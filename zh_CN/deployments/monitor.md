@@ -2,24 +2,24 @@
 
 EMQ X Cloud 提供完整的监控和告警方案 
 
-要查看部署的监控和告警，请导航至 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+要查看部署的监控和告警，请导航至 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/) 点击相应的部署，即可查看该部署的监控指标，日志以及告警。
 
 ### 监控
 
-可在控制台 -> 部署中，选择要查看部署，在指标页查看相关的消息。
+点击指标页面，将跳转到部署指标页面，在这里可以查看部署的指标信息。
 
 ![metrics](../_assets/deployments/view_metrics.png)
 
 
 
-#### EMQX 数量指标
+#### EMQX 实时指标
 
 在 Stats 模块里，提供最近一段时间内的 EMQX 数量指标。从左到右分别为：
 
 1. 连接数量
 2. 留存数量
 3. 订阅数量
-4. 订阅分享数量
+4. 共享订阅数
 5. 主题数量
 
 ![metrics_stats](../_assets/deployments/metrics_stats.png)
@@ -27,15 +27,59 @@ EMQ X Cloud 提供完整的监控和告警方案
 
 #### EMQX 增长指标
 
-指标页面还提供了 Messages、Client、Packets、Delivery 四种增长指标视图。
+指标页面还提供了 消息、客户端、报文、交付 四种增长指标视图。
 
 把鼠标移动到图表上，可以查看每个图表，某个时间点的详细信息。
 
 ![metrics_line_detail](../_assets/deployments/metrics_line_detail.png)
 
+##### 消息视图
+
+消息视图展示，在时间段内，消息的收发的增长情况。提供以下 3 种指标：
+
+| 指标              | 意义                                     |
+| ----------------- | :--------------------------------------- |
+| messages_dropped  | EMQ X 内部转发到订阅进程前丢弃的消息总数 |
+| messages_received | 接收来自客户端的消息数量                 |
+| messages_sent     | 发送给客户端的消息数量                   |
+
+##### 客户端视图
+
+客户端视图展示，在时间段内，与客户端交互的增长情况。它提供以下 4 种指标：
+
+| 指标                | 意义               |
+| ------------------- | :----------------- |
+| client_connected    | 客户端成功连接次数 |
+| client_disconnected | 客户端断开连接次数 |
+| client_subscribe    | 客户端订阅次数     |
+| client_unsubscribe  | 客户端取消订阅次数 |
+
+##### 报文视图
+
+报文视图展示，在时间段内，收发的字节数的增长情况。提供以下 2 种指标：
+
+| 指标               | 意义             |
+| ------------------ | :--------------- |
+| send_kibibytes     | 发送报文的千字节 |
+| received_kibibytes | 接受报文的千字节 |
+
+##### 交付视图
+
+交付视图展示，在时间段内，丢弃的消息数量增长情况，提供以下 1 种指标：
+
+| 指标             | 意义                 |
+| ---------------- | :------------------- |
+| delivery_dropped | 发送时丢弃的消息总数 |
+
+### 日志
+
+点击日志页面，将跳转到部署日志页面，在这里可以查看部署日志相关消息
+
+![view_log](/Users/mac/OneDrive - 杭州映云科技/截图/alert/view_log.png)
+
 ### 告警
 
-可在控制台 -> 部署中，选择要查看部署，在告警页面查看相关的消息，每条告警信息包含：时间，级别，以及告警类型
+点击告警页面，将跳转到部署告警页面，在这里可以查看部署告警相关消息
 
 ![main](../_assets/deployments/view_alert.png)
 
@@ -44,7 +88,7 @@ EMQ X Cloud 提供以下 5 种告警提示
 | 告警类型              | 告警服务          | 告警级别  | 触发条件                                |
 | ------------------- | ---------------- | -------- | ------------------------------------- |
 | connections-high    | load_balancer    | warning  | 部署连接数是否大于购买规格 90%             |
-| traffic-high        | load_balancer    | warning  | 上小时流量费与前 5 小时平均值做对比，超过1GB |
+| traffic-high        | load_balancer    | warning  | 流量突增                                |
 | cpu-high            | instance         | warning  | 实例 cpu 负载使用率大于 75%               |
 | memory-high         | instance         | warning  | 实例 memory 使用率大于 75%               |
 | filesystem-high     | instance         | warning  | 实例 disk 使用率大于 75%                 |
