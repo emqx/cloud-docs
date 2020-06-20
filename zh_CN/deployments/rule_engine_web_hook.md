@@ -62,7 +62,7 @@ WHERE
 
 在创建资源页面里，资源类型选择 WebHook，在请求 URL 里填写 Web 服务器的 URL 地址，然后点击测试。右上角会返回 “测试资源创建成功” 表示测试成功。
 
->注意：如果测试失败，请检查是否完成对等连接，详情请看 [VPC 对等连接](http://../deployment/vpc_peering.md)，并检查 URL 是否正确。
+>注意：如果测试失败，请检查是否完成对等连接，详情请看 [VPC 对等连接](../deployments/vpc_peering.md)，并检查 URL 是否正确。
 
 
 
@@ -80,7 +80,7 @@ WHERE
 
 #### 4. 测试
 
->如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](http://../deployments/connections.md)，查看MQTT 客户端连接和测试指南
+>如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../deployments/connections.md)，查看MQTT 客户端连接和测试指南
 
 当我们发送 "hello" 到 greet 主题，上面创建的规则就会触发，可以看到 WEB 服务已经收到消息 "hello emqx!"
 
