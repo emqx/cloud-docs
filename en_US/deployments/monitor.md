@@ -84,7 +84,7 @@ Click log to navigate to the deployment log page, where you can view the deploym
 
 Click the alarm to navigate to the deployment's alarm page, where you can view the deployment alarm.
 
-![main](../_assets/deployments/view_alert.png )
+![view_alert](../_assets/deployments/view_alert.png )
 
 EMQ X Cloud provides the following five-alarm prompts
 

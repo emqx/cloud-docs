@@ -8,7 +8,7 @@ EMQ X Cloud uses prepaid billing pattern based on usage, which can increase clus
 
 EMQ X Cloud bills each deployment according to the maximum connection specification and message TPS.
 
-Before creating a deployment, EMQ X Cloud will estimate the use cost based on your deployment selection. The specific price can be viewed on the [Price Estimate](https://cloud.emqx.io/cn/calculator) page
+Before creating a deployment, EMQ X Cloud will estimate the use cost based on your deployment selection. The specific price can be viewed on the [Price Estimate](https://cloud.emqx.io/calculator) page
 
 > Note: Due to differences in actual usage, there may be differences between estimated cost and actual cost.
 
@@ -21,7 +21,7 @@ The specific billing items are shown in the table below:
 
 ### Billing cycle
 
-**For every hour,** EMQ X Cloud calculates the account consumption within the last hour (hourly bill) and deducts the fee from the balance, and then adds it to the monthly consumption (monthly bill).  You can go to [Bill Page](<https://cloud.emqx.io/console/billing/overview>) to view detailed deduction information
+**For every hour,** EMQ X Cloud calculates the account consumption within the last hour (hourly bill) and deducts the fee from the balance, and then adds it to the monthly consumption (monthly bill).  You can go to [Bill Page](https://cloud.emqx.io/console/billing/overview) to view detailed deduction information
 
 ### Arrears notification
 

@@ -25,7 +25,7 @@ Before creating a rule engine, you need to ensure that the status of deployment 
 
 6. Add actions.
 
-   > Note: Before adding actions, you need to ensure that [VPC Peer Connection]() has been added, and [resource creation](./) has been finished.
+   > Note: Before adding actions, you need to ensure that [VPC Peer Connection](../deployments/vpc_peering.md) has been added, and [resource creation](../deployments/resources.md) has been finished.
 
    ![deployment_connections](../_assets/deployments/add_action.png)
 
