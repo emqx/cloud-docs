@@ -16,9 +16,12 @@
 2. 设置规则引擎的筛选条件
 3. 创建一个资源和一个动作
 4. 完成规则引擎创建，并进行测试
+
 >注意:
 >
->在使用 Webhook 前，请先创建部署，并完成[对等连接](../deployments/vpc_peering.md)
+>在使用 规则引擎 前，请先创建部署，并完成[对等连接](../deployments/vpc_peering.md)
+>
+>请确保以下涉及到的服务器都建立在对等连接下的 VPC 中
 
 
 #### 1. 创建 Web 服务器
@@ -38,7 +41,12 @@ while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
 
 ![规则引擎页](../_assets/deployments/rule_engine/view_rule_engine.png)
 
-在条件处的 SQL 中，将 FROM 设置为，"greet/#"，最后的 SQL 应该如下：
+我们的目标是：当有消息 "hello"，发送到 greet 主题时，就会触发引擎。这里需要对 SQL 进行一定的处理：
+
+* 仅针对 'greet/#'
+* 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行规则引擎
+
+根据上面的原则，我们最后得到的 SQL 应该如下：
 
 ```sql
 SELECT

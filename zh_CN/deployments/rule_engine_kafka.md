@@ -20,6 +20,7 @@
 4. 完成规则引擎创建，并进行测试
 
 >注意:
+>
 >在使用规则引擎前，请先创建部署，并完成[对等连接](../deployments/vpc_peering.md)
 >
 >请确保以下涉及到的服务器都建立在对等连接下的 VPC 中
@@ -58,7 +59,12 @@ $ kafka-topics.sh --zookeeper <服务器内网IP>:2181 --replication-factor 1 --
 
 ![规则引擎页](../_assets/deployments/rule_engine/view_rule_engine.png)
 
-在条件处的 SQL 中，将 FROM 设置为，"greet/#"，最后的 SQL 应该如下：
+我们的目标是：当主题 greet 收到 msg 为 hello 字符时，就会触发引擎。这里需要对 SQL 进行一定的处理：
+
+* 针对 greet 主题，即 'greet/#'
+* 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行规则引擎
+
+根据上面的原则，我们最后得到的 SQL 应该如下：
 
 ```sql
 SELECT
@@ -69,7 +75,6 @@ WHERE
   msg = 'hello'
 ```
 
-这个 SQL 可以解读为：当 "greet" 主题收到消息时，选取信息里的 msg 字段。
 可以点击 SQL 输入框下的 SQL 测试 ，填写数据：
 
 * topic: greet
@@ -101,7 +106,7 @@ WHERE
 
 ![添加动作](../_assets/deployments/rule_engine/add_kafka_action03.png)
 
->注意：如果测试失败，请检查是否完成对等连接，详情请看 [VPC 对等连接](http://../deployments/vpc_peering.md)，并检查 URL 是否正确。 
+>注意：如果测试失败，请检查是否完成对等连接，详情请看 [VPC 对等连接](../deployments/vpc_peering.md)，并检查 URL 是否正确。 
 
 点击确定，返回到配置动作页面，Kafka 主题填写刚刚创建的 testTopic 主题，在消息内容模板里填写 "hello from emqx cloud"，资源 ID 默认，点击确定。
 
@@ -113,7 +118,7 @@ WHERE
 
 ### 4. 测试
 
->如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](http://../deployments/connections.md)，查看 MQTT 客户端连接和测试指南 
+>如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../deployments/connections.md)，查看 MQTT 客户端连接和测试指南 
 
 我们尝试向 home/sensor 主题发送下面的数据
 
