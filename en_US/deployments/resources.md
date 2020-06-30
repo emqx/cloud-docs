@@ -19,13 +19,13 @@ EMQ X Cloud resource is used for the response actions of rule engine. You need t
 
 3. Click Create, select the corresponding resource type, and fill in the corresponding resource configuration information
 
-   ![deployment_connections](../_assets/deployments/add_resources.png)
+   ![deployment_connections](../_assets/deployments/add_resource.png)
 
 4. Click Test. If no error is reported, click Confirm, otherwise please check the resource configuration information carefully.
 
 5. Click Confirm and you will return to the resource list.
 
-   ![deployment_connections](../_assets/deployments/resources_list.png)
+   ![deployment_connections](../_assets/deployments/list_resources.png)
 
 
 
