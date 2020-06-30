@@ -1,11 +1,11 @@
-# Monitor and alert
+# Monitor and Alert
 
 
-EMQ x cloud provides complete monitoring and alarm scheme
+EMQ X Cloud provides a complete monitoring and alerting solution
 
-To view the deployed monitoring and alarms, navigate to the [EMQ X Cloud console](https://cloud.emqx.io/console/) Click the corresponding deployment to view the monitoring metrics, logs, and alarms.
+To view the monitoring and alerting of your deployments, navigate to the [EMQ X Cloud console](https://cloud.emqx.io/console/) Click the corresponding deployment to view the monitoring metrics, logs, and alerts.
 
-### Monitoring
+### Metric
 
 Click the metric to navigate to the deployment metrics page, where you can view the deployment metrics information.
 
@@ -74,21 +74,21 @@ It shows the increment of the number of messages dropped in the period and provi
 | delivery_ Dropped | the total number of messages dropped when sent|
 
 
-### Log
+### Logs
 
 Click log to navigate to the deployment log page, where you can view the deployment log.
 
 ![view_log](../_assets/deployments/view_log.png)
 
-### Alarm
+### Alerts
 
-Click the alarm to navigate to the deployment's alarm page, where you can view the deployment alarm.
+Click the alert to navigate to the deployment's alert page, where you can view the deployment alert.
 
 ![view_alert](../_assets/deployments/view_alert.png )
 
 EMQ X Cloud provides the following five-alarm prompts
 
-|Alarm type | alarm service | alarm level | trigger condition|
+|alert type | alert service | alert level | trigger condition|
 | ------------------- | ---------------- | -------- | ------------------------------------- |
 | connections-high | load_ Balancer | warning | deployment connection number is greater than 90% of purchase specification|
 | traffic-high | load_ Balancer | warning | sudden increase in traffic|

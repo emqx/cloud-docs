@@ -13,7 +13,7 @@
   * [Resources](./deployments/resources.md)
   * [Monitor and alert](./deployments/monitor.md)
 * Billing
-  * [Overview](./billing/monitor.md)
+  * [Overview](./billing/overview.md)
   * [Credits](./billing/credits.md)
 * Other
 * Usage example

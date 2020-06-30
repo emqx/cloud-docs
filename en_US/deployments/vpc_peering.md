@@ -26,9 +26,9 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![aws-vpc-request](../_assets/deployments/aws-vpc-request.png)
 
-   After filling in all the information, click the  button of `Create Peering Connection`
+   After filling in all the information, click the button of `Create Peering Connection`
 
-3. After the creation is complete, the following is displayed. Please record `Requester VPC owner`, `Requester VPC ID`, `VPC Peering Connection`, which need to be used later
+3. Once created, the following will be displayed. Please record `Requester VPC owner`, `Requester VPC ID`, `VPC Peering Connection`, which need to be used later
 
    ![aws-vpc1](../_assets/deployments/aws-vpc1.png)
 

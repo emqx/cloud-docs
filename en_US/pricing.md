@@ -8,7 +8,7 @@ EMQ X Cloud uses prepaid billing pattern based on usage, which can increase clus
 
 EMQ X Cloud bills each deployment according to the maximum connection specification and message TPS.
 
-Before creating a deployment, EMQ X Cloud will estimate the use cost based on your deployment selection. The specific price can be viewed on the [Price Estimate](https://cloud.emqx.io/calculator) page
+Before creating a deployment, EMQ X Cloud will estimate the use cost based on your deployment selection. The specific price can be viewed on the [Price Estimation](https://cloud.emqx.io/calculator) page
 
 > Note: Due to differences in actual usage, there may be differences between estimated cost and actual cost.
 
