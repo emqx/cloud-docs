@@ -22,7 +22,9 @@
 4. 完成规则引擎创建，并进行测试
 
 >注意:
+>
 >在使用 规则引擎 前，请先创建部署，并完成[对等连接](../deployments/vpc_peering.md)
+>
 >请确保以下涉及到的服务器都建立在对等连接下的 VPC 中
 
 
@@ -48,7 +50,12 @@ $ docker run --name=influxdb --rm -d -p 8086:8086 -p 8089:8089/udp -v ${PWD}/fil
 
 ![规则引擎页](../_assets/deployments/rule_engine/view_rule_engine.png)
 
-将条件处的 SQL 改成如下的样子
+我们的目标是：只要 home/sensor 主题有监控信息时，就会触发引擎。这里需要对 SQL 进行一定的处理：
+
+* 仅针对主题 "home/sensor"
+* 获取我们需要的三个数据 location、temperacture、humidity 
+
+根据上面的原则，我们最后得到的 SQL 应该如下：
 
 ```sql
 SELECT
