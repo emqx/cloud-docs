@@ -7,6 +7,7 @@
 * 部署
   * [创建和删除部署](./deployments/create_delete.md)
   * [部署连接指南](./deployments/connections.md)
+  * [TLS/SSL 配置](./deployments/tls.md)
   * [对等连接指南](./deployments/vpc_peering.md)
   * [认证和鉴权](./deployments/users_and_acl.md)
   * [规则引擎](./deployments/rule_engine.md)
