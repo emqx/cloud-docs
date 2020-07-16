@@ -1,19 +1,35 @@
 # 配置 TLS/SSL
 
-## 证书介绍
-EMQ X Cloud 支持两种方式的认证：单向认证和双向认证，服务器证书和私钥都是必需的，如果有证书链，也需要提供。如果开启双向认证，还需要提供客户端 CA 证书。
+## TLS/SSL 介绍
+作为基于现代密码学公钥算法的安全协议，TLS/SSL 能在计算机通讯网络上保证传输安全。
+TLS/SSL 带来的安全优势
+- 强认证。 用 TLS 建立连接的时候，通讯双方可以互相检查对方的身份。在实践中，很常见的一种身份检查方式是检查对方持有的 X.509 数字证书。这样的数字证书通常是由一个受信机构颁发的，不可伪造。
 
+- 保证机密性。TLS 通讯的每次会话都会由会话密钥加密，会话密钥由通讯双方协商产生。任何第三方都无法知晓通讯内容。即使一次会话的密钥泄露，并不影响其他会话的安全性。
+
+- 完整性。 加密通讯中的数据很难被篡改而不被发现。
+
+EMQ X Cloud 支持两种方式的认证：单向认证和双向认证<br>
+单向认证需要：
 - 服务器证书
 - 证书链
 - 私有秘钥
-- CA 证书：客户端 CA 证书，用于双向认证时验证客户端证书。
 
-## 证书说明
-- 证书支持第三方机构颁发的证书和自签名证书，若要生成自签名证书，可参考下面关于自签名的说明。
+双向认证需要：
+- 服务器证书
+- 证书链
+- 私有秘钥
+- 客户端 CA 证书
+
+## 证书限制
+- 证书必须指定加密算法和密钥大小。EMQ X Cloud 支持下列算法：
+  - 1024 位 RSA (RSA_1024)
+  - 2048 位 RSA (RSA_2048)
+- 证书必须是 SSL/TLS X.509 版本 3 证书。它必须包含公有密钥、网站的完全限定域名 (FQDN) 或 IP 地址以及有关发布者的信息。证书可以由您的私有密钥或发证 CA 的私有密钥进行自签名。如果证书由 CA 签名，则在导入证书时必须包含证书链。
 - 证书必须是有效的，有效期开始之前和结束的 `180` 天之内，无法导入证书。
 - 证书、私有密钥和证书链必须采用 PEM 编码。
-- 证书、私有密钥和证书链长度限制为 2048。
 - 私有秘钥必须是无密码的。
+- 证书的加密算法必须与签名 CA 的加密算法匹配。例如，如果签名 CA 的密钥类型为 RSA，则该证书的密钥类型也必须为 RSA。
 
 ### 格式说明
 #### 证书格式
@@ -27,9 +43,6 @@ Base64–encoded certificate
 > 不要把证书复制到证书链中
 
 ```
------BEGIN CERTIFICATE-----
-Base64–encoded certificate
------END CERTIFICATE-----
 -----BEGIN CERTIFICATE-----
 Base64–encoded certificate
 -----END CERTIFICATE-----
@@ -65,7 +78,7 @@ openssl req \
 ```bash
 openssl genrsa -out cloud.key 2048
 ```
-创建 `openssl.cnf` 文件，修改 `alt_names` 的 `CONNECT_ADDRESS` 为实际连接地址或 IP，DNS 和 IP 仅保留一个。`req_distinguished_name` 根据需求进行修改。
+创建 `openssl.cnf` 文件，修改 `alt_names` 的 `CONNECT_ADDRESS` 为部署详情界面的连接地址，DNS 和 IP 仅保留一个。`req_distinguished_name` 根据需求进行修改。
 > AWS 为 DNS 地址，阿里云和华为云为 IP 地址
 ```
 [req]
@@ -136,7 +149,7 @@ openssl x509 -req -days 3650 -in client.csr -CA cloud-ca.crt -CAkey cloud-ca.key
      - 单向认证：仅客户端验证服务端证书
      - 双向认证：客户端和服务端相互验证证书
    - 证书：服务端证书
-   - 证书链：证书链
+   - 证书链：证书链，通常第三方机构签发证书时会提供
    - 私有秘钥：私有秘钥
    - CA 证书：选择双向认证时，需要提供客户端的 CA 证书
 4. 填写完成后，点击“确定”。
@@ -145,7 +158,7 @@ openssl x509 -req -days 3650 -in client.csr -CA cloud-ca.crt -CAkey cloud-ca.key
 
 ## 测试连接
 测试之前，请确保创建了认证信息，参考 [认证和鉴权](./users_and_acl.md)。<br>
-您可以使用 [EMQ X Tools](<http://tools.emqx.io/>) 或者 [MQTTX](<https://mqttx.app/>) 连接和测试。<br>
+您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。<br>
 我们使用 MQTTX 进行测试：
 - 新建连接，输入 Name，Client ID 随机生成即可
 - 选择 Host，填入部署的连接地址和端口
