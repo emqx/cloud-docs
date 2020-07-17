@@ -7,6 +7,7 @@
 * Deployment
   * [Create and delete deployments](./deployments/create_delete.md)
   * [Deployment Connection Guide](./deployments/connections.md)
+  * [TLS/SSL configuration](./deployments/tls.md)
   * [Peer-to-peer connection guide](./deployments/vpc_peering.md)
   * [Authentication](./deployments/users_and_acl.md)
   * [Rule engine](./deployments/rule_engine.md)
