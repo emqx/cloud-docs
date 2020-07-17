@@ -1,6 +1,6 @@
 ![规则引擎](../_assets/deployments/rule_engine/web_hook.jpg)
 
-# 使用 EMQ X Cloud 规则引擎——Kafka
+# 使用 EMQ X Cloud 规则引擎对接 Kafka
 
 [Kafka](https://kafka.apache.org/)是由Apache软件基金会开发的一个开源流处理平台。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台，是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。
 

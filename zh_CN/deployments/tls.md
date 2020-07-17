@@ -78,8 +78,7 @@ openssl req \
 ```bash
 openssl genrsa -out cloud.key 2048
 ```
-创建 `openssl.cnf` 文件，修改 `alt_names` 的 `CONNECT_ADDRESS` 为部署详情界面的连接地址，DNS 和 IP 仅保留一个。`req_distinguished_name` 根据需求进行修改。
-> AWS 为 DNS 地址，阿里云和华为云为 IP 地址
+创建 `openssl.cnf` 文件，修改 `alt_names` 的 `CONNECT_ADDRESS` 为部署详情界面的连接地址。`req_distinguished_name` 根据需求进行修改。
 ```
 [req]
 default_bits  = 2048
@@ -98,7 +97,6 @@ subjectAltName = @alt_names
 [v3_req]
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = CONNECT_ADDRESS
 IP.1 = CONNECT_ADDRESS
 ```
 
