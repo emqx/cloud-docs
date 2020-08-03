@@ -125,16 +125,16 @@ openssl req \
     -days 3650 \
     -nodes \
     -x509 \
-    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=CA" \
+    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client CA" \
     -keyout client-ca.key \
     -out client-ca.crt
 
 # Create client key
 openssl genrsa -out client.key 2048
 # Create client request file
-openssl req -new -key client.key -out client.csr -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=client"
+openssl req -new -key client.key -out client.csr -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client"
 # Sign the client with a CA certificate
-openssl x509 -req -days 3650 -in client.csr -CA cloud-ca.crt -CAkey cloud-ca.key -CAcreateserial -out client.crt
+openssl x509 -req -days 3650 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
 ```
 The above steps mainly generated the following files:
 - client-ca.crt: client CA certificate

@@ -123,16 +123,16 @@ openssl req \
     -days 3650 \
     -nodes \
     -x509 \
-    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=CA" \
+    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client CA" \
     -keyout client-ca.key \
     -out client-ca.crt
 
 # 创建客户端 key
 openssl genrsa -out client.key 2048
 # 创建客户端请求文件
-openssl req -new -key client.key -out client.csr -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=client"
+openssl req -new -key client.key -out client.csr -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client"
 # 用 CA 证书给客户端签名
-openssl x509 -req -days 3650 -in client.csr -CA cloud-ca.crt -CAkey cloud-ca.key -CAcreateserial -out client.crt
+openssl x509 -req -days 3650 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
 ```
 以上步骤主要生成以下文件：
 - client-ca.crt：客户端 CA 证书
