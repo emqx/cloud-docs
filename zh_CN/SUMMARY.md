@@ -22,4 +22,5 @@
 * 使用示例
   * [使用 EMQ X Cloud 规则引擎对接 Kafka](./use_cases/rule_engine_kafka.md)
   * [使用 EMQ X Cloud 规则引擎消息重新发布](./use_cases/rule_engine_republish.md)
-  * [使用 EMQ X Cloud 规则引擎对接 Webhook](./use_cases/rule_engine_republish.md)
+  * [使用 EMQ X Cloud 规则引擎对接 Webhook](./use_cases/rule_engine_web_hook.md)
+  * [使用 EMQ X Cloud 规则引擎对接 Aliyun Kafka](./use_cases/rule_engine_aliyun_kafka.md)
