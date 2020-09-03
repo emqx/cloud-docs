@@ -8,10 +8,19 @@
 * 部署
   * [创建和删除部署](./deployments/create_delete.md)
   * [部署连接指南](./deployments/connections.md)
+  * Dashboard
+      * [监控](./deployments/dashboard/monitor.md)
+      * [认证和鉴权](./deployments/dashboard/users_and_acl.md)
+      * [客户端](./deployments/dashboard/clients.md)
+      * [主题](./deployments/dashboard/topics.md)
+      * [订阅](./deployments/dashboard/subscriptions.md)
+      * 规则引擎
+        * [规则](./deployments/dashboard/rule_engine/rules.md)
+        * [资源](./deployments/dashboard/rule_engine/resources.md)
+      * 工具
+        * [websocket](./deployments/dashboard/tools/websocket.md)
   * [TLS/SSL 配置](./deployments/tls.md)
   * [VPC 对等连接配置](./deployments/vpc_peering.md)
-  * [认证和鉴权](./deployments/users_and_acl.md)
-  * [规则引擎](./deployments/rule_engine.md)
   * [资源](./deployments/resources.md)
   * [监控和告警](./deployments/monitor.md)
 * 账单
