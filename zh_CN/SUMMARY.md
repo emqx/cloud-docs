@@ -21,7 +21,6 @@
         * [websocket](./deployments/dashboard/tools/websocket.md)
   * [TLS/SSL 配置](./deployments/tls.md)
   * [VPC 对等连接配置](./deployments/vpc_peering.md)
-  * [资源](./deployments/resources.md)
   * [监控和告警](./deployments/monitor.md)
 * 账单
   * [概览](./billing/overview.md)
