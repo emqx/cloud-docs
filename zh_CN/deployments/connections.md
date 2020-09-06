@@ -22,10 +22,10 @@ EMQ X Cloud 创建的部署默认开启客户端认证，所以在连接之前�
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 2. 点击所需连接的部署，您将进入部署详情页面
-3. 点击认证和鉴权， 您将跳转到认证和鉴权页面
-4. 输入用户名和密码 点击右侧添加按钮
+3. 点击部署详情页面中的 dashboard 地址，您将进入到 dashboard
+4. 点击 dashboard 左侧菜单`认证鉴权`，在认证中填入`用户名`、`密码`，然后点击添加按钮
 5. 在列表中查看添加信息
- 
+
 ![deployment_connections](../_assets/deployments/add_users.png)
 
 
