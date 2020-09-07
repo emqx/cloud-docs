@@ -6,9 +6,9 @@
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击部署详情页面中的 dashboard 地址，您将进入到 dashboard
+3. 点击部署详情页面中的 EMQ X Dashboard 地址，您将进入到 Dashboard
 
-4. 点击 dashboard 左侧菜单`监控`
+4. 点击 Dashboard 左侧菜单`监控`
 
   ![monitor-overview](../../_assets/deployments/dashboard/monitor/monitor-overview.png)
   

@@ -17,20 +17,17 @@
       * 规则引擎
         * [规则](./deployments/dashboard/rule_engine/rules.md)
         * [资源](./deployments/dashboard/rule_engine/resources.md)
-      * 工具
-        * [websocket](./deployments/dashboard/tools/websocket.md)
   * [TLS/SSL 配置](./deployments/tls.md)
   * [VPC 对等连接配置](./deployments/vpc_peering.md)
-  * [监控和告警](./deployments/monitor.md)
+  * [API 访问](./deployments/api.md)
+  * [指标](./deployments/metrics.md)
+  * [日志](./deployments/logs.md)
+  * 告警
+    * [告警事件](./deployments/alerts/events.md)
+    * [告警集成](./deployments/alerts/alert_integrations.md)
 * 账单
   * [概览](./billing/overview.md)
   * [代金券](./billing/credits.md)
   * [发票](./billing/invoices.md)
 * 其他
 * 使用示例
-  * [使用 EMQ X Cloud 规则引擎对接 Kafka](./use_cases/rule_engine_kafka.md)
-  * [使用 EMQ X Cloud 规则引擎消息重新发布](./use_cases/rule_engine_republish.md)
-  * [使用 EMQ X Cloud 规则引擎对接 Webhook](./use_cases/rule_engine_web_hook.md)
-  * [使用 EMQ X Cloud 规则引擎对接 MQTT 代理](./use_cases/rule_engine_mqtt.md)
-  * [使用 EMQ X Cloud 规则引擎对接 阿里云 Kafka](./use_cases/rule_engine_aliyun_kafka.md)
-  * [使用 EMQ X Cloud 规则引擎对接 华为云 Kafka](./use_cases/rule_engine_huawei_kafka.md)
