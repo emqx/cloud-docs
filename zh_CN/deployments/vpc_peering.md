@@ -1,10 +1,8 @@
 # VPC 对等连接配置
 
+> 该功能在免费试用和共享部署中不可用
+
 VPC 对等连接是两个VPC 之间的网络连接，通过此连接，使两个VPC 中的实例可以彼此通信，就像它们在同一网络中一样。
-
-> 注意： 不同云服务商，对等连接有不同的称呼，您需要依据部署所在平台选择不同的使用方法
-
-
 
 ### 注意事项
 
@@ -47,9 +45,9 @@ VPC 对等连接是两个VPC 之间的网络连接，通过此连接，使两个
 6. 登录 EMQ X Cloud 控制台, 访问部署详情，查看对等连接状态
 
    ![cloud_vpc_peering_info](../_assets/deployments/view_deployment_peering.png)
- 
+
 7. 登录您阿里云账号，配置安全组，允许 EMQ X Cloud 网段访问您的 VPC
-   
+  
    ![aliyun_security_group](../_assets/deployments/aliyun_security_group.png)
 
 
@@ -92,7 +90,7 @@ VPC 对等连接是两个VPC 之间的网络连接，通过此连接，使两个
     ![create_huawei_vpc_peering](../_assets/deployments/huawei_create_vpc_peering.png)
     
 4. 在对等连接信息界面，记录下以下 3 个值
-    
+  
     * 1 为 对等连接 ID
     * 2 为 VPC 网段
     * 3 为 VPC ID
@@ -110,7 +108,7 @@ VPC 对等连接是两个VPC 之间的网络连接，通过此连接，使两个
     ![huawei_vpc_peering_info](../_assets/deployments/huawei_emqx_vpc_peering_info2.png)
 
 7. 在华为云控制台，打开 虚拟私有云 VPC -> 路由表，将步骤 1 中的部署 VPC 网段加入到对应 VPC 的路由表中
-    
+  
     > 注意：下一跳类型为 对等连接
     
     ![huawei_vpc_add_route](../_assets/deployments/huawei_vpc_add_route.png)
