@@ -1,20 +1,46 @@
-* [EMQ X Cloud Use Guide](./README.md)
-* [Product Pricing](./pricing.md)
+* EMQ X Cloud Product Description
+* Pricing
 * Quick start
-  * [Overview](./quick_start/quick_start.md)
-  * [Signup and login](./quick_start/signup_login.md)
-  * [Create deployment for free trial](./quick_start/free_trial.md)
-* Deployment
-  * [Create and delete deployments](./deployments/create_delete.md)
-  * [Deployment Connection Guide](./deployments/connections.md)
-  * [TLS/SSL configuration](./deployments/tls.md)
-  * [Peer-to-peer connection guide](./deployments/vpc_peering.md)
-  * [Authentication](./deployments/users_and_acl.md)
-  * [Rule engine](./deployments/rule_engine.md)
-  * [Resources](./deployments/resources.md)
-  * [Monitor and alert](./deployments/monitor.md)
+  - Create an EMQ X Cloud Account
+  - Create a Free Tier Cluster Deployment 
+  - Connect to Your Deployment
+* Connection to a Deployment
+  - Overview
+  - Connect via Python SDK
+  - Connect via Java SDK
+  - Connect via Node.js SDK
+  - Connect via PHP SDK
+  - Connect via C SDK
+  - Connect via C++ SDK
+  - Connect via Go SDK
+  - Connect via MQTT X
+  - Connect via MQTT.fx
+* Message storage
+  - Overview
+* Best Practices
+* Deployments
+  - Create a New Deployment
+  - View Deployment
+  - EMQ X Dashboard
+    - Monitor
+    - Users & ACL
+    - Clients
+    - Topics
+    - Subscriptions
+    - Rules Engine
+  - Configuring TLS/SSL
+  - Set up a Network Peering Connection
+  - Set up a Network NAT Gateway
+  - Creating API Applications
+  - View Metrics
+  - View Logs
+  - Alerts
+    - events
+    - Alerts integration
+  - Upgrade of deployment specifications
+  - Termination a Deployment
+* Events
 * Billing
-  * [Overview](./billing/overview.md)
-  * [Credits](./billing/credits.md)
-* Other
-* Usage example
+* API
+* FAQ
+* Release Notes
