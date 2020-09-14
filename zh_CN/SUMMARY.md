@@ -29,13 +29,15 @@
 * 部署
   - 创建一个新的部署
   - 查看部署
-  - EMQ X Dashboard
-    - 监控
-    - 认证鉴权
-    - 客户端
-    - 主题
-    - 订阅
-    - [规则引擎](./deployments/rule_engine.md)
+  - [EMQ X Dashboard](./deployments/dashboard/README.md)
+    - [监控](./deployments/dashboard/monitor.md)
+    - [认证鉴权](./deployments/dashboard/users_and_acl.md)
+    - [客户端](./deployments/dashboard/client.md)
+    - [主题](./deployments/dashboard/topic.md)
+    - [订阅](./deployments/dashboard/subscribe.md)
+    - [规则引擎](./deployments/dashboard/rule_engine/README.md)
+      - [规则](./deployments/dashboard/rule_engine/rule.md)
+      - [资源](./deployments/dashboard/rule_engine/resource.md)
   - 配置 TLS/SSL
   - 配置 VPC 对等连接
   - 配置 NAT 网关
