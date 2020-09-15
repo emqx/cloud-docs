@@ -29,13 +29,15 @@
 * 部署
   - [查看部署](./deployments/README.md)
   - [创建一个新的部署](./deployments/create_deployment.md)
-  - [EMQ X Dashboard](./deployments/dashboard/README.md)
+  - EMQ X Dashboard
+    - [概览](./deployments/dashboard/README.md)
     - [监控](./deployments/dashboard/monitor.md)
     - [认证鉴权](./deployments/dashboard/users_and_acl.md)
     - [客户端](./deployments/dashboard/client.md)
     - [主题](./deployments/dashboard/topic.md)
     - [订阅](./deployments/dashboard/subscribe.md)
-    - [规则引擎](./deployments/dashboard/rule_engine/README.md)
+    - 规则引擎
+      - [概览](./deployments/dashboard/rule_engine/README.md)
       - [规则](./deployments/dashboard/rule_engine/rule.md)
       - [资源](./deployments/dashboard/rule_engine/resource.md)
   - [配置 TLS/SSL](./deployments/tls_ssl.md)
@@ -49,6 +51,9 @@
   - [删除部署](./deployments/delete_deployment.md)
 * 事件
 * 账单
+  - [概览](./billing/README.md)
+  - [代金券](./billing/credits.md)
+  - [发票](./billing/invoices.md)
 * 开发指南
 * [API](./api.md)
 * FAQ
