@@ -16,6 +16,12 @@
   - MQTT.fx 连接
 * 消息存储
   - [简介及使用限制](./messages/README.md)
+  - [桥接数据到 Kafka](./use_cases/rule_engine/rule_engine_kafka.md)
+  - [桥接数据到 阿里云 Kafka](./use_cases/rule_engine/rule_engine_aliyun_kafka.md)
+  - [桥接数据到 华为云 Kafka](./use_cases/rule_engine/rule_engine_huawei_kafka.md)
+  - [桥接数据到 MQTT Broker](./use_cases/rule_engine/rule_engine_mqtt.md)
+  - [离线消息转发到 Webhook](./use_cases/rule_engine/rule_engine_web_hook.md)
+  - [消息重新发布](./use_cases/rule_engine/rule_engine_republish.md)
   - [离线消息保存到 MySQL](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-mysql)
   - [离线消息保存到 PostgreSQL](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-postgresql)
   - [离线消息保存到 Cassandra](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-cassandra)
