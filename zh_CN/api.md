@@ -81,13 +81,13 @@ HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authen
 
 >  GET /brokers/{node}
 
-**Path Parameters**
+**URL 路径参数**
 
 | Name | Type   | Required | Description                                               |
 | :--- | :----- | :------- | :-------------------------------------------------------- |
 | node | String | False    | 节点名字，如 "emqx@127.0.0.1。 不指定时返回所有节点的信息 |
 
-**Success Response Body (JSON)**
+**成功响应消息元素 (JSON)**
 
 | Name             | Type                    | Description                                                  |
 | :--------------- | :---------------------- | :----------------------------------------------------------- |
@@ -101,7 +101,7 @@ HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authen
 | data.uptime      | String                  | EMQ X 运行时间，格式为 "H hours, m minutes, s seconds"       |
 | data.version     | String                  | EMQ X 版本                                                   |
 
-**Examples**
+**示例**
 
 获取所有节点的基本信息：
 
@@ -129,13 +129,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /nodes/{node}
 
-**Path Parameters**
+**URL 路径参数**
 
 | Name | Type   | Required | Description                                               |
 | :--- | :----- | :------- | :-------------------------------------------------------- |
 | node | String | False    | 节点名字，如 "emqx@127.0.0.1。 不指定时返回所有节点的信息 |
 
-**Success Response Body (JSON)**
+**成功响应消息元素 (JSON)**
 
 | Name                   | Type                    | Description                                                  |
 | :--------------------- | :---------------------- | :----------------------------------------------------------- |
@@ -156,7 +156,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data.uptime            | String                  | EMQ X 运行时间                                               |
 | data.version           | String                  | EMQ X 版本                                                   |
 
-**Examples**
+**示例**
 
 获取所有节点的状态：
 
@@ -176,6 +176,121 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
+### 管理认证数据
+
+
+
+#### 查看已经添加的认证数据
+
+> GET /auth_user
+
+**URL 查询参数:**
+
+| Name   | Type    | Required | Default | Description                                                  |
+| :----- | :------ | :------- | :------ | :----------------------------------------------------------- |
+| _page  | Integer | False    | 1       | 页码                                                         |
+| _limit | Integer | False    | 10000   | 每页显示的数据条数，未指定时由 `emqx-management` 插件的配置项 `max_row_limit` 决定 |
+
+**成功响应消息元素 (JSON):**
+
+| Name                 | Type             | Description        |
+| :------------------- | :--------------- | :----------------- |
+| code                 | Integer          | 0                  |
+| data                 | Array of Objects | 所有认证数据       |
+| data[0].login        | String           | 登录用户名         |
+| data[0].password     | String           | 登录密码           |
+| data[0].is_superuser | Boolean          | 是否为超级用户     |
+| meta                 | Object           | 分页信息           |
+| meta.page            | Integer          | 页码               |
+| meta.limit           | Integer          | 每页显示的数据条数 |
+| meta.count           | Integer          | 数据总条数         |
+
+**示例:**
+
+```bash
+$ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/auth_user"
+
+{"meta":{"page":1,"limit":10,"count":3},"data":[{"password":"efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7","login":"test1","is_superuser":false},{"password":"efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7","login":"test2","is_superuser":false},{"password":"efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7","login":"test3","is_superuser":false}],"code":0}
+```
+
+
+
+#### 批量添加认证数据
+
+> POST /auth_user
+
+**请求消息元素 (json):**
+
+| Name            | Type    | Required | Description    |
+| :-------------- | :------ | :------- | :------------- |
+| [0].login       | String  | True     | 登录用户名     |
+| [0].password    | String  | True     | 登录密码       |
+| [0]is_superuser | Boolean | True     | 是否为超级用户 |
+
+**成功响应消息元素 (JSON):**
+
+| Name | Type             | Description                                       |
+| :--- | :--------------- | :------------------------------------------------ |
+| code | Integer          | 0                                                 |
+| data | Array of Objects | 认证数据添加状态，`ok` 表示对应的认证数据添加成功 |
+
+**示例:**
+
+```bash
+$ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn.emqx.cloud:8443/api/auth_user" -d '[{"login":"test5","password":"public", "is_superuser": false}]'
+
+{"data":{"test5":"ok"},"code":0}
+```
+
+
+
+#### 更新已添加的认证数据
+
+> PUT /auth_user/${login}
+
+**请求消息元素 (json):**
+
+| Name         | Type    | Required | Description    |
+| :----------- | :------ | :------- | :------------- |
+| password     | String  | True     | 登录密码       |
+| is_superuser | Boolean | True     | 是否为超级用户 |
+
+**成功响应消息元素 (JSON):**
+
+| Name | Type    | Description |
+| :--- | :------ | :---------- |
+| code | Integer | 0           |
+
+**示例:**
+
+```bash
+$ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X PUT "https://lacd0b7b.test-cn.emqx.cloud:8443/api/auth_user/test5" -d '{"password":"public1", "is_superuser": false}'
+
+{"code":0}
+```
+
+
+
+#### 删除认证数据
+
+> DELETE /auth_user/${login}
+
+**成功响应消息元素 (JSON):**
+
+| Name | Type    | Description |
+| :--- | :------ | :---------- |
+| code | Integer | 0           |
+
+**示例:**
+
+```bash
+$ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-cn.emqx.cloud:8443/api/auth_user/test5"
+
+{"code":0}
+```
+
+
+
 ### 客户端
 
 
@@ -184,7 +299,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /clients
 
-**Query String Parameters:**
+**URL 查询参数:**
 
 | Name   | Type    | Required | Default | Description                                                  |
 | :----- | :------ | :------- | :------ | :----------------------------------------------------------- |
@@ -210,7 +325,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | _gte_connected_at | Integer | False    | 客户端连接创建时间，小于等于查找                             |
 | _lte_connected_at | Integer | False    | 客户端连接创建时间，大于等于查找                             |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name                      | Type             | Description                                                  |
 | :------------------------ | :--------------- | :----------------------------------------------------------- |
@@ -257,7 +372,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | meta.limit                | Integer          | 每页显示的数据条数                                           |
 | meta.count                | Integer          | 数据总条数                                                   |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/clients?_page=1&_limit=10"
@@ -276,20 +391,20 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /clients/{clientid}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | clientid | String | True     | ClientID    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
 | data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
 
-**Examples:**
+**示例:**
 
 查询指定客户端
 
@@ -307,19 +422,19 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 >
 > 注意踢除客户端操作会将连接与会话一并终结。
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | clientid | String | True     | ClientID    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 踢除指定客户端
 
@@ -335,21 +450,21 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 > GET /nodes/{node}/clients
 
-**Query String Parameters:**
+**URL 查询参数:**
 
 | Name   | Type    | Required | Default | Description                                                  |
 | :----- | :------ | :------- | :------ | :----------------------------------------------------------- |
 | _page  | Integer | False    | 1       | 页码                                                         |
 | _limit | Integer | False    | 10000   | 每页显示的数据条数，未指定时由 `emqx-management` 插件的配置项 `max_row_limit` 决定 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
 | data | Array of Objects | 所有客户端的信息，详情请参看 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/clients?_page=1&_limit=10"
@@ -363,20 +478,20 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /nodes/{node}/clients/{clientid}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | clientid | String | True     | ClientID    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description                                                  |
 | :--- | :------ | :----------------------------------------------------------- |
 | code | Integer | 0                                                            |
 | data | Object  | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/clients/example"
@@ -392,20 +507,20 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 >
 > 由于可能存在多个客户端使用相同的用户名的情况，所以可能同时返回多个客户端信息。
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | username | String | True     | Username    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
 | data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/clients/username/steve"
@@ -419,20 +534,20 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /nodes/{node}/clients/username/{username}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | username | String | True     | Username    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
 | data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/clients/username/test"
@@ -446,13 +561,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /clients/{clientid}/acl_cache
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | clientid | String | True     | ClientID    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name                 | Type             | Description      |
 | :------------------- | :--------------- | :--------------- |
@@ -463,7 +578,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data[0].result       | String           | 允许/拒绝        |
 | data[0].updated_time | Integer          | ACL 缓存建立时间 |
 
-**Examples:**
+**示例:**
 
 查询 ACL 缓存
 
@@ -479,19 +594,19 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > DELETE /clients/{clientid}/acl_cache
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | clientid | String | True     | ClientID    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 清除 ACL 缓存
 
@@ -511,7 +626,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 > GET /subscriptions
 
-**Query String Parameters:**
+**URL 查询参数:**
 
 | Name   | Type    | Required | Default | Description                                                  |
 | :----- | :------ | :------- | :------ | :----------------------------------------------------------- |
@@ -528,7 +643,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 | share | String | 共享订阅的组名称 |
 | _match_topic | String | 主题，匹配查询 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name             | Type             | Description       |
 | :--------------- | :--------------- | :---------------- |
@@ -540,7 +655,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 | data[0].qos      | Integer          | QoS 等级          |
 | meta             | Object           | 同 `/api/clients` |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/subscriptions?_page=1&_limit=10"
@@ -559,13 +674,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /subscriptions/{clientid}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | clientid | String | True     | ClientID    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name          | Type    | Description  |
 | :------------ | :------ | :----------- |
@@ -576,7 +691,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data.topic    | String  | 订阅主题     |
 | data.qos      | Integer | QoS 等级     |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/subscriptions/123"
@@ -590,14 +705,14 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /nodes/{node}/subscriptions
 
-**Query String Parameters:**
+**URL 查询参数:**
 
 | Name   | Type    | Required | Default | Description                                                  |
 | :----- | :------ | :------- | :------ | :----------------------------------------------------------- |
 | _page  | Integer | False    | 1       | 页码                                                         |
 | _limit | Integer | False    | 10000   | 每页显示的数据条数，未指定时由 `emqx-management` 插件的配置项 `max_row_limit` 决定 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name             | Type             | Description       |
 | :--------------- | :--------------- | :---------------- |
@@ -609,7 +724,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data[0].qos      | Integer          | QoS 等级          |
 | meta             | Object           | 同 `/api/clients` |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/subscriptions?_page=1&limit=10"
@@ -623,13 +738,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /nodes/{node}/subscriptions/{clientid}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name     | Type   | Required | Description |
 | :------- | :----- | :------- | :---------- |
 | clientid | String | True     | ClientID    |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name          | Type    | Description  |
 | :------------ | :------ | :----------- |
@@ -640,7 +755,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data.topic    | String  | 订阅主题     |
 | data.qos      | Integer | QoS 等级     |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/subscriptions/sample"
@@ -658,14 +773,14 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /routes
 
-**Query String Parameters:**
+**URL 查询参数:**
 
 | Name   | Type    | Required | Default | Description                                                  |
 | :----- | :------ | :------- | :------ | :----------------------------------------------------------- |
 | _page  | Integer | False    | 1       | 页码                                                         |
 | _limit | Integer | False    | 10000   | 每页显示的数据条数，未指定时由 `emqx-management` 插件的配置项 `max_row_limit` 决定 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name          | Type             | Description       |
 | :------------ | :--------------- | :---------------- |
@@ -675,7 +790,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data[0].node  | String           | 节点名称          |
 | meta          | Object           | 同 `/api/clients` |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/routes"
@@ -689,13 +804,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /routes/{topic}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name  | Type    | Required | Description |
 | :---- | :------ | :------- | :---------- |
 | topic | Integer | True     | 主题        |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name       | Type    | Description  |
 | :--------- | :------ | :----------- |
@@ -704,12 +819,103 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data.topic | String  | MQTT 主题    |
 | data.node  | String  | 节点名称     |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/routes/a%2fb%2fc"
 
 {"data":[{"topic":"a/b/c","node":"emqx@127.0.0.1"}],"code":0}
+```
+
+
+
+### 发布订阅 ACL
+
+
+
+#### 查看已经添加的 ACL 规则
+
+> GET /emqx_acl
+
+**URL 查询参数:**
+
+| Name   | Type    | Required | Default | Description                                                  |
+| :----- | :------ | :------- | :------ | :----------------------------------------------------------- |
+| _page  | Integer | False    | 1       | 页码                                                         |
+| _limit | Integer | False    | 10000   | 每页显示的数据条数，未指定时由 `emqx-management` 插件的配置项 `max_row_limit` 决定 |
+
+**成功响应消息元素 (JSON):**
+
+| Name           | Type             | Description        |
+| :------------- | :--------------- | :----------------- |
+| code           | Integer          | 0                  |
+| data           | Array of Objects | 所有认证数据       |
+| data[0].topic  | String           | 指定的主题         |
+| data[0].login  | String           | 指定的登录用户名   |
+| data[0].allow  | Boolean          | 是否允许           |
+| data[0].action | String           | ACL 规则动作       |
+| meta           | Object           | 分页信息           |
+| meta.page      | Integer          | 页码               |
+| meta.limit     | Integer          | 每页显示的数据条数 |
+| meta.count     | Integer          | 数据总条数         |
+
+**示例:**
+
+```bash
+curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/emqx_acl"
+
+{"meta":{"page":1,"limit":10,"count":2},"data":[{"topic":"/test1","login":"test1","allow":true,"action":"pubsub"},{"topic":"/test","login":"test2","allow":true,"action":"pubsub"}],"code":0}
+```
+
+
+
+#### 批量添加 ACL 规则
+
+> POST /emqx_acl
+
+**请求消息元素 (json):**
+
+| Name           | Type    | Required | Description      |
+| :------------- | :------ | :------- | :--------------- |
+| data[0].topic  | String  | True     | 指定的主题       |
+| data[0].login  | String  | True     | 指定的登录用户名 |
+| data[0].allow  | Boolean | True     | 是否允许         |
+| data[0].action | String  | True     | ACL 规则动作     |
+
+**成功响应消息元素 (JSON):**
+
+| Name | Type             | Description                                        |
+| :--- | :--------------- | :------------------------------------------------- |
+| code | Integer          | 0                                                  |
+| data | Array of Objects | ACL 规则添加状态，`ok` 表示对应的 ACL 规则添加成功 |
+
+**示例:**
+
+```bash
+curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn.emqx.cloud:8443/api/emqx_acl" -d
+'[{"topic":"test","login":"test3","allow":false,"action":"pubsub"}]'
+
+{"data":{"test3":"ok"},"code":0}
+```
+
+
+
+#### 删除 ACL 规则
+
+> DELETE /emqx_acl/${login}/\${topic}
+
+**成功响应消息元素 (JSON):**
+
+| Name | Type    | Description |
+| :--- | :------ | :---------- |
+| code | Integer | 0           |
+
+**示例:**
+
+```bash
+curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-cn.emqx.cloud:8443/api/emqx_acl/emqx_acl/test3/test"
+
+{"code":0}
 ```
 
 
@@ -722,7 +928,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > POST /mqtt/publish
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name     | Type    | Required | Default | Description                                                 |
 | :------- | :------ | :------- | :------ | :---------------------------------------------------------- |
@@ -734,13 +940,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | qos      | Integer | Optional | 0       | QoS 等级                                                    |
 | retain   | Boolean | Optional | false   | 是否为保留消息                                              |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn.emqx.cloud:8443/api/mqtt/publish" -d '{"topic":"a/b/c","payload":"Hello World","qos":1,"retain":false,"clientid":"example"}'
@@ -754,7 +960,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 > POST /mqtt/publish_batch
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name         | Type    | Required | Default | Description                                                 |
 | :----------- | :------ | :------- | :------ | :---------------------------------------------------------- |
@@ -766,13 +972,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 | [0].qos      | Integer | Optional | 0       | QoS 等级                                                    |
 | [0].retain   | Boolean | Optional | false   | 是否为保留消息                                              |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn.emqx.cloud:8443/api/mqtt/publish_batch" -d '[{"topic":"a/b/c","payload":"Hello World","qos":1,"retain":false,"clientid":"example"},{"topic":"a/b/c","payload":"Hello World Again","qos":0,"retain":false,"clientid":"example"}]'
@@ -790,7 +996,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 > POST /mqtt/subscribe
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name     | Type    | Required | Default | Description                                           |
 | :------- | :------ | :------- | :------ | :---------------------------------------------------- |
@@ -799,13 +1005,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 | clientid | String  | Required |         | 客户端标识符                                          |
 | qos      | Integer | Optional | 0       | QoS 等级                                              |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 同时订阅 `a`, `b`, `c` 三个主题
 
@@ -821,20 +1027,20 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 > POST /mqtt/unsubscribe
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name     | Type   | Required | Default | Description  |
 | :------- | :----- | :------- | :------ | :----------- |
 | topic    | String | Required |         | 主题         |
 | clientid | String | Required |         | 客户端标识符 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 取消订阅 `a` 主题
 
@@ -850,7 +1056,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 > POST /mqtt/subscribe_batch
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name         | Type    | Required | Default | Description                                           |
 | :----------- | :------ | :------- | :------ | :---------------------------------------------------- |
@@ -859,13 +1065,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 | [0].clientid | String  | Required |         | 客户端标识符                                          |
 | [0].qos      | Integer | Optional | 0       | QoS 等级                                              |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 一次性订阅 `a`, `b`, `c` 三个主题
 
@@ -881,20 +1087,20 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 > POST /mqtt/unsubscribe_batch
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name         | Type   | Required | Default | Description  |
 | :----------- | :----- | :------- | :------ | :----------- |
 | [0].topic    | String | Required |         | 主题         |
 | [0].clientid | String | Required |         | 客户端标识符 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 一次性取消订阅 `a`, `b` 主题
 
@@ -914,9 +1120,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 > GET /listeners
 
-**Path Parameters:** 无
+**URL 路径参数:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name                                | Type             | Description            |
 | :---------------------------------- | :--------------- | :--------------------- |
@@ -940,7 +1146,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 | discarded  | Integer | 由于 `Clean Session` 或 `Clean Start` 为 `true` 而被丢弃的连接数量 |
 | takeovered | Integer | 由于 `Clean Session` 或 `Clean Start` 为 `false` 而被接管的连接数量 |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/listeners"
@@ -954,9 +1160,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /nodes/{node}/listeners
 
-**Path Parameters:** 无
+**URL 路径参数:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name                   | Type             | Description            |
 | :--------------------- | :--------------- | :--------------------- |
@@ -969,7 +1175,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | data[0].max_conns      | Integer          | 允许建立的最大连接数量 |
 | data[0].shutdown_count | Array of Objects | 连接关闭原因及计数     |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/listeners"
@@ -987,9 +1193,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /metrics
 
-**Path Parameters:** 无
+**URL 路径参数:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name            | Type             | Description                        |
 | :-------------- | :--------------- | :--------------------------------- |
@@ -1085,7 +1291,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | session.takeovered              | Integer | 由于 `Clean Session` 或 `Clean Start` 为 `false` 而被接管的会话数量 |
 | session.terminated              | Integer | 终结的会话数量                                               |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/metrics"
@@ -1099,16 +1305,16 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /nodes/{node}/metrics
 
-**Path Parameters:** 无
+**URL 路径参数:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description                                                  |
 | :--- | :------ | :----------------------------------------------------------- |
 | code | Integer | 0                                                            |
 | data | Object  | 各节点上的统计指标列表，详见 [GET /api/metrics](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-metrics) |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/metrics"
@@ -1126,9 +1332,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /stats
 
-**Path Parameters:** 无
+**URL 路径参数:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name          | Type             | Description                  |
 | :------------ | :--------------- | :--------------------------- |
@@ -1162,7 +1368,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | retained.count             | Integer | 当前保留消息数量           |
 | retained.max               | Integer | 保留消息的历史最大值       |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/stats"
@@ -1176,16 +1382,16 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 >  GET /nodes/{node}/stats
 
-**Path Parameters:** 无
+**URL 路径参数:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
 | data | Array of Objects | 各节点上的状态数据列表，详见 [GET /api/stats](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-stats) |
 
-**Examples:**
+**示例:**
 
 ```bash
 $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.emqx.cloud:8443/api/nodes/emqx@127.0.0.1/stats"
@@ -1205,13 +1411,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > GET /rules/{rule_id}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name    | Type   | Required | Description                                                  |
 | :------ | :----- | :------- | :----------------------------------------------------------- |
 | rule_id | String | False    | 可选，Rule ID。如不指定 rule_id 则 以数组形式返回所有已创建的规则 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name                      | Type    | Description                                      |
 | :------------------------ | :------ | :----------------------------------------------- |
@@ -1234,7 +1440,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > POST /rules
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name                | Type   | Required | Description                                                  |
 | :------------------ | :----- | :------- | :----------------------------------------------------------- |
@@ -1244,7 +1450,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | - actions[0].params | Object | True     | 动作参数。参数以 key-value 形式表示。 详情可参看添加规则的示例 |
 | description         | String | False    | 可选，规则描述                                               |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name                      | Type    | Description                                      |
 | :------------------------ | :------ | :----------------------------------------------- |
@@ -1267,7 +1473,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 > PUT /rules/{rule_id}
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name                | Type   | Required | Description                                                  |
 | :------------------ | :----- | :------- | :----------------------------------------------------------- |
@@ -1277,7 +1483,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | - actions[0].params | Object | True     | 可选，动作参数。参数以 key-value 形式表示。 详情可参看添加规则的示例 |
 | description         | String | False    | 可选，规则描述                                               |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name                      | Type    | Description                                      |
 | :------------------------ | :------ | :----------------------------------------------- |
@@ -1302,13 +1508,13 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 **Parameters:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 添加一个规则，对于所有匹配到主题 "t/a" 的消息，打印其规则运行参数。
 
@@ -1379,13 +1585,13 @@ $ curl -XDELETE --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.e
 
 > GET /actions/{action_name}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name        | Type   | Required | Description                                                  |
 | :---------- | :----- | :------- | :----------------------------------------------------------- |
 | action_name | String | False    | 可选，动作名。如不指定 action_name 则 以数组形式返回当前支持的所有动作。 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name               | Type    | Description                                                  |
 | :----------------- | :------ | :----------------------------------------------------------- |
@@ -1397,7 +1603,7 @@ $ curl -XDELETE --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.e
 | - data.description | Object  | 动作的描述信息，中英文。                                     |
 | - data.app         | String  | 动作的提供者                                                 |
 
-**Examples:**
+**示例:**
 
 查询 inspect 动作的详情：
 
@@ -1427,13 +1633,13 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 
 > GET /resource_types/{resource_type_name}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name               | Type   | Required | Description                                                  |
 | :----------------- | :----- | :------- | :----------------------------------------------------------- |
 | resource_type_name | String | False    | 可选，资源类型名。如不指定 resource_type_name 则 以数组形式返回当前支持的所有资源类型。 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name               | Type    | Description                                                  |
 | :----------------- | :------ | :----------------------------------------------------------- |
@@ -1444,7 +1650,7 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 | - data.description | Object  | 资源类型的描述信息，中英文。                                 |
 | - data.provider    | String  | 资源类型的提供者                                             |
 
-**Examples:**
+**示例:**
 
 查询 web_hook 资源类型的详细信息：
 
@@ -1474,13 +1680,13 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 
 > GET /resources/{resource_id}
 
-**Path Parameters:**
+**URL 路径参数:**
 
 | Name        | Type   | Required | Description                                                  |
 | :---------- | :----- | :------- | :----------------------------------------------------------- |
 | resource_id | String | False    | 可选，资源类型 ID。如不指定 resource_id 则 以数组形式返回当前所有的资源。 |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name               | Type    | Description                                                  |
 | :----------------- | :------ | :----------------------------------------------------------- |
@@ -1498,7 +1704,7 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 
 > POST /resources
 
-**Parameters (json):**
+**请求消息元素 (json):**
 
 | Name        | Type   | Required | Description                                                |
 | :---------- | :----- | :------- | :--------------------------------------------------------- |
@@ -1506,7 +1712,7 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 | config      | Object | True     | 资源参数。要跟对应的资源类型的 params 里指定的格式相一致。 |
 | description | String | False    | 可选，资源描述                                             |
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name               | Type    | Description                                                  |
 | :----------------- | :------ | :----------------------------------------------------------- |
@@ -1525,13 +1731,13 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 
 **Parameters:** 无
 
-**Success Response Body (JSON):**
+**成功响应消息元素 (JSON):**
 
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
 
-**Examples:**
+**示例:**
 
 创建一个 webhook 资源，webserver 的 URL 为 [http://127.0.0.1:9910](http://127.0.0.1:9910/) ：
 

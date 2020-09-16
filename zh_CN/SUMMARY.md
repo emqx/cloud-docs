@@ -62,7 +62,7 @@
   - [概览](./billing/README.md)
   - [代金券](./billing/credits.md)
   - [发票](./billing/invoices.md)
-* 开发指南
+* [开发指南](./dev_guide.md)
 * [API](./api.md)
 * FAQ
 * 发布公告
