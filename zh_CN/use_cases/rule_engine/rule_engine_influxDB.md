@@ -126,20 +126,18 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 | 参数   | 必填   | 类型   | 意义   |
 |:----|:----|:----|:----|
 | Measurement   | 是   | str   | 指定写入到 InfluxDB 的  measurement   |
-| Field Keys   | 是   | str，多个 key 值用逗号隔开   | 指定写入到 InfluxDB 的 fields 的值从哪里获取   |
-| Tag Keys   | 否   | str，多个 key 值用逗号隔开   | 指定写入到 InfluxDB 的 tags 的值从哪里获取   |
+| Fields  | 是   | str   | 指定写入到 InfluxDB 的 fields 的值从哪里获取   |
+| Tags  | 否   | str  | 指定写入到 InfluxDB 的 tags 的值从哪里获取   |
 | Timestamp Key   | 否   | str   | 指定写入到 InfluxDB 的 timestamp 的值从哪里获取   |
-| 设置时间戳   | 否   | bool   | 未指定 Timestamp Key 时是否自动生成   |
 
 针对我们的情况，这部分可以这样填写
 
 ![配置动作](_assets/add_influxDB_action04.png)
 
 * Measurement 可以随意设置，我们这里填写 "home_sensor"
-* Field Keys 填写我们需要记录的两个数据：temperature 和 humidity，用逗号隔开
+* Field Keys 填写我们需要记录的两个数据：temperature 和 humidity
 * Tag Keys 这里我们设置成 location
 * Timestamp Key 默认为空
-* 设置时间戳 默认为 true
 
 填写完成后，点击确定。
 
@@ -184,3 +182,9 @@ time                humidity location temperature
 ----                -------- -------- -----------
 1592984201145230677 46.4     bedroom  25
 ```
+
+> 注意：
+>
+> 在 influxDB 中，数据类型以第一个值为准。如果你误将字符串传给 humidity 和 temperature。
+>
+> 可以通过在数据库里，输入命令 `DROP SERIES FROM home_sensor` 清除
