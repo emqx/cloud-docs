@@ -1,5 +1,5 @@
 * [EMQ X Cloud 产品简介](./README.md)
-* 产品定价
+* [产品定价](./pricing.md)
 * 快速入门
   - 创建 EMQ X Cloud 账号
   - 创建免费试用部署
@@ -14,7 +14,7 @@
   - PHP SDK 连接
   - MQTT X 连接
   - MQTT.fx 连接
-* 消息存储
+* 消息存储(规则引擎)
   - [简介及使用限制](./messages/README.md)
   - [桥接数据到 Kafka](./use_cases/rule_engine/rule_engine_kafka.md)
   - [桥接数据到 阿里云 Kafka](./use_cases/rule_engine/rule_engine_aliyun_kafka.md)
