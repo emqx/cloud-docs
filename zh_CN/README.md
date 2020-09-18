@@ -59,7 +59,7 @@ EMQ X Cloud 支持使用规则引擎配置设备消息、事件的处理、响�
 
 规则引擎不仅提供了清晰、灵活的"配置式"的业务集成方案，简化了业务开发流程，提升用户易用性，降低业务系统与 EMQ X 的耦合度。
 
-https://docs.emqx.net/broker/latest/cn/assets/image-20190506171815028.jpg
+![](https://docs.emqx.net/broker/latest/cn/assets/image-20190506171815028.jpg)
 
 - **发送到 HTTP 服务与其他 MQTT 服务**
   - 发送数据到 Web 服务
