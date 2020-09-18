@@ -1,4 +1,4 @@
-* EMQ X Cloud 产品简介
+* [EMQ X Cloud 产品简介](./README.md)
 * 产品定价
 * 快速入门
   - 创建 EMQ X Cloud 账号
