@@ -1,16 +1,22 @@
 # 资源
 
-EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保部署状态为 `running`
+EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保部署状态为 `running`。您可以参阅 [EMQ X 规则引擎](https://docs.emqx.net/broker/latest/cn/rule/rule-engine.html) 了解更多资源创建。
 
-### 创建资源
+
+
+## 简单示例
+
+
+
+## 创建资源
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 Dashboard
+3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
 
-4. 点击 Dashboard 左侧菜单`规则引擎` → `资源`，在资源列表页面点击资源`创建`按钮
+4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `资源`，在资源列表页面点击资源`创建`按钮
 
    ![resource-add](./_assets/resource-add.png)
 
@@ -22,28 +28,28 @@ EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保�
 
 
 
-### 查看资源状态
+## 查看资源状态
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 Dashboard
+3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
 
-4. 点击 Dashboard 左侧菜单`规则引擎` → `资源`，在资源列表页面点击资源状态图标
+4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `资源`，在资源列表页面点击资源状态图标
 
    ![resource-status](./_assets/resource-status.png)
 
 
 
-### 删除资源
+## 删除资源
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 Dashboard
+3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
 
-4. 点击 Dashboard 左侧菜单`规则引擎` → `资源`，在资源列表页面点击资源`删除`按钮
+4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `资源`，在资源列表页面点击资源`删除`按钮
 
    ![resource-delete](./_assets/resource-delete.png)
