@@ -1,12 +1,35 @@
 * [EMQ X Cloud 产品简介](./README.md)
 * [产品定价](./pricing.md)
-* 快速入门
-  - 创建 EMQ X Cloud 账号
-  - 创建免费试用部署
-  - 连接到您的部署
-* 连接到部署
-  - 通信方式概述
-  - Python SDK 连接
+* [快速入门](./quick_start/README.md)
+  - [创建 EMQ X Cloud 账号](./quick_start/create_account.md)
+  - [创建免费试用部署](./quick_start/create_free_trial.md)
+  - [连接到您的部署](./connect_to_deployments/README.md)
+* [部署](./deployments/README.md)
+  - [价格计算](./deployments/calculator.md)
+  - [创建一个新的部署](./deployments/create_deployment.md)
+  - [查看部署](./deployments/README.md)
+  - [EMQ X Dashboard](./deployments/dashboard/README.md)
+    - [监控](./deployments/dashboard/monitor.md)
+    - [认证鉴权](./deployments/dashboard/users_and_acl.md)
+    - [客户端](./deployments/dashboard/client.md)
+    - [主题](./deployments/dashboard/topic.md)
+    - [订阅](./deployments/dashboard/subscribe.md)
+    - [规则引擎](./deployments/dashboard/rule_engine/README.md)
+      - [规则](./deployments/dashboard/rule_engine/rule.md)
+      - [资源](./deployments/dashboard/rule_engine/resource.md)
+  - 安全功能和设置
+    - [TLS/SSL 设置](./deployments/tls_ssl.md)
+    - [VPC 对等连接设置](./deployments/vpc_peering.md)
+    - [API 访问设置](./deployments/api.md)
+  - 运维管理
+    - [事件](./deployments/events.md)
+    - [指标](./deployments/metrics.md)
+    - [日志](./deployments/logs.md)
+    - [告警](./deployments/alerts.md)
+  - [伸缩部署规格](./deployments/upgrade_deployment.md)
+  - [删除部署](./deployments/delete_deployment.md)
+* [连接到部署](./connect_to_deployments/README.md)
+  - [Python SDK 连接](./connect_to_deployments/python_sdk.md)
   - Java SDK 连接
   - C SDK 连接
   - C++ SDK 连接
@@ -14,8 +37,7 @@
   - PHP SDK 连接
   - MQTT X 连接
   - MQTT.fx 连接
-* 消息存储(规则引擎)
-  - [简介及使用限制](./messages/README.md)
+* [消息存储(规则引擎)](./messages/README.md)
   - [桥接数据到 Kafka](./use_cases/rule_engine/rule_engine_kafka.md)
   - [桥接数据到 阿里云 Kafka](./use_cases/rule_engine/rule_engine_aliyun_kafka.md)
   - [桥接数据到 华为云 Kafka](./use_cases/rule_engine/rule_engine_huawei_kafka.md)
@@ -33,36 +55,12 @@
   - [从 PostgreSQL 中获取订阅关系](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-postgresql-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
   - [从 Cassandra 中获取订阅关系](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-cassandra-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
   - [从 MongoDB 中获取订阅关系](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-mongodb-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
-* 最佳实践
-* 部署
-  - [查看部署](./deployments/README.md)
-  - [创建一个新的部署](./deployments/create_deployment.md)
-  - EMQ X Dashboard
-    - [概览](./deployments/dashboard/README.md)
-    - [监控](./deployments/dashboard/monitor.md)
-    - [认证鉴权](./deployments/dashboard/users_and_acl.md)
-    - [客户端](./deployments/dashboard/client.md)
-    - [主题](./deployments/dashboard/topic.md)
-    - [订阅](./deployments/dashboard/subscribe.md)
-    - 规则引擎
-      - [概览](./deployments/dashboard/rule_engine/README.md)
-      - [规则](./deployments/dashboard/rule_engine/rule.md)
-      - [资源](./deployments/dashboard/rule_engine/resource.md)
-  - [配置 TLS/SSL](./deployments/tls_ssl.md)
-  - [配置 VPC 对等连接](./deployments/vpc_peering.md)
-  - 配置 NAT 网关
-  - [创建 API 应用](./deployments/application.md)
-  - [查看指标](./deployments/metrics.md)
-  - [查看日志](./deployments/logs.md)
-  - [查看告警](./deployments/monitor.md)
-  - 升级部署规格
-  - [删除部署](./deployments/delete_deployment.md)
-* 事件
-* 账单
+* [账单](./billing/README.md)
   - [概览](./billing/README.md)
   - [代金券](./billing/credits.md)
   - [发票](./billing/invoices.md)
 * [开发指南](./dev_guide.md)
 * [API](./api.md)
-* FAQ
-* 发布公告
+* [FAQ](./faq.md)
+* [联系我们](./contact.md)
+* [发布公告](./release_notes.md)

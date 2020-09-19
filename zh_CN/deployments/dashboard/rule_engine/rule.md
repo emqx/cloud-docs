@@ -8,23 +8,27 @@
 
 - 响应动作：如果有处理结果输出，规则将执行相应的动作，如持久化到数据库、重新发布处理后的消息、转发消息到消息队列等。一条规则可以配置多个响应动作。
 
-如图所示是一条简单的规则，该条规则用于处理 消息发布 时的数据，将全部主题消息的 msg 字段，消息 topic 、qos 筛选出来，发送到 Web Server 与 /uplink 主题：
+
+
+## 简单示例
+
+如下图所示规则，该条规则用于处理**消息发布**时的数据，将全部主题消息的 msg 字段，消息 topic 、qos 筛选出来，发送到 Web Server 与 /uplink 主题。您可以参阅 [EMQ X 规则](https://docs.emqx.net/broker/latest/cn/rule/rule-engine.html)了解更多使用指南。
 
 ![img](./_assets/rule_engine_detail.png)
 
-更详细的规则使用，可以查看文档 [EMQ X 规则](https://docs.emqx.net/broker/latest/cn/rule/rule-engine.html)
 
-### 添加规则
 
-在创建规则引擎之前您需要确保部署状态为 `running `
+## 添加规则
+
+在创建规则引擎之前您需要确保部署状态为 **running **
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 Dashboard
+3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
 
-4. 点击 Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击创建按钮
+4. 点击  EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击创建按钮
 
    ![rule-add](./_assets/rule-add.png)
 
@@ -42,29 +46,29 @@
 
    ![rule-action-config](./_assets/rule-action-config.png)
 
-### 查看规则监控状态
+## 查看规则监控状态
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 Dashboard
+3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
 
-4. 点击 Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则监控图标
+4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则监控图标
 
    ![rule-monitor](./_assets/rule-monitor.png)
 
 
 
-### 编辑规则
+## 编辑规则
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 Dashboard
+3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
 
-4. 点击 Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则`编辑`按钮
+4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则`编辑`按钮
 
    ![rule-edit](./_assets/rule-edit.png)
 
@@ -78,14 +82,14 @@
 
 
 
-### 删除规则
+## 删除规则
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 Dashboard
+3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
 
-4. 点击 Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则`删除`按钮
+4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则`删除`按钮
 
    ![rule-delete](./_assets/rule-delete.png)

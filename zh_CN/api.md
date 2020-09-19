@@ -1,5 +1,7 @@
 # REST API
 
+EMQ X Cloud  API 遵循REST体系结构，您可以通过编程方式访问 EMQ X 的功能。
+
 
 
 ### API 地址
@@ -75,8 +77,6 @@ HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authen
 
 ### Broker 基本信息
 
-
-
 #### 获取集群下节点的基本信息
 
 >  GET /brokers/{node}
@@ -122,8 +122,6 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 ### 节点
-
-
 
 #### 获取节点的状态
 
@@ -177,8 +175,6 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 ### 管理认证数据
-
-
 
 #### 查看已经添加的认证数据
 
@@ -292,8 +288,6 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 
 ### 客户端
-
-
 
 #### 获取集群下所有客户端的信息
 
@@ -620,8 +614,6 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 ### 订阅信息
 
-
-
 #### 获取集群下所有订阅信息
 
 > GET /subscriptions
@@ -831,8 +823,6 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 ### 发布订阅 ACL
 
-
-
 #### 查看已经添加的 ACL 规则
 
 > GET /emqx_acl
@@ -922,8 +912,6 @@ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-cn
 
 ### 消息发布
 
-
-
 #### 发布 MQTT 消息
 
 > POST /mqtt/publish
@@ -989,8 +977,6 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 ### 主题订阅
-
-
 
 #### 订阅 MQTT 主题
 
@@ -1405,8 +1391,6 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 查询规则引擎的动作
 
-
-
 #### 获取某个规则的详情
 
 > GET /rules/{rule_id}
@@ -1579,8 +1563,6 @@ $ curl -XDELETE --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.e
 
 查询规则引擎的动作。注意动作只能由 emqx 提供，不能添加。
 
-
-
 #### 获取某个动作的详情
 
 > GET /actions/{action_name}
@@ -1626,8 +1608,6 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 ### 资源类型
 
 查询规则引擎的资源类型。注意资源类型只能由 emqx 提供，不能添加。
-
-
 
 #### 获取资源类型的详细信息
 

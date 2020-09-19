@@ -1,4 +1,4 @@
-**EMQ X Cloud 设备管理/物联网平台集成指南**
+# EMQ X Cloud 设备管理/物联网平台集成指南
 
 ## 前言
 
@@ -118,11 +118,10 @@
 
 ## 接入示例代码
 
-[此处](https://github.com/emqx/example)提供各类 MQTT 客户端库接入 EMQ X Cloud 示例代码。
+您可以前往 [连接到部署](./connect_to_deployments/README.md)了解更多 MQTT 客户端库接入 EMQ X Cloud 示例。
 
 
 
 ## 其他功能
 
-集成细节以及其他集成功能需求您可以提工单或发送邮件咨询
-
+集成细节以及其他集成功能需求您可以提[工单](./contact.md)或发送[邮件](cloud@emqx.io)咨询
