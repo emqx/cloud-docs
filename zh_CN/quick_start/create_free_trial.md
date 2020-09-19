@@ -4,7 +4,7 @@
 
 * 最高长达 180 天的免费试用。
 
-  > 如需延长免费试用时长，您可以提工单或发送邮件与我们取得联系
+  > 如需延长免费试用时长，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
 * 普通用户最大允许 25 个客户端连接，高校计划最大允许 100 个客户端连接。
 
@@ -14,7 +14,7 @@
 
 * 仅支持 MQTT over TLS/SSL, Websockets over TLS/SSL 协议连接。
 
-  > 如需其他协议支持，您可以提工单或发送邮件与我们取得联系
+  > 如需其他协议支持，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
 * 不支持自定义 [TLS/SSL](../deployments/tls_ssl.md) 以及创建 [VPC 对等连接](../deployments/vpc_peering.md)。
 
