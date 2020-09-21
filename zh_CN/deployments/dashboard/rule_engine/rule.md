@@ -38,7 +38,7 @@
 
 6. 添加动作
 
-   > 注意： 添加动作之前，您需要保证已添加 [VPC 对等连接](), 并已经[创建资源](./)
+   > 注意： 添加动作之前，您需要保证已添加 [VPC 对等连接](../../vpc_peering.md), 并已经[创建资源](resource.md)
 
    ![rule-action-add](./_assets/rule-action-add.png)
 

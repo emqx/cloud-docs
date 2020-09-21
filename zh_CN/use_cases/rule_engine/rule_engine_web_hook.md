@@ -89,7 +89,7 @@ WHERE
 
 #### 4. 测试
 
->如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../deployments/connections.md)，查看 MQTT 客户端连接和测试指南
+>如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../../connect_to_deployments/README.md)，查看 MQTT 客户端连接和测试指南
 
 当我们发送 "hello" 到 greet 主题，上面创建的规则就会触发，可以看到 Web 服务器已经收到消息 "hello emqx!"
 
