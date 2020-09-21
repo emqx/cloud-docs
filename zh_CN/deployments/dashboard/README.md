@@ -6,7 +6,7 @@ EMQ X Cloud 提供了 Dashboard 以方便用户管理设备与监控相关指标
 
 
 
-## 从部署详情进入 EMQ X Dashbaord
+## 从部署详情进入 EMQ X Dashboard
 
 您可以通过下面的步骤进入 EMQ X Dashboard：
 
@@ -21,7 +21,7 @@ EMQ X Cloud 提供了 Dashboard 以方便用户管理设备与监控相关指标
 
 ## [监控](./monitor.md)
 
-您可以在 **监控 **页面可查看 EMQ X 当前集群的运行指标。
+您可以在**监控**页面可查看 EMQ X 当前集群的运行指标。
 
 
 

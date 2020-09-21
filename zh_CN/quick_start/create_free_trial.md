@@ -65,7 +65,7 @@
 
 ### 2. 添加客户端认证信息
 
-单击部署详情页面 EMQ X Dashbaord 按钮，您将进入 EMQ X Dashboard，单击左侧 **认证鉴权** 菜单 
+单击部署详情页面 EMQ X Dashboard 按钮，您将进入 EMQ X Dashboard，单击左侧 **认证鉴权** 菜单 
 
 ![add_users](./_assets/add_users.png)
 

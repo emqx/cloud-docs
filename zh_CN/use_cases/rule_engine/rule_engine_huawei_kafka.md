@@ -30,7 +30,7 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 1.2 创建 EMQ X Cloud 部署
 
-如果您是初次接触 EMQ X Cloud，建议您跟随 EMQ X Cloud [快速入门](https://docs.emqx.io/cloud/latest/cn/quick_start/quick_start.html)的提示进行创建
+如果您是初次接触 EMQ X Cloud，建议您跟随 EMQ X Cloud [快速入门](../../quick_start/README.md)的提示进行创建
 
 ![](_assets/buy_huawei_kafka_emqx_deployment.png)
 
@@ -154,7 +154,8 @@ WHERE
 
 
 #### 6. 测试
-如果您是第一次使用 EMQ X Cloud 可以前往部署连接指南，查看 MQTT 客户端连接和测试指南
+> 如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../../connect_to_deployments/README.md)，查看 MQTT 客户端连接和测试指南
+
 我们尝试向 greet/a 主题发送下面的数据
 ```json
 {
