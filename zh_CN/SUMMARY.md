@@ -30,11 +30,15 @@
   - [删除部署](./deployments/delete_deployment.md)
 * [连接到部署](./connect_to_deployments/README.md)
   - [Python SDK 连接](./connect_to_deployments/python_sdk.md)
-  - Java SDK 连接
-  - C SDK 连接
-  - C++ SDK 连接
   - [Go SDK 连接](./connect_to_deployments/golang_sdk.md)
-  - PHP SDK 连接
+  - [Java SDK 连接](./connect_to_deployments/java_sdk.md)
+  - [C SDK 连接](./connect_to_deployments/c_sdk.md)
+  - [C++ SDK 连接](./connect_to_deployments/cpp_sdk.md)
+  - [C# SDK 连接](./connect_to_deployments/c_sharp_sdk.md)
+  - [PHP SDK 连接](./connect_to_deployments/php_sdk.md)
+  - [Ruby SDK 连接](./connect_to_deployments/ruby_sdk.md)
+  - [Scala SDK 连接](./connect_to_deployments/scala_sdk.md)
+  - [Perl SDK 连接](./connect_to_deployments/perl_sdk.md)
   - MQTT X 连接
   - MQTT.fx 连接
 * [消息存储(规则引擎)](./messages/README.md)
