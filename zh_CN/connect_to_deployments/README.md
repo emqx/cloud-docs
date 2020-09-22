@@ -13,7 +13,7 @@
 * 使用 C SDK 连接到部署
 * 使用 C++ SDK 连接到部署
 * [使用 Go SDK 连接到部署](./golang_sdk.md)
-* 使用 Node.Js SDK 连接到部署
+* [使用 Node.js SDK 连接到部署](./nodejs_sdk.md)
 
 
 

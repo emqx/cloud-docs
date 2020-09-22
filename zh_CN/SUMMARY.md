@@ -34,6 +34,7 @@
   - C SDK 连接
   - C++ SDK 连接
   - [Go SDK 连接](./connect_to_deployments/golang_sdk.md)
+  - [Node.js SDK 连接](./connect_to_deployments/nodejs_sdk.md)
   - PHP SDK 连接
   - MQTT X 连接
   - MQTT.fx 连接
