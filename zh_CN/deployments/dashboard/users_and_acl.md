@@ -1,89 +1,75 @@
 # 认证和鉴权
 
-EMQ X Cloud 完整支持 MQTT 各项安全规范，内置的安全功能无需编程开箱即用，可以快速排除项目中的安全隐患。在使用Users and ACL 时，您需要确保部署状态为 `running`
+身份认证是大多数应用的重要组成部分，MQTT 协议支持用户名密码认证，启用身份认证能有效阻止非法客户端的连接。EMQ X 中的认证指的是当一个客户端连接到 EMQ X 的时候，通过服务器端的配置来控制客户端连接服务器的权限。
+
+EMQ X 的认证支持包括两个层面：
+
+1. MQTT 协议本身在 CONNECT 报文中指定用户名和密码
+
+2. 在传输层上，TLS 可以保证使用客户端证书的客户端到服务器的身份验证，并确保服务器向客户端验证服务器证书。
+
+本节主要是指 MQTT 协议本身的认证。关于传输层上 TLS 验证，可以参考指南——[配置 TLS/SSL](../tls_ssl.md)
+
+![添加认证信息](./_assets/users_acl.png)
 
 
 
 ## 认证
 
-EMQ X Cloud 客户端支持 `username` ,`password` 认证。
+### 查看客户端认证信息
+
+在 `Dashboard` 的 `认证鉴权` 页中，您可以查看到该部署的所有认证信息。
+
+![添加认证信息](./_assets/view_users.png)
 
 
 
 ### 添加客户端认证信息
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+在页面的上方输入框，依次输入客户端用户名、密码，然后点击添加按钮完成添加。
 
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击部署详情页面中的 dashboard 地址，您将进入到 dashboard
-
-4. 点击 dashboard 左侧菜单`认证鉴权`，在认证中填入`用户名`、`密码`，然后点击添加按钮
-
-   ![users-add](../../_assets/deployments/dashboard/users_acl/users-add.png)
+![添加认证信息](./_assets/add_users.png)
 
 
 
 ### 编辑客户端认证信息
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+您可以点击每条认证信息右侧的 `编辑` 按钮，可以对客户端认证密码进行修改。
 
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击部署详情页面中的 dashboard 地址，您将进入到 dashboard
-
-4. 点击 dashboard 左侧菜单`认证鉴权`，点击认证信息中的`编辑`按钮
-
-   ![users-edit](../../_assets/deployments/dashboard/users_acl/users-edit.png)
-
-   可对认证信息的密码进行更改
-
-   ![users-password](../../_assets/deployments/dashboard/users_acl/users-password.png)
+![修改认证信息](./_assets/update_users.png)
 
 
 
-### 删除客户端认证信息
+### 删除认证信息
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+对于不需要的认证信息，您可以点击右侧的 `删除` 按钮进行删除。
 
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击部署详情页面中的 dashboard 地址，您将进入到 dashboard
-
-4. 点击 dashboard 左侧菜单`认证鉴权`，点击认证信息中的`删除`按钮
-
-   ![users-delete](../../_assets/deployments/dashboard/users_acl/users-delete.png)
+![删除认证信息](./_assets/delete_users.png)
 
 
 
-## 发布订阅 ACL
+## 鉴权(ACL)
 
-EMQ X Cloud 发布订阅 ACL 支持 `username`, `topic` 模式。
+鉴权是指对发布 (PUBLISH)/订阅 (SUBSCRIBE) 操作的 `权限控制`。
 
+### 查看鉴权信息
 
+在 `Dashboard` 的 `认证鉴权` 页中，您可以查看到该部署的所有鉴权信息。
 
-### 添加 ACL 信息
-
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
-
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击部署详情页面中的 dashboard 地址，您将进入到 dashboard
-
-4. 点击 dashboard 左侧菜单`认证鉴权`，在 ACL 中填入`用户名`、`主题`，并选择是否允许以及主题动作，然后点击添加按钮
-
-   ![acl-add](../../_assets/deployments/dashboard/users_acl/acl-add.png)
+![删除认证信息](./_assets/view_acl.png)
 
 
 
-### 删除 ACL 信息
+### 添加 ACL
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+再输入框中依次输入客户端：用户名、主题、规则（允许/不允许）、主题动作（pub/sub/pubsub）完成部署 ACL 规则创建
 
-2. 点击所需连接的部署，您将进入部署详情页面
+![添加 ACL](./_assets/add_acl.png)
 
-3. 点击部署详情页面中的 dashboard 地址，您将进入到 dashboard
 
-4. 点击 dashboard 左侧菜单`认证鉴权`，点击 ACL 信息中的`删除`按钮
 
-   ![acl-delete](../../_assets/deployments/dashboard/users_acl/acl-delete.png)
+### 删除 ACL 
+
+对于不需要的 ACL 信息，您可以点击右侧的 `删除` 按钮进行删除。
+
+![删除 ACL](./_assets/delete_acl.png)

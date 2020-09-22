@@ -11,7 +11,7 @@
 1. 在 `地址管理` 中更新开票地址信息
 2. 在 `开票记录` 中点击 `申请开票` ，输入开票金额(开票金额不能小于 100 元)
 
-![invoices-create](../_assets/billing/invoices-create.png)
+![invoices-create](./_assets/invoices-create.png)
 
 
 
@@ -19,7 +19,7 @@
 
 开票记录将展示账户的开票记录，以及可开票余额
 
-![invoices](../_assets/billing/invoices.png)
+![invoices](./_assets/invoices.png)
 
 
 
@@ -27,7 +27,7 @@
 
 地址管理中可对账户的发票信息进行更新
 
-![invoices-profile](../_assets/billing/invoices-profile.png)
+![invoices-profile](./_assets/invoices-profile.png)
 
 
 

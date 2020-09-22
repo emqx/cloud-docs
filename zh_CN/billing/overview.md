@@ -1,4 +1,4 @@
-# 概览
+# 账单概览
 
 概览将介绍 EMQ X Cloud 账户的充值，查看交易记录、月账单以及费用报告。点击左侧菜单中的 `财务管理` -> `概览` 可进入账单概览查看页面
 
@@ -10,7 +10,7 @@
 
 3. 费用趋势，可通过切换 `日`、`月` 来展示相对应的费用趋势
 
-![overview](../_assets/billing/overview.png)
+![overview](./_assets/overview.png)
 
 
 
@@ -18,7 +18,7 @@
 
 在概览页面点击 `充值` 按钮，输入充值金额，充值方式支持 `支付宝`、`微信`
 
-![overview](../_assets/billing/overview.png)
+![overview](./_assets/overview.png)
 
 
 
@@ -28,11 +28,11 @@
 
 1. 在 `概览` 页面中点击 `交易记录` 进入交易记录页面
 
-   ![transactions](../_assets/billing/transactions.png)
+   ![transactions](./_assets/transactions.png)
 
 2. 交易记录页面点击 `概览` 可回到 `概览` 页面
 
-   ![transactions-list](../_assets/billing/transactions-list.png)
+   ![transactions-list](./_assets/transactions-list.png)
 
 
 
@@ -42,19 +42,19 @@
 
 1. 在 `概览` 页面中点击 `账单` 进入账单页面
 
-   ![bills](../_assets/billing/bills.png)
+   ![bills](./_assets/bills.png)
 
 2. 若需下载账单详情，可点击账单详情中的下载图标
 
-   ![bills-download](../_assets/billing/bills-download.png)
+   ![bills-download](./_assets/bills-download.png)
 
 3. 若要查看账单关联的部署账单情况，点击账单记录，即会在下方展开显示
 
-   ![bills-details](../_assets/billing/bills-details.png)
+   ![bills-details](./_assets/bills-details.png)
 
 4. 若要查看部署账单的详细费用报告，点击部署费用记录的 `查看报告` 
 
-   ![bills-report](../_assets/billing/bills-report.png)
+   ![bills-report](./_assets/bills-report.png)
 
 
 
@@ -64,9 +64,9 @@
 
 1. 在 `概览` 页面中点击 `查看报告` 进入账单报告页面
 
-   ![report](../_assets/billing/report.png)
+   ![report](./_assets/report.png)
 
 2. 可对账单报告进行账单时间、账单 ID、部署名称过滤
 
-   ![report-filter](../_assets/billing/report-filter.png)
+   ![report-filter](./_assets/report-filter.png)
 

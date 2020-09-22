@@ -8,11 +8,11 @@
 
 1. 可对代金券进行 `代金券类型`、`状态` 过滤。点击 `使用记录` 可查看代金券的使用记录情况
 
-   ![credits](../_assets/billing/credits.png)
+   ![credits](./_assets/credits.png)
 
 2. 在代金券使用记录中，点击账单 ID 可以查看具体抵扣详情
 
-   ![credits-usage](../_assets/billing/credits-usage.png)
+   ![credits-usage](./_assets/credits-usage.png)
 
 
 
