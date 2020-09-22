@@ -13,7 +13,7 @@
 * [使用 C SDK 连接到部署](c_sdk.md)
 * [使用 C++ SDK 连接到部署](cpp_sdk.md)
 * [使用 Go SDK 连接到部署](golang_sdk.md)
-* [使用 Node.Js SDK 连接到部署]()
+* [使用 Node.js SDK 连接到部署](nodejs_sdk.md)
 * [使用 PHP SDK 连接到部署](php_sdk.md)
 * [使用 C# SDK 连接到部署](c_sharp.md)
 * [使用 Perl SDK 连接到部署](perl_sdk.md)
