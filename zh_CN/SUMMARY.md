@@ -32,6 +32,7 @@
   - [Python SDK 连接](./connect_to_deployments/python_sdk.md)
   - [Go SDK 连接](./connect_to_deployments/golang_sdk.md)
   - [Java SDK 连接](./connect_to_deployments/java_sdk.md)
+  - [Node.js SDK 连接](./connect_to_deployments/nodejs_sdk.md)
   - [C SDK 连接](./connect_to_deployments/c_sdk.md)
   - [C++ SDK 连接](./connect_to_deployments/cpp_sdk.md)
   - [C# SDK 连接](./connect_to_deployments/c_sharp_sdk.md)
