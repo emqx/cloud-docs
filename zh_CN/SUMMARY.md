@@ -7,7 +7,7 @@
 * [部署](./deployments/README.md)
   - [价格计算](./deployments/calculator.md)
   - [创建一个新的部署](./deployments/create_deployment.md)
-  - [查看部署](./deployments/README.md)
+  - [查看部署](./deployments/view_deployment.md)
   - [EMQ X Dashboard](./deployments/dashboard/README.md)
     - [监控](./deployments/dashboard/monitor.md)
     - [认证鉴权](./deployments/dashboard/users_and_acl.md)
