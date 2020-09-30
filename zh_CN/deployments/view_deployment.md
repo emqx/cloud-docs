@@ -80,6 +80,6 @@ EMQ X Cloud 提供实时在线查看 各节点 EMQ X 日志功能。
 
 ## [告警](./alerts.md)
 
-EMQ X Cloud 提供了实时查看告警以及告警集成等功能 。
+EMQ X Cloud 提供了实时查看告警以及告警集成等功能。
 
 ![base_info](./_assets/alerts_info.png)

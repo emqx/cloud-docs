@@ -7,7 +7,7 @@
 * [部署](./deployments/README.md)
   - [价格计算](./deployments/calculator.md)
   - [创建一个新的部署](./deployments/create_deployment.md)
-  - [查看部署](./deployments/README.md)
+  - [查看部署](./deployments/view_deployment.md)
   - [EMQ X Dashboard](./deployments/dashboard/README.md)
     - [监控](./deployments/dashboard/monitor.md)
     - [认证鉴权](./deployments/dashboard/users_and_acl.md)
@@ -40,8 +40,12 @@
   - [Ruby SDK 连接](./connect_to_deployments/ruby_sdk.md)
   - [Scala SDK 连接](./connect_to_deployments/scala_sdk.md)
   - [Perl SDK 连接](./connect_to_deployments/perl_sdk.md)
-  - MQTT X 连接
-  - MQTT.fx 连接
+  - [使用 WebSocket 连接到部署](https://www.emqx.io/cn/blog/connect-to-mqtt-broker-with-websocket)
+  - [在 Android Kotlin 项目中连接到部署](https://www.emqx.io/cn/blog/android-connects-mqtt-using-kotlin)
+  - [在 Electron 项目中连接到部署](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-electron)
+  - [在 Vue 项目中连接到部署](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue)
+  - [MQTT X 连接到部署](./connect_to_deployments/mqttx.md)
+  - [MQTT.fx 连接](./connect_to_deployments/mqttfx.md)
 * [消息存储(规则引擎)](./messages/README.md)
   - [桥接数据到 Kafka](./use_cases/rule_engine/rule_engine_kafka.md)
   - [桥接数据到 阿里云 Kafka](./use_cases/rule_engine/rule_engine_aliyun_kafka.md)
