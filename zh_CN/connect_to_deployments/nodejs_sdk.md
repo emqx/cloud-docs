@@ -24,7 +24,7 @@
 
 ## 示例代码
 
-从这里获取[示例源码](https://github.com/emqx/example/tree/master/mqtt-client-Node.js)
+从这里获取[示例源码](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js)
 
 * 查看命令行帮助
 

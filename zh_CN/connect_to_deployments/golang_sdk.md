@@ -2,8 +2,6 @@
 
 在本教程中您将学习使用 Go **paho-mqtt** 客户端连接到 EMQ X Cloud 部署。
 
-
-
 ## 先决条件
 
 * 已在 EMQ X Cloud [创建部署](../deployments/create_deployment.md)，并且部署状态为 **running**
@@ -20,11 +18,9 @@
 
 * 对于免费试用和共享部署 EMQ X Cloud 默认提供了 TLS/SSL 连接认证，您还需下载 [根证书](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) 用于 TLS/SSL 连接。
 
-
-
 ## 示例代码
 	
-从这里获取[示例源码](https://github.com/emqx/example/tree/master/mqtt-client-Go)
+从这里获取[示例源码](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go)
 
 - 通过 MQTT 协议连接到部署并发布消息
 	```

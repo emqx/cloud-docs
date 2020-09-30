@@ -15,15 +15,17 @@
 * [使用 Go SDK 连接到部署](golang_sdk.md)
 * [使用 Node.js SDK 连接到部署](nodejs_sdk.md)
 * [使用 PHP SDK 连接到部署](php_sdk.md)
-* [使用 C# SDK 连接到部署](c_sharp.md)
+* [使用 C# SDK 连接到部署](c_sharp_sdk.md)
 * [使用 Perl SDK 连接到部署](perl_sdk.md)
 * [使用 Ruby SDK 连接到部署](ruby_sdk.md)
 * [使用 Scala SDK 连接到部署](scala_sdk.md)
-
-
+* [使用 WebSocket 连接到部署](web_websocket.md)
+* [在 Android Kotlin 项目中连接到部署](android_kotlin_sdk.md)
+* [在 Electron 项目中连接到部署](electron_sdk.md)
+* [在 Vue 项目中连接到部署](vue_sdk.md)
 
 ## 使用工具连接
 
-* MQTT X 连接到部署
-* MQTT.fx 连接到部署
+* [MQTT X 连接到部署](mqttx.md)
+* [MQTT.fx 连接到部署](mqttfx.md)
 
