@@ -1,89 +1,74 @@
 # Authentication
 
-EMQ X Cloud fully supports the various security specifications of MQTT, and the built-in security functions can be used out of the box without programming, which can quickly eliminate security risks in the project. When using Users and ACL, you need to ensure that the deployment status is `running`
+Identity authentication is an important part of most applications. The MQTT protocol supports user name and password authentication. Enabling identity authentication can effectively prevent illegal client connections. Authentication in EMQ X means that when a client connects to EMQ X, the server-side configuration controls the client's permission to connect to the server.
+
+EMQ X certification support includes two levels:
+
+1. The MQTT protocol itself specifies the user name and password in the CONNECT packet
+2. At the transport layer, TLS can guarantee client-to-server authentication using client certificates and ensure that the server verifies the server certificate to the client.
+
+This section mainly refers to the authentication of the MQTT protocol itself. For TLS verification on the transport layer, you can refer to the guide-[Configure TLS/SSL](../tls_ssl.md)
+
+![添加认证信息](./_assets/users_acl.png)
 
 
 
 ## Authentication
 
-EMQ X Cloud client supports `username` and `password` authentication.
+### View client authentication information
+
+In the `Authentication` page of `Dashboard`, you can view all the authentication information of the deployment.
+
+![添加认证信息](./_assets/view_users.png)
 
 
 
 ### Add client authentication information
 
-1. Log in to [EMQ X Cloud console](https://cloud.emqx.io/console/)
+In the input box at the top of the page, enter the client user name and password in turn, and then click the Add button to complete the addition.
 
-2. Click on the deployment for the connection, and you will enter the deployment details page
-
-3. Click the dashboard address in the deployment details page, and you will enter the dashboard
-
-4. Click `Authentication` in the left menu of dashboard, fill in `Username`, `Password` in the authentication, and then click the Add button
-
-   ![users-add](../../_assets/deployments/dashboard/users_acl/users-add.png)
+![添加认证信息](./_assets/add_users.png)
 
 
 
 ### Edit client authentication information
 
-1. Log in to [EMQ X Cloud console](https://cloud.emqx.io/console/)
+You can click the `Edit` button on the right side of each piece of authentication information to modify the client authentication password.
 
-2. Click on the deployment for the connection, and you will enter the deployment details page
-
-3. Click the dashboard address in the deployment details page, and you will enter the dashboard
-
-4. Click `Authentication` in the left menu of dashboard, and then click the `Edit` button
-
-   ![users-edit](../../_assets/deployments/dashboard/users_acl/users-edit.png)
-
-   The password of the authentication information can be changed
-
-   ![users-password](../../_assets/deployments/dashboard/users_acl/users-password.png)
+![修改认证信息](./_assets/update_users.png)
 
 
 
-### Delete client authentication information
+### Delete authentication information
 
-1. Log in to [EMQ X Cloud console](https://cloud.emqx.io/console/)
+For unnecessary authentication information, you can click the `Delete` button on the right to delete it.
 
-2. Click on the deployment for the connection, and you will enter the deployment details page
-
-3. Click the dashboard address in the deployment details page, and you will enter the dashboard
-
-4. Click on the `Authentication` on the left side of the dashboard menu, and click the `Delete` button in the authentication information
-
-   ![users-delete](../../_assets/deployments/dashboard/users_acl/users-delete.png)
+![删除认证信息](./_assets/delete_users.png)
 
 
 
-## Publish and Subscription ACL
+## ACL
 
-EMQ X Cloud publish and subscription ACL supports `username`, `topic` mode.
+ACL refers to the `permission control` for PUBLISH/SUBSCRIBE operations.
 
+### View ACL information
 
+In the `Authentication and ACL page of `Dashboard`, you can view all the authentication information of the deployment.
 
-### Add ACL information
-
-1. Log in to [EMQ X Cloud console](https://cloud.emqx.io/console/)
-
-2. Click on the deployment for the connection, and you will enter the deployment details page
-
-3. Click the dashboard address in the deployment details page, and you will enter the dashboard
-
-4. Click `Authentication` in the left side of dashboard menu, fill in `Username`, `topic` in ACL, and select whether to allow topict actions, then click the Add button
-
-   ![acl-add](../../_assets/deployments/dashboard/users_acl/acl-add.png)
+![删除认证信息](./_assets/view_acl.png)
 
 
 
-### Delete ACL information
+### Add ACL
 
-1. Log in to [EMQ X Cloud console](https://cloud.emqx.io/console/)
+Enter the client in the input box: user name, topic, rule (allowed/not allowed), topic action (pub/sub/pubsub) to complete the deployment of ACL rule creation
 
-2. Click on the deployment for the connection, and you will enter the deployment details page
+![添加 ACL](./_assets/add_acl.png)
 
-3. Click the dashboard address in the deployment details page, and you will enter the dashboard
 
-4. Click `Authentication` on the left side of dashboard menu, and click `Delete` button in ACL information
 
-   ![acl-delete](../../_assets/deployments/dashboard/users_acl/acl-delete.png)
+### Delete ACL 
+
+For unnecessary ACL information, you can click the `Delete` button on the right to delete it.
+
+![删除 ACL](./_assets/delete_acl.png)

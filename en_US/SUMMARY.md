@@ -1,46 +1,71 @@
-* EMQ X Cloud Product Description
-* Pricing
-* Quick start
-  - Create an EMQ X Cloud Account
-  - Create a Free Tier Cluster Deployment 
-  - Connect to Your Deployment
-* Connection to a Deployment
-  - Overview
-  - Connect via Python SDK
-  - Connect via Java SDK
-  - Connect via Node.js SDK
-  - Connect via PHP SDK
-  - Connect via C SDK
-  - Connect via C++ SDK
-  - Connect via Go SDK
-  - Connect via MQTT X
-  - Connect via MQTT.fx
-* Message storage
-  - Overview
-* Best Practices
-* Deployments
-  - Create a New Deployment
-  - View Deployment
-  - EMQ X Dashboard
-    - Monitor
-    - Users & ACL
-    - Clients
-    - Topics
-    - Subscriptions
-    - Rules Engine
-  - Configuring TLS/SSL
-  - Set up a Network Peering Connection
-  - Set up a Network NAT Gateway
-  - Creating API Applications
-  - View Metrics
-  - View Logs
-  - Alerts
-    - events
-    - Alerts integration
-  - Upgrade of deployment specifications
-  - Termination a Deployment
-* Events
-* Billing
-* API
-* FAQ
-* Release Notes
+* [EMQ X Cloud Product Introduction](./README.md)
+* [Product Pricing](./pricing.md)
+* [Quick Start](./quick_start/README.md)
+  - [Create an EMQ X Cloud account](./quick_start/create_account.md)
+  - [Create a free trial deployment](./quick_start/create_free_trial.md)
+  - [Connect to your deployment](./connect_to_deployments/README.md)
+* [Deployment](./deployments/README.md)
+  - [Price calculation](./deployments/calculator.md)
+  - [Create a new deployment](./deployments/create_deployment.md)
+  - [View deployment](./deployments/README.md)
+  - [EMQ X Dashboard](./deployments/dashboard/README.md)
+    - [Monitor](./deployments/dashboard/monitor.md)
+    - [Authentication](./deployments/dashboard/users_and_acl.md)
+    - [Client](./deployments/dashboard/client.md)
+    - [Topic](./deployments/dashboard/topic.md)
+    - [Subscribe](./deployments/dashboard/subscribe.md)
+    - [Rule engine](./deployments/dashboard/rule_engine/README.md)
+      - [Rule](./deployments/dashboard/rule_engine/rule.md)
+      - [Resource](./deployments/dashboard/rule_engine/resource.md)
+  - Security features and settings
+    - [TLS/SSL configuration](./deployments/tls_ssl.md)
+    - [VPC Peering connection settings](./deployments/vpc_peering.md)
+    - [API Access Settings](./deployments/api.md)
+  - Operation and maintenance management
+    - [Event](./deployments/events.md)
+    - [Metrics](./deployments/metrics.md)
+    - [Log](./deployments/logs.md)
+    - [Alert](./deployments/alerts.md)
+  - [Scaling deployment specifications](./deployments/upgrade_deployment.md)
+  - [Delete deployments](./deployments/delete_deployment.md)
+* [Connect to deployment](./connect_to_deployments/README.md)
+  - [Python SDK connection](./connect_to_deployments/python_sdk.md)
+  - [Go SDK connection](./connect_to_deployments/golang_sdk.md)
+  - [Java SDK connection](./connect_to_deployments/java_sdk.md)
+  - [Node.js SDK connection](./connect_to_deployments/nodejs_sdk.md)
+  - [C SDK connection](./connect_to_deployments/c_sdk.md)
+  - [C++ SDK connection](./connect_to_deployments/cpp_sdk.md)
+  - [C# SDK connection](./connect_to_deployments/c_sharp_sdk.md)
+  - [PHP SDK connection](./connect_to_deployments/php_sdk.md)
+  - [Ruby SDK connection](./connect_to_deployments/ruby_sdk.md)
+  - [Scala SDK connection](./connect_to_deployments/scala_sdk.md)
+  - [Perl SDK connection](./connect_to_deployments/perl_sdk.md)
+  - MQTT X connection
+  - MQTT.fx connection
+* [Message storage (rule engine)](./messages/README.md)
+  - [Bridge data to Kafka](./use_cases/rule_engine/rule_engine_kafka.md)
+  - [Bridge data to Alibaba Cloud Kafka](./use_cases/rule_engine/rule_engine_aliyun_kafka.md)
+  - [Bridge data to Huawei Cloud Kafka](./use_cases/rule_engine/rule_engine_huawei_kafka.md)
+  - [Bridge data to InfluxDB](./use_cases/rule_engine/rule_engine_influxDB.md)
+  - [Bridge data to MQTT Broker](./use_cases/rule_engine/rule_engine_mqtt.md)
+  - [Forward offline messages to Webhook](./use_cases/rule_engine/rule_engine_web_hook.md)
+  - [Republish messages](./use_cases/rule_engine/rule_engine_republish.md)
+  - [Save offline messages to MySQL](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-mysql)
+  - [Save offline messages to PostgreSQL](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-postgresql)
+  - [Save offline messages to TimescalaDB](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-timescaledb)
+  - [Save offline messages to Cassandra](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-cassandra)
+  - [Save offline messages to MongoDB](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-mongodb)
+  - [Get subscription relationship from Redis](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-redis-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
+  - [Get subscription relationship from MySQL](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-mysql-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
+  - [Get subscription relationship from PostgreSQL](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-postgresql-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
+  - [Get subscription relationship from Cassandra](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-cassandra-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
+  - [Get subscription relationship from MongoDB](https://docs.emqx.net/enterprise/latest/cn/rule/rule-example.html#%E4%BB%8E-mongodb-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB)
+* [Financial Management](./billing/README.md)
+  - [Billing overview](./billing/overview.md)
+  - [Voucher](./billing/credits.md)
+  - [Invoice](./billing/invoices.md)
+* [Development Guide](./dev_guide.md)
+* [API](./api.md)
+* [FAQ](./faq.md)
+* [Contact us](./contact.md)
+* [Release note](./release_notes.md)
