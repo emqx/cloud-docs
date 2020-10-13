@@ -1,2 +1,2 @@
 # NAT gateway configuration
-> This feature is not available in free trial and shared deployment
+{% hint style="danger" %} This feature is not available in free trial and shared deployment {% endhint %}

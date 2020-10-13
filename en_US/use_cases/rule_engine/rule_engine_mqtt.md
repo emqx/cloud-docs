@@ -60,7 +60,7 @@ FROM
 
 #### 3. Create resources and actions
 Click Add Action. On the Select Action page, select Bridge Data to MQTT Broker, click Next, and on the Configure Action page, click Create Resource.
-![添加动作](_assets/add_mqtt_action01.png)
+![添加动作](_assets/add_webhook_action01.png)
 
 ![选择 桥接数据到 MQTT Broker](_assets/add_mqtt_action02.png)
 

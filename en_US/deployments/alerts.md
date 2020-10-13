@@ -44,5 +44,5 @@ The alert information is sent to the event of PagerDuty, and PagerDuty specifies
 2. Add api v2 integration and copy the integration key
     ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
 
-3, Fill in the integration key on EMQ X Cloud
-  ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
+3. Fill in the integration key on EMQ X Cloud
+     ![pagerduty_alerts](./_assets/pagerduty_alerts.png)

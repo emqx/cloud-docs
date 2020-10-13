@@ -56,10 +56,10 @@ Before connecting to your free trial deployment, you need to wait for the free t
 
 Click the free trial deployment to be connected, and you will enter the deployment details page. The free trial of EMQ X Cloud supports TLS and WSS protocol connections. The corresponding ports of the protocol are as follows:
 
-| Protocol            | Port |
-| ------------------- | ---- |
-| MQTT over TLS       | 8883 |
-| Websockets over TLS | 8084 |
+| Protocol   | Port |
+| ---------- | ---- |
+| MQTT       | 1883 |
+| Websockets | 8083 |
 
 ![connections](./_assets/connections.png)
 
@@ -73,11 +73,11 @@ Click the EMQ X Dashboard button on the deployment details page, you will enter 
 
 EMQ X Cloud recommends using [MQTT X](https://mqttx.app/cn/) to test the connection to the free trial.
 
-* MQTT over TLS connection
+* MQTT connection
 
   ![mqttx_mqtts](./_assets/mqttx_mqtts.png)
 
-* Websockets over TLS connection
+* Websockets connection
 
   ![mqttx_wss](./_assets/mqttx_wss.png)
 

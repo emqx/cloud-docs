@@ -40,17 +40,17 @@ docker run -d  --restart=always --name mykafka \
     -p 9092:9092 \
     -e HOST_IP=localhost \
     -e KAFKA_ADVERTISED_PORT=9092 \
-    -e KAFKA_ADVERTISED_HOST_NAME=<服务器 IP> \
+    -e KAFKA_ADVERTISED_HOST_NAME=<Server IP> \
     -e KAFKA_BROKER_ID=1 \
     -e KAFKA_LOG_RETENTION_HOURS=12 \
     -e KAFKA_LOG_FLUSH_INTERVAL_MESSAGES=100000 \
-    -e KAFKA_ZOOKEEPER_CONNECT=<服务器 IP>:2181 \
-    -e ZK=<服务器 IP> \
+    -e KAFKA_ZOOKEEPER_CONNECT=<Server IP>:2181 \
+    -e ZK=<Server IP> \
     wurstmeister/kafka
     
 # Enter Kafka instance and create testTopic topic
 $ docker exec -it mykafka /bin/bash
-$ kafka-topics.sh --zookeeper <服务器 IP>:2181 --replication-factor 1 --partitions 1 --topic testTopic --create
+$ kafka-topics.sh --zookeeper <Server IP>:2181 --replication-factor 1 --partitions 1 --topic testTopic --create
 ```
 
 ### 2. Set the filter criteria of the rule engine
@@ -73,8 +73,6 @@ SELECT
   payload.msg as msg
 FROM
   "greet/#"
-WHERE
-  msg = 'hello'
 ```
 
 You can click SQL test under the SQL input box to fill in the data:
@@ -142,3 +140,4 @@ $ docker exec -it mykafka /bin/bas
 $ kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092  --topic testTopic --from-beginning
 ```
 ![服务器收到消息](_assets/add_kafka_action07.png)
+

@@ -54,29 +54,6 @@ EMQ X Cloud **Standard Deployment** provides custom one-way/two-way TLS/SSL conf
   -----END CERTIFICATE----- 
   ```
   
-- - 证书格式。
-
-    ```bash
-  -----BEGIN CERTIFICATE-----
-    Base64–encoded certificate
-    -----END CERTIFICATE----- 
-    ```
-  
-  - 证书链格式。
-
-    ```bash
-  -----BEGIN CERTIFICATE-----
-    Base64–encoded certificate
-    -----END CERTIFICATE----- 
-    ```
-  
-  - 私有秘钥格式。
-
-    ```bash
-  -----BEGIN CERTIFICATE-----
-    Base64–encoded certificate
-    -----END CERTIFICATE----- 
-    ```
 
 
 

@@ -7,7 +7,7 @@ You can enter the ticket system by following the steps below:
 1. Login  [EMQ X Cloud console](https://cloud.emqx.io/console/)
 2. Click the `Ticket` in the lower left corner
 
-![工单](_assets/tickets.png)
+![tickets](_assets/tickets.png)
 
 ### Create tickets
 
