@@ -4,7 +4,7 @@ The price calculation of EMQ X Cloud allows you to estimate the cost of creating
 
 ## Visit EMQ X Cloud price estimatation
 
-* For users who are **unregistered** with EMQ X Cloud, you can go to [Price Estimate](https://cloud.emqx.io/cn/calculator) to use price estimation.
+* For users who are **unregistered** with EMQ X Cloud, you can go to [Price Estimate](https://cloud.emqx.io/calculator) to use price estimation.
 
   ![calculator](./_assets/calculator.png)
 
@@ -18,7 +18,7 @@ The price calculation of EMQ X Cloud allows you to estimate the cost of creating
 
 You can select cloud platform, region, estimated maximum number of connections, and TPS of message uplink and downlink to get the hourly price of deployment.
 
-> Choose Huawei Cloud Platform, Guangzhou area, the maximum number of connections is 1000, the message uplink and downlink TPS is 1000, the hourly price is 2.72, and the monthly basic cost is: 2.72 * 730 = 1985.
+> Choose Huawei Cloud Platform, Guangzhou area, the maximum number of connections is 1000, the message uplink and downlink TPS is 1000, the hourly price is 1.17, and the monthly basic cost is: 1.17 * 730 = 854.1.
 
 ![deployment_price](./_assets/deployment_price.png)
 
@@ -26,10 +26,9 @@ You can select cloud platform, region, estimated maximum number of connections, 
 
 ## Supported cloud service providers and regions
 
-EMQ X Cloud currently supports cloud service providers: Ali Cloud and Huawei Cloud. If you need other cloud service providers or regions, you can submit a [ticket](../contact.md) or email (cloud@emqx.io) to get in touch with us.
+EMQ X Cloud currently supports cloud service providers: Ali Cloud and Huawei Cloud. If you need other cloud service providers or regions, you can submit a [ticket](../contact.md) or email(cloud@emqx.io) to get in touch with us.
 
 | Platform     | Region                                |
 | ------------ | ------------------------------------- |
-| Ali Cloud    | Beijing, Shanghai, Shenzhen, Hangzhou |
-| HUAWEI CLOUD | Guangzhou, Shanghai, Beijing          |
+| AWS    | US East(N.Virginia), US West(Oregon), EU(Ireland), Asia Pacific(Singapore) |
 

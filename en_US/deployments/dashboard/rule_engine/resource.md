@@ -1,6 +1,6 @@
 # Resource
 
-EMQ X Cloud resources are used for rule engine response actions. Before that, you need to ensure that the deployment status is `running`. You can refer to [EMQ X Rule Engine](https://docs.emqx.net/broker/latest/cn/rule/rule-engine.html) for more information about resource creation.
+EMQ X Cloud resources are used for rule engine response actions. Before that, you need to ensure that the deployment status is `running`. You can refer to [EMQ X Rule Engine](https://docs.emqx.io/broker/latest/en/rule/rule-engine.html) for more information about resource creation.
 
 
 

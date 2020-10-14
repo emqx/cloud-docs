@@ -26,7 +26,7 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
 ## Start creating a free trial deployment
 
-### 1. Login to [EMQ X Cloud Console](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/console/)
+### 1. Login to [EMQ X Cloud Console](https://accounts.emqx.io/signin?continue=https://cloud.emqx.io/console/)
 
 ![login_console](./_assets/login_console.png)
 

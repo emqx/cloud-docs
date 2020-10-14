@@ -32,7 +32,7 @@ EMQ X Dashboard (EMQ X Management Console) is a back-end web console provided by
 
 ## [TLS/SSL configuration](./tls_ssl.md) 
 
-> Free trial and shared deployment does not support this feature
+{% hint style="danger" %} This feature is not available in free trial and shared deployment {% endhint %}
 
 EMQ X Cloud provides custom **one-way TLS/SSL** authentication, and supports **self-signed certificate** and **CA signed certificate**.
 
@@ -42,7 +42,7 @@ EMQ X Cloud provides custom **one-way TLS/SSL** authentication, and supports **s
 
 ## [VPC Peering Connection Configuration](./vpc_peering.md)
 
-> Free trial and shared deployment does not support this feature
+{% hint style="danger" %} This feature is not available in free trial and shared deployment {% endhint %}
 
 EMQ X Cloud supports the creation of peering connections with customers' existing VPC (Virtual Private Cloud) for cloud service providers in the same region. A VPC peering connection is a network connection between two VPCs. Through this connection, the instances in the two VPCs can communicate with each other as if they were in the same network.
 

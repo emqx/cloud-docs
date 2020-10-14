@@ -38,9 +38,9 @@ Click the green **Client ID** to view the client subscription list information, 
 
 
 
-## Remove the client
+## Kick Out client
 
-On the right side of the client list, you can click the **Remove** button to remove the specified client. There are following precautions for that action:
+On the right side of the client list, you can click the **Kick Out** button to remove the specified client. There are following precautions for that action:
 
 * The operation of removing the client will terminate the connection and the session together.
 * After removing the client, if the client has a reconnection mechanism, it can still continue to connect to the EMQ X cluster

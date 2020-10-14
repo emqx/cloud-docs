@@ -93,4 +93,4 @@ Get [Sample Source Code](https://github.com/emqx/MQTT-Client-Examples/tree/maste
 	go run main.go --protocol=wss --port=8084 --tls=true --action=pubsub
 	```
 
-- [How to use MQTT in Golang](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-golang)
+- [How to use MQTT in Golang](https://www.emqx.io/blog/how-to-use-mqtt-in-golang)

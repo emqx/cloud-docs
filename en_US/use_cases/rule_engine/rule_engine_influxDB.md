@@ -72,10 +72,10 @@ The payload in SQL represents the data we send to EMQX Cloud. The JSON structure
 
 ```json
 {
-  "location": "房间",
+  "location": "room",
   "data":{
-    "temperature": "温度",
-    "humidity": "湿度"
+    "temperature": "temperature",
+    "humidity": "humidity"
   }
 }
 ```

@@ -4,7 +4,7 @@ You can create an EMQ X Cloud account using your email address
 
 
 
-## [Register an account](https://accounts.emqx.io/cn/signup?continue=https://cloud.emqx.io/cn)
+## [Register an account](https://accounts.emqx.io/cn/signup?continue=https://cloud.emqx.io/)
 
 1. Enter your personal information: email, password, mobile phone number, company name, country
 2. Click register, EMQ X Cloud will automatically send a confirmation email to the email address you provided
@@ -15,7 +15,7 @@ You can create an EMQ X Cloud account using your email address
 
 
 
-## [login to the account](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/cn)
+## [login to the account](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/)
 
 Enter your email and password, and then choose to log in and you will be redirected to the EMQ X Cloud page
 
@@ -23,7 +23,7 @@ Enter your email and password, and then choose to log in and you will be redirec
 
 
 
-## [Get back password](https://accounts.emqx.io/cn/forgot_password?continue=https://cloud.emqx.io/cn)
+## [Get back password](https://accounts.emqx.io/cn/forgot_password?continue=https://cloud.emqx.io/)
 
 If you forget your password, we will send a verification email to your mailbox. You can click Get back Password in the verification email to create a new password. You will return to the login page, enter a new password, and select login
 

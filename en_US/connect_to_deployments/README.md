@@ -17,10 +17,10 @@ For free trial and shared deployment EMQ X Cloud, it provides TLS/SSL connection
 * [Connect to deployments with Perl SDK](perl_sdk.md)
 * [Connect to deployments with Ruby SDK](ruby_sdk.md)
 * [Connect to deployments with Scala SDK](scala_sdk.md)
-* [Connect to deployments with WebSocket](https://www.emqx.io/cn/blog/connect-to-mqtt-broker-with-websocket)
-* [Connect to deployments in Android Kotlin project](https://www.emqx.io/cn/blog/android-connects-mqtt-using-kotlin)
-* [Connect to deployments in Electron project](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-electron)
-* [Connect to deployments in Vue project](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue)
+<!-- * [Connect to deployments with WebSocket](https://www.emqx.io/cn/blog/connect-to-mqtt-broker-with-websocket) -->
+* [Connect to deployments in Android Kotlin project](https://www.emqx.io/blog/android-connects-mqtt-using-kotlin)
+<!-- * [Connect to deployments in Electron project](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-electron) -->
+<!-- * [Connect to deployments in Vue project](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue) -->
 
 ## Connect with tools
 

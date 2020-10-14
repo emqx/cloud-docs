@@ -1,45 +1,37 @@
-# Billing overview
+# Overview
 
-The overview will introduce the recharge of the EMQ X Cloud account, view transaction records, monthly bills and expense reports. Click `Financial Management` -> `Overview` in the left menu to enter the billing overview page
+The overview will introduce the recharge of the EMQ X Cloud account, PayPal payment, view transaction records, monthly bills and expense reports. Click `Billing` -> `Overview` in the left menu to enter the billing overview page
 
 The overview page displays the following three parts:
 
-1. Account balance, you can click the `recharge` button to recharge the account, the payment method supports `Alipay`, `WeChat`
+1. Account Balance and PayPal Payment
 2. Billing of the current month (the billing fee from the 1st of the month to the current time)
-
 3. Expense trend, you can switch between `day` and `month` to show the corresponding expense trend
 
 ![overview](./_assets/overview.png)
 
 
+### Account Balance and PayPal Payment
+EMQ X Cloud deducts the cost of last month's bill from your account balance on the 1st of each month. You need to use PayPal to complete last month's bill payment.
 
-### Recharge introduction
-
-Click the `Recharge` button on the overview page and enter the recharge amount. The recharge method supports `Alipay` and `WeChat`
-
-![overview](./_assets/overview.png)
-
-
-
-### View transaction record
-
-Transaction records will show the account's recharge and payment records
-
-1. Click `Transaction Record` on the `Overview` page to enter the transaction record page
-
-   ![transactions](./_assets/transactions.png)
-
-2. Click on the "Overview" on the transaction record page to return to the "Overview" page
-
-   ![transactions-list](./_assets/transactions-list.png)
-
+* Account Balance
+  ![Account Balance](./_assets/account_balance.png)
+  
+* PayPal Payment
+  ![PayPal Payment](./_assets/paypal_payment.png)
+  
+* Other Payment Methods
+  
+  Through [tickets](https://cloud.emqx.io/console/tickets), you can pay using a:
+  * Currency other than USD.
+  * Method other than a credit card or PayPal.
 
 
 ### View monthly bill
 
 The monthly bill will show the monthly billing record of the account
 
-1. Click `Bill` on the `Overview` page to enter the billing page
+1. Click `Billing` on the `Overview` page to enter the billing page
 
    ![bills](./_assets/bills.png)
 

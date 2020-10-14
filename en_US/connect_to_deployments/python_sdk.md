@@ -13,7 +13,7 @@ In this tutorial, you will learn how to use the Python **paho-mqtt** client to c
 * **Paho-mqtt** MQTT client has been installed. If not installed, please run the following command to complete the installation
 
   ```
-  pip3 install -i https://pypi.doubanio.com/simple paho-mqtt
+  pip3 install paho-mqtt
   ```
 
 * For free trial and shared deployment EMQ X Cloud, it provides TLS/SSL connection certification by default, and you also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) for TLS/SSL connection.
@@ -22,7 +22,7 @@ In this tutorial, you will learn how to use the Python **paho-mqtt** client to c
 
 ## Sample code
 
-* [How to use MQTT in Python](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-python)
+* [How to use MQTT in Python](https://www.emqx.io/blog/how-to-use-mqtt-in-python)
 * [Connect to deployments and publish messages with MQTT protocol](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/pub_tcp.py)
 * [Connect to deployments and subscribe to messages with MQTT protocol](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/sub_tcp.py)
 * [Connect to deployments, publish and subscribe to messages with MQTT protocol and ](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/pub_sub_tcp.py)

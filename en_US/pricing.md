@@ -8,7 +8,7 @@ EMQ X Cloud charges based on cluster instance specifications and message transmi
 
 EMQ X Cloud charges each deployment according to the deployment specifications (maximum number of connections, message TPS), and different specifications have different hourly unit prices.
 
-Before creating a deployment, EMQ X Cloud will estimate the usage cost based on your deployment options, and the specific price can be viewed on the [Price Estimation](https://cloud.emqx.io/cn/calculator) page
+Before creating a deployment, EMQ X Cloud will estimate the usage cost based on your deployment options, and the specific price can be viewed on the [Price Estimation](https://cloud.emqx.io/calculator) page
 
 
 The specific billing items are shown in the table below:
@@ -16,7 +16,7 @@ The specific billing items are shown in the table below:
 | Item  | Description                                               |
 | -------- | ------------------------------------------------------------ |
 | <div style="width: 120px"></div>Basic fee | It is determined according to the deployment specifications (maximum number of connections, message TPS), and the estimated cost of this part will not change in actual use. |
-| Traffic usage | The basic fee already includes a certain amount of free traffic, and it is valid for the month. If there is any surplus, it will be cleared automatically at the end of the month. After the device communication exceeds the traffic, the excess will be charged at 1.5 Yuan/GB. |
+| Traffic usage | The basic fee already includes a certain amount of free traffic, and it is valid for the month. If there is any surplus, it will be cleared automatically at the end of the month. After the device communication exceeds the traffic, the excess will be charged at 0.15 USD/GB. |
 
 {% hint style="danger" %}
 Note: Due to different actual usage conditions, there may be differences between the estimated cost and the actual cost.
@@ -26,7 +26,7 @@ Note: Due to different actual usage conditions, there may be differences between
 
 ### Billing cycle
 
-EMQ X Cloud calculates the account consumption in the last hour (hourly bill) and deducts the balance from the balance **every hour**, and then adds up to the current month's consumption (monthly bill). You can go to [Billing Page](<https:/ /cloud.emqx.io/console/billing/overview>)  to View detailed billing information.
+EMQ X Cloud calculates the account consumption in the last hour (hourly bill) and deducts the balance from the balance **every hour**, and then adds up to the current month's consumption (monthly bill). You can go to [Billing Page](https://cloud.emqx.io/console/billing/overview)  to View detailed billing information.
 
 ### Description of arrears
 
@@ -36,7 +36,7 @@ When the balance is insufficient, EMQ X Cloud will send a notification email to 
 - Clear the deployment running data, **and the lost data cannot be recovered**.
 
 {% hint style="danger" %}
-Note: The overdraft limit is 10 Yuan by default. You can contact your business manager or submit a ticket to increase the limit
+Note: The overdraft limit is 10 USD by default. You can contact your business manager or submit a ticket to increase the limit
 {% endhint %}
 
 <!-- ### 计费示例一 TODO 等待添加 ### 计费示例二 -->

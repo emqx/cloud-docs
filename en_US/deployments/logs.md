@@ -1,4 +1,4 @@
-# Deployment log
+# Log
 
 EMQ X Cloud provides real-time online viewing of EMQ X logs
 

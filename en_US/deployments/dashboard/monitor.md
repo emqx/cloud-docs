@@ -8,7 +8,7 @@ Through monitoring, we can view the running indicators of the current deployment
 
 ## Cluster operation indicators
 
-The four indicator cards at the top of the page include the cluster's `message sending rate`, `message inflow rate`, `subscriptions` and `current connections`.
+The four indicator cards at the top of the page include the cluster's `message out rate`, `message in rate`, `subscriptions` and `connections`.
 
 ![历史数据](./_assets/monitor_cluster.png)
 

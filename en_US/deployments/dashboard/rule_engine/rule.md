@@ -10,7 +10,7 @@ The rule describes the three configurations of "where the data comes from", "how
 
 ## A simple example
 
-The rule shown in the figure below is used to process the data when **message is published**, filter out the msg field, message topic and qos of all topic messages, and send them to the Web Server and /uplink topics. You can refer to [EMQ X Rules](https://docs.emqx.net/broker/latest/cn/rule/rule-engine.html) for more  guidelines.
+The rule shown in the figure below is used to process the data when **message is published**, filter out the msg field, message topic and qos of all topic messages, and send them to the Web Server and /uplink topics. You can refer to [EMQ X Rules](https://docs.emqx.io/broker/latest/en/rule/rule-engine.html) for more  guidelines.
 
 ![img](./_assets/rule_engine_detail.png)
 
@@ -18,7 +18,7 @@ The rule shown in the figure below is used to process the data when **message is
 
 ## Add rules
 
-Before creating a rule engine, you need to make sure that the deployment status is **running **
+Before creating a rule engine, you need to make sure that the deployment status is **running**
 
 1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
 

@@ -21,7 +21,7 @@ You can enter EMQ X Dashboard through the following steps:
 
 ## [Monitor](./monitor.md)
 
-You can view the running indicators of the current EMQ X cluster on the **Monitoring** page.
+You can view the running indicators of the current EMQ X cluster on the **Monitor** page.
 
 ## [Authentication](./users_and_acl.md)
 

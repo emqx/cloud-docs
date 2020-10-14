@@ -25,12 +25,11 @@ It supports massive devices to connect to the cloud, and provides stable and rel
 - Support CoAP, MQTT-SN, LwM2M protocol and private TCP protocol access to meet the cloud requirements of various systems
 - Provide cloud access solutions on different network equipment, industrial/edge equipment
 - Provide open source multi-language/platform access sample code for cross-platform migration guidance
-- <!-- TODO: example 仓库 -->
-- Perfectly fit EMQ product ecology of [Edge Computing](https://www.emqx.io/cn/products/kuiper), [Edge Industrial Internet of Things](https://www.emqx.io/cn/products/neuron), Support dozens of industrial protocols to connect to the cloud
+<!-- TODO: example 仓库 -->
+- Perfectly fit EMQ product ecology of [Edge Computing](https://www.emqx.io/products/kuiper), [Edge Industrial Internet of Things](https://www.emqx.io/products/neuron), Support dozens of industrial protocols to connect to the cloud
 
 {% hint style="info" %}
-For multi-protocol and private protocol support, please contact [Ticket](./contact.md) for activation.
-
+For multi-protocol and private protocol support, please contact [Tickets](./contact.md) for activation.
 {% endhint %}
 
 
@@ -39,7 +38,7 @@ For multi-protocol and private protocol support, please contact [Ticket](./conta
 
 To ensure flexibility, EMQ X Cloud does not directly provide device management related functions, but opens up capabilities through REST API and rule engine. Users can choose the functions they need to integrate with their own device management system and IoT platform.
 
-![image (1)](https://static.emqx.net/images/64e6c6e9650c1f00b8376e7239343c4e.png)
+![image (1)](_assets/http_rest_api.png)
 
 - **Device authentication information management: **The platform uses REST API to add, delete, check, and modify authentication information. 
 - - **View online status of device:**

@@ -6,7 +6,7 @@
 
 EMQ X Cloud is an online SaaS service of EMQ X provided by the EMQ team.
 
-In the past few years, EMQ has provided mature MQTT IoT messaging middleware and IoT platform related support services to many customers. During this period, we have accumulated a wealth of practical experience in IoT platform design, operation and maintenance management. Based on that, we launched the IoT platform public cloud service EMQ X Cloud, providing one-stop operation and maintenance management, and EMQ X access platform service with a unique isolation environment .
+In the past few years, EMQ has provided mature MQTT IoT messaging middleware and IoT platform related support services to many customers. During this period, we have accumulated a wealth of practical experience in IoT platform design, operation and maintenance management. Based on that, we launched the IoT platform public cloud service EMQ X Cloud, providing one-stop operation and maintenance management, and EMQ X access platform service with a unique isolation environment.
 
 EMQ X Cloud provides safe and reliable two-way communication capabilities for applications and devices, and provides other value-added capabilities on the basis of supporting large-scale clusters and massive device connection, such as device management, rule engine, data persistence, and Kafka data bridging. It covers various IoT application scenarios and retains customization and expansion capabilities.
 
@@ -30,13 +30,13 @@ If you have special usage requirements, or other usage conditions, you can submi
 
 EMQ X Cloud deployment only supports MQTT over TLS/SSL, Websockets over TLS/SSL protocol connections.
 
-If you need other protocol support, you can submit a [ticket](contact.md) or send an email (cloud@emqx.io) to us.
+If you need other protocol support, you can submit a [ticket](contact.md) or send an email(cloud@emqx.io) to us.
 
 ### How do I connect to the deployment?
 
 You can connect through [MQTTX client](https://mqttx.app).
 
-You can also connect through the SDK,  for details, see [Connect to Deployment](connect_to_deployments/README.md).
+You can also connect through the SDK, for details, see [Connect to Deployment](connect_to_deployments/README.md).
 
 ### Does it support API calls?
 
@@ -58,7 +58,7 @@ Yes.
 
 For the configuration method, please refer to [configure TLS/SSL](deployments/tls_ssl.md)
 
-### Does it support mutual  TLS/SSL authentication?
+### Does it support mutual TLS/SSL authentication?
 
 Yes.
 
@@ -81,11 +81,11 @@ EMQ X Cloud charges based on the cluster instance specifications and message tra
 
 For detailed billing rules, you can view [Product Pricing](pricing.md)
 
-### How to recharge?
+### How to payment?
 
-In the EMQ X Cloud console, click the `Recharge` button at the account balance of `Property Management` -> `Overview`, and enter the recharge amount.
+In the EMQ X Cloud console, click the `Payment` button at the account balance of `Billing` -> `Overview`, and complete the monthly bill payment.
 
-Currently, EMQ X Cloud supports `Alipay` and `WeChat` for recharging.
+Currently, EMQ X Cloud supports `PayPal` to complete the monthly bill payment.
 
 ### How to get the voucher?
 
@@ -96,7 +96,3 @@ If you need to experience all the functions of the standard deployment, you can 
 It is not supported at present.
 
 Please pay attention to the update of EMQ x cloud.
-
-### How to get the invoice?
-
-Open [EMQ X Console](https://cloud.emqx.io/console), click `Property Management` -> `Invoices` -> `Apply for Invoicing`

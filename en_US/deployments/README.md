@@ -20,7 +20,7 @@ View and manage all deployments you create.
 
 ## Security features and settings
 
-### [TLS/SSL Settiing](./tls_ssl.md)
+### [Configure TLS/SSL](./tls_ssl.md)
 
 
 
@@ -42,7 +42,7 @@ View and manage all deployments you create.
 
 
 
-### [Indicator](./metrics.md)
+### [Metrics](./metrics.md)
 
 
 

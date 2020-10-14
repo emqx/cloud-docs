@@ -1,6 +1,6 @@
-# Deployment indicators
+# Metric
 
-EMQ X Cloud provides four incremental indicators: message, client, packet, and delivery. You can view the display chart corresponding to each indicator and the detailed information at a certain point of time.
+EMQ X Cloud provides four incremental metrics: message, client, packet, and delivery. You can view the display chart corresponding to each indicator and the detailed information at a certain point of time.
 
 ![metrics_line_detail](_assets/metrics.png)
 
@@ -8,7 +8,7 @@ EMQ X Cloud provides four incremental indicators: message, client, packet, and d
 
 ## Message
 
-It shows the incremental status of message sending and receiving in a certain period of time. The following 3 indicators are provided:
+It shows the incremental status of message sending and receiving in a certain period of time. The following 3 metrics are provided:
 
 | Indicator         | Meaning                                                      |
 | ----------------- | :----------------------------------------------------------- |
@@ -22,7 +22,7 @@ It shows the incremental status of message sending and receiving in a certain pe
 
 ## Client
 
-Shows the incremental situation of interaction with the client in a certain period of time. The following 4 indicators are provided:
+Shows the incremental situation of interaction with the client in a certain period of time. The following 4 metrics are provided:
 
 | Indicator           | Meaning                                 |
 | ------------------- | :-------------------------------------- |
@@ -35,9 +35,9 @@ Shows the incremental situation of interaction with the client in a certain peri
 
 
 
-## Packet
+## Packets
 
-It shows the increment of the number of bytes sent and received during the time period. The following 2 indicators are provided:
+It shows the increment of the number of bytes sent and received during the time period. The following 2 metrics are provided:
 
 | Indicator          | Meaning                      |
 | ------------------ | :--------------------------- |
