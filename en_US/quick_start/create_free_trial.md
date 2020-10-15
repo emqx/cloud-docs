@@ -1,8 +1,8 @@
 # Create a free trial deployment
 
-For users who use EMQ X Cloud for the first time, we have prepared an opportunity for you to create a free trial deployment for up to **180** days. The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following limitations:
+For users who use EMQ X Cloud for the first time, we have prepared an opportunity for you to create a free trial deployment for up to **7** days. The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following limitations:
 
-* Free trial up to 180 days.
+* Free trial up to 7 days.
 
   > If you need to extend the free trial period, you can submit a [ticket](../contact.md) or email (cloud@emqx.io) to get in touch with us
 
@@ -17,11 +17,6 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 * > If you need other protocol support, you can submit a [ticket](../contact.md) or send an email (cloud@emqx.io) to get in touch with us
 
 * Customizing [TLS/SSL](../deployments/tls_ssl.md) and creating [VPC peering connection](../deployments/vpc_peering.md) are not supported.
-
-* Active client connections are deployed within 7 days.
-
-  > If there is no active connection for the deployment within 7 days, we will temporarily stop your free trial deployment. You can log in to the EMQ X Cloud console again to restart your free trial deployment.
-
 
 
 ## Start creating a free trial deployment

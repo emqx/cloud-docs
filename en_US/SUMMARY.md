@@ -5,7 +5,7 @@
   - [Create a free trial deployment](./quick_start/create_free_trial.md)
   - [Connect to your deployment](./connect_to_deployments/README.md)
 * [Deployment](./deployments/README.md)
-  - [Price calculation](./deployments/calculator.md)
+  - [Price estimatation](./deployments/calculator.md)
   - [Create a new deployment](./deployments/create_deployment.md)
   - [View deployment](./deployments/README.md)
   - [EMQ X Dashboard](./deployments/dashboard/README.md)

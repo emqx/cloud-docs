@@ -1,13 +1,13 @@
 # Introduction of EMQ X Cloud Product 
 
-As the world's first fully hosted MQTT 5.0 public cloud service, EMQ X Cloud provides one-stop operation and maintenance management and a unique isolation environment for EMQ X access platform services. For customers who use EMQ X Cloud for the first time, we have prepared an opportunity for you to create a free trial deployment for up to **180** days.
+As the world's first fully hosted MQTT 5.0 public cloud service, EMQ X Cloud provides one-step operation and maintenance management and a unique isolation environment for EMQ X access platform services. For customers who use EMQ X Cloud for the first time, we have prepared an opportunity for you to create a free trial deployment for up to **7** days.
 
 EMQ X Cloud provides secure and reliable two-way communication capabilities for applications and IoT devices:
 
 - It can connect a large number of devices , support device data to the cloud, and device communication;
 - It can store device events and message data in various databases and stream processing systems, and supports calling cloud APIs to issue control commands to devices.
 
-With the infrastructure provided by cloud service providers, EMQ x cloud provides services to dozens of countries and regions around the world, providing low-cost, safe and reliable cloud services for 5G and IoT applications.
+With the infrastructure provided by cloud service providers, EMQ X Cloud provides services to dozens of countries and regions around the world, providing low-cost, safe and reliable cloud services for 5G and IoT applications.
 
 ![emqx_cloud](https://static.emqx.net/images/b7f3e53a4f6a789c698e5af8476d3e51.png)
 
@@ -41,11 +41,11 @@ To ensure flexibility, EMQ X Cloud does not directly provide device management r
 ![image (1)](_assets/http_rest_api.png)
 
 - **Device authentication information management: **The platform uses REST API to add, delete, check, and modify authentication information. 
-- - **View online status of device:**
+- **View online status of device:**
     - The platform obtains a list of online devices through the REST API to check whether the device is online. 
     - The platform uses the rule engine to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
 - **Device offline alarm:** Notify the platform when the device is offline to determine whether an alarm is needed.
-- - **Device online and offline history:**
+- **Device online and offline history:**
     - The platform uses the rule engine to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
 - **Device publish and subscribe to ACL permission management:** The platform uses the REST API to add, delete, check and modify ACL permissions.
 - **Kick online device offline:** The platform kicked off online devices.
@@ -67,7 +67,7 @@ The rule engine not only provides a clear and flexible "configurable" business i
 - **Send to HTTP service and other MQTT services**
   
   - Send data to web service
-- Bridge data to MQTT Broker
+  - Bridge data to MQTT Broker
   
 - **Save device event information and message data to the database, and use device events to drive business data**
   
@@ -81,7 +81,7 @@ The rule engine not only provides a clear and flexible "configurable" business i
   - Save data to TDengine
   - Save data to OpenTSDB
   - Save data to TimescaleDB
-- Save data to InfluxDB
+  - Save data to InfluxDB
   
 - **Bridge data to Kafka, RabbitMQ and other messaging and stream processing platforms**
   
@@ -89,7 +89,7 @@ The rule engine not only provides a clear and flexible "configurable" business i
   - Bridge data to Pulsar
   - Bridge data to RocketMQ
   - Bridge data to RabbitMQ
-- Bridge data to RPC service
+  - Bridge data to RPC service
   
 - **Consumption messages are issued to the device, and transaction-level platform instructions are issued**
   

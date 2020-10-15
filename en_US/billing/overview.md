@@ -24,7 +24,7 @@ EMQ X Cloud deducts the cost of last month's bill from your account balance on t
   
   Through [tickets](https://cloud.emqx.io/console/tickets), you can pay using a:
   * Currency other than USD.
-  * Method other than a credit card or PayPal.
+  * Method other than a PayPal.
 
 
 ### View monthly bill

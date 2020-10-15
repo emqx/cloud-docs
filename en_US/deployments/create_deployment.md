@@ -3,11 +3,11 @@ In this tutorial, you will learn how to create a new EMQ X Cloud deployment. To 
 
 ## limitation
 
-* Before creating a deployment, your account balance cannot be less than the total cost of the created deployment for **24** hours. You can go to [Price Estimate](https://cloud.emqx.io/console/deployments/0?oper=new) to view the hourly cost of the selected deployment specification * 24, and you can go to [Payment Overview Page](https://cloud.emqx.io/console/billing/overview)  to complete the account balance recharge.
+* Before creating a deployment, your account overdraft limit should be greater than the 24-hour deployment cost. You can go to the [Price Estimate](https://cloud.emqx.io/console/deployments/0?oper=new) to estimate the 24-hour deployment cost, or submit a tickets to increase the account overdraft limit.
 
-  > The deployment specification is 1000 lines, 100 tps, and the hourly price is 1.17 Yuan, then your account balance should be greater than **28.08** USD (1.17 * 24)
+  > The deployment specification is 1000 lines, 1000 tps, and the hourly price is 1.17 USD, then your account balance should be greater than **28.08** USD (1.17 * 24)
 
-
+* There are no unpaid bills in your account.
 
 ## Create deployment
 

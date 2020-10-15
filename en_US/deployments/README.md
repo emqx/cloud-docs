@@ -3,7 +3,7 @@ The deployment is an EMQ X cluster managed by EMQ X Cloud
 
 
 
-## [Price calculation](./calculator.md)
+## [](./calculator.md)
 View the cloud service providers, regions, and deployment **per hour** prices of different specifications supported by EMQ X Cloud.
 
 
