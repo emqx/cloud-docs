@@ -44,5 +44,5 @@ EMQ X Cloud 目前提供 邮箱和 PagerDuty 事件告警集成。如您需要�
 2. 添加 api v2 集成，并复制集成秘钥
   ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
 
-3, 在 EMQ X Cloud 上填写集成秘钥
+3. 在 EMQ X Cloud 上填写集成秘钥
   ![pagerduty_alerts](./_assets/pagerduty_alerts.png)

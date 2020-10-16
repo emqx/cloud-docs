@@ -1,46 +1,64 @@
-* EMQ X Cloud Product Description
-* Pricing
-* Quick start
-  - Create an EMQ X Cloud Account
-  - Create a Free Tier Cluster Deployment 
-  - Connect to Your Deployment
-* Connection to a Deployment
-  - Overview
-  - Connect via Python SDK
-  - Connect via Java SDK
-  - Connect via Node.js SDK
-  - Connect via PHP SDK
-  - Connect via C SDK
-  - Connect via C++ SDK
-  - Connect via Go SDK
-  - Connect via MQTT X
-  - Connect via MQTT.fx
-* Message storage
-  - Overview
-* Best Practices
-* Deployments
-  - Create a New Deployment
-  - View Deployment
-  - EMQ X Dashboard
-    - Monitor
-    - Users & ACL
-    - Clients
-    - Topics
-    - Subscriptions
-    - Rules Engine
-  - Configuring TLS/SSL
-  - Set up a Network Peering Connection
-  - Set up a Network NAT Gateway
-  - Creating API Applications
-  - View Metrics
-  - View Logs
-  - Alerts
-    - events
-    - Alerts integration
-  - Upgrade of deployment specifications
-  - Termination a Deployment
-* Events
-* Billing
-* API
-* FAQ
-* Release Notes
+* [EMQ X Cloud Product Introduction](./README.md)
+* [Product Pricing](./pricing.md)
+* [Quick Start](./quick_start/README.md)
+  - [Create an EMQ X Cloud account](./quick_start/create_account.md)
+  - [Create a free trial deployment](./quick_start/create_free_trial.md)
+  - [Connect to your deployment](./connect_to_deployments/README.md)
+* [Deployment](./deployments/README.md)
+  - [Price estimatation](./deployments/calculator.md)
+  - [Create a new deployment](./deployments/create_deployment.md)
+  - [View deployment](./deployments/README.md)
+  - [EMQ X Dashboard](./deployments/dashboard/README.md)
+    - [Monitor](./deployments/dashboard/monitor.md)
+    - [Authentication](./deployments/dashboard/users_and_acl.md)
+    - [Client](./deployments/dashboard/client.md)
+    - [Topic](./deployments/dashboard/topic.md)
+    - [Subscribe](./deployments/dashboard/subscribe.md)
+    - [Rule engine](./deployments/dashboard/rule_engine/README.md)
+      - [Rule](./deployments/dashboard/rule_engine/rule.md)
+      - [Resource](./deployments/dashboard/rule_engine/resource.md)
+  - Security features and settings
+    - [TLS/SSL configuration](./deployments/tls_ssl.md)
+    - [VPC Peering connection settings](./deployments/vpc_peering.md)
+    - [API Access Settings](./deployments/api.md)
+  - Operation and maintenance management
+    - [Event](./deployments/events.md)
+    - [Metrics](./deployments/metrics.md)
+    - [Log](./deployments/logs.md)
+    - [Alert](./deployments/alerts.md)
+  - [Scaling deployment specifications](./deployments/upgrade_deployment.md)
+  - [Delete deployments](./deployments/delete_deployment.md)
+* [Connect to deployment](./connect_to_deployments/README.md)
+  - [Python SDK connection](./connect_to_deployments/python_sdk.md)
+  - [Go SDK connection](./connect_to_deployments/golang_sdk.md)
+  - [Java SDK connection](./connect_to_deployments/java_sdk.md)
+  - [Node.js SDK connection](./connect_to_deployments/nodejs_sdk.md)
+  - [C SDK connection](./connect_to_deployments/c_sdk.md)
+  - [C++ SDK connection](./connect_to_deployments/cpp_sdk.md)
+  - [C# SDK connection](./connect_to_deployments/c_sharp_sdk.md)
+  - [PHP SDK connection](./connect_to_deployments/php_sdk.md)
+  - [Ruby SDK connection](./connect_to_deployments/ruby_sdk.md)
+  - [Scala SDK connection](./connect_to_deployments/scala_sdk.md)
+  - [Perl SDK connection](./connect_to_deployments/perl_sdk.md)
+  - [MQTT X connection](./connect_to_deployments/mqttx.md)
+  - [MQTT.fx connection](./connect_to_deployments/mqttfx.md)
+* [Message storage (rule engine)](./messages/README.md)
+  - [Bridge data to Kafka](./use_cases/rule_engine/rule_engine_kafka.md)
+  - [Bridge data to InfluxDB](./use_cases/rule_engine/rule_engine_influxDB.md)
+  - [Bridge data to MQTT Broker](./use_cases/rule_engine/rule_engine_mqtt.md)
+  - [Forward offline messages to Webhook](./use_cases/rule_engine/rule_engine_web_hook.md)
+  - [Republish messages](./use_cases/rule_engine/rule_engine_republish.md)
+  - [Save offline messages to MySQL](https://docs.emqx.io/enterprise/latest/en/rule/rule-example.html#create-mysql-rules)
+  - [Save offline messages to PostgreSQL](https://docs.emqx.io/enterprise/latest/en/rule/rule-example.html#create-postgresql-rules)
+  - [Save offline messages to TimescalaDB](https://docs.emqx.io/enterprise/latest/en/rule/rule-example.html#create-timescaledb-rules)
+  - [Save offline messages to Cassandra](https://docs.emqx.io/enterprise/latest/en/rule/rule-example.html#create-cassandra-rules)
+  - [Save offline messages to MongoDB](https://docs.emqx.io/enterprise/latest/en/rule/rule-example.html#create-mongodb-rules)
+* [Billing](./billing/README.md)
+  - [Overview](./billing/overview.md)
+  - [Credits](./billing/credits.md)
+  - [Invoice](./billing/invoices.md)
+* [Development Guide](./dev_guide.md)
+* [API](./api.md)
+* [FAQ](./faq.md)
+* [Contact us](./contact.md)
+* [Release note](./release_notes.md)
