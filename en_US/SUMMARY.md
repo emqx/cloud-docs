@@ -7,6 +7,7 @@
 * [Deployment](./deployments/README.md)
   - [Price estimatation](./deployments/calculator.md)
   - [Create a new deployment](./deployments/create_deployment.md)
+  - [View deployment](./deployments/view_deployment.md)
   - [EMQ X Dashboard](./deployments/dashboard/README.md)
     - [Monitor](./deployments/dashboard/monitor.md)
     - [Authentication](./deployments/dashboard/users_and_acl.md)
