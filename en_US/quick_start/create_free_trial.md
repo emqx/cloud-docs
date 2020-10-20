@@ -8,8 +8,6 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
 * For ordinary users, it allows up to 25 client connections, and for the university plans, it allows up to 100 client connections.
 
-* 10 GB of free traffic per month.
-
 * Use EMQ X's own functions such as rule engine and monitoring management.
 
 * Only MQTT over TLS/SSL, Websockets over TLS/SSL protocol connections are supported.
