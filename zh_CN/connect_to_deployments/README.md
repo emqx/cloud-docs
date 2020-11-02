@@ -24,6 +24,9 @@
 * [在 Electron 项目中连接到部署](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-electron)
 * [在 Vue 项目中连接到部署](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue)
 
+## 使用硬件连接
+* [esp8266 连接到部署](esp8266.md)
+
 ## 使用工具连接
 
 * [MQTT X 连接到部署](mqttx.md)

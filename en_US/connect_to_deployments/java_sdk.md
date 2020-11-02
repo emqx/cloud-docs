@@ -2,6 +2,6 @@
 
 In this tutorial, you will learn how to use **Eclipse Paho Java Client** to connect to EMQ X Cloud deployment.
 
-## Sample code
+## Example Code
 
 * [Example of Java project to connect MQTT ](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java)

@@ -22,7 +22,7 @@ In this tutorial, you will learn how to use Node.js **MQTT.js** client to connec
 
 
 
-## Sample code
+## Example Code
 
 Get [Sample Source Code](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js)
 

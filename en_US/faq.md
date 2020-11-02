@@ -89,7 +89,7 @@ Currently, EMQ X Cloud supports `PayPal` to complete the monthly bill payment.
 
 ### How to get the credits?
 
-If you need to experience all the functions of the standard deployment, you can submit a [ticket](contact.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of creditss based on your business needs
+If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](contact.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of creditss based on your business needs
 
 ### Does it support annual and monthly payment?
 

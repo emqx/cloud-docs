@@ -18,7 +18,7 @@ In this tutorial, you will learn to use Go **paho-mqtt** client to connect to EM
 
 * For free trial and shared deployment EMQ X Cloud, it provides TLS/SSL connection authentication by default, and you also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) for TLS/SSL connection.
 
-## Sample code
+## Example Code
 
 Get [Sample Source Code](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go)
 

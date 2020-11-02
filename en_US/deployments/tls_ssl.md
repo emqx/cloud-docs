@@ -2,7 +2,7 @@
 
 {% hint style="danger" %} This feature is not available in free trial and shared deployment {% endhint %}
 
-EMQ X Cloud **Standard Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
+EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
 
 | Certification Mode  | Whether to support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
 | ---------------------- | ------------------------------------------ | ------------------ | ----------------- | ----------- | --------------------- |

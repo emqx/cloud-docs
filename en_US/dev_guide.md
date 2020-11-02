@@ -116,7 +116,7 @@ It obtains relevant statistical information through the REST API, including the 
 
 
 
-## Access sample code
+## Access Example Code
 
 You can go to [Connect to Deployment](./connect_to_deployments/README.md) to learn more examples of MQTT client library accessing EMQ X Cloud.
 
