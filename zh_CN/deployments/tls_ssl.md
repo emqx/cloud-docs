@@ -4,12 +4,12 @@
 该功能在免费试用和共享部署中不可用
 {% endhint %}
 
-EMQ X Cloud **标准部署** 提供自定义 单向/双向 TLS/SSL 配置，具体如下：
+EMQ X Cloud **独享部署** 提供自定义 单向/双向 TLS/SSL 配置，具体如下：
 
 | 认证方式 | 是否支持自签名证书 | 服务器证书 | 证书链 | 私有秘钥 | 客户端 CA 证书 |
 | -------- | ------------------ | ---------- | ------ | -------- | -------------- |
 | 单向认证 | 支持               | 需要       | 需要   | 需要     | 不需要         |
-| 双向认证 | 支持               | 需要       | 需要   | 需要     | 必传           |
+| 双向认证 | 支持               | 需要       | 需要   | 需要     | 需要           |
 
 
 
@@ -103,7 +103,10 @@ EMQ X Cloud **标准部署** 提供自定义 单向/双向 TLS/SSL 配置，具�
 ## 生成自签名证书
 
 请先确保您已经安装了 [OpenSSL](https://www.openssl.org/)
-### 创建服务端 CA 证书
+
+### CA 证书生成
+
+subj 依据实际使用情况调整。
 
 ```bash
 openssl req \
@@ -112,80 +115,71 @@ openssl req \
     -days 3650 \
     -nodes \
     -x509 \
-    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=CA" \
-    -keyout cloud-ca.key \
-    -out cloud-ca.crt
+    -subj "/C=CN/O=EMQ Technologies Co., Ltd/CN=EMQ CA" \
+    -keyout root-ca.key \
+    -out root-ca.crt
 ```
 
-生成的 `cloud-ca.crt` 为服务端 CA 证书，用于签发服务端证书和连接时验证服务端证书。
+### 服务端证书生成
 
-### 创建服务端证书
-
-生成私钥
+1. 服务端秘钥生成
 ```bash
-openssl genrsa -out cloud.key 2048
-```
-创建 `openssl.cnf` 文件，修改 `alt_names` 的 `CONNECT_ADDRESS` 为部署详情界面的连接地址。`req_distinguished_name` 根据需求进行修改。
-```
-[req]
-default_bits  = 2048
-distinguished_name = req_distinguished_name
-req_extensions = req_ext
-x509_extensions = v3_req
-prompt = no
-[req_distinguished_name]
-countryName = CN
-stateOrProvinceName = XX
-localityName = XX
-organizationName = XX
-commonName = XX
-[req_ext]
-subjectAltName = @alt_names
-[v3_req]
-subjectAltName = @alt_names
-[alt_names]
-IP.1 = CONNECT_ADDRESS
+openssl genrsa -out server.key 2048
 ```
 
-生成证书请求文件 `cloud.csr`
+2. 生成服务端证书请求文件 server.csr
 ```bash
-openssl req -new -key cloud.key -config openssl.cnf -out cloud.csr 
+openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
-用 CA 证书给服务端签名
+3. 用 CA 证书给服务端证书签名
 ```bash
-openssl x509 -req -days 3650 -in cloud.csr -CA cloud-ca.crt -CAkey cloud-ca.key -CAcreateserial -out cloud.crt  -extensions v3_req -extfile openssl.cnf 
-```
-
-上面步骤主要生成了以下文件：
-- cloud.crt：服务端证书
-- cloud.key：私有秘钥
-
-### 创建客户端证书(双向认证)
-
-```bash
-# 创建客户端 CA 证书
-openssl req \
-    -new \
-    -newkey rsa:2048 \
+openssl x509 -req \
     -days 3650 \
-    -nodes \
-    -x509 \
-    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client CA" \
-    -keyout client-ca.key \
-    -out client-ca.crt
+    -in server.csr \
+    -CA root-ca.crt \
+    -CAkey root-ca.key \
+    -CAcreateserial -out server.crt \
+    -extensions v3_req -extfile openssl.cnf
+```
 
-# 创建客户端 key
+4. 查看服务端证书信息
+```bash
+openssl x509 -noout -text -in server.crt
+```
+
+5. 验证证书
+```bash
+openssl verify -CAfile root-ca.crt server.crt
+```
+
+### 客户端证书生成
+
+
+1. 客户端秘钥生成
+```bash
 openssl genrsa -out client.key 2048
-# 创建客户端请求文件
-openssl req -new -key client.key -out client.csr -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client"
-# 用 CA 证书给客户端签名
-openssl x509 -req -days 3650 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
 ```
-以上步骤主要生成以下文件：
-- client-ca.crt：客户端 CA 证书
-- client.key：客户端私有秘钥
-- client.crt：客户端证书
+
+2. 生成客户端证书请求文件 server.csr
+```bash
+openssl req -new -key client.key -out client.csr -subj "/CN=Client"
+```
+
+3. 用 CA 证书给服务端证书签名
+```bash
+openssl x509 -req -days 3650 -in client.csr -CA root-ca.crt -CAkey root-ca.key -CAcreateserial -out client.crt
+```
+
+4. 查看客户端端证书信息
+```bash
+openssl x509 -noout -text -in client.crt
+```
+
+5. 验证证书
+```bash
+openssl verify -CAfile root-ca.crt client.crt
+```
 
 
 

@@ -6,11 +6,11 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
   > If you need to extend the free trial period, you can submit a [ticket](../contact.md) or email (cloud@emqx.io) to get in touch with us
 
-* For ordinary users, it allows up to 25 client connections, and for the university plans, it allows up to 100 client connections.
+* For ordinary users, it allows up to 25 client connections.
 
 * Use EMQ X's own functions such as rule engine and monitoring management.
 
-* Only MQTT over TLS/SSL, Websockets over TLS/SSL protocol connections are supported.
+* Supports MQTT, WebSockets protocol connections.
 
 * > If you need other protocol support, you can submit a [ticket](../contact.md) or send an email (cloud@emqx.io) to get in touch with us
 
@@ -47,7 +47,7 @@ Before connecting to your free trial deployment, you need to wait for the free t
 
 ### 1. Get free trial connection information
 
-Click the free trial deployment to be connected, and you will enter the deployment details page. The free trial of EMQ X Cloud supports TLS and WSS protocol connections. The corresponding ports of the protocol are as follows:
+Click the free trial deployment to be connected, and you will enter the deployment details page. The corresponding ports of the protocol are as follows:
 
 | Protocol   | Port |
 | ---------- | ---- |

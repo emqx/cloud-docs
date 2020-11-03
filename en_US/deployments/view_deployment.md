@@ -16,8 +16,8 @@ Here you can view the following deployment information:
   * Free trial and shared deployment connection address: domain name ending with emqx.cloud suffix
 * Connection port:
 
-  * Standard deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and  **8084**(wss)through [Configuring TLS/SSL](./tls_ssl.md) 
-  * Free trial and shared deployment connection address: open **8883**(tls), **8084**(wss) by default 
+  * Dedicated Deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and  **8084**(wss)through [Configuring TLS/SSL](./tls_ssl.md) 
+  * Free Trial and Shared Deployment port: open **8883**(tls), **8084**(wss) by default 
 
 ![base_info](./_assets/base_info.png)
 

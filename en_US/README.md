@@ -24,7 +24,7 @@ It supports massive devices to connect to the cloud, and provides stable and rel
 - Support standard MQTT protocol (including MQTT over WebSocket), and connect to the cloud with standard MQTT client library
 - Support CoAP, MQTT-SN, LwM2M protocol and private TCP protocol access to meet the cloud requirements of various systems
 - Provide cloud access solutions on different network equipment, industrial/edge equipment
-- Provide open source multi-language/platform access sample code for cross-platform migration guidance
+- Provide open source multi-language/platform access example code for cross-platform migration guidance
 <!-- TODO: example 仓库 -->
 - Perfectly fit EMQ product ecology of [Edge Computing](https://www.emqx.io/products/kuiper), [Edge Industrial Internet of Things](https://www.emqx.io/products/neuron), Support dozens of industrial protocols to connect to the cloud
 

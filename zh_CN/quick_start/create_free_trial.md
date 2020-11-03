@@ -12,7 +12,7 @@
 
 * 使用规则引擎、监控管理等 EMQ X 自有的功能。
 
-* 仅支持 MQTT over TLS/SSL, Websockets over TLS/SSL 协议连接。
+* 支持 MQTT, WebSockets, MQTT over TLS/SSL, Websockets over TLS/SSL 协议连接。
 
   > 如需其他协议支持，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
@@ -54,11 +54,13 @@
 
 ### 1. 获取免费试用连接信息
 
-单击所需连接的免费试用部署，您将进入部署详情页面。EMQ X Cloud 免费试用支持 TLS, WSS 协议连接，协议对应端口如下：
+单击所需连接的免费试用部署，您将进入部署详情页面。EMQ X Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接，协议对应端口如下：
 
 | 协议                | 端口 |
 | ------------------- | ---- |
-| MQTT over TLS       | 8883 |
+| MQTT                | 11xxx|
+| MQTT                | 8083 |
+| MQTT over TLS       | 11xxx|
 | Websockets over TLS | 8084 |
 
 ![connections](./_assets/connections.png)
@@ -72,6 +74,12 @@
 ### 3.  MQTT X 连接到免费试用部署
 
 EMQ X Cloud 推荐使用 [MQTT X](https://mqttx.app/cn/) 测试连接到免费试用。
+
+* MQTT 连接
+  ![mqttx_mqtt](./_assets/mqttx_mqtt.png)
+
+* Websockets 连接
+  ![mqttx_mqtt](./_assets/mqttx_ws.png)
 
 * MQTT over TLS 连接
 

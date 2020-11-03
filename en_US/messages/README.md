@@ -11,4 +11,4 @@ Usage restrictions:
 To ensure that you can use EMQ X Cloud message storage normally, EMQ X Cloud has the following restrictions:
 
 - For free trial deployment and shared deployment: Access to resources such as databases only supports public network access. Therefore, before creating resources, you need to ensure that the resources have public network access capabilities and open security groups.
-- For standard deployment: Access to resources such as databases only supports intranet access. Therefore,  you need to configure VPC peering connections and open security groups before creating resources.
+- For dedicated deployment: Access to resources such as databases only supports intranet access. Therefore,  you need to configure VPC peering connections and open security groups before creating resources.

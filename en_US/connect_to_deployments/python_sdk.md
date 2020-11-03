@@ -20,7 +20,7 @@ In this tutorial, you will learn how to use the Python **paho-mqtt** client to c
 
 
 
-## Sample code
+## Example Code
 
 * [How to use MQTT in Python](https://www.emqx.io/blog/how-to-use-mqtt-in-python)
 * [Connect to deployments and publish messages with MQTT protocol](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/pub_tcp.py)
