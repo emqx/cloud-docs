@@ -23,7 +23,7 @@ For free trial and shared deployment EMQ X Cloud, it provides TLS/SSL connection
 <!-- * [Connect to deployments in Vue project](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue) -->
 
 ## Connect with hardware
-* [Connect to deployments with ESP8266](./esp8266.md)
+* [Connect to deployments with ESP8266](esp8266.md)
 
 ## Connect with tools
 
