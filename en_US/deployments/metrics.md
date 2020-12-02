@@ -2,7 +2,7 @@
 
 EMQ X Cloud provides four incremental metrics: message, client, packet, and delivery. You can view the display chart corresponding to each indicator and the detailed information at a certain point of time.
 
-![metrics_line_detail](_assets/metrics.png)
+![metrics_line_detail](./_assets/metrics.png)
 
 
 
@@ -16,7 +16,7 @@ It shows the incremental status of message sending and receiving in a certain pe
 | messages_received | Number of messages received from the client                  |
 | messages_sent     | Number of messages sent to the client                        |
 
-![metrics_line_detail](_assets/metric_messages.png)
+![metrics_line_detail](./_assets/metric_messages.png)
 
 
 
@@ -31,7 +31,7 @@ Shows the incremental situation of interaction with the client in a certain peri
 | client_subscribe    | Number of client subscriptions          |
 | client_unsubscribe  | Number of client unsubscriptions        |
 
-![metrics_line_detail](_assets/metric_clients.png)
+![metrics_line_detail](./_assets/metric_clients.png)
 
 
 
@@ -44,7 +44,7 @@ It shows the increment of the number of bytes sent and received during the time 
 | send_kibibytes     | Kilobytes of sent packet     |
 | received_kibibytes | Kilobytes of received packet |
 
-![metrics_line_detail](_assets/metric_packages.png)
+![metrics_line_detail](./_assets/metric_packages.png)
 
 
 
@@ -56,4 +56,4 @@ It shows the increment of the number of discarded messages within a time period,
 | ---------------- | :---------------------------------------------- |
 | delivery_dropped | Total number of messages discarded when sending |
 
-![metrics_line_detail](_assets/metric_delivery.png)
+![metrics_line_detail](./_assets/metric_delivery.png)

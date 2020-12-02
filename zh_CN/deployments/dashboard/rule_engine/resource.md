@@ -1,6 +1,6 @@
 # 资源
 
-EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保部署状态为 `running`。您可以参阅 [EMQ X 规则引擎](https://docs.emqx.net/broker/latest/cn/rule/rule-engine.html) 了解更多资源创建。
+EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保部署状态为 `running`。您可以参阅 [EMQ X 规则引擎](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html) 了解更多资源创建。
 
 
 
@@ -8,7 +8,7 @@ EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保�
 
 如下图所示资源，是 WebHook 资源，请求 URL 为某个 IP 的 9910 端口，请求方法为 POST，请求头为空
 
-![img](_assets/resource-detail.png)
+![img](./_assets/resource-detail.png)
 
 ## 创建资源
 

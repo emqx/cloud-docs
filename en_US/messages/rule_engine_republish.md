@@ -1,4 +1,4 @@
-![规则引擎](_assets/web_hook.jpg)
+![规则引擎](./_assets/web_hook.jpg)
 
 # Use the EMQ X Cloud rule engine of message republishing
 
@@ -20,7 +20,7 @@ Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter 
 
 On the deployment page, select the rule engine and click Create.
 
-![规则引擎页](_assets/view_rule_engine.png)
+![规则引擎页](./_assets/view_rule_engine.png)
 
 Our goal is that as long as the msg contains the string of 'hello'  in any message, the engine will be triggered. Certain SQL processing is required here:
 
@@ -55,23 +55,25 @@ Click Test to view the obtained data results. If the settings are correct, the t
 ```
 
 The test output is consistent with expectations, and we can proceed to the next steps.
->Note: If the test fails, please check whether the SQL is compliant
+::: tip Tip
+If the test fails, please check whether the SQL is compliant
+:::
 
-![测试 SQL](_assets/republish_SQL_setting.png)
+![测试 SQL](./_assets/republish_SQL_setting.png)
 
 ### 2. Create actions
 
 Click to add action. On the select action page, select `message republishing`, and click next
 
-![选择动作](_assets/add_republish_action01.png)
+![选择动作](./_assets/add_republish_action01.png)
 
 In the configuration action page, set the target topic to greet, fill in "${msg} - forward from emqx cloud" in the message content template, and set the target QoS as default. Click OK.
 
-![配置动作](_assets/add_republish_action02.png)
+![配置动作](./_assets/add_republish_action02.png)
 
 The created action will be displayed in the response action column. After confirming that the information is correct, click Create in the lower right corner to complete the configuration of the rule engine.
 
-![完成规则引擎](_assets/add_republish_action03.png)
+![完成规则引擎](./_assets/add_republish_action03.png)
 
 ### 3. Test
 
@@ -86,9 +88,9 @@ We try to send the following data to the test topic
 ```
 On the rule engine page, click Monitor and you can see that the number of successes becomes 1.
 
-![查看动作指标](_assets/add_republish_action04.png)
+![查看动作指标](./_assets/add_republish_action04.png)
 
 At the same time, a message forwarded from the topic greet was received.
 
-![收到转发消息](_assets/add_republish_action05.png)
+![收到转发消息](./_assets/add_republish_action05.png)
 

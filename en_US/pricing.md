@@ -18,9 +18,9 @@ The specific billing items are shown in the table below:
 | <div style="width: 120px"></div>Basic fee | It is determined according to the deployment specifications (maximum number of connections, message TPS), and the estimated cost of this part will not change in actual use. |
 | Traffic usage | The basic fee already includes a certain amount of free traffic, and it is valid for the month. If there is any surplus, it will be cleared automatically at the end of the month. After the device communication exceeds the traffic, the excess will be charged at 0.15 USD/GB. |
 
-{% hint style="danger" %}
-Note: Due to different actual usage conditions, there may be differences between the estimated cost and the actual cost.
-{% endhint %}
+::: tip Tip
+Due to different actual usage conditions, there may be differences between the estimated cost and the actual cost.
+:::
 
 
 
@@ -35,8 +35,8 @@ When the balance is insufficient, EMQ X Cloud will send a notification email to 
 - Reserve the right to recover overdraft arrears
 - Clear the deployment running data, **and the lost data cannot be recovered**.
 
-{% hint style="danger" %}
-Note: The overdraft limit is 10 USD by default. You can contact your business manager or submit a ticket to increase the limit
-{% endhint %}
+::: tip Tip
+The overdraft limit is 10 USD by default. You can contact your business manager or submit a ticket to increase the limit
+:::
 
 <!-- ### 计费示例一 TODO 等待添加 ### 计费示例二 -->

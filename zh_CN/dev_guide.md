@@ -4,19 +4,19 @@
 
 本文档提供 EMQ X Cloud 集成用户自己的设备管理系统或物联网平台，进行设备认证、设备行为和状态管理、消息数据集成管理的指导方案。包含内容如下：
 
-- **设备认证信息管理：**平台通过 REST API 进行认证信息增、删、查、改，API 使用参考[管理认证数据](https://docs.emqx.net/cloud/latest/cn/api.html#管理认证数据)。
-- **设备在线状态查看：**
-  - 平台通过 REST API 获取在线设备列表，查询设备是否在线，API 使用参考[客户端](https://docs.emqx.net/cloud/latest/cn/api.html#客户端)。
+- **设备认证信息管理:** 平台通过 REST API 进行认证信息增、删、查、改，API 使用参考[管理认证数据](https://docs.emqx.cn/cn/cloud/latest/api.html#管理认证数据)。
+- **设备在线状态查看:** 
+  - 平台通过 REST API 获取在线设备列表，查询设备是否在线，API 使用参考[客户端](https://docs.emqx.cn/cn/cloud/latest/api.html#客户端)。
   - 平台通过规则引擎在设备上线、下线时改写私有数据库中设备的状态或发送到自建服务（Web 服务）。
-- **设备离线告警：**设备离线时通知平台，判断是否需要告警。
-- **设备上下线历史记录：**
+- **设备离线告警:** 设备离线时通知平台，判断是否需要告警。
+- **设备上下线历史记录:** 
   - 平台通过规则引擎在设备上线、下线时将上下线信息写入私有数据库或发送到自建服务（Web 服务）。
-- **设备发布订阅 ACL 权限管理：**平台通过 REST API 对 ACL 权限进行增、删、查、改，API 使用参考[发布订阅 ACL](https://docs.emqx.net/cloud/latest/cn/api.html#发布订阅-acl)。
-- **在线设备踢下线：**平台将在线设备踢下线。
-- **代理订阅：**平台通过 REST API 为**在线设备**订阅或取消订阅主题，API 使用参考[主题订阅](https://docs.emqx.net/cloud/latest/cn/api.html#主题订阅)。
-- **向设备发布消息：**平台通过 REST API 或 MQTT 接入向指定主题发布消息，支持批量操作，API 使用参考[消息发布](https://docs.emqx.net/cloud/latest/cn/api.html#消息发布)。
-- **获取设备消息进行桥接/存储：**通过规则引擎，将设备事件（上下线、订阅/取消订阅、消息发布）以及消息数据存储至私有数据库（主流关系/非关系，各类时序数据库）、消息队列 Kafka 以及自建 Web 服务。
-- **消息收发、连接数等业务统计：**通过 REST API 获取相关统计信息，API 使用参考[统计指标](https://docs.emqx.net/cloud/latest/cn/api.html#统计指标)。
+- **设备发布订阅 ACL 权限管理:** 平台通过 REST API 对 ACL 权限进行增、删、查、改，API 使用参考[发布订阅 ACL](https://docs.emqx.cn/cn/cloud/latest/api.html#发布订阅-acl)。
+- **在线设备踢下线:** 平台将在线设备踢下线。
+- **代理订阅:** 平台通过 REST API 为**在线设备**订阅或取消订阅主题，API 使用参考[主题订阅](https://docs.emqx.cn/cn/cloud/latest/api.html#主题订阅)。
+- **向设备发布消息:** 平台通过 REST API 或 MQTT 接入向指定主题发布消息，支持批量操作，API 使用参考[消息发布](https://docs.emqx.cn/cn/cloud/latest/api.html#消息发布)。
+- **获取设备消息进行桥接/存储:** 通过规则引擎，将设备事件（上下线、订阅/取消订阅、消息发布）以及消息数据存储至私有数据库（主流关系/非关系，各类时序数据库）、消息队列 Kafka 以及自建 Web 服务。
+- **消息收发、连接数等业务统计:** 通过 REST API 获取相关统计信息，API 使用参考[统计指标](https://docs.emqx.cn/cn/cloud/latest/api.html#统计指标)。
 
 ​            ![img](https://static.emqx.net/images/a912409d8db446e61567c4749946023c.png)            
 

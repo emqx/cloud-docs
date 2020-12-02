@@ -12,10 +12,10 @@ EMQ X 提供了 HTTP API 以实现与外部系统的集成，例如查询客户�
 
 点击 `+新建应用`，会随机生成一个 `APP ID` 和 `APP Secret`
 
-![添加应用](_assets/appllcation_add.png)
+![添加应用](./_assets/app_add.png)
 
 ### 删除应用
 
 点击每个应用右侧的删除图标，可以删除对应的 APP 信息。
 
-![删除应用](_assets/appllcation_del.png)
+![删除应用](./_assets/app_del.png)

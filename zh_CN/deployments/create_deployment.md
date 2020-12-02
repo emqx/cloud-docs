@@ -25,4 +25,4 @@
 6. 等待 5 ~ 10 分钟直至部署运行状态为 **running** 。
 7. 您可以前往 [连接到部署](../connect_to_deployments/README.md) 查看更多方法连接部署。
 
-![create_deployment](_assets/create_deployment.png)
+![create_deployment](./_assets/create_deployment.png)

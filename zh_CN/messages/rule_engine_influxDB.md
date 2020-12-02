@@ -1,4 +1,4 @@
-![规则引擎——InfluxDB](_assets/rule_engine_influxdb.jpg)
+![规则引擎——InfluxDB](./_assets/rule_engine_influxdb.jpg)
 
 # 使用 EMQ X Cloud 规则引擎——InfluxDB
 
@@ -50,7 +50,7 @@ $ docker run --name=influxdb --rm -d -p 8086:8086 -p 8089:8089/udp -v ${PWD}/fil
 
 在部署页面，选择规则引擎，点击创建。
 
-![规则引擎页](_assets/view_rule_engine.png)
+![规则引擎页](./_assets/view_rule_engine.png)
 
 我们的目标是：只要 home/sensor 主题有监控信息时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 
@@ -103,7 +103,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
   "humidity": 46.4
 }
 ```
-![配置SQL](_assets/influxDB_SQL_setting.png)
+![配置SQL](./_assets/influxDB_SQL_setting.png)
 
 >注意：如果无法通过测试，请检查 SQL 是否合规，测试中的 topic 是否与 SQL 填写的一致。
 
@@ -113,13 +113,13 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 点击添加动作，在选择动作页中，选择**保存数据到 InfluxDB**，点击下一步，当配置动作页面，点击创建资源。
 
-![选择动作](_assets/add_influxDB_action02.png)
+![选择动作](./_assets/add_influxDB_action02.png)
 
 在创建资源页面里，资源类型选择 **InfluxDB UDP 服务**, 服务器地址处填写 **<服务器 IP>:8089**
 
 >注意：目前 InfluxDB 使用的是 UDP 端口，所以无法检测是否连接成功
 
-![创建资源](_assets/add_influxDB_action03.png)
+![创建资源](./_assets/add_influxDB_action03.png)
 
 点击确定，返回到配置动作页面，默认选择的是刚才创建的资源。其他字段可以参照下表。
 
@@ -132,7 +132,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 针对我们的情况，这部分可以这样填写
 
-![配置动作](_assets/add_influxDB_action04.png)
+![配置动作](./_assets/add_influxDB_action04.png)
 
 * Measurement 可以随意设置，我们这里填写 "home_sensor"
 * Field Keys 填写我们需要记录的两个数据：temperature 和 humidity
@@ -143,7 +143,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的确认，完成规则引擎的配置。
 
-![完成规则引擎配置](_assets/add_influxDB_action05.png)
+![完成规则引擎配置](./_assets/add_influxDB_action05.png)
 
 
 
@@ -164,7 +164,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 ```
 在规则引擎页中，点击监控可以看到动作指标数的成功数变为 1。
 
-![转发成功](_assets/test_rule_engine_influxDB.png)
+![转发成功](./_assets/test_rule_engine_influxDB.png)
 
 打开服务器，查看 InfluxDB 里的数据。
 

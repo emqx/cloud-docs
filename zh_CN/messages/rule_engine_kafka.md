@@ -1,4 +1,4 @@
-![规则引擎](_assets/web_hook.jpg)
+![规则引擎](./_assets/web_hook.jpg)
 
 # 使用 EMQ X Cloud 规则引擎对接 Kafka
 
@@ -59,7 +59,7 @@ $ kafka-topics.sh --zookeeper <服务器 IP>:2181 --replication-factor 1 --parti
 
 在部署页面，选择规则引擎，点击创建。
 
-![规则引擎页](_assets/view_rule_engine.png)
+![规则引擎页](./_assets/view_rule_engine.png)
 
 我们的目标是：当主题 greet 收到 msg 为 hello 字符时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 
@@ -100,13 +100,13 @@ WHERE
 
 点击添加动作，在选择动作页，选择 桥接数据到 Kafka，点击下一步，在配置动作页面，点击创建资源。
 
-![添加动作](_assets/add_webhook_action01.png)
+![添加动作](./_assets/add_webhook_action01.png)
 
-![添加动作](_assets/add_kafka_action02.png)
+![添加动作](./_assets/add_kafka_action02.png)
 
 在创建资源页面里，资源类型选择 Kafka，在 Kafka 服务器框里填写服务器的 IP 和对应的端口` <ip>:<port>`，这里，我们使用的端口号是 9092。点击测试，返回 “资源可用” 表示测试成功。
 
-![添加动作](_assets/add_kafka_action03.png)
+![添加动作](./_assets/add_kafka_action03.png)
 
 > 注意：
 >
@@ -114,11 +114,11 @@ WHERE
 
 点击确定，返回到配置动作页面，Kafka 主题填写刚刚创建的 testTopic 主题，在消息内容模板里填写 "hello from emqx cloud"，资源 ID 默认，点击确定。
 
-![添加动作](_assets/add_kafka_action04.png)
+![添加动作](./_assets/add_kafka_action04.png)
 
 创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的确认，完成规则引擎的配置。
 
-![添加动作](_assets/add_kafka_action05.png)
+![添加动作](./_assets/add_kafka_action05.png)
 
 ### 4. 测试
 
@@ -133,7 +133,7 @@ WHERE
 ```
 在规则引擎页中，点击监控可以看到动作指标数的成功数变为 1。
 
-![转发成功](_assets/add_kafka_action06.png)
+![转发成功](./_assets/add_kafka_action06.png)
 在 Kafka 实例中，可以看到 EMQ X Cloud 转发过来的消息。
 
 ```sh
@@ -141,4 +141,4 @@ WHERE
 $ docker exec -it mykafka /bin/bas
 $ kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092  --topic testTopic --from-beginning
 ```
-![服务器收到消息](_assets/add_kafka_action07.png)
+![服务器收到消息](./_assets/add_kafka_action07.png)

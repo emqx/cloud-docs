@@ -1,0 +1,660 @@
+{
+  "cn": [
+    {
+      "title": "EMQ X Cloud 产品简介",
+      "path": "./"
+    },
+    {
+      "title": "产品定价",
+      "path": "pricing"
+    },
+    {
+      "title": "快速入门",
+      "children": [
+        {
+          "title": "创建 EMQ X Cloud 账号",
+          "path": "quick_start/create_account"
+        },
+        {
+          "title": "创建免费试用部署",
+          "path": "quick_start/create_free_trial"
+        },
+        {
+          "title": "连接到您的部署",
+          "path": "connect_to_deployments/"
+        }
+      ]
+    },
+    {
+      "title": "部署",
+      "children": [
+        {
+          "title": "价格计算",
+          "path": "deployments/calculator"
+        },
+        {
+          "title": "创建一个新的部署",
+          "path": "deployments/create_deployment"
+        },
+        {
+          "title": "查看部署",
+          "path": "deployments/view_deployment"
+        },
+        {
+          "title": "EMQ X Dashboard",
+          "children": [
+            {
+              "title": "监控",
+              "path": "deployments/dashboard/monitor"
+            },
+            {
+              "title": "认证鉴权",
+              "path": "deployments/dashboard/users_and_acl"
+            },
+            {
+              "title": "客户端",
+              "path": "deployments/dashboard/client"
+            },
+            {
+              "title": "主题",
+              "path": "deployments/dashboard/topic"
+            },
+            {
+              "title": "订阅",
+              "path": "deployments/dashboard/subscribe"
+            },
+            {
+              "title": "规则引擎",
+              "children": [
+                {
+                  "title": "规则",
+                  "path": "deployments/dashboard/rule_engine/rule"
+                },
+                {
+                  "title": "资源",
+                  "path": "deployments/dashboard/rule_engine/resource"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "安全功能和设置",
+          "children": [
+            {
+              "title": "TLS/SSL 设置",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "VPC 对等连接设置",
+              "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "API 访问设置",
+              "path": "deployments/api"
+            }
+          ]
+        },
+        {
+          "title": "运维管理",
+          "children": [
+            {
+              "title": "事件",
+              "path": "deployments/events"
+            },
+            {
+              "title": "指标",
+              "path": "deployments/metrics"
+            },
+            {
+              "title": "日志",
+              "path": "deployments/logs"
+            },
+            {
+              "title": "告警",
+              "path": "deployments/alerts"
+            }
+          ]
+        },
+        {
+          "title": "伸缩部署规格",
+          "path": "deployments/upgrade_deployment"
+        },
+        {
+          "title": "删除部署",
+          "path": "deployments/delete_deployment"
+        }
+      ]
+    },
+    {
+      "title": "连接到部署",
+      "children": [
+        {
+          "title": "Python SDK 连接",
+          "path": "connect_to_deployments/python_sdk"
+        },
+        {
+          "title": "Go SDK 连接",
+          "path": "connect_to_deployments/golang_sdk"
+        },
+        {
+          "title": "Java SDK 连接",
+          "path": "connect_to_deployments/java_sdk"
+        },
+        {
+          "title": "Node.js SDK 连接",
+          "path": "connect_to_deployments/nodejs_sdk"
+        },
+        {
+          "title": "C SDK 连接",
+          "path": "connect_to_deployments/c_sdk"
+        },
+        {
+          "title": "C++ SDK 连接",
+          "path": "connect_to_deployments/cpp_sdk"
+        },
+        {
+          "title": "C# SDK 连接",
+          "path": "connect_to_deployments/c_sharp_sdk"
+        },
+        {
+          "title": "PHP SDK 连接",
+          "path": "connect_to_deployments/php_sdk"
+        },
+        {
+          "title": "Ruby SDK 连接",
+          "path": "connect_to_deployments/ruby_sdk"
+        },
+        {
+          "title": "Scala SDK 连接",
+          "path": "connect_to_deployments/scala_sdk"
+        },
+        {
+          "title": "Perl SDK 连接",
+          "path": "connect_to_deployments/perl_sdk"
+        },
+        {
+          "title": "使用 WebSocket 连接到部署",
+          "path": "https://www.emqx.io/cn/blog/connect-to-mqtt-broker-with-websocket"
+        },
+        {
+          "title": "在 Android Kotlin 项目中连接到部署",
+          "path": "https://www.emqx.io/cn/blog/android-connects-mqtt-using-kotlin"
+        },
+        {
+          "title": "在 Electron 项目中连接到部署",
+          "path": "https://www.emqx.io/cn/blog/how-to-use-mqtt-in-electron"
+        },
+        {
+          "title": "在 Vue 项目中连接到部署",
+          "path": "https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue"
+        },
+        {
+          "title": "使用 ESP8266 连接到部署",
+          "path": "connect_to_deployments/esp8266"
+        },
+        {
+          "title": "MQTT X 连接到部署",
+          "path": "connect_to_deployments/mqttx"
+        },
+        {
+          "title": "MQTT.fx 连接",
+          "path": "connect_to_deployments/mqttfx"
+        }
+      ]
+    },
+    {
+      "title": "消息存储(规则引擎)",
+      "children": [
+        {
+          "title": "简介",
+          "path": "messages/"
+        },
+        {
+          "title": "保存数据到 MySQL",
+          "path": "messages/rule_engine_save_mysql"
+        },
+        {
+          "title": "保存数据到 PostgreSQL",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-postgresql"
+        },
+        {
+          "title": "保存数据到 TimescaleDB",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-timescaledb"
+        },
+        {
+          "title": "保存数据到 InfluxDB",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-influxdb"
+        },
+        {
+          "title": "保存数据到 Cassandra",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-cassandra"
+        },
+        {
+          "title": "保存数据到 MongoDB",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-mongodb"
+        },
+        {
+          "title": "保存数据到 DynamoDB",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-dynamodb"
+        },
+        {
+          "title": "保存数据到 Redis",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-redis"
+        },
+        {
+          "title": "保存数据到 ClickHouse",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-clickhouse"
+        },
+        {
+          "title": "保存数据到 OpenTSDB",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-opentsdb"
+        },
+        {
+          "title": "保存数据到 TDengine",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/backends.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-tdengine"
+        },
+        {
+          "title": "桥接数据到 Kafka",
+          "path": "messages/rule_engine_kafka"
+        },
+        {
+          "title": "桥接数据到 阿里云 Kafka",
+          "path": "messages/rule_engine_aliyun_kafka"
+        },
+        {
+          "title": "桥接数据到 华为云 Kafka",
+          "path": "messages/rule_engine_huawei_kafka"
+        },
+        {
+          "title": "桥接数据到 InfluxDB",
+          "path": "messages/rule_engine_influxDB"
+        },
+        {
+          "title": "桥接数据到 MQTT Broker",
+          "path": "messages/rule_engine_mqtt"
+        },
+        {
+          "title": "离线消息转发到 Webhook",
+          "path": "messages/rule_engine_web_hook"
+        },
+        {
+          "title": "消息重新发布",
+          "path": "messages/rule_engine_republish"
+        },
+        {
+          "title": "离线消息保存到 MySQL",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-mysql"
+        },
+        {
+          "title": "离线消息保存到 PostgreSQL",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-postgresql"
+        },
+        {
+          "title": "离线消息保存到 TimescalaDB",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-timescaledb"
+        },
+        {
+          "title": "离线消息保存到 Cassandra",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-cassandra"
+        },
+        {
+          "title": "离线消息保存到 MongoDB",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0-mongodb"
+        },
+        {
+          "title": "从 Redis 中获取订阅关系",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BB%8E-redis-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB"
+        },
+        {
+          "title": "从 MySQL 中获取订阅关系",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BB%8E-mysql-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB"
+        },
+        {
+          "title": "从 PostgreSQL 中获取订阅关系",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BB%8E-postgresql-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB"
+        },
+        {
+          "title": "从 Cassandra 中获取订阅关系",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BB%8E-cassandra-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB"
+        },
+        {
+          "title": "从 MongoDB 中获取订阅关系",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/rule-example.html#%E4%BB%8E-mongodb-%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%AE%A2%E9%98%85%E5%85%B3%E7%B3%BB"
+        }
+      ]
+    },
+    {
+      "title": "财务管理",
+      "children": [
+        {
+          "title": "账单概览",
+          "path": "billing/overview"
+        },
+        {
+          "title": "代金券",
+          "path": "billing/credits"
+        },
+        {
+          "title": "发票",
+          "path": "billing/invoices"
+        }
+      ]
+    },
+    {
+      "title": "开发指南",
+      "path": "dev_guide"
+    },
+    {
+      "title": "API",
+      "path": "api"
+    },
+    {
+      "title": "FAQ",
+      "path": "faq"
+    },
+    {
+      "title": "联系我们",
+      "path": "contact"
+    },
+    {
+      "title": "发布公告",
+      "path": "release_notes"
+    }
+  ],
+  "en": [
+    {
+      "title": "EMQ X Cloud Product Introduction",
+      "path": "./"
+    },
+    {
+      "title": "Product Pricing",
+      "path": "pricing"
+    },
+    {
+      "title": "Quick Start",
+      "children": [
+        {
+          "title": "Create an EMQ X Cloud account",
+          "path": "quick_start/create_account"
+        },
+        {
+          "title": "Create a free trial deployment",
+          "path": "quick_start/create_free_trial"
+        },
+        {
+          "title": "Connect to your deployment",
+          "path": "connect_to_deployments/"
+        }
+      ]
+    },
+    {
+      "title": "Deployment",
+      "children": [
+        {
+          "title": "Price estimatation",
+          "path": "deployments/calculator"
+        },
+        {
+          "title": "Create a new deployment",
+          "path": "deployments/create_deployment"
+        },
+        {
+          "title": "View deployment",
+          "path": "deployments/view_deployment"
+        },
+        {
+          "title": "EMQ X Dashboard",
+          "children": [
+            {
+              "title": "Monitor",
+              "path": "deployments/dashboard/monitor"
+            },
+            {
+              "title": "Authentication",
+              "path": "deployments/dashboard/users_and_acl"
+            },
+            {
+              "title": "Client",
+              "path": "deployments/dashboard/client"
+            },
+            {
+              "title": "Topic",
+              "path": "deployments/dashboard/topic"
+            },
+            {
+              "title": "Subscribe",
+              "path": "deployments/dashboard/subscribe"
+            },
+            {
+              "title": "Rule engine",
+              "children": [
+                {
+                  "title": "Rule",
+                  "path": "deployments/dashboard/rule_engine/rule"
+                },
+                {
+                  "title": "Resource",
+                  "path": "deployments/dashboard/rule_engine/resource"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Security Features and Setup",
+          "children": [
+            {
+              "title": "TLS/SSL configuration",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "VPC Peering connection settings",
+              "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "API Access Settings",
+              "path": "deployments/api"
+            }
+          ]
+        },
+        {
+          "title": "Monitor Your Deployment",
+          "children": [
+            {
+              "title": "Event",
+              "path": "deployments/events"
+            },
+            {
+              "title": "Metrics",
+              "path": "deployments/metrics"
+            },
+            {
+              "title": "Log",
+              "path": "deployments/logs"
+            },
+            {
+              "title": "Alert",
+              "path": "deployments/alerts"
+            }
+          ]
+        },
+        {
+          "title": "Upgrade service plan",
+          "path": "deployments/upgrade_deployment"
+        },
+        {
+          "title": "Delete deployments",
+          "path": "deployments/delete_deployment"
+        }
+      ]
+    },
+    {
+      "title": "Connect To Deployment",
+      "children": [
+        {
+          "title": "Python SDK connection",
+          "path": "connect_to_deployments/python_sdk"
+        },
+        {
+          "title": "Go SDK connection",
+          "path": "connect_to_deployments/golang_sdk"
+        },
+        {
+          "title": "Java SDK connection",
+          "path": "connect_to_deployments/java_sdk"
+        },
+        {
+          "title": "Node.js SDK connection",
+          "path": "connect_to_deployments/nodejs_sdk"
+        },
+        {
+          "title": "C SDK connection",
+          "path": "connect_to_deployments/c_sdk"
+        },
+        {
+          "title": "C++ SDK connection",
+          "path": "connect_to_deployments/cpp_sdk"
+        },
+        {
+          "title": "C# SDK connection",
+          "path": "connect_to_deployments/c_sharp_sdk"
+        },
+        {
+          "title": "PHP SDK connection",
+          "path": "connect_to_deployments/php_sdk"
+        },
+        {
+          "title": "Ruby SDK connection",
+          "path": "connect_to_deployments/ruby_sdk"
+        },
+        {
+          "title": "Scala SDK connection",
+          "path": "connect_to_deployments/scala_sdk"
+        },
+        {
+          "title": "Perl SDK connection",
+          "path": "connect_to_deployments/perl_sdk"
+        },
+        {
+          "title": "MQTT X connection",
+          "path": "connect_to_deployments/mqttx"
+        },
+        {
+          "title": "MQTT.fx connection",
+          "path": "connect_to_deployments/mqttfx"
+        },
+        {
+          "title": "Connect to deployments with ESP8266",
+          "path": "connect_to_deployments/esp8266"
+        }
+      ]
+    },
+    {
+      "title": "Message storage (rule engine)",
+      "children": [
+        {
+          "title": "Introduction",
+          "path": "messages/"
+        },
+        {
+          "title": "Save data to MySQL",
+          "path": "https://docs.emqx.io/en/enterprise/latest/en/rule/backends.html#save-data-to-mysql"
+        },
+        {
+          "title": "Save data to PostgreSQL",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-postgresql"
+        },
+        {
+          "title": "Save data to TimescaleDB",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-timescaledb"
+        },
+        {
+          "title": "Save data to InfluxDB",
+          "path": "messages/rule_engine_influxDB"
+        },
+        {
+          "title": "Save data to Redis",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-redis"
+        },
+        {
+          "title": "Save data to MongoDB",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-mongodb"
+        },
+        {
+          "title": "Save data to Cassandra",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-cassandra"
+        },
+        {
+          "title": "Save data to DynamoDB",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-dynamodb"
+        },
+        {
+          "title": "Save data to OpenTSDB",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-opentsdb"
+        },
+        {
+          "title": "Save data to TDengine",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-tdengine"
+        },
+        {
+          "title": "Bridge data to Kafka",
+          "path": "messages/rule_engine_kafka"
+        },
+        {
+          "title": "Bridge data to MQTT Broker",
+          "path": "messages/rule_engine_mqtt"
+        },
+        {
+          "title": "Bridge data to RabbitMQ",
+          "path": "https://docs.emqx.io/en/enterprise/latest/en/rule/bridges.html#bridge-data-to-rocketmq"
+        },
+        {
+          "title": "Forward offline messages to Webhook",
+          "path": "messages/rule_engine_web_hook"
+        },
+        {
+          "title": "Republish messages",
+          "path": "messages/rule_engine_republish"
+        }
+      ]
+    },
+    {
+      "title": "Billing",
+      "children": [
+        {
+          "title": "Overview",
+          "path": "billing/overview"
+        },
+        {
+          "title": "Credits",
+          "path": "billing/credits"
+        },
+        {
+          "title": "Invoice",
+          "path": "billing/invoices"
+        }
+      ]
+    },
+    {
+      "title": "Developer Guides",
+      "path": "dev_guide"
+    },
+    {
+      "title": "API",
+      "path": "api"
+    },
+    {
+      "title": "FAQ",
+      "path": "faq"
+    },
+    {
+      "title": "Contact us",
+      "path": "contact"
+    },
+    {
+      "title": "Release note",
+      "path": "release_notes"
+    }
+  ]
+}

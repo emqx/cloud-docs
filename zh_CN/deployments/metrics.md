@@ -2,7 +2,7 @@
 
 EMQ X Cloud 提供了消息、客户端、报文、交付四种增量指标，可以查看每种指标对应的展示图表，某个时间点的详细信息。
 
-![metrics_line_detail](_assets/metrics.png)
+![metrics_line_detail](./_assets/metrics.png)
 
 
 
@@ -16,7 +16,7 @@ EMQ X Cloud 提供了消息、客户端、报文、交付四种增量指标，�
 | messages_received | 接收来自客户端的消息数量                 |
 | messages_sent     | 发送给客户端的消息数量                   |
 
-![metrics_line_detail](_assets/metric_messages.png)
+![metrics_line_detail](./_assets/metric_messages.png)
 
 
 
@@ -31,7 +31,7 @@ EMQ X Cloud 提供了消息、客户端、报文、交付四种增量指标，�
 | client_subscribe    | 客户端订阅次数     |
 | client_unsubscribe  | 客户端取消订阅次数 |
 
-![metrics_line_detail](_assets/metric_clients.png)
+![metrics_line_detail](./_assets/metric_clients.png)
 
 
 
@@ -44,7 +44,7 @@ EMQ X Cloud 提供了消息、客户端、报文、交付四种增量指标，�
 | send_kibibytes     | 发送报文的千字节 |
 | received_kibibytes | 接受报文的千字节 |
 
-![metrics_line_detail](_assets/metric_packages.png)
+![metrics_line_detail](./_assets/metric_packages.png)
 
 
 
@@ -56,4 +56,4 @@ EMQ X Cloud 提供了消息、客户端、报文、交付四种增量指标，�
 | ---------------- | :------------------- |
 | delivery_dropped | 发送时丢弃的消息总数 |
 
-![metrics_line_detail](_assets/metric_delivery.png)
+![metrics_line_detail](./_assets/metric_delivery.png)

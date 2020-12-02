@@ -28,9 +28,9 @@ EMQ X Cloud 作为全托管的 EMQ X 接入平台服务，提供了设备接入�
 <!-- TODO: example 仓库 -->
 - 完美契合 EMQ [边缘计算](https://www.emqx.io/cn/products/kuiper)、[边缘工业物联网](https://www.emqx.io/cn/products/neuron)产品生态，支持数十种工业协议接入上云
 
-{% hint style="info" %}
+::: tip
 多协议以及私有协议支持请[工单](./contact.md)联系进行开通。
-{% endhint %}
+:::
 
 
 
@@ -63,7 +63,7 @@ EMQ X Cloud 支持使用规则引擎配置设备消息、事件的处理、响�
 
 规则引擎不仅提供了清晰、灵活的"配置式"的业务集成方案，简化了业务开发流程，提升用户易用性，降低业务系统与 EMQ X 的耦合度。
 
-![](https://docs.emqx.net/broker/latest/cn/assets/image-20190506171815028.jpg)
+![](https://docs.emqx.cn/cn/broker/latest/assets/image-20190506171815028.jpg)
 
 - **发送到 HTTP 服务与其他 MQTT 服务**
   - 发送数据到 Web 服务
@@ -97,7 +97,7 @@ EMQ X Cloud 支持使用规则引擎配置设备消息、事件的处理、响�
 
 ### 使用限制
 
-相比于 公有云 IoT Hub 平台，EMQ X Cloud 有更少的使用限制。下表中相关的限制取决于购买的连接数与硬件性能，对应的参数 EMQ 官方均进行过严密性能测试。
+相比于公有云 IoT Hub 平台，EMQ X Cloud 有更少的使用限制。下表中相关的限制取决于购买的连接数与硬件性能，对应的参数 EMQ 官方均进行过严密性能测试。
 
 > 以下各表中 EMQ X 的“不限”指不做技术手段限制，相关项的性能取决于部署规格，具体数据以实际使用场景为准。
 

@@ -8,7 +8,7 @@ EMQ X Cloud API follows the REST architecture, and you can access the functions 
 
 You can get the API access address through the deployment details page.
 
-![api-access](_assets/api-access.png)
+![api-access](./_assets/api-access.png)
 
 If we want to get the information of all nodes, we can call it like this:
 
@@ -22,7 +22,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 HTTP API uses the method of [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The id and password must be filled in AppID and AppSecret respectively. You can modify and add AppID/AppSecret by creating an application access in the API access under the deployment details page.
 
-![api-app](_assets/api-app.png)
+![api-app](./_assets/api-app.png)
 
 
 
@@ -368,7 +368,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 {"meta":{"page":1,"limit":10,"count":1},"data":[{"zone":"external","recv_cnt":2,"max_mqueue":1000,"node":"emqx@127.0.0.1","username":"test","mqueue_len":0,"max_inflight":32,"is_bridge":false,"mqueue_dropped":0,"inflight":0,"heap_size":2586,"max_subscriptions":0,"proto_name":"MQTT","created_at":"2020-02-19 17:01:26","proto_ver":4,"reductions":3997,"send_msg":0,"ip_address":"127.0.0.1","send_cnt":0,"mailbox_len":1,"awaiting_rel":0,"keepalive":60,"recv_msg":0,"send_pkt":0,"recv_oct":29,"clientid":"example","clean_start":true,"expiry_interval":0,"connected":true,"port":64491,"send_oct":0,"recv_pkt":1,"connected_at":"2020-02-19 17:01:26","max_awaiting_rel":100,"subscriptions_cnt":0}],"code":0}
 ```
 
-Note: After version 4.1, the contents of the returned `meta` were modified:
+::: tip Tip
+After version 4.1, the contents of the returned `meta` were modified:
+:::
 
 - `count`：It still represents the total number. However, in multi-condition/fuzzy query, it is fixed at -1.
 - `hasnext`：It is a newly added field indicating whether there is a next page.
@@ -390,7 +392,7 @@ Note: After version 4.1, the contents of the returned `meta` were modified:
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | Client information, for details, see [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Array of Objects | Client information, for details, see [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **Examples:**
 
@@ -406,9 +408,11 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 ####  Delete the specified client
 
-> DELETE /clients/{clientid}
->
-> Note that this operation will terminate the connection with the session.
+DELETE /clients/{clientid}
+
+::: tip Tip
+this operation will terminate the connection with the session.
+:::
 
 **URL Path Parameters:**
 
@@ -450,7 +454,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | Information about all clients, see  [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) for details |
+| data | Array of Objects | Information about all clients, see  [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) for details |
 
 **Examples:**
 
@@ -477,7 +481,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type    | Description                                                  |
 | :--- | :------ | :----------------------------------------------------------- |
 | code | Integer | 0                                                            |
-| data | Object  | Client information, for details, see [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Object  | Client information, for details, see [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **Examples:**
 
@@ -506,7 +510,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | Client information, for details, see [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Array of Objects | Client information, for details, see [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **Examples:**
 
@@ -533,7 +537,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | Client information, for details, see [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Array of Objects | Client information, for details, see [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **Examples:**
 
@@ -649,11 +653,11 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 {"meta":{"page":1,"limit":10000,"count":2},"data":[{"topic":"a/+/c","qos":0,"node":"emqx@127.0.0.1","clientid":"78082755-e8eb-4a87-bab7-8277541513f0"},{"topic":"a/b/c","qos":1,"node":"emqx@127.0.0.1","clientid":"7a1dfceb-89c0-4f7e-992b-dfeb09329f01"}],"code":0}
 ```
 
-Note: After 4.1, the contents of the returned `meta` were modified:
-
+::: tip Tip
+After 4.1, the contents of the returned `meta` were modified:
 - `count`：It still represents the total number, but in multi-condition/fuzzy query, it is fixed at -1.
 - `hasnext`：It is a newly added field indicating whether there is a next page.
-
+:::
 
 
 #### Get the subscription information of the specified client in the cluster
@@ -1292,7 +1296,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type    | Description                                                  |
 | :--- | :------ | :----------------------------------------------------------- |
 | code | Integer | 0                                                            |
-| data | Object  | List of statistical metrics on each node, see [GET /api/metrics](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-metrics) for details |
+| data | Object  | List of statistical metrics on each node, see [GET /api/metrics](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-metrics) for details |
 
 **Examples:**
 
@@ -1367,7 +1371,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | List of status data on each node, see [GET /api/stats](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-stats) for details. |
+| data | Array of Objects | List of status data on each node, see [GET /api/stats](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-stats) for details. |
 
 **Examples:**
 

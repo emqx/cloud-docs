@@ -8,7 +8,7 @@
 2. 点击进入对应的部署
 3. 在页面的下方，查找 `API 访问` 模块
 
-![API](_assets/deployment_api.png)
+![API](./_assets/deployment_api.png)
 
 关于 API 的使用方式，可以前往指南 —— [REST API](../api.md)
 
@@ -16,10 +16,10 @@
 
 点击 API 访问的 `+ 新建应用`，生成随机 APP ID 和 APP Secret
 
-![创建 APP](_assets/app_add.png)
+![创建 APP](./_assets/app_add.png)
 
 ## 删除 API 秘钥
 
 点击每个 APP 秘钥右边的删除按钮，进行删除
 
-![创建 APP](_assets/app_del.png)
+![创建 APP](./_assets/app_del.png)

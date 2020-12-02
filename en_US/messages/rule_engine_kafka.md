@@ -1,4 +1,4 @@
-![规则引擎](_assets/web_hook.jpg)
+![规则引擎](./_assets/web_hook.jpg)
 
 # Use EMQ X Cloud rule engine to connect to Kafka
 
@@ -19,13 +19,11 @@ In order to achieve this function, we will complete the following 4 tasks:
 3. Create a resource and an action
 4. Complete the rule engine creation and test
 
->Note:
->
->Before using the rule engine, create a deployment first.
->
->For dedicated deployment users: Please complete [Peering Connection](../../deployments/vpc_peering.md) first, and ensure that the following resources involved are established in the VPC under the peering connection. The IP mentioned below refer to the intranet IP of the resource
->
->For free trial and shared deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
+::: tip Tip
+Before using the rule engine, create a deployment first.
+For dedicated deployment users: Please complete [Peering Connection](../../deployments/vpc_peering.md) first, and ensure that the following resources involved are established in the VPC under the peering connection. The IP mentioned below refer to the intranet IP of the resource
+For free trial and shared deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
+:::
 
 ### 1. Set up Kafka service
 
@@ -59,7 +57,7 @@ Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter 
 
 On the deployment page, select the rule engine and click Create.
 
-![规则引擎页](_assets/view_rule_engine.png)
+![规则引擎页](./_assets/view_rule_engine.png)
 
 Our goal is to trigger the engine when the topic of greet receives msg as hello. Certain SQL processing is required here:
 
@@ -92,31 +90,33 @@ Click Test to view the obtained data results. If the settings are correct, the t
 }
 ```
 
->Note:If test fails, please check whether the SQL is compliant, and whether the topic in the test is consistent with the SQL filled in.
+::: tip Tip
+If test fails, please check whether the SQL is compliant, and whether the topic in the test is consistent with the SQL filled in.
+:::
 
 ### 3. Create resources and actions
 
 Click Add Action. On the Select Action page, select Bridge Data to Kafka, click Next, and on the Configure Action page, click Create Resource.
 
-![添加动作](_assets/add_webhook_action01.png)
+![添加动作](./_assets/add_webhook_action01.png)
 
-![添加动作](_assets/add_kafka_action02.png)
+![添加动作](./_assets/add_kafka_action02.png)
 
 On the Create Resource page, select Kafka as the resource type, and fill in the server's IP and corresponding port `<ip>:<port>` in the Kafka server box. Here, the port number we use is 9092. Click Test and  it indicates that the test is successful if "Resources Available" returns.
 
-![添加动作](_assets/add_kafka_action03.png)
+![添加动作](./_assets/add_kafka_action03.png)
 
-> note:
->
->If the test fails, please check whether the [VPC peering connection](../../deployments/vpc_peering.md) is completed and whether the IP address is correct. 
+::: tip Tip
+If the test fails, please check whether the [VPC peering connection](../../deployments/vpc_peering.md) is completed and whether the IP address is correct. 
+:::
 
 Click OK to return to the configuration action page, fill in the testTopic topic just created in Kafka topic, fill in "hello from emqx cloud" in the message content template, select the default resource ID, and click OK.
 
-![添加动作](_assets/add_kafka_action04.png)
+![添加动作](./_assets/add_kafka_action04.png)
 
 The created action will be displayed in the response action column. After confirming that the information is correct, click Confirm in the lower right corner to complete the configuration of the rule engine.
 
-![添加动作](_assets/add_kafka_action05.png)
+![添加动作](./_assets/add_kafka_action05.png)
 
 ### 4. Test
 
@@ -131,7 +131,7 @@ We try to send the following data to the topic of greet/a
 ```
 On the rule engine page, click Monitor and you can see that the number of successes becomes 1.
 
-![转发成功](_assets/add_kafka_action06.png)
+![转发成功](./_assets/add_kafka_action06.png)
 In the Kafka instance, you can see the messages forwarded by EMQ X Cloud.
 
 ```sh
@@ -139,5 +139,5 @@ In the Kafka instance, you can see the messages forwarded by EMQ X Cloud.
 $ docker exec -it mykafka /bin/bas
 $ kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092  --topic testTopic --from-beginning
 ```
-![服务器收到消息](_assets/add_kafka_action07.png)
+![服务器收到消息](./_assets/add_kafka_action07.png)
 

@@ -16,17 +16,17 @@
 
 * 通过 MQTT 协议连接到部署
 
-![](_assets/mqttx_mqtt.png)
+    ![](./_assets/mqttx_mqtt.png)
 
 * 通过 Websocket 协议连接到部署并订阅消息
 
-![](_assets/mqttx_ws.png)
+    ![](./_assets/mqttx_ws.png)
 
 * 通过 MQTT over TLS/SSL 协议连接到部署并订阅消息
 
-![](_assets/mqttx_mqtts.png)
+    ![](./_assets/mqttx_mqtts.png)
 
 * 通过 Websocket over TLS/SSL 协议连接到部署并订阅消息
 
-![](_assets/mqttx_wss.png)
+    ![](./_assets/mqttx_wss.png)
 
