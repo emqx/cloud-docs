@@ -15,17 +15,17 @@ Before downloading and installing, please visit our [website](https://mqttx.app/
 
 * Connect to deployment with MQTT protocol
 
-![](_assets/mqttx_mqtt.png)
+![](./_assets/mqttx_mqtt.png)
 
 * Connect to the deployment and subscribe to messages with the Websocket protocol
 
-![](_assets/mqttx_ws.png)
+![](./_assets/mqttx_ws.png)
 
 * Connect to deployment and subscribe to messages with MQTT over TLS/SSL protocol
 
-![](_assets/mqttx_mqtts.png)
+![](./_assets/mqttx_mqtts.png)
 
 * Connect to deployment and subscribe to messages with Websocket over TLS/SSL protocol
 
-![](_assets/mqttx_wss.png)
+![](./_assets/mqttx_wss.png)
 

@@ -27,13 +27,13 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 如果您是初次接触阿里云 Kafka，建议您跟随阿里云消息队列 Kafka 版[快速入门](https://help.aliyun.com/document_detail/99949.html)的提示进行创建。
 
-![](_assets/buy_aliyun_kafka02.png)
+![](./_assets/buy_aliyun_kafka02.png)
 
 1.2 创建 EMQ X Cloud 部署
 
 如果您是初次接触 EMQ X Cloud，建议您跟随 EMQ X Cloud [快速入门](../../quick_start/README.md)的提示进行创建。
 
-![](_assets/buy_aliyun_kafka_emqx_deployment.png)
+![](./_assets/buy_aliyun_kafka_emqx_deployment.png)
 
 #### 2. 建立阿里云 Kafka 与 EMQ X Cloud 部署之间的连接
 2.1 你需要在阿里云里创建一个云企业网。进入云企业网页面，并创建一个云企业网示例。并将 Kafka 所在的 VPC 加入云企业网中。
@@ -60,15 +60,15 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 3.1 在阿里云 Kafka 控制台中，点击 Topic 管理 -> 创建 Topic，创建一个名为 testTopic 的主题。
 
-![](_assets/set_aliyun_kafka_topic.png)
+![](./_assets/set_aliyun_kafka_topic.png)
 
 3.2 在 Kafka 实例详情中，白名单 IP 加入: 0.0.0.0/0
 
-![](_assets/set_aliyun_kafka_white_list.png)
+![](./_assets/set_aliyun_kafka_white_list.png)
 
 3.3 记录下 Kafka 实例的 IP 地址。
 
-![](_assets/record_aliyun_kafka_ip.png)
+![](./_assets/record_aliyun_kafka_ip.png)
 
 #### 4. 设置规则引擎的筛选条件
 
@@ -76,7 +76,7 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 在部署页面，选择规则引擎，点击创建。
 
-![规则引擎页](_assets/view_rule_engine.png)
+![规则引擎页](./_assets/view_rule_engine.png)
 
 我们的目标是：当主题 greet 收到 msg 为 hello 字符时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 ● 针对 greet 主题，即 'greet/#'
@@ -115,14 +115,14 @@ WHERE
 #### 5. 创建资源和动作
 点击添加动作，在选择动作页，选择 `桥接数据到 Kafka`，点击 `新建` 创建资源。
 
-![添加动作](_assets/add_webhook_action01.png)
+![添加动作](./_assets/add_webhook_action01.png)
 
-![添加动作](_assets/add_kafka_action02.png)
+![添加动作](./_assets/add_kafka_action02.png)
 
 
 在创建资源页面里，资源类型选择 Kafka，在 Kafka 服务器框里填写服务器的内网 IP 和对应的端口。点击测试，返回 “资源可用” 表示测试成功。
 
-![添加动作](_assets/add_kafka_action03.png)
+![添加动作](./_assets/add_kafka_action03.png)
 
 > 注意：
 >
@@ -130,11 +130,11 @@ WHERE
 
 点击确定，返回到配置动作页面，Kafka 主题填写刚刚创建的 testTopic 主题，在消息内容模板里填写 "hello from emqx cloud"，资源 ID 默认，点击确定。
 
-![添加动作](_assets/add_kafka_action04.png)
+![添加动作](./_assets/add_kafka_action04.png)
 
 创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的确认，完成规则引擎的配置。
 
-![添加动作](_assets/add_kafka_action05.png)
+![添加动作](./_assets/add_kafka_action05.png)
 
 #### 6. 测试
 
@@ -150,8 +150,8 @@ WHERE
 
 在规则引擎页中，点击监控可以看到动作指标数的成功数变为 1。
 
-![转发成功](_assets/add_kafka_action06.png)
+![转发成功](./_assets/add_kafka_action06.png)
 
 在 Kafka 实例中，可以看到 EMQ X Cloud 转发过来的消息。
 
-![](_assets/check_aliyun_kafka_message.png)
+![](./_assets/check_aliyun_kafka_message.png)

@@ -12,10 +12,10 @@ This section mainly introduces API application creation and deletion. For more i
 
 Click `+New Application`, an ʻAPP ID` and ʻAPP Secret` will be randomly generated
 
-![添加应用](_assets/appllcation_add.png)
+![添加应用](./_assets/app_add.png)
 
 ### Delete application
 
 Click the delete icon on the right side of each application to delete the corresponding APP information.
 
-![删除应用](_assets/appllcation_del.png)
+![删除应用](./_assets/app_del.png)

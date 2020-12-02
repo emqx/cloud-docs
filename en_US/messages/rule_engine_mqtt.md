@@ -1,4 +1,4 @@
-![Webhook](_assets/web_hook.jpg)
+![Webhook](./_assets/web_hook.jpg)
 
 # Use EMQ X Cloud rule engine to connect to MQTT Broker
 
@@ -17,13 +17,11 @@ In order to achieve this function, we will complete the following 4 tasks:
 3. Create a resource and an action
 4. Complete the rule engine creation and test
 
->note:
->
->Before using the rule engine, create a deployment first.
->
->For dedicated deployment users: please complete [Peering Connection](../../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
->
->For free trial and shared deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
+::: tip Tip
+Before using the rule engine, create a deployment first.
+For dedicated deployment users: please complete [Peering Connection](../../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
+For free trial and shared deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
+:::
 
 
 #### 1. Create Mosquitto service
@@ -42,7 +40,7 @@ Enter [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter 
 
 On the deployment page, select the rule engine and click Create.
 
-![规则引擎页](_assets/view_rule_engine.png)
+![规则引擎页](./_assets/view_rule_engine.png)
 
 Our goal is to trigger the engine when the topic of greet receives messages. Certain SQL processing is required here:
 
@@ -60,27 +58,28 @@ FROM
 
 #### 3. Create resources and actions
 Click Add Action. On the Select Action page, select Bridge Data to MQTT Broker, click Next, and on the Configure Action page, click Create Resource.
-![添加动作](_assets/add_webhook_action01.png)
+![添加动作](./_assets/add_webhook_action01.png)
 
-![选择 桥接数据到 MQTT Broker](_assets/add_mqtt_action02.png)
+![选择 桥接数据到 MQTT Broker](./_assets/add_mqtt_action02.png)
 
 
 
 On the Create Resource page, select MQTT Bridge as the resource type, fill in the private address of the server in the remote broker address, place the mount point on emqx/, and click Test. If "test available" returns, it means the test was successful.
 
->note:
->
->If the test fails, please check whether the [VPC peering connection](../../deployments/vpc_peering.md) is completed and whether the IP address is correct. 
+::: tip Tip
+If the test fails, please check whether the [VPC peering connection](../../deployments/vpc_peering.md) is completed and whether the IP address is correct. 
+:::
 
-![填写 MQTT 配置](_assets/add_mqtt_action03.png)
+
+![填写 MQTT 配置](./_assets/add_mqtt_action03.png)
 
 Click OK to return to the configuration action page. The resource just created is selected by default. Fill in "${msg} FROM EMQ X CLOUD" in the message content template, and click OK.
 
-![填写消息内容模版](_assets/add_mqtt_action04.png)
+![填写消息内容模版](./_assets/add_mqtt_action04.png)
 
 The created action will be displayed in the response action column. After confirming that the information is correct, click Create in the lower right corner to complete the configuration of the rule engine.
 
-![确认](_assets/add_mqtt_action05.png)
+![确认](./_assets/add_mqtt_action05.png)
 
 
 
@@ -92,5 +91,5 @@ When configuring the action in the third step, we set the mount point to emqx/. 
 
 At the same time, we send "hello" to the greet topic of EMQ X Cloud, and the rule engine will be triggered. We can see that Mosquitto has received the message of "hello FROM EMQ X CLOUD"
 
-![收到转发的消息](_assets/add_mqtt_action06.png)
+![收到转发的消息](./_assets/add_mqtt_action06.png)
 

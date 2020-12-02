@@ -10,4 +10,4 @@
 
 3. 点击确认，完成部署删除
 
-![delete_deployment](_assets/delete_deployment.png)
+![delete_deployment](./_assets/delete_deployment.png)

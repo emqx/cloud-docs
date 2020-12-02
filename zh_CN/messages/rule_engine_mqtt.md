@@ -1,4 +1,4 @@
-![Webhook](_assets/web_hook.jpg)
+![Webhook](./_assets/web_hook.jpg)
 
 # 使用 EMQ X Cloud 规则引擎对接 MQTT Broker
 
@@ -42,7 +42,7 @@ sudo docker run -it -p 1883:1883 adek06/mqtt:mosquitto
 
 在部署页面，选择规则引擎，点击创建。
 
-![规则引擎页](_assets/view_rule_engine.png)
+![规则引擎页](./_assets/view_rule_engine.png)
 
 我们的目标是：当有消息发送到 greet 主题时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 
@@ -59,9 +59,9 @@ FROM
 
 #### 3. 创建资源和动作
 点击添加动作，在选择动作页，选择 桥接数据到 MQTT Broker，点击下一步，在配置动作页面，点击创建资源。
-![添加动作](_assets/add_mqtt_action01.png)
+![添加动作](./_assets/add_mqtt_action01.png)
 
-![选择 桥接数据到 MQTT Broker](_assets/add_mqtt_action02.png)
+![选择 桥接数据到 MQTT Broker](./_assets/add_mqtt_action02.png)
 
 
 
@@ -71,15 +71,15 @@ FROM
 >
 >如果测试失败，请检查是否完成 [VPC 对等连接](../../deployments/vpc_peering.md)，并检查 IP 地址是否正确。
 
-![填写 MQTT 配置](_assets/add_mqtt_action03.png)
+![填写 MQTT 配置](./_assets/add_mqtt_action03.png)
 
 点击确定，返回到配置动作页面，默认选择的是刚才创建的资源，在消息内容模版里填写 "${msg} FROM EMQ X CLOUD"，点击确定。
 
-![填写消息内容模版](_assets/add_mqtt_action04.png)
+![填写消息内容模版](./_assets/add_mqtt_action04.png)
 
 创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的创建，完成规则引擎的配置。
 
-![确认](_assets/add_mqtt_action05.png)
+![确认](./_assets/add_mqtt_action05.png)
 
 
 
@@ -91,5 +91,5 @@ FROM
 
 同时我们发送 "hello" 到 EMQ X Cloud 的 greet 主题，规则引擎就会触发。可以看到 Mosquitto 已经收到消息 "hello FROM EMQ X CLOUD"
 
-![收到转发的消息](_assets/add_mqtt_action06.png)
+![收到转发的消息](./_assets/add_mqtt_action06.png)
 

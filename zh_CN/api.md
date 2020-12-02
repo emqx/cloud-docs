@@ -8,7 +8,7 @@ EMQ X Cloud  API 遵循REST体系结构，您可以通过编程方式访问 EMQ 
 
 您可以在部署详情页面下的 API 访问中，获取到 API 访问地址
 
-![api-access](_assets/api-access.png)
+![api-access](./_assets/api-access.png)
 
 假如我们想要获取所有节点的信息，可以这样去调用：
 
@@ -22,7 +22,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authentication) 方式，id 和 password 须分别填写 AppID 和 AppSecret。 您可以在部署详情页面下的 API 访问中，通过创建应用访问来修改和添加 AppID/AppSecret。
 
-![api-app](_assets/api-app.png)
+![api-app](./_assets/api-app.png)
 
 
 
@@ -396,7 +396,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **示例:**
 
@@ -456,7 +456,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | 所有客户端的信息，详情请参看 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Array of Objects | 所有客户端的信息，详情请参看 [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **示例:**
 
@@ -483,7 +483,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type    | Description                                                  |
 | :--- | :------ | :----------------------------------------------------------- |
 | code | Integer | 0                                                            |
-| data | Object  | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Object  | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **示例:**
 
@@ -512,7 +512,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **示例:**
 
@@ -539,7 +539,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-clients) |
+| data | Array of Objects | 客户端的信息，详细请参见 [GET /api/clients](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-clients) |
 
 **示例:**
 
@@ -1298,7 +1298,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type    | Description                                                  |
 | :--- | :------ | :----------------------------------------------------------- |
 | code | Integer | 0                                                            |
-| data | Object  | 各节点上的统计指标列表，详见 [GET /api/metrics](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-metrics) |
+| data | Object  | 各节点上的统计指标列表，详见 [GET /api/metrics](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-metrics) |
 
 **示例:**
 
@@ -1375,7 +1375,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 | Name | Type             | Description                                                  |
 | :--- | :--------------- | :----------------------------------------------------------- |
 | code | Integer          | 0                                                            |
-| data | Array of Objects | 各节点上的状态数据列表，详见 [GET /api/stats](https://docs.emqx.net/enterprise/latest/cn/advanced/http-api.html#endpoint-get-stats) |
+| data | Array of Objects | 各节点上的状态数据列表，详见 [GET /api/stats](https://docs.emqx.cn/cn/enterprise/latest/advanced/http-api.html#endpoint-get-stats) |
 
 **示例:**
 

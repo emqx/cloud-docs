@@ -1,8 +1,8 @@
 # 配置 TLS/SSL
 
-{% hint style="danger" %}
+::: danger
 该功能在免费试用和共享部署中不可用
-{% endhint %}
+:::
 
 EMQ X Cloud **独享部署** 提供自定义 单向/双向 TLS/SSL 配置，具体如下：
 

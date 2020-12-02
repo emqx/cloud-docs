@@ -23,4 +23,4 @@ In this tutorial, you will learn how to create a new EMQ X Cloud deployment. To 
 6. Wait 5 ~ 10 minutes until the deployment running status is **running**.
 7. You can go to [Connect to Deployment](../connect_to_deployments/README.md) to see more ways to connect to deployment.
 
-![create_deployment](_assets/create_deployment.png)
+![create_deployment](./_assets/create_deployment.png)

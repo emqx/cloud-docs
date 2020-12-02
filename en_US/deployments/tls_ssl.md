@@ -1,6 +1,8 @@
 # Configure TLS/SSL
 
-{% hint style="danger" %} This feature is not available in free trial and shared deployment {% endhint %}
+::: danger
+This feature is not available in free trial and shared deployment
+:::
 
 EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
 

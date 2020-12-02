@@ -8,7 +8,7 @@ You can enter the API management section in the following ways:
 2. Click to enter the corresponding deployment
 3. At the bottom of the page, find the `API Access` module
 
-![API](_assets/deployment_api.png)
+![API](./_assets/deployment_api.png)
 
 For how to use the API, you can go to the guide—— [REST API](../api.md)
 
@@ -16,10 +16,10 @@ For how to use the API, you can go to the guide—— [REST API](../api.md)
 
 Click on the `+ New Application` of API access to generate random APP ID and APP Secret
 
-![创建 APP](_assets/app_add.png)
+![创建 APP](./_assets/app_add.png)
 
 ## Delete API key
 
 Click the delete button to the right of each APP key to delete
 
-![创建 APP](_assets/app_del.png)
+![创建 APP](./_assets/app_del.png)
