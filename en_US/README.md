@@ -40,19 +40,19 @@ To ensure flexibility, EMQ X Cloud does not directly provide device management r
 
 ![image (1)](./_assets/http_rest_api.png)
 
-- **Device authentication information management: **The platform uses REST API to add, delete, check, and modify authentication information. 
+- **Device authentication information management:** The platform uses REST API to add, delete, check, and modify authentication information. 
 - **View online status of device:**
     - The platform obtains a list of online devices through the REST API to check whether the device is online. 
     - The platform uses the rule engine to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
-- **Device offline alarm**: Notify the platform when the device is offline to determine whether an alarm is needed.
+- **Device offline alarm:** Notify the platform when the device is offline to determine whether an alarm is needed.
 - **Device online and offline history:**
     - The platform uses the rule engine to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
-- **Device publish and subscribe to ACL permission management**: The platform uses the REST API to add, delete, check and modify ACL permissions.
-- **Kick online device offline**: The platform kicked off online devices.
-- **Proxy subscription**: The platform uses the REST API to subscribe or unsubscribe to topics for **online devices**. 
-- **Publish a message to the device**: The platform publishes messages to specified topics through REST API or MQTT access, and supports batch operations.
-- **Get device messages for bridging/storing**: Through the rule engine, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
-- **Business(such as message sending and receiving, connections) statistics**: Get relevant statistics through REST API. 
+- **Device publish and subscribe to ACL permission management:** The platform uses the REST API to add, delete, check and modify ACL permissions.
+- **Kick online device offline:** The platform kicked off online devices.
+- **Proxy subscription:** he platform uses the REST API to subscribe or unsubscribe to topics for **online devices**. 
+- **Publish a message to the device:** The platform publishes messages to specified topics through REST API or MQTT access, and supports batch operations.
+- **Get device messages for bridging/storing:** Through the rule engine, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
+- **Business(such as message sending and receiving, connections) statistics:** Get relevant statistics through REST API. 
 
 
 
