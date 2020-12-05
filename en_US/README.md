@@ -13,11 +13,11 @@ With the infrastructure provided by cloud service providers, EMQ X Cloud provide
 
 
 
-### Product capabilities
+## Product capabilities
 
 As a fully hosted EMQ X access platform service, EMQ X Cloud provides functions such as device access, device management, and message storage.
 
-#### Device access
+### Device access
 
 It supports massive devices to connect to the cloud, and provides stable and reliable two-way communication capabilities between devices and devices, devices and applications.
 
@@ -34,7 +34,7 @@ For multi-protocol and private protocol support, please contact [Tickets](./cont
 
 
 
-#### Device management
+### Device management
 
 To ensure flexibility, EMQ X Cloud does not directly provide device management related functions, but opens up capabilities through REST API and rule engine. Users can choose the functions they need to integrate with their own device management system and IoT platform.
 
@@ -44,19 +44,19 @@ To ensure flexibility, EMQ X Cloud does not directly provide device management r
 - **View online status of device:**
     - The platform obtains a list of online devices through the REST API to check whether the device is online. 
     - The platform uses the rule engine to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
-- **Device offline alarm:** Notify the platform when the device is offline to determine whether an alarm is needed.
+- **Device offline alarm**: Notify the platform when the device is offline to determine whether an alarm is needed.
 - **Device online and offline history:**
     - The platform uses the rule engine to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
-- **Device publish and subscribe to ACL permission management:** The platform uses the REST API to add, delete, check and modify ACL permissions.
-- **Kick online device offline:** The platform kicked off online devices.
-- **Proxy subscription:** The platform uses the REST API to subscribe or unsubscribe to topics for **online devices**. 
-- **Publish a message to the device:** The platform publishes messages to specified topics through REST API or MQTT access, and supports batch operations.
-- **Get device messages for bridging/storing: **Through the rule engine, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
-- **Business(such as message sending and receiving, connections) statistics: **Get relevant statistics through REST API. 
+- **Device publish and subscribe to ACL permission management**: The platform uses the REST API to add, delete, check and modify ACL permissions.
+- **Kick online device offline**: The platform kicked off online devices.
+- **Proxy subscription**: The platform uses the REST API to subscribe or unsubscribe to topics for **online devices**. 
+- **Publish a message to the device**: The platform publishes messages to specified topics through REST API or MQTT access, and supports batch operations.
+- **Get device messages for bridging/storing**: Through the rule engine, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
+- **Business(such as message sending and receiving, connections) statistics**: Get relevant statistics through REST API. 
 
 
 
-#### Message storage (rule engine)
+### Message storage (rule engine)
 
 EMQ X Cloud supports the use of a rule engine to configure device message, process event, and response rules.
 
@@ -98,7 +98,7 @@ The rule engine not only provides a clear and flexible "configurable" business i
   
   
 
-### Restrictions on use
+## Restrictions on use
 
 Compared with the public cloud IoT Hub platform, EMQ X Cloud has fewer usage restrictions. The relevant restrictions in the following table depend on the number of connections purchased and hardware performance. The corresponding parameters have been rigorously tested by EMQ.
 
@@ -118,7 +118,7 @@ Compared with the public cloud IoT Hub platform, EMQ X Cloud has fewer usage res
 | Single message length                               | 1024KB by default. 1-256MB can be applied                    | 256KB                                   |
 | Maximum storage time of offline messages            | No restriction by default                                    | 1 week                                  |
 
-#### Topic restriction
+### Topic restriction
 
 | **Restriction description**                         | **EMQ X**                       | Public cloud IoT Hub                                         |
 | --------------------------------------------------- | ------------------------------- | ------------------------------------------------------------ |
@@ -128,42 +128,42 @@ Compared with the public cloud IoT Hub platform, EMQ X Cloud has fewer usage res
 
 
 
-### Product advantages
+## Product advantages
 
-#### Complete protocol support
+### Complete protocol support
 
 It supports MQTT v3.1, v3.1.1 and v5.0 protocol versions. It is the world's first public cloud service that supports MQTT 5.0, supports MQTT WebSocket service, and fully supports QoS0, QoS1 and QoS2 level of MQTT messages.
 
-#### Fewer usage restrictions
+### Fewer usage restrictions
 
 Most public cloud IoT platforms have various usage restrictions, including the number of MQTT topics, message size, message rate, and access/communication mode. EMQ X Cloud has fewer usage restrictions, allowing you to integrate and use without hindrance.
 
-#### Significant cost advantage
+### Significant cost advantage
 
 It charges based on cluster instance and message traffic, not the number of messages, and the use of API and rule engines is not limited. The cost is still clear and controllable when the business is massively expanded.
 
 
-#### Fully hosted operation and maintenance
+### Fully hosted operation and maintenance
 
 It can create a highly available MQTT cluster within a few minutes and immediately start device access. After that, our global service support team and EMQ experts will provide 7*24 uninterrupted operation and maintenance services throughout the entire life cycle. You can use tickets, emails, phone calls at any time to get quick responses.
 
 
-#### High availability and data security
+### High availability and data security
 
 It adopts a highly redundant cluster architecture to ensure high availability of services. It can ensure your data security and business stability through a unique isolation environment. Each deployed cluster has its own public IP, dedicated VPC network, independent EMQ X server and database server , Which is more secure and reliable.
 
 
-#### Multiple protocol access, customize function extension
+### Multiple protocol access, customize function extension
 
 It supports the access of multiple communication protocols including MQTT, MQTT-SN, CoAP, LwM2M, and private TCP protocols, covering various industry applications; the privatization function can be customized according to your special usage scenarios to fully meet business needs.
 
 
-#### Capacity estimation and scaling
+### Capacity estimation and scaling
 
 The capacity is automatically estimated through the number of connections and message throughput, and the scaling plan is made through close monitoring. The cluster size can be smoothly adjusted according to the business scale.
 
 
-#### Flexible data stream solution
+### Flexible data stream solution
 
 It supports real-time preprocessing of device event and message data, and store it in more than ten databases and message systems such as MySQL, Kafka, and InfluxDB on the cloud.
 
