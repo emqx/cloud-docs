@@ -559,7 +559,7 @@
         },
         {
           "title": "Save data to MySQL",
-          "path": "https://docs.emqx.io/en/enterprise/latest/en/rule/backends.html#save-data-to-mysql"
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-mysql"
         },
         {
           "title": "Save data to PostgreSQL",
@@ -607,7 +607,7 @@
         },
         {
           "title": "Bridge data to RabbitMQ",
-          "path": "https://docs.emqx.io/en/enterprise/latest/en/rule/bridges.html#bridge-data-to-rocketmq"
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/bridges.html#bridge-data-to-rocketmq"
         },
         {
           "title": "Forward offline messages to Webhook",
