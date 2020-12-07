@@ -115,7 +115,7 @@ Click Add Action, on the Select Action page, select **Save data to InfluxDB**, a
 
 ![选择动作](./_assets/add_influxDB_action02.png)
 
-On the Create Resource page, select **InfluxDB UDP Service** for the resource type, and fill in  **<Server IP>:8089**for the server address
+On the Create Resource page, select **InfluxDB UDP Service** for the resource type, and fill in  **\<Server IP>:8089**for the server address
 
 ::: tip Tip
 Currently, InfluxDB uses a UDP port. Therefore, it is impossible to detect whether the connection is successful
