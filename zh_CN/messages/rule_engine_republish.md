@@ -1,8 +1,8 @@
-![规则引擎](./_assets/web_hook.jpg)
-
 ---
 title: 使用 EMQ X Cloud 规则引擎消息重新发布
 ---
+
+![规则引擎](./_assets/web_hook.jpg)
 
 # 使用 EMQ X Cloud 规则引擎消息重新发布
 

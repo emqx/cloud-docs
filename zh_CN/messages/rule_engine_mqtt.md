@@ -1,8 +1,8 @@
-![Webhook](./_assets/web_hook.jpg)
-
 ---
 title: 使用 EMQ X Cloud 规则引擎对接 MQTT Broker
 ---
+
+![Webhook](./_assets/web_hook.jpg)
 
 # 使用 EMQ X Cloud 规则引擎对接 MQTT Broker
 
