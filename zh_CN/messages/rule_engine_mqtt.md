@@ -1,5 +1,9 @@
 ![Webhook](./_assets/web_hook.jpg)
 
+---
+title: 使用 EMQ X Cloud 规则引擎对接 MQTT Broker
+---
+
 # 使用 EMQ X Cloud 规则引擎对接 MQTT Broker
 
 为了方便多个 MQTT Broker 进行消息桥接，你可以使用规则引擎进行操作。

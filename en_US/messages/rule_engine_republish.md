@@ -1,5 +1,9 @@
 ![规则引擎](./_assets/web_hook.jpg)
 
+---
+title: Use the EMQ X Cloud rule engine of message republishing
+---
+
 # Use the EMQ X Cloud rule engine of message republishing
 
 When a message meets a certain features, you want to publish it to other topics without writing code. EMQ X Cloud has prepared such a service for you: By using the EMQ X Cloud rule engine-message republishing, you can easily achieve this function.

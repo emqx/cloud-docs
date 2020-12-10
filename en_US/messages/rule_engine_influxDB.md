@@ -1,5 +1,9 @@
 ![规则引擎——InfluxDB](./_assets/rule_engine_influxdb.jpg)
 
+---
+title: Use EMQ X Cloud rule engine-InfluxDB
+---
+
 # Use EMQ X Cloud rule engine-InfluxDB
 
 [InfluxDB](https://www.influxdata.com/) is an open source database for storing and analyzing time series data, with built-in HTTP API, support for SQL-like statements, and unstructured features that are very friendly for users. Its powerful data throughput and stable performance make it very suitable for the IoT field.

@@ -1,5 +1,9 @@
 ![Webhook](./_assets/web_hook.jpg)
 
+---
+title: Use EMQ X Cloud rule engine to connect to MQTT Broker
+---
+
 # Use EMQ X Cloud rule engine to connect to MQTT Broker
 
 In order to facilitate the message bridging of multiple MQTT Brokers, you can use the rule engine to operate.

@@ -1,5 +1,9 @@
 ![规则引擎——InfluxDB](./_assets/rule_engine_influxdb.jpg)
 
+---
+title: 使用 EMQ X Cloud 规则引擎——InfluxDB
+---
+
 # 使用 EMQ X Cloud 规则引擎——InfluxDB
 
 [InfluxDB](https://www.influxdata.com/) 是一个用于存储和分析时间序列数据的开源数据库，内置 HTTP API，类 SQL 语句的支持和无结构的特性对使用者而言都非常友好。它强大的数据吞吐能力以及稳定的性能表现使其非常适合 IoT 领域。

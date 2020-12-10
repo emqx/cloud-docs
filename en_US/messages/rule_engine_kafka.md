@@ -1,5 +1,9 @@
 ![规则引擎](./_assets/web_hook.jpg)
 
+---
+title: Use EMQ X Cloud rule engine to connect to Kafka
+---
+
 # Use EMQ X Cloud rule engine to connect to Kafka
 
 [Kafka](https://kafka.apache.org/) is an open source stream processing platform developed by the Apache Software Foundation. The goal of this project is to provide a unified, high-throughput and low-latency platform for processing real-time data. It is a "large-scale publish/subscribe message queue based on a distributed transaction log architecture", which makes it an enterprise-level infrastructure for processing valuable streaming data.
