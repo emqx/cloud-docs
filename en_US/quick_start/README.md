@@ -1,4 +1,4 @@
-# EMQ X Cloud quick start
+# Introduction
 
 Welcome to use EMQ X Cloud. EMQ X Cloud is the first fully hosted MQTT 5.0 public cloud service in the world. With the support of [EMQ X Cloud](https://cloud.emqx.io), you can create an EMQ X cluster on the cloud and use all the features of EMQ X Enterprise Edition. This allows you to spend more time on business connection and less time for EMQ X operation, maintenance and management. This tutorial will guide you through the process of creating and connecting to EMQ X Cloud deployment. Before starting, let us review some core concepts and phrases:
 

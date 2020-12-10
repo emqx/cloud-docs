@@ -1,4 +1,4 @@
-# Deployment
+# Introduction
 The deployment is an EMQ X cluster managed by EMQ X Cloud
 
 

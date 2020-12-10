@@ -12,6 +12,10 @@
       "title": "快速入门",
       "children": [
         {
+          "title": "简介",
+          "path": "quick_start/"
+        },
+        {
           "title": "创建 EMQ X Cloud 账号",
           "path": "quick_start/create_account"
         },
@@ -29,6 +33,10 @@
       "title": "部署",
       "children": [
         {
+          "title": "简介",
+          "path": "deployments/"
+        },
+        {
           "title": "价格计算",
           "path": "deployments/calculator"
         },
@@ -43,6 +51,10 @@
         {
           "title": "EMQ X Dashboard",
           "children": [
+            {
+              "title": "简介",
+              "path": "deployments/dashboard/"
+            },
             {
               "title": "监控",
               "path": "deployments/dashboard/monitor"
@@ -66,6 +78,10 @@
             {
               "title": "规则引擎",
               "children": [
+                {
+                  "title":"简介",
+                  "path":"deployments/dashboard/rule_engine/"
+                },
                 {
                   "title": "规则",
                   "path": "deployments/dashboard/rule_engine/rule"
@@ -129,6 +145,10 @@
     {
       "title": "连接到部署",
       "children": [
+        {
+          "title": "简介",
+          "path": "connect_to_deployments/"
+        },
         {
           "title": "Python SDK 连接",
           "path": "connect_to_deployments/python_sdk"
@@ -324,6 +344,10 @@
       "title": "财务管理",
       "children": [
         {
+          "title": "简介",
+          "path": "billing/"
+        },
+        {
           "title": "账单概览",
           "path": "billing/overview"
         },
@@ -371,6 +395,10 @@
       "title": "Quick Start",
       "children": [
         {
+          "title": "Introduction",
+          "path": "quick_start/"
+        },
+        {
           "title": "Create an EMQ X Cloud account",
           "path": "quick_start/create_account"
         },
@@ -388,6 +416,10 @@
       "title": "Deployment",
       "children": [
         {
+          "title": "Introduction",
+          "path": "deployments/"
+        },
+        {
           "title": "Price estimatation",
           "path": "deployments/calculator"
         },
@@ -402,6 +434,10 @@
         {
           "title": "EMQ X Dashboard",
           "children": [
+            {
+              "title": "Introduction",
+              "path": "deployments/dashboard/"
+            },
             {
               "title": "Monitor",
               "path": "deployments/dashboard/monitor"
@@ -425,6 +461,10 @@
             {
               "title": "Rule engine",
               "children": [
+                {
+                  "title":"Introduction",
+                  "path":"deployments/dashboard/rule_engine/"
+                },
                 {
                   "title": "Rule",
                   "path": "deployments/dashboard/rule_engine/rule"
@@ -488,6 +528,10 @@
     {
       "title": "Connect To Deployment",
       "children": [
+        {
+          "title": "Introduction",
+          "path": "connect_to_deployments/"
+        },
         {
           "title": "Python SDK connection",
           "path": "connect_to_deployments/python_sdk"
@@ -618,6 +662,10 @@
     {
       "title": "Billing",
       "children": [
+        {
+          "title": "Introduction",
+          "path": "billing/"
+        },
         {
           "title": "Overview",
           "path": "billing/overview"

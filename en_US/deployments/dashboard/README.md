@@ -1,4 +1,4 @@
-# EMQ X Dashboard manual
+# Introduction
 
 EMQ X Cloud provides Dashboard to facilitate users to manage device and monitor related indicators. Through the Dashboard, you can view basic server information, load status, and statistical data, and you can view information such as the connection status of a client or even disconnect it.
 
