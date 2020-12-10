@@ -57,56 +57,55 @@ EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL con
   ```
   
 
+## New certificate
 
-
-## Create a certificate
-
-1. Login to [EMQ X Cloud console](<https://cloud.emqx.io/console>).
-2. Enter the deployment details, click the `+TLS/SSL configuration` button to configure the certificate content, you can upload the file or directly fill in the certificate content
-   - Authentication type
-     - One-way authentication: Only the client verifies the server certificate.
-     - Two-way authentication: client and server mutually verify certificates.
-   - Certificate: server certificate
-   - Certificate chain: certificate chain, usually be provided when a third-party organization issues a certificate, if missing, you can go to [Certificate Chain Completion](Certificate Chain Completion: https://myssl.com/chain_download.html) to complete
-   - Private key: private key
-   - CA certificate: When you select two-way authentication, you need to provide the client's CA certificate
-3. After filling in, click "OK".
+1. Login [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
+2. Go to the deployment details and click on the `+TLS/SSL configuration` button to configure the certificate contents, either by uploading a file or by filling in the certificate contents directly
+   - Type of certification:
+     - One-way authentication: only the client verifies the server-side certificate
+     - Two-way authentication: the client and the server validate each other's certificates.
+   - Certificates: server-side certificates
+   - Certificate chain: the certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
+   - Private keys: private keys
+   - CA certificate: the client's CA certificate is required when selecting two-way certification
+3. When you have completed the form, click on "OK".
 
 ![tls](./_assets/tls.png)
 
 
 
-## Test connection
+## Test connections
 
-Before testing, please make sure to create authentication information, refer to [Authentication](./dashboard/users_and_acl.md), and you can use [MQTTX](<https://mqttx.app/>) to connect and test. In this tutorial, we will use MQTTX for testing:
-
-- Create a new connection, enter the Name, and randomly generate the Client ID
-- Select Host, fill in the deployment connection address and port
-  - If you choose SSL connection, select `mqtts://` and `8883` port
-  - If you choose Websocket with SSL, select `wss://` and `8084` ports
-- Enter the created authentication information: username and password
-- Select true for SSL/TLS 
+Before testing, make sure that you have created authentication information, refer to [certification and authentication](./dashboard/users_and_acl.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+- To create a new connection, enter the Name, Client ID is randomly generated
+- Select Host and fill in the deployed connection address and port
+  - If you select an SSL connection, select ports `mqtts://` and `8883`
+  - If you select Websocket with SSL, select ports `wss://` and `8084`
+- Enter the authentication information you have created: username and password
+- Select true on SSL/TLS
 - Certificate selection
-  - For certificates certified by third-party organizations, there is no need to provide CA certificates
-  - For self-signed certificate, you need to provide server CA certificate, if two-way authentication is used, you also need to provide client certificate and private key
+  - Certificates certified by third-party authorities, no CA certificate required
+  - For self-signed certificates, a server-side CA certificate is required or, for two-way certification, a client-side certificate and private key are required
 - Turn on strict mode
 - Connect
 
 ![mqttx_tls](./_assets/mqttx_tls.png)
 
-## Delete certificate
-Deletion of the certificate will disconnect the client from `8883` and `8084`. Please make sure that this will not affect your business.
-
-1. Log in to [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
-2. Enter the deployment details and click the delete button of the certificate in the `TLS/SSL configuration` section.
-3. Click "OK" in the dialog box to complete the deletion.
-
+## Delete the certificate
+Deleting the certificate will disconnect the client from `8883` and `8084`, please ensure that this does not affect your business.
+1. Login [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
+2. To access the deployment details, click on the delete button for the certificate in the `TLS/SSL Configuration` section.
+3. Click on "OK" in the dialog to complete the deletion.
 
 
-## Generate a self-signed certificate
 
-Please make sure you have installed [OpenSSL](https://www.openssl.org/)
-### Create server CA certificate
+## Generate self-signed certificates
+
+Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
+
+### Generation of CA certificate
+
+subj adjusted to actual use.
 
 ```bash
 openssl req \
@@ -115,112 +114,133 @@ openssl req \
     -days 3650 \
     -nodes \
     -x509 \
-    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=CA" \
-    -keyout cloud-ca.key \
-    -out cloud-ca.crt
+    -subj "/C=CN/O=EMQ Technologies Co., Ltd/CN=EMQ CA" \
+    -keyout root-ca.key \
+    -out root-ca.crt
 ```
 
-The generated `cloud-ca.crt` is the server CA certificate, which is used to issue the server certificate and verify the server certificate when connecting.
+### Generation of server-side certificate 
 
-### Create server certificate
-
-Generate private key
+1. Generation of server-side secret key
 ```bash
-openssl genrsa -out cloud.key 2048
+openssl genrsa -out server.key 2048
 ```
-Create the ʻopenssl.cnf` file and modify the `CONNECT_ADDRESS` of ʻalt_names` to the connection address of the deployment details interface. `req_distinguished_name` is modified as required.
 
+2. Create `openssl.cnf` file
+
+Replace the DNS.1 address with the current deployment address
 ```
+cat << EOF > ./openssl.cnf
+[policy_match]
+countryName             = match
+stateOrProvinceName     = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
 [req]
-default_bits  = 2048
+default_bits       = 2048
 distinguished_name = req_distinguished_name
-req_extensions = req_ext
-x509_extensions = v3_req
-prompt = no
+req_extensions     = req_ext
+x509_extensions    = v3_req
+prompt             = no
+
 [req_distinguished_name]
-countryName = CN
-stateOrProvinceName = XX
-localityName = XX
-organizationName = XX
-commonName = XX
+commonName          = Server
+
 [req_ext]
 subjectAltName = @alt_names
+
 [v3_req]
 subjectAltName = @alt_names
+
 [alt_names]
-IP.1 = CONNECT_ADDRESS
+# EMQ X Cloud deployment connections address
+DNS.1 = tls.emqx.io
+EOF
 ```
 
-Generate certificate request file `cloud.csr`
+3. Generate the server-side certificate request file server.csr
 ```bash
-openssl req -new -key cloud.key -config openssl.cnf -out cloud.csr 
+openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
-Sign the server with the CA certificate
+4. Sign the server-side certificate with a CA certificate
 ```bash
-openssl x509 -req -days 3650 -in cloud.csr -CA cloud-ca.crt -CAkey cloud-ca.key -CAcreateserial -out cloud.crt  -extensions v3_req -extfile openssl.cnf 
-```
-
-The above steps mainly generated the following files:
-- cloud.crt: server certificate
-- cloud.key: private key
-
-### Create client certificate (two-way authentication)
-
-```bash
-# Create client CA certificate
-openssl req \
-    -new \
-    -newkey rsa:2048 \
+openssl x509 -req \
     -days 3650 \
-    -nodes \
-    -x509 \
-    -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client CA" \
-    -keyout client-ca.key \
-    -out client-ca.crt
-
-# Create client  key
-openssl genrsa -out client.key 2048
-# Create client request file
-openssl req -new -key client.key -out client.csr -subj "/C=CN/ST=XX/L=XX/O=EMQ X Cloud/CN=Client"
-# Sign the client with a CA certificate
-openssl x509 -req -days 3650 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
+    -in server.csr \
+    -CA root-ca.crt \
+    -CAkey root-ca.key \
+    -CAcreateserial -out server.crt \
+    -extensions v3_req -extfile openssl.cnf
 ```
-The above steps mainly generate the following files:
-- -lient-ca.crt: Client CA certificate
-- client.key: client private key
-- client.crt: client certificate
+
+5. View server-side certificate information
+```bash
+openssl x509 -noout -text -in server.crt
+```
+
+6. Verify the certificate
+```bash
+openssl verify -CAfile root-ca.crt server.crt
+```
+
+### Generation of client-side certificate 
+
+
+1. Generation of client-side secret key
+```bash
+openssl genrsa -out client.key 2048
+```
+
+2. Generate the client-side certificate request file server.csr
+```bash
+openssl req -new -key client.key -out client.csr -subj "/CN=Client"
+```
+
+3. Sign the server-side certificate with a CA certificate
+```bash
+openssl x509 -req -days 3650 -in client.csr -CA root-ca.crt -CAkey root-ca.key -CAcreateserial -out client.crt
+```
+
+4. View client-side certificate information
+```bash
+openssl x509 -noout -text -in client.crt
+```
+
+5. Verify the certificate
+```bash
+openssl verify -CAfile root-ca.crt client.crt
+```
 
 
 
-## Common problem
+## FAQ
 
-1. The certificate content contains multiple certificates
+1. The certificate contains several certificates
   
-   The purchased certificate contains an intermediate certificate. Open the certificate in text form, and multiple certificates follow the order of user certificate-intermediate certificate-root certificate. Generally speaking, a certificate contains a user certificate and multiple intermediate certificates. You need to separate the user certificate from the intermediate certificate and fill the intermediate certificate into the certificate chain.
-   
+   Purchased certificates contain intermediate certificates, which open the certificate in text form, and multiple certificates in the order of User Certificate - Intermediate Certificate - Root Certificate. Generally, a certificate contains a user certificate and several intermediate certificates, you need to separate the user certificate from the intermediate certificate and fill in the certificate chain with the intermediate certificate.
    ```
------BEGIN CERTIFICATE-----
-   
-   user certificat
+   -----BEGIN CERTIFICATE-----
+
+   User Certificate
    
    -----END CERTIFICATE-----
    
    -----BEGIN CERTIFICATE-----
    
-   intermediate certificate
+   Intermediate Certificate
    
    -----END CERTIFICATE-----
    
    -----BEGIN CERTIFICATE-----
    
-   root certificate
+   Root Certificate
    
    -----END CERTIFICATE-----
    ```
-   
-2. Certificate chain missing
+2. Lack of certificate chain
   
     Certificate chain completion: https://myssl.com/chain_download.html
-
-
