@@ -36,7 +36,7 @@ If you need other protocol support, you can submit a [ticket](contact.md) or sen
 
 You can connect through [MQTTX client](https://mqttx.app).
 
-You can also connect through the SDK, for details, see [Connect to Deployment](connect_to_deployments/README.md).
+You can also connect through the SDK, for details, see [Connect to Deployment](connect_to_deployments/introduction.md).
 
 ### Does it support API calls?
 
@@ -72,9 +72,9 @@ For the configuration method, please refer to [configure TLS/SSL](deployments/tl
 
 ### How to connect with my existing system?
 
-You can use the rule engine to connect with your existing functions. For details, see [Message Storage](messages/README.md)
+You can use the rule engine to connect with your existing functions. For details, see [Rule Engine](rule_engine/introduction.md)
 
-## Bill
+## Billing
 ### How to bill?
 
 EMQ X Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.

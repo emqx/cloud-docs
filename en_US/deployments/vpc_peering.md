@@ -4,9 +4,9 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 ### Precautions
 
-1. EMQ X Cloud only supports creating peering connection at **the same region**
-2. EMQ x cloud does not support CIDR of 100.0.0.0/8，101.0.0.0/8 . Please plan your VPC CIDR reasonably
-3. Peering connections are bound to resources. Please create peering connections before creating resources
+1. EMQ X Cloud only supports creating peering connection at **the same region**.
+2. EMQ X Cloud does not accept CIDR in the range of 10.11.1.0/24 ~ 10.64.255.0/24.
+3. Peering connections are bound to resources. Please create peering connections before creating resources.
 
 
 
@@ -16,7 +16,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 1. Log in to [EMQ X Cloud console](<https://cloud.emqx.io/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQ X Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
 
-   ![create-vpc1](./_assets/create-vpc1.png)
+   ![create-vpc1](./_assets/create_aws_vpc_peering.png)
 
 2. Log in to the Amazon Web Services console, switch to the region where `Region of deployment` is recorded in step 1, go to `Networking & Content Delivery` -> `VPC` -> `Peering Connection`, and click the button of `Create Peering Connection`
 
@@ -38,7 +38,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
    * For Account ID,  fill in the recorded `Requester VPC owner`
    * For VPC ID,  fill in the recorded `Requester VPC ID`
 
-   ![create-vpc2](./_assets/create-vpc2.png)
+   ![create-vpc2](./_assets/create_aws_vpc_peering.png)
 
 5. Return to Amazon Web Services console, go to `Networking & Content Delivery` -> `VPC` -> `Route Tables`, add the `CIDR of deployment` recorded in step 1 to the route table of the corresponding VPC
 

@@ -27,7 +27,7 @@
 
 
 
-## [EMQ X Dashboard](./dashboard/README.md)
+## [EMQ X Dashboard](./dashboard/introduction.md)
 EMQ X Dashboard（EMQ X 管理控制台）是 EMQ X Cloud 提供的一个后端 Web 控制台，您可以通过 Web 控制台查看 EMQ X 集群的运行状态、统计指标，客户端的在线情况和订阅关系等信息，并可以使用规则引擎实现设备数据存储转发等功能。点击 **EMQ X Dashboard** 按钮，将进入 EMQ X Dashboard 页面。
 
 ![base_info](./_assets/emqx_dashboard.png)
