@@ -1,4 +1,4 @@
-# Connect to deployments
+# Introduction
 
 Before connecting to the deployments, you need to complete the required operations for [Viewing Deployment](../deployments/view_deployment.md) to obtain the necessary information such as the deployment connection address and connection port. At the same time, you also need to add client connection authentication information in the EMQ X Dashboard [authentication and ACL](../deployments/dashboard/users_and_acl.md).
 

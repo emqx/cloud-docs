@@ -1,4 +1,4 @@
-# Rule engine
+# Introduction
 
 EMQ X Cloud Rule Engine (hereinafter referred to as rule engine) is used to configure EMQ X message stream and device event processing and response rules. The rule engine not only provides a clear and flexible "configurable" business integration solution, simplifies the business development process, improves ease of use,  but also reduces the coupling between the business system and EMQ X, and provides a better infrastructure for private function customization of EMQ X .
 

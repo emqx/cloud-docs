@@ -1,3 +1,7 @@
+---
+title: Use the EMQ X Cloud rule engine of message republishing
+---
+
 ![规则引擎](./_assets/web_hook.jpg)
 
 # Use the EMQ X Cloud rule engine of message republishing

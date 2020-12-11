@@ -1,3 +1,7 @@
+---
+title: Use EMQ X Cloud rule engine to connect to Kafka
+---
+
 ![规则引擎](./_assets/web_hook.jpg)
 
 # Use EMQ X Cloud rule engine to connect to Kafka

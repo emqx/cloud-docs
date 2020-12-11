@@ -127,12 +127,47 @@ openssl req \
 openssl genrsa -out server.key 2048
 ```
 
-2. 生成服务端证书请求文件 server.csr
+2. 创建 `openssl.cnf` 文件
+
+**替换 IP.1 地址为当前部署地址**
+```
+cat << EOF > ./openssl.cnf
+[policy_match]
+countryName             = match
+stateOrProvinceName     = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+[req]
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+x509_extensions    = v3_req
+prompt             = no
+
+[req_distinguished_name]
+commonName          = Server
+
+[req_ext]
+subjectAltName = @alt_names
+
+[v3_req]
+subjectAltName = @alt_names
+
+[alt_names]
+# EMQ X Cloud deployment connections address
+IP.1 = 8.129.40.147
+EOF
+```
+
+3. 生成服务端证书请求文件 server.csr
 ```bash
 openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
-3. 用 CA 证书给服务端证书签名
+4. 用 CA 证书给服务端证书签名
 ```bash
 openssl x509 -req \
     -days 3650 \
@@ -143,15 +178,15 @@ openssl x509 -req \
     -extensions v3_req -extfile openssl.cnf
 ```
 
-4. 查看服务端证书信息
+5. 查看服务端证书信息
 ```bash
 openssl x509 -noout -text -in server.crt
 ```
 
-5. 验证证书
+6. 验证证书
 ```bash
 openssl verify -CAfile root-ca.crt server.crt
-```
+``` 
 
 ### 客户端证书生成
 

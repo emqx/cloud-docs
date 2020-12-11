@@ -1,4 +1,4 @@
-# Billing
+# Introduction
 Your EMQ X Cloud usage is calculated by either the hour based on the specifications(connections and tps) of the deployment, and the region where the deployment are launched.
 Pricing is per deployment hour consumed for each deployment, from the time an deployment is launched until it is terminated or stopped.
 

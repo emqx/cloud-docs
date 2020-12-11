@@ -1,3 +1,7 @@
+---
+title: Use EMQ X Cloud rule engine-InfluxDB
+---
+
 ![规则引擎——InfluxDB](./_assets/rule_engine_influxdb.jpg)
 
 # Use EMQ X Cloud rule engine-InfluxDB
