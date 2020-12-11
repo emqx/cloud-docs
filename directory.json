@@ -1,7 +1,7 @@
 {
   "cn": [
     {
-      "title": "EMQ X Cloud 产品简介",
+      "title": "产品简介",
       "path": "./"
     },
     {
@@ -25,7 +25,7 @@
         },
         {
           "title": "连接到您的部署",
-          "path": "connect_to_deployments/introduction"
+          "path": "quick_start/connect_to_deployments"
         }
       ]
     },
@@ -384,7 +384,7 @@
   ],
   "en": [
     {
-      "title": "EMQ X Cloud Product Introduction",
+      "title": "Product Introduction",
       "path": "./"
     },
     {
@@ -408,7 +408,7 @@
         },
         {
           "title": "Connect to your deployment",
-          "path": "connect_to_deployments/introduction"
+          "path": "quick_start/connect_to_deployments"
         }
       ]
     },
@@ -599,7 +599,7 @@
         },
         {
           "title": "Save data to MySQL",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-mysql"
+          "path": "rule_engine/rule_engine_save_mysql"
         },
         {
           "title": "Save data to PostgreSQL",
