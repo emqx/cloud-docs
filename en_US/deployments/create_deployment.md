@@ -21,6 +21,6 @@ In this tutorial, you will learn how to create a new EMQ X Cloud deployment. To 
 4. Check the deployment information in the **Basic Information** column on the right.
 5. Click **Deploy Now** and agree to the EMQ X Cloud Terms of Service. You will be redirected to the console deployment details page.
 6. Wait 5 ~ 10 minutes until the deployment running status is **running**.
-7. You can go to [Connect to Deployment](../connect_to_deployments/README.md) to see more ways to connect to deployment.
+7. You can go to [Connect to Deployment](../connect_to_deployments/introduction.md) to see more ways to connect to deployment.
 
 ![create_deployment](./_assets/create_deployment.png)

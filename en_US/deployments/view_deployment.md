@@ -23,7 +23,7 @@ Here you can view the following deployment information:
 
 
 
-## [EMQ X Dashboard](./dashboard/README.md)
+## [EMQ X Dashboard](./dashboard/introduction.md)
 EMQ X Dashboard (EMQ X Management Console) is a back-end web console provided by EMQ X Cloud. Through the web console, you can view the running status of the EMQ X cluster, statistical metricss, the online status of the client and the subscription relationship and other information. You can use the rule engine to implement functions such as device data storage and forwarding. Click the **EMQ X Dashboard** button to enter the EMQ X Dashboard page.
 
 ![base_info](./_assets/emqx_dashboard.png)

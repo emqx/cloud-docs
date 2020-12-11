@@ -74,7 +74,7 @@ EMQ X Cloud recommends using [MQTT X](https://mqttx.app/cn/) to test the connect
 
   ![mqttx_wss](./_assets/mqttx_wss.png)
 
-### 4. [Use SDK or other tools to connect to the free trial deployments](../connect_to_deployments/README.md)
+### 4. [Use SDK or other tools to connect to the free trial deployments](../connect_to_deployments/introduction.md)
 
 
 

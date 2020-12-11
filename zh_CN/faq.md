@@ -36,7 +36,7 @@ EMQ X Cloud 部署仅支持 MQTT over TLS/SSL, Websockets over TLS/SSL 协议连
 
 可以通过 [MQTTX 客户端](https://mqttx.app)进行连接。
 
-也可以通过 SDK 进行连接，详见：[连接到部署](connect_to_deployments/README.md)
+也可以通过 SDK 进行连接，详见：[连接到部署](connect_to_deployments/introduction.md)
 
 ### 是否支持 API 调用?
 
@@ -72,7 +72,7 @@ EMQ X 提供了 HTTP API 以实现与外部系统的集成，例如查询客户�
 
 ### 如何与我现有系统对接？
 
-您可以使用规则引擎与您现有功能做对接，详情查看[消息存储](messages/README.md)
+您可以使用规则引擎与您现有功能做对接，详情查看[消息存储](rule_engine/introduction.md)
 
 ## 账单
 ### 如何计费？

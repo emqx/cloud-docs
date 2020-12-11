@@ -89,7 +89,7 @@ EMQ X Cloud 推荐使用 [MQTT X](https://mqttx.app/cn/) 测试连接到免费�
 
   ![mqttx_wss](./_assets/mqttx_wss.png)
 
-### 4. [使用 SDK 或其他工具连接到免费试用部署](../connect_to_deployments/README.md)
+### 4. [使用 SDK 或其他工具连接到免费试用部署](../connect_to_deployments/introduction.md)
 
 
 
