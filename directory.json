@@ -303,6 +303,10 @@
           "path": "rule_engine/rule_engine_republish"
         },
         {
+          "title": "离线消息保存到 Redis",
+          "path": "rule_engine/rule_engine_offonline_to_redis"
+        },
+        {
           "title": "离线消息保存到 MySQL",
           "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/offline_msg_to_mysql.html"
         },

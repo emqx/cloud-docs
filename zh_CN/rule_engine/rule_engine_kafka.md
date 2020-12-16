@@ -6,7 +6,7 @@ title: 使用 EMQ X Cloud 规则引擎对接 Kafka
 
 # 使用 EMQ X Cloud 规则引擎对接 Kafka
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 MySQL。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 Kafka。
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
@@ -66,7 +66,7 @@ title: 使用 EMQ X Cloud 规则引擎对接 Kafka
    
    "temp_hum/emqx"
    ```
-   ![规则引擎](./_assets/mysql_sql_test.png)
+   ![规则引擎](./_assets/sql_test.png)
 
 3. 添加响应动作
    点击左下角添加动作，下拉选择 → 数据转发 → 桥接数据到 Kafka，选择第一步创建好的资源，并填写以下数据：
@@ -89,7 +89,7 @@ title: 使用 EMQ X Cloud 规则引擎对接 Kafka
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并在 EMQ X Dashboard 中添加[客户端认证信息](../deployments/dashboard/users_and_acl.md)。
-   ![MQTTX](./_assets/mysql_mqttx_publish.png)
+   ![MQTTX](./_assets/mqttx_publish.png)
    
 2. 查看数据转存结果
 
@@ -98,4 +98,4 @@ title: 使用 EMQ X Cloud 规则引擎对接 Kafka
     $ docker exec -it mykafka /bin/bash
     $ kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092  --topic emqx --from-beginning
     ```
-   ![mysql](./_assets/kafka_query_result.png)
+   ![kafka](./_assets/kafka_query_result.png)
