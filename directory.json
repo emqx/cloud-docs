@@ -303,6 +303,10 @@
           "path": "rule_engine/rule_engine_republish"
         },
         {
+          "title": "离线消息保存到 Redis",
+          "path": "rule_engine/rule_engine_offonline_to_redis"
+        },
+        {
           "title": "离线消息保存到 MySQL",
           "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/offline_msg_to_mysql.html"
         },
@@ -319,12 +323,12 @@
           "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/offline_msg_to_mongodb.html"
         },
         {
-          "title": "从 Redis 中获取订阅关系",
-          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/get_subs_from_redis.html"
+          "title": "从 MySQL 中获取订阅关系",
+          "path": "rule_engine/get_subs_from_mysql"
         },
         {
-          "title": "从 MySQL 中获取订阅关系",
-          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/get_subs_from_mysql.html"
+          "title": "从 Redis 中获取订阅关系",
+          "path": "https://docs.emqx.cn/cn/enterprise/latest/rule/get_subs_from_redis.html"
         },
         {
           "title": "从 PostgreSQL 中获取订阅关系",

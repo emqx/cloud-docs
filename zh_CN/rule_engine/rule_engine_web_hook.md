@@ -6,95 +6,67 @@ title: 使用 EMQ X Cloud 规则引擎对接 Webhook
 
 # 使用 EMQ X Cloud 规则引擎对接 Webhook
 
-为了方便消息的进一步处理，你可以通过使用规则引擎的 Webhook 动作，将特定的消息推送到指定的 Web 服务器。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 Kafka。
 
-这篇指南会完成一个 Webhook 规则引擎的创建，实现下面的功能：
+在开始之前，您需要完成以下操作：
+* 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
+* 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
+* 对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
-- 当有消息 "hello"，发送到 greet 主题时，会触发规则引擎，发送 "hello emqx！" 到我们的 Web 服务器上。
+### 创建 Web 服务器
 
+1. 使用 nc 命令创建一个简易的 Web 服务器。
+   ```bash
+   while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
+   ```
 
+### EMQ X Cloud 规则引擎配置
 
-为了实现这个功能，我们会完成以下 4 个任务：
+进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
 
-1. 开启一个简易的 Web 服务器
-2. 设置规则引擎的筛选条件
-3. 创建一个资源和一个动作
-4. 完成规则引擎创建，并进行测试
+1. 资源创建
 
->注意:
->
->在使用规则引擎前，请先创建部署。
->
->对于独享部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的资源都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
->
->对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP
+   点击左侧菜单栏规则 → 资源，点击新建资源，下拉选择 WebHook 资源类型。填入 URL，并点击测试如果出现错误应及时检查数据库配置是否正确。
+   ![创建资源](./_assets/webhook_create_resource.png)
 
+2. 规则测试
+   点击左侧菜单栏规则 → 规则，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度。
+   
+   ```sql
+   SELECT 
+   
+   timestamp as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum
+   
+   FROM
+   
+   "temp_hum/emqx"
+   ```
+   ![规则引擎](./_assets/sql_test.png)
 
-#### 1. 创建 Web 服务器
+3. 添加响应动作
+   点击左下角添加动作，下拉选择 → 数据转发 → 发送数据到 Web 服务，选择第一步创建好的资源，并填写以下数据：
+   
+   消息内容模板: 
+   ```
+   {"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
+   ```
+   ![添加动作](./_assets/webhook_action.png)
 
-首先，我们在自己的服务器上创建一个 Web 服务器。可以使用 nc 命令创建一个简易的 Web 服务器。
+4. 点击创建规则，并返回规则列表
+   ![规则列表](./_assets/view_rule_engine_webhook.png)
 
-```shell
-while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
-```
-
-
-#### 2. 设置规则引擎的筛选条件
-
-进入 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)，并点击进入要使用 Webhook 的部署。
-
-在部署页面，选择规则引擎，点击创建。
-
-![规则引擎页](./_assets/view_rule_engine.png)
-
-我们的目标是：当有消息 "hello"，发送到 greet 主题时，就会触发引擎。这里需要对 SQL 进行一定的处理：
-
-* 仅针对 'greet/#'
-* 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行规则引擎
-
-根据上面的原则，我们最后得到的 SQL 应该如下：
-
-```sql
-SELECT
-  payload.msg as msg
-FROM
-  "greet/#"
-WHERE
-  msg = 'hello'
-```
-
-#### 3. 创建资源和动作
-
-点击添加动作，在选择动作页，选择 `发送数据到 Web 服务`，点击`新建`资源。
-
-![添加动作](./_assets/add_webhook_action01.png)
-
-![选择发送到 Web 服务器](./_assets/add_webhook_action02.png)
+5. 查看规则监控
+   ![查看监控](./_assets/view_monitor_webhook.png)
 
 
+### 测试
 
-在创建资源页面里，资源类型选择 Webhook，在请求 URL 里填写 Web 服务器的 URL 地址，然后点击测试。返回 “测试可用” 表示测试成功。
+1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
-> 注意：
->
->如果测试失败，请检查是否完成 [VPC 对等连接](../deployments/vpc_peering.md)，以及检查 IP 地址是否正确。 
+   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并在 EMQ X Dashboard 中添加[客户端认证信息](../deployments/dashboard/users_and_acl.md)。
+   ![MQTTX](./_assets/mqttx_publish.png)
+   
+2. 查看数据转存结果
+    
+   ![kafka](./_assets/webhook_query_result.png)
 
-![创建资源](./_assets/add_webhook_action04.png)
-
-点击确定，返回到配置动作页面，默认选择的是刚才创建的资源，在消息内容模板里填写 "hello emqx!"，点击确定。
-
-![配置动作](./_assets/add_webhook_action05.png)
-
-创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的创建，完成规则引擎的配置。
-
-![完成规则引擎配置](./_assets/add_webhook_action06.png)
-
-
-
-#### 4. 测试
-
->如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/introduction.md)，查看 MQTT 客户端连接和测试指南
-
-当我们发送 "hello" 到 greet 主题，上面创建的规则就会触发，可以看到 Web 服务器已经收到消息 "hello emqx!"
-
-![Web 服务器收到消息](./_assets/add_webhook_action07.png)
