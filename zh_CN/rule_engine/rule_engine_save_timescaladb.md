@@ -55,7 +55,7 @@
    ```sql
    SELECT 
    
-   timestamp as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum
+   timestamp div 1000 as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum
    
    FROM
    
@@ -68,7 +68,7 @@
    点击左下角添加动作，下拉选择 → 数据持久化 → 保存数据到 Timescale 选择第一步创建好的资源，并输入以下数据插入 SQL 模板。
 
    ```sql
-   insert into temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(${up_timestamp}/1000), ${client_id}, ${temp}, ${hum}) 
+   insert into temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
    ```
    ![规则引擎](./_assets/timescaledb_action.png)
 
