@@ -2,62 +2,83 @@
 
 The overview will introduce the recharge of the EMQ X Cloud account, PayPal payment, view transaction records, monthly bills and expense reports. Click `Billing` -> `Overview` in the left menu to enter the billing overview page
 
-The overview page displays the following three parts:
+The overview page displays the following five parts:
 
-1. Account Balance and PayPal Payment
+1. Balance
 2. Billing of the current month (the billing fee from the 1st of the month to the current time)
-3. Expense trend, you can switch between `day` and `month` to show the corresponding expense trend
+3. Add or Update a Payment Method
+4. Expense trend, you can switch between `day` and `month` to show the corresponding expense trend
 
 ![overview](./_assets/overview.png)
 
 
-### Account Balance and PayPal Payment
-EMQ X Cloud deducts the cost of last month's bill from your account balance on the 1st of each month. You need to use PayPal to complete last month's bill payment.
 
-* Account Balance
-  ![Account Balance](./_assets/account_balance.png)
-  
-* PayPal Payment
-  ![PayPal Payment](./_assets/paypal_payment.png)
-  
-* Other Payment Methods
-  
-  Through [tickets](https://cloud.emqx.io/console/tickets), you can pay using a:
-  * Currency other than USD.
-  * Method other than a PayPal.
+### Balance
 
+By default, payments are processed automatically so you don't have to worry that your service will stop running if you forget to make a payment.
 
-### View monthly bill
+- Balance
+  Only if the credit card payment fails will the balance show all the charges you have incurred for the previous month's deployment,
+  you will need to complete the payment manually or verify that the credit card information is correct.
 
-The monthly bill will show the monthly billing record of the account
-
-1. Click `Billing` on the `Overview` page to enter the billing page
-
-   ![bills](./_assets/bills.png)
-
-2. To download the bill details, click the download icon in the bill details
-
-   ![bills-download](./_assets/bills-download.png)
-
-3. To view the deployment bill associated with the bill, click on the bill record and it will be displayed below
-
-   ![bills-details](./_assets/bills-details.png)
-
-4. To view the detailed expense report of the deployment bill, click on the `View report` of the deployment expense record
-
-   ![bills-report](./_assets/bills-report.png)
+- Transactions
+  To view your transaction history, access the Transactions page in the [Billing Transactions](https://cloud.emqx.io/console/billing/transactions)
+  ![Transactions](./_assets/transactions.png)
 
 
 
-### View expense report
+### View monthly bills
 
-The expense report will show in detail every expense incurred by the deployment
+The monthly bills will show the monthly billing record of the account
+
+1. Click `bills` to view monthly bills history
+
+   ![bills](./_assets/monthly_bills.png)
+
+2. To view the deployment bill associated with the bill, click on the bill record and it will be displayed below
+
+   ![bills_details](./_assets/monthly_bills_details.png)
+
+3. To view the detailed expense report of the deployment bill, click on the `View report` of the deployment expense record
+
+   ![bills_report](./_assets/hourly_bills_report.png)
+
+
+
+### View billing report
+
+Billing report showing all costs incurred per hour of deployment
 
 1. Click `View Report` on the `Overview` page to enter the billing report page
 
-   ![report](./_assets/report.png)
+   ![bills_report](./_assets/hourly_bills_report.png)
 
 2. The billing report can be filtered by billing time, billing ID, and deployment name
 
-   ![report-filter](./_assets/report-filter.png)
+   ![report_filter](./_assets/hourly_bills_report_filter.png)
 
+
+
+### Add or Update a Payment Method
+
+You can use the overview to add a credit card to your account.
+
+- To add a credit card to your EMQ X Cloud account
+
+  1. Sign in to the EMQ X Cloud Console and open the [Billing Overview](https://cloud.emqx.io/console/billing/overview)
+
+  2. Choose an editorial payment method
+  3. Enter the credit card information and billing address.
+  4. Choose Submit.
+
+  ![edit_payment_method](./_assets/edit_payment_method.png)
+
+- To update your credit card
+
+  1. Sign in to the EMQ X Cloud Console and open the Billing Overview at https://cloud.emqx.io/console/billing/overview.
+
+  2. Choose an editorial payment method
+
+  3. Enter the credit card information and billing address.
+
+  4. Choose Submit.

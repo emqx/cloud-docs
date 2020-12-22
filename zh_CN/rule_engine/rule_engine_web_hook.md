@@ -1,10 +1,4 @@
----
-title: 使用 EMQ X Cloud 规则引擎对接 Webhook
----
-
-![Webhook](./_assets/web_hook.jpg)
-
-# 使用 EMQ X Cloud 规则引擎对接 Webhook
+# 使用 EMQ X Cloud 规则引擎转发数据到 WebHook
 
 在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 Kafka。
 
