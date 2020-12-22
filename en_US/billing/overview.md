@@ -2,7 +2,7 @@
 
 The overview will introduce the recharge of the EMQ X Cloud account, PayPal payment, view transaction records, monthly bills and expense reports. Click `Billing` -> `Overview` in the left menu to enter the billing overview page
 
-The overview page displays the following five parts:
+The overview page displays the following four parts:
 
 1. Balance
 2. Billing of the current month (the billing fee from the 1st of the month to the current time)
