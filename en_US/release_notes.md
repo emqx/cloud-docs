@@ -1,7 +1,7 @@
 # Version release
 
 ## 2020-12-21
-* Support the creation of 180 day free trial
+* Support the creation of 180-day free trial
 
 ## 2020-09-17
 * Deployment a dedicated dashboard
