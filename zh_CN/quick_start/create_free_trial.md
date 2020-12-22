@@ -10,9 +10,9 @@
 
 * 每月 10 GB 免费流量。
 
-* 使用规则引擎、监控管理等 EMQ X 自有的功能。
+* 使用规则引擎、监控管理等 EMQ X 所有功能。
 
-* 支持 MQTT, WebSockets, MQTT over TLS/SSL, Websockets over TLS/SSL 协议连接。
+* 支持 MQTT, WebSockets, MQTT over TLS/SSL, Websockets over TLS 协议连接。
 
   > 如需其他协议支持，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
 

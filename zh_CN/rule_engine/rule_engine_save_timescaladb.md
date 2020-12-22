@@ -1,4 +1,4 @@
-# EMQ X Cloud 规则引擎对接 TimescaleDB
+# EMQ X Cloud 规则引擎保存数据到 TimescaleDB
 
 在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 TimescaleDB。
 
