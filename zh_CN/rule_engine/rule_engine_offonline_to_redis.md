@@ -73,12 +73,11 @@
 2. 查看数据转存结果
 
     ```bash
-    # 进入 Kafka 实例，并查看 emqx 主题
     $ docker exec -it myredis bash
     $ redis-cli
     $ keys *
     ```
-   ![redis](./_assets/offonline_redis_query_result.png)
+    ![redis](./_assets/offonline_redis_query_result.png)
 
 3. 使用 [MQTT X](https://mqttx.app/) 消费离线数据
    在 MQTT X 中，订阅主题 temp_hum/emqx，获取离线数据

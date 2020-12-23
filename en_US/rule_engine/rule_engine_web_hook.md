@@ -1,99 +1,72 @@
 ---
-title: Use EMQ X Cloud rule engine to connect to webhook
+title: Forwarding device data to Webhook using the Rule Engine
 ---
 
 ![Webhook](./_assets/web_hook.jpg)
 
-# Use EMQ X Cloud rule engine to connect to webhook
+# Forwarding device data to Webhook using the Rule Engine
 
-In order to facilitate the further processing of messages, you can push specific messages to the specified Web server by using the Webhook action of the rule engine.
+In this article, we will simulate temperature and humidity data and report these data to EMQ X Cloud via the MQTT protocol and then use the EMQ X Cloud rules engine to dump the data into Kafka.
 
-This guide will complete the creation of a Webhook rule engine to achieve the following functions:
+Before you start, you need to complete the following operations:
+* Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
+* For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
+* For free trial and shared deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
-- When there is a message "hello" sent to the greet topic, the rule engine will be triggered to send "hello emqx!" to our web server.
+### Create a Web server
 
-In order to achieve this function, we will complete the following 4 tasks:
+1. Use the nc command to create a simple Web server.
+   ```bash
+   while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
+   ```
 
-1. Start a simple web server
-2. Set the filter conditions of the rule engine
-3. Create a resource and an action
-4. Complete the rule engine creation and test
+### EMQ X Cloud rules engine configuration
 
-::: tip Tip
-Before using the rule engine, create a deployment first.
+Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 
-For dedicated deployment users: Please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the following resources involved are established in the VPC under the peering connection. The IP mentioned below refer to the intranet IP of the resource
+1. New Resource
 
-For free trial and shared deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
-:::
+   Click on Rules on the left menu bar → Resources, click on New Resource and drop down to select the WebHook resource type. Fill in the URL and click Test. If you get an error, instantly check that the database configuration is correct.
+   ![create resource](./_assets/webhook_create_resource.png)
 
+2. Rule Testing
+   Click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.  In the following rule we read the time `up_timestamp` when the message is reported, the client ID, the message body (Payload) from the `temp_hum/emqx` topic and the temperature and humidity from the message body respectively.
+   
+   ```sql
+   SELECT 
+   
+   timestamp as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum
+   
+   FROM
+   
+   "temp_hum/emqx"
+   ```
+   ![rule engine](./_assets/sql_test.png)
 
-#### 1. Create a web server
+3. Add a response action
+   Click on Add Action in the bottom left corner, drop down and select → Data Forwarding → Send Data to Web Service, select the resource created in the first step and fill in the following data:
+   
+   Message content template:
+   ```
+   {"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
+   ```
+   ![rule_action](./_assets/webhook_action.png)
 
-At first, we create a web server on our own server. The nc command can be used to create a simple Web server.
+4. Click on New Rule and return to the list of rules
+   ![rule list](./_assets/view_rule_engine_webhook.png)
 
-```shell
-while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
-```
-
-
-#### 2. Set the filter conditions of the rule engine
-
-Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter the deployment to use Webhook.
-
-On the deployment page, select the rule engine and click Create.
-
-![规则引擎页](./_assets/view_rule_engine.png)
-
-Our goal is to trigger the rule engine when a message "hello" is sent to the greet topic. Certain SQL processing is required here:
-
-* Only for 'greet/#'
-* Match the msg in the payload, and execute the rule engine when it is a string of 'hello'
-
-According to the above principles, the SQL we finally get should be as follows:
-
-```sql
-SELECT
-  payload.msg as msg
-FROM
-  "greet/#"
-WHERE
-  msg = 'hello'
-```
-
-#### 3. Create resources and actions
-
-Click Add Action. On the Select Action page, select `Send Data to Web Service`, and click `New` Resource.
-
-![添加动作](./_assets/add_webhook_action01.png)
-
-![选择发送到 Web 服务器](./_assets/add_webhook_action02.png)
+5. View rules monitoring
+   ![view monitor](./_assets/view_monitor_webhook.png)
 
 
+### Test
 
-On the Create Resource page, select Webhook as the resource type, fill in the URL address of the Web server in the request URL, and click Test. If "test available" returns, it means the test was successful.
+1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
 
-::: tip Tip
-If the test fails, please check whether the [VPC peering connection](../deployments/vpc_peering.md) is completed and whether the IP address is correct. 
-:::
+   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/dashboard/users_and_acl.md) to the EMQ X Dashboard.
+   ![MQTTX](./_assets/mqttx_publish.png)
+   
+2. View data dump results
+   
+   ![kafka](./_assets/webhook_query_result.png)
 
-
-![创建资源](./_assets/add_webhook_action04.png)
-
-Click OK to return to the configuration action page. The resource just created is selected by default. Fill in "hello emqx!" in the message content template, and click OK.
-
-![配置动作](./_assets/add_webhook_action05.png)
-
-The created action will be displayed in the response action column. After confirming that the information is correct, click Create in the lower right corner to complete the configuration of the rule engine.
-
-![完成规则引擎配置](./_assets/add_webhook_action06.png)
-
-
-
-#### 4. Test
-
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/introduction.md) to view the MQTT client connection and test guide
-
-When we send "hello" to the greet topic, the rule created above will be triggered and we can see that the web server has received the message of "hello emqx!"
-
-![Web 服务器收到消息](./_assets/add_webhook_action07.png)
