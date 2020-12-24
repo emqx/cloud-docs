@@ -1,9 +1,3 @@
----
-title: Use the EMQ X Cloud rule engine of message republishing
----
-
-![规则引擎](./_assets/web_hook.jpg)
-
 # Use the EMQ X Cloud rule engine of message republishing
 
 When a message meets a certain features, you want to publish it to other topics without writing code. EMQ X Cloud has prepared such a service for you: By using the EMQ X Cloud rule engine-message republishing, you can easily achieve this function.
@@ -24,7 +18,7 @@ Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter 
 
 On the deployment page, select the rule engine and click Create.
 
-![规则引擎页](./_assets/view_rule_engine.png)
+![rule_engine](./_assets/view_rule_engine.png)
 
 Our goal is that as long as the msg contains the string of 'hello'  in any message, the engine will be triggered. Certain SQL processing is required here:
 
@@ -69,11 +63,11 @@ If the test fails, please check whether the SQL is compliant
 
 Click to add action. On the select action page, select `message republishing`, and click next
 
-![选择动作](./_assets/add_republish_action01.png)
+![action](./_assets/add_republish_action01.png)
 
 In the configuration action page, set the target topic to greet, fill in "${msg} - forward from emqx cloud" in the message content template, and set the target QoS as default. Click OK.
 
-![配置动作](./_assets/add_republish_action02.png)
+![config action](./_assets/add_republish_action02.png)
 
 The created action will be displayed in the response action column. After confirming that the information is correct, click Create in the lower right corner to complete the configuration of the rule engine.
 

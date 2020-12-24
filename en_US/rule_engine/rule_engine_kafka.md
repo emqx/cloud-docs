@@ -1,9 +1,3 @@
----
-title: Bridge device data to Kafka using the Rule Engine
----
-
-![rule engine](./_assets/web_hook.jpg)
-
 # Bridge device data to Kafka using the Rule Engine
 
 In this article, we will simulate temperature and humidity data and report these data to EMQ X Cloud via the MQTT protocol and then use the EMQ X Cloud rules engine to dump the data into Kafka.

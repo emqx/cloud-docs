@@ -1,9 +1,3 @@
----
-title: Use EMQ X Cloud rule engine-InfluxDB
----
-
-![规则引擎——InfluxDB](./_assets/rule_engine_influxdb.jpg)
-
 # Use EMQ X Cloud rule engine-InfluxDB
 
 [InfluxDB](https://www.influxdata.com/) is an open source database for storing and analyzing time series data, with built-in HTTP API, support for SQL-like statements, and unstructured features that are very friendly for users. Its powerful data throughput and stable performance make it very suitable for the IoT field.
@@ -52,7 +46,7 @@ Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter 
 
 On the deployment page, select the rule engine and click Create.
 
-![规则引擎页](./_assets/view_rule_engine.png)
+![rule_engine](./_assets/view_rule_engine.png)
 
 Our goal is that as long as the home/sensor topic has monitoring information, the engine will be triggered. Certain SQL processing is required here:
 
@@ -105,7 +99,7 @@ Click Test to view the obtained data results. If the settings are correct, the t
   "humidity": 46.4
 }
 ```
-![配置SQL](./_assets/influxDB_SQL_setting.png)
+![SQL](./_assets/influxDB_SQL_setting.png)
 
 ::: tip Tip
 If test fails, please check whether the SQL is compliant, and whether the topic in the test is consistent with the SQL filled in.
@@ -117,7 +111,7 @@ If test fails, please check whether the SQL is compliant, and whether the topic 
 
 Click Add Action, on the Select Action page, select **Save data to InfluxDB**, and click Next. When the action page is configured, click Create Resource.
 
-![选择动作](./_assets/add_influxDB_action02.png)
+![action](./_assets/add_influxDB_action02.png)
 
 On the Create Resource page, select **InfluxDB UDP Service** for the resource type, and fill in  **\<Server IP>:8089**for the server address
 
@@ -125,7 +119,7 @@ On the Create Resource page, select **InfluxDB UDP Service** for the resource ty
 Currently, InfluxDB uses a UDP port. Therefore, it is impossible to detect whether the connection is successful
 :::
 
-![创建资源](./_assets/add_influxDB_action03.png)
+![resources](./_assets/add_influxDB_action03.png)
 
 Click OK to return to the configuration action page. The resource just created is selected by default. For other fields, you can refer to the table below.
 
@@ -138,7 +132,7 @@ Click OK to return to the configuration action page. The resource just created i
 
 For our situation, this part can be filled in like this
 
-![配置动作](./_assets/add_influxDB_action04.png)
+![config action](./_assets/add_influxDB_action04.png)
 
 * For Measurement, it can be set at will, and we fill in "home_sensor" here
 * For Field Keys, we fill in the two data we need to record: temperature and humidity
@@ -149,7 +143,7 @@ After filling in, click OK.
 
 The created action will be displayed in the response action column. After confirming that the information is correct, click Confirm in the lower right corner to complete the configuration of the rule engine.
 
-![完成规则引擎配置](./_assets/add_influxDB_action05.png)
+![rule_engine](./_assets/add_influxDB_action05.png)
 
 
 
@@ -170,7 +164,7 @@ We try to send the following data to the home/sensor topic
 ```
 On the rule engine page, click Monitor and you can see that the number of successes becomes 1.
 
-![转发成功](./_assets/test_rule_engine_influxDB.png)
+![success](./_assets/test_rule_engine_influxDB.png)
 
 Open the server and view the data in InfluxDB.
 
