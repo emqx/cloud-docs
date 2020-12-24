@@ -259,7 +259,7 @@
           "path": "rule_engine/rule_engine_mqtt"
         },
         {
-          "title": "离线消息转发到 Webhook",
+          "title": "桥接数据到 Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
         {
@@ -543,7 +543,7 @@
         },
         {
           "title": "Save data to TimescaleDB",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-timescaledb"
+          "path": "rule_engine/rule_engine_save_timescaladb"
         },
         {
           "title": "Save data to InfluxDB",
@@ -586,12 +586,20 @@
           "path": "https://docs.emqx.io/en/enterprise/latest/rule/bridges.html#bridge-data-to-rocketmq"
         },
         {
-          "title": "Forward offline messages to Webhook",
+          "title": "Bridge data to Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
         {
           "title": "Republish messages",
           "path": "rule_engine/rule_engine_republish"
+        },
+        {
+          "title": "Forward offline messages to Redis",
+          "path": "rule_engine/rule_engine_offonline_to_redis"
+        },
+        {
+          "title": "Get subscription topic information from MySQL",
+          "path": "rule_engine/get_subs_from_mysql"
         }
       ]
     },

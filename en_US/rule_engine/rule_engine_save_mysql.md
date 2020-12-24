@@ -1,4 +1,4 @@
-# EMQ X Cloud Rule Engine Save Data to MySQL
+# Save device data to MySQL using the Rule Engine
 
 In this article, we will simulate the temperature and humidity data, and report these data to EMQ X Cloud via the MQTT protocol and then we will use EMQ X Cloud rules engine to dump the data to MySQL.
 
@@ -85,7 +85,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord
    
    "temp_hum/emqx"  
    ```
-   ![rule engine](./_assets/mysql_sql_test.png)
+   ![rule engine](./_assets/sql_test.png)
    
 3. Add Action
 
@@ -109,11 +109,10 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord
 1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data
 
    You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/dashboard/users_and_acl.md) in the EMQ X Dashboard.
-   ![MQTTX](./_assets/mysql_mqttx_publish.png)
+   ![MQTTX](./_assets/mqttx_publish.png)
 
 2. View data dump results
       ```sql
       select * from temp_hum order by up_timestamp desc limit 10;
       ```
    ![mysql](./_assets/mysql_query_result.png)
-
