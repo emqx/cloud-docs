@@ -61,7 +61,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
    
    "temp_hum/emqx"
    ```
-   ![规则引擎](./_assets/sql_test.png)
+   ![rule_engine](./_assets/sql_test.png)
 
 3. Add a response action
 
@@ -70,14 +70,14 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
    ```sql
    insert into temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
    ```
-   ![规则引擎](./_assets/timescaledb_action.png)
+   ![rule_engine](./_assets/timescaledb_action.png)
 
 4. Click on New Rule and return to the list of rules
-   ![规则列表](./_assets/view_rule_engine_timescaledb.png)
+   ![rule_engine](./_assets/view_rule_engine_timescaledb.png)
 
 
 5. View rules monitoring
-   ![查看监控](./_assets/view_monitor_timescaledb.png)
+   ![monitor](./_assets/view_monitor_timescaledb.png)
 
 ### Test
 1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting

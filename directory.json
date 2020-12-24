@@ -538,16 +538,16 @@
           "path": "rule_engine/rule_engine_save_mysql"
         },
         {
-          "title": "Save data to PostgreSQL",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-postgresql"
-        },
-        {
           "title": "Save data to TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaladb"
         },
         {
           "title": "Save data to InfluxDB",
           "path": "rule_engine/rule_engine_influxDB"
+        },
+        {
+          "title": "Save data to PostgreSQL",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-postgresql"
         },
         {
           "title": "Save data to Redis",
@@ -582,19 +582,19 @@
           "path": "rule_engine/rule_engine_mqtt"
         },
         {
-          "title": "Bridge data to RabbitMQ",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/bridges.html#bridge-data-to-rocketmq"
-        },
-        {
           "title": "Bridge data to Webhook",
           "path": "rule_engine/rule_engine_web_hook"
+        },
+        {
+          "title": "Bridge data to RabbitMQ",
+          "path": "https://docs.emqx.io/en/enterprise/latest/rule/bridges.html#bridge-data-to-rocketmq"
         },
         {
           "title": "Republish messages",
           "path": "rule_engine/rule_engine_republish"
         },
         {
-          "title": "Forward offline messages to Redis",
+          "title": "Store device offline messages to Redis",
           "path": "rule_engine/rule_engine_offonline_to_redis"
         },
         {
