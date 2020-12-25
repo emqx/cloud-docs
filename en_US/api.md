@@ -406,7 +406,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-####  Delete the specified client
+#### Delete the specified client
 
 DELETE /clients/{clientid}
 
@@ -612,7 +612,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 ### Subscription Information
 
-####  Get all subscription information under the cluster
+#### Get all subscription information under the cluster
 
 > GET /subscriptions
 

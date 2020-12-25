@@ -240,7 +240,7 @@
         },
         {
           "title": "保存数据到 InfluxDB",
-          "path": "rule_engine/rule_engine_influxDB.md"
+          "path": "rule_engine/rule_engine_influxDB"
         },
         {
           "title": "桥接数据到 Kafka",

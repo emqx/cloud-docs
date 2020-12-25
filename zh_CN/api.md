@@ -410,7 +410,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-####  踢除指定客户端
+#### 踢除指定客户端
 
 > DELETE /clients/{clientid}
 >
