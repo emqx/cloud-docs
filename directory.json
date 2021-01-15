@@ -195,19 +195,19 @@
         },
         {
           "title": "使用 WebSocket 连接到部署",
-          "path": "https://www.emqx.io/cn/blog/connect-to-mqtt-broker-with-websocket"
+          "path": "https://www.emqx.cn/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
           "title": "在 Android Kotlin 项目中连接到部署",
-          "path": "https://www.emqx.io/cn/blog/android-connects-mqtt-using-kotlin"
+          "path": "https://www.emqx.cn/blog/android-connects-mqtt-using-kotlin"
         },
         {
           "title": "在 Electron 项目中连接到部署",
-          "path": "https://www.emqx.io/cn/blog/how-to-use-mqtt-in-electron"
+          "path": "https://www.emqx.cn/blog/how-to-use-mqtt-in-electron"
         },
         {
           "title": "在 Vue 项目中连接到部署",
-          "path": "https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue"
+          "path": "https://www.emqx.cn/blog/how-to-use-mqtt-in-vue"
         },
         {
           "title": "使用 ESP8266 连接到部署",

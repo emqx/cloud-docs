@@ -93,4 +93,4 @@
 	go run main.go --protocol=wss --port=8084 --tls=true --action=pubsub
 	```
 
-- [如何在 Golang 中使用 MQTT](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-golang)
+- [如何在 Golang 中使用 MQTT](https://www.emqx.cn/blog/how-to-use-mqtt-in-golang)
