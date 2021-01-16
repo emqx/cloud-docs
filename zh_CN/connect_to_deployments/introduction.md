@@ -19,10 +19,10 @@
 * [使用 Perl SDK 连接到部署](perl_sdk.md)
 * [使用 Ruby SDK 连接到部署](ruby_sdk.md)
 * [使用 Scala SDK 连接到部署](scala_sdk.md)
-* [使用 WebSocket 连接到部署](https://www.emqx.io/cn/blog/connect-to-mqtt-broker-with-websocket)
-* [在 Android Kotlin 项目中连接到部署](https://www.emqx.io/cn/blog/android-connects-mqtt-using-kotlin)
-* [在 Electron 项目中连接到部署](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-electron)
-* [在 Vue 项目中连接到部署](https://www.emqx.io/cn/blog/how-to-use-mqtt-in-vue)
+* [使用 WebSocket 连接到部署](https://www.emqx.cn/blog/connect-to-mqtt-broker-with-websocket)
+* [在 Android Kotlin 项目中连接到部署](https://www.emqx.cn/blog/android-connects-mqtt-using-kotlin)
+* [在 Electron 项目中连接到部署](https://www.emqx.cn/blog/how-to-use-mqtt-in-electron)
+* [在 Vue 项目中连接到部署](https://www.emqx.cn/blog/how-to-use-mqtt-in-vue)
 
 ## 使用硬件连接
 * [esp8266 连接到部署](esp8266.md)
