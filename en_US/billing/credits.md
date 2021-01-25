@@ -4,7 +4,7 @@ The credit will show all the credit owned by the account, including the credit u
 
 
 
-### View credits
+## View credits
 
 1. The credit can be filtered by `Credit Type` and `status`. Click `Usage Records` to view the usage record of the credit
 
@@ -15,6 +15,6 @@ The credit will show all the credit owned by the account, including the credit u
    ![credits-usage](./_assets/credits-usage.png)
 
 
-### Get credits
+## Get credits
 
 To obtain credits, you can follow the official website activities or contact our business manager

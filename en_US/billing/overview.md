@@ -13,7 +13,7 @@ The overview page displays the following four parts:
 
 
 
-### Balance
+## Balance
 
 By default, payments are processed automatically so you don't have to worry that your service will stop running if you forget to make a payment.
 
@@ -27,7 +27,7 @@ By default, payments are processed automatically so you don't have to worry that
 
 
 
-### View monthly bills
+## View monthly bills
 
 The monthly bills will show the monthly billing record of the account
 
@@ -45,7 +45,7 @@ The monthly bills will show the monthly billing record of the account
 
 
 
-### View billing report
+## View billing report
 
 Billing report showing all costs incurred per hour of deployment
 
@@ -59,7 +59,7 @@ Billing report showing all costs incurred per hour of deployment
 
 
 
-### Add or Update a Payment Method
+## Add or Update a Payment Method
 
 You can use the overview to add a credit card to your account.
 

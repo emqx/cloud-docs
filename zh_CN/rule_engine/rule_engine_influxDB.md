@@ -29,7 +29,7 @@
 
 
 
-#### 1. 安装并初始化 InfluxDB
+## 1. 安装并初始化 InfluxDB
 
 首先，我们在自己的服务器上创建一个 InfluxDB。为了快速创建 InfluxDB，这里我们使用 docker 进行快速安装，并开放 **8089** UDP 端口，数据库名为 **db**.
 
@@ -42,7 +42,7 @@ $ docker run --name=influxdb --rm -d -p 8086:8086 -p 8089:8089/udp -v ${PWD}/fil
 
 
 
-#### 2. 设置规则引擎的筛选条件
+## 2. 设置规则引擎的筛选条件
 
 进入 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)，并点击进入要使用 InfluxDB 的部署。
 
@@ -107,7 +107,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
   
 
-#### 3. 创建资源和动作
+## 3. 创建资源和动作
 
 点击添加动作，在选择动作页中，选择**保存数据到 InfluxDB**，点击下一步，当配置动作页面，点击创建资源。
 
@@ -145,7 +145,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 
 
-#### 4. 测试
+## 4. 测试
 
 >如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/introduction.md)，查看 MQTT 客户端连接和测试指南
 

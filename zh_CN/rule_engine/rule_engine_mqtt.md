@@ -24,7 +24,7 @@
 >对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP
 
 
-#### 1. 创建 Mosquitto 服务
+## 1. 创建 Mosquitto 服务
 
 在你的云服务器中，创建一个 Mosquitto 服务。为了方便演示，这里使用 Docker 快速搭建。(请勿在生产环境中使用)
 
@@ -34,7 +34,7 @@ sudo docker run -it -p 1883:1883 adek06/mqtt:mosquitto
 
 之后，开放服务器的 1883 端口
 
-#### 2. 设置规则引擎的筛选条件
+## 2. 设置规则引擎的筛选条件
 
 进入 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)，并点击进入要使用 MQTT Broker 桥接的部署。
 
@@ -55,7 +55,7 @@ FROM
 ```
 
 
-#### 3. 创建资源和动作
+## 3. 创建资源和动作
 点击添加动作，在选择动作页，选择 桥接数据到 MQTT Broker，点击下一步，在配置动作页面，点击创建资源。
 ![添加动作](./_assets/add_mqtt_action01.png)
 
@@ -81,7 +81,7 @@ FROM
 
 
 
-#### 4. 测试
+## 4. 测试
 
 >如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/introduction.md)，查看 MQTT 客户端连接和测试指南
 

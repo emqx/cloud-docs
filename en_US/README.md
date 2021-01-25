@@ -104,7 +104,7 @@ Compared with the public cloud IoT Hub platform, EMQ X Cloud has fewer usage res
 
 > In the following tables, the "no restriction" of EMQ X means that there are no technical restrictions. The performance of related items depends on the deployment specifications, and the specific data is subject to the actual use scenario.
 
-#### Connection communication
+### Connection communication
 
 | **Restriction description**                         | **EMQ X**                                                    | Public cloud IoT Hub                    |
 | --------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------- |

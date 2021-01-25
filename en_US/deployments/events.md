@@ -4,7 +4,7 @@ View current accounts: create and delete deployment events.
 ![event](./_assets/events.png)
 
 
-### View event
+## View event
 
 EMQ X Cloud provides the following types of event records:
 

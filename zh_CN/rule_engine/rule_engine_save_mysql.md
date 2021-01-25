@@ -9,7 +9,7 @@
 
 
 
-### MySQL 配置
+## MySQL 配置
 
 1. MySQL 安装
 
@@ -66,7 +66,7 @@
    
 
 
-### EMQ X Cloud 规则引擎配置
+## EMQ X Cloud 规则引擎配置
 
 进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
 
@@ -108,7 +108,7 @@
 
    
 
-### 测试
+## 测试
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并在 EMQ X Dashboard 中添加[客户端认证信息](../deployments/dashboard/users_and_acl.md)。

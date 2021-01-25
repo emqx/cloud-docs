@@ -12,7 +12,7 @@ In order to achieve this function, we will complete the following 3 tasks in tur
 2. Create a resource and an action
 3. Complete the creation of the rule engine and test it
 
-### 1. Set the filter criteria of the rule engine
+## 1. Set the filter criteria of the rule engine
 
 Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter the deployment to use `message republishing`.
 
@@ -59,7 +59,7 @@ If the test fails, please check whether the SQL is compliant
 
 ![测试 SQL](./_assets/republish_SQL_setting.png)
 
-### 2. Create actions
+## 2. Create actions
 
 Click to add action. On the select action page, select `message republishing`, and click next
 
@@ -73,7 +73,7 @@ The created action will be displayed in the response action column. After confir
 
 ![完成规则引擎](./_assets/add_republish_action03.png)
 
-### 3. Test
+## 3. Test
 
 >If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/introduction.md) to view the MQTT client connection and test guide
 

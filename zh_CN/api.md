@@ -4,7 +4,7 @@ EMQ X Cloud  API 遵循REST体系结构，您可以通过编程方式访问 EMQ 
 
 
 
-### API 地址
+## API 地址
 
 您可以在部署详情页面下的 API 访问中，获取到 API 访问地址
 
@@ -18,7 +18,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### 接口安全
+## 接口安全
 
 HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authentication) 方式，id 和 password 须分别填写 AppID 和 AppSecret。 您可以在部署详情页面下的 API 访问中，通过创建应用访问来修改和添加 AppID/AppSecret。
 
@@ -26,9 +26,9 @@ HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authen
 
 
 
-### 响应码
+## 响应码
 
-#### HTTP 状态码 (status codes)
+### HTTP 状态码 (status codes)
 
 接口在调用成功时总是返回 200 OK，响应内容则以 JSON 格式返回。
 
@@ -44,7 +44,7 @@ HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authen
 
 
 
-#### 返回码 (result codes)
+### 返回码 (result codes)
 
 接口的响应消息体为 JSON 格式，其中总是包含返回码 `code`。
 
