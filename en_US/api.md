@@ -4,7 +4,7 @@ EMQ X Cloud API follows the REST architecture, and you can access the functions 
 
 
 
-### API address
+## API address
 
 You can get the API access address through the deployment details page.
 
@@ -18,7 +18,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Interface security
+## Interface security
 
 HTTP API uses the method of [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The id and password must be filled in AppID and AppSecret respectively. You can modify and add AppID/AppSecret by creating an application access in the API access under the deployment details page.
 
@@ -26,9 +26,9 @@ HTTP API uses the method of [Basic authentication](https://en.wikipedia.org/wiki
 
 
 
-### Response code
+## Response code
 
-#### HTTP status codes
+### HTTP status codes
 
 The EMQ X Broker interface always returns 200 OK when the call is successful, and the response content is returned in JSON format.
 
@@ -42,7 +42,7 @@ The possible status codes are as follows:
 | 404         | The requested path cannot be found or the requested object does not exist |
 | 500         | An internal error occurred while the server was processing the request |
 
-#### Result codes
+### Result codes
 
 The response message body of the EMQ X Broker interface is in JSON format, which always contains the returned `code`.
 
@@ -69,9 +69,9 @@ The possible result codes are as follows:
 
 ## API Endpoints
 
-### Broker basic Information
+## Broker basic Information
 
-#### Return basic information of all nodes in the cluster.
+### Return basic information of all nodes in the cluster.
 
 >  GET /brokers/{node}
 
@@ -115,9 +115,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Node
+## Node
 
-#### Get the status of the node
+### Get the status of the node
 
 > GET /nodes/{node}
 
@@ -168,9 +168,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Manage authentication data
+## Manage authentication data
 
-#### View the authentication data that has been added
+### View the authentication data that has been added
 
 > GET /auth_user
 
@@ -205,7 +205,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Add authentication data in batch
+### Add authentication data in batch
 
 > POST /auth_user
 
@@ -234,7 +234,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 
-#### Update the added authentication data
+### Update the added authentication data
 
 > PUT /auth_user/${login}
 
@@ -261,7 +261,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X PUT "https://lacd0b7b.test-cn.
 
 
 
-#### Delete authentication data
+### Delete authentication data
 
 > DELETE /auth_user/${login}
 
@@ -281,9 +281,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 
 
-### Client
+## Client
 
-#### Get information of all clients in the cluster
+### Get information of all clients in the cluster
 
 > GET /clients
 
@@ -377,7 +377,7 @@ After version 4.1, the contents of the returned `meta` were modified:
 
 
 
-#### Get the information of the specified client
+### Get the information of the specified client
 
 > GET /clients/{clientid}
 
@@ -406,7 +406,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Delete the specified client
+### Delete the specified client
 
 DELETE /clients/{clientid}
 
@@ -438,7 +438,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 
 
-#### Get the information of all clients under the specified node
+### Get the information of all clients under the specified node
 
 > GET /nodes/{node}/clients
 
@@ -466,7 +466,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Get the information of the specified client under the specified node
+### Get the information of the specified client under the specified node
 
 > GET /nodes/{node}/clients/{clientid}
 
@@ -493,7 +493,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Query client information through Username
+### Query client information through Username
 
 > GET /clients/username/{username}
 >
@@ -522,7 +522,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Under the specified node, query the information of the specified client through Username
+### Under the specified node, query the information of the specified client through Username
 
 > GET /nodes/{node}/clients/username/{username}
 
@@ -549,7 +549,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Query the ACL cache of the specified client
+### Query the ACL cache of the specified client
 
 > GET /clients/{clientid}/acl_cache
 
@@ -582,7 +582,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Delete the ACL cache of the specified client
+### Delete the ACL cache of the specified client
 
 > DELETE /clients/{clientid}/acl_cache
 
@@ -610,9 +610,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-
 
 
 
-### Subscription Information
+## Subscription Information
 
-#### Get all subscription information under the cluster
+### Get all subscription information under the cluster
 
 > GET /subscriptions
 
@@ -660,7 +660,7 @@ After 4.1, the contents of the returned `meta` were modified:
 :::
 
 
-#### Get the subscription information of the specified client in the cluster
+### Get the subscription information of the specified client in the cluster
 
 > GET /subscriptions/{clientid}
 
@@ -691,7 +691,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Get all subscription information under the specified node
+### Get all subscription information under the specified node
 
 > GET /nodes/{node}/subscriptions
 
@@ -724,7 +724,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Query all subscription information of a clientid under the specified node,
+### Query all subscription information of a clientid under the specified node,
 
 > GET /nodes/{node}/subscriptions/{clientid}
 
@@ -755,11 +755,11 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Routes 
+## Routes 
 
 
 
-#### Get all routes information under the cluster
+### Get all routes information under the cluster
 
 > GET /routes
 
@@ -790,7 +790,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Get the routes information of the specified topic under the cluster
+### Get the routes information of the specified topic under the cluster
 
 > GET /routes/{topic}
 
@@ -819,9 +819,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Publish /Subscribe ACL
+## Publish /Subscribe ACL
 
-#### View ACL rules that have been added
+### View ACL rules that have been added
 
 > GET /emqx_acl
 
@@ -857,7 +857,7 @@ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.em
 
 
 
-#### Add ACL rules in batch
+### Add ACL rules in batch
 
 > POST /emqx_acl
 
@@ -888,7 +888,7 @@ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn.e
 
 
 
-#### Delete ACL rules 
+### Delete ACL rules 
 
 > DELETE /emqx_acl/${login}/\${topic}
 
@@ -908,9 +908,9 @@ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X DELETE "https://lacd0b7b.test-cn
 
 
 
-### Publish message
+## Publish message
 
-#### Publish MQTT message
+### Publish MQTT message
 
 > POST /mqtt/publish
 
@@ -942,7 +942,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 
-#### Publish MQTT message in batch
+### Publish MQTT message in batch
 
 > POST /mqtt/publish_batch
 
@@ -974,9 +974,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 
-### Subscribe to topic
+## Subscribe to topic
 
-#### Subscribe to MQTT topic
+### Subscribe to MQTT topic
 
 > POST /mqtt/subscribe
 
@@ -1007,7 +1007,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 
-#### Unsubscribe
+### Unsubscribe
 
 > POST /mqtt/unsubscribe
 
@@ -1036,7 +1036,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 
-#### Subscribe to MQTT topic in batch
+### Subscribe to MQTT topic in batch
 
 > POST /mqtt/subscribe_batch
 
@@ -1067,7 +1067,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 
-#### Unsubscribe in batch
+### Unsubscribe in batch
 
 > POST /mqtt/unsubscribe_batch
 
@@ -1096,11 +1096,11 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X POST "https://lacd0b7b.test-cn
 
 
 
-### Listener
+## Listener
 
 
 
-#### Get information about all listeners in the cluster
+### Get information about all listeners in the cluster
 
 > GET /listeners
 
@@ -1140,7 +1140,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Get the listener information for the specified node
+### Get the listener information for the specified node
 
 > GET /nodes/{node}/listeners
 
@@ -1169,11 +1169,11 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Metrics
+## Metrics
 
 
 
-#### Get all statistical  metrics under the cluster
+### Get all statistical  metrics under the cluster
 
 > GET /metrics
 
@@ -1285,7 +1285,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Get all monitoring indicator data under the specified node
+### Get all monitoring indicator data under the specified node
 
 > GET /nodes/{node}/metrics
 
@@ -1308,9 +1308,9 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Status
+## Status
 
-#### Get all status data in the cluster
+### Get all status data in the cluster
 
 > GET /stats
 
@@ -1360,7 +1360,7 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-#### Get the status data on the specified node
+### Get the status data on the specified node
 
 >  GET /nodes/{node}/stats
 
@@ -1383,11 +1383,11 @@ $ curl -i --basic -u j11c5ff1:qc47fd11fccf1644 -X GET "https://lacd0b7b.test-cn.
 
 
 
-### Rule
+## Rule
 
 Query rule engine actions.
 
-#### Get the details of a rule
+### Get the details of a rule
 
 > GET /rules/{rule_id}
 
@@ -1414,7 +1414,7 @@ Query rule engine actions.
 | - data.actions[0].name    | String  | Action name, consistent with actions.name in the request     |
 | - data.actions[0].metrics | Array   | Metrics, see Rule Metrics on Dashboard for details           |
 
-#### Create a rule 
+### Create a rule 
 
 > POST /rules
 
@@ -1445,7 +1445,7 @@ Query rule engine actions.
 | - data.actions[0].name    | String  | Action name, consistent with actions.name in the request     |
 | - data.actions[0].metrics | Array   | Metrics, see Rule Metrics on Dashboard for details           |
 
-#### Update the rule
+### Update the rule
 
 > PUT /rules/{rule_id}
 
@@ -1476,7 +1476,7 @@ Query rule engine actions.
 | - data.actions[0].name    | String  | Action name, consistent with actions.name in the request     |
 | - data.actions[0].metrics | Array   | Metrics, see Rule Metrics on Dashboard for details           |
 
-#### Delete the rule
+### Delete the rule
 
 > DELETE /rules/{rule_id}
 
@@ -1549,11 +1549,11 @@ $ curl -XDELETE --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.e
 
 
 
-### Action
+## Action
 
 Query the actions of the rule engine. Note that actions can only be provided by emqx and cannot be added.
 
-#### Get the details of an action
+### Get the details of an action
 
 > GET /actions/{action_name}
 
@@ -1595,11 +1595,11 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 
 
 
-### Resource Type 
+## Resource Type 
 
 Query the rule engine's resource type. Note that resource types can only be provided by emqx and cannot be added
 
-#### Get the details of an action
+### Get the details of an action
 
 > GET /resource_types/{resource_type_name}
 
@@ -1640,11 +1640,11 @@ $ curl --basic -u j11c5ff1:qc47fd11fccf1644 'https://lacd0b7b.test-cn.emqx.cloud
 
 
 
-### Resource
+## Resource
 
 Manage the resources of the rules engine. A resource is an instance of a resource type and is used to maintain related resources such as database connections.
 
-#### Gets the details of the specified resource
+### Gets the details of the specified resource
 
 > GET /resources/{resource_id}
 
@@ -1666,7 +1666,7 @@ Manage the resources of the rules engine. A resource is an instance of a resourc
 | - data.status      | Array   | Status information for the resource. See the status of resources on the Dashboard for details. |
 | - data.description | Object  | A description of the resource, in both English and Chinese.  |
 
-#### Get all resource information
+### Get all resource information
 
 > POST /resources
 
@@ -1691,7 +1691,7 @@ Manage the resources of the rules engine. A resource is an instance of a resourc
 
 
 
-#### Delete the resource
+### Delete the resource
 
 > DELETE /resources/{resource_id}
 

@@ -7,14 +7,14 @@
 * 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 * 对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
-### 创建 Web 服务器
+## 创建 Web 服务器
 
 1. 使用 nc 命令创建一个简易的 Web 服务器。
    ```bash
    while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
    ```
 
-### EMQ X Cloud 规则引擎配置
+## EMQ X Cloud 规则引擎配置
 
 进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
 
@@ -53,7 +53,7 @@
    ![查看监控](./_assets/view_monitor_webhook.png)
 
 
-### 测试
+## 测试
 
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 

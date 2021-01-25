@@ -7,7 +7,7 @@ Before you start, you need to complete the following operations:
 * For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 * For free trial and shared deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
-### MySQL configuration
+## MySQL configuration
 
 1. Install MySQL
 
@@ -67,7 +67,7 @@ Before you start, you need to complete the following operations:
    select * from mqtt_sub;
    ```
 
-### EMQ X Cloud rules engine configuration
+## EMQ X Cloud rules engine configuration
 
 Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 
@@ -96,7 +96,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 5. View rules monitoring
    ![monitor](./_assets/view_monitor_mysql_get_subs.png)
 
-### Test
+## Test
 
 1. Inserting subscription data in MySQL
    Insert the subscription data with client ID client1, subscription topic1 and QoS 1. 

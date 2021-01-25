@@ -11,7 +11,7 @@ Before you start, you need to complete the following operations:
 * For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 * For free trial and shared deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
-### Redis configuration
+## Redis configuration
 
 1. Install Redis
 
@@ -19,7 +19,7 @@ Before you start, you need to complete the following operations:
    docker run -itd --name redis -p 6379:6379 redis
    ```
 
-### EMQ X Cloud rules engine configuration
+## EMQ X Cloud rules engine configuration
 
 Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 
@@ -59,7 +59,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 5. View rules monitoring
    ![monitor](./_assets/view_monitor_offonline_redis.png)
 
-### Test
+## Test
 
 1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
 

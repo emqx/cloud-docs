@@ -12,7 +12,7 @@
 2. 创建一个资源和一个动作
 3. 完成规则引擎创建，并进行测试
 
-### 1. 设置规则引擎的筛选条件
+## 1. 设置规则引擎的筛选条件
 
 进入 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)，并点击进入要使用 `消息重新发布` 的部署。
 
@@ -57,7 +57,7 @@ WHERE
 
 ![测试 SQL](./_assets/republish_SQL_setting.png)
 
-### 2. 创建动作
+## 2. 创建动作
 
 点击添加动作，在选择动作页，选择 `消息重新发布`，点击下一步
 
@@ -71,7 +71,7 @@ WHERE
 
 ![完成规则引擎](./_assets/add_republish_action03.png)
 
-### 3. 测试
+## 3. 测试
 
 >如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/introduction.md)，查看 MQTT 客户端连接和测试指南 
 

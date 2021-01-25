@@ -7,7 +7,7 @@
 * 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 * 对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
-### TimescaleDB 配置
+## TimescaleDB 配置
 
 1. TimescaleDB 安装
    ```bash
@@ -40,7 +40,7 @@
    select * from temp_hum;
    ```
    
-### EMQ X Cloud 规则引擎配置
+## EMQ X Cloud 规则引擎配置
 
 进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
 
@@ -80,7 +80,7 @@
    ![查看监控](./_assets/view_monitor_timescaledb.png)
    
 
-### 测试
+## 测试
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并在 EMQ X Dashboard 中添加[客户端认证信息](../deployments/dashboard/users_and_acl.md)。

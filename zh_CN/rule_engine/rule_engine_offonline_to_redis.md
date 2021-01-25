@@ -11,7 +11,7 @@
 * 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 * 对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
-### Redis 配置
+## Redis 配置
 
 1. 安装 Redis
 
@@ -19,7 +19,7 @@
    docker run -itd --name redis -p 6379:6379 redis
    ```
 
-### EMQ X Cloud 规则引擎配置
+## EMQ X Cloud 规则引擎配置
 
 进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
 
@@ -58,7 +58,7 @@
 5. 查看规则监控
    ![查看监控](./_assets/view_monitor_offonline_redis.png)
 
-### 测试
+## 测试
 
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 

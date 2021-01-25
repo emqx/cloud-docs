@@ -22,7 +22,7 @@ For free trial and shared deployment users: There is no need to complete peering
 :::
 
 
-#### 1. Create Mosquitto service
+## 1. Create Mosquitto service
 
 In your cloud server, create a mosquitto service. For the convenience of demonstration, we use docker to build quickly here. (Do not use it in production environment)
 
@@ -32,7 +32,7 @@ sudo docker run -it -p 1883:1883 adek06/mqtt:mosquitto
 
 After that, open the server's 1883 port
 
-#### 2. Set the filter conditions of the rule engine
+## 2. Set the filter conditions of the rule engine
 
 Enter [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter the deployment to use MQTT Broker bridge.
 
@@ -54,7 +54,7 @@ FROM
 ```
 
 
-#### 3. Create resources and actions
+## 3. Create resources and actions
 Click Add Action. On the Select Action page, select Bridge Data to MQTT Broker, click Next, and on the Configure Action page, click Create Resource.
 ![add_action](./_assets/add_webhook_action01.png)
 
@@ -81,7 +81,7 @@ The created action will be displayed in the response action column. After confir
 
 
 
-#### 4. Test
+## 4. Test
 
 >If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/introduction.md) to view the MQTT client connection and test guide
 

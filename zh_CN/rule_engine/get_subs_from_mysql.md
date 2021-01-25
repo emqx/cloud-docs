@@ -7,7 +7,7 @@
 * 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 * 对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
-### MySQL 配置
+## MySQL 配置
 
 1. MySQL 安装
 
@@ -67,7 +67,7 @@
    select * from mqtt_sub;
    ```
 
-### EMQ X Cloud 规则引擎配置
+## EMQ X Cloud 规则引擎配置
 
 进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
 
@@ -96,7 +96,7 @@
 5. 查看规则监控
    ![查看监控](./_assets/view_monitor_mysql_get_subs.png)
 
-### 测试
+## 测试
 
 1. 在 MySQL 中插入订阅数据
    插入客户端 ID 为 client1，订阅主题 topic1，QoS 为 1 的订阅数据。 

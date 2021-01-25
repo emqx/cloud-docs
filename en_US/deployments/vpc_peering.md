@@ -2,7 +2,7 @@
 
 VPC peering connection is a network connection between two VPCs. Through this connection, the instances in different VPCs can communicate with each other as if they are in the same network.
 
-### Precautions
+## Precautions
 
 1. EMQ X Cloud only supports creating peering connection at **the same region**.
 2. EMQ X Cloud does not accept CIDR in the range of 10.11.1.0/24 ~ 10.64.255.0/24.
@@ -10,9 +10,9 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 
 
-### AWS Cloud VPC Peering Connection
+## AWS Cloud VPC Peering Connection
 
-#### Creating peering connection
+### Creating peering connection
 
 1. Log in to [EMQ X Cloud console](<https://cloud.emqx.io/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQ X Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
 
@@ -50,7 +50,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 
 
-#### Delete peering connections
+### Delete peering connections
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
 

@@ -4,7 +4,7 @@
 ![event](./_assets/events.png)
 
 
-### 查看事件
+## 查看事件
 
 EMQ X Cloud 提供以下种类事件记录：
 

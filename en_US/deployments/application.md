@@ -4,7 +4,7 @@ EMQ X provides HTTP API to achieve integration with external systems, such as qu
 
 This section mainly introduces API application creation and deletion. For more information about how to use the API, you can go to the guide —— [REST API](../api.md)
 
-### Create API application
+## Create API application
 
 1. Log in to [EMQ X Cloud console](https://cloud.emqx.io/console/)
 

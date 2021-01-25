@@ -27,7 +27,7 @@ For free trial and shared deployment users: There is no need to complete peering
 
 
 
-#### 1. Install and initialize InfluxDB
+## 1. Install and initialize InfluxDB
 
 First, we create an InfluxDB on our server. In order to quickly create InfluxDB, we use docker for quick installation, and open **8089** UDP port. The database name is **db**.
 
@@ -40,7 +40,7 @@ $ docker run --name=influxdb --rm -d -p 8086:8086 -p 8089:8089/udp -v ${PWD}/fil
 
 
 
-#### 2. Set the filter criteria of the rule engine
+## 2. Set the filter criteria of the rule engine
 
 Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter the deployment of InfluxDB to be used.
 
@@ -107,7 +107,7 @@ If test fails, please check whether the SQL is compliant, and whether the topic 
 
 
 
-#### 3. Create resources and actions
+## 3. Create resources and actions
 
 Click Add Action, on the Select Action page, select **Save data to InfluxDB**, and click Next. When the action page is configured, click Create Resource.
 
@@ -147,7 +147,7 @@ The created action will be displayed in the response action column. After confir
 
 
 
-#### 4. Test
+## 4. Test
 
 >If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/introduction.md) to view the MQTT client connection and test guide
 
