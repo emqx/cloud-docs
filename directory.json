@@ -106,6 +106,10 @@
               "path": "deployments/vpc_peering"
             },
             {
+              "title": "NAT 网关设置",
+              "path": "deployments/nat"
+            },
+            {
               "title": "API 访问设置",
               "path": "deployments/api"
             }
@@ -423,6 +427,10 @@
             {
               "title": "VPC Peering connection settings",
               "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "NAT Gateway settings",
+              "path": "deployments/nat"
             },
             {
               "title": "API Access Settings",
