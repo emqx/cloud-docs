@@ -5,7 +5,7 @@
 
 ## 限制
 
-* 在创建部署前，您账户余额不能少于所创建部署 **24** 小时所需总费用。您可以前往 [价格估算](https://cloud.emqx.io/console/deployments/0?oper=new) 查看所选部署规格每小时费用 * 24，同时您可以在 [付款概览页面 ](https://cloud.emqx.io/console/billing/overview)完成账户余额充值。
+* 在创建部署前，您账户余额不能少于所创建部署 **24** 小时所需总费用。您可以前往 [价格估算](https://cloud.emqx.cn/console/deployments/0?oper=new) 查看所选部署规格每小时费用 * 24，同时您可以在 [付款概览页面 ](https://cloud.emqx.cn/console/billing/overview)完成账户余额充值。
 
   > 部署规格为 1000 线、100 tps 每小时价格为 2.26 元，则您账户余额应该大于 **55** 元(2.26 * 24)
 
@@ -13,7 +13,7 @@
 
 ## 创建部署
 
-1. 登录账户，导航到 EMQ X Cloud [控制台](https://cloud.emqx.io/console/)。
+1. 登录账户，导航到 EMQ X Cloud [控制台](https://cloud.emqx.cn/console/)。
 2. 点击右上角**新建按钮**进入部署价格估算页面。
 3. 依据您的需求选择相应规格的部署。
    * 选择云平台：EMQ X Cloud 暂支持华为云、阿里云，如您有其他云服务提供商需求，您可以提交[工单](../contact.md)或通过邮件（cloud@emqx.io）和我们联系。

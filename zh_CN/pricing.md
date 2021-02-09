@@ -8,7 +8,7 @@ EMQ X Cloud 按集群实例规格与消息传输网络流量收费，而非消�
 
 EMQ X Cloud 按照部署规格（最大连接数、消息 TPS）对每个部署进行计费，不同规格有不同的小时单价。
 
-创建部署前 EMQ X Cloud 会根据您的部署选用情况估算使用成本，具体价格可以前往[价格估算](https://cloud.emqx.io/cn/calculator)页面查看
+创建部署前 EMQ X Cloud 会根据您的部署选用情况估算使用成本，具体价格可以前往[价格估算](https://cloud.emqx.cn/calculator)页面查看
 
 
 具体计费项目见下表：
@@ -27,7 +27,7 @@ EMQ X Cloud 按照部署规格（最大连接数、消息 TPS）对每个部署�
 
 ### 计费周期
 
-EMQ X Cloud **每小时**统计核算一次上小时内账户消费情况（小时账单）并从余额扣费，然后累加到当月消费（月账单），您可以前往[账单页面](<https://cloud.emqx.io/console/billing/overview>)查看详细扣费信息
+EMQ X Cloud **每小时**统计核算一次上小时内账户消费情况（小时账单）并从余额扣费，然后累加到当月消费（月账单），您可以前往[账单页面](<https://cloud.emqx.cn/console/billing/overview>)查看详细扣费信息
 
 
 
