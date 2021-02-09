@@ -4,7 +4,7 @@
 
 您可以通过下面的方式进入 API 管理板块：
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console)
 2. 点击进入对应的部署
 3. 在页面的下方，查找 `API 访问` 模块
 

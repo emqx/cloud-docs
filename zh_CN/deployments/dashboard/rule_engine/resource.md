@@ -12,7 +12,7 @@ EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保�
 
 ## 创建资源
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -32,7 +32,7 @@ EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保�
 
 ## 查看资源状态
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -46,7 +46,7 @@ EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保�
 
 ## 删除资源
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 

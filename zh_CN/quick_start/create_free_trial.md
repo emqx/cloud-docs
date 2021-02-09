@@ -26,7 +26,7 @@
 
 ## 开始创建免费试用部署
 
-### 1. 登录 [EMQ X Cloud Console](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/console/)
+### 1. 登录 [EMQ X Cloud Console](https://accounts.emqx.cn/signin?continue=https://cloud.emqx.cn/console/)
 
 ![login_console](./_assets/login_console.png)
 

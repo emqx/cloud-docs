@@ -10,7 +10,7 @@ EMQ X Cloud 提供了 Dashboard 以方便用户管理设备与监控相关指标
 
 您可以通过下面的步骤进入 EMQ X Dashboard：
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
 2. 点击所需连接的部署，您将进入部署详情页面
 3. 点击页面中 **EMQ X Dashboard** 按钮，您将进入到 EMQ X Dashboard
 
