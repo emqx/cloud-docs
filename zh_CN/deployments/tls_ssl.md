@@ -60,7 +60,7 @@ EMQ X Cloud **独享部署** 提供自定义 单向/双向 TLS/SSL 配置，具�
 
 ## 创建证书
 
-1. 登录 [EMQ X Cloud 控制台](<https://cloud.emqx.io/console>)。
+1. 登录 [EMQ X Cloud 控制台](<https://cloud.emqx.cn/console>)。
 2. 进入部署详情，点击 `+TLS/SSL 配置` 按钮，配置证书内容，您可以上传文件或者直接填写证书内容
    - 认证类型：
      - 单向认证：仅客户端验证服务端证书。
@@ -94,7 +94,7 @@ EMQ X Cloud **独享部署** 提供自定义 单向/双向 TLS/SSL 配置，具�
 
 ## 删除证书
 删除证书会断开客户端到 `8883` 和 `8084` 的连接，请确保这不会影响到您的业务。
-1. 登录 [EMQ X Cloud 控制台](<https://cloud.emqx.io/console>)。
+1. 登录 [EMQ X Cloud 控制台](<https://cloud.emqx.cn/console>)。
 2. 进入部署详情，点击 `TLS/SSL 配置` 部分的证书的删除按钮。
 3. 在对话框点击“确定”，完成删除。
 

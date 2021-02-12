@@ -4,7 +4,7 @@
 
 
 
-## [注册账户](https://accounts.emqx.io/cn/signup?continue=https://cloud.emqx.io/cn)
+## [注册账户](https://accounts.emqx.cn/signup?continue=https://cloud.emqx.cn)
 
 1. 输入您的个人信息：邮箱，密码，手机号码，公司名称，国家
 2. 点击注册，EMQ X Cloud 会自动将确认邮件发送到您提供的邮箱地址
@@ -15,7 +15,7 @@
 
 
 
-## [登录账户](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/cn)
+## [登录账户](https://accounts.emqx.cn/signin?continue=https://cloud.emqx.cn)
 
 输入您的邮箱和密码，然后选择登录将跳转到 EMQ X Cloud 页面
 
@@ -23,7 +23,7 @@
 
 
 
-## [找回密码](https://accounts.emqx.io/cn/forgot_password?continue=https://cloud.emqx.io/cn)
+## [找回密码](https://accounts.emqx.cn/forgot_password?continue=https://cloud.emqx.cn)
 
 如果您忘记密码，我们将会向您的邮箱发送验证邮件。您可以在验证邮件中点击找回密码，创建新的密码。您将返回登录页面，输入新的密码，然后选择登录
 

@@ -14,7 +14,7 @@
 
 ## 1. 设置规则引擎的筛选条件
 
-进入 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)，并点击进入要使用 `消息重新发布` 的部署。
+进入 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)，并点击进入要使用 `消息重新发布` 的部署。
 
 在部署页面，选择规则引擎，点击创建。
 

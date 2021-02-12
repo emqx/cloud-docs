@@ -44,7 +44,7 @@ $ docker run --name=influxdb --rm -d -p 8086:8086 -p 8089:8089/udp -v ${PWD}/fil
 
 ## 2. 设置规则引擎的筛选条件
 
-进入 [EMQ X Cloud 控制台](https://cloud.emqx.io/console/)，并点击进入要使用 InfluxDB 的部署。
+进入 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)，并点击进入要使用 InfluxDB 的部署。
 
 在部署页面，选择规则引擎，点击创建。
 
