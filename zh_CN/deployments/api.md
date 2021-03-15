@@ -6,7 +6,7 @@
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console)
 2. 点击进入对应的部署
-3. 在页面的下方，查找 `API 访问` 模块
+3. 在页面的下方，查找 `REST API` 模块
 
 ![API](./_assets/deployment_api.png)
 
