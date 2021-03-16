@@ -52,6 +52,15 @@ EMQ X Cloud 提供了 REST API 以实现与外部系统的集成，例如查询�
 
 ![base_info](./_assets/api_info.png)
 
+## [认证鉴权](./auth_and_acl.md)
+EMQ X Cloud 提供了认证鉴权功能，可对认证和访问控制进行管理。
+
+![auth_and_acl](./_assets/auth.png)
+
+## [监控](./monitors.md)
+EMQ X Cloud 提供了监控指标，可实时查看连接数，TPS，订阅数和主题数等数据。
+
+![monitors](./_assets/monitors.png)
 
 
 ## [指标](./metrics.md)
