@@ -1,7 +1,4 @@
-# Create an EMQ X Cloud account
-
-You can create an EMQ X Cloud account using your email address.
-
+# Register and Log in to the EMQ X Cloud account
 
 
 ## [Register an account](https://accounts.emqx.io/cn/signup?continue=https://cloud.emqx.io/)
@@ -13,10 +10,10 @@ Start at the EMQ X Cloud sign up page
    * Email
    * Password 
    * Full name
-    * Phone number
-    * Company 
-    * Use case
-    * Country/Region
+   * Phone number
+   * Company 
+   * Use case
+   * Country/Region
 
 ![login](./_assets/sign_up.png)
 

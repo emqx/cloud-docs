@@ -6,27 +6,31 @@ connections and less time for EMQ X operation, maintenance, and management. This
 to EMQ X Cloud deployment. Before starting, let's review some core concepts and phrases:
 
 * Deployment: EMQ X Enterprise cluster hosted on EMQ X Cloud
+* Free Trial: Single node version of EMQ X Enterprise
+* Exclusive deployment: An EMQ X Enterprise Edition cluster with separate networks, instances, and load balancing
+
+You can follow these steps shown below to quickly complete the EMQ X Cloud QuickStart.
+
+1. [Login/Register](./create_account.md) EMQ X Cloud account
+
+    ![add_users](./_assets/log_in.png)
 
 
-
-## [Create an EMQ X Cloud account](./create_account.md)
-
-You can create an EMQ X Cloud account with an email address
-
+2. Visit EMQ X Cloud [console](https://cloud.emqx.io/console/) and create a free trial deployment
+   
+   ![console](./_assets/free_trial.png)
 
 
-## [Create a free trial deployment](./create_free_trial.md)
+3. Visit Authentication & ACL page to add authentication information
 
-The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud.
-
-
-
-## [Connect to your deployment](../connect_to_deployments/introduction.md)
-
-You can use the MQTT client that you are familiar with to connect to the deployment. At the same time, we also provide connection example codes in  the language of Python, Java, C, C++, Go and so on.
+   ![authentication](./_assets/auth.png)
 
 
+4. Click the menu on the left to get the deployment connection information and ports
 
-## [Message storage](../connect_to_deployments/introduction.md)
+   ![authentication](./_assets/detail.png)
+    
 
-You can use the EMQ X rule engine to store the operation record in various databases such as Redis, MySQL, PostgreSQL, MongoDB, and Cassandra. The operation record includes the client's online and offline status, subscribing to topic information, message content, and sending a message receipt after the message arrives.
+5. Use the MQTT client or SDK that you are familiar with to [connect to the deployment](../connect_to_deployments/introduction.md) 
+   ![authentication](./_assets/mqttx_connect.png)
+   
