@@ -12,7 +12,7 @@
 
 ## 简单示例
 
-如下图所示规则，该条规则用于处理**消息发布**时的数据，将全部主题消息的 msg 字段，消息 topic 、qos 筛选出来，发送到 Web Server 与 /uplink 主题。您可以参阅 [EMQ X 规则](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html)了解更多使用指南。
+如下图所示规则，该条规则用于处理**消息发布**时的数据，将全部主题消息的 msg 字段，消息 topic 、qos 筛选出来，发送到 Web Server。您可以参阅 [EMQ X 规则](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html)了解更多使用指南。
 
 ![img](./_assets/rule_engine_detail.png)
 
@@ -20,15 +20,13 @@
 
 ## 添加规则
 
-在创建规则引擎之前您需要确保部署状态为 **running**
+在创建规则引擎之前您需要确保部署状态为 **运行中**
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
-
-4. 点击  EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击创建按钮
+3. 点击左侧菜单`规则引擎`，在规则面板点击创建按钮
 
    ![rule-add](./_assets/rule-add.png)
 
@@ -38,7 +36,7 @@
 
 6. 添加动作
 
-   > 注意： 添加动作之前，您需要保证已添加 [VPC 对等连接](../../vpc_peering.md), 并已经[创建资源](resource.md)
+   > 注意： 添加动作之前，您需要保证已添加 [VPC 对等连接](../vpc_peering.md), 并已经[创建资源](resource.md)
 
    ![rule-action-add](./_assets/rule-action-add.png)
 
@@ -52,9 +50,7 @@
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
-
-4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则监控图标
+3. 点击左侧菜单`规则引擎`，在规则面板点击规则监控图标
 
    ![rule-monitor](./_assets/rule-monitor.png)
 
@@ -66,9 +62,7 @@
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
-
-4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则`编辑`按钮
+3. 点击左侧菜单`规则引擎 `，在规则面板点击规则`编辑`按钮
 
    ![rule-edit](./_assets/rule-edit.png)
 
@@ -88,8 +82,6 @@
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
-3. 点击页面中 EMQ X Dashboard 按钮，您将进入到 EMQ X Dashboard
-
-4. 点击 EMQ X Dashboard 左侧菜单`规则引擎` → `规则`，在规则列表页面点击规则`删除`按钮
+3. 点击左侧菜单`规则引擎`，在规则面板点击`删除`按钮
 
    ![rule-delete](./_assets/rule-delete.png)

@@ -49,6 +49,23 @@
           "path": "deployments/view_deployment"
         },
         {
+          "title": "规则引擎",
+          "children": [
+            {
+                "title": "简介",
+                "path": "deployments/rule_engine/introduction"
+            },
+            {
+                "title": "规则",
+                "path": "deployments/rule_engine/rule"
+            },
+            {
+                "title": "资源",
+                "path": "deployments/rule_engine/resource"
+            }
+          ]
+        },
+        {
           "title": "EMQ X Dashboard",
           "children": [
             {
@@ -74,23 +91,6 @@
             {
               "title": "订阅",
               "path": "deployments/dashboard/subscribe"
-            },
-            {
-              "title": "规则引擎",
-              "children": [
-                {
-                  "title": "简介",
-                  "path": "deployments/dashboard/rule_engine/introduction"
-                },
-                {
-                  "title": "规则",
-                  "path": "deployments/dashboard/rule_engine/rule"
-                },
-                {
-                  "title": "资源",
-                  "path": "deployments/dashboard/rule_engine/resource"
-                }
-              ]
             }
           ]
         },

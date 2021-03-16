@@ -48,7 +48,3 @@ EMQ X Cloud 提供了 Dashboard 以方便用户管理设备与监控相关指标
 查看当前 EMQ X 集群客户端订阅信息
 
 
-
-## [规则引擎](./rule_engine/introduction.md)
-
-通过配置规则，实现设备消息转发、存储
