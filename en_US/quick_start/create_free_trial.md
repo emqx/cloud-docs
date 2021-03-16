@@ -8,6 +8,8 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
 - Allow free trial users to have up to 25 client connections.
 
+- 10 GB of free data per month
+
 - Use all EMQ X features such as rule engine, monitoring and management.
 
 - Supports MQTT, WebSockets, MQTT over TLS, Websockets over TLS protocol connections.
