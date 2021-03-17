@@ -10,7 +10,7 @@
 
 ![API](./_assets/deployment_api.png)
 
-关于 API 的使用方式，可以前往指南 —— [REST API](../api.md)
+关于 API 的使用方式，可以前往指南 —— [REST API](./api/api.md)
 
 ## 创建 API 秘钥
 
