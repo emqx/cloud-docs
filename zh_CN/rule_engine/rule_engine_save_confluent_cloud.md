@@ -26,17 +26,15 @@
 
 ## EMQ X Cloud 规则引擎配置
 
-进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
-
 1. 资源创建
 
-   点击左侧菜单栏规则 → 资源，点击新建资源，下拉选择 Kafka 资源类型。
+   点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 Kafka 资源类型。
    依次填写：Kafka 服务器、Kafka 用户名（Confluent Cloud API Key）、Kafka 密码（Confluent Cloud API Secret），以及开启 SSL。
    最后，点击测试如果出现错误应及时检查数据库配置是否正确。
    ![创建资源](./_assets/confluent_kafka_create_resource.png)
 
 2. 规则测试
-   点击左侧菜单栏规则 → 规则，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度。
+   点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度。
 
    ```sql
    SELECT

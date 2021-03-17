@@ -4,7 +4,7 @@
 
 用户也可以通过订阅相关主题的方式来实现类似的功能，但是在 EMQ X Cloud 中内置了对这些持久化的支持；相比于前者，后者的执行效率更高，也能大大降低开发者的工作量。
 
-EMQ X Cloud 的消息存储功能依赖于规则引擎。如果您事先未了解过何为规则引擎，可以参考指南——[规则引擎](../deployments/dashboard/rule_engine/introduction.md)。
+EMQ X Cloud 的消息存储功能依赖于规则引擎。如果您事先未了解过何为规则引擎，可以参考指南——[规则引擎](../deployments/rule_engine/introduction.md)。
 
 使用限制:
 
