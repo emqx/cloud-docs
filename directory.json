@@ -123,6 +123,14 @@
               "path": "deployments/events"
             },
             {
+              "title": "监控",
+              "path": "deployments/monitors"
+            },
+            {
+              "title": "认证鉴权",
+              "path": "deployments/auth_and_acl"
+            },
+            {
               "title": "指标",
               "path": "deployments/metrics"
             },
