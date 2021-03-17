@@ -41,6 +41,9 @@
 
 ### [事件](./events.md)
 
+### [监控](./monitors.md)
+
+### [认证鉴权](./auth_and_acl.md)
 
 
 ### [指标](./metrics.md)
