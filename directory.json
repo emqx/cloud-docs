@@ -315,7 +315,20 @@
     },
     {
       "title": "API",
-      "path": "api"
+      "children": [
+        {
+          "title": "API 概览",
+          "path": "deployments/api/api"
+        },
+        {
+          "title": "认证管理",
+          "path": "deployments/api/auth"
+        },
+        {
+          "title": "访问控制管理",
+          "path": "deployments/api/acl"
+        }
+      ]
     },
     {
       "title": "FAQ",
