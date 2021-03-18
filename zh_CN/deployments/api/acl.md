@@ -10,7 +10,7 @@ POST /acl
 
 | 名称     | 类型   | 描述                   |
 | -------- | ------ | ---------------------- |
-| clientid | String | client id              |
+| clientid | String | clientid              |
 | topic    | String | 主题                   |
 | action   | String | 动作：sub, pub, subpub |
 | access   | String | 是否允许：allow, deny  |
@@ -23,23 +23,22 @@ POST /acl
 | data          | Object  | 规则对象   |
 | data.topic    | String  | 主题       |
 | data.result   | String  | 结果       |
-| data.clientid | String | client id |
+| data.clientid | String | clientid |
 | data.action   | String | 动作       |
 | data.access   | String | 是否允许       |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret -XPOST {api}/acl
+```bash
+$ curl -u app_id:app_secret -X POST {api}/acl
 ```
 
 ```JSON
 {
-	"clientid": "client1",
-	"topic": "a/b",
-	"action": "sub",
-	"access": "allow"
+  "clientid": "client1",
+  "topic": "a/b",
+  "action": "sub",
+  "access": "allow"
 }
 ```
 
@@ -85,19 +84,18 @@ POST /acl
 | data.action   | String  | 动作     |
 | data.access   | String  | 是否允许 |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret -XPOST {api}/acl
+```bash
+$ curl -u app_id:app_secret -X POST {api}/acl
 ```
 
 ```JSON
 {
-	"username": "user1",
-	"topic": "a/b",
-	"action": "sub",
-	"access": "allow"
+  "username": "user1",
+  "topic": "a/b",
+  "action": "sub",
+  "access": "allow"
 }
 ```
 
@@ -144,14 +142,15 @@ POST /acl
 
 ### 请求示例
 
+```bash
+$ curl -u app_id:app_secret -X POST {api}/acl
 ```
-curl -u app_id:app_secret -XPOST {api}/acl
-```
+
 ```json
 {
-	"topic": "a/b",
-	"action": "pub",
-	"access": "allow"
+  "topic": "a/b",
+  "action": "pub",
+  "access": "allow"
 }
 ```
 
@@ -180,7 +179,7 @@ POST /acl
 
 | 名称   | 类型   | 描述                   |
 | ------ | ------ | ---------------------- |
-| [0].clientid | String | client id              |
+| [0].clientid | String | clientid              |
 | [0].topic | String | 主题                   |
 | [0].action | String | 动作：sub, pub, subpub |
 | [0].access | String | 是否允许：allow, deny  |
@@ -191,55 +190,54 @@ POST /acl
 | [2].topic | String | 主题                   |
 | [2].action | String | 动作：sub, pub, subpub |
 | [2].access | String | 是否允许：allow, deny  |
-
 
 ### 响应消息
 
-| 名称        | 类型    | 描述     |
-| :---------- | :------ | :------- |
-| code        | Integer | 0        |
-| data        | Object  | 规则对象 |
-| [0].clientid | String | client id              |
-| [0].topic | String | 主题                   |
-| [0].action | String | 动作：sub, pub, subpub |
-| [0].access | String | 是否允许：allow, deny  |
-| [0].result | String | 结果                  |
-| [1].username | String | username               |
-| [1].topic | String | 主题                   |
-| [1].action | String | 动作：sub, pub, subpub |
-| [1].access | String | 是否允许：allow, deny  |
-| [1].result | String | 结果                  |
-| [2].topic | String | 主题                   |
-| [2].action | String | 动作：sub, pub, subpub |
-| [2].access | String | 是否允许：allow, deny  |
-| [2].all     | String | $all                |
-| [2].result | String | 结果                  |
-
+| 名称          | 类型    | 描述     |
+| :----------  | :------ | :------- |
+| code         | Integer | 0        |
+| data         | Object  | 规则对象 |
+| [0].clientid | String  | clientid              |
+| [0].topic    | String  | 主题                   |
+| [0].action   | String  | 动作：sub, pub, subpub |
+| [0].access   | String  | 是否允许：allow, deny  |
+| [0].result   | String  | 结果                  |
+| [1].username | String  | username               |
+| [1].topic    | String  | 主题                   |
+| [1].action   | String  | 动作：sub, pub, subpub |
+| [1].access   | String  | 是否允许：allow, deny  |
+| [1].result   | String  | 结果                  |
+| [2].topic    | String  | 主题                   |
+| [2].action   | String  | 动作：sub, pub, subpub |
+| [2].access   | String  | 是否允许：allow, deny  |
+| [2].all      | String  | $all                |
+| [2].result   | String  | 结果                  |
+ 
 ### 请求示例
 
-```
-curl -u app_id:app_secret -XPOST {api}/acl
+```bash
+$ curl -u app_id:app_secret -X POST {api}/acl
 ```
 
 ```json
 [
-	{
-		"clientid": "emqx_c_1",
-		"topic": "topic/A",
-		"action": "pub",
-		"access": "allow"
-	},
-	{
-		"username": "emqx_u_1",
-		"topic": "topic/A",
-		"action": "sub",
-		"access": "allow"
-	},
-	{
-		"topic": "topic/+",
-		"action": "pubsub",
-		"access": "deny"
-	}
+  {
+    "clientid": "emqx_c_1",
+    "topic": "topic/A",
+    "action": "pub",
+    "access": "allow"
+  },
+  {
+    "username": "emqx_u_1",
+    "topic": "topic/A",
+    "action": "sub",
+    "access": "allow"
+  },
+  {
+    "topic": "topic/+",
+    "action": "pubsub",
+    "access": "deny"
+  }
 ]
 ```
 
@@ -286,24 +284,23 @@ GET /acl/clientid
 
 ### 响应消息
 
-| 名称                 | 类型             | 描述        |
-| :------------------- | :--------------- | :----------------- |
-| code                 | Integer          | 0                  |
-| data                 | Array of Objects | 所有认证数据       |
-| data[].topic         | String          | 主题 |
-| data[].clientid      | String          | client id |
-| data[].action        | String          | 动作 |
-| data[].access        | String          | 是否允许 |
-| meta                 | Object           | 分页信息           |
-| meta.page            | Integer          | 页码               |
-| meta.limit           | Integer          | 每页显示的数据条数 |
-| meta.count           | Integer          | 数据总条数         |
-
+| 名称              | 类型             | 描述        |
+| :--------------- | :--------------- | :----------------- |
+| code             | Integer          | 0                  |
+| data             | Array of Objects | 所有认证数据       |
+| data[].topic     | String           | 主题 |
+| data[].clientid  | String           | clientid |
+| data[].action    | String           | 动作 |
+| data[].access    | String           | 是否允许 |
+| meta             | Object           | 分页信息           |
+| meta.page        | Integer          | 页码               |
+| meta.limit       | Integer          | 每页显示的数据条数 |
+| meta.count       | Integer          | 数据总条数         |
 
 ### 请求示例
 
-```
-curl -u app_id:app_secret {api}/acl/clientid
+```bash
+$ curl -u app_id:app_secret -X GET {api}/acl/clientid
 ```
 
 ### 响应示例
@@ -326,8 +323,6 @@ curl -u app_id:app_secret {api}/acl/clientid
   "code": 0
 }
 ```
-
-
 
 ## 查看基于 username 所有的 ACL 规则
 
@@ -354,11 +349,10 @@ GET /acl/username
 | meta.limit      | Integer          | 每页显示的数据条数 |
 | meta.count      | Integer          | 数据总条数         |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret {api}/acl/username
+```bash
+$ curl -u app_id:app_secret -X GET {api}/acl/username
 ```
 
 ### 响应示例
@@ -407,11 +401,10 @@ GET /acl/$all
 | meta.limit    | Integer          | 每页显示的数据条数 |
 | meta.count    | Integer          | 数据总条数         |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret {api}/acl/\$all
+```bash
+$ curl -u app_id:app_secret -X GET {api}/acl/\$all
 ```
 
 ### 响应示例
@@ -441,9 +434,11 @@ curl -u app_id:app_secret {api}/acl/\$all
 
 GET /acl/clientid/{clientid}
 
+**参数：**
+
 | 参数     | 类型   | 描述      |
 | -------- | ------ | --------- |
-| clientid | String | client id |
+| clientid | String | clientid |
 
 ### 请求消息
 
@@ -451,20 +446,19 @@ GET /acl/clientid/{clientid}
 
 ### 响应消息
 
-| 名称          | 类型             | 描述         |
-| :------------ | :--------------- | :----------- |
-| code          | Integer          | 0            |
-| data          | Array of Objects | 所有认证数据 |
-| data[].topic  | String           | 主题         |
-| data[].clientid    | String           | client id         |
-| data[].action | String           | 动作         |
-| data[].access | String           | 是否允许     |
-
+| 名称              | 类型             | 描述          |
+| :------------    | :--------------- | :----------- |
+| code             | Integer          | 0            |
+| data             | Array of Objects | 所有认证数据   |
+| data[].topic     | String           | 主题          |
+| data[].clientid  | String           | client id    |
+| data[].action    | String           | 动作          |
+| data[].access    | String           | 是否允许       |
 
 ### 请求示例
 
-```
-curl -u app_id:app_secret {api}/acl/clientid/emqx_c_1
+```bash
+$ curl -u app_id:app_secret -X GET {api}/acl/clientid/emqx_c_1
 ```
 
 ### 响应示例
@@ -489,6 +483,8 @@ curl -u app_id:app_secret {api}/acl/clientid/emqx_c_1
 
 GET /acl/username/{username}
 
+**参数：**
+
 | 参数     | 类型   | 描述     |
 | -------- | ------ | -------- |
 | username | String | username |
@@ -508,11 +504,10 @@ GET /acl/username/{username}
 | data[].action   | String           | 动作         |
 | data[].access   | String           | 是否允许     |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret {api}/acl/username/emqx_u_1
+```bash
+$ curl -u app_id:app_secret -X GET {api}/acl/username/emqx_u_1
 ```
 
 ### 响应示例
@@ -537,6 +532,8 @@ curl -u app_id:app_secret {api}/acl/username/emqx_u_1
 
 DELETE /acl/clientid/{clientid}/topic/{topic}
 
+**参数：**
+
 | 参数     | 类型   | 描述                               |
 | -------- | ------ | ---------------------------------- |
 | clientid | String | clientid                           |
@@ -552,11 +549,10 @@ DELETE /acl/clientid/{clientid}/topic/{topic}
 | :--- | :------ | :--- |
 | code | Integer | 0    |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret -XDELETE {api}/acl/clientid/emqx_c_1/topic/topic%2uA
+```bash
+$ curl -u app_id:app_secret -X DELETE {api}/acl/clientid/emqx_c_1/topic/topic%2uA
 ```
 
 ### 响应示例
@@ -573,6 +569,8 @@ curl -u app_id:app_secret -XDELETE {api}/acl/clientid/emqx_c_1/topic/topic%2uA
 
 DELETE /acl/username/{username}/topic/{topic}
 
+**参数：**
+
 | 参数     | 类型   | 描述                               |
 | -------- | ------ | ---------------------------------- |
 | username | String | username                           |
@@ -588,11 +586,10 @@ DELETE /acl/username/{username}/topic/{topic}
 | :--- | :------ | :--- |
 | code | Integer | 0    |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret -XDELETE {api}/acl/username/emqx_u_1/topic/topic%2uA
+```bash
+$ curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2uA
 ```
 
 ### 响应示例
@@ -609,6 +606,8 @@ curl -u app_id:app_secret -XDELETE {api}/acl/username/emqx_u_1/topic/topic%2uA
 
 DELETE /acl/all/$all/topic/{topic}
 
+**参数：**
+
 | 参数  | 类型   | 描述                               |
 | ----- | ------ | ---------------------------------- |
 | topic | String | topic，可能需要使用 UrlEncode 编码 |
@@ -623,11 +622,10 @@ DELETE /acl/all/$all/topic/{topic}
 | :--- | :------ | :--- |
 | code | Integer | 0    |
 
-
 ### 请求示例
 
-```
-curl -u app_id:app_secret -XDELETE {api}/acl/all/\$all/topic/topic%2uA
+```bash
+$ curl -u app_id:app_secret -X DELETE {api}/acl/all/\$all/topic/topic%2uA
 ```
 
 ### 响应示例

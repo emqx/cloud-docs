@@ -327,6 +327,26 @@
         {
           "title": "访问控制管理",
           "path": "deployments/api/acl"
+        },
+        {
+          "title": "客户端管理",
+          "path": "deployments/api/clients"
+        },
+        {
+          "title": "订阅信息",
+          "path": "deployments/api/subscriptions"
+        },
+        {
+          "title": "主题订阅",
+          "path": "deployments/api/subscribe"
+        },
+        {
+          "title": "消息发布",
+          "path": "deployments/api/publish"
+        },
+        {
+          "title": "指标",
+          "path": "deployments/api/metrics"
         }
       ]
     },
