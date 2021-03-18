@@ -6,9 +6,9 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
   > If you need to extend the free trial period, you can submit a [ticket](../contact.md) or email (cloud@emqx.io) to get in touch with us
 
-- For ordinary users, it allows up to 25 client connections.
+- Allow free trial users to have up to 25 client connections.
 
-- Use all EMQ X features such as rule engine, monitoring and management
+- Use all EMQ X features such as rule engine, monitoring and management.
 
 - Supports MQTT, WebSockets, MQTT over TLS, Websockets over TLS protocol connections.
 
@@ -26,31 +26,38 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
 1. Login to [EMQ X Cloud Console](https://accounts.emqx.io/signin?continue=https://cloud.emqx.io/console/)
 
-   ![login_console](./_assets/login_console.png)
+   ![log_in](./_assets/log_in.png)
 
-2. Click the Create Deployment button
+2. Click the `Create Deployment` button
 
-   ![first_create_deployment](./_assets/first_create_deployment.png)
+   ![console](./_assets/console.png)
 
-3. Choose 180 Day Free Trial
+3. Choose 180 Day Free Trial for step 1. Keep the default settings of other steps and click `Deploy` 
+on the right.
 
-   ![create_free_trial](./_assets/calculate_free_trial.png)
+   ![free_trial](./_assets/free_trial.png)
 
-4. Click to deploy now, and agree to EMQ X standard terms of service and free trial statement
+4. Review the EMQ X Cloud Standard Terms of Service and click `Continue`.
 
-   ![free_trial_declare](./_assets/free_trial_declare.png)
+   ![service_terms](./_assets/service_terms.png)
 
-5. Wait for 5 ~ 10 minutes until the deployment status is **running**
+5. Review the Free Trial Declaration Terms and click `Get started`.
 
-   ![free_trial_running](./_assets/free_trial_running.png)
+   ![freetrial_term](./_assets/freetrial_terms.png)
+   
+6. Wait for 5 ~ 10 minutes until the deployment status is **running**
+
+   ![free_trial_running](./_assets/running.png)
 
 
 
 ## Connect to your free trial deployment
 
-Before connecting to your free trial deployment, you need to wait for the free trial deployment status chaning from **pending** to **running**
+Before connecting to your free trial deployment, you need to wait for the deployment status changed from **pending** to **running**
 
-1. Get free trial connection information. Click the free trial deployment to be connected, and you will enter the deployment details page. The corresponding ports of the protocol are as follows:
+1. Get free trial connection information. 
+   
+    Click the free trial deployment to be connected, and you will enter the deployment details page. The corresponding ports of the protocol are as follows:
     | Protocol            | Port  |
     | ------------------- | ----- |
     | MQTT                | 11xxx |
@@ -58,19 +65,21 @@ Before connecting to your free trial deployment, you need to wait for the free t
     | Websockets          | 8083  |
     | Websockets over TLS | 8084  |
     
-    ![connections](./_assets/connections.png)
+    ![connections](./_assets/detail.png)
         
     
-2. Add client authentication information, Click the EMQ X Dashboard button on the deployment details page, you will enter the EMQ X Dashboard, and click the **Authentication and ACL** menu on the left
+2. Add client authentication information.
+   
+    Click the EMQ X Dashboard button on the deployment details page, you will enter the EMQ X Dashboard, and click the **Users & ACL** menu on the left
 
-    ![add_users](./_assets/add_users.png)
+    ![add_users](./_assets/auth.png)
 
 3. Connect to free trial deployment with MQTT X
-   EMQ X Cloud recommends using [MQTT X](https://mqttx.app/) to test the connection to the free trial.
+   EMQ X Cloud recommends using [MQTT X](https://mqttx.app/) to test the connection.
 
    - MQTT connection
 
-     ![mqttx_mqtts](./_assets/mqttx_mqtt.png)
+     ![mqttx_mqtts](./_assets/mqttx_connect.png)
 
    - Websockets connection
      
