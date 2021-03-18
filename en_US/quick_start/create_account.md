@@ -1,30 +1,47 @@
-# Create an EMQ X Cloud accoun
+# Create an EMQ X Cloud account
 
-You can create an EMQ X Cloud account using your email address
+You can create an EMQ X Cloud account using your email address.
 
 
 
 ## [Register an account](https://accounts.emqx.io/cn/signup?continue=https://cloud.emqx.io/)
 
-1. Enter your personal information: email, password, mobile phone number, company name, country
-2. Click register, EMQ X Cloud will automatically send a confirmation email to the email address you provided
-3. To verify your new account, click on the link in the confirmation email. The link will verify your account and return to the login page
-4. Log in to EMQ X Cloud
+Start at the EMQ X Cloud sign up page
 
-![login](./_assets/signup.png)
+1. Enter your personal information:
+   
+   * Email
+   * Password 
+   * Full name
+    * Phone number
+    * Company 
+    * Use case
+    * Country/Region
+
+![login](./_assets/sign_up.png)
+
+2. Click `Sign Up` to register to create your account.
+   EMQ X Cloud will automatically send a confirmation email to the email address you provided.
+3. Click on the link in the confirmation email to verify your new account. The link will verify your account
+   and redirect you to the login page.
+4. Now you are ready to log in to EMQ X Cloud.
+
+## [Login to the account](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/)
+
+If you've already registered an account, you could log in by the following steps:
+
+1. Go to EMQ X Cloud login page.
+2. Enter your email and password.
+3. Click `Sign in` to direct to the EMQ X Cloud page.
+
+![login](./_assets/log_in.png)
 
 
 
-## [login to the account](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/)
+## [Forget Password](https://accounts.emqx.io/cn/forgot_password?continue=https://cloud.emqx.io/)
 
-Enter your email and password, and then choose to log in and you will be redirected to the EMQ X Cloud page
+If you forget your password, you could click on `Forget your password` and enter your email address, we will send a verification email to your mailbox.
 
-![login](./_assets/login.png)
-
-
-
-## [Get back password](https://accounts.emqx.io/cn/forgot_password?continue=https://cloud.emqx.io/)
-
-If you forget your password, we will send a verification email to your mailbox. You can click Get back Password in the verification email to create a new password. You will return to the login page, enter a new password, and select login
-
-![login](./_assets/forgot.png)
+You can click Get back Password in the verification email to create a new password, 
+then you will be redirected to the login page. Enter the new password, and select `Sign in`.
+![login](./_assets/forget_password.png)
