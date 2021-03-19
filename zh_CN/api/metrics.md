@@ -21,7 +21,7 @@ POST /metrics
 
 **metrics：**
 
-| Name                            | Type    | Description                                                  |
+| 名称                            | 类型    | 描述                                                  |
 | ------------------------------- | ------- | --------------|
 | actions.failure                 | Integer | 规则引擎 action 成功失败次数   |
 | actions.success                 | Integer | 规则引擎 action 执行失败次数       |
