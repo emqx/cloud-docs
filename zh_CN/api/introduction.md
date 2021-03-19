@@ -45,7 +45,7 @@ HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authen
 
 可能的状态码如下：
 
-| Status Code | Description                                              |
+| 状态码 | 描述                                              |
 | :---------- | :------------------------------------------------------- |
 | 200         | 成功，返回的 JSON 数据将提供更多信息                     |
 | 400         | 客户端请求无效，例如请求体或参数错误                     |
@@ -61,7 +61,7 @@ HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authen
 
 可能的返回码如下：
 
-| Return Code | Description                |
+| 返回码 | 描述                |
 | :---------- | :------------------------- |
 | 0           | 成功                       |
 | 101         | RPC 错误                   |
