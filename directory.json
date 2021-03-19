@@ -318,15 +318,35 @@
       "children": [
         {
           "title": "API 概览",
-          "path": "deployments/api/api"
+          "path": "api/introduction"
         },
         {
           "title": "认证管理",
-          "path": "deployments/api/auth"
+          "path": "api/auth"
         },
         {
           "title": "访问控制管理",
-          "path": "deployments/api/acl"
+          "path": "api/acl"
+        },
+        {
+          "title": "客户端管理",
+          "path": "api/clients"
+        },
+        {
+          "title": "订阅信息",
+          "path": "api/subscriptions"
+        },
+        {
+          "title": "主题订阅",
+          "path": "api/subscribe"
+        },
+        {
+          "title": "消息发布",
+          "path": "api/publish"
+        },
+        {
+          "title": "指标",
+          "path": "api/metrics"
         }
       ]
     },
