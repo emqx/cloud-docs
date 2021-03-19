@@ -1,15 +1,12 @@
-# 创建 EMQ X Cloud 账户
-
-您可以使用电子邮件地址创建 EMQ X Cloud 账户
-
-
+# 创建和登录 EMQ X Cloud 账户
 
 ## [注册账户](https://accounts.emqx.cn/signup?continue=https://cloud.emqx.cn)
 
 1. 输入您的个人信息：邮箱，密码，手机号码，公司名称，国家
 2. 点击注册，EMQ X Cloud 会自动将确认邮件发送到您提供的邮箱地址
-3. 要验证您的新账户，请在点击确认邮件中的链接,该链接将会验证您的账户，并返回登录页面
-4. 登录 EMQ X Cloud
+3. 根据监管要求，注册需要验证手机完成实名认证.
+4. 要验证您的新账户，请在点击确认邮件中的链接,该链接将会验证您的账户，并返回登录页面
+5. 登录 EMQ X Cloud
 
 ![login](./_assets/signup.png)
 
