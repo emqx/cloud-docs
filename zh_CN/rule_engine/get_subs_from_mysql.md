@@ -111,13 +111,14 @@
 
 2. 使用 [MQTT X](https://mqttx.app/) 连接部署
 
-   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)
+   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth_and_acl.md)。
+   
    其中，设定 clientID 为 client1
 
    ![](./_assets/connect_mqtt_get_subs_mysql.png)
 
-3. 在 Dashboard 中查看订阅关系
+3. 在部署详情中查看订阅关系
 
-   进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord。在 `订阅` 中查看客户端订阅关系
-    
+   进入部署详情在 `监控` 中查看客户端订阅关系
+   
    ![](./_assets/dashboard_get_subs_mysql.png)

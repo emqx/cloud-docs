@@ -1,6 +1,6 @@
 # 使用 EMQ X Cloud 规则引擎转发数据到 WebHook
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 Kafka。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 WebHook。
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
@@ -15,8 +15,6 @@
    ```
 
 ## EMQ X Cloud 规则引擎配置
-
-进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
 
 1. 资源创建
 
@@ -62,9 +60,10 @@
 
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
-   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)
+   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth_and_acl.md)。
+   ![MQTTX](./_assets/mqttx_publish.png)
    
 2. 查看数据转存结果
     
-   ![kafka](./_assets/webhook_query_result.png)
+   ![result](./_assets/webhook_query_result.png)
 

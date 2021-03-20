@@ -67,7 +67,7 @@
 
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
-   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)
+   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth_and_acl.md)。
    ![MQTTX](./_assets/mqttx_publish.png)
 
 2. 使用 Confluent Cloud 提供的 CLI 工具查看转存消息
