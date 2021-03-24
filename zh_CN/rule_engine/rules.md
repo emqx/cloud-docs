@@ -44,6 +44,8 @@
 
    ![rule-action-config](./_assets/rule-action-config.png)
 
+
+
 ## 查看规则监控状态
 
 1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
