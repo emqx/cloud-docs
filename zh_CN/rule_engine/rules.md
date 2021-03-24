@@ -36,13 +36,15 @@
 
 6. 添加动作
 
-   > 注意： 添加动作之前，您需要保证已添加 [VPC 对等连接](../vpc_peering.md), 并已经[创建资源](resource.md)
+   > 注意： 添加动作之前，您需要保证已添加 [VPC 对等连接](../deployments/vpc_peering.md), 并已经[创建资源](./resources.md)
 
    ![rule-action-add](./_assets/rule-action-add.png)
 
    在弹出的动作配置对话框中，选择相应的动作类型，并填写相应动作的配置信息
 
    ![rule-action-config](./_assets/rule-action-config.png)
+
+
 
 ## 查看规则监控状态
 
