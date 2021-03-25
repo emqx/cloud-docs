@@ -22,7 +22,7 @@
    * 消息上下行 TPS：部署每秒钟发送和接收消息条数的总和，您后续可以通过 [升降部署规格](./upgrade_deployment.md) 实现增加和减少消息上下行 TPS。
 4. 在右侧 **基础信息** 栏核对部署信息。
 5. 点击 **立即部署** 并同意 EMQ X Cloud 服务条款。您将跳转到控制台部署详情页面。
-6. 等待 5 ~ 10 分钟直至部署运行状态为 **running** 。
+6. 等待 5 ~ 10 分钟直至部署运行状态为 **运行中** 。
 7. 您可以前往 [连接到部署](../connect_to_deployments/introduction.md) 查看更多方法连接部署。
 
-![create_deployment](./_assets/create_deployment.png)
+![create_deployment](./_assets/console_calculator.png)
