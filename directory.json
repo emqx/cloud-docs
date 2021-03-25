@@ -22,18 +22,6 @@
         {
           "title": "创建免费试用部署",
           "path": "quick_start/create_free_trial"
-        },
-        {
-          "title": "连接到您的部署",
-          "path": "connect_to_deployments/introduction"
-        },
-        {
-          "title": "查看部署监控数据",
-          "path": "deployments/monitors"
-        },
-        {
-          "title": "规则引擎使用",
-          "path": "rule_engine/introduction"
         }
       ]
     },
