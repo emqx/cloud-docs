@@ -50,7 +50,7 @@
         },
         {
           "title": "规则引擎",
-          "path": "rule_engine/introduction"
+          "path": "deployments/rule_engine"
         },
         {
           "title": "监控",

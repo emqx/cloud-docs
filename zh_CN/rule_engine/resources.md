@@ -1,6 +1,6 @@
 # 资源
 
-EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保部署状态为 `运行中`。您可以参阅 [EMQ X 规则引擎](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html) 了解更多资源创建。
+EMQ X Cloud 资源用于规则引擎响应动作， 在此之前您需要确保部署状态为**运行中**。您可以参阅 [EMQ X 规则引擎](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html) 了解更多资源创建。
 
 
 

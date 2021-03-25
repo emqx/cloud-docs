@@ -45,5 +45,5 @@ EMQ X Cloud 提供了监控指标，可实时查看连接数，TPS，订阅数�
 * 客户端 ID
 * topic 查询：例如：要搜索 `a/b`，可以通过 `a/b`，`a/+` 和 `a/#` 搜索到
 * QoS
-* 筛选共享订阅
+* 共享订阅组名称
 ![clients](./_assets/subscriptions.png)

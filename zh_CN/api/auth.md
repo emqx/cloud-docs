@@ -52,7 +52,7 @@ $ curl -u app_id:app_secret -X GET {api}/auth_username
 }
 ```
 
-## 查看指定 username 的认证信息
+## 查看指定用户名的认证信息
 
 ### URI
 
@@ -230,7 +230,7 @@ $ curl -u app_id:app_secret -X PUT {api}/auth_username/api_user1
 }
 ```
 
-## 删除用户名认证密码
+## 删除用户名认证信息
 
 ### URI
 
