@@ -188,6 +188,14 @@
           "path": "rule_engine/introduction"
         },
         {
+          "title": "规则管理",
+          "path": "rule_engine/rules"
+        },
+        {
+          "title": "资源管理",
+          "path": "rule_engine/resources"
+        },
+        {
           "title": "保存数据到 MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
