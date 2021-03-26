@@ -44,7 +44,7 @@ EMQ X Cloud 部署仅支持 MQTT over TLS/SSL, Websockets over TLS/SSL 协议连
 
 EMQ X 提供了 HTTP API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 
-更多关于 API 的使用方法，可以前往指南 —— [REST API](api.md)
+更多关于 API 的使用方法，可以前往指南 —— [REST API](api/introduction.md)
 
 ### 如何保证我的部署连接安全？
 

@@ -97,7 +97,8 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 我们的目标是：当主题 greet 收到 msg 为 hello 字符时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 - 针对 greet 主题，即 'greet/#'
 - 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行规则引擎
-- 根据上面的原则，我们最后得到的 SQL 应该如下：
+
+根据上面的原则，我们最后得到的 SQL 应该如下：
 
 ```sql
 SELECT
@@ -111,11 +112,11 @@ WHERE
 可以点击 SQL 输入框下的 SQL 测试 ，填写数据：
 - topic: greet
 - payload:
-```json
-{
-"msg":"hello"
-}
-```
+  ```json
+  {
+    "msg":"hello"
+  }
+  ```
 
 点击测试，查看得到的数据结果，如果设置无误，测试输出框应该得到完整的 JSON 数据，如下：
 ```json
@@ -144,7 +145,7 @@ WHERE
 >
 >如果测试失败，请检查是否完成 [VPC 对等连接](../deployments/vpc_peering.md)，以及检查 IP 地址是否正确。 
 
-点击确定，返回到配置动作页面，Kafka 主题填写刚刚创建的 testTopic 主题，在消息内容模板里填写 "hello from emqx cloud"，资源 ID 默认，点击确定。
+点击确定，返回到配置动作页面，Kafka 主题填写刚刚创建的 testTopic 主题，在消息内容模板里填写 "${msg} from emqx cloud"，资源 ID 默认，点击确定。
 
 ![添加动作](./_assets/add_kafka_action04.png)
 

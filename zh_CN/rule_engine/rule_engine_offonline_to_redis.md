@@ -21,15 +21,14 @@
 
 ## EMQ X Cloud 规则引擎配置
 
-进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord
-
 1. 资源创建
 
-   点击左侧菜单栏规则 → 资源，点击新建资源，下拉选择 Redis 单节点模式 资源类型。填入刚才创建好的 Redis 信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+   点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 Redis 单节点模式 资源类型。填入刚才创建好的 Redis 信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+
    ![创建资源](./_assets/redis_create_resource.png)
 
 2. 规则测试
-   点击左侧菜单栏规则 → 规则，点击创建，然后输入如下规则匹配 SQL 语句。我们将主题为 `temp_hum/emqx` 的消息信息读取出来。
+   点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。我们将主题为 `temp_hum/emqx` 的消息信息读取出来。
 
    ```sql
    SELECT
@@ -53,16 +52,18 @@
    ![添加动作](./_assets/offonline_redis_action.png)
 
 4. 点击创建规则，并返回规则列表
+
    ![规则列表](./_assets/view_rule_engine_offonline_redis.png)
 
 5. 查看规则监控
+
    ![查看监控](./_assets/view_monitor_offonline_redis.png)
 
 ## 测试
 
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
-   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并在 EMQ X Dashboard 中添加[客户端认证信息](../deployments/dashboard/users_and_acl.md)。
+   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)
 
    ::: tip Tip
    发送消息需要 QoS > 0
@@ -80,7 +81,8 @@
     ![redis](./_assets/offonline_redis_query_result.png)
 
 3. 使用 [MQTT X](https://mqttx.app/) 消费离线数据
-   在 MQTT X 中，订阅主题 temp_hum/emqx，获取离线数据
+   
+   在 MQTT X 中，订阅主题 `temp_hum/emqx`，获取离线数据
 
    ![mqttx](./_assets/mqttx_offonline_message.png)
    ![mqttx](./_assets/mqttx_offonline_message2.png)

@@ -22,10 +22,6 @@
         {
           "title": "创建免费试用部署",
           "path": "quick_start/create_free_trial"
-        },
-        {
-          "title": "连接到您的部署",
-          "path": "quick_start/connect_to_deployments"
         }
       ]
     },
@@ -45,54 +41,32 @@
           "path": "deployments/create_deployment"
         },
         {
-          "title": "查看部署",
+          "title": "部署概览",
           "path": "deployments/view_deployment"
         },
         {
-          "title": "EMQ X Dashboard",
-          "children": [
-            {
-              "title": "简介",
-              "path": "deployments/dashboard/introduction"
-            },
-            {
-              "title": "监控",
-              "path": "deployments/dashboard/monitor"
-            },
-            {
-              "title": "认证鉴权",
-              "path": "deployments/dashboard/users_and_acl"
-            },
-            {
-              "title": "客户端",
-              "path": "deployments/dashboard/client"
-            },
-            {
-              "title": "主题",
-              "path": "deployments/dashboard/topic"
-            },
-            {
-              "title": "订阅",
-              "path": "deployments/dashboard/subscribe"
-            },
-            {
-              "title": "规则引擎",
-              "children": [
-                {
-                  "title": "简介",
-                  "path": "deployments/dashboard/rule_engine/introduction"
-                },
-                {
-                  "title": "规则",
-                  "path": "deployments/dashboard/rule_engine/rule"
-                },
-                {
-                  "title": "资源",
-                  "path": "deployments/dashboard/rule_engine/resource"
-                }
-              ]
-            }
-          ]
+          "title": "认证鉴权",
+          "path": "deployments/auth_and_acl"
+        },
+        {
+          "title": "规则引擎",
+          "path": "deployments/rule_engine"
+        },
+        {
+          "title": "监控",
+          "path": "deployments/monitors"
+        },
+        {
+          "title": "指标",
+          "path": "deployments/metrics"
+        },
+        {
+          "title": "日志",
+          "path": "deployments/logs"
+        },
+        {
+          "title": "告警",
+          "path": "deployments/alerts"
         },
         {
           "title": "安全功能和设置",
@@ -108,37 +82,16 @@
             {
               "title": "NAT 网关设置",
               "path": "deployments/nat"
-            },
-            {
-              "title": "API 访问设置",
-              "path": "deployments/api"
-            }
-          ]
-        },
-        {
-          "title": "运维管理",
-          "children": [
-            {
-              "title": "事件",
-              "path": "deployments/events"
-            },
-            {
-              "title": "指标",
-              "path": "deployments/metrics"
-            },
-            {
-              "title": "日志",
-              "path": "deployments/logs"
-            },
-            {
-              "title": "告警",
-              "path": "deployments/alerts"
             }
           ]
         },
         {
           "title": "伸缩部署规格",
           "path": "deployments/upgrade_deployment"
+        },
+        {
+          "title": "停止部署",
+          "path": "deployments/stop_deployment"
         },
         {
           "title": "删除部署",
@@ -235,6 +188,14 @@
           "path": "rule_engine/introduction"
         },
         {
+          "title": "规则管理",
+          "path": "rule_engine/rules"
+        },
+        {
+          "title": "资源管理",
+          "path": "rule_engine/resources"
+        },
+        {
           "title": "保存数据到 MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
@@ -307,7 +268,40 @@
     },
     {
       "title": "API",
-      "path": "api"
+      "children": [
+        {
+          "title": "API 概览",
+          "path": "api/introduction"
+        },
+        {
+          "title": "认证管理",
+          "path": "api/auth"
+        },
+        {
+          "title": "访问控制管理",
+          "path": "api/acl"
+        },
+        {
+          "title": "客户端管理",
+          "path": "api/clients"
+        },
+        {
+          "title": "订阅信息",
+          "path": "api/subscriptions"
+        },
+        {
+          "title": "主题订阅",
+          "path": "api/subscribe"
+        },
+        {
+          "title": "消息发布",
+          "path": "api/publish"
+        },
+        {
+          "title": "指标",
+          "path": "api/metrics"
+        }
+      ]
     },
     {
       "title": "FAQ",
