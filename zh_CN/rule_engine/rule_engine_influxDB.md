@@ -83,15 +83,15 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 * topic: home/sensor
 * payload:
-```json
-{
-  "location": "bedroom",
-  "data":{
-    "temperature": 26,
-    "humidity": 46.4
+  ```json
+  {
+    "location": "bedroom",
+    "data":{
+      "temperature": 26,
+      "humidity": 46.4
+    }
   }
-}
-```
+  ```
 点击测试，查看得到的数据结果，如果设置无误，测试输出框应该得到完整的 JSON 数据，如下：
 
 ```json

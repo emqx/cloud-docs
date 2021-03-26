@@ -72,6 +72,7 @@
 1. 资源创建
 
    点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 MySQL 资源类型。填入刚才创建好的 mysql 数据库信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+
    ![资源创建](./_assets/mysql_create_resource.png)
    
 2. 规则填写
@@ -84,20 +85,23 @@
    
 3. 添加响应动作
 
-   点击左下角添加动作，下拉选择 → 代理订阅 → 从 MySQL 中获取订阅列表 选择第一步创建好的资源
+   点击左下角添加动作，下拉选择 → 代理订阅 → 从 MySQL 中获取订阅列表，选择第一步创建好的资源
 
    ![规则引擎](./_assets/get_subs_mysql_action.png)
 
 4. 点击创建规则，并返回规则列表
+
    ![规则列表](./_assets/view_rule_engine_mysql_get_subs.png)
 
 
 5. 查看规则监控
+
    ![查看监控](./_assets/view_monitor_mysql_get_subs.png)
 
 ## 测试
 
 1. 在 MySQL 中插入订阅数据
+
    插入客户端 ID 为 client1，订阅主题 topic1，QoS 为 1 的订阅数据。 
    ```sql
    INSERT INTO mqtt_sub(clientid, topic, qos) values("client1", "topic1", 1);
@@ -109,8 +113,11 @@
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)
    其中，设定 clientID 为 client1
+
    ![](./_assets/connect_mqtt_get_subs_mysql.png)
 
 3. 在 Dashboard 中查看订阅关系
-   进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord。在 `订阅` 中查看客户端订阅关系 
+
+   进入部署详情点击 EMQ X Dashbaord 将进入 Dashbaord。在 `订阅` 中查看客户端订阅关系
+    
    ![](./_assets/dashboard_get_subs_mysql.png)

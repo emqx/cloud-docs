@@ -45,7 +45,8 @@ sudo docker run -it -p 1883:1883 adek06/mqtt:mosquitto
 我们的目标是：当有消息发送到 greet 主题时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 
 * 仅针对 'greet/#'
-* 根据上面的原则，我们最后得到的 SQL 应该如下：
+
+根据上面的原则，我们最后得到的 SQL 应该如下：
 
 ```sql
 SELECT
@@ -57,13 +58,19 @@ FROM
 
 ## 3. 创建资源和动作
 点击添加动作，在选择动作页，选择 桥接数据到 MQTT Broker，点击下一步，在配置动作页面，点击创建资源。
+
 ![添加动作](./_assets/add_mqtt_action01.png)
 
 ![选择 桥接数据到 MQTT Broker](./_assets/add_mqtt_action02.png)
 
 
 
-在创建资源页面里，资源类型选择 MQTT Bridge，在 远程 broker 地址 里填写服务器的私有地址，将挂载点放在 emqx/ 上，然后点击测试。返回 “测试可用” 表示测试成功。
+在创建资源页面里，按照如下设置：
+- 资源类型：选择 `MQTT Bridge`
+- 远程 broker 地址：填写服务器的私有地址
+- 桥接挂载点：`emqx/`
+
+然后点击测试。返回 “测试可用” 表示测试成功。
 
 >注意：
 >
@@ -85,7 +92,7 @@ FROM
 
 >如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/introduction.md)，查看 MQTT 客户端连接和测试指南
 
-在第三步配置动作时，我们将挂载点设为 emqx/，所以这里用客户端订阅 Mosquitto 的 emqx/# 主题。
+在第三步配置动作时，我们将挂载点设为 `emqx/`，所以这里用客户端订阅 Mosquitto 的 `emqx/#` 主题。
 
 同时我们发送 "hello" 到 EMQ X Cloud 的 greet 主题，规则引擎就会触发。可以看到 Mosquitto 已经收到消息 "hello FROM EMQ X CLOUD"
 

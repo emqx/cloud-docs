@@ -80,9 +80,10 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 ![规则引擎页](./_assets/view_rule_engine.png)
 
 我们的目标是：当主题 greet 收到 msg 为 hello 字符时，就会触发引擎。这里需要对 SQL 进行一定的处理：
-● 针对 greet 主题，即 'greet/#'
-● 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行规则引擎
-● 根据上面的原则，我们最后得到的 SQL 应该如下：
+- 针对 greet 主题，即 'greet/#'
+- 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行规则引擎
+
+根据上面的原则，我们最后得到的 SQL 应该如下：
 
 ```sql
 SELECT
@@ -98,11 +99,11 @@ WHERE
 - topic: greet
 - payload:
 
-```json
-{
-"msg":"hello"
-}
-```
+  ```json
+  {
+    "msg":"hello"
+  }
+  ```
 
 点击测试，查看得到的数据结果，如果设置无误，测试输出框应该得到完整的 JSON 数据，如下：
 
