@@ -145,7 +145,7 @@ WHERE
 >
 >如果测试失败，请检查是否完成 [VPC 对等连接](../deployments/vpc_peering.md)，以及检查 IP 地址是否正确。 
 
-点击确定，返回到配置动作页面，Kafka 主题填写刚刚创建的 testTopic 主题，在消息内容模板里填写 "hello from emqx cloud"，资源 ID 默认，点击确定。
+点击确定，返回到配置动作页面，Kafka 主题填写刚刚创建的 testTopic 主题，在消息内容模板里填写 "${msg} from emqx cloud"，资源 ID 默认，点击确定。
 
 ![添加动作](./_assets/add_kafka_action04.png)
 
