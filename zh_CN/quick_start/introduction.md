@@ -23,6 +23,7 @@
    ![add_users](./_assets/add_users.png)
 
 4. 点击左侧概览菜单，获取部署连接信息和端口
+
    ![add_users](./_assets/overview.png)
 
 5. 使用您熟悉的 MQTT 客户端或 SDK [连接到部署](../connect_to_deployments/introduction.md)

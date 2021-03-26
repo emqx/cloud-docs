@@ -71,6 +71,7 @@
 1. 资源创建
 
    点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 MySQL 资源类型。填入刚才创建好的 mysql 数据库信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+
    ![资源创建](./_assets/mysql_create_resource.png)
    
 2. 规则测试
@@ -97,10 +98,12 @@
    ![规则引擎](./_assets/mysql_action.png)
 
 4. 点击创建规则，并返回规则列表
+
    ![规则列表](./_assets/view_rule_engine.png)
 
 
 5. 查看规则监控
+
    ![查看监控](./_assets/view_monitor.png)
    
 

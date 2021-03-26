@@ -39,11 +39,11 @@ WHERE
 
 * topic: t/a
 * payload:
-```json
-{
-  "msg":"hello test"
-}
-```
+  ```json
+  {
+    "msg":"hello test"
+  }
+  ```
 点击测试，查看得到的数据结果，如果设置无误，测试输出框应该得到完整的 JSON 数据，如下：
 
 ```json

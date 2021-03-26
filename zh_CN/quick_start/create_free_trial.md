@@ -59,7 +59,7 @@
    
    ![add_users](./_assets/add_users.png)
 
-2.   获取免费试用连接信息
+2. 获取免费试用连接信息
     
    点击概览菜单，您将看到部署连接信息以及连接端口。EMQ X Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接，协议对应端口如下：
 
@@ -72,7 +72,7 @@
 
    ![connections](./_assets/overview.png)
 
-3.  MQTT X 连接到免费试用部署
+3. MQTT X 连接到免费试用部署
 
    EMQ X Cloud 推荐使用 [MQTT X](https://mqttx.app/cn/) 测试连接和测试部署，您也可以使用熟悉的[SDK 或其他工具](../connect_to_deployments/introduction.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
 

@@ -24,6 +24,7 @@
 1. 资源创建
 
    点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 Redis 单节点模式 资源类型。填入刚才创建好的 Redis 信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+
    ![创建资源](./_assets/redis_create_resource.png)
 
 2. 规则测试
@@ -51,9 +52,11 @@
    ![添加动作](./_assets/offonline_redis_action.png)
 
 4. 点击创建规则，并返回规则列表
+
    ![规则列表](./_assets/view_rule_engine_offonline_redis.png)
 
 5. 查看规则监控
+
    ![查看监控](./_assets/view_monitor_offonline_redis.png)
 
 ## 测试
@@ -78,7 +81,8 @@
     ![redis](./_assets/offonline_redis_query_result.png)
 
 3. 使用 [MQTT X](https://mqttx.app/) 消费离线数据
-   在 MQTT X 中，订阅主题 temp_hum/emqx，获取离线数据
+   
+   在 MQTT X 中，订阅主题 `temp_hum/emqx`，获取离线数据
 
    ![mqttx](./_assets/mqttx_offonline_message.png)
    ![mqttx](./_assets/mqttx_offonline_message2.png)

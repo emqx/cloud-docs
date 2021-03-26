@@ -45,6 +45,7 @@
 1. 资源创建
 
    点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 TimescaleDB 资源类型。填入刚才创建好的 timescaledb 数据库信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+
    ![资源创建](./_assets/timescaledb_create_resource.png)
 
 2. 规则测试
@@ -71,10 +72,12 @@
    ![规则引擎](./_assets/timescaledb_action.png)
 
 4. 点击创建规则，并返回规则列表
+
    ![规则列表](./_assets/view_rule_engine_timescaledb.png)
 
 
 5. 查看规则监控
+
    ![查看监控](./_assets/view_monitor_timescaledb.png)
    
 
@@ -82,6 +85,7 @@
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)。
+   
    ![MQTTX](./_assets/mqttx_publish.png)
    
 2. 查看数据转存结果
