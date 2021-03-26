@@ -75,6 +75,7 @@
    ![资源创建](./_assets/mysql_create_resource.png)
    
 2. 规则测试
+   
    点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度。
    
    ```sql
