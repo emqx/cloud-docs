@@ -75,6 +75,7 @@
    ![资源创建](./_assets/mysql_create_resource.png)
    
 2. 规则测试
+   
    点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度。
    
    ```sql
@@ -112,8 +113,10 @@
 ## 测试
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
-   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)
-   
+   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth_and_acl.md)。
+
+   ![MQTTX](./_assets/mqttx_publish.png)
+
 2. 查看数据转存结果
 
    ```sql
