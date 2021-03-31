@@ -8,7 +8,7 @@ QoS > 0 required to save offline messages
 
 Before you start, you need to complete the following operations:
 * Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
-* For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
+* For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/Security features and Settings/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 * For free trial and shared deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
 ## Redis configuration
@@ -63,7 +63,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 
 1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
 
-   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/dashboard/users_and_acl.md) to the EMQ X Dashboard.
+   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth_and_acl.md) to the EMQ X Dashboard.
 
    ::: tip Tip
 

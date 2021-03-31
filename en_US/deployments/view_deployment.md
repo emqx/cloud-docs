@@ -17,14 +17,14 @@ Here you can view the following deployment information:
   - Free trial and shared deployment connection address: domain name ending with emqx.cloud suffix
 - Connection port:
 
-  - Exclusive Deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](./tls_ssl.md)
+  - Exclusive Deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](./Security features and Settings/tls_ssl.md)
   - Free Trial and Shared Deployment port: open **11xxx(mqtt) **, **11xxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
 
 ![base_info](./_assets/deployment_info.png)
 
 
 
-## [TLS/SSL Configuration](./tls_ssl.md)
+## [TLS/SSL Configuration](./Security features and Settings/tls_ssl.md)
 
 ::: danger
 This feature is not available in free trial and shared deployment.
@@ -36,7 +36,7 @@ EMQ X Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supp
 
 
 
-## [VPC Peering Connection Configuration](./vpc_peering.md)
+## [VPC Peering Connection Configuration](./Security features and Settings/vpc_peering.md)
 
 ::: danger
 This feature is not available in free trial and shared deployment
