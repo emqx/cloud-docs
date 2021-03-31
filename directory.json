@@ -371,20 +371,7 @@
         },
         {
           "title": "Rule Engine",
-          "children": [
-            {
-              "title": "Introduction",
-              "path": "deployment/rule_engine"
-            },
-            {
-              "title": "Rule",
-              "path": "deployment/rule"
-            },
-            {
-              "title": "Resource",
-              "path": "deployment/resource"
-            }
-          ]
+          "path": "deployments/rule_engine"
         },
         {
           "title": "Monitor",

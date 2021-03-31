@@ -9,11 +9,11 @@ In EMQ X Cloud, using the rule engine has the following requirements:
 - For free trial deployments and shared deployments: Access to resources such as databases only supports public network access, so you need to ensure that resources have public network access capability and that security groups are open before creating resources.
 - For exclusive deployments: Access to resources such as databases only supports Intranet access, so you need to configure a VPC peering connection and open security groups before creating resources.
 
-## [Rule Management](./rule.md)
+## Rule Management
 
 The rule engine not only provides a clear and flexible "configurable" business integration solution, simplifies the business development process, improves user usability, and reduces the coupling degree between the business system and EMQ X, but also provides a superior infrastructure for EMQ X's proprietary functionality customization.
 
-## [Resource Management](./resource.md)
+## Resource Management
 
 EMQ X Cloud resources are used for rule engine response actions, before which you need to ensure that the deployment status is running.
 
