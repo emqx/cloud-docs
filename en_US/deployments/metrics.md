@@ -1,6 +1,6 @@
 # Metric
 
-EMQ X Cloud provides four incremental metrics: message, client, packet, and delivery. You can view the display chart corresponding to each indicator and the detailed information at a certain point of time.
+EMQ X Cloud provides four incremental metrics: messages, client, packets, and delivery. You can view the display chart corresponding to each indicator, and the detailed information at a certain point of time.
 
 ![metrics_line_detail](./_assets/metrics.png)
 
@@ -44,7 +44,7 @@ It shows the increment of the number of bytes sent and received during the time 
 | send_kibibytes     | Kilobytes of sent packet     |
 | received_kibibytes | Kilobytes of received packet |
 
-![metrics_line_detail](./_assets/metric_packages.png)
+![metrics_line_detail](./_assets/metric_packets.png)
 
 
 
