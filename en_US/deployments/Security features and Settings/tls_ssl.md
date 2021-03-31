@@ -1,7 +1,7 @@
 # Configure TLS/SSL
 
 ::: danger
-This feature is not available in free trial and shared deployment
+This feature is not available for free trial and shared deployment.
 :::
 
 EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
@@ -13,7 +13,7 @@ EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL con
 
 
 
-## Certificate restrictions
+## Certificate Restrictions
 
 - The certificate must specify the encryption algorithm and key size. EMQ X Cloud supports the following algorithms:
 
@@ -57,7 +57,7 @@ EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL con
   ```
   
 
-## New certificate
+## Create a Certificate
 
 1. Login [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
 2. Go to the deployment details and click on the `+TLS/SSL configuration` button to configure the certificate contents, either by uploading a file or by filling in the certificate contents directly
@@ -68,7 +68,7 @@ EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL con
    - Certificate chain: the certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
    - Private keys: private keys
    - CA certificate: the client's CA certificate is required when selecting two-way certification
-3. When you have completed the form, click on "OK".
+3. When you have completed the form, click on `OK`.
 
 ![tls](./_assets/tls.png)
 
@@ -76,7 +76,7 @@ EMQ X Cloud **Dedicated Deployment** provides custom one-way/two-way TLS/SSL con
 
 ## Test connections
 
-Before testing, make sure that you have created authentication information, refer to [certification and authentication](./dashboard/users_and_acl.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./dashboard/users_and_acl.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
 - To create a new connection, enter the Name, Client ID is randomly generated
 - Select Host and fill in the deployed connection address and port
   - If you select an SSL connection, select ports `mqtts://` and `8883`
@@ -91,7 +91,7 @@ Before testing, make sure that you have created authentication information, refe
 
 ![mqttx_tls](./_assets/mqttx_tls.png)
 
-## Delete the certificate
+## Delete the Certificate
 Deleting the certificate will disconnect the client from `8883` and `8084`, please ensure that this does not affect your business.
 1. Login [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
 2. To access the deployment details, click on the delete button for the certificate in the `TLS/SSL Configuration` section.
@@ -99,7 +99,7 @@ Deleting the certificate will disconnect the client from `8883` and `8084`, plea
 
 
 
-## Generate self-signed certificates
+## Generate Self-signed Certificates
 
 Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
 
@@ -119,7 +119,7 @@ openssl req \
     -out root-ca.crt
 ```
 
-### Generation of server-side certificate 
+### Generation of Server-side Certificate 
 
 1. Generation of server-side secret key
 ```bash
@@ -187,7 +187,7 @@ openssl x509 -noout -text -in server.crt
 openssl verify -CAfile root-ca.crt server.crt
 ```
 
-### Generation of client-side certificate 
+### Generation of Client-side Certificate 
 
 
 1. Generation of client-side secret key
