@@ -50,25 +50,25 @@ For more information about how to use the API, you can refer to the guide-[REST 
 
 Encrypted communication can be realized by configuring TLS/SSL certificate.
 
-For the configuration method, please refer to [configure TLS/SSL](deployments/tls_ssl.md)
+For the configuration method, please refer to [configure TLS/SSL](deployments/Security features and Settings/tls_ssl.md)
 
 ### Does it support one-way TLS/SSL authentication?
 
 Yes.
 
-For the configuration method, please refer to [configure TLS/SSL](deployments/tls_ssl.md)
+For the configuration method, please refer to [configure TLS/SSL](deployments/Security features and Settings/tls_ssl.md)
 
 ### Does it support mutual TLS/SSL authentication?
 
 Yes.
 
-For the configuration method, please refer to [configure TLS/SSL](deployments/tls_ssl.md)
+For the configuration method, please refer to [configure TLS/SSL](deployments/Security features and Settings/tls_ssl.md)
 
 ### Does it support custom signed TLS/SSL authentication?
 
 Yes.
 
-For the configuration method, please refer to [configure TLS/SSL](deployments/tls_ssl.md)
+For the configuration method, please refer to [configure TLS/SSL](deployments/Security features and Settings/tls_ssl.md)
 
 ### How to connect with my existing system?
 

@@ -6,7 +6,7 @@ Before you start, you will need to complete the following:
 
 * A deployment (EMQ X Cluster) has been created on EMQ X Cloud.
 
-* For Dedicated Deployment users: please complete the creation of a [VPC Peering Connections](../deployments/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
+* For Dedicated Deployment users: please complete the creation of a [VPC Peering Connections](../deployments/Security features and Settings/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
 
 * For Free Trial and Shared Deployment users: No PC Peering Connections is required. All IP references below are to the public IP of the resource.
 
@@ -108,7 +108,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord
 
 1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data
 
-   You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/dashboard/users_and_acl.md) in the EMQ X Dashboard.
+   You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth_and_acl.md) in the EMQ X Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)
 
 2. View data dump results

@@ -16,7 +16,7 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
   > If you need other protocol support, you can submit a [ticket](../contact.md) or send an email (cloud@emqx.io) to get in touch with us
 
-- Customizing [TLS/SSL](../deployments/tls_ssl.md) and creating [VPC peering connection](../deployments/vpc_peering.md) are not supported.
+- Customizing [TLS/SSL](../deployments/Security features and Settings/tls_ssl.md) and creating [VPC peering connection](../deployments/Security features and Settings/vpc_peering.md) are not supported.
 
 - Active client connections are deployments within 7 days.
   

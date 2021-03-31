@@ -4,7 +4,7 @@ The main usage scenarios of message storage include storing the operation record
 
 Users can also subscribe to related topics to achieve similar functions, but EMQ X Cloud has built-in support for the persistence of this function; compared with the former, the latter has higher execution efficiency and can greatly reduce the developer’s Workload.
 
-The message storage function of EMQ X Cloud relies on the rule engine. If you don't know what a rule engine is, you can refer to the guide-[Rule Engine](../deployments/dashboard/rule_engine/introduction.md).
+The message storage function of EMQ X Cloud relies on the rule engine. If you don't know what a rule engine is, you can refer to the guide-[Rule Engine](../deployments/rule_engine.md).
 
 Usage restrictions:
 
