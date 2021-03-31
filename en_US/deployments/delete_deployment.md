@@ -1,4 +1,4 @@
-# Delete deployment
+# Delete Deployment
 
 Before deleting the deployment, you need to make sure the deployment running status is `running`.
 

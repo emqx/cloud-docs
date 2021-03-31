@@ -17,7 +17,7 @@ In order to achieve this function, we will complete the following 4 tasks:
 
 ::: tip Tip
 Before using the rule engine, create a deployment first.
-For dedicated deployment users: please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
+For dedicated deployment users: please complete [Peering Connection](../deployments/Security features and Settings/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
 For free trial and shared deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
 :::
 
@@ -65,7 +65,7 @@ Click Add Action. On the Select Action page, select Bridge Data to MQTT Broker, 
 On the Create Resource page, select MQTT Bridge as the resource type, fill in the private address of the server in the remote broker address, place the mount point on emqx/, and click Test. If "test available" returns, it means the test was successful.
 
 ::: tip Tip
-If the test fails, please check whether the [VPC peering connection](../deployments/vpc_peering.md) is completed and whether the IP address is correct. 
+If the test fails, please check whether the [VPC peering connection](../deployments/Security features and Settings/vpc_peering.md) is completed and whether the IP address is correct. 
 :::
 
 

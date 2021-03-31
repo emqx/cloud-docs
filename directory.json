@@ -362,103 +362,73 @@
           "path": "deployments/create_deployment"
         },
         {
-          "title": "View deployment",
+          "title": "Deployment Overview",
           "path": "deployments/view_deployment"
         },
         {
-          "title": "EMQ X Dashboard",
+          "title": "Authentication & ACL",
+          "path": "deployments/auth_and_acl"
+        },
+        {
+          "title": "Rule Engine",
           "children": [
             {
               "title": "Introduction",
-              "path": "deployments/dashboard/introduction"
+              "path": "deployment/rule_engine"
             },
             {
-              "title": "Monitor",
-              "path": "deployments/dashboard/monitor"
+              "title": "Rule",
+              "path": "deployment/rule"
             },
             {
-              "title": "Authentication",
-              "path": "deployments/dashboard/users_and_acl"
-            },
-            {
-              "title": "Client",
-              "path": "deployments/dashboard/client"
-            },
-            {
-              "title": "Topic",
-              "path": "deployments/dashboard/topic"
-            },
-            {
-              "title": "Subscribe",
-              "path": "deployments/dashboard/subscribe"
-            },
-            {
-              "title": "Rule engine",
-              "children": [
-                {
-                  "title": "Introduction",
-                  "path": "deployments/dashboard/rule_engine/introduction"
-                },
-                {
-                  "title": "Rule",
-                  "path": "deployments/dashboard/rule_engine/rule"
-                },
-                {
-                  "title": "Resource",
-                  "path": "deployments/dashboard/rule_engine/resource"
-                }
-              ]
+              "title": "Resource",
+              "path": "deployment/resource"
             }
           ]
         },
         {
-          "title": "Security Features and Setup",
+          "title": "Monitor",
+          "path": "deployments/monitors"
+        },
+        {
+          "title": "Metrics",
+          "path": "deployments/metrics"
+        },
+        {
+          "title": "Log",
+          "path": "deployments/logs"
+        },
+        {
+          "title": "Alert",
+          "path": "deployments/alerts"
+        },
+        {
+          "title": "Security features and Settings",
           "children": [
             {
-              "title": "TLS/SSL configuration",
-              "path": "deployments/tls_ssl"
+              "title": "TLS/SSL",
+              "path": "deployments/Security features and Settings/tls_ssl"
             },
             {
-              "title": "VPC Peering connection settings",
-              "path": "deployments/vpc_peering"
+              "title": "VPC Peering Connection",
+              "path": "deployments/Security features and Settings/vpc_peering"
             },
             {
-              "title": "NAT Gateway settings",
-              "path": "deployments/nat"
-            },
-            {
-              "title": "API Access Settings",
-              "path": "deployments/api"
+              "title": "NAT Gateway",
+              "path": "deployments/Security features and Settings/nat"
             }
           ]
         },
         {
-          "title": "Monitor Your Deployment",
-          "children": [
-            {
-              "title": "Event",
-              "path": "deployments/events"
-            },
-            {
-              "title": "Metrics",
-              "path": "deployments/metrics"
-            },
-            {
-              "title": "Log",
-              "path": "deployments/logs"
-            },
-            {
-              "title": "Alert",
-              "path": "deployments/alerts"
-            }
-          ]
-        },
-        {
-          "title": "Upgrade service plan",
+          "title": "Scaling",
           "path": "deployments/upgrade_deployment"
         },
         {
-          "title": "Delete deployments",
+          "title": "Stop Deployment",
+          "path": "deployments/stop_deployment"
+        },
+        {
+          "title": "Delete Deployment",
           "path": "deployments/delete_deployment"
         }
       ]
@@ -534,10 +504,6 @@
         {
           "title": "Introduction",
           "path": "rule_engine/introduction"
-        },
-        {
-          "title": "Save data to MySQL",
-          "path": "rule_engine/rule_engine_save_mysql"
         },
         {
           "title": "Save data to TimescaleDB",
