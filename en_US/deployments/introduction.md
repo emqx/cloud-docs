@@ -41,15 +41,15 @@ Timely access to alarm information through configuring email and other methods.
 ## Security features and settings
 
 ### [TLS/SSL Configure](security_features_and_settings/tls_ssl.md)
-The exclusive deployment allows you to customize both one-way and two-way TLS/SSL connections.
+The dedicated deployment allows you to customize both one-way and two-way TLS/SSL connections.
 
 
 ### [VPC peering connections setting](security_features_and_settings/vpc_peering.md)
-Enables internal and external communication between deployments and your business machines by creating peer connections for exclusive deployments.
+Enables internal and external communication between deployments and your business machines by creating peer connections for dedicated deployments.
 
 
 ### [NAT Gateway settings](security_features_and_settings/nat.md)
-Enable the deployment to access public network resources by creating NAT gateways for exclusive deployments.
+Enable the deployment to access public network resources by creating NAT gateways for dedicated deployments.
 
 
 ## [Scaling deployment specifications](./upgrade_deployment.md)

@@ -22,7 +22,7 @@ This document provides a guide plan for EMQ X Cloud to integrate the user's own 
 
 Figure 1 Schematic diagram of EMQ X Cloud cluster architecture
 
-On EMQ X Cloud, users can create a highly available EMQ X cluster with exclusive instance  in just a few minutes, and immediately start prototype design and application development without paying attention to subsequent operation and maintenance work. After the product is online, the cluster can be expanded without stopping to cope with the capacity expansion caused by business growth, ensuring availability while maximizing cost savings.
+On EMQ X Cloud, users can create a highly available EMQ X cluster with dedicated instance in just a few minutes, and immediately start prototype design and application development without paying attention to subsequent operation and maintenance work. After the product is online, the cluster can be expanded without stopping to cope with the capacity expansion caused by business growth, ensuring availability while maximizing cost savings.
 
 Unlike most other public IoT Hub cloud platforms, EMQ X Cloud provides MQTT 5.0 server clusters with a unique isolated environment, which has significant cost advantages and fewer usage restrictions. In the case of a large amount of messages, EMQ X Cloud Can still maintain a low cost of use. Through functions such as peer-to-peer networks, it is possible to connect to the big data analysis, message storage, and other business systems deployed by users in the private network.
 
