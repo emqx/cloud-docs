@@ -8,7 +8,7 @@ QoS > 0 required to save offline messages
 
 Before you start, you need to complete the following operations:
 * Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
-* For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/Security features and Settings/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
+* For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/security_features_and_settings/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 * For free trial and shared deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
 ## Redis configuration
