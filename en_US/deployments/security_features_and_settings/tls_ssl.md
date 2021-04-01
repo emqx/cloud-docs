@@ -99,7 +99,7 @@ Deleting the certificate will disconnect the client from `8883` and `8084`, plea
 
 
 
-## Generate Self-signed Certificates
+## Creating a Self-Signed TSL/SSL Certificate
 
 Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
 
@@ -119,7 +119,7 @@ openssl req \
     -out root-ca.crt
 ```
 
-### Generation of Server-side Certificate 
+### Creating a Server Certificate
 
 1. Generation of server-side secret key
 ```bash
@@ -187,7 +187,7 @@ openssl x509 -noout -text -in server.crt
 openssl verify -CAfile root-ca.crt server.crt
 ```
 
-### Generation of Client-side Certificate 
+### Creating a Client Certificate
 
 
 1. Generation of client-side secret key

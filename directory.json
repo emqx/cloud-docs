@@ -400,15 +400,15 @@
           "children": [
             {
               "title": "TLS/SSL",
-              "path": "deployments/Security features and Settings/tls_ssl"
+              "path": "deployments/security_features_and_settings/tls_ssl"
             },
             {
               "title": "VPC Peering Connection",
-              "path": "deployments/Security features and Settings/vpc_peering"
+              "path": "deployments/security_features_and_settings/vpc_peering"
             },
             {
               "title": "NAT Gateway",
-              "path": "deployments/Security features and Settings/nat"
+              "path": "deployments/security_features_and_settings/nat"
             }
           ]
         },
@@ -497,6 +497,10 @@
         {
           "title": "Introduction",
           "path": "rule_engine/introduction"
+        },
+        {
+          "title": "Save data to MySQL",
+          "path": "rule_engine/rule_engine_save_mysql"
         },
         {
           "title": "Save data to TimescaleDB",
