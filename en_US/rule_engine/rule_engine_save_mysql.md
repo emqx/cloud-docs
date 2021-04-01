@@ -6,7 +6,7 @@ Before you start, you will need to complete the following:
 
 * A deployment (EMQ X Cluster) has been created on EMQ X Cloud.
 
-* For Dedicated Deployment users: please complete the creation of a [VPC Peering Connections](../deployments/Security features and Settings/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
+* For Dedicated Deployment users: please complete the creation of a [VPC Peering Connections](../deployments/security_features_and_settings/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
 
 * For Free Trial and Shared Deployment users: No PC Peering Connections is required. All IP references below are to the public IP of the resource.
 
