@@ -13,11 +13,11 @@ Here you can view the following deployment information:
 - Pub&Sub TPS: The peak value contains the total number of messages sent and received per second.
 - Deployment name: the name of the deployment, which can be modified by clicking the edit button on the right.
 - Connection address
-  - Exclusive deployment connection address: IP
+  - Dedicated deployment connection address: IP
   - Free trial and shared deployment connection address: domain name ending with emqx.cloud suffix
 - Connection port:
 
-  - Exclusive Deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](security_features_and_settings/tls_ssl.md)
+  - Dedicated Deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](security_features_and_settings/tls_ssl.md)
   - Free Trial and Shared Deployment port: open **11xxx(mqtt) **, **11xxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
 
 ![base_info](./_assets/deployment_info.png)
