@@ -499,6 +499,14 @@
           "path": "rule_engine/introduction"
         },
         {
+          "title": "Rule Management",
+          "path": "rule_engine/rule"
+        },
+        {
+          "title": "Resource Management",
+          "path": "rule_engine/resource"
+        },
+        {
           "title": "Save data to MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
@@ -523,12 +531,12 @@
           "path": "rule_engine/rule_engine_web_hook"
         },
         {
-          "title": "Republish messages",
-          "path": "rule_engine/rule_engine_republish"
-        },
-        {
           "title": "Store device offline messages to Redis",
           "path": "rule_engine/rule_engine_offonline_to_redis"
+        },
+        {
+          "title": "Republish messages",
+          "path": "rule_engine/rule_engine_republish"
         },
         {
           "title": "Get subscription topic information from MySQL",
