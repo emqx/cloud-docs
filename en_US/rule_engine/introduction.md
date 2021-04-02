@@ -1,14 +1,22 @@
-# Introduction
+# Overview
 
-The main usage scenarios of message storage include storing the operation record in various databases such as Redis, MySQL, PostgreSQL, MongoDB, and Cassandra. The operation record includes the client's online and offline status, subscribing to topic information, message content, and sending a message receipt after the message arrives.
+The EMQ X Cloud Rule Engine (abbreviated as the Rule Engine) is used to configure the rules for handling and responding to EMQ X message flows and device events. The rule engine not only provides a clear and flexible "configurable" business integration solution, but also simplifies the business development process, improves user usability, and reduces the coupling degree between the business system and EMQ X Cloud. It also provides a superior infrastructure for customization of EMQ X Cloud's proprietary capabilities.
 
-Users can also subscribe to related topics to achieve similar functions, but EMQ X Cloud has built-in support for the persistence of this function; compared with the former, the latter has higher execution efficiency and can greatly reduce the developer’s Workload.
+![rule_engine](../rule_engine/_assets/rule_engine.png)
 
-The message storage function of EMQ X Cloud relies on the rule engine. If you don't know what a rule engine is, you can refer to the guide-[Rule Engine](../deployments/rule_engine.md).
+In EMQ X Cloud, using the rule engine has the following requirements:
 
-Usage restrictions:
+- For free trial deployments and shared deployments: Access to resources such as databases only supports public network access, so you need to ensure that resources have public network access capability and that security groups are open before creating resources.
+- For dedicated deployments: Access to resources such as databases only supports Intranet access, so you need to configure a VPC peering connection and open security groups before creating resources.
 
-To ensure that you can use EMQ X Cloud message storage normally, EMQ X Cloud has the following restrictions:
+## [Rule Management](./rule.md)
 
-- For free trial deployment and shared deployment: Access to resources such as databases only supports public network access. Therefore, before creating resources, you need to ensure that the resources have public network access capabilities and open security groups.
-- For dedicated deployment: Access to resources such as databases only supports intranet access. Therefore,  you need to configure VPC peering connections and open security groups before creating resources.
+The rule engine not only provides a clear and flexible "configurable" business integration solution, simplifies the business development process, improves user usability, and reduces the coupling degree between the business system and EMQ X, but also provides a superior infrastructure for EMQ X's proprietary functionality customization.
+
+## [Resource Management](./resource.md)
+
+EMQ X Cloud resources are used for rule engine response actions, before which you need to ensure that the deployment status is running.
+
+## [Write Rules Using SQL](https://docs.emqx.io/en/broker/v4.3/rule/rule-engine.html#sql-statement)
+
+Learn and understand how to use SQL to write rules.
