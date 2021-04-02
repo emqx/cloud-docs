@@ -382,11 +382,11 @@
           "path": "deployments/metrics"
         },
         {
-          "title": "Log",
+          "title": "Logs",
           "path": "deployments/logs"
         },
         {
-          "title": "Alert",
+          "title": "Alerts",
           "path": "deployments/alerts"
         },
         {
@@ -505,34 +505,6 @@
           "path": "rule_engine/rule_engine_influxDB"
         },
         {
-          "title": "Save data to PostgreSQL",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-postgresql"
-        },
-        {
-          "title": "Save data to Redis",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-redis"
-        },
-        {
-          "title": "Save data to MongoDB",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-mongodb"
-        },
-        {
-          "title": "Save data to Cassandra",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-cassandra"
-        },
-        {
-          "title": "Save data to DynamoDB",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-dynamodb"
-        },
-        {
-          "title": "Save data to OpenTSDB",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-opentsdb"
-        },
-        {
-          "title": "Save data to TDengine",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/backends.html#save-data-to-tdengine"
-        },
-        {
           "title": "Bridge data to Kafka",
           "path": "rule_engine/rule_engine_kafka"
         },
@@ -543,10 +515,6 @@
         {
           "title": "Bridge data to Webhook",
           "path": "rule_engine/rule_engine_web_hook"
-        },
-        {
-          "title": "Bridge data to RabbitMQ",
-          "path": "https://docs.emqx.io/en/enterprise/latest/rule/bridges.html#bridge-data-to-rocketmq"
         },
         {
           "title": "Republish messages",
