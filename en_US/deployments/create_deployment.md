@@ -3,13 +3,11 @@ In this tutorial, you will learn how to create a new EMQ X Cloud deployment. To 
 
 ## Limitation
 
-* Before the deployment is created, your account balance must not be less than the total cost of the deployment you created for 24 hours. You can visit the [Price Estimate](https://cloud.emqx.io/console/deployments/0?oper=new) page to view the hourly cost of your selected deployment specification, and top up your account balance in the [Payment Overview](https://cloud.emqx.io/console/billing/overview) page.
-  > The deployment specification is 1000 lines, 1000 tps, and the hourly price is 1.17 USD, then your account balance should be greater than **28.08** USD (1.17 * 24)
-
+* Before the deployment is created, you need to bind credit card payment information in the [Billing](https://cloud.emqxcloud.com/console/billing/overview) page.
 
 ## Create Deployment
 
-1. Log in to your account and navigate to EMQ X Cloud [Console](https://cloud.emqx.io/console/).
+1. Log in to your account and navigate to EMQ X Cloud [Console](https://cloud.emqxcloud.com/console/).
 2. Click the **New** button in the upper right corner to enter the deployment price estimation page.
 3. Choose the deployment of the corresponding specifications according to your needs.
    * Choose cloud platform: EMQ X Cloud temporarily supports AWS. If you have other cloud service provider requirements, you can submit a [ticket](../contact.md) or email (cloud@emqx.io) )  us.
