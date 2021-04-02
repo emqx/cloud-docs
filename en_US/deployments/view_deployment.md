@@ -48,7 +48,7 @@ EMQ X Cloud supports peering connections with customers' existing VPC (Virtual P
 
 
 
-## [API access](../api.md)
+## [API access](../api/api_overview.md)
 
 EMQ X Cloud provides REST API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
 

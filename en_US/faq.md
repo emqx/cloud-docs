@@ -44,7 +44,7 @@ Yes.
 
 EMQ X provides HTTP API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
 
-For more information about how to use the API, you can refer to the guide-[REST API](api.md)
+For more information about how to use the API, you can refer to the guide-[REST API](./api/api_overview.md)
 
 ### How can I ensure the security of my deployment connection?
 

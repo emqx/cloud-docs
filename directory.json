@@ -589,7 +589,40 @@
     },
     {
       "title": "API",
-      "path": "api"
+      "children": [
+        {
+          "title": "API Overview",
+          "path": "api/api_overview"
+        },
+        {
+          "title": "Authentication Management",
+          "path": "api/auth"
+        },
+        {
+          "title": "ACL Management",
+          "path": "api/acl"
+        },
+        {
+          "title": "Client Management",
+          "path": "api/client"
+        },
+        {
+          "title": "Subscription",
+          "path": "api/sub"
+        },
+        {
+          "title": "Topic Subscription",
+          "path": "api/topic"
+        },
+        {
+          "title": "Message Publish",
+          "path": "api/pub"
+        },
+        {
+          "title": "Metrics",
+          "path": "api/metrics"
+        }
+      ]
     },
     {
       "title": "FAQ",
