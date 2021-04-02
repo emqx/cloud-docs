@@ -14,7 +14,7 @@ GET /subscriptions
 | ------------ | ------ | ------------------------------ |
 | clientid     | String | Client identifier              |
 | topic        | String | congruent query                |
-| qos          | Enum   | Possible values are 0`,`1`,`2` |
+| qos          | Enum   | Possible values are `0`,`1`,`2` |
 | share        | String | Shared subscription group name |
 | _match_topic | String | Topic Match query              |
 
