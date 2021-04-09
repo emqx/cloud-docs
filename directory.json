@@ -509,6 +509,10 @@
           "path": "rule_engine/rule_engine_save_timescaladb"
         },
         {
+          "title": "Save data to PostgreSQL",
+          "path": "rule_engine/rule_engine_save_psql"
+        },
+        {
           "title": "Save data to InfluxDB",
           "path": "rule_engine/rule_engine_influxDB"
         },
