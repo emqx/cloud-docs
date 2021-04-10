@@ -1,8 +1,8 @@
-# Save device data to PostgreSQL using the Rule Engine
+# Save device data to MongoDB using the Rule Engine
 
 In this article, we will simulate the temperature and humidity
 data, and publish these data to EMQ X Cloud via the MQTT protocol, and then we will use the EMQ X Cloud
-rule engine to store the data to PostgreSQL.
+rule engine to store the data to MongoDB.
 
 Before you start, you will need to complete the following:
 
@@ -12,58 +12,71 @@ Before you start, you will need to complete the following:
 
 * For Free Trial and Shared Deployment users: No VPC Peering Connection is required. All IPs mentioned below refer to the resource's public IP.
 
-## PostgreSQL Configuration
+## MongoDB Configuration
 
-1. Install PostgreSQL 11
+1. Pull the newest version of MongoDB mirror
+   
    ```bash
-   docker run -d --restart=always     --name postgres     -p 5432:5432     -e POSTGRES_PASSWORD=public     -e POSTGRES_USER=root     postgres:11
+   docker pull mongo:latest
    ```
 
-2. New database
-   ```sql
-   CREATE database emqx;
+2. Run Mongo Container
+   
+    ```bash
+    docker run -itd --name mongo -p 27017:27017 mongo --auth
    ```
 
-3. New temperature and humidity table
+3. Execute Container
+   
+    ```bash
+    docker exec -it mongo mongo admin
+   ```
 
-   Use the following SQL statement to create `temp_hum` table. This table will be used to save the temperature and humidity data reported by devices.
-    ```sql
-    CREATE TABLE temp_hum (
-    id SERIAL NOT NULL, 
-    up_timestamp INTEGER, 
-    client_id VARCHAR(32), 
-    temp FLOAT, 
-    hum FLOAT, 
-    PRIMARY KEY (id)
-    );
-    ```
+4. Create user and set up the password
+   
+    ```bash
+    db.createUser({ user:'root',pwd:'public',roles:[ { role:'userAdminAnyDatabase', db: 'admin'},"readWriteAnyDatabase"]});
+   ```
 
-4. Insert test data and view it
-    ```sql
-     Insert into temp_hum(up_timestamp, client_id, temp, hum) values (1603963414,'client_1',19.1,55); 
-     select * from temp_hum;
+5. Connect by using the user information above 
+   
+   ```bash
+   db.auth('root', 'public')
    ```
    
+    You will get the same result by following the steps above.
+   ![create resource](./_assets/mongo_auth.png)
+    
+6. Create a new database
+   
+   ```sql
+   Use emqx
+   ```
+
+7. Insert data into `temp_hum` collection and view the result.
+   
     ```sql
-    select * from temp_hum;
-    ```
+     db.temp_hum.insert({up_timestamp: 34256, client_id: 1, temp: 20, hum: 33})
+   ```
+   ![create resource](./_assets/mongodb_view.png)
+
 ## EMQ X Cloud Rule Engine Configuration
 
 Select `Rule Engine` from the left menu bar to edit rule engine configuration.
 
-1. Create PostgreSQL Resource
+1. Create MongoDB Resource
 
    Click on Rule Engine on the left menu bar and
    click on `+ New` button to create a new resource.
 
    ![create resource](./_assets/psql1.png)
 
-   Then fill in the information regarding the PostgreSQL database
+   Then fill in the information regarding the MongoDB
    you choose to store the data. You could always test if the database configuration you entered is correct before confirm to add the resource. If you get an error message after
    clicking the `Test` button, make sure to double-check the input information
    and retry.
 
-   ![create resource](./_assets/psql_resource.png)
+   ![create resource](./_assets/mongo_create_resource.png)
 
    If the configuration test is passed, click on `confirm` to finish creating resource.
 
@@ -92,6 +105,7 @@ Select `Rule Engine` from the left menu bar to edit rule engine configuration.
 
    You should always test the SQL ahead to make sure it's functioning
    as you expected.
+   
    ![rule engine](./_assets/psql_test_rule.png)
 
 
@@ -102,19 +116,17 @@ Select `Rule Engine` from the left menu bar to edit rule engine configuration.
 
    Towards the bottom of the page, in the Response Action section,
    click on the `+ Add action` button.
-   
-   ![rule_action](./_assets/psql_action1.png)
-    Fill in the SQL Template with sql command bellow
-   ```sql
-   insert into temp_hum(up_timestamp, client_id, temp, hum) values (${up_timestamp}, ${client_id}, ${temp}, ${hum})
-   ```
-   
+
+   ![rule_action](./_assets/mongo_add_action.png)
+
 5. Click on `Confirm` to finish creating a Rule. You could always come back to edit you rules and add more actions.
-   ![rule list](./_assets/psql_create.png)
+   
+   ![rule list](./_assets/mongo_rule.png)
 
 
-5. Check Rules Monitoring
-   ![view monitor](./_assets/psql_monitor.png)
+6. Check Rules Monitoring
+   
+   ![view monitor](./_assets/mongo_monitor.png)
 
 
 ## Test
@@ -122,10 +134,11 @@ Select `Rule Engine` from the left menu bar to edit rule engine configuration.
 1. Use [MQTT X](https://mqttx.app/) to simulate publishing temperature and humidity data
 
    You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth_and_acl.md) in the EMQ X Dashboard.
-   ![MQTTX](./_assets/psql_connect.png)
+   ![MQTTX](./_assets/mongo_connect.png)
 
 2. View stored results
-      ```sql
-      select * from temp_hum;
+   
       ```
-   ![mysql](./_assets/psql_query_result.png)
+     db.temp_hum.find()
+      ```
+   ![mongo](./_assets/mongo_result.png)
