@@ -513,6 +513,10 @@
           "path": "rule_engine/rule_engine_save_psql"
         },
         {
+          "title": "Save data to MongoDB",
+          "path": "rule_engine/rule_engine_save_mongodb"
+        },
+        {
           "title": "Save data to InfluxDB",
           "path": "rule_engine/rule_engine_influxDB"
         },
