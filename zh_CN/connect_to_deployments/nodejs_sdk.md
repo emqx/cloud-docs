@@ -18,7 +18,7 @@
   yarn
   ```
 
-* 对于免费试用和共享部署 EMQ X Cloud 默认提供了 TLS/SSL 连接认证，您还需下载 [根证书](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) 用于 TLS/SSL 连接。
+* 对于基础版 EMQ X Cloud 默认提供了 TLS/SSL 连接认证，您还需下载 [根证书](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) 用于 TLS/SSL 连接。
 
 
 
