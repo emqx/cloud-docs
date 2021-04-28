@@ -6,11 +6,13 @@ EMQ X Cloud  价格计算允许您依据实际业务需求预估，预估 EMQX C
 
 ## 访问 EMQ X Cloud 价格估算
 
-* 对于**未注册** EMQ X Cloud 的用户，您可以前往 [价格估算](https://cloud.emqx.cn/calculator)，使用价格估算。
+* 对于**未注册** EMQ X Cloud 的用户，您可以前往 [价格](https://cloud.emqx.cn/pricing) 页面，使用价格估算。
 
   ![calculator](./_assets/calculator.png)
 
-* 对于**登录**到 EMQ X Cloud 的用户，您可以前往 [价格估算](https://cloud.emqx.cn/console/deployments/0?oper=new), 使用价格估算，并创建部署。
+* 对于**登录**到 EMQ X Cloud 的用户，您可以前往 [价格估算](https://cloud.emqx.cn/console/deployments/0?oper=new)，选择版本，使用价格估算，并创建部署。
+  
+  ![edition](_assets/choose_edition.png)
 
   ![calculator](./_assets/console_calculator.png)
 
@@ -18,9 +20,9 @@ EMQ X Cloud  价格计算允许您依据实际业务需求预估，预估 EMQX C
 
 ## 获取部署每小时价格
 
-您可以依次选择云平台，区域，预估最大连接数，消息上下行来获取部署每小时价格。
+您可以依次选择云平台，区域和规格获取部署每小时价格。
 
-> 选择华为云平台，广州区域，最大连接数 1000，消息上下行 TPS 为 1000，则每小时价格为 2.41，则每月基础费用为： 2.41 * 730 = 1759。
+> 专业版：选择阿里云平台，深圳区域，最大连接数 5000，消息上下行 TPS 为 10000，则每小时价格为 2.18，则每月基础费用为： 2.18 * 730 = 1591。
 
 ![deployment_price](./_assets/deployment_price.png)
 
