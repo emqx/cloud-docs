@@ -1,11 +1,14 @@
 # 使用 EMQ X Cloud 规则引擎桥接数据到 Kafka
 
+::: danger
+该功能在基础版中不可用
+:::
+
 在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 Kafka。
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
 * 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
-* 对于免费试用及共享部署用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
 ## Kafka 配置
 

@@ -1,26 +1,31 @@
 # 创建免费试用部署
 
-对于首次使用 EMQ X Cloud 的客户，我们为您准备了 **一次** 创建长达 **180** 天时长免费试用部署的机会。免费试用部署是您学习和探索 EMQ X Cloud 功能的理想方式。在创建免费试用部署之前，您需要先了解免费试用有如下限制：
+对于首次使用 EMQ X Cloud 的客户，我们为您准备了 **一次** 创建长达 **30** 天时长免费试用部署的机会。免费试用部署是您学习和探索 EMQ X Cloud 功能的理想方式。
 
-* 最高长达 180 天的免费试用。
+EMQ X Cloud 免费试用部署规格如下：
 
-  > 如需延长免费试用时长，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
+* 基础版 1000 线规格提供一次最高 30 天的免费试用。
 
-* 普通用户最大允许 25 个客户端连接，高校计划最大允许 100 个客户端连接。
+* 专业版 5000 线规格提供一次最高 14 天的免费试用。
 
-* 每月 10 GB 免费流量。
+* 试用期间提供 100 GB 免费流量。
 
-* 使用规则引擎、监控管理等 EMQ X 所有功能。
+* 使用规则引擎（基础版仅支持 Webhook 和 MQTT 桥接）、监控管理等 EMQ X Cloud 自有的功能。
 
-* 支持 MQTT, WebSockets, MQTT over TLS/SSL, Websockets over TLS 协议连接。
+* 支持 MQTT, Websockets 协议连接。
+  
+  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
-  > 如需其他协议支持，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
-* 不支持自定义 [TLS/SSL](../deployments/tls_ssl.md) 以及 [VPC 对等连接](../deployments/vpc_peering.md)。
+EMQ X Cloud 免费试用部署注意事项：
 
-* 7 天内部署有活跃客户端连接。
+* 免费试用仅限于基础版和专业版的**最低规格**产品。
 
-  > 7天内如果部署无活跃连接我们会暂时停止您免费试用部署，您可以重新登录 EMQ X Cloud 控制台启动您的免费试用部署。
+* 试用期间若连续 5 天没有客户端连接，则试用部署将被停止，但您的部署实例将会被保留，如需继续试用，请在控制台手动启用。
+
+* 试用到期后，如您账户还有可用余额，部署将继续运行并自动按每小时收费，否则我们将停止您的部署。
+
+* 试用到期后，如您账户无可用余额，部署数据将会被保留 3 天，3 天后若您账户仍无可用余额，我们将删除您的部署。
 
 
 
@@ -34,7 +39,7 @@
 
    ![first_create_deployment](./_assets/first_create_deployment.png)
 
-3. 选择 `180 天免费试用`
+3. 选择 `基础版免费试用`
 
    ![create_free_trial](./_assets/create_free_trial.png)
 
@@ -60,15 +65,8 @@
    ![add_users](./_assets/add_users.png)
 
 2. 获取免费试用连接信息
-    
-   点击概览菜单，您将看到部署连接信息以及连接端口。EMQ X Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接，协议对应端口如下：
-
-   | 协议                | 端口 |
-   | ------------------- | ---- |
-   | MQTT                | 11xxx|
-   | MQTT                | 8083 |
-   | MQTT over TLS       | 11xxx|
-   | Websockets over TLS | 8084 |
+   
+   点击概览菜单，您将看到部署连接信息以及连接端口。EMQ X Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接
 
    ![connections](./_assets/overview.png)
 

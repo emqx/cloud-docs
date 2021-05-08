@@ -196,6 +196,18 @@
           "path": "rule_engine/resources"
         },
         {
+          "title": "桥接数据到 Webhook",
+          "path": "rule_engine/rule_engine_web_hook"
+        },
+        {
+          "title": "桥接数据到 MQTT Broker",
+          "path": "rule_engine/rule_engine_mqtt"
+        },
+        {
+          "title": "消息重新发布",
+          "path": "rule_engine/rule_engine_republish"
+        },
+        {
           "title": "保存数据到 MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
@@ -220,20 +232,8 @@
           "path": "rule_engine/rule_engine_huawei_kafka"
         },
         {
-          "title": "桥接数据到 MQTT Broker",
-          "path": "rule_engine/rule_engine_mqtt"
-        },
-        {
-          "title": "桥接数据到 Webhook",
-          "path": "rule_engine/rule_engine_web_hook"
-        },
-        {
           "title": "离线消息保存到 Redis",
           "path": "rule_engine/rule_engine_offonline_to_redis"
-        },
-        {
-          "title": "消息重新发布",
-          "path": "rule_engine/rule_engine_republish"
         },
         {
           "title": "从 MySQL 中获取订阅关系",
