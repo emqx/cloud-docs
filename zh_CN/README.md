@@ -12,8 +12,7 @@ EMQ X Cloud 是 EMQ 公司推出的一款面向物联网领域的 MQTT 消息中
 
 EMQ X Cloud 支持海量设备及应用端连接，为应用程序及物联网设备提供安全可靠的双向通信能力:
 
-<配图： 以 MQTT broker 为中心，各类设备和手机应用，web 应用通过 mqtt broker 与设备通信，支持 mqtt, websocket
-协议，设备和手机应用可以用 mqtt 协议，web 应用可以用 websocket>
+![two-way-communication](./_assets/two-way-communication.png)
 
 在该模型中，EMQ X Cloud 提供的 MQTT 服务将海量设备与应用连接起来，支持应用与设备间的双向通信，也支持设备与设备间的双向通信。该模型适用于有类即时通讯需求的物联网应用，比较典型的如：智能家居场景中，手机 APP 获取智能设备的状态信息，并且用户可以通过 APP 向智能设备发送控制指令。又如在工业场景中，AGV 机器人之间通过 MQTT 协议来进行即时通信，实现多机协作。EMQ X Cloud 提供的 MQTT 服务不仅支持标准 MQTT 协议，也支持 MQTT over WebSocket，以及 CoAP、 MQTT-SN、LwM2M、JT/T808等协议，只需一个消息中间件即可满足多类终端同时接入的需求。
 
@@ -21,7 +20,7 @@ EMQ X Cloud 支持海量设备及应用端连接，为应用程序及物联网�
 
 EMQ X Cloud 支持设备数据上云，通过海量 Topic 及规则引擎的支持，低代码即可实现数据的采集、过滤、转换、计算及持久化。
 
-<配图： 数据从各类传感器（各种工业协议），一部分经过边缘网关传输到云端 MQTT Broker，一部分直接连接云端 MQTT Broker，在 MQTT Broker 上经过过滤和处理后，一部分分发至其他服务，如 Kafka，RabbitMQ，一部分持久化到数据库，如 MySQL、PostgreSQL、TimeScaleDB 等>
+![data_collection](./_assets/data_collection.png)
 
 在该模型中，EMQ X Cloud 提供的 MQTT 服务可以实现数据的采集、计算和持久化。该模型适用于有数据采集和持久化需求的物联网应用，比较典型的如：在工业场景中，各个物联网传感器将实时采集的数据汇集到边缘网关，通过边缘网关将数据上传到 MQTT 服务器上，再由规则引擎触发数据的过滤、转换和简单计算，并将最终结果转发至其他服务或持久化至目标数据库中。EMQ X Cloud 提供了多种功能不同网络、工业、边缘设备的接入方案，支持70多种工业协议。
 
@@ -29,7 +28,7 @@ EMQ X Cloud 支持设备数据上云，通过海量 Topic 及规则引擎的支�
 
 EMQ X Cloud 提供的 MQTT 服务支持双向通信和数据采集模型的混合应用。通过共享订阅、规则引擎等能力，实现数据在物与物、物与应用间流转的同时进行持久化。
 
-<配图：设备通过 MQTT Broker 与后台应用双向通信，同时部分数据通过规则引擎直接进行持久化，后台应用也可以获取数据库中的数据>
+![hyvrid_model](./_assets/hybrid_model.png)
 
 在该模型中，EMQ X Cloud 提供的 MQTT 服务不仅为设备与设备、设备与应用间架起桥梁，同时可将需要的数据进行持久化，以便非实时应用在后续对获取的数据加以利用。比较典型的如一些人工智能应用，终端获取的数据需要发送至云端，通过云端运行的计算模型经过计算后即使反馈给终端，如物品或人脸识别应用。同时数据的副本需要持久化到数据库中，以便于后续离线训练和改进人工智能计算模型。
 
@@ -37,7 +36,7 @@ EMQ X Cloud 提供的 MQTT 服务支持双向通信和数据采集模型的混�
 
 EMQ X Cloud 分为三个版本，每个版本包含多个规格，我们支持在全球主流的公有云上部署专属于您的全托管 MQTT 服务
 
-![edition](./_assets/home_pricing.png)
+![edition](./_assets/product_edition.png)
 
 1. 基础版：适用于 MQTT 协议或 EMQ X Broker 产品的学习和体验，及轻量级物联网应用的开发。
 2. 专业版：适用于构建关键任务的物联网应用，本版本提供了数据持久化，消息分发，VPC 对等连接等高级功能。
@@ -98,7 +97,9 @@ EMQ X Cloud 作为全托管的 EMQ X 接入平台服务，提供了设备接入�
 
 EMQ X Cloud 基础版和专业版提供了丰富的 REST API ，用户可通过 API 和规则引擎与自己的设备管理系统、物联网平台集成。EMQ X Cloud 旗舰版提供了企业级的设备管理功能，用户可以利用企业版直接创建和管理设备对象，并利用设备影子，云边协同管理等旗舰版特有的功能来管理边缘终端设备和网关设备。
 
-![image (1)](https://static.emqx.net/images/64e6c6e9650c1f00b8376e7239343c4e.png)
+![device_manager_1](./_assets/device_manager_1.png)
+
+![device_manager_2](./_assets/device_manager_2.png)
 
 - **设备认证信息管理**： 平台通过 REST API 进行认证信息增、删、查、改
 

@@ -6,7 +6,7 @@
 
 EMQ X Cloud 分为基础版、专业版和旗舰版三个版本。
 
-![edition](./_assets/home_pricing.png)
+![edition](./_assets/product_edition.png)
 
 - 基础版：适用于 MQTT 协议或 EMQ X Broker 产品的学习和体验，及轻量级物联网应用的开发。基础版提供 30 天免费试用。
 - 专业版：适用于构建关键任务的物联网应用，本版本提供了数据持久化，消息分发，VPC 对等连接等高级功能。专业版提供 14 天免费试用。
