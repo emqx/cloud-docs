@@ -2,37 +2,45 @@
 
 We offer a variety of flexible product specifications to support the deployment of fully managed MQTT services exclusively for you on the world's leading public clouds.
 
-## Product Editions
+## Product Plans
 
-EMQ X Cloud is available in three editions: Basic, Professional, and Signature.
+EMQ X Cloud is available in three plans: Basic, Professional, and Signature.
 
-![edition](./_assets/pricing.png)
+![plan](./_assets/pricing.png)
 
-- Basic Edition: Suitable for learning and experiencing the MQTT protocol or EMQ X Broker product, and developing lightweight IoT applications. The Basic Edition offers a 30-day free trial.
-- Professional Edition: For building mission-critical IoT applications, this edition provides advanced features such as data persistence, message distribution, VPC peer-to-peer connectivity, and more. The Professional Edition is available for a 14-day free trial.
-- Unlimited Edition: Suitable for building enterprise-class IoT platforms, this edition provides support for multi-territory and exclusive hardware deployments and adds device management, device shadowing, and thing modeling features.
+- Basic: Suitable for learning and experiencing the MQTT protocol or EMQ X Broker product, and developing lightweight IoT applications. The Basic plan offers a 30-day free trial.
+- Professional: For building mission-critical IoT applications, this plan provides advanced features such as data persistence, message distribution, VPC peer-to-peer connectivity, and more. The Professional plan is available for a 14-day free trial.
+- Unlimited: Suitable for building enterprise-class IoT platforms, this plan provides support for multi-territory and exclusive hardware deployments and adds device management, device shadowing, and thing modeling features.
 
 
 
 ## Billing Items
 
-EMQ X Cloud is billed by product version, instance specification, and messaging network traffic. There is no limit to the number of messages, API calls, and rules engine usage. You can choose the product and specification to suit your business, ensuring that costs remain clear and manageable as your business expands.
+EMQ X Cloud is billed by product plan, instance specification, and messaging network traffic. There is no limit to the number of messages, API calls, and rules engine usage. You can choose the product and specification to suit your business, ensuring that costs remain clear and manageable as your business expands.
 
 EMQ X Cloud's billing consists of two components.
 
 | Item         | Description                                                  |
-| :----------- | :----------------------------------------------------------- |
-| Base Fee    | The base cost of the instance is calculated based on the hourly unit price corresponding to the product version and instance specifications (maximum connections, message TPS) selected at the time of deployment. In practice, this part of the cost is only related to the length of time, and will not change due to changes in usage (number of connections, message TPS).
+| ----------- | ----------------------------------------------------------- |
+| Base Fee    | The base cost of the instance is calculated based on the hourly unit price corresponding to the product plan and instance specifications (maximum connections, message TPS) selected at the time of deployment. In practice, this part of the cost is only related to the length of time, and will not change due to changes in usage (number of connections, message TPS).
 | Traffic Fee | Each instance specification includes a certain amount of free traffic. The free traffic is valid for the month and will be automatically emptied at the end of the month if there is any remaining traffic. When the device traffic exceeds the amount of free traffic, the excess will be charged. |
 
+When you create a deployment, EMQ X Cloud estimates the cost of use based on your instance specification selection, and you can see the estimated price on the confirmation page before you officially deploy.
+
 ::: danger
-When you create a deployment, EMQ X Cloud will estimate the usage cost based on your instance specification selection, and you can see the estimated price on the confirmation page before the deployment.
+Note: When you create a deployment, EMQ X Cloud will estimate the usage cost based on your instance specification selection, and you can see the estimated price on the confirmation page before the deployment.
 :::
 
+
+
 ### Billing Period
-EMQ X Cloud calculates the account consumption in the last hour (hourly billing) and debits the balance once an hour, then adds up to the current month's consumption (monthly billing), you can go to the billing page in the console to see the detailed debit information
+
+EMQ X Cloud calculates the account consumption in the last hour (hourly billing) and debits the balance **once an hour**, then adds up to the current month's consumption (monthly billing), you can go to the [billing page](<https://cloud.emqx.io/console/billing/overview>) in the console to see the detailed debit information
+
+
 
 ### Description of outstanding charges
+
 EMQ X Cloud will send a notification email to the registered email address when the balance is insufficient, during which a certain amount of overdraft will be provided, and when the overdraft limit is exhausted, your existing deployment instance will be stopped and deleted, resulting in the following impacts.
 
 - Retain the right to recover the overdraft balance
@@ -44,23 +52,66 @@ Note: The default overdraft limit is $10. You can increase the limit by contacti
 
 **Price Details**
 
-| Version      | Specifications                          | Base Charge     | Free Traffic  | Overage Unit Price |
-| :----------- | :-------------------------------------- | :-------------- | :------------ | :----------------- |
-| Basic        | 1,000 connections / up to 1,000 TPS     | from $ 0.19/hr  | 100G/month    | $ 0.15/GB          |
-|              | 5,000 connections / up to 5,000 TPS     | from $ 0.55/hr  | 100G/month    | $ 0.15/GB          |
-|              | 1,0000 connections / up to 5,000 TPS    | from $ 1.02/hr  | 100G/month    | $ 0.15/GB          |
-| Professional | 5,000 connections / up to 10,000 TPS    | from $ 1.02/hr  | 100G/month    | $ 0.15/GB          |
-|              | 10,000 connections / up to 20,000 TPS   | from $ 1.79/hr  | 100G/month    | $ 0.15/GB          |
-|              | 50,000 connections / up to 50,000 TPS   | from $ 4.28/hr  | 1T/month      | $ 0.15/GB          |
-|              | 100,000 connections / up to 100,000 TPS | from $ 7.99 /hr | 1T/month      | $ 0.15/GB          |
-|              | > 100,000 connections                   | from $ 7.99 /hr | Contact sales |                    |
-| Unlimited    | Unlimited                               | Contact sales   |               |                    |
+<table>
+   <tr>
+      <th>Plan</th>
+      <th>Specification</th>
+      <th>Base Fee</th>
+      <th>Free Traffic</th>
+      <th>Overage Unit Price</th>
+   </tr>
+   <tr>
+      <td rowspan="3">Basic</td>
+      <td>1,000 connections / Up to 1,000 TPS</td>
+      <td>from $ 0.19/hr</td>
+      <td rowspan="3">100G/month</td>
+      <td rowspan="7">$ 0.15/GB</td>
+   </tr>
+   <tr>
+      <td>5,000 connections / Up to 5,000 TPS</td>
+      <td>from $ 0.55/hr</td>
+   </tr>
+   <tr>
+      <td>1,0000 connections / Up to 5,000 TPS</td>
+      <td>from $ 1.02/hr </td>
+   </tr>
+   <tr>
+      <td rowspan="5">Professional</td>
+      <td>5,000 connections / Up to 10,000 TPS</td>
+      <td>from $ 1.02/hr </td>
+      <td rowspan="2">100G/month</td>
+   </tr>
+   <tr>
+      <td>10,000 connections / Up to 20,000 TPS</td>
+      <td>from $ 1.79/hr</td>
+   </tr>
+   <tr>
+      <td>50,000 connections / Up to 50,000 TPS</td>
+      <td>from $ 4.28/hr</td>
+      <td rowspan="2">1T/month</td>
+   </tr>
+   <tr>
+      <td>100,000 connections / Up to 100,000 TPS</td>
+      <td>from $ 7.99/hr</td>
+   </tr>
+   <tr>
+      <td>>100,000 connections</td>
+      <td>from $ 7.99/hr</td>
+      <td colspan="2" align="center">Contact sales</td>
+   </tr>
+   <tr>
+      <td>Unlimited</td>
+      <td>Unlimited</td>
+      <td colspan="3" align="center">Contact sales</td>
+   </tr>
+</table>
+
 
 ::: danger
 Note: Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
 :::
 
-## Functional Details
+## Function Details
 
 <table>
   <tr>
@@ -76,7 +127,7 @@ Note: Prices may vary depending on the public cloud platform selected and the de
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">support MQTT v3.1, v3.1.1, v5.0 protocal version</td>
+      <td style="text-indent: 2em;">support MQTT v3.1, v3.1.1, v5.0 protocol plan</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
