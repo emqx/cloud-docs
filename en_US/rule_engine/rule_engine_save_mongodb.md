@@ -8,9 +8,9 @@ Before you start, you will need to complete the following:
 
 * A deployment (EMQ X Cluster) has been created on EMQ X Cloud.
 
-* For Dedicated Deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/security_features_and_settings/vpc_peering.md) first. All IPs mentioned below refer to the resource's intranet IP.
+* For professional deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/security_features_and_settings/vpc_peering.md) first. All IPs mentioned below refer to the resource's intranet IP.
 
-* For Free Trial and Shared Deployment users: No VPC Peering Connection is required. All IPs mentioned below refer to the resource's public IP.
+* For basic deployment users: No VPC Peering Connection is required. All IPs mentioned below refer to the resource's public IP.
 
 ## MongoDB Configuration
 

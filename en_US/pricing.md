@@ -17,7 +17,7 @@ The specific billing items are shown in the table below:
 | -------- | ------------------------------------------------------------ |
 | <div style="width: 120px"></div>Basic cost | Based on the deployment specifications (maximum number of connections, TPS of message), the estimated cost of this part will not change in actual use.
 | Traffic usage | The basic fee has already included a certain amount of traffic, which is valid in the month when the complimentary traffic is available. If there is any surplus, it will be automatically cleared at the end of the month. After the equipment exceeds the flow, the excess part will be charged at 0.15 USD/GB.
-::: tip Tip
+::: tip
 There may be differences between estimated and actual costs due to actual usage.
 :::
 
