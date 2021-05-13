@@ -13,12 +13,12 @@ Here you can view the following deployment information:
 - Pub&Sub TPS: The peak value contains the total number of messages sent and received per second.
 - Deployment name: the name of the deployment, which can be modified by clicking the edit button on the right.
 - Connection address
-  - Dedicated deployment connection address: IP
-  - Free trial and shared deployment connection address: domain name ending with emqx.cloud suffix
+  - Professional deployment connection address: IP
+  - Basic deployment connection address: domain name ending with emqx.cloud suffix
 - Connection port:
 
-  - Dedicated Deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](security_features_and_settings/tls_ssl.md)
-  - Free Trial and Shared Deployment port: open **11xxx(mqtt) **, **11xxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
+  - Professional deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](security_features_and_settings/tls_ssl.md)
+  - Basic deployment port: open **11xxx(mqtt) **, **11xxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
 
 ![base_info](./_assets/deployment_info.png)
 
@@ -27,7 +27,7 @@ Here you can view the following deployment information:
 ## [TLS/SSL Configuration](security_features_and_settings/tls_ssl.md)
 
 ::: danger
-This feature is not available in free trial and shared deployment.
+This feature is not available in basic deployment.
 :::
 
 EMQ X Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supports **self-signed certificate** and **CA signed certificate**.
@@ -39,7 +39,7 @@ EMQ X Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supp
 ## [VPC Peering Connection Configuration](security_features_and_settings/vpc_peering.md)
 
 ::: danger
-This feature is not available in free trial and shared deployment
+This feature is not available in basic deployment
 :::
 
 EMQ X Cloud supports peering connections with customers' existing VPC (Virtual Private Cloud) for cloud service providers in the same region. A VPC peering connection is a network connection between two VPCs. Through this connection, the instances in the two VPCs can communicate with each other as if they were in the same network.
