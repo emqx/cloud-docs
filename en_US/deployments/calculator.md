@@ -27,7 +27,7 @@ You can select cloud platform, region, and specifications to get the hourly pric
 
 ## Supported Cloud Service Providers and Regions
 
-EMQ X Cloud currently supports cloud service providers: AWS Cloud. If you need other cloud service providers or regions, you can submit a [tickets](../contact.md) or email(cloud@emqx.io) to get in touch with us.
+EMQ X Cloud currently supports cloud service providers: AWS Cloud. If you need other cloud service providers or regions, you can submit [tickets](../contact.md) or email(cloud@emqx.io) to contact us.
 
 | Platform | Region                                                       |
 | -------- | ------------------------------------------------------------ |

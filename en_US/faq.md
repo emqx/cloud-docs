@@ -4,12 +4,7 @@
 
 ### What's EMQ X Cloud？
 
-EMQ X Cloud is an online SaaS service of EMQ X provided by the EMQ team.
-
-In the past few years, EMQ has provided mature MQTT IoT messaging middleware and IoT platform related support services to many customers. During this period, we have accumulated a wealth of practical experience in IoT platform design, operation and maintenance management. Based on that, we launched the IoT platform public cloud service EMQ X Cloud, providing one-stop operation and maintenance management, and EMQ X access platform service with a unique isolation environment.
-
-EMQ X Cloud provides safe and reliable two-way communication capabilities for applications and devices, and provides other value-added capabilities on the basis of supporting large-scale clusters and massive device connection, such as device management, rule engine, data persistence, and Kafka data bridging. It covers various IoT application scenarios and retains customization and expansion capabilities.
-
+EMQ X Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQ X Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQ X Cloud can help you quickly build industry applications for the IoT domain and easily realize the collection, transmission, computation, and persistence of IoT data.
 ### What is EMQ X Cloud deployment?
 
 The deployment is an EMQ X Enterprise cluster hosted by EMQ X Cloud
@@ -75,24 +70,20 @@ For the configuration method, please refer to [configure TLS/SSL](deployments/se
 You can use the rule engine to connect with your existing functions. For details, see [Rule Engine](rule_engine/introduction.md)
 
 ## Billing
+
 ### How to bill?
 
 EMQ X Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
 
 For detailed billing rules, you can view [Product Pricing](pricing.md)
 
-### How to payment?
+### How to pay?
 
-In the EMQ X Cloud console, click the `Payment` button at the account balance of `Billing` -> `Overview`, and complete the monthly bill payment.
-
-Currently, EMQ X Cloud supports `PayPal` to complete the monthly bill payment.
+EMQ X Cloud supports credit card payment, for more payment options please contact us.
 
 ### How to get the credits?
 
 If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](contact.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of creditss based on your business needs
 
-### Does it support annual and monthly payment?
-
-It is not supported at present.
 
 Please pay attention to the update of EMQ x cloud.
