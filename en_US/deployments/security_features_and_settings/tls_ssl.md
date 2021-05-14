@@ -6,7 +6,7 @@ This feature is not available for the basic plan
 
 EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
 
-| Certification Mode  | Whether to support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
+| Certification Mode  | Support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
 | ---------------------- | ------------------------------------------ | ------------------ | ----------------- | ----------- | --------------------- |
 | one-way Authentication | Yes                                        | required           | required          | required    | not required          |
 | two-way Authentication | Yes                                        | required           | required          | required    | required              |
@@ -26,7 +26,7 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
 
 - The certificate, private key and certificate chain must use **PEM encoding**.
 
-- The private key must be passwordless.
+- The private key must be password-less.
 
 - The encryption algorithm of the certificate must match the encryption algorithm of the signing CA. For example, if the key type of the signing CA is RSA, the key type of the certificate must also be RSA.
 

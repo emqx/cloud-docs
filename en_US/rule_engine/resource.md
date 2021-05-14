@@ -4,13 +4,13 @@ EMQ X Cloud resources are used for rule engine response actions. Before that, yo
 
 
 
-## Simple example
+## Simple Example
 
 The resource shown in the figure below is a WebHook resource. The request URL is port 9910 of an IP, the request method is POST, and the request header is empty.
 
 ![img](./_assets/resource-detail.png)
 
-## Create resources
+## Create Resources
 
 1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
 
@@ -30,7 +30,7 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 
 
-## View resource status
+## View Resource Status
 
 1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
 
@@ -44,7 +44,7 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 
 
-## Delete resources
+## Delete Resources
 
 1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
 

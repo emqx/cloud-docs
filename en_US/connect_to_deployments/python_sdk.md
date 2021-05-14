@@ -1,4 +1,4 @@
-# Connect to deployments with Python SDK
+# Connect to Deployments with Python SDK
 
 In this tutorial, you will learn how to use the Python **paho-mqtt** client to connect to EMQ X Cloud deployment.
 

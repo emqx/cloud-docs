@@ -1,4 +1,4 @@
-# Connect to deployments with MQTT X
+# Connect to Deployments with MQTT X
 
 [MQTT X](https://mqttx.app) is an elegant cross-platform MQTT 5.0 desktop client open sourced by [EMQ](http://emqx.io), which supports macOS, Linux, Windows.
 

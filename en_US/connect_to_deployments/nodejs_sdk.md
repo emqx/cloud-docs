@@ -1,4 +1,4 @@
-# Connect to deployments with Node.js SDK
+# Connect to Deployments with Node.js SDK
 
 In this tutorial, you will learn how to use Node.js **MQTT.js** client to connect to EMQ X Cloud deployment.
 

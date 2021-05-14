@@ -1,4 +1,4 @@
-# Forwarding device data to Webhook using the Rule Engine
+# Forwarding Device Data to Webhook Using the Rule Engine
 
 In this article, we will simulate temperature and humidity data and report these data to EMQ X Cloud via the MQTT protocol and then use the EMQ X Cloud rules engine to dump the data into Kafka.
 

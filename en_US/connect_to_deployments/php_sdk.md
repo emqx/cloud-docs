@@ -1,1 +1,1 @@
-# Connect to deployments with PHP SDK 
+# Connect to Deployments with PHP SDK 
