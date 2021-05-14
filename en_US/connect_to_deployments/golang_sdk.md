@@ -2,7 +2,7 @@
 
 In this tutorial, you will learn to use Go **paho-mqtt** client to connect to EMQ X Cloud deployment.
 
-## precondition
+## Precondition
 
 * Already [Create Deployment](../deployments/create_deployment.md) in EMQ X Cloud , and the deployment status is **running**
 

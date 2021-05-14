@@ -10,6 +10,6 @@ To stop the deployment, you need to make sure the deployment running status is `
 2. Click the `stop` button and fill in the deployment name in the pop-up box
 
 
-3. Click OK to stop the deployment
+3. Click `Confirm` to stop the deployment
 
 ![stop_deployment](./_assets/stop_deployment.png)

@@ -1,4 +1,4 @@
-# Store device offline messages to Redis using the Rule Engine
+# Store Device Offline Messages to Redis Using the Rule Engine
 
 In this article, we will simulate temperature and humidity data and report these data to EMQ X Cloud via the MQTT protocol and then use the EMQ X Cloud rules engine to dump the offline messages into Redis.
 

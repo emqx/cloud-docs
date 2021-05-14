@@ -1,4 +1,4 @@
-# Get subscription topic information from MySQL using the Rule Engine
+# Get Subscription Topic Information from MySQL Using the Rule Engine
 
 In this article, we will use the EMQ X Cloud rules engine to get subscription relationships from MySQL.
 
