@@ -16,7 +16,7 @@ EMQ X Cloud is available in three plans: Basic, Professional, and Unlimited.
 
 ## Billing Items
 
-EMQ X Cloud is billed by product plan, instance specification, and messaging network traffic. There is no limit to the number of messages, API calls, and rules engine usage. You can choose the product and specification to suit your business, ensuring that costs remain clear and manageable as your business expands.
+EMQ X Cloud is billed by product plan, instance specification, and messaging network traffic. There is no limit to the number of messages, API calls, and rule engine usage. You can choose the product and specification to suit your business, ensuring that costs remain clear and manageable as your business expands.
 
 EMQ X Cloud's billing consists of two components.
 
@@ -61,40 +61,40 @@ EMQ X Cloud will charge your credit card on the 1st of each month for the previo
    <tr>
       <td rowspan="3">Basic</td>
       <td>1,000 connections / Up to 1,000 TPS</td>
-      <td>from $ 0.19/hr</td>
+      <td>from $ 0.18/hr</td>
       <td rowspan="3">100G/month</td>
       <td rowspan="7">$ 0.15/GB</td>
    </tr>
    <tr>
       <td>5,000 connections / Up to 5,000 TPS</td>
-      <td>from $ 0.55/hr</td>
+      <td>from $ 0.5/hr</td>
    </tr>
    <tr>
       <td>1,0000 connections / Up to 5,000 TPS</td>
-      <td>from $ 1.02/hr </td>
+      <td>from $ 0.88/hr </td>
    </tr>
    <tr>
       <td rowspan="5">Professional</td>
       <td>5,000 connections / Up to 10,000 TPS</td>
-      <td>from $ 1.02/hr </td>
+      <td>from $ 0.99/hr </td>
       <td rowspan="2">100G/month</td>
    </tr>
    <tr>
       <td>10,000 connections / Up to 20,000 TPS</td>
-      <td>from $ 1.79/hr</td>
+      <td>from $ 1.49/hr</td>
    </tr>
    <tr>
       <td>50,000 connections / Up to 50,000 TPS</td>
-      <td>from $ 4.28/hr</td>
+      <td>from $ 3.99/hr</td>
       <td rowspan="2">1T/month</td>
    </tr>
    <tr>
       <td>100,000 connections / Up to 100,000 TPS</td>
-      <td>from $ 7.99/hr</td>
+      <td>from $ 7.19/hr</td>
    </tr>
    <tr>
       <td>>100,000 connections</td>
-      <td>from $ 7.99/hr</td>
+      <td>from $ 7.19/hr</td>
       <td colspan="2" align="center">Contact sales</td>
    </tr>
    <tr>

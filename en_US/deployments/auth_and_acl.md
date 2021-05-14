@@ -17,15 +17,15 @@ Enter the username and password in the input box at the top of the page, and cli
 
 ### Batch Add Authentication Information
 Certification information can be imported in bulk through CSV files.
-1. Click `import` button
-2. Download the template
-3. Fill in the authentication information and submit the file
+
+1. Download the template
+2. Fill in the authentication information and submit the file
 
    The sample template file is shown below:
 
    ![auth](./_assets/auth_ex.png)
 
-4. Click `import` button
+3. Click `import` button
 
    ![auth](./_assets/import_auth.png)
 
@@ -69,9 +69,10 @@ Same process for `Username` and `All Users`.
 ACL information can be imported in bulk through CSV files.
 
 > `All Users` are not supported
-1. Click `import` button
-2. Download the template
-3. Fill in the ACL information and submit the file
+
+1. Download the template
+   
+2. Fill in the ACL information and submit the file
 
    The sample template file for `username` is shown below:
 
@@ -82,7 +83,7 @@ ACL information can be imported in bulk through CSV files.
    ![acl](./_assets/clientid.png)
 
 
-4. Click `import` button
+3. Click `import` button
 
    ![acl](./_assets/import_auth.png)
 

@@ -12,7 +12,7 @@ In EMQ X Cloud, using the rule engine has the following requirements and restric
 - Professional Deployment
     - The resource only supports intranet access, so you need to configure VPC peering before creating the resource and open the security group.
 
-Translated with www.DeepL.com/Translator (free version)
+
 ## [Rule Management](../rule_engine/rule.md)
 
 The rule engine not only provides a clear and flexible "configurable" business integration solution, simplifies the business development process, improves user usability, and reduces the coupling degree between the business system and EMQ X, but also provides a superior infrastructure for EMQ X's proprietary functionality customization.

@@ -14,12 +14,4 @@ You can enter the ticket system by following the steps below:
 1. Click `New` in the upper right corner
 2. Enter `Subject` and `Description` in the pop-up page
 
-![](./_assets/creat_tickets01.png)
-
-![](./_assets/creat_tickets02.png)
-
-### View tickets
-
-You can click `Status` to filter the status of the ticket.
-
-![tickets status](./_assets/check_tickets.png)
+![](./_assets/create_tickets02.png)

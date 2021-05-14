@@ -1,6 +1,6 @@
 # EMQ X Cloud Product Description
 
-EMQ X Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQ X Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQ X Cloud can help you quickly build industry applications for the IoT domain and easily realize the collection, transmission, computation, and persistence of IoT data.
+EMQ X Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQ X Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQ X Cloud can help you quickly build industry applications for the IoT domain and easily collect, transmit, compute, and persist IoT data.
 
 ![emqx_cloud](https://static.emqx.net/images/b7f3e53a4f6a789c698e5af8476d3e51.png)
 
@@ -18,13 +18,13 @@ In this model, EMQ X Cloud provides MQTT services to connect massive devices and
 
 ### *Data Collection*
 
-EMQ X Cloud supports device data on the cloud. With the support of a massive Topic and rule engine, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
+EMQ X Cloud supports device data on the cloud. With the support of massive topics and rule engine, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
 
 ![data collection](./_assets/data_collection.png)
 
 In this model, the MQTT service provided by EMQ X Cloud enables data collection, computation, and persistence. This model is suitable for IoT applications with data collection and persistence requirements, such as: in industrial scenarios, each IoT sensor collects real-time data to the edge gateway, uploads the data to the MQTT server through the edge gateway, and then the rule engine triggers data filtering, transformation, and simple calculation, and forwards the final result to other services or persists to the target database. EMQ X Cloud provides a variety of access solutions for different functionalities of the network, industrial, and edge devices, and supports more than 70 industrial protocols.
 
-### *Hybrid model*
+### *Hybrid Model*
 
 EMQ X Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and rule engines, data is persisted while flowing from object to object and from object to application.
 
@@ -32,7 +32,7 @@ EMQ X Cloud provides MQTT services to support hybrid applications with two-way c
 
 In this model, the MQTT service provided by EMQ X Cloud not only bridges the gap between device and device, device and application but also persists the required data so that non-real-time applications can subsequently make use of the acquired data. Typical of these applications are artificial intelligence applications where the data acquired by the terminal needs to be sent to the cloud, where the computational model running in the cloud is calculated and fed back to the terminal, such as item or face recognition applications. At the same time, a copy of the data needs to be persisted in the database for subsequent offline training and improvement of the AI computational model.
 
-## Product Plan
+## Product Plans
 
 EMQ X Cloud comes in three plans, each with multiple specifications, and we support the deployment of your own fully managed MQTT service on the world's leading public clouds
 
@@ -56,25 +56,25 @@ Most public cloud IoT platforms have multiple usage restrictions, including the 
 
 Charge per cluster instance and message traffic, not message count, and unlimited API and rule engine usage, so costs remain clear and manageable as your business scales.
 
-### Fully Managed Operations and Maintenance
+### Fully managed operations and maintenance
 
 Create a highly available MQTT clusters in minutes and start accessing devices immediately, followed by up to 7*24 technical support and operations by our global service support team and EMQ experts for the entire life cycle.
 
-### High Availability and Data Security
+### High availability and data security
 
 EMQ X Cloud Professional and Unlimited plans use a highly redundant cluster architecture to ensure high availability of services and guarantee your data security and business stability with a unique isolated environment. Each deployment cluster has its public IP, dedicated VPC network, independent EMQ X servers, and database servers, which is more secure and reliable.
 
 ### Multiple protocol access and private customization extensions
 
-Supports multiple communication protocols including MQTT, MQTT-SN, CoAP, LwM2M, and private TCP protocols, covering various industry applications; can customize private functions according to your special usage scenarios to fully meet business needs.
+Supports multiple communication protocols including MQTT, MQTT-SN, CoAP, LwM2M, and private TCP protocols, covering various industry applications. It can customize private functions according to your special usage scenarios to fully meet business needs.
 
 ### Capacity estimation and scaling
 
 Capacity is automatically estimated by the number of connections and message throughput, and the scaling plan is made through close monitoring, and the cluster size can be smoothly adjusted with the business scale.
 
-### Flexible Data Flow Solution
+### Flexible data flow solution
 
-EMQ X Cloud Professional and Unlimited plans support real-time pre-processing of device event and message data, and storage to more than ten kinds of databases and messaging systems such as MySQL, Kafka, InfluxDB, etc. on the cloud.
+EMQ X Cloud Professional and Unlimited plans support real-time pre-processing of device event and message data, and storage to more than ten kinds of databases and messaging systems such as MySQL, Kafka, InfluxDB on the cloud.
 
 ## Product Capabilities
 
@@ -82,7 +82,7 @@ EMQ X Cloud, a fully managed EMQ X access platform service, provides device acce
 
 ### Device Access
 
-Supports massive device connections to the cloud, providing stable and reliable bi-directional communication capabilities between devices and devices, and between devices and applications.
+Supports massive device connections to the cloud, providing stable and reliable two-way communication capabilities between devices and devices, and between devices and applications.
 
 - Support standard MQTT protocol (including MQTT over WebSocket), using the standard MQTT client library to connect to the cloud
 - Support CoAP, MQTT-SN, LwM2M protocol, and private TCP protocol access to meet the needs of various systems access to the cloud
@@ -134,7 +134,7 @@ EMQ X Cloud Basic and Professional plans provide rich REST APIs that allow users
 
 ### Message Storage (Rule Engine)
 
-EMQ X Cloud supports the use of a rule engine to configure rules for processing and responding to devise messages and events.
+EMQ X Cloud supports the use of the rule engine to configure rules for processing and responding to devise messages and events.
 
 The rule engine not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQ X.
 
@@ -142,7 +142,7 @@ The rule engine not only provides a clear and flexible "configuration-based" bus
 
 - **Send data to HTTP services and other MQTT services**:
   - Send data to Web services
-  - bridge data to MQTT Broker
+  - Bridge data to MQTT Broker
 
 **Professional and Unlimited plans only**
 
@@ -184,11 +184,11 @@ EMQ X Cloud has fewer usage restrictions than the public cloud IoT Hub platform.
 
 | **Limitation Description**         | **EMQ X**                                             | **Public Cloud IoT Hub**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |
-| The maximum number of simultaneous online long connections  | Depends on specifications, choose from 1000-1000W+, more than 20W please send tickets for application| 1W-50W                                 |
-| Number of connections established per second     | 1W                                                    | 200-500                                |
+| The maximum number of simultaneous online long connections  | Depends on specifications, choose from 1000-10M+, more than 200K please send tickets for application| 10K-500K                                 |
+| Number of connections established per second     | 10K                                                   | 200-500                                |
 | Number of topics subscribed to by a single client   | Unlimited                                                  | 10-100                                 |
-| Single-client subscription requests per second  | Unlimited                                                  | 10-1W                                  |
-| Single-client upstream message speed | Unlimited                                                  | QoS0：30 messages/sec；QoS1：10 messages/sec；QoS2：Not supported |
+| Single-client subscription requests per second  | Unlimited                                                  | 10-10K                                  |
+| Single-client upstream message speed | Unlimited                                                  | QoS0: 30 messages/sec；QoS1: 10 messages/sec；QoS2: Not supported |
 | Single-client message downstream     | Unlimited                                                  | 50-100 messages/sec                          |
 | Single client throughput bandwidth per second | Unlimited                                                  | 512-1024KB                             |
 | Single message length         | Default 1024KB 1-256MB. Adjustable on request                      | 256KB                                  |
