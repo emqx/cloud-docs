@@ -1,26 +1,26 @@
 # Create a free trial deployment
 
-For users who use EMQ X Cloud for the first time, we have prepared an opportunity for you to create a free trial deployment for up to **180** days. The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following limitations:
+For first-time EMQ X Cloud customers, we have an opportunity for you to create a free trial deployment of up to **30** days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following restrictions.
 
-- Free trial up to 180 days.
+* Free trial up to 30 days.
 
-  > If you need to extend the free trial period, you can submit a [ticket](../contact.md) or email (cloud@emqx.io) to get in touch with us
+  > To extend your free trial, you can submit a [ticket](../contact.md) or contact us by email to get in touch with us.
 
-- Allow free trial users to have up to 25 client connections.
+* Maximum 1000 client connections for the basic plan, maximum 5000 client connections for professional plan
 
-- 10 GB of free data per month
+* 100 GB free traffic per month.
 
-- Use all EMQ X features such as rule engine, monitoring and management.
+* Use all EMQ X features such as rule engine, monitoring management, etc.
 
-- Supports MQTT, WebSockets, MQTT over TLS, Websockets over TLS protocol connections.
+* Support for MQTT, WebSockets, MQTT over TLS/SSL, Websockets over TLS protocol connections.
 
-  > If you need other protocol support, you can submit a [ticket](../contact.md) or send an email (cloud@emqx.io) to get in touch with us
+  > For additional protocol support, you can submit a [ticket](../contact.md) or send email (cloud@emqx.io) to get in touch with us.
 
-- Customizing [TLS/SSL](../deployments/security_features_and_settings/tls_ssl.md) and creating [VPC peering connection](../deployments/security_features_and_settings/vpc_peering.md) are not supported.
+* The basic plan does not support custom [TLS/SSL](../deployments/security_features_and_settings/tls_ssl.md) and [VPC Peering](../deployments/security_features_and_settings/vpc_peering.md).
 
-- Active client connections are deployments within 7 days.
-  
-  > If the deployment has no active connections for 7 days we will temporarily stop your free trial deployment and you can start your free trial deployment again by logging into the EMQ X Cloud console.
+* Deployment has active client connections within 7 days.
+
+  > If the deployment has no active connections for 7 days we will temporarily stop your free trial deployment. You can start your free trial deployment again by logging into the EMQ X Cloud console.
 
 
 
@@ -34,20 +34,15 @@ For users who use EMQ X Cloud for the first time, we have prepared an opportunit
 
    ![console](./_assets/console.png)
 
-3. Choose 180 Day Free Trial for step 1. Keep the default settings of other steps and click `Deploy` 
-on the right.
+3. Select `create free trial` under basic plan
 
-   ![free_trial](./_assets/free_trial.png)
+   ![free_trial](./_assets/select_trial.png)
 
-4. Review the EMQ X Cloud Standard Terms of Service and click `Continue`.
-
-   ![service_terms](./_assets/service_terms.png)
-
-5. Review the Free Trial Declaration Terms and click `Get started`.
+4. Review the EMQ X Cloud Standard Terms of Service and Free Trial Declaration Terms.
 
    ![freetrial_term](./_assets/freetrial_terms.png)
    
-6. Wait for 5 ~ 10 minutes until the deployment status is **running**
+5. Wait for 5 ~ 10 minutes until the deployment status is **running**
 
    ![free_trial_running](./_assets/running.png)
 

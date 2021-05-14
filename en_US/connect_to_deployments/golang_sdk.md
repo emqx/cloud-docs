@@ -2,7 +2,7 @@
 
 In this tutorial, you will learn to use Go **paho-mqtt** client to connect to EMQ X Cloud deployment.
 
-## precondition
+## Precondition
 
 * Already [Create Deployment](../deployments/create_deployment.md) in EMQ X Cloud , and the deployment status is **running**
 
@@ -16,7 +16,7 @@ In this tutorial, you will learn to use Go **paho-mqtt** client to connect to EM
 	go get golang.org/x/net/proxy
 	```
 
-* For free trial and shared deployment EMQ X Cloud, it provides TLS/SSL connection authentication by default, and you also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) for TLS/SSL connection.
+* For basic EMQ X Cloud deployment, it provides TLS/SSL connection authentication by default, and you also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) for TLS/SSL connection.
 
 ## Example Code
 
@@ -27,13 +27,13 @@ Get [Sample Source Code](https://github.com/emqx/MQTT-Client-Examples/tree/maste
 	go run main.go --protocol=mqtt --port=1883 --action=pub
 	```
 
-- Connect to the deployment and subscribe to messages with MQTT protocol
+- Connect to the deployment and subscribe messages with MQTT protocol
 
 	```
 	go run main.go --protocol=mqtt --port=1883 --action=sub
 	```
 
-- Connect to deployment, publish and subscribe to messages with MQTT protocol
+- Connect to deployment, publish and subscribe messages with MQTT protocol
 
 	```
 	go run main.go --protocol=mqtt --port=1883 --action=pubsub

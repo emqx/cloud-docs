@@ -1,4 +1,4 @@
-# Connect to deployments with MQTT.fx
+# Connect to Deployments with MQTT.fx
 
 [MQTT.fx](https://mqttfx.jensd.de/) is an cross-platform MQTT desktop client, which supports macOS, Linux, Windows.
 

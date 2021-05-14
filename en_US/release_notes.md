@@ -1,5 +1,11 @@
 # Version release
 
+## 2021-5-13
+* New Pricing Plans
+
+## 2021-3-15
+* New UI design
+
 ## 2020-12-21
 * Support the creation of 180-day free trial
 

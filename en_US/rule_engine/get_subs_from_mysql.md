@@ -1,11 +1,11 @@
-# Get subscription topic information from MySQL using the Rule Engine
+# Get Subscription Topic Information from MySQL Using the Rule Engine
 
 In this article, we will use the EMQ X Cloud rules engine to get subscription relationships from MySQL.
 
 Before you start, you need to complete the following operations:
 * Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
-* For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/security_features_and_settings/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
-* For free trial and shared deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
+* For professional deployment users: Please complete [Peering Connection Creation](../deployments/security_features_and_settings/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
+* For basic deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
 ## MySQL configuration
 
@@ -49,13 +49,13 @@ Before you start, you need to complete the following operations:
    :::
 
 4. Set the EMQ X cluster IP segment to be allowed to access the database (optional)
-   For exclusive deployment, if you want to get deployment segment, you can go to Deployment Details → View Peer Connection Information and copy the deployment VPC segment.
+   For professional deployment, if you want to get deployment segment, you can go to Deployment Details → View Peer Connection Information and copy the deployment VPC segment.
    
    ```sql
-   # Exclusive deployment
+   # Professional deployment
    GRANT ALL PRIVILEGES ON *.* TO root@'10.11.30.%' IDENTIFIED BY 'public' WITH GRANT OPTION;
    
-   # Free trial and shared deployment
+   # Basic deployment
    GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'public' WITH GRANT OPTION;
    ```
 

@@ -525,20 +525,20 @@
           "path": "rule_engine/rule_engine_kafka"
         },
         {
-          "title": "Bridge data to MQTT Broker",
-          "path": "rule_engine/rule_engine_mqtt"
-        },
-        {
           "title": "Bridge data to Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
         {
-          "title": "Store device offline messages to Redis",
-          "path": "rule_engine/rule_engine_offonline_to_redis"
+          "title": "Bridge data to MQTT Broker",
+          "path": "rule_engine/rule_engine_mqtt"
         },
         {
           "title": "Republish messages",
           "path": "rule_engine/rule_engine_republish"
+        },
+        {
+          "title": "Store device offline messages to Redis",
+          "path": "rule_engine/rule_engine_offonline_to_redis"
         },
         {
           "title": "Get subscription topic information from MySQL",

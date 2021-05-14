@@ -6,9 +6,9 @@ Before you start, you will need to complete the following:
 
 * A deployment (EMQ X Cluster) has been created on EMQ X Cloud.
 
-* For Dedicated Deployment users: please complete the creation of a [VPC Peering Connections](../deployments/security_features_and_settings/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
+* For professional deployment users: please complete the creation of a [VPC Peering Connections](../deployments/security_features_and_settings/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
 
-* For Free Trial and Shared Deployment users: No PC Peering Connections is required. All IP references below are to the public IP of the resource.
+* For basic deployment users: No PC Peering Connections is required. All IP references below are to the public IP of the resource.
 
 
 ## MySQL Configuration
@@ -44,14 +44,14 @@ Before you start, you will need to complete the following:
     ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
     ```
 
-4. For dedicated deployment, set up to allow EMQ X cluster IP segments to access the database (optional).
+4. For professional deployment, set up to allow EMQ X cluster IP segments to access the database (optional).
      To obtain the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
 
      ```mysql
-       # Dedicated Deployment CIDR: 10.11.x.%
+       # Professional Deployment CIDR: 10.11.x.%
        GRANT ALL PRIVILEGES ON *.* TO root@'10.11.30.%' IDENTIFIED BY 'public' WITH GRANT OPTION;
        
-       # Free Trial and Shared Deployment CIDR: 123.xxx.xxx.xxx
+       # Basic Deployment CIDR: 123.xxx.xxx.xxx
        GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'public' WITH GRANT OPTION;
      ```
 

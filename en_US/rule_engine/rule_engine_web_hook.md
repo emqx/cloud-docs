@@ -1,11 +1,11 @@
-# Forwarding device data to Webhook using the Rule Engine
+# Forwarding Device Data to Webhook Using the Rule Engine
 
 In this article, we will simulate temperature and humidity data and report these data to EMQ X Cloud via the MQTT protocol and then use the EMQ X Cloud rules engine to dump the data into Kafka.
 
 Before you start, you need to complete the following operations:
 * Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
-* For exclusive deployment users: Please complete [Peering Connection Creation](../deployments/security_features_and_settings/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
-* For free trial and shared deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
+* For professional deployment users: Please complete [Peering Connection Creation](../deployments/security_features_and_settings/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
+* For basic deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
 ## Create a Web server
 

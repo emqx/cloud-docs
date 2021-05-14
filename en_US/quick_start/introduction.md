@@ -6,13 +6,14 @@ connections and less time for EMQ X operation, maintenance, and management. This
 to EMQ X Cloud deployment. Before starting, let's review some core concepts and phrases:
 
 * Deployment: EMQ X Enterprise cluster hosted on EMQ X Cloud
-* Free Trial: Single node version of EMQ X Enterprise
-* Exclusive deployment: An EMQ X Enterprise Edition cluster with separate networks, instances, and load balancing
+* Basic Plan: Single node version of EMQ X Enterprise
+* Professional Plan: An EMQ X Enterprise Edition cluster with separate networks, instances, and load balancing
 
 You can follow these steps shown below to quickly complete the EMQ X Cloud QuickStart.
 
 1. [Login/Register](./create_account.md) EMQ X Cloud account
 
+> EMQ X Cloud offers one 30-day free trial of basic plan, and a 14-day free trial of the professional plan for each user (Professional plan free trial is available after you bind the credit card).
     ![add_users](./_assets/log_in.png)
 
 

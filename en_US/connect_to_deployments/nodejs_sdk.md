@@ -1,4 +1,4 @@
-# Connect to deployments with Node.js SDK
+# Connect to Deployments with Node.js SDK
 
 In this tutorial, you will learn how to use Node.js **MQTT.js** client to connect to EMQ X Cloud deployment.
 
@@ -18,7 +18,7 @@ In this tutorial, you will learn how to use Node.js **MQTT.js** client to connec
   yarn
   ```
 
-* For free trial and shared deployment EMQ X Cloud, it provides TLS/SSL connection authentication by default,  and you also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) For TLS/SSL connection.
+* For basic EMQ X Cloud deployment, it provides TLS/SSL connection authentication by default,  and you also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) For TLS/SSL connection.
 
 
 

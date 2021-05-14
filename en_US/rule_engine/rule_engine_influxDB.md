@@ -16,13 +16,13 @@ In order to achieve this function, we will complete the following 4 tasks:
 
 1. Install and initialize InfluxDB
 2. Set the filter conditions of the rule engine
-3. Create a resource and an action
+3. Create a resource and action
 4. Complete the rule engine creation and test
 
-::: tip Tip
+::: tip
 Before using the rule engine, create a deployment first.
-For dedicated deployment users: please complete [Peering Connection](../deployments/security_features_and_settings/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
-For free trial and shared deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
+For professional deployment users: please complete [Peering Connection](../deployments/security_features_and_settings/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
+For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
 :::
 
 
