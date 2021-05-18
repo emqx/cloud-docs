@@ -17,10 +17,10 @@ For basic EMQ X Cloud deployment , it provides TLS/SSL connection authentication
 * [Connect to deployments with Perl SDK](perl_sdk.md)
 * [Connect to deployments with Ruby SDK](ruby_sdk.md)
 * [Connect to deployments with Scala SDK](scala_sdk.md)
-<!-- * [Connect to deployments with WebSocket](https://www.emqx.cn/blog/connect-to-mqtt-broker-with-websocket) -->
+<!-- * [Connect to deployments with WebSocket](https://www.emqx.io/blog/connect-to-mqtt-broker-with-websocket) -->
 * [Connect to deployments in Android Kotlin project](https://www.emqx.io/blog/android-connects-mqtt-using-kotlin)
-<!-- * [Connect to deployments in Electron project](https://www.emqx.cn/blog/how-to-use-mqtt-in-electron) -->
-<!-- * [Connect to deployments in Vue project](https://www.emqx.cn/blog/how-to-use-mqtt-in-vue) -->
+<!-- * [Connect to deployments in Electron project](https://www.emqx.io/blog/how-to-use-mqtt-in-electron) -->
+<!-- * [Connect to deployments in Vue project](https://www.emqx.io/blog/how-to-use-mqtt-in-vue) -->
 
 ## Connect with hardware
 * [Connect to deployments with ESP8266](esp8266.md)
