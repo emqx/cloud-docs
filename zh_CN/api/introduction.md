@@ -31,7 +31,7 @@ EMQ X Cloud  API 遵循 REST 体系结构，您可以通过编程方式访问 EM
 
 ### 认证鉴权
 
-HTTP API 使用 [Basic 认证](https://en.wikipedia.org/wiki/Basic_access_authentication) 方式，id 和 password 须分别填写 AppID 和 AppSecret。 您可以在部署详情页面下的 API 访问中，通过创建应用访问来添加和删除 AppID/AppSecret。
+HTTP API 使用 [Basic 认证](https://zh.wikipedia.org/wiki/Basic_access_authentication) 方式，id 和 password 须分别填写 AppID 和 AppSecret。 您可以在部署详情页面下的 API 访问中，通过创建应用访问来添加和删除 AppID/AppSecret。
 
 ![api-app](./_assets/api_secret.png)
 

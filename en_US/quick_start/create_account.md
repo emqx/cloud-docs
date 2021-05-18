@@ -1,7 +1,7 @@
 # Register and Log in to the EMQ X Cloud account
 
 
-## [Register an account](https://accounts.emqx.io/cn/signup?continue=https://cloud.emqx.io/)
+## [Register an account](https://accounts.emqx.io/signup?continue=https://cloud.emqx.io/)
 
 Start at the EMQ X Cloud sign up page
 
@@ -23,7 +23,7 @@ Start at the EMQ X Cloud sign up page
    and redirect you to the login page.
 4. Now you are ready to log in to EMQ X Cloud.
 
-## [Login to the account](https://accounts.emqx.io/cn/signin?continue=https://cloud.emqx.io/)
+## [Login to the account](https://accounts.emqx.io/signin?continue=https://cloud.emqx.io/)
 
 If you've already registered an account, you could log in by the following steps:
 
@@ -35,7 +35,7 @@ If you've already registered an account, you could log in by the following steps
 
 
 
-## [Forget Password](https://accounts.emqx.io/cn/forgot_password?continue=https://cloud.emqx.io/)
+## [Forget Password](https://accounts.emqx.io/forgot_password?continue=https://cloud.emqx.io/)
 
 If you forget your password, you could click on `Forget your password` and enter your email address, we will send a verification email to your mailbox.
 
