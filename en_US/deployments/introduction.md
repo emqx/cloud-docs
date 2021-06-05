@@ -53,17 +53,17 @@ Timely access to alarm information through configuring email and other methods.
 
 ## Security features and settings
 
-### [TLS/SSL Configure](security_features_and_settings/tls_ssl.md)
+### [TLS/SSL Configure](./tls_ssl.md)
 
 The professional plan allows you to customize both one-way and two-way TLS/SSL connections.
 
 
-### [VPC peering connections setting](security_features_and_settings/vpc_peering.md)
+### [VPC peering connections setting](./vpc_peering.md)
 
 Enables internal and external communication between deployments and your business machines by creating peer connections for the professional plan.
 
 
-### [NAT Gateway settings](security_features_and_settings/nat.md)
+### [NAT Gateway settings](./nat.md)
 
 Enable the deployment to access public network resources by creating NAT gateways for the professiional plan.
 

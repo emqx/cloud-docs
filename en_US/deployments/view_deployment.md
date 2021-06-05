@@ -17,14 +17,14 @@ Here you can view the following deployment information:
   - Basic deployment connection address: domain name ending with emqx.cloud suffix
 - Connection port:
 
-  - Professional deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](security_features_and_settings/tls_ssl.md)
+  - Professional deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](./tls_ssl.md)
   - Basic deployment port: open **11xxx(mqtt)**, **11xxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
 
 ![base_info](./_assets/deployment_info.png)
 
 
 
-## [TLS/SSL Configuration](security_features_and_settings/tls_ssl.md)
+## [TLS/SSL Configuration](./tls_ssl.md)
 
 ::: danger
 This feature is not available in basic deployment.
@@ -36,7 +36,7 @@ EMQ X Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supp
 
 
 
-## [VPC Peering Connection Configuration](security_features_and_settings/vpc_peering.md)
+## [VPC Peering Connection Configuration](./vpc_peering.md)
 
 ::: danger
 This feature is not available in basic deployment

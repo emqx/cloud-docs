@@ -394,15 +394,15 @@
           "children": [
             {
               "title": "TLS/SSL",
-              "path": "deployments/security_features_and_settings/tls_ssl"
+              "path": "deployments/tls_ssl"
             },
             {
               "title": "VPC Peering Connection",
-              "path": "deployments/security_features_and_settings/vpc_peering"
+              "path": "deployments/vpc_peering"
             },
             {
               "title": "NAT Gateway",
-              "path": "deployments/security_features_and_settings/nat"
+              "path": "deployments/nat"
             }
           ]
         },

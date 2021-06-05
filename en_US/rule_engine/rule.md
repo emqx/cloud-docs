@@ -37,7 +37,7 @@ Before creating a rule engine, you need to make sure that the deployment status 
 6. Add an action
 
 ::: tip Tip
-Before adding an action, you need to ensure that you have added [VPC peering connection](../deployments/security_features_and_settings/vpc_peering.md), and [create resource](resource.md)
+Before adding an action, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md), and [create resource](resource.md)
 :::
 
    ![rule-action-add](./_assets/rule-action-add.png)
