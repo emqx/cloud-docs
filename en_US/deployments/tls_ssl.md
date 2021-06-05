@@ -70,13 +70,13 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
    - CA certificate: the client's CA certificate is required when selecting two-way certification
 3. When you have completed the form, click on `OK`.
 
-![tls](../_assets/tls.png)
+![tls](./_assets/tls.png)
 
 
 
 ## Test connections
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](../auth_and_acl.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_and_acl.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
 - To create a new connection, enter the Name, Client ID is randomly generated
 - Select Host and fill in the deployed connection address and port
   - If you select an SSL connection, select ports `mqtts://` and `8883`
@@ -89,7 +89,7 @@ Before testing, make sure that you have created authentication information, refe
 - Turn on strict mode
 - Connect
 
-![mqttx_tls](../_assets/mqttx_tls.png)
+![mqttx_tls](./_assets/mqttx_tls.png)
 
 ## Delete the Certificate
 Deleting the certificate will disconnect the client from `8883` and `8084`, please ensure that this does not affect your business.
@@ -200,7 +200,7 @@ openssl genrsa -out client.key 2048
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 ```
 
-3. Sign the server-side certificate with a CA certificate
+3. Sign the client-side certificate with a CA certificate
 ```bash
 openssl x509 -req -days 3650 -in client.csr -CA root-ca.crt -CAkey root-ca.key -CAcreateserial -out client.crt
 ```

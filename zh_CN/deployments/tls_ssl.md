@@ -201,7 +201,7 @@ openssl genrsa -out client.key 2048
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 ```
 
-3. 用 CA 证书给服务端证书签名
+3. 用 CA 证书给客户端证书签名
 ```bash
 openssl x509 -req -days 3650 -in client.csr -CA root-ca.crt -CAkey root-ca.key -CAcreateserial -out client.crt
 ```
