@@ -22,8 +22,8 @@
 4. 依据您的需求选择相应规格配置。
 
    ![select_deployment_spec](./_assets/select_deployment_spec.png)
-   * 选择云平台：EMQ X Cloud 暂时支持华为云、阿里云，如您有其他云服务提供商需求，您可以提交[工单](../contact.md)或通过邮件（cloud@emqx.io）和我们联系。
-   * 选择区域：EMQ X Cloud 暂时支持华为云（广州，上海，北京），阿里云（深圳，上海，杭州，北京），如您有其他区域需求，您可以提交 [工单](../contact.md) 或通过邮件（cloud@emqx.io）和我们联系。
+   * 选择云平台：EMQ X Cloud 暂时支持华为云、阿里云、腾讯云，如您有其他云服务提供商需求，您可以提交[工单](../contact.md)或通过邮件（cloud@emqx.io）和我们联系。
+   * 选择区域：EMQ X Cloud 暂时支持华为云（广州，上海，北京），阿里云（深圳，上海，杭州，北京），腾讯云（广州，上海，北京）如您有其他区域需求，您可以提交 [工单](../contact.md) 或通过邮件（cloud@emqx.io）和我们联系。
    * 选择最大连接数：客户端最大允许接入数，您后续可以通过 [升降部署规格](./upgrade_deployment.md) 实现增加和减少最大连接数。
    * 消息上下行 TPS：部署每秒钟发送和接收消息条数的总和，您后续可以通过 [升降部署规格](./upgrade_deployment.md) 实现增加和减少消息上下行 TPS。
 5. 在 **确认** 页核对部署信息。
