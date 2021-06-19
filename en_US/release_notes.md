@@ -1,5 +1,8 @@
 # Version release
 
+## 2021-6-19
+* Optimization of User Interface Design 
+
 ## 2021-5-13
 * New Pricing Plans
 
