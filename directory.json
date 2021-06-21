@@ -529,6 +529,10 @@
           "path": "rule_engine/rule_engine_influxDB"
         },
         {
+          "title": "Save data to InfluxDB 2.0",
+          "path": "rule_engine/rule_engine_influxDB_2.0"
+        },
+        {
           "title": "Bridge data to Kafka",
           "path": "rule_engine/rule_engine_kafka"
         },
