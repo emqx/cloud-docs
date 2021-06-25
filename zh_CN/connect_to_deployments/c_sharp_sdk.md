@@ -37,7 +37,7 @@ using uPLibrary.Networking.M2Mqtt;
 ```c#
 string broker = "broker.emqx.io";
 int port = 1883;
-string topic = "/Csharp/mqtt";
+string topic = "Csharp/mqtt";
 string clientId = Guid.NewGuid().ToString();
 ```
 
@@ -145,7 +145,7 @@ namespace csharpMQTT
         {
             string broker = "broker.emqx.io";
             int port = 1883;
-            string topic = "/Csharp/mqtt";
+            string topic = "Csharp/mqtt";
             string clientId = Guid.NewGuid().ToString();
             MqttClient client = ConnectMQTT(broker, port, clientId);
             Subscribe(client, topic);
