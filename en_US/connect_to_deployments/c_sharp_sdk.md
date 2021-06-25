@@ -1,7 +1,7 @@
 # Connect to Deployments with C# SDK
 [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) is an **object-oriented** programming language provided by Microsoft that runs on **.NET Framework**.
 
-This article mainly introduces how to use the **paho.mqtt.m2mqtt** client and implement connection, subscribe, messaging, and other functions between the client and MQTT broker, in the C# project.
+This article mainly introduces how to use the **paho.mqtt.m2mqtt** client library in a C# project to connect, subscribe, publish and receive messages from the client to the MQTT server.
 
 ## Project initialization
 This project uses .NET 5.0 to develop and test. You can use the following commend to confirm the .NET version.
@@ -22,7 +22,7 @@ dotnet add package M2Mqtt --version 4.3.0
 ## The use of C# MQTT
 
 ### Connect to the MQTT broker
-This article will use [the free public MQTT broker](https://www.emqx.io/mqtt/public-mqtt5-broker) provided by EMQ X. This service is based on [MQTT IoT cloud platform](https://cloud.emqx.io/) to create. The accessing information of the broker is as follows:
+This article will use [the free public MQTT broker](https://www.emqx.io/mqtt/public-mqtt5-broker) provided by EMQ X. This service is created base on [MQTT IoT cloud platform](https://cloud.emqx.io/) to create. The accessing information of the broker is as follows:
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - Websocket Port: **8083**
@@ -33,7 +33,7 @@ using uPLibrary.Networking.M2Mqtt;
 ```
 
 ### Set the parameter of MQTT Broker connection
-Set the address, port and topic of MQTT Broker connection. At the same time, we call the C# `Guid.NewGuid()` to randomly generated uid as the MQTT client id.
+Set the address, port and topic of MQTT Broker connection. At the same time, we call the C# `Guid.NewGuid()` to randomly generate uid as the MQTT client id.
 ```c#
 string broker = "broker.emqx.io";
 int port = 1883;
@@ -42,7 +42,7 @@ string clientId = Guid.NewGuid().ToString();
 ```
 
 ### Write the MQTT connect method
-Write static class method ConnectMQTT to create MQTT client connect to the specified broker, and we can determine whether the client is connected successfully according to client's  `IsConnected`. Finally, method will return the client.
+Write static class method ConnectMQTT to create an MQTT client and connect it to the specified broker. We can determine whether the client is connected successfully according to the client's property of `IsConnected`. In the end, the client is returned.
 ```c#
 static MqttClient ConnectMQTT(string broker, int port, string clientId) 
 {    
@@ -61,7 +61,7 @@ static MqttClient ConnectMQTT(string broker, int port, string clientId)
 ```
 
 ### Publish messages
-We define a while loop. In this loop we will set the MQTT client `Publish` method to send messages to the specified topic every second.
+We define a while loop. In this loop we will set the MQTT client `Publish` method to publish messages to the specified topic every second.
 ```c#
 static void Publish(MqttClient client, string topic) 
 {    
