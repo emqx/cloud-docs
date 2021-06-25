@@ -1,1 +1,159 @@
 # Connect to Deployments with C# SDK
+[C#](https://docs.microsoft.com/en-us/dotnet/csharp/) is an **object-oriented** programming language provided by Microsoft that runs on **.NET Framework**.
+
+This article mainly introduces how to use the **paho.mqtt.m2mqtt** client and implement connection, subscribe, messaging, and other functions between the client and MQTT broker, in the C# project.
+
+## Project initialization
+This project uses .NET 5.0 to develop and test. You can use the following commend to confirm the .NET version.
+```bash
+~ dotnet --version            
+5.0.301
+```
+
+### Choose the MQTT client
+[paho.mqtt.m2mqtt](https://www.eclipse.org/paho/clients/dotnet/) is a MQTT client available for all .NET platforms with support for both MQTT v3.1 and v3.1.1.
+
+### .NET CLI install M2Mqtt 
+Use the following command in the root of the project to install M2Mqtt.
+```bash
+dotnet add package M2Mqtt --version 4.3.0
+```
+
+## The use of C# MQTT
+
+### Connect to the MQTT broker
+This article will use [the free public MQTT broker](https://www.emqx.io/mqtt/public-mqtt5-broker) provided by EMQ X. This service is based on [MQTT IoT cloud platform](https://cloud.emqx.io/) to create. The accessing information of the broker is as follows:
+- Broker: **broker.emqx.io**
+- TCP Port: **1883**
+- Websocket Port: **8083**
+
+### Import the M2Mqtt
+```c#
+using uPLibrary.Networking.M2Mqtt;
+```
+
+### Set the parameter of MQTT Broker connection
+Set the address, port and topic of MQTT Broker connection. At the same time, we call the C# `Guid.NewGuid()` to randomly generated uid as the MQTT client id.
+```c#
+string broker = "broker.emqx.io";
+int port = 1883;
+string topic = "/Csharp/mqtt";
+string clientId = Guid.NewGuid().ToString();
+```
+
+### Write the MQTT connect method
+Write static class method ConnectMQTT to create MQTT client connect to the specified broker, and we can determine whether the client is connected successfully according to client's  `IsConnected`. Finally, method will return the client.
+```c#
+static MqttClient ConnectMQTT(string broker, int port, string clientId) 
+{    
+  MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);    
+  client.Connect(clientId);    
+  if (client.IsConnected)    
+  {       
+    Console.WriteLine("Connected to MQTT Broker");    
+  }    
+  else    
+  {        
+    Console.WriteLine("Failed to connect");    
+  }    
+  return client; 
+}
+```
+
+### Publish messages
+We define a while loop. In this loop we will set the MQTT client `Publish` method to send messages to the specified topic every second.
+```c#
+static void Publish(MqttClient client, string topic) 
+{    
+  int msg_count = 0;    
+  while (true)    
+  {        
+    System.Threading.Thread.Sleep(1*1000);        
+    string msg = "messages: " + msg_count.ToString();        
+    client.Publish(topic, System.Text.Encoding.UTF8.GetBytes(msg));        
+    Console.WriteLine("Send `{0}` to topic `{1}`", msg, topic);       
+    msg_count++;    
+  } 
+}
+```
+
+### Subscribe to messages
+Write the static method `client_MqttMsgPublishReceived`. This method will be called after the client received messages from the MQTT Broker. In this method, we will print the topic and payload of the messages.
+```c#
+static void Subscribe(MqttClient client, string topic)
+{
+    client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
+    client.Subscribe(new string[] { topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+}
+static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+{
+    string payload = System.Text.Encoding.Default.GetString(e.Message);
+    Console.WriteLine("Received `{0}` from `{1}` topic", payload, e.Topic.ToString());
+}
+```
+
+### The complete code
+```c#
+using System;
+using uPLibrary.Networking.M2Mqtt;
+using uPLibrary.Networking.M2Mqtt.Messages;
+
+namespace csharpMQTT
+{
+    class Program
+    {
+        static MqttClient ConnectMQTT(string broker, int port, string clientId)
+        {
+            MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);
+            client.Connect(clientId);
+            if (client.IsConnected)
+            {
+                Console.WriteLine("Connected to MQTT Broker");
+            }
+            else
+            {
+                Console.WriteLine("Failed to connect");
+            }
+            return client;
+        }
+
+        static void Publish(MqttClient client, string topic)
+        {
+            int msg_count = 0;
+            while (true)
+            {
+                System.Threading.Thread.Sleep(1*1000);
+                string msg = "messages: " + msg_count.ToString();
+                client.Publish(topic, System.Text.Encoding.UTF8.GetBytes(msg));
+                Console.WriteLine("Send `{0}` to topic `{1}`", msg, topic);
+                msg_count++;
+            }
+        }
+
+        static void Subscribe(MqttClient client, string topic)
+        {
+            client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
+            client.Subscribe(new string[] { topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+        }
+        static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+        {
+            string payload = System.Text.Encoding.Default.GetString(e.Message);
+            Console.WriteLine("Received `{0}` from `{1}` topic", payload, e.Topic.ToString());
+        }
+
+        static void Main(string[] args)
+        {
+            string broker = "broker.emqx.io";
+            int port = 1883;
+            string topic = "/Csharp/mqtt";
+            string clientId = Guid.NewGuid().ToString();
+            MqttClient client = ConnectMQTT(broker, port, clientId);
+            Subscribe(client, topic);
+            Publish(client, topic);
+        }
+    }
+}
+```
+
+## Test
+Run the code, the console output is as follows. ![c_sharp_connect](_assets/c_sharp_connect.png)
