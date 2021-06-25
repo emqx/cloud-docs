@@ -37,7 +37,7 @@ Set the address, port and topic of MQTT Broker connection. At the same time, we 
 ```c#
 string broker = "broker.emqx.io";
 int port = 1883;
-string topic = "/Csharp/mqtt";
+string topic = "Csharp/mqtt";
 string clientId = Guid.NewGuid().ToString();
 ```
 
@@ -77,7 +77,7 @@ static void Publish(MqttClient client, string topic)
 }
 ```
 
-### Subscribe to messages
+### Subscribe to a topic
 Write the static method `client_MqttMsgPublishReceived`. This method will be called after the client received messages from the MQTT Broker. In this method, we will print the topic and payload of the messages.
 ```c#
 static void Subscribe(MqttClient client, string topic)
@@ -145,7 +145,7 @@ namespace csharpMQTT
         {
             string broker = "broker.emqx.io";
             int port = 1883;
-            string topic = "/Csharp/mqtt";
+            string topic = "Csharp/mqtt";
             string clientId = Guid.NewGuid().ToString();
             MqttClient client = ConnectMQTT(broker, port, clientId);
             Subscribe(client, topic);
