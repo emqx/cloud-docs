@@ -22,7 +22,7 @@ dotnet add package M2Mqtt --version 4.3.0
 ## The use of C# MQTT
 
 ### Connect to the MQTT broker
-This article will use [the free public MQTT broker](https://www.emqx.io/mqtt/public-mqtt5-broker) provided by EMQ X. This service is created base on [MQTT IoT cloud platform](https://cloud.emqx.io/) to create. The accessing information of the broker is as follows:
+This article will use [the free public MQTT broker](https://www.emqx.io/mqtt/public-mqtt5-broker) provided by EMQ X. This service is created based on [MQTT IoT cloud platform](https://cloud.emqx.io/) to create. The accessing information of the broker is as follows:
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - Websocket Port: **8083**
