@@ -59,16 +59,16 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
 
 ## Create a Certificate
 
-1. Login [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
+1. Login to the [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
 2. Go to the deployment details and click on the `+TLS/SSL configuration` button to configure the certificate contents, either by uploading a file or by filling in the certificate contents directly
    - Type of certification:
      - One-way authentication: only the client verifies the server-side certificate
      - Two-way authentication: the client and the server validate each other's certificates.
    - Certificates: server-side certificates
    - Certificate chain: the certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
-   - Private keys: private keys
-   - CA certificate: the client's CA certificate is required when selecting two-way certification
-3. When you have completed the form, click on `OK`.
+   - Certificate private keys: server-side private keys
+   - Client CA certificate: the client's CA certificate that is required when selecting two-way certification
+3. When you have completed the form, click on `Confirm`.
 
 ![tls](./_assets/tls.png)
 
@@ -87,25 +87,25 @@ Before testing, make sure that you have created authentication information, refe
   - Certificates certified by third-party authorities, no CA certificate required
   - For self-signed certificates, a server-side CA certificate is required or, for two-way certification, a client-side certificate and private key are required
 - Turn on strict mode
-- Connect
+- Click on `Connect`
 
 ![mqttx_tls](./_assets/mqttx_tls.png)
 
 ## Delete the Certificate
+
 Deleting the certificate will disconnect the client from `8883` and `8084`, please ensure that this does not affect your business.
-1. Login [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
+
+1. Login to the [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
 2. To access the deployment details, click on the delete button for the certificate in the `TLS/SSL Configuration` section.
 3. Click on "OK" in the dialog to complete the deletion.
 
 
 
-## Creating a Self-Signed TSL/SSL Certificate
+## Creating Self-Signed TSL/SSL Certificate
 
 Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
 
-### Generation of CA certificate
-
-subj adjusted to actual use.
+### Generation of Server CA certificate
 
 ```bash
 openssl req \
@@ -115,20 +115,24 @@ openssl req \
     -nodes \
     -x509 \
     -subj "/C=CN/O=EMQ Technologies Co., Ltd/CN=EMQ CA" \
-    -keyout root-ca.key \
-    -out root-ca.crt
+    -keyout server-ca.key \
+    -out server-ca.crt
 ```
+
+You should adjust `subj` to actual use.
 
 ### Creating a Server Certificate
 
-1. Generation of server-side secret key
+1. Generate server-side secret key
+
 ```bash
 openssl genrsa -out server.key 2048
 ```
 
 2. Create `openssl.cnf` file
 
-Replace the DNS.1 address with the current deployment address
+Replace the DNS.1 address with your deployment address
+
 ```
 cat << EOF > ./openssl.cnf
 [policy_match]
@@ -162,17 +166,19 @@ EOF
 ```
 
 3. Generate the server-side certificate request file server.csr
+
 ```bash
 openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
 4. Sign the server-side certificate with a CA certificate
+
 ```bash
 openssl x509 -req \
     -days 3650 \
     -in server.csr \
-    -CA root-ca.crt \
-    -CAkey root-ca.key \
+    -CA server-ca.crt \
+    -CAkey server-ca.key \
     -CAcreateserial -out server.crt \
     -extensions v3_req -extfile openssl.cnf
 ```
@@ -184,25 +190,45 @@ openssl x509 -noout -text -in server.crt
 
 6. Verify the certificate
 ```bash
-openssl verify -CAfile root-ca.crt server.crt
+openssl verify -CAfile server-ca.crt server.crt
 ```
 
-### Creating a Client Certificate
+### Creating a client Certificate
 
+For two-way authentication, you will need to generate the client CA certificate first 
 
-1. Generation of client-side secret key
+#### Generate client CA certificate
+
+```bash
+openssl req \
+    -new \
+    -newkey rsa:2048 \
+    -days 3650 \
+    -nodes \
+    -x509 \
+    -subj "/C=CN/O=EMQ Technologies Co., Ltd/CN=EMQ CA" \
+    -keyout client-ca.key \
+    -out client-ca.crt
+```
+
+You should adjust `subj` to actual use.
+
+1. Generate  client-side secret key
+
 ```bash
 openssl genrsa -out client.key 2048
 ```
 
 2. Generate the client-side certificate request file server.csr
+
 ```bash
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 ```
 
 3. Sign the client-side certificate with a CA certificate
+
 ```bash
-openssl x509 -req -days 3650 -in client.csr -CA root-ca.crt -CAkey root-ca.key -CAcreateserial -out client.crt
+openssl x509 -req -days 3650 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
 ```
 
 4. View client-side certificate information
@@ -212,7 +238,7 @@ openssl x509 -noout -text -in client.crt
 
 5. Verify the certificate
 ```bash
-openssl verify -CAfile root-ca.crt client.crt
+openssl verify -CAfile client-ca.crt client.crt
 ```
 
 
