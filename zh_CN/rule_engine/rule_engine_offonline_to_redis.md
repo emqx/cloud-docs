@@ -12,14 +12,14 @@
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
-* 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
+* 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
 ## Redis 配置
 
 1. 安装 Redis
 
    ```bash
-   docker run -itd --name redis -p 6379:6379 redis
+   docker run -d --name redis -p 6379:6379 redis
    ```
 
 ## EMQ X Cloud 规则引擎配置
@@ -77,7 +77,7 @@
 2. 查看数据转存结果
 
     ```bash
-    $ docker exec -it myredis bash
+    $ docker exec -it redis bash
     $ redis-cli
     $ keys *
     ```
@@ -93,7 +93,7 @@
 4. 查看 redis 被消费的数据
 
    ```bash
-   $ docker exec -it myredis bash
+   $ docker exec -it redis bash
    $ redis-cli
    $ keys *
    ```

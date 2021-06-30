@@ -16,13 +16,15 @@ Before you start, you need to complete the following operations:
      --name mysql \
      -p 3306:3306 \
      -e MYSQL_ROOT_PASSWORD=public \
-     -d mysql/mysql-server:5.7
+     mysql/mysql-server:5.7
    ```
 
 2. New database
 
-   ```sql
+   ```bash
+   docker exec -it mysql mysql -uroot -ppublic
    CREATE DATABASE emqx;
+   USE emqx;
    ```
 
 

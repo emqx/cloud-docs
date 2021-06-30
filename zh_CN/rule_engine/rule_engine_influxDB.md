@@ -27,17 +27,22 @@
 >
 >在使用规则引擎前，请先创建部署。
 >
->对于独享部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的服务器都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
+>对于专业版部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的服务器都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
 
 ## 1. 安装并初始化 InfluxDB
 
 首先，我们在自己的服务器上创建一个 InfluxDB。为了快速创建 InfluxDB，这里我们使用 docker 进行快速安装，并开放 **8089** UDP 端口，数据库名为 **db**.
 
 ```shell
-$ docker pull influxdb
+$ docker pull influxdb:1.8
 $ git clone -b v1.0.0 https://github.com/palkan/influx_udp.git
 $ cd influx_udp
-$ docker run --name=influxdb --rm -d -p 8086:8086 -p 8089:8089/udp -v ${PWD}/files/influxdb.conf:/etc/influxdb/influxdb.conf:ro -e INFLUXDB_DB=db influxdb:latest
+$ docker run -d --name=influxdb \
+      -p 8086:8086 \
+      -p 8089:8089/udp \
+      -v ${PWD}/files/influxdb.conf:/etc/influxdb/influxdb.conf:ro \
+      -e INFLUXDB_DB=db \
+      influxdb:1.8
 ```
 
 
@@ -167,7 +172,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 打开服务器，查看 InfluxDB 里的数据。
 
 ```shell
-$ docker exec -it InfluxDB influx
+$ docker exec -it influxdb influx
 $ use db
 $ select * from "home_sensor"
 ```

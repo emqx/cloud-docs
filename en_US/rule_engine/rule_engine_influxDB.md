@@ -12,7 +12,7 @@ In this guide, we will complete the creation of an InfluxDB rule engine to achie
 
 
 
-In order to achieve this function, we will complete the following 4 tasks:
+To achieve this function, we will complete the following 4 tasks:
 
 1. Install and initialize InfluxDB
 2. Set the filter conditions of the rule engine
@@ -29,13 +29,18 @@ For basic deployment users: There is no need to complete peering connection, and
 
 ## 1. Install and initialize InfluxDB
 
-First, we create an InfluxDB on our server. In order to quickly create InfluxDB, we use docker for quick installation, and open **8089** UDP port. The database name is **db**.
+First, we create an InfluxDB on our server. To quickly create InfluxDB, we use docker for quick installation, and open **8089** UDP port. The database name is **db**.
 
 ```shell
-$ docker pull influxdb
+$ docker pull influxdb:1.8
 $ git clone -b v1.0.0 https://github.com/palkan/influx_udp.git
 $ cd influx_udp
-$ docker run --name=influxdb --rm -d -p 8086:8086 -p 8089:8089/udp -v ${PWD}/files/influxdb.conf:/etc/influxdb/influxdb.conf:ro -e INFLUXDB_DB=db influxdb:latest
+$ docker run -d --name=influxdb \
+      -p 8086:8086 \
+      -p 8089:8089/udp \
+      -v ${PWD}/files/influxdb.conf:/etc/influxdb/influxdb.conf:ro \
+      -e INFLUXDB_DB=db \
+      influxdb:1.8
 ```
 
 
@@ -90,7 +95,7 @@ You can click **SQL Test** under the SQL input box to fill in the data:
   }
 }
 ```
-Click Test to view the obtained data results. If the settings are correct, the test output box should get the complete JSON data as follows:
+Click Test to view the get data results. If the settings are correct, the test output box should get the complete JSON data as follows:
 
 ```json
 {
@@ -169,7 +174,7 @@ On the rule engine page, click Monitor and you can see that the number of succes
 Open the server and view the data in InfluxDB.
 
 ```shell
-$ docker exec -it InfluxDB influx
+$ docker exec -it influxdb influx
 $ use db
 $ select * from "home_sensor"
 ```

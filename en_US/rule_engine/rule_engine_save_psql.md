@@ -16,12 +16,18 @@ Before you start, you will need to complete the following:
 
 1. Install PostgreSQL 11
    ```bash
-   docker run -d --restart=always     --name postgres     -p 5432:5432     -e POSTGRES_PASSWORD=public     -e POSTGRES_USER=root     postgres:11
+   docker run -d --restart=always --name postgres \
+       -p 5432:5432 \
+       -e POSTGRES_PASSWORD=public \
+       -e POSTGRES_USER=root \
+       postgres:11
    ```
 
 2. New database
-   ```sql
+   ```bash
+   docker exec -it postgres psql
    CREATE database emqx;
+   \c emqx
    ```
 
 3. New temperature and humidity table

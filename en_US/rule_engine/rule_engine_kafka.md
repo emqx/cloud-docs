@@ -14,7 +14,9 @@ Before you start, you need to complete the following operations:
     ```bash
     # Install zookeeper
     docker run -d --restart=always \
-        --name zookeeper -p 2181:2181 zookeeper
+        --name zookeeper \
+        -p 2181:2181 \
+        zookeeper
 
     # Install Kafka and open port 9092
     docker run -d  --restart=always --name mykafka \

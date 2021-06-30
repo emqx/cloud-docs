@@ -15,8 +15,10 @@ Before you start, you need to complete the following operations:
    ```
 
 2. New database
-   ```sql
+   ```bash
+   docker exec -it timescaledb psql -U postgres
    CREATE database emqx;
+   \c emqx
    ```
 
 3. New temperature and humidity table

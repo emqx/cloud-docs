@@ -18,8 +18,10 @@
    ```
 
 2. 数据库创建
-   ```sql
+   ```bash
+   docker exec -it timescaledb psql -U postgres
    CREATE database emqx;
+   \c emqx
    ```
 
 3. 温湿度表创建

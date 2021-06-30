@@ -8,7 +8,7 @@
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
-* 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
+* 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
 ## Kafka 配置
 
@@ -17,7 +17,9 @@
     ```bash
     # 安装 zookeeper
     docker run -d --restart=always \
-        --name zookeeper -p 2181:2181 zookeeper
+        --name zookeeper \
+        -p 2181:2181 \
+        zookeeper
 
     # 安装 Kafka，开放 9092 端口
     docker run -d  --restart=always --name mykafka \

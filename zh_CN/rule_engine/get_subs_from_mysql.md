@@ -8,7 +8,7 @@
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
-* 对于独享部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
+* 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
 ## MySQL 配置
 
@@ -19,13 +19,15 @@
      --name mysql \
      -p 3306:3306 \
      -e MYSQL_ROOT_PASSWORD=public \
-     -d mysql/mysql-server:5.7
+     mysql/mysql-server:5.7
    ```
 
 2. 数据库创建
 
-   ```sql
+   ```bash
+   docker exec -it mysql mysql -uroot -ppublic
    CREATE DATABASE emqx;
+   USE emqx;
    ```
 
 
@@ -52,10 +54,10 @@
    :::
 
 4. 设置允许 EMQ X 集群 IP 段访问数据库(可选)
-   对于独享部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
+   对于专业版部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
    
    ```sql
-   # 独享部署
+   # 专业版
    GRANT ALL PRIVILEGES ON *.* TO root@'10.11.30.%' IDENTIFIED BY 'public' WITH GRANT OPTION;
    
    # 基础版

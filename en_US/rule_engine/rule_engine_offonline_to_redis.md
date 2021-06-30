@@ -48,7 +48,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
    Click on Add Action in the bottom left corner, drop down and select → Offline Message → Save Offline Message to Redis, select the resource created in the first step.
 
    ::: tip Tip
-   Here you need to plan for the Redis Key expiration time, and it is recommended that no more than 100 messages be saved offline
+   Here you need to plan for the Redis Key expiration time, and it is recommended to save no more than 100 messages offline
    :::
 
    ![create action](./_assets/offonline_redis_action.png)
@@ -75,7 +75,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 2. View data dump results
 
     ```bash
-    $ docker exec -it myredis bash
+    $ docker exec -it redis bash
     $ redis-cli
     $ keys *
     ```
@@ -90,7 +90,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 4. View the data consumed by redis
 
    ```bash
-   $ docker exec -it myredis bash
+   $ docker exec -it redis bash
    $ redis-cli
    $ keys *
    ```
