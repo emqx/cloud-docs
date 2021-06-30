@@ -19,7 +19,7 @@
 >
 >在使用规则引擎前，请先创建部署。
 >
->对于独享部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的资源都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
+>对于专业版部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的资源都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
 >
 >对于基础版用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP
 
@@ -29,7 +29,7 @@
 在你的云服务器中，创建一个 Mosquitto 服务。为了方便演示，这里使用 Docker 快速搭建。(请勿在生产环境中使用)
 
 ```shell
-sudo docker run -it -p 1883:1883 adek06/mqtt:mosquitto
+docker run -it -p 1883:1883 --name mosquitto eclipse-mosquitto:1.6
 ```
 
 之后，开放服务器的 1883 端口

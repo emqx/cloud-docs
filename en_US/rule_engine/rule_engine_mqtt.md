@@ -27,7 +27,7 @@ For basic deployment users: There is no need to complete peering connection, and
 In your cloud server, create a mosquitto service. For the convenience of demonstration, we use docker to build quickly here. (Do not use it in production environment)
 
 ```shell
-sudo docker run -it -p 1883:1883 adek06/mqtt:mosquitto
+docker run -it -p 1883:1883 --name mosquitto eclipse-mosquitto:1.6
 ```
 
 After that, open the server's 1883 port

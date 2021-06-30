@@ -1,6 +1,6 @@
 # Save device data to MySQL using the Rule Engine
 
-In this article, we will simulate the temperature and humidity data, and report these data to EMQ X Cloud via the MQTT protocol and then we will use EMQ X Cloud rules engine to dump the data to MySQL.
+In this article, we will simulate the temperature and humidity data, and report these data to EMQ X Cloud via the MQTT protocol, and then we will use EMQ X Cloud rules engine to dump the data to MySQL.
 
 Before you start, you will need to complete the following:
 
@@ -20,11 +20,12 @@ Before you start, you will need to complete the following:
        --name mysql \
        -p 3306:3306 \
        -e MYSQL_ROOT_PASSWORD=public \
-       -d mysql/mysql-server:5.7
+       mysql/mysql-server:5.7
    ```
 2. Creating and Selecting a Database
 
-   ```mysql
+   ```bash
+   docker exec -it mysql mysql -uroot -ppublic
    CREATE DATABASE emqx;
    USE emqx;
    ```
@@ -45,7 +46,7 @@ Before you start, you will need to complete the following:
     ```
 
 4. For professional deployment, set up to allow EMQ X cluster IP segments to access the database (optional).
-     To obtain the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
+     To get the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
 
      ```mysql
        # Professional Deployment CIDR: 10.11.x.%
@@ -110,6 +111,14 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord
 
    You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth_and_acl.md) in the EMQ X Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)
+   - topic: `temp_hum/emqx`
+   - payload:
+     ```json
+     {
+        "temp": "20.1",
+        "hum": "57"
+     }
+     ```
 
 2. View data dump results
       ```sql

@@ -8,7 +8,7 @@
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
-* 对于独享部署用户：需要打开 NAT 服务。
+* 对于专业版部署用户：需要打开 NAT 服务。
 
 ## Confluent Cloud 配置
 1. 创建 Confulent Cloud 部署
