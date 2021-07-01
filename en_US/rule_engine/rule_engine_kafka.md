@@ -35,24 +35,26 @@ Before you start, you need to complete the following operations:
 2. Create a topic
 
     ```bash
-    # Go to the Kafka instance and create the emqx topic
-    $ docker exec -it mykafka /bin/bash
-    $ kafka-topics.sh --zookeeper <broker IP>:2181 --replication-factor 1 --partitions 1 --topic emqx --create
+    # Create the "emqx" topic in the Kafka instance
+   
+    $ docker exec -it mykafka /opt/kafka/bin/kafka-topics.sh --zookeeper <broker IP>:2181 --replication-factor 1 --partitions 1 --topic emqx --create
+  
     ```
-    If `Created topic emqx` is returned, it indicates that the creation was successful.
+   
+    If the topic is successfuly created, the message pf `Created topic emqx` will be returned.
 
-## EMQ X Cloud rules engine configuration
+## EMQ X Cloud rule engine configuration
 
-Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
+Go to the `Rule Engine` page
 
-1. New Resource
+1. Create a new resource
 
-   Click on Rules on the left menu bar → Resources, click on New Resource and drop down to select the Kafka resource type. Fill in the Kafka information you have just created and click Test. If you get an error, instantly check that the database configuration is correct.
+   Click on the `+ New`  button in the `Resources` section and select `Kafka` as the resource type. Fill in the Kafka information you have just created and click Test. If you get an error, instantly check that the database configuration is correct.
    ![create resource](./_assets/kafka_create_resource.png)
 
-2. Rule Testing
+2. Create a new rule
 
-   Click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.  In the following rule we read the time `up_timestamp` when the message is reported, the client ID, the message body (Payload) from the `temp_hum/emqx` topic and the temperature and humidity from the message body respectively.
+   Click on the `+ New`  button in the `Rules` section. Enter the following rule to match the SQL statement.  In the following rule we read the time `up_timestamp` when the message is reported, the client ID, the message body (Payload) from the `temp_hum/emqx` topic and the temperature and humidity from the message body respectively.
 
    ```sql
    SELECT 
@@ -65,8 +67,9 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
    ```
    ![rule sql](./_assets/sql_test.png)
 
-3. Add a response action
-   Click on Add Action in the bottom left corner, drop down and select → Data Forwarding → Bridge Data to Kafka, select the resource created in the first step and fill in the following data:
+3. Create a response action 
+   
+   Click on the `Add Action` toward the bottom of the page and select action type as `Data Forwarding` and `Bridge Data to Kafka`. Select the resource created in the first step and fill in the following data:
 
    Kafka topic: emqx
    Message content template:
@@ -75,11 +78,10 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
    {"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
    ```
    ![kafka action](./_assets/kafka_action.png)
-   
-4. Click on New Rule and return to the list of rules
-   ![rule list](./_assets/view_rule_engine_kafka.png)
 
 5. View rules monitoring
+   
+   Go back to the `Rule Engine` page to monitor the rule
    ![monitor](./_assets/view_monitor_kafka.png)
 
 ## Test
@@ -93,7 +95,8 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
 
     ```bash
     # Go to the Kafka instance and view the emqx topic
-    $ docker exec -it mykafka /bin/bash
-    $ kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092  --topic emqx --from-beginning
+   
+    $ docker exec -it mykafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server <broker IP>:9092  --topic emqx --from-beginning
+
     ```
    ![kafka](./_assets/kafka_query_result.png)
