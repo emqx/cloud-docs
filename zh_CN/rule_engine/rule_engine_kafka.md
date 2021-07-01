@@ -37,9 +37,8 @@
 
     ```bash
     # 进入 Kafka 实例，并创建 emqx 主题
-    $ docker exec -it mykafka /bin/bash
-    $ kafka-topics.sh --zookeeper <服务器 IP>:2181 --replication-factor 1 --partitions 1 --topic emqx --create
-    ```
+    $ docker exec -it mykafka /opt/kafka/bin/kafka-topics.sh --zookeeper <broker IP>:2181 --replication-factor 1 --partitions 1 --topic emqx --create
+      ```
     返回 `Created topic emqx.` 表示创建成功
 
 ## EMQ X Cloud 规则引擎配置
@@ -97,7 +96,6 @@
 
     ```bash
     # 进入 Kafka 实例，并查看 emqx 主题
-    $ docker exec -it mykafka /bin/bash
-    $ kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092  --topic emqx --from-beginning
-    ```
+    $ docker exec -it mykafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server <broker IP>:9092  --topic emqx --from-beginning
+     ```
    ![kafka](./_assets/kafka_query_result.png)
