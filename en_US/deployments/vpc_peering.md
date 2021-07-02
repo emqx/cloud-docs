@@ -48,8 +48,6 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![security-groups](./_assets/security-groups.png)
 
-
-
 ### Delete peering connections
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
@@ -65,4 +63,11 @@ Before deleting the peering connection, please make sure that there are no assoc
 2. Click the `delete button` on the right side of the peering connection
 
    ![vpc-delete](./_assets/vpc-delete.png)
+
+
+
+
+## Azure VPC Peering Connection
+
+This feature is currently not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../contact.md) to contact us. 
 
