@@ -71,3 +71,23 @@ Before deleting the peering connection, please make sure that there are no assoc
 
 This feature is currently not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../contact.md) to contact us. 
 
+
+## Confluent Cloud Peering Connection
+
+After the Confluent Cloud cluster has been created, we could add peering by the following steps:
+
+*  Go to the `Networking` section of the `Cluster settings` page and click on the `Add Peering` button.
+
+   ![addPeering](./_assets/confluent_addPeering.png)
+
+*  Fill in the vpc information. (You could get the information from `VPC Peering` section of the deployment console)
+
+   ![vpc_info](./_assets/confluent_vpc1.png)
+
+   ![vpc_info](./_assets/confluent_vpc2.png)
+
+*  When the connection status is `Inactive`, go back to the deployment console to accept the peering request. Fill in the vpc information of the confluent cloud cluster and click `Confirm`. When the vpc status turns to `running`, you successfully create the vpc peering connection.
+
+   ![vpc_info](./_assets/confluent_vpc2.png)
+
+   ![vpc](./_assets/confluent_finish.png)
