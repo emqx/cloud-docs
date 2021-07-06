@@ -541,6 +541,10 @@
           "path": "rule_engine/rule_engine_kafka"
         },
         {
+          "title": "Bridge data to Confluent Cloud",
+          "path": "rule_engine/rule_engine_confluent"
+        },
+        {
           "title": "Bridge data to Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
