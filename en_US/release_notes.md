@@ -1,12 +1,15 @@
 # Version release
 
-## 2021-6-19
+## 2021-07-19
+* Added Azure Cloud Platform
+
+## 2021-06-19
 * Optimization of User Interface Design 
 
-## 2021-5-13
+## 2021-05-13
 * New Pricing Plans
 
-## 2021-3-15
+## 2021-03-15
 * New UI design
 
 ## 2020-12-21
