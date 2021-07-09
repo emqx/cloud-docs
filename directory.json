@@ -196,6 +196,10 @@
           "path": "rule_engine/resources"
         },
         {
+          "title": "事件订阅",
+          "path": "rule_engine/rule_engine_events"
+        },
+        {
           "title": "桥接数据到 Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
