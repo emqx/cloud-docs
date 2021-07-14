@@ -518,7 +518,11 @@
         },
         {
           "title": "Save data to TimescaleDB",
-          "path": "rule_engine/rule_engine_save_timescaladb"
+          "path": "rule_engine/rule_engine_save_timescaledb"
+        },
+        {
+          "title": "Save data to Timescale Cloud",
+          "path": "rule_engine/rule_engine_save_timescale_cloud"
         },
         {
           "title": "Save data to PostgreSQL",
