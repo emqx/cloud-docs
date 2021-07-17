@@ -513,6 +513,22 @@
           "path": "rule_engine/resource"
         },
         {
+          "title": "Rule engine events",
+          "path": "rule_engine/rule_engine_events"
+        },
+        {
+          "title": "Bridge data to Webhook",
+          "path": "rule_engine/rule_engine_web_hook"
+        },
+        {
+          "title": "Bridge data to MQTT Broker",
+          "path": "rule_engine/rule_engine_mqtt"
+        },
+        {
+          "title": "Republish messages",
+          "path": "rule_engine/rule_engine_republish"
+        },
+        {
           "title": "Save data to MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
@@ -547,18 +563,6 @@
         {
           "title": "Bridge data to Confluent Cloud",
           "path": "rule_engine/rule_engine_confluent"
-        },
-        {
-          "title": "Bridge data to Webhook",
-          "path": "rule_engine/rule_engine_web_hook"
-        },
-        {
-          "title": "Bridge data to MQTT Broker",
-          "path": "rule_engine/rule_engine_mqtt"
-        },
-        {
-          "title": "Republish messages",
-          "path": "rule_engine/rule_engine_republish"
         },
         {
           "title": "Store device offline messages to Redis",
