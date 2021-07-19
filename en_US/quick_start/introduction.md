@@ -8,6 +8,10 @@ to EMQ X Cloud deployment. Before starting, let's review some core concepts and 
 * Deployment: EMQ X Enterprise cluster hosted on EMQ X Cloud
 * Basic Plan: Single node version of EMQ X Enterprise
 * Professional Plan: An EMQ X Enterprise Edition cluster with separate networks, instances, and load balancing
+  
+  <div style="position: relative; padding: 30% 45%;">
+  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/nOmIomoFn28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
 You can follow these steps shown below to quickly complete the EMQ X Cloud QuickStart.
 
