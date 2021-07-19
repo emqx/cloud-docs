@@ -224,6 +224,10 @@
           "path": "rule_engine/rule_engine_influxDB"
         },
         {
+          "title": "保存数据到 Redis",
+          "path": "rule_engine/rule_engine_save_redis"
+        },
+        {
           "title": "桥接数据到 Kafka",
           "path": "rule_engine/rule_engine_kafka"
         },
@@ -555,6 +559,10 @@
         {
           "title": "Save data to InfluxDB 2.0",
           "path": "rule_engine/rule_engine_influxDB_2.0"
+        },
+        {
+          "title": "Save data to Redis",
+          "path": "rule_engine/rule_engine_save_redis"
         },
         {
           "title": "Bridge data to Kafka",
