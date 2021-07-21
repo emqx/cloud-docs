@@ -9,10 +9,39 @@
 
 ## 创建 Web 服务器
 
-1. 使用 nc 命令创建一个简易的 Web 服务器。
-   ```bash
-   while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
+1. 创建一个简易的 Web 服务器。
+
+   ```python
+   from http.server import HTTPServer, BaseHTTPRequestHandler
+   from socketserver import ThreadingMixIn
+   from time import sleep
+   
+   
+   class Handler(BaseHTTPRequestHandler):
+   
+       def do_GET(self):
+           self.send_response(200)
+           self.end_headers()
+           self.wfile.write(b'Hello, world!')
+           return
+   
+       def do_POST(self):
+           sleep(5)
+           content_length = int(self.headers['Content-Length'])
+           body = self.rfile.read(content_length)
+           print("Received POST request with body: " + str(body))
+           self.send_response(201)
+           self.end_headers()
+
+   class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+        pass
+
+   if __name__ == '__main__':
+      server = ThreadedHTTPServer(('0.0.0.0', 8080), Handler)
+      print('Starting server...')
+      server.serve_forever()
    ```
+
 
 ## EMQ X Cloud 规则引擎配置
 
