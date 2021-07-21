@@ -9,18 +9,46 @@ Before you start, you need to complete the following operations:
 
 ## Create a Web server
 
-1. Use the nc command to create a simple Web server.
-   ```bash
-   while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l 0.0.0.0 9910; done;
+1. You could use the following python code to create a simple Web server.
+   
+   ```python
+   from http.server import HTTPServer, BaseHTTPRequestHandler
+   from socketserver import ThreadingMixIn
+   from time import sleep
+   
+   
+   class Handler(BaseHTTPRequestHandler):
+   
+       def do_GET(self):
+           self.send_response(200)
+           self.end_headers()
+           self.wfile.write(b'Hello, world!')
+           return
+   
+       def do_POST(self):
+           sleep(5)
+           content_length = int(self.headers['Content-Length'])
+           body = self.rfile.read(content_length)
+           print("Received POST request with body: " + str(body))
+           self.send_response(201)
+           self.end_headers()
+
+   class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+        pass
+
+   if __name__ == '__main__':
+      server = ThreadedHTTPServer(('0.0.0.0', 8080), Handler)
+      print('Starting server...')
+      server.serve_forever()
    ```
 
 ## EMQ X Cloud rules engine configuration
 
-Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
+Go to Deployment Details and click on EMQ X Dashboard to go to Dashboard.
 
 1. New Resource
 
-   Click on Rules on the left menu bar → Resources, click on New Resource and drop down to select the WebHook resource type. Fill in the URL and click Test. If you get an error, instantly check that the database configuration is correct.
+   Click on Rules on the left menu bar → Resources, click on New Resource and drop to select the WebHook resource type. Fill in the URL and click Test. If you get an error, instantly check that the database configuration is correct.
    ![create resource](./_assets/webhook_create_resource.png)
 
 2. Rule Testing
@@ -62,5 +90,5 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
    
 2. View data dump results
    
-   ![kafka](./_assets/webhook_query_result.png)
+   ![kafka](./_assets/webhook_view.png)
 
