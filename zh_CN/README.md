@@ -88,7 +88,7 @@ EMQ X Cloud 作为全托管的 EMQ X 接入平台服务，提供了设备接入�
 - 支持 CoAP、MQTT-SN、LwM2M 协议以及私有 TCP 协议接入，满足各类系统接入上云需求
 - 提供不同网络设备、工业/边缘设备上云接入方案
 - 开源多种语言/平台接入示例代码，提供跨平台移植指导
-- 完美契合 EMQ [边缘计算](https://www.emqx.cn/products/kuiper)、[边缘工业物联网](https://www.emqx.cn/products/neuron) 产品生态，支持数十种工业协议接入上云
+- 完美契合 EMQ [边缘计算](https://github.com/lf-edge/ekuiper)、[边缘工业物联网](https://www.emqx.com/zh/products/neuron) 产品生态，支持数十种工业协议接入上云
 
 ::: tip
 多协议以及私有协议支持请 [工单](./contact.md) 联系进行开通。
