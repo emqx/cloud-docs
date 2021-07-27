@@ -22,7 +22,7 @@
 
 ## 示例代码
 
-* [如何在 Python 中使用 MQTT](https://www.emqx.cn/blog/how-to-use-mqtt-in-python)
+* [如何在 Python 中使用 MQTT](https://www.emqx.com/zh/blog/how-to-use-mqtt-in-python)
 * [通过 MQTT 协议连接到部署并发布消息](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/pub_tcp.py)
 * [通过 MQTT 协议连接到部署并订阅消息](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/sub_tcp.py)
 * [通过 MQTT 协议连接到部署并发布和订阅消息](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/pub_sub_tcp.py)

@@ -88,7 +88,7 @@ Supports massive device connections to the cloud, providing stable and reliable 
 - Support CoAP, MQTT-SN, LwM2M protocol, and private TCP protocol access to meet the needs of various systems access to the cloud
 - Provide different network devices and industrial/edge devices to access the cloud
 - Open source multi-lingual/platform access sample code, providing cross-platform migration guidance
-- Perfectly fits EMQ [edge computing](https://www.emqx.io/products/kuiper), [edge industrial IoT](https://www.emqx.io/products/neuron) product ecology, supports dozens of industrial protocols to access the cloud
+- Perfectly fits EMQ [edge computing](https://github.com/lf-edge/ekuiper), [edge industrial IoT](https://www.emqx.com/en/products/neuron) product ecology, supports dozens of industrial protocols to access the cloud
 
 :::tip
 Multi-protocol and private protocol support, please contact us by [ticket](./contact.md) for opening.
