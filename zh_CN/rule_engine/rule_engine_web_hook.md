@@ -13,33 +13,22 @@
 
    ```python
    from http.server import HTTPServer, BaseHTTPRequestHandler
-   from socketserver import ThreadingMixIn
-   from time import sleep
    
-   
-   class Handler(BaseHTTPRequestHandler):
-   
-       def do_GET(self):
-           self.send_response(200)
-           self.end_headers()
-           self.wfile.write(b'Hello, world!')
-           return
-   
+   class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+      def do_GET(self):
+         self.send_response(200)
+         self.end_headers()
+         self.wfile.write(b'Hello, world!')
+      
        def do_POST(self):
-           sleep(5)
            content_length = int(self.headers['Content-Length'])
            body = self.rfile.read(content_length)
            print("Received POST request with body: " + str(body))
            self.send_response(201)
            self.end_headers()
-
-   class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
-        pass
-
-   if __name__ == '__main__':
-      server = ThreadedHTTPServer(('0.0.0.0', 8080), Handler)
-      print('Starting server...')
-      server.serve_forever()
+   
+   httpd = HTTPServer(('0.0.0.0', 8080), SimpleHTTPRequestHandler)
+   httpd.serve_forever()
    ```
 
 
