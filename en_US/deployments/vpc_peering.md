@@ -9,8 +9,11 @@ VPC peering connection is a network connection between two VPCs. Through this co
 3. Peering connections are bound to resources. Please create peering connections before creating resources.
 
 
-
 ## AWS Cloud VPC Peering Connection
+
+  <div style="position: relative; padding: 30% 45%;">
+  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/ajnLBS3LLKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
 ### Creating peering connection
 
