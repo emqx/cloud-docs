@@ -9,6 +9,12 @@ Before you start, you need to complete the following operations:
   * For basic and standard cluster, please open the NAT first.
   * For dedicated cluster, please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 
+
+  <div style="position: relative; padding: 30% 45%;">
+  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/jLn0q8xf-1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+
 ## Confluent Cloud Configuration
 
 ### Create a cluster

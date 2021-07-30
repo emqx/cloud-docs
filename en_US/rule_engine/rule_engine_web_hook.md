@@ -7,6 +7,14 @@ Before you start, you need to complete the following operations:
 * For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 * For basic deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
+
+
+  <div style="position: relative; padding: 30% 45%;">
+  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/fXahRUaQaHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+
+
 ## Create a Web server
 
 1. You could use the following python code to create a simple Web server.
