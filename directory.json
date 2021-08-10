@@ -72,6 +72,10 @@
           "title": "安全功能和设置",
           "children": [
             {
+              "title": "绑定域名",
+              "path": "deployments/bind_domain"
+            },
+            {
               "title": "TLS/SSL 设置",
               "path": "deployments/tls_ssl"
             },

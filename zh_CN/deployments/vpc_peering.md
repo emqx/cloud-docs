@@ -185,3 +185,52 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 2. 点击对等连接右侧 `删除按钮`
 
    ![tencent_delete_peering](./_assets/tencent_delete_peering.png)
+   
+   
+## AWS 平台对等连接
+
+### 创建对等连接
+
+1. 登陆 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console)，进入对应的部署，点击 `+ VPC 对等连接` 按钮，在弹出的窗口里，记录下`部署所在区域`、`部署 VPC ID`、`部署 VPC 网段`和 `EMQ X Cloud 账户 ID`，后面的步骤用将会用到这些信息。同时，请不要关闭该窗口。
+
+    ![get-vpc-info](./_assets/get_aws_cn_vpc_info.png)
+
+2. 登录亚马逊（中国）控制台，切换区域到步骤 1 里提到的`部署所在区域`，找到`联网` -> `VPC` -> `对等连接`，点击上方的`创建对等连接`
+
+    * 在账户处选择`另一个账户`，`账户 ID` 填入步骤 1 提到的 `EMQ X Cloud 账户 ID`
+    * 在区域处选择`此区域`
+    * 在 VPC ID (接受方)处，填入步骤 1 提到的 `部署 VPC ID`
+
+    ![create-peering1](./_assets/create_aws_cn_peering1.png)
+    
+3. 一旦完成创建，如下图所示。请记录下`请求方拥有者 ID`、`请求者 VPC`、`对等连接 ID`，后面的步骤用将会用到这些信息。
+
+    ![peering-info](./_assets/aws_cn_peering_info.png)
+
+4. 回到 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console)，填入步骤 3 记录的信息，然后点击确认，完成对等连接。
+
+    * 对等连接 ID 填入 `对等连接 ID`
+    * 账户 ID 填入 `请求方拥有者 ID`
+    * VPC ID 填入 `请求者 VPC`
+
+    ![create-peering2](./_assets/create_aws_cn_peering2.png)
+
+5. 返回亚马逊（中国）控制台，找到`联网` -> `VPC` -> `路由表`，将步骤 1 记录下的`部署 VPC 网段`加入对应的 VPC 路由表中
+
+    ![add-route-table](./_assets/add_aws_cn_route_tables.png)
+
+6. 找到`联网` -> `VPC` -> `安全组`，找到绑定在对应 VPC 上的安全组，修改其中的安全组规则
+
+    ![add-security-group](./_assets/add_aws_cn_security_group.png)
+
+### 删除对等连接
+
+在删除对等连接前，您需要确保对等连接状态为 `running`
+
+> 注意: 删除对等连接前，请确保部署不存在任何关联的资源，否则将导致不可预估的风险
+
+1. 进入部署详情
+
+2. 点击对等连接右侧 `删除按钮`
+
+   ![tencent_delete_peering](./_assets/tencent_delete_peering.png)

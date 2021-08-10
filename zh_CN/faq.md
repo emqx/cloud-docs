@@ -46,6 +46,12 @@ EMQ X 提供了 HTTP API 以实现与外部系统的集成，例如查询客户�
 
 更多关于 API 的使用方法，可以前往指南 —— [REST API](api/introduction.md)
 
+### 我可以将 mqtt 地址绑定到自己的域名上吗？
+
+可以。
+
+配置方法详见[绑定域名](deployments/bind_domain.md)
+
 ### 如何保证我的部署连接安全？
 
 可以通过配置 TLS/SSL 证书实现加密通信。
