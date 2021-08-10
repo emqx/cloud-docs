@@ -130,6 +130,8 @@ openssl genrsa -out server.key 2048
 2. 创建 `openssl.cnf` 文件
 
 **替换 IP.1 地址为当前部署地址**
+
+> 注意：使用亚马逊中国的用户，请将 IP.1 替换成 DNS.1
 ```
 cat << EOF > ./openssl.cnf
 [policy_match]
@@ -158,7 +160,10 @@ subjectAltName = @alt_names
 
 [alt_names]
 # EMQ X Cloud deployment connections address
-IP.1 = 8.129.40.147
+# 非亚马逊的部署使用 IP.1
+IP.1 = <当前部署的地址>
+# 亚马逊中国的部署使用 DNS.1
+# DNS.1 = <当前部署的地址>
 EOF
 ```
 
