@@ -181,6 +181,10 @@
         {
           "title": "MQTT.fx 连接",
           "path": "connect_to_deployments/mqttfx"
+        },
+        {
+          "title": "共享订阅",
+          "path": "connect_to_deployments/shared_subscription"
         }
       ]
     },
@@ -502,6 +506,10 @@
         {
           "title": "Connect with openHAB",
           "path": "connect_to_deployments/openhab"
+        },
+        {
+          "title": "Shared subscription",
+          "path": "connect_to_deployments/shared_subscription"
         }
       ]
     },
