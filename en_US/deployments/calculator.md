@@ -27,9 +27,10 @@ You can select cloud platform, region, and specifications to get the hourly pric
 
 ## Supported Cloud Service Providers and Regions
 
-EMQ X Cloud currently supports cloud service providers including AWS Cloud and Azure. If you need other cloud service providers or regions, you can submit [tickets](../contact.md) or email(cloud@emqx.io) to contact us.
+EMQ X Cloud now supports cloud service providers including AWS Cloud, Azure and GCP. If you need other cloud service providers or regions, you can submit [tickets](../contact.md) or email(cloud@emqx.io) to contact us.
 
 | Platform | Region                                                       |
 | -------- | ------------------------------------------------------------ |
 | AWS      | US East(N.Virginia), US West(Oregon), EU(Ireland), Asia Pacific(Singapore), Asia Pacific (Mumbai) |
 | Azure    | East US, Germany West Central, Southeast Asia |
+| GCP      | us-east1 (South Carolina), us-west1 (Oregon), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore) |

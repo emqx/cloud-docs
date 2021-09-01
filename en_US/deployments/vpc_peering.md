@@ -72,8 +72,63 @@ Before deleting the peering connection, please make sure that there are no assoc
 
 ## Azure VPC Peering Connection
 
-This feature is currently not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../contact.md) to contact us. 
+This feature is now not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../contact.md) to contact us. 
 
+## GCP VPC Peering Connection
+
+### Creating peering connection
+
+1. Log in to [EMQ X Cloud console](<https://cloud.emqx.io/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
+    * Project ID: GCP Project ID of your peering VPC
+    * VPC ID:  Name of your peering VPC
+
+   and record the information below:
+    * VPC ID of deployment
+    * CIDR of deployment
+    * Project ID of EMQ X Cloud
+
+   ![gcp_create_peering](./_assets/gcp_create_peering.png)
+
+2. Log in to your GCP console, create the peering connection
+    1. In the Google Cloud Console, click **VPC network peering**.
+    2. Click **CREATE PEERING CONNECTION**, and click **Continue**
+    3. In **Name**, enter a name for your peering connection.
+    4. In **Your VPC Network**, enter the name of your GCP VPC network.
+    5. In **Peered VPC network**, select **In another project**.
+    6. In **Project ID**, enter EMQ X Cloud Project ID. You can find this name in the VPC Peering view in EMQ X Cloud.
+    7. In **VPC network name**, enter your EMQ X Cloud VPC Name. You can find this name in the VPC Peering view in EMQ X Cloud.
+    8. Click **CREATE**.
+    
+   ![gcp_peering](./_assets/gcp_peering.png)
+
+3. You will see the status of peering connection is **Active** if succeeded.
+   ![gcp_console_peering](./_assets/gcp_console_peering.png)
+   and you will see the status of VPC Peering on EMQ X Cloud is **running**.
+   ![](./_assets/gcp_cloud_console.png)
+
+
+4. Create firewall to allow your EMQ X CLoud deployment to access your GCP network
+   1. Click **Firewall**, and Click **CREATE FIREWALL RULE**.
+   2. In **Network**, select your GCP network
+   3. In **Targets**, select **All instances in the network**, or you can select other option according to your situation.
+   4. In **Source IP ranges**, fill in the CIDR of deployment in step 1
+   5. Seletc your Protocols and ports.
+
+### Delete peering connections
+
+To delete a peering connection, you need to ensure that the status of peering connection is `running`
+
+::: tip Tip
+Before deleting the peering connection, please make sure that there is no associated resources in the deployment, otherwise there will be unpredictable risks
+:::
+
+1. Go to deployment details
+
+   ![vpc-list](./_assets/vpc-list.png)
+
+2. Click the `delete button` on the right side of the peering connection
+
+   ![vpc-delete](./_assets/vpc-delete.png)
 
 ## Confluent Cloud Peering Connection
 
