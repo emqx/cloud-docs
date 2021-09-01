@@ -53,12 +53,12 @@ Simulate client subscriptions using MQTT X.
 * s1, s2 subscribe topic `$share/g1/test`
 * s3 subscribe topic `test`
 
-![shared_subscription_1](_assets/shared_subscription_1.png)
+![shared_subscription_1](./_assets/shared_subscription_1.png)
 
 Create client P1 using MQTT X to send 3 messages to the topic `test`
 
-![shared_subscription_2](_assets/shared_subscription_2.png)
+![shared_subscription_2](./_assets/shared_subscription_2.png)
 
 s1 receive msg1, msg2, s2 receive msg3 and s3 receive all messages
 
-![shared_subscription_3](_assets/shared_subscription_3.png)
+![shared_subscription_3](./_assets/shared_subscription_3.png)
