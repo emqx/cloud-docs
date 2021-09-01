@@ -51,12 +51,12 @@ EMQ X Cloud 支持两种格式的共享订阅前缀，分别为带群组的共�
 * s1，s2 订阅主题 `$share/g1/test`，为带群组的共享订阅
 * s3 订阅主题 `test` 为普通订阅
 
-![shared_subscription_1](_assets/shared_subscription_1.png)
+![shared_subscription_1](./_assets/shared_subscription_1.png)
 
 使用 MQTT X 创建客户端 p1 向主题 `test` 发送3条信息
 
-![shared_subscription_2](_assets/shared_subscription_2.png)
+![shared_subscription_2](./_assets/shared_subscription_2.png)
 
 3个订阅者中，s1 接收到msg1，msg2，而 s2 接收到 msg3，s3 接收到所有3条 msg 信息
 
-![shared_subscription_3](_assets/shared_subscription_3.png)
+![shared_subscription_3](./_assets/shared_subscription_3.png)

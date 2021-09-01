@@ -155,4 +155,4 @@ namespace csharpMQTT
 }
 ```
 ## 测试
-运行代码，控制台输出如下。![c_sharp_connect](_assets/c_sharp_connect.png)
+运行代码，控制台输出如下。![c_sharp_connect](./_assets/c_sharp_connect.png)
