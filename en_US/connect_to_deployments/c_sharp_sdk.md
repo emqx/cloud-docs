@@ -39,41 +39,44 @@ string broker = "broker.emqx.io";
 int port = 1883;
 string topic = "Csharp/mqtt";
 string clientId = Guid.NewGuid().ToString();
+// If the broker requires authentication, set the username and password
+string username = "emqx";
+string password = "public";
 ```
 
 ### Write the MQTT connect method
 Write static class method ConnectMQTT to create an MQTT client and connect it to the specified broker. We can determine whether the client is connected successfully according to the client's property of `IsConnected`. In the end, the client is returned.
 ```c#
-static MqttClient ConnectMQTT(string broker, int port, string clientId) 
-{    
-  MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);    
-  client.Connect(clientId);    
-  if (client.IsConnected)    
-  {       
-    Console.WriteLine("Connected to MQTT Broker");    
-  }    
-  else    
-  {        
-    Console.WriteLine("Failed to connect");    
-  }    
-  return client; 
+static MqttClient ConnectMQTT(string broker, int port, string clientId, string username, string password)
+{
+    MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);
+    client.Connect(clientId, username, password);
+    if (client.IsConnected)
+    {
+        Console.WriteLine("Connected to MQTT Broker");
+    }
+    else
+    {
+        Console.WriteLine("Failed to connect");
+    }
+    return client;
 }
 ```
 
 ### Publish messages
 We define a while loop. In this loop we will set the MQTT client `Publish` method to publish messages to the specified topic every second.
 ```c#
-static void Publish(MqttClient client, string topic) 
-{    
-  int msg_count = 0;    
-  while (true)    
-  {        
-    System.Threading.Thread.Sleep(1*1000);        
-    string msg = "messages: " + msg_count.ToString();        
-    client.Publish(topic, System.Text.Encoding.UTF8.GetBytes(msg));        
-    Console.WriteLine("Send `{0}` to topic `{1}`", msg, topic);       
-    msg_count++;    
-  } 
+static void Publish(MqttClient client, string topic)
+{
+    int msg_count = 0;
+    while (true)
+    {
+        System.Threading.Thread.Sleep(1*1000);
+        string msg = "messages: " + msg_count.ToString();
+        client.Publish(topic, System.Text.Encoding.UTF8.GetBytes(msg));
+        Console.WriteLine("Send `{0}` to topic `{1}`", msg, topic);
+        msg_count++;
+    }
 }
 ```
 
@@ -102,10 +105,10 @@ namespace csharpMQTT
 {
     class Program
     {
-        static MqttClient ConnectMQTT(string broker, int port, string clientId)
+        static MqttClient ConnectMQTT(string broker, int port, string clientId, string username, string password)
         {
             MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);
-            client.Connect(clientId);
+            client.Connect(clientId, username, password);
             if (client.IsConnected)
             {
                 Console.WriteLine("Connected to MQTT Broker");
@@ -147,7 +150,9 @@ namespace csharpMQTT
             int port = 1883;
             string topic = "Csharp/mqtt";
             string clientId = Guid.NewGuid().ToString();
-            MqttClient client = ConnectMQTT(broker, port, clientId);
+            string username = "emqx";
+            string password = "public";
+            MqttClient client = ConnectMQTT(broker, port, clientId, username, password);
             Subscribe(client, topic);
             Publish(client, topic);
         }
