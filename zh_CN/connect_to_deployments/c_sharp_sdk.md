@@ -39,15 +39,18 @@ string broker = "broker.emqx.io";
 int port = 1883;
 string topic = "Csharp/mqtt";
 string clientId = Guid.NewGuid().ToString();
+// 如果 broker 需要鉴权，设置用户名密码
+string username = "emqx";
+string password = "public";
 ```
 
 ### 编写 MQTT 连接函数
 编写连接静态类方法 `ConnectMQTT`，该方法会创建MQTT客户端并连接到指定的Broker，并根据客户端的`IsConnected`属性来判断连接是否成功，最后将客户端对象返回。
 ```c#
-static MqttClient ConnectMQTT(string broker, int port, string clientId)
+static MqttClient ConnectMQTT(string broker, int port, string clientId, string username, string password)
 {
     MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);
-    client.Connect(clientId);
+    client.Connect(clientId, username, password);
     if (client.IsConnected)
     {
         Console.WriteLine("Connected to MQTT Broker");
@@ -102,10 +105,10 @@ namespace csharpMQTT
 {
     class Program
     {
-        static MqttClient ConnectMQTT(string broker, int port, string clientId)
+        static MqttClient ConnectMQTT(string broker, int port, string clientId, string username, string password)
         {
             MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);
-            client.Connect(clientId);
+            client.Connect(clientId, username, password);
             if (client.IsConnected)
             {
                 Console.WriteLine("Connected to MQTT Broker");
@@ -147,7 +150,9 @@ namespace csharpMQTT
             int port = 1883;
             string topic = "Csharp/mqtt";
             string clientId = Guid.NewGuid().ToString();
-            MqttClient client = ConnectMQTT(broker, port, clientId);
+            string username = "emqx";
+            string password = "public";
+            MqttClient client = ConnectMQTT(broker, port, clientId, username, password);
             Subscribe(client, topic);
             Publish(client, topic);
         }
