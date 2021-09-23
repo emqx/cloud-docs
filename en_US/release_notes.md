@@ -1,7 +1,16 @@
 # Version release
 
+
+## 2021-09-19 
+
+* Support Project Management
+
+## 2021-08-19 
+
+* Support Google Cloud Platform
+
 ## 2021-07-19
-* Added Azure Cloud Platform
+* Support Azure Cloud Platform
 
 ## 2021-06-19
 * Optimization of User Interface Design 

@@ -10,7 +10,7 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 [华为云分布式消息服务 Kafka](https://www.huaweicloud.com/product/dmskafka.html)，是华为云基于开源社区版 Kafka 提供的消息队列服务，向用户提供计算、存储和带宽资源独占式的 Kafka 专享实例。
 
-[EMQ X Cloud](https://cloud.emqx.cn) 是由 EMQ X 建立的云上 MQTT 服务。EMQ X 团队在物联网领域耕织多年，EMQ X MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
+[EMQ X Cloud](https://www.emqx.com/zh/cloud) 是由 EMQ X 建立的云上 MQTT 服务。EMQ X 团队在物联网领域耕织多年，EMQ X MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
 
 本篇指南将会连通华为云 Kafka 和 EMQ X Cloud，并通过 EMQ X Cloud 规则引擎将 MQTT 消息转发到 Kafka 主题。
 

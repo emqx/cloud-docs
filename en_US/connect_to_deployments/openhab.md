@@ -14,7 +14,7 @@ MQTT, known as Message Queuing Telemetry Transport, is a lightweight IoT messagi
 
 ## Why EMQ X Cloud MQTT?
 
-[EMQ X Cloud](https://cloud.emqx.io/) is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQ X Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. It serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications.
+[EMQ X Cloud](https://www.emqx.com/en/cloud) is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQ X Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. It serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications.
 
 EMQ X Cloud is available in three plans: Basic, Professional, and Unlimited, which offers a variety of flexible product specifications to support the deployment of fully managed MQTT services exclusively for you on the world's leading public clouds. Need more information with EMQ X Cloud's product plan? Click[ here](https://docs.emqx.io/en/cloud/latest/pricing.html).
 
@@ -26,7 +26,7 @@ Such a powerful product is a great choice to integrate with openHAB. You could c
 
 If it's your first time using EMQ X Cloud, don't worry. We will guide you through connecting Home Assistant with EMQ X Cloud.
 
-1. [Create](https://accounts.emqx.io/signup?continue=https://cloud.emqx.io/) an EMQ X Cloud Account.
+1. [Create](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud) an EMQ X Cloud Account.
 
 2. Login to EMQ X Cloud [console](https://cloud.emqx.io/console/) and start a new deployment.
 
