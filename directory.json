@@ -37,6 +37,10 @@
           "path": "deployments/calculator"
         },
         {
+          "title": "项目管理",
+          "path": "deployments/project"
+        },
+        {
           "title": "创建一个新的部署",
           "path": "deployments/create_deployment"
         },
@@ -381,6 +385,10 @@
         {
           "title": "Pricing Estimation",
           "path": "deployments/calculator"
+        },
+        {
+          "title": "Project Management",
+          "path": "deployments/project"
         },
         {
           "title": "Create a new deployment",

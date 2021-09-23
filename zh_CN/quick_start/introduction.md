@@ -1,6 +1,6 @@
 # 简介
 
-欢迎使用 EMQ X Cloud，EMQ X Cloud 是全球首个全托管的 MQTT 5.0 公有云服务。在 [EMQ X Cloud](https://cloud.emqx.cn)支持下，您可以在云上创建 EMQ X 集群并使用 EMQ X 企业版全部功能。这使您可以将更多的时间花费在业务对接上，而将较少的时间用于 EMQ X 的运维和管理 。本教程将指导您完成创建、连接到 EMQ X Cloud 部署，在开始之前，让我们回顾一些核心概念和短语：
+欢迎使用 EMQ X Cloud，EMQ X Cloud 是全球首个全托管的 MQTT 5.0 公有云服务。在 [EMQ X Cloud](https://www.emqx.com/zh/cloud)支持下，您可以在云上创建 EMQ X 集群并使用 EMQ X 企业版全部功能。这使您可以将更多的时间花费在业务对接上，而将较少的时间用于 EMQ X 的运维和管理 。本教程将指导您完成创建、连接到 EMQ X Cloud 部署，在开始之前，让我们回顾一些核心概念和短语：
 
 * 部署： EMQ X Cloud 上托管的 EMQ X 企业版集群
 * 基础版部署：单节点的 EMQ X 企业版

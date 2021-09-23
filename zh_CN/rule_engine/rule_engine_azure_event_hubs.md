@@ -6,7 +6,7 @@
 
 [Azure 事件中心](https://docs.microsoft.com/azure/event-hubs) 是大数据流式处理平台和事件引入服务， 它可以每秒接收和处理数百万个事件，可以使用任何实时分析提供程序或批处理/存储适配器转换和存储发送到事件中心的数据。
 
-[EMQ X Cloud](https://cloud.emqx.cn) 是由 EMQ X 建立的云上 MQTT 服务。EMQ X 团队在物联网领域耕织多年，EMQ X MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
+[EMQ X Cloud](https://www.emqx.com/zh/cloud) 是由 EMQ X 建立的云上 MQTT 服务。EMQ X 团队在物联网领域耕织多年，EMQ X MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
 
 本篇指南将会连通 Azure 事件中心 和 EMQ X Cloud，并通过 EMQ X Cloud 规则引擎将 MQTT 消息转发到 Azure 事件中心。
 
