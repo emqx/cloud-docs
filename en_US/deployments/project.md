@@ -1,6 +1,6 @@
 # Project Management
 
-Project management is used to group deployments under different projects, making it easy to manage deployments according to projects.
+Project management is used to group deployments under different projects, making it easy to manage deployments according to the projects.
 
 ## Default project
 
@@ -30,7 +30,7 @@ Select the target project in the project list
 
 ![move_project](./_assets/move_project.png)
 
-Once you click Confirm, you can move the deployment to a new project
+Once you click **Confirm**, you can move the deployment to a new project
 
 ![new_project_deployments](./_assets/new_project_deployments.png)
 
@@ -40,7 +40,7 @@ Hover over the project to see the update button
 
 ![update_project_menu](./_assets/update_project_menu.png)
 
-Click to update the project's name and description
+Click the button to update the project's name and description
 
 ![update_project](./_assets/update_project.png)
 
@@ -48,7 +48,7 @@ Click to update the project's name and description
 
 > Make sure there are no deployments under the project before deleting it
 
-Hover over the project and click the Delete button to delete the project
+Hover over the project and click the **Delete** button to delete the project
 
 ![delete_project](./_assets/delete_project.png)
 
