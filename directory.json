@@ -228,6 +228,10 @@
           "path": "rule_engine/rule_engine_save_mysql"
         },
         {
+          "title": "桥接数据到 阿里云 MongoDB",
+          "path": "rule_engine/rule_engine_aliyun_mongodb"
+        },
+        {
           "title": "保存数据到 TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaladb"
         },
