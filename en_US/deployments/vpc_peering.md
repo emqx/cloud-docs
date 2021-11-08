@@ -17,7 +17,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 ### Creating peering connection
 
-1. Log in to [EMQ X Cloud console](<https://cloud.emqx.io/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQ X Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
+1. Log in to [EMQ X Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQ X Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
 
    ![create-vpc1](./_assets/create_aws_vpc_peering.png)
 
@@ -35,7 +35,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![aws-vpc1](./_assets/aws-vpc1.png)
 
-4. Return to  [EMQ X Cloud console](<https://cloud.emqx.io/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
+4. Return to  [EMQ X Cloud console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
 
    * For Peering ID,  fill in the recorded `VPC Peering Connection`
    * For Account ID,  fill in the recorded `Requester VPC owner`
@@ -78,7 +78,7 @@ This feature is now not available. If you need to set up VPC peering connection 
 
 ### Creating peering connection
 
-1. Log in to [EMQ X Cloud console](<https://cloud.emqx.io/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
+1. Log in to [EMQ X Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
     * Project ID: GCP Project ID of your peering VPC
     * VPC ID:  Name of your peering VPC
 

@@ -21,7 +21,7 @@ You can follow these steps shown below to quickly complete the EMQ X Cloud Quick
     ![add_users](./_assets/log_in.png)
 
 
-2. Visit EMQ X Cloud [console](https://cloud.emqx.io/console/) and create a free trial deployment
+2. Visit EMQ X Cloud [console](https://cloud-intl.emqx.com/console/) and create a free trial deployment
    
    ![console](./_assets/free_trial.png)
 

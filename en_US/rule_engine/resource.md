@@ -12,7 +12,7 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 ## Create Resources
 
-1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
+1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
@@ -32,7 +32,7 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 ## View Resource Status
 
-1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
+1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
@@ -46,7 +46,7 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 ## Delete Resources
 
-1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
+1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 

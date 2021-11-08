@@ -6,11 +6,11 @@ EMQ X Cloud  价格计算允许您依据实际业务需求预估，预估 EMQX C
 
 ## 访问 EMQ X Cloud 价格估算
 
-* 对于**未注册** EMQ X Cloud 的用户，您可以前往 [价格](https://cloud.emqx.cn/pricing) 页面，使用价格估算。
+* 对于**未注册** EMQ X Cloud 的用户，您可以前往 [价格](https://cloud.emqx.com/pricing) 页面，使用价格估算。
 
   ![calculator](./_assets/calculator.png)
 
-* 对于**登录**到 EMQ X Cloud 的用户，您可以前往 [价格估算](https://cloud.emqx.cn/console/deployments/0?oper=new)，选择版本，使用价格估算，并创建部署。
+* 对于**登录**到 EMQ X Cloud 的用户，您可以前往 [价格估算](https://cloud.emqx.com/console/deployments/0?oper=new)，选择版本，使用价格估算，并创建部署。
   
   ![edition](./_assets/choose_edition.png)
 

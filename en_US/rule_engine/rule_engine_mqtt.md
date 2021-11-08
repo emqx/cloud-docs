@@ -34,7 +34,7 @@ After that, open the server's 1883 port
 
 ## 2. Set the filter conditions of the rule engine
 
-Enter [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter the deployment to use MQTT Broker bridge.
+Enter [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment to use MQTT Broker bridge.
 
 On the deployment page, select the rule engine and click Create.
 

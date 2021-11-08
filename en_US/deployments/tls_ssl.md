@@ -59,7 +59,7 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
 
 ## Create a Certificate
 
-1. Login to the [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
+1. Login to the [EMQ X Cloud Console](<https://cloud-intl.emqx.com/console>).
 2. Go to the deployment details and click on the `+TLS/SSL configuration` button to configure the certificate contents, either by uploading a file or by filling in the certificate contents directly
    - Type of certification:
      - One-way authentication: only the client verifies the server-side certificate
@@ -105,7 +105,7 @@ Before testing, make sure that you have created authentication information, refe
 
 Deleting the certificate will disconnect the client from `8883` and `8084`, please ensure that this does not affect your business.
 
-1. Login to the [EMQ X Cloud Console](<https://cloud.emqx.io/console>).
+1. Login to the [EMQ X Cloud Console](<https://cloud-intl.emqx.com/console>).
 2. To access the deployment details, click on the delete button for the certificate in the `TLS/SSL Configuration` section.
 3. Click on "OK" in the dialog to complete the deletion.
 

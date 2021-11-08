@@ -22,7 +22,7 @@
 
 在创建规则引擎之前您需要确保部署状态为**运行中**
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -48,7 +48,7 @@
 
 ## 查看规则监控状态
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -60,7 +60,7 @@
 
 ## 编辑规则
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -80,7 +80,7 @@
 
 ## 删除规则
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 

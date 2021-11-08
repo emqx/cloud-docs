@@ -62,7 +62,7 @@ Once the token is created, you could choose to activate/deactivate the token.
 
 ## 2. Create a resource
 
-Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/) and go to the `Rule Engine` page
+Go to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/) and go to the `Rule Engine` page
 
 ![rule_engine](./_assets/influx_rule_1.png)
 

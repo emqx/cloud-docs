@@ -31,7 +31,7 @@ EMQ X Cloud 免费试用部署注意事项：
 
 ## 开始创建免费试用部署
 
-1. 登录 [EMQ X Cloud 控制台](https://accounts.emqx.cn/signin?continue=https://cloud.emqx.cn/console/)
+1. 登录 [EMQ X Cloud 控制台](https://accounts.emqx.cn/signin?continue=https://cloud.emqx.com/console/)
 
    ![login_console](./_assets/login.png)
 

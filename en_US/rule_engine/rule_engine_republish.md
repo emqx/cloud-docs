@@ -14,7 +14,7 @@ In order to achieve this function, we will complete the following 3 tasks in tur
 
 ## 1. Set the filter criteria of the rule engine
 
-Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter the deployment to use `message republishing`.
+Go to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment to use `message republishing`.
 
 On the deployment page, select the rule engine and click Create.
 

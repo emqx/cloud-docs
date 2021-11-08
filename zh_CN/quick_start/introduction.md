@@ -14,7 +14,7 @@
 
    ![add_users](./_assets/login.png)
 
-2. 访问 EMQ X Cloud [控制台](https://cloud.emqx.cn/console/)，选择基础版或专业版创建部署
+2. 访问 EMQ X Cloud [控制台](https://cloud.emqx.com/console/)，选择基础版或专业版创建部署
    > EMQ X Cloud 为每位用户提供一次 30 天的免费试用和 14 天的专业版免费试用(专业版免费试用需提交申请)。
    
    ![add_users](./_assets/create_free_trial.png)

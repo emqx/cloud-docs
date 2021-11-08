@@ -36,7 +36,7 @@ docker run -it -p 1883:1883 --name mosquitto eclipse-mosquitto:1.6
 
 ## 2. 设置规则引擎的筛选条件
 
-进入 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)，并点击进入要使用 MQTT Broker 桥接的部署。
+进入 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)，并点击进入要使用 MQTT Broker 桥接的部署。
 
 在部署页面，选择规则引擎，点击创建。
 

@@ -4,7 +4,7 @@
 
 您可以通过下面的步骤进入进入工单系统：
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
 2. 点击左下角的 `工单`
 
 ![工单](./_assets/tickets.png)
