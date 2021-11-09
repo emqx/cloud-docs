@@ -50,7 +50,7 @@ EMQ X Cloud 提供实时在线查看 EMQ X 日志功能
 检查客户端连接使用的 MQTT 协议是否为标准 MQTT 协议
 ```
 
-### 部署 QoS 1 消息丢弃告警(warning)
+### 部署消息丢弃告警(warning)
 
 * 日志
 ```
