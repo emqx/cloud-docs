@@ -24,7 +24,7 @@ By default, payments are processed automatically, so you don't have to worry tha
 
 - Transactions
   
-  To view your transaction history, access the Transactions page in the [Billing Transactions](https://cloud.emqx.io/console/billing/transactions)
+  To view your transaction history, access the Transactions page in the [Billing Transactions](https://cloud-intl.emqx.com/console/billing/transactions)
   ![Transactions](./_assets/transactions.png)
 
 
@@ -67,7 +67,7 @@ You can use the overview to add a credit card to your account.
 
 - To add a credit card to your EMQ X Cloud account
 
-  1. Sign in to the EMQ X Cloud Console and open the [Billing Overview](https://cloud.emqx.io/console/billing/overview)
+  1. Sign in to the EMQ X Cloud Console and open the [Billing Overview](https://cloud-intl.emqx.com/console/billing/overview)
 
   2. Choose an editorial payment method
   3. Enter the credit card information and billing address.
@@ -77,7 +77,7 @@ You can use the overview to add a credit card to your account.
 
 - To update your credit card
 
-  1. Sign in to the EMQ X Cloud Console and open the Billing Overview at https://cloud.emqx.io/console/billing/overview.
+  1. Sign in to the EMQ X Cloud Console and open the Billing Overview at https://cloud-intl.emqx.com/console/billing/overview.
 
   2. Choose an editorial payment method
 

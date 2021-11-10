@@ -48,12 +48,13 @@ EMQ X Cloud 提供了消息、客户端、报文、交付四种增量指标，�
 
 
 
-## 交付
+## 丢弃消息
 
 展示在时间段内，丢弃的消息数量增量情况，提供以下 1 种指标：
 
 | 指标             | 意义                 |
 | ---------------- | :------------------- |
 | delivery_dropped | 发送时丢弃的消息总数 |
+| delivery_dropped_queue_full | 消息队列满而被丢弃的消息数 |
 
 ![metrics_line_detail](./_assets/metric_delivery.png)

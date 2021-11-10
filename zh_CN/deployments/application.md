@@ -6,7 +6,7 @@ EMQ X 提供了 HTTP API 以实现与外部系统的集成，例如查询客户�
 
 ## 创建 API 应用
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.cn/console/)
+1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 

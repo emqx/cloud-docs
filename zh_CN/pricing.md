@@ -35,7 +35,7 @@ EMQ X Cloud 的计费由两部分组成：
 
 ### 计费周期
 
-EMQ X Cloud **每小时**统计核算一次上小时内账户消费情况（小时账单）并从余额扣费，然后累加到当月消费（月账单），您可以前往 [账单页面](<https://cloud.emqx.cn/console/billing/overview>) 查看详细扣费信息
+EMQ X Cloud **每小时**统计核算一次上小时内账户消费情况（小时账单）并从余额扣费，然后累加到当月消费（月账单），您可以前往 [账单页面](<https://cloud.emqx.com/console/billing/overview>) 查看详细扣费信息
 
 
 
@@ -83,7 +83,7 @@ EMQ X Cloud **每小时**统计核算一次上小时内账户消费情况（小�
    </tr>
    <tr>
       <td>10,000 连接 / 最高 20,000 TPS</td>
-      <td>￥4.58/小时 起</td>
+      <td>￥3.99/小时 起</td>
    </tr>
    <tr>
       <td>50,000 连接 / 最高 50,000 TPS</td>

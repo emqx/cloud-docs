@@ -6,11 +6,11 @@ EMQ X Cloud pricing calculator allows you to estimate the cost of creating deplo
 
 ## Visit EMQ X Cloud Pricing Details
 
-- For users who are **unregistered** with EMQ X Cloud, you can go to [Pricing](https://cloud.emqx.io/pricing) page to check the available plans.
+- For users who are **unregistered** with EMQ X Cloud, you can go to [Pricing](https://cloud-intl.emqx.com/pricing) page to check the available plans.
 
   ![pricing](../_assets/pricing.png)
 
-- For users who are **registered** to EMQ X Cloud, you can go to [Price Estimate](https://cloud.emqx.io/console/deployments/0?oper=new) to select plan, use price estimation and create a deployment.
+- For users who are **registered** to EMQ X Cloud, you can go to [Price Estimate](https://cloud-intl.emqx.com/console/deployments/0?oper=new) to select plan, use price estimation and create a deployment.
 
   ![calculator](./_assets/calculator.png)
 

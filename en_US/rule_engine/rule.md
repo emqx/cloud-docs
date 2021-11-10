@@ -20,7 +20,7 @@ The rule shown in the figure below is used to process the data when **message is
 
 Before creating a rule engine, you need to make sure that the deployment status is **running**
 
-1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
+1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
@@ -48,7 +48,7 @@ Before adding an action, you need to ensure that you have added [VPC peering con
 
 ## View rule monitoring status
 
-1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
+1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
@@ -62,7 +62,7 @@ Before adding an action, you need to ensure that you have added [VPC peering con
 
 ## Edit rules
 
-1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
+1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
@@ -84,7 +84,7 @@ Before adding an action, you need to ensure that you have added [VPC peering con
 
 ## Delete rules
 
-1. Log in to [EMQ X Cloud Console](https://cloud.emqx.io/console/)
+1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 

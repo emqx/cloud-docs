@@ -54,6 +54,7 @@ It shows the increment of the number of discarded messages within a time period,
 
 | Indicagor        | Meaning                                         |
 | ---------------- | :---------------------------------------------- |
-| delivery_dropped | Total number of messages discarded when sending |
+| delivery_dropped | Number of message dropped when sending |
+| delivery_dropped_queue_full | Number of message dropped when the message queue is full |
 
 ![metrics_line_detail](./_assets/metric_delivery.png)

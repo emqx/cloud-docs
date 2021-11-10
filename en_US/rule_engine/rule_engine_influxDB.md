@@ -47,7 +47,7 @@ $ docker run -d --name=influxdb \
 
 ## 2. Set the filter criteria of the rule engine
 
-Go to [EMQ X Cloud Console](https://cloud.emqx.io/console/), and click to enter the deployment of InfluxDB to be used.
+Go to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment of InfluxDB to be used.
 
 On the deployment page, select the rule engine and click Create.
 

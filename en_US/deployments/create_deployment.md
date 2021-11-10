@@ -3,11 +3,11 @@ In this tutorial, you will learn how to create a new EMQ X Cloud deployment. To 
 
 ## Limitation
 
-* Before the deployment is created, you need to bind credit card payment information in the [Billing](https://cloud.emqx.io/console/billing/overview) page.
+* Before the deployment is created, you need to bind credit card payment information in the [Billing](https://cloud-intl.emqx.com/console/billing/overview) page.
 
 ## Create Deployment
 
-1. Log in to your account and navigate to EMQ X Cloud [Console](https://cloud.emqx.io/console/).
+1. Log in to your account and navigate to EMQ X Cloud [Console](https://cloud-intl.emqx.com/console/).
 2. Click the **New** button in the upper right corner to enter the deployment price estimation page.
 3. Choose the deployment of the corresponding specifications according to your needs.
    * Choose cloud platform: EMQ X Cloud temporarily supports AWS, Azure and GCP. If you have other cloud service provider requirements, you can submit a [ticket](../contact.md) or email (cloud@emqx.io) )  us.
