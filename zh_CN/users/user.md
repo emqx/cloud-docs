@@ -44,11 +44,11 @@
 
 **修改密码**：目前只有管理员可以为子账号修改密码
 
-![default_project](./_assets/more1.png)
+![default_project](./_assets/more_1.png)
 
 **修改角色**：可以为账号修改或再分配角色
 
-![default_project](./_assets/more2.png)
+![default_project](./_assets/more_2.png)
 
 **停用/启用**：对子账号停用之后，子账号就无法登录，直到重新启用账号
 > * 当角色停用时
