@@ -19,7 +19,7 @@
 ![default_project](./_assets/projectcenter_new_step2.png)
 
 
-3. 再确认列表中可以再次修该账号的角色或删除账号的授权，点击确认。这样就完成了一个项目的创建。
+3. 再确认列表中可以再次修改账号的角色或删除账号的授权，点击确认。这样就完成了一个项目的创建。
 > 取消账号全部的角色等同于删除该账号的项目授权。
 
 ![default_project](./_assets/projectcenter_new_step3.png)
