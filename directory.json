@@ -41,6 +41,11 @@
           "path": "deployments/project"
         },
         {
+          "title": "项目中心",
+          "path": "deployments/project_center"
+
+        },
+        {
           "title": "创建一个新的部署",
           "path": "deployments/create_deployment"
         },
@@ -262,6 +267,19 @@
         {
           "title": "从 MySQL 中获取订阅关系",
           "path": "rule_engine/get_subs_from_mysql"
+        }
+      ]
+    },
+    {
+      "title": "用户管理",
+      "children": [
+        {
+          "title": "简介",
+          "path": "users/intro"
+        },
+        {
+          "title": "子用户管理",
+          "path": "users/user"
         }
       ]
     },
