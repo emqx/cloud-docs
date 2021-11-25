@@ -41,11 +41,6 @@
           "path": "deployments/project"
         },
         {
-          "title": "项目中心",
-          "path": "deployments/project_center"
-
-        },
-        {
           "title": "创建一个新的部署",
           "path": "deployments/create_deployment"
         },
@@ -269,6 +264,11 @@
           "path": "rule_engine/get_subs_from_mysql"
         }
       ]
+    },
+    {
+      "title": "项目中心",
+      "path": "deployments/project_center"
+
     },
     {
       "title": "用户管理",
@@ -630,6 +630,23 @@
         {
           "title": "Get subscription topic information from MySQL",
           "path": "rule_engine/get_subs_from_mysql"
+        }
+      ]
+    },
+    {
+      "title": "Project Center",
+      "path": "deployments/project_center"
+    },
+    {
+      "title": "User Management",
+      "children": [
+        {
+          "title": "Introduction",
+          "path": "users/intro"
+        },
+        {
+          "title": "Sub-user Management",
+          "path": "users/user"
         }
       ]
     },

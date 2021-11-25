@@ -1,5 +1,8 @@
 # Version release
 
+## 2021-11-19
+
+* Support Subaccount Management
 
 ## 2021-09-19 
 
