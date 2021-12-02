@@ -2,8 +2,7 @@
 
 本文主要介绍如何在 Go 项目中，使用 `paho.mqtt.golang` 库实现一个 MQTT 客戶端与 MQTT 服务器的连接、订阅、收发消息等功能。
 
-[Go](https://go.dev/) 是 Google
-开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。而 `paho.mqtt.golang` 是一个 MQTT 库，它提供了一个简单的 API，用于在 Go 项目中连接到 MQTT 服务器，并发送和接收消息。
+[Go](https://go.dev/) 是 Google 开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。而 `paho.mqtt.golang` 是一个 MQTT 库，它提供了一个简单的 API，用于在 Go 项目中连接到 MQTT 服务器，并发送和接收消息。
 
 ## 前提条件
 
@@ -48,21 +47,18 @@ go version go1.15.13 darwin/amd64
     ```
 
 ## 连接
-
-请在控制台的部署概览找到相关的地址以及端口信息。
-
-> 需要注意如果是基础版，端口不一定是1883或8883端口，请确认好端口。
+请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在[认证鉴权](../deployments/auth_and_acl.md) 中添加认证信息。
 
 ### 连接设置
 
 设置 MQTT Broker 连接地址，端口以及 topic, 以及用戶名和密码。
 
 ``` go
-const broker = "" // MQTT Broker 连接地址
+const broker = "broker.emqx.io" // MQTT Broker 连接地址
 const port = 1883
 const topic = "t/1"
-const username = ""
-const password = ""
+const username = "emqx"
+const password = "public"
 ```
 
 ### 编写 MQTT 连接函数
