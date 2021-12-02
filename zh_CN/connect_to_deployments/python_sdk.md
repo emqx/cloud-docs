@@ -17,7 +17,7 @@ Python 让开发者能够用更少的代码表达想法，不管是小型还是�
 Python 3.8.6
 ```
 
-## 安装使用客户端
+## 安装 MQTT 客户端
 
 [paho-mqtt](https://www.eclipse.org/paho/clients/python/) 是目前 Python 中使用较多的 MQTT 客户端库，
 它在 Python 2.7.9+ 或 3.6+ 上为客户端类提供了对 MQTT v5.0，v3.1 和 v3.1.1 的支持。它还提供了一些帮助程序功能，使将消息发布到 MQTT 服务器变得非常简单。
@@ -36,7 +36,7 @@ from paho.mqtt import client as mqtt_client
 
 ## 连接
 
-请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不一定是 1883 或 8883 端口，请确认好端口
+请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口
 
 ### 连接设置
 
@@ -232,5 +232,5 @@ if __name__ == '__main__':
 
 ## 下一步
 
-以上为您演示了如何使用 paho.mqtt.m2mqtt 客户端库连接到 EMQ X Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/) 下载到示例的源码。
+以上为您演示了如何使用 paho-mqtt 客户端库连接到 EMQ X Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/) 下载到示例的源码。
 同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。

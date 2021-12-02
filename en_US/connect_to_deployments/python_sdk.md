@@ -19,7 +19,7 @@ Python 3.8.6
 ```
 
 
-## Installation and use
+## Install MQTT client
 
 [paho-mqtt](https://www.eclipse.org/paho/clients/python/) is currently using more MQTT client library in Python.
 It provides support for MQTT V5.0, V3.1, and V3.1.1 for client classes on Python 2.7.9+ or 3.6+. 
@@ -236,6 +236,6 @@ Run the code of publishing messages, we will see that the client connects succes
 
 ## Next step
 
-This shows you how to use the paho.mqtt.m2mqtt client library to connect to the EMQ X Cloud.
+This shows you how to use the paho-mqtt client library to connect to the EMQ X Cloud.
 You can download the source code to the example in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/).
 You can find more other languages in [GitHub](https://github.com/emqx/MQTT-Client-Examples).
