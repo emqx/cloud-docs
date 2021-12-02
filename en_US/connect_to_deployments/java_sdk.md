@@ -7,7 +7,10 @@ You have aleady created deployment, You can see the connection information on [D
 
 ## Getting Started
 
-### Dependency
+### Create project
+1. Create a Maven project with `Intellij IDEA`, refer to [Creating a Maven project](https://www.jetbrains.com/idea/guide/tutorials/working-with-maven/creating-a-project/)
+2. Craet package `io.emqx.mqtt` under `src/main/java`
+### Add dependency
 Add the dependency definition to the `pom.xml`
 ```xml
 <dependency>
@@ -25,7 +28,7 @@ mvn install
 You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your edition is not dedicated, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md).
 
 #### Connect Options
-Setup the broker, port, topic and authentication.
+Create `MqttSample.java`, setup the broker, port, topic and authentication.
 
 ```java
 String topic = "test/topic";

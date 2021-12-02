@@ -9,6 +9,11 @@
 本项目构建工具使用 Maven
 
 ## Eclipse Paho Java Client 使用
+
+### 初始化项目
+1. 使用 `Intellij IDEA` 新建一个 Maven 项目，参考 [Creating a Maven project](https://www.jetbrains.com/idea/guide/tutorials/working-with-maven/creating-a-project/)
+2. 在 `src/main/java` 下创建包: `io.emqx.mqtt`
+
 ### 安装依赖
 添加依赖到 `pom.xml`
 ```xml
@@ -27,7 +32,7 @@ mvn install
 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在[认证鉴权](../deployments/auth_and_acl.md) 中添加认证信息。
 
 #### 连接设置
-设置 MQTT Broker 连接地址，端口，topic 以及认证信息。
+创建 `MqttSample.java`，设置 MQTT Broker 连接地址，端口，topic 以及认证信息。
 
 ```java
 String topic = "test/topic";
