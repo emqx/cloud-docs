@@ -2,11 +2,13 @@
 
 在本教程中您将学习在 Java 中使用 [**Eclipse Paho Java Client**](https://github.com/eclipse/paho.mqtt.java) 客户端连接到 EMQ X Cloud 部署。
 
-### 前提条件
+## 前提条件
+
 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，同时你可以了使用 WebSocket 先测试连接到 MQTT 服务器。
 
 本项目构建工具使用 Maven
 
+## Eclipse Paho Java Client 使用
 ### 安装依赖
 添加依赖到 `pom.xml`
 ```xml
@@ -210,5 +212,5 @@ Disconnected
 ```
 我们可以看到已经成功连接，成功订阅，发布，并且收到发布的消息。
 
-### 下一步
+## 下一步
 以上为您演示了如何使用 paho.mqtt.java 客户端库连接到 EMQ X Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java) 下载到示例的源码。同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多起他语言的 Demo 示例。

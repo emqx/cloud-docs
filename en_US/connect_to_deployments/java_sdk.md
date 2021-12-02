@@ -2,8 +2,10 @@
 
 In this tutorial, you will learn how to use [**Eclipse Paho Java Client**](https://github.com/eclipse/paho.mqtt.java) to connect to EMQ X Cloud deployment.
 
-### Prerequisites
+## Prerequisites
 You have aleady created deployment, You can see the connection information on [Deployment Overview](../deployments/view_deployment.md), and you can connect to the MQTT broker with Websocket.
+
+## Getting Started
 
 ### Dependency
 Add the dependency definition to the `pom.xml`
@@ -205,5 +207,5 @@ Disconnected
 
 We can see that we have connected, subscribed and published, and received the published message.
 
-### Next
+## Next
 The above shows you how to connect to EMQ X Cloud using the paho.mqtt.java client library, You can see the source code on [GitHub](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java). You can also find more examples of other language on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
