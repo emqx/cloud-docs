@@ -8,7 +8,7 @@ Python 让开发者能够用更少的代码表达想法，不管是小型还是�
 
 ## 前提条件
 
-已经创建了部署，在部署概览下可以查看到连接相关的信息，同时你可以了使用 WebSocket 先测试连接到 MQTT 服务器。
+已经创建了部署，在部署概览下可以查看到连接相关的信息，同时你可以使用 WebSocket 先测试连接到 MQTT 服务器。
 
 本项目使用 Python 3.8 进行开发测试，可用如下命令确认 Python 的版本。
 
@@ -20,7 +20,7 @@ Python 3.8.6
 ## 安装使用客户端
 
 [paho-mqtt](https://www.eclipse.org/paho/clients/python/) 是目前 Python 中使用较多的 MQTT 客户端库，
-它在 Python 2.7 或 3.x 上为客户端类提供了对 MQTT v5.0，v3.1 和 v3.1.1 的支持。它还提供了一些帮助程序功能，使将消息发布到 MQTT 服务器变得非常简单。
+它在 Python 2.7.9+ 或 3.6+ 上为客户端类提供了对 MQTT v5.0，v3.1 和 v3.1.1 的支持。它还提供了一些帮助程序功能，使将消息发布到 MQTT 服务器变得非常简单。
 
 1. Pip 是 Python 包管理工具，该工具提供了对 Python 包的查找、下载、安装、卸载的功能，使用以下命令安装 paho-mqtt。
 
@@ -75,7 +75,7 @@ def connect_mqtt():
 
 ### 发布消息
 
-首先定义一个 while 循环语句，在循环中我们将设置每秒调用 MQTT 客户端 `publish` 函数向 `/python/mqtt` 主题发送消息。
+首先定义一个 while 循环语句，在循环中我们将设置每秒调用 MQTT 客户端 `publish` 函数向 `python/mqtt` 主题发送消息。
 
 ```python
  def publish(client):
@@ -165,7 +165,6 @@ def run():
 
 if __name__ == '__main__':
     run()
-
 ```
 
 **消息订阅代码**
@@ -234,4 +233,4 @@ if __name__ == '__main__':
 ## 下一步
 
 以上为您演示了如何使用 paho.mqtt.m2mqtt 客户端库连接到 EMQ X Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/) 下载到示例的源码。
-同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多起他语言的 Demo 示例。
+同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
