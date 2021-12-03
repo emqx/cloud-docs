@@ -25,7 +25,7 @@ Run
 mvn install
 ```
 ### Connect
-You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your edition is not dedicated, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md).
+You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your  choose a Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md) in advance.
 
 #### Connect Options
 Create `MqttSample.java`, setup the broker, port, topic and authentication.
@@ -208,7 +208,7 @@ deliveryComplete
 Disconnected
 ```
 
-We can see that we have connected, subscribed and published, and received the published message.
+That's the whole process of connecting, subscribing, publishing, and receiving the message.
 
 ## Next
 The above shows you how to connect to EMQ X Cloud using the paho.mqtt.java client library, You can see the source code on [GitHub](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java). You can also find more examples of other language on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
