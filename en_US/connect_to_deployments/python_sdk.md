@@ -11,7 +11,7 @@ Its language constructs and object-oriented approach aim to help programmers wri
 
 The deployment has been created, you can see connection information under the Deployment Overview, and you can test connecting to the MQTT server using WebSocket.
 
-This project uses Python 3.8 to develop and test. Readers can use the following command to confirm the Python version.
+This project uses Python 3.8 to develop and test. Confirm the Python version by the following command.
 
 ```
 ➜  ~ python3 --version             
@@ -39,11 +39,11 @@ from paho.mqtt import client as mqtt_client
 
 ## Connect to the MQTT server
 
-Please find the address and port information in the Deployment Overview.
+Please find the host and port information in the Deployment Overview.
 
 ### Connection Settings
 
-Set the address, port and topic of MQTT Broker connection. At the same time, we call the Python function 'random.randint' to randomly generate the MQTT client id.
+Set the host, port and topic of MQTT Broker connection. At the same time, we call the Python function 'random.randint' to randomly generate the MQTT client id.
 
 ```python
 broker = 'broker.emqx.io'
@@ -226,7 +226,7 @@ if __name__ == '__main__':
 
 ### Publish messages
 
-Run the code of publishing messages, we will see that the client connects successfully and publishes messages successfully
+Run the code of publishing messages, we will see that the client connects and publishes messages successfully.
 
 ![python_pub](./_assets/python_pub.png)
 
@@ -236,6 +236,6 @@ Run the code of publishing messages, we will see that the client connects succes
 
 ## Next step
 
-This shows you how to use the paho-mqtt client library to connect to the EMQ X Cloud.
+All of the above shows that how to use the paho-mqtt client library to connect to the EMQ X Cloud.
 You can download the source code to the example in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/).
 You can find more other languages in [GitHub](https://github.com/emqx/MQTT-Client-Examples).
