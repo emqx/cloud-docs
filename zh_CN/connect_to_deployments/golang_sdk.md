@@ -58,7 +58,7 @@ const broker = "broker.emqx.io" // MQTT Broker 连接地址
 const port = 1883
 const topic = "t/1"
 const username = "emqx"
-const password = "public"
+const password = "******"
 ```
 
 ### 编写 MQTT 连接函数

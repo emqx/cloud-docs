@@ -1,12 +1,13 @@
-# Connect to the deployment using the go SDK
+# Connect to the deployment using Go SDK
 
-This paper mainly introduces how to use the `paho.mqtt.golang` Library in go project to realize the functions of connecting, subscribing, sending, and receiving messages between an mqtt client and an mqtt server.
+This article guides you to use the `paho.mqtt.golang` Library in go project to realize the functions of connecting, subscribing, sending, and receiving messages between a MQTT client and a MQTT broker.
+
 
 [Go](https://go.dev/) it's Google Developed a programming language with strong static type, compilation type, parallel style, and garbage collection function. `paho.mqtt.golang` is an mqtt library, which provides a simple API for connecting to the mqtt server and sending and receiving messages in the go project.
 
 ## Preconditions
 
-The deployment has been created. You can view the connection-related information under the deployment overview. At the same time, you can use "Online Test" to test the connection to the mqtt server first.
+You can view the connection-related information under the deployment overview after deployment has been created.
 
 The project uses go version 1.15.13 for development and testing. The following commands can be used to confirm the go version.
 
@@ -48,7 +49,8 @@ go version go1.15.13 darwin/amd64
     ```
 
 ## Connect
-You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your edition is not dedicated, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md).
+
+Please pay attention that the port is not 1883 or 8883 if you choose the Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md) in advance.
 
 ### Connection settings
 
@@ -59,7 +61,7 @@ const broker = "broker.emqx.io" // MQTT Broker address
 const port = 1883
 const topic = "t/1"
 const username = "emqx"
-const password = "public"
+const password = "******"
 ```
 
 ### Writing mqtt connection functions
@@ -222,4 +224,5 @@ publish success, topic: t/1, payload: message: 6!
 
 The above shows you how to use the 'paho.mqtt.golang' client to connect to EMQ X Cloud, which can be found in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) Download to the sample source code
 
-Also available in [GitHub](https://github.com/emqx/MQTT-Client-Examples) Find more demo examples for other languages on.
+
+More demo examples for other languages are available in [GitHub](https://github.com/emqx/MQTT-Client-Examples).
