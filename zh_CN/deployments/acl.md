@@ -12,50 +12,6 @@ EMQ X Cloud 的认证支持包括两个层面：
 
 
 
-## 认证
-
-### 查看认证信息
-
-在左侧`认证鉴权`的`认证`页面，可以看到认证信息
-
-![auth](./_assets/auth.png)
-
-### 添加认证信息
-
-在页面上方的输入框中依次输入用户名和密码，添加添加按钮即可完成认证信息的添加
-
-![add_auth](./_assets/add_auth.png)
-
-### 批量添加认证信息
-
-可以通过 CSV 文件批量导入认证信息
-
-1. 点击导入按钮
-2. 下载模板
-3.    填写认证信息后上传文件
-   
-   模板示例文件如下图所示
-
-   ![auth_csv](./_assets/auth_csv.png)
-
-4.    点击导入按钮导入
-
-   ![import_auth](./_assets/import_auth.png)
-
-### 编辑认证信息
-
-点击认证信息右侧的编辑按钮，可以修改用户名的密码
-
-![edit_auth](./_assets/edit_auth.png)
-
-### 删除认证信息
-
-点击认证信息右侧的删除按钮，可以对认证信息进行删除
-
-![delete_auth](./_assets/delete_auth.png)
-
-
-
 ## 访问控制（ACL）
 
 鉴权是指对发布 (PUBLISH)/订阅 (SUBSCRIBE) 操作的 `权限控制`。

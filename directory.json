@@ -1,60 +1,131 @@
 {
   "cn": [
     {
-      "title": "产品简介",
+      "title": "EMQ X Cloud 引导",
       "path": "./"
     },
     {
+      "title": "产品简介",
+      "children": [
+        {
+          "title": "产品概述",
+          "path": "./"
+        },
+        {
+          "title": "产品优势",
+          "path": "intro/advance"
+        },
+        {
+          "title": "产品限制",
+          "path": "intro/restriction"
+        }
+      ]
+    },
+    {
       "title": "产品定价",
-      "path": "pricing"
+      "children": [
+        {
+          "title": "定价介绍",
+          "path": "price/pricing"
+        },
+        {
+          "title": "计费说明",
+          "path": "price/charging"
+        },
+        {
+          "title": "价格计算",
+          "path": "price/calculator"
+        }
+      ]
     },
     {
       "title": "快速入门",
       "children": [
         {
-          "title": "简介",
+          "title": "入门简介",
           "path": "quick_start/introduction"
-        },
-        {
-          "title": "创建 EMQ X Cloud 账号",
-          "path": "quick_start/create_account"
         },
         {
           "title": "创建免费试用部署",
           "path": "quick_start/create_free_trial"
+        },
+        {
+          "title": "创建计费部署",
+          "path": "deployments/create_deployment"
+        },
+        {
+          "title": "使用MQTTX连接到部署",
+          "path": "connect_to_deployments/mqttx"
         }
       ]
     },
     {
-      "title": "部署",
+      "title": "功能概述",
       "children": [
         {
-          "title": "简介",
-          "path": "deployments/introduction"
+          "title": "项目中心",
+          "path": "feature/project_center"
         },
         {
-          "title": "价格计算",
-          "path": "deployments/calculator"
-        },
-        {
-          "title": "项目管理",
+          "title": "项目列表",
           "path": "deployments/project"
         },
         {
-          "title": "创建一个新的部署",
-          "path": "deployments/create_deployment"
+          "title": "角色权限",
+          "path": "feature/role"
+        },
+        {
+          "title": "子用户管理",
+          "path": "feature/user"
+        },
+        {
+          "title": "财务管理",
+          "path": "billing/introduction"
+        },
+        {
+          "title": "账单概览",
+          "path": "billing/overview"
+        },
+        {
+          "title": "代金券",
+          "path": "billing/credits"
+        },
+        {
+          "title": "发票",
+          "path": "billing/invoices"
+        },
+        {
+          "title": "工单",
+          "path": "feature/tickets"
+        }
+      ]
+    },
+    {
+      "title": "部署和连接",
+      "children": [
+        {
+          "title": "部署简介",
+          "path": "deployments/introduction"
         },
         {
           "title": "部署概览",
           "path": "deployments/view_deployment"
         },
         {
-          "title": "认证鉴权",
-          "path": "deployments/auth_and_acl"
+          "title": "TLS/SSL 设置",
+          "path": "deployments/tls_ssl"
         },
         {
-          "title": "规则引擎",
-          "path": "deployments/rule_engine"
+          "title": "VPC 对等连接设置",
+          "path": "deployments/vpc_peering"
+        },
+        {
+          "title": "认证",
+          "path": "deployments/auth"
+        },
+        {
+          "title": "访问控制",
+          "path": "deployments/acl"
         },
         {
           "title": "监控",
@@ -73,37 +144,8 @@
           "path": "deployments/alerts"
         },
         {
-          "title": "安全功能和设置",
-          "children": [
-            {
-              "title": "绑定域名",
-              "path": "deployments/bind_domain"
-            },
-            {
-              "title": "TLS/SSL 设置",
-              "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC 对等连接设置",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "NAT 网关设置",
-              "path": "deployments/nat"
-            }
-          ]
-        },
-        {
-          "title": "伸缩部署规格",
-          "path": "deployments/upgrade_deployment"
-        },
-        {
-          "title": "停止部署",
-          "path": "deployments/stop_deployment"
-        },
-        {
-          "title": "删除部署",
-          "path": "deployments/delete_deployment"
+          "title": "停止/删除部署",
+          "path": "deployments/stop_delete_deployment"
         }
       ]
     },
@@ -141,22 +183,6 @@
         {
           "title": "C# SDK 连接",
           "path": "connect_to_deployments/c_sharp_sdk"
-        },
-        {
-          "title": "PHP SDK 连接",
-          "path": "connect_to_deployments/php_sdk"
-        },
-        {
-          "title": "Ruby SDK 连接",
-          "path": "connect_to_deployments/ruby_sdk"
-        },
-        {
-          "title": "Scala SDK 连接",
-          "path": "connect_to_deployments/scala_sdk"
-        },
-        {
-          "title": "Perl SDK 连接",
-          "path": "connect_to_deployments/perl_sdk"
         },
         {
           "title": "使用 WebSocket 连接到部署",
@@ -266,58 +292,6 @@
       ]
     },
     {
-      "title": "项目中心",
-      "path": "deployments/project_center"
-
-    },
-    {
-      "title": "用户管理",
-      "children": [
-        {
-          "title": "简介",
-          "path": "users/intro"
-        },
-        {
-          "title": "子用户管理",
-          "path": "users/user"
-        }
-      ]
-    },
-    {
-      "title": "财务管理",
-      "children": [
-        {
-          "title": "简介",
-          "path": "billing/introduction"
-        },
-        {
-          "title": "账单概览",
-          "path": "billing/overview"
-        },
-        {
-          "title": "代金券",
-          "path": "billing/credits"
-        },
-        {
-          "title": "发票",
-          "path": "billing/invoices"
-        }
-      ]
-    },
-    {
-      "title": "最佳实践",
-      "children": [
-        {
-          "title": "规则引擎 + Redis 实时获取主题下订阅的客户端",
-          "path": "best_practices/save_topic_clients_to_redis"
-        }
-      ]
-    },
-    {
-      "title": "开发指南",
-      "path": "dev_guide"
-    },
-    {
       "title": "API",
       "children": [
         {
@@ -355,16 +329,21 @@
       ]
     },
     {
+      "title": "最佳实践",
+      "children": [
+        {
+          "title": "规则引擎 + Redis 实时获取主题下订阅的客户端",
+          "path": "best_practices/save_topic_clients_to_redis"
+        }
+      ]
+    },
+    {
+      "title": "产品动态",
+      "path": "release_notes"
+    },
+    {
       "title": "FAQ",
       "path": "faq"
-    },
-    {
-      "title": "联系我们",
-      "path": "contact"
-    },
-    {
-      "title": "发布公告",
-      "path": "release_notes"
     }
   ],
   "en": [
