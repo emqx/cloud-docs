@@ -1,96 +1,228 @@
-# Connect to deployments with  Go SDK 
+# Connect to the deployment using Go SDK
 
-In this tutorial, you will learn to use Go **paho-mqtt** client to connect to EMQ X Cloud deployment.
+This article guides you to use the `paho.mqtt.golang` Library in go project to realize the functions of connecting, subscribing, sending, and receiving messages between a MQTT client and a MQTT broker.
 
-## Precondition
 
-* Already [Create Deployment](../deployments/create_deployment.md) in EMQ X Cloud , and the deployment status is **running**
+[Go](https://go.dev/) it's Google Developed a programming language with strong static type, compilation type, parallel style, and garbage collection function. `paho.mqtt.golang` is an mqtt library, which provides a simple API for connecting to the mqtt server and sending and receiving messages in the go project.
 
-* It is recommended to use Go 13+ version
+## Preconditions
 
-* **Paho-mqtt** MQTT client has been installed. If not installed, please run the following command to complete the installation
+You can view the connection-related information under the deployment overview after deployment has been created.
 
-	```
-	go get github.com/eclipse/paho.mqtt.golang 
-	go get github.com/gorilla/websocket
-	go get golang.org/x/net/proxy
-	```
+The project uses go version 1.15.13 for development and testing. The following commands can be used to confirm the go version.
 
-* For basic EMQ X Cloud deployment, it provides TLS/SSL connection authentication by default, and you also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) for TLS/SSL connection.
+``` bash
+➜ ~ go version
+go version go1.15.13 darwin/amd64
+```
 
-## Example Code
+## Install mqtt client
 
-Get [Sample Source Code](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go)
+### Project initialization
 
-- Connect to deployment and publish messages with MQTT protocol
-	```
-	go run main.go --protocol=mqtt --port=1883 --action=pub
-	```
+1. Create a new folder `go_client`, enter the folder and run the following command
 
-- Connect to the deployment and subscribe messages with MQTT protocol
+    ``` bash
+    ➜ ~ go mod init go-client
+    go: creating new go.mod: module go-mqtt
+    ```
 
-	```
-	go run main.go --protocol=mqtt --port=1883 --action=sub
-	```
+2. Use the `go get <Library>` command to install `paho.mqtt.golang`
 
-- Connect to deployment, publish and subscribe messages with MQTT protocol
+    ``` bash
+    ➜ ~ go get github.com/eclipse/paho.mqtt.golang
+    go: downloading github.com/eclipse/paho.mqtt.golang v1.3.5
+    go: github.com/eclipse/paho.mqtt.golang upgrade => v1.3.5
+    ```
 
-	```
-	go run main.go --protocol=mqtt --port=1883 --action=pubsub
-	```
+3. Create the `main.go` file and import the `paho.mqtt.golang` client
 
-- Connect to the deployment and publish messages with Websocket protocol
+    ``` go
+    package main
+    
+    import (
+        mqtt "github.com/eclipse/paho.mqtt.golang"
+    )
+    
+    func main(){
+    }
+    ```
 
-	```
-	go run main.go --protocol=ws --port=8083 --action=pub
-	```
+## Connect
 
-- Connect to the deployment and subscribe to messages with Websocket protocol
+Please pay attention that the port is not 1883 or 8883 if you choose the Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md) in advance.
 
-	```
-	go run main.go --protocol=ws --port=8083 --action=sub
-	```
+### Connection settings
 
-- Connect to deployment, publish and subscribe to messages with Websocket protocol
+Set the mqtt broker connection address, port, topic, username, and password.
 
-	```
-	go run main.go --protocol=ws --port=8083 --action=pubsub
-	```
-	
-- Connect to deployment and publish messages with MQTT over TLS/SSL protocol
+``` go
+const broker = "broker.emqx.io" // MQTT Broker address
+const port = 1883
+const topic = "t/1"
+const username = "emqx"
+const password = "******"
+```
 
-	```
-	go run main.go --protocol=mqtts --port=8883 --tls=true --action=pub
-	```
+### Writing mqtt connection functions
 
-- Connect to deployment and subscribe to messages with MQTT over TLS/SSL protocol
+We write a function to create and return an mqtt client.
 
-	```
-	go run main.go --protocol=mqtts --port=8883 --tls=true --action=sub
-	```
+``` go
+func createMqttClient() mqtt.Client {
+    connectAddress := fmt.Sprintf("tcp://%s:%d", broker, port)
+    client_id := fmt.Sprintf("go-client-%d", rand.Int())
 
-- Connect to deployment, publish and subscribe to messages with MQTT over TLS/SSL protocol
+    fmt.Println("connect address: ", connectAddress)
+    opts := mqtt.NewClientOptions()
+    opts.AddBroker(connectAddress)
+    opts.SetUsername(username)
+    opts.SetPassword(password)
+    opts.SetClientID(client_id)
+    opts.SetKeepAlive(60)
+    client := mqtt.NewClient(opts)
+    token := client.Connect()
+    // if connection failed, exit
+    if token.WaitTimeout(3*time.Second) && token.Error() != nil {
+        log.Fatal(token.Error())
+    }
+    return client
+}
+```
 
-	```
-	go run main.go --protocol=mqtts --port=8883 --tls=true --action=pubsub
-	```
+## Publish and subscribe
 
-- Connect to deployment and publish messages with Websocket over TLS/SSL protocol
+### Release news
 
-	```
-	go run main.go --protocol=wss --port=8084 --tls=true --action=pub
-	```
+Defines a publish function for publishing messages.
 
-- Connect to deployment and subscribe to messages with Websocket over TLS/SSL protocol
+In this function, we define an unconditional loop to publish a message every 1s. Count the number of published messages through `msgCount`.
+``` go
+func publish(client mqtt.Client) {
+    qos := 0
+    msgCount := 0
+    for {
+        payload := fmt.Sprintf("message: %d!", msgCount)
+        if token := client.Publish(topic, byte(qos), false, payload); token.Wait() && token.Error() != nil {
+            fmt.Printf("publish failed, topic: %s, payload: %s\n", topic, payload)
+        } else {
+            fmt.Printf("publish success, topic: %s, payload: %s\n", topic, payload)
+        }
+        msgCount++
+        time.Sleep(time.Second * 1)
+    }
+}
+```
 
-	```
-	go run main.go --protocol=wss --port=8084 --tls=true --action=sub
-	```
-	
-- Connect to deployment,publish and subscribe to messages with Websocket over TLS/SSL protocol
+### Subscription message
 
-	```
-	go run main.go --protocol=wss --port=8084 --tls=true --action=pubsub
-	```
+Define subscription function to subscribe to messages. This function prints the topic and payload of the message on the console.
 
-- [How to use MQTT in Golang](https://www.emqx.com/en/blog/how-to-use-mqtt-in-golang)
+``` go
+func subscribe(client mqtt.Client) {
+    qos := 0
+    client.Subscribe(topic, byte(qos), func(client mqtt.Client, msg mqtt.Message) {
+        fmt.Printf("Received `%s` from `%s` topic", msg.Payload(), msg.Topic())
+    })
+}
+```
+
+## Complete code
+
+``` go
+package main
+
+import (
+        "fmt"
+        "log"
+        "math/rand"
+        "time"
+
+        mqtt "github.com/eclipse/paho.mqtt.golang"
+)
+
+const broker = ""
+const port = 1883
+const topic = "t/1"
+const username = ""
+const password = ""
+
+func main() {
+        client := createMqttClient()
+        go subscribe(client)        // we use goroutine to run the subscription function
+        time.Sleep(time.Second * 1) // pause 1s to wait for the subscription function to be ready
+        publish(client)
+}
+
+func createMqttClient() mqtt.Client {
+        connectAddress := fmt.Sprintf("tcp://%s:%d", broker, port)
+        client_id := fmt.Sprintf("go-client-%d", rand.Int())
+
+        fmt.Println("connect address: ", connectAddress)
+        opts := mqtt.NewClientOptions()
+        opts.AddBroker(connectAddress)
+        opts.SetUsername(username)
+        opts.SetPassword(password)
+        opts.SetClientID(client_id)
+        opts.SetKeepAlive(60)
+        client := mqtt.NewClient(opts)
+        token := client.Connect()
+        if token.WaitTimeout(3*time.Second) && token.Error() != nil {
+                log.Fatal(token.Error())
+        }
+        return client
+}
+
+func publish(client mqtt.Client) {
+        qos := 0
+        msgCount := 0
+        for {
+                payload := fmt.Sprintf("message: %d!", msgCount)
+                if token := client.Publish(topic, byte(qos), false, payload); token.Wait() && token.Error() != nil {
+                        fmt.Printf("publish failed, topic: %s, payload: %s\n", topic, payload)
+                } else {
+                        fmt.Printf("publish success, topic: %s, payload: %s\n", topic, payload)
+                }
+                msgCount++
+                time.Sleep(time.Second * 1)
+        }
+}
+
+func subscribe(client mqtt.Client) {
+        qos := 0
+        client.Subscribe(topic, byte(qos), func(client mqtt.Client, msg mqtt.Message) {
+                fmt.Printf("Received `%s` from `%s` topic\n", msg.Payload(), msg.Topic())
+        })
+}
+```
+
+## Test verification
+
+Execution procedure
+
+``` bash
+➜ ~ go run main.go
+connect address:  tcp://***.***.***.***:1883
+publish success, topic: t/1, payload: message: 0!
+Received `message: 0!` from `t/1` topic
+publish success, topic: t/1, payload: message: 1!
+Received `message: 1!` from `t/1` topic
+publish success, topic: t/1, payload: message: 2!
+Received `message: 2!` from `t/1` topic
+publish success, topic: t/1, payload: message: 3!
+Received `message: 3!` from `t/1` topic
+publish success, topic: t/1, payload: message: 4!
+Received `message: 4!` from `t/1` topic
+publish success, topic: t/1, payload: message: 5!
+Received `message: 5!` from `t/1` topic
+publish success, topic: t/1, payload: message: 6!
+```
+
+![go pubsub](./_assets/go_pubsub.png)
+
+## Next step
+
+The above shows you how to use the 'paho.mqtt.golang' client to connect to EMQ X Cloud, which can be found in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) Download to the sample source code
+
+
+More demo examples for other languages are available in [GitHub](https://github.com/emqx/MQTT-Client-Examples).
