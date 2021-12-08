@@ -42,39 +42,6 @@ EMQ X Cloud comes in three plans, each with multiple specifications, and we supp
 2. Professional: for building mission-critical IoT applications, this plan provides advanced features such as data persistence, message distribution, VPC peering connection.
 3. Unlimited: Suitable for building enterprise-class IoT platform, providing support for multi-location and exclusive hardware deployment, and adding features such as device management, device shadowing, and thing model.
 
-## Product Advantages
-
-### Protocol support is complete
-
-Supports MQTT v3.1, v3.1.1, and v5.0 protocol versions, the world's first public cloud service to support MQTT 5.0, MQTT WebSocket services, and full support for QoS0, QoS1, and QoS2 level MQTT messages.
-
-### Fewer usage restrictions
-
-Most public cloud IoT platforms have multiple usage restrictions, including the number of MQTT topics, message size, message rate, and access/communication modes. EMQ X Cloud has fewer usage restrictions, allowing you to integrate and use it without hindrance.
-
-### Significant cost advantages
-
-Charge per cluster instance and message traffic, not message count, and unlimited API and rule engine usage, so costs remain clear and manageable as your business scales.
-
-### Fully managed operations and maintenance
-
-Create a highly available MQTT clusters in minutes and start accessing devices immediately, followed by up to 7*24 technical support and operations by our global service support team and EMQ experts for the entire life cycle.
-
-### High availability and data security
-
-EMQ X Cloud Professional and Unlimited plans use a highly redundant cluster architecture to ensure high availability of services and guarantee your data security and business stability with a unique isolated environment. Each deployment cluster has its public IP, dedicated VPC network, independent EMQ X servers, and database servers, which is more secure and reliable.
-
-### Multiple protocol access and private customization extensions
-
-Supports multiple communication protocols including MQTT, MQTT-SN, CoAP, LwM2M, and private TCP protocols, covering various industry applications. It can customize private functions according to your special usage scenarios to fully meet business needs.
-
-### Capacity estimation and scaling
-
-Capacity is automatically estimated by the number of connections and message throughput, and the scaling plan is made through close monitoring, and the cluster size can be smoothly adjusted with the business scale.
-
-### Flexible data flow solution
-
-EMQ X Cloud Professional and Unlimited plans support real-time pre-processing of device event and message data, and storage to more than ten kinds of databases and messaging systems such as MySQL, Kafka, InfluxDB on the cloud.
 
 ## Product Capabilities
 
@@ -174,30 +141,3 @@ The rule engine not only provides a clear and flexible "configuration-based" bus
   - Consume messages from Kafka to EMQ X
   - Consume messages from Pulsar to EMQ X
 
-## Use limitations
-
-EMQ X Cloud has fewer usage restrictions than the public cloud IoT Hub platform. The limitations in the table below depend on the number of connections purchased and the hardware performance, and the corresponding parameters have been rigorously tested for performance by EMQ officials.
-
-> The performance of the relevant items depends on the deployment specifications, and the specific data is subject to actual usage scenarios.
-
-### Connected Communications
-
-| **Limitation Description**         | **EMQ X**                                             | **Public Cloud IoT Hub**                     |
-| -------------------- | ----------------------------------------------------- | -------------------------------------- |
-| The maximum number of simultaneous online long connections  | Depends on specifications, choose from 1000-10M+, more than 200K please send tickets for application| 10K-500K                                 |
-| Number of connections established per second     | 10K                                                   | 200-500                                |
-| Number of topics subscribed to by a single client   | Unlimited                                                  | 10-100                                 |
-| Single-client subscription requests per second  | Unlimited                                                  | 10-10K                                  |
-| Single-client upstream message speed | Unlimited                                                  | QoS0: 30 messages/sec；QoS1: 10 messages/sec；QoS2: Not supported |
-| Single-client message downstream     | Unlimited                                                  | 50-100 messages/sec                          |
-| Single client throughput bandwidth per second | Unlimited                                                  | 512-1024KB                             |
-| Single message length         | Default 1024KB 1-256MB. Adjustable on request                      | 256KB                                  |
-| Maximum offline message storage length| Unlimited                                              | 1 week
-
-### Topic Limitation
-
-| **Limitation Description**              | **EMQ X**          | **Public Cloud IoT Hub**                              |
-| ------------------------- | ------------------ | ----------------------------------------------- |
-| Topic number               | Unlimited              | 50 single product                                     |
-| Permissions                      | Customize | Devices can only subscribe to a limited number of their own Topics for message distribution |
-| Subscribe/unsubscribe response time | Immediate             | 5-10 sec                                          |

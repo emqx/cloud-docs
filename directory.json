@@ -344,31 +344,102 @@
   ],
   "en": [
     {
-      "title": "Product Introduction",
+      "title": "Product Overview",
       "path": "./"
     },
     {
-      "title": "Product Pricing",
-      "path": "pricing"
+      "title": "Product Introduction",
+      "children": [
+        {
+          "title": "Overview",
+          "path": "./"
+        },
+        {
+          "title": "Advantages",
+          "path": "intro/advance"
+        },
+        {
+          "title": "limitations",
+          "path": "intro/restriction"
+        }
+      ]
+    },
+    {
+      "title": "Pricing",
+      "children": [
+        {
+          "title": "Product Plans",
+          "path": "price/pricing"
+        },
+        {
+          "title": "Billing",
+          "path": "price/billing"
+        },
+        {
+          "title": "Price Estimation",
+          "path": "price/calculator"
+        }
+      ]
     },
     {
       "title": "Quick Start",
       "children": [
         {
-          "title": "Introduction",
+          "title": "Overview",
           "path": "quick_start/introduction"
-        },
-        {
-          "title": "Create an EMQ X Cloud account",
-          "path": "quick_start/create_account"
         },
         {
           "title": "Create a free trial deployment",
           "path": "quick_start/create_free_trial"
         },
         {
-          "title": "Connect to your deployment",
-          "path": "quick_start/connect_to_deployments"
+          "title": "Create a billing deployment",
+          "path": "deployments/create_deployment"
+        },
+        {
+          "title": "Use MQTTX to connect to deployments",
+          "path": "connect_to_deployments/mqttx"
+        }
+      ]
+    },
+    {
+      "title": "Features",
+      "children": [
+        {
+          "title": "Project Center",
+          "path": "feature/project_center"
+        },
+        {
+          "title": "Project List",
+          "path": "deployments/project"
+        },
+        {
+          "title": "Role & Authentication",
+          "path": "feature/role"
+        },
+        {
+          "title": "Sub-user Management",
+          "path": "feature/user"
+        },
+        {
+          "title": "Billing Brief",
+          "path": "billing/introduction"
+        },
+        {
+          "title": "Billing Overview",
+          "path": "billing/overview"
+        },
+        {
+          "title": "Credits",
+          "path": "billing/credits"
+        },
+        {
+          "title": "Invoice",
+          "path": "billing/invoices"
+        },
+        {
+          "title": "Tickets",
+          "path": "feature/tickets"
         }
       ]
     },
@@ -380,20 +451,16 @@
           "path": "deployments/introduction"
         },
         {
-          "title": "Pricing Estimation",
-          "path": "deployments/calculator"
-        },
-        {
-          "title": "Project Management",
-          "path": "deployments/project"
-        },
-        {
-          "title": "Create a new deployment",
-          "path": "deployments/create_deployment"
-        },
-        {
           "title": "Deployment Overview",
           "path": "deployments/view_deployment"
+        },
+        {
+          "title": "TLS/SSL",
+          "path": "deployments/tls_ssl"
+        },
+        {
+          "title": "VPC Peering Connection",
+          "path": "deployments/vpc_peering"
         },
         {
           "title": "Authentication & ACL",
@@ -418,23 +485,6 @@
         {
           "title": "Alerts",
           "path": "deployments/alerts"
-        },
-        {
-          "title": "Security features and Settings",
-          "children": [
-            {
-              "title": "TLS/SSL",
-              "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC Peering Connection",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "NAT Gateway",
-              "path": "deployments/nat"
-            }
-          ]
         },
         {
           "title": "Scaling",
@@ -478,28 +528,8 @@
           "path": "connect_to_deployments/c_sdk"
         },
         {
-          "title": "C++ SDK connection",
-          "path": "connect_to_deployments/cpp_sdk"
-        },
-        {
           "title": "C# SDK connection",
           "path": "connect_to_deployments/c_sharp_sdk"
-        },
-        {
-          "title": "PHP SDK connection",
-          "path": "connect_to_deployments/php_sdk"
-        },
-        {
-          "title": "Ruby SDK connection",
-          "path": "connect_to_deployments/ruby_sdk"
-        },
-        {
-          "title": "Scala SDK connection",
-          "path": "connect_to_deployments/scala_sdk"
-        },
-        {
-          "title": "Perl SDK connection",
-          "path": "connect_to_deployments/perl_sdk"
         },
         {
           "title": "MQTT X connection",
@@ -609,44 +639,6 @@
       ]
     },
     {
-      "title": "Project Center",
-      "path": "deployments/project_center"
-    },
-    {
-      "title": "User Management",
-      "children": [
-        {
-          "title": "Introduction",
-          "path": "users/intro"
-        },
-        {
-          "title": "Sub-user Management",
-          "path": "users/user"
-        }
-      ]
-    },
-    {
-      "title": "Billing",
-      "children": [
-        {
-          "title": "Introduction",
-          "path": "billing/introduction"
-        },
-        {
-          "title": "Overview",
-          "path": "billing/overview"
-        },
-        {
-          "title": "Credits",
-          "path": "billing/credits"
-        },
-        {
-          "title": "Invoice",
-          "path": "billing/invoices"
-        }
-      ]
-    },
-    {
       "title": "Developer Guides",
       "path": "dev_guide"
     },
@@ -688,16 +680,12 @@
       ]
     },
     {
-      "title": "FAQ",
-      "path": "faq"
-    },
-    {
-      "title": "Contact us",
-      "path": "contact"
-    },
-    {
       "title": "Release note",
       "path": "release_notes"
+    },
+    {
+      "title": "FAQ",
+      "path": "faq"
     }
   ]
 }

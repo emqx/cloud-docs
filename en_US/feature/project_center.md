@@ -53,7 +53,7 @@ Click `Add` to bind a new account, search and add a subaccount, click OK to retu
 
 ![default_project](./_assets/pc_opts_3.jpg)
 
-### Edit project 
+### Edit project
 You can edit and modify the name and notes of the project.
 
 ![default_project](./_assets/pc_opts_4.png)

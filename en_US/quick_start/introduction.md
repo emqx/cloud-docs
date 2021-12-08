@@ -13,29 +13,69 @@ to EMQ X Cloud deployment. Before starting, let's review some core concepts and 
   <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/nOmIomoFn28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
-You can follow these steps shown below to quickly complete the EMQ X Cloud QuickStart.
 
-1. [Login/Register](./create_account.md) EMQ X Cloud account
-
-> EMQ X Cloud offers one 30-day free trial of basic plan, and a 14-day free trial of the professional plan for each user (Professional plan free trial is available after you bind the credit card).
-    ![add_users](./_assets/log_in.png)
+If you have not yet created an account for EMQ X Cloud, the following steps will guide you through the creation of your account. You can also skip this step to view the console quick guide.
 
 
-2. Visit EMQ X Cloud [console](https://cloud-intl.emqx.com/console/) and create a free trial deployment
+### [Register an account](https://www.emqx.com/en/signup?continue=https://www.emqx.com/en/cloud)
+
+Start at the EMQ X Cloud sign up page
+
+1. Enter your personal information:
+   
+   * Email
+   * Password
+   * Country / Region
+
+![login](./_assets/sign_up.png)
+
+2. Click `Sign Up` to register to create your account.
+   EMQ X Cloud will automatically send a confirmation email to the email address you provided.
+3. Click on the link in the confirmation email to verify your new account. The link will verify your account
+   and redirect you to the login page.
+4. Now you are ready to log in to EMQ X Cloud.
+
+### [Login to the account](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud)
+
+If you've already registered an account, you could log in by the following steps:
+
+1. Go to EMQ X Cloud login page.
+2. Enter your email and password.
+3. Click `Sign in` to direct to the EMQ X Cloud page.
+
+![login](./_assets/log_in.png)
+
+
+
+### [Forget Password](https://www.emqx.com/en/forgot-password?continue=https://www.emqx.com/en/cloud)
+
+If you forget your password, you could click on `Forget your password` and enter your email address, we will send a verification email to your mailbox.
+
+You can click Get back Password in the verification email to create a new password, 
+then you will be redirected to the login page. Enter the new password, and select `Sign in`.
+![login](./_assets/forget_password.png)
+
+
+## Console Guide
+
+You can follow these steps shown below to quickly complete the EMQ X Cloud Console Guide.
+
+
+1. Visit EMQ X Cloud [console](https://cloud-intl.emqx.com/console/) and create a free trial deployment
    
    ![console](./_assets/free_trial.png)
 
 
-3. Visit Authentication & ACL page to add authentication information
+2. Visit Authentication & ACL page to add authentication information
 
    ![authentication](./_assets/auth.png)
 
 
-4. Click the menu on the left to get the deployment connection information and ports
+3. Click the menu on the left to get the deployment connection information and ports
 
    ![authentication](./_assets/detail.png)
     
 
-5. Use the MQTT client or SDK that you are familiar with to [connect to the deployment](../connect_to_deployments/introduction.md) 
+4. Use the MQTT client or SDK that you are familiar with to [connect to the deployment](../connect_to_deployments/introduction.md) 
    ![authentication](./_assets/mqttx_connect.png)
    
