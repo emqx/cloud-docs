@@ -6,10 +6,8 @@
 
 ## 前提条件
 
-1. 已经创建了部署，在[部署概览](../deployments/view_deployment.md)下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
-![概览](./_assets/prerequisit.png)
-
-2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+> 1. 已经创建了部署，在[部署概览](../deployments/view_deployment.md)下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 
 本项目使用 Go 1.15.13 版本进行开发测试，可用如下命令确认 Go 版本。
@@ -51,7 +49,7 @@ go version go1.15.13 darwin/amd64
     ```
 
 ## 连接
-请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在[认证鉴权](../deployments/auth_and_acl.md) 中添加认证信息。
+> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在[认证鉴权](../deployments/auth_and_acl.md) 中添加认证信息。
 
 ### 连接设置
 
