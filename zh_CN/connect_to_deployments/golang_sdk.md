@@ -6,7 +6,11 @@
 
 ## 前提条件
 
-已经创建了部署，在部署概览下可以查看到连接相关的信息，同时你可以使用 `在线调试` 先测试连接到 MQTT 服务器。
+1. 已经创建了部署，在[部署概览](../deployments/view_deployment.md)下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+![概览](./_assets/prerequisit.png)
+
+2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+
 
 本项目使用 Go 1.15.13 版本进行开发测试，可用如下命令确认 Go 版本。
 
@@ -218,7 +222,7 @@ publish success, topic: t/1, payload: message: 6!
 
 ![go pubsub](./_assets/go_pubsub.png)
 
-## 下一步
+## 更多内容
 
 以上为您演示了如何使用 `paho.mqtt.golang` 客戶端连接到 EMQ X Cloud, 可以在[这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go)下载到示例的源码
 

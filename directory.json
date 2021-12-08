@@ -177,10 +177,6 @@
           "path": "connect_to_deployments/c_sdk"
         },
         {
-          "title": "C++ SDK 连接",
-          "path": "connect_to_deployments/cpp_sdk"
-        },
-        {
           "title": "C# SDK 连接",
           "path": "connect_to_deployments/c_sharp_sdk"
         },
