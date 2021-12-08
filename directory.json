@@ -190,11 +190,11 @@
         },
         {
           "title": "在 Electron 项目中连接到部署",
-          "path": "https://www.emqx.com/zh/blog/how-to-use-mqtt-in-electron"
+          "path": "connect_to_deployments/electron_sdk"
         },
         {
           "title": "在 Vue 项目中连接到部署",
-          "path": "https://www.emqx.com/zh/blog/how-to-use-mqtt-in-vue"
+          "path": "connect_to_deployments/vue_sdk"
         },
         {
           "title": "使用 ESP8266 连接到部署",
