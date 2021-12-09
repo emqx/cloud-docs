@@ -13,7 +13,7 @@
 ![default_project](./_assets/projectcenter_new_step1.png)
 
 
-2. 搜索并选择子账号，搜索时需要输入完整的账号名称，并为子账号设置角色，如果你还没有创建子账号，可以在用户管理中创建子账号。[了解更多角色相关的信息](../users/user.md)。这里我们为子账号 `subuser1@emqx.io`赋予项目管理员的角色。在子账号输入框里，可以添加多个子账号。
+2. 搜索并选择子账号，搜索时需要输入完整的账号名称，并为子账号设置角色，如果你还没有创建子账号，可以在用户管理中创建子账号。[了解更多角色相关的信息](./user.md)。这里我们为子账号 `subuser1@emqx.io`赋予项目管理员的角色。在子账号输入框里，可以添加多个子账号。
 > 如果不需要设置子账号可以点击下一步跳过设置。
 
 ![default_project](./_assets/projectcenter_new_step2.png)
@@ -43,7 +43,7 @@
 
 **项目使用者**：拥有查看项目的权限和查看编辑部署的权限
 
-[点击查看角色的权限区分](../users/intro.md)
+[点击查看角色的权限区分](./role.md)
 ![default_project](./_assets/projectcenter_opts_1.png)
 
 

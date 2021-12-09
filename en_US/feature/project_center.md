@@ -13,7 +13,7 @@ Click the `New Project` button in the upper right corner to start the new projec
 ![default_project](./_assets/pc_step1.png)
 
 
-2. Search and select a subaccount. When searching, you need to enter the full account name and set the role for the subaccount. If you haven't created a subaccount yet, you can create a sub-account in the user management. [Learn more about role related information](../users/user.md). Here we give the subaccount `subuser1@emqx.io` the role of project administrator. You can add multiple subaccounts in the subaccount input box.
+2. Search and select a subaccount. When searching, you need to enter the full account name and set the role for the subaccount. If you haven't created a subaccount yet, you can create a sub-account in the user management. [Learn more about role related information](./user.md). Here we give the subaccount `subuser1@emqx.io` the role of project administrator. You can add multiple subaccounts in the subaccount input box.
 > If you do not need to set up a subaccount you can click Next to skip the settings.
 
 ![default_project](./_assets/pc_step2.png)
@@ -43,7 +43,7 @@ In the project authorization list you can see the currently authorized accounts,
 
 **Project User**：Have permission to view the project and permission to view and edit the deployment
 
-[Click to see the permission distinction of roles](../users/intro.md)
+[Click to see the permission distinction of roles](./role.md)
 ![default_project](./_assets/pc_opts_1.jpg)
 
 

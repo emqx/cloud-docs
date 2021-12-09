@@ -77,7 +77,7 @@ EMQ X Cloud **专业版部署** 提供自定义 单向/双向 TLS/SSL 配置，�
 
 ## 测试连接
 
-测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_and_acl.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
+测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
 - 新建连接，输入 Name，Client ID 随机生成即可
 - 选择 Host，填入部署的连接地址和端口
   - 若选择 SSL 连接，选择 `mqtts://` 和 `8883` 端口

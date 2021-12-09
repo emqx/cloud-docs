@@ -99,7 +99,7 @@ Before you start, you will need to complete the following:
 
 1. Use [MQTT X](https://mqttx.app/) to simulate publishing temperature and humidity data
 
-   You need to replace `broker.emqx.io` with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth_and_acl.md) in the EMQ X Dashboard.
+   You need to replace `broker.emqx.io` with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQ X Dashboard.
    
    ![MQTTX](./_assets/mqttx_publish_redis.png)
 

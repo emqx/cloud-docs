@@ -19,13 +19,13 @@ EMQ X (Erlang/Enterprise/Elastic MQTT Broker) is an open source IoT MQTT message
 
 Yes.
 
-If you have special usage requirements, or other usage conditions, you can submit a [ticket](contact.md) or send an email (cloud@emqx.io) to us, and we will reply within 24 hours.
+If you have special usage requirements, or other usage conditions, you can submit a [ticket](feature/tickets.md) or send an email (cloud@emqx.io) to us, and we will reply within 24 hours.
 
 ### Which protocol connections are supported?
 
 EMQ X Cloud deployment only supports MQTT over TLS/SSL, Websockets over TLS/SSL protocol connections.
 
-If you need other protocol support, you can submit a [ticket](contact.md) or send an email(cloud@emqx.io) to us.
+If you need other protocol support, you can submit a [ticket](feature/tickets.md) or send an email(cloud@emqx.io) to us.
 
 ### How do I connect to the deployment?
 

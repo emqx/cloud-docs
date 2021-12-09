@@ -58,7 +58,7 @@ Supports massive device connections to the cloud, providing stable and reliable 
 - Perfectly fits EMQ [edge computing](https://github.com/lf-edge/ekuiper), [edge industrial IoT](https://www.emqx.com/en/products/neuron) product ecology, supports dozens of industrial protocols to access the cloud
 
 :::tip
-Multi-protocol and private protocol support, please contact us by [ticket](./contact.md) for opening.
+Multi-protocol and private protocol support, please contact us by [ticket](feature/tickets.md) for opening.
 :::
 
 ### Device Management

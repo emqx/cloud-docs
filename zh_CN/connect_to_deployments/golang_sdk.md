@@ -49,7 +49,7 @@ go version go1.15.13 darwin/amd64
     ```
 
 ## 连接
-> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在[认证鉴权](../deployments/auth_and_acl.md) 中添加认证信息。
+> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在[认证鉴权](../deployments/auth.md) 中添加认证信息。
 
 ### 连接设置
 

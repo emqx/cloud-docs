@@ -50,7 +50,7 @@ go version go1.15.13 darwin/amd64
 
 ## Connect
 
-Please pay attention that the port is not 1883 or 8883 if you choose the Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md) in advance.
+Please pay attention that the port is not 1883 or 8883 if you choose the Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth.md) in advance.
 
 ### Connection settings
 

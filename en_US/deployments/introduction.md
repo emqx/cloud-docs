@@ -5,7 +5,7 @@ The deployment is an EMQ X cluster managed by the EMQ X Cloud
 
 
 
-## [Price Estimation](./calculator.md)
+## [Price Estimation](price/calculator.md)
 View EMQ X Cloud supported cloud service providers, regions, and different size deployments **hourly** pricing.
 
 
@@ -25,7 +25,7 @@ View and manage all the deployments that you create.
 View the deployment connection address, port and status.
 
 
-### [Authentication & ACL](./auth_and_acl.md)
+### [Authentication & ACL](./auth.md)
 
 Add and import MQTT authentication and ACL information.
 
@@ -63,12 +63,12 @@ The professional plan allows you to customize both one-way and two-way TLS/SSL c
 Enables internal and external communication between deployments and your business machines by creating peer connections for the professional plan.
 
 
-### [NAT Gateway settings](./nat.md)
+### NAT Gateway settings
 
 Enable the deployment to access public network resources by creating NAT gateways for the professiional plan.
 
 
-## [Scaling deployment specifications](./upgrade_deployment.md)
+## Scaling deployment specifications
 Upgrade or reduce deployment specifications based on demand
 
 

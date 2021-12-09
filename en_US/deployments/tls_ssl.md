@@ -86,7 +86,7 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
 
 ## Test connections
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_and_acl.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
 - To create a new connection, enter the Name, Client ID is randomly generated
 - Select Host and fill in the deployed connection address and port
   - If you select an SSL connection, select ports `mqtts://` and `8883`

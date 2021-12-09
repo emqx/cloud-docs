@@ -50,7 +50,7 @@
    
    ![add_users](./_assets/create_free_trial.png)
 
-2. 前往部署认证和鉴权页面[添加认证信息](../deployments/auth_and_acl.md)
+2. 前往部署认证和鉴权页面[添加认证信息](../deployments/auth.md)
 
    ![add_users](./_assets/add_users.png)
 
