@@ -6,7 +6,7 @@
 
 [MQTT](https://www.emqx.com/zh/mqtt) 是一种基于发布/订阅模式的轻量级物联网消息传输协议，可以用极少的代码和带宽为联网设备提供实时可靠的消息服务，它广泛应用于物联网、移动互联网、智能硬件、车联网、电力能源等行业。
 
-### 前提条件
+## 前提条件
 
 >1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
 >2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
@@ -19,7 +19,7 @@ node --version
 v14.14.0
 ```
 
-### 安装依赖
+## 安装依赖
 
 [MQTT.js](https://github.com/mqttjs/MQTT.js) 是一个 MQTT 协议的客户端库，使用 JavaScript 编写，用于 Node.js 和 浏览器环境中。是 JavaScript 生态中目前使用最为广泛的 [MQTT 客户端库](https://www.emqx.com/zh/blog/introduction-to-the-commonly-used-mqtt-client-library)。
 
@@ -33,11 +33,11 @@ npm install mqtt --save
 
 完成后我们在当前目录下新建一个 index.js 文件作为项目的入口文件，在该文件中来实现 MQTT 连接测试的完整逻辑。
 
-### 连接
+## 连接
 
 >请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
 
-#### 连接设置
+### 连接设置
 
 本文将使用 EMQ X 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQ X 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 
@@ -53,7 +53,7 @@ npm install mqtt --save
 const mqtt = require('mqtt')
 ```
 
-#### 设置 MQTT Broker 的连接参数
+### 设置 MQTT Broker 的连接参数
 
 设置 MQTT Broker 连接地址，端口以及 topic，这里我们使用 JavaScript 中的生成随机数的函数来生成客户端 ID。
 
@@ -63,7 +63,7 @@ const port = '1883'
 const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
 ```
 
-#### 编写 MQTT 连接函数
+### 编写 MQTT 连接函数
 
 我们使用刚才设置的连接参数来进行连接，连接的 URL 通过上面定义的 host、port 端口来进行拼接。然后调用 mqtt 模块内置的 connect 函数，连接成功后返回一个 Client 实例。
 
@@ -80,7 +80,7 @@ const client = mqtt.connect(connectUrl, {
 })
 ```
 
-#### 订阅主题
+### 订阅主题
 
 使用返回的 Client 实例的 on 方法来监听连接成功状态，并在连接成功后的回调函数中订阅 topic。此时我们连接成功后调用 Client 实例的 subscribe 方法订阅 `/nodejs/mqtt` 主题。
 
@@ -104,13 +104,13 @@ client.on('message', (topic, payload) => {
 })
 ```
 
-#### 消息发布
+### 消息发布
 
 完成上述的订阅主题和消息监听后，我们再来编写一个发布消息的方法。
 
 > 注意：消息发布需要在 MQTT 连接成功以后，因此这里我们写到 Connect 成功的回调函数里
 
-```java
+```javascript
 client.on('connect', () => {
   client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
     if (error) {
@@ -160,7 +160,7 @@ client.on('message', (topic, payload) => {
 
 项目完整代码请见：[https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js)
 
-### 测试验证
+## 测试验证
 
 我们在 package.json 文件中的脚本字段中添加一行启动脚本。
 
@@ -188,6 +188,6 @@ npm start
 
 ![控制台接收到 MQTT X 发送的消息](https://static.emqx.net/images/02d8a35312ca1309f18a628dacca8910.png)
 
-### 更多内容
+## 更多内容
 
 至此，我们完成了使用 Node.js 来作为 MQTT 客户端连接到 [公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，并实现了测试客户端与 MQTT 服务器的连接、消息发布和订阅。可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js) 下载到示例的源码，同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。

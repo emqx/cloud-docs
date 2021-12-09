@@ -6,12 +6,12 @@
 
 一个基础的 Electron 包含三个文件：`package.json`（元数据）、`main.js`（代码）和 `index.html`（图形用户界面）。框架由 Electron 可执行文件（Windows 中为 electron.exe、macOS 中为 electron.app、Linux 中为 electron）提供。开发者可以自行添加标志、自定义图标、重命名或编辑 Electron 可执行文件。
 
-### 前提条件
+## 前提条件
 
 >1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
 >2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
-#### 新建项目
+## 新建项目
 
 新建项目的方式有很多种，以下简单列举几种：
 
@@ -27,11 +27,11 @@
 
   并参考以下文档中的步骤进行项目搭建。
 
-  地址：https://www.electronjs.org/docs/tutorial/first-app
+  地址：<https://www.electronjs.org/docs/tutorial/first-app>
 
 - 通过官方提供的 `electron-quick-start` 模版项目进行快速开发
 
-  地址：https://github.com/electron/electron-quick-start
+  地址：<https://github.com/electron/electron-quick-start>
 
   ```shell
     # Clone this repository
@@ -46,7 +46,7 @@
 
 - 通过 `electron-react-bolierplate` 的模板项目进行快速开发构建，该模版可使用 `React.js` 进行开发
 
-  地址：https://github.com/electron-react-boilerplate/electron-react-boilerplate
+  地址：<https://github.com/electron-react-boilerplate/electron-react-boilerplate>
 
   ```shell
   git clone --depth 1 --single-branch https://github.com/electron-react-boilerplate/electron-react-boilerplate.git your-project-name
@@ -56,7 +56,7 @@
 
 - 通过 `electron-vue` 进行项目的快速开发构建，将配合使用 `vue-cli` 工具进行项目初始化，该方法可使用 `Vue.js` 进行开发
 
-  地址：https://github.com/SimulatedGREG/electron-vue
+  地址：<https://github.com/SimulatedGREG/electron-vue>
 
   ```shell
   # Install vue-cli and scaffold boilerplate
@@ -71,7 +71,7 @@
 
 本文为方便快速搭建示例项目，将使用官方提供的 electron quick start 项目模板进行项目初始化构建。
 
-### 安装依赖
+## 安装依赖
 
 通过命令行安装
 
@@ -103,15 +103,15 @@ mainWindow.webContents.openDevTools()
 
 2. 可以在 `preload.js` 中进行引入 `MQTT.js` 模块操作。当没有 node integration 时，这个脚本仍然有能力去访问所有的 Node APIs, 但是当这个脚本执行执行完成之后，通过 Node 注入的全局对象（global objects）将会被删除。
 
-### 连接
+## 连接
 
 >请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
 
-#### 连接设置
+### 连接设置
 
 本文将使用 EMQ X 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQ X 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 
-- Broker: **broker.emqx.io**
+- Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
 - TCP Port: **1883**
 - Websocket Port: **8083**
 
@@ -187,13 +187,13 @@ client.on('message', (topic, message, packet) => {
 
 MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简单的 UI 界面来手动输入 MQTT 连接时所需要的配置等，并在点击连接按钮后可以连接到 MQTT 服务器，此外还可以断开连接，订阅主题，收发消息等。
 
-#### 应用程序界面
+### 应用程序界面
 
 ![electronui.png](https://static.emqx.net/images/f628816b73b31e6d3c695cd39c439ca6.png)
 
 项目完整代码请见：[https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron)。
 
-#### 连接关键代码
+### 连接关键代码
 
 ```javascript
   let client = null
@@ -235,7 +235,7 @@ MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简
   }
 ```
 
-#### 订阅主题
+### 订阅主题
 
 ```javascript
   function onSub () {
@@ -252,7 +252,7 @@ MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简
   }
 ```
 
-#### 取消订阅
+### 取消订阅
 
 ```javascript
   function onUnsub () {
@@ -269,7 +269,7 @@ MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简
   }
 ```
 
-#### 消息发布
+### 消息发布
 
 ```javascript
   function onSend () {
@@ -283,7 +283,7 @@ MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简
   }
 ```
 
-#### 接收消息
+### 接收消息
 
 ```javascript
 // 在 onConnect 函数中
@@ -296,7 +296,7 @@ client.on('message', (topic, message) => {
 })
 ```
 
-#### 断开连接
+### 断开连接
 
 ```javascript
   function onDisconnect () {
@@ -310,7 +310,7 @@ client.on('message', (topic, message) => {
   }
 ```
 
-### 测试验证
+## 测试验证
 
 此时我们配合一款同样使用 Electron 编写的 [MQTT 5.0 客户端工具 - MQTT X](https://mqttx.app/zh) 进行消息的收发测试。
 
@@ -322,7 +322,7 @@ client.on('message', (topic, message) => {
 
 ![mqttx.png](https://static.emqx.net/images/cc97fe533fcce20765530970d7696f58.png)
 
-### 更多内容
+## 更多内容
 
 至此， 我们就完成了使用 Electron 创建一个简单的 MQTT 桌面客户端的过程，并模拟了客户端与 MQTT 服务器进行订阅、收发消息、取消订阅以及断开连接的场景。还值得一提的是，因为 Electron 项目同时包含了浏览器环境和 `Node.js` 环境，所以除 MQTT/TCP 连接外，还可以利用浏览器的 WebSocket API，同时实现 MQTT over WebSocket 的连接，只需修改上述代码中的连接协议和端口即可。具体如何使用 WebSocket 连接 MQTT 服务，可参考我们的博客 [使用 WebSocket 连接 MQTT 服务器](https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket)。可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron) 下载到示例的源码，同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
 
