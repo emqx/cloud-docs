@@ -20,7 +20,7 @@ EMQ X Cloud 支持**专业版**部署在不影响业务的情况下，平滑伸�
 > 注意：在绑定域名后，基础版将无法使用 mqtts 和 wss 端口
 
 ### 操作步骤
-1. 这里假设您有顶级域名 www.abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQ X Cloud 上的部署的连接地址为 123.123.123.123
+1. 这里假设您有顶级域名 abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQ X Cloud 上的部署的连接地址为 123.123.123.123
 
 2. 那么只需要在您的域名提供商的操作面板上，将 mqtt.abc.com 的 A 记录指向 123.123.123.123 即可
 
@@ -44,11 +44,11 @@ EMQ X Cloud 支持**专业版**部署在不影响业务的情况下，平滑伸�
 更多关于 API 的使用方法，可以前往指南 —— [REST API](api/introduction.md)。
 
 ## 支持什么样的 TLS/SSL 认证？
-目前支持 [单项](deployments/tls_ssl.md),[双向](deployments/tls_ssl.md),和[自定义签名](deployments/tls_ssl.md)的方式来进行配置。
+目前支持 [单项](deployments/tls_ssl.md),[双向](deployments/tls_ssl.md),和 [自定义签名](deployments/tls_ssl.md)的方式来进行配置。
 
 
 ## 如何与自己现有的系统对接？
-可以使用规则引擎与您现有功能做对接，详情查看[规则引擎](rule_engine/introduction.md)
+可以使用规则引擎与您现有功能做对接，详情查看 [规则引擎](rule_engine/introduction.md)
 
 ## 设备的认证信息存储在自己的数据库中，是否支持通过我自己的数据库做MQTT连接的认证？
 目前还不支持通过直接获取自己的MySQL的数据，可以通过将数据导出，EMQ X Cloud支持csv文件的数据导入，可以批量导入认证信息。或者通过工单或发送邮件(cloud@emqx.io)与我们取得联系。

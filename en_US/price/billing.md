@@ -17,13 +17,13 @@ Note: When you create a deployment, EMQ X Cloud will estimate the usage cost bas
 
 
 
-### Billing Period
+## Billing Period
 
 EMQ X Cloud deployments are charged hourly and on the 1st of each month your credit card will be charged for the previous month's deployment usage. You can go to the [Billing Page](<https://cloud-intl.emqx.com/console/billing/overview>) of the console to see the detailed information.
 
 
 
-### Description of Unpaid Bills
+## Description of Unpaid Bills
 
 EMQ X Cloud will charge your credit card on the 1st of each month for the previous month's deployment. When the charge fails, we will retry every 8 hours until the 5th of the month, after which we will do the following if the charge is still unsuccessful:
 

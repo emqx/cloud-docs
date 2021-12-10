@@ -4,7 +4,7 @@ EMQ X Cloud has fewer usage restrictions than the public cloud IoT Hub platform.
 
 > The performance of the relevant items depends on the deployment specifications, and the specific data is subject to actual usage scenarios.
 
-### Connected Communications
+## Connected Communications
 
 | **Limitation Description**         | **EMQ X**                                             | **Public Cloud IoT Hub**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |
@@ -18,7 +18,7 @@ EMQ X Cloud has fewer usage restrictions than the public cloud IoT Hub platform.
 | Single message length         | Default 1024KB 1-256MB. Adjustable on request                      | 256KB                                  |
 | Maximum offline message storage length| Unlimited                                              | 1 week
 
-### Topic Limitation
+## Topic Limitation
 
 | **Limitation Description**              | **EMQ X**          | **Public Cloud IoT Hub**                              |
 | ------------------------- | ------------------ | ----------------------------------------------- |

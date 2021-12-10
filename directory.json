@@ -463,8 +463,12 @@
           "path": "deployments/vpc_peering"
         },
         {
-          "title": "Authentication & ACL",
-          "path": "deployments/auth_and_acl"
+          "title": "Authentication",
+          "path": "deployments/auth"
+        },
+        {
+          "title": "ACL",
+          "path": "deployments/acl"
         },
         {
           "title": "Rule Engine",

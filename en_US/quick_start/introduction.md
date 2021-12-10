@@ -16,6 +16,7 @@ to EMQ X Cloud deployment. Before starting, let's review some core concepts and 
 
 If you have not yet created an account for EMQ X Cloud, the following steps will guide you through the creation of your account. You can also skip this step to view the console quick guide.
 
+## Register Guide
 
 ### [Register an account](https://www.emqx.com/en/signup?continue=https://www.emqx.com/en/cloud)
 

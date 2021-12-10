@@ -6,7 +6,7 @@
 
 ## 前提条件
 
-> 1. 已经创建了部署，在[部署概览](../deployments/view_deployment.md)下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
 > 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 
@@ -49,7 +49,7 @@ go version go1.15.13 darwin/amd64
     ```
 
 ## 连接
-> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在[认证鉴权](../deployments/auth.md) 中添加认证信息。
+> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在 [认证鉴权](../deployments/auth.md) 中添加认证信息。
 
 ### 连接设置
 
@@ -222,7 +222,7 @@ publish success, topic: t/1, payload: message: 6!
 
 ## 更多内容
 
-以上为您演示了如何使用 `paho.mqtt.golang` 客戶端连接到 EMQ X Cloud, 可以在[这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go)下载到示例的源码
+以上为您演示了如何使用 `paho.mqtt.golang` 客戶端连接到 EMQ X Cloud, 可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) 下载到示例的源码。
 
 同时也可以在 [Github](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其它语言的 Demo 示例。
 
