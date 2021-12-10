@@ -15,7 +15,7 @@ EMQ X Cloud 免费试用部署规格如下：
 
 * 支持 MQTT, Websockets 协议连接。
   
-  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提[工单](feature/tickets.md)或发送邮件(cloud@emqx.io)与我们取得联系
+  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提 [工单](../feature/tickets.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
 
 EMQ X Cloud 免费试用部署注意事项：

@@ -5,7 +5,7 @@
 
 
 
-## [价格计算](price/calculator.md)
+## [价格计算](../price/calculator.md)
 查看 EMQ X Cloud 支持的云服务商、地区以及不同规格部署**每小时**价格。
 
 

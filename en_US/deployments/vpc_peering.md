@@ -72,7 +72,7 @@ Before deleting the peering connection, please make sure that there are no assoc
 
 ## Azure VPC Peering Connection
 
-This feature is now not available. If you need to set up VPC peering connection with Azure, please submit [tickets](feature/tickets.md) to contact us. 
+This feature is now not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../feature/tickets.md) to contact us. 
 
 ## GCP VPC Peering Connection
 
