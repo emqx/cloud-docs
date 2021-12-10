@@ -75,7 +75,7 @@ You can use the rule engine to connect with your existing functions. For details
 
 EMQ X Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
 
-For detailed billing rules, you can view [Product Pricing](pricing.md)
+For detailed billing rules, you can view [Product Pricing](./price/pricing.md)
 
 ### How to pay?
 
@@ -83,7 +83,7 @@ EMQ X Cloud supports credit card payment, for more payment options please contac
 
 ### How to get the credits?
 
-If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](contact.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of creditss based on your business needs
+If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of creditss based on your business needs
 
 
 Please pay attention to the update of EMQ x cloud.

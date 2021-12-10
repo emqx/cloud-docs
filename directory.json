@@ -338,8 +338,25 @@
       "path": "release_notes"
     },
     {
-      "title": "FAQ",
-      "path": "faq"
+      "title": "常见问题",
+      "children": [
+        {
+          "title": "一般业务问题",
+          "path": "faq/normal_a"
+        },
+        {
+          "title": "一般开发问题",
+          "path": "faq/normal_b"
+        },
+        {
+          "title": "部署相关问题",
+          "path": "faq/deploy"
+        },
+        {
+          "title": "财务相关问题",
+          "path": "faq/billing"
+        }
+      ]
     }
   ],
   "en": [
@@ -411,7 +428,7 @@
         },
         {
           "title": "Project List",
-          "path": "deployments/project"
+          "path": "feature/project"
         },
         {
           "title": "Role & Authentication",
@@ -489,10 +506,6 @@
         {
           "title": "Alerts",
           "path": "deployments/alerts"
-        },
-        {
-          "title": "Scaling",
-          "path": "deployments/upgrade_deployment"
         },
         {
           "title": "Stop Deployment",

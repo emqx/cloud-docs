@@ -10,8 +10,8 @@ In this tutorial, you will learn how to create a new EMQ X Cloud deployment. To 
 1. Log in to your account and navigate to EMQ X Cloud [Console](https://cloud-intl.emqx.com/console/).
 2. Click the **New** button in the upper right corner to enter the deployment price estimation page.
 3. Choose the deployment of the corresponding specifications according to your needs.
-   * Choose cloud platform: EMQ X Cloud temporarily supports AWS, Azure and GCP. If you have other cloud service provider requirements, you can submit a [ticket](feature/tickets.md) or email (cloud@emqx.io) )  us.
-   * Select region. If you have other regional requirements, you can submit [tickets](feature/tickets.md) or contact us via email (cloud@emqx.io).
+   * Choose cloud platform: EMQ X Cloud temporarily supports AWS, Azure and GCP. If you have other cloud service provider requirements, you can submit a [ticket](../feature/tickets.md) or email (cloud@emqx.io) )  us.
+   * Select region. If you have other regional requirements, you can submit [tickets](../feature/tickets.md) or contact us via email (cloud@emqx.io).
    * Select the maximum number of connections: For the maximum number of client connections allowed, you can increase or decrease the maximum number of connections through Upgrade Deployment Specifications later.
    * Select peak value of TPS: the total number of messages sent and received per second of deployment. You can increase and decrease the message upstream and downstream TPS through Upgrade Deployment Specifications later.
 4. Check the deployment information in the **Confirm** page.
