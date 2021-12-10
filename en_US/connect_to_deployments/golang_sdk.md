@@ -222,7 +222,4 @@ publish success, topic: t/1, payload: message: 6!
 
 ## Next step
 
-The above shows you how to use the 'paho.mqtt.golang' client to connect to EMQ X Cloud, which can be found in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) Download to the sample source code
-
-
-More demo examples for other languages are available in [GitHub](https://github.com/emqx/MQTT-Client-Examples).
+The above shows you how to use the 'paho.mqtt.golang' client to connect to EMQ X Cloud, which can be found in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) Download to the sample source code. More demo examples for other languages are available in [GitHub](https://github.com/emqx/MQTT-Client-Examples).
