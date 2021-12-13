@@ -2,14 +2,14 @@
   "cn": [
     {
       "title": "EMQ X Cloud 引导",
-      "path": "./cn_overview"
+      "path": "./"
     },
     {
       "title": "产品简介",
       "children": [
         {
           "title": "产品概述",
-          "path": "./"
+          "path": "overview"
         },
         {
           "title": "产品优势",
@@ -154,7 +154,7 @@
       "children": [
         {
           "title": "简介",
-          "path": "connect_to_deployments/cn_conn_overview"
+          "path": "connect_to_deployments/overview"
         },
         {
           "title": "Python SDK 连接",
@@ -362,14 +362,14 @@
   "en": [
     {
       "title": "Product Overview",
-      "path": "./en_overview"
+      "path": "./"
     },
     {
       "title": "Product Introduction",
       "children": [
         {
           "title": "Overview",
-          "path": "./"
+          "path": "overview"
         },
         {
           "title": "Advantages",
@@ -522,7 +522,7 @@
       "children": [
         {
           "title": "Introduction",
-          "path": "connect_to_deployments/en_conn_overview"
+          "path": "connect_to_deployments/overview"
         },
         {
           "title": "Python SDK connection",
