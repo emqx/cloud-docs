@@ -1,6 +1,7 @@
 ---
 {
   'title': '建立 MQTT 客户端连接',
+  'lang': 'cn',
   'headers':
     [
       { 'title': '客户端工具', 'slug': '客户端工具' },
@@ -17,36 +18,71 @@
               'imgName': 'mqttx',
               'name': 'MQTT X',
               'description': 'MQTT X 是 EMQ 开源的一款优雅的跨平台 MQTT 5.0 桌面客户端，它支持 macOS、Linux 和 Windows。',
-              'link': ' ',
+              'link': './mqttx.html',
             },
             {
               'imgName': 'mqttfx',
               'name': 'MQTT.fx',
               'description': 'MQTT.fx 是目前主流的跨平台 MQTT 桌面客户端，它支持 macOS、Linux 和 Windows。',
-              'link': ' ',
+              'link': './mqttfx.html',
             },
             {
               'imgName': 'esp8266',
               'name': 'Arduino ESP8266',
               'description': '通过 Arduino 的 PubSubClient 库，使用 MQTT 协议从 ESP8266 模组向 EMQ X Cloud 推送数据。',
-              'link': ' ',
+              'link': './esp8266.html',
             },
           ],
       },
       {
-        'title': '终端开发语言 Demos',
+        'title': '终端开发语言 Demo',
         'moreText': '查看更多',
         'linkForMoreDemos': 'https://github.com/emqx/MQTT-Client-Examples',
         'menus':
           [
-            { 'imgName': 'python', 'name': 'Python', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'go', 'name': 'Golang', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'java', 'name': 'Java', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'node', 'name': 'Node.js', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'c', 'name': 'C', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'c-sharp', 'name': 'C#', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'vue', 'name': 'Vue.js', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'electron', 'name': 'Electron', 'description': '文案文案', 'link': ' ' },
+            {
+              'imgName': 'python',
+              'name': 'Python',
+              'description': '使用 Paho Python 库连接到 EMQ X Cloud',
+              'link': './python_sdk.html',
+            },
+            {
+              'imgName': 'go',
+              'name': 'Golang',
+              'description': '使用 Paho Golang 库连接到 EMQ X Cloud',
+              'link': './golang_sdk.html',
+            },
+            {
+              'imgName': 'java',
+              'name': 'Java',
+              'description': '使用 Paho Java 库连接到 EMQ X Cloud',
+              'link': './java_sdk.html',
+            },
+            {
+              'imgName': 'node',
+              'name': 'Node.js',
+              'description': '使用 mqtt.js 库连接到 EMQ X Cloud',
+              'link': './nodejs_sdk.html',
+            },
+            { 'imgName': 'c', 'name': 'C', 'description': '使用 Paho C 语言库连接到 EMQ X Cloud', 'link': './c_sdk.html' },
+            {
+              'imgName': 'c-sharp',
+              'name': 'C#',
+              'description': '使用 Paho C# 库连接到 EMQ X Cloud',
+              'link': './c_sharp_sdk.html',
+            },
+            {
+              'imgName': 'vue',
+              'name': 'Vue.js',
+              'description': '在 VUE 中使用 mqtt.js 库连接到 EMQ X Cloud',
+              'link': './vue_sdk.html',
+            },
+            {
+              'imgName': 'electron',
+              'name': 'Electron',
+              'description': '在 Electron 中使用 mqtt.js 库连接到 EMQ X Cloud',
+              'link': './electron_sdk.html',
+            },
           ],
       },
       {

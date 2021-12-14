@@ -1,6 +1,7 @@
 ---
 {
   'title': 'Create MQTT Client Connection',
+  'lang': 'en',
   'headers':
     [
       { 'title': 'Client Tools', 'slug': 'Client-Tools' },
@@ -20,36 +21,71 @@
               'imgName': 'mqttx',
               'name': 'MQTT X',
               'description': 'MQTT X is an elegant cross-platform MQTT 5.0 desktop client open sourced by EMQ, which supports macOS, Linux, Windows.',
-              'link': ' ',
+              'link': './mqttx.html',
             },
             {
               'imgName': 'mqttfx',
               'name': 'MQTT.fx',
               'description': 'MQTT.fx is an cross-platform MQTT desktop client, which supports macOS, Linux, Windows.',
-              'link': ' ',
+              'link': './mqttfx.html',
             },
             {
               'imgName': 'esp8266',
               'name': 'Arduino ESP8266',
               'description': 'Through Arduino PubSubClient library, use MQTT protocol to push data from ESP8266 module to EMQ X Cloud.',
-              'link': ' ',
+              'link': './esp8266.html',
             },
           ],
       },
       {
-        'title': 'Terminal Development Language Demos',
-        'moreText': 'More Demos',
+        'title': 'Terminal Development Language Demo',
+        'moreText': 'More Demo',
         'linkForMoreDemos': 'https://github.com/emqx/MQTT-Client-Examples',
         'menus':
           [
-            { 'imgName': 'python', 'name': 'Python', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'go', 'name': 'Golang', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'java', 'name': 'Java', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'node', 'name': 'Node.js', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'c', 'name': 'C', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'c-sharp', 'name': 'C#', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'vue', 'name': 'Vue.js', 'description': '文案文案', 'link': ' ' },
-            { 'imgName': 'electron', 'name': 'Electron', 'description': '文案文案', 'link': ' ' },
+            {
+              'imgName': 'python',
+              'name': 'Python',
+              'description': 'Connect to EMQ X Cloud using the Paho Python library',
+              'link': './python_sdk.html',
+            },
+            {
+              'imgName': 'go',
+              'name': 'Golang',
+              'description': 'Connect to EMQ X Cloud using the Paho Golang library',
+              'link': './golang_sdk.html',
+            },
+            {
+              'imgName': 'java',
+              'name': 'Java',
+              'description': 'Connect to EMQ X Cloud using the Paho Java library',
+              'link': './java_sdk.html',
+            },
+            {
+              'imgName': 'node',
+              'name': 'Node.js',
+              'description': 'Connect to EMQ X Cloud using the mqtt.js library',
+              'link': './nodejs_sdk.html',
+            },
+            { 'imgName': 'c', 'name': 'C', 'description': 'Connect to EMQ X Cloud using the Paho C library', 'link': './c_sdk.html' },
+            {
+              'imgName': 'c-sharp',
+              'name': 'C#',
+              'description': 'Connect to EMQ X Cloud using the Paho C# library',
+              'link': './c_sharp_sdk.html',
+            },
+            {
+              'imgName': 'vue',
+              'name': 'Vue.js',
+              'description': 'Use the mqtt.js library in VUE to connect to EMQ X Cloud',
+              'link': './vue_sdk.html',
+            },
+            {
+              'imgName': 'electron',
+              'name': 'Electron',
+              'description': 'Use the mqtt.js library in Electron to connect to EMQ X Cloud',
+              'link': './electron_sdk.html',
+            },
           ],
       },
       {

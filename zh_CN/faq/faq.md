@@ -34,7 +34,7 @@ EMQ X Cloud 部署仅支持 MQTT over TLS/SSL, Websockets over TLS/SSL 协议连
 
 ### 我如何连接到部署？
 
-可以通过 [MQTTX 客户端](https://mqttx.app)进行连接。
+可以通过 [MQTT X 客户端](https://mqttx.app)进行连接。
 
 也可以通过 SDK 进行连接，详见：[连接到部署](connect_to_deployments/introduction.md)
 

@@ -54,7 +54,7 @@
           "path": "deployments/create_deployment"
         },
         {
-          "title": "使用 MQTTX 连接到部署",
+          "title": "使用 MQTT X 连接到部署",
           "path": "connect_to_deployments/mqttx"
         }
       ]
@@ -201,7 +201,7 @@
           "path": "connect_to_deployments/esp8266"
         },
         {
-          "title": "MQTTX 连接到部署",
+          "title": "MQTT X 连接到部署",
           "path": "connect_to_deployments/mqttx"
         },
         {
@@ -414,7 +414,7 @@
           "path": "deployments/create_deployment"
         },
         {
-          "title": "Use MQTTX to connect to deployments",
+          "title": "Use MQTT X to connect to deployments",
           "path": "connect_to_deployments/mqttx"
         }
       ]
