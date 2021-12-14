@@ -5,4 +5,4 @@ Before connecting to the deployments, you need to complete the required operatio
 For the basic deployment, EMQ X Cloud provides TLS/SSL connection authentication by default. You may also need to download [root certificate](https://static.emqx.net/data/cn.emqx.cloud-ca.crt) for TLS/SSL connection.
 
 
-## [Connect to Deployment](../connect_to_deployments/introduction.md)
+## [Connect to Deployment](../connect_to_deployments/overview.md)

@@ -118,7 +118,7 @@
 
 ## 接入示例代码
 
-您可以前往 [连接到部署](./connect_to_deployments/introduction.md)了解更多 MQTT 客户端库接入 EMQ X Cloud 示例。
+您可以前往 [连接到部署](./connect_to_deployments/overview.md)了解更多 MQTT 客户端库接入 EMQ X Cloud 示例。
 
 
 

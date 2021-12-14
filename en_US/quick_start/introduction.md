@@ -77,6 +77,6 @@ You can follow these steps shown below to quickly complete the EMQ X Cloud Conso
    ![authentication](./_assets/detail.png)
     
 
-4. Use the MQTT client or SDK that you are familiar with to [connect to the deployment](../connect_to_deployments/introduction.md) 
+4. Use the MQTT client or SDK that you are familiar with to [connect to the deployment](../connect_to_deployments/overview.md) 
    ![authentication](./_assets/mqttx_connect.png)
    

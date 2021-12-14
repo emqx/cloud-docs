@@ -7,7 +7,7 @@
 
 
 ## 要如何才能连接到部署？
-您可以通过客户端软件如 [MQTTX 客户端](https://mqttx.app) 进行连接。也可以通过 SDK 进行连接，可以查看 [连接到部署](../connect_to_deployments/introduction.md)了解更多内容。
+您可以通过客户端软件如 [MQTTX 客户端](https://mqttx.app) 进行连接。也可以通过 SDK 进行连接，可以查看 [连接到部署](../connect_to_deployments/overview.md)了解更多内容。
 
 ## 连接失败有哪几类原因？
 1. 首先需要检查部署是否处于运行的状态，对于没有活跃连接的部署，系统会自动停止。

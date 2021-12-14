@@ -82,4 +82,4 @@ Before connecting to your free trial deployment, you need to wait for the deploy
      
      ![mqttx_ws](./_assets/mqttx_ws.png)
 
-4. [Use SDK or other tools to connect to the free trial deployments](../connect_to_deployments/introduction.md)
+4. [Use SDK or other tools to connect to the free trial deployments](../connect_to_deployments/overview.md)

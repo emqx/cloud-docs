@@ -152,7 +152,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 ## 4. 测试
 
->如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/introduction.md)，查看 MQTT 客户端连接和测试指南
+>如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
 
 我们尝试向 home/sensor 主题发送下面的数据
 

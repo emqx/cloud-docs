@@ -57,7 +57,7 @@
 
    ![add_users](./_assets/overview.png)
 
-4. 使用您熟悉的 MQTT 客户端或 SDK [连接到部署](../connect_to_deployments/introduction.md)
+4. 使用您熟悉的 MQTT 客户端或 SDK [连接到部署](../connect_to_deployments/overview.md)
 
    ![add_users](./_assets/mqttx_mqtt.png)
 

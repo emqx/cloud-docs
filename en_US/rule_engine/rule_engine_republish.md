@@ -75,7 +75,7 @@ The created action will be displayed in the response action column. After confir
 
 ## 3. Test
 
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/introduction.md) to view the MQTT client connection and test guide
+>If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 We try to send the following data to the test topic
 

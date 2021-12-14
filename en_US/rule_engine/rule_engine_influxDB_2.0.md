@@ -183,7 +183,7 @@ Go back to the `Rule Engine` page, now you can see the rule we created is on the
 
 We recommend you to use MQTT X, an elegant cross-platform MQTT 5.0 desktop client to subscribe/publish messages.
 
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/introduction.md) to view the MQTT client connection and test guide
+>If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 We will be using the MQTT X desktop version in this tutorial.
 
