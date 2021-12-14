@@ -31,7 +31,7 @@ If you need other protocol support, you can submit a [ticket](./feature/tickets.
 
 You can connect through [MQTTX client](https://mqttx.app).
 
-You can also connect through the SDK, for details, see [Connect to Deployment](connect_to_deployments/introduction.md).
+You can also connect through the SDK, for details, see [Connect to Deployment](connect_to_deployments/overview.md).
 
 ### Does it support API calls?
 
