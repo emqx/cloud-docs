@@ -1,15 +1,13 @@
 ---
 {
-  "headers": [
-    {
-      "title": "Cloud Console",
-      "slug": "cloud-console",
-    },
-    {
-      "title": "After Getting Started",
-      "slug": "after-getting-started",
-    },
-  ],
+  'title': 'EMQ X Cloud Overview',
+  'description': 'EMQ X Cloud is a fully managed MQTT 5.0 IoT cloud service. It can process a huge amount of data in real-time to and from connected IoT devices and applications.',
+  'lang': 'en',
+  'headers':
+    [
+      { 'title': 'Cloud Console', 'slug': 'cloud-console' },
+      { 'title': 'After Getting Started', 'slug': 'after-getting-started' },
+    ],
 }
 ---
 

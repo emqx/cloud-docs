@@ -261,7 +261,7 @@ Role list
       <td>&#10003</td>
    	</tr>
    	<tr>
-      <td>View Credits</td>
+      <td>View Coupons</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>

@@ -54,7 +54,7 @@
           "path": "deployments/create_deployment"
         },
         {
-          "title": "使用MQTTX连接到部署",
+          "title": "使用 MQTTX 连接到部署",
           "path": "connect_to_deployments/mqttx"
         }
       ]
@@ -88,7 +88,7 @@
         },
         {
           "title": "代金券",
-          "path": "billing/credits"
+          "path": "billing/coupon"
         },
         {
           "title": "发票",
@@ -201,11 +201,11 @@
           "path": "connect_to_deployments/esp8266"
         },
         {
-          "title": "MQTT X 连接到部署",
+          "title": "MQTTX 连接到部署",
           "path": "connect_to_deployments/mqttx"
         },
         {
-          "title": "MQTT.fx 连接",
+          "title": "MQTT.fx 连接到部署",
           "path": "connect_to_deployments/mqttfx"
         },
         {
@@ -447,8 +447,8 @@
           "path": "billing/overview"
         },
         {
-          "title": "Credits",
-          "path": "billing/credits"
+          "title": "Coupon",
+          "path": "billing/coupon"
         },
         {
           "title": "Invoice",

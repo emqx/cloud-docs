@@ -83,7 +83,7 @@ EMQ X Cloud supports credit card payment, for more payment options please contac
 
 ### How to get the credits?
 
-If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of creditss based on your business needs
+If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of credits based on your business needs
 
 
 Please pay attention to the update of EMQ x cloud.
