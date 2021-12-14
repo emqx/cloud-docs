@@ -64,7 +64,7 @@
             {
               'imgName': 'node',
               'name': 'Node.js',
-              'description': 'Connect to EMQ X Cloud using the mqtt.js library',
+              'description': 'Connect to EMQ X Cloud using the MQTT.js library',
               'link': './nodejs_sdk.html',
             },
             { 'imgName': 'c', 'name': 'C', 'description': 'Connect to EMQ X Cloud using the Paho C library', 'link': './c_sdk.html' },
@@ -77,13 +77,13 @@
             {
               'imgName': 'vue',
               'name': 'Vue.js',
-              'description': 'Use the mqtt.js library in VUE to connect to EMQ X Cloud',
+              'description': 'Use the MQTT.js library in Vue to connect to EMQ X Cloud',
               'link': './vue_sdk.html',
             },
             {
               'imgName': 'electron',
               'name': 'Electron',
-              'description': 'Use the mqtt.js library in Electron to connect to EMQ X Cloud',
+              'description': 'Use the MQTT.js library in Electron to connect to EMQ X Cloud',
               'link': './electron_sdk.html',
             },
           ],

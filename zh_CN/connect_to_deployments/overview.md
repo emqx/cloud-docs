@@ -61,7 +61,7 @@
             {
               'imgName': 'node',
               'name': 'Node.js',
-              'description': '使用 mqtt.js 库连接到 EMQ X Cloud',
+              'description': '使用 MQTT.js 库连接到 EMQ X Cloud',
               'link': './nodejs_sdk.html',
             },
             { 'imgName': 'c', 'name': 'C', 'description': '使用 Paho C 语言库连接到 EMQ X Cloud', 'link': './c_sdk.html' },
@@ -74,13 +74,13 @@
             {
               'imgName': 'vue',
               'name': 'Vue.js',
-              'description': '在 VUE 中使用 mqtt.js 库连接到 EMQ X Cloud',
+              'description': '在 Vue 中使用 MQTT.js 库连接到 EMQ X Cloud',
               'link': './vue_sdk.html',
             },
             {
               'imgName': 'electron',
               'name': 'Electron',
-              'description': '在 Electron 中使用 mqtt.js 库连接到 EMQ X Cloud',
+              'description': '在 Electron 中使用 MQTT.js 库连接到 EMQ X Cloud',
               'link': './electron_sdk.html',
             },
           ],
