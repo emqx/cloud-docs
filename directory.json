@@ -190,11 +190,11 @@
         },
         {
           "title": "在 Electron 项目中连接到部署",
-          "path": "https://www.emqx.com/zh/blog/how-to-use-mqtt-in-electron"
+          "path": "connect_to_deployments/electron_sdk"
         },
         {
           "title": "在 Vue 项目中连接到部署",
-          "path": "https://www.emqx.com/zh/blog/how-to-use-mqtt-in-vue"
+          "path": "connect_to_deployments/vue_sdk"
         },
         {
           "title": "使用 ESP8266 连接到部署",
@@ -547,6 +547,18 @@
         {
           "title": "C# SDK connection",
           "path": "connect_to_deployments/c_sharp_sdk"
+        },
+        {
+          "title": "Connect to deployments with WebSocket",
+          "path": "https://www.emqx.com/en/blog/connect-to-mqtt-broker-with-websocket"
+        },
+        {
+          "title": "Connect to deployments using Electron",
+          "path": "connect_to_deployments/electron_sdk"
+        },
+        {
+          "title": "Connect to deployments using Vue.js",
+          "path": "connect_to_deployments/vue_sdk"
         },
         {
           "title": "MQTT X connection",
