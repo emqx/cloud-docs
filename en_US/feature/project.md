@@ -1,4 +1,4 @@
-# Project Management
+# Project List
 
 Project management is used to group deployments under different projects, making it easy to manage deployments according to the projects.
 

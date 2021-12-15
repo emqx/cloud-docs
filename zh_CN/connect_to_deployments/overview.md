@@ -5,7 +5,7 @@
   'headers':
     [
       { 'title': '客户端工具', 'slug': '客户端工具' },
-      { 'title': '终端开发语言 Demos', 'slug': '终端开发语言-Demos' },
+      { 'title': '终端开发语言 Demo', 'slug': '终端开发语言-Demo' },
       { 'title': '第三方 SDK 推荐', 'slug': '第三方-SDK-推荐' },
     ],
   'categoryList':

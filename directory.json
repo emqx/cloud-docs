@@ -1,7 +1,7 @@
 {
   "cn": [
     {
-      "title": "EMQ X Cloud 引导",
+      "title": "EMQ X Cloud",
       "path": "./"
     },
     {
@@ -361,11 +361,11 @@
   ],
   "en": [
     {
-      "title": "Product Overview",
+      "title": "EMQ X Cloud Overview",
       "path": "./"
     },
     {
-      "title": "Product Introduction",
+      "title": "Introduction",
       "children": [
         {
           "title": "Overview",
@@ -376,7 +376,7 @@
           "path": "intro/advance"
         },
         {
-          "title": "limitations",
+          "title": "Limitations",
           "path": "intro/restriction"
         }
       ]

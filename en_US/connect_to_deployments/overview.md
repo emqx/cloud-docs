@@ -6,8 +6,8 @@
     [
       { 'title': 'Client Tools', 'slug': 'Client-Tools' },
       {
-        'title': 'Terminal Development Language Demos',
-        'slug': 'Terminal-Development-Language-Demos',
+        'title': 'Terminal Development Language Demo',
+        'slug': 'Terminal-Development-Language-Demo',
       },
       { 'title': 'Third-party SDK Recommendation', 'slug': 'Third-party-SDK-Recommendation' },
     ],
