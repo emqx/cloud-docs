@@ -9,9 +9,9 @@ Pricing is per deployment hour consumed for each deployment, from the time an de
 
 You can view the details of monthly and hourly bills in the overview, and enter your credit card information.
 
-## [Credits](./credits.md)
+## [Coupons](./coupon.md)
 
-You can check the credit usage status on the credits page.
+You can check the coupon usage status from the coupon page.
 
 ## [Invoices](./invoices.md)
 

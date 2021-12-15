@@ -118,10 +118,10 @@
 
 ## 接入示例代码
 
-您可以前往 [连接到部署](./connect_to_deployments/introduction.md)了解更多 MQTT 客户端库接入 EMQ X Cloud 示例。
+您可以前往 [连接到部署](./connect_to_deployments/overview.md)了解更多 MQTT 客户端库接入 EMQ X Cloud 示例。
 
 
 
 ## 其他功能
 
-集成细节以及其他集成功能需求您可以提[工单](./contact.md)或发送邮件（cloud@emqx.io）咨询
+集成细节以及其他集成功能需求您可以提 [工单](./feature/tickets.md)或发送邮件（cloud@emqx.io）咨询

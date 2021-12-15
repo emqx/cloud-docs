@@ -19,19 +19,19 @@ EMQ X (Erlang/Enterprise/Elastic MQTT Broker) is an open source IoT MQTT message
 
 Yes.
 
-If you have special usage requirements, or other usage conditions, you can submit a [ticket](contact.md) or send an email (cloud@emqx.io) to us, and we will reply within 24 hours.
+If you have special usage requirements, or other usage conditions, you can submit a [ticket](./feature/tickets.md) or send an email (cloud@emqx.io) to us, and we will reply within 24 hours.
 
 ### Which protocol connections are supported?
 
 EMQ X Cloud deployment only supports MQTT over TLS/SSL, Websockets over TLS/SSL protocol connections.
 
-If you need other protocol support, you can submit a [ticket](contact.md) or send an email(cloud@emqx.io) to us.
+If you need other protocol support, you can submit a [ticket](./feature/tickets.md) or send an email(cloud@emqx.io) to us.
 
 ### How do I connect to the deployment?
 
 You can connect through [MQTTX client](https://mqttx.app).
 
-You can also connect through the SDK, for details, see [Connect to Deployment](connect_to_deployments/introduction.md).
+You can also connect through the SDK, for details, see [Connect to Deployment](connect_to_deployments/overview.md).
 
 ### Does it support API calls?
 
@@ -75,7 +75,7 @@ You can use the rule engine to connect with your existing functions. For details
 
 EMQ X Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
 
-For detailed billing rules, you can view [Product Pricing](pricing.md)
+For detailed billing rules, you can view [Product Pricing](./price/pricing.md)
 
 ### How to pay?
 
@@ -83,7 +83,7 @@ EMQ X Cloud supports credit card payment, for more payment options please contac
 
 ### How to get the credits?
 
-If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](contact.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of creditss based on your business needs
+If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of credits based on your business needs
 
 
 Please pay attention to the update of EMQ x cloud.

@@ -4,7 +4,7 @@ For first-time EMQ X Cloud customers, we have an opportunity for you to create a
 
 * Free trial up to 30 days.
 
-  > To extend your free trial, you can submit a [ticket](../contact.md) or contact us by email to get in touch with us.
+  > To extend your free trial, you can submit a [ticket](../feature/tickets.md) or contact us by email to get in touch with us.
 
 * Maximum 1000 client connections for the basic plan, maximum 5000 client connections for professional plan
 
@@ -14,7 +14,7 @@ For first-time EMQ X Cloud customers, we have an opportunity for you to create a
 
 * Support for MQTT, WebSockets, MQTT over TLS/SSL, Websockets over TLS protocol connections.
 
-  > For additional protocol support, you can submit a [ticket](../contact.md) or send email (cloud@emqx.io) to get in touch with us.
+  > For additional protocol support, you can submit a [ticket](../feature/tickets.md) or send email (cloud@emqx.io) to get in touch with us.
 
 * The basic plan does not support custom [TLS/SSL](../deployments/./tls_ssl.md) and [VPC Peering](../deployments/vpc_peering.md).
 
@@ -82,4 +82,4 @@ Before connecting to your free trial deployment, you need to wait for the deploy
      
      ![mqttx_ws](./_assets/mqttx_ws.png)
 
-4. [Use SDK or other tools to connect to the free trial deployments](../connect_to_deployments/introduction.md)
+4. [Use SDK or other tools to connect to the free trial deployments](../connect_to_deployments/overview.md)

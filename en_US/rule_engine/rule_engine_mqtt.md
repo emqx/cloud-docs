@@ -83,7 +83,7 @@ The created action will be displayed in the response action column. After confir
 
 ## 4. Test
 
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/introduction.md) to view the MQTT client connection and test guide
+>If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 When configuring the action in the third step, we set the mount point to emqx/. Therefore, we use the client to subscribe to the topic emqx/# of Mosquitto.
 

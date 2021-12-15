@@ -1,4 +1,4 @@
-# 简介
+# 简介 （TODO 这个换成部署连接聚合页面）
 
 在连接到部署之前您需要完成 [查看部署](../deployments/view_deployment.md) 所需操作，获取部署连接地址、连接端口等必要信息。
 
@@ -11,14 +11,9 @@
 * [使用 Python SDK 连接到部署](python_sdk.md)
 * [使用 Java SDK 连接到部署](java_sdk.md)
 * [使用 C SDK 连接到部署](c_sdk.md)
-* [使用 C++ SDK 连接到部署](cpp_sdk.md)
 * [使用 Go SDK 连接到部署](golang_sdk.md)
 * [使用 Node.js SDK 连接到部署](nodejs_sdk.md)
-* [使用 PHP SDK 连接到部署](php_sdk.md)
 * [使用 C# SDK 连接到部署](c_sharp_sdk.md)
-* [使用 Perl SDK 连接到部署](perl_sdk.md)
-* [使用 Ruby SDK 连接到部署](ruby_sdk.md)
-* [使用 Scala SDK 连接到部署](scala_sdk.md)
 * [使用 WebSocket 连接到部署](https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket)
 * [在 Android Kotlin 项目中连接到部署](https://www.emqx.com/zh/blog/android-connects-mqtt-using-kotlin)
 * [在 Electron 项目中连接到部署](https://www.emqx.com/zh/blog/how-to-use-mqtt-in-electron)

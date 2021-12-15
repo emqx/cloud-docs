@@ -7,8 +7,8 @@ Python 的设计哲学强调代码的可读性和简洁的语法（尤其是使�
 Python 让开发者能够用更少的代码表达想法，不管是小型还是大型程序，该语言都试图让程序的结构清晰明了。
 
 ## 前提条件
-
-已经创建了部署，在部署概览下可以查看到连接相关的信息，同时你可以使用 WebSocket 先测试连接到 MQTT 服务器。
+> 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 本项目使用 Python 3.8 进行开发测试，可用如下命令确认 Python 的版本。
 
@@ -36,7 +36,7 @@ from paho.mqtt import client as mqtt_client
 
 ## 连接
 
-请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口
+> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口
 
 ### 连接设置
 
@@ -230,7 +230,7 @@ if __name__ == '__main__':
 
 ![python_sub](./_assets/python_sub.png)
 
-## 下一步
+## 更多内容
 
 以上为您演示了如何使用 paho-mqtt 客户端库连接到 EMQ X Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/) 下载到示例的源码。
 同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。

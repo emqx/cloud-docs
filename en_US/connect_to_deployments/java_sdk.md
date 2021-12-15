@@ -25,7 +25,7 @@ Run
 mvn install
 ```
 ### Connect
-You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your  choose a Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth_and_acl.md) in advance.
+You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your  choose a Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth.md) in advance.
 
 #### Connect Options
 Create `MqttSample.java`, setup the broker, port, topic and authentication.

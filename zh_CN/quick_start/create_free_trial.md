@@ -1,5 +1,6 @@
 # 创建免费试用部署
 
+
 对于首次使用 EMQ X Cloud 的客户，我们为您准备了 **一次** 创建长达 **30** 天时长免费试用部署的机会。免费试用部署是您学习和探索 EMQ X Cloud 功能的理想方式。
 
 EMQ X Cloud 免费试用部署规格如下：
@@ -14,7 +15,7 @@ EMQ X Cloud 免费试用部署规格如下：
 
 * 支持 MQTT, Websockets 协议连接。
   
-  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提[工单](../contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
+  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提 [工单](../feature/tickets.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
 
 EMQ X Cloud 免费试用部署注意事项：
@@ -72,7 +73,7 @@ EMQ X Cloud 免费试用部署注意事项：
 
 3. MQTT X 连接到免费试用部署
 
-   EMQ X Cloud 推荐使用 [MQTT X](https://mqttx.app/zh/) 测试连接和测试部署，您也可以使用熟悉的[SDK 或其他工具](../connect_to_deployments/introduction.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
+   EMQ X Cloud 推荐使用 [MQTT X](https://mqttx.app/zh/) 测试连接和测试部署，您也可以使用熟悉的[SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
 
   * MQTT 连接
 

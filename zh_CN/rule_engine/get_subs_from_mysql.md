@@ -116,7 +116,7 @@
 
 2. 使用 [MQTT X](https://mqttx.app/) 连接部署
 
-   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth_and_acl.md)。
+   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth.md)。
 
    其中，设定 clientID 为 client1
 
