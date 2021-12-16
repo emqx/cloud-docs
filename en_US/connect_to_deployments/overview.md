@@ -81,6 +81,12 @@
               'link': './vue_sdk.html',
             },
             {
+              'imgName': 'react',
+              'name': 'React',
+              'description': 'Use the MQTT.js library in React to connect to EMQ X Cloud',
+              'link': './react_sdk.html',
+            },
+            {
               'imgName': 'electron',
               'name': 'Electron',
               'description': 'Use the MQTT.js library in Electron to connect to EMQ X Cloud',

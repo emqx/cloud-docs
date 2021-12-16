@@ -78,6 +78,12 @@
               'link': './vue_sdk.html',
             },
             {
+              'imgName': 'react',
+              'name': 'React',
+              'description': '在 React 中使用 MQTT.js 库连接到 EMQ X Cloud',
+              'link': './react_sdk.html',
+            },
+            {
               'imgName': 'electron',
               'name': 'Electron',
               'description': '在 Electron 中使用 MQTT.js 库连接到 EMQ X Cloud',

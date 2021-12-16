@@ -181,20 +181,24 @@
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "使用 WebSocket 连接到部署",
-          "path": "https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket"
-        },
-        {
           "title": "在 Android Kotlin 项目中连接到部署",
           "path": "https://www.emqx.com/zh/blog/android-connects-mqtt-using-kotlin"
         },
         {
-          "title": "在 Electron 项目中连接到部署",
-          "path": "connect_to_deployments/electron_sdk"
+          "title": "使用 WebSocket 连接到部署",
+          "path": "https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
           "title": "在 Vue 项目中连接到部署",
           "path": "connect_to_deployments/vue_sdk"
+        },
+        {
+          "title": "在 React 项目中连接到部署",
+          "path": "connect_to_deployments/react_sdk"
+        },
+        {
+          "title": "在 Electron 项目中连接到部署",
+          "path": "connect_to_deployments/electron_sdk"
         },
         {
           "title": "使用 ESP8266 连接到部署",
@@ -553,12 +557,16 @@
           "path": "https://www.emqx.com/en/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "Connect to deployments using Electron",
-          "path": "connect_to_deployments/electron_sdk"
-        },
-        {
           "title": "Connect to deployments using Vue.js",
           "path": "connect_to_deployments/vue_sdk"
+        },
+        {
+          "title": "Connect to deployments using React",
+          "path": "connect_to_deployments/react_sdk"
+        },
+        {
+          "title": "Connect to deployments using Electron",
+          "path": "connect_to_deployments/electron_sdk"
         },
         {
           "title": "MQTT X connection",
