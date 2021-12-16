@@ -34,11 +34,11 @@ In this model, the MQTT service provided by EMQ X Cloud not only bridges the gap
 
 ## Product Plans
 
-EMQ X Cloud comes in three plans, each with multiple specifications, and we support the deployment of your own fully managed MQTT service on the world's leading public clouds
+EMQ X Cloud comes in three plans, each with multiple specifications, and we support the deployment of your own fully managed MQTT service on the world's leading public clouds.
 
 ![edition](./_assets/pricing.png)
 
-1. Basic: For learning and experiencing the MQTT protocol or EMQ X Broker product, and developing lightweight IoT applications.
+1. Standard: For learning and experiencing the MQTT protocol or EMQ X Broker product, and developing lightweight IoT applications.
 2. Professional: for building mission-critical IoT applications, this plan provides advanced features such as data persistence, message distribution, VPC peering connection.
 3. Unlimited: Suitable for building enterprise-class IoT platform, providing support for multi-location and exclusive hardware deployment, and adding features such as device management, device shadowing, and thing model.
 
@@ -63,7 +63,7 @@ Multi-protocol and private protocol support, please contact us by [ticket](featu
 
 ### Device Management
 
-EMQ X Cloud Basic and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and rule engines. The unlimited plan of EMQ X Cloud provides enterprise-class device management capabilities, allowing users to create and manage device objects directly with the enterprise plan, and manage edge endpoint devices and gateway devices with features unique to the unlimited plan such as device shadowing and cloud edge collaboration.
+EMQ X Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and rule engines. The unlimited plan of EMQ X Cloud provides enterprise-class device management capabilities, allowing users to create and manage device objects directly with the enterprise plan, and manage edge endpoint devices and gateway devices with features unique to the unlimited plan such as device shadowing and cloud edge collaboration.
 
 ![device_manager_1](./_assets/device_manage1.png)
 

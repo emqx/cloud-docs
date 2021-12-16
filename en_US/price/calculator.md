@@ -20,7 +20,7 @@ EMQ X Cloud pricing calculator allows you to estimate the cost of creating deplo
 
 You can select cloud platform, region, and specifications to get the hourly price of deployment.
 
-> Basic Plan: Choose Azure Platform, US East (N. Virginia) area, the maximum number of connections is 1000, the message upstream and downstream TPS is 1000, the hourly price is 0.99, and the monthly basic cost is: 0.99 * 730 = 722.7
+> Standard Plan: Choose Azure Platform, US East (N. Virginia) area, the maximum number of connections is 1000, the message upstream and downstream TPS is 1000, the hourly price is 0.99, and the monthly cost is: 0.99 * 730 = 722.7
   
   ![deployment_price](./_assets/calculator.png)
 
