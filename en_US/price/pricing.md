@@ -4,11 +4,11 @@ We offer a variety of flexible product specifications to support the deployment 
 
 ## Product Plans
 
-EMQ X Cloud is available in three plans: Basic, Professional, and Unlimited.
+EMQ X Cloud is available in three plans: Standard, Professional, and Unlimited.
 
 ![plan](./_assets/pricing.png)
 
-- Basic: Suitable for learning and experiencing the MQTT protocol or EMQ X Broker product, and developing lightweight IoT applications. The Basic plan offers a 30-day free trial.
+- Standard: Suitable for learning and experiencing the MQTT protocol or EMQ X Broker product, and developing lightweight IoT applications. The Standard plan offers a 30-day free trial.
 - Professional: For building mission-critical IoT applications, this plan provides advanced features such as data persistence, message distribution, VPC peer-to-peer connectivity, and more. The Professional plan is available for a 14-day free trial.
 - Unlimited: Suitable for building enterprise-class IoT platforms, this plan provides support for multi-territory and exclusive hardware deployments and adds device management, device shadowing, and thing modeling features.
 
@@ -26,7 +26,7 @@ EMQ X Cloud is available in three plans: Basic, Professional, and Unlimited.
       <th>Overage Unit Price</th>
    </tr>
    <tr>
-      <td rowspan="3">Basic</td>
+      <td rowspan="3">Standard</td>
       <td>1,000 connections / Up to 1,000 TPS</td>
       <td>from $ 0.18/hr</td>
       <td rowspan="3">100G/month</td>
@@ -81,7 +81,7 @@ Note: Prices may vary depending on the public cloud platform selected and the de
 <table>
   <tr>
       <th></th>
-      <th>Basic</th>
+      <th>Standard</th>
       <th>Professional</th>
       <th>Unlimited</th>
     </tr>
