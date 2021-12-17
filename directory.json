@@ -205,6 +205,10 @@
           "path": "connect_to_deployments/esp8266"
         },
         {
+          "title": "使用 ESP32 连接到部署",
+          "path": "connect_to_deployments/esp32"
+        },
+        {
           "title": "MQTT X 连接到部署",
           "path": "connect_to_deployments/mqttx"
         },
@@ -579,6 +583,10 @@
         {
           "title": "Connect to deployments with ESP8266",
           "path": "connect_to_deployments/esp8266"
+        },
+        {
+          "title": "Connect to deployments with ESP32",
+          "path": "connect_to_deployments/esp32"
         },
         {
           "title": "Connect with Home Assistant",
