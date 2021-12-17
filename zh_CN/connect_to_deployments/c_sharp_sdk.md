@@ -5,7 +5,11 @@ C#是一种由C和C++派生出来的面向对象的编程语言。
 
 本文主要介绍如何在 C# 项目中使用 **paho.mqtt.m2mqtt** 客户端库 ，实现客户端与 MQTT 服务器的连接、订阅、收发消息等功能。
 
-## 项目初始化
+## 前提条件
+
+>1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+>2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+
 本项目使用 .NET 5.0  进行开发测试，可以用以下命令确认 .NET 的版本。
 ```bash
 ~ dotnet --version            
@@ -20,21 +24,24 @@ C#是一种由C和C++派生出来的面向对象的编程语言。
 ```bash
 dotnet add package M2Mqtt --version 4.3.0
 ```
+## 连接
 
-## C# MQTT 客户端库使用
+>请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+
+### C# MQTT 客户端库使用
 本文将使用 EMQ X 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker) ，该服务基于 EMQ X 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - Websocket Port: **8083**
 
 ### 导入 M2Mqtt客户端库
-```c#
+```csharp
 using uPLibrary.Networking.M2Mqtt;
 ```
 
 ### 设置 MQTT Broker 连接参数
 设置 MQTT Broker 连接地址，端口以及 topic，同时我们调用 C# `Guid.NewGuid()` 函数随机生成 uid作为MQTT 客户端 id。
-```c#
+```csharp
 string broker = "broker.emqx.io";
 int port = 1883;
 string topic = "Csharp/mqtt";
@@ -46,7 +53,7 @@ string password = "public";
 
 ### 编写 MQTT 连接函数
 编写连接静态类方法 `ConnectMQTT`，该方法会创建MQTT客户端并连接到指定的Broker，并根据客户端的`IsConnected`属性来判断连接是否成功，最后将客户端对象返回。
-```c#
+```csharp
 static MqttClient ConnectMQTT(string broker, int port, string clientId, string username, string password)
 {
     MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);
@@ -65,7 +72,7 @@ static MqttClient ConnectMQTT(string broker, int port, string clientId, string u
 
 ### 发布消息
 定义一个 while 循环语句，在循环中我们将设置每秒调用 MQTT 客户端 `Publish` 方法向指定主题发送消息。
-```c#
+```csharp
 static void Publish(MqttClient client, string topic)
 {
     int msg_count = 0;
@@ -82,7 +89,7 @@ static void Publish(MqttClient client, string topic)
 
 ### 订阅消息
 编写静态方法 `client_MqttMsgPublishReceived`，该方法将在客户端从 MQTT Broker 收到消息后被调用，在控制台打印消息的topic和payload。
-```c#
+```csharp
 static void Subscribe(MqttClient client, string topic)
 {
     client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
@@ -96,7 +103,7 @@ static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs
 ```
 
 ### 完整代码
-```c#
+```csharp
 using System;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;

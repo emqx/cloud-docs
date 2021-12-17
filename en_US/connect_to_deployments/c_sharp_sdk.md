@@ -3,7 +3,11 @@
 
 This article mainly introduces how to use the **paho.mqtt.m2mqtt** client library in a C# project to connect, subscribe, publish and receive messages from the client to the MQTT server.
 
-## Project initialization
+## Preconditions
+
+>1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+>2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
+
 This project uses .NET 5.0 to develop and test. You can use the following commend to confirm the .NET version.
 ```bash
 ~ dotnet --version            
@@ -19,7 +23,10 @@ Use the following command in the root of the project to install M2Mqtt.
 dotnet add package M2Mqtt --version 4.3.0
 ```
 
-## The use of C# MQTT
+
+## Connection
+
+>Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connect to the MQTT broker
 This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQ X. This service is created based on [MQTT IoT cloud platform](https://www.emqx.com/en/cloud) to create. The accessing information of the broker is as follows:
@@ -28,13 +35,13 @@ This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt
 - Websocket Port: **8083**
 
 ### Import the M2Mqtt
-```c#
+```csharp
 using uPLibrary.Networking.M2Mqtt;
 ```
 
 ### Set the parameter of MQTT Broker connection
 Set the address, port and topic of MQTT Broker connection. At the same time, we call the C# `Guid.NewGuid()` to randomly generate uid as the MQTT client id.
-```c#
+```csharp
 string broker = "broker.emqx.io";
 int port = 1883;
 string topic = "Csharp/mqtt";
@@ -46,7 +53,7 @@ string password = "public";
 
 ### Write the MQTT connect method
 Write static class method ConnectMQTT to create an MQTT client and connect it to the specified broker. We can determine whether the client is connected successfully according to the client's property of `IsConnected`. In the end, the client is returned.
-```c#
+```csharp
 static MqttClient ConnectMQTT(string broker, int port, string clientId, string username, string password)
 {
     MqttClient client = new MqttClient(broker, port, false, MqttSslProtocols.None, null, null);
@@ -65,7 +72,7 @@ static MqttClient ConnectMQTT(string broker, int port, string clientId, string u
 
 ### Publish messages
 We define a while loop. In this loop we will set the MQTT client `Publish` method to publish messages to the specified topic every second.
-```c#
+```csharp
 static void Publish(MqttClient client, string topic)
 {
     int msg_count = 0;
@@ -82,7 +89,7 @@ static void Publish(MqttClient client, string topic)
 
 ### Subscribe to a topic
 Write the static method `client_MqttMsgPublishReceived`. This method will be called after the client received messages from the MQTT Broker. In this method, we will print the topic and payload of the messages.
-```c#
+```csharp
 static void Subscribe(MqttClient client, string topic)
 {
     client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
@@ -96,7 +103,7 @@ static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs
 ```
 
 ### The complete code
-```c#
+```csharp
 using System;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
