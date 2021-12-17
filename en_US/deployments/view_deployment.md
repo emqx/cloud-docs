@@ -17,7 +17,7 @@ Here you can view the following deployment information:
   - Basic deployment connection address: domain name ending with emqx.cloud suffix
 - Connection port:
 
-  - Professional deployment port: **1883**(tcp), **8083**(ws) are enabled by default, you can enable **8883**(tls) and **8084**(wss)through [Configuring TLS/SSL](./tls_ssl.md)
+  - Professional deployment port: **1883**(mqtt), **8083**(ws) are enabled by default, you can enable **8883**(mqtts) and **8084**(wss)through [Configuring TLS/SSL](./tls_ssl.md)
   - Basic deployment port: open **11xxx(mqtt)**, **11xxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
 
 ![base_info](./_assets/deployment_info.png)
