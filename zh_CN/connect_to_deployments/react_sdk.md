@@ -85,30 +85,30 @@ React 起源于 Facebook 的内部项目，目前由 Facebook 企业和其强大
 ### 连接代码
 
 ```javascript
-const [client, setClient] = useState(null)
+const [client, setClient] = useState(null);
 const mqttConnect = (host, mqttOption) => {
-  setConnectStatus('Connecting')
-  setClient(mqtt.connect(host, mqttOption))
-}
+  setConnectStatus("Connecting");
+  setClient(mqtt.connect(host, mqttOption));
+};
 useEffect(() => {
   if (client) {
-    console.log(client)
-    client.on('connect', () => {
-      setConnectStatus('Connected')
-    })
-    client.on('error', (err) => {
-      console.error('Connection error: ', err)
-      client.end()
-    })
-    client.on('reconnect', () => {
-      setConnectStatus('Reconnecting')
-    })
-    client.on('message', (topic, message) => {
-      const payload = { topic, message: message.toString() }
-      setPayload(payload)
-    })
+    console.log(client);
+    client.on("connect", () => {
+      setConnectStatus("Connected");
+    });
+    client.on("error", (err) => {
+      console.error("Connection error: ", err);
+      client.end();
+    });
+    client.on("reconnect", () => {
+      setConnectStatus("Reconnecting");
+    });
+    client.on("message", (topic, message) => {
+      const payload = { topic, message: message.toString() };
+      setPayload(payload);
+    });
   }
-}, [client])
+}, [client]);
 ```
 
 ### 订阅主题
@@ -116,16 +116,16 @@ useEffect(() => {
 ```javascript
 const mqttSub = (subscription) => {
   if (client) {
-    const { topic, qos } = subscription
+    const { topic, qos } = subscription;
     client.subscribe(topic, { qos }, (error) => {
       if (error) {
-        console.log('Subscribe to topics error', error)
-        return
+        console.log("Subscribe to topics error", error);
+        return;
       }
-      setIsSub(true)
-    })
+      setIsSub(true);
+    });
   }
-}
+};
 ```
 
 ### 取消订阅
@@ -133,16 +133,16 @@ const mqttSub = (subscription) => {
 ```javascript
 const mqttUnSub = (subscription) => {
   if (client) {
-    const { topic } = subscription
+    const { topic } = subscription;
     client.unsubscribe(topic, (error) => {
       if (error) {
-        console.log('Unsubscribe error', error)
-        return
+        console.log("Unsubscribe error", error);
+        return;
       }
-      setIsSub(false)
-    })
+      setIsSub(false);
+    });
   }
-}
+};
 ```
 
 ### 消息发布
@@ -150,14 +150,14 @@ const mqttUnSub = (subscription) => {
 ```javascript
 const mqttPublish = (context) => {
   if (client) {
-    const { topic, qos, payload } = context
+    const { topic, qos, payload } = context;
     client.publish(topic, payload, { qos }, (error) => {
       if (error) {
-        console.log('Publish error: ', error)
+        console.log("Publish error: ", error);
       }
-    })
+    });
   }
-}
+};
 ```
 
 ### 断开连接
@@ -166,10 +166,10 @@ const mqttPublish = (context) => {
 const mqttDisconnect = () => {
   if (client) {
     client.end(() => {
-      setConnectStatus('Connect')
-    })
+      setConnectStatus("Connect");
+    });
   }
-}
+};
 ```
 
 完整项目示例代码：[https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React)。

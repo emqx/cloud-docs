@@ -8,8 +8,8 @@ This article mainly introduces how to use `MQTT.js` in the Vue project, and impl
 
 ## Preconditions
 
->1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
->2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
+> 1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+> 2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 This project uses [Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) to create a Vue project for development and testing. You can confirm the Vue CLI by using the following command (this example version is **v4.x**) and create a new project, or you can [create a Vue project by referencing Vue.js](https://vuejs.org/v2/guide/installation.html).
 
@@ -49,7 +49,7 @@ The following method 2 and 3 are more suitable for the project that directly int
 
 ## Connection
 
->Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
+> Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connection settings
 
@@ -63,75 +63,75 @@ This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt
 
 ```html
 <script>
-import mqtt from 'mqtt'
+  import mqtt from 'mqtt'
 
-export default {
-  data() {
-    return {
-      connection: {
-        host: 'broker.emqx.io',
-        port: 8083,
-        endpoint: '/mqtt',
-        clean: true, // Reserved session
-        connectTimeout: 4000, // Time out
-        reconnectPeriod: 4000, // Reconnection interval
-        // Certification Information
-        clientId: 'mqttjs_3be2c321',
-        username: 'emqx_test',
-        password: 'emqx_test',
-      },
-      subscription: {
-        topic: 'topic/mqttx',
-        qos: 0,
-      },
-      publish: {
-        topic: 'topic/browser',
-        qos: 0,
-        payload: '{ "msg": "Hello, I am browser." }',
-      },
-      receiveNews: '',
-      qosList: [
-        { label: 0, value: 0 },
-        { label: 1, value: 1 },
-        { label: 2, value: 2 },
-      ],
-      client: {
-        connected: false,
-      },
-      subscribeSuccess: false,
-    }
-  },
-
-  methods: {
-    // Create connection
-    createConnection() {
-      // Connect string, and specify the connection method used through protocol
-      // ws unencrypted WebSocket connection
-      // wss encrypted WebSocket connection
-      // mqtt unencrypted TCP connection
-      // mqtts encrypted TCP connection
-      // wxs WeChat mini app connection
-      // alis Alipay mini app connection
-      const { host, port, endpoint, ...options } = this.connection
-      const connectUrl = `ws://${host}:${port}${endpoint}`
-      try {
-        this.client = mqtt.connect(connectUrl, options)
-      } catch (error) {
-        console.log('mqtt.connect error', error)
+  export default {
+    data() {
+      return {
+        connection: {
+          host: 'broker.emqx.io',
+          port: 8083,
+          endpoint: '/mqtt',
+          clean: true, // Reserved session
+          connectTimeout: 4000, // Time out
+          reconnectPeriod: 4000, // Reconnection interval
+          // Certification Information
+          clientId: 'mqttjs_3be2c321',
+          username: 'emqx_test',
+          password: 'emqx_test',
+        },
+        subscription: {
+          topic: 'topic/mqttx',
+          qos: 0,
+        },
+        publish: {
+          topic: 'topic/browser',
+          qos: 0,
+          payload: '{ "msg": "Hello, I am browser." }',
+        },
+        receiveNews: '',
+        qosList: [
+          { label: 0, value: 0 },
+          { label: 1, value: 1 },
+          { label: 2, value: 2 },
+        ],
+        client: {
+          connected: false,
+        },
+        subscribeSuccess: false,
       }
-      this.client.on('connect', () => {
-        console.log('Connection succeeded!')
-      })
-      this.client.on('error', error => {
-        console.log('Connection failed', error)ß
-      })
-      this.client.on('message', (topic, message) => {
-        this.receiveNews = this.receiveNews.concat(message)
-        console.log(`Received message ${message} from topic ${topic}`)
-      })
     },
+
+    methods: {
+      // Create connection
+      createConnection() {
+        // Connect string, and specify the connection method used through protocol
+        // ws unencrypted WebSocket connection
+        // wss encrypted WebSocket connection
+        // mqtt unencrypted TCP connection
+        // mqtts encrypted TCP connection
+        // wxs WeChat mini app connection
+        // alis Alipay mini app connection
+        const { host, port, endpoint, ...options } = this.connection
+        const connectUrl = `ws://${host}:${port}${endpoint}`
+        try {
+          this.client = mqtt.connect(connectUrl, options)
+        } catch (error) {
+          console.log('mqtt.connect error', error)
+        }
+        this.client.on('connect', () => {
+          console.log('Connection succeeded!')
+        })
+        this.client.on('error', error => {
+          console.log('Connection failed', error)ß
+        })
+        this.client.on('message', (topic, message) => {
+          this.receiveNews = this.receiveNews.concat(message)
+          console.log(`Received message ${message} from topic ${topic}`)
+        })
+      },
+    }
   }
-}
 </script>
 ```
 

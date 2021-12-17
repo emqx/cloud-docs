@@ -418,7 +418,7 @@
           "path": "deployments/create_deployment"
         },
         {
-          "title": "Use MQTT X to connect to deployments",
+          "title": "Use MQTT X to connect to deployment",
           "path": "connect_to_deployments/mqttx"
         }
       ]
@@ -553,19 +553,19 @@
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "Connect to deployments with WebSocket",
+          "title": "Connect to deployment with WebSocket",
           "path": "https://www.emqx.com/en/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "Connect to deployments using Vue.js",
+          "title": "Connect to deployment with Vue.js",
           "path": "connect_to_deployments/vue_sdk"
         },
         {
-          "title": "Connect to deployments using React",
+          "title": "Connect to deployment with React",
           "path": "connect_to_deployments/react_sdk"
         },
         {
-          "title": "Connect to deployments using Electron",
+          "title": "Connect to deployment with Electron",
           "path": "connect_to_deployments/electron_sdk"
         },
         {
@@ -577,7 +577,7 @@
           "path": "connect_to_deployments/mqttfx"
         },
         {
-          "title": "Connect to deployments with ESP8266",
+          "title": "Connect to deployment with ESP8266",
           "path": "connect_to_deployments/esp8266"
         },
         {

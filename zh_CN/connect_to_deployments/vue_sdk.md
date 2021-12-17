@@ -8,8 +8,8 @@
 
 ## 前提条件
 
->1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
->2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+> 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 本项目使用 [Vue CLI](https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create) 创建 Vue 项目进行开发和测试，可通过以下命令确认 Vue CLI 的版本（本示例版本为 **v4.x**）并创建一个新项目，也可以 [通过引用 Vue.js 创建 Vue 项目](https://cn.vuejs.org/v2/guide/installation.html)。
 
@@ -49,7 +49,7 @@ vue create vue-mqtt-test
 
 ## 连接
 
->请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
 
 ### 连接设置
 
@@ -63,75 +63,75 @@ vue create vue-mqtt-test
 
 ```html
 <script>
-import mqtt from 'mqtt'
+  import mqtt from 'mqtt'
 
-export default {
-  data() {
-    return {
-      connection: {
-        host: 'broker.emqx.io',
-        port: 8083,
-        endpoint: '/mqtt',
-        clean: true, // 保留会话
-        connectTimeout: 4000, // 超时时间
-        reconnectPeriod: 4000, // 重连时间间隔
-        // 认证信息
-        clientId: 'mqttjs_3be2c321',
-        username: 'emqx_test',
-        password: 'emqx_test',
-      },
-      subscription: {
-        topic: 'topic/mqttx',
-        qos: 0,
-      },
-      publish: {
-        topic: 'topic/browser',
-        qos: 0,
-        payload: '{ "msg": "Hello, I am browser." }',
-      },
-      receiveNews: '',
-      qosList: [
-        { label: 0, value: 0 },
-        { label: 1, value: 1 },
-        { label: 2, value: 2 },
-      ],
-      client: {
-        connected: false,
-      },
-      subscribeSuccess: false,
-    }
-  },
-
-  methods: {
-    // 创建连接
-    createConnection() {
-      // 连接字符串, 通过协议指定使用的连接方式
-      // ws 未加密 WebSocket 连接
-      // wss 加密 WebSocket 连接
-      // mqtt 未加密 TCP 连接
-      // mqtts 加密 TCP 连接
-      // wxs 微信小程序连接
-      // alis 支付宝小程序连接
-      const { host, port, endpoint, ...options } = this.connection
-      const connectUrl = `ws://${host}:${port}${endpoint}`
-      try {
-        this.client = mqtt.connect(connectUrl, options)
-      } catch (error) {
-        console.log('mqtt.connect error', error)
+  export default {
+    data() {
+      return {
+        connection: {
+          host: 'broker.emqx.io',
+          port: 8083,
+          endpoint: '/mqtt',
+          clean: true, // 保留会话
+          connectTimeout: 4000, // 超时时间
+          reconnectPeriod: 4000, // 重连时间间隔
+          // 认证信息
+          clientId: 'mqttjs_3be2c321',
+          username: 'emqx_test',
+          password: 'emqx_test',
+        },
+        subscription: {
+          topic: 'topic/mqttx',
+          qos: 0,
+        },
+        publish: {
+          topic: 'topic/browser',
+          qos: 0,
+          payload: '{ "msg": "Hello, I am browser." }',
+        },
+        receiveNews: '',
+        qosList: [
+          { label: 0, value: 0 },
+          { label: 1, value: 1 },
+          { label: 2, value: 2 },
+        ],
+        client: {
+          connected: false,
+        },
+        subscribeSuccess: false,
       }
-      this.client.on('connect', () => {
-        console.log('Connection succeeded!')
-      })
-      this.client.on('error', error => {
-        console.log('Connection failed', error)ß
-      })
-      this.client.on('message', (topic, message) => {
-        this.receiveNews = this.receiveNews.concat(message)
-        console.log(`Received message ${message} from topic ${topic}`)
-      })
     },
+
+    methods: {
+      // 创建连接
+      createConnection() {
+        // 连接字符串, 通过协议指定使用的连接方式
+        // ws 未加密 WebSocket 连接
+        // wss 加密 WebSocket 连接
+        // mqtt 未加密 TCP 连接
+        // mqtts 加密 TCP 连接
+        // wxs 微信小程序连接
+        // alis 支付宝小程序连接
+        const { host, port, endpoint, ...options } = this.connection
+        const connectUrl = `ws://${host}:${port}${endpoint}`
+        try {
+          this.client = mqtt.connect(connectUrl, options)
+        } catch (error) {
+          console.log('mqtt.connect error', error)
+        }
+        this.client.on('connect', () => {
+          console.log('Connection succeeded!')
+        })
+        this.client.on('error', error => {
+          console.log('Connection failed', error)ß
+        })
+        this.client.on('message', (topic, message) => {
+          this.receiveNews = this.receiveNews.concat(message)
+          console.log(`Received message ${message} from topic ${topic}`)
+        })
+      },
+    }
   }
-}
 </script>
 ```
 
@@ -203,7 +203,7 @@ destroyConnection() {
 
 ![vueui.png](https://static.emqx.net/images/b6563b0eb66eb51a2a02776889016a18.png)
 
-使用 [MQTT 5.0 客户端工具 - MQTT X](https://mqttx.app/zh)  作为另一个客户端进行消息收发测试。
+使用 [MQTT 5.0 客户端工具 - MQTT X](https://mqttx.app/zh) 作为另一个客户端进行消息收发测试。
 
 ![vuemqttx.png](https://static.emqx.net/images/2013cbab1bdffcae69b817bfebb4a33f.png)
 

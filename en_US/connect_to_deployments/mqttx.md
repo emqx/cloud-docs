@@ -1,31 +1,57 @@
-# Connect to Deployments with MQTT X
+# Connect to Deployment with MQTT X
 
-[MQTT X](https://mqttx.app) is an elegant cross-platform MQTT 5.0 desktop client open sourced by [EMQ](http://emqx.io), which supports macOS, Linux, Windows.
+This article will introduce using MQTT X as an MQTT client testing tool to connect the deployment of EMQ X Cloud.
 
-The UI of [MQTT X](https://mqttx.app) adopts the chat interface form, which simplifies the page operation logic. Users can quickly create connections. It allows multiple clients to be saved, which is convenient for users to quickly test `MQTT/MQTTS` connection, and subscribe and publish `MQTT` messages.
+[MQTT X](https://mqttx.app) is a cross-platform MQTT 5.0 client tool open sourced by [EMQ](https://emqx.com/en), which can run on macOS, Linux and Windows, and supports formatting MQTT payload.
 
-Before downloading and installing, please visit our [website](https://mqttx.app/) or [GitHub](https://github.com/emqx/MQTTX) to get the latest version information. The latest version helps to improve the using experience. If you are familiar with this project, you can also directly clone [MQTT X](https://mqttx.app/)  repository source code, package and use it yourself. During useing, if you have any questions, you can go to [GitHub issues](https://github.com/emqx/MQTTX/issues) to post questions and opinions or Fork our project, and submit a revised PR to us, We will carefully review and reply.
+[MQTT X](https://mqttx.app) simplifies the operation logic of the page with the help of chatting software. The user can quickly create a connection to save and establish multiple connection clients at the same time. It is convenient for the user to quickly test the connection of `MQTT/TCP`、`MQTT/TLS`, and `MQTT/WebSocket` Publish / Subscribe functions and other features.
 
-## Precondition
+## Preconditions
 
-* Already [Create Deployment](../deployments/create_deployment.md) in EMQ X Cloud, and the deployment status is **running**
-* Install MQTT X client
+> 1. [Install](https://www.emqx.com/en/downloads/MQTTX) MQTT X client tool
+> 2. Already [Create Deployment](../deployments/create_deployment.md) in EMQ X Cloud, and the deployment status is **running**
 
-## Connection configuration example
+Before downloading and installing, please visit our [website](https://mqttx.app/) or [GitHub](https://github.com/emqx/MQTTX) to get the latest version information. The latest version helps to improve the using experience. If you are familiar with this project, you can also directly clone [MQTT X](https://github.com/emqx/MQTTX) repository source code, package and use it yourself. During using, if you have any questions, you can go to [GitHub issues](https://github.com/emqx/MQTTX/issues) to post questions and opinions or Fork our project, and submit a revised PR to us, We will carefully review and reply.
 
-* Connect to deployment with MQTT protocol
+## Connection configuration
 
-![](./_assets/mqttx_mqtt.png)
+### Broker information
 
-* Connect to the deployment and subscribe to messages with the Websocket protocol
+Get the connection address and port in the [Deployment Overview](../deployments/view_deployment.md) (the following **xxxxx represents a random port**, the specific port information **please refer to the information on the deployment overview page**).
 
-![](./_assets/mqttx_ws.png)
+- Professional plan address: IP; port: 1883(mqtt), 8083(ws) is enabled by default, you can enable port 8883(mqtts) and 8084(wss) by configuring TLS/SSL
+- Standard plan address: domain name ending with emqx.cloud suffix; port: xxxxx (mqtt), xxxxx (ws), xxxxx (mqtts), xxxxx (wss)
 
-* Connect to deployment and subscribe to messages with MQTT over TLS/SSL protocol
+### Authentication
 
-![](./_assets/mqttx_mqtts.png)
+All deployments of EMQ X Cloud have user authentication enabled, so when using MQTT X to test the connection, **you need to fill in the Username and Password fields**.
 
-* Connect to deployment and subscribe to messages with Websocket over TLS/SSL protocol
+> Set the Username and Password in `Authentication & ACL` > `Authentication`, which can be added one by one, or can be imported at once
 
-![](./_assets/mqttx_wss.png)
+### Protocol
 
+- Connect to deployment with MQTT protocol
+
+![MQTT X uses MQTT protocol](./_assets/mqttx_mqtt.png)
+
+- Connect to the deployment with the Websocket protocol
+
+![MQTT X uses WS protocol](./_assets/mqttx_ws.png)
+
+- Connect to deployment with MQTT over TLS/SSL protocol
+
+![MQTT X uses MQTTS protocol](./_assets/mqttx_mqtts.png)
+
+- Connect to deployment with Websocket over TLS/SSL protocol
+
+![MQTT X uses WSS protocol](./_assets/mqttx_wss.png)
+
+### Name & Client ID
+
+The name is an identification of this connection, the client ID has been filled in by default, and you can click the refresh icon on the right to refresh. After filling in the appeal information correctly, click the connect button in the upper right corner to connect to the EMQ X Cloud deployment.
+
+### More
+
+- For more subscription, publishing and other functions, please refer to: [MQTT X Guideline](https://www.emqx.com/en/blog/mqtt-x-guideline)
+- [MQTT X Script Function Tutorial](https://www.emqx.com/en/blog/mqttx-script-function-tutorial)
+- [MQTT X - an elegant cross-platform MQTT 5.0 desktop client](https://www.emqx.com/en/blog/mqtt-x-elegant-cross-platform-mqtt5-desktop-client)

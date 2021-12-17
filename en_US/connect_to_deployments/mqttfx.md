@@ -1,25 +1,45 @@
-# Connect to Deployments with MQTT.fx
+# Connect to Deployment with MQTT.fx
 
-[MQTT.fx](https://mqttfx.jensd.de/) is an cross-platform MQTT desktop client, which supports macOS, Linux, Windows.
+This article will take [MQTT.fx](http://www.mqttfx.jensd.de/) as [MQTT client](https://www.emqx.com/en/blog/introduction-to-the-commonly-used-mqtt-client-library) test tool to connect the deployment of EMQ X Cloud.
 
-TCP and TLS protocols are supported **but websocket**.
+[MQTT.fx](http://www.mqttfx.jensd.de/) is the most popular MQTT desktop client tool currently. The major version of MQTT.fx 1.0 is developed by [Jens Deters](https://www.jensd.de/wordpress/) using [JavaFX](https://en.wikipedia.org/wiki/JavaFX) technology, which is a Java virtual machine application. Unfortunately, the maintenance of MQTT.fx has now stopped maintenance and Softblade company has sponsored the development and released its commercial version MQTT.fx® 5.0, which is operated with a fee-based license. MQTT.fx in this article refers to version 1.0 without special instructions.
 
-## Precondition
+TCP and TLS protocols are supported **but WebSocket**.
 
-* Already [Create Deployment](../deployments/create_deployment.md) in EMQ X Cloud, and the deployment status is **running**
-* Install MQTT.fx client
+## Preconditions
 
-## Connection configuration example
+> 1. [Install](http://www.mqttfx.jensd.de/index.php/download) MQTT.fx client
+> 2. Already [Create Deployment](../deployments/create_deployment.md) in EMQ X Cloud, and the deployment status is **running**
+
+## Connection configuration
+
+### Broker information
+
+Get the connection address and port in the [Deployment Overview](../deployments/view_deployment.md) (the following **xxxxx represents a random port**, the specific port information **please refer to the information on the deployment overview page**).
+
+- Professional plan address: IP; port: 1883(mqtt), 8083(ws) is enabled by default, you can enable port 8883(mqtts) and 8084(wss) by configuring TLS/SSL
+- Standard plan address: domain name ending with emqx.cloud suffix; port: xxxxx (mqtt), xxxxx (ws), xxxxx (mqtts), xxxxx (wss)
+
+### Authentication
+
+All deployments of EMQ X Cloud have user authentication enabled, so when using MQTT.fx to test the connection, **you need to fill in the Username and Password fields**.
+
+> Set the Username and Password in `Authentication & ACL` > `Authentication`, which can be added one by one, or can be imported at once
+
+## Connect
 
 1. Open connection profile
 
-    ![](./_assets/mqttfx_profile.png)
+   ![Open connection profile of MQTT.fx](./_assets/mqttfx_profile.png)
 
 2. Create a new connection configuration and fill in the relevant configuration
 
-    ![](./_assets/mqttfx_new_profile.png)
+   ![Connection configuration of MQTT.fx](./_assets/mqttfx_new_profile.png)
 
 3. Connect to MQTT broker
 
-    ![](./_assets/mqttfx_connect.png)
+   ![Use MQTT.fx to connect MQTT broker](./_assets/mqttfx_connect.png)
 
+## More
+
+For more subscription, publishing and other functions, please refer to: [Using MQTT.fx to connect to EMQ X Cloud](https://www.emqx.com/en/blog/connecting-to-emqx-cloud-with-mqttfx).
