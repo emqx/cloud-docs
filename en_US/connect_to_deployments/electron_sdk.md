@@ -8,8 +8,8 @@ A basic Electron includes three files: `package.json` (metadata) `main.js` (code
 
 ## Preconditions
 
->1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
->2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
+> 1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+> 2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 ## New project
 
@@ -19,9 +19,9 @@ There are many ways to build a new project, but here is a brief list of a few:
 
   ```shell
   cd your-project
-  
+
   npm init
-  
+
   npm i -D electron@latest
   ```
 
@@ -62,7 +62,7 @@ There are many ways to build a new project, but here is a brief list of a few:
   # Install vue-cli and scaffold boilerplate
   npm install -g vue-cli
   vue init simulatedgreg/electron-vue my-project
-  
+
   # Install dependencies and run your app
   cd my-project
   yarn # or npm install
@@ -83,7 +83,7 @@ After the dependencies are installed, if you want to open the console for debugg
 
 ```javascript
 // Open the DevTools.
-mainWindow.webContents.openDevTools()
+mainWindow.webContents.openDevTools();
 ```
 
 In this case, the locally installed `MQTT.js` module cannot be loaded directly into `renderer.js` without using the front-end builder to package the front-end page. In addition to using the build tool method, there are two other ways to solve this:
@@ -92,20 +92,20 @@ In this case, the locally installed `MQTT.js` module cannot be loaded directly i
 
    ```javascript
    const mainWindow = new BrowserWindow({
-       width: 800,
-       height: 600,
-       webPreferences: {
-         nodeIntegration: true,
-         preload: path.join(__dirname, 'preload.js')
-       }
-     })
+     width: 800,
+     height: 600,
+     webPreferences: {
+       nodeIntegration: true,
+       preload: path.join(__dirname, "preload.js"),
+     },
+   });
    ```
 
 2. The MQTT.js module can be imported in preload.js. When there is no node integration, this script still can access all Node APIs. However, when this script execution completes, global objects injected via Node will be removed.
 
 ## Connection
 
->Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
+> Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connection settings
 
@@ -121,64 +121,66 @@ To illustrate more intuitive, the key connection code for the example will be wr
 
 ```javascript
 // preload.js
-const mqtt = require('mqtt')
-window.mqtt = mqtt
+const mqtt = require("mqtt");
+window.mqtt = mqtt;
 ```
 
 - Configure and test MQTT module
 
 ```javascript
 // renderer.js
-const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
+const clientId = "mqttjs_" + Math.random().toString(16).substr(2, 8);
 
-const host = 'mqtt://broker.emqx.io:1883'
+const host = "mqtt://broker.emqx.io:1883";
 
 const options = {
   keepalive: 30,
   clientId: clientId,
-  protocolId: 'MQTT',
+  protocolId: "MQTT",
   protocolVersion: 4,
   clean: true,
   reconnectPeriod: 1000,
   connectTimeout: 30 * 1000,
   will: {
-    topic: 'WillMsg',
-    payload: 'Connection Closed abnormally..!',
+    topic: "WillMsg",
+    payload: "Connection Closed abnormally..!",
     qos: 0,
-    retain: false
+    retain: false,
   },
-  rejectUnauthorized: false
-}
+  rejectUnauthorized: false,
+};
 
 // Information about the mqtt module is available
-console.log(mqtt)
+console.log(mqtt);
 
-console.log('connecting mqtt client')
-const client = mqtt.connect(host, options)
+console.log("connecting mqtt client");
+const client = mqtt.connect(host, options);
 
-client.on('error', (err) => {
-  console.log('Connection error: ', err)
-  client.end()
-})
+client.on("error", (err) => {
+  console.log("Connection error: ", err);
+  client.end();
+});
 
-client.on('reconnect', () => {
-  console.log('Reconnecting...')
-})
+client.on("reconnect", () => {
+  console.log("Reconnecting...");
+});
 
-client.on('connect', () => {
-  console.log('Client connected:' + clientId)
-  client.subscribe('testtopic/electron', {
-    qos: 0
-  })
-  client.publish('testtopic/electron', 'Electron connection demo...!', {
+client.on("connect", () => {
+  console.log("Client connected:" + clientId);
+  client.subscribe("testtopic/electron", {
     qos: 0,
-    retain: false
-  })
-})
+  });
+  client.publish("testtopic/electron", "Electron connection demo...!", {
+    qos: 0,
+    retain: false,
+  });
+});
 
-client.on('message', (topic, message, packet) => {
-  console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
-})
+client.on("message", (topic, message, packet) => {
+  console.log(
+    "Received Message: " + message.toString() + "\nOn topic: " + topic
+  );
+});
 ```
 
 We can see the following output on the console after writing the above code and running the project:
@@ -196,117 +198,122 @@ The complete code is available here: [https://github.com/emqx/MQTT-Client-Exampl
 ### Key code
 
 ```javascript
-  let client = null
-  
-  const options = {
-    keepalive: 30,
-    protocolId: 'MQTT',
-    protocolVersion: 4,
-    clean: true,
-    reconnectPeriod: 1000,
-    connectTimeout: 30 * 1000,
-    will: {
-      topic: 'WillMsg',
-      payload: 'Connection Closed abnormally..!',
-      qos: 0,
-      retain: false
-    },
-  }
-  
-  function onConnect () {
-    const { host, port, clientId, username, password } = connection
-    const connectUrl = `mqtt://${host.value}:${port.value}`
-    options.clientId = clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`
-    options.username = username.value
-    options.password = password.value
-    console.log('connecting mqtt client')
-    client = mqtt.connect(connectUrl, options)
-    client.on('error', (err) => {
-      console.error('Connection error: ', err)
-      client.end()
-    })
-    client.on('reconnect', () => {
-      console.log('Reconnecting...')
-    })
-    client.on('connect', () => {
-      console.log('Client connected:' + options.clientId)
-      connectBtn.innerText = 'Connected'
-    })
-  }
+let client = null;
+
+const options = {
+  keepalive: 30,
+  protocolId: "MQTT",
+  protocolVersion: 4,
+  clean: true,
+  reconnectPeriod: 1000,
+  connectTimeout: 30 * 1000,
+  will: {
+    topic: "WillMsg",
+    payload: "Connection Closed abnormally..!",
+    qos: 0,
+    retain: false,
+  },
+};
+
+function onConnect() {
+  const { host, port, clientId, username, password } = connection;
+  const connectUrl = `mqtt://${host.value}:${port.value}`;
+  options.clientId =
+    clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`;
+  options.username = username.value;
+  options.password = password.value;
+  console.log("connecting mqtt client");
+  client = mqtt.connect(connectUrl, options);
+  client.on("error", (err) => {
+    console.error("Connection error: ", err);
+    client.end();
+  });
+  client.on("reconnect", () => {
+    console.log("Reconnecting...");
+  });
+  client.on("connect", () => {
+    console.log("Client connected:" + options.clientId);
+    connectBtn.innerText = "Connected";
+  });
+}
 ```
 
 ### Subscribe to the topic
 
 ```javascript
-  function onSub () {
-    if (client.connected) {
-      const { topic, qos } = subscriber
-      client.subscribe(topic.value, { qos: parseInt(qos.value, 10) }, (error, res) => {
-         if (error) {
-           console.error('Subscribe error: ', error)
-         } else {
-           console.log('Subscribed: ', res)
-         }
-      })
-    }
+function onSub() {
+  if (client.connected) {
+    const { topic, qos } = subscriber;
+    client.subscribe(
+      topic.value,
+      { qos: parseInt(qos.value, 10) },
+      (error, res) => {
+        if (error) {
+          console.error("Subscribe error: ", error);
+        } else {
+          console.log("Subscribed: ", res);
+        }
+      }
+    );
   }
+}
 ```
 
 ### Unsubscribe
 
 ```javascript
-  function onUnsub () {
-    if (client.connected) {
-      const { topic } = subscriber
-      client.unsubscribe(topic.value, error => {
-        if (error) {
-          console.error('Unsubscribe error: ', error)
-        } else {
-          console.log('Unsubscribed: ', topic.value)
-        }
-      })
-    }
+function onUnsub() {
+  if (client.connected) {
+    const { topic } = subscriber;
+    client.unsubscribe(topic.value, (error) => {
+      if (error) {
+        console.error("Unsubscribe error: ", error);
+      } else {
+        console.log("Unsubscribed: ", topic.value);
+      }
+    });
   }
+}
 ```
 
 ### Publish messages
 
 ```javascript
-  function onSend () {
-    if (client.connected) {
-      const { topic, qos, payload } = publisher
-      client.publish(topic.value, payload.value, {
-        qos: parseInt(qos.value, 10),
-        retain: false
-      })
-    }
+function onSend() {
+  if (client.connected) {
+    const { topic, qos, payload } = publisher;
+    client.publish(topic.value, payload.value, {
+      qos: parseInt(qos.value, 10),
+      retain: false,
+    });
   }
+}
 ```
 
 ### Receive messages
 
 ```javascript
 // In the onConnect function
-client.on('message', (topic, message) => {
-  const msg = document.createElement('div')
-  msg.setAttribute('class', 'message-body')
-  msg.innerText = `${message.toString()}\nOn topic: ${topic}`
-  document.getElementById('article').appendChild(msg)
-})
+client.on("message", (topic, message) => {
+  const msg = document.createElement("div");
+  msg.setAttribute("class", "message-body");
+  msg.innerText = `${message.toString()}\nOn topic: ${topic}`;
+  document.getElementById("article").appendChild(msg);
+});
 ```
 
 ### Disconnect
 
 ```javascript
-  function onDisconnect () {
-    if (client.connected) {
-      client.end()
-      client.on('close', () => {
-        connectBtn.innerText = 'Connect'
-        console.log(options.clientId + ' disconnected')
-      })
-    }
+function onDisconnect() {
+  if (client.connected) {
+    client.end();
+    client.on("close", () => {
+      connectBtn.innerText = "Connect";
+      console.log(options.clientId + " disconnected");
+    });
   }
+}
 ```
 
 ## Test
@@ -327,4 +334,4 @@ So far, we have completed that use Electron to create a simple MQTT desktop clie
 
 You can download the source code of the example [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron), and you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
 
-[^1]:  https://en.wikipedia.org/wiki/Electron_(software_framework)
+[^1]: https://en.wikipedia.org/wiki/Electron_(software_framework)

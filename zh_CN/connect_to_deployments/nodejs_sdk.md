@@ -8,8 +8,8 @@
 
 ## 前提条件
 
->1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
->2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+> 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 本项目使用 Node.js v14.14.0 进行开发和测试，读者可用如下命令确认 Node.js 的版本。
 
@@ -35,7 +35,7 @@ npm install mqtt --save
 
 ## 连接
 
->请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
 
 ### 连接设置
 
@@ -50,7 +50,7 @@ npm install mqtt --save
 > 注意：在 Node.js 环境中，导入依赖模块请使用 commonjs 规范
 
 ```javascript
-const mqtt = require('mqtt')
+const mqtt = require("mqtt");
 ```
 
 ### 设置 MQTT Broker 的连接参数
@@ -58,9 +58,9 @@ const mqtt = require('mqtt')
 设置 MQTT Broker 连接地址，端口以及 topic，这里我们使用 JavaScript 中的生成随机数的函数来生成客户端 ID。
 
 ```javascript
-const host = 'broker.emqx.io'
-const port = '1883'
-const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
+const host = "broker.emqx.io";
+const port = "1883";
+const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
 ```
 
 ### 编写 MQTT 连接函数
@@ -68,16 +68,16 @@ const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
 我们使用刚才设置的连接参数来进行连接，连接的 URL 通过上面定义的 host、port 端口来进行拼接。然后调用 mqtt 模块内置的 connect 函数，连接成功后返回一个 Client 实例。
 
 ```javascript
-const connectUrl = `mqtt://${host}:${port}`
+const connectUrl = `mqtt://${host}:${port}`;
 
 const client = mqtt.connect(connectUrl, {
   clientId,
   clean: true,
   connectTimeout: 4000,
-  username: 'emqx',
-  password: 'public',
+  username: "emqx",
+  password: "public",
   reconnectPeriod: 1000,
-})
+});
 ```
 
 ### 订阅主题
@@ -85,13 +85,13 @@ const client = mqtt.connect(connectUrl, {
 使用返回的 Client 实例的 on 方法来监听连接成功状态，并在连接成功后的回调函数中订阅 topic。此时我们连接成功后调用 Client 实例的 subscribe 方法订阅 `/nodejs/mqtt` 主题。
 
 ```javascript
-const topic = '/nodejs/mqtt'
-client.on('connect', () => {
-  console.log('Connected')
+const topic = "/nodejs/mqtt";
+client.on("connect", () => {
+  console.log("Connected");
   client.subscribe([topic], () => {
-    console.log(`Subscribe to topic '${topic}'`)
-  })
-})
+    console.log(`Subscribe to topic '${topic}'`);
+  });
+});
 ```
 
 订阅主题成功后，我们再使用 on 方法来监听接收消息的方法，当接受到消息时，我们可以在该方法的回调函数中获取到 topic 和 message 消息。
@@ -99,9 +99,9 @@ client.on('connect', () => {
 > 注意：回调函数中的 message 是 Buffer 类型，需要使用 toString 方法将其转化为字符串
 
 ```javascript
-client.on('message', (topic, payload) => {
-  console.log('Received Message:', topic, payload.toString())
-})
+client.on("message", (topic, payload) => {
+  console.log("Received Message:", topic, payload.toString());
+});
 ```
 
 ### 消息发布
@@ -111,13 +111,18 @@ client.on('message', (topic, payload) => {
 > 注意：消息发布需要在 MQTT 连接成功以后，因此这里我们写到 Connect 成功的回调函数里
 
 ```javascript
-client.on('connect', () => {
-  client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
-    if (error) {
-      console.error(error)
+client.on("connect", () => {
+  client.publish(
+    topic,
+    "nodejs mqtt test",
+    { qos: 0, retain: false },
+    (error) => {
+      if (error) {
+        console.error(error);
+      }
     }
-  })
-})
+  );
+});
 ```
 
 ### 完整代码
@@ -125,37 +130,42 @@ client.on('connect', () => {
 服务器连接、主题订阅、消息发布与接收的代码。
 
 ```javascript
-const mqtt = require('mqtt')
+const mqtt = require("mqtt");
 
-const host = 'broker.emqx.io'
-const port = '1883'
-const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
+const host = "broker.emqx.io";
+const port = "1883";
+const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
 
-const connectUrl = `mqtt://${host}:${port}`
+const connectUrl = `mqtt://${host}:${port}`;
 const client = mqtt.connect(connectUrl, {
   clientId,
   clean: true,
   connectTimeout: 4000,
-  username: 'emqx',
-  password: 'public',
+  username: "emqx",
+  password: "public",
   reconnectPeriod: 1000,
-})
+});
 
-const topic = '/nodejs/mqtt'
-client.on('connect', () => {
-  console.log('Connected')
+const topic = "/nodejs/mqtt";
+client.on("connect", () => {
+  console.log("Connected");
   client.subscribe([topic], () => {
-    console.log(`Subscribe to topic '${topic}'`)
-  })
-  client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
-    if (error) {
-      console.error(error)
+    console.log(`Subscribe to topic '${topic}'`);
+  });
+  client.publish(
+    topic,
+    "nodejs mqtt test",
+    { qos: 0, retain: false },
+    (error) => {
+      if (error) {
+        console.error(error);
+      }
     }
-  })
-})
-client.on('message', (topic, payload) => {
-  console.log('Received Message:', topic, payload.toString())
-})
+  );
+});
+client.on("message", (topic, payload) => {
+  console.log("Received Message:", topic, payload.toString());
+});
 ```
 
 项目完整代码请见：[https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js)

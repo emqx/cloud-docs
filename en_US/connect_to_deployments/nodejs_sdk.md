@@ -8,8 +8,8 @@ This article mainly introduces how to use MQTT in the Node.js project to realize
 
 ## Preconditions
 
->1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
->2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
+> 1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+> 2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 This project uses Node.js v14.14.0 for development and testing. Readers can confirm the version of Node.js with the following command.
 
@@ -35,7 +35,7 @@ After the installation, we create a new index.js file in the current directory a
 
 ## Connection
 
->Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
+> Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connection settings
 
@@ -50,7 +50,7 @@ Import the MQTT.js client library
 > Note: In the Node.js environment, please use the commonjs specification to import dependency modules
 
 ```javascript
-const mqtt = require('mqtt')
+const mqtt = require("mqtt");
 ```
 
 ### Set MQTT Broker connection parameters
@@ -58,9 +58,9 @@ const mqtt = require('mqtt')
 Set the MQTT Broker connection address, port and topic. Here we use the function of generating random numbers in JavaScript to generate the client ID.
 
 ```javascript
-const host = 'broker.emqx.io'
-const port = '1883'
-const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
+const host = "broker.emqx.io";
+const port = "1883";
+const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
 ```
 
 ### Write MQTT connect function
@@ -68,16 +68,16 @@ const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
 We use the connection parameters just set to connect, and the URL for the connection is spliced through the host and port ports defined above. Then, we call the built-in connect function of the MQTT module, and it will return a Client instance after the connection is successful.
 
 ```javascript
-const connectUrl = `mqtt://${host}:${port}`
+const connectUrl = `mqtt://${host}:${port}`;
 
 const client = mqtt.connect(connectUrl, {
   clientId,
   clean: true,
   connectTimeout: 4000,
-  username: 'emqx',
-  password: 'public',
+  username: "emqx",
+  password: "public",
   reconnectPeriod: 1000,
-})
+});
 ```
 
 ### Subscribe to topics
@@ -85,13 +85,13 @@ const client = mqtt.connect(connectUrl, {
 We use the on function of the returned Client instance to monitor the connection status, and subscribe to the topic in the callback function after the connection is successful. At this point, we call the subscribe function of the Client instance to subscribe to the topic `/nodejs/mqtt` after the connection is successful.
 
 ```javascript
-const topic = '/nodejs/mqtt'
-client.on('connect', () => {
-  console.log('Connected')
+const topic = "/nodejs/mqtt";
+client.on("connect", () => {
+  console.log("Connected");
   client.subscribe([topic], () => {
-    console.log(`Subscribe to topic '${topic}'`)
-  })
-})
+    console.log(`Subscribe to topic '${topic}'`);
+  });
+});
 ```
 
 After subscribing to the topic successfully, we then use the on function to monitor the function of receiving the message. When the message is received, we can get the topic and message in the callback function of this function.
@@ -99,9 +99,9 @@ After subscribing to the topic successfully, we then use the on function to moni
 > Note: The message in the callback function is of Buffer type and needs to be converted into a string by the toString function
 
 ```javascript
-client.on('message', (topic, payload) => {
-  console.log('Received Message:', topic, payload.toString())
-})
+client.on("message", (topic, payload) => {
+  console.log("Received Message:", topic, payload.toString());
+});
 ```
 
 ### Publish messages
@@ -111,13 +111,18 @@ After completing the above topic subscription and message monitoring, we will wr
 > Note: The message needs to be published after the MQTT connection is successful, so we write it in the callback function after the connection is successful
 
 ```javascript
-client.on('connect', () => {
-  client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
-    if (error) {
-      console.error(error)
+client.on("connect", () => {
+  client.publish(
+    topic,
+    "nodejs mqtt test",
+    { qos: 0, retain: false },
+    (error) => {
+      if (error) {
+        console.error(error);
+      }
     }
-  })
-})
+  );
+});
 ```
 
 ### Complete code
@@ -125,37 +130,42 @@ client.on('connect', () => {
 The code for server connection, topic subscription, message publishing and receiving.
 
 ```javascript
-const mqtt = require('mqtt')
+const mqtt = require("mqtt");
 
-const host = 'broker.emqx.io'
-const port = '1883'
-const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
+const host = "broker.emqx.io";
+const port = "1883";
+const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
 
-const connectUrl = `mqtt://${host}:${port}`
+const connectUrl = `mqtt://${host}:${port}`;
 const client = mqtt.connect(connectUrl, {
   clientId,
   clean: true,
   connectTimeout: 4000,
-  username: 'emqx',
-  password: 'public',
+  username: "emqx",
+  password: "public",
   reconnectPeriod: 1000,
-})
+});
 
-const topic = '/nodejs/mqtt'
-client.on('connect', () => {
-  console.log('Connected')
+const topic = "/nodejs/mqtt";
+client.on("connect", () => {
+  console.log("Connected");
   client.subscribe([topic], () => {
-    console.log(`Subscribe to topic '${topic}'`)
-  })
-  client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
-    if (error) {
-      console.error(error)
+    console.log(`Subscribe to topic '${topic}'`);
+  });
+  client.publish(
+    topic,
+    "nodejs mqtt test",
+    { qos: 0, retain: false },
+    (error) => {
+      if (error) {
+        console.error(error);
+      }
     }
-  })
-})
-client.on('message', (topic, payload) => {
-  console.log('Received Message:', topic, payload.toString())
-})
+  );
+});
+client.on("message", (topic, payload) => {
+  console.log("Received Message:", topic, payload.toString());
+});
 ```
 
 For the complete code of the project, please see: [https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js).

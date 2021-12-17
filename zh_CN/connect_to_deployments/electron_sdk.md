@@ -8,8 +8,8 @@
 
 ## 前提条件
 
->1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
->2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+> 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 ## 新建项目
 
@@ -19,9 +19,9 @@
 
   ```shell
   cd your-project
-  
+
   npm init
-  
+
   npm i -D electron@latest
   ```
 
@@ -62,7 +62,7 @@
   # Install vue-cli and scaffold boilerplate
   npm install -g vue-cli
   vue init simulatedgreg/electron-vue my-project
-  
+
   # Install dependencies and run your app
   cd my-project
   yarn # or npm install
@@ -83,7 +83,7 @@ npm install mqtt --save
 
 ```javascript
 // Open the DevTools.
-mainWindow.webContents.openDevTools()
+mainWindow.webContents.openDevTools();
 ```
 
 如此时未使用前端构建工具对前端页面进行打包构建的话，无法直接在 `renderer.js` 中加载到本地已经安装的 `MQTT.js` 模块。除使用构建工具方法外，还提供另外两种解决方法：
@@ -92,20 +92,20 @@ mainWindow.webContents.openDevTools()
 
    ```javascript
    const mainWindow = new BrowserWindow({
-       width: 800,
-       height: 600,
-       webPreferences: {
-         nodeIntegration: true,
-         preload: path.join(__dirname, 'preload.js')
-       }
-     })
+     width: 800,
+     height: 600,
+     webPreferences: {
+       nodeIntegration: true,
+       preload: path.join(__dirname, "preload.js"),
+     },
+   });
    ```
 
 2. 可以在 `preload.js` 中进行引入 `MQTT.js` 模块操作。当没有 node integration 时，这个脚本仍然有能力去访问所有的 Node APIs, 但是当这个脚本执行执行完成之后，通过 Node 注入的全局对象（global objects）将会被删除。
 
 ## 连接
 
->请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
 
 ### 连接设置
 
@@ -121,64 +121,66 @@ mainWindow.webContents.openDevTools()
 
 ```javascript
 // preload.js
-const mqtt = require('mqtt')
-window.mqtt = mqtt
+const mqtt = require("mqtt");
+window.mqtt = mqtt;
 ```
 
 - 配置测试 MQTT 模块
 
 ```javascript
 // renderer.js
-const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
+const clientId = "mqttjs_" + Math.random().toString(16).substr(2, 8);
 
-const host = 'mqtt://broker.emqx.io:1883'
+const host = "mqtt://broker.emqx.io:1883";
 
 const options = {
   keepalive: 30,
   clientId: clientId,
-  protocolId: 'MQTT',
+  protocolId: "MQTT",
   protocolVersion: 4,
   clean: true,
   reconnectPeriod: 1000,
   connectTimeout: 30 * 1000,
   will: {
-    topic: 'WillMsg',
-    payload: 'Connection Closed abnormally..!',
+    topic: "WillMsg",
+    payload: "Connection Closed abnormally..!",
     qos: 0,
-    retain: false
+    retain: false,
   },
-  rejectUnauthorized: false
-}
+  rejectUnauthorized: false,
+};
 
 // 可查看到 mqtt 模块的信息
-console.log(mqtt)
+console.log(mqtt);
 
-console.log('connecting mqtt client')
-const client = mqtt.connect(host, options)
+console.log("connecting mqtt client");
+const client = mqtt.connect(host, options);
 
-client.on('error', (err) => {
-  console.log('Connection error: ', err)
-  client.end()
-})
+client.on("error", (err) => {
+  console.log("Connection error: ", err);
+  client.end();
+});
 
-client.on('reconnect', () => {
-  console.log('Reconnecting...')
-})
+client.on("reconnect", () => {
+  console.log("Reconnecting...");
+});
 
-client.on('connect', () => {
-  console.log('Client connected:' + clientId)
-  client.subscribe('testtopic/electron', {
-    qos: 0
-  })
-  client.publish('testtopic/electron', 'Electron connection demo...!', {
+client.on("connect", () => {
+  console.log("Client connected:" + clientId);
+  client.subscribe("testtopic/electron", {
     qos: 0,
-    retain: false
-  })
-})
+  });
+  client.publish("testtopic/electron", "Electron connection demo...!", {
+    qos: 0,
+    retain: false,
+  });
+});
 
-client.on('message', (topic, message, packet) => {
-  console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
-})
+client.on("message", (topic, message, packet) => {
+  console.log(
+    "Received Message: " + message.toString() + "\nOn topic: " + topic
+  );
+});
 ```
 
 可以看到，在编写完以上代码后并且运行该项目后可以在控制台看到以下内容输出：
@@ -196,118 +198,123 @@ MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简
 ### 连接关键代码
 
 ```javascript
-  let client = null
-  
-  const options = {
-    keepalive: 30,
-    protocolId: 'MQTT',
-    protocolVersion: 4,
-    clean: true,
-    reconnectPeriod: 1000,
-    connectTimeout: 30 * 1000,
-    will: {
-      topic: 'WillMsg',
-      payload: 'Connection Closed abnormally..!',
-      qos: 0,
-      retain: false
-    },
-  }
-  
-  function onConnect () {
-    const { host, port, clientId, username, password } = connection
-    const connectUrl = `mqtt://${host.value}:${port.value}`
-    options.clientId = clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`
-    options.username = username.value
-    options.password = password.value
-    console.log('connecting mqtt client')
-    client = mqtt.connect(connectUrl, options)
-    client.on('error', (err) => {
-      console.error('Connection error: ', err)
-      client.end()
-    })
-    client.on('reconnect', () => {
-      console.log('Reconnecting...')
-    })
-    client.on('connect', () => {
-      console.log('Client connected:' + options.clientId)
-      connectBtn.innerText = 'Connected'
-    })
-  }
+let client = null;
+
+const options = {
+  keepalive: 30,
+  protocolId: "MQTT",
+  protocolVersion: 4,
+  clean: true,
+  reconnectPeriod: 1000,
+  connectTimeout: 30 * 1000,
+  will: {
+    topic: "WillMsg",
+    payload: "Connection Closed abnormally..!",
+    qos: 0,
+    retain: false,
+  },
+};
+
+function onConnect() {
+  const { host, port, clientId, username, password } = connection;
+  const connectUrl = `mqtt://${host.value}:${port.value}`;
+  options.clientId =
+    clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`;
+  options.username = username.value;
+  options.password = password.value;
+  console.log("connecting mqtt client");
+  client = mqtt.connect(connectUrl, options);
+  client.on("error", (err) => {
+    console.error("Connection error: ", err);
+    client.end();
+  });
+  client.on("reconnect", () => {
+    console.log("Reconnecting...");
+  });
+  client.on("connect", () => {
+    console.log("Client connected:" + options.clientId);
+    connectBtn.innerText = "Connected";
+  });
+}
 ```
 
 ### 订阅主题
 
 ```javascript
-  function onSub () {
-    if (client.connected) {
-      const { topic, qos } = subscriber
-      client.subscribe(topic.value, { qos: parseInt(qos.value, 10) }, (error, res) => {
-         if (error) {
-           console.error('Subscribe error: ', error)
-         } else {
-           console.log('Subscribed: ', res)
-         }
-      })
-    }
+function onSub() {
+  if (client.connected) {
+    const { topic, qos } = subscriber;
+    client.subscribe(
+      topic.value,
+      { qos: parseInt(qos.value, 10) },
+      (error, res) => {
+        if (error) {
+          console.error("Subscribe error: ", error);
+        } else {
+          console.log("Subscribed: ", res);
+        }
+      }
+    );
   }
+}
 ```
 
 ### 取消订阅
 
 ```javascript
-  function onUnsub () {
-    if (client.connected) {
-      const { topic } = subscriber
-      client.unsubscribe(topic.value, error => {
-        if (error) {
-          console.error('Unsubscribe error: ', error)
-        } else {
-          console.log('Unsubscribed: ', topic.value)
-        }
-      })
-    }
+function onUnsub() {
+  if (client.connected) {
+    const { topic } = subscriber;
+    client.unsubscribe(topic.value, (error) => {
+      if (error) {
+        console.error("Unsubscribe error: ", error);
+      } else {
+        console.log("Unsubscribed: ", topic.value);
+      }
+    });
   }
+}
 ```
 
 ### 消息发布
 
 ```javascript
-  function onSend () {
-    if (client.connected) {
-      const { topic, qos, payload } = publisher
-      client.publish(topic.value, payload.value, {
-        qos: parseInt(qos.value, 10),
-        retain: false
-      })
-    }
+function onSend() {
+  if (client.connected) {
+    const { topic, qos, payload } = publisher;
+    client.publish(topic.value, payload.value, {
+      qos: parseInt(qos.value, 10),
+      retain: false,
+    });
   }
+}
 ```
 
 ### 接收消息
 
 ```javascript
 // 在 onConnect 函数中
-client.on('message', (topic, message) => {
-  const msg = document.createElement('div')
-  msg.className = 'message-body'
-  msg.setAttribute('class', 'message-body')
-  msg.innerText = `${message.toString()}\nOn topic: ${topic}`
-  document.getElementById('article').appendChild(msg)
-})
+client.on("message", (topic, message) => {
+  const msg = document.createElement("div");
+  msg.className = "message-body";
+  msg.setAttribute("class", "message-body");
+  msg.innerText = `${message.toString()}\nOn topic: ${topic}`;
+  document.getElementById("article").appendChild(msg);
+});
 ```
 
 ### 断开连接
 
 ```javascript
-  function onDisconnect () {
-    if (client.connected) {
-      client.end()
-      client.on('close', () => {
-        connectBtn.innerText = 'Connect'
-        console.log(options.clientId + ' disconnected')
-      })
-    }
+function onDisconnect() {
+  if (client.connected) {
+    client.end();
+    client.on("close", () => {
+      connectBtn.innerText = "Connect";
+      console.log(options.clientId + " disconnected");
+    });
   }
+}
 ```
 
 ## 测试验证
