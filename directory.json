@@ -722,7 +722,24 @@
     },
     {
       "title": "FAQ",
-      "path": "faq"
+      "children": [
+        {
+          "title": "Ordinary Business",
+          "path": "faq/normal_a"
+        },
+        {
+          "title": "Ordinary Development",
+          "path": "faq/normal_b"
+        },
+        {
+          "title": "Deployment Related",
+          "path": "faq/deploy"
+        },
+        {
+          "title": "Billing",
+          "path": "faq/billing"
+        }
+      ]
     }
   ]
 }
