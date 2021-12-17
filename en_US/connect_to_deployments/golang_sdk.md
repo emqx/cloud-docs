@@ -7,7 +7,8 @@ This article guides you to use the `paho.mqtt.golang` Library in go project to r
 
 ## Preconditions
 
-You can view the connection-related information under the deployment overview after deployment has been created.
+>1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+>2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 The project uses go version 1.15.13 for development and testing. The following commands can be used to confirm the go version.
 
@@ -16,14 +17,12 @@ The project uses go version 1.15.13 for development and testing. The following c
 go version go1.15.13 darwin/amd64
 ```
 
-## Install mqtt client
+## Install dependencies
 
-### Project initialization
-
-1. Create a new folder `go_client`, enter the folder and run the following command
+1. Create a new folder `go-mqtt`, enter the folder and run the following command
 
     ``` bash
-    ➜ ~ go mod init go-client
+    ➜ ~ go mod init go-mqtt
     go: creating new go.mod: module go-mqtt
     ```
 
@@ -48,9 +47,9 @@ go version go1.15.13 darwin/amd64
     }
     ```
 
-## Connect
+## Connection
 
-Please pay attention that the port is not 1883 or 8883 if you choose the Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth.md) in advance.
+>Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connection settings
 
@@ -64,7 +63,7 @@ const username = "emqx"
 const password = "******"
 ```
 
-### Writing mqtt connection functions
+### The key code of connection
 
 We write a function to create and return an mqtt client.
 
@@ -90,9 +89,7 @@ func createMqttClient() mqtt.Client {
 }
 ```
 
-## Publish and subscribe
-
-### Release news
+### Publish Message
 
 Defines a publish function for publishing messages.
 
@@ -114,7 +111,7 @@ func publish(client mqtt.Client) {
 }
 ```
 
-### Subscription message
+### Subscribe Topic
 
 Define subscription function to subscribe to messages. This function prints the topic and payload of the message on the console.
 
@@ -127,7 +124,7 @@ func subscribe(client mqtt.Client) {
 }
 ```
 
-## Complete code
+### Complete code
 
 ``` go
 package main
@@ -196,7 +193,7 @@ func subscribe(client mqtt.Client) {
 }
 ```
 
-## Test verification
+## Test
 
 Execution procedure
 
@@ -220,6 +217,6 @@ publish success, topic: t/1, payload: message: 6!
 
 ![go pubsub](./_assets/go_pubsub.png)
 
-## Next step
+## More
 
 The above shows you how to use the 'paho.mqtt.golang' client to connect to EMQ X Cloud, which can be found in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) Download to the sample source code. More demo examples for other languages are available in [GitHub](https://github.com/emqx/MQTT-Client-Examples).

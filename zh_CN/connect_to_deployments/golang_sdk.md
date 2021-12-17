@@ -17,14 +17,12 @@
 go version go1.15.13 darwin/amd64
 ```
 
-## 安装 MQTT 客戶端
+## 安装依赖
 
-### 项目初始化
-
-1.  创建一个新的文件夹 `go_client`, 进入文件夹, 运行以下命令
+1.  创建一个新的文件夹 `go-mqtt`, 进入文件夹, 运行以下命令
 
     ``` bash
-    ➜ ~ go mod init go-client
+    ➜ ~ go mod init go-mqtt
     go: creating new go.mod: module go-mqtt
     ```
 
@@ -35,7 +33,7 @@ go version go1.15.13 darwin/amd64
     go: downloading github.com/eclipse/paho.mqtt.golang v1.3.5
     go: github.com/eclipse/paho.mqtt.golang upgrade => v1.3.5
     ```
-3.  创建  `main.go` 文件, 并导入 `paho.mqtt.golang` 客戶端
+3.  创建 `main.go` 文件, 并导入 `paho.mqtt.golang` 客戶端
 
     ``` go
     package main
@@ -49,6 +47,7 @@ go version go1.15.13 darwin/amd64
     ```
 
 ## 连接
+
 > 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。并且在 [认证鉴权](../deployments/auth.md) 中添加认证信息。
 
 ### 连接设置
@@ -63,7 +62,7 @@ const username = "emqx"
 const password = "******"
 ```
 
-### 编写 MQTT 连接函数
+### 连接关键代码
 
 我们编写一个函数, 用于创建并返回 MQTT 客户端。
 
@@ -89,8 +88,6 @@ func createMqttClient() mqtt.Client {
 }
 ```
 
-## 发布和订阅
-
 ### 发布消息
 
 定义发布函数，用于发布消息。
@@ -114,9 +111,9 @@ func publish(client mqtt.Client) {
 }
 ```
 
-### 订阅消息
+### 订阅主题
 
-定义订阅函数，用于订阅消息。该方法将在控制台打印消息的 Topic 和 Payload。
+定义订阅函数，用于订阅主题。该方法将在控制台打印消息的 Topic 和 Payload。
 
 ``` go
 func subscribe(client mqtt.Client) {
@@ -127,7 +124,7 @@ func subscribe(client mqtt.Client) {
 }
 ```
 
-## 完整代码
+### 完整代码
 
 ``` go
 package main
@@ -221,5 +218,5 @@ publish success, topic: t/1, payload: message: 6!
 ![go pubsub](./_assets/go_pubsub.png)
 
 ## 更多内容
-以上为您演示了如何使用 `paho.mqtt.golang` 客戶端连接到 EMQ X Cloud, 可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) 下载到示例的源码。同时也可以在 [Github](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其它语言的 Demo 示例。
+以上为您演示了如何使用 `paho.mqtt.golang` 客戶端连接到 EMQ X Cloud, 模拟了客户端与 MQTT 服务器进行订阅, 收发消息的场景。 可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) 下载到示例的源码。同时也可以在 [Github](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其它语言的 Demo 示例。
 
