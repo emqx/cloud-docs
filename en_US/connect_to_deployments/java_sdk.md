@@ -3,15 +3,21 @@
 In this tutorial, you will learn how to use [**Eclipse Paho Java Client**](https://github.com/eclipse/paho.mqtt.java) to connect to EMQ X Cloud deployment.
 
 ## Prerequisites
-You have aleady created deployment, You can see the connection information on [Deployment Overview](../deployments/view_deployment.md), and you can connect to the MQTT broker with Websocket.
 
-## Getting Started
+>1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+>2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
-### Create project
+The project use Maven as the build tool.
+
+## Create project
+
 1. Create a Maven project with `Intellij IDEA`, refer to [Creating a Maven project](https://www.jetbrains.com/idea/guide/tutorials/working-with-maven/creating-a-project/)
 2. Craet package `io.emqx.mqtt` under `src/main/java`
+
 ### Add dependency
+
 Add the dependency definition to the `pom.xml`
+
 ```xml
 <dependency>
     <groupId>org.eclipse.paho</groupId>
@@ -19,15 +25,19 @@ Add the dependency definition to the `pom.xml`
     <version>1.2.5</version>
 </dependency>
 ```
+
 Run
 
-```bash
+```shell
 mvn install
 ```
-### Connect
+
+## Connection
+
 You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your  choose a Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth.md) in advance.
 
-#### Connect Options
+### Connect Options
+
 Create `MqttSample.java`, setup the broker, port, topic and authentication.
 
 ```java
@@ -45,7 +55,7 @@ connOpts.setUserName("emqx_user");
 connOpts.setPassword("emqx_password".toCharArray());
 ```
 
-#### Concect
+### Connect
 
 ```Java
 MqttClient client = new MqttClient(broker, clientId, persistence);
@@ -86,14 +96,14 @@ public class SampleCallback implements MqttCallback {
 }
 ```
 
-### Subscribe
+## Subscribe
 
 ```Java
 client.subscribe(topic, qos);
 System.out.println("Subscribed to topic: " + topic);
 ```
 
-### Publish
+## Publish
 
 ```Java
 MqttMessage message = new MqttMessage(content.getBytes());
@@ -102,7 +112,8 @@ client.publish(topic, message);
 System.out.println("Message published");
 ```
 
-### Source code
+## Source code
+
 `MqttSample.java`
 
 ```Java
@@ -186,16 +197,17 @@ public class SampleCallback implements MqttCallback {
 }
 ```
 
-### Test
+## Test
 
 Run with the command:
 
-```bash
-$ mvn compile exec:java -Dexec.mainClass="io.emqx.mqtt.MqttSample"
+```shell
+mvn compile exec:java -Dexec.mainClass="io.emqx.mqtt.MqttSample"
 ```
 
 The console output:
-```
+
+```shell
 Connecting to broker: tcp://broker.emqx.io:1883
 Connected to broker: tcp://broker.emqx.io:1883
 Subscribed to topic: test/topic
@@ -210,5 +222,6 @@ Disconnected
 
 That's the whole process of connecting, subscribing, publishing, and receiving the message.
 
-## Next
+## More
+
 The above shows you how to connect to EMQ X Cloud using the paho.mqtt.java client library, You can see the source code on [GitHub](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java). You can also find more examples of other language on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
