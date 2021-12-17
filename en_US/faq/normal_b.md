@@ -41,7 +41,7 @@ If you need an intranet connection to deploy to mqtt, you will need to submit a 
 ## Is API supported？
 Yes. An HTTP API is provided for integration with external systems, such as querying client information, posting messages and creating rules.
 
-Find more here [REST API](../api/introduction.md)。
+Find more here [REST API](../api/api_overview.md)。
 
 ## What kind of TLS/SSL authentication is supported?
 Support[one-way](../deployments/tls_ssl.md),[two-way](../deployments/tls_ssl.md),和 [custom signature](../deployments/tls_ssl.md) for configuration.
