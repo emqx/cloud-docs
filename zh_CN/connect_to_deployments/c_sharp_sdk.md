@@ -32,7 +32,7 @@ dotnet add package M2Mqtt --version 4.3.0
 本文将使用 EMQ X 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker) ，该服务基于 EMQ X 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### 导入 M2Mqtt客户端库
 ```csharp

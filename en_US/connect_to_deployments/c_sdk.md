@@ -1,4 +1,4 @@
-# Connect to Deployments with C SDK
+# Connect to the Deployment with C SDK
 
 Eclipse Paho C and Eclipse Paho Embedded C are all client libraries in C language (MQTT C Client) under the Eclipse Paho project, and are full-featured MQTT clients written in ANSI C.
 

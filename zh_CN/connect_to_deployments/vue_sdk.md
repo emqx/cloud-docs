@@ -57,7 +57,7 @@ vue create vue-mqtt-test
 
 - Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### 连接关键代码
 

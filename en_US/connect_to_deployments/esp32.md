@@ -1,4 +1,4 @@
-# Connect to the Deployment using ESP32
+# Connect to the Deployment with ESP32
 
 This article mainly introduces how to use `PubSubClient` in the ESP32 project, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 
@@ -30,7 +30,7 @@ This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt
 
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### First, we will import the WiFi and PubSubClient libraries.
 

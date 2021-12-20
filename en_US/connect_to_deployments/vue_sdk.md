@@ -1,4 +1,4 @@
-# Connect to the deployment using Vue.js
+# Connect to the Deployment with Vue.js
 
 This article mainly introduces how to use `MQTT.js` in the Vue project, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 
@@ -57,7 +57,7 @@ This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt
 
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### The key code of connection
 

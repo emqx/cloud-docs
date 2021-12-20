@@ -201,6 +201,10 @@
           "path": "connect_to_deployments/electron_sdk"
         },
         {
+          "title": "在微信小程序中连接到部署",
+          "path": "connect_to_deployments/wechat_miniprogram"
+        },
+        {
           "title": "使用 ESP8266 连接到部署",
           "path": "connect_to_deployments/esp8266"
         },
@@ -557,35 +561,35 @@
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "Connect to deployment with WebSocket",
+          "title": "WebSocket SDK connection",
           "path": "https://www.emqx.com/en/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "Connect to deployment with Vue.js",
+          "title": "Vue.js SDK connection",
           "path": "connect_to_deployments/vue_sdk"
         },
         {
-          "title": "Connect to deployment with React",
+          "title": "React SDK connection",
           "path": "connect_to_deployments/react_sdk"
         },
         {
-          "title": "Connect to deployment with Electron",
+          "title": "Electron SDK connection",
           "path": "connect_to_deployments/electron_sdk"
         },
         {
-          "title": "MQTT X connection",
+          "title": "Connect with MQTT X",
           "path": "connect_to_deployments/mqttx"
         },
         {
-          "title": "MQTT.fx connection",
+          "title": "Connect with MQTT.fx",
           "path": "connect_to_deployments/mqttfx"
         },
         {
-          "title": "Connect to deployment with ESP8266",
+          "title": "Connect with ESP8266",
           "path": "connect_to_deployments/esp8266"
         },
         {
-          "title": "Connect to deployments with ESP32",
+          "title": "Connect with ESP32",
           "path": "connect_to_deployments/esp32"
         },
         {

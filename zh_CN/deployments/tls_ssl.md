@@ -81,7 +81,7 @@ EMQ X Cloud **专业版部署** 提供自定义 单向/双向 TLS/SSL 配置，�
 - 新建连接，输入 Name，Client ID 随机生成即可
 - 选择 Host，填入部署的连接地址和端口
   - 若选择 SSL 连接，选择 `mqtts://` 和 `8883` 端口
-  - 若选择 Websocket with SSL，选择 `wss://` 和 `8084` 端口
+  - 若选择 WebSocket with SSL，选择 `wss://` 和 `8084` 端口
 - 输入创建的认证信息：用户名和密码
 - SSL/TLS 选择 true
 - 证书选择

@@ -1,4 +1,4 @@
-# Connect to Deployment with MQTT X
+# Connect to the Deployment with MQTT X
 
 This article will introduce using MQTT X as an MQTT client testing tool to connect the deployment of EMQ X Cloud.
 
@@ -34,7 +34,7 @@ All deployments of EMQ X Cloud have user authentication enabled, so when using M
 
 ![MQTT X uses MQTT protocol](./_assets/mqttx_mqtt.png)
 
-- Connect to the deployment with the Websocket protocol
+- Connect to the deployment with the WebSocket protocol
 
 ![MQTT X uses WS protocol](./_assets/mqttx_ws.png)
 
@@ -42,7 +42,7 @@ All deployments of EMQ X Cloud have user authentication enabled, so when using M
 
 ![MQTT X uses MQTTS protocol](./_assets/mqttx_mqtts.png)
 
-- Connect to deployment with Websocket over TLS/SSL protocol
+- Connect to deployment with WebSocket over TLS/SSL protocol
 
 ![MQTT X uses WSS protocol](./_assets/mqttx_wss.png)
 

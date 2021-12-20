@@ -12,7 +12,7 @@ For first-time EMQ X Cloud customers, we have an opportunity for you to create a
 
 * Use all EMQ X features such as rule engine, monitoring management, etc.
 
-* Support for MQTT, WebSockets, MQTT over TLS/SSL, Websockets over TLS protocol connections.
+* Support for MQTT, WebSockets, MQTT over TLS/SSL, WebSockets over TLS protocol connections.
 
   > For additional protocol support, you can submit a [ticket](../feature/tickets.md) or send email (cloud@emqx.io) to get in touch with us.
 
@@ -59,8 +59,8 @@ Before connecting to your free trial deployment, you need to wait for the deploy
     | ------------------- | ----- |
     | MQTT                | 11xxx |
     | MQTT over TLS       | 11xxx |
-    | Websockets          | 8083  |
-    | Websockets over TLS | 8084  |
+    | WebSockets          | 8083  |
+    | WebSockets over TLS | 8084  |
     
     ![connections](./_assets/detail.png)
         
@@ -78,7 +78,7 @@ Before connecting to your free trial deployment, you need to wait for the deploy
 
      ![mqttx_mqtts](./_assets/mqttx_connect.png)
 
-   - Websockets connection
+   - WebSockets connection
      
      ![mqttx_ws](./_assets/mqttx_ws.png)
 

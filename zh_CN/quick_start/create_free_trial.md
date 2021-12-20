@@ -13,7 +13,7 @@ EMQ X Cloud 免费试用部署规格如下：
 
 * 使用规则引擎（基础版仅支持 Webhook 和 MQTT 桥接）、监控管理等 EMQ X Cloud 自有的功能。
 
-* 支持 MQTT, Websockets 协议连接。
+* 支持 MQTT, WebSockets 协议连接。
   
   > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提 [工单](../feature/tickets.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
@@ -79,7 +79,7 @@ EMQ X Cloud 免费试用部署注意事项：
 
     ![mqttx_mqtt](./_assets/mqttx_mqtt.png)
   
-  * Websockets 连接
+  * WebSockets 连接
   
     ![mqttx_mqtt](./_assets/mqttx_ws.png)
   
@@ -87,7 +87,7 @@ EMQ X Cloud 免费试用部署注意事项：
   
     ![mqttx_mqtts](./_assets/mqttx_mqtts.png)
   
-  * Websockets over TLS 连接
+  * WebSockets over TLS 连接
   
     ![mqttx_wss](./_assets/mqttx_wss.png)
 

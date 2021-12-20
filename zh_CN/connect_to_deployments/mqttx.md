@@ -34,7 +34,7 @@ EMQ X Cloud 所有部署均开启了用户认证，因此使用 MQTT X 进行测
 
   ![MQTT X 使用 MQTT 协议](./_assets/mqttx_mqtt.png)
 
-- 通过 Websocket 协议连接到部署
+- 通过 WebSocket 协议连接到部署
 
   ![MQTT X 使用 WS 协议](./_assets/mqttx_ws.png)
 
@@ -42,7 +42,7 @@ EMQ X Cloud 所有部署均开启了用户认证，因此使用 MQTT X 进行测
 
   ![MQTT X 使用 MQTTS 协议](./_assets/mqttx_mqtts.png)
 
-- 通过 Websocket over TLS/SSL 协议连接到部署
+- 通过 WebSocket over TLS/SSL 协议连接到部署
 
   ![MQTT X 使用 WSS 协议](./_assets/mqttx_wss.png)
 

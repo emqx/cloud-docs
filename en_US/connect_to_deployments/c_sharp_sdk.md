@@ -1,4 +1,5 @@
-# Connect to Deployments with C# SDK
+# Connect to the Deployment with C# SDK
+
 [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) is an **object-oriented** programming language provided by Microsoft that runs on **.NET Framework**.
 
 This article mainly introduces how to use the **paho.mqtt.m2mqtt** client library in a C# project to connect, subscribe, publish and receive messages from the client to the MQTT server.
@@ -32,7 +33,7 @@ dotnet add package M2Mqtt --version 4.3.0
 This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQ X. This service is created based on [MQTT IoT cloud platform](https://www.emqx.com/en/cloud) to create. The accessing information of the broker is as follows:
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### Import the M2Mqtt
 ```csharp

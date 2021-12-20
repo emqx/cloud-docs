@@ -1,4 +1,4 @@
-# Connect to the deployment using Go SDK
+# Connect to the Deployment with Go SDK
 
 This article guides you to use the `paho.mqtt.golang` Library in go project to realize the functions of connecting, subscribing, sending, and receiving messages between a MQTT client and a MQTT broker.
 

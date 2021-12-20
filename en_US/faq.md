@@ -23,7 +23,7 @@ If you have special usage requirements, or other usage conditions, you can submi
 
 ### Which protocol connections are supported?
 
-EMQ X Cloud deployment only supports MQTT over TLS/SSL, Websockets over TLS/SSL protocol connections.
+EMQ X Cloud deployment only supports MQTT over TLS/SSL, WebSockets over TLS/SSL protocol connections.
 
 If you need other protocol support, you can submit a [ticket](./feature/tickets.md) or send an email(cloud@emqx.io) to us.
 
