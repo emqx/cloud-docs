@@ -80,7 +80,7 @@ React 起源于 Facebook 的内部项目，目前由 Facebook 企业和其强大
 
 - Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### 连接代码
 

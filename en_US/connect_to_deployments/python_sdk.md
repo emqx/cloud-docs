@@ -1,4 +1,4 @@
-# Connect to Deployments with Python SDK
+# Connect to the Deployment with Python SDK
 
 This document describes how to use the **paho-mqtt** client library in Python projects to connect to the MQTT server, subscribe, unsubscribe, send and receive messages.
 

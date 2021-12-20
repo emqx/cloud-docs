@@ -1,1 +1,1 @@
-# Connect to Deployments with  C++ SDK
+# Connect to the Deployment with C++ SDK

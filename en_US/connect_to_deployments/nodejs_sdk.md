@@ -1,4 +1,4 @@
-# Connect to the deployment using Node.js
+# Connect to the Deployment with Node.js
 
 This article mainly introduces how to use MQTT in the Node.js project to realize the functions of connecting, subscribing, unsubscribing, sending and receiving messages between the client and the MQTT server.
 

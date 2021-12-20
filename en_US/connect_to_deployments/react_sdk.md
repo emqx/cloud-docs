@@ -1,4 +1,4 @@
-# Connect to the deployment using React
+# Connect to the Deployment with React
 
 This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in the React project for implementing connect, subscribe, messaging and unsubscribe, etc., between the client and MQTT broker.
 
@@ -78,7 +78,7 @@ This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt
 
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### Connect
 

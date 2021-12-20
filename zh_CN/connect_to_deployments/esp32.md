@@ -28,7 +28,7 @@
 
 - Broker: **broker-cn.emqx.io**
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 ### 导入 WiFi 和 PubSubClient 库
 

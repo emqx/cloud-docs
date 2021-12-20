@@ -2,7 +2,7 @@
 
 
 ## 支持哪些协议连接？
-EMQ X Cloud 部署目前支持 MQTT over TLS/SSL, Websockets over TLS/SSL 协议连接。
+EMQ X Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
 
 如需其他协议支持，您可以提工单或发送邮件(cloud@emqx.io)与我们取得联系
 

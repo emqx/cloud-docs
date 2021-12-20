@@ -1,4 +1,4 @@
-# Connect to the deployment using Electron
+# Connect to the Deployment with Electron
 
 This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in Electron projects, and complete a simple MQTT desktop client, and implement the connection, subscription, unsubscribe, messaging and other functions between the client and [MQTT broker](https://www.emqx.com/en/cloud).
 
@@ -113,7 +113,7 @@ This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt
 
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 To illustrate more intuitive, the key connection code for the example will be written in the renderer.js file. With the consideration of security, the installed MQTT module will be loaded via the require method of the Node.js API, in the preload.js file (using method 2 above). Also, this method injecting it in the global window object so that the loaded module can be accessed directly in renderer.js.
 

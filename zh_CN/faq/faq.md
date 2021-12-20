@@ -28,15 +28,15 @@ EMQ X (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发�
 
 ### 支持那些协议连接？
 
-EMQ X Cloud 部署仅支持 MQTT over TLS/SSL, Websockets over TLS/SSL 协议连接。
+EMQ X Cloud 部署仅支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
 
 如需其他协议支持，您可以提[工单](contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
 ### 我如何连接到部署？
 
-可以通过 [MQTT X 客户端](https://mqttx.app)进行连接。
+可以通过 [MQTT X 客户端](https://mqttx.app/zh)进行连接。
 
-也可以通过 SDK 进行连接，详见：[连接到部署](connect_to_deployments/introduction.md)
+也可以通过 SDK 进行连接，详见：[连接到部署](connect_to_deployments/overview.md)
 
 ### 是否支持 API 调用?
 

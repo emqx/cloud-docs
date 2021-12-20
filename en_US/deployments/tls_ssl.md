@@ -90,7 +90,7 @@ Before testing, make sure that you have created authentication information, refe
 - To create a new connection, enter the Name, Client ID is randomly generated
 - Select Host and fill in the deployed connection address and port
   - If you select an SSL connection, select ports `mqtts://` and `8883`
-  - If you select Websocket with SSL, select ports `wss://` and `8084`
+  - If you select WebSocket with SSL, select ports `wss://` and `8084`
 - Enter the authentication information you have created: username and password
 - Select true on SSL/TLS
 - Certificate selection

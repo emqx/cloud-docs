@@ -113,7 +113,7 @@ mainWindow.webContents.openDevTools();
 
 - Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
 - TCP Port: **1883**
-- Websocket Port: **8083**
+- WebSocket Port: **8083**
 
 为更直观表达，示例的关键连接代码将在 `renderer.js` 文件中编写，并考虑到安全问题，将使用上文中如何引入 `MQTT.js` 里的方法 2，在 `preload.js` 文件中通过 Node.js API 的 `require` 方法加载已安装的 MQTT 模块，并挂载到全局的 `window` 对象中，这样在 `renderer.js` 中，便可以直接访问已加载的模块：
 
