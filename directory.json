@@ -181,27 +181,27 @@
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "在 Android Kotlin 项目中连接到部署",
+          "title": "Android Kotlin SDK 连接",
           "path": "https://www.emqx.com/zh/blog/android-connects-mqtt-using-kotlin"
         },
         {
-          "title": "使用 WebSocket 连接到部署",
+          "title": "WebSocket SDK 连接",
           "path": "https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "在 Vue 项目中连接到部署",
+          "title": "Vue.js SDK 连接",
           "path": "connect_to_deployments/vue_sdk"
         },
         {
-          "title": "在 React 项目中连接到部署",
+          "title": "React SDK 连接",
           "path": "connect_to_deployments/react_sdk"
         },
         {
-          "title": "在 Electron 项目中连接到部署",
+          "title": "Electron SDK 连接",
           "path": "connect_to_deployments/electron_sdk"
         },
         {
-          "title": "在微信小程序中连接到部署",
+          "title": "微信小程序 SDK 连接",
           "path": "connect_to_deployments/wechat_miniprogram"
         },
         {
@@ -213,11 +213,11 @@
           "path": "connect_to_deployments/esp32"
         },
         {
-          "title": "MQTT X 连接到部署",
+          "title": "使用 MQTT X 连接到部署",
           "path": "connect_to_deployments/mqttx"
         },
         {
-          "title": "MQTT.fx 连接到部署",
+          "title": "使用 MQTT.fx 连接到部署",
           "path": "connect_to_deployments/mqttfx"
         },
         {
