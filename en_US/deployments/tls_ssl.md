@@ -55,7 +55,6 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
   Base64–encoded certificate
   -----END CERTIFICATE----- 
   ```
-  
 
 ## Create a Certificate
 
@@ -67,13 +66,13 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
        <div style="position: relative; padding: 30% 45%;">
        <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/kkb1D4lXbFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        </div>
-    
+   
      - Two-way authentication: the client and the server validate each other's certificates.
        
        <div style="position: relative; padding: 30% 45%;">
        <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/VzygGJXgVI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        </div>
-       
+     
    - Certificates: server-side certificates
    - Certificate chain: the certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
    - Certificate private keys: server-side private keys
@@ -264,7 +263,7 @@ openssl verify -CAfile client-ca.crt client.crt
    Purchased certificates contain intermediate certificates, which open the certificate in text form, and multiple certificates in the order of User Certificate - Intermediate Certificate - Root Certificate. Generally, a certificate contains a user certificate and several intermediate certificates, you need to separate the user certificate from the intermediate certificate and fill in the certificate chain with the intermediate certificate.
    ```
    -----BEGIN CERTIFICATE-----
-
+   
    User Certificate
    
    -----END CERTIFICATE-----

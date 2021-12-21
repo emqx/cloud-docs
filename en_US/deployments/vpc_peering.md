@@ -156,7 +156,7 @@ After the Confluent Cloud cluster has been created, we could add peering by the 
 If you don't have a VPC for your timescale cloud project, you could log in to the timescale cloud and create a new VPC.
 
    ![vpc](./_assets/timescale_cloud_1.png)
-   
+
 When the VPC is created, you are ready to create the VPC peering connection. Click on the VPC to go to the vpc peering page. Enter the EMQ X Cloud deployment's vpc information to start the vpc peering process.
 You could find the deployment's vpc information in the EMQ X Cloud console, VPC peering section.
 
