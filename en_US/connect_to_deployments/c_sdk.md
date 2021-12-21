@@ -1,18 +1,24 @@
-# Connect to the Deployment with C SDK
+# Connect to the Deployment with C
 
-Eclipse Paho C and Eclipse Paho Embedded C are all client libraries in C language (MQTT C Client) under the Eclipse Paho project, and are full-featured MQTT clients written in ANSI C.
+This article mainly introduces how to use `Eclipse Paho C` in the C project, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 
 Eclipse Paho Embedded C can be used on the desktop operating system, but mainly for embedded environments such as mbed, Arduino and FreeRTOS .
 
-The client has synchronous/asynchronous APIs, which start with MQTTClient and MQTTAsync:
+## Preconditions
 
-* The synchronous API is designed to be simpler and more useful and some calls will be blocked until the operation is completed, which is easier for programming;
-* There is only one calling block API-waitForCompletion in the asynchronous API, which is notified through the callback, and is more suitable for the non-main thread environment.
+### Install dependency packages
 
-## Building from source
+```bash
+sudo apt-get update
+sudo apt-get -y install build-essential git cmake
+```
+
+### Building from source
+
 The continuous integration builds can be found on Travis-CI for Linux and Mac, and AppVeyor for Windows.
 
-### Linux/Mac
+#### Linux/Mac
+
 ```bash
 git clone https://github.com/eclipse/paho.mqtt.c.git
 cd org.eclipse.paho.mqtt.c.git
@@ -20,7 +26,8 @@ make
 sudo make install
 ```
 
-### Windows
+#### Windows
+
 ```bash
 mkdir build.paho
 
@@ -33,59 +40,182 @@ cmake -G "NMake Makefiles" -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE
 nmake
 ```
 
+## Connection
 
-## Paho C Usage example
-For detailed descriptions of the comparison, download, and usage of the two MQTT client libraries related to the C language, please move to the project homepage to view. This example contains the complete code of the Paho C in C language connecting to the EMQ X Broker, sending and receiving messages:
+> Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
+
+### Connection settings
+
+This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQ X. This service was created based on the [EMQ X Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+
+- Broker: **broker.emqx.io**
+- TCP Port: **1883**
+- WebSocket Port: **8083**
+
+### Include dependency library
+
 ```c
-#include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include "unistd.h"
+#include "MQTTClient.h"
+```
 
+### Define connection addresses, authentication information, and message publishing and receiving topic
+
+```c
+#define ADDRESS     "tcp://broker.emqx.io:1883"
+#define USERNAME    "emqx"
+#define PASSWORD    "public"
+#define CLIENTID    "c-client"
+#define QOS         0
+#define TOPIC       "emqx/c-test"
+#define TIMEOUT     10000L
+```
+
+### Define the message publishing function
+
+```c
+void publish(MQTTClient client, char *topic, char *payload) {
+    MQTTClient_message message = MQTTClient_message_initializer;
+    message.payload = payload;
+    message.payloadlen = strlen(payload);
+    message.qos = QOS;
+    message.retained = 0;
+    MQTTClient_deliveryToken token;
+    MQTTClient_publishMessage(client, topic, &message, &token);
+    MQTTClient_waitForCompletion(client, token, TIMEOUT);
+    printf("Send `%s` to topic `%s` \n", payload, TOPIC);
+}
+```
+
+### Define the on_message callback function to print the content of the messages received by the subscribed topic
+
+```c
+int on_message(void *context, char *topicName, int topicLen, MQTTClient_message *message) {
+    char *payload = message->payload;
+    printf("Received `%s` from `%s` topic \n", payload, topicName);
+    MQTTClient_freeMessage(&message);
+    MQTTClient_free(topicName);
+    return 1;
+}
+```
+
+### Initialize the MQTT client and subscribe to topic
+
+```c
+int rc;
+MQTTClient client;
+
+MQTTClient_create(&client, ADDRESS, CLIENTID, 0, NULL);
+MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+conn_opts.username = USERNAME;
+conn_opts.password = PASSWORD;
+MQTTClient_setCallbacks(client, NULL, NULL, on_message, NULL);
+if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS) {
+    printf("Failed to connect, return code %d\n", rc);
+    exit(-1);
+} else {
+    printf("Connected to MQTT Broker!\n");
+}
+// subscribe topic
+MQTTClient_subscribe(client, TOPIC, QOS);
+```
+
+### Call the `publish` function in a loop to finish publishing the message
+
+```c
+char payload[16];
+for (int i = 0; i < 100; i += 1) {
+    // publish message to broker
+    snprintf(payload, 16, "message-%d", i);
+    publish(client, TOPIC, payload);
+    sleep(1);
+}
+```
+
+### The full code
+
+```c
+#include "stdlib.h"
+#include "string.h"
+#include "unistd.h"
 #include "MQTTClient.h"
 
 #define ADDRESS     "tcp://broker.emqx.io:1883"
-#define CLIENTID    "emqx_test"
-#define TOPIC       "testtopic/1"
-#define PAYLOAD     "Hello World!"
-#define QOS         1
+#define USERNAME    "emqx"
+#define PASSWORD    "public"
+#define CLIENTID    "c-client"
+#define QOS         0
+#define TOPIC       "emqx/c-test"
 #define TIMEOUT     10000L
 
-int main(int argc, char* argv[])
-{
-    MQTTClient client;
-    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    MQTTClient_message pubmsg = MQTTClient_message_initializer;
+void publish(MQTTClient client, char *topic, char *payload) {
+    MQTTClient_message message = MQTTClient_message_initializer;
+    message.payload = payload;
+    message.payloadlen = strlen(payload);
+    message.qos = QOS;
+    message.retained = 0;
     MQTTClient_deliveryToken token;
+    MQTTClient_publishMessage(client, topic, &message, &token);
+    MQTTClient_waitForCompletion(client, token, TIMEOUT);
+    printf("Send `%s` to topic `%s` \n", payload, TOPIC);
+}
+
+int on_message(void *context, char *topicName, int topicLen, MQTTClient_message *message) {
+    char *payload = message->payload;
+    printf("Received `%s` from `%s` topic \n", payload, topicName);
+    MQTTClient_freeMessage(&message);
+    MQTTClient_free(topicName);
+    return 1;
+}
+
+int main(int argc, char *argv[]) {
     int rc;
+    MQTTClient client;
 
-    MQTTClient_create(&client, ADDRESS, CLIENTID,
-        MQTTCLIENT_PERSISTENCE_NONE, NULL);
-
-    // MQTT Connection parameters
-    conn_opts.keepAliveInterval = 20;
-    conn_opts.cleansession = 1;
-
-    if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
-    {
+    MQTTClient_create(&client, ADDRESS, CLIENTID, 0, NULL);
+    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+    conn_opts.username = USERNAME;
+    conn_opts.password = PASSWORD;
+    MQTTClient_setCallbacks(client, NULL, NULL, on_message, NULL);
+    if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS) {
         printf("Failed to connect, return code %d\n", rc);
         exit(-1);
+    } else {
+        printf("Connected to MQTT Broker!\n");
     }
-
-    // Publish message
-    pubmsg.payload = PAYLOAD;
-    pubmsg.payloadlen = strlen(PAYLOAD);
-    pubmsg.qos = QOS;
-    pubmsg.retained = 0;
-    MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
-    printf("Waiting for up to %d seconds for publication of %s\n"
-            "on topic %s for client with ClientID: %s\n",
-            (int)(TIMEOUT/1000), PAYLOAD, TOPIC, CLIENTID);
-    rc = MQTTClient_waitForCompletion(client, token, TIMEOUT);
-    printf("Message with delivery token %d delivered\n", token);
-
-    // Disconnect
-    MQTTClient_disconnect(client, 10000);
+    // subscribe topic
+    MQTTClient_subscribe(client, TOPIC, QOS);
+    char payload[16];
+    for (int i = 0; i < 100; i += 1) {
+        // publish message to broker
+        snprintf(payload, 16, "message-%d", i);
+        publish(client, TOPIC, payload);
+        sleep(1);
+    }
+    MQTTClient_disconnect(client, TIMEOUT);
     MQTTClient_destroy(&client);
     return rc;
 }
 ```
+
+## Test
+
+1. Write the CMakeLists.txt file
+   ```
+   cmake_minimum_required(VERSION 3.17)
+   find_package(eclipse-paho-mqtt-c 1.3.9 REQUIRED)
+   project(mqtt_c C)
+   include_directories(/usr/local/include)
+   link_directories(/usr/local/lib)
+   set(CMAKE_C_STANDARD 99)
+   add_executable(mqtt_c main.c)
+   target_link_libraries(mqtt_c paho-mqtt3c)
+   ```
+2. Compile and run code
+   ![c_mqtt](./_assets/c_mqtt.png)
+   
+## More
+
+In summary, we have implemented the creation of an MQTT connection in a C project, simulated subscribing, sending and receiving messages, unsubscribing, and disconnecting between the client and MQTT broker. You can download the source code of the example [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-c), and you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
