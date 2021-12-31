@@ -34,7 +34,7 @@
 在 RDS MySQL 实例页面中，找到 `数据安全性` -> `白名单设置`
 
 将 EMQ X Cloud 的 VPC 网段加入 RDS MySQL 的白名单中
-![VPC 网段](./../_assets/aliyun_mysql_vpc_info.png)
+![VPC 网段](./_assets/aliyun_mysql_vpc_info.png)
 
 ### 3. 开启阿里云 SSL
 
@@ -87,11 +87,11 @@
    点击左侧菜单栏规则引擎，找到资源面板，点击新建资源，下拉选择 MySQL 资源类型。填入刚才创建好的 MySQL 数据库信息，并开启 SSL 链接到阿里云,
    上传对应格式.pem 的 CA 文件，点击测试如果出现错误应及时检查数据库配置是否正确。
 
-   ![规则引擎](./../_assets/aliyun_mysql_resource.png)
+   ![规则引擎](./_assets/aliyun_mysql_resource.png)
 
    其中, `服务器地圵`可以在下图的位置找到
 
-   ![阿里云 RDS MySQL 连接地址](./../_assets/aliyun_mysql_address.png)
+   ![阿里云 RDS MySQL 连接地址](./_assets/aliyun_mysql_address.png)
 
 2. 规则测试
 
@@ -107,7 +107,7 @@
    "temp_hum/emqx"
    ```
 
-   ![规则引擎](./../_assets/rdsmysql_sql_test.png.png)
+   ![规则引擎](./_assets/rdsmysql_sql_test.png)
 
 3. 添加响应动作
 
@@ -117,11 +117,11 @@
    insert into temp_hum(up_timestamp, client_id, temp, hum) values (FROM_UNIXTIME(${up_timestamp}/1000), ${client_id}, ${temp}, ${hum})
    ```
 
-   ![规则引擎](./../_assets/rdsmysql_action.png)
+   ![规则引擎](./_assets/rdsmysql_action.png)
 
 4. 点击创建规则，并返回规则列表查看规则监控
 
-   ![查看监控](./../_assets/rdsmysql_view_monitor.png)
+   ![查看监控](./_assets/rdsmysql_view_monitor.png)
 
 ## 测试
 
@@ -139,7 +139,7 @@
      }
      ```
 
-   ![MQTTX](./../_assets/rdsmysql_mqttx_publish.png)
+   ![MQTTX](./_assets/rdsmysql_mqttx_publish.png)
 
 2. 查看数据转存结果
 
@@ -147,4 +147,4 @@
    select * from temp_hum order by up_timestamp desc limit 10;
    ```
 
-   ![mysql](./../_assets/rdsmysql_query_result.png)
+   ![mysql](./_assets/rdsmysql_query_result.png)
