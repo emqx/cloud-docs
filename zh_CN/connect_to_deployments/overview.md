@@ -1,7 +1,6 @@
 ---
 {
   'title': '建立 MQTT 客户端连接',
-  'lang': 'cn',
   'headers':
     [
       { 'title': '客户端工具', 'slug': '客户端工具' },
