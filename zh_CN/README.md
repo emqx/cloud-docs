@@ -2,7 +2,6 @@
 {
   'title': 'EMQ X Cloud 帮助中心',
   'description': 'EMQ X Cloud 是由 EMQ 提供的全托管 MQTT 5.0 物联网云服务平台，可连接海量物联网设备并实时处理数据，它支持按量付费，可零代码实现消息分发和持久化。',
-  'lang': 'cn',
   'headers':
     [
       { 'title': '了解', 'slug': '了解' },

@@ -1,7 +1,6 @@
 ---
 {
   'title': 'Create MQTT Client Connection',
-  'lang': 'en',
   'headers':
     [
       { 'title': 'Client Tools', 'slug': 'Client-Tools' },
