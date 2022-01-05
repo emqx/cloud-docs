@@ -10,8 +10,6 @@ EMQ X Cloud 的认证支持包括两个层面：
 
 本节主要是指 MQTT 协议本身的认证。关于传输层上 TLS 验证，可以参考指南——配置 [TLS/SSL](./tls_ssl.md)
 
-
-
 ## 访问控制（ACL）
 
 鉴权是指对发布 (PUBLISH)/订阅 (SUBSCRIBE) 操作的 `权限控制`。
@@ -36,6 +34,11 @@ EMQ X Cloud 的认证支持包括两个层面：
 
 依次填入客户端 ID，主题，选择是否允许，选择动作：sub/pub/pubsub，点击添加按钮，完成添加
 
+你可以在主题中使用以下占位符，请求时 EMQ X Cloud将自动填充为客户端信息：
+
+- %u：用户名
+- %c：客户端 ID
+
 ![add_acl](./_assets/add_acl.png)
 
 `用户名` 和 `全部用户` 的操作相同
@@ -48,8 +51,8 @@ EMQ X Cloud 的认证支持包括两个层面：
 
 1. 点击导入按钮
 2. 下载模板
-3.    填写访问控制信息后上传文件
-   
+3. 填写访问控制信息后上传文件
+
    `username` 示例模板文件如下图所示
 
    ![acl_username_csv](./_assets/acl_username_csv.png)
@@ -58,8 +61,8 @@ EMQ X Cloud 的认证支持包括两个层面：
 
    ![acl_clientid_csv](./_assets/acl_clientid_csv.png)
 
-4.    点击导入按钮导入
-      
+4. 点击导入按钮导入
+
    ![import_acl](./_assets/import_acl.png)
 
 导入字段说明
