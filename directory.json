@@ -128,6 +128,10 @@
           "path": "deployments/acl"
         },
         {
+          "title": "HTTP 自定义认证",
+          "path": "deployments/http_auth"
+        },
+        {
           "title": "监控",
           "path": "deployments/monitors"
         },
