@@ -11,7 +11,7 @@ EMQ X Cloud requests permission from a user-defined authentication service using
  - Ignored: returns a 200 status code and the message body: ignore
  
 
- ## Permission Authentication
+## Permission Authentication
  Click on `Authentication` - `Custom Authentication` and click on Configure Authentication on the start page to create a new authentication.
 
  ![http_auth](./_assets/http_default.png)
@@ -45,7 +45,7 @@ When the HTTP request method is GET, the request parameters are passed as a URL 
 
 > The POST method is recommended. When using the GET method, plaintext passwords may be logged in the server logs with the URL during transmission.
 
- ## ACL
+## ACL
  
  When publishing or subscribing to authentication, EMQ X Cloud will use the current client information and initiate a user-configured ACL authorization query request to find out the authorization info for the client on the HTTP server.
 
@@ -53,7 +53,7 @@ When the HTTP request method is GET, the request parameters are passed as a URL 
 
   ![http_auth](./_assets/http_auth_2.png)
 
- ### Request Parameter Placeholders
+### Request Parameter Placeholders
 You can use the following placeholders in your authentication request and the EMQ X will be automatically replace with client information.
 
  - %A: operation type, '1' subscribe; '2' publish
