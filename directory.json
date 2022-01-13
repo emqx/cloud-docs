@@ -148,6 +148,10 @@
           "path": "deployments/alerts"
         },
         {
+          "title": "Webhook 告警",
+          "path": "deployments/alerts_webhook"
+        },
+        {
           "title": "停止/删除部署",
           "path": "deployments/stop_delete_deployment"
         }
