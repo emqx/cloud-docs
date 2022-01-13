@@ -500,6 +500,10 @@
           "path": "deployments/auth"
         },
         {
+          "title": "Custom Authentication",
+          "path": "deployments/http_auth"
+        },
+        {
           "title": "ACL",
           "path": "deployments/acl"
         },
