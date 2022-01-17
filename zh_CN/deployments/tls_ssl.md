@@ -4,12 +4,12 @@
 该功能在基础版中不可用
 :::
 
-EMQ X Cloud **专业版部署** 提供自定义 单向/双向 TLS/SSL 配置，具体如下：
+EMQ X Cloud **专业版部署** 提供自定义单向/双向 TLS/SSL 配置，具体如下：
 
 | 认证方式 | 是否支持自签名证书 | 服务器证书 | 证书链 | 私有秘钥 | 客户端 CA 证书 |
-| -------- | ------------------ | ---------- | ------ | -------- | -------------- |
-| 单向认证 | 支持               | 需要       | 需要   | 需要     | 不需要         |
-| 双向认证 | 支持               | 需要       | 需要   | 需要     | 需要           |
+|------|-----------|-------|-----|------|-----------|
+| 单向认证 | 支持        | 需要    | 需要  | 需要   | 不需要       |
+| 双向认证 | 支持        | 需要    | 需要  | 需要   | 需要        |
 
 
 
@@ -26,13 +26,15 @@ EMQ X Cloud **专业版部署** 提供自定义 单向/双向 TLS/SSL 配置，�
 
 - 证书、私有密钥和证书链必须采用 **PEM 编码**。
 
-- 私有秘钥必须是无密码的。
+- 私有秘钥必须是**无密码**的。
+
+- 私有秘钥支持 `PKCS#1` 和 `PKCS#8` 格式。
 
 - 证书的加密算法必须与签名 CA 的加密算法匹配。例如，如果签名 CA 的密钥类型为 RSA，则该证书的密钥类型也必须为 RSA。
 
 - 格式说明：
 
-  - 证书格式。
+  - 证书格式
 
     ```bash
     -----BEGIN CERTIFICATE-----
@@ -40,7 +42,7 @@ EMQ X Cloud **专业版部署** 提供自定义 单向/双向 TLS/SSL 配置，�
     -----END CERTIFICATE----- 
     ```
 
-  - 证书链格式。
+  - 证书链格式
 
     ```bash
     -----BEGIN CERTIFICATE-----
@@ -48,12 +50,12 @@ EMQ X Cloud **专业版部署** 提供自定义 单向/双向 TLS/SSL 配置，�
     -----END CERTIFICATE----- 
     ```
 
-  - 私有秘钥格式。
+  - 私有秘钥格式
 
     ```bash
-    -----BEGIN CERTIFICATE-----
-    Base64–encoded certificate
-    -----END CERTIFICATE----- 
+    -----BEGIN (RSA) PRIVATE KEY-----
+    Base64–encoded private key
+    -----END (RSA) PRIVATE KEY----- 
     ```
 
 
@@ -122,7 +124,7 @@ openssl req \
 
 ### 服务端证书生成
 
-1. 服务端秘钥生成
+1. 服务端秘钥生成 `server.key`
 ```bash
 openssl genrsa -out server.key 2048
 ```
@@ -167,12 +169,12 @@ IP.1 = <当前部署的地址>
 EOF
 ```
 
-3. 生成服务端证书请求文件 server.csr
+3. 生成服务端证书请求文件 `server.csr`
 ```bash
 openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
-4. 用 CA 证书给服务端证书签名
+4. 用 CA 证书给服务端证书签名，生成服务端证书 `server.crt`
 ```bash
 openssl x509 -req \
     -days 3650 \
@@ -196,17 +198,17 @@ openssl verify -CAfile root-ca.crt server.crt
 ### 客户端证书生成
 
 
-1. 客户端秘钥生成
+1. 客户端秘钥生成 `client.key`
 ```bash
 openssl genrsa -out client.key 2048
 ```
 
-2. 生成客户端证书请求文件 server.csr
+2. 生成客户端证书请求文件 `server.csr`
 ```bash
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 ```
 
-3. 用 CA 证书给客户端证书签名
+3. 用 CA 证书给客户端证书签名，生成 `client.crt`
 ```bash
 openssl x509 -req -days 3650 -in client.csr -CA root-ca.crt -CAkey root-ca.key -CAcreateserial -out client.crt
 ```
