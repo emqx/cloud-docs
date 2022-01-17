@@ -6,10 +6,10 @@ This feature is not available for the basic plan
 
 EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
 
-| Certification Mode  | Support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
-| ---------------------- | ------------------------------------------ | ------------------ | ----------------- | ----------- | --------------------- |
-| one-way Authentication | Yes                                        | required           | required          | required    | not required          |
-| two-way Authentication | Yes                                        | required           | required          | required    | required              |
+| Certification Mode     | Support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
+|------------------------|---------------------------------|--------------------|-------------------|-------------|-----------------------|
+| one-way Authentication | Yes                             | required           | required          | required    | not required          |
+| two-way Authentication | Yes                             | required           | required          | required    | required              |
 
 
 
@@ -28,11 +28,13 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
 
 - The private key must be password-less.
 
+- The private key support PKCS#1 and PKCS#8.
+
 - The encryption algorithm of the certificate must match the encryption algorithm of the signing CA. For example, if the key type of the signing CA is RSA, the key type of the certificate must also be RSA.
 
 - Format description:
 
-  - Certificate format.
+  - Certificate format
 
   ```bash
   -----BEGIN CERTIFICATE-----
@@ -40,7 +42,7 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
   -----END CERTIFICATE----- 
   ```
 
-  - The certificate chain format.
+  - The certificate chain format
 
   ```bash
   -----BEGIN CERTIFICATE-----
@@ -48,12 +50,12 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
   -----END CERTIFICATE----- 
   ```
 
-  - Private key format.
+  - Private key format
 
   ```bash
-  -----BEGIN CERTIFICATE-----
-  Base64–encoded certificate
-  -----END CERTIFICATE----- 
+  -----BEGIN (RSA) PRIVATE KEY-----
+  Base64–encoded private key
+  -----END (RSA) PRIVATE KEY----- 
   ```
 
 ## Create a Certificate
@@ -73,9 +75,9 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
        <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/VzygGJXgVI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        </div>
      
-   - Certificates: server-side certificates
+   - Certificate: server-side certificate
    - Certificate chain: the certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
-   - Certificate private keys: server-side private keys
+   - Certificate private key: server-side private key
    - Client CA certificate: the client's CA certificate that is required when selecting two-way certification
 3. When you have completed the form, click on `Confirm`.
 
@@ -136,7 +138,7 @@ You should adjust `subj` to actual use.
 
 ### Creating a Server Certificate
 
-1. Generate server-side secret key
+1. Generate server-side secret key `server.key`
 
 ```bash
 openssl genrsa -out server.key 2048
@@ -178,13 +180,13 @@ DNS.1 = tls.emqx.io
 EOF
 ```
 
-3. Generate the server-side certificate request file server.csr
+3. Generate the server-side certificate request file `server.csr`
 
 ```bash
 openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
-4. Sign the server-side certificate with a CA certificate
+4. Sign the server-side certificate with a CA certificate `server.crt`
 
 ```bash
 openssl x509 -req \
@@ -226,19 +228,19 @@ openssl req \
 
 You should adjust `subj` to actual use.
 
-1. Generate  client-side secret key
+1. Generate client-side secret key `client.key`
 
 ```bash
 openssl genrsa -out client.key 2048
 ```
 
-2. Generate the client-side certificate request file server.csr
+2. Generate the client-side certificate request file `server.csr`
 
 ```bash
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 ```
 
-3. Sign the client-side certificate with a CA certificate
+3. Sign the client-side certificate with a CA certificate `client.crt`
 
 ```bash
 openssl x509 -req -days 3650 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
