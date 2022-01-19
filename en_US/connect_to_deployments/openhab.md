@@ -31,7 +31,7 @@ If it's your first time using EMQ X Cloud, don't worry. We will guide you throug
 2. Login to EMQ X Cloud [console](https://cloud.emqx.io/console/) and start a new deployment.
 
    ```tip
-   For the first-time EMQ X Cloud customers, we have an opportunity for you to create a free trial deployment of up to 30 days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud. 
+   For the first-time EMQ X Cloud customers, we have an opportunity for you to create a free trial deployment of up to 14 days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud. 
    ```
 
 3. After the new deployment is created, and the status is **running**, add the client authentication information (you could choose to add manually or import from the file).  

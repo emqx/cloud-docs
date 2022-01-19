@@ -2,7 +2,7 @@
 
 For first-time EMQ X Cloud customers, we have an opportunity for you to create a free trial deployment of up to **30** days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQ X Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following restrictions.
 
-* Free trial up to 30 days.
+* Free trial up to 14 days.
 
   > To extend your free trial, you can submit a [ticket](../feature/tickets.md) or contact us by email to get in touch with us.
 
