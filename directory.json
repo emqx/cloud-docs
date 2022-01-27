@@ -532,6 +532,10 @@
           "path": "deployments/alerts"
         },
         {
+          "title": "Webhook Alerts",
+          "path": "deployments/alerts_webhook"
+        },
+        {
           "title": "Stop Deployment",
           "path": "deployments/stop_deployment"
         },
