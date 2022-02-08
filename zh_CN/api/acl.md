@@ -604,7 +604,7 @@ $ curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2u
 
 ### URI
 
-DELETE /acl/all/$all/topic/{topic}
+DELETE /acl/$all/topic/{topic}
 
 **参数：**
 

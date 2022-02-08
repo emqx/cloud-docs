@@ -4,7 +4,7 @@
 
 ### URI
 
-POST /metrics
+GET /metrics
 
 ### 请求消息
 
