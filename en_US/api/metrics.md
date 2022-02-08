@@ -3,7 +3,7 @@
 ## Statistical Metrics
 
 ### URI
-POST /metrics
+GET /metrics
 
 ### Request Message
 None

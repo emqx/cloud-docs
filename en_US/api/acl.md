@@ -542,7 +542,7 @@ $ curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2u
 
 ## Delete based on All Specified ACL Rules
 ### URI
-DELETE /acl/all/$all/topic/{topic}
+DELETE /acl/$all/topic/{topic}
 #### Parameter
 | Name                 | Type             | Description                             |
 | :------------------- | :--------------- | :-------------------------------------- |
