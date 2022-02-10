@@ -1,6 +1,6 @@
 # Logs
 
-EMQ X Cloud provides real-time online viewing of EMQ X logs
+EMQX Cloud provides real-time online viewing of EMQX logs
 
 
 

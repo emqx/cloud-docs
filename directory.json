@@ -1,7 +1,7 @@
 {
   "cn": [
     {
-      "title": "EMQ X Cloud",
+      "title": "EMQX Cloud",
       "path": "./"
     },
     {
@@ -381,7 +381,7 @@
   ],
   "en": [
     {
-      "title": "EMQ X Cloud Overview",
+      "title": "EMQX Cloud Overview",
       "path": "./"
     },
     {

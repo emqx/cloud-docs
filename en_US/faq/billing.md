@@ -2,7 +2,7 @@
 
 ## How to bill?
 
-EMQ X Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
+EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
 
 For detailed billing rules, you can view [Product Pricing](../price/pricing.md)
 
@@ -12,7 +12,7 @@ You need to bind a credit card and the fee is charged monthly.
 
 ## How do I download an invoice?
 
- [EMQ X Conosle](https://cloud.emqx.com/console)，check `Billing` -> `Invoice`.
+ [EMQX Conosle](https://cloud.emqx.com/console)，check `Billing` -> `Invoice`.
 
 ## How to get the coupons?
 

@@ -1,14 +1,14 @@
-# EMQ X Cloud 规则引擎保存数据到阿里云 RDS MySQL
+# EMQX Cloud 规则引擎保存数据到阿里云 RDS MySQL
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到阿里云 RDS MySQL。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将数据转存到阿里云 RDS MySQL。
 
 在开始之前，您需要完成以下操作：
 
-- 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
+- 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 - 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
 ## 购买阿里云 RDS MySQL
@@ -27,13 +27,13 @@
 - 网络类型：专有网络
 - 规格：1 核 1G
 
-> 需要特别注意的是：网络类型一定要选专有网络，并选择与 EMQ X Cloud 建立了对等连接的 VPC
+> 需要特别注意的是：网络类型一定要选专有网络，并选择与 EMQX Cloud 建立了对等连接的 VPC
 
-### 2. 将 EMQ X Cloud VPC 所在网段加入白名单
+### 2. 将 EMQX Cloud VPC 所在网段加入白名单
 
 在 RDS MySQL 实例页面中，找到 `数据安全性` -> `白名单设置`
 
-将 EMQ X Cloud 的 VPC 网段加入 RDS MySQL 的白名单中
+将 EMQX Cloud 的 VPC 网段加入 RDS MySQL 的白名单中
 ![VPC 网段](./_assets/aliyun_mysql_vpc_info.png)
 
 ### 3. 开启阿里云 SSL
@@ -60,7 +60,7 @@
    ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
    ```
 
-2. 设置允许 EMQ X 集群 IP 段访问数据库(可选)
+2. 设置允许 EMQX 集群 IP 段访问数据库(可选)
 
    对于专业版部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
 

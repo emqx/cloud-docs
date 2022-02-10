@@ -1,8 +1,8 @@
-# EMQ X Cloud Device management/IoT platform integration guide
+# EMQX Cloud Device management/IoT platform integration guide
 
 ## Introduction
 
-This document provides a guide plan for EMQ X Cloud to integrate the user's own device management system or IoT platform for device authentication, device action and status management, and message data integration management. The contents are as follows:
+This document provides a guide plan for EMQX Cloud to integrate the user's own device management system or IoT platform for device authentication, device action and status management, and message data integration management. The contents are as follows:
 
 - **Device authentication information management:** The platform uses REST API to add, delete, check, and modify authentication information. For API usage, refer to[Authentication Management](https://docs.emqx.io/en/cloud/latest/api/auth.html)
 - **View online status of device:**
@@ -20,17 +20,17 @@ This document provides a guide plan for EMQ X Cloud to integrate the user's own 
 
 ​            ![img](https://static.emqx.net/images/a912409d8db446e61567c4749946023c.png)            
 
-Figure 1 Schematic diagram of EMQ X Cloud cluster architecture
+Figure 1 Schematic diagram of EMQX Cloud cluster architecture
 
-On EMQ X Cloud, users can create a highly available EMQ X cluster with dedicated instance in just a few minutes, and immediately start prototype design and application development without paying attention to subsequent operation and maintenance work. After the product is online, the cluster can be expanded without stopping to cope with the capacity expansion caused by business growth, ensuring availability while maximizing cost savings.
+On EMQX Cloud, users can create a highly available EMQX cluster with dedicated instance in just a few minutes, and immediately start prototype design and application development without paying attention to subsequent operation and maintenance work. After the product is online, the cluster can be expanded without stopping to cope with the capacity expansion caused by business growth, ensuring availability while maximizing cost savings.
 
-Unlike most other public IoT Hub cloud platforms, EMQ X Cloud provides MQTT 5.0 server clusters with a unique isolated environment, which has significant cost advantages and fewer usage restrictions. In the case of a large amount of messages, EMQ X Cloud Can still maintain a low cost of use. Through functions such as peer-to-peer networks, it is possible to connect to the big data analysis, message storage, and other business systems deployed by users in the private network.
+Unlike most other public IoT Hub cloud platforms, EMQX Cloud provides MQTT 5.0 server clusters with a unique isolated environment, which has significant cost advantages and fewer usage restrictions. In the case of a large amount of messages, EMQX Cloud Can still maintain a low cost of use. Through functions such as peer-to-peer networks, it is possible to connect to the big data analysis, message storage, and other business systems deployed by users in the private network.
 
 
 
 ## Device authentication information management
 
-The platform uses REST API to add, delete, check, and modify authentication information, and applies platform-side operations on EMQ X Cloud.
+The platform uses REST API to add, delete, check, and modify authentication information, and applies platform-side operations on EMQX Cloud.
 
 ​            ![img](./_assets/http_rest_api.png)            
 
@@ -38,7 +38,7 @@ The platform uses REST API to add, delete, check, and modify authentication info
 
 ## View device online status
 
-To obtain the online status of the device, EMQ X Cloud itself can query the online status, or record the online status in the platform's private database.
+To obtain the online status of the device, EMQX Cloud itself can query the online status, or record the online status in the platform's private database.
 
 - The platform obtains the list of online devices through the REST API and queries whether the device is online.
 
@@ -118,7 +118,7 @@ It obtains relevant statistical information through the REST API, including the 
 
 ## Access Example Code
 
-You can go to [Connect to Deployment](./connect_to_deployments/overview.md) to learn more examples of MQTT client library accessing EMQ X Cloud.
+You can go to [Connect to Deployment](./connect_to_deployments/overview.md) to learn more examples of MQTT client library accessing EMQX Cloud.
 
 
 

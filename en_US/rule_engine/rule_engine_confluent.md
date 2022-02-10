@@ -1,9 +1,9 @@
 # Bridge device data to Confluent Cloud using the Rule Engine
 
-In this article, we will simulate temperature and humidity data and report these data to EMQ X Cloud via the MQTT protocol and then use the EMQ X Cloud rules engine to dump the data into Confluent Cloud.
+In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud rules engine to dump the data into Confluent Cloud.
 
 Before you start, you need to complete the following operations:
-* Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
+* Deployments have already been created on EMQX Cloud (EMQX Cluster).
 * This feature is available for professional deployment
 * There are three types of Confluent Cloud cluster you could choose:
   * For basic and standard cluster, please open the NAT first.
@@ -141,7 +141,7 @@ After the cluster has been created, we should add peering
    ![vpc](./_assets/confluent_finish.png)
    
 
-## EMQ X Cloud rule engine configuration
+## EMQX Cloud rule engine configuration
 
 Go to the `Rule Engine` page
 
@@ -186,7 +186,7 @@ Go to the `Rule Engine` page
 
 1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
 
-   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQ X Dashboard.
+   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQX Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)
    
 2. View data dump results

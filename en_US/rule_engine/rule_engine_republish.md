@@ -1,6 +1,6 @@
-# Use the EMQ X Cloud rule engine of message republishing
+# Use the EMQX Cloud rule engine of message republishing
 
-When a message meets a certain features, you want to publish it to other topics without writing code. EMQ X Cloud has prepared such a service for you: By using the EMQ X Cloud rule engine-message republishing, you can easily achieve this function.
+When a message meets a certain features, you want to publish it to other topics without writing code. EMQX Cloud has prepared such a service for you: By using the EMQX Cloud rule engine-message republishing, you can easily achieve this function.
 
 This guide will complete the creation of a `message republishing` rule engine to achieve the following goals:
 
@@ -14,7 +14,7 @@ In order to achieve this function, we will complete the following 3 tasks in tur
 
 ## 1. Set the filter criteria of the rule engine
 
-Go to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment to use `message republishing`.
+Go to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment to use `message republishing`.
 
 On the deployment page, select the rule engine and click Create.
 
@@ -75,7 +75,7 @@ The created action will be displayed in the response action column. After confir
 
 ## 3. Test
 
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
+>If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 We try to send the following data to the test topic
 

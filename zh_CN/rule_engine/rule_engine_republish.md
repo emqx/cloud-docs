@@ -1,6 +1,6 @@
-# 使用 EMQ X Cloud 规则引擎消息重新发布
+# 使用 EMQX Cloud 规则引擎消息重新发布
 
-当有消息满足某一特征时，你希望在不编写代码的情况下，将它发布到其它主题上。EMQ X Cloud 为你准备了这样的服务：通过使用 EMQ X Cloud 规则引擎——消息重新发布，你可以轻松实现这一功能。
+当有消息满足某一特征时，你希望在不编写代码的情况下，将它发布到其它主题上。EMQX Cloud 为你准备了这样的服务：通过使用 EMQX Cloud 规则引擎——消息重新发布，你可以轻松实现这一功能。
 
 这篇指南会完成一个 `消息重新发布` 规则引擎的创建，实现下面的目标：
 
@@ -14,7 +14,7 @@
 
 ## 1. 设置规则引擎的筛选条件
 
-进入 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)，并点击进入要使用 `消息重新发布` 的部署。
+进入 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)，并点击进入要使用 `消息重新发布` 的部署。
 
 在部署页面，选择规则引擎，点击创建。
 
@@ -73,7 +73,7 @@ WHERE
 
 ## 3. 测试
 
->如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南 
+>如果您是第一次使用 EMQX Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南 
 
 我们尝试向 test 主题发送下面的数据
 

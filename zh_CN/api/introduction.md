@@ -1,6 +1,6 @@
 # REST API
 
-EMQ X Cloud  API 遵循 REST 体系结构，您可以通过编程方式访问 EMQ X 的功能。
+EMQX Cloud  API 遵循 REST 体系结构，您可以通过编程方式访问 EMQX 的功能。
 
 ## API 概览
 

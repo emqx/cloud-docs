@@ -2,7 +2,7 @@
 
 
 ## Which protocol connections are supported?
-EMQ X Cloud deployment supports MQTT over TLS/SSL, WebSockets over TLS/SSL protocol connections.
+EMQX Cloud deployment supports MQTT over TLS/SSL, WebSockets over TLS/SSL protocol connections.
 
 If you need other protocol support, you can submit a ticket or send an email (cloud@emqx.io) to us.
 
@@ -13,14 +13,14 @@ If you need other protocol support, you can submit a ticket or send an email (cl
 
 ## How to bind a domain name？
 
-When you create a deployment in EMQ X Cloud, you will be given an MQTT connection address, which is displayed as an IP in the Professional deployment and as a second-level domain ending in emqx.cloud in the Standard deployment.
+When you create a deployment in EMQX Cloud, you will be given an MQTT connection address, which is displayed as an IP in the Professional deployment and as a second-level domain ending in emqx.cloud in the Standard deployment.
 
 You may already have your own domain name and would like to be able to bind to your own domain.
 
 > Note: mqtts and wss ports will not be available on Standard after the domain is bound.
 
 ### Steps
-1. Let's assume you have the top-level domain abc.com and want to access the mqtt service as mqtt.abc.com, and your deployment on EMQ X Cloud has a connection address of 123.123.123.123.
+1. Let's assume you have the top-level domain abc.com and want to access the mqtt service as mqtt.abc.com, and your deployment on EMQX Cloud has a connection address of 123.123.123.123.
 
 2. Point the A record from mqtt.abc.com to 123.123.123.123 in your domain setting panel.
 
@@ -55,7 +55,7 @@ It is not yet supported to get data directly from your own database. You can imp
 
 
 ## How long can device logs be kept in the console?
-EMQ X Cloud does not keep device communication logs, only deployment event logs, which are kept for 7 days by default.
+EMQX Cloud does not keep device communication logs, only deployment event logs, which are kept for 7 days by default.
 
 
 ## How long can device events be stored in the console?

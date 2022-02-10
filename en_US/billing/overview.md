@@ -1,6 +1,6 @@
 # Overview
 
-The billing overview will introduce you to the recharge of the EMQ X Cloud account, PayPal payment, view transaction records, monthly bills, and expense reports. Click `Billing` -> `Overview` in the left menu to enter the billing overview page.
+The billing overview will introduce you to the recharge of the EMQX Cloud account, PayPal payment, view transaction records, monthly bills, and expense reports. Click `Billing` -> `Overview` in the left menu to enter the billing overview page.
 
 The overview page displays the following:
 
@@ -65,9 +65,9 @@ The billing report shows all costs incurred per hour of deployment.
 
 You can use the overview to add a credit card to your account.
 
-- To add a credit card to your EMQ X Cloud account
+- To add a credit card to your EMQX Cloud account
 
-  1. Sign in to the EMQ X Cloud Console and open the [Billing Overview](https://cloud-intl.emqx.com/console/billing/overview)
+  1. Sign in to the EMQX Cloud Console and open the [Billing Overview](https://cloud-intl.emqx.com/console/billing/overview)
 
   2. Choose an editorial payment method
   3. Enter the credit card information and billing address.
@@ -77,7 +77,7 @@ You can use the overview to add a credit card to your account.
 
 - To update your credit card
 
-  1. Sign in to the EMQ X Cloud Console and open the Billing Overview at https://cloud-intl.emqx.com/console/billing/overview.
+  1. Sign in to the EMQX Cloud Console and open the Billing Overview at https://cloud-intl.emqx.com/console/billing/overview.
 
   2. Choose an editorial payment method
 

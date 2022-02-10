@@ -12,7 +12,7 @@
 
 ## 简单示例
 
-如下图所示规则，该条规则用于处理**消息发布**时的数据，将全部主题消息的 msg 字段，消息 topic 、qos 筛选出来，发送到 Web Server。您可以参阅 [EMQ X 规则](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html)了解更多使用指南。
+如下图所示规则，该条规则用于处理**消息发布**时的数据，将全部主题消息的 msg 字段，消息 topic 、qos 筛选出来，发送到 Web Server。您可以参阅 [EMQX 规则](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html)了解更多使用指南。
 
 ![img](./_assets/rule_engine_detail.png)
 
@@ -22,7 +22,7 @@
 
 在创建规则引擎之前您需要确保部署状态为**运行中**
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
+1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -48,7 +48,7 @@
 
 ## 查看规则监控状态
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
+1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -60,7 +60,7 @@
 
 ## 编辑规则
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
+1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 
@@ -80,7 +80,7 @@
 
 ## 删除规则
 
-1. 登录 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)
+1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
 
 2. 点击所需连接的部署，您将进入部署详情页面
 

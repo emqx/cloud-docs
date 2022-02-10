@@ -1,6 +1,6 @@
 # REST API
 
-EMQ X Cloud API follows the REST architecture, and you can access the functions of EMQ X programmatically.
+EMQX Cloud API follows the REST architecture, and you can access the functions of EMQX programmatically.
 
 ## API Overview
 | API         | Description                                     |
@@ -30,7 +30,7 @@ HTTP API uses [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_
 ## Response code
 ### HTTP status codes
 
-The EMQ X Broker interface always returns 200 OK when the call is successful, and the response content is returned in JSON format.
+The EMQX Broker interface always returns 200 OK when the call is successful, and the response content is returned in JSON format.
 
 The possible status codes are as follows:
 
@@ -44,7 +44,7 @@ The possible status codes are as follows:
 
 ### Result codes
 
-The response message body of the EMQ X Broker interface is in JSON format, which always contains the returned `code`.
+The response message body of the EMQX Broker interface is in JSON format, which always contains the returned `code`.
 
 The possible result codes are as follows:
 

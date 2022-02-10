@@ -1,18 +1,18 @@
 # Introduction
 
-The deployment is an EMQ X cluster managed by the EMQ X Cloud
+The deployment is an EMQX cluster managed by the EMQX Cloud
 
 
 
 
 ## [Price Estimation](../price/calculator.md)
-View EMQ X Cloud supported cloud service providers, regions, and different size deployments **hourly** pricing.
+View EMQX Cloud supported cloud service providers, regions, and different size deployments **hourly** pricing.
 
 
 
 ## [Create a New Deployment](./create_deployment.md)
 
-Step-by-step guide for creating a new EMQ X Cloud deployment.
+Step-by-step guide for creating a new EMQX Cloud deployment.
 
 
 

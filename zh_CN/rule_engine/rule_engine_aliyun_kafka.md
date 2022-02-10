@@ -1,4 +1,4 @@
-# 阿里云 Kafka 对接 EMQ X Cloud
+# 阿里云 Kafka 对接 EMQX Cloud
 
 ::: danger
 该功能在基础版中不可用
@@ -10,14 +10,14 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 [阿里云 Kafka](http://www.aliyun.com/product/kafka) 是阿里云基于 Apache Kafka 构建的高吞吐量、高可扩展性的分布式消息队列服务，广泛用于日志收集、监控数据聚合、流式数据处理、在线和离线分析等，是大数据生态中不可或缺的产品之一，阿里云提供全托管服务，用户无需部署运维，更专业、更可靠、更安全。
 
-[EMQ X Cloud](https://www.emqx.com/zh/cloud) 是由 EMQ X 建立的云上 MQTT 服务。EMQ X 团队在物联网领域耕织多年，EMQ X MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
+[EMQX Cloud](https://www.emqx.com/zh/cloud) 是由 EMQX 建立的云上 MQTT 服务。EMQX 团队在物联网领域耕织多年，EMQX MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
 
-本篇指南将会连通阿里云 Kafka 和 EMQ X Cloud，并通过 EMQ X Cloud 规则引擎将 MQTT 消息转发到 Kafka 主题。
+本篇指南将会连通阿里云 Kafka 和 EMQX Cloud，并通过 EMQX Cloud 规则引擎将 MQTT 消息转发到 Kafka 主题。
 
 为了实现该功能，我们将会完成以下几个任务：
 
 1. 购买云资源
-2. 建立阿里云 Kafka 与 EMQ X Cloud 部署之间的连接
+2. 建立阿里云 Kafka 与 EMQX Cloud 部署之间的连接
 3. 创建 Kafka 主题，开通端口，并记录 Kafka 连接地址
 4. 设置规则引擎的筛选条件
 5. 创建一个资源和一个动作
@@ -33,17 +33,17 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 ![](./_assets/buy_aliyun_kafka02.png)
 
-1.2 创建 EMQ X Cloud 部署
+1.2 创建 EMQX Cloud 部署
 
-如果您是初次接触 EMQ X Cloud，建议您跟随 EMQ X Cloud [快速入门](../quick_start/introduction.md)的提示进行创建。
+如果您是初次接触 EMQX Cloud，建议您跟随 EMQX Cloud [快速入门](../quick_start/introduction.md)的提示进行创建。
 
 ![](./_assets/buy_aliyun_kafka_emqx_deployment.png)
 
-### 2. 建立阿里云 Kafka 与 EMQ X Cloud 部署之间的连接
+### 2. 建立阿里云 Kafka 与 EMQX Cloud 部署之间的连接
 
 2.1 你需要在阿里云里创建一个云企业网。进入云企业网页面，并创建一个云企业网示例。并将 Kafka 所在的 VPC 加入云企业网中。
 
-2.2 在 EMQ X Cloud 控制台 中，进入刚刚创建的部署中，点击 `+VPC 对等连接`，填写阿里云企业网相关信息，并记录在 EMQ X Cloud 中 VPC 对等连接的提示。
+2.2 在 EMQX Cloud 控制台 中，进入刚刚创建的部署中，点击 `+VPC 对等连接`，填写阿里云企业网相关信息，并记录在 EMQX Cloud 中 VPC 对等连接的提示。
 
 其中：
 
@@ -53,13 +53,13 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 - VPC ID == 挂载到云企业网中的 VPC ID
 
-访问刚创建好的云企业网实例详情，点击加载网络实例，填写 EMQ X Cloud 部署相关信息，点击确定。
+访问刚创建好的云企业网实例详情，点击加载网络实例，填写 EMQX Cloud 部署相关信息，点击确定。
 
 > 注意：
 >
-> 您需要在 10 分钟内完成 EMQ X Cloud 对等连接相关信息添加，否则将视为失败
+> 您需要在 10 分钟内完成 EMQX Cloud 对等连接相关信息添加，否则将视为失败
 >
-> 回到 EMQ X Cloud 控制台, 访问部署详情，查看对等连接状态
+> 回到 EMQX Cloud 控制台, 访问部署详情，查看对等连接状态
 
 ### 3. 创建 Kafka 主题，开放端口，并记录 Kafka 连接地址
 
@@ -77,7 +77,7 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 ### 4. 设置规则引擎的筛选条件
 
-进入 EMQ X Cloud 控制台，并点击进入要使用桥接 Kafka 的部署。
+进入 EMQX Cloud 控制台，并点击进入要使用桥接 Kafka 的部署。
 
 在部署页面，选择规则引擎，点击创建。
 
@@ -145,7 +145,7 @@ WHERE
 
 ### 6. 测试
 
-> 如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
+> 如果您是第一次使用 EMQX Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
 
 我们尝试向 greet/a 主题发送下面的数据
 
@@ -159,6 +159,6 @@ WHERE
 
 ![转发成功](./_assets/add_kafka_action06.png)
 
-在 Kafka 实例中，可以看到 EMQ X Cloud 转发过来的消息。
+在 Kafka 实例中，可以看到 EMQX Cloud 转发过来的消息。
 
 ![](./_assets/check_aliyun_kafka_message.png)

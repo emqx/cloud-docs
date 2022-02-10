@@ -34,7 +34,7 @@ After that, open the server's 1883 port
 
 ## 2. Set the filter conditions of the rule engine
 
-Enter [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment to use MQTT Broker bridge.
+Enter [EMQX Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment to use MQTT Broker bridge.
 
 On the deployment page, select the rule engine and click Create.
 
@@ -71,7 +71,7 @@ If the test fails, please check whether the [VPC peering connection](../deployme
 
 ![MQTT Config](./_assets/add_mqtt_action03.png)
 
-Click OK to return to the configuration action page. The resource just created is selected by default. Fill in "${msg} FROM EMQ X CLOUD" in the message content template, and click OK.
+Click OK to return to the configuration action page. The resource just created is selected by default. Fill in "${msg} FROM EMQX CLOUD" in the message content template, and click OK.
 
 ![template](./_assets/add_mqtt_action04.png)
 
@@ -83,11 +83,11 @@ The created action will be displayed in the response action column. After confir
 
 ## 4. Test
 
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
+>If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 When configuring the action in the third step, we set the mount point to emqx/. Therefore, we use the client to subscribe to the topic emqx/# of Mosquitto.
 
-At the same time, we send "hello" to the greet topic of EMQ X Cloud, and the rule engine will be triggered. We can see that Mosquitto has received the message of "hello FROM EMQ X CLOUD"
+At the same time, we send "hello" to the greet topic of EMQX Cloud, and the rule engine will be triggered. We can see that Mosquitto has received the message of "hello FROM EMQX CLOUD"
 
 ![messages](./_assets/add_mqtt_action06.png)
 

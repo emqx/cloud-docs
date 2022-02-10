@@ -1,12 +1,12 @@
 # Use limitations
 
-EMQ X Cloud has fewer usage restrictions than the public cloud IoT Hub platform. The limitations in the table below depend on the number of connections purchased and the hardware performance, and the corresponding parameters have been rigorously tested for performance by EMQ officials.
+EMQX Cloud has fewer usage restrictions than the public cloud IoT Hub platform. The limitations in the table below depend on the number of connections purchased and the hardware performance, and the corresponding parameters have been rigorously tested for performance by EMQ officials.
 
 > The performance of the relevant items depends on the deployment specifications, and the specific data is subject to actual usage scenarios.
 
 ## Connected Communications
 
-| **Limitation Description**         | **EMQ X**                                             | **Public Cloud IoT Hub**                     |
+| **Limitation Description**         | **EMQX**                                             | **Public Cloud IoT Hub**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |
 | The maximum number of simultaneous online long connections  | Depends on specifications, choose from 1000-10M+, more than 200K please send tickets for application| 10K-500K                                 |
 | Number of connections established per second     | 10K                                                   | 200-500                                |
@@ -20,7 +20,7 @@ EMQ X Cloud has fewer usage restrictions than the public cloud IoT Hub platform.
 
 ## Topic Limitation
 
-| **Limitation Description**              | **EMQ X**          | **Public Cloud IoT Hub**                              |
+| **Limitation Description**              | **EMQX**          | **Public Cloud IoT Hub**                              |
 | ------------------------- | ------------------ | ----------------------------------------------- |
 | Topic number               | Unlimited              | 50 single product                                     |
 | Permissions                      | Customize | Devices can only subscribe to a limited number of their own Topics for message distribution |

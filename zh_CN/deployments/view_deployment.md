@@ -34,7 +34,7 @@
 该功能在基础版中不可用
 :::
 
-EMQ X Cloud 提供自定义 **单双向 TLS/SSL** 认证，并支持 **自签名证书** 和 **CA 签名证书**。
+EMQX Cloud 提供自定义 **单双向 TLS/SSL** 认证，并支持 **自签名证书** 和 **CA 签名证书**。
 
 ![base_info](./_assets/tls_info.png)
 
@@ -46,7 +46,7 @@ EMQ X Cloud 提供自定义 **单双向 TLS/SSL** 认证，并支持 **自签名
 该功能在基础版中不可用
 :::
 
-EMQ X Cloud 支持同云服务商、同区域与客户已有 VPC(Virtual Private Cloud) 创建对等连接。 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两个 VPC 中的实例可以彼此通信，就像它们在同一网络中一样。
+EMQX Cloud 支持同云服务商、同区域与客户已有 VPC(Virtual Private Cloud) 创建对等连接。 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两个 VPC 中的实例可以彼此通信，就像它们在同一网络中一样。
 
 ![base_info](./_assets/vpc_peering_info.png)
 
@@ -54,5 +54,5 @@ EMQ X Cloud 支持同云服务商、同区域与客户已有 VPC(Virtual Private
 
 ## [API 访问](../api/introduction.md)
 
-EMQ X Cloud 提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
+EMQX Cloud 提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 
