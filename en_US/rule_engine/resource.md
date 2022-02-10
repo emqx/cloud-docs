@@ -1,6 +1,6 @@
 # Resource
 
-EMQ X Cloud resources are used for rule engine response actions. Before that, you need to ensure that the deployment status is `running`. You can refer to [EMQ X Rule Engine](https://docs.emqx.io/broker/latest/en/rule/rule-engine.html) for more information about resource creation.
+EMQX Cloud resources are used for rule engine response actions. Before that, you need to ensure that the deployment status is `running`. You can refer to [EMQX Rule Engine](https://docs.emqx.io/broker/latest/en/rule/rule-engine.html) for more information about resource creation.
 
 
 
@@ -12,13 +12,13 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 ## Create Resources
 
-1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
+1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
-3. Click the EMQ X Dashboard button on the page, and you will enter the EMQ X Dashboard
+3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
 
-4. Click `Rule Engine` → `Resources` on the left menu of EMQ X Dashboard, and click the resource `Create` button on the resource list page
+4. Click `Rule Engine` → `Resources` on the left menu of EMQX Dashboard, and click the resource `Create` button on the resource list page
 
    ![resource-add](./_assets/resource-add.png)
 
@@ -32,13 +32,13 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 ## View Resource Status
 
-1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
+1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
-3. Click the EMQ X Dashboard button on the page, and you will enter the EMQ X Dashboard
+3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
 
-4. Click `Rule Engine` → `Resources` on the left menu of EMQ X Dashboard, and click the resource status icon on the resource list page
+4. Click `Rule Engine` → `Resources` on the left menu of EMQX Dashboard, and click the resource status icon on the resource list page
 
    ![resource-status](./_assets/resource-status.png)
 
@@ -46,12 +46,12 @@ The resource shown in the figure below is a WebHook resource. The request URL is
 
 ## Delete Resources
 
-1. Log in to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/)
+1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
 
 2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
-3. Click the EMQ X Dashboard button on the page, and you will enter the EMQ X Dashboard
+3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
 
-4. Click `Rule Engine` → `Resources` on the left menu of EMQ X Dashboard, and click the resource `Delete` button on the resource list page
+4. Click `Rule Engine` → `Resources` on the left menu of EMQX Dashboard, and click the resource `Delete` button on the resource list page
 
    ![resource-delete](./_assets/resource-delete.png)

@@ -237,6 +237,6 @@ Run the code of publishing messages, we will see that the client connects and pu
 
 ## More
 
-All of the above shows that how to use the paho-mqtt client library to connect to the EMQ X Cloud.
+All of the above shows that how to use the paho-mqtt client library to connect to the EMQX Cloud.
 You can download the source code to the example in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/).
 You can find more other languages in [GitHub](https://github.com/emqx/MQTT-Client-Examples).

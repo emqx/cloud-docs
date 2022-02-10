@@ -4,8 +4,8 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 ## Precautions
 
-1. EMQ X Cloud only supports creating peering connection at **the same region**.
-2. EMQ X Cloud does not accept CIDR in the range of 10.11.1.0/24 ~ 10.64.255.0/24.
+1. EMQX Cloud only supports creating peering connection at **the same region**.
+2. EMQX Cloud does not accept CIDR in the range of 10.11.1.0/24 ~ 10.64.255.0/24.
 3. Peering connections are bound to resources. Please create peering connections before creating resources.
 
 
@@ -17,13 +17,13 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 ### Creating peering connection
 
-1. Log in to [EMQ X Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQ X Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
+1. Log in to [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQX Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
 
    ![create-vpc1](./_assets/create_aws_vpc_peering.png)
 
 2. Log in to the Amazon Web Services console, switch to the region where `Region of deployment` is recorded in step 1, go to `Networking & Content Delivery` -> `VPC` -> `Peering Connection`, and click the button of `Create Peering Connection`
 
-   * Select `Another account` of `Account`，`Account ID` , fill in the `Account ID of EMQ X Cloud` recorded in step 1
+   * Select `Another account` of `Account`，`Account ID` , fill in the `Account ID of EMQX Cloud` recorded in step 1
    * Select `This region(us-east-1)` of `Region`
    * For VPC (Accepter), fill in the `VPC ID of deployment` in step 1.
 
@@ -35,7 +35,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![aws-vpc1](./_assets/aws-vpc1.png)
 
-4. Return to  [EMQ X Cloud console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
+4. Return to  [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
 
    * For Peering ID,  fill in the recorded `VPC Peering Connection`
    * For Account ID,  fill in the recorded `Requester VPC owner`
@@ -78,14 +78,14 @@ This feature is now not available. If you need to set up VPC peering connection 
 
 ### Creating peering connection
 
-1. Log in to [EMQ X Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
+1. Log in to [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
     * Project ID: GCP Project ID of your peering VPC
     * VPC ID:  Name of your peering VPC
 
    and record the information below:
     * VPC ID of deployment
     * CIDR of deployment
-    * Project ID of EMQ X Cloud
+    * Project ID of EMQX Cloud
 
    ![gcp_create_peering](./_assets/gcp_create_peering.png)
 
@@ -95,19 +95,19 @@ This feature is now not available. If you need to set up VPC peering connection 
     3. In **Name**, enter a name for your peering connection.
     4. In **Your VPC Network**, enter the name of your GCP VPC network.
     5. In **Peered VPC network**, select **In another project**.
-    6. In **Project ID**, enter EMQ X Cloud Project ID. You can find this name in the VPC Peering view in EMQ X Cloud.
-    7. In **VPC network name**, enter your EMQ X Cloud VPC Name. You can find this name in the VPC Peering view in EMQ X Cloud.
+    6. In **Project ID**, enter EMQX Cloud Project ID. You can find this name in the VPC Peering view in EMQX Cloud.
+    7. In **VPC network name**, enter your EMQX Cloud VPC Name. You can find this name in the VPC Peering view in EMQX Cloud.
     8. Click **CREATE**.
     
    ![gcp_peering](./_assets/gcp_peering.png)
 
 3. You will see the status of peering connection is **Active** if succeeded.
    ![gcp_console_peering](./_assets/gcp_console_peering.png)
-   and you will see the status of VPC Peering on EMQ X Cloud is **running**.
+   and you will see the status of VPC Peering on EMQX Cloud is **running**.
    ![](./_assets/gcp_cloud_console.png)
 
 
-4. Create firewall to allow your EMQ X CLoud deployment to access your GCP network
+4. Create firewall to allow your EMQX CLoud deployment to access your GCP network
    1. Click **Firewall**, and Click **CREATE FIREWALL RULE**.
    2. In **Network**, select your GCP network
    3. In **Targets**, select **All instances in the network**, or you can select other option according to your situation.
@@ -157,8 +157,8 @@ If you don't have a VPC for your timescale cloud project, you could log in to th
 
    ![vpc](./_assets/timescale_cloud_1.png)
 
-When the VPC is created, you are ready to create the VPC peering connection. Click on the VPC to go to the vpc peering page. Enter the EMQ X Cloud deployment's vpc information to start the vpc peering process.
-You could find the deployment's vpc information in the EMQ X Cloud console, VPC peering section.
+When the VPC is created, you are ready to create the VPC peering connection. Click on the VPC to go to the vpc peering page. Enter the EMQX Cloud deployment's vpc information to start the vpc peering process.
+You could find the deployment's vpc information in the EMQX Cloud console, VPC peering section.
 
    ![create-vpc1](./_assets/create_aws_vpc_peering.png)
 
@@ -168,7 +168,7 @@ When the peering connection state turns to `Pending peer`:
 
    ![create-vpc3](./_assets/timescale_cloud_3.png)
 
-go to the EMQ X Cloud console to accept the peering request by filling the timescale cloud vpc information
+go to the EMQX Cloud console to accept the peering request by filling the timescale cloud vpc information
 
    ![create-vpc1](./_assets/create_aws_vpc_peering.png)
 

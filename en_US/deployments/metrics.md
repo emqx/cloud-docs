@@ -1,6 +1,6 @@
 # Metric
 
-EMQ X Cloud provides four incremental metrics: messages, client, packets, and delivery. You can view the display chart corresponding to each indicator, and the detailed information at a certain point of time.
+EMQX Cloud provides four incremental metrics: messages, client, packets, and delivery. You can view the display chart corresponding to each indicator, and the detailed information at a certain point of time.
 
 ![metrics_line_detail](./_assets/metrics.png)
 
@@ -12,7 +12,7 @@ It shows the incremental status of message sending and receiving in a certain pe
 
 | Indicator         | Meaning                                                      |
 | ----------------- | :----------------------------------------------------------- |
-| messages_dropped  | The total number of messages discarded before forwarding to the subscription process in EMQ X |
+| messages_dropped  | The total number of messages discarded before forwarding to the subscription process in EMQX |
 | messages_received | Number of messages received from the client                  |
 | messages_sent     | Number of messages sent to the client                        |
 

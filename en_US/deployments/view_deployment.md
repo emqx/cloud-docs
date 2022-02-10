@@ -30,7 +30,7 @@ Here you can view the following deployment information:
 This feature is not available in basic deployment.
 :::
 
-EMQ X Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supports **self-signed certificate** and **CA signed certificate**.
+EMQX Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supports **self-signed certificate** and **CA signed certificate**.
 
 ![base_info](./_assets/tls_info.png)
 
@@ -42,7 +42,7 @@ EMQ X Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supp
 This feature is not available in basic deployment
 :::
 
-EMQ X Cloud supports peering connections with customers' existing VPC (Virtual Private Cloud) for cloud service providers in the same region. A VPC peering connection is a network connection between two VPCs. Through this connection, the instances in the two VPCs can communicate with each other as if they were in the same network.
+EMQX Cloud supports peering connections with customers' existing VPC (Virtual Private Cloud) for cloud service providers in the same region. A VPC peering connection is a network connection between two VPCs. Through this connection, the instances in the two VPCs can communicate with each other as if they were in the same network.
 
 ![base_info](./_assets/vpc_peering_info.png)
 
@@ -50,7 +50,7 @@ EMQ X Cloud supports peering connections with customers' existing VPC (Virtual P
 
 ## [API access](../api/api_overview.md)
 
-EMQ X Cloud provides REST API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
+EMQX Cloud provides REST API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
 
 ![base_info](./_assets/api_info.png)
 

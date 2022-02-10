@@ -1,6 +1,6 @@
 # Webhook Alerts
 
-EMQ X Cloud integrates with Webhook, enabling alerts to be sent to IM software or to your own service. Testing whether the Webhook is correctly configured by sending the message through test function.
+EMQX Cloud integrates with Webhook, enabling alerts to be sent to IM software or to your own service. Testing whether the Webhook is correctly configured by sending the message through test function.
 
 Now we suppoert Slack and a common webhook from your service.
 

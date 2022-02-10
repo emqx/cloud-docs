@@ -1,18 +1,18 @@
 # 简介
 
-部署是由 EMQ X Cloud 管理的 EMQ X 集群。
+部署是由 EMQX Cloud 管理的 EMQX 集群。
 
 
 
 
 ## [价格计算](../price/calculator.md)
-查看 EMQ X Cloud 支持的云服务商、地区以及不同规格部署**每小时**价格。
+查看 EMQX Cloud 支持的云服务商、地区以及不同规格部署**每小时**价格。
 
 
 
 ## [创建一个新的部署](./create_deployment.md)
 
-创建新的 EMQ X Cloud 部署的分步指南。
+创建新的 EMQX Cloud 部署的分步指南。
 
 
 
@@ -69,7 +69,7 @@
 
 ## 伸缩部署规格
 
-EMQ X Cloud 支持**专业版**部署在不影响业务的情况下，平滑伸缩部署规格。有关如何伸缩部署规格，您可以通过工单或邮箱（cloud@emqx.io）与我们取得联系。
+EMQX Cloud 支持**专业版**部署在不影响业务的情况下，平滑伸缩部署规格。有关如何伸缩部署规格，您可以通过工单或邮箱（cloud@emqx.io）与我们取得联系。
 
 
 

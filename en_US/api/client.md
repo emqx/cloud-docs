@@ -59,7 +59,7 @@ None
 | data[0].mqueue_dropped    | Integer          | Number of messages dropped by the message queue due to exceeding the length |
 | data[0].awaiting_rel      | Integer          | Number of awaiting PUBREC packet                             |
 | data[0].max_awaiting_rel  | Integer          | Maximum allowed number of awaiting PUBREC packet             |
-| data[0].recv_oct          | Integer          | Number of bytes received by EMQ X Broker (the same below)    |
+| data[0].recv_oct          | Integer          | Number of bytes received by EMQX Broker (the same below)    |
 | data[0].recv_cnt          | Integer          | Number of TCP packets received                               |
 | data[0].recv_pkt          | Integer          | Number of MQTT packets received                              |
 | data[0].recv_msg          | Integer          | Number of PUBLISH packets received                           |

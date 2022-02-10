@@ -1,4 +1,4 @@
-# Azure 事件中心 对接 EMQ X Cloud
+# Azure 事件中心 对接 EMQX Cloud
 
 ::: danger
 该功能在基础版中不可用
@@ -6,14 +6,14 @@
 
 [Azure 事件中心](https://docs.microsoft.com/azure/event-hubs) 是大数据流式处理平台和事件引入服务， 它可以每秒接收和处理数百万个事件，可以使用任何实时分析提供程序或批处理/存储适配器转换和存储发送到事件中心的数据。
 
-[EMQ X Cloud](https://www.emqx.com/zh/cloud) 是由 EMQ X 建立的云上 MQTT 服务。EMQ X 团队在物联网领域耕织多年，EMQ X MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
+[EMQX Cloud](https://www.emqx.com/zh/cloud) 是由 EMQX 建立的云上 MQTT 服务。EMQX 团队在物联网领域耕织多年，EMQX MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
 
-本篇指南将会连通 Azure 事件中心 和 EMQ X Cloud，并通过 EMQ X Cloud 规则引擎将 MQTT 消息转发到 Azure 事件中心。
+本篇指南将会连通 Azure 事件中心 和 EMQX Cloud，并通过 EMQX Cloud 规则引擎将 MQTT 消息转发到 Azure 事件中心。
 
 为了实现该功能，我们将会完成以下几个任务：
 
 1. 购买云资源
-2. 创建资源，建立 Azure 事件中心命名空间 与 EMQ X Cloud 部署之间的 kafka 连接
+2. 创建资源，建立 Azure 事件中心命名空间 与 EMQX Cloud 部署之间的 kafka 连接
 3. 创建 Azure 事件中心
 4. 创建规则
 5. 完成规则引擎创建，并进行测试
@@ -38,13 +38,13 @@ Kafka 和事件中心概念映射
 
 ![create_namespace](./_assets/rule_engine_azure_event_hubs_create_namespace.png)
 
-1.2 创建 EMQ X Cloud 部署
+1.2 创建 EMQX Cloud 部署
 
-如果您是初次接触 EMQ X Cloud，建议您跟随 EMQ X Cloud [快速入门](../quick_start/introduction.md)的提示进行创建。
+如果您是初次接触 EMQX Cloud，建议您跟随 EMQX Cloud [快速入门](../quick_start/introduction.md)的提示进行创建。
 
-### 2.创建资源，建立 Azure 事件中心命名空间 与 EMQ X Cloud 部署之间的 kafka 连接
+### 2.创建资源，建立 Azure 事件中心命名空间 与 EMQX Cloud 部署之间的 kafka 连接
 
-进入 EMQ X Cloud 控制台，并点击进入要使用的部署，在部署页面，选择规则引擎，点击创建资源。
+进入 EMQX Cloud 控制台，并点击进入要使用的部署，在部署页面，选择规则引擎，点击创建资源。
 
 资源类型选择 kafka，Kafka 服务器地址为 `命名空间名称(namespace).servicebus.windows.net:9093`，
 例如 `emqx-cloud.servicebus.windows.net:9093`。
@@ -69,7 +69,7 @@ Azure 事件中心对应 kafka 中主题的概念，在命名空间下选择 实
 
 ### 4.创建规则
 
-进入 EMQ X Cloud 控制台，在部署页面，选择规则引擎，点击创建。
+进入 EMQX Cloud 控制台，在部署页面，选择规则引擎，点击创建。
 
 我们的目标是：当主题 greet 收到 msg 为 hello 字符时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 - 针对 greet 主题，即 'greet/#'
@@ -115,7 +115,7 @@ WHERE
 
 ### 5.完成规则引擎创建，并进行测试
 
-> 如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
+> 如果您是第一次使用 EMQX Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
 
 我们尝试向 greet/a 主题发送下面的数据
 
@@ -129,6 +129,6 @@ WHERE
 
 ![转发成功](./_assets/rule_engine_azure_event_hubs_action.png)
 
-在事件中心中，进入 功能 -> 处理数据，就可以看到 EMQ X Cloud 转发过来的消息。
+在事件中心中，进入 功能 -> 处理数据，就可以看到 EMQX Cloud 转发过来的消息。
 
 ![](./_assets/rule_engine_azure_event_hubs_message.png)

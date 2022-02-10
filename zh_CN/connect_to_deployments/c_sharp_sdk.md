@@ -29,7 +29,7 @@ dotnet add package M2Mqtt --version 4.3.0
 >请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
 
 ### C# MQTT 客户端库使用
-本文将使用 EMQ X 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker) ，该服务基于 EMQ X 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
+本文将使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker) ，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - WebSocket Port: **8083**

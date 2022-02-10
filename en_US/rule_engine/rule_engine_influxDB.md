@@ -1,8 +1,8 @@
-# Use EMQ X Cloud rule engine-InfluxDB
+# Use EMQX Cloud rule engine-InfluxDB
 
 [InfluxDB](https://www.influxdata.com/) is an open source database for storing and analyzing time series data, with built-in HTTP API, support for SQL-like statements, and unstructured features that are very friendly for users. Its powerful data throughput and stable performance make it very suitable for the IoT field.
 
-Through the EMQ X Cloud rule engine, we can customize the Template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
+Through the EMQX Cloud rule engine, we can customize the Template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
 
 
 
@@ -47,7 +47,7 @@ $ docker run -d --name=influxdb \
 
 ## 2. Set the filter criteria of the rule engine
 
-Go to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment of InfluxDB to be used.
+Go to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment of InfluxDB to be used.
 
 On the deployment page, select the rule engine and click Create.
 
@@ -154,7 +154,7 @@ The created action will be displayed in the response action column. After confir
 
 ## 4. Test
 
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
+>If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 We try to send the following data to the home/sensor topic
 

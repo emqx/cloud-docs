@@ -1,4 +1,4 @@
-# 使用 EMQ X Cloud 规则引擎桥接数据到 MQTT Broker
+# 使用 EMQX Cloud 规则引擎桥接数据到 MQTT Broker
 
 为了方便多个 MQTT Broker 进行消息桥接，你可以使用规则引擎进行操作。
 
@@ -36,7 +36,7 @@ docker run -it -p 1883:1883 --name mosquitto eclipse-mosquitto:1.6
 
 ## 2. 设置规则引擎的筛选条件
 
-进入 [EMQ X Cloud 控制台](https://cloud.emqx.com/console/)，并点击进入要使用 MQTT Broker 桥接的部署。
+进入 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)，并点击进入要使用 MQTT Broker 桥接的部署。
 
 在部署页面，选择规则引擎，点击创建。
 
@@ -78,7 +78,7 @@ FROM
 
 ![填写 MQTT 配置](./_assets/add_mqtt_action03.png)
 
-点击确定，返回到配置动作页面，默认选择的是刚才创建的资源，在消息内容模版里填写 "${msg} FROM EMQ X CLOUD"，点击确定。
+点击确定，返回到配置动作页面，默认选择的是刚才创建的资源，在消息内容模版里填写 "${msg} FROM EMQX CLOUD"，点击确定。
 
 ![填写消息内容模版](./_assets/add_mqtt_action04.png)
 
@@ -90,11 +90,11 @@ FROM
 
 ## 4. 测试
 
->如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
+>如果您是第一次使用 EMQX Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
 
 在第三步配置动作时，我们将挂载点设为 `emqx/`，所以这里用客户端订阅 Mosquitto 的 `emqx/#` 主题。
 
-同时我们发送 "hello" 到 EMQ X Cloud 的 greet 主题，规则引擎就会触发。可以看到 Mosquitto 已经收到消息 "hello FROM EMQ X CLOUD"
+同时我们发送 "hello" 到 EMQX Cloud 的 greet 主题，规则引擎就会触发。可以看到 Mosquitto 已经收到消息 "hello FROM EMQX CLOUD"
 
 ![收到转发的消息](./_assets/add_mqtt_action06.png)
 

@@ -1,6 +1,6 @@
 # Monitors
 
-EMQ X Cloud provides monitoring metrics to view data such as TPS, number of connections, subscriptions, and topics in real time.
+EMQX Cloud provides monitoring metrics to view data such as TPS, number of connections, subscriptions, and topics in real time.
 
 ## Basic Information
 The following monitoring metrics are included:

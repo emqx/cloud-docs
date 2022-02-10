@@ -1,6 +1,6 @@
 # Rule engine events
 
-EMQ X Cloud Rule Engine provide event topic available for FROM clause.
+EMQX Cloud Rule Engine provide event topic available for FROM clause.
 
 | Event topic name | Explanation |
 | ---- | ---- |

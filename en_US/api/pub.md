@@ -30,7 +30,7 @@ $ curl -u app_id:app_secret -X POST {api}/mqtt/publish
 {
   "topic": "topic/a",
   "clientid": "emqx_c_1",
-  "payload": "Hello EMQ X"
+  "payload": "Hello EMQX"
 }
 ```
 

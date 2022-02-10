@@ -1,13 +1,13 @@
-# 使用 EMQ X Cloud 规则引擎桥接数据到 Confluent Cloud
+# 使用 EMQX Cloud 规则引擎桥接数据到 Confluent Cloud
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到 Confluent Cloud。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将数据转存到 Confluent Cloud。
 
 在开始之前，您需要完成以下操作：
-* 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
+* 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 * 对于专业版部署用户：需要打开 NAT 服务。
 
 ## Confluent Cloud 配置
@@ -27,7 +27,7 @@
    点击 `Cluster settings -> General`，在 `Identification -> Bootstrap server` 获取 kafka 服务地址。
    ![获取 Kafka 地址](./_assets/confulent_get_server_host.png)
 
-## EMQ X Cloud 规则引擎配置
+## EMQX Cloud 规则引擎配置
 
 1. 资源创建
 

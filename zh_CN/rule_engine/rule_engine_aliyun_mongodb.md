@@ -3,10 +3,10 @@
 该功能在基础版中不可用
 :::
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQ X Cloud，然后使用 EMQ X Cloud 规则引擎将数据转存到阿里云 MongoDB。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将数据转存到阿里云 MongoDB。
 
 在开始之前，您需要完成以下操作：
-* 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
+* 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 * 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
 ## 购买阿里云 MongoDB
@@ -25,20 +25,20 @@
 - 网络类型：专有网络
 - 规格：1核2G
 
-> 需要特别注意的是：网络类型一定要选专有网络，并选择与 EMQ X Cloud 建立了对等连接的 VPC
+> 需要特别注意的是：网络类型一定要选专有网络，并选择与 EMQX Cloud 建立了对等连接的 VPC
 
-### 2. 将 EMQ X Cloud VPC 所在网段加入白名单
+### 2. 将 EMQX Cloud VPC 所在网段加入白名单
 
 在 mongodb 实例页面中，找到 `数据安全性` -> `白名单设置`
 
-将 EMQ X Cloud 的 VPC 网段加入 mongodb 的白名单中
+将 EMQX Cloud 的 VPC 网段加入 mongodb 的白名单中
 
 ![VPC 网段](./_assets/aliyun_mongodb_vpc_info.png)
 
 ## 配置规则引擎
 ### 1. 创建 MongoDB 资源
 
-进入 EMQ X Cloud 控制台，并点击进入要桥接 MongoDB 的部署
+进入 EMQX Cloud 控制台，并点击进入要桥接 MongoDB 的部署
 
 在部署页面，选择 `规则引擎`，在资源栏点击 `+新建` 创建资源
 
@@ -64,7 +64,7 @@
 
 在部署页面，选择 `规则引擎`，在规则栏点击 `+新建` 创建规则
 
-将下面的 SQL 复制到 `SQL 输入` 中，这条 SQL 告知 EMQ X Cloud 会提取发到 `temp_hum/emqx` 中的 timestamp, client ID 以及 payload
+将下面的 SQL 复制到 `SQL 输入` 中，这条 SQL 告知 EMQX Cloud 会提取发到 `temp_hum/emqx` 中的 timestamp, client ID 以及 payload
 
 ```sql
 SELECT

@@ -218,5 +218,5 @@ publish success, topic: t/1, payload: message: 6!
 ![go pubsub](./_assets/go_pubsub.png)
 
 ## 更多内容
-以上为您演示了如何使用 `paho.mqtt.golang` 客戶端连接到 EMQ X Cloud, 模拟了客户端与 MQTT 服务器进行订阅, 收发消息的场景。 可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) 下载到示例的源码。同时也可以在 [Github](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其它语言的 Demo 示例。
+以上为您演示了如何使用 `paho.mqtt.golang` 客戶端连接到 EMQX Cloud, 模拟了客户端与 MQTT 服务器进行订阅, 收发消息的场景。 可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Go) 下载到示例的源码。同时也可以在 [Github](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其它语言的 Demo 示例。
 

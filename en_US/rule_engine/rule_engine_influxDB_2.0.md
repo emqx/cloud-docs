@@ -2,7 +2,7 @@
 
 [InfluxDB](https://www.influxdata.com/) is an open source database for storing and analyzing time-series data, with built-in HTTP API, support for SQL-like statements, and unstructured features that are very friendly for users. Its powerful data throughput and stable performance make it very suitable for the IoT field.
 
-Through the EMQ X Cloud rule engine, we can customize the template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
+Through the EMQX Cloud rule engine, we can customize the template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
 
 
 In this guide, we will complete the creation of an InfluxDB rule engine to achieve the following functions:
@@ -62,7 +62,7 @@ Once the token is created, you could choose to activate/deactivate the token.
 
 ## 2. Create a resource
 
-Go to [EMQ X Cloud Console](https://cloud-intl.emqx.com/console/) and go to the `Rule Engine` page
+Go to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/) and go to the `Rule Engine` page
 
 ![rule_engine](./_assets/influx_rule_1.png)
 
@@ -183,7 +183,7 @@ Go back to the `Rule Engine` page, now you can see the rule we created is on the
 
 We recommend you to use MQTT X, an elegant cross-platform MQTT 5.0 desktop client to subscribe/publish messages.
 
->If you are using EMQ X Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
+>If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 We will be using the MQTT X desktop version in this tutorial.
 

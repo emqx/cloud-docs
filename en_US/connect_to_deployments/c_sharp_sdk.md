@@ -30,7 +30,7 @@ dotnet add package M2Mqtt --version 4.3.0
 >Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connect to the MQTT broker
-This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQ X. This service is created based on [MQTT IoT cloud platform](https://www.emqx.com/en/cloud) to create. The accessing information of the broker is as follows:
+This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service is created based on [MQTT IoT cloud platform](https://www.emqx.com/en/cloud) to create. The accessing information of the broker is as follows:
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - WebSocket Port: **8083**

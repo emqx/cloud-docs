@@ -22,8 +22,8 @@ None
 | ------------------------------- | ------- | ------------------------------------------------------------ |
 | actions.failure                 | Integer | Number of failure executions of the rule engine action       |
 | actions.success                 | Integer | Number of successful executions of the rule engine action    |
-| bytes.received                  | Integer | Number of bytes received by EMQ X Broker                     |
-| bytes.sent                      | Integer | Number of bytes sent by EMQ X Broker on this connection      |
+| bytes.received                  | Integer | Number of bytes received by EMQX Broker                     |
+| bytes.sent                      | Integer | Number of bytes sent by EMQX Broker on this connection      |
 | client.authenticate             | Integer | Number of client authentications                             |
 | client.auth.anonymous           | Integer | Number of clients who log in anonymously                     |
 | client.connect                  | Integer | Number of client connections                                 |
@@ -39,9 +39,9 @@ None
 | delivery.dropped.expired        | Integer | Number of messages dropped due to message expiration on sending |
 | delivery.dropped.no_local       | Integer | Number of messages that were dropped due to the No Local subscription option when sending |
 | delivery.dropped                | Integer | Total number of discarded messages when sending              |
-| messages.delayed                | Integer | Number of delay- published messages stored by EMQ X Broker   |
-| messages.delivered              | Integer | Number of messages forwarded to the subscription process internally by EMQ X Broker |
-| messages.dropped                | Integer | Total number of messages dropped by EMQ X Broker before forwarding to the subscription process |
+| messages.delayed                | Integer | Number of delay- published messages stored by EMQX Broker   |
+| messages.delivered              | Integer | Number of messages forwarded to the subscription process internally by EMQX Broker |
+| messages.dropped                | Integer | Total number of messages dropped by EMQX Broker before forwarding to the subscription process |
 | messages.dropped.expired        | Integer | Number of messages dropped due to message expiration when receiving |
 | messages.dropped.no_subscribers | Integer | Number of messages dropped due to no subscribers             |
 | messages.forward                | Integer | Number of messages forwarded to other nodes                  |
@@ -54,7 +54,7 @@ None
 | messages.qos2.sent              | Integer | Number of QoS 2 messages sent to clients                     |
 | messages.received               | Integer | Number of messages received from the client, equal to the sum of `messages.qos0.received`，`messages.qos1.received` and `messages.qos2.received` |
 | messages.sent                   | Integer | Number of messages sent to the client, equal to the sum of `messages.qos0.sent`，`messages.qos1.sent` and `messages.qos2.sent` |
-| messages.retained               | Integer | Number of retained messages stored by EMQ X Broker           |
+| messages.retained               | Integer | Number of retained messages stored by EMQX Broker           |
 | messages.acked                  | Integer | Number of received PUBACK and PUBREC packet                  |
 | packets.received                | Integer | Number of received packet                                    |
 | packets.sent                    | Integer | Number of sent packet                                        |

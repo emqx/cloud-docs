@@ -1,7 +1,7 @@
 # Authentication & ACL
-Authentication is a significant part of most applications. The MQTT protocol supports username and password authentication. Enabling authentication is an effective way to prevent illegal clients from connecting. Authentication in EMQ X Cloud means that when a client connects to the EMQ X Cloud, the configuration on the server-side controls the client's permission to connect to the server.
+Authentication is a significant part of most applications. The MQTT protocol supports username and password authentication. Enabling authentication is an effective way to prevent illegal clients from connecting. Authentication in EMQX Cloud means that when a client connects to the EMQX Cloud, the configuration on the server-side controls the client's permission to connect to the server.
 
-EMQ X Cloud authentication support includes two levels:
+EMQX Cloud authentication support includes two levels:
 1. The MQTT protocol itself specifies the username and password in the CONNECT message.
 2. At the transport level, TLS guarantees client-to-server authentication using client certificates and ensures that the server validates the server certificate to the client.
 

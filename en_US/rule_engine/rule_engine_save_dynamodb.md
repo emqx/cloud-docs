@@ -1,12 +1,12 @@
 # Save device data to DynamoDB using the Rule Engine
 
 In this article, we will simulate the temperature and humidity
-data, and publish these data to EMQ X Cloud via the MQTT protocol, and then we will use the EMQ X Cloud
+data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud
 rule engine to store the data to DynamoDB.
 
 Before you start, you will need to complete the following:
 
-* A deployment (EMQ X Cluster) has been created on EMQ X Cloud.
+* A deployment (EMQX Cluster) has been created on EMQX Cloud.
 
 * For professional deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/security_features_and_settings/vpc_peering.md) first. All IPs mentioned below refer to the resource's intranet IP.
 
@@ -101,7 +101,7 @@ You could create a new DynamoDB table by the following steps:
 
 1. Use [MQTT X](https://mqttx.app/) to simulate publishing temperature and humidity data
 
-   You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQ X Dashboard.
+   You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
    ![MQTTX](./_assets/psql_connect.png)
 
 2. View stored results
