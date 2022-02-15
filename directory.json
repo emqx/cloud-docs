@@ -320,11 +320,11 @@
         },
         {
           "title": "NAT 网关",
-          "path": "vas/nat_gateway"
+          "path": "vas/nat-gateway"
         },
         {
           "title": "内网负载均衡",
-          "path": "vas/intranet_lb"
+          "path": "vas/intranet-lb"
         }
       ]
     },
