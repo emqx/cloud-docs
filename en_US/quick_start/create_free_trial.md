@@ -1,6 +1,6 @@
 # Create a free trial deployment
 
-For first-time EMQX Cloud customers, we have an opportunity for you to create a free trial deployment of up to **30** days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQX Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following restrictions.
+For first-time EMQX Cloud customers, we have an opportunity for you to create a free trial deployment of up to **14** days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQX Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following restrictions.
 
 * Free trial up to 14 days.
 
