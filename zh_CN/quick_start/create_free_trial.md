@@ -1,9 +1,9 @@
 # 创建免费试用部署
 
 
-对于首次使用 EMQ X Cloud 的客户，我们为您准备了 **一次** 创建长达 **30** 天时长免费试用部署的机会。免费试用部署是您学习和探索 EMQ X Cloud 功能的理想方式。
+对于首次使用 EMQX Cloud 的客户，我们为您准备了 **一次** 创建长达 **14** 天时长免费试用部署的机会。免费试用部署是您学习和探索 EMQX Cloud 功能的理想方式。
 
-EMQ X Cloud 免费试用部署规格如下：
+EMQX Cloud 免费试用部署规格如下：
 
 * 基础版 1000 线规格提供一次最高 14 天的免费试用。
 
@@ -11,14 +11,14 @@ EMQ X Cloud 免费试用部署规格如下：
 
 * 试用期间提供 100 GB 免费流量。
 
-* 使用规则引擎（基础版仅支持 Webhook 和 MQTT 桥接）、监控管理等 EMQ X Cloud 自有的功能。
+* 使用规则引擎（基础版仅支持 Webhook 和 MQTT 桥接）、监控管理等 EMQX Cloud 自有的功能。
 
 * 支持 MQTT, WebSockets 协议连接。
   
   > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提 [工单](../feature/tickets.md)或发送邮件(cloud@emqx.io)与我们取得联系
 
 
-EMQ X Cloud 免费试用部署注意事项：
+EMQX Cloud 免费试用部署注意事项：
 
 * 免费试用仅限于基础版和专业版的**最低规格**产品。
 
@@ -32,7 +32,7 @@ EMQ X Cloud 免费试用部署注意事项：
 
 ## 开始创建免费试用部署
 
-1. 登录 [EMQ X Cloud 控制台](https://accounts.emqx.cn/signin?continue=https://cloud.emqx.com/console/)
+1. 登录 [EMQX Cloud 控制台](https://accounts.emqx.cn/signin?continue=https://cloud.emqx.com/console/)
 
    ![login_console](./_assets/login.png)
 
@@ -44,7 +44,7 @@ EMQ X Cloud 免费试用部署注意事项：
 
    ![create_free_trial](./_assets/create_free_trial.png)
 
-4. 点击立即部署，并同意 EMQ X 标准服务条款、免费试用申明
+4. 点击立即部署，并同意 EMQX 标准服务条款、免费试用申明
 
    ![free_trial_declare](./_assets/free_trial_declare.png)
 
@@ -67,13 +67,13 @@ EMQ X Cloud 免费试用部署注意事项：
 
 2. 获取免费试用连接信息
    
-   点击概览菜单，您将看到部署连接信息以及连接端口。EMQ X Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接
+   点击概览菜单，您将看到部署连接信息以及连接端口。EMQX Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接
 
    ![connections](./_assets/overview.png)
 
 3. MQTT X 连接到免费试用部署
 
-   EMQ X Cloud 推荐使用 [MQTT X](https://mqttx.app/zh/) 测试连接和测试部署，您也可以使用熟悉的[SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
+   EMQX Cloud 推荐使用 [MQTT X](https://mqttx.app/zh/) 测试连接和测试部署，您也可以使用熟悉的[SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
 
   * MQTT 连接
 

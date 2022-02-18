@@ -1,9 +1,9 @@
 # Get Subscription Topic Information from MySQL Using the Rule Engine
 
-In this article, we will use the EMQ X Cloud rules engine to get subscription relationships from MySQL.
+In this article, we will use the EMQX Cloud rules engine to get subscription relationships from MySQL.
 
 Before you start, you need to complete the following operations:
-* Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
+* Deployments have already been created on EMQX Cloud (EMQX Cluster).
 * For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 * For basic deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
@@ -50,7 +50,7 @@ Before you start, you need to complete the following operations:
    The subscription relationship table structure cannot be modified, please use the above SQL statement to create
    :::
 
-4. Set the EMQ X cluster IP segment to be allowed to access the database (optional)
+4. Set the EMQX cluster IP segment to be allowed to access the database (optional)
    For professional deployment, if you want to get deployment segment, you can go to Deployment Details → View Peer Connection Information and copy the deployment VPC segment.
    
    ```sql
@@ -69,9 +69,9 @@ Before you start, you need to complete the following operations:
    select * from mqtt_sub;
    ```
 
-## EMQ X Cloud rules engine configuration
+## EMQX Cloud rules engine configuration
 
-Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
+Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 
 1. New Resource
 
@@ -111,10 +111,10 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord.
    
 2. Use [MQTT X](https://mqttx.app/) to connect the deployment 
 
-   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQ X Dashboard.
+   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQX Dashboard.
    In this case, set the clientID to client1
    ![](./_assets/connect_mqtt_get_subs_mysql.png)
 
 3. View subscription relationships in the Dashboard
-   Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord and view the client subscription relationship in `Subscriptions`. 
+   Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord and view the client subscription relationship in `Subscriptions`. 
    ![](./_assets/dashboard_get_subs_mysql.png)

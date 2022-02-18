@@ -1,9 +1,9 @@
-# Register and Log in to the EMQ X Cloud account
+# Register and Log in to the EMQX Cloud account
 
 
 ## [Register an account](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud)
 
-Start at the EMQ X Cloud sign up page
+Start at the EMQX Cloud sign up page
 
 1. Enter your personal information:
    
@@ -18,18 +18,18 @@ Start at the EMQ X Cloud sign up page
 ![login](./_assets/sign_up.png)
 
 2. Click `Sign Up` to register to create your account.
-   EMQ X Cloud will automatically send a confirmation email to the email address you provided.
+   EMQX Cloud will automatically send a confirmation email to the email address you provided.
 3. Click on the link in the confirmation email to verify your new account. The link will verify your account
    and redirect you to the login page.
-4. Now you are ready to log in to EMQ X Cloud.
+4. Now you are ready to log in to EMQX Cloud.
 
 ## [Login to the account](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud)
 
 If you've already registered an account, you could log in by the following steps:
 
-1. Go to EMQ X Cloud login page.
+1. Go to EMQX Cloud login page.
 2. Enter your email and password.
-3. Click `Sign in` to direct to the EMQ X Cloud page.
+3. Click `Sign in` to direct to the EMQX Cloud page.
 
 ![login](./_assets/log_in.png)
 

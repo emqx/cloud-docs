@@ -25,8 +25,8 @@ GET /metrics
 | ------------------------------- | ------- | --------------|
 | actions.failure                 | Integer | 规则引擎 action 成功失败次数   |
 | actions.success                 | Integer | 规则引擎 action 执行失败次数       |
-| bytes.received                  | Integer | EMQ X 接收的字节数    |
-| bytes.sent                      | Integer | EMQ X 在此连接上发送的字节数   |
+| bytes.received                  | Integer | EMQX 接收的字节数    |
+| bytes.sent                      | Integer | EMQX 在此连接上发送的字节数   |
 | client.authenticate             | Integer | 客户端认证次数   |
 | client.auth.anonymous           | Integer | 匿名登录的客户端数量 |
 | client.connect                  | Integer | 客户端连接次数     |
@@ -42,9 +42,9 @@ GET /metrics
 | delivery.dropped.expired        | Integer | 发送时由于消息过期而被丢弃的消息数量    |
 | delivery.dropped.no_local       | Integer | 发送时由于 `No Local` 订阅选项而被丢弃的消息数量   |
 | delivery.dropped                | Integer | 发送时丢弃的消息总数  |
-| messages.delayed                | Integer | EMQ X 存储的延迟发布的消息数量  |
-| messages.delivered              | Integer | EMQ X 内部转发到订阅进程的消息数量 |
-| messages.dropped                | Integer | EMQ X 内部转发到订阅进程前丢弃的消息总数 |
+| messages.delayed                | Integer | EMQX 存储的延迟发布的消息数量  |
+| messages.delivered              | Integer | EMQX 内部转发到订阅进程的消息数量 |
+| messages.dropped                | Integer | EMQX 内部转发到订阅进程前丢弃的消息总数 |
 | messages.dropped.expired        | Integer | 接收时由于消息过期而被丢弃的消息数量  |
 | messages.dropped.no_subscribers | Integer | 由于没有订阅者而被丢弃的消息数量 |
 | messages.forward                | Integer | 向其他节点转发的消息数量  |
@@ -57,7 +57,7 @@ GET /metrics
 | messages.qos2.sent              | Integer | 发送给客户端的 QoS 2 消息数量 |
 | messages.received               | Integer | 接收来自客户端的消息数量，等于 `messages.qos0.received`，`messages.qos1.received` 与 `messages.qos2.received` 之和 |
 | messages.sent                   | Integer | 发送给客户端的消息数量，等于 `messages.qos0.sent`，`messages.qos1.sent` 与 `messages.qos2.sent` 之和 |
-| messages.retained               | Integer | EMQ X 存储的保留消息数量 |
+| messages.retained               | Integer | EMQX 存储的保留消息数量 |
 | messages.acked                  | Integer | 接收的 PUBACK 和 PUBREC 报文数量 |
 | packets.received                | Integer | 接收的报文数量 |
 | packets.sent                    | Integer | 发送的报文数量 |

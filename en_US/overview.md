@@ -1,51 +1,51 @@
-# EMQ X Cloud Product Description
+# EMQX Cloud Product Description
 
-EMQ X Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQ X Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQ X Cloud can help you quickly build industry applications for the IoT domain and easily collect, transmit, compute, and persist IoT data.
+EMQX Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain and easily collect, transmit, compute, and persist IoT data.
 
 ![emqx_cloud](./_assets/product_description.png)
 
-With the infrastructure provided by cloud providers, EMQ X Cloud serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications.
+With the infrastructure provided by cloud providers, EMQX Cloud serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications.
 
 ## IoT Messaging Model
 
 ### *Two-way communication*
 
-EMQ X Cloud supports massive devices and application-side connectivity, providing secure and reliable two-way communication for applications and IoT devices:
+EMQX Cloud supports massive devices and application-side connectivity, providing secure and reliable two-way communication for applications and IoT devices:
 
 ![two-way-communication](./_assets/bidirection_communication.png)
 
-In this model, EMQ X Cloud provides MQTT services to connect massive devices and applications. It supports two-way communication between applications and devices and two-way communication between devices and devices. This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone APP gets the status information of smart devices. Users can send control commands to smart devices through APP. Another example, in industrial scenarios, AGV robots communicate with each other instantly via the MQTT protocol to achieve multi-robot collaboration. The MQTT service supports not only the standard MQTT protocol, but also MQTT over WebSocket, CoAP, MQTT-SN, LwM2M, JT, /T808, etc.
+In this model, EMQX Cloud provides MQTT services to connect massive devices and applications. It supports two-way communication between applications and devices and two-way communication between devices and devices. This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone APP gets the status information of smart devices. Users can send control commands to smart devices through APP. Another example, in industrial scenarios, AGV robots communicate with each other instantly via the MQTT protocol to achieve multi-robot collaboration. The MQTT service supports not only the standard MQTT protocol, but also MQTT over WebSocket, CoAP, MQTT-SN, LwM2M, JT, /T808, etc.
 
 ### *Data Collection*
 
-EMQ X Cloud supports device data on the cloud. With the support of massive topics and rule engine, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
+EMQX Cloud supports device data on the cloud. With the support of massive topics and rule engine, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
 
 ![data collection](./_assets/data_collection.png)
 
-In this model, the MQTT service provided by EMQ X Cloud enables data collection, computation, and persistence. This model is suitable for IoT applications with data collection and persistence requirements, such as: in industrial scenarios, each IoT sensor collects real-time data to the edge gateway, uploads the data to the MQTT server through the edge gateway, and then the rule engine triggers data filtering, transformation, and simple calculation, and forwards the final result to other services or persists to the target database. EMQ X Cloud provides a variety of access solutions for different functionalities of the network, industrial, and edge devices, and supports more than 70 industrial protocols.
+In this model, the MQTT service provided by EMQX Cloud enables data collection, computation, and persistence. This model is suitable for IoT applications with data collection and persistence requirements, such as: in industrial scenarios, each IoT sensor collects real-time data to the edge gateway, uploads the data to the MQTT server through the edge gateway, and then the rule engine triggers data filtering, transformation, and simple calculation, and forwards the final result to other services or persists to the target database. EMQX Cloud provides a variety of access solutions for different functionalities of the network, industrial, and edge devices, and supports more than 70 industrial protocols.
 
 ### *Hybrid Model*
 
-EMQ X Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and rule engines, data is persisted while flowing from object to object and from object to application.
+EMQX Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and rule engines, data is persisted while flowing from object to object and from object to application.
 
 ![hybrid model](./_assets/hybrid_model.png)
 
-In this model, the MQTT service provided by EMQ X Cloud not only bridges the gap between device and device, device and application but also persists the required data so that non-real-time applications can subsequently make use of the acquired data. Typical of these applications are artificial intelligence applications where the data acquired by the terminal needs to be sent to the cloud, where the computational model running in the cloud is calculated and fed back to the terminal, such as item or face recognition applications. At the same time, a copy of the data needs to be persisted in the database for subsequent offline training and improvement of the AI computational model.
+In this model, the MQTT service provided by EMQX Cloud not only bridges the gap between device and device, device and application but also persists the required data so that non-real-time applications can subsequently make use of the acquired data. Typical of these applications are artificial intelligence applications where the data acquired by the terminal needs to be sent to the cloud, where the computational model running in the cloud is calculated and fed back to the terminal, such as item or face recognition applications. At the same time, a copy of the data needs to be persisted in the database for subsequent offline training and improvement of the AI computational model.
 
 ## Product Plans
 
-EMQ X Cloud comes in three plans, each with multiple specifications, and we support the deployment of your own fully managed MQTT service on the world's leading public clouds.
+EMQX Cloud comes in three plans, each with multiple specifications, and we support the deployment of your own fully managed MQTT service on the world's leading public clouds.
 
 ![edition](./_assets/pricing.png)
 
-1. Standard: For learning and experiencing the MQTT protocol or EMQ X Broker product, and developing lightweight IoT applications.
+1. Standard: For learning and experiencing the MQTT protocol or EMQX Broker product, and developing lightweight IoT applications.
 2. Professional: for building mission-critical IoT applications, this plan provides advanced features such as data persistence, message distribution, VPC peering connection.
 3. Unlimited: Suitable for building enterprise-class IoT platform, providing support for multi-location and exclusive hardware deployment, and adding features such as device management, device shadowing, and thing model.
 
 
 ## Product Capabilities
 
-EMQ X Cloud, a fully managed EMQ X access platform service, provides device access, device management, message storage, and other capabilities.
+EMQX Cloud, a fully managed EMQX access platform service, provides device access, device management, message storage, and other capabilities.
 
 ### Device Access
 
@@ -63,7 +63,7 @@ Multi-protocol and private protocol support, please contact us by [ticket](featu
 
 ### Device Management
 
-EMQ X Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and rule engines. The unlimited plan of EMQ X Cloud provides enterprise-class device management capabilities, allowing users to create and manage device objects directly with the enterprise plan, and manage edge endpoint devices and gateway devices with features unique to the unlimited plan such as device shadowing and cloud edge collaboration.
+EMQX Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and rule engines. The unlimited plan of EMQX Cloud provides enterprise-class device management capabilities, allowing users to create and manage device objects directly with the enterprise plan, and manage edge endpoint devices and gateway devices with features unique to the unlimited plan such as device shadowing and cloud edge collaboration.
 
 ![device_manager_1](./_assets/device_manage1.png)
 
@@ -101,9 +101,9 @@ EMQ X Cloud Standard and Professional plans provide rich REST APIs that allow us
 
 ### Message Storage (Rule Engine)
 
-EMQ X Cloud supports the use of the rule engine to configure rules for processing and responding to devise messages and events.
+EMQX Cloud supports the use of the rule engine to configure rules for processing and responding to devise messages and events.
 
-The rule engine not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQ X.
+The rule engine not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
 
 ![](./_assets/rule_engine.png)
 
@@ -138,6 +138,6 @@ The rule engine not only provides a clear and flexible "configuration-based" bus
 **Professional and Unlimited plans only**
 
 - **Consume messages and sent down to device, transaction-level platform commands sent down**
-  - Consume messages from Kafka to EMQ X
-  - Consume messages from Pulsar to EMQ X
+  - Consume messages from Kafka to EMQX
+  - Consume messages from Pulsar to EMQX
 

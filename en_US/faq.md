@@ -2,16 +2,16 @@
 
 ## Product
 
-### What's EMQ X Cloud？
+### What's EMQX Cloud？
 
-EMQ X Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQ X Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQ X Cloud can help you quickly build industry applications for the IoT domain and easily realize the collection, transmission, computation, and persistence of IoT data.
-### What is EMQ X Cloud deployment?
+EMQX Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain and easily realize the collection, transmission, computation, and persistence of IoT data.
+### What is EMQX Cloud deployment?
 
-The deployment is an EMQ X Enterprise cluster hosted by EMQ X Cloud
+The deployment is an EMQX Enterprise cluster hosted by EMQX Cloud
 
-### What's EMQ X?
+### What's EMQX?
 
-EMQ X (Erlang/Enterprise/Elastic MQTT Broker) is an open source IoT MQTT message server developed on the Erlang/OTP platform.
+EMQX (Erlang/Enterprise/Elastic MQTT Broker) is an open source IoT MQTT message server developed on the Erlang/OTP platform.
 
 ## Deployment
 
@@ -23,7 +23,7 @@ If you have special usage requirements, or other usage conditions, you can submi
 
 ### Which protocol connections are supported?
 
-EMQ X Cloud deployment only supports MQTT over TLS/SSL, WebSockets over TLS/SSL protocol connections.
+EMQX Cloud deployment only supports MQTT over TLS/SSL, WebSockets over TLS/SSL protocol connections.
 
 If you need other protocol support, you can submit a [ticket](./feature/tickets.md) or send an email(cloud@emqx.io) to us.
 
@@ -37,7 +37,7 @@ You can also connect through the SDK, for details, see [Connect to Deployment](c
 
 Yes.
 
-EMQ X provides HTTP API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
+EMQX provides HTTP API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
 
 For more information about how to use the API, you can refer to the guide-[REST API](./api/api_overview.md)
 
@@ -73,17 +73,17 @@ You can use the rule engine to connect with your existing functions. For details
 
 ### How to bill?
 
-EMQ X Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
+EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
 
 For detailed billing rules, you can view [Product Pricing](./price/pricing.md)
 
 ### How to pay?
 
-EMQ X Cloud supports credit card payment, for more payment options please contact us.
+EMQX Cloud supports credit card payment, for more payment options please contact us.
 
 ### How to get the credits?
 
 If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or email (cloud@emqx.io) to get in touch with us, and we will issue a certain amount of credits based on your business needs
 
 
-Please pay attention to the update of EMQ x cloud.
+Please pay attention to the update of EMQX cloud.

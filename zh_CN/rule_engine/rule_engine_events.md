@@ -1,6 +1,6 @@
 # 事件订阅
 
-EMQ X Cloud Rule Engine (以下简称规则引擎) 提供了以下七个可用的事件订阅主题。
+EMQX Cloud Rule Engine (以下简称规则引擎) 提供了以下七个可用的事件订阅主题。
 
 | 事件主题名 | 释义 |
 | ---- | ---- |
@@ -19,7 +19,7 @@ EMQ X Cloud Rule Engine (以下简称规则引擎) 提供了以下七个可用�
 
 ### 设备上线
 
-设备上线的消息主题为 `$events/client_connected`，在规则面板中点击创建规则，然后输入如下规则匹配 SQL 语句便可完成设备上线规则的创建，当新设备上线并连接到 EMQ X Cloud 便会触发该规则。
+设备上线的消息主题为 `$events/client_connected`，在规则面板中点击创建规则，然后输入如下规则匹配 SQL 语句便可完成设备上线规则的创建，当新设备上线并连接到 EMQX Cloud 便会触发该规则。
    ```sql
     SELECT
         *

@@ -232,5 +232,5 @@ if __name__ == '__main__':
 
 ## 更多内容
 
-以上为您演示了如何使用 paho-mqtt 客户端库连接到 EMQ X Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/) 下载到示例的源码。
+以上为您演示了如何使用 paho-mqtt 客户端库连接到 EMQX Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/) 下载到示例的源码。
 同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。

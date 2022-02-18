@@ -1,10 +1,10 @@
 # Save device data to MySQL using the Rule Engine
 
-In this article, we will simulate the temperature and humidity data, and report these data to EMQ X Cloud via the MQTT protocol, and then we will use EMQ X Cloud rules engine to dump the data to MySQL.
+In this article, we will simulate the temperature and humidity data, and report these data to EMQX Cloud via the MQTT protocol, and then we will use EMQX Cloud rules engine to dump the data to MySQL.
 
 Before you start, you will need to complete the following:
 
-* A deployment (EMQ X Cluster) has been created on EMQ X Cloud.
+* A deployment (EMQX Cluster) has been created on EMQX Cloud.
 
 * For professional deployment users: please complete the creation of a [VPC Peering Connections](../deployments/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
 
@@ -45,7 +45,7 @@ Before you start, you will need to complete the following:
     ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
     ```
 
-4. For professional deployment, set up to allow EMQ X cluster IP segments to access the database (optional).
+4. For professional deployment, set up to allow EMQX cluster IP segments to access the database (optional).
      To get the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
 
      ```mysql
@@ -67,7 +67,7 @@ Before you start, you will need to complete the following:
    
 ## Rules Engine Configuration
 
-Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord
+Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord
 
 1. Create MySQL Resource
 
@@ -109,7 +109,7 @@ Go to Deployment Details and click on EMQ X Dashbaord to go to Dashbaord
 
 1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data
 
-   You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQ X Dashboard.
+   You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)
    - topic: `temp_hum/emqx`
    - payload:

@@ -1,4 +1,4 @@
-# 华为云 Kafka 对接 EMQ X Cloud
+# 华为云 Kafka 对接 EMQX Cloud
 
 ::: danger
 该功能在基础版中不可用
@@ -10,14 +10,14 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 [华为云分布式消息服务 Kafka](https://www.huaweicloud.com/product/dmskafka.html)，是华为云基于开源社区版 Kafka 提供的消息队列服务，向用户提供计算、存储和带宽资源独占式的 Kafka 专享实例。
 
-[EMQ X Cloud](https://www.emqx.com/zh/cloud) 是由 EMQ X 建立的云上 MQTT 服务。EMQ X 团队在物联网领域耕织多年，EMQ X MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
+[EMQX Cloud](https://www.emqx.com/zh/cloud) 是由 EMQX 建立的云上 MQTT 服务。EMQX 团队在物联网领域耕织多年，EMQX MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
 
-本篇指南将会连通华为云 Kafka 和 EMQ X Cloud，并通过 EMQ X Cloud 规则引擎将 MQTT 消息转发到 Kafka 主题。
+本篇指南将会连通华为云 Kafka 和 EMQX Cloud，并通过 EMQX Cloud 规则引擎将 MQTT 消息转发到 Kafka 主题。
 
 为了实现该功能，我们将会完成以下几个任务：
 
 1. 购买云资源
-2. 建立华为云 Kafka 与 EMQ X Cloud 部署之间的连接
+2. 建立华为云 Kafka 与 EMQX Cloud 部署之间的连接
 3. 创建 Kafka 主题，开通端口，并记录 Kafka 连接地址
 4. 设置规则引擎的筛选条件
 5. 创建一个资源和一个动作
@@ -33,29 +33,29 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 ![](./_assets/buy_huawei_kafka.png)
 
-1.2 创建 EMQ X Cloud 部署
+1.2 创建 EMQX Cloud 部署
 
-如果您是初次接触 EMQ X Cloud，建议您跟随 EMQ X Cloud [快速入门](../quick_start/introduction.md)的提示进行创建
+如果您是初次接触 EMQX Cloud，建议您跟随 EMQX Cloud [快速入门](../quick_start/introduction.md)的提示进行创建
 
 ![](./_assets/buy_huawei_kafka_emqx_deployment.png)
 
-### 2. 建立华为云 Kafka 与 EMQ X Cloud 部署之间的连接
+### 2. 建立华为云 Kafka 与 EMQX Cloud 部署之间的连接
 
-在这一部分，我们需要完成华为云和 EMQ X Cloud 的对等连接。详细步骤可参考 [VPC 对等连接](../deployments/vpc_peering.md)
+在这一部分，我们需要完成华为云和 EMQX Cloud 的对等连接。详细步骤可参考 [VPC 对等连接](../deployments/vpc_peering.md)
 
-2.1 登录 EMQ X Cloud 控制台，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，记录以下 EMQ X Cloud VPC 对等连接提示
+2.1 登录 EMQX Cloud 控制台，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，记录以下 EMQX Cloud VPC 对等连接提示
 
 > 注意：暂时不要关闭该页面
 
    * 部署 VPC ID
-   * EMQ X Cloud 账户 ID
+   * EMQX Cloud 账户 ID
    * 部署 VPC 网段
 
 2.2 登录华为云账号，进入控制台 -> 虚拟私有云 VPC
 
-2.3 点击 对等连接 -> 创建对等连接，选择其它账户。填入刚才在 EMQ X Cloud 控制台 记录的信息，点击确定创建对等连接请求
+2.3 点击 对等连接 -> 创建对等连接，选择其它账户。填入刚才在 EMQX Cloud 控制台 记录的信息，点击确定创建对等连接请求
 
-* 对端项目 ID == EMQ X Cloud 账户 ID
+* 对端项目 ID == EMQX Cloud 账户 ID
 * 对端VPC ID == 部署 VPC ID
 
 这里的本端 VPC，选择 Kafka 所在的 VPC。可以在 Kafka 实例 -> 基本信息-> 网络 -> 虚拟私有云 里看到
@@ -69,13 +69,13 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 2.5 找到 我的凭证，记录下用户 ID
 
-2.6 回到 EMQ X Cloud 控制台。填写步骤 4 记录的对等连接 ID，VPC 网段，VPC ID 和步骤 5 记录的用户 ID。点击确定，完成对等连接
+2.6 回到 EMQX Cloud 控制台。填写步骤 4 记录的对等连接 ID，VPC 网段，VPC ID 和步骤 5 记录的用户 ID。点击确定，完成对等连接
 
 2.7 在华为云控制台，打开 `虚拟私有云 VPC` -> `路由表`，将步骤 1.1 中的部署 VPC 网段加入到对应 VPC 的路由表中
 
 > 注意：下一跳类型为 对等连接
 
-2.8 在华为云控制台里配置安全组，允许 EMQ X Cloud 网段访问您的 VPC
+2.8 在华为云控制台里配置安全组，允许 EMQX Cloud 网段访问您的 VPC
 
 ### 3. 创建 Kafka 主题，开放端口，并记录 Kafka 连接地址
 3.1 在华为云 Kafka 控制台中，点击 Topic 管理 -> 创建 Topic，创建一个名为 testTopic 的主题。
@@ -94,7 +94,7 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 ### 4. 设置规则引擎的筛选条件
 
-进入 EMQ X Cloud 控制台，并点击进入要使用桥接 Kafka 的部署。
+进入 EMQX Cloud 控制台，并点击进入要使用桥接 Kafka 的部署。
 在部署页面，选择规则引擎，点击创建。
 
 ![规则引擎页](./_assets/view_rule_engine.png)
@@ -160,7 +160,7 @@ WHERE
 
 
 ### 6. 测试
-> 如果您是第一次使用 EMQ X Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
+> 如果您是第一次使用 EMQX Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
 
 我们尝试向 greet/a 主题发送下面的数据
 ```json

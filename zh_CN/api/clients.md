@@ -62,7 +62,7 @@ GET /clients
 | data[].mqueue_dropped    | Integer          | 消息队列因超出长度而丢弃的消息数量  |
 | data[].awaiting_rel      | Integer          | 未确认的 PUBREC 报文数量 |
 | data[].max_awaiting_rel  | Integer          | 允许存在未确认的 PUBREC 报文的最大数量 |
-| data[].recv_oct          | Integer          | EMQ X Broker（下同）接收的字节数量 |
+| data[].recv_oct          | Integer          | EMQX Broker（下同）接收的字节数量 |
 | data[].recv_cnt          | Integer          | 接收的 TCP 报文数量 |
 | data[].recv_pkt          | Integer          | 接收的 MQTT 报文数量  |
 | data[].recv_msg          | Integer          | 接收的 PUBLISH 报文数量    |

@@ -4,7 +4,7 @@
 This feature is not available for the basic plan
 :::
 
-EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
+EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
 
 | Certification Mode     | Support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
 |------------------------|---------------------------------|--------------------|-------------------|-------------|-----------------------|
@@ -15,7 +15,7 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
 
 ## Certificate Restrictions
 
-- The certificate must specify the encryption algorithm and key size. EMQ X Cloud supports the following algorithms:
+- The certificate must specify the encryption algorithm and key size. EMQX Cloud supports the following algorithms:
 
   - 1024 bit RSA (RSA_1024)
   - 2048 bit RSA (RSA_2048)
@@ -60,7 +60,7 @@ EMQ X Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL 
 
 ## Create a Certificate
 
-1. Login to the [EMQ X Cloud Console](<https://cloud-intl.emqx.com/console>).
+1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
 2. Go to the deployment details and click on the `+TLS/SSL configuration` button to configure the certificate contents, either by uploading a file or by filling in the certificate contents directly
    - Type of certification:
      - One-way authentication: only the client verifies the server-side certificate
@@ -106,7 +106,7 @@ Before testing, make sure that you have created authentication information, refe
 
 Deleting the certificate will disconnect the client from `8883` and `8084`, please ensure that this does not affect your business.
 
-1. Login to the [EMQ X Cloud Console](<https://cloud-intl.emqx.com/console>).
+1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
 2. To access the deployment details, click on the delete button for the certificate in the `TLS/SSL Configuration` section.
 3. Click on "OK" in the dialog to complete the deletion.
 
@@ -175,7 +175,7 @@ subjectAltName = @alt_names
 subjectAltName = @alt_names
 
 [alt_names]
-# EMQ X Cloud deployment connections address
+# EMQX Cloud deployment connections address
 DNS.1 = tls.emqx.io
 EOF
 ```

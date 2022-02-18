@@ -1,16 +1,16 @@
 # Price Estimation
 
-EMQ X Cloud pricing calculator allows you to estimate the cost of creating deployments on the EMQ X Cloud based on actual business requirements. EMQ X Cloud pricing calculator is useful for customers who have never used EMQ X Cloud before and who want to reorganize or extend the EMQ X Cloud deployment specifications.
+EMQX Cloud pricing calculator allows you to estimate the cost of creating deployments on the EMQX Cloud based on actual business requirements. EMQX Cloud pricing calculator is useful for customers who have never used EMQX Cloud before and who want to reorganize or extend the EMQX Cloud deployment specifications.
 
 
 
-## Visit EMQ X Cloud Pricing Details
+## Visit EMQX Cloud Pricing Details
 
-- For users who are **unregistered** with EMQ X Cloud, you can go to [Pricing](https://cloud-intl.emqx.com/pricing) page to check the available plans.
+- For users who are **unregistered** with EMQX Cloud, you can go to [Pricing](https://cloud-intl.emqx.com/pricing) page to check the available plans.
 
   ![pricing](./_assets/pricing.png)
 
-- For users who are **registered** to EMQ X Cloud, you can go to [Price Estimate](https://cloud-intl.emqx.com/console/deployments/0?oper=new) to select plan, use price estimation and create a deployment.
+- For users who are **registered** to EMQX Cloud, you can go to [Price Estimate](https://cloud-intl.emqx.com/console/deployments/0?oper=new) to select plan, use price estimation and create a deployment.
 
   ![calculator](./_assets/calculator.png)
 
@@ -27,7 +27,7 @@ You can select cloud platform, region, and specifications to get the hourly pric
 
 ## Supported Cloud Service Providers and Regions
 
-EMQ X Cloud now supports cloud service providers including AWS Cloud, Azure and GCP. If you need other cloud service providers or regions, you can submit [tickets](../feature/tickets.md) or email(cloud@emqx.io) to contact us.
+EMQX Cloud now supports cloud service providers including AWS Cloud, Azure and GCP. If you need other cloud service providers or regions, you can submit [tickets](../feature/tickets.md) or email(cloud@emqx.io) to contact us.
 
 | Platform | Region                                                       |
 | -------- | ------------------------------------------------------------ |

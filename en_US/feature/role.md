@@ -4,7 +4,7 @@ User management fulfils enterprise users' multi-role management requirements, by
 
 ## Subaccount System
 
-A sub-account is an account created by an EMQ X Cloud user. Subaccounts will be activated after email authentication. An EMQ X Cloud user account currently cannot be registered as a subaccount. On the contrary, Subaccount email can be registered as an EMQ X Cloud user. Additionally, it can be registered as a subaccount under other EMQ X Cloud user account.
+A sub-account is an account created by an EMQX Cloud user. Subaccounts will be activated after email authentication. An EMQX Cloud user account currently cannot be registered as a subaccount. On the contrary, Subaccount email can be registered as an EMQX Cloud user. Additionally, it can be registered as a subaccount under other EMQX Cloud user account.
 
 Here is the login page for sub-users (for subaccount login only)
 

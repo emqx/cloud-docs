@@ -1,6 +1,6 @@
 # 部署日志
 
-EMQ X Cloud 提供实时在线查看 EMQ X 日志功能
+EMQX Cloud 提供实时在线查看 EMQX 日志功能
 
 
 

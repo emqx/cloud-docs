@@ -1,9 +1,9 @@
 # Bridge device data to Kafka using the Rule Engine
 
-In this article, we will simulate temperature and humidity data and report these data to EMQ X Cloud via the MQTT protocol and then use the EMQ X Cloud rules engine to dump the data into Kafka.
+In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud rules engine to dump the data into Kafka.
 
 Before you start, you need to complete the following operations:
-* Deployments have already been created on EMQ X Cloud (EMQ X Cluster).
+* Deployments have already been created on EMQX Cloud (EMQX Cluster).
 * For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 * For basic deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
@@ -47,7 +47,7 @@ Before you start, you need to complete the following operations:
    
     If the topic is successfuly created, the message pf `Created topic emqx` will be returned.
 
-## EMQ X Cloud rule engine configuration
+## EMQX Cloud rule engine configuration
 
 Go to the `Rule Engine` page
 
@@ -92,7 +92,7 @@ Go to the `Rule Engine` page
 
 1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
 
-   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQ X Dashboard.
+   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQX Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)
    
 2. View data dump results

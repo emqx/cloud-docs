@@ -1,6 +1,6 @@
 # 使用微信小程序连接到部署
 
-在本教程中您将学习使用微信小程序连接到 EMQ X Cloud 部署。
+在本教程中您将学习使用微信小程序连接到 EMQX Cloud 部署。
 
 ## 项目初始化
 
@@ -8,7 +8,7 @@
 
 注册微信小程序帐号，并下载 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)。由于微信小程序安全要求比较高，在与后台服务器之间的通讯必须使用 https 或 wss 协议，因此要在微信小程序后台设置域名服务器。
 
-微信小程序仅支持通过 WebSocket 进行即时通信，EMQ X 的 MQTT Over WebSocket 能够完全兼容使用在微信小程序上。但由于微信小程序的规范限制，EMQ X 使用微信小程序接入时需要注意以下几点：
+微信小程序仅支持通过 WebSocket 进行即时通信，EMQX 的 MQTT Over WebSocket 能够完全兼容使用在微信小程序上。但由于微信小程序的规范限制，EMQX 使用微信小程序接入时需要注意以下几点：
 
 > - 使用已经通过 [域名备案](https://baike.baidu.com/item/域名备案) 的**域名**接入
 > - 域名需要 [微信公众平台](https://mp.weixin.qq.com/) 登录后在主页面的服务器域名下添加配置服务器域名地址

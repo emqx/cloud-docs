@@ -4,10 +4,10 @@
 该功能在基础版中不可用
 :::
 
-在本文中我们将使用 EMQ X Cloud 规则引擎保存 topic 和客户端的订阅关系到 Redis，可以实时获取主题下订阅的客户端列表。
+在本文中我们将使用 EMQX Cloud 规则引擎保存 topic 和客户端的订阅关系到 Redis，可以实时获取主题下订阅的客户端列表。
 
 在开始之前，您需要完成以下操作：
-* 已经在 EMQ X Cloud 上创建部署(EMQ X 集群)。
+* 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 * 对于专业版部署用户：请先完成 [对等连接的创建](../../en_US/deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
 ## Redis 配置
@@ -17,7 +17,7 @@
    docker run -d --name redis -p 6379:6379 redis
    ```
 
-## EMQ X Cloud 规则引擎配置
+## EMQX Cloud 规则引擎配置
 
 ### 资源创建
 

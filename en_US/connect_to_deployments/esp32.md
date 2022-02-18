@@ -26,7 +26,7 @@ This article uses the [Arduino IDE](https://www.arduino.cc/en/software) as the c
 
 ### Connection settings
 
-This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQ X. This service was created based on the [EMQ X Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
@@ -90,7 +90,7 @@ while (!client.connected()) {
 
 ```c
 // publish and subscribe
-client.publish(topic, "Hi EMQ X I'm ESP32 ^^");
+client.publish(topic, "Hi EMQX I'm ESP32 ^^");
 client.subscribe(topic);
 ```
 
@@ -155,7 +155,7 @@ void setup() {
      }
  }
  // publish and subscribe
- client.publish(topic, "Hi EMQ X I'm ESP32 ^^");
+ client.publish(topic, "Hi EMQX I'm ESP32 ^^");
  client.subscribe(topic);
 }
 

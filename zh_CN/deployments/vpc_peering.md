@@ -8,8 +8,8 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ## 注意事项
 
-1. EMQ X Cloud 只支持**同一区域**创建对等连接。
-2. EMQ X Cloud 不接收 `10.10.0.0/24 ～ 10.64.255.0/24` 范围内的网段，请合理规划您的 VPC 网段。
+1. EMQX Cloud 只支持**同一区域**创建对等连接。
+2. EMQX Cloud 不接收 `10.10.0.0/24 ～ 10.64.255.0/24` 范围内的网段，请合理规划您的 VPC 网段。
 3. 对等连接与规则引擎资源相互绑定，创建资源前请先创建对等连接。
 
 ## 阿里云平台对等连接
@@ -30,7 +30,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
    ![deployment_connections](./_assets/aliyun_create_vpc_peering.png)
 
-5. 登录 [EMQ X Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，填写您阿里云云企业网相关信息，并记录下 EMQ X Cloud VPC 对等连接提示
+5. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，填写您阿里云云企业网相关信息，并记录下 EMQX Cloud VPC 对等连接提示
 
    * 对等连接ID == 云企业网实例 ID
    * 账户ID == 阿里云账户ID
@@ -38,17 +38,17 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
    ![cloud_vpc_peering_info](./_assets/add_vpc_peering_info.png)
 
-6. 登录您阿里云账号，访问刚创建好的云企业网实例详情，点击加载网络实例，填写 EMQ X Cloud 部署相关信息，点击确定
+6. 登录您阿里云账号，访问刚创建好的云企业网实例详情，点击加载网络实例，填写 EMQX Cloud 部署相关信息，点击确定
 
-   > 注意：您需要在10分钟内完成 EMQ X Cloud 对等连接相关信息添加，否则将视为失败
+   > 注意：您需要在10分钟内完成 EMQX Cloud 对等连接相关信息添加，否则将视为失败
 
    ![cloud_vpc_peering_info](./_assets/aliyun_add_cloud_vpc_peering.png)
 
-7. 登录 EMQ X Cloud 控制台，访问部署详情，查看对等连接状态
+7. 登录 EMQX Cloud 控制台，访问部署详情，查看对等连接状态
 
    ![cloud_vpc_peering_info](./_assets/view_deployment_peering.png)
 
-8. 登录您阿里云账号，配置安全组，允许 EMQ X Cloud 网段访问您的 VPC
+8. 登录您阿里云账号，配置安全组，允许 EMQX Cloud 网段访问您的 VPC
   
    ![aliyun_security_group](./_assets/aliyun_security_group.png)
 
@@ -68,11 +68,11 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ### 创建对等连接
 
-1. 登录 [EMQ X Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，记录以下 EMQ X Cloud VPC 对等连接提示
+1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，记录以下 EMQX Cloud VPC 对等连接提示
     > 注意：暂时不要关闭该页面
 
    * 部署 VPC ID
-   * EMQ X Cloud 账户 ID
+   * EMQX Cloud 账户 ID
    * 部署 VPC 网段
 
    ![huawei_vpc_peering_info](./_assets/huawei_emqx_vpc_peering_info1.png)
@@ -81,9 +81,9 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
     ![huawei_account_id](./_assets/huawei_vpc.png)
 
-3. 点击 `对等连接` -> `创建对等连接`，选择其它账户。填入刚才在 [EMQ X Cloud 控制台](<https://cloud.emqx.com/console>) 记录的信息，点击确定创建对等连接请求
+3. 点击 `对等连接` -> `创建对等连接`，选择其它账户。填入刚才在 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>) 记录的信息，点击确定创建对等连接请求
 
-    * 对端项目 ID == EMQ X Cloud 账户 ID
+    * 对端项目 ID == EMQX Cloud 账户 ID
     * 对端 VPC ID == 部署 VPC ID
 
     ![create_huawei_vpc_peering](./_assets/huawei_create_vpc_peering.png)
@@ -102,7 +102,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
     ![huawei_account_id](./_assets/huawei_account_info.png)
 
-6. 回到 [EMQ X Cloud 控制台](<https://cloud.emqx.com/console>)。填写步骤 4 记录的 `对等连接 ID`，`VPC 网段`，`VPC ID` 和步骤 5 记录的 `用户 ID`。点击 `确定`，完成对等连接
+6. 回到 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。填写步骤 4 记录的 `对等连接 ID`，`VPC 网段`，`VPC ID` 和步骤 5 记录的 `用户 ID`。点击 `确定`，完成对等连接
 
     ![huawei_vpc_peering_info](./_assets/huawei_emqx_vpc_peering_info2.png)
 
@@ -112,7 +112,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
     ![huawei_vpc_add_route](./_assets/huawei_vpc_add_route.png)
 
-8. 在华为云控制台里配置安全组，允许 EMQ X Cloud 网段访问您的 VPC
+8. 在华为云控制台里配置安全组，允许 EMQX Cloud 网段访问您的 VPC
 
     ![huawei_vpc_secGroups](./_assets/huawei_vpc_secGroups.png)
 
@@ -144,7 +144,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
    ![tencent_create_ccn](./_assets/tencent_create_ccn.png)
 
-4. 登录 [EMQ X Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，填写您腾讯云云联网相关信息，并记录下 EMQ X Cloud VPC 对等连接提示
+4. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，填写您腾讯云云联网相关信息，并记录下 EMQX Cloud VPC 对等连接提示
 
    * 对等连接ID == 云联网实例 ID
    * 账户ID == 云联网实例所在账户 ID
@@ -154,15 +154,15 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 5. 登录您腾讯云账号，访问刚创建好的云联网实例详情，在关联实例中，找到请求的 VPC 信息，点击同意
 
-   > 注意：您需要在 10 分钟内完成 EMQ X Cloud 对等连接相关信息添加，否则将视为失败
+   > 注意：您需要在 10 分钟内完成 EMQX Cloud 对等连接相关信息添加，否则将视为失败
 
    ![tencent_approve_peering](./_assets/tencent_approve_peering.png)
 
-6. 登录 EMQ X Cloud 控制台，访问部署详情，查看对等连接状态
+6. 登录 EMQX Cloud 控制台，访问部署详情，查看对等连接状态
 
    ![tencent_view_peering](./_assets/tencent_view_peering.png)
 
-7. 在腾讯云控制台配置安全组，允许 EMQ X Cloud 网段访问您的 VPC，来源网段可以在对等连接详情界面中查看
+7. 在腾讯云控制台配置安全组，允许 EMQX Cloud 网段访问您的 VPC，来源网段可以在对等连接详情界面中查看
 
    ![tencent_sg](./_assets/tencent_security_group.png)
 
@@ -182,13 +182,13 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ### 创建对等连接
 
-1. 登陆 [EMQ X Cloud 控制台](https://cloud.emqx.com/console)，进入对应的部署，点击 `+ VPC 对等连接` 按钮，在弹出的窗口里，记录下`部署所在区域`、`部署 VPC ID`、`部署 VPC 网段`和 `EMQ X Cloud 账户 ID`，后面的步骤用将会用到这些信息。同时，请不要关闭该窗口。
+1. 登陆 [EMQX Cloud 控制台](https://cloud.emqx.com/console)，进入对应的部署，点击 `+ VPC 对等连接` 按钮，在弹出的窗口里，记录下`部署所在区域`、`部署 VPC ID`、`部署 VPC 网段`和 `EMQX Cloud 账户 ID`，后面的步骤用将会用到这些信息。同时，请不要关闭该窗口。
 
     ![get-vpc-info](./_assets/get_aws_cn_vpc_info.png)
 
 2. 登录亚马逊（中国）控制台，切换区域到步骤 1 里提到的`部署所在区域`，找到`联网` -> `VPC` -> `对等连接`，点击上方的`创建对等连接`
 
-    * 在账户处选择`另一个账户`，`账户 ID` 填入步骤 1 提到的 `EMQ X Cloud 账户 ID`
+    * 在账户处选择`另一个账户`，`账户 ID` 填入步骤 1 提到的 `EMQX Cloud 账户 ID`
     * 在区域处选择`此区域`
     * 在 VPC ID (接受方)处，填入步骤 1 提到的 `部署 VPC ID`
 
@@ -198,7 +198,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
     ![peering-info](./_assets/aws_cn_peering_info.png)
 
-4. 回到 [EMQ X Cloud 控制台](https://cloud.emqx.com/console)，填入步骤 3 记录的信息，然后点击确认，完成对等连接。
+4. 回到 [EMQX Cloud 控制台](https://cloud.emqx.com/console)，填入步骤 3 记录的信息，然后点击确认，完成对等连接。
 
     * 对等连接 ID 填入 `对等连接 ID`
     * 账户 ID 填入 `请求方拥有者 ID`
