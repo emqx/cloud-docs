@@ -3,7 +3,7 @@
 ## NAT Gateway
 NAT gateways are automatically given a free 14-day trial after they are opened, and after the first trial instance ends or is deleted, the next instance created will be charged.
 
-At the end of the trial, you will be billed at **$0.60/hour** and will be charged on an hourly basis to your account balance under your main EMQX Cloud account. If the account balance is insufficient, the service will be automatically deleted.
+At the end of the trial, you will be billed at **$0.10/hour** and will be charged on an hourly basis to your account balance under your main EMQX Cloud account. If the account balance is insufficient, the service will be automatically deleted.
 
 Details of the charges can be viewed in `Billing` page
 
@@ -15,7 +15,7 @@ When the deployment where the value added service is running is stopped, the non
 ## Intranet Load Balancers
 After the intranet load balancing is opened, you will automatically get a 14-day free trial, and after the first trial instance ends or is deleted, the next instance created will be charged.
 
-At the end of the trial, you will be billed at **$0.10/hour** and will be charged on an hourly basis to your account balance under your main EMQX Cloud account. If the account balance is insufficient, the service will be automatically deleted.
+At the end of the trial, you will be billed at **$0.05/hour** and will be charged on an hourly basis to your account balance under your main EMQX Cloud account. If the account balance is insufficient, the service will be automatically deleted.
 
 Details of the charges can be viewed in `Billing` page
 
