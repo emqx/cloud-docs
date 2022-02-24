@@ -21,7 +21,7 @@ You can choose to enable the intranet load balancing service from the top menu b
 
 ## Usage
 
-After completing the intranet load balancing value-added service purchase, you can see the intranet load balancing creation status at the corresponding deployment overview and wait for the creation to complete.
+After completing the intranet load balancing value added service purchase, you can see the intranet load balancing creation status at the corresponding deployment overview and wait for the creation to complete.
 
 ![intranet_lb_info](./_assets/intranet_lb_info.png)
 

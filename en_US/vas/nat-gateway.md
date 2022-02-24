@@ -20,7 +20,7 @@ You can choose to enable the NAT gateway service from the top menu bar - `VAS` o
 
 ## Usage
 
-After completing the NAT gateway value-added service purchase, you can see the NAT gateway creation status at the appropriate deployment overview and wait for the creation to complete.
+After completing the NAT gateway value added service purchase, you can see the NAT gateway creation status at the appropriate deployment overview and wait for the creation to complete.
 
 ![intranet_lb_info](./_assets/nat_gateway_info.png)
 

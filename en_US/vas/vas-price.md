@@ -1,4 +1,4 @@
-# Value-added services billing instructions
+# Value Added services billing instructions
 
 ## NAT Gateway
 NAT gateways are automatically given a free 14-day trial after they are opened, and after the first trial instance ends or is deleted, the next instance created will be charged.
@@ -8,7 +8,7 @@ At the end of the trial, you will be billed at **$0.60/hour** and will be charge
 Details of the charges can be viewed in `Billing` page
 
 ::: tip
-When the deployment where the value-added service is running is stopped, the non-trial value-added service will be billed normally. In order not to incur additional charges, please delete the value-added service under this deployment.
+When the deployment where the value added service is running is stopped, the non-trial valu added service will be billed normally. In order not to incur additional charges, please delete the value added service under this deployment.
 :::
 
 
@@ -20,5 +20,5 @@ At the end of the trial, you will be billed at **$0.10/hour** and will be charge
 Details of the charges can be viewed in `Billing` page
 
 ::: tip
-When the deployment where the value-added service is running is stopped, the non-trial value-added service will be billed normally. In order not to incur additional charges, please delete the value-added service under this deployment.
+When the deployment where the value added service is running is stopped, the non-trial valu added service will be billed normally. In order not to incur additional charges, please delete the valu added service under this deployment.
 :::
