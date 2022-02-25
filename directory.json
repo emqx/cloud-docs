@@ -729,6 +729,27 @@
       "path": "dev_guide"
     },
     {
+      "title": "VAS",
+      "children": [
+        {
+          "title": "VAS Introduction",
+          "path": "vas/vas-intro"
+        },
+        {
+          "title": "VAS Billing",
+          "path": "vas/vas-price"
+        },
+        {
+          "title": "NAT Gateway",
+          "path": "vas/nat-gateway"
+        },
+        {
+          "title": "Internal Load Balancers",
+          "path": "vas/intranet-lb"
+        }
+      ]
+    },
+    {
       "title": "API",
       "children": [
         {
