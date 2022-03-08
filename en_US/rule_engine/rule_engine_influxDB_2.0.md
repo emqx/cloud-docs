@@ -60,49 +60,26 @@ Once the token is created, you could choose to activate/deactivate the token.
 
 
 
-## 2. Create a resource
+## 2. Create Webhook Resource
 
-Go to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/) and go to the `Rule Engine` page
+Go to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/) and go to the `Data Integrations` page
 
-![rule_engine](./_assets/influx_rule_1.png)
+![rule_engine](./_assets/data_integrations_influxDB_v2.png)
 
-Click on the `+ New` button in the `Resource` section to create a new resource.
-
-Select the WebHook as the resource type and fill in the request URL as follows:
-
-![rule_engine](./_assets/influx_rule_2.png)
-
+Click on the `WebHook` card to create a new resource. Fill in the request URL as follows:
 ```
-    Url:
-        https://us-east-1-1.aws.cloud2.influxdata.com/api/v2/write
-    Request parameters:
-        org: organizations
-        bucket: data buckets
-        precision: Timestamp precision(ns, us, ms, s)
-    Example:
-        https://us-east-1-1.aws.cloud2.influxdata.com/api/v2/write?org=tifidol259%40revutap.com&bucket=em qx&precision=ns
+Url: https://us-east-1-1.aws.cloud2.influxdata.com
 ```
 
-Then add the request headers as following:
+![rule_engine](./_assets/create_influxDB_v2_resource.png)
 
-```
-    Content-Encoding: identity
-    Content-Type: text/plain
-    Accept: application/json
-    Authorization: Token <your_influxdb_token>
-    User-Agent: Telegraf
-```
+Click Test button when configuration is complete, then click New button to create a resource when it is available.
 
-![resource](./_assets/influx_resource_1.png)
+## 3. Create Rule
 
-Click `Conform` to finish creating the resource. If the resource is created successfully, you will see the status for the resource is `avaliable`
+After the resource is successfully created, you can return to the data integration page and find the newly created resource, and click create rule.
 
-![resource](./_assets/influx_resource_2.png)
-
-
-## 3. Create a rule
-
-Click on the `+ New` button in the `Rules` section to create a new rule.
+![create_resource](./_assets/influxDB_v2_create_rule_1.png)
 
 Our goal is that as long as the emqx/test topic has monitoring information, the engine will be triggered. Certain SQL processing is required here:
 
@@ -118,9 +95,6 @@ SELECT
     payload.hum as hum
 FROM "emqx/test"
 ```
-
-![SQL](./_assets/influx_sql.png)
-
 You can click **SQL Test** under the SQL input box to fill in the data:
 
 * topic: emqx/test
@@ -132,6 +106,7 @@ You can click **SQL Test** under the SQL input box to fill in the data:
   "hum": 46.4
 }
 ```
+
 Click Test to view the obtained data results. If the settings are correct, the test output box should get the complete JSON data as follows:
 
 ```json
@@ -142,21 +117,28 @@ Click Test to view the obtained data results. If the settings are correct, the t
 }
 ```
 
-![SQL](./_assets/influx_sql_test.png)
+![create_resource](./_assets/influxDB_v2_create_rule_2.png)
 
 ::: tip Tip
 If the test fails, please check whether the SQL is compliant and whether the topic in the test is consistent with the SQL filled in.
 :::
 
+## 4. Create Action
 
+After completing the rule configuration, click Next to configure and create an action. Then add the request headers as following:
 
-### Create a response action
+```
+    Method: POST
+    Path: path <your_influxdb_path>, example: '/api/v2/write?org=tifidol259%40revutap.com&bucket=emqx&precision=ns'
+    Headers:
+        Content-Encoding: identity
+        Content-Type: text/plain
+        Accept: application/json
+        Authorization: Token <your_influxdb_token>
+        User-Agent: Telegraf
+```
 
-Click Add Action, on the Select Action page, select **Data forward** and **Data to Web Server**
-
-Select the resource we just created
-
-Enter the payload Template as follows:
+Enter the Body as follows:
 
 ```
 temp_hum,location=${location} temp=${temp},hum=${hum}
@@ -165,21 +147,14 @@ temp_hum,location=${location} temp=${temp},hum=${hum}
 where:
 
 ```
-    Measurement: temp_hum
-    Tags: location
-    Fields: temp, hum
+Measurement: temp_hum
+Tags: location
+Fields: temp, hum
 ```
 
-![action](./_assets/influx_action.png)
+![create_resource](./_assets/influxDB_v2_create_rule_3.png)
 
-Click `Confirm` to finish creating the response action and finish creating the rule
-
-Go back to the `Rule Engine` page, now you can see the rule we created is on the list
-
-![rule](./_assets/influx_finish_rule.png)
-
-
-## 4. Connect to MQTT X to send data
+## 5. Connect to MQTT X to send data
 
 We recommend you to use MQTT X, an elegant cross-platform MQTT 5.0 desktop client to subscribe/publish messages.
 
@@ -195,8 +170,7 @@ Enter the topic name and payload message to publish the message
 
 ![success](./_assets/influx_send.png)
 
-
-## 5. View results in influxDB console
+## 6. View results in influxDB console
 
 Go back to the InfluxDB console and go to the `Data Explorer` page
 
