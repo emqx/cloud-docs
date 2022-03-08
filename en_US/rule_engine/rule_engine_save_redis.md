@@ -8,12 +8,12 @@ Before you start, you will need to complete the following:
 
 * A deployment (EMQX Cluster) has been created on EMQX Cloud.
 
-* For professional deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/vpc_peering.md) first. All IPs mentioned below refer to the resource's intranet IP.
+* For professional deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/vpc_peering.md) first. All IPs mentioned below refer to the resource's intranet IP. If the professional deployment has a NAT gateway can also be connected using public IP.
 
 * For basic deployment users: No VPC Peering Connection is required. All IPs mentioned below refer to the resource's public IP.
 
 
-## Redis Configuration
+## 1. Redis Configuration
 
 1. Pull the newest version of Redis mirror
    ```bash
@@ -22,85 +22,62 @@ Before you start, you will need to complete the following:
    
 2. Run Redis Container
    ```bash
-   docker run -itd --name redis -p 6379:6379 redis
+   docker run -itd --name redis -p 6379:6379 redis:latest
    ```
 
 
-## EMQX Cloud Rule Engine Configuration
+## 2. Create Redis Single Mode Resource
 
-1. Create Redis Resource
+Go to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment of Redis to be used.
 
-   Click on Rule Engine on the left menu bar and click on `+ New` button to create a new resource.
+On the deployment page, select the Data Integrations and click the Redis single mode resource under Data Persistence to create it.
 
-   ![rule_engine_resource](./_assets/rule_engine_resource.png)
+![data_integrations](./_assets/data_integrations_redis.png)
+
+In the Create Resource page, set as follows:
+- Redis Server: IP address and port of the server
+
+![create_resource](./_assets/create_redis_resource.png)
+
+Click Test button when configuration is complete, then click New button to create a resource when it is available.
+
+## 3. Create Rule
+
+After the resource is successfully created, you can return to the data integration page and find the newly created resource, and click create rule.
+
+![create_rule_1](./_assets/redis_create_rule_1.png)
+
+Our goal is to trigger the engine when the client sends a temperature and humidity message to the **temp_hum/emqx** topic. Here you need a certain process of SQL:
+* Only for 'temp_hum/emqx'
    
-   Then fill in the information regarding the Redis you choose to store the data. 
-   You could always test if the database configuration you entered is correct before confirm to add the resource. 
-   If you get an error message after clicking the `Test` button, make sure to double-check the input information and retry.
-
-   ![create resource](./_assets/rule_engine_redis_create_resource.png)   
-
-   If the configuration test is passed, click on `confirm` to finish creating resource.
-
-
-2. Create Rule
-
-   Now we need to create a rule for the rule engine. 
-   Click on Rule Engine on the left menu bar and click on `+ New` button to create a new Rule.
-   In the following rule, we read the timestamp, client ID, payload via temp_hum/emqx topic.
-   
-   ```sql
-   SELECT 
-   
+Based on the above principles, our final SQL should look like this
+```sql
+SELECT
     timestamp div 1000 as up_timestamp, clientid as client_id, payload as temp_hum
-   
-   FROM
-   
+FROM
     "temp_hum/emqx"
-   ```
+```
 
-   ![create_rule](./_assets/rule_engine_redis_sql.png)
+![create_rule_2](./_assets/redis_create_rule_2.png)
 
+## 4. Create Action
 
-3. Rule Test
+After completing the rule configuration, click Next to configure and create an action. We read the up_timestamp, client ID, temperature and humidity form the topic and save to Redis.
 
-   You should always test the SQL ahead to make sure it's functioning
-   as you expected.
+```bash
+HMSET ${client_id} ${up_timestamp} ${temp_hum}
+```
 
-   ![rule test](./_assets/rule_engine_redis_sql_test.png))
+![create_rule_3](./_assets/redis_create_rule_3.png)
 
+After an action is created, you can add another action or return it to the data integration screen
 
-4. Add Action
-
-   After inputting the SQL command, it's time to create the response actions.
-
-   Towards the bottom of the page, in the Response Action section,
-   click on the `+ Add action` button. 
-   Select the resource created in the first step and enter the following data to insert into the Redis command template.
-
-   ```bash
-   HMSET ${client_id} ${up_timestamp} ${temp_hum}
-   ```
-   
-   ![add_action](./_assets/rule_engine_redis_action.png))
-   
-
-5. Click on `Confirm` to finish creating a Rule. You could always come back to edit you rules and add more actions.
-
-   ![rule list](./_assets/rule_engine_redis_rule.png)
-
-
-6. Check Rules Monitoring
-
-   ![view monitor](./_assets/view_monitor_redis.png)
-
-
-## Test
+## 5. Test
 
 1. Use [MQTT X](https://mqttx.app/) to simulate publishing temperature and humidity data
 
    You need to replace `broker.emqx.io` with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
-   
+
    ![MQTTX](./_assets/mqttx_publish_redis.png)
 
 2. View stored results
@@ -109,5 +86,5 @@ Before you start, you will need to complete the following:
    docker exec -it redis bash redis-cli
    HGETALL test_client
    ```
-   
+
    ![redis](./_assets/redis_query_result.png)

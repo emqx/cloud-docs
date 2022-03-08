@@ -45,13 +45,29 @@ $ docker run -d --name=influxdb \
 
 
 
-## 2. Set the filter criteria of the rule engine
+## 2. Create InfluxDB UDP Server Resource
 
 Go to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment of InfluxDB to be used.
 
-On the deployment page, select the rule engine and click Create.
+On the deployment page, select the Data Integrations and click Create.
 
-![rule_engine](./_assets/view_rule_engine.png)
+![data_integrations](./_assets/data_integrations_influxDB.png)
+
+On the Create Resource page, fill in  **\<Server IP>:8089**for the server address
+
+::: tip Tip
+Currently, InfluxDB uses a UDP port. Therefore, it is impossible to detect whether the connection is successful
+:::
+
+![resources](./_assets/create_influxDB_resource.png)
+
+Click Test button when configuration is complete, then click New button to create a resource when it is available.
+
+## 3. Create Rule
+
+After the resource is successfully created, you can return to the data integration page and find the newly created resource, and click create rule.
+
+![resources](./_assets/influxDB_create_rule_1.png)
 
 Our goal is that as long as the home/sensor topic has monitoring information, the engine will be triggered. Certain SQL processing is required here:
 
@@ -99,34 +115,20 @@ Click Test to view the get data results. If the settings are correct, the test o
 
 ```json
 {
-  "temperature": 25,
-  "location": "bedroom",
-  "humidity": 46.4
+  "temperature": 25, 
+  "location": "bedroom",
+  "humidity": 46.4
 }
 ```
-![SQL](./_assets/influxDB_SQL_setting.png)
+![SQL](./_assets/influxDB_create_rule_2.png)
 
 ::: tip Tip
 If test fails, please check whether the SQL is compliant, and whether the topic in the test is consistent with the SQL filled in.
 :::
 
+## 4. Create Action
 
-
-## 3. Create resources and actions
-
-Click Add Action, on the Select Action page, select **Save data to InfluxDB**, and click Next. When the action page is configured, click Create Resource.
-
-![action](./_assets/add_influxDB_action02.png)
-
-On the Create Resource page, select **InfluxDB UDP Service** for the resource type, and fill in  **\<Server IP>:8089**for the server address
-
-::: tip Tip
-Currently, InfluxDB uses a UDP port. Therefore, it is impossible to detect whether the connection is successful
-:::
-
-![resources](./_assets/add_influxDB_action03.png)
-
-Click OK to return to the configuration action page. The resource just created is selected by default. For other fields, you can refer to the table below.
+After completing the rule configuration, click Next to configure and create an action. For other fields, you can refer to the table below.
 
 | parameter | Required | Type | Meaning |
 |:----|:----|:----|:----|
@@ -137,7 +139,7 @@ Click OK to return to the configuration action page. The resource just created i
 
 For our situation, this part can be filled in like this
 
-![config action](./_assets/add_influxDB_action04.png)
+![config action](./_assets/influxDB_create_rule_3.png)
 
 * For Measurement, it can be set at will, and we fill in "home_sensor" here
 * For Field Keys, we fill in the two data we need to record: temperature and humidity
@@ -148,11 +150,7 @@ After filling in, click OK.
 
 The created action will be displayed in the response action column. After confirming that the information is correct, click Confirm in the lower right corner to complete the configuration of the rule engine.
 
-![rule_engine](./_assets/add_influxDB_action05.png)
-
-
-
-## 4. Test
+## 5. Test
 
 >If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
