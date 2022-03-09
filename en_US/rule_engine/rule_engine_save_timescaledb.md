@@ -1,11 +1,11 @@
-# Save device data to Timescaledb using the Rule Engine
+# Save device data to Timescaledb using the Data Integrations
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud rules engine to dump the data into TimescaleDB.
 
 Before you start, you need to complete the following operations:
+
 * Deployments have already been created on EMQX Cloud (EMQX Cluster).
 * For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
-
 
 ## TimescaleDB Configuration
 
@@ -14,14 +14,14 @@ Before you start, you need to complete the following operations:
    docker run -d --name timescaledb -p 5432:5432 -e POSTGRES_PASSWORD=password timescale/timescaledb:1.7.4-pg12
    ```
 
-2. New database
+2. Create database
    ```bash
    docker exec -it timescaledb psql -U postgres
    CREATE database emqx;
    \c emqx
    ```
 
-3. New temperature and humidity table
+3. Create table
 
    Use the following SQL statement to create `temp_hum` table. This table will be used to save the temperature and humidity data reported by devices.
    ```sql
@@ -37,56 +37,67 @@ Before you start, you need to complete the following operations:
 
 4. Insert test data and view it
    ```sql
-   INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
+   INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
 
-   select * from temp_hum;
+   SELECT * FROM temp_hum;
    ```
+
+## Data Integrations Configuration
+
+Go to Deployment Details and click on `Data Integrations` on the left menu bar.
+
+1. Create TimescaleDB Resource
    
-## EMQX Cloud rules engine configuration
+   Click on `TimescaleDB` under the Data Persistence.
 
-Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
+   ![timescaledb](./_assets/timescaledb.png)
+ 
+   Fill in the timescaledb database information you have just created and click `Test`. If there is an error, you should check if the database configuration is correct. Then click on `New` to create TimescaleDB resource.
 
-1. New Resource
-
-   Click on Rules on the left menu bar → Resources, click on New Resource and drop down to select the TimescaleDB resource type. Fill in the timescaledb database information you have just created and click Test. If you get an error, instantly check that the database configuration is correct.
    ![create resource](./_assets/timescaledb_create_resource.png)
-   
-2. Rule Testing
-   Click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.  In the following rule we read the time `up_timestamp` when the message is reported, the client ID, the message body (Payload) from the `temp_hum/emqx` topic and the temperature and humidity from the message body respectively.
-   
+
+2. Create Rule
+
+   Choose the TimescaleDB resource under Configured Resources, click on `New Rule` and enter the following rule to match the SQL statement. In the following rule we read the time `up_timestamp` when the message is reported, the client ID, the message body (Payload) from the `temp_hum/emqx` topic and the temperature and humidity from the message body respectively.
+
    ```sql
    SELECT 
-   
-   timestamp div 1000 as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum
-   
+   timestamp div 1000 AS up_timestamp, clientid AS client_id, payload.temp AS temp, payload.hum AS hum
    FROM
-   
    "temp_hum/emqx"
    ```
-   ![rule_engine](./_assets/sql_test.png)
+   ![rule_engine](./_assets/timescaledb_new_rule.png)
 
-3. Add a response action
+3. Create Action
 
-   Click on Add Action in the bottom left corner, drop down and select → Data Persistence → Save Data to Timescale, select the resource created in the first step and enter the following data to insert into the SQL template.
+   Click on the `Next` button in the bottom to enter action view. Select the resource created in the first step and enter the following data to insert into the SQL template.
 
    ```sql
-   insert into temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
+   INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
    ```
-   ![rule_engine](./_assets/timescaledb_action.png)
+   ![rule_engine](./_assets/timescaledb_new_action.png)
+   Click on `Confirm` to create action.
 
-4. Click on New Rule and return to the list of rules
-   ![rule_engine](./_assets/view_rule_engine_timescaledb.png)
+4. View Resource Detail
+
+   Click on the resource to see the detail.
+
+   ![timescale_resource_detail](./_assets/timescaledb_resource_detail.png)
 
 
-5. View rules monitoring
-   ![monitor](./_assets/view_monitor_timescaledb.png)
+5. Check Rule Monitoring
+
+   Click the monitor icon of rule to see the metrics
+
+   ![view monitor](./_assets/timescaledb_monitor.png)
 
 ## Test
+
 1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
 
    You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQX Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)
-   
+
 2. View data dump results
 
    ```sql
