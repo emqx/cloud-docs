@@ -1,6 +1,6 @@
-# Save device data to MySQL using the Rule Engine
+# Save device data to MySQL using the Data IntegrationsData Integrations
 
-In this article, we will simulate the temperature and humidity data, and report these data to EMQX Cloud via the MQTT protocol, and then we will use EMQX Cloud rules engine to dump the data to MySQL.
+In this article, we will simulate the temperature and humidity data, and report these data to EMQX Cloud via the MQTT protocol, and then we will use EMQX Cloud Data Integrations to dump the data to MySQL.
 
 Before you start, you will need to complete the following:
 
@@ -10,10 +10,9 @@ Before you start, you will need to complete the following:
 
 * For basic deployment users: No PC Peering Connections is required. All IP references below are to the public IP of the resource.
 
-
 ## MySQL Configuration
 
-1. Installing MySQL with Docker
+1. Install MySQL with Docker
 
    ```bash
    docker run -d --restart=always \
@@ -22,7 +21,7 @@ Before you start, you will need to complete the following:
        -e MYSQL_ROOT_PASSWORD=public \
        mysql/mysql-server:5.7
    ```
-2. Creating and Selecting a Database
+2. Create a database
 
    ```bash
    docker exec -it mysql mysql -uroot -ppublic
@@ -30,7 +29,8 @@ Before you start, you will need to complete the following:
    USE emqx;
    ```
 
-3. Create temp_hum table
+3. Create table
+   
    Use the following SQL command to create `temp_hum` table, and this table will be used for storing the temperature and humidity data reported by devices.
 
     ```sql
@@ -45,10 +45,9 @@ Before you start, you will need to complete the following:
     ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
     ```
 
-4. For professional deployment, set up to allow EMQX cluster IP segments to access the database (optional).
-     To get the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
+5. For professional deployment, set up to allow EMQX cluster IP segments to access the database (optional). To get the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
 
-     ```mysql
+     ```sql
        # Professional Deployment CIDR: 10.11.x.%
        GRANT ALL PRIVILEGES ON *.* TO root@'10.11.30.%' IDENTIFIED BY 'public' WITH GRANT OPTION;
        
@@ -56,54 +55,67 @@ Before you start, you will need to complete the following:
        GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'public' WITH GRANT OPTION;
      ```
 
-5. Insert test data and view data
+6. Insert test data and view data
 
-   ```mysql
-     INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) values (FROM_UNIXTIME(1603963414), 'temp_hum-001', 19.1, 55);
+   ```sql
+     INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (FROM_UNIXTIME(1603963414), 'temp_hum-001', 19.1, 55);
      
-     select * from temp_hum;
+     SELECT * FROM temp_hum;
    ```
 
-   
-## Rules Engine Configuration
+## Data Integrations Configuration
 
-Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord
+Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 1. Create MySQL Resource
 
-   Click on Rules on the left menu bar → Resources, click on New Resource and drop down to select the MySQL resource type. Fill in the information of the mysql database you have just created and click Test. If there is an error, you should check if the database configuration is correct.
+   Click on `MySQL` under the Data Persistence.
+
+   ![mysql](./_assets/mysql.png)
+ 
+   Fill in the information of the mysql database you have just created and click `Test`. If there is an error, you should check if the database configuration is correct.Then click on `New` to craete MySQL resource.
+
    ![create resource](./_assets/create_mysql_resource.png)
-   
-2. Rule Test
-   click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement. In the following rule, we read the time when the message was reported `up_timestamp`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
-   
+
+2. Create Rule
+
+   Choose the MySQL resource under Configured Resources, click on `New Rule` and enter the following rule to match the SQL statement. In the following rule, we read the time when the message was reported `up_timestamp`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
+
    ```sql
-   SELECT 
-   
-   timestamp as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum  
-   
-   FROM  
-   
-   "temp_hum/emqx"  
+   SELECT
+   timestamp AS up_timestamp, clientid AS client_id, payload.temp AS temp, payload.hum AS hum  
+   FROM
+   "temp_hum/emqx"
    ```
-   ![rule engine](./_assets/sql_test.png)
    
+   ![mysql_new_rule](./_assets/mysql_new_rule.png)
+
+   You can use `SQL Test` to see the result
+
+   ![mysql_new_rule](./_assets/mysql_create_rule.png) 
+
 3. Add Action
 
-   Click on the Add action in the bottom left corner, drop down and select → Save data to MySQL. Select the resource created in the first step and enter the following data to insert into the SQL template.
+   Click on the Next action in the bottom to enter action view. Select the resource created in the first step, select `Data Persistence - Data to MySQL` as Action Type, and enter the following data to insert into the SQL template.
 
    ```sql
-   insert into temp_hum(up_timestamp, client_id, temp, hum) values (FROM_UNIXTIME(${up_timestamp}/1000), ${client_id}, ${temp}, ${hum}) 
+   INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (FROM_UNIXTIME(${up_timestamp}/1000), ${client_id}, ${temp}, ${hum}) 
    ```
-   ![rule_action](./_assets/add_mysql_action.png)
+   ![rule_action](./_assets/mysql_new_action.png)
+   Click on `Confirm` to create action.
 
-4. Click on Create a Rule, and return the list of rules
-   ![rule list](./_assets/view_rule_engine.png)
+4. View Resource Detail
+
+   Click on the resource to see the detail.
+
+   ![mysql_resource_detail](./_assets/mysql_resource_detail.png)
 
 
 5. Check Rules Monitoring
-   ![view monitor](./_assets/view_monitor.png)
-   
+
+   Click the monitor icon of rule to see the metrics
+
+   ![view monitor](./_assets/mysql_monitor.png)
 
 ## Test
 
@@ -111,14 +123,14 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord
 
    You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)
-   - topic: `temp_hum/emqx`
-   - payload:
-     ```json
-     {
-        "temp": "20.1",
-        "hum": "57"
-     }
-     ```
+    - topic: `temp_hum/emqx`
+    - payload:
+      ```json
+      {
+         "temp": "20.1",
+         "hum": "57"
+      }
+      ```
 
 2. View data dump results
       ```sql
