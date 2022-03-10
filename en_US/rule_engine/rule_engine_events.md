@@ -1,6 +1,6 @@
-# Rule engine events
+# Event Topics
 
-EMQX Cloud Rule Engine provide event topic available for FROM clause.
+The Rule of Data Integration provides several event topics available for FROM clause.
 
 | Event topic name | Explanation |
 | ---- | ---- |
