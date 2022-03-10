@@ -652,11 +652,11 @@
         },
         {
           "title": "Rule Management",
-          "path": "rule_engine/rule"
+          "path": "rule_engine/rules"
         },
         {
           "title": "Resource Management",
-          "path": "rule_engine/resource"
+          "path": "rule_engine/resources"
         },
         {
           "title": "Rule engine events",

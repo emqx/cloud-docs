@@ -1,33 +1,47 @@
 # Version release
 
+## 2022-3-19
+
+* Replace Rule Engine with Data Integration
+
+## 2022-1-19
+
+* Support Intranet and NAT Gateway LB VAS
+
 ## 2021-11-19
 
 * Support Subaccount Management
 
-## 2021-09-19 
+## 2021-09-19
 
 * Support Project Management
 
-## 2021-08-19 
+## 2021-08-19
 
 * Support Google Cloud Platform
 
 ## 2021-07-19
+
 * Support Azure Cloud Platform
 
 ## 2021-06-19
-* Optimization of User Interface Design 
+
+* Optimization of User Interface Design
 
 ## 2021-05-13
+
 * New Pricing Plans
 
 ## 2021-03-15
+
 * New UI design
 
 ## 2020-12-21
+
 * Support the creation of 180-day free trial
 
 ## 2020-09-17
+
 * Deployment a dedicated dashboard
 
 ## 2020-07-15
@@ -52,4 +66,4 @@
 
 ## 2019-09-30
 
-* EMQX Cloud Service is released
+* EMQX Cloud Service released
