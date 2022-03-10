@@ -3,7 +3,7 @@
 
 The EMQX Cloud Data Integration is used to configure the rules for handling and responding to EMQX message flows and device events. The Data Integration not only provides a clear and flexible "configurable" architecture solution, but also simplifies the development process, improves user usability, and reduces the coupling degree between the business system and EMQX Cloud. It also provides a superior infrastructure for customization of EMQX Cloud's proprietary capabilities.
 
-![rule_engine](../rule_engine/_assets/rule_engine.png)
+![](./_assets/integration_intro_01.png)
 
 In EMQX Cloud, using Data Integration has the following requirements:
 
@@ -21,6 +21,8 @@ The primary dimension of Data Integration is the resource. A resource is a servi
 After the resource is settled, you need to create a rule to handle the data collected from the device. The rule can collect and process data in the way you want by using a SQL clause.
 
 When a rule is tested and created, action needs to be attached to the rule. It will send the data to the target resource.
+
+![](./_assets/integration_intro_02.png)
 
 ## [Resource](./resource.md)
 
