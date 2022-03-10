@@ -13,11 +13,11 @@ In EMQX Cloud, using the rule engine has the following requirements and restrict
     - The resource only supports intranet access, so you need to configure VPC peering before creating the resource and open the security group.
 
 
-## [Rule Management](../rule_engine/rule.md)
+## [Rule Management](../rule_engine/rules.md)
 
 The rule engine not only provides a clear and flexible "configurable" business integration solution, simplifies the business development process, improves user usability, and reduces the coupling degree between the business system and EMQX, but also provides a superior infrastructure for EMQX's proprietary functionality customization.
 
-## [Resource Management](../rule_engine/resource.md)
+## [Resource Management](../rule_engine/resources.md)
 
 EMQX Cloud resources are used for rule engine response actions, before which you need to ensure that the deployment status is running.
 
