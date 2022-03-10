@@ -1,95 +1,89 @@
 # Rule
 
-The rule describes the three configurations of "where the data comes from", "how to filter and process the data", and "where the processing results go". That is to say, a usable rule contains three elements:
+The rule describes the three configurations of "where the data comes from", "how to filter and process the data", and "where the processing results go". A rule contains three factors:
 
-- Trigger event: The rule is triggered by an event, and the event injects the context information (data source) of the event into the rule when triggered. The event type is specified through the FROM clause of SQL;
-- Processing rules (SQL): Use SELECT clause and WHERE clause and built-in processing functions to filter and process data from context information;
+- Trigger event: The rule is triggered by an event, and the event injects the context information (data source) of the event into the rule when triggered. The event type is specified through the `FROM` clause of SQL;
+- Processing rules (SQL): Use `SELECT` clause and `WHERE` clause and built-in processing functions to filter and process data from context information;
 - Response action: If there is a processing result output, the rule will execute the corresponding action, such as persisting to the database, republishing the processed message, and forwarding the message to the message queue. A rule can configure multiple response actions.
 
 
 
-## A simple example
-
-The rule shown in the figure below is used to process the data when **message is published**, filter out the msg field, message topic and qos of all topic messages, and send them to the Web Server and /uplink topics. You can refer to [EMQX Rules](https://docs.emqx.io/broker/latest/en/rule/rule-engine.html) for more  guidelines.
-
-![img](./_assets/rule_engine_detail.png)
-
-
-
-## Add rules
-
-Before creating a rule engine, you need to make sure that the deployment status is **running**
-
-1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
-
-2. Click on the deployment of the desired connection, and you will enter the deployment details page
-
-3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
-
-4. Click `Rule Engine` → `Rule` on the left menu of EMQX Dashboard, and click the Create button on the rule list page
-
-   ![rule-add](./_assets/rule-add.png)
-
-5. Create a new test SQL, click the switch behind `SQL test`, fill in the corresponding test parameters, and finally click the `SQL test` button
-
-   ![rule-sql-test](./_assets/rule-sql-test.png)
-
-6. Add an action
-
+## Create rules
 ::: tip Tip
-Before adding an action, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md), and [create resource](resource.md)
+Before creating a rule, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md), and [created a resource](resource.md)
 :::
 
-   ![rule-action-add](./_assets/rule-action-add.png)
+1. We will attach the rule to the TimescaleDB resource as an example. Either create a rule directly from the notification or the resource detail page.
 
-   In the pop-up action configuration dialog box, select the corresponding action type and fill in the configuration information of the corresponding action
+![](./_assets/resource_05.png)
 
-   ![rule-action-config](./_assets/rule-action-config.png)
-
-## View rule monitoring status
-
-1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
-
-2. Click on the deployment of the desired connection, and you will enter the deployment details page
-
-3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
-
-4. Click `Rule Engine` → `Rules` on the left menu of EMQX Dashboard, and click the rule monitoring icon on the rule list page
-
-   ![rule-monitor](./_assets/rule-monitor.png)
+![](./_assets/rule_intro_01.png)
 
 
+2. In the following rule, we read the time up_timestamp when the message is reported, the client ID, the message body (Payload) from the temp_hum/emqx topic and the temperature and humidity from the message body respectively.
 
-## Edit rules
+```sql
+SELECT 
+timestamp div 1000 AS up_timestamp, clientid AS client_id, payload.temp AS temp, payload.hum AS hum
+FROM
+"temp_hum/emqx"
 
-1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
+```
+![](./_assets/rule_intro_02.png)
 
-2. Click on the deployment of the desired connection, and you will enter the deployment details page
 
-3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
+3. Create a new test SQL, click the switch button behind `SQL test`, fill in the corresponding test parameters, and finally click the `SQL test` button.
 
-4. Click `Rule Engine` → `Rules` on the left menu of EMQX Dashboard, and click the `Edit` button on the rule list page
+![](./_assets/rule_intro_03.png)
 
-   ![rule-edit](./_assets/rule-edit.png)
 
-   When editing rules, you can also edit the actions added in the rules
+4. In the result text area, we will find the output data as expected. Then click the `Next` button to save the rule.
 
-   ![rule-action-edit](./_assets/rule-action-edit.png)
 
-5. Change rule status
 
-   ![rule-status](./_assets/rule-status.png)
+## Create Actions
+
+An action solves the problem of "where to send the processed data". It tells EMQX Cloud what to do with the data generated by the rule. Usually, we set up the configuration and SQL Template for the target resource. 
+
+1. EMQX Cloud will set the default values for the configuration. You can change them if needed.
+
+2. Code the SQL Template, and click `Confirm` to create an action.
+
+```sql
+INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
+
+```
+![](./_assets/rule_intro_12.png)
+![](./_assets/rule_intro_04.png)
+
+3. One rule can be associated with a few actions. Add another action, and we can change the target resource. For example, we can forward the data to Kafka cluster as well as save the data to RDS.
+![](./_assets/rule_intro_05.png)
+
+4. If there is a failure on the main action, we can set up a fallback action to ensure a double check. 
+![](./_assets/rule_intro_06.png)
+
+
+## Rules Operations
+
+### Edit Rules
+Click the edit icon to edit the rule. On this page, you can edit both the rule SQL Template and the actions.
+![](./_assets/rule_intro_07.png)
+![](./_assets/rule_intro_08.png)
+  
+
+### View Monitoring Status
+
+1. Click the rule monitoring icon on the rule list page.
+
+![](./_assets/rule_intro_09.png)
+
+2. The panel shows the detail of rule matching status.
+![](./_assets/rule_intro_10.png)
 
 
 
 ## Delete rules
 
-1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
+In the resource detail page, you can delete the rules in the rule list.
+![](./_assets/rule_intro_11.png)
 
-2. Click on the deployment of the desired connection, and you will enter the deployment details page
-
-3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
-
-4. Click `Rule Engine` → `Rule` on the left menu of EMQX Dashboard, click the rule `Delete` button on the rule list page
-
-   ![rule-delete](./_assets/rule-delete.png)

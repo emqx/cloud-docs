@@ -1,57 +1,43 @@
 # Resource
 
-EMQX Cloud resources are used for rule engine response actions. Before that, you need to ensure that the deployment status is `running`. You can refer to [EMQX Rule Engine](https://docs.emqx.io/broker/latest/en/rule/rule-engine.html) for more information about resource creation.
+EMQX Cloud resources are the key concept for data integration. Most of the resources are the services provided by the cloud providers. Before starting, you need to ensure that the deployment status is `running`. 
+
+In a professional plan, we provide all the resources. However, in a standard plan, only `MQTT Bridge`, `Republish`, `Webhook`, `debug mode` are available. Because other resources require a VPC peering and can only be connected through Intranet. 
+
+::: tip Tip
+Before adding a resource, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md). Or you can open [NAT Gateway](../vas/vas-intro.md) to connect to the service without VPC peering.
+:::
+
+
+## Resource Browse Page
+This is the browse page for all the resources that EMQX Cloud lists. The most commonly used types are Data Forwarding and Data Persisting. Like forwarding data to Kafka clusters or saving data into MongoDB. Select the item from the list of available resources to continue.
+   ![resource-add](./_assets/resource_01.png)
 
 
 
-## Simple Example
-
-The resource shown in the figure below is a WebHook resource. The request URL is port 9910 of an IP, the request method is POST, and the request header is empty.
-
-![img](./_assets/resource-detail.png)
-
-## Create Resources
-
-1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
-
-2. Click on the deployment of the desired connection, and you will enter the deployment details page
-
-3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
-
-4. Click `Rule Engine` → `Resources` on the left menu of EMQX Dashboard, and click the resource `Create` button on the resource list page
-
-   ![resource-add](./_assets/resource-add.png)
-
-5. Select the corresponding resource type and fill in the corresponding resource configuration information
-
-   ![resource-config](./_assets/resource-config.png)
-
-6. Click Test, if there is no error, click Confirm, otherwise please check the resource configuration information carefully
+## Set up a resource
+We set up a TimescaleDB Resource for an example. Filling in the corresponding resource configuration and click `Test` Button. If the connection is successful, We will receive a message and click to see the detail. Otherwise please check the resource configuration.
+   ![resource-add](./_assets/resource_02.png)
 
 
+If you created a resource, it will be listed on the overview page. You can add another resource as well. All the resources you created will be listed on the overview page. You can browse all the resources through the link 'Add New Resouce' or 'View All Resources'.
+   ![resource-add](./_assets/resource_03.png)
 
-## View Resource Status
 
-1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
+## Resource Detail
+1. Click the resource ID link to view the resource detail. The Basic Information section and Configuration section show the default information and the content you fill in during the set-up.
 
-2. Click on the deployment of the desired connection, and you will enter the deployment details page
+2. The related rules section shows all the rules attached to this resource. A resource can correspond to more than one rule. [Read more about Rules](./rule.md). 
+   ![resource-add](./_assets/resource_07.png)
 
-3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
-
-4. Click `Rule Engine` → `Resources` on the left menu of EMQX Dashboard, and click the resource status icon on the resource list page
-
-   ![resource-status](./_assets/resource-status.png)
 
 
 
 ## Delete Resources
 
-1. Log in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console/)
+1. In the Configured Resources List, click the `delete` button to delete a resource.  
 
-2. Click on the deployment of the desired connection, and you will enter the deployment details page
+2. You have to enter the resource ID to confirm the deletion. 
+   ![resource-delete](./_assets/resource_06.png)
 
-3. Click the EMQX Dashboard button on the page, and you will enter the EMQX Dashboard
-
-4. Click `Rule Engine` → `Resources` on the left menu of EMQX Dashboard, and click the resource `Delete` button on the resource list page
-
-   ![resource-delete](./_assets/resource-delete.png)
+3. Make sure to empty all the rules under the resource before deleting the resource.
