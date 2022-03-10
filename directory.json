@@ -688,7 +688,7 @@
         },
         {
           "title": "Save data to PostgreSQL",
-          "path": "rule_engine/rule_engine_save_psql"
+          "path": "rule_engine/rule_engine_save_postgredb"
         },
         {
           "title": "Save data to MongoDB",

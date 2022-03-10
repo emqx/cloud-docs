@@ -1,131 +1,82 @@
-# Save device data to MongoDB using the Rule Engine
+# Save device data to MongoDB using the Data Integrations
 
 In this article, we will simulate the temperature and humidity
 data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud
 rule engine to store the data to MongoDB.
 
-Before you start, you will need to complete the following:
+Before you start, you need to complete the following operations:
 
-* A deployment (EMQX Cluster) has been created on EMQX Cloud.
-
-* For professional deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/vpc_peering.md) first. All IPs mentioned below refer to the resource's intranet IP.
-
-* For basic deployment users: No VPC Peering Connection is required. All IPs mentioned below refer to the resource's public IP.
+* Deployments have already been created on EMQX Cloud (EMQX Cluster).
+* For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 
 ## MongoDB Configuration
 
-1. Pull the newest version of MongoDB mirror
+1. Install MongoDB
    
    ```bash
-   docker pull mongo:latest
+   docker run --name mongo -d -p 27017:27017 mongo:5.0
    ```
 
-2. Run Mongo Container
-   
-    ```bash
-    docker run -itd --name mongo -p 27017:27017 mongo --auth
-   ```
-
-3. Execute Container
-   
-    ```bash
-    docker exec -it mongo mongo admin
-   ```
-
-4. Create user and set up the password
-   
-    ```bash
-    db.createUser({ user:'root',pwd:'public',roles:[ { role:'userAdminAnyDatabase', db: 'admin'},"readWriteAnyDatabase"]});
-   ```
-
-5. Connect by using the user information above 
+3. Enter Container
    
    ```bash
-   db.auth('root', 'public')
+   docker exec -it mongo mongosh emqx
    ```
-   
-    You will get the same result by following the steps above.
-   ![create resource](./_assets/mongo_auth.png)
-    
-6. Create a new database
+4. Insert data into `temp_hum` collection and view the result.
    
    ```sql
-   Use emqx
-   ```
-
-7. Insert data into `temp_hum` collection and view the result.
-   
-    ```sql
-     db.temp_hum.insert({up_timestamp: 34256, client_id: 1, temp: 20, hum: 33})
+   db.temp_hum.insert({up_timestamp: 34256, client_id: 1, temp: 20, hum: 33})
+   db.temp_hum.find()
    ```
    ![create resource](./_assets/mongodb_view.png)
 
-## EMQX Cloud Rule Engine Configuration
+## Data Integrations Configuration
 
-Select `Rule Engine` from the left menu bar to edit rule engine configuration.
+Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 1. Create MongoDB Resource
 
-   Click on Rule Engine on the left menu bar and
-   click on `+ New` button to create a new resource.
+   Click on `MongoDB Single Mode` under the Data Persistence.
 
-   ![create resource](./_assets/psql1.png)
+   ![create resource](./_assets/mongodb.png)
 
-   Then fill in the information regarding the MongoDB
-   you choose to store the data. You could always test if the database configuration you entered is correct before confirm to add the resource. If you get an error message after
-   clicking the `Test` button, make sure to double-check the input information
-   and retry.
+   Fill in the information you have just created and click `Test`. If there is an error, you should check if the database configuration is correct. Then click on `New` to create MongoDB resource
 
    ![create resource](./_assets/mongo_create_resource.png)
 
-   If the configuration test is passed, click on `confirm` to finish creating resource.
-
 2. Create Rule
 
-   Now we need to create a rule for the rule engine.
-   Click on Rule Engine on the left menu bar and
-   click on `+ New` button to create a new Rule.
-
-   In the following rule, we read the timestamp,
-   client ID, payload via temp_hum/emqx topic.
+   Choose the MongoDB resource under Configured Resources, click on `New Rule` and enter the following rule to match the SQL statement. In the following rule we read the time `up_timestamp` when the message is reported, the client ID, the message body (Payload) from the `temp_hum/emqx` topic and the temperature and humidity from the message body respectively.
 
    ```sql
    SELECT 
-   
-   timestamp as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum  
-   
-   FROM  
-   
-   "temp_hum/emqx"  
+      timestamp div 1000 AS up_timestamp, clientid AS client_id, payload.temp AS temp, payload.hum AS hum
+   FROM
+      "temp_hum/emqx"
    ```
 
-   ![rule engine](./_assets/psql_rule1.png)
-
-3. Rule Test
-
-   You should always test the SQL ahead to make sure it's functioning
-   as you expected.
-   
-   ![rule engine](./_assets/psql_test_rule.png)
+   ![rule engine](./_assets/postgresql_new_rule.png)
 
 
+3. Create Action
 
-4. Add Action
-
-   After inputting the SQL command, it's time to create the response actions.
-
-   Towards the bottom of the page, in the Response Action section,
-   click on the `+ Add action` button.
+   Click on the `Next` button in the bottom to enter action view. Select the resource created in the first step, select `Data Persistence - Data to MongoDB` for `Action Type` and enter the following data to insert into the SQL template.
 
    ![rule_action](./_assets/mongo_add_action.png)
 
-5. Click on `Confirm` to finish creating a Rule. You could always come back to edit you rules and add more actions.
-   
-   ![rule list](./_assets/mongo_rule.png)
+   Click on `Confirm` to create action.
+
+4. View Resource Detail
+
+   Click on the resource to see the detail.
+
+   ![rule list](./_assets/mongo_resource_detail.png)
 
 
-6. Check Rules Monitoring
-   
+5. Check Rules Monitoring
+
+   Click the monitor icon of rule to see the metrics
+
    ![view monitor](./_assets/mongo_monitor.png)
 
 
@@ -138,7 +89,7 @@ Select `Rule Engine` from the left menu bar to edit rule engine configuration.
 
 2. View stored results
    
-      ```
-     db.temp_hum.find()
-      ```
+   ```
+   db.temp_hum.find()
+   ```
    ![mongo](./_assets/mongo_result.png)
