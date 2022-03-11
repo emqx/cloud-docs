@@ -126,7 +126,7 @@ Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
 openssl req \
     -new \
     -newkey rsa:2048 \
-    -days 3650 \
+    -days 365 \
     -nodes \
     -x509 \
     -subj "/C=CN/O=EMQ Technologies Co., Ltd/CN=EMQ CA" \
@@ -190,7 +190,8 @@ openssl req -new -key server.key -config openssl.cnf -out server.csr
 
 ```bash
 openssl x509 -req \
-    -days 3650 \
+    -days 365 \
+    -sha256 \
     -in server.csr \
     -CA server-ca.crt \
     -CAkey server-ca.key \
@@ -218,7 +219,7 @@ For two-way authentication, you will need to generate the client CA certificate 
 openssl req \
     -new \
     -newkey rsa:2048 \
-    -days 3650 \
+    -days 365 \
     -nodes \
     -x509 \
     -subj "/C=CN/O=EMQ Technologies Co., Ltd/CN=EMQ CA" \
@@ -243,7 +244,7 @@ openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 3. Sign the client-side certificate with a CA certificate `client.crt`
 
 ```bash
-openssl x509 -req -days 3650 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
+openssl x509 -req -days 365 -sha256 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
 ```
 
 4. View client-side certificate information
