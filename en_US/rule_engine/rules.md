@@ -29,6 +29,7 @@ FROM
 "temp_hum/emqx"
 
 ```
+
 ![](./_assets/rule_intro_02.png)
 
 
@@ -53,13 +54,15 @@ An action solves the problem of "where to send the processed data". It tells EMQ
 INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
 
 ```
+
 ![](./_assets/rule_intro_12.png)
-![](./_assets/rule_intro_04.png)
 
 3. One rule can be associated with a few actions. Add another action, and we can change the target resource. For example, we can forward the data to Kafka cluster as well as save the data to RDS.
+
 ![](./_assets/rule_intro_05.png)
 
 4. If there is a failure on the main action, we can set up a fallback action to ensure a double check. 
+
 ![](./_assets/rule_intro_06.png)
 
 
@@ -67,6 +70,7 @@ INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${
 
 ### Edit Rules
 Click the edit icon to edit the rule. On this page, you can edit both the rule SQL Template and the actions.
+
 ![](./_assets/rule_intro_07.png)
 ![](./_assets/rule_intro_08.png)
   
@@ -78,12 +82,13 @@ Click the edit icon to edit the rule. On this page, you can edit both the rule S
 ![](./_assets/rule_intro_09.png)
 
 2. The panel shows the detail of rule matching status.
-![](./_assets/rule_intro_10.png)
 
+![](./_assets/rule_intro_10.png)
 
 
 ## Delete rules
 
 In the resource detail page, you can delete the rules in the rule list.
+
 ![](./_assets/rule_intro_11.png)
 
