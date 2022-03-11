@@ -67,4 +67,5 @@ EMQX Cloud 中仅适用以下操作：
    ![MQTTX](./_assets/empty_action_debug_mqttx_pub.png)
 
 2. 查看监控结果
+   
    ![result](./_assets/empty_action_debug_result.png)
