@@ -1,10 +1,10 @@
-# EMQX Cloud 规则引擎保存数据到 Redis
+# EMQX Cloud 数据集成保存数据到 Redis
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将数据转存到 Redis。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到 Redis。
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)
