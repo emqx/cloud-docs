@@ -16,53 +16,45 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 在阿里云平台，VPC 对等连接又称为 [云企业网](https://cn.aliyun.com/product/cbn)
 
+### 准备工作
+
+创建对等连接之前，您需要在阿里云上先创建 VPC，并确保在企业版转发路由器支持的可用区均拥有至少一个交换机实例，且每个交换机实例拥有至少一个空闲的 IP 地址。<br>
+例如，您在华南1（深圳）地域创建了 1 个 VPC，则该 VPC 需在可用区 D 和可用区 E 各拥有至少一个交换机实例，且每个交换机实例拥有至少一个空闲的 IP 地址。<br>
+具体信息可查看 [企业版转发路由器支持的地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/181681.html)。
+
 ### 创建对等连接
 
-1. 登录您的阿里云账户，并进入[云企业网页面](<https://cen.console.aliyun.com/cen/list>)
+1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，确认信息后，点击 `同意并开通云企业网`。
 
-2. 切到旧版![切换版本](./_assets/aliyun_back_to_old.png)
+  ![cloud_vpc_peering_info](./_assets/aliyun_cen_1.png)
+   
+   此时若成功开通云企业网，会返回如下信息，记录以下信息
 
-3. 点击创建云企业网实例
+   ![cloud_vpc_peering_info](./_assets/aliyun_cen_2.png)
+   
+2. 登录您的阿里云账户，点击您的 VPC 实例进入详情，点击 `云企业网跨账号授权` 标签页，点击 `云企业网跨账号授权` 按钮，将上一步的信息填入。资费承担方式**必须**选择 `VPC用户承担资费`，否则无法创建成功。
 
-4. 填写 VPC 相关信息，然后点击确定
+  ![](./_assets/aliyun_cen_grant.png)
 
-   > 注意：一个 VPC 只能关联一个云企业网
+3. 完成授权后，等待一段时间，在部署详情查看对等连接状态，`运行中`表示已经创建成功
+  
+   ![aliyun_cen_running](./_assets/aliyun_cen_running.png)
 
-   ![deployment_connections](./_assets/aliyun_create_vpc_peering.png)
-
-5. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，填写您阿里云云企业网相关信息，并记录下 EMQX Cloud VPC 对等连接提示
-
-   * 对等连接ID == 云企业网实例 ID
-   * 账户ID == 阿里云账户ID
-   * VPC ID == 挂载到云企业网中的 VPC ID
-
-   ![cloud_vpc_peering_info](./_assets/add_vpc_peering_info.png)
-
-6. 登录您阿里云账号，访问刚创建好的云企业网实例详情，点击加载网络实例，填写 EMQX Cloud 部署相关信息，点击确定
-
-   > 注意：您需要在10分钟内完成 EMQX Cloud 对等连接相关信息添加，否则将视为失败
-
-   ![cloud_vpc_peering_info](./_assets/aliyun_add_cloud_vpc_peering.png)
-
-7. 登录 EMQX Cloud 控制台，访问部署详情，查看对等连接状态
-
-   ![cloud_vpc_peering_info](./_assets/view_deployment_peering.png)
-
-8. 登录您阿里云账号，配置安全组，允许 EMQX Cloud 网段访问您的 VPC
+4. 登录您阿里云账号，为实例配置安全组，允许 EMQX Cloud 网段访问您的 VPC
   
    ![aliyun_security_group](./_assets/aliyun_security_group.png)
 
 ### 删除对等连接
 
-删除对等连接，您需要确保对等连接状态为 `running`
+删除对等连接，您需要确保对等连接状态为 `运行中`
 
 > 注意: 删除对等连接前，请确保部署不存在任何关联的资源，否则将导致不可预估的风险
 
 1. 进入部署详情
 
-2. 点击对等连接右侧 `删除按钮`
+2. 点击对等连接右侧 `删除按钮`，点击确认后完成删除
 
-   ![cloud_vpc_peering_info](./_assets/delete_deployment_peering.png)
+   ![delete_aliyun_peering](./_assets/delete_aliyun_peering.png)
 
 ## 华为云平台对等连接
 
