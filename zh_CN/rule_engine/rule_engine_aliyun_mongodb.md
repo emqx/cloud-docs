@@ -3,7 +3,7 @@
 该功能在基础版中不可用
 :::
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将数据转存到阿里云 MongoDB。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到阿里云 MongoDB。
 
 在开始之前，您需要完成以下操作：
 
@@ -13,7 +13,7 @@
   
 ## 购买阿里云 MongoDB
 
-1. 创建阿里云 云数据库MongoDB
+1. 创建阿里云云数据库 MongoDB
   
     如果您是初次接触阿里云云数据库 MongoDB，建议您跟随[快速入门](https://help.aliyun.com/document_detail/26572.html)进行创建。
 
@@ -36,7 +36,7 @@
 ## EMQX Cloud 数据集成配置
 1. 创建资源
 
-    点击左侧菜单栏`数据集成`，在数据持久化下找到 MySQL，点击新建资源。
+    点击左侧菜单栏`数据集成`，在数据持久化下找到 `MongoDB Relica Set 模式`，点击新建资源。
 
     ![](./_assets/mongodb_relica_set.png)
 
@@ -49,7 +49,7 @@
     - 连接认证源
     - 数据集名称
 
-    其中, `服务器地圵`和 `副本集名称` 可以在下图的位置找到
+    其中, `服务器地圵`和 `副本集名称` 可以在阿里云控制台，下图的位置找到
 
     ![阿里云 MongoDB 连接地址](./_assets/aliyun_mongodb_address.png)
 
@@ -66,7 +66,7 @@
       
     "temp_hum/emqx"
     ```
-   ![规则引擎](./_assets/sql_test.png)
+   ![数据集成](./_assets/sql_test.png)
 
 3. 添加响应动作
   
@@ -75,13 +75,18 @@
     ![](./_assets/aliyun_mongodb_create_action.png)
 
 4. 查看资源详情
+
    动作创建完以后，返回列表点击资源可以查看详情
-  ![](./_assets/aliyun_mongo_resource_detail.png)
+
+   ![](./_assets/aliyun_mongo_resource_detail.png)
 5. 查看规则详情
+
    资源详情界面点击规则可以查看规则监控信息和规则详情
+
    ![](./_assets/aliyun_mongo_monitor.png)
 
 ## 测试
+
 1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth.md)。
@@ -97,4 +102,5 @@
       ```
 
 2. 查看数据转存结果
+
     ![](./_assets/aliyun_mongodb_query_result.png)
