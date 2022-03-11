@@ -1,8 +1,8 @@
-# Save device data to Redis using the Rule Engine
+# Save device data to Redis using the Data Integrations
 
 In this article, we will simulate the temperature and humidity
 data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud
-rule engine to store the data to Redis.
+Data Integrations to store the data to Redis.
 
 Before you start, you will need to complete the following:
 
