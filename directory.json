@@ -533,7 +533,7 @@
           "path": "deployments/acl"
         },
         {
-          "title": "Rule Engine",
+          "title": "Data Integrations",
           "path": "deployments/rule_engine"
         },
         {
@@ -644,7 +644,7 @@
       ]
     },
     {
-      "title": "Rule Engine",
+      "title": "Data Integrations",
       "children": [
         {
           "title": "Introduction",
@@ -659,7 +659,7 @@
           "path": "rule_engine/resources"
         },
         {
-          "title": "Rule engine events",
+          "title": "Event Topics",
           "path": "rule_engine/rule_engine_events"
         },
         {

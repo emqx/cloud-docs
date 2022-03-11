@@ -20,8 +20,8 @@ None
 
 | Name                            | Type    | Description                                                  |
 | ------------------------------- | ------- | ------------------------------------------------------------ |
-| actions.failure                 | Integer | Number of failure executions of the rule engine action       |
-| actions.success                 | Integer | Number of successful executions of the rule engine action    |
+| actions.failure                 | Integer | Number of failure executions of the action       |
+| actions.success                 | Integer | Number of successful executions of the action    |
 | bytes.received                  | Integer | Number of bytes received by EMQX Broker                     |
 | bytes.sent                      | Integer | Number of bytes sent by EMQX Broker on this connection      |
 | client.authenticate             | Integer | Number of client authentications                             |

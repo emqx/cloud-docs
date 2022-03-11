@@ -10,7 +10,7 @@ For first-time EMQX Cloud customers, we have an opportunity for you to create a 
 
 * 100 GB free traffic per month.
 
-* Use all EMQX features such as rule engine, monitoring management, etc.
+* Use all EMQX features such as Data Integrations, monitoring management, etc.
 
 * Support for MQTT, WebSockets, MQTT over TLS/SSL, WebSockets over TLS protocol connections.
 

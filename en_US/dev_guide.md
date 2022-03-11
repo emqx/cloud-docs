@@ -7,15 +7,15 @@ This document provides a guide plan for EMQX Cloud to integrate the user's own d
 - **Device authentication information management:** The platform uses REST API to add, delete, check, and modify authentication information. For API usage, refer to[Authentication Management](https://docs.emqx.io/en/cloud/latest/api/auth.html)
 - **View online status of device:**
   - The platform obtains a list of online devices through the REST API to check whether the device is online. For API usage, please refer to [Client Management](https://docs.emqx.io/en/cloud/latest/api/client.html).
-  - The platform uses the rule engine to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
+  - The platform uses the Data Integrations to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
 - **Device offline alarm:** Notify the platform when the device is offline to determine whether an alarm is needed.
 - **Device online and offline history:**
-  - The platform uses the rule engine to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
+  - The platform uses the Data Integrations to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
 - **Device publish and subscribe to ACL permission management:** The platform uses the REST API to add, delete, check and modify ACL permissions. For API usage, refer to [Access Control(ACL) Management](https://docs.emqx.io/en/cloud/latest/api/acl.html).
 - **Kick online device offline:** The platform kicked off online devices.
 - **Proxy subscription:** The platform uses the REST API to subscribe or unsubscribe to topics for **online devices**. For API usage, please refer to [Topic subscription](https://docs.emqx.io/en/cloud/latest/api/topic.html).
 - **Publish a message to the device:** The platform publishes messages to specified topics through REST API or MQTT access, and supports batch operations. For API usage, refer to [Message Publish](https://docs.emqx.io/en/cloud/latest/api/pub.html).
-- **Get device messages for bridging/storing:** Through the rule engine, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
+- **Get device messages for bridging/storing:** Through the Data Integrations, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
 - **Business( such as message sending and receiving, connections) statistics:** Get relevant statistics through REST API. For API usage, please refer to [Metrics](https://docs.emqx.io/en/cloud/latest/api/metrics.html).
 
 ​            ![img](https://static.emqx.net/images/a912409d8db446e61567c4749946023c.png)            
@@ -44,7 +44,7 @@ To obtain the online status of the device, EMQX Cloud itself can query the onlin
 
 ​            ![img](./_assets/http_rest_api.png)            
 
-- The platform uses the rule engine to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
+- The platform uses the Data Integrations to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
 
 ​            ![img](./_assets/http_rest_api_rule_engine.png)            
 
@@ -56,7 +56,7 @@ See the device online and offline history below.
 
 ## Device online and offline history
 
-The platform uses the rule engine to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
+The platform uses the Data Integrations to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
 
 After receiving the device offline notification, the platform can perform offline alarm related services.
 
@@ -100,7 +100,7 @@ The platform publishes messages to specified topics through REST API or MQTT acc
 
 ## Get device messages for bridging/storing
 
-Through the rule engine, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
+Through the Data Integrations, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
 
 
 

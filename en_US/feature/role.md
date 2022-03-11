@@ -132,7 +132,7 @@ Role list
       <td>Read only</td>
    </tr>
    <tr>
-   	  <td>Rule Engine Configuration</td>
+   	  <td>Data Integrations Configuration</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>

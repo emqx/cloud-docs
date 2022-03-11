@@ -48,7 +48,7 @@ Support [one-way](../deployments/tls_ssl.md),[two-way](../deployments/tls_ssl.md
 
 
 ## How to integrate with other systems?
-You can use Rule Engine to integrate with other applications. Check [Rule Engine](../rule_engine/introduction.md) for more details.
+You can use Data Integrations to integrate with other applications. Check [Data Integrations](../rule_engine/introduction.md) for more details.
 
 ## The authentication data of the device is stored in my own database. Can I do the authentication of MQTT connections through my own database?
 It is not yet supported to get data directly from your own database. You can import data from csv files together. Or you can submit a ticket or send an email (cloud@emqx.io) to us.
