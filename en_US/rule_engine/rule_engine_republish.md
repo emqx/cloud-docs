@@ -17,10 +17,12 @@ In order to achieve this function, we will complete the following 3 tasks in tur
 Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
 
 1. Data Forward
+   
    Click on Data Integrations on the left menu bar, drop down to select the Republish resource type.
    ![data integration](./_assets/data_integrations_republish.png)
 
 2. Rule Testing
+   
    Our goal is that as long as the msg contains the string of 'hello' in any message, the engine will be triggered. Certain SQL processing is required here:
 
 - Target all topics, that is '#'
@@ -66,13 +68,15 @@ Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
   ![测试 SQL](./_assets/republish_create_rule_2.png)
 
 3. Add a response action
+   
    Click to Next. In the configuration action page, set the target topic to greet, fill in "${msg} - forward from emqx cloud" in the message content template, and set the target QoS as default. Click confirm.
   ![action](./_assets/republish_action.png)
 
 4. View rules monitoring
+   
    ![view monitor](./_assets/republish_view_monitor.png)
 
-## 3. Test
+## Test
 
 > If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 

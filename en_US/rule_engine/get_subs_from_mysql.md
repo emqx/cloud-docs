@@ -51,6 +51,7 @@ Before you start, you need to complete the following operations:
    :::
 
 4. Set the EMQX cluster IP segment to be allowed to access the database (optional)
+   
    For professional deployment, if you want to get deployment segment, you can go to Deployment Details → View Peer Connection Information and copy the deployment VPC segment.
 
    ```sql
@@ -79,7 +80,8 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
    ![data integrations](./_assets/data_integrations_get_sub_from_mysql.png)
    ![create resource](./_assets/create_mysql_resource_get_subs_from_mysql.png)
 
-2. Fill in rules
+2. Fill in rule
+   
    Click `Data Integration` on the left menu bar, find the configured resource, click New Rule, and then enter the following rule to match the SQL statement
 
    ```sql
@@ -89,19 +91,23 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
    ![create resource](./_assets/rule_get_subs_mysql.png)
 
 3. Add a response action
+   
    Click Next, select the resource created in the first step, drop down and select Action Type → Proxy Subscriptions → Get Subscription List from MySQL
 
    ![mysql action](./_assets/get_subs_mysql_action.png)
 
 4. Return to the list of rules
+   
    ![rule list](./_assets/view_rule_engine_mysql_get_subs.png)
 
 5. View rules monitoring
+   
    ![monitor](./_assets/view_monitor_mysql_get_subs.png)
 
 ## Test
 
 1. Inserting subscription data in MySQL
+   
    Insert the subscription data with client ID client1, subscription topic1 and QoS 1.
 
    ```sql
@@ -117,5 +123,6 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
    ![mqttx_rusult](./_assets/connect_mqtt_get_subs_mysql.png)
 
 3. View subscription relationships in the Dashboard
+   
    Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord and view the client subscription relationship in `Subscriptions`.
    ![monitor](./_assets/dashboard_get_subs_mysql.png)

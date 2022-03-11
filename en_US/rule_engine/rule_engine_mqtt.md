@@ -49,6 +49,7 @@ On the deployment page, drop down to select the MQTT Bridge resource type.
    ![create resource](./_assets/mqttbridge_resource.png)
 
 2. Rule Testing
+   
    Our goal is to trigger the engine when the topic of greet receives messages. Certain SQL processing is required here:
 
 - Only target 'greet/#'
@@ -66,6 +67,7 @@ On the deployment page, drop down to select the MQTT Bridge resource type.
   ![add_rule](./_assets/mqttbridge_rule_2.png)
 
 3. Add a response action
+   
    Click Next, select the resource created in the first step, and fill in "${msg} FROM EMQX CLOUD" in the message content template, and click confirm:
    ![add_action](./_assets/mqttbridge_action.png)
 
