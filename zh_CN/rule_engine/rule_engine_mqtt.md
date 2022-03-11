@@ -1,23 +1,24 @@
-# 使用 EMQX Cloud 规则引擎桥接数据到 MQTT Broker
+# 使用 EMQX Cloud 数据集成桥接数据到 MQTT Broker
 
-为了方便多个 MQTT Broker 进行消息桥接，你可以使用规则引擎进行操作。
+为了方便多个 MQTT Broker 进行消息桥接，你可以使用数据集成进行操作。
 
-这篇指南会创建一个 MQTT Broker 桥接的规则引擎，实现下面的功能：
+这篇指南会创建一个 MQTT Broker 桥接的数据集成，实现下面的功能：
 
 - 将所有发送到 greet 主题的消息，转发到另一个 MQTT Broker 上
 
 
 
-为了实现这个功能，我们会完成以下 4 个任务：
+为了实现这个功能，我们会完成以下 5 个任务：
 
 1. 开启 Mosquitto 服务
-2. 设置规则引擎的筛选条件
-3. 创建一个资源和一个动作
-4. 完成规则引擎创建，并进行测试
+2. 创建 Broker Bridge 资源
+3. 创建规则
+4. 新建动作
+5. 完成数据集成创建，并进行测试
 
 >注意:
 >
->在使用规则引擎前，请先创建部署。
+>在使用数据集成前，请先创建部署。
 >
 >对于专业版部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的资源都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP（专业版部署若开通 NAT 网关也可使用公网 IP 进行连接）
 >
@@ -84,6 +85,6 @@ FROM
 
 在第三步配置动作时，我们将挂载点设为 `emqx/`，所以这里用客户端订阅 Mosquitto 的 `emqx/#` 主题。
 
-同时我们发送 "hello" 到 EMQX Cloud 的 greet 主题，规则引擎就会触发。可以看到 Mosquitto 已经收到消息 "hello FROM EMQX CLOUD"
+同时我们发送 "hello" 到 EMQX Cloud 的 greet 主题，数据集成就会触发。可以看到 Mosquitto 已经收到消息 "hello FROM EMQX CLOUD"
 
 ![收到转发的消息](./_assets/mqtt_bridge_test.png)
