@@ -1,6 +1,6 @@
-# 使用 EMQX Cloud 规则引擎转发数据到 WebHook
+# 使用 EMQX Cloud 数据集成转发数据到 WebHook
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将数据转存到 WebHook。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到 WebHook。
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
@@ -16,16 +16,16 @@
    
    class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
        def do_GET(self):
-         self.send_response(200)
-         self.end_headers()
-         self.wfile.write(b'Hello, world!')
-      
+          self.send_response(200)
+          self.end_headers()
+          self.wfile.write(b'Hello, world!')
+
        def do_POST(self):
-           content_length = int(self.headers['Content-Length'])
-           body = self.rfile.read(content_length)
-           print("Received POST request with body: " + str(body))
-           self.send_response(201)
-           self.end_headers()
+          content_length = int(self.headers['Content-Length'])
+          body = self.rfile.read(content_length)
+          print("Received POST request with body: " + str(body))
+          self.send_response(201)
+          self.end_headers()
    
    httpd = HTTPServer(('0.0.0.0', 8080), SimpleHTTPRequestHandler)
    httpd.serve_forever()
@@ -60,7 +60,7 @@
 
    我们可以使用 `SQL 测试` 来测试查看结果
 
-   ![规则引擎](./_assets/sql_test.png)
+   ![数据集成](./_assets/sql_test.png)
 
 3. 新建响应动作
 
@@ -90,7 +90,15 @@
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth.md)。
 
-   ![MQTTX](./_assets/mqttx_publish.png)
+    - topic: `temp_hum/emqx`
+    - payload:
+
+      ```json
+      {
+        "temp": "27.5",
+        "hum": "41.8"
+      }
+      ```
    
 2. 查看数据转发结果
     
