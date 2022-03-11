@@ -1,28 +1,25 @@
-# Bridge device data to MQTT Broker using the Rule Engine
+# Bridge device data to MQTT Broker Using the Data Integrations
 
-In order to facilitate the message bridging of multiple MQTT Brokers, you can use the rule engine to operate.
+In order to facilitate the message bridging of multiple MQTT Brokers, you can use the Data Integrations to operate.
 
-This guide will create a rule engine bridged by MQTT Broker to achieve the following functions:
+This guide will create a a data integration bridged by MQTT Broker to achieve the following functions:
 
 - Forward all messages sent to the greet topic to another MQTT Broker
-
-
 
 In order to achieve this function, we will complete the following 4 tasks:
 
 1. Start Mosquitto service
-2. Set the filter conditions of the rule engine
+2. Set the filter conditions of the data integration
 3. Create a resource and an action
-4. Complete the rule engine creation and test
+4. Complete the data integrations creation and test
 
-::: tip Tip
+:::tip Tip
 Before using the rule engine, create a deployment first.
 For professional deployment users: please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
 For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
 :::
 
-
-## 1. Create Mosquitto service
+## Create Mosquitto service
 
 In your cloud server, create a mosquitto service. For the convenience of demonstration, we use docker to build quickly here. (Do not use it in production environment)
 
@@ -32,62 +29,52 @@ docker run -it -p 1883:1883 --name mosquitto eclipse-mosquitto:1.6
 
 After that, open the server's 1883 port
 
-## 2. Set the filter conditions of the rule engine
+## EMQX Cloud Data Integrations configuration
 
 Enter [EMQX Cloud Console](https://cloud-intl.emqx.com/console/), and click to enter the deployment to use MQTT Broker bridge.
 
-On the deployment page, select the rule engine and click Create.
+On the deployment page, drop down to select the MQTT Bridge resource type.
 
-![rule_engine](./_assets/view_rule_engine.png)
+![data_integration](./_assets/data_integrations_mqtt_bridge.png)
 
-Our goal is to trigger the engine when the topic of greet receives messages. Certain SQL processing is required here:
+## Create resources and actions
 
-* Only target 'greet/#'
+1. New Resource
 
-According to the above principles, the SQL we finally get should be as follows:
+   Click on Data Integrations on the left menu bar,fill in the private address of the server in the remote broker address, place the mount point on emqx/, and click Test. If "test available" returns, it means the test was successful.
+   ::: tip Tip
+   If the test fails, please check whether the [VPC peering connection](../deployments/vpc_peering.md) is completed and whether the IP address is correct.
+   :::
 
-```sql
-SELECT
-  payload.msg as msg
-FROM
-  "greet/#"
-```
+   ![create resource](./_assets/mqttbridge_resource.png)
 
+2. Rule Testing
+   Our goal is to trigger the engine when the topic of greet receives messages. Certain SQL processing is required here:
 
-## 3. Create resources and actions
-Click Add Action. On the Select Action page, select Bridge Data to MQTT Broker, click Next, and on the Configure Action page, click Create Resource.
-![add_action](./_assets/add_webhook_action01.png)
+- Only target 'greet/#'
 
-![Bridge MQTT Broker](./_assets/add_mqtt_action02.png)
+  According to the above principles, the SQL we finally get should be as follows:
 
+  ```sql
+  SELECT
+    payload.msg as msg
+  FROM
+    "greet/#"
+  ```
 
+  ![add_rule](./_assets/mqttbridge_rule.png)
+  ![add_rule](./_assets/mqttbridge_rule_2.png)
 
-On the Create Resource page, select MQTT Bridge as the resource type, fill in the private address of the server in the remote broker address, place the mount point on emqx/, and click Test. If "test available" returns, it means the test was successful.
+3. Add a response action
+   Click Next, select the resource created in the first step, and fill in "${msg} FROM EMQX CLOUD" in the message content template, and click confirm:
+   ![add_action](./_assets/mqttbridge_action.png)
 
-::: tip Tip
-If the test fails, please check whether the [VPC peering connection](../deployments/vpc_peering.md) is completed and whether the IP address is correct. 
-:::
+## Test
 
-
-![MQTT Config](./_assets/add_mqtt_action03.png)
-
-Click OK to return to the configuration action page. The resource just created is selected by default. Fill in "${msg} FROM EMQX CLOUD" in the message content template, and click OK.
-
-![template](./_assets/add_mqtt_action04.png)
-
-The created action will be displayed in the response action column. After confirming that the information is correct, click Create in the lower right corner to complete the configuration of the rule engine.
-
-![add](./_assets/add_mqtt_action05.png)
-
-
-
-## 4. Test
-
->If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
+> If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
 When configuring the action in the third step, we set the mount point to emqx/. Therefore, we use the client to subscribe to the topic emqx/# of Mosquitto.
 
 At the same time, we send "hello" to the greet topic of EMQX Cloud, and the rule engine will be triggered. We can see that Mosquitto has received the message of "hello FROM EMQX CLOUD"
 
-![messages](./_assets/add_mqtt_action06.png)
-
+![messages](./_assets/mqttbridge_mqttx_result.png)
