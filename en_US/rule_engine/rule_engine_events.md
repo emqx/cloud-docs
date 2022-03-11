@@ -1,6 +1,6 @@
 # Event Topics
 
-The Rule of Data Integration provides several event topics available for FROM clause.
+The Rule of Data Integrations provides several event topics available for FROM clause.
 
 | Event topic name | Explanation |
 | ---- | ---- |

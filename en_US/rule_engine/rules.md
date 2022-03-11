@@ -10,7 +10,7 @@ The rule describes the three configurations of "where the data comes from", "how
 
 ## Create rules
 ::: tip Tip
-Before creating a rule, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md), and [created a resource](resource.md)
+Before creating a rule, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md), and [created a resource](resources.md)
 :::
 
 1. We will attach the rule to the TimescaleDB resource as an example. Either create a rule directly from the notification or the resource detail page.

@@ -1,6 +1,6 @@
 # Resource
 
-EMQX Cloud resources are the key concept for Data Integration. Most of the resources are the services provided by the cloud providers. Before starting, you need to ensure that the deployment status is `running`. 
+EMQX Cloud resources are the key concept for Data Integrations. Most of the resources are the services provided by the cloud providers. Before starting, you need to ensure that the deployment status is `running`. 
 
 In a professional plan, we provide all the resources. However, in a standard plan, only `MQTT Bridge`, `Republish`, `Webhook`, `debug mode` are available. Because other resources require a VPC peering and can only be connected through Intranet. 
 
@@ -30,7 +30,7 @@ If you created a resource, it will be listed on the overview page. You can add a
 ## Resource Detail
 1. Click the resource ID link to view the resource detail. The Basic Information section and Configuration section show the default information and the content you fill in during the set-up.
 
-2. The related rules section shows all the rules attached to this resource. A resource can correspond to more than one rule. [Read more about Rules](./rule.md). 
+2. The related rules section shows all the rules attached to this resource. A resource can correspond to more than one rule. [Read more about Rules](./rules.md). 
 
    ![resource-add](./_assets/resource_07.png)
 
