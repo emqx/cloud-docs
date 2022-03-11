@@ -1,26 +1,26 @@
-# Use EMQX Cloud rule engine-InfluxDB
+# Save device data to InfluxDB using the Data Integrations
 
 [InfluxDB](https://www.influxdata.com/) is an open source database for storing and analyzing time series data, with built-in HTTP API, support for SQL-like statements, and unstructured features that are very friendly for users. Its powerful data throughput and stable performance make it very suitable for the IoT field.
 
-Through the EMQX Cloud rule engine, we can customize the Template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
+Through the EMQX Cloud Data Integrations, we can customize the Template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
 
 
 
-In this guide, we will complete the creation of an InfluxDB rule engine to achieve the following functions:
+In this guide, we will complete the creation of an InfluxDB data integration to achieve the following functions:
 
-* Record the temperature and humidity of each room. When there is a temperature and humidity monitoring message sent to the home/sensor topic, the rule engine will be triggered to record this data in InfluxDB.
+* Record the temperature and humidity of each room. When there is a temperature and humidity monitoring message sent to the home/sensor topic, the Data Integrations will be triggered to record this data in InfluxDB.
 
 
 
 To achieve this function, we will complete the following 4 tasks:
 
 1. Install and initialize InfluxDB
-2. Set the filter conditions of the rule engine
+2. Set the filter conditions of the rule
 3. Create a resource and action
-4. Complete the rule engine creation and test
+4. Complete the data integration creation and test
 
 ::: tip
-Before using the rule engine, create a deployment first.
+Before using the Data Integrations, create a deployment first.
 For professional deployment users: please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
 For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
 :::
@@ -148,7 +148,7 @@ For our situation, this part can be filled in like this
 
 After filling in, click OK.
 
-The created action will be displayed in the response action column. After confirming that the information is correct, click Confirm in the lower right corner to complete the configuration of the rule engine.
+The created action will be displayed in the response action column. After confirming that the information is correct, click Confirm in the lower right corner to complete the configuration of the data integration.
 
 ## 5. Test
 
@@ -165,7 +165,7 @@ We try to send the following data to the home/sensor topic
   }
 }
 ```
-On the rule engine page, click Monitor and you can see that the number of successes becomes 1.
+On the Data Integrations page, click Monitor and you can see that the number of successes becomes 1.
 
 ![success](./_assets/test_rule_engine_influxDB.png)
 

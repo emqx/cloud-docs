@@ -1,13 +1,13 @@
-# Save device data to InfluxDB using the Rule Engine
+# Save device data to InfluxDB 2.0 using the Data Integrations
 
 [InfluxDB](https://www.influxdata.com/) is an open source database for storing and analyzing time-series data, with built-in HTTP API, support for SQL-like statements, and unstructured features that are very friendly for users. Its powerful data throughput and stable performance make it very suitable for the IoT field.
 
-Through the EMQX Cloud rule engine, we can customize the template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
+Through the EMQX Cloud Data Integrations, we can customize the template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
 
 
-In this guide, we will complete the creation of an InfluxDB rule engine to achieve the following functions:
+In this guide, we will complete the creation of an InfluxDB data integration to achieve the following functions:
 
-* Record the temperature and humidity of Prague. When there is a temperature and humidity message sent to the emqx/test topic, the rule engine will be triggered to record this data in InfluxDB.
+* Record the temperature and humidity of Prague. When there is a temperature and humidity message sent to the emqx/test topic, the Data Integrations will be triggered to record this data in InfluxDB.
 
 
 In order to achieve this function, we will complete the following 4 tasks:
@@ -19,7 +19,7 @@ In order to achieve this function, we will complete the following 4 tasks:
 5. View results in the InfluxDB console
 
 ::: tip
-Before using the rule engine, create a deployment first.
+Before using the Data Integrations, create a deployment first.
 For professional deployment users: please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the intranet IP of the resource
 For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
 :::
