@@ -10,7 +10,7 @@ Most public cloud IoT platforms have multiple usage restrictions, including the 
 
 ## Significant cost advantages
 
-Charge per cluster instance and message traffic, not message count, and unlimited API and rule engine usage, so costs remain clear and manageable as your business scales.
+Charge per cluster instance and message traffic, not message count, and unlimited API and Data Integrations usage, so costs remain clear and manageable as your business scales.
 
 ## Fully managed operations and maintenance
 

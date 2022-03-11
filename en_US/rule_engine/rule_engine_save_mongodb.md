@@ -2,7 +2,7 @@
 
 In this article, we will simulate the temperature and humidity
 data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud
-rule engine to store the data to MongoDB.
+Data Integrations to store the data to MongoDB.
 
 Before you start, you need to complete the following operations:
 

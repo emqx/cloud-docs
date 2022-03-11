@@ -2,7 +2,7 @@
 
 ## How to bill?
 
-EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
+EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and Data Integrations.
 
 For detailed billing rules, you can view [Product Pricing](../price/pricing.md)
 

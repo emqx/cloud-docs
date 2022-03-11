@@ -22,11 +22,11 @@ EMQX Cloud supports device data on the cloud. With the support of massive topics
 
 ![data collection](./_assets/data_collection.png)
 
-In this model, the MQTT service provided by EMQX Cloud enables data collection, computation, and persistence. This model is suitable for IoT applications with data collection and persistence requirements, such as: in industrial scenarios, each IoT sensor collects real-time data to the edge gateway, uploads the data to the MQTT server through the edge gateway, and then the rule engine triggers data filtering, transformation, and simple calculation, and forwards the final result to other services or persists to the target database. EMQX Cloud provides a variety of access solutions for different functionalities of the network, industrial, and edge devices, and supports more than 70 industrial protocols.
+In this model, the MQTT service provided by EMQX Cloud enables data collection, computation, and persistence. This model is suitable for IoT applications with data collection and persistence requirements, such as: in industrial scenarios, each IoT sensor collects real-time data to the edge gateway, uploads the data to the MQTT server through the edge gateway, and then the Data Integrations triggers data filtering, transformation, and simple calculation, and forwards the final result to other services or persists to the target database. EMQX Cloud provides a variety of access solutions for different functionalities of the network, industrial, and edge devices, and supports more than 70 industrial protocols.
 
 ### *Hybrid Model*
 
-EMQX Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and rule engines, data is persisted while flowing from object to object and from object to application.
+EMQX Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and Data Integrations, data is persisted while flowing from object to object and from object to application.
 
 ![hybrid model](./_assets/hybrid_model.png)
 
@@ -63,7 +63,7 @@ Multi-protocol and private protocol support, please contact us by [ticket](featu
 
 ### Device Management
 
-EMQX Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and rule engines. The unlimited plan of EMQX Cloud provides enterprise-class device management capabilities, allowing users to create and manage device objects directly with the enterprise plan, and manage edge endpoint devices and gateway devices with features unique to the unlimited plan such as device shadowing and cloud edge collaboration.
+EMQX Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. The unlimited plan of EMQX Cloud provides enterprise-class device management capabilities, allowing users to create and manage device objects directly with the enterprise plan, and manage edge endpoint devices and gateway devices with features unique to the unlimited plan such as device shadowing and cloud edge collaboration.
 
 ![device_manager_1](./_assets/device_manage1.png)
 
@@ -74,12 +74,12 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 - **Device online status view**：
 
   - The platform gets the list of online devices through REST API and queries whether the devices are online.
-  - The platform rewrites the status of devices in the private database or sends it to the self-built service (Web service) when the devices are online or offline through the rule engine
+  - The platform rewrites the status of devices in the private database or sends it to the self-built service (Web service) when the devices are online or offline through the Data Integrations
   - Device offline alarm: Notify the platform when the device is offline and determine whether it needs to be alarmed
 
 - **Device up/down history**:
 
-  - The platform writes the up/down information to the private database or sends it to the self-built service (Web service) when the device is online or offline through the rule engine.
+  - The platform writes the up/down information to the private database or sends it to the self-built service (Web service) when the device is online or offline through the Data Integrations.
   - ACL Permission Management: The platform adds, deletes, checks, and changes ACL permissions through REST API.
 
 - **Online device kick-off**: The platform kicks off the online device
@@ -92,18 +92,18 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 
 **Professional and Unlimited plans only**
 
-- **Bridging/storage of device messages**: Store device events (up/down, subscribe/unsubscribe, message publishing) and message data to private databases (mainstream relational/non-relational, various temporal databases), message queues Kafka, and self-built web services via rule engine.
+- **Bridging/storage of device messages**: Store device events (up/down, subscribe/unsubscribe, message publishing) and message data to private databases (mainstream relational/non-relational, various temporal databases), message queues Kafka, and self-built web services via Data Integrations.
 
 **Unlimited Plan only**
 
 - **Device Shadowing**：Indirectly get the status of the device, whether it is offline or not, through device shadowing, and modify the device properties through device shadowing. Automatic synchronization of device shadow status when the device is online.
 - **Edge Computing**: Create and manage edge gateways and end devices through the Unlimited plan management platform, and configure edge gateways and devices.
 
-### Message Storage (Rule Engine)
+### Message Storage (Data Integrations)
 
-EMQX Cloud supports the use of the rule engine to configure rules for processing and responding to devise messages and events.
+EMQX Cloud use Data Integrations to configure rules for processing and responding to devise messages and events.
 
-The rule engine not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
+The Data Integrations not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
 
 ![](./_assets/rule_engine.png)
 

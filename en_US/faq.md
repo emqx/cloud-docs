@@ -67,13 +67,13 @@ For the configuration method, please refer to [configure TLS/SSL](deployments/./
 
 ### How to connect with my existing system?
 
-You can use the rule engine to connect with your existing functions. For details, see [Rule Engine](rule_engine/introduction.md)
+You can use the Data Integrations to connect with your existing functions. For details, see [Data Integrations](rule_engine/introduction.md)
 
 ## Billing
 
 ### How to bill?
 
-EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and rule engines.
+EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and Data Integrations.
 
 For detailed billing rules, you can view [Product Pricing](./price/pricing.md)
 

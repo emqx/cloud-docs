@@ -1,6 +1,6 @@
 # Billing Items
 
-EMQX Cloud is billed by product plan, instance specification, and messaging network traffic. There is no limit to the number of messages, API calls, and rule engine usage. You can choose the product and specification to suit your business, ensuring that costs remain clear and manageable as your business expands.
+EMQX Cloud is billed by product plan, instance specification, and messaging network traffic. There is no limit to the number of messages, API calls, and Data Integrations usage. You can choose the product and specification to suit your business, ensuring that costs remain clear and manageable as your business expands.
 
 EMQX Cloud's billing consists of two components.
 
