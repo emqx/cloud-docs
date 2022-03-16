@@ -1,10 +1,10 @@
-# 使用 EMQX Cloud 规则引擎保存离线消息到 Redis
+# 使用 EMQX Cloud 数据集成保存离线消息到 Redis
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将离线消息转存到 Redis。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将离线消息转存到 Redis。
 
 ::: danger
 保存离线消息需要 QoS > 0
@@ -22,16 +22,16 @@
    docker run -d --name redis -p 6379:6379 redis
    ```
 
-## EMQX Cloud 规则引擎配置
+## EMQX Cloud 数据集成配置
 
 1. 资源创建
 
-   点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 Redis 单节点模式 资源类型。填入刚才创建好的 Redis 信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+   点击左侧菜单栏`数据集成`，找到资源面板，点击新建资源，下拉选择 Redis 单节点模式 资源类型。填入刚才创建好的 Redis 信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
 
    ![创建资源](./_assets/redis_create_resource.png)
 
 2. 规则测试
-   点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。我们将主题为 `temp_hum/emqx` 的消息信息读取出来。
+   点击左侧左侧菜单栏`数据集成`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。我们将主题为 `temp_hum/emqx` 的消息信息读取出来。
 
    ```sql
    SELECT
@@ -43,7 +43,7 @@
    WHERE
        topic =~ 'temp_hum/emqx'
    ```
-   ![规则引擎](./_assets/offonline_sql_test.png)
+   ![数据集成](./_assets/offonline_sql_test.png)
 
 3. 添加响应动作
    点击左下角添加动作，下拉选择 → 离线消息 → 离线消息保存到 Redis，选择第一步创建好的资源

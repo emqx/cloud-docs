@@ -1,52 +1,50 @@
 # 资源
 
-EMQX Cloud 资源用于规则引擎响应动作， 在此之前您需要确保部署状态为**运行中**。您可以参阅 [EMQX 规则引擎](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html) 了解更多资源创建。
+EMQX Cloud 资源是数据集成的关键概念。大多数的资源是由云服务商提供的服务。在开始之前，你需要确保当前部署正在运行。
+
+在专业版中，我们支持所有的资源。然而在标准版中，只有`MQTT桥接`、`消息重新发布`、`Webhook`、`调试`模式是可用的。因为其他资源需要配置VPC 对等连接，只能通过内网连接。
 
 
+::: tip Tip
+在添加一个资源之前, 你需要确保已经配置了 [VPC 对等连接](../deployments/vpc_peering.md). 或者可以开通 [NAT 网关](../vas/nat-gateway.md) 从公网来连接你的其他云服务.
+:::
 
-## 简单示例
 
-如下图所示资源，是 WebHook 资源，请求 URL 为某个 IP 的 9910 端口，请求方法为 POST，请求头为空
+## 资源概览
 
-![img](./_assets/resource-detail.png)
+EMQX Cloud 列出的所有资源的概览页面。最常用的类型是数据转发和数据持久化。比如将数据转发到Kafka集群或将数据保存到MongoDB。从可用资源的列表中选择项目之后进行配置。
+
+ ![resource-add](./_assets/resource_01.png)
+
 
 ## 创建资源
 
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
-
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击左侧菜单`规则引擎`，在资源面板点击`新建`按钮
-
-   ![resource-add](./_assets/resource-add.png)
-
-5. 选择相应资源类型，并填写相应资源配置信息
-
-   ![resource-config](./_assets/resource-config.png)
-
-6. 点击测试，如果没有报错则点击确认，否则请仔细检查资源配置信息
+我们设置了一个 Kafka 资源作为例子。选择 Kafka 选项，填写相应的资源配置并点击"测试"按钮。如果连接成功，将显示成功提示，并点击可查看资源。如果失败请检查资源配置。
 
 
-
-## 查看资源状态
-
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
-
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击左侧菜单`规则引擎`，在资源面板可以查看到资源状态
-
-   ![resource-status](./_assets/resource-status.png)
+![resource-add](./_assets/resource_02.png)
 
 
+如果你创建了一个资源，它将被列在概览页上。你也可以添加另一个资源。你创建的所有资源将被列在概览页上。你可以通过 "添加新资源"或"查看所有资源"的链接浏览所有资源。
 
+
+![resource-add](./_assets/resource_03.png)
+
+
+## 规则详情
+
+1. 点击资源ID链接，查看资源详情。基础信息和配置信息显示默认的配置和你在设置时填写的内容。
+
+2. 关联规则显示附属于该资源的所有规则。一个资源可以对应一个以上的规则。可以从这里创建基于该资源的规则。[了解规则](./rules.md)。
+
+   ![resource-add](./_assets/resource_04.png)
 
 ## 删除资源
 
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
+1. 在 "已配置的资源"列表中，点击"删除"按钮来删除一个资源。 
 
-2. 点击所需连接的部署，您将进入部署详情页面
+2. 必须输入资源的ID来确认删除。
 
-3. 点击左侧菜单`规则引擎`，在资源面板点击`删除`按钮
+   ![resource-add](./_assets/resource_05.png)
 
-   ![resource-delete](./_assets/resource-delete.png)
+3. 确保在删除资源之前，清空该资源下的所有规则。

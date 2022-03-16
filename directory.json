@@ -235,19 +235,19 @@
       ]
     },
     {
-      "title": "规则引擎",
+      "title": "数据集成",
       "children": [
         {
-          "title": "简介",
+          "title": "数据集成简介",
           "path": "rule_engine/introduction"
-        },
-        {
-          "title": "规则管理",
-          "path": "rule_engine/rules"
         },
         {
           "title": "资源管理",
           "path": "rule_engine/resources"
+        },
+        {
+          "title": "规则管理",
+          "path": "rule_engine/rules"
         },
         {
           "title": "事件订阅",
@@ -373,7 +373,7 @@
       "title": "最佳实践",
       "children": [
         {
-          "title": "规则引擎 + Redis 实时获取主题下订阅的客户端",
+          "title": "数据集成 + Redis 实时获取主题下订阅的客户端",
           "path": "best_practices/save_topic_clients_to_redis"
         }
       ]

@@ -1,10 +1,10 @@
-# 使用 EMQX Cloud 规则引擎从 MySQL 中获取订阅关系
+# 使用 EMQX Cloud 数据集成从 MySQL 中获取订阅关系
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将使用 EMQX Cloud 规则引擎从 MySQL 中获取订阅关系
+在本文中我们将使用 EMQX Cloud 数据集成从 MySQL 中获取订阅关系
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
@@ -72,17 +72,17 @@
    select * from mqtt_sub;
    ```
 
-## EMQX Cloud 规则引擎配置
+## EMQX Cloud 数据集成配置
 
 1. 资源创建
 
-   点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 MySQL 资源类型。填入刚才创建好的 mysql 数据库信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+   点击左侧菜单栏`数据集成`，找到资源面板，点击新建资源，下拉选择 MySQL 资源类型。填入刚才创建好的 mysql 数据库信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
 
    ![资源创建](./_assets/mysql_create_resource.png)
    
 2. 规则填写
 
-   点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句
+   点击左侧左侧菜单栏`数据集成`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句
    
    ```sql
    SELECT * FROM "$events/client_connected"
@@ -92,7 +92,7 @@
 
    点击左下角添加动作，下拉选择 → 代理订阅 → 从 MySQL 中获取订阅列表，选择第一步创建好的资源
 
-   ![规则引擎](./_assets/get_subs_mysql_action.png)
+   ![数据集成](./_assets/get_subs_mysql_action.png)
 
 4. 点击创建规则，并返回规则列表
 
