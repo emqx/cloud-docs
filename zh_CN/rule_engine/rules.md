@@ -19,7 +19,7 @@
 
 ![](./_assets/rule_intro_01.png)
 
-![](./_assets/rule_intro_012.png)
+![](./_assets/rule_intro_12.png)
 
 
 2. 在下面的规则语句中，我们从 temp_hum/emqx 主题中读取报告的时间up_timestamp，clientid，payload中的温度以及湿度。
