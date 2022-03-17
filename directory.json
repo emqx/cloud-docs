@@ -282,10 +282,6 @@
           "path": "rule_engine/rule_engine_save_timescaladb"
         },
         {
-          "title": "保存数据到 InfluxDB",
-          "path": "rule_engine/rule_engine_influxDB"
-        },
-        {
           "title": "保存数据到 Redis",
           "path": "rule_engine/rule_engine_save_redis"
         },
@@ -300,10 +296,6 @@
         {
           "title": "桥接数据到 华为云 Kafka",
           "path": "rule_engine/rule_engine_huawei_kafka"
-        },
-        {
-          "title": "离线消息保存到 Redis",
-          "path": "rule_engine/rule_engine_offonline_to_redis"
         },
         {
           "title": "从 MySQL 中获取订阅关系",

@@ -11,7 +11,7 @@
 
 ## 创建规则
 ::: tip Tip
-在创建一个规则之前, 你需要确定已经添加了 [VPC 对等连接](../deployments/vpc_peering.md), 以及 [创建了资源](./resources.md)
+在专业版中创建一个规则之前, 你需要确定已经添加了 [VPC 对等连接](../deployments/vpc_peering.md), 以及 [完成创建资源](./resources.md)
 :::
 
 1. 我们使用 Kafka 资源创建规则举例，可以在“已配置的资源”列表中创建规则，或者是从资源详情中新建规则
@@ -55,7 +55,7 @@ FROM
 {"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
 ```
 
-3. 一个规则可以与多个动作相关联。添加另一个动作，我们就可以改变目标资源。例如，我们可以把数据转发给 Kafka 的同时也可以把数据保存到 RDS。
+3. 一个规则可以与多个动作相关联。一个动作配置完成之后，还可以添加另一个动作，同时还可以改变目标资源。例如，我们可以一个动作把数据转发给 Kafka，同时另一个动作把数据保存到 RDS。
 
 ![](./_assets/rule_intro_05.png)
 
@@ -70,6 +70,8 @@ FROM
 点击编辑图标来编辑该规则。在编辑页面，你可以编辑规则的 SQL 模板，同时可以编辑、添加动作。
 
 ![](./_assets/rule_intro_07.png)
+
+编辑页面
 
 ![](./_assets/rule_intro_08.png)
 
