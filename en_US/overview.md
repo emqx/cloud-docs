@@ -18,7 +18,7 @@ In this model, EMQX Cloud provides MQTT services to connect massive devices and 
 
 ### *Data Collection*
 
-EMQX Cloud supports device data on the cloud. With the support of massive topics and rule engine, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
+EMQX Cloud supports device data on the cloud. With the support of massive topics and data integration, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
 
 ![data collection](./_assets/data_collection.png)
 

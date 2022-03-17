@@ -1,6 +1,6 @@
 # Save device data to PostgreSQL using the Data Integrations
 
-In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud rules engine to dump the data into PostgreSQL.
+In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud Data Integrations to dump the data into PostgreSQL.
 
 Before you start, you need to complete the following operations:
 

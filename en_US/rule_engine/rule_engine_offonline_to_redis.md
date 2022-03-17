@@ -1,4 +1,4 @@
-# Store Device Offline Messages to Redis Using the Rule Engine
+# Store Device Offline Messages to Redis Using Data Integrations
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud rules engine to dump the offline messages into Redis.
 
@@ -19,7 +19,7 @@ Before you start, you need to complete the following operations:
    docker run -itd --name redis -p 6379:6379 redis
    ```
 
-## EMQX Cloud rules engine configuration
+## Data Integrations configuration
 
 Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 
