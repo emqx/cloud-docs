@@ -1,8 +1,7 @@
-# Save device data to DynamoDB using the Rule Engine
+# Save device data to DynamoDB using Data Integrations
 
 In this article, we will simulate the temperature and humidity
-data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud
-rule engine to store the data to DynamoDB.
+data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud Data Integrations to store the data to DynamoDB.
 
 Before you start, you will need to complete the following:
 
@@ -52,11 +51,11 @@ You could create a new DynamoDB table by the following steps:
    ```   
 
 
-## Rule Engine Configuration
+## Configuration
 
 ### Create a new Rule
 
-* Select `Rule Engine` from the left menu bar and select the `+ New` button to go to the page of creating a new rule.
+* Select `Data Integrations` from the left menu bar and select the `+ New` button to go to the page of creating a new rule.
 
    ![Rule](./_assets/dynamo_rule.png)
 

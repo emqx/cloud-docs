@@ -26,7 +26,7 @@ Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
    Our goal is that as long as the msg contains the string of 'hello' in any message, the engine will be triggered. Certain SQL processing is required here:
 
 - Target all topics, that is '#'
-- Perform regular matching on the msg in the payload, and execute the rule engine if it contains the string of 'hello'
+- Perform regular matching on the msg in the payload, and execute the rule if it contains the string of 'hello'
 
   According to the above principles, the SQL we finally get should be as follows:
 
@@ -88,7 +88,7 @@ We try to send the following data to the test topic
 }
 ```
 
-On the rule engine page, click Monitor and you can see that the number of successes becomes 1.
+On the rule page, click Monitor and you can see that the number of successes becomes 1.
 
 ![查看动作指标](./_assets/republish_query_result.png)
 

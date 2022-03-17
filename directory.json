@@ -651,12 +651,12 @@
           "path": "rule_engine/introduction"
         },
         {
-          "title": "Rule Management",
-          "path": "rule_engine/rules"
-        },
-        {
           "title": "Resource Management",
           "path": "rule_engine/resources"
+        },
+        {
+          "title": "Rule Management",
+          "path": "rule_engine/rules"
         },
         {
           "title": "Event Topics",

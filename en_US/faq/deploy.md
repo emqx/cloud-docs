@@ -19,4 +19,4 @@ You can connect via client such as [MQTT X](https://mqttx.app). You can also con
 you need to double check the right deployment name before deleting a deployment. Deployments cannot be recovered after they have been deleted.
 
 ## How can I get the messages sent by the client in deployment console?
-Messages sent from the client cannot be viewed directly in the deployment console and need to be persisted using the rules engine for forwarding, while EMQX Cloud does not store client messages.
+Messages sent from the client cannot be viewed directly in the deployment console and need to be persisted using Data Integrations for forwarding, while EMQX Cloud does not store client messages.

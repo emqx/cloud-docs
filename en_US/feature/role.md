@@ -17,7 +17,7 @@ Here is the login page for sub-users (for subaccount login only)
 
 **Project Administrator**：Project Administrators have permission to view and modify projects and to modify and delete deployments. Project administrator is mainly used for project deployment-related management. For example, an organization needs to have separate cluster management and designate a person as administrator for a certain project. Assigning the project administrators will give them sufficient access instead of full access to the project.
 
-**Project User**：Project users have permission to view the project, and the permission to view and edit the deployment. Project users are usually business developers. In addition to viewing projects and deployment permissions, they can also view deployment details, use the rules engine and monitoring, and further process-related business requirements.
+**Project User**：Project users have permission to view the project, and the permission to view and edit the deployment. Project users are usually business developers. In addition to viewing projects and deployment permissions, they can also view deployment details, use Data Integrations and monitoring, and further process-related business requirements.
 
 **Accountant**：Accountants have financial management permissions and can view projects and deployments. They can manage the billing, balance, invoices, etc.
 
