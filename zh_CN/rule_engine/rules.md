@@ -22,7 +22,7 @@
 ![](./_assets/rule_intro_12.png)
 
 
-2. 在下面的规则语句中，我们从 temp_hum/emqx 主题中读取报告的时间up_timestamp，clientid，payload中的温度以及湿度。
+2. 在下面的规则语句中，我们从 temp_hum/emqx 主题中读取报告的时间`up_timestamp`，`clientid`，`payload`中的温度以及湿度。
 
 ![](./_assets/rule_intro_02.png)
 
@@ -34,7 +34,7 @@ FROM
 ```
 
 
-3. 创建一个新的测试SQL，点击`SQL测试`后面的切换按钮，填写相应的测试参数，最后点击`SQL测试`按钮。
+3. 创建一个新的测试SQL，点击` SQL 测试`后面的切换按钮，填写相应的测试参数，最后点击` SQL 测试`按钮。
 
 ![](./_assets/rule_intro_03.png)
 
@@ -43,7 +43,7 @@ FROM
 
 ## 创建动作
 
-动作解决了"将处理过的数据发送到哪里"的问题。它告诉EMQX Cloud 如何处理规则所产生的数据。通常情况下，我们为目标资源设置配置和SQL模板。
+动作解决了"将处理过的数据发送到哪里"的问题。它告诉 EMQX Cloud 如何处理规则所产生的数据。通常情况下，我们为目标资源设置配置和SQL模板。
 
 1. EMQX Cloud 将设置配置的默认值。如果需要，你可以改变它们。
 
@@ -55,7 +55,7 @@ FROM
 {"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
 ```
 
-3. 一个规则可以与多个动作相关联。添加另一个动作，我们就可以改变目标资源。例如，我们可以把数据转发给 Kafka 的同时也可以把数据保存到RDS。
+3. 一个规则可以与多个动作相关联。添加另一个动作，我们就可以改变目标资源。例如，我们可以把数据转发给 Kafka 的同时也可以把数据保存到 RDS。
 
 ![](./_assets/rule_intro_05.png)
 
