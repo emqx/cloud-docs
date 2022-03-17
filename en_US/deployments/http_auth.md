@@ -6,7 +6,7 @@ In addition to the default authentication, EMQX Cloud also allows users to conne
 
 EMQX Cloud requests permission from a user-defined authentication service using information about the current client as a parameter in the device connection event, and processes the authentication request with the HTTP statusCode returned.
 
- - Failure: returns status code 4xx 
+ - No permission: returns a non-200 status code 
  - Successful: returns status code 200 
  - Ignored: returns a 200 status code and the message body: ignore
  
@@ -36,8 +36,7 @@ You can use the following placeholders in your authentication request and the EM
  - %r: Client access protocol
  - %P: Plaintext password
  - %p: Client port
- - %C: TLS certificate common name (domain or subdomain of the certificate), valid only for TLS connections
- - %d: TLS certificate subject, valid only for TLS connections
+
  
 
 ### Request Method
@@ -61,7 +60,6 @@ You can use the following placeholders in your authentication request and the EM
  - %c: Client ID
  - %a: Client IP address
  - %r: Client access protocol
- - %m: Mountpoint
  - %t: Subject
  
 ### Request Method
