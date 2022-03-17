@@ -8,7 +8,7 @@
 
 [EMQX Cloud](https://www.emqx.com/zh/cloud) 是由 EMQX 建立的云上 MQTT 服务。EMQX 团队在物联网领域耕织多年，EMQX MQTT 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
 
-本篇指南将会连通 Azure 事件中心 和 EMQX Cloud，并通过 EMQX Cloud 规则引擎将 MQTT 消息转发到 Azure 事件中心。
+本篇指南将会连通 Azure 事件中心 和 EMQX Cloud，并通过 EMQX Cloud 数据集成将 MQTT 消息转发到 Azure 事件中心。
 
 为了实现该功能，我们将会完成以下几个任务：
 
@@ -16,7 +16,7 @@
 2. 创建资源，建立 Azure 事件中心命名空间 与 EMQX Cloud 部署之间的 kafka 连接
 3. 创建 Azure 事件中心
 4. 创建规则
-5. 完成规则引擎创建，并进行测试
+5. 完成数据集成创建，并进行测试
 
 Kafka 和事件中心概念映射
 
@@ -44,7 +44,7 @@ Kafka 和事件中心概念映射
 
 ### 2.创建资源，建立 Azure 事件中心命名空间 与 EMQX Cloud 部署之间的 kafka 连接
 
-进入 EMQX Cloud 控制台，并点击进入要使用的部署，在部署页面，选择规则引擎，点击创建资源。
+进入 EMQX Cloud 控制台，并点击进入要使用的部署，在部署页面，选择数据集成，点击创建资源。
 
 资源类型选择 kafka，Kafka 服务器地址为 `命名空间名称(namespace).servicebus.windows.net:9093`，
 例如 `emqx-cloud.servicebus.windows.net:9093`。
@@ -69,11 +69,11 @@ Azure 事件中心对应 kafka 中主题的概念，在命名空间下选择 实
 
 ### 4.创建规则
 
-进入 EMQX Cloud 控制台，在部署页面，选择规则引擎，点击创建。
+进入 EMQX Cloud 控制台，在部署页面，选择数据集成，点击创建。
 
 我们的目标是：当主题 greet 收到 msg 为 hello 字符时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 - 针对 greet 主题，即 'greet/#'
-- 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行规则引擎
+- 对 payload 中的 msg 进行匹配，当它为 'hello' 字符串再执行数据集成
 
 根据上面的原则，我们最后得到的 SQL 应该如下：
 
@@ -113,7 +113,7 @@ WHERE
 
 ![create_action](./_assets/rule_engine_azure_event_hubs_create_action.png)
 
-### 5.完成规则引擎创建，并进行测试
+### 5.完成数据集成创建，并进行测试
 
 > 如果您是第一次使用 EMQX Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
 
@@ -125,7 +125,7 @@ WHERE
 }
 ```
 
-在规则引擎页中，点击监控可以看到动作指标数的成功数变为 1。
+在数据集成页中，点击监控可以看到动作指标数的成功数变为 1。
 
 ![转发成功](./_assets/rule_engine_azure_event_hubs_action.png)
 

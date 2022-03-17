@@ -1,10 +1,10 @@
-# EMQX Cloud 规则引擎保存数据到 TimescaleDB
+# EMQX Cloud 数据集成保存数据到 TimescaleDB
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 规则引擎将数据转存到 TimescaleDB。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到 TimescaleDB。
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
@@ -45,17 +45,17 @@
    select * from temp_hum;
    ```
    
-## EMQX Cloud 规则引擎配置
+## EMQX Cloud 数据集成配置
 
 1. 资源创建
 
-   点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 TimescaleDB 资源类型。填入刚才创建好的 timescaledb 数据库信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
+   点击左侧菜单栏`数据集成`，找到资源面板，点击新建资源，下拉选择 TimescaleDB 资源类型。填入刚才创建好的 timescaledb 数据库信息，并点击测试如果出现错误应及时检查数据库配置是否正确。
 
    ![资源创建](./_assets/timescaledb_create_resource.png)
 
 2. 规则测试
    
-   点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度。
+   点击左侧左侧菜单栏`数据集成`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度。
    
    ```sql
    SELECT 
@@ -66,7 +66,7 @@
    
    "temp_hum/emqx"
    ```
-   ![规则引擎](./_assets/sql_test.png)
+   ![数据集成](./_assets/sql_test.png)
 
 3. 添加响应动作
 
@@ -75,7 +75,7 @@
    ```sql
    insert into temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
    ```
-   ![规则引擎](./_assets/timescaledb_action.png)
+   ![数据集成](./_assets/timescaledb_action.png)
 
 4. 点击创建规则，并返回规则列表
 

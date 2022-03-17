@@ -74,7 +74,7 @@ Dropped msg due to queue is full: Message(Id=xxx, QoS=1, Topic=xxx)
 及时调整客户端发送速率，使发送速率小于部署限制的 TPS
 ```
 
-### 规则引擎 MySQL 资源异常(error)
+### 数据集成 MySQL 资源异常(error)
 
 * 日志
 ```
@@ -83,11 +83,11 @@ Initiate 'mysql:resource:7aba6137' failed {{shutdown,{failed_to_start_child,work
 
 * 处理
 ```
-检查部署规则引擎中 MySQL 资源
+检查部署数据集成中 MySQL 资源
 ```
 
 
-### 规则引擎 Webhook 资源异常(error)
+### 数据集成 Webhook 资源异常(error)
 
 * 日志
 ```
@@ -96,10 +96,10 @@ cluster_call error found, ResL: [{{emqx_web_hook_actions,on_resource_create},{er
 
 * 处理
 ```
-检查部署规则引擎中 Webhook 资源
+检查部署数据集成中 Webhook 资源
 ```
 
-### 规则引擎 Webhook 状态异常(error)
+### 数据集成 Webhook 状态异常(error)
 
 * 日志
 ```
@@ -108,10 +108,10 @@ cluster_call error found, ResL: [{{emqx_web_hook_actions,on_resource_create},{er
 
 * 处理
 ```
-检查部署规则引擎中 Webhook 资源配置的认证是否正确可用
+检查部署数据集成中 Webhook 资源配置的认证是否正确可用
 ```
 
-### 规则引擎 Kafka 资源异常(error)
+### 数据集成 Kafka 资源异常(error)
 
 * 日志
 ```
@@ -120,10 +120,10 @@ cluster_call error found, ResL: [{{emqx_bridge_kafka_actions,on_resource_create}
 
 * 处理
 ```
-部署规则引擎 Kafka 资源异常
+部署数据集成 Kafka 资源异常
 ```
 
-### 规则引擎 SQL 模板配置错误(error)
+### 数据集成 SQL 模板配置错误(error)
 
 * 日志
 ```
@@ -132,10 +132,10 @@ cluster_call error found, ResL: [{{emqx_bridge_kafka_actions,on_resource_create}
 
 * 处理
 ```
-检查部署规则引擎中规则的 SQL 编写是否正确
+检查部署数据集成中规则的 SQL 编写是否正确
 ```
 
-### 规则引擎响应动作失败(error)
+### 数据集成响应动作失败(error)
 
 * 日志
 ```
@@ -144,5 +144,5 @@ cluster_call error found, ResL: [{{emqx_bridge_kafka_actions,on_resource_create}
 
 * 处理
 ```
-检查部署规则引擎中规则的 action 编写是否正确
+检查部署数据集成中规则的 action 编写是否正确
 ```

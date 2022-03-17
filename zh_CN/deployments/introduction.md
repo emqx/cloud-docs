@@ -28,7 +28,7 @@
 
 添加和导入 MQTT 认证和 ACL 信息。
 
-### [规则引擎](../rule_engine/introduction.md)
+### [数据集成](../rule_engine/introduction.md)
 
 通过添加规则和资源，将设备或客户端数据流转到数据库以及其他地方。
 

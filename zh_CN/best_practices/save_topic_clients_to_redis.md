@@ -1,10 +1,10 @@
-# 规则引擎 + Redis 实时获取主题下订阅的客户端
+# 数据集成 + Redis 实时获取主题下订阅的客户端
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将使用 EMQX Cloud 规则引擎保存 topic 和客户端的订阅关系到 Redis，可以实时获取主题下订阅的客户端列表。
+在本文中我们将使用 EMQX Cloud 数据集成保存 topic 和客户端的订阅关系到 Redis，可以实时获取主题下订阅的客户端列表。
 
 在开始之前，您需要完成以下操作：
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
@@ -17,11 +17,11 @@
    docker run -d --name redis -p 6379:6379 redis
    ```
 
-## EMQX Cloud 规则引擎配置
+## EMQX Cloud 数据集成配置
 
 ### 资源创建
 
-点击左侧菜单栏`规则引擎`，找到资源面板，点击新建资源，下拉选择 Redis单节点模式。填入刚才创建好的 Redis 信息，并点击测试，如果出现错误应及时检查 Redis 配置是否正确。
+点击左侧菜单栏`数据集成`，找到资源面板，点击新建资源，下拉选择 Redis单节点模式。填入刚才创建好的 Redis 信息，并点击测试，如果出现错误应及时检查 Redis 配置是否正确。
 
    ![资源创建](./_assets/create_redis_resource.png)
 
@@ -31,7 +31,7 @@
 
 1. 创建规则
 
-   点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下 SQL 语句。在下面规则中我们从订阅事件中获取所有信息。
+   点击左侧左侧菜单栏`数据集成`，找到规则面板，点击创建，然后输入如下 SQL 语句。在下面规则中我们从订阅事件中获取所有信息。
 
    ```sql
    SELECT
@@ -39,7 +39,7 @@
    FROM
    "$events/session_subscribed"
    ```
-   ![规则引擎](./_assets/redis_sub_sql.png)
+   ![数据集成](./_assets/redis_sub_sql.png)
 
 2. 添加响应动作
 
@@ -48,7 +48,7 @@
    ```bash
    HSETNX ${topic} ${clientid} ${timestamp}
    ```
-   ![规则引擎](./_assets/create_sub_action.png)
+   ![数据集成](./_assets/create_sub_action.png)
 
 3. 点击创建规则
 
@@ -56,7 +56,7 @@
 
 1. 创建规则
 
-   点击左侧左侧菜单栏`规则引擎`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从取消订阅事件中获取所有信息。
+   点击左侧左侧菜单栏`数据集成`，找到规则面板，点击创建，然后输入如下规则匹配 SQL 语句。在下面规则中我们从取消订阅事件中获取所有信息。
 
    ```sql
    SELECT
@@ -64,7 +64,7 @@
    FROM
    "$events/session_unsubscribed"
    ```
-   ![规则引擎](./_assets/redis_unsub_sql.png)
+   ![数据集成](./_assets/redis_unsub_sql.png)
 
 2. 添加响应动作
 
@@ -73,7 +73,7 @@
    ```bash
    HDEL ${topic} ${clientid}
    ```
-   ![规则引擎](./_assets/create_unsub_action.png)
+   ![数据集成](./_assets/create_unsub_action.png)
 
 3. 点击创建规则
 
