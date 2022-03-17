@@ -1,4 +1,4 @@
-# 使用 EMQX Cloud 规则引擎保存数据到 InfluxDB
+# 使用 EMQX Cloud 数据集成保存数据到 InfluxDB
 
 ::: danger
 该功能在基础版中不可用
@@ -6,26 +6,26 @@
 
 [InfluxDB](https://www.influxdata.com/) 是一个用于存储和分析时间序列数据的开源数据库，内置 HTTP API，类 SQL 语句的支持和无结构的特性对使用者而言都非常友好。它强大的数据吞吐能力以及稳定的性能表现使其非常适合 IoT 领域。
 
-通过 EMQX Cloud 规则引擎，我们可以自定义 Template 文件，然后将 JSON 格式的 MQTT 消息转换为 Measurement 写入 InfluxDB。
+通过 EMQX Cloud 数据集成，我们可以自定义 Template 文件，然后将 JSON 格式的 MQTT 消息转换为 Measurement 写入 InfluxDB。
 
 
 
-这篇指南会完成一个 InfluxDB 规则引擎的创建，实现下面的功能：
+这篇指南会完成一个 InfluxDB 数据集成的创建，实现下面的功能：
 
-* 记录每个房间的温度和湿度情况。当有温度和湿度的监控消息，发送到 home/sensor 主题时，会触发规则引擎，将这条数据记录在 InfluxDB 中。
+* 记录每个房间的温度和湿度情况。当有温度和湿度的监控消息，发送到 home/sensor 主题时，会触发数据集成，将这条数据记录在 InfluxDB 中。
 
 
 
 为了实现这个功能，我们会完成以下 4 个任务：
 
 1. 安装并初始化 InfluxDB 
-2. 设置规则引擎的筛选条件
+2. 设置数据集成的筛选条件
 3. 创建一个资源和一个动作
-4. 完成规则引擎创建，并进行测试
+4. 完成数据集成创建，并进行测试
 
 >注意:
 >
->在使用规则引擎前，请先创建部署。
+>在使用数据集成前，请先创建部署。
 >
 >对于专业版部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的服务器都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
 
@@ -47,13 +47,13 @@ $ docker run -d --name=influxdb \
 
 
 
-## 2. 设置规则引擎的筛选条件
+## 2. 设置数据集成的筛选条件
 
 进入 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)，并点击进入要使用 InfluxDB 的部署。
 
-在部署页面，选择规则引擎，点击创建。
+在部署页面，选择数据集成，点击创建。
 
-![规则引擎页](./_assets/view_rule_engine.png)
+![数据集成页](./_assets/view_rule_engine.png)
 
 我们的目标是：只要 home/sensor 主题有监控信息时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 
@@ -144,9 +144,9 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 填写完成后，点击确定。
 
-创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的确认，完成规则引擎的配置。
+创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的确认，完成数据集成的配置。
 
-![完成规则引擎配置](./_assets/add_influxDB_action05.png)
+![完成数据集成配置](./_assets/add_influxDB_action05.png)
 
 
 
@@ -165,7 +165,7 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
   }
 }
 ```
-在规则引擎页中，点击监控可以看到动作指标数的成功数变为 1。
+在数据集成页中，点击监控可以看到动作指标数的成功数变为 1。
 
 ![转发成功](./_assets/test_rule_engine_influxDB.png)
 

@@ -23,8 +23,8 @@ GET /metrics
 
 | 名称                            | 类型    | 描述                                                  |
 | ------------------------------- | ------- | --------------|
-| actions.failure                 | Integer | 规则引擎 action 成功失败次数   |
-| actions.success                 | Integer | 规则引擎 action 执行失败次数       |
+| actions.failure                 | Integer | 数据集成 action 成功失败次数   |
+| actions.success                 | Integer | 数据集成 action 执行失败次数       |
 | bytes.received                  | Integer | EMQX 接收的字节数    |
 | bytes.sent                      | Integer | EMQX 在此连接上发送的字节数   |
 | client.authenticate             | Integer | 客户端认证次数   |

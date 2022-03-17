@@ -14,7 +14,7 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 [EMQX Cloud](https://www.emqx.com/zh/cloud) 是由 EMQX 建立的云上 MQTT 服务。EMQX 团队在物联网领域耕织多年，EMQX MQTT
 服务器在过去几年中被全球数千家企业用户使用。每一台部署都拥有独立的 VPS、负载均衡、DNS，保证系统安全与稳定。
 
-本篇指南将会连通阿里云 Kafka 和 EMQX Cloud，并通过 EMQX Cloud 规则引擎将 MQTT 消息转发到 Kafka 主题。
+本篇指南将会连通阿里云 Kafka 和 EMQX Cloud，并通过 EMQX Cloud 数据集成将 MQTT 消息转发到 Kafka 主题。
 
 在开始之前，您需要完成以下操作：
 

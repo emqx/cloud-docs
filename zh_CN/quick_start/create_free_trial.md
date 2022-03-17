@@ -11,7 +11,7 @@ EMQX Cloud 免费试用部署规格如下：
 
 * 试用期间提供 100 GB 免费流量。
 
-* 使用规则引擎（基础版仅支持 Webhook 和 MQTT 桥接）、监控管理等 EMQX Cloud 自有的功能。
+* 使用数据集成（基础版仅支持 Webhook 和 MQTT 桥接）、监控管理等 EMQX Cloud 自有的功能。
 
 * 支持 MQTT, WebSockets 协议连接。
   

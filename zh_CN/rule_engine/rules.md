@@ -9,81 +9,83 @@
 - 响应动作：如果有处理结果输出，规则将执行相应的动作，如持久化到数据库、重新发布处理后的消息、转发消息到消息队列等。一条规则可以配置多个响应动作。
 
 
+## 创建规则
+::: tip Tip
+在创建一个规则之前, 你需要确定已经添加了 [VPC 对等连接](../deployments/vpc_peering.md), 以及 [创建了资源](./resources.md)
+:::
 
-## 简单示例
-
-如下图所示规则，该条规则用于处理**消息发布**时的数据，将全部主题消息的 msg 字段，消息 topic 、qos 筛选出来，发送到 Web Server。您可以参阅 [EMQX 规则](https://docs.emqx.cn/cn/broker/latest/rule/rule-engine.html)了解更多使用指南。
-
-![img](./_assets/rule_engine_detail.png)
-
-
-
-## 添加规则
-
-在创建规则引擎之前您需要确保部署状态为**运行中**
-
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
-
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击左侧菜单`规则引擎`，在规则面板点击创建按钮
-
-   ![rule-add](./_assets/rule-add.png)
-
-5. 新建一条测试 SQL，点击 `SQL 测试` 后面的开关，并填写相应的测试参数，最后点击 `SQL 测试`按钮
-
-   ![rule-sql-test](./_assets/rule-sql-test.png)
-
-6. 添加动作
-
-   > 注意： 添加动作之前，您需要保证已添加 [VPC 对等连接](../deployments//vpc_peering.md), 并已经 [创建资源](./resources.md)
-
-   ![rule-action-add](./_assets/rule-action-add.png)
-
-   在弹出的动作配置对话框中，选择相应的动作类型，并填写相应动作的配置信息
-
-   ![rule-action-config](./_assets/rule-action-config.png)
+1. 我们使用 Kafka 资源创建规则举例，可以在“已配置的资源”列表中创建规则，或者是从资源详情中新建规则
 
 
+![](./_assets/rule_intro_01.png)
 
-## 查看规则监控状态
-
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
-
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击左侧菜单`规则引擎`，在规则面板点击规则监控图标
-
-   ![rule-monitor](./_assets/rule-monitor.png)
+![](./_assets/rule_intro_12.png)
 
 
+2. 在下面的规则语句中，我们从 temp_hum/emqx 主题中读取报告的时间`up_timestamp`，`clientid`，`payload`中的温度以及湿度。
 
-## 编辑规则
+![](./_assets/rule_intro_02.png)
 
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
-
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击左侧菜单`规则引擎 `，在规则面板点击规则`编辑`按钮
-
-   ![rule-edit](./_assets/rule-edit.png)
-
-   编辑规则时，也可对规则中添加的动作进行编辑
-
-   ![rule-action-edit](./_assets/rule-action-edit.png)
-
-5. 更改规则状态
-
-   ![rule-status](./_assets/rule-status.png)
+```sql
+SELECT
+  timestamp as up_timestamp,    clientid as client_id,    payload.temp as temp,    payload.hum as hum
+FROM
+  "temp_hum/emqx"
+```
 
 
+3. 创建一个新的测试SQL，点击` SQL 测试`后面的切换按钮，填写相应的测试参数，最后点击` SQL 测试`按钮。
+
+![](./_assets/rule_intro_03.png)
+
+4. 在测试输出，我们可以看到预期的数据处理结果，规则完成之后，我们点击'下一步'并保存。
+
+
+## 创建动作
+
+动作解决了"将处理过的数据发送到哪里"的问题。它告诉 EMQX Cloud 如何处理规则所产生的数据。通常情况下，我们为目标资源设置配置和SQL模板。
+
+1. EMQX Cloud 将设置配置的默认值。如果需要，你可以改变它们。
+
+2. 对SQL模板进行编码，这里我们将取得的变量保存到 Kafka，并点击 "确认"来创建一个动作。
+
+![](./_assets/rule_intro_04.png)
+
+```
+{"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
+```
+
+3. 一个规则可以与多个动作相关联。添加另一个动作，我们就可以改变目标资源。例如，我们可以把数据转发给 Kafka 的同时也可以把数据保存到 RDS。
+
+![](./_assets/rule_intro_05.png)
+
+4. 当一个动作的数据传输失败时，我们还可以添加备选动作，确保能成功保存。
+
+![](./_assets/rule_intro_06.png)
+
+## 规则操作
+
+### 编辑规则
+
+点击编辑图标来编辑该规则。在编辑页面，你可以编辑规则的 SQL 模板，同时可以编辑、添加动作。
+
+![](./_assets/rule_intro_07.png)
+
+![](./_assets/rule_intro_08.png)
+
+
+## 查看监控状态
+
+1. 点击规则列表页上的规则监控图标。
+
+![](./_assets/rule_intro_09.png)
+
+2. 状态面板上会显示规则命中的数据详情。
+
+![](./_assets/rule_intro_10.png)
 
 ## 删除规则
 
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
+在资源详情页，你可以删除该资源关联的规则。
 
-2. 点击所需连接的部署，您将进入部署详情页面
-
-3. 点击左侧菜单`规则引擎`，在规则面板点击`删除`按钮
-
-   ![rule-delete](./_assets/rule-delete.png)
+![](./_assets/rule_intro_11.png)
