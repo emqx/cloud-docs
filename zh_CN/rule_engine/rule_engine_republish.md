@@ -4,21 +4,25 @@
 
 这篇指南会完成一个 `消息重新发布` 数据集成的创建，实现下面的目标：
 
-* 当任一消息的 msg 包含 'hello' 字符串时，将消息转发到 greet 主题
+#### 当任一消息的 msg 包含 'hello' 字符串时，将消息转发到 greet 主题
 
 为了实现这个功能，我们会依次完成以下 3 个任务：
 
 1. 设置数据集成的筛选条件
-2. 创建一个资源和一个动作
+2. 创建一个动作
 3. 完成数据集成创建，并进行测试
+
+::: tip Tip
+基础版和专业版部署都可以使用数据集成的消息重新发布功能
+:::
 
 ## 1. 设置数据集成的筛选条件
 
-进入 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)，并点击进入要使用 `消息重新发布` 的部署。
+在数据集成的概览页面中，选择`消息重新发布`，并点击创建。
 
-在部署页面，选择数据集成，点击创建。
 
-![数据集成页](./_assets/view_rule_engine.png)
+
+![数据集成页](./_assets/repub_01.png)
 
 我们的目标是：任何消息中，只要 msg 中包含 'hello' 字符串，就会触发引擎。这里需要对 SQL 进行一定的处理：
 
@@ -55,21 +59,21 @@ WHERE
 测试输出与预期相符，我们可以进行后续步骤。
 >注意：如果无法通过测试，请检查 SQL 是否合规
 
-![测试 SQL](./_assets/republish_SQL_setting.png)
+![测试 SQL](./_assets/repub_02.png)
+
+![测试 SQL](./_assets/repub_03.png)
 
 ## 2. 创建动作
 
-点击添加动作，在选择动作页，选择 `消息重新发布`，点击下一步
+点击`下一步`，添加动作.
 
-![选择动作](./_assets/add_republish_action01.png)
+在配置动作页面中，目的主题设为 greet，在消息内容模板里填写 "${msg} -- forward from emqx cloud"，目的 QoS 默认。点击确定完成配置。
 
-在配置动作页面中，目的主题设为 greet，在消息内容模板里填写 "${msg} -- forward from emqx cloud"，目的 QoS 默认。点击确定。
+![完成数据集成](./_assets/repub_04.png)
 
-![配置动作](./_assets/add_republish_action02.png)
+可以查看到消息重新发布规则的具体详情。
 
-创建好的动作会显示在响应动作一栏里，确认信息无误后，点击右下角的创建，完成数据集成的配置。
-
-![完成数据集成](./_assets/add_republish_action03.png)
+![完成数据集成](./_assets/repub_05.png)
 
 ## 3. 测试
 
@@ -82,11 +86,19 @@ WHERE
   "msg": "hello"
 }
 ```
-在数据集成页中，点击监控可以看到动作指标数的成功数变为 1。
 
-![查看动作指标](./_assets/add_republish_action04.png)
+因为消息重新发布无需添加任何资源，所以在资源概览页无法显示，点击“查看已创建规则”进入规则列表，我们可以看到配置的规则。
+
+![完成数据集成](./_assets/repub_06.png)
+
+![完成数据集成](./_assets/repub_07.png)
+
+
+在状态监控页中，点击监控可以看到转发指标数的成功数变为 1。
+
+![查看动作指标](./_assets/repub_08.png)
 
 同时收到了来自主题 greet 的消息转发。
 
-![收到转发消息](./_assets/add_republish_action05.png)
+![收到转发消息](./_assets/repub_09.png)
 
