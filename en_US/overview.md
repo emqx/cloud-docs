@@ -99,13 +99,14 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 - **Device Shadowing**：Indirectly get the status of the device, whether it is offline or not, through device shadowing, and modify the device properties through device shadowing. Automatic synchronization of device shadow status when the device is online.
 - **Edge Computing**: Create and manage edge gateways and end devices through the Unlimited plan management platform, and configure edge gateways and devices.
 
-### Message Storage (Data Integrations)
+### Data Integrations
 
 EMQX Cloud use Data Integrations to configure rules for processing and responding to devise messages and events.
 
 The Data Integrations not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
 
-![](./_assets/rule_engine.png)
+![](./rule_engine/_assets/integration_intro_01.png)
+
 
 - **Send data to HTTP services and other MQTT services**:
   - Send data to Web services

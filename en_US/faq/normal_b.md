@@ -29,7 +29,7 @@ You may already have your own domain name and would like to be able to bind to y
 3. Once the DNS resolution has taken effect, you can connect to the mqtt service via mqtt.abc.com.
 
 ## How to set up NAT gateway configuration?
-NAT is only supported for **Professional plan**, please submit a ticket to get in touch with us.
+NAT is only supported for **Professional plan**. You can enable NAT gateway in Valued-Added Service.
 
 
 ## Will cluster scaling affect the device connectivity?
