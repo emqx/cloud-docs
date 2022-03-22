@@ -6,12 +6,19 @@ In addition to the default authentication, EMQX Cloud also allows users to conne
 
 EMQX Cloud requests permission from a user-defined authentication service using information about the current client as a parameter in the device connection event, and processes the authentication request with the HTTP statusCode returned.
 
- - No permission: returns a non-200 status code 
- - Successful: returns status code 200 
- - Ignored: returns a 200 status code and the message body: ignore
- 
+- Successful: returns status code 200  
+- Failure: returns a non-200 status code
+- Ignored: returns a 200 status code and the message body: ignore
+  
+If built-in authentication is also enabled, EMQX Cloud will follow the default authentication, HTTP authentication for chain authentication:
+
+- Once authentication is successful, terminate the authentication chain and allow client access
+- Once authentication is successful, Terminate the authentication chain and disable client access
+
+ ![auth_chain](./_assets/auth_chain_en.png)
 
 ## Permission Authentication
+
  Click on `Authentication` - `Custom Authentication` and click on Configure Authentication on the start page to create a new authentication.
 
  ![http_auth](./_assets/http_default.png)
