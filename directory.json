@@ -298,6 +298,10 @@
           "path": "rule_engine/rule_engine_huawei_kafka"
         },
         {
+          "title": "保存数据到 InfluxDB 2.0",
+          "path": "rule_engine/rule_engine_influxDB_2.0"
+        },
+        {
           "title": "从 MySQL 中获取订阅关系",
           "path": "rule_engine/get_subs_from_mysql"
         },
