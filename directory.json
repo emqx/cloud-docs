@@ -286,6 +286,10 @@
           "path": "rule_engine/rule_engine_save_timescaladb"
         },
         {
+          "title": "保存数据到 PostgreSQL",
+          "path": "rule_engine/rule_engine_save_postgresql"
+        }, 
+        {
           "title": "保存数据到 Redis",
           "path": "rule_engine/rule_engine_save_redis"
         },
