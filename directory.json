@@ -95,6 +95,10 @@
           "path": "billing/invoices"
         },
         {
+          "title": "续费管理",
+          "path": "billing/subscription"
+        },
+        {
           "title": "工单",
           "path": "feature/tickets"
         }
@@ -308,7 +312,7 @@
         {
           "title": "空动作（调试）",
           "path": "rule_engine/rule_engine_empty_action_debug"
-        } 
+        }
       ]
     },
     {
