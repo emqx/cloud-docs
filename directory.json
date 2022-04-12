@@ -124,6 +124,10 @@
           "path": "deployments/vpc_peering"
         },
         {
+          "title": "私网连接 PrivateLink 设置",
+          "path": "deployments/privatelink"
+        },
+        {
           "title": "认证",
           "path": "deployments/auth"
         },
