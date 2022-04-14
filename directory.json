@@ -345,7 +345,11 @@
         {
           "title": "内网负载均衡",
           "path": "vas/intranet-lb"
-        }
+        },
+        {
+          "title": "流量包",
+          "path": "vas/traffic-pack"
+        }  
       ]
     },
     {
