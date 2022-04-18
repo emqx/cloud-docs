@@ -1,15 +1,16 @@
-# Store Device Offline Messages to Redis Using Data Integrations
+# Store Device Offline Messages Using Data Integrations
 
-In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud rules engine to dump the offline messages into Redis.
+We will simulate temperature and humidity data and report them to the EMQX Cloud via the MQTT protocol, and then use EMQX Cloud data integration to save offline messages to cloud service resources (third-party database or message queue), which is implemented in this article using Redis as an example.
 
-::: danger
+::: warning
 QoS > 0 required to save offline messages
 :::
 
 Before you start, you need to complete the following operations:
-* Deployments have already been created on EMQX Cloud (EMQX Cluster).
-* For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
-* For basic deployment users: No peering connection is required, all IPs below refer to the public IP of the resource.
+
+- Deployments have already been created on EMQX Cloud (EMQX Cluster).
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
+- For Standard Plan users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
 ## Redis configuration
 
@@ -31,6 +32,14 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 2. Rule Testing
    Click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement. We will read out its message information, if the topic is `temp_hum/emqx`.
 
+   The FROM statement of the rule SQL explains.
+
+   temp_hum/emqx: Publisher posts a message to "temp_hum/emqx" triggers saving offline messages to Redis
+
+   $events/session_subscribed: Subscriber subscribes to topic "temp_hum/emqx" triggers fetching offline messages
+
+   $events/message_acked: Subscriber replies to the message ACK and triggers the deletion of the received offline message
+
    ```sql
    SELECT
        *
@@ -41,6 +50,7 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
    WHERE
        topic =~ 'temp_hum/emqx'
    ```
+
    ![test sql](./_assets/offonline_sql_test.png)
 
 3. Add a response action
@@ -79,10 +89,15 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
     $ redis-cli
     $ keys *
     ```
+
    ![redis](./_assets/offonline_redis_query_result.png)
 
 3. Use [MQTT X](https://mqttx.app/) to consume offline data
    In MQTT X, subscribe to topic temp_hum/emqx to get offline data.
+
+   ::: tip Tip
+   The QoS of the subscription topic must be greater than 0, otherwise the message will be received repeatedly.
+   :::
 
    ![mqttx](./_assets/mqttx_offonline_message.png)
    ![mqttx](./_assets/mqttx_offonline_message2.png)
