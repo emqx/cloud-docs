@@ -1,15 +1,15 @@
-# 使用 EMQX Cloud 数据集成从 MySQL 中获取订阅关系
+# 使用 EMQX Cloud 数据集成获取订阅关系
 
 ::: danger
 该功能在基础版中不可用
 :::
 
-在本文中我们将使用 EMQX Cloud 数据集成从 MySQL 中获取订阅关系
+我们将使用 EMQX Cloud 数据集成从云服务资源（第三方数据库或消息队列）中获取订阅关系，并代理设备订阅。本文以 MySQL 为例实现该功能。
 
 在开始之前，您需要完成以下操作：
 
 - 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
-- 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
+- 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。（专业版部署若开通 [NAT 网关](../vas/nat-gateway.md) 也可使用公网 IP 连接资源）
 
 ## MySQL 配置
 
@@ -33,6 +33,10 @@
 
 3. 订阅关系表创建
 
+   ::: danger
+   订阅关系表结构不能修改，请使用下面 SQL 语句创建
+   :::
+
    使用以下 SQL 语句将创建 `mqtt_sub` 表，该表将用于存放设备订阅关系数据。
 
    ```sql
@@ -49,12 +53,8 @@
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8MB4;
    ```
 
-   ::: danger
-   订阅关系表结构不能修改，请使用上面 SQL 语句创建
-   :::
-
 4. 设置允许 EMQX 集群 IP 段访问数据库(可选)
-   
+
    对于专业版部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
 
    ```sql

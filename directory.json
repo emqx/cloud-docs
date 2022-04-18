@@ -318,8 +318,12 @@
           "path": "rule_engine/rule_engine_influxDB_2.0"
         },
         {
-          "title": "从 MySQL 中获取订阅关系",
-          "path": "rule_engine/get_subs_from_mysql"
+          "title": "获取订阅关系",
+          "path": "rule_engine/rule_engine_get_subscription"
+        },
+        {
+          "title": "保存离线消息",
+          "path": "rule_engine/rule_engine_offline_msg_saving"
         },
         {
           "title": "空动作（调试）",
