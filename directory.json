@@ -759,12 +759,12 @@
           "path": "rule_engine/rule_engine_confluent"
         },
         {
-          "title": "Store device offline messages to Redis",
-          "path": "rule_engine/rule_engine_offonline_to_redis"
+          "title": "Store device offline messages",
+          "path": "rule_engine/rule_engine_offline_msg_saving"
         },
         {
-          "title": "Get subscription topic information from MySQL",
-          "path": "rule_engine/get_subs_from_mysql"
+          "title": "Get subscription topic information",
+          "path": "rule_engine/rule_engine_get_subscription"
         }
       ]
     },
