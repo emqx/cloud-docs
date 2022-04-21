@@ -353,7 +353,11 @@
         {
           "title": "流量包",
           "path": "vas/traffic-pack"
-        }  
+        }, 
+        {
+          "title": "自定义函数",
+          "path": "vas/codec"
+        } 
       ]
     },
     {
