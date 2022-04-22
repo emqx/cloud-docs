@@ -140,6 +140,10 @@
           "path": "deployments/http_auth"
         },
         {
+          "title": "PostgreSQL 认证/访问控制",
+          "path": "deployments/postgresql_auth"
+        },
+        {
           "title": "监控",
           "path": "deployments/monitors"
         },
