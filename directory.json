@@ -136,6 +136,10 @@
           "path": "deployments/acl"
         },
         {
+          "title": "自定义认证概述",
+          "path": "deployments/custom_auth"
+        },
+        {
           "title": "HTTP 自定义认证",
           "path": "deployments/http_auth"
         },
