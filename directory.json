@@ -144,6 +144,10 @@
           "path": "deployments/postgresql_auth"
         },
         {
+          "title": "MySQL 认证/访问控制",
+          "path": "deployments/mysql_auth"
+        },
+        {
           "title": "监控",
           "path": "deployments/monitors"
         },
@@ -288,7 +292,7 @@
         {
           "title": "保存数据到 MongoDB",
           "path": "rule_engine/rule_engine_save_mongodb"
-        }, 
+        },
         {
           "title": "桥接数据到 阿里云 MongoDB",
           "path": "rule_engine/rule_engine_aliyun_mongodb"
@@ -300,7 +304,7 @@
         {
           "title": "保存数据到 PostgreSQL",
           "path": "rule_engine/rule_engine_save_postgresql"
-        }, 
+        },
         {
           "title": "保存数据到 Redis",
           "path": "rule_engine/rule_engine_save_redis"
@@ -357,11 +361,11 @@
         {
           "title": "流量包",
           "path": "vas/traffic-pack"
-        }, 
+        },
         {
           "title": "自定义函数",
           "path": "vas/codec"
-        } 
+        }
       ]
     },
     {
