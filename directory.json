@@ -149,11 +149,7 @@
         },
         {
           "title": "PostgreSQL 认证/访问控制",
-          "path": "deployments/postgresql_auth"
-        },
-        {
-          "title": "MySQL 认证/访问控制",
-          "path": "deployments/mysql_auth"
+          "path": "deployments/pgsql_auth"
         },
         {
           "title": "监控",

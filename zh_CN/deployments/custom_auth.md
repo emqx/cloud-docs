@@ -21,4 +21,4 @@
  
 [MySQL 认证/访问控制](./mysql_auth.md)
  
-[Postgre 认证/访问控制](./postgresql_auth.md)
+[Postgre 认证/访问控制](./pgsql_auth.md)
