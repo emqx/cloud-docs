@@ -569,12 +569,24 @@
           "path": "deployments/auth"
         },
         {
-          "title": "Custom Authentication",
+          "title": "ACL",
+          "path": "deployments/acl"
+        },
+        {
+          "title": "Custom Authentication Intro",
+          "path": "deployments/external_auth"
+        },
+        {
+          "title": "Custom HTTP Authentication",
           "path": "deployments/http_auth"
         },
         {
-          "title": "ACL",
-          "path": "deployments/acl"
+          "title": "MySQL Authentication & ACL",
+          "path": "deployments/mysql_auth"
+        },
+        {
+          "title": "PostgreSQL Authentication & ACL",
+          "path": "deployments/postgresql_auth"
         },
         {
           "title": "Data Integrations",
