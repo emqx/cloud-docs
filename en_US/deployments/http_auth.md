@@ -1,10 +1,10 @@
-# Custom Authentication
+# Custom HTTP Authentication
 
 In addition to the default authentication, EMQX Cloud also allows users to connect to their own services and determine the login of the endpoint by returning status, enabling complex authentication logic and complex ACL verification. Custom authentication currently supports both permission-based authentication and access control authentication.
 
 ## Authentication Rules
 
-EMQX Cloud requests permission from a user-defined authentication service using information about the current client as a parameter in the device connection event, and processes the authentication request with the HTTP statusCode returned.
+EMQX Cloud requests permission from a user-defined authentication service using information about the current client as a parameter in the device connection event and processes the authentication request with the HTTP status code returned.
 
 - Successful: returns status code 200  
 - Failure: returns a non-200 status code
@@ -23,14 +23,14 @@ If built-in authentication is also enabled, EMQX Cloud will follow the default a
 
  ![http_auth](./_assets/http_default.png)
 
- When authenticating, EMQX Cloud will use the current client information to populate and initiate a user-configured authentication query request to find the client's authentication data on the HTTP server side.
+When authenticating, EMQX Cloud will use the current client information to populate and initiate a user-configured authentication query request to find the client's authentication data on the HTTP server-side.
 
- Configure the required parameters for permission authentication on the form page, including the authentication request address, authentication request parameters, HTTP request method and the type of request content. Use the default values for the remaining parameters if they are not specifically required.
+Configure the required parameters for permission authentication on the form page, including the authentication request address, authentication request parameters, HTTP request method, and the type of request content. Use the default values for the remaining parameters if they are not specifically required.
 
  ![http_auth](./_assets/http_auth_1.png)
 
 > - In Standard plan, please fill in the public network IP address for the request
-> - In Professional Edition, please fill in the intranet IP address for the request
+> - In Professional plan, please fill in the intranet IP address for the request
 
 
 
@@ -60,7 +60,8 @@ When the HTTP request method is GET, the request parameters are passed as a URL 
   ![http_auth](./_assets/http_auth_2.png)
 
 ### Request Parameter Placeholders
-You can use the following placeholders in your authentication request and the EMQX will be automatically replace with client information.
+
+You can use the following placeholders in your authentication request and the EMQX will be automatically replaced with client information.
 
  - %A: operation type, '1' subscribe; '2' publish
  - %u: Client ID
