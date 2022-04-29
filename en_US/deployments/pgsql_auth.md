@@ -4,7 +4,7 @@ In addition to supporting the default authentication and authentication method, 
 
 ## Authentication Chain
 
-If built-in authentication is also enabled, EMQX Cloud will chain [default authentication](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) and PostgreSQL authentication in the following order Authentication.
+If built-in authentication is also enabled, EMQX Cloud will chain [default authentication](auth.md) and PostgreSQL authentication in the following order Authentication.
 
 - Once authentication is successful, terminate the authentication chain and allow client access
 - In case of authentication failure, terminate the chain and disable client access
@@ -74,26 +74,19 @@ If built-in authentication is also enabled, EMQX Cloud will chain [default authe
     - allow: prohibit (0), allow (1)
     - ipaddr: set IP address
     - username: the username of the connecting client, if the value here is set to $all, the rule applies to all users
-    - clientid: clientid of the connected client
+    - clientid: client id of the connected client
     - access: allowed operations: subscribe (1), publish (2), both subscribe and publish (3)
     - topic: the topic of the control, you can use wildcards, and you can add placeholders in the topic to match the client information, for example, t/%c will replace the topic with the current clientid when matching
 
 ## Authentication/access control configuration
 
 1. Click `Authentication & Authentication` - `External Authentication & Authorization` in the left menu bar of EMQX Cloud deployment, and select PostgreSQL Authentication/Access Control.
-   
-    ! [pgsql_auth](https://docs.emqx.com/docs-assets/img/pgsql_auth.1497b6e4.png)
-    
+
 2. Click `Configure Authentication` to enter the PostgreSQL Authentication/Access Control page, fill in the information and create a new authentication.
-   
-    Tip
     
     - If you are currently deploying the basic version, please fill in the public address of the server.
-    - If you are currently deploying Professional Edition, you need to create a [VPC peer connection (opens new window)](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html) and fill in the intranet address for the server address.
+    - If you are currently deploying Professional Edition, you need to create a [VPC peer connection](vpc_peering.md) and fill in the intranet address for the server address.
     - If you are prompted with Init resource failure! Check if the server address is correct and if the security group is enabled.
-    
-    ! [pgsql_auth](https://docs.emqx.com/docs-assets/img/pgsql_auth_info.6aeab871.png)
-    
 
 ### Principle of permission authentication
 
@@ -103,15 +96,13 @@ When authenticating, EMQX Cloud will use the current client information to popul
 select password from mqtt_user where username = '%u' limit 1;
 ```
 
-1  
-
 You can use the following placeholders in the authentication SQL, which will be automatically populated with the client information when EMQX Cloud is executed: :
 
 - %u: username
 - %c: clientid
 - %P: plaintext password
 
-You can adapt the authentication SQL to your business needs, such as adding multiple query conditions, using database preprocessing functions, to achieve more business-related functionality. But in any case, the authentication SQL needs to meet the following conditions: 1.
+You can adapt the authentication SQL to your business needs, such as adding multiple query conditions, using database preprocessing functions, to achieve more business-related functionality. But in any case, the authentication SQL needs to meet the following conditions:
 
 1. the query result must contain a password field, which is used by EMQX Cloud to compare with the client password
 2. If the salt configuration is enabled, the query result must contain the salt field, which is used by EMQX Cloud as the salt value. 3.
@@ -121,10 +112,7 @@ The default configuration example data is as follows.
 
 ```
 INSERT INTO mqtt_user (id, username, password, salt) VALUES (1, 'emqx', 'efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7', NULL);
-
 ```
-
-1  
 
 With PostgreSQL authentication enabled, you can connect via username: emqx, password: public.
 
@@ -135,8 +123,6 @@ When access control authentication is performed for topic subscription and publi
 ```
 select allow, ipaddr, username, clientid, access, topic from mqtt_acl where ipaddr = '%a' or username = '%u' or username = '$all' or clientid = '%c';
 ```
-
-1  
 
 You can use the following placeholders in the authentication SQL, which will be automatically populated with client information by EMQX Cloud when executed: :
 
@@ -165,8 +151,6 @@ INSERT INTO mqtt_acl (allow, ipaddr, username, clientid, access, topic) VALUES (
 ### Encryption rules
 
 EMQX Cloud most external authentication can enable the hash method, and only the password cipher text is stored in the data source to ensure data security. When enabling the hash method, you can specify a salt for each client and configure the salt rule, and the password stored in the database is the cipher text processed according to the salt rule and the hash method.
-
-> See: [Salt rule and hash method](https://www.emqx.io/docs/zh/v4.3/advanced/auth.html#%E8%AE%A4%E8%AF%81%E6%96%B9%E5%BC%8F).
 
 ```
 ## unsalted, plaintext

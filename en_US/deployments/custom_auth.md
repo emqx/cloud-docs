@@ -1,12 +1,12 @@
 # External authentication and access control
 
-External authentication and access control help users to use their own services for authentication and authentication, currently supporting the use of MySQL, PostgreSQL as the data source, and also supports connecting to HTTP services for authentication and authentication.
+External authentication and access control help users to use their own services for authentication and authentication, currently supporting the use of MySQL and PostgreSQL as the data source, and also supports connecting to HTTP services for authentication and authentication.
 
 ## Principles and rules
 
 After the service is configured, if the client needs to authenticate, EMQX Cloud will use the current client's information to populate the query and perform the user-configured authentication. The authentication is determined by the return.
 
-If built-in authentication is also enabled, EMQX Cloud will chain authentication in the order of [default authentication](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81), custom authentication as follows:
+If built-in authentication is also enabled, EMQX Cloud will chain authentication in the order of [default authentication](auth.md), custom authentication as follows:
 
 - Once the authentication is successful, terminate the authentication chain and allow the client to access
 - Once the authentication fails, terminate the authentication chain and prohibit the client from accessing
@@ -18,7 +18,7 @@ When multiple authentication methods are enabled at the same time, the system wi
 
 ## View the detailed implementation of external authentication/access control
 
-[HTTP authentication/access control](https://docs.emqx.com/zh/cloud/latest/deployments/http_auth.html)
+[HTTP authentication/access control](http_auth.md)
 
 [MySQL authentication/access control](https://docs.emqx.com/zh/cloud/latest/deployments/mysql_auth.html)
 

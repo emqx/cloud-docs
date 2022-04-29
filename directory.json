@@ -574,7 +574,7 @@
         },
         {
           "title": "Custom Authentication Intro",
-          "path": "deployments/external_auth"
+          "path": "deployments/custom_auth"
         },
         {
           "title": "Custom HTTP Authentication",
@@ -586,7 +586,7 @@
         },
         {
           "title": "PostgreSQL Authentication & ACL",
-          "path": "deployments/postgresql_auth"
+          "path": "deployments/pgsql_auth"
         },
         {
           "title": "Data Integrations",
