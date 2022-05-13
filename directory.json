@@ -160,6 +160,10 @@
           "path": "deployments/metrics"
         },
         {
+          "title": "Prometheus",
+          "path": "deployments/prometheus"
+        },
+        {
           "title": "日志",
           "path": "deployments/logs"
         },
