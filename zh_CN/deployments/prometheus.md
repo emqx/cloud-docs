@@ -12,7 +12,7 @@ EMQX Cloud 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X GET {api}/emqx_prometheus
+curl -u app_id:app_secret -X GET {api}/emqx_prometheus?type=prometheus
 ```
 
 ### 响应示例
@@ -309,8 +309,8 @@ Prometheus 跟踪您的 EMQX Cloud 部署的以下指标数据。
 | emqx_delivery_dropped                | counter  | 消息投递丢弃数                      |
 | emqx_connections_max                 | gauge    | 历史最大连接数                      |
 | emqx_connections_count               | gauge    | 当前连接数                          |
-| emqx_cluster_nodes_stopped           | gauge    | 集群运行节点数                      |
-| emqx_cluster_nodes_running           | gauge    | 集群停止节点数                      |
+| emqx_cluster_nodes_stopped           | gauge    | 集群停止节点数                      |
+| emqx_cluster_nodes_running           | gauge    | 集群运行节点数                      |
 | emqx_client_unsubscribe              | counter  | 客户端取消订阅                      |
 | emqx_client_subscribe                | counter  | 客户端发起订阅                      |
 | emqx_client_disconnected             | counter  | 客户端已下线                        |
