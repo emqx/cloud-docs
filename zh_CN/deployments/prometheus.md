@@ -17,131 +17,213 @@ curl -u app_id:app_secret -X GET {api}/emqx_prometheus?type=prometheus
 
 ### 响应示例
 
-```JSON
-{
-  "data": {
-    "client": {
-      "emqx_client_auth_anonymous": 0, 
-      "emqx_client_authenticate": 0, 
-      "emqx_client_check_acl": 0, 
-      "emqx_client_connected": 0, 
-      "emqx_client_disconnected": 0, 
-      "emqx_client_subscribe": 0, 
-      "emqx_client_unsubscribe": 0
-    }, 
-    "cluster": {
-      "emqx_cluster_nodes_running": 2, 
-      "emqx_cluster_nodes_stopped": 0
-    }, 
-    "delivery": {
-      "emqx_delivery_dropped": 0, 
-      "emqx_delivery_dropped_expired": 0, 
-      "emqx_delivery_dropped_no_local": 0, 
-      "emqx_delivery_dropped_qos0_msg": 0, 
-      "emqx_delivery_dropped_queue_full": 0, 
-      "emqx_delivery_dropped_too_large": 0
-    }, 
-    "messages": {
-      "emqx_messages_acked": 0, 
-      "emqx_messages_delayed": 0, 
-      "emqx_messages_delivered": 0, 
-      "emqx_messages_dropped": 0, 
-      "emqx_messages_dropped_expired": 0, 
-      "emqx_messages_dropped_no_subscribers": 0, 
-      "emqx_messages_forward": 0, 
-      "emqx_messages_publish": 0, 
-      "emqx_messages_qos0_received": 0, 
-      "emqx_messages_qos0_sent": 0, 
-      "emqx_messages_qos1_received": 0, 
-      "emqx_messages_qos1_sent": 0, 
-      "emqx_messages_qos2_received": 0, 
-      "emqx_messages_qos2_sent": 0, 
-      "emqx_messages_received": 0, 
-      "emqx_messages_retained": 582, 
-      "emqx_messages_sent": 0
-    }, 
-    "metrics": {
-      "emqx_vm_cpu_idle": 198.344361625774, 
-      "emqx_vm_cpu_use": 1.655638374226001, 
-      "emqx_vm_process_messages_in_queues": 0, 
-      "emqx_vm_run_queue": 2, 
-      "emqx_vm_total_memory": 7945035776, 
-      "emqx_vm_used_memory": 2014879744
-    }, 
-    "packets": {
-      "emqx_bytes_received": 0, 
-      "emqx_bytes_sent": 0, 
-      "emqx_packets_auth_received": 0, 
-      "emqx_packets_auth_sent": 0, 
-      "emqx_packets_connack_auth_error": 0, 
-      "emqx_packets_connack_error": 0, 
-      "emqx_packets_connack_sent": 0, 
-      "emqx_packets_connect": 0, 
-      "emqx_packets_disconnect_received": 0, 
-      "emqx_packets_disconnect_sent": 0, 
-      "emqx_packets_pingreq_received": 0, 
-      "emqx_packets_pingresp_sent": 0, 
-      "emqx_packets_puback_inuse": 0, 
-      "emqx_packets_puback_missed": 0, 
-      "emqx_packets_puback_received": 0, 
-      "emqx_packets_puback_sent": 0, 
-      "emqx_packets_pubcomp_inuse": 0, 
-      "emqx_packets_pubcomp_missed": 0, 
-      "emqx_packets_pubcomp_received": 0, 
-      "emqx_packets_pubcomp_sent": 0, 
-      "emqx_packets_publish_auth_error": 0, 
-      "emqx_packets_publish_dropped": 0, 
-      "emqx_packets_publish_error": 0, 
-      "emqx_packets_publish_inuse": 0, 
-      "emqx_packets_publish_received": 0, 
-      "emqx_packets_publish_sent": 0, 
-      "emqx_packets_pubrec_inuse": 0, 
-      "emqx_packets_pubrec_missed": 0, 
-      "emqx_packets_pubrec_received": 0, 
-      "emqx_packets_pubrec_sent": 0, 
-      "emqx_packets_pubrel_missed": 0, 
-      "emqx_packets_pubrel_received": 0, 
-      "emqx_packets_pubrel_sent": 0, 
-      "emqx_packets_received": 0, 
-      "emqx_packets_sent": 0, 
-      "emqx_packets_suback_sent": 0, 
-      "emqx_packets_subscribe_auth_error": 0, 
-      "emqx_packets_subscribe_error": 0, 
-      "emqx_packets_subscribe_received": 0, 
-      "emqx_packets_unsuback_sent": 0, 
-      "emqx_packets_unsubscribe_error": 0, 
-      "emqx_packets_unsubscribe_received": 0
-    }, 
-    "session": {
-      "emqx_session_created": 0, 
-      "emqx_session_discarded": 0, 
-      "emqx_session_resumed": 0, 
-      "emqx_session_takeovered": 0, 
-      "emqx_session_terminated": 0
-    }, 
-    "stats": {
-      "emqx_connections_count": 0, 
-      "emqx_connections_max": 0, 
-      "emqx_retained_count": 10, 
-      "emqx_retained_max": 10, 
-      "emqx_routes_count": 0, 
-      "emqx_routes_max": 0, 
-      "emqx_sessions_count": 0, 
-      "emqx_sessions_max": 0, 
-      "emqx_suboptions_count": 0, 
-      "emqx_suboptions_max": 0, 
-      "emqx_subscribers_count": 0, 
-      "emqx_subscribers_max": 0, 
-      "emqx_subscriptions_count": 0, 
-      "emqx_subscriptions_max": 0, 
-      "emqx_subscriptions_shared_count": 0, 
-      "emqx_subscriptions_shared_max": 0, 
-      "emqx_topics_count": 0, 
-      "emqx_topics_max": 0
-    }
-  }, 
-  "code": 0
-}
+```prometheus
+# TYPE emqx_vm_run_queue gauge
+emqx_vm_run_queue 2
+# TYPE emqx_vm_process_messages_in_queues gauge
+emqx_vm_process_messages_in_queues 0
+# TYPE emqx_vm_cpu_use gauge
+emqx_vm_cpu_use 1
+# TYPE emqx_vm_cpu_idle gauge
+emqx_vm_cpu_idle 198
+# TYPE emqx_vm_used_memory gauge
+emqx_vm_used_memory 2100293632
+# TYPE emqx_vm_total_memory gauge
+emqx_vm_total_memory 8065474560
+# TYPE emqx_messages_qos1_received counter
+emqx_messages_qos1_received 0
+# TYPE emqx_messages_dropped_expired counter
+emqx_messages_dropped_expired 0
+# TYPE emqx_messages_dropped counter
+emqx_messages_dropped 0
+# TYPE emqx_messages_qos1_sent counter
+emqx_messages_qos1_sent 0
+# TYPE emqx_messages_qos0_received counter
+emqx_messages_qos0_received 0
+# TYPE emqx_messages_received counter
+emqx_messages_received 0
+# TYPE emqx_messages_acked counter
+emqx_messages_acked 0
+# TYPE emqx_messages_publish counter
+emqx_messages_publish 0
+# TYPE emqx_messages_delivered counter
+emqx_messages_delivered 0
+# TYPE emqx_messages_sent counter
+emqx_messages_sent 0
+# TYPE emqx_messages_qos0_sent counter
+emqx_messages_qos0_sent 0
+# TYPE emqx_messages_qos2_received counter
+emqx_messages_qos2_received 0
+# TYPE emqx_messages_retained counter
+emqx_messages_retained 660
+# TYPE emqx_messages_qos2_sent counter
+emqx_messages_qos2_sent 0
+# TYPE emqx_messages_forward counter
+emqx_messages_forward 0
+# TYPE emqx_messages_delayed counter
+emqx_messages_delayed 0
+# TYPE emqx_messages_dropped_no_subscribers counter
+emqx_messages_dropped_no_subscribers 0
+# TYPE emqx_delivery_dropped counter
+emqx_delivery_dropped 0
+# TYPE emqx_delivery_dropped_too_large counter
+emqx_delivery_dropped_too_large 0
+# TYPE emqx_delivery_dropped_queue_full counter
+emqx_delivery_dropped_queue_full 0
+# TYPE emqx_delivery_dropped_qos0_msg counter
+emqx_delivery_dropped_qos0_msg 0
+# TYPE emqx_delivery_dropped_no_local counter
+emqx_delivery_dropped_no_local 0
+# TYPE emqx_delivery_dropped_expired counter
+emqx_delivery_dropped_expired 0
+# TYPE emqx_client_auth_anonymous counter
+emqx_client_auth_anonymous 0
+# TYPE emqx_client_unsubscribe counter
+emqx_client_unsubscribe 0
+# TYPE emqx_client_subscribe counter
+emqx_client_subscribe 0
+# TYPE emqx_client_disconnected counter
+emqx_client_disconnected 0
+# TYPE emqx_client_connected counter
+emqx_client_connected 0
+# TYPE emqx_client_check_acl counter
+emqx_client_check_acl 0
+# TYPE emqx_client_authenticate counter
+emqx_client_authenticate 0
+# TYPE emqx_cluster_nodes_stopped gauge
+emqx_cluster_nodes_stopped 0
+# TYPE emqx_cluster_nodes_running gauge
+emqx_cluster_nodes_running 2
+# TYPE emqx_suboptions_max gauge
+emqx_suboptions_max 0
+# TYPE emqx_subscriptions_shared_max gauge
+emqx_subscriptions_shared_max 0
+# TYPE emqx_subscribers_max gauge
+emqx_subscribers_max 0
+# TYPE emqx_retained_count gauge
+emqx_retained_count 10
+# TYPE emqx_sessions_max gauge
+emqx_sessions_max 0
+# TYPE emqx_routes_max gauge
+emqx_routes_max 0
+# TYPE emqx_topics_max gauge
+emqx_topics_max 0
+# TYPE emqx_connections_max gauge
+emqx_connections_max 0
+# TYPE emqx_subscribers_count gauge
+emqx_subscribers_count 0
+# TYPE emqx_retained_max gauge
+emqx_retained_max 10
+# TYPE emqx_subscriptions_count gauge
+emqx_subscriptions_count 0
+# TYPE emqx_subscriptions_shared_count gauge
+emqx_subscriptions_shared_count 0
+# TYPE emqx_suboptions_count gauge
+emqx_suboptions_count 0
+# TYPE emqx_routes_count gauge
+emqx_routes_count 0
+# TYPE emqx_topics_count gauge
+emqx_topics_count 0
+# TYPE emqx_sessions_count gauge
+emqx_sessions_count 0
+# TYPE emqx_connections_count gauge
+emqx_connections_count 0
+# TYPE emqx_subscriptions_max gauge
+emqx_subscriptions_max 0
+# TYPE emqx_session_discarded counter
+emqx_session_discarded 0
+# TYPE emqx_session_created counter
+emqx_session_created 0
+# TYPE emqx_session_terminated counter
+emqx_session_terminated 0
+# TYPE emqx_session_takeovered counter
+emqx_session_takeovered 0
+# TYPE emqx_session_resumed counter
+emqx_session_resumed 0
+# TYPE emqx_packets_pubrec_missed counter
+emqx_packets_pubrec_missed 0
+# TYPE emqx_packets_pubrel_received counter
+emqx_packets_pubrel_received 0
+# TYPE emqx_packets_auth_received counter
+emqx_packets_auth_received 0
+# TYPE emqx_packets_pingresp_sent counter
+emqx_packets_pingresp_sent 0
+# TYPE emqx_packets_publish_auth_error counter
+emqx_packets_publish_auth_error 0
+# TYPE emqx_packets_disconnect_received counter
+emqx_packets_disconnect_received 0
+# TYPE emqx_packets_sent counter
+emqx_packets_sent 0
+# TYPE emqx_packets_puback_received counter
+emqx_packets_puback_received 0
+# TYPE emqx_bytes_sent counter
+emqx_bytes_sent 0
+# TYPE emqx_packets_pubcomp_missed counter
+emqx_packets_pubcomp_missed 0
+# TYPE emqx_packets_pubrel_missed counter
+emqx_packets_pubrel_missed 0
+# TYPE emqx_packets_pubrec_inuse counter
+emqx_packets_pubrec_inuse 0
+# TYPE emqx_packets_pubcomp_sent counter
+emqx_packets_pubcomp_sent 0
+# TYPE emqx_packets_auth_sent counter
+emqx_packets_auth_sent 0
+# TYPE emqx_packets_pubcomp_inuse counter
+emqx_packets_pubcomp_inuse 0
+# TYPE emqx_bytes_received counter
+emqx_bytes_received 0
+# TYPE emqx_packets_publish_inuse counter
+emqx_packets_publish_inuse 0
+# TYPE emqx_packets_pubrec_received counter
+emqx_packets_pubrec_received 0
+# TYPE emqx_packets_pingreq_received counter
+emqx_packets_pingreq_received 0
+# TYPE emqx_packets_suback_sent counter
+emqx_packets_suback_sent 0
+# TYPE emqx_packets_publish_error counter
+emqx_packets_publish_error 0
+# TYPE emqx_packets_disconnect_sent counter
+emqx_packets_disconnect_sent 0
+# TYPE emqx_packets_publish_received counter
+emqx_packets_publish_received 0
+# TYPE emqx_packets_received counter
+emqx_packets_received 0
+# TYPE emqx_packets_puback_missed counter
+emqx_packets_puback_missed 0
+# TYPE emqx_packets_puback_sent counter
+emqx_packets_puback_sent 0
+# TYPE emqx_packets_publish_dropped counter
+emqx_packets_publish_dropped 0
+# TYPE emqx_packets_pubrec_sent counter
+emqx_packets_pubrec_sent 0
+# TYPE emqx_packets_pubrel_sent counter
+emqx_packets_pubrel_sent 0
+# TYPE emqx_packets_connack_auth_error counter
+emqx_packets_connack_auth_error 0
+# TYPE emqx_packets_subscribe_error counter
+emqx_packets_subscribe_error 0
+# TYPE emqx_packets_publish_sent counter
+emqx_packets_publish_sent 0
+# TYPE emqx_packets_connect counter
+emqx_packets_connect 0
+# TYPE emqx_packets_puback_inuse counter
+emqx_packets_puback_inuse 0
+# TYPE emqx_packets_connack_sent counter
+emqx_packets_connack_sent 0
+# TYPE emqx_packets_unsuback_sent counter
+emqx_packets_unsuback_sent 0
+# TYPE emqx_packets_pubcomp_received counter
+emqx_packets_pubcomp_received 0
+# TYPE emqx_packets_subscribe_auth_error counter
+emqx_packets_subscribe_auth_error 0
+# TYPE emqx_packets_unsubscribe_error counter
+emqx_packets_unsubscribe_error 0
+# TYPE emqx_packets_unsubscribe_received counter
+emqx_packets_unsubscribe_received 0
+# TYPE emqx_packets_connack_error counter
+emqx_packets_connack_error 0
+# TYPE emqx_packets_subscribe_received counter
+emqx_packets_subscribe_received 0
 ```
 
 ## Prometheus 配置

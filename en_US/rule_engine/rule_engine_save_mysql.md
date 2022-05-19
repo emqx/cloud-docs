@@ -1,4 +1,4 @@
-# Save device data to MySQL using the Data IntegrationsData Integrations
+# Save device data to MySQL using the Data Integrations
 
 In this article, we will simulate the temperature and humidity data, and report these data to EMQX Cloud via the MQTT protocol, and then we will use EMQX Cloud Data Integrations to dump the data to MySQL.
 

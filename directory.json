@@ -605,6 +605,10 @@
           "path": "deployments/metrics"
         },
         {
+          "title": "Prometheus",
+          "path": "deployments/prometheus"
+        },
+        {
           "title": "Logs",
           "path": "deployments/logs"
         },
