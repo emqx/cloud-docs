@@ -569,6 +569,10 @@
           "path": "deployments/vpc_peering"
         },
         {
+          "title": "PrivateLink Setting",
+          "path": "deployments/privatelink"
+        },
+        {
           "title": "Authentication",
           "path": "deployments/auth"
         },
