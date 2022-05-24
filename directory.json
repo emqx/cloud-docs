@@ -152,6 +152,10 @@
           "path": "deployments/pgsql_auth"
         },
         {
+          "title": "Redis 认证/访问控制",
+          "path": "deployments/redis_auth"
+        },
+        {
           "title": "监控",
           "path": "deployments/monitors"
         },
