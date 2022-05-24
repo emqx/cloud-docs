@@ -4,59 +4,56 @@ In addition to supporting the default authentication and authentication method, 
 
 ## Authentication Chain
 
-If built-in authentication is also enabled, EMQX Cloud will chain [default authentication](auth.md) and PostgreSQL authentication in the following order Authentication.
+If built-in authentication is also enabled, EMQX Cloud will chain [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) and PostgreSQL authentication in the following order Authentication.
 
 - Once authentication is successful, terminate the authentication chain and allow client access
 - In case of authentication failure, terminate the chain and disable client access
 
-! [auth_chain](https://docs.emqx.com/docs-assets/img/pgsql_auth_chain.0c639bfd.png)
+![auth_chain](./_assets/../_assets/pgsql_auth_chain.png)
 
 ## PostgreSQL Configuration
 
 1. PostgreSQL installation
-   
-    ```
+
+    ```bash
      docker run -d --name postgresql -p 5432:5432 -e POSTGRES_PASSWORD=public postgres:13
-    
     ```
-    
+
 2. database creation
-   
-    ```
+
+    ```bash
      docker exec -it postgresql psql -U postgres
      CREATE database emqx;
      \c emqx
-    
     ```
-    
+
 3. Authentication table creation
-   
+
     Using the following SQL statement will create the ``mqtt_user`` table which will be used to store user authentication data.
-    
-    ```
+
+    ```sql
     CREATE TABLE mqtt_user (
       id SERIAL PRIMARY KEY,
       username CHARACTER VARYING(100),
       password CHARACTER VARYING(100),
       salt CHARACTER VARYING(40),
       UNIQUE (username)
-     );
-    
+     ); 
     ```
-    
+
     Field Description:
-    
+
     - username: username of the connecting client, a value of $all means that the rule applies to all users
     - password: the password parameter of the connected client
     - salt: password with salt string
-    
+
     > You can use AS syntax in SQL to rename the field to specify password, or set the salt value to a fixed value.
-    
+
 4. Access Control Table Creation
-   
+
     The following SQL statement will create the `mqtt_acl` table, which will be used to store the authentication data of topic subscription and publishing privileges.
-    
-    ```
+
+    ```sql
      CREATE TABLE mqtt_acl (
        id SERIAL PRIMARY KEY,
        allow INTEGER,
@@ -66,11 +63,10 @@ If built-in authentication is also enabled, EMQX Cloud will chain [default authe
        access INTEGER,
        topic CHARACTER VARYING(100)
      );
-    
     ```
-    
+
     Field descriptions.
-    
+
     - allow: prohibit (0), allow (1)
     - ipaddr: set IP address
     - username: the username of the connecting client, if the value here is set to $all, the rule applies to all users
@@ -82,17 +78,21 @@ If built-in authentication is also enabled, EMQX Cloud will chain [default authe
 
 1. Click `Authentication & Authentication` - `External Authentication & Authorization` in the left menu bar of EMQX Cloud deployment, and select PostgreSQL Authentication/Access Control.
 
+    ![pgsql_auth](./_assets/../_assets/pgsql_auth.png)
+
 2. Click `Configure Authentication` to enter the PostgreSQL Authentication/Access Control page, fill in the information and create a new authentication.
-    
+
     - If you are currently deploying the basic version, please fill in the public address of the server.
-    - If you are currently deploying Professional Edition, you need to create a [VPC peer connection](vpc_peering.md) and fill in the intranet address for the server address.
+    - If you are currently deploying Professional Edition, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html) and fill in the intranet address for the server address.
     - If you are prompted with Init resource failure! Check if the server address is correct and if the security group is enabled.
+
+    ![pgsql_auth](./_assets/../_assets/pgsql_auth_info.png)
 
 ### Principle of permission authentication
 
 When authenticating, EMQX Cloud will use the current client information to populate and execute the user name and password authentication SQL configured by the user, and query the authentication data in the database of the client.
 
-```
+```sql
 select password from mqtt_user where username = '%u' limit 1;
 ```
 
@@ -110,7 +110,7 @@ You can adapt the authentication SQL to your business needs, such as adding mult
 
 The default configuration example data is as follows.
 
-```
+```sql
 INSERT INTO mqtt_user (id, username, password, salt) VALUES (1, 'emqx', 'efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7', NULL);
 ```
 
@@ -120,7 +120,7 @@ With PostgreSQL authentication enabled, you can connect via username: emqx, pass
 
 When access control authentication is performed for topic subscription and publication, EMQX Cloud will use the current client information to populate and execute the user-configured access control authentication SQL to find the data related to the client from PostgreSQL and then perform authentication.
 
-```
+```sql
 select allow, ipaddr, username, clientid, access, topic from mqtt_acl where ipaddr = '%a' or username = '%u' or username = '$all' or clientid = '%c';
 ```
 
@@ -133,7 +133,7 @@ You can use the following placeholders in the authentication SQL, which will be 
 
 The following example data is configured by default.
 
-```
+```sql
 -- All users are not allowed to subscribe to system topics
 INSERT INTO mqtt_acl (allow, ipaddr, username, clientid, access, topic) VALUES (0, NULL, '$all', NULL, 1, '$SYS/#');
 
@@ -150,9 +150,11 @@ INSERT INTO mqtt_acl (allow, ipaddr, username, clientid, access, topic) VALUES (
 
 ### Encryption rules
 
-EMQX Cloud most external authentication can enable the hash method, and only the password cipher text is stored in the data source to ensure data security. When enabling the hash method, you can specify a salt for each client and configure the salt rule, and the password stored in the database is the cipher text processed according to the salt rule and the hash method.
+Most external authentication on EMQX Cloud can be enabled with the hash method, and only the cipher text of the password is stored in the data source to ensure data security. When hashing is enabled, you can specify a salt for each client and configure the salt rules, and the password stored in the database is the cipher text processed according to the salt rules and the hashing method.
 
-```
+> Available from: [Salting rules and hashing methods](https://www.emqx.io/docs/en/v4.4/advanced/auth.html#password-salting-rules-and-hash-methods)。
+
+```bash
 ## unsalted, plaintext
 plain
 

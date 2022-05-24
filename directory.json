@@ -597,6 +597,10 @@
           "path": "deployments/pgsql_auth"
         },
         {
+          "title": "Redis Authentication & ACL",
+          "path": "deployments/redis_auth"
+        },
+        {
           "title": "Data Integrations",
           "path": "deployments/rule_engine"
         },
