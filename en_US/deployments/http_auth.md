@@ -10,10 +10,10 @@ EMQX Cloud requests permission from a user-defined authentication service using 
 - Failure: returns a non-200 status code
 - Ignored: returns a 200 status code and the message body: ignore
   
-If built-in authentication is also enabled, EMQX Cloud will follow the default authentication, HTTP authentication for chain authentication:
+If built-in authentication is also enabled, EMQX Cloud will follow [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html),and HTTP authentication for chain authentication:
 
-- Once authentication is successful, terminate the authentication chain and allow client access
-- Once authentication is successful, Terminate the authentication chain and disable client access
+- Once authentication is successful, terminate the authentication chain and the client is accessible
+- Once authentication fails, terminate the authentication chain and disable client access
 
  ![auth_chain](./_assets/auth_chain_en.png)
 
