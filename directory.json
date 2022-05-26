@@ -334,6 +334,10 @@
           "path": "rule_engine/rule_engine_influxDB_2.0"
         },
         {
+          "title": "保存数据到 TDengine",
+          "path": "rule_engine/rule_engine_save_tdengine"
+        },
+        {
           "title": "获取订阅关系",
           "path": "rule_engine/rule_engine_get_subscription"
         },
