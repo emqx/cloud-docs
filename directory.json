@@ -819,6 +819,10 @@
           "path": "rule_engine/rule_engine_offline_msg_saving"
         },
         {
+          "title": "Bridge data to Pulsar",
+          "path": "rule_engine/rule_engine_bridge_pulsar"
+        },
+        {
           "title": "Get subscription topic information",
           "path": "rule_engine/rule_engine_get_subscription"
         }
