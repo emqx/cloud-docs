@@ -350,6 +350,10 @@
           "path": "rule_engine/rule_engine_offline_msg_saving"
         },
         {
+          "title": "桥接数据到 Pulsar",
+          "path": "rule_engine/rule_engine_bridge_pulsar"
+        },
+        {
           "title": "空动作（调试）",
           "path": "rule_engine/rule_engine_empty_action_debug"
         }
