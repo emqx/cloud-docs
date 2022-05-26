@@ -73,7 +73,7 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
    ![mysql](./_assets/mysql.png)
  
-   Fill in the information of the mysql database you have just created and click `Test`. If there is an error, you should check if the database configuration is correct.Then click on `New` to craete MySQL resource.
+   Fill in the information of the mysql database you have just created and click `Test`. If there is an error, you should check if the database configuration is correct. Then click on `New` to create MySQL resource.
 
    ![create resource](./_assets/create_mysql_resource.png)
 
