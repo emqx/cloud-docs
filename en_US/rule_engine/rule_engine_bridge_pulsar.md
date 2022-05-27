@@ -1,5 +1,9 @@
 # Bridge device data to Pulsar using the Data Integrations
 
+::: danger
+This feature is not available in basic deployment
+:::
+
 In this article, we will simulate the temperature and humidity data, and report these data to EMQX Cloud via the MQTT protocol, and then we will use EMQX Cloud Data Integrations to bridge the data to Pulsar.
 
 Before you start, you will need to complete the following:
