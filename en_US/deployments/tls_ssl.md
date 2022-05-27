@@ -65,15 +65,11 @@ EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL c
    - Type of certification:
      - One-way authentication: only the client verifies the server-side certificate
        
-       <div style="position: relative; padding: 30% 45%;">
-       <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/kkb1D4lXbFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       </div>
+       <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null" />
    
      - Two-way authentication: the client and the server validate each other's certificates.
        
-       <div style="position: relative; padding: 30% 45%;">
-       <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/VzygGJXgVI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       </div>
+       <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null" />
      
    - Certificate: server-side certificate
    - Certificate chain: the certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
@@ -116,9 +112,7 @@ Deleting the certificate will disconnect the client from `8883` and `8084`, plea
 
 Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
 
- <div style="position: relative; padding: 30% 45%;">
-       <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/kYL0pQ0GC3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       </div>
+ <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/kYL0pQ0GC3k/?autoplay=1&null" />
 
 ### Generation of Server CA certificate
 

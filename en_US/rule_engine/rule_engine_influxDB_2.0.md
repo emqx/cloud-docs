@@ -25,9 +25,7 @@ For basic deployment users: There is no need to complete peering connection, and
 :::
 
 
-  <div style="position: relative; padding: 30% 45%;">
-  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/1S09epPWLpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
+  <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/1S09epPWLpc/?autoplay=1&null" />
 
 
 ## 1. Login and initialize InfluxDB

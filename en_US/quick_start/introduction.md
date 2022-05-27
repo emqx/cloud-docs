@@ -9,9 +9,7 @@ to EMQX Cloud deployment. Before starting, let's review some core concepts and p
 * Basic Plan: Single node version of EMQX Enterprise
 * Professional Plan: An EMQX Enterprise Edition cluster with separate networks, instances, and load balancing
   
-  <div style="position: relative; padding: 30% 45%;">
-  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/nOmIomoFn28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
+  <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/nOmIomoFn28/?autoplay=1&null" />
 
 
 If you have not yet created an account for EMQX Cloud, the following steps will guide you through the creation of your account. You can also skip this step to view the console quick guide.

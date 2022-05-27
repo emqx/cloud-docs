@@ -7,9 +7,7 @@ Before you start, you need to complete the following operations:
 * For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
 
 
-  <div style="position: relative; padding: 30% 45%;">
-  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://www.youtube.com/embed/7EheLmjaHCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
+  <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/7EheLmjaHCk/?autoplay=1&null" />
 
 ## Create a Timescale Cloud service
 
