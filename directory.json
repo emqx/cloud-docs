@@ -358,6 +358,10 @@
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
         {
+          "title": "桥接数据到 RabbitMQ",
+          "path": "rule_engine/rule_engine_bridge_rabbitmq"
+        },
+        {
           "title": "空动作（调试）",
           "path": "rule_engine/rule_engine_empty_action_debug"
         }
