@@ -795,6 +795,10 @@
           "path": "rule_engine/rule_engine_confluent"
         },
         {
+          "title": "Bridge data to RabbitMQ",
+          "path": "rule_engine/rule_engine_bridge_rabbitmq"
+        },
+        {
           "title": "Store device offline messages",
           "path": "rule_engine/rule_engine_offline_msg_saving"
         },
