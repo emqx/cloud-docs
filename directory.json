@@ -795,6 +795,10 @@
           "path": "rule_engine/rule_engine_save_redis"
         },
         {
+          "title": "Save data to TDengine",
+          "path": "rule_engine/rule_engine_save_tdengine"
+        },
+        {
           "title": "Bridge data to Kafka",
           "path": "rule_engine/rule_engine_kafka"
         },
