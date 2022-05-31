@@ -2,6 +2,7 @@
 
 EMQX Cloud 除了支持默认的认证和鉴权方式之外，还可以让用户连接到自己的服务，通过返回来判断终端的登录权限,能够实现复杂的认证鉴权逻辑和复杂的 ACL 校验逻辑。自定义认证目前可以支持权限的认证以及访问控制的认证。
 
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=552145995&bvid=BV15i4y1C7km&cid=546961807&page=1" />
 
 ## HTTP 认证原理
 

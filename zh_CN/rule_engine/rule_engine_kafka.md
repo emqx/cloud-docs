@@ -11,6 +11,7 @@
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 * 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=638887037&bvid=BV1NY4y1r7DZ&cid=716531055&page=1" />
 
 ## Kafka 配置
 

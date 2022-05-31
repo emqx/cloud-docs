@@ -11,6 +11,12 @@ EMQX Cloud **专业版部署** 提供自定义单向/双向 TLS/SSL 配置，具
 | 单向认证 | 支持               | 需要       | 需要   | 需要     | 不需要         |
 | 双向认证 | 支持               | 需要       | 需要   | 需要     | 需要           |
 
+**单向认证视频**
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=851870347&bvid=BV1FL4y137YM&cid=516019519&page=1" />
+
+**双向认证视频**
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=894345104&bvid=BV1sP4y1c7tN&cid=516012317&page=1" />
+
 ## 证书限制
 
 - 证书必须指定加密算法和密钥大小。EMQX Cloud 支持下列算法：

@@ -22,4 +22,4 @@ When multiple authentication methods are enabled at the same time, the system wi
 
 [MySQL authentication/access control](https://docs.emqx.com/zh/cloud/latest/deployments/mysql_auth.html)
 
-[Postgre authentication/access control](https://docs.emqx.com/zh/cloud/latest/deployments/pgsql_auth.html)
+[PostgreSQL authentication/access control](https://docs.emqx.com/zh/cloud/latest/deployments/pgsql_auth.html)

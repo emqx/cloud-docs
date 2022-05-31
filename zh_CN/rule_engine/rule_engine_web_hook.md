@@ -7,6 +7,8 @@
 * 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 * 对于基础版用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
+<LazyIframeVideo vendor="bilibili" src="https:///player.bilibili.com/player.html?aid=297842723&bvid=BV1HF41137qq&cid=565385853&page=1" />
+
 ## 创建 Web 服务器
 
 1. 创建一个简易的 Web 服务器。
@@ -30,7 +32,6 @@
    httpd = HTTPServer(('0.0.0.0', 8080), SimpleHTTPRequestHandler)
    httpd.serve_forever()
    ```
-
 
 ## EMQX Cloud 数据集成配置
 
