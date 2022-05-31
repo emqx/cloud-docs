@@ -14,6 +14,8 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ## 阿里云平台对等连接
 
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=935751232&bvid=BV1DT4y117Pa&cid=576710909&page=1" />
+
 在阿里云平台，VPC 对等连接又称为 [云企业网](https://cn.aliyun.com/product/cbn)
 
 ### 准备工作
@@ -27,11 +29,11 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，确认信息后，点击 `同意并开通云企业网`。
 
   ![cloud_vpc_peering_info](./_assets/aliyun_cen_1.png)
-   
+
    此时若成功开通云企业网，会返回如下信息，记录以下信息
 
    ![cloud_vpc_peering_info](./_assets/aliyun_cen_2.png)
-   
+
 2. 登录您的阿里云账户，点击您的 VPC 实例进入详情，点击 `云企业网跨账号授权` 标签页，点击 `云企业网跨账号授权` 按钮，将上一步的信息填入。资费承担方式**必须**选择 `VPC用户承担资费`，否则无法创建成功。
 
   ![](./_assets/aliyun_cen_grant.png)
@@ -57,6 +59,8 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
    ![delete_aliyun_peering](./_assets/delete_aliyun_peering.png)
 
 ## 华为云平台对等连接
+
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=253362125&bvid=BV1aY411b7JG&cid=489245559&page=1" />
 
 ### 创建对等连接
 
@@ -122,6 +126,8 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ## 腾讯云平台对等连接
 
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=253252178&bvid=BV1FY411b7ai&cid=489245566&page=1" />
+
 在腾讯云平台，VPC 对等连接又称为 [云联网](https://cloud.tencent.com/document/product/877)。
 
 ### 创建对等连接
@@ -171,6 +177,8 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
    ![tencent_delete_peering](./_assets/tencent_delete_peering.png)
 
 ## AWS 平台对等连接
+
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=340292743&bvid=BV1t94y1o7db&cid=565385787&page=1" />
 
 ### 创建对等连接
 
