@@ -18,7 +18,7 @@ Create a highly available MQTT clusters in minutes and start accessing devices i
 
 ## High availability and data security
 
-EMQX Cloud Professional and Unlimited plans use a highly redundant cluster architecture to ensure high availability of services and guarantee your data security and business stability with a unique isolated environment. Each deployment cluster has its public IP, dedicated VPC network, independent EMQX servers, and database servers, which is more secure and reliable.
+EMQX Cloud Professional and Premium plans use a highly redundant cluster architecture to ensure high availability of services and guarantee your data security and business stability with a unique isolated environment. Each deployment cluster has its public IP, dedicated VPC network, independent EMQX servers, and database servers, which is more secure and reliable.
 
 ## Multiple protocol access and private customization extensions
 
@@ -30,4 +30,4 @@ Capacity is automatically estimated by the number of connections and message thr
 
 ## Flexible data flow solution
 
-EMQX Cloud Professional and Unlimited plans support real-time pre-processing of device event and message data, and storage to more than ten kinds of databases and messaging systems such as MySQL, Kafka, InfluxDB on the cloud.
+EMQX Cloud Professional and Premium plans support real-time pre-processing of device event and message data, and storage to more than ten kinds of databases and messaging systems such as MySQL, Kafka, InfluxDB on the cloud.
