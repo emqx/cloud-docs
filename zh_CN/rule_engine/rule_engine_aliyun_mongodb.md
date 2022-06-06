@@ -1,4 +1,4 @@
-# 使用 EMQX Cloud 数据集成桥接数据到阿里云 MongoDB
+# 使用 EMQX Cloud 数据集成保存数据到阿里云 MongoDB
 ::: danger
 该功能在基础版中不可用
 :::
