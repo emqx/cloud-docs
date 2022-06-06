@@ -282,48 +282,20 @@
           "path": "rule_engine/rule_engine_events"
         },
         {
-          "title": "桥接数据到 Webhook",
-          "path": "rule_engine/rule_engine_web_hook"
-        },
-        {
-          "title": "桥接数据到 MQTT Broker",
-          "path": "rule_engine/rule_engine_mqtt"
+          "title": "空动作（调试）",
+          "path": "rule_engine/rule_engine_empty_action_debug"
         },
         {
           "title": "消息重新发布",
           "path": "rule_engine/rule_engine_republish"
         },
         {
-          "title": "保存数据到 MySQL",
-          "path": "rule_engine/rule_engine_save_mysql"
+          "title": "桥接数据到 Webhook",
+          "path": "rule_engine/rule_engine_web_hook"
         },
         {
-          "title": "保存数据到 阿里云 MySQL",
-          "path": "rule_engine/rule_engine_save_rds_mysql"
-        },
-        {
-          "title": "保存数据到 MongoDB",
-          "path": "rule_engine/rule_engine_save_mongodb"
-        },
-        {
-          "title": "桥接数据到 阿里云 MongoDB",
-          "path": "rule_engine/rule_engine_aliyun_mongodb"
-        },
-        {
-          "title": "保存数据到 TimescaleDB",
-          "path": "rule_engine/rule_engine_save_timescaladb"
-        },
-        {
-          "title": "保存数据到 PostgreSQL",
-          "path": "rule_engine/rule_engine_save_postgresql"
-        },
-        {
-          "title": "保存数据到 Redis",
-          "path": "rule_engine/rule_engine_save_redis"
-        },
-        {
-          "title": "保存数据到 阿里云 Lindorm",
-          "path": "rule_engine/rule_engine_aliyun_lindorm"
+          "title": "桥接数据到 MQTT Broker",
+          "path": "rule_engine/rule_engine_mqtt"
         },
         {
           "title": "桥接数据到 Kafka",
@@ -338,22 +310,6 @@
           "path": "rule_engine/rule_engine_huawei_kafka"
         },
         {
-          "title": "保存数据到 InfluxDB 2.0",
-          "path": "rule_engine/rule_engine_influxDB_2.0"
-        },
-        {
-          "title": "保存数据到 TDengine",
-          "path": "rule_engine/rule_engine_save_tdengine"
-        },
-        {
-          "title": "获取订阅关系",
-          "path": "rule_engine/rule_engine_get_subscription"
-        },
-        {
-          "title": "保存离线消息",
-          "path": "rule_engine/rule_engine_offline_msg_saving"
-        },
-        {
           "title": "桥接数据到 Pulsar",
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
@@ -362,8 +318,56 @@
           "path": "rule_engine/rule_engine_bridge_rabbitmq"
         },
         {
-          "title": "空动作（调试）",
-          "path": "rule_engine/rule_engine_empty_action_debug"
+          "title": "保存数据到 MySQL",
+          "path": "rule_engine/rule_engine_save_mysql"
+        },
+        {
+          "title": "保存数据到 阿里云 MySQL",
+          "path": "rule_engine/rule_engine_save_rds_mysql"
+        },
+        {
+          "title": "保存数据到 TimescaleDB",
+          "path": "rule_engine/rule_engine_save_timescaladb"
+        },
+        {
+          "title": "保存数据到 PostgreSQL",
+          "path": "rule_engine/rule_engine_save_postgresql"
+        },
+        {
+          "title": "保存数据到 MongoDB",
+          "path": "rule_engine/rule_engine_save_mongodb"
+        },
+        {
+          "title": "保存数据到 阿里云 MongoDB",
+          "path": "rule_engine/rule_engine_aliyun_mongodb"
+        },
+        {
+          "title": "保存数据到 Redis",
+          "path": "rule_engine/rule_engine_save_redis"
+        },
+        {
+          "title": "保存数据到 ClickHouse",
+          "path": "rule_engine/rule_engine_save_clickhouse"
+        },
+        {
+          "title": "保存数据到 InfluxDB 2.0",
+          "path": "rule_engine/rule_engine_influxDB_2.0"
+        },
+        {
+          "title": "保存数据到 TDengine",
+          "path": "rule_engine/rule_engine_save_tdengine"
+        },
+        {
+          "title": "保存数据到 阿里云 Lindorm",
+          "path": "rule_engine/rule_engine_aliyun_lindorm"
+        },
+        {
+          "title": "获取订阅关系",
+          "path": "rule_engine/rule_engine_get_subscription"
+        },
+        {
+          "title": "保存离线消息",
+          "path": "rule_engine/rule_engine_offline_msg_saving"
         }
       ]
     },
@@ -755,6 +759,10 @@
           "path": "rule_engine/rule_engine_events"
         },
         {
+          "title": "Republish messages",
+          "path": "rule_engine/rule_engine_republish"
+        },
+        {
           "title": "Bridge data to Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
@@ -763,12 +771,12 @@
           "path": "rule_engine/rule_engine_mqtt"
         },
         {
-          "title": "Republish messages",
-          "path": "rule_engine/rule_engine_republish"
+          "title": "Bridge data to Kafka",
+          "path": "rule_engine/rule_engine_kafka"
         },
         {
-          "title": "Save data to MySQL",
-          "path": "rule_engine/rule_engine_save_mysql"
+          "title": "Bridge data to Confluent Cloud",
+          "path": "rule_engine/rule_engine_confluent"
         },
         {
           "title": "Save data to TimescaleDB",
@@ -781,6 +789,10 @@
         {
           "title": "Save data to PostgreSQL",
           "path": "rule_engine/rule_engine_save_psql"
+        },
+        {
+          "title": "Save data to MySQL",
+          "path": "rule_engine/rule_engine_save_mysql"
         },
         {
           "title": "Save data to MongoDB",
@@ -801,18 +813,6 @@
         {
           "title": "Save data to TDengine",
           "path": "rule_engine/rule_engine_save_tdengine"
-        },
-        {
-          "title": "Bridge data to Kafka",
-          "path": "rule_engine/rule_engine_kafka"
-        },
-        {
-          "title": "Bridge data to Confluent Cloud",
-          "path": "rule_engine/rule_engine_confluent"
-        },
-        {
-          "title": "Bridge data to RabbitMQ",
-          "path": "rule_engine/rule_engine_bridge_rabbitmq"
         },
         {
           "title": "Store device offline messages",
