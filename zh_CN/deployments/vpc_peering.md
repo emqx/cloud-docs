@@ -42,7 +42,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
     ![cloud_vpc_peering_info](./_assets/cloud_vpc_network_segments.png)
     ![aliyun_create_vpc_peering_3](./_assets/ali_vpc_peering_route.png)
 
-6. 登录您阿里云账号，为实例配置安全组，允许 EMQX Cloud 网段访问您的 VPC。
+6. 登录您阿里云账号，找到 ECS 实例详情页面 - 安全组，在入方向手动添加安全组，允许 EMQX Cloud 网段访问您的 VPC。
   
     ![aliyun_security_group](./_assets/ali_vpc_peering_security.png)
 
