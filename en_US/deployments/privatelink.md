@@ -6,6 +6,8 @@ In the private connection, the EMQX Cloud deployment VPC acts as the service use
 
 ## AWS Platform PrivateLink Connection
 
+<LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/vu_3KW4pq9A/?autoplay=1&null" />
+
 ### Preparation
 
 Before you can configure PrivateLink, you need to complete the following prerequisites on the AWS platform.

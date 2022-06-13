@@ -13,6 +13,8 @@
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 * 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。(专业版部署若开通 [NAT 网关](../vas/nat-gateway.md)也可使用公网 IP 进行连接）
 
+<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=769840539&bvid=BV1Er4y1V7UC&cid=741804407&page=1" />
+
 ## TDengine 配置
 
 1. TDengine 安装
