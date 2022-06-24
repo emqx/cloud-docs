@@ -156,6 +156,10 @@
           "path": "deployments/redis_auth"
         },
         {
+          "title": "JWT 认证",
+          "path": "deployments/jwt_auth"
+        },
+        {
           "title": "监控",
           "path": "deployments/monitors"
         },
@@ -623,6 +627,10 @@
         {
           "title": "Redis Authentication & ACL",
           "path": "deployments/redis_auth"
+        },
+        {
+          "title": "JWT Authentication",
+          "path": "deployments/jwt_auth"
         },
         {
           "title": "Data Integrations",

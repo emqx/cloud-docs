@@ -103,11 +103,11 @@ If built-in authentication is also enabled, EMQX Cloud will chain [default authe
 
 2. Click `Configure Authentication` to enter MySQL Authentication/Access Control page, fill in the information and create a new authentication.
 
-    Tip
-
-    - If the current deployment is Basic Edition, please fill in the public address for the server address
-    - If the current deployment is Professional Edition, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the intranet address for the server address.
-    - If you are prompted with Init resource failure! check whether the server address is correct, whether the security group is enabled, and whether the MySQL database allows EMQX Cloud cluster access
+    ::: tip
+     - If the current deployment is Basic deployment, please fill in the public address for the server address
+     - If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the intranet address for the server address.
+     - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
+    :::
 
     ![mysql_auth](./_assets/../_assets/mysql_auth_info.png)
 
