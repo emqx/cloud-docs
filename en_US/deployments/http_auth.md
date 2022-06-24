@@ -29,30 +29,32 @@ Configure the required parameters for permission authentication on the form page
 
  ![http_auth](./_assets/http_auth_1.png)
 
-> - In Standard plan, please fill in the public network IP address for the request
-> - In Professional plan, please fill in the intranet IP address for the request
+  ::: tip
 
-
+- If the current deployment is Basic deployment, please fill in the public address for the server address
+- If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the intranet address for the server address.
+- If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
+  :::
 
 ### Request Parameter Placeholders
+
 You can use the following placeholders in your authentication request and the EMQX will be automatically replace with client information.
 
- - %u: User name
- - %c: Client ID
- - %a: Client IP address
- - %r: Client access protocol
- - %P: Plaintext password
- - %p: Client port
-
- 
+- %u: User name
+- %c: Client ID
+- %a: Client IP address
+- %r: Client access protocol
+- %P: Plaintext password
+- %p: Client port
 
 ### Request Method
+
 When the HTTP request method is GET, the request parameters are passed as a URL query string; when the request method is POST, the request parameters are submitted as a normal form (content-type is x-www-form-urlencoded or json).
 
 > The POST method is recommended. When using the GET method, plaintext passwords may be logged in the server logs with the URL during transmission.
 
 ## ACL
- 
+
  When publishing or subscribing to authentication, EMQX Cloud will use the current client information and initiate a user-configured ACL authorization query request to find out the authorization info for the client on the HTTP server.
 
  Configure the parameters for ACL, including ACL request address, ACL request parameters, HTTP request method and type of request content. Use the default values for the remaining parameters if they are not specifically required.
@@ -63,12 +65,13 @@ When the HTTP request method is GET, the request parameters are passed as a URL 
 
 You can use the following placeholders in your authentication request and the EMQX will be automatically replaced with client information.
 
- - %A: operation type, '1' subscribe; '2' publish
- - %u: Client ID
- - %c: Client ID
- - %a: Client IP address
- - %r: Client access protocol
- - %t: Subject
- 
+- %A: operation type, '1' subscribe; '2' publish
+- %u: Client ID
+- %c: Client ID
+- %a: Client IP address
+- %r: Client access protocol
+- %t: Subject
+
 ### Request Method
+
 When the HTTP request method is GET, the request parameters are passed as a URL query string; when the request method is POST, the request parameters are submitted as a normal form (content-type is x-www-form-urlencoded or json).

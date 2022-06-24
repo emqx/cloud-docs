@@ -82,9 +82,11 @@ If built-in authentication is also enabled, EMQX Cloud will chain [default authe
 
 2. Click `Configure Authentication` to enter the PostgreSQL Authentication/Access Control page, fill in the information and create a new authentication.
 
-    - If you are currently deploying the basic version, please fill in the public address of the server.
-    - If you are currently deploying Professional Edition, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html) and fill in the intranet address for the server address.
-    - If you are prompted with Init resource failure! Check if the server address is correct and if the security group is enabled.
+    ::: tip
+     - If the current deployment is Basic deployment, please fill in the public address for the server address
+     - If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the intranet address for the server address.
+     - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
+    :::
 
     ![pgsql_auth](./_assets/../_assets/pgsql_auth_info.png)
 
