@@ -18,7 +18,7 @@ This document provides a guide plan for EMQX Cloud to integrate the user's own d
 - **Get device messages for bridging/storing:** Through the Data Integrations, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases) , Message queue Kafka and self-built web services.
 - **Business( such as message sending and receiving, connections) statistics:** Get relevant statistics through REST API. For API usage, please refer to [Metrics](https://docs.emqx.io/en/cloud/latest/api/metrics.html).
 
-​            ![img](https://static.emqx.net/images/a912409d8db446e61567c4749946023c.png)            
+​            ![img](https://assets.emqx.com/images/a912409d8db446e61567c4749946023c.png)            
 
 Figure 1 Schematic diagram of EMQX Cloud cluster architecture
 

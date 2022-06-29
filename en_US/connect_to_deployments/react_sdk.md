@@ -176,15 +176,15 @@ The complete project example code: [https://github.com/emqx/MQTT-Client-Examples
 
 We have written the following simple browser application using React with the ability to create connections, subscribe to topics, send and receive messages, unsubscribe, and disconnect.
 
-![reactmqttpage.png](https://static.emqx.net/images/d1c51195c056f3b4afb267edaeb217f0.png)
+![reactmqttpage.png](https://assets.emqx.com/images/d1c51195c056f3b4afb267edaeb217f0.png)
 
 Use [MQTT 5.0 client tool - MQTT X](https://mqttx.app/) as another client to test sending and receiving messages.
 
-![reactmqttx.png](https://static.emqx.net/images/621ba9544ea69f9ee7b24203846d0409.png)
+![reactmqttx.png](https://assets.emqx.com/images/621ba9544ea69f9ee7b24203846d0409.png)
 
 You can see that MQTT X can receive messages from the browser side normally, as can be seen when sending a message to the topic using MQTT X.
 
-![reactmqtttest.png](https://static.emqx.net/images/da008ae3544a83a3efa78266190ea364.png)
+![reactmqtttest.png](https://assets.emqx.com/images/da008ae3544a83a3efa78266190ea364.png)
 
 ## More
 
