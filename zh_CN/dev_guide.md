@@ -18,7 +18,7 @@
 - **获取设备消息进行桥接/存储:** 通过数据集成，将设备事件（上下线、订阅/取消订阅、消息发布）以及消息数据存储至私有数据库（主流关系/非关系，各类时序数据库）、消息队列 Kafka 以及自建 Web 服务。
 - **消息收发、连接数等业务统计:** 通过 REST API 获取相关统计信息，API 使用参考[指标](https://docs.emqx.cn/cloud/latest/api/metrics.html)。
 
-​            ![img](https://static.emqx.net/images/a912409d8db446e61567c4749946023c.png)            
+​            ![img](https://assets.emqx.com/images/a912409d8db446e61567c4749946023c.png)            
 
 ​																				图 1 EMQX Cloud 集群架构示意图
 
@@ -32,7 +32,7 @@
 
 平台通过 REST API 进行认证信息增、删、查、改，将平台端的操作运用在 EMQX Cloud 端。
 
-​            ![img](https://static.emqx.net/images/54741111f28d67400944f8b436e5e145.png)            
+​            ![img](https://assets.emqx.com/images/54741111f28d67400944f8b436e5e145.png)            
 
 
 
@@ -42,11 +42,11 @@
 
 - 平台通过 REST API 获取在线设备列表，查询设备是否在线。
 
-​            ![img](https://static.emqx.net/images/54741111f28d67400944f8b436e5e145.png)            
+​            ![img](https://assets.emqx.com/images/54741111f28d67400944f8b436e5e145.png)            
 
 - 平台通过数据集成在设备上线、下线时改写私有数据库中设备的状态或发送到自建服务（Web 服务）。
 
-​            ![img](https://static.emqx.net/images/45f8093affa14ad31e2482eb7b706e29.png)            
+​            ![img](https://assets.emqx.com/images/45f8093affa14ad31e2482eb7b706e29.png)            
 
 ## 设备离线告警
 
@@ -60,7 +60,7 @@
 
 接收到设备下线通知后，平台可以做离线告警相关业务。
 
-​            ![img](https://static.emqx.net/images/45f8093affa14ad31e2482eb7b706e29.png)            
+​            ![img](https://assets.emqx.com/images/45f8093affa14ad31e2482eb7b706e29.png)            
 
 
 
@@ -70,7 +70,7 @@
 
 平台通过 REST API 对 ACL 权限进行增、删、查、改。
 
-​            ![img](https://static.emqx.net/images/1a9342cf4189088082abd5807b43ed98.png)            
+​            ![img](https://assets.emqx.com/images/1a9342cf4189088082abd5807b43ed98.png)            
 
 
 
@@ -78,7 +78,7 @@
 
 对于异常设备或者需要强制离线的设备，平台可以使用 REST  API 将在线设备踢下线。
 
-​            ![img](https://static.emqx.net/images/5da6e976718b1a21b9468c777a11624c.png)            
+​            ![img](https://assets.emqx.com/images/5da6e976718b1a21b9468c777a11624c.png)            
 
 
 
@@ -86,7 +86,7 @@
 
 平台通过 REST API 为**在线设备**订阅或取消订阅主题，无需设备主动发起订阅，无需升级、烧录设备的软件数据。
 
-​            ![img](https://static.emqx.net/images/5da6e976718b1a21b9468c777a11624c.png)            
+​            ![img](https://assets.emqx.com/images/5da6e976718b1a21b9468c777a11624c.png)            
 
 
 
@@ -94,7 +94,7 @@
 
 平台通过 REST API 或 MQTT 接入向指定主题发布消息，支持批量操作。
 
-​            ![img](https://static.emqx.net/images/cc5cdfaafcd34bd7771cbeb5048537ac.png)            
+​            ![img](https://assets.emqx.com/images/cc5cdfaafcd34bd7771cbeb5048537ac.png)            
 
 
 
@@ -104,7 +104,7 @@
 
 
 
-​            ![img](https://static.emqx.net/images/a58e488c3f168e6df2a39cdca75d79f6.png)            
+​            ![img](https://assets.emqx.com/images/a58e488c3f168e6df2a39cdca75d79f6.png)            
 
 
 
@@ -112,7 +112,7 @@
 
 通过 REST API 获取相关统计信息，包括在线设备、订阅主题、主题、消息收发等数量，以及消息收发条数等统计指标。
 
-​            ![img](https://static.emqx.net/images/a40b740cad9c6980b17366b2635129d2.png)            
+​            ![img](https://assets.emqx.com/images/a40b740cad9c6980b17366b2635129d2.png)            
 
 
 
