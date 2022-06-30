@@ -12,10 +12,10 @@ GET /subscriptions
 
 查询参数:
 
-| 名称          | 类型    |  描述        |
-| ------       | ------- |  ------- |
-| _page        | Integer | 页码         |
-| _limit       | Integer | 每页显示的数据条数 |
+| 名称         | 类型    | 描述                  |
+| ------------ | ------- | --------------------- |
+| _page        | Integer | 页码                  |
+| _limit       | Integer | 每页显示的数据条数    |
 | clientid     | String  | 客户端标识符          |
 | qos          | Integer | 可取值为：`0`,`1`,`2` |
 | share        | String  | 共享订阅的组名称      |
@@ -23,15 +23,15 @@ GET /subscriptions
 
 ### 响应消息
 
-| 名称            | 类型              | 描述         |
-| ------          | ------           | ------      |
-| code            | Integer          | 0            |
-| data            | Array of Objects | 所有订阅信息 |
-| data[].node     | String           | 节点名称     |
-| data[].clientid | String           | 客户端标识符 |
-| data[].topic    | String           | 订阅主题     |
-| data[].qos      | Integer          | QoS 等级     |
-| meta            | Object           | 分页信息     |
+| 名称            | 类型             | 描述               |
+| --------------- | ---------------- | ------------------ |
+| code            | Integer          | 0                  |
+| data            | Array of Objects | 所有订阅信息       |
+| data[].node     | String           | 节点名称           |
+| data[].clientid | String           | 客户端标识符       |
+| data[].topic    | String           | 订阅主题           |
+| data[].qos      | Integer          | QoS 等级           |
+| meta            | Object           | 分页信息           |
 | meta.page       | Integer          | 页码               |
 | meta.limit      | Integer          | 每页显示的数据条数 |
 | meta.count      | Integer          | 数据总条数         |
@@ -74,25 +74,25 @@ GET /subscriptions/{clientid}
 
 查询参数:
 
-| 名称      | 类型      | 描述        |
-| ------   | ------   | ----------  |
-| clientid | String   | clientid    |
+| 名称     | 类型   | 描述     |
+| -------- | ------ | -------- |
+| clientid | String | clientid |
 
 ### 响应消息
 
-| 名称             | 类型             | 描述          |
-| -----------     | ------------     | ----------  | 
+| 名称            | 类型             | 描述         |
+| --------------- | ---------------- | ------------ |
 | code            | Integer          | 0            |
-| data            | Array of Objects | 所有订阅信息   |
-| data[].node     | String           | 节点名称      |
-| data[].clientid | String           | 客户端标识符   |
-| data[].topic    | String           | 订阅主题       |
-| data[].qos      | Integer          | QoS 等级      |
+| data            | Array of Objects | 所有订阅信息 |
+| data[].node     | String           | 节点名称     |
+| data[].clientid | String           | 客户端标识符 |
+| data[].topic    | String           | 订阅主题     |
+| data[].qos      | Integer          | QoS 等级     |
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/subscriptions
+$ curl -u app_id:app_secret -X GET {api}/subscriptions/{clientid}
 ```
 
 ### 响应示例

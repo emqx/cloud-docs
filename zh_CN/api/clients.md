@@ -8,24 +8,24 @@ GET /clients
 
 **查询参数:**
 
-| 参数               | 类型       | 描述                                                  |
-| ------            |  -------   | --------- |
-| _page             | Integer    | 页码     |
-| _limit            | Integer    | 每页显示的数据条数 |
-| clientid          | String     | 客户端标识符      |
-| username          | String     | 客户端用户名      |
-| zone              | String     | 客户端配置组名称   |
-| ip_address        | String     | 客户端 IP 地址    |
-| conn_state        | Enum       | 客户端当前连接状态， 可取值有：`connected`,`idle`,`disconnected` |
-| clean_start       | Bool       | 客户端是否使用了全新的会话                                   |
-| proto_name        | Enum       | 客户端协议名称， 可取值有：`MQTT`,`CoAP`,`LwM2M`,`MQTT-SN`   |
-| proto_ver         | Integer    | 客户端协议版本                      |
-| _like_clientid    | String     | 客户端标识符，子串方式模糊查找         |
-| _like_username    | String     | 客户端用户名，子串方式模糊查找         |
-| _gte_created_at   | Integer    | 客户端会话创建时间，小于等于查找        |
-| _lte_created_at   | Integer    | 客户端会话创建时间，大于等于查找        |
-| _gte_connected_at | Integer    | 客户端连接创建时间，小于等于查找        |
-| _lte_connected_at | Integer    | 客户端连接创建时间，大于等于查找        |
+| 参数              | 类型    | 描述                                                             |
+| ----------------- | ------- | ---------------------------------------------------------------- |
+| _page             | Integer | 页码                                                             |
+| _limit            | Integer | 每页显示的数据条数                                               |
+| clientid          | String  | 客户端标识符                                                     |
+| username          | String  | 客户端用户名                                                     |
+| zone              | String  | 客户端配置组名称                                                 |
+| ip_address        | String  | 客户端 IP 地址                                                   |
+| conn_state        | Enum    | 客户端当前连接状态， 可取值有：`connected`,`idle`,`disconnected` |
+| clean_start       | Bool    | 客户端是否使用了全新的会话                                       |
+| proto_name        | Enum    | 客户端协议名称， 可取值有：`MQTT`,`CoAP`,`LwM2M`,`MQTT-SN`       |
+| proto_ver         | Integer | 客户端协议版本                                                   |
+| _like_clientid    | String  | 客户端标识符，子串方式模糊查找                                   |
+| _like_username    | String  | 客户端用户名，子串方式模糊查找                                   |
+| _gte_created_at   | Integer | 客户端会话创建时间，小于等于查找                                 |
+| _lte_created_at   | Integer | 客户端会话创建时间，大于等于查找                                 |
+| _gte_connected_at | Integer | 客户端连接创建时间，小于等于查找                                 |
+| _lte_connected_at | Integer | 客户端连接创建时间，大于等于查找                                 |
 
 ### 请求消息
 
@@ -33,55 +33,55 @@ GET /clients
 
 ### 响应消息
 
-| 名称                      | 类型             | 描述       |
-| ------------------------ | ---------------- | ------------ |
-| code                     | Integer          | 0        |
-| data                     | Array of Objects | 所有客户端的信息      |
-| data[].node              | String           | 客户端所连接的节点名称    |
-| data[].clientid          | String           | 客户端标识符  |
-| data[].username          | String           | 客户端连接时使用的用户名  |
-| data[].proto_name        | String           | 客户端协议名称  |
-| data[].proto_ver         | Integer          | 客户端使用的协议版本  |
-| data[].ip_address        | String           | 客户端的 IP 地址    |
-| data[].port              | Integer          | 客户端的端口 |
-| data[].is_bridge         | Boolean          | 指示客户端是否通过桥接方式连接  |
-| data[].connected_at      | String           | 客户端连接时间，格式为 "YYYY-MM-DD HH:mm:ss" |
+| 名称                     | 类型             | 描述                                                                                            |
+| ------------------------ | ---------------- | ----------------------------------------------------------------------------------------------- |
+| code                     | Integer          | 0                                                                                               |
+| data                     | Array of Objects | 所有客户端的信息                                                                                |
+| data[].node              | String           | 客户端所连接的节点名称                                                                          |
+| data[].clientid          | String           | 客户端标识符                                                                                    |
+| data[].username          | String           | 客户端连接时使用的用户名                                                                        |
+| data[].proto_name        | String           | 客户端协议名称                                                                                  |
+| data[].proto_ver         | Integer          | 客户端使用的协议版本                                                                            |
+| data[].ip_address        | String           | 客户端的 IP 地址                                                                                |
+| data[].port              | Integer          | 客户端的端口                                                                                    |
+| data[].is_bridge         | Boolean          | 指示客户端是否通过桥接方式连接                                                                  |
+| data[].connected_at      | String           | 客户端连接时间，格式为 "YYYY-MM-DD HH:mm:ss"                                                    |
 | data[].disconnected_at   | String           | 客户端离线时间，格式为 "YYYY-MM-DD HH:mm:ss"， 此字段仅在 `connected` 为 `false` 时有效并被返回 |
-| data[].connected         | Boolean          | 客户端是否处于连接状态  |
-| data[].zone              | String           | 指示客户端使用的配置组  |
-| data[].keepalive         | Integer          | 保持连接时间，单位：秒   |
-| data[].clean_start       | Boolean          | 指示客户端是否使用了全新的会话   |
-| data[].expiry_interval   | Integer          | 会话过期间隔，单位：秒  |
-| data[].created_at        | String           | 会话创建时间，格式为 "YYYY-MM-DD HH:mm:ss"|
-| data[].subscriptions_cnt | Integer          | 此客户端已建立的订阅数量  |
-| data[].max_subscriptions | Integer          | 此客户端允许建立的最大订阅数量  |
-| data[].inflight          | Integer          | 飞行队列当前长度  |
-| data[].max_inflight      | Integer          | 飞行队列最大长度  |
-| data[].mqueue_len        | Integer          | 消息队列当前长度   |
-| data[].max_mqueue        | Integer          | 消息队列最大长度  |
-| data[].mqueue_dropped    | Integer          | 消息队列因超出长度而丢弃的消息数量  |
-| data[].awaiting_rel      | Integer          | 未确认的 PUBREC 报文数量 |
-| data[].max_awaiting_rel  | Integer          | 允许存在未确认的 PUBREC 报文的最大数量 |
-| data[].recv_oct          | Integer          | EMQX Broker（下同）接收的字节数量 |
-| data[].recv_cnt          | Integer          | 接收的 TCP 报文数量 |
-| data[].recv_pkt          | Integer          | 接收的 MQTT 报文数量  |
-| data[].recv_msg          | Integer          | 接收的 PUBLISH 报文数量    |
-| data[].send_oct          | Integer          | 发送的字节数量  |
-| data[].send_cnt          | Integer          | 发送的 TCP 报文数量 |
-| data[].send_pkt          | Integer          | 发送的 MQTT 报文数量 |
-| data[].send_msg          | Integer          | 发送的 PUBLISH 报文数量  |
-| data[].mailbox_len       | Integer          | 进程邮箱大小  |
-| data[].heap_size         | Integer          | 进程堆栈大小，单位：字节 |
-| data[].reductions        | Integer          | Erlang reduction |
-| meta                     | Object           | 分页信息  |
-| meta.page                | Integer          | 页码  |
-| meta.limit               | Integer          | 每页显示的数据条数 |
-| meta.count               | Integer          | 数据总条数 |
+| data[].connected         | Boolean          | 客户端是否处于连接状态                                                                          |
+| data[].zone              | String           | 指示客户端使用的配置组                                                                          |
+| data[].keepalive         | Integer          | 保持连接时间，单位：秒                                                                          |
+| data[].clean_start       | Boolean          | 指示客户端是否使用了全新的会话                                                                  |
+| data[].expiry_interval   | Integer          | 会话过期间隔，单位：秒                                                                          |
+| data[].created_at        | String           | 会话创建时间，格式为 "YYYY-MM-DD HH:mm:ss"                                                      |
+| data[].subscriptions_cnt | Integer          | 此客户端已建立的订阅数量                                                                        |
+| data[].max_subscriptions | Integer          | 此客户端允许建立的最大订阅数量                                                                  |
+| data[].inflight          | Integer          | 飞行队列当前长度                                                                                |
+| data[].max_inflight      | Integer          | 飞行队列最大长度                                                                                |
+| data[].mqueue_len        | Integer          | 消息队列当前长度                                                                                |
+| data[].max_mqueue        | Integer          | 消息队列最大长度                                                                                |
+| data[].mqueue_dropped    | Integer          | 消息队列因超出长度而丢弃的消息数量                                                              |
+| data[].awaiting_rel      | Integer          | 未确认的 PUBREC 报文数量                                                                        |
+| data[].max_awaiting_rel  | Integer          | 允许存在未确认的 PUBREC 报文的最大数量                                                          |
+| data[].recv_oct          | Integer          | EMQX Broker（下同）接收的字节数量                                                               |
+| data[].recv_cnt          | Integer          | 接收的 TCP 报文数量                                                                             |
+| data[].recv_pkt          | Integer          | 接收的 MQTT 报文数量                                                                            |
+| data[].recv_msg          | Integer          | 接收的 PUBLISH 报文数量                                                                         |
+| data[].send_oct          | Integer          | 发送的字节数量                                                                                  |
+| data[].send_cnt          | Integer          | 发送的 TCP 报文数量                                                                             |
+| data[].send_pkt          | Integer          | 发送的 MQTT 报文数量                                                                            |
+| data[].send_msg          | Integer          | 发送的 PUBLISH 报文数量                                                                         |
+| data[].mailbox_len       | Integer          | 进程邮箱大小                                                                                    |
+| data[].heap_size         | Integer          | 进程堆栈大小，单位：字节                                                                        |
+| data[].reductions        | Integer          | Erlang reduction                                                                                |
+| meta                     | Object           | 分页信息                                                                                        |
+| meta.page                | Integer          | 页码                                                                                            |
+| meta.limit               | Integer          | 每页显示的数据条数                                                                              |
+| meta.count               | Integer          | 数据总条数                                                                                      |
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/clients?_page=1&_limit=10"    
+$ curl -u app_id:app_secret -X GET {api}/clients?_page=1&_limit=10
 ```
 
 ### 响应示例
@@ -148,9 +148,9 @@ GET /clients/{clientid}
 
 **参数:**
 
-| 参数     | 类型     | 描述     |
-| -------- | ------  | -------- |
-| clientid | String  | clientid |
+| 参数     | 类型   | 描述     |
+| -------- | ------ | -------- |
+| clientid | String | clientid |
 
 ### 请求信息
 
@@ -158,7 +158,7 @@ GET /clients/{clientid}
 
 ### 响应信息
 
-| 名称 | 类型              | 描述                                    |
+| 名称 | 类型             | 描述                                    |
 | ---- | ---------------- | --------------------------------------- |
 | code | Integer          | 0                                       |
 | data | Array of Objects | 客户端的信息，详细请参见 `GET /clients` |
@@ -229,9 +229,9 @@ DELETE /clients/{clientid}
 
 参数:
 
-| 参数     | 类型    | 描述 |
-| -------- | ------  | ----------- |
-| clientid | String  | clientid    |
+| 参数     | 类型   | 描述     |
+| -------- | ------ | -------- |
+| clientid | String | clientid |
 
 ### 请求信息
 
