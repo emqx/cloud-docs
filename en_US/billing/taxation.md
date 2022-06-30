@@ -85,4 +85,29 @@ You can find out other supported Tax IDs in [here](https://stripe.com/docs/billi
 We will calculate the taxes based on your billing address and whether you have filled in your VAT/GST ID. If you have further questions, please contact us by email cloud-service@emqx.io.
 
 
+## Regions
+
+### Australia
+EMQX Cloud charge GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+
+### Canada
+EMQX Cloud charge GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+
+### European Union (EU)
+EMQX Cloud Consulting charge VAT if you do not enter a valid VAT ID Number. Provide a valid VAT ID Number on your billing information to incur no VAT charges.
+
+::: tip
+If your billing address is in Sweden, EMQX Cloud always charge VAT, even with a valid VAT ID Number.
+:::
+
+### India
+EMQX Cloud charges GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+
+### United Kingdom (UK)
+EMQX Cloud charges VAT if you do not enter a valid VAT ID Number. Provide a valid VAT ID Number on your billing information to incur no VAT charges.
+
+
+### Singapore
+EMQX Cloud charges GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+
 
