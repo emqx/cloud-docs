@@ -10,36 +10,27 @@ POST /acl
 
 | 名称     | 类型   | 描述                   |
 | -------- | ------ | ---------------------- |
-| clientid | String | clientid              |
+| clientid | String | clientid               |
 | topic    | String | 主题                   |
 | action   | String | 动作：sub, pub, subpub |
 | access   | String | 是否允许：allow, deny  |
 
 ### 响应消息
 
-| 名称          | 类型    | 描述       |
-| :------------ | :------ | :--------- |
-| code          | Integer | 0          |
-| data          | Object  | 规则对象   |
-| data.topic    | String  | 主题       |
-| data.result   | String  | 结果       |
-| data.clientid | String | clientid |
-| data.action   | String | 动作       |
-| data.access   | String | 是否允许       |
+| 名称          | 类型    | 描述     |
+| :------------ | :------ | :------- |
+| code          | Integer | 0        |
+| data          | Object  | 规则对象 |
+| data.topic    | String  | 主题     |
+| data.result   | String  | 结果     |
+| data.clientid | String  | clientid |
+| data.action   | String  | 动作     |
+| data.access   | String  | 是否允许 |
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST {api}/acl
-```
-
-```JSON
-{
-  "clientid": "client1",
-  "topic": "a/b",
-  "action": "sub",
-  "access": "allow"
-}
+$ curl -u app_id:app_secret -X POST -d '{"clientid": "client1","topic": "a/b","action": "sub","access": "allow"}' {api}/acl
 ```
 
 ### 响应示例
@@ -87,16 +78,7 @@ POST /acl
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST {api}/acl
-```
-
-```JSON
-{
-  "username": "user1",
-  "topic": "a/b",
-  "action": "sub",
-  "access": "allow"
-}
+$ curl -u app_id:app_secret -X POST -d '{"username": "user1","topic": "a/b","action": "sub","access": "allow"}' {api}/acl
 ```
 
 ### 响应示例
@@ -104,12 +86,12 @@ $ curl -u app_id:app_secret -X POST {api}/acl
 ```JSON
 {
   "data": {
-    "topic": "a/b",
-    "result": "ok",
-    "username": "user1",
-    "action": "sub",
+    "username": "user1", 
+    "topic": "a/b", 
+    "result": "ok", 
+    "action": "sub", 
     "access": "allow"
-  },
+  }, 
   "code": 0
 }
 ```
@@ -122,36 +104,28 @@ POST /acl
 
 ### 请求消息
 
-| 名称     | 类型   | 描述                   |
-| -------- | ------ | ---------------------- |
-| topic    | String | 主题                   |
-| action   | String | 动作：sub, pub, subpub |
-| access   | String | 是否允许：allow, deny  |
+| 名称   | 类型   | 描述                   |
+| ------ | ------ | ---------------------- |
+| topic  | String | 主题                   |
+| action | String | 动作：sub, pub, subpub |
+| access | String | 是否允许：allow, deny  |
 
 ### 响应消息
 
-| 名称          | 类型    | 描述      |
-| :------------ | :------ | :-------- |
-| code          | Integer | 0         |
-| data          | Object  | 规则对象  |
-| data.topic    | String  | 主题      |
-| data.result   | String  | 结果      |
-| data.all      | String  | $all      |
-| data.action   | String  | 动作      |
-| data.access   | String  | 是否允许  |
+| 名称        | 类型    | 描述     |
+| :---------- | :------ | :------- |
+| code        | Integer | 0        |
+| data        | Object  | 规则对象 |
+| data.topic  | String  | 主题     |
+| data.result | String  | 结果     |
+| data.all    | String  | $all     |
+| data.action | String  | 动作     |
+| data.access | String  | 是否允许 |
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST {api}/acl
-```
-
-```json
-{
-  "topic": "a/b",
-  "action": "pub",
-  "access": "allow"
-}
+$ curl -u app_id:app_secret -X POST -d '{"topic": "a/b","action": "pub","access": "allow"}' {api}/acl
 ```
 
 ### 响应示例
@@ -177,68 +151,46 @@ POST /acl
 
 ### 请求消息
 
-| 名称   | 类型   | 描述                   |
-| ------ | ------ | ---------------------- |
-| [0].clientid | String | clientid              |
-| [0].topic | String | 主题                   |
-| [0].action | String | 动作：sub, pub, subpub |
-| [0].access | String | 是否允许：allow, deny  |
+| 名称         | 类型   | 描述                   |
+| ------------ | ------ | ---------------------- |
+| [0].clientid | String | clientid               |
+| [0].topic    | String | 主题                   |
+| [0].action   | String | 动作：sub, pub, subpub |
+| [0].access   | String | 是否允许：allow, deny  |
 | [1].username | String | username               |
-| [1].topic | String | 主题                   |
-| [1].action | String | 动作：sub, pub, subpub |
-| [1].access | String | 是否允许：allow, deny  |
-| [2].topic | String | 主题                   |
-| [2].action | String | 动作：sub, pub, subpub |
-| [2].access | String | 是否允许：allow, deny  |
+| [1].topic    | String | 主题                   |
+| [1].action   | String | 动作：sub, pub, subpub |
+| [1].access   | String | 是否允许：allow, deny  |
+| [2].topic    | String | 主题                   |
+| [2].action   | String | 动作：sub, pub, subpub |
+| [2].access   | String | 是否允许：allow, deny  |
 
 ### 响应消息
 
-| 名称          | 类型    | 描述     |
-| :----------  | :------ | :------- |
-| code         | Integer | 0        |
-| data         | Object  | 规则对象 |
-| [0].clientid | String  | clientid              |
+| 名称         | 类型    | 描述                   |
+| :----------- | :------ | :--------------------- |
+| code         | Integer | 0                      |
+| data         | Object  | 规则对象               |
+| [0].clientid | String  | clientid               |
 | [0].topic    | String  | 主题                   |
 | [0].action   | String  | 动作：sub, pub, subpub |
 | [0].access   | String  | 是否允许：allow, deny  |
-| [0].result   | String  | 结果                  |
+| [0].result   | String  | 结果                   |
 | [1].username | String  | username               |
 | [1].topic    | String  | 主题                   |
 | [1].action   | String  | 动作：sub, pub, subpub |
 | [1].access   | String  | 是否允许：allow, deny  |
-| [1].result   | String  | 结果                  |
+| [1].result   | String  | 结果                   |
 | [2].topic    | String  | 主题                   |
 | [2].action   | String  | 动作：sub, pub, subpub |
 | [2].access   | String  | 是否允许：allow, deny  |
-| [2].all      | String  | $all                |
-| [2].result   | String  | 结果                  |
- 
+| [2].all      | String  | $all                   |
+| [2].result   | String  | 结果                   |
+
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST {api}/acl
-```
-
-```json
-[
-  {
-    "clientid": "emqx_c_1",
-    "topic": "topic/A",
-    "action": "pub",
-    "access": "allow"
-  },
-  {
-    "username": "emqx_u_1",
-    "topic": "topic/A",
-    "action": "sub",
-    "access": "allow"
-  },
-  {
-    "topic": "topic/+",
-    "action": "pubsub",
-    "access": "deny"
-  }
-]
+$ curl -u app_id:app_secret -X POST -d '[{"clientid": "emqx_c_1","topic": "topic/A","action": "pub","access": "allow"},{"username": "emqx_u_1","topic": "topic/A","action": "sub","access": "allow"},{"topic": "topic/+","action": "pubsub","access": "deny"}]' {api}/acl
 ```
 
 ### 响应示例
@@ -284,18 +236,18 @@ GET /acl/clientid
 
 ### 响应消息
 
-| 名称              | 类型             | 描述        |
-| :--------------- | :--------------- | :----------------- |
-| code             | Integer          | 0                  |
-| data             | Array of Objects | 所有认证数据       |
-| data[].topic     | String           | 主题 |
-| data[].clientid  | String           | clientid |
-| data[].action    | String           | 动作 |
-| data[].access    | String           | 是否允许 |
-| meta             | Object           | 分页信息           |
-| meta.page        | Integer          | 页码               |
-| meta.limit       | Integer          | 每页显示的数据条数 |
-| meta.count       | Integer          | 数据总条数         |
+| 名称            | 类型             | 描述               |
+| :-------------- | :--------------- | :----------------- |
+| code            | Integer          | 0                  |
+| data            | Array of Objects | 所有认证数据       |
+| data[].topic    | String           | 主题               |
+| data[].clientid | String           | clientid           |
+| data[].action   | String           | 动作               |
+| data[].access   | String           | 是否允许           |
+| meta            | Object           | 分页信息           |
+| meta.page       | Integer          | 页码               |
+| meta.limit      | Integer          | 每页显示的数据条数 |
+| meta.count      | Integer          | 数据总条数         |
 
 ### 请求示例
 
@@ -436,8 +388,8 @@ GET /acl/clientid/{clientid}
 
 **参数：**
 
-| 参数     | 类型   | 描述      |
-| -------- | ------ | --------- |
+| 参数     | 类型   | 描述     |
+| -------- | ------ | -------- |
 | clientid | String | clientid |
 
 ### 请求消息
@@ -446,14 +398,14 @@ GET /acl/clientid/{clientid}
 
 ### 响应消息
 
-| 名称              | 类型             | 描述          |
-| :------------    | :--------------- | :----------- |
-| code             | Integer          | 0            |
-| data             | Array of Objects | 所有认证数据   |
-| data[].topic     | String           | 主题          |
-| data[].clientid  | String           | client id    |
-| data[].action    | String           | 动作          |
-| data[].access    | String           | 是否允许       |
+| 名称            | 类型             | 描述         |
+| :-------------- | :--------------- | :----------- |
+| code            | Integer          | 0            |
+| data            | Array of Objects | 所有认证数据 |
+| data[].topic    | String           | 主题         |
+| data[].clientid | String           | client id    |
+| data[].action   | String           | 动作         |
+| data[].access   | String           | 是否允许     |
 
 ### 请求示例
 
@@ -552,7 +504,7 @@ DELETE /acl/clientid/{clientid}/topic/{topic}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X DELETE {api}/acl/clientid/emqx_c_1/topic/topic%2uA
+$ curl -u app_id:app_secret -X DELETE {api}/acl/clientid/emqx_c_1/topic/topic%2fA
 ```
 
 ### 响应示例
@@ -589,7 +541,7 @@ DELETE /acl/username/{username}/topic/{topic}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2uA
+$ curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2fA
 ```
 
 ### 响应示例
@@ -625,7 +577,7 @@ DELETE /acl/$all/topic/{topic}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X DELETE {api}/acl/all/\$all/topic/topic%2uA
+$ curl -u app_id:app_secret -X DELETE {api}/acl/\$all/topic/topic%2fA
 ```
 
 ### 响应示例
@@ -635,4 +587,3 @@ $ curl -u app_id:app_secret -X DELETE {api}/acl/all/\$all/topic/topic%2uA
   "code": 0
 }
 ```
-
