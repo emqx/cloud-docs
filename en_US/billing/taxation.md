@@ -2,16 +2,13 @@
 
 Your billing address determines your region.
 
+If your billing address is **in** the United States (USA), we will assess and collect sales tax according to the rules and regulations in each state.
 
-If your billing address is **within** the United States (USA), you will be taxed according to the laws of each state.
-
-If your billing address is **outside** of the United States (USA), add your VAT or GST Number in the VAT/GST ID field on the Billing Information.
-
-If you enter a valid VAT/GST ID, we will not charge you VAT/GST (except for customers in Sweden). Remember to include the country code in the VAT/GST ID  (including a prefix of country code at the beginning and a suffix of numbers/letters for identification). By entering a VAT/GST ID you are confirming you are a VAT/GST registered business.
+If your billing address is **outside** of the United States (USA), VAT/GST will be applied to your purchases. If you enter a valid VAT/GST ID, we will not charge you VAT/GST (except for customers in Sweden). By entering a VAT/GST ID you are confirming you are a VAT/GST registered business.
 
 
 ## Tax ID types
-If you are in the listed countries, please enter the the specific type of Tax ID. If you have different type of Tax ID which dosen't match the default type, contact us and get help.
+If you are in the listed countries, please enter the the specific type of Tax ID. Providing your VAT/GST ID will ensure that you are not charged additional tax. If you can not provide/or we can not verify a VAT/GST ID, you will be charged taxes as required by your country's tax code. If you have different type of Tax ID which dosen't match the default type, contact us and get help.
 
 <table>
    <tr>
@@ -85,7 +82,7 @@ You can find out other supported Tax IDs in [here](https://stripe.com/docs/billi
 
 ## Tax Rates
 
-We will calculate the tax rate based on your billing address and whether you have filled in your VAT/GST ID. If you have further questions, please contact us by email cloud-service@emqx.io.
+We will calculate the taxes based on your billing address and whether you have filled in your VAT/GST ID. If you have further questions, please contact us by email cloud-service@emqx.io.
 
 
 
