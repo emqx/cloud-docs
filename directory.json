@@ -556,22 +556,6 @@
           "path": "feature/user"
         },
         {
-          "title": "Billing Brief",
-          "path": "billing/introduction"
-        },
-        {
-          "title": "Billing Overview",
-          "path": "billing/overview"
-        },
-        {
-          "title": "Coupon",
-          "path": "billing/coupon"
-        },
-        {
-          "title": "Invoice",
-          "path": "billing/invoices"
-        },
-        {
           "title": "Tickets",
           "path": "feature/tickets"
         }
@@ -839,6 +823,31 @@
     {
       "title": "Developer Guides",
       "path": "dev_guide"
+    },
+    {
+      "title": "Billing",
+      "children": [
+        {
+          "title": "Billing Brief",
+          "path": "billing/introduction"
+        },
+        {
+          "title": "Billing Overview",
+          "path": "billing/overview"
+        },
+        {
+          "title": "Coupon",
+          "path": "billing/coupon"
+        },
+        {
+          "title": "Invoice",
+          "path": "billing/invoices"
+        },
+        {
+          "title": "Taxation by Region",
+          "path": "billing/taxation"
+        }
+      ]
     },
     {
       "title": "VAS",
