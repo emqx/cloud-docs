@@ -6,7 +6,7 @@
 
 [TDengine](https://github.com/taosdata/TDengine) 是[涛思数据](https://www.taosdata.com/)推出的一款开源的专为物联网、车联网、工业互联网、IT 运维等设计和优化的大数据平台。除核心的快 10 倍以上的时序数据库功能外，还提供缓存、数据订阅、流式计算等功能，最大程度减少研发和运维的复杂度。
 
-在本文中我们将模拟数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到 TDengine。
+在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到 TDengine。
 
 在开始之前，您需要完成以下操作：
 
@@ -28,22 +28,23 @@
    ```bash
    docker exec -it tdengine bash
    taos
-   create database test;
-   use test;
+   create database emqx;
+   use emqx;
    ```
 
 3. 数据表创建
 
-   使用以下 SQL 语句将创建 `t_mqtt_msg` 表，该表将用于存放设备上报的数据。
+   使用以下 SQL 语句将创建 `temp_hum` 表，该表将用于存放设备上报的温湿度数据。
+
+   > 注意： topic 是 TDengine 的保留关键字，用 topic 作为字段名会导致建表失败。
 
    ```sql
-   CREATE TABLE t_mqtt_msg (
+   CREATE TABLE temp_hum (
    ts timestamp,
-   msgid NCHAR(64),
+   client_id NCHAR(64),
    mqtt_topic NCHAR(255),
-   qos TINYINT,
-   payload BINARY(1024),
-   arrived timestamp
+   temp BINARY(1024),
+   hum BINARY(1024)
    );
    ```
 
@@ -55,42 +56,52 @@
 
    ![tdengine](./_assets/data_integration_tdengine.png)
 
-   填入刚才创建好的 TDengine 数据库信息，并点击测试，如果出现错误应及时检查数据库配置是否正确。
+   填入刚才创建好的 TDengine 数据库信息，默认用户名为 **root**，缺省密码为 **taosdata**，TDengine 不在资源中配置数据库名，请在 SQL 中自行配置。点击测试，如果出现错误应及时检查数据库配置是否正确。
 
    ![创建资源](./_assets/tdengine_resource.png)
 
 2. 创建规则
 
-   资源创建后点击新建规则，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `t/#` 主题读取消息上报的数据。
+   资源创建后点击新建规则，然后输入如下规则匹配 SQL 语句。在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报的数据。
 
    ```sql
-   SELECT * FROM "t/#"
+   SELECT
+
+   now_timestamp('millisecond')  as ts,
+   clientid as client_id,
+   topic as mqtt_topic,
+   payload.temp as temp,
+   payload.hum as hum
+
+   FROM
+
+   "temp_hum/emqx"
    ```
 
-   我们可以使用 `SQL 测试` 来测试查看结果
+   我们可以使用 `SQL 测试` 来测试查看结果。
 
    ![创建规则](./_assets/tdengine_rule_1.png)
    ![创建规则](./_assets/tdengine_rule_2.png)
 
 3. 添加响应动作
 
-   点击下一步来到动作界面，选择第一步创建好的资源，动作类型选择`数据持久化 - 保存数据到 TDengine`，并输入以下数据插入 SQL 模板，点击确认。
+   点击下一步来到动作界面，选择第一步创建好的资源，动作类型选择`数据持久化 - 保存数据到 TDengine`，并输入以下数据插入 SQL 模板，在 SQL 中需要指定数据库名，字符类型也要用单引号括起来，点击确认。
 
    ```sql
-   insert into test.t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload) values (now, '${id}', '${topic}', ${qos}, '${payload}')
+   insert into emqx.temp_hum(ts, client_id, mqtt_topic, temp, hum) values (${ts}, '${client_id}', '${mqtt_topic}', '${temp}', '${hum}')
    ```
 
    ![添加动作](./_assets/tdengine_action.png)
 
 4. 查看资源详情
 
-   动作创建完以后，返回列表点击资源可以查看详情
+   动作创建完以后，返回列表点击资源可以查看详情。
 
    ![资源详情](./_assets/tdengine_resource_details.png)
 
 5. 查看规则详情
 
-   资源详情界面点击规则可以查看规则监控信息和规则详情
+   资源详情界面点击规则可以查看规则监控信息和规则详情。
 
    ![规则详情](./_assets/tdengine_rule_details.png)
 
@@ -99,12 +110,13 @@
 1. 使用 [MQTT X](https://mqttx.app/) 模拟数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth.md)。
-    * topic: `t/a`
+    * topic: `temp_hum/emqx`
     * payload:
 
       ```json
       {
-      "msg":"hello"
+      "temp":"24.6",
+      "hum":"37.5"
       }
       ```
 
@@ -113,6 +125,7 @@
 2. 查看数据转存结果
 
    ```sql
-   select * from t_mqtt_msg;
+   select * from temp_hum;
    ```
+
    ![tdengine](./_assets/tdengine_result.png)
