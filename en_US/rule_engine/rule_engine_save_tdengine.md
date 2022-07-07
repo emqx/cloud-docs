@@ -2,7 +2,7 @@
 
 [TDengine](https://github.com/taosdata/TDengine) is an open source big data platform designed and optimized by [TOS Data](https://www.taosdata.com/) for IoT, Telematics, Industrial Internet, IT O&M, and other applications.In addition to the core 10x faster time-series database functionality, it also provides caching, data subscription, streaming computing and other features to minimise the complexity of R & D and O & M.
 
-In this article, we will simulate data and report it to EMQX Cloud via the MQTT protocol, and then use the EMQX Cloud data integration to save the data into TDengine.
+In this article, we will simulate temperature & humidity data and report it to EMQX Cloud via the MQTT protocol, and then use the EMQX Cloud data integration to save the data into TDengine.
 
 Before you start, you need to complete the following operations:
 
@@ -22,22 +22,23 @@ Before you start, you need to complete the following operations:
    ```bash
    docker exec -it tdengine bash
    taos
-   create database test;
-   use test;
+   create database emqx;
+   use emqx;
    ```
 
 3. New table
 
-   Use the following SQL statement to create `t_mqtt_msg` table. This table will be used to save the device data.
+   Use the following SQL statement to create `temp_hum` table. This table will be used to save the temperature & humidity data of device data.
+
+ > "topic" is a reserved keyword of TDengine. Using "topic" as the field name will cause the table build to fail.  
 
    ```sql
-   CREATE TABLE t_mqtt_msg (
+   CREATE TABLE temp_hum (
    ts timestamp,
-   msgid NCHAR(64),
+   client_id NCHAR(64),
    mqtt_topic NCHAR(255),
-   qos TINYINT,
-   payload BINARY(1024),
-   arrived timestamp
+   temp BINARY(1024),
+   hum BINARY(1024)
    );
    ```
 
@@ -47,7 +48,7 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
 
 1. New Resource
 
-   Click on Data Integrations on the left menu bar → Resources, click on New Resource and drop down to select the TDengine resource type. Fill in the tdengine database information you have just created and click Test. If you get an error, instantly check that the database configuration is correct.
+   Click on Data Integrations on the left menu bar → Resources, click on New Resource and drop down to select the TDengine resource type. Fill in the information from the newly created TDengine database: the default user name is **root**, and the default password is **taosdata**. TDengine does not configure the database name in the resource, please configure it in SQL. If there is an error, you should promptly check whether the database configuration is correct.
    ![data integrations](./_assets/data_integration_tdengine.png)
    ![create resource](./_assets/tdengine_resource.png)
 
@@ -56,19 +57,28 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
    Click `Data Integration` on the left menu bar, find the configured resource, click New Rule, and then enter the following rule to match the SQL statement
 
    ```sql
-   SELECT * FROM "t/#"
+   SELECT
+
+   now_timestamp('millisecond')  as ts,
+   clientid as client_id,
+   topic as mqtt_topic,
+   payload.temp as temp,
+   payload.hum as hum
+
+   FROM
+
+   "temp_hum/emqx"
    ```
 
-   ![create rule](./_assets/tdengine_new_rule.png)
    ![create rule](./_assets/tdengine_rule_1.png)
    ![create rule](./_assets/tdengine_rule_2.png)
 
 3. Add a response action
 
-   Click Next, select the resource created in the first step, drop down and select Action Type → Data Persistence → Data to TDengine, Enter the following data to the SQL template. Click on confirm.
+   Click Next, select the resource created in the first step, drop down and select Action Type → Data Persistence → Data to TDengine, Enter the following data to the SQL template. You need to specify the database name in SQL, and the character type should be enclosed in single quotes, click Confirm.
 
    ```sql
-   insert into test.t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload) values (now, '${id}', '${topic}', ${qos}, '${payload}')
+   insert into emqx.temp_hum(ts, client_id, mqtt_topic, temp, hum) values (${ts}, '${client_id}', '${mqtt_topic}', '${temp}', '${hum}')
    ```
 
    ![tdengine action](./_assets/tdengine_action.png)
@@ -84,7 +94,7 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
 2. View the data saving results
 
    ```sql
-   select * from t_mqtt_msg;
+   select * from temp_hum;
    ```
 
    ![result](./_assets/tdengine_result.png)
