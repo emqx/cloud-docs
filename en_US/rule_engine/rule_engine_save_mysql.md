@@ -8,8 +8,6 @@ Before you start, you will need to complete the following:
 
 * For professional deployment users: please complete the creation of a [VPC Peering Connections](../deployments/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
 
-* For basic deployment users: No PC Peering Connections is required. All IP references below are to the public IP of the resource.
-
 ## MySQL Configuration
 
 1. Install MySQL with Docker
