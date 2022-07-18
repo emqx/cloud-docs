@@ -370,6 +370,10 @@
           "path": "rule_engine/rule_engine_save_tablestore"
         },
         {
+          "title": "保存数据到 HStreamDB",
+          "path": "rule_engine/rule_engine_save_hstreamdb"
+        },
+        {
           "title": "获取订阅关系",
           "path": "rule_engine/rule_engine_get_subscription"
         },
@@ -775,6 +779,10 @@
           "path": "rule_engine/rule_engine_confluent"
         },
         {
+          "title": "Bridge data to Pulsar",
+          "path": "rule_engine/rule_engine_bridge_pulsar"
+        },
+        {
           "title": "Save data to TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaledb"
         },
@@ -811,12 +819,12 @@
           "path": "rule_engine/rule_engine_save_tdengine"
         },
         {
-          "title": "Store device offline messages",
-          "path": "rule_engine/rule_engine_offline_msg_saving"
+          "title": "Save data to HStreamDB",
+          "path": "rule_engine/rule_engine_save_hstreamdb"
         },
         {
-          "title": "Bridge data to Pulsar",
-          "path": "rule_engine/rule_engine_bridge_pulsar"
+          "title": "Store device offline messages",
+          "path": "rule_engine/rule_engine_offline_msg_saving"
         },
         {
           "title": "Get subscription topic information",
