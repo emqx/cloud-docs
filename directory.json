@@ -836,8 +836,8 @@
           "path": "billing/overview"
         },
         {
-          "title": "Coupon",
-          "path": "billing/coupon"
+          "title": "Billing Information",
+          "path": "billing/billing_information" 
         },
         {
           "title": "Invoice",

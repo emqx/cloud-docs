@@ -1,17 +1,17 @@
 # View and Edit Your Billing Information
 
-To view and edit your billing information:
+To view and update your billing information:
 
 1. Navigate to the Billing Overview page.
 2. In the right top section of the page, you can find the Billing Information block.
-  - If you have not added a card, click + button to add a new card.
-  - If you have added a card, your card information will be displayed in the block including card last four numbers, expire date, when the card had been added.
-  - Click **Change Info** to edit card information.
-  - Click **Got a problem?** if you have any issues in editing card information. You can contact us through the **Tickets** in the top menu or by sending us an email.
+  - If you haven't added a card, click + button to add a new card.
+  - If you have added a card, your card information will be displayed in the block including card last four numbers, expire date, and when the card had been added.
+  - Click **Change Info** to update card information.
+  - Click **Got a problem?** if you have any issues in updating card information. You can contact us through the **Tickets** in the top menu or by sending us an email.
 
 TODO PIC
 
-## Edit or Update your Billing Information
+## Add or Update your Billing Information
 TODO PIC
 Please fill the details as needed.
 <table>
@@ -71,9 +71,8 @@ If your company's billing address is in a country other than the United States (
 Click *Next* to update card information.
 
 ## Edit or Update your Card Information
-
-Please fill the details as needed.
 TODO PIC
+Please fill the details as needed.
 <table>
    <tr>
       <th>Field</th>
@@ -100,7 +99,6 @@ To confirm your credit card information, EMQX Cloud charges $1.00 when you first
 - To decline your changes, click *Cancel*.
 - To edit billing information, click *Previous*.
 
-## Retry a Failed Payment
 
 
 
