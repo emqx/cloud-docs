@@ -12,7 +12,7 @@ POST /acl
 | -------- | ------ | ---------------------- |
 | clientid | String | clientid               |
 | topic    | String | 主题                   |
-| action   | String | 动作：sub, pub, subpub |
+| action   | String | 动作：sub, pub, pubsub |
 | access   | String | 是否允许：allow, deny  |
 
 ### 响应消息
@@ -60,7 +60,7 @@ POST /acl
 | -------- | ------ | ---------------------- |
 | username | String | username               |
 | topic    | String | 主题                   |
-| action   | String | 动作：sub, pub, subpub |
+| action   | String | 动作：sub, pub, pubsub |
 | access   | String | 是否允许：allow, deny  |
 
 ### 响应消息
@@ -107,7 +107,7 @@ POST /acl
 | 名称   | 类型   | 描述                   |
 | ------ | ------ | ---------------------- |
 | topic  | String | 主题                   |
-| action | String | 动作：sub, pub, subpub |
+| action | String | 动作：sub, pub, pubsub |
 | access | String | 是否允许：allow, deny  |
 
 ### 响应消息
@@ -155,14 +155,14 @@ POST /acl
 | ------------ | ------ | ---------------------- |
 | [0].clientid | String | clientid               |
 | [0].topic    | String | 主题                   |
-| [0].action   | String | 动作：sub, pub, subpub |
+| [0].action   | String | 动作：sub, pub, pubsub |
 | [0].access   | String | 是否允许：allow, deny  |
 | [1].username | String | username               |
 | [1].topic    | String | 主题                   |
-| [1].action   | String | 动作：sub, pub, subpub |
+| [1].action   | String | 动作：sub, pub, pubsub |
 | [1].access   | String | 是否允许：allow, deny  |
 | [2].topic    | String | 主题                   |
-| [2].action   | String | 动作：sub, pub, subpub |
+| [2].action   | String | 动作：sub, pub, pubsub |
 | [2].access   | String | 是否允许：allow, deny  |
 
 ### 响应消息
@@ -173,16 +173,16 @@ POST /acl
 | data         | Object  | 规则对象               |
 | [0].clientid | String  | clientid               |
 | [0].topic    | String  | 主题                   |
-| [0].action   | String  | 动作：sub, pub, subpub |
+| [0].action   | String  | 动作：sub, pub, pubsub |
 | [0].access   | String  | 是否允许：allow, deny  |
 | [0].result   | String  | 结果                   |
 | [1].username | String  | username               |
 | [1].topic    | String  | 主题                   |
-| [1].action   | String  | 动作：sub, pub, subpub |
+| [1].action   | String  | 动作：sub, pub, pubsub |
 | [1].access   | String  | 是否允许：allow, deny  |
 | [1].result   | String  | 结果                   |
 | [2].topic    | String  | 主题                   |
-| [2].action   | String  | 动作：sub, pub, subpub |
+| [2].action   | String  | 动作：sub, pub, pubsub |
 | [2].access   | String  | 是否允许：allow, deny  |
 | [2].all      | String  | $all                   |
 | [2].result   | String  | 结果                   |

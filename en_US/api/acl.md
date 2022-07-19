@@ -12,7 +12,7 @@ POST /acl
 | :------- | :----- | :----------------------- |
 | clientid | String | clientid                 |
 | topic    | String | Topic                    |
-| action   | String | Action: sub, pub, subpub |
+| action   | String | Action: sub, pub, pubsub |
 | access   | String | If allowed: allow, deny  |
 
 ### Response Message
@@ -60,7 +60,7 @@ POST /acl
 | :------- | :----- | :----------------------- |
 | username | String | username                 |
 | topic    | String | Topic                    |
-| action   | String | Action: sub, pub, subpub |
+| action   | String | Action: sub, pub, pubsub |
 | access   | String | If allowed: allow, deny  |
 
 ### Response Message
@@ -107,7 +107,7 @@ POST /acl
 | Name   | Type   | Description              |
 | :----- | :----- | :----------------------- |
 | topic  | String | Topic                    |
-| action | String | Action: sub, pub, subpub |
+| action | String | Action: sub, pub, pubsub |
 | access | String | If allowed: allow, deny  |
 
 ### Response Message
@@ -155,14 +155,14 @@ POST /acl
 | :----------- | :----- | :----------------------- |
 | [0].clientid | String | [0].clientid             |
 | [0].topic    | String | Topic                    |
-| [0].action   | String | Action: sub, pub, subpub |
+| [0].action   | String | Action: sub, pub, pubsub |
 | [0].access   | String | If allowed: allow, deny  |
 | [1].username | String | username                 |
 | [1].topic    | String | Topic                    |
-| [1].action   | String | Action: sub, pub, subpub |
+| [1].action   | String | Action: sub, pub, pubsub |
 | [1].access   | String | If allowed: allow, deny  |
 | [2].topic    | String | Topic                    |
-| [2].action   | String | Action: sub, pub, subpub |
+| [2].action   | String | Action: sub, pub, pubsub |
 | [2].access   | String | If allowed: allow, deny  |
 
 ### Response Message
@@ -173,16 +173,16 @@ POST /acl
 | data         | Object  | Rule Object              |
 | [0].clientid | String  | clientid                 |
 | [0].topic    | String  | Topic                    |
-| [0].action   | String  | Action: sub, pub, subpub |
+| [0].action   | String  | Action: sub, pub, pubsub |
 | [0].access   | String  | If allowed: allow, deny  |
 | [0].result   | String  | Result                   |
 | [1].username | String  | username                 |
 | [1].topic    | String  | Topic                    |
-| [1].action   | String  | Action: sub, pub, subpub |
+| [1].action   | String  | Action: sub, pub, pubsub |
 | [1].access   | String  | If allowed: allow, deny  |
 | [1].result   | String  | Result                   |
 | [2].topic    | String  | Topic                    |
-| [2].action   | String  | Action: sub, pub, subpub |
+| [2].action   | String  | Action: sub, pub, pubsub |
 | [2].access   | String  | If allowed: allow, deny  |
 | [2].all      | String  | $All                     |
 | [2].result   | String  | Result                   |
