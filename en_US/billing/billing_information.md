@@ -9,10 +9,11 @@ To view and update your billing information:
   - Click **Change Info** to update card information.
   - Click **Got a problem?** if you have any issues in updating card information. You can contact us through the **Tickets** in the top menu or by sending us an email.
 
-TODO PIC
+![bill info](./_assets/overview_info.png)
+
 
 ## Add or Update your Billing Information
-TODO PIC
+![bill info](./_assets/edit_payment_method.png)
 Please fill the details as needed.
 <table>
    <tr>
@@ -71,7 +72,7 @@ If your company's billing address is in a country other than the United States (
 Click *Next* to update card information.
 
 ## Edit or Update your Card Information
-TODO PIC
+![card info](./_assets/edit_card.png)
 Please fill the details as needed.
 <table>
    <tr>

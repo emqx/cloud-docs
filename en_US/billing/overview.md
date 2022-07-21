@@ -15,7 +15,7 @@ Billing occurs on the first day of the month for the previous month. For example
 
 ## Monthly Bills
 
-TODO PIC
+![month bill](./_assets/monthly_bill.png)
 
 The Monthly Bill card will show the total amount of usage. You can change the billing period in the right top corner of the card. You can select billing period up to the last 12 months. 
 
@@ -36,7 +36,7 @@ See [Billing Information](./billing_information.md) for more details.
 
 ### Date-to-Month Usage Chart
 
-TODO PIC
+![month bill](./_assets/trend.png)
 
 On the Billing Overview page, a Usage chart displays the costs incurred by your account usage over last 13 days or last 24 months.
 
@@ -63,10 +63,10 @@ On the Billing Overview page, a Usage chart displays the costs incurred by your 
 ## Retry a Failed Payment
 If there is an overdue bill, in the top of the Billing Overview page, you will find a message alert. Click "TRY HERE TO PAY THE OVERDUE BILL(s) MANUALLY." to view the overdue bill in Bills page.
 
-TODO PIC
-
 View the payment method displayed in the Payment Method card. If this method appears incorrect, click **Change info** in that card.
 
 Click the **Overdue** or **the card icon**, check the failed payment in that month and retry the payment.
+
+![overdue](./_assets/overdue.png)
 
 If the payment is failed again, please contact your card issuer and ask for more information about the declined payment.

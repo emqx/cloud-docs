@@ -1,6 +1,6 @@
 # Introduction
 
-To configure the payment method and billing profile, or to view the most recent and pending charges for a deployment, access the account Billing section.
+To configure the payment method and billing profile, or to view the most recent and pending charges for a deployment, access the Billing section.
 
 
 ## [Overview Page](./overview.md)

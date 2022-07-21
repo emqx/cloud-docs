@@ -22,6 +22,6 @@ Click `Billing` -> `Invoices` in the top menu to navigate to the invoice page.
 ## Download the invoices
 Click the download icon in the right column to download the invoice from the located month.
 
-TODO PIC
+![invoice](./_assets/invoices.png)
 
 
