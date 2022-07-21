@@ -7,7 +7,7 @@ To view and update your billing information:
   - If you haven't added a card, click + button to add a new card.
   - If you have added a card, your card information will be displayed in the block including card last four numbers, expire date, and when the card had been added.
   - Click **Change Info** to update card information.
-  - Click **Got a problem?** if you have any issues in updating card information. You can contact us through the **Tickets** in the top menu or by sending us an email.
+  - Click **Got a problem?** if you have any issues in updating card information. You can contact us through the **Tickets** in the top menu or by emailing us.
 
 ![bill info](./_assets/overview_info.png)
 
@@ -33,7 +33,7 @@ Please fill the details as needed.
 
 If your company's billing address is in a country other than the United States (USA), EMQX typically charges VAT if you do not enter a valid VAT ID Number on your billing information.
 
-- If your billing address is in Swenden, EMQX always charges VAT, even with a valid VAT ID Number.
+- If your billing address is in Sweden, EMQX always charges VAT, even with a valid VAT ID Number.
 - To learn more about VAT/GST by region, see <a href="./taxation.md">Taxation by Region</a>
 </td>
    </tr>
