@@ -844,6 +844,10 @@
           "path": "billing/invoices"
         },
         {
+          "title": "Coupon",
+          "path": "billing/coupon"
+        },
+        {
           "title": "Taxation by Region",
           "path": "billing/taxation"
         }
