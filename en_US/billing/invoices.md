@@ -1,11 +1,27 @@
 # Invoices
 
-Invoice includes the account invoice record, and profile management. Click `Billing` -> `Invoices` in the left menu to enter the invoice page.
+Click `Billing` -> `Invoices` in the top menu to navigate to the invoice page.
 
-## View Invoice Records
+## View the invoices status
+<table>
+   <tr>
+      <th>Status</th>
+      <th>Invoice Type</th>
+   </tr>
+   <tr>
+      <td>Pending</td>
+      <td>Invoices still pending payment.</td>
+   </tr>
+   <tr>
+   	  <td>Issued</td>
+   	  <td>Invoices that are paid.</td>
+   </tr>
+</table>
 
-The invoice record will show the invoice record of the account, and the balance that can be invoiced.
 
-![invoices](./_assets/invoices.png)
+## Download the invoices
+Click the download icon in the right column to download the invoice from the located month.
+
+![invoice](./_assets/invoices.png)
 
 
