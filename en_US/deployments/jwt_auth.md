@@ -4,7 +4,7 @@
 
 ## Authentication Chain
 
-If built-in authentication is also enabled, EMQX Cloud will follow [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html),and JWT authentication for chain authentication:
+If default authentication is also enabled, EMQX Cloud will follow [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) -> JWT authentication for chain authentication:
 
 - Once authentication is successful, terminate the authentication chain and the client is accessible
 - Once authentication fails, terminate the authentication chain and disable client access

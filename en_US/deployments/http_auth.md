@@ -9,13 +9,25 @@ EMQX Cloud requests permission from a user-defined authentication service using 
 - Successful: returns status code 200  
 - Failure: returns a non-200 status code
 - Ignored: returns a 200 status code and the message body: ignore
+
+## Authentication Chain
   
-If built-in authentication is also enabled, EMQX Cloud will follow [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html),and HTTP authentication for chain authentication:
+If default authentication is also enabled, EMQX Cloud will follow [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) -> HTTP authentication for chain authentication:
 
 - Once authentication is successful, terminate the authentication chain and the client is accessible
 - Once authentication fails, terminate the authentication chain and disable client access
 
- ![auth_chain](./_assets/auth_chain_en.png)
+ ![auth_chain](./_assets/http_auth_chain.png)
+
+## ACL Authentication Chain
+
+If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](https://docs.emqx.com/en/cloud/latest/deployments/acl.html)-> HTTP ACL-> System Defaults (All Pub/Sub allowed).
+
+- Once the authentication is passed, terminate the chain and allow the client to pass the authentication
+- Once authentication has failed, terminate the chain and deny the client to pass authentication
+- Until the last ACL module fails to authenticate, authenticate according to the System default settings --- **(All Pub/Sub allowed)**
+
+![acl_chain](./_assets/http_acl_chain.png)
 
 ## Permission Authentication
 

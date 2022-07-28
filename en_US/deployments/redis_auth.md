@@ -4,12 +4,22 @@ In addition to supporting the default authentication method, EMQX Cloud can also
 
 ## Authentication Chain
 
-If built-in authentication is also enabled, EMQX Cloud will chain authentication in the order of [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html), Redis authentication.
+If default authentication is also enabled, EMQX Cloud will chain authentication in the order of [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) -> Redis authentication.
 
 * Once the authentication is successful, terminate the authentication chain and the client is accessible
 * Once authentication fails, terminate the authentication chain and disable client access
 
 ![auth_chain](./_assets/../_assets/redis_auth_chain.png)
+
+## ACL Authentication Chain
+
+If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](https://docs.emqx.com/en/cloud/latest/deployments/acl.html)-> Redis ACL-> System Defaults (All Pub/Sub allowed).
+
+- Once the authentication is passed, terminate the chain and allow the client to pass the authentication
+- Once authentication has failed, terminate the chain and deny the client to pass authentication
+- Until the last ACL module fails to authenticate, authenticate according to the System default settings --- **(All Pub/Sub allowed)**
+
+![acl_chain](./_assets/redis_acl_chain.png)
 
 ## Redis Configuration
 
@@ -43,9 +53,7 @@ In your cloud server, create a Redis service. For demonstration purposes, here i
 
     ![redis_auth](./_assets/../_assets/redis_auth_info.png)
 
-3. As the EMQX Cloud ACL is `blacklisted` by default, to enable Redis ACL whitelisting, you need to set the default (built-in) access control module in EMQX Cloud to deny all users to subscribe/publish all topics.
-
-   ![emqx_acl](./_assets/../_assets/redis_emqx_acl.png)
+3. Since EMQX Cloud ACL is in **blacklist mode** by default, if you want to enable Redis ACL whitelist, you need to submit a [ticket](https://docs.emqx.com/en/cloud/latest/feature/tickets.html#contact-by-tickets) to make it work.
 
 ### Permissions authentication principle
 
@@ -121,7 +129,7 @@ Example data for the default configuration is as follows.
 
 ```sql
 HSET mqtt_acl:emqx # 1
-HSET mqtt_acl:testtopic/2 2
+HSET mqtt_acl:test topic/2 2
 ```
 
 ### Encryption rules

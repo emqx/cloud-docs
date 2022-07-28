@@ -4,7 +4,7 @@
 
 ## 认证链
 
-若同时启用了内置认证，EMQX Cloud Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81)、JWT 认证的顺序进行链式认证：
+若同时启用默认认证模块，EMQX Cloud Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) -> JWT 认证的顺序进行链式认证：
 
 * 一旦认证成功，终止认证链并允许客户端接入
 * 一旦认证失败，终止认证链并禁止客户端接入

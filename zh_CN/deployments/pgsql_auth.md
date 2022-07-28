@@ -4,12 +4,24 @@ EMQX Cloud 除了支持默认的认证鉴权方式，还可以使⽤外部 Postg
 
 ## 认证链
 
-若同时启用了内置认证，EMQX Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81)、PostgreSQL 认证的顺序进行链式认证：
+若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) -> PostgreSQL 认证的顺序进行链式认证：
 
 * 一旦认证成功，终止认证链并允许客户端接入
 * 一旦认证失败，终止认证链并禁止客户端接入
 
-![auth_chain](./_assets/../_assets/pgsql_auth_chain.png)
+![auth_chain](./_assets/../_assets/postgresql_auth_chain.png)
+
+## ACL 鉴权链
+
+若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](https://docs.emqx.com/zh/cloud/latest/deployments/acl.html) ->  PostgreSQL ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
+
+- 一旦通过鉴权，终止链并允许客户端通过验证
+- 一旦鉴权失败，终止链并禁止客户端通过验证
+- 直到最后一个 ACL 模块仍未通过鉴权，根据系统默认设置来验证，即 **允许所有订阅/发布**
+
+> 同时只启用一个 ACL 插件可以提高客户端 ACL 检查性能。
+
+![acl_chain](./_assets/postgresql_acl_chain.png)
 
 ## PostgreSQL 配置
 
