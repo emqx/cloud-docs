@@ -4,12 +4,22 @@ In addition to supporting the default authentication and authentication method, 
 
 ## Authentication Chain
 
-If built-in authentication is also enabled, EMQX Cloud will chain [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) and MySQL authentication in the following order Authentication.
+If default authentication is also enabled, EMQX Cloud will chain [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html)-> MySQL authentication in the following order Authentication.
 
 - Once authentication is successful, the chain is terminated and the client is accessible
 - Once authentication fails, terminate the chain and disable client access
 
 ![auth_chain](./_assets/../_assets/mysql_auth_chain.png)
+
+## ACL Authentication Chain
+
+If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](https://docs.emqx.com/en/cloud/latest/deployments/acl.html)-> MySQL ACL-> System Defaults (All Pub/Sub allowed).
+
+- Once the authentication is passed, terminate the chain and allow the client to pass the authentication
+- Once authentication has failed, terminate the chain and deny the client to pass authentication
+- Until the last ACL module fails to authenticate, authenticate according to the System default settings --- **(All Pub/Sub allowed)**
+
+![acl_chain](./_assets/mysql_acl_chain.png)
 
 ## MySQL Configuration
 

@@ -12,12 +12,26 @@ EMQX Cloud 在设备连接事件中使用当前客户端相关信息作为参数
 - 认证失败：API 返回 非 200 状态码
 - 忽略认证：API 返回 200 状态码且消息体 ignore
 
-若同时启用了内置认证，EMQX Cloud 将按照默认认证、HTTP 认证的顺序进行链式认证：
+## 认证链
+
+若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) -> HTTP 认证的顺序进行链式认证：
 
 - 一旦认证成功，终止认证链并允许客户端接入
 - 一旦认证失败，终止认证链并禁止客户端接入
 
-![auth_chain](./_assets/auth_chain_cn.png)
+![auth_chain](./_assets/http_auth_chain.png)
+
+## ACL 鉴权链
+
+若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](https://docs.emqx.com/zh/cloud/latest/deployments/acl.html) ->  HTTP ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
+
+- 一旦通过鉴权，终止链并允许客户端通过验证
+- 一旦鉴权失败，终止链并禁止客户端通过验证
+- 直到最后一个 ACL 模块仍未通过鉴权，根据系统默认设置来验证，即 **允许所有订阅/发布**
+
+> 同时只启用一个 ACL 插件可以提高客户端 ACL 检查性能。
+
+![acl_chain](./_assets/http_acl_chain.png)
 
 ## 权限认证
 
@@ -26,7 +40,6 @@ EMQX Cloud 在设备连接事件中使用当前客户端相关信息作为参数
 ![http_auth](./_assets/http_default.png)
 
 进行身份认证时，EMQX Cloud 将使用当前客户端信息填充并发起用户配置的认证查询请求，查询出该客户端在 HTTP 服务器端的认证数据。
-
 
 在表单页配置权限认证的必填参数，包括认证请求地址、认证请求参数、HTTP 请求方法和请求内容的类型。其余的参数如果没有特殊要求使用默认值即可。
 
