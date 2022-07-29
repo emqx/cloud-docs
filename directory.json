@@ -330,6 +330,10 @@
           "path": "rule_engine/rule_engine_save_rds_mysql"
         },
         {
+          "title": "保存数据到 AWS RDS MySQL",
+          "path": "rule_engine/rule_engine_save_aws_rds_mysql"
+        },
+        {
           "title": "保存数据到 TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaladb"
         },
