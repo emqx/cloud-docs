@@ -29,13 +29,12 @@ Please fill the details as needed.
    <tr>
       <td>VAT/GST ID</td>
       <td>Conditional</td>
-      <td>The form displays the VAT/GST ID field if you select a country other than the United States. To learn more about VAT/GST, see <a href="./taxation.md">Tax ID</a>.
-
-If your company's billing address is in a country other than the United States (USA), EMQX typically charges VAT if you do not enter a valid VAT ID Number on your billing information.
-
-- If your billing address is in Sweden, EMQX always charges VAT, even with a valid VAT ID Number.
-- To learn more about VAT/GST by region, see <a href="./taxation.md">Taxation by Region</a>
-</td>
+      <td>
+         The form displays the VAT/GST ID field if you select a country other than the United States. To learn more about VAT/GST, see <a href="./taxation.md">Tax ID</a>.
+         If your company's billing address is in a country other than the United States (USA), EMQX typically charges VAT if you do not enter a valid VAT ID Number on your billing information.
+         - If your billing address is in Sweden, EMQX always charges VAT, even with a valid VAT ID Number.
+         - To learn more about VAT/GST by region, see <a href="./taxation.md">Taxation by Region</a>
+      </td>
    </tr>
    <tr>
       <td>Company Name</td>
