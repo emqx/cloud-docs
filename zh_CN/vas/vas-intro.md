@@ -32,7 +32,7 @@ EMQX Cloud 提供的所有增值服务可以在顶部菜单栏 - `增值服务` 
       <th>试用限制</th>
    </tr>
    <tr>
-      <td>NAT 网管</td>
+      <td>NAT 网关</td>
       <td>专业版</td>
       <td>14天</td>
       <td>一个云账号一次试用</td>
