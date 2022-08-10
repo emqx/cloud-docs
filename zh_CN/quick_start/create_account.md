@@ -10,15 +10,11 @@
 
 ![login](./_assets/signup.png)
 
-
-
 ## [登录账户](https://www.emqx.com/zh/signin?continue=https://www.emqx.com/cn/cloud)
 
 输入您的邮箱和密码，然后选择登录将跳转到 EMQX Cloud 页面
 
 ![login](./_assets/login.png)
-
-
 
 ## [找回密码](https://www.emqx.com/zh/forgot-password?continue=https://www.emqx.com/cn/cloud)
 

@@ -4,8 +4,7 @@
 
 * 部署： EMQX Cloud 上托管的 EMQX 企业版集群
 * 基础版部署：单节点的 EMQX 企业版
-* 专业版部署：拥有独立 网络、实例以及负载均衡的 EMQX 企业版集群
-
+* 专业版部署：拥有独立网络、实例以及负载均衡的 EMQX 企业版集群
 
 如果您还没有创建EMQX Cloud的账号，以下步骤会引导你完成账号的创建。也可以跳过此步骤查看控制台快速指南。
 
@@ -21,15 +20,11 @@
 
 ![login](./_assets/signup.png)
 
-
-
 ### [登录账户](https://www.emqx.com/zh/signin?continue=https://www.emqx.com/cn/cloud)
 
 输入您的邮箱和密码，然后选择登录将跳转到 EMQX Cloud 控制台。
 
 ![login](./_assets/login.png)
-
-
 
 ### [找回密码](https://www.emqx.com/zh/forgot-password?continue=https://www.emqx.com/cn/cloud)
 
@@ -37,21 +32,18 @@
 
 ![login](./_assets/forgot.png)
 
-
 ## 控制台快速入门
-
 
 以下会为您介绍 EMQX Cloud 控制台的基本功能。
 
-
 1. 访问 EMQX Cloud [控制台](https://cloud.emqx.com/console/)，选择基础版或专业版创建部署
-   > EMQX Cloud 为每位用户提供一次 14 天的免费试用和 14 天的专业版免费试用(专业版免费试用需提交申请)。
-   
+   > EMQX Cloud 为每位用户提供一次 14 天的基础版免费试用和 14 天的专业版免费试用
+
    ![add_users](./_assets/create_free_trial.png)
 
 2. 前往部署认证和鉴权页面[添加认证信息](../deployments/auth.md)
 
-   ![add_users](./_assets/add_users.png)
+   ![add_users](./_assets/auth.png)
 
 3. 点击左侧概览菜单，获取部署连接信息和端口
 
@@ -60,5 +52,3 @@
 4. 使用您熟悉的 MQTT 客户端或 SDK [连接到部署](../connect_to_deployments/overview.md)
 
    ![add_users](./_assets/mqttx_mqtt.png)
-
-
