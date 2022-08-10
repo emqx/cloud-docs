@@ -1,21 +1,20 @@
 # Register and Log in to the EMQX Cloud account
 
-
 ## [Register an account](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud)
 
 Start at the EMQX Cloud sign up page
 
 1. Enter your personal information:
-   
+
    * Email
-   * Password 
+   * Password
    * Full name
    * Phone number
-   * Company 
+   * Company
    * Use case
    * Country/Region
 
-![login](./_assets/sign_up.png)
+   ![login](./_assets/sign_up.png)
 
 2. Click `Sign Up` to register to create your account.
    EMQX Cloud will automatically send a confirmation email to the email address you provided.
@@ -33,12 +32,11 @@ If you've already registered an account, you could log in by the following steps
 
 ![login](./_assets/log_in.png)
 
-
-
 ## [Forget Password](https://www.emqx.com/en/forgot-password?continue=https://www.emqx.com/en/cloud)
 
 If you forget your password, you could click on `Forget your password` and enter your email address, we will send a verification email to your mailbox.
 
-You can click Get back Password in the verification email to create a new password, 
+You can click Get back Password in the verification email to create a new password,
 then you will be redirected to the login page. Enter the new password, and select `Sign in`.
+
 ![login](./_assets/forget_password.png)
