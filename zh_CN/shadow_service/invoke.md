@@ -1,4 +1,4 @@
-# 影子服务通信
+# 服务调用和通信
 
 ## MQTT 通信
 设备通过 topic 和 broker 之间做 MQTT 的通信，这和其他常规的 topic 通信没有区别，影子服务额外 提供了存储（数据缓存）能力。设备端或者应用端可通过影子服务包含的两个 Topic 进行通信，即用于设备端的数据上报的发布主题，以及用于设备端做数据接收的订阅主题。
@@ -28,26 +28,38 @@
    </tr>
    <tr>
       <td>PUT</td>
-      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 PUT 方法，用于<strong>全量更新</strong> payload 的数据，用法请见调用示例。</td>
+      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 PUT 方法，用于<strong>全量更新</strong> 影子模型 data 的数据，用法请见调用示例。</td>
    </tr>
    <tr>
       <td>PATCH</td>
-      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 PATCH 方法，用于<strong>增量更新</strong> payload 的数据，用法请见调用示例。</td>
+      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 PATCH 方法，用于<strong>增量更新</strong> 影子模型 data 的数据，用法请见调用示例。</td>
    </tr>
    <tr>
       <td>GET</td>
-      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 GET 方法，用于在<strong>订阅主题</strong>中获得最新的 payload 数据。</td>
+      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 GET 方法，用于在<strong>订阅主题</strong>中获得最新的 影子模型 data 数据。</td>
    </tr>
 </table>
 
 **在使用 PATCH 方法更新 paylaod 的情况下，不能新增多层级对象，请见调用示例。**
 
+影子服务 JSON
+``` javascript
+{
+  "createAt": 1660201961567, //JSON 创建时间
+  "data": { // 主题或者 API 发布的消息主体
+    
+  },
+  "lastTime": 1660204233317, // 最新一次更新的时间
+  "version": 3 // 该影子模型更新的次数
+}
+```
+
 
 ### 调用示例
 
-使用增量更新的方法更新影子模型数据
+使用增量更新的方法更新影子模型数据，使用 `PATCH`方法以及`payload`存放消息
 ``` javascript
-// 影子模型 JSON
+// 影子模型 JSON data
 {
     "Key01" : {
         "a" : 100
@@ -77,7 +89,7 @@
 
 增量更新的方法不能新增多层对象
 ``` javascript
-// 影子模型 JSON
+// 影子模型 JSON data
 {
     "Key01" : {
         "a" : 100
@@ -137,9 +149,9 @@
 ```
 
 
-使用全量更新的方法更新影子模型数据
+使用全量更新的方法更新影子模型数据，使用 `PUT`方法以及`payload`存放消息
 ``` javascript
-// 影子模型 JSON
+// 影子模型 JSON data
 {
     "Key01" : {
         "a" : 100
@@ -174,7 +186,7 @@
 
 使用 GET 方法获取影子模型数据
 ``` javascript
-// 影子模型 JSON
+// 影子模型 JSON data
 {
     "Key01" : {
         "a" : 100
@@ -192,12 +204,17 @@
 
 // 订阅主题（shadow/${shadow_id}/reply）将接收到影子模型数据
 {
+  "data": {
     "Key01" : {
         "a" : 100
     },
     "Key02" : {
     	"b" : 200
     }
+  },
+  "createAt": 1660201961567,
+  "lastTime": 1660204233317,
+  "version": 2
 }
 ```
 
@@ -209,8 +226,8 @@
 ### 生成 APP ID
 在使用 API 之前，需要在影子服务开通的部署中获取 APP ID 以及 APP Secret 用于 API 调用的认证鉴权。请在`部署概览`， 下拉至 `REST API`部分，点击`新建应用`，使用生成的 APP ID 以及 APP Secret。更多关于 API 使用请查看 [REST API](../api/introduction.md)。
 
+![appid](./_assets/appid.png)
 
-TODO PIC
 
 ### API 列表
 

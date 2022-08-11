@@ -413,6 +413,31 @@
         {
           "title": "自定义函数",
           "path": "vas/codec"
+        },
+        {
+          "title": "影子服务",
+          "path": "shadow_service/overview"
+        }
+      ]
+    },
+    {
+      "title": "影子服务",
+      "children": [
+        {
+          "title": "服务概览",
+          "path": "shadow_service/overview"
+        },
+        {
+          "title": "计费说明",
+          "path": "shadow_service/pricing"
+        },
+        {
+          "title": "功能简介",
+          "path": "shadow_service/feature"
+        },
+        {
+          "title": "调用和通信",
+          "path": "shadow_service/invoke"
         }
       ]
     },
