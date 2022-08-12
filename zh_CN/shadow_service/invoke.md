@@ -43,14 +43,12 @@
 **在使用 PATCH 方法更新 paylaod 的情况下，不能新增多层级对象，请见调用示例。**
 
 影子服务 JSON
-``` javascript
+``` json
 {
-  "createAt": 1660201961567, //JSON 创建时间
-  "data": { // 主题或者 API 发布的消息主体
-    
-  },
-  "lastTime": 1660204233317, // 最新一次更新的时间
-  "version": 3 // 该影子模型更新的次数
+    "lastTime": 1660204233317, //最新一次更新的时间
+    "data": {}, // 主题或者 API 发布的消息主体
+    "createAt": 1660201961567, //JSON 创建时间
+    "version": 3 // 该影子模型更新的次数
 }
 ```
 
@@ -58,163 +56,161 @@
 ### 调用示例
 
 使用增量更新的方法更新影子模型数据，使用 `PATCH` 方法以及 `payload` 存放消息
-``` javascript
+``` json
 // 影子模型 data
 {
-    "Key01" : {
-        "a" : 100
+    "Key01": {
+        "a": 100
     }
 }
 
 // 发布主题（shadow/${shadow_id}）增量更新
 {
-	"method" : "PATCH",
-	"payload" : {
-		"Key01" : {
-			"b" : 200,
-			"c" : 300
-		}
-	}
+	"method": "PATCH",
+    "payload": {
+        "Key01": {
+            "c": 300,
+            "b": 200
+        }
+    }
 }
 
 // 影子模型 data 将更新为
 {
-    "Key01" : {
-        "a" : 100,
-    	"b" : 200,
-        "c" : 300
+    "Key01": {
+        "a": 100,
+        "c": 300,
+        "b": 200
     }
 }
 ```
 
 增量更新的方法不能新增多层对象
-``` javascript
+``` json
 // 影子模型 data
 {
-    "Key01" : {
-        "a" : 100
+    "Key01": {
+        "a": 100
     }
 }
 
 // 以下直接添加多层新对象的方式都会报错
 {
-	"method" : "PATCH",
-	"payload" : {
-		"Key01" : {
-	        "a" : 100
-	    },
-	    "Key02" : {
-	    	"b" : 200
-	    }
-	}
+	"method": "PATCH",
+    "payload": {
+        "Key01": {
+            "a": 100
+        },
+        "Key02": {
+            "b": 200
+        }
+    }
 }
 
 {
-	"method" : "PATCH",
-	"payload" : {
-		"Key01" : {
-	        "a" : 100,
-	        "Key02" : {
-	        	"b" : 200
-	        }
-	    }
-	}
+	"method": "PATCH",
+    "payload": {
+        "Key01": {
+            "a": 100,
+            "Key02": {
+                "b": 200
+            }
+        }
+    }
 }
 
 // 如果需要多层新对象，请逐层添加，或者使用全量更新方法来添加
 {
-	"method" : "PATCH",
-	"payload" : {
-		"Key01" : {
-	        "a" : 100
-	    },
-	    "Key02" : {
-	    	
-	    }
-	}
+	"method": "PATCH",
+    "payload": {
+        "Key01": {
+            "a": 100
+        },
+        "Key02": {}
+    }
 }
 
 {
-	"method" : "PATCH",
-	"payload" : {
-		"Key01" : {
-	        "a" : 100
-	    },
-	    "Key02" : {
-	    	"b" : 200
-	    }
-	}
+	"method": "PATCH",
+    "payload": {
+        "Key01": {
+            "a": 100
+        },
+        "Key02": {
+            "b": 200
+        }
+    } 
 }
 
 ```
 
 
 使用全量更新的方法更新影子模型数据，使用 `PUT` 方法以及 `payload` 存放消息
-``` javascript
+``` json
 // 影子模型 data
 {
-    "Key01" : {
-        "a" : 100
+    "Key01": {
+        "a": 100
     }
 }
 
 // 发布主题（shadow/${shadow_id}）全量更新
 {
-	"method" : "PUT",
-	"payload" : {
-		"Key01" : {
-			"b" : 200,
-			"c" : 300
-		},
-		"Key02" : {
-			"d" : 400
-		}
-	}
+	"method": "PUT",
+    "payload": {
+        "Key01": {
+            "c": 300,
+            "b": 200
+        },
+        "Key02": {
+            "d": 400
+        }
+    }
 }
 
 // 影子模型 data 将更新为
 {
-    "Key01" : {
-    	"b" : 200,
-        "c" : 300
+    "Key01": {
+        "c": 300,
+        "b": 200
     },
-    "Key02" : {
-    	"d" : 400
+    "Key02": {
+        "d": 400
     }
 }
 ```
 
 使用 GET 方法获取影子模型数据
-``` javascript
+``` json
 // 影子模型 data
 {
-    "Key01" : {
-        "a" : 100
+    "Key01": {
+        "a": 100
     },
-    "Key02" : {
-    	"b" : 200
+    "Key02": {
+        "b": 200
     }
 }
 
 // 发布主题（shadow/${shadow_id}）全量更新
 {
-	"method" : "GET",
-	"payload" : {}
+    "payload": {},
+    "method": "GET"
 }
 
 // 订阅主题（shadow/${shadow_id}/reply）将接收到影子模型 JSON
 {
-  "data": {
-    "Key01" : {
-        "a" : 100
+    "lastTime": 1660204233317,
+    "data": {
+        "Key01": {
+            "a": 100
+        },
+        "Key02": {
+            "b": 200
+        }
     },
-    "Key02" : {
-    	"b" : 200
-    }
-  },
-  "createAt": 1660201961567,
-  "lastTime": 1660204233317,
-  "version": 2
+    "createAt": 1660201961567,
+    "version": 2
 }
 ```
 
@@ -291,20 +287,20 @@
 
 ```json
 {
+    "meta": {
+        "limit": 10,
+        "page": 1,
+        "count": 1
+    },
     "items": [
         {
-            "createdAt": "2022-06-10 03:20",
-            "shadowID": "test_dm1",
-            "shadowName": "test",
             "description": "123",
-            "updatedAt": "2022-06-10 03:20"
+            "updatedAt": "2022-06-10 03:20",
+            "shadowID": "test_dm1",
+            "createdAt": "2022-06-10 03:20",
+            "shadowName": "test"
         }
-    ],
-    "meta": {
-        "count": 1,
-        "page": 1,
-        "limit": 10
-    }
+    ]
 }
 ```
 
@@ -318,11 +314,11 @@
 
 ```json
 {
-  "createdAt": "2022-06-10 03:20",
-  "updatedAt": "2022-06-10 03:20",
-  "shadowName": "test",
-  "shadowID": "test_dm",
-  "description": "123"
+    "description": "123",
+    "updatedAt": "2022-06-10 03:20",
+    "shadowID": "test_dm",
+    "createdAt": "2022-06-10 03:20",
+    "shadowName": "test"
 }
 ```
 
@@ -336,9 +332,9 @@
 
 ```json
 {
-  "color": "blue",
-  "power": 0,
-  "state": 1
+    "color": "blue",
+    "state": 1,
+    "power": 0
 }
 ```
 
@@ -350,9 +346,9 @@
 
 ```json
 {
-  "shadowID": "test_dm",
-  "shadowName": "test",
-  "description": "123"
+    "description": "123",
+    "shadowID": "test_dm",
+    "shadowName": "test"
 }
 ```
 
@@ -360,11 +356,11 @@
 
 ```json
 {
-  "createdAt": "2022-06-10 03:39",
-  "updatedAt": "2022-06-10 03:39",
-  "shadowName": "test",
-  "shadowID": "test_dm",
-  "description": "123"
+    "description": "123",
+    "updatedAt": "2022-06-10 03:39",
+    "shadowID": "test_dm",
+    "createdAt": "2022-06-10 03:39",
+    "shadowName": "test"
 }
 ```
 
@@ -376,8 +372,8 @@
 
 ```json
 {
-  "shadowName": "test",
-  "description": ""
+    "description": "",
+    "shadowName": "test"
 }
 ```
 
@@ -385,11 +381,11 @@
 
 ```json
 {
-  "createdAt": "2022-06-10 03:39",
-  "updatedAt": "2022-06-10 03:39",
-  "shadowName": "test",
-  "shadowID": "test_dm",
-  "description": ""
+    "description": "",
+    "updatedAt": "2022-06-10 03:39",
+    "shadowID": "test_dm",
+    "createdAt": "2022-06-10 03:39",
+    "shadowName": "test"
 }
 ```
 
@@ -401,9 +397,9 @@
 
 ```json
 {
-  "color": "blue",
-  "power": 0,
-  "state": 1
+    "color": "blue",
+    "state": 1,
+    "power": 0
 }
 ```
 
@@ -411,9 +407,9 @@
 
 ```json
 {
-  "color": "blue",
-  "power": 0,
-  "state": 1
+    "color": "blue",
+    "state": 1,
+    "power": 0
 }
 ```
 

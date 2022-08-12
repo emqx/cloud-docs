@@ -30,17 +30,19 @@
 ![new](./_assets/device_shadow_02.png)
 
 创建一个设备影子 JSON 模型，用来描述智能灯的颜色状态和亮度，指令下发的目标颜色和亮度。
-``` javascript
-"state":{
-    "reported": {
-        "color": null, 
-        "volumn": null
-    },
-    "desired": {
-        "color" : null,
-        "volumn": null
+``` json
+{
+    "state": {
+        "reported": {
+            "color": null,
+            "volumn": null
+        },
+        "desired": {
+            "color": null,
+            "volumn": null
+        }
     }
- }
+}
 ```
 <table>
    <tr>
@@ -75,18 +77,18 @@
 
 使用设备影子机制，设备状态变更，只需同步状态给设备影子一次，应用程序请求获取设备状态，不论应用程序请求数量，和设备是否联网在线，都可从设备影子中获取设备当前状态，实现应用程序与设备解耦。
 
-1. 设备上线后上报最新的状态，只需要增量更新“reported”字段。
-``` javascript
+1. 设备上线后上报最新的状态，只需要增量更新 “reported” 字段。
+``` json
 {
-	"method" : "PATCH",
-	"payload" : {
-		"state":{
-			"reported": {
-		        "color": "GREEN", 
-		        "volumn": 80
-		    }
-		}
-	}
+   "method": "PATCH",
+    "payload": {
+        "state": {
+            "reported": {
+                "color": "GREEN",
+                "volumn": 80
+            }
+        }
+    }
 }
 ```
 
