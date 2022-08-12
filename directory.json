@@ -438,6 +438,10 @@
         {
           "title": "调用和通信",
           "path": "shadow_service/invoke"
+        },
+        {
+          "title": "场景案例：设备影子",
+          "path": "shadow_service/device_shadow"
         }
       ]
     },

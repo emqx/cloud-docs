@@ -36,7 +36,7 @@
    </tr>
    <tr>
       <td>GET</td>
-      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 GET 方法，用于在<strong>订阅主题</strong>中获得最新的 影子模型 data 数据。</td>
+      <td>请在<strong>发布主题</strong>中使用该方法，对应 HTTP 的 GET 方法，用于在<strong>订阅主题</strong>中获得最新的 影子模型 JSON 数据。</td>
    </tr>
 </table>
 
@@ -59,7 +59,7 @@
 
 使用增量更新的方法更新影子模型数据，使用 `PATCH`方法以及`payload`存放消息
 ``` javascript
-// 影子模型 JSON data
+// 影子模型 data
 {
     "Key01" : {
         "a" : 100
@@ -77,7 +77,7 @@
 	}
 }
 
-// 影子模型 JSON 将更新为
+// 影子模型 data 将更新为
 {
     "Key01" : {
         "a" : 100,
@@ -89,14 +89,14 @@
 
 增量更新的方法不能新增多层对象
 ``` javascript
-// 影子模型 JSON data
+// 影子模型 data
 {
     "Key01" : {
         "a" : 100
     }
 }
 
-// 以下方式都会报错
+// 以下直接添加多层新对象的方式都会报错
 {
 	"method" : "PATCH",
 	"payload" : {
@@ -121,7 +121,7 @@
 	}
 }
 
-// 如果需要多层新对象，请逐步添加，或者使用全量更新方法来添加
+// 如果需要多层新对象，请逐层添加，或者使用全量更新方法来添加
 {
 	"method" : "PATCH",
 	"payload" : {
@@ -151,7 +151,7 @@
 
 使用全量更新的方法更新影子模型数据，使用 `PUT`方法以及`payload`存放消息
 ``` javascript
-// 影子模型 JSON data
+// 影子模型 data
 {
     "Key01" : {
         "a" : 100
@@ -172,7 +172,7 @@
 	}
 }
 
-// 影子模型 JSON 将更新为
+// 影子模型 data 将更新为
 {
     "Key01" : {
     	"b" : 200,
@@ -186,7 +186,7 @@
 
 使用 GET 方法获取影子模型数据
 ``` javascript
-// 影子模型 JSON data
+// 影子模型 data
 {
     "Key01" : {
         "a" : 100
@@ -202,7 +202,7 @@
 	"payload" : {}
 }
 
-// 订阅主题（shadow/${shadow_id}/reply）将接收到影子模型数据
+// 订阅主题（shadow/${shadow_id}/reply）将接收到影子模型 JSON
 {
   "data": {
     "Key01" : {
@@ -278,9 +278,5 @@
       <td>增量更新指定影子模型 JSON</td>
    </tr>
 </table>
-
-### 调用示例
-
-TODO PIC
 
 
