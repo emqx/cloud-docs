@@ -1,19 +1,18 @@
 # Introduction
 
-User management fulfils enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. Different personnel can be invited within the enterprise to do detailed management of resources.
+Accounts management fulfils enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. Different personnel can be invited within the enterprise to do detailed management of resources.
 
-## Subaccount System
+## Member Accounts System
 
-A sub-account is an account created by an EMQX Cloud user. Subaccounts will be activated after email authentication. An EMQX Cloud user account currently cannot be registered as a subaccount. On the contrary, Subaccount email can be registered as an EMQX Cloud user. Additionally, it can be registered as a subaccount under other EMQX Cloud user account.
+A member account is an account created by an EMQX Cloud user. Member accounts will be activated after email authentication. An EMQX Cloud user account currently cannot be registered as a member account. On the contrary, member account email can be registered as an EMQX Cloud user. Additionally, it can be registered as a member account under other EMQX Cloud user account.
 
-Here is the login page for sub-users (for subaccount login only)
+Here is the login page for member accounts (for member accounts login only)
 
 ![default_project](./_assets/login_1.png)
 
+## Accounts Categories
 
-## Subaccount Categories
-
-**Administrator**：Same as the platform account, Administrator have all the access to the platform and is the super administrator in the subaccount system. It is important to note that although functionally equivalent to the platform account, the administrator still belongs to the system of subaccount.
+**Administrator**：Same as the platform account, Administrator have all the access to the platform and is the super administrator in the member account system. It is important to note that although functionally equivalent to the platform account, the administrator still belongs to the system of member account.
 
 **Project Administrator**：Project Administrators have permission to view and modify projects and to modify and delete deployments. Project administrator is mainly used for project deployment-related management. For example, an organization needs to have separate cluster management and designate a person as administrator for a certain project. Assigning the project administrators will give them sufficient access instead of full access to the project.
 
@@ -21,7 +20,7 @@ Here is the login page for sub-users (for subaccount login only)
 
 **Accountant**：Accountants have financial management permissions and can view projects and deployments. They can manage the billing, balance, invoices, etc.
 
-**Auditor**：Auditors can view projects, deployments,  sub-users, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
+**Auditor**：Auditors can view projects, deployments,  accounts, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
 Role list
 
 <table>
@@ -218,7 +217,7 @@ Role list
       <td>&#10007</td>
    </tr>
    <tr>
-      <td>Project bind subaccount</td>
+      <td>Project bind member accounts</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>

@@ -10,7 +10,7 @@
 
 ## 2021-11-19
 
-* Support Subaccount Management
+* Support Member Accounts Management
 
 ## 2021-09-19
 

@@ -10,7 +10,7 @@ Before you start, you need to complete the following operations:
     * For basic and standard cluster, please open the NAT first.
     * For dedicated cluster, please
       complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned
-      below refer to the intranet IP of the resource.
+      below refer to the internal network IP of the resource.
 
   <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/jLn0q8xf-1Y/?autoplay=1&null" />
 

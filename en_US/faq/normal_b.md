@@ -36,7 +36,7 @@ NAT is only supported for **Professional plan**. You can enable NAT gateway in V
 It will cause the interruption to the connectivity on seconds.
 
 ## How do I connect my own services to the MQTT service via local network when I have built a VPC peer-to-peer connection?
-If you need an intranet connection to deploy to mqtt, you will need to submit a ticket and contact us to open SLB.
+If you need an internal network connection to deploy to mqtt, you will need to submit a ticket and contact us to open SLB.
 
 ## Is API supported？
 Yes. An HTTP API is provided for integration with external systems, such as querying client information, posting messages and creating rules.

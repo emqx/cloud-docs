@@ -10,7 +10,7 @@ In EMQX Cloud, using the Data Integrations has the following requirements and re
     - The resource only supports public access, so you need to ensure that the resource has public access and open security groups before creating the resource.
     - Only Webhook and MQTT bridges are open for the resource type.
 - Professional Deployment
-    - The resource only supports intranet access, so you need to configure VPC peering before creating the resource and open the security group.
+    - The resource only supports internal network access, so you need to configure VPC peering before creating the resource and open the security group.
 
 
 ## [Rule Management](../rule_engine/rules.md)

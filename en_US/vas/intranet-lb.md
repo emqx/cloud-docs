@@ -4,7 +4,7 @@
 This feature is not available in the standard deployment
 :::
 
-Intranet load balancing is a service that distributes traffic on demand in the intranet, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
+Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
 
 Before start, you will need to complete the following actions:
 * Professional deployments (EMQX clusters) have been created on EMQX Cloud.
@@ -25,4 +25,4 @@ After completing the intranet load balancing value added service purchase, you c
 
 ![intranet_lb_info](./_assets/intranet_lb_info.png)
 
-When the status of the intranet load balancing is running, you can connect the endpoints under the VPC that have completed peering to the deployment through the intranet IP of the intranet address on the same port as the public connection port: mqtt(1883) and websocket(8083).
+When the status of the intranet load balancing is running, you can connect the endpoints under the VPC that have completed peering to the deployment through the internal network IP of the internal network address on the same port as the public connection port: mqtt(1883) and websocket(8083).
