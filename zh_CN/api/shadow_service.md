@@ -120,12 +120,15 @@ GET /shadows/${shadow_id}/json
 
 ### 响应消息
 
-| 名称      | 类型   | 描述                 |
-| --------- | ------ | -------------------- |
-| createdAt | Int    | JSON 创建时间（UTC） |
-| lastTime  | Int    | JSON 更新时间（UTC） |
-| version   | String | JSON 修改的版本号    |
-| data      | String | 消息正文             |
+| 名称         | 类型    | 描述                           |
+| ------------ | ------- | ------------------------------ |
+| createdAt    | Integer | JSON 创建时间毫秒时间戳（UTC） |
+| lastTime     | Integer | JSON 更新时间毫秒时间戳（UTC） |
+| version      | Integer | JSON 修改的版本号              |
+| data         | String  | 消息正文                       |
+| data[].color | String  | 颜色                           |
+| data[].state | Integer | 状态                           |
+| data[].power | Integer | 电量                           |
 
 ### 请求示例
 
@@ -240,21 +243,21 @@ PUT /shadows/${shadow_id}/json
 
 ### 请求消息
 
-| 名称         | 类型   | 描述     |
-| ------------ | ------ | -------- |
-| data         | String | 消息正文 |
-| data[].color | String | 颜色     |
-| data[].state | String | 状态     |
-| data[].power | String | 电量     |
+| 名称         | 类型    | 描述     |
+| ------------ | ------- | -------- |
+| data         | String  | 消息正文 |
+| data[].color | String  | 颜色     |
+| data[].state | Integer | 状态     |
+| data[].power | Integer | 电量     |
 
 ### 响应消息
 
-| 名称      | 类型   | 描述                 |
-| --------- | ------ | -------------------- |
-| createdAt | Int    | JSON 创建时间（UTC） |
-| lastTime  | Int    | JSON 更新时间（UTC） |
-| version   | String | JSON 修改的版本号    |
-| data      | String | 消息正文             |
+| 名称      | 类型    | 描述                           |
+| --------- | ------- | ------------------------------ |
+| createdAt | Integer | JSON 创建时间毫秒时间戳（UTC） |
+| lastTime  | Integer | JSON 更新时间毫秒时间戳（UTC） |
+| version   | Integer | JSON 修改的版本号              |
+| data      | String  | 消息正文                       |
 
 ### 请求示例
 
@@ -285,19 +288,22 @@ PATCH /shadows/${shadow_id}/json
 
 ### 请求消息
 
-| 名称         | 类型   | 描述     |
-| ------------ | ------ | -------- |
-| data         | String | 消息正文 |
-| data[].specs | String | 规格     |
+| 名称         | 类型    | 描述     |
+| ------------ | ------- | -------- |
+| data         | String  | 消息正文 |
+| data[].specs | Integer | 规格     |
+| data[].color | String  | 颜色     |
+| data[].state | Integer | 状态     |
+| data[].power | Integer | 电量     |
 
 ### 响应消息
 
-| 名称      | 类型   | 描述                 |
-| --------- | ------ | -------------------- |
-| createdAt | Int    | JSON 创建时间（UTC） |
-| lastTime  | Int    | JSON 更新时间（UTC） |
-| version   | String | JSON 修改的版本号    |
-| data      | String | 消息正文             |
+| 名称      | 类型    | 描述                           |
+| --------- | ------- | ------------------------------ |
+| createdAt | Integer | JSON 创建时间毫秒时间戳（UTC） |
+| lastTime  | Integer | JSON 更新时间毫秒时间戳（UTC） |
+| version   | Integer | JSON 修改的版本号              |
+| data      | String  | 消息正文                       |
 
 ### 请求示例
 
