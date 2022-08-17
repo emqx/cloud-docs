@@ -479,6 +479,10 @@
         {
           "title": "指标",
           "path": "api/metrics"
+        },
+        {
+          "title": "影子服务",
+          "path": "api/shadow_service"
         }
       ]
     },
