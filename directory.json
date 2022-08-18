@@ -416,7 +416,7 @@
         },
         {
           "title": "影子服务",
-          "path": "shadow_service/overview"
+          "path": "vas/shadows"
         }
       ]
     },

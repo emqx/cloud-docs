@@ -45,12 +45,40 @@
 
 影子服务 JSON
 
+<table>
+   <tr>
+      <th>字段</th>
+      <th>类型</th>
+      <th>说明</th>
+   </tr>
+   <tr>
+      <td>data</td>
+      <td>Object</td>
+      <td>主题或者 API 发布的消息主体</td>
+   </tr>
+   <tr>
+      <td>createAt</td>
+      <td>Number</td>
+      <td>JSON 创建时间</td>
+   </tr>
+   <tr>
+      <td>lastTime</td>
+      <td>Number</td>
+      <td>最新一次更新的时间</td>
+   </tr>
+   <tr>
+      <td>version</td>
+      <td>Number</td>
+      <td>该影子模型更新的次数</td>
+   </tr>
+</table>
+
 ``` json
 {
-    "lastTime": 1660204233317, //最新一次更新的时间
-    "data": {}, // 主题或者 API 发布的消息主体
-    "createAt": 1660201961567, //JSON 创建时间
-    "version": 3 // 该影子模型更新的次数
+    "data": {},
+    "createAt": 1660201961567,
+    "lastTime": 1660204233317,
+    "version": 3
 }
 ```
 
@@ -68,7 +96,7 @@
 
 // 发布主题（shadow/${shadow_id}）增量更新
 {
- "method": "PATCH",
+    "method": "PATCH",
     "payload": {
         "Key01": {
             "c": 300,
@@ -99,7 +127,7 @@
 
 // 以下直接添加多层新对象的方式都会报错
 {
- "method": "PATCH",
+    "method": "PATCH",
     "payload": {
         "Key01": {
             "a": 100
@@ -111,7 +139,7 @@
 }
 
 {
- "method": "PATCH",
+    "method": "PATCH",
     "payload": {
         "Key01": {
             "a": 100,
@@ -124,7 +152,7 @@
 
 // 如果需要多层新对象，请逐层添加，或者使用全量更新方法来添加
 {
- "method": "PATCH",
+    "method": "PATCH",
     "payload": {
         "Key01": {
             "a": 100
@@ -134,7 +162,7 @@
 }
 
 {
- "method": "PATCH",
+    "method": "PATCH",
     "payload": {
         "Key01": {
             "a": 100
@@ -159,7 +187,7 @@
 
 // 发布主题（shadow/${shadow_id}）全量更新
 {
- "method": "PUT",
+    "method": "PUT",
     "payload": {
         "Key01": {
             "c": 300,
@@ -204,7 +232,6 @@
 
 // 订阅主题（shadow/${shadow_id}/reply）将接收到影子模型 JSON
 {
-    "lastTime": 1660204233317,
     "data": {
         "Key01": {
             "a": 100
@@ -214,6 +241,7 @@
         }
     },
     "createAt": 1660201961567,
+    "lastTime": 1660204233317,
     "version": 2
 }
 ```
