@@ -1,6 +1,6 @@
 # Overview
 
-EMQX Cloud Bills are based on the consumption of deployments and other services within your account. This includes the total deployments and services created by both root account and member accounts.
+EMQX Cloud Bills are based on the consumption of deployments and other services within your account. This includes the total deployments and services created by both root account and subaccounts.
 
 You can either pay as you go in an hourly basis or make an annual prepaid purchase. For the plan pricing details, see the [Product Pricing](../price/pricing.md) page.
 

@@ -13,8 +13,8 @@ Click the `New Project` button in the upper right corner to start the new projec
 ![default_project](./_assets/pc_step1.png)
 
 
-1. Search and select a member account. When searching, you need to enter the full account name and set the role for the member account. If you haven't created a member account yet, you can create a member account in the Accounts menu. [Learn more about role related information](./user.md). Here we give the member account `subuser1@emqx.io` the role of project administrator. You can add multiple member accounts in the member accounts input box.
-> If you do not need to set up a member account you can click Next to skip the settings.
+1. Search and select a subaccount. When searching, you need to enter the full account name and set the role for the subaccount. If you haven't created a subaccount yet, you can create a subaccount in the Accounts menu. [Learn more about role related information](./user.md). Here we give the subaccount `subuser1@emqx.io` the role of project administrator. You can add multiple subaccounts in the subaccounts input box.
+> If you do not need to set up a subaccount you can click Next to skip the settings.
 
 ![default_project](./_assets/pc_step2.png)
 
@@ -47,7 +47,7 @@ In the project authorization list you can see the currently authorized accounts,
 ![default_project](./_assets/pc_opts_1.png)
 
 
-Click `Add` to bind a new account, search and add a member account, click OK to return to the account list.
+Click `Add` to bind a new account, search and add a subaccount, click OK to return to the account list.
 
 ![default_project](./_assets/pc_opts_2.png)
 
