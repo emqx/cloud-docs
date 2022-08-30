@@ -211,7 +211,15 @@
 ##### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X POST -d '{"description": "note","shadowID": "Things_Model_ID","shadowName": "Things_Model_Name"}' {api}/shadows
+curl --request POST \
+  --url http://127.0.0.1:5002/{api}/shadows \
+  --user app_id:app_secret \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "shadowName":"Things_Model_Name",
+  "shadowID" : "Things_Model_ID",
+  "description": "note"
+}'
 ```
 
 #### 更新物模型 JSON
@@ -222,7 +230,28 @@ curl -u app_id:app_secret -X POST -d '{"description": "note","shadowID": "Things
 ##### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X PUT -d '{"properties":[{"name":"prop_name","dataType":{"type":"text"},"expands":{"remark":""},"id":"prop_state","data_transfer_type":"RO"}],"profile":{"Things_Model_ID":"model_id","version":"1","Things_Model_Name":"name"}}' {api}/shadows/${Things_Model_ID}/json
+curl --request PUT \
+  --url http://127.0.0.1:5002/{api}/shadows/${Things_Model_ID}/json \
+  --user app_id:app_secret \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "profile": {
+    "Things_Model_ID": "model_id",
+    "Things_Model_Name": "name",
+    "version": "1"
+  },
+  "properties": [{
+    "expands": {
+      "remark": ""
+    },
+    "data_transfer_type": "RO",
+    "dataType": {
+      "type": "text"
+    },
+    "id": "prop_state",
+    "name": "prop_name"
+  }]
+}'
 ```
 
 #### 请求物模型最新状态展示
@@ -233,7 +262,9 @@ curl -u app_id:app_secret -X PUT -d '{"properties":[{"name":"prop_name","dataTyp
 ##### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X GET {api}/shadows/${Things_Model_ID}/json
+curl --request GET \
+  --url http://127.0.0.1:5002/{api}/shadows/${Things_Model_ID}/json \
+  --user app_id:app_secret \
 ```
 
 如果在设备的管理页面，我们除了功能展示还需要做指令的发送，我们可以使用局部更新的方法去更新模型。
@@ -243,7 +274,11 @@ curl -u app_id:app_secret -X GET {api}/shadows/${Things_Model_ID}/json
 ##### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}' {api}/shadows/${Things_Model_ID}/json
+curl --request PATCH \
+  --url http://127.0.0.1:5002/{api}/shadows/${Things_Model_ID}/json \
+  --user app_id:app_secret \
+  --header 'Content-Type: application/json' \
+  --data '{"devices[x]":{"properties_name":"data"}}'
 ```
 
 关于更多的影子服务的 API 相关的内容请[查看这里](../api/shadow_service.md)。
@@ -257,8 +292,7 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
 ``` json
 {
 	"method": "GET",
-    "payload": {}
-    
+  "payload": {}
 }
 ```
 
@@ -266,14 +300,14 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
 设备端初始化更新设备数据，可以使用 PATCH 方法在 Topic “shadow/Things_Model_ID” 更新当前设备的数据，这里的 `devices[x]` 是使用下标的方式新建设备数据。
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-    	"devices[x]" :{
-    		"client_id" : "客户端 ID",
-	  		"updatedAt" : "设备更新时间",
-	  		"properties_name" : "设备数据"
-    	}
+  "method": "PATCH",
+  "payload": {
+    "devices[x]": {
+      "client_id": "客户端 ID",
+      "updatedAt": "设备更新时间",
+      "properties_name": "设备数据"
     }
+  }
 }
 ```
 
@@ -281,13 +315,13 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
 如果设备只是上报最新的属性状态，同样可以使用 PATCH 方法在 Topic “shadow/Things_Model_ID” 更新，只需要更新变化的数据即可
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-    	"devices[x]" :{
-	  		"updatedAt" : "新的时间",
-	  		"properties_name" : "新的设备数据"
-    	}
+  "method": "PATCH",
+  "payload": {
+    "devices[x]": {
+      "updatedAt": "新的时间",
+      "properties_name": "新的设备数据"
     }
+  }
 }
 ```
 
@@ -307,22 +341,21 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
     "Things_Model_ID": "tm_mc_001",
     "Things_Model_Name": "门磁001"
   },
-  "properties": [
-    {
+  "properties": [{
       "id": "doorcontact_state",
       "name": "门磁状态",
-      "data_transfer_type":"RO",
+      "data_transfer_type": "RO",
       "dataType": {
         "type": "bool"
       },
-      "expands" : {
-        "remark" : ""
+      "expands": {
+        "remark": ""
       }
     },
     {
       "id": "battery_percentage",
       "name": "电池电量",
-      "data_transfer_type":"RO",
+      "data_transfer_type": "RO",
       "dataType": {
         "type": "int",
         "specs": {
@@ -333,19 +366,19 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
           "step": "1"
         }
       },
-      "expands" : {
-        "remark" : "数值范围: 0-100, 步长: 1, 单位: %"
+      "expands": {
+        "remark": "数值范围: 0-100, 步长: 1, 单位: %"
       }
     },
     {
       "id": "temper_alarm",
       "name": "防拆报警",
-      "data_transfer_type":"RO",
+      "data_transfer_type": "RO",
       "dataType": {
         "type": "bool"
       },
-      "expands" : {
-        "remark" : ""
+      "expands": {
+        "remark": ""
       }
     }
   ]
@@ -382,34 +415,34 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
 #### 第一步
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-      "devices" :[]
-    }
+  "method": "PATCH",
+  "payload": {
+    "devices": []
+  }
 }
 ```
 #### 第二步
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-      "devices" :[{}]
-    }
+  "method": "PATCH",
+  "payload": {
+    "devices": [{}]
+  }
 }
 ```
 #### 第三步
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-      "devices[0]" :{
-		  "client_id" : "client_mc_eceba70f",
-  		  "updatedAt" : "2022-06-10 03:20:00",
-  		  "doorcontact_state" : 0,
-  		  "battery_percentage" : 90,
-  		  "temper_alarm" : 0
-      }
+  "method": "PATCH",
+  "payload": {
+    "devices[0]": {
+      "client_id": "client_mc_eceba70f",
+      "updatedAt": "2022-06-10 03:20:00",
+      "doorcontact_state": 0,
+      "battery_percentage": 90,
+      "temper_alarm": 0
     }
+  }
 }
 ```
 
@@ -420,14 +453,14 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
 当门的开关状态被触发，门磁的状态发生变化时候，使用 Topic "shadow/tm_mc_001" 对门磁状态进行上报。
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-    	"devices[0]" :{
-    		"client_id" : "client_mc_eceba70f",
-	  		"updatedAt" : "2022-06-10 04:20:00",
-	  		"doorcontact_state" : 1
-    	}
+  "method": "PATCH",
+  "payload": {
+    "devices[0]": {
+      "client_id": "client_mc_eceba70f",
+      "updatedAt": "2022-06-10 04:20:00",
+      "doorcontact_state": 1
     }
+  }
 }
 ```
 
@@ -436,25 +469,25 @@ curl -u app_id:app_secret -X PATCH -d '{"devices[x]":{"properties_name":"data"}}
 #### 第一步
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-      "devices[1]" :{}
-    }
+  "method": "PATCH",
+  "payload": {
+    "devices[1]": {}
+  }
 }
 ```
 #### 第二步
 ``` json
 {
-    "method": "PATCH",
-    "payload": {
-    	"devices[1]" :{
-    		"client_id" : "client_mc_2dbbad82",
-	  		"updatedAt" : "2022-08-26 13:20:00",
-	  		"doorcontact_state" : 0,
-	  		"battery_percentage" : 100,
-	  		"temper_alarm" : 0
-    	}
+  "method": "PATCH",
+  "payload": {
+    "devices[1]": {
+      "client_id": "client_mc_2dbbad82",
+      "updatedAt": "2022-08-26 13:20:00",
+      "doorcontact_state": 0,
+      "battery_percentage": 100,
+      "temper_alarm": 0
     }
+  }
 }
 ```
 
