@@ -61,7 +61,7 @@ Role list
       <td>&#10007</td>
    </tr>
    <tr>
-   	  <td>Create new deployments</td>
+   	<td>Create new deployments</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -131,7 +131,7 @@ Role list
       <td>Read only</td>
    </tr>
    <tr>
-   	  <td>Data Integrations Configuration</td>
+   	<td>Data Integrations Configuration</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
@@ -173,15 +173,15 @@ Role list
       <td>&#10007</td>
    </tr>
    <tr>
-      <td rowspan="2">User Management</td>
-      <td>View user list</td>
+      <td rowspan="2">Account Management</td>
+      <td>View Account List</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>User Management Operation</td>
+      <td>Account Management Operation</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -223,37 +223,30 @@ Role list
       <td>&#10007</td>
       <td>&#10007</td>
    </tr>
-   <tr>
-      <td colspan="2">Events</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
-   </tr>
 	<tr>
-      <td rowspan="9">Financial Management</td>
-      <td>View the financial data</td>
+      <td rowspan="7">Billing</td>
+      <td>Billing Overview</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    	</tr>
    	<tr>
-      <td>Top up/bind credit card</td>
+      <td>Change credit card info</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10007</td>
    	</tr>
    	<tr>
-      <td>View transaction history</td>
+      <td>View Bills page</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    	</tr>
    	<tr>
-      <td>View historical and hourly bills</td>
+      <td>View Charges by Services page</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
@@ -274,26 +267,41 @@ Role list
       <td>&#10003</td>
    	</tr>
    	<tr>
-      <td>Apply Invoices</td>
+      <td>Download Invoices</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10007</td>
    	</tr>
-   	<tr>
-      <td>View Invoices Address</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
+      <tr>
+      <td rowspan="3">Value Added Services</td>
+      <td>View VAS List</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   	</tr>
-   	<tr>
-      <td>Edit Invoices Address</td>
       <td>&#10007</td>
       <td>&#10007</td>
+      </tr>
+      <tr>
+      <td>Enable a Service</td>
       <td>&#10003</td>
       <td>&#10007</td>
-   	</tr>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      </tr>
+      <tr>
+      <td>Delete a Service</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      </tr>
+   <tr>
+      <td colspan="2">Events</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10007</td>
+   </tr>
    	<tr>
       <td colspan="2">Tickets</td>
       <td>&#10003</td>
