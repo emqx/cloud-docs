@@ -601,7 +601,7 @@
           "path": "feature/role"
         },
         {
-          "title": "Sub-user Management",
+          "title": "Subaccount Management",
           "path": "feature/user"
         },
         {

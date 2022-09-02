@@ -4,7 +4,7 @@ In this article, we will simulate temperature and humidity data and report these
 
 Before you start, you need to complete the following operations:
 * Deployments have already been created on EMQX Cloud (EMQX Cluster).
-* For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.
+* For professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.
 
 
   <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/7EheLmjaHCk/?autoplay=1&null" />

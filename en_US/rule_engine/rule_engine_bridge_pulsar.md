@@ -10,7 +10,7 @@ Before you start, you will need to complete the following:
 
 * A deployment (EMQX Cluster) has been created on EMQX Cloud.
 
-* For professional deployment users: please complete the creation of a [VPC Peering Connections](../deployments/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's intranet IP.
+* For professional deployment users: please complete the creation of a [VPC Peering Connections](../deployments/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's internal network IP.
 
 ## Pulsar Configuration
 

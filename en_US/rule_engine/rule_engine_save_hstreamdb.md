@@ -7,7 +7,7 @@ In this article, we will simulate temperature and humidity data and report it to
 Before you start, you need to complete the following operations:
 
 - Deployments have already been created on EMQX Cloud (EMQX Cluster).
-- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the intranet IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
 ## HStreamDB Configuration
 

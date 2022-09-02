@@ -1,17 +1,16 @@
 # Introduction
 
-User management fulfils enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. Different personnel can be invited within the enterprise to do detailed management of resources.
+Accounts management fulfils enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. Different personnel can be invited within the enterprise to do detailed management of resources.
 
-## Subaccount System
+## Subaccounts System
 
-A sub-account is an account created by an EMQX Cloud user. Subaccounts will be activated after email authentication. An EMQX Cloud user account currently cannot be registered as a subaccount. On the contrary, Subaccount email can be registered as an EMQX Cloud user. Additionally, it can be registered as a subaccount under other EMQX Cloud user account.
+A subaccount is an account created by an EMQX Cloud user. Subaccounts will be activated after email authentication. An EMQX Cloud user account currently cannot be registered as a subaccount. On the contrary, subaccount email can be registered as an EMQX Cloud user. Additionally, it can be registered as a subaccount under other EMQX Cloud user account.
 
-Here is the login page for sub-users (for subaccount login only)
+Here is the login page for subaccounts (for subaccounts login only)
 
 ![default_project](./_assets/login_1.png)
 
-
-## Subaccount Categories
+## Accounts Categories
 
 **Administrator**：Same as the platform account, Administrator have all the access to the platform and is the super administrator in the subaccount system. It is important to note that although functionally equivalent to the platform account, the administrator still belongs to the system of subaccount.
 
@@ -21,7 +20,7 @@ Here is the login page for sub-users (for subaccount login only)
 
 **Accountant**：Accountants have financial management permissions and can view projects and deployments. They can manage the billing, balance, invoices, etc.
 
-**Auditor**：Auditors can view projects, deployments,  sub-users, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
+**Auditor**：Auditors can view projects, deployments,  accounts, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
 Role list
 
 <table>
@@ -218,7 +217,7 @@ Role list
       <td>&#10007</td>
    </tr>
    <tr>
-      <td>Project bind subaccount</td>
+      <td>Project bind subaccounts</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
