@@ -28,7 +28,7 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
       <td>1,000 连接 / 最高 1,000 TPS</td>
       <td>¥0.68/小时 起</td>
       <td rowspan="3">100G/月</td>
-      <td rowspan="7">￥1.5/GB</td>
+      <td rowspan="9">￥1.5/GB</td>
    </tr>
    <tr>
       <td>5,000 连接 / 最高 5,000 TPS</td>
@@ -40,9 +40,13 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
    </tr>
    <tr>
       <td rowspan="5">专业版</td>
+      <td>1,000 连接 / 最高 1,000 TPS</td>
+      <td>￥1.28/小时 起</td>
+      <td rowspan="3">100G/月</td>
+   </tr>
+   <tr>
       <td>5,000 连接 / 最高 10,000 TPS</td>
       <td>￥2.18/小时 起</td>
-      <td rowspan="2">100G/月</td>
    </tr>
    <tr>
       <td>10,000 连接 / 最高 20,000 TPS</td>
