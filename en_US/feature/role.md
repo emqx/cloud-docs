@@ -173,15 +173,15 @@ Role list
       <td>&#10007</td>
    </tr>
    <tr>
-      <td rowspan="2">Account Management</td>
-      <td>View Account List</td>
+      <td rowspan="2">Subaccounts</td>
+      <td>View Subaccounts List</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>Account Management Operation</td>
+      <td>Subaccounts Operation</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -287,6 +287,13 @@ Role list
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
+      </tr>
+      <tr>
+      <td>Service Usage</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>Read Only</td>
+      <td>Read Only</td>
       </tr>
       <tr>
       <td>Delete a Service</td>
