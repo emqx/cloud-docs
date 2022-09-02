@@ -8,7 +8,6 @@ VPC peering connection is a network connection between two VPCs. Through this co
 2. EMQX Cloud does not accept CIDR in the range of 10.11.1.0/24 ~ 10.64.255.0/24.
 3. Peering connections are bound to resources. Please create peering connections before creating resources.
 
-
 ## AWS Cloud VPC Peering Connection
 
 <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/ajnLBS3LLKY/?autoplay=1&null" />
@@ -17,7 +16,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 1. Log in to [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQX Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
 
-   ![create-vpc1](./_assets/create_aws_vpc_peering.png)
+   ![create-vpc1](./_assets/aws_vpc_peering.png)
 
 2. Log in to the Amazon Web Services console, switch to the region where `Region of deployment` is recorded in step 1, go to `Networking & Content Delivery` -> `VPC` -> `Peering Connection`, and click the button of `Create Peering Connection`
 
@@ -36,10 +35,9 @@ VPC peering connection is a network connection between two VPCs. Through this co
 4. Return to  [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
 
    * For Peering ID,  fill in the recorded `VPC Peering Connection`
-   * For Account ID,  fill in the recorded `Requester VPC owner`
    * For VPC ID,  fill in the recorded `Requester VPC ID`
 
-   ![create-vpc2](./_assets/create_aws_vpc_peering.png)
+   ![create-vpc2](./_assets/aws_vpc_peering_info.png)
 
 5. Return to Amazon Web Services console, go to `Networking & Content Delivery` -> `VPC` -> `Route Tables`, add the `CIDR of deployment` recorded in step 1 to the route table of the corresponding VPC
 
@@ -59,18 +57,15 @@ Before deleting the peering connection, please make sure that there are no assoc
 
 1. Go to deployment details
 
-   ![vpc-list](./_assets/vpc-list.png)
+   ![vpc-list](./_assets/aws_vpc_peeing_status.png)
 
 2. Click the `delete button` on the right side of the peering connection
 
-   ![vpc-delete](./_assets/vpc-delete.png)
-
-
-
+   ![vpc-delete](./_assets/aws_vpc_peering_delete.png)
 
 ## Azure VPC Peering Connection
 
-This feature is now not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../feature/tickets.md) to contact us. 
+This feature is now not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../feature/tickets.md) to contact us.
 
 ## GCP VPC Peering Connection
 
@@ -78,14 +73,14 @@ This feature is now not available. If you need to set up VPC peering connection 
 
 1. Log in to [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
     * Project ID: GCP Project ID of your peering VPC
-    * VPC ID:  Name of your peering VPC
+    * VPC Network Name :  Network Name of your peering VPC
 
    and record the information below:
-    * VPC ID of deployment
+    * VPC Network Name of deployment
     * CIDR of deployment
     * Project ID of EMQX Cloud
 
-   ![gcp_create_peering](./_assets/gcp_create_peering.png)
+   ![gcp_create_peering](./_assets/gcp_vpc_peering.png)
 
 2. Log in to your GCP console, create the peering connection
     1. In the Google Cloud Console, click **VPC network peering**.
@@ -94,16 +89,15 @@ This feature is now not available. If you need to set up VPC peering connection 
     4. In **Your VPC Network**, enter the name of your GCP VPC network.
     5. In **Peered VPC network**, select **In another project**.
     6. In **Project ID**, enter EMQX Cloud Project ID. You can find this name in the VPC Peering view in EMQX Cloud.
-    7. In **VPC network name**, enter your EMQX Cloud VPC Name. You can find this name in the VPC Peering view in EMQX Cloud.
+    7. In **VPC network name**, enter your EMQX Cloud VPC Network Name. You can find this name in the VPC Peering view in EMQX Cloud.
     8. Click **CREATE**.
-    
+
    ![gcp_peering](./_assets/gcp_peering.png)
 
 3. You will see the status of peering connection is **Active** if succeeded.
    ![gcp_console_peering](./_assets/gcp_console_peering.png)
    and you will see the status of VPC Peering on EMQX Cloud is **running**.
-   ![](./_assets/gcp_cloud_console.png)
-
+   ![gcp_peering_result](./_assets/gcp_vpc_peering_status.png)
 
 4. Create firewall to allow your EMQX CLoud deployment to access your GCP network
    1. Click **Firewall**, and Click **CREATE FIREWALL RULE**.
@@ -122,54 +116,42 @@ Before deleting the peering connection, please make sure that there is no associ
 
 1. Go to deployment details
 
-   ![vpc-list](./_assets/vpc-list.png)
+   ![vpc-list](./_assets/gcp_vpc_peering_status.png)
 
 2. Click the `delete button` on the right side of the peering connection
 
-   ![vpc-delete](./_assets/vpc-delete.png)
+   ![vpc-delete](./_assets/gcp_peering_delete.png)
 
 ## Confluent Cloud Peering Connection
 
 After the Confluent Cloud cluster has been created, we could add peering by the following steps:
 
-*  Go to the `Networking` section of the `Cluster settings` page and click on the `Add Peering` button.
+* Go to the `Networking` section of the `Cluster settings` page and click on the `Add Peering` button.
 
    ![addPeering](./_assets/confluent_addPeering.png)
 
-*  Fill in the vpc information. (You could get the information from `VPC Peering` section of the deployment console)
+* Fill in the vpc information. (You could get the information from `VPC Peering` section of the deployment console)
 
    ![vpc_info](./_assets/confluent_vpc1.png)
 
-   ![vpc_info](./_assets/confluent_vpc2.png)
+   ![vpc_info](./_assets/aws_vpc_peering.png)
 
-*  When the connection status is `Inactive`, go back to the deployment console to accept the peering request. Fill in the vpc information of the confluent cloud cluster and click `Confirm`. When the vpc status turns to `running`, you successfully create the vpc peering connection.
+* When the connection status is `Inactive`, go back to the deployment console to accept the peering request. Fill in the vpc information of the confluent cloud cluster and click `Confirm`. When the vpc status turns to `running`, you successfully create the vpc peering connection.
 
-   ![vpc_info](./_assets/confluent_vpc2.png)
+   ![vpc](./_assets/aws_vpc_peeing_status.png)
 
-   ![vpc](./_assets/confluent_finish.png)
+### Delete peering connections
 
+To delete a peering connection, you need to ensure that the status of peering connection is `running`
 
-## Timescale Cloud Peering Connection
+::: tip Tip
+Before deleting the peering connection, please make sure that there are no associated resources in the deployment, otherwise there will be unpredictable risks
+:::
 
-If you don't have a VPC for your timescale cloud project, you could log in to the timescale cloud and create a new VPC.
+1. Go to deployment details
 
-   ![vpc](./_assets/timescale_cloud_1.png)
+   ![vpc-list](./_assets/aws_vpc_peeing_status.png)
 
-When the VPC is created, you are ready to create the VPC peering connection. Click on the VPC to go to the vpc peering page. Enter the EMQX Cloud deployment's vpc information to start the vpc peering process.
-You could find the deployment's vpc information in the EMQX Cloud console, VPC peering section.
+2. Click the `delete button` on the right side of the peering connection
 
-   ![create-vpc1](./_assets/create_aws_vpc_peering.png)
-
-   ![create-vpc2](./_assets/timescale_cloud_2.png)
-
-When the peering connection state turns to `Pending peer`:
-
-   ![create-vpc3](./_assets/timescale_cloud_3.png)
-
-go to the EMQX Cloud console to accept the peering request by filling the timescale cloud vpc information
-
-   ![create-vpc1](./_assets/create_aws_vpc_peering.png)
-
-Click on `Confirm` to finish the creation. When the status turns to `runninng`, you are successfully created the vpc peering connection!
-
-   ![finish](./_assets/timescale_cloud_finish.png)
+   ![vpc-delete](./_assets/aws_vpc_peering_delete.png)

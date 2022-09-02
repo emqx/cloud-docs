@@ -212,7 +212,7 @@
 
 ```bash
 curl --request POST \
-  --url http://127.0.0.1:5002/{api}/shadows \
+  --url {api}/shadows \
   --user app_id:app_secret \
   --header 'Content-Type: application/json' \
   --data '{
@@ -231,7 +231,7 @@ curl --request POST \
 
 ```bash
 curl --request PUT \
-  --url http://127.0.0.1:5002/{api}/shadows/${Things_Model_ID}/json \
+  --url {api}/shadows/${Things_Model_ID}/json \
   --user app_id:app_secret \
   --header 'Content-Type: application/json' \
   --data '{
@@ -263,7 +263,7 @@ curl --request PUT \
 
 ```bash
 curl --request GET \
-  --url http://127.0.0.1:5002/{api}/shadows/${Things_Model_ID}/json \
+  --url {api}/shadows/${Things_Model_ID}/json \
   --user app_id:app_secret \
 ```
 
@@ -275,7 +275,7 @@ curl --request GET \
 
 ```bash
 curl --request PATCH \
-  --url http://127.0.0.1:5002/{api}/shadows/${Things_Model_ID}/json \
+  --url {api}/shadows/${Things_Model_ID}/json \
   --user app_id:app_secret \
   --header 'Content-Type: application/json' \
   --data '{"devices[x]":{"properties_name":"data"}}'

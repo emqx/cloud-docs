@@ -1,5 +1,24 @@
 # Version release
 
+## 2022-8-19
+
+* Add Available Credit as a payment method
+
+## 2022-7-19
+
+* Deployment logs support multi-criteria search
+* Modification of the billing subject information
+
+## 2022-6-19
+
+* AWS platform added Hong Kong region
+* GCP platform added Taiwan region
+
+## 2022-5-19
+
+* Added multiple custom Authentication sources
+* Added multiple custom Data Integration Resources
+
 ## 2022-3-19
 
 * Replace Rule Engine with Data Integration

@@ -120,15 +120,19 @@ GET /shadows/${shadow_id}/json
 
 ### 响应消息
 
-| 名称         | 类型    | 描述                           |
-| ------------ | ------- | ------------------------------ |
-| createdAt    | Integer | JSON 创建时间毫秒时间戳（UTC） |
-| lastTime     | Integer | JSON 更新时间毫秒时间戳（UTC） |
-| version      | Integer | JSON 修改的版本号              |
-| data         | String  | 消息正文                       |
-| data[].color | String  | 颜色                           |
-| data[].state | Integer | 状态                           |
-| data[].power | Integer | 电量                           |
+| 名称      | 类型    | 描述                           |
+| --------- | ------- | ------------------------------ |
+| createdAt | Integer | JSON 创建时间毫秒时间戳（UTC） |
+| lastTime  | Integer | JSON 更新时间毫秒时间戳（UTC） |
+| version   | Integer | JSON 修改的版本号              |
+| data      | String  | 消息正文                       |
+
+### 响应消息示例格式
+| 名称         | 类型    | 描述 |
+| ------------ | ------- | ---- |
+| data[].color | String  | 颜色 |
+| data[].state | Integer | 状态 |
+| data[].power | Integer | 电量 |
 
 ### 请求示例
 
@@ -158,6 +162,10 @@ curl -u app_id:app_secret -X GET {api}/shadows/${shadow_id}/json
 POST /shadows
 
 ### 请求消息
+
+::: tip Tip
+影子模型 ID 为非必填，系统会自动生成，同时也支持用户自定义。
+:::
 
 | 名称        | 类型   | 描述         |
 | ----------- | ------ | ------------ |
@@ -201,10 +209,13 @@ PUT /shadows/${shadow_id}
 
 ### 请求消息
 
+::: tip Tip
+影子模型一旦创建，就无法对 ID 进行修改
+:::
+
 | 名称        | 类型   | 描述         |
 | ----------- | ------ | ------------ |
 | description | String | 影子模型描述 |
-| shadowID    | String | 影子模型 ID  |
 | shadowName  | String | 影子模型名称 |
 
 ### 响应消息
@@ -243,12 +254,16 @@ PUT /shadows/${shadow_id}/json
 
 ### 请求消息
 
-| 名称         | 类型    | 描述     |
-| ------------ | ------- | -------- |
-| data         | String  | 消息正文 |
-| data[].color | String  | 颜色     |
-| data[].state | Integer | 状态     |
-| data[].power | Integer | 电量     |
+| 名称 | 类型   | 描述     |
+| ---- | ------ | -------- |
+| data | String | 消息正文 |
+
+### 请求消息示例格式
+| 名称         | 类型    | 描述 |
+| ------------ | ------- | ---- |
+| data[].color | String  | 颜色 |
+| data[].state | Integer | 状态 |
+| data[].power | Integer | 电量 |
 
 ### 响应消息
 
@@ -288,13 +303,14 @@ PATCH /shadows/${shadow_id}/json
 
 ### 请求消息
 
-| 名称         | 类型    | 描述     |
-| ------------ | ------- | -------- |
-| data         | String  | 消息正文 |
-| data[].specs | Integer | 规格     |
-| data[].color | String  | 颜色     |
-| data[].state | Integer | 状态     |
-| data[].power | Integer | 电量     |
+| 名称 | 类型   | 描述     |
+| ---- | ------ | -------- |
+| data | String | 消息正文 |
+
+### 请求消息示例格式
+| 名称         | 类型    | 描述 |
+| ------------ | ------- | ---- |
+| data[].specs | Integer | 规格 |
 
 ### 响应消息
 
@@ -324,6 +340,78 @@ curl -u app_id:app_secret -X PATCH -d '{"specs": 2}' {api}/shadows/${shadow_id}/
   "createAt": 1660618831979, 
   "lastTime": 1660631880990, 
   "version": 10
+}
+```
+
+## 增量更新指定影子模型 JSON 多层对象
+### URL
+
+PATCH /shadows/${shadow_id}/json
+
+### 请求消息
+
+| 名称 | 类型   | 描述     |
+| ---- | ------ | -------- |
+| data | String | 消息正文 |
+
+### 响应消息
+
+| 名称      | 类型    | 描述                           |
+| --------- | ------- | ------------------------------ |
+| createdAt | Integer | JSON 创建时间毫秒时间戳（UTC） |
+| lastTime  | Integer | JSON 更新时间毫秒时间戳（UTC） |
+| version   | Integer | JSON 修改的版本号              |
+| data      | String  | 消息正文                       |
+
+### 请求示例
+
+::: tip Tip
+如果需要增量更新多层新对象，请**逐层**添加，不可直接添加多层新对象，会失败并返回 500 状态码。
+:::
+
+```bash
+# 错误请求示例
+curl -u app_id:app_secret -X PATCH -d '{"key": {"a":100}}' {api}/shadows/${shadow_id}/json
+```
+
+```bash
+# 正确请求示例
+curl -u app_id:app_secret -X PATCH -d '{"key": {}}' {api}/shadows/${shadow_id}/json
+
+curl -u app_id:app_secret -X PATCH -d '{"key": {"a":100}}' {api}/shadows/${shadow_id}/json
+```
+
+### 响应示例
+
+```json
+{
+  "data": {
+    "color": "blue",
+    "key": {},
+    "power": 0,
+    "specs": 2,
+    "state": 1
+  },
+  "createAt": 1662087412285,
+  "lastTime": 1662106829205,
+  "version": 12
+}
+```
+
+```json
+{
+    "data": {
+        "color": "blue",
+        "key": {
+            "a": 100
+        },
+        "power": 0,
+        "specs": 2,
+        "state": 1
+    },
+    "createAt": 1662087412285,
+    "lastTime": 1662106900812,
+    "version": 13
 }
 ```
 

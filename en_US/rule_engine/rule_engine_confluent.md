@@ -47,31 +47,31 @@ Now that you have a cluster up and running in Confluent Cloud， you can manage 
 #### Install the Confluent Cloud CLI
 
 ```bash
-curl -L --http1.1 https://cnfl.io/ccloud-cli | sh -s -- -b /usr/local/bin
+curl -sL --http1.1 https://cnfl.io/cli | sh -s -- -b /usr/local/bin
 ```
 
 If you already have the CLI installed, you could update it by:
 
 ```bash
-ccloud update
+confluent update
 ```
 
 #### Log in to your account
 
 ```bash
-ccloud login --save
+confluent login --save
 ```
 
 #### Select the environment
 
 ```bash
-ccloud environment use env-v9y0p
+confluent environment use env-xxxxx
 ```
 
 #### Select the cluster
 
 ```bash
-ccloud kafka cluster use lkc-djr31
+confluent kafka cluster use lkc-xxxxx
 ```
 
 #### Use an API key and secret
@@ -79,7 +79,7 @@ ccloud kafka cluster use lkc-djr31
 If you have an existing API key that you'd like to use, add it to the CLI by:
 
 ```bash
-ccloud api-key store --resource lkc-djr31
+confluent api-key store --resource lkc-xxxxx
 Key: <API_KEY>
 Secret: <API_SECRET>
 ```
@@ -87,37 +87,37 @@ Secret: <API_SECRET>
 If you don't have the API key and secret, you can create one by:
 
 ```bash
-ccloud api-key create --resource lkc-djr31
+confluent api-key create --resource lkc-xxxxx
 ```
 
 After add them to teh CLI, you could use the API key and secret by:
 
 ```bash
-ccloud api-key use "API_Key" --resource lkc-djr31
+confluent api-key use "API_Key" --resource lkc-xxxxx
 ```
 
 #### Create a topic
 
 ```bash
-ccloud kafka topic create topic-name
+confluent kafka topic create <topic-name>
 ```
 
 You could check the topic list by:
 
 ```bash
-ccloud kafka topic list
+confluent kafka topic list
 ```
 
 #### Produce messages to the topic
 
 ```bash
-ccloud kafka topic produce topic-name
+confluent kafka topic produce <topic-name>
 ```
 
 #### Consume messages from the topic
 
 ```bash
-ccloud kafka topic consume -b topic-name
+confluent kafka topic consume -b <topic-name>
 ```
 
 ### Build VPC Peering Connection with the deployment
@@ -134,13 +134,11 @@ After the cluster has been created, we should add peering
 
   ![vpc_info](./_assets/confluent_vpc1.png)
 
-  ![vpc_info](./_assets/confluent_vpc2.png)
+  ![vpc_info](./_assets/../../deployments/_assets/aws_vpc_peering.png)
 
 * When the connection status is `Inactive`, go back to the deployment console to accept the peering request. Fill in the vpc information of the confluent cloud cluster and click `Confirm`. When the vpc status turns to `running`, you successfully create the vpc peering connection.
 
-  ![vpc_info](./_assets/confluent_vpc2.png)
-
-  ![vpc](./_assets/confluent_finish.png)
+  ![vpc](./_assets/../../deployments/_assets/aws_vpc_peeing_status.png)
 
 
 
@@ -151,7 +149,7 @@ Go to the `Data Integrations` page
 1. Create kafka resources and verify that they are available.
 
    On the data integration page, click kafka resources, fill in the kafka connection details, and then click test. Please check the kafka service if the test fails.
-   ![create resource](./_assets/kafka_create_resource.png)
+   ![create resource](./_assets/confluent_resource.png)
 
 2. Click the New button after the test is passed and you will see the Create Resource successfully message.
 
@@ -170,6 +168,7 @@ Go to the `Data Integrations` page
    FROM
    "temp_hum/emqx"
    ```
+  
    ![rule sql](./_assets/kafka_create_sql.png)
 
 4. Rule SQL Testing
@@ -182,7 +181,7 @@ Go to the `Data Integrations` page
 
    Click Next to add a Kafka forwarding action to the rule once the SQL test succeeds. To demonstrate how to bridge the data reported by the device to Kafka, we'll utilize the following Kafka topic and message template.
 
-   ```
+   ```bash
    # kafka topic
    emqx
    
@@ -200,8 +199,6 @@ Go to the `Data Integrations` page
 
    ![monitor](./_assets/kafka_monitor.png)
 
-
-
 ## Test
 
 1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
@@ -212,9 +209,8 @@ Go to the `Data Integrations` page
 2. View data bridging results
 
     ```bash
-    # Go to the Kafka instance and view the emqx topic
-      
-    $ docker exec -it mykafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server <broker IP>:9092  --topic emqx --from-beginning
-      
+    # Go to the confluent peering server and view the emqx topic
+    confluent kafka topic consume -b emqx
     ```
-   ![kafka](./_assets/kafka_query_result.png)
+
+   ![kafka](./_assets/confluent_result.png)
