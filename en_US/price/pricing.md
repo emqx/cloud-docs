@@ -41,14 +41,10 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
       <td>from $ 0.88/hr </td>
    </tr>
    <tr>
-      <td rowspan="5">Professional</td>
-      <td>1,000 connections / Up to 1,000 TPS</td>
-      <td>from $ 0.36/hr </td>
-      <td rowspan="3">100G/month</td>
-   </tr>
-   <tr>
+      <td rowspan="4">Professional</td>
       <td>5,000 connections / Up to 10,000 TPS</td>
       <td>from $ 0.99/hr </td>
+      <td rowspan="2">100G/month</td>
    </tr>
    <tr>
       <td>10,000 connections / Up to 20,000 TPS</td>
