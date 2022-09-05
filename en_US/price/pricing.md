@@ -93,7 +93,7 @@ Note: Prices may vary depending on the public cloud platform selected and the de
    </tr>
    <tr>
       <td style="text-indent: 2em;">support MQTT v3.1, v3.1.1, v5.0 protocol version</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>

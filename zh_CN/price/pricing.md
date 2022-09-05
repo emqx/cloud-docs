@@ -95,7 +95,7 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
    </tr>
    <tr>
       <td style="text-indent: 2em;">支持 MQTT v3.1, v3.1.1, v5.0 协议版本</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
