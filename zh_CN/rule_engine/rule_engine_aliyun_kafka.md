@@ -20,7 +20,7 @@ Kafka 是由 Apache 基金会开发的流处理平台，专为分布式、高吞
 
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 * 已经在阿里云上创建 kafka 资源。
-* 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
+* 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。(专业版部署若开通 [NAT 网关](../vas/nat-gateway.md)也可使用公网 IP 进行连接）
 
 
 ## 阿里云 Kafka 配置

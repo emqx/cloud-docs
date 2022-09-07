@@ -26,8 +26,7 @@
 >
 >在使用数据集成前，请先创建部署。
 >
->对于专业版部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的服务器都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
-
+> 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。(专业版部署若开通 [NAT 网关](../vas/nat-gateway.md)也可使用公网 IP 进行连接）
 
 ## 1. 安装并初始化 InfluxDB 2.0
 

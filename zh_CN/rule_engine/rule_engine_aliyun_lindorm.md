@@ -89,7 +89,7 @@
    SELECT 
    
    timestamp as timestamp, 
-   clientid as client_id, 
+   clientid as clientid, 
    payload.temp as temp, 
    payload.hum as hum
    
