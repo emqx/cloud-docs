@@ -650,7 +650,7 @@
           "path": "deployments/custom_auth"
         },
         {
-          "title": "Custom HTTP Authentication",
+          "title": "HTTP Authentication & ACL",
           "path": "deployments/http_auth"
         },
         {
