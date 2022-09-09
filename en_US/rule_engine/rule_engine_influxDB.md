@@ -4,13 +4,9 @@
 
 Through the EMQX Cloud Data Integrations, we can customize the Template file, and then convert the MQTT message in JSON format to Measurement and write it to InfluxDB.
 
-
-
 In this guide, we will complete the creation of an InfluxDB data integration to achieve the following functions:
 
 * Record the temperature and humidity of each room. When there is a temperature and humidity monitoring message sent to the home/sensor topic, the Data Integrations will be triggered to record this data in InfluxDB.
-
-
 
 To achieve this function, we will complete the following 4 tasks:
 
@@ -19,13 +15,10 @@ To achieve this function, we will complete the following 4 tasks:
 3. Create a resource and action
 4. Complete the data integration creation and test
 
-::: tip
-Before using the Data Integrations, create a deployment first.
-For professional deployment users: please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the internal network IP of the resource
-For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
-:::
+Before you start, you will need to complete the following:
 
-
+* Deployments have already been created on EMQX Cloud (EMQX Cluster).
+* For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
 ## 1. Install and initialize InfluxDB
 
@@ -130,12 +123,12 @@ If test fails, please check whether the SQL is compliant, and whether the topic 
 
 After completing the rule configuration, click Next to configure and create an action. For other fields, you can refer to the table below.
 
-| parameter | Required | Type | Meaning |
-|:----|:----|:----|:----|
-| Measurement   | Yes | str   | Specify the measurement written to InfluxDB |
-| Fields  | Yes | str   | Specify where to get the value of fields written to InfluxDB |
-| Tags  | No  | str  | Specify where to get the value of tags written to InfluxDB |
-| Timestamp Key   | No  | str   | Specify where to get the timestamp value written to InfluxDB |
+| parameter     | Required | Type | Meaning                                                      |
+| :------------ | :------- | :--- | :----------------------------------------------------------- |
+| Measurement   | Yes      | str  | Specify the measurement written to InfluxDB                  |
+| Fields        | Yes      | str  | Specify where to get the value of fields written to InfluxDB |
+| Tags          | No       | str  | Specify where to get the value of tags written to InfluxDB   |
+| Timestamp Key | No       | str  | Specify where to get the timestamp value written to InfluxDB |
 
 For our situation, this part can be filled in like this
 

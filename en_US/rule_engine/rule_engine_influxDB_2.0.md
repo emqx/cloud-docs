@@ -16,15 +16,12 @@ In order to achieve this function, we will complete the following 4 tasks:
 4. Connect to MQTT X to send data
 5. View results in the InfluxDB console
 
-::: tip
-Before using the Data Integrations, create a deployment first.
-For professional deployment users: please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the internal network IP of the resource
-For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
-:::
+Before you start, you will need to complete the following:
 
+* Deployments have already been created on EMQX Cloud (EMQX Cluster).
+* For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
   <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/1S09epPWLpc/?autoplay=1&null" />
-
 
 ## 1. Login and initialize InfluxDB
 

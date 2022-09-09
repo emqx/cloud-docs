@@ -4,9 +4,8 @@ In this article, we will simulate the temperature and humidity data, and report 
 
 Before you start, you will need to complete the following:
 
-* A deployment (EMQX Cluster) has been created on EMQX Cloud.
-
-* For professional deployment users: please complete the creation of a [VPC Peering Connections](../deployments/vpc_peering.md) connection first. All IPs mentioned below refer to the resource's internal network IP.
+- Deployments have already been created on EMQX Cloud (EMQX Cluster).
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
 ## MySQL Configuration
 
@@ -120,9 +119,10 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data
 
    You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
-   ![MQTTX](./_assets/mqttx_publish.png)
+
     - topic: `temp_hum/emqx`
     - payload:
+
       ```json
       {
          "temp": "20.1",
@@ -130,8 +130,12 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
       }
       ```
 
+      ![MQTTX](./_assets/mqttx_publish.png)
+
 2. View data dump results
+
       ```sql
       select * from temp_hum order by up_timestamp desc limit 10;
       ```
-   ![mysql](./_assets/mysql_query_result.png)
+
+      ![mysql](./_assets/mysql_query_result.png)
