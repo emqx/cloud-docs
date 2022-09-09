@@ -6,9 +6,7 @@ Before you start, you need to complete the following operations:
 
 * Deployments have already been created on EMQX Cloud (EMQX Cluster).
 
-* For professional deployment users: Please
-  complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned
-  below refer to the internal network IP of the resource.
+* For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
   <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/Bk-uhfSm32I/?autoplay=1&null" />
 

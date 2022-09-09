@@ -6,12 +6,8 @@ Data Integrations to store the data to Redis.
 
 Before you start, you will need to complete the following:
 
-* A deployment (EMQX Cluster) has been created on EMQX Cloud.
-
-* For professional deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/vpc_peering.md) first. All IPs mentioned below refer to the resource's internal network IP. If the professional deployment has a NAT gateway can also be connected using public IP.
-
-* For basic deployment users: No VPC Peering Connection is required. All IPs mentioned below refer to the resource's public IP.
-
+- Deployments have already been created on EMQX Cloud (EMQX Cluster).
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
 ## 1. Redis Configuration
 

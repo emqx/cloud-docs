@@ -14,8 +14,8 @@ In order to achieve this function, we will complete the following 4 tasks:
 4. Complete the data integrations creation and test
 
 :::tip Tip
-- Before using the Data Integrations, create a deployment first.
-- For professional deployment users: please complete [Peering Connection](../deployments/vpc_peering.md) first, and ensure that the servers involved in the following are established in the VPC under the peering connection. All the IP mentioned below refer to the internal network IP of the resource
+- Deployments have already been created on EMQX Cloud (EMQX Cluster).
+- For Professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 - For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
 :::
 

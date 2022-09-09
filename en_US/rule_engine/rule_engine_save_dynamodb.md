@@ -6,10 +6,7 @@ data, and publish these data to EMQX Cloud via the MQTT protocol, and then we wi
 Before you start, you will need to complete the following:
 
 * A deployment (EMQX Cluster) has been created on EMQX Cloud.
-
-* For professional deployment users: Please complete the creation of a [VPC Peering Connection](../deployments/security_features_and_settings/vpc_peering.md) first. All IPs mentioned below refer to the resource's internal network IP.
-
-* For basic deployment users: No VPC Peering Connection is required. All IPs mentioned below refer to the resource's public IP.
+* For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
 ## DynamoDB Configuration
 

@@ -860,6 +860,10 @@
           "path": "rule_engine/rule_engine_save_redis"
         },
         {
+          "title": "Save data to SQL Server",
+          "path": "rule_engine/rule_engine_save_sqlserver"
+        },
+        {
           "title": "Save data to TDengine",
           "path": "rule_engine/rule_engine_save_tdengine"
         },

@@ -4,13 +4,8 @@ In this article, we will simulate temperature and humidity data and report these
 
 Before you start, you need to complete the following operations:
 
-* Deployments have already been created on EMQX Cloud (EMQX Cluster).
-* This feature is available for professional deployment
-* There are three types of Confluent Cloud cluster you could choose:
-    * For basic and standard cluster, please open the NAT first.
-    * For dedicated cluster, please
-      complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned
-      below refer to the internal network IP of the resource.
+- Deployments have already been created on EMQX Cloud (EMQX Cluster).
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
 
   <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/jLn0q8xf-1Y/?autoplay=1&null" />
 

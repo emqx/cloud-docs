@@ -10,7 +10,6 @@ Before you start, you need to complete the following operations:
 
 - Deployments have already been created on EMQX Cloud (EMQX Cluster).
 - For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
-- For Standard Plan users: No peering connection is required, all IPs below refer to the public IP of the resource.
 
 ## Redis configuration
 
