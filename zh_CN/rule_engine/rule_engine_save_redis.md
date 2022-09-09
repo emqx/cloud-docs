@@ -7,6 +7,7 @@
 在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到 Redis。
 
 在开始之前，您需要完成以下操作：
+
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)
 * 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP（专业版部署若开通 NAT 网关也可使用公网 IP 进行连接）
 

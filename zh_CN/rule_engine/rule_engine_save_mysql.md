@@ -9,7 +9,7 @@
 在开始之前，您需要完成以下操作：
 
 * 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
-* 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
+* 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。(专业版部署若开通 [NAT 网关](../vas/nat-gateway.md)也可使用公网 IP 进行连接）
 
 <LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=726385460&bvid=BV1BS4y1h732&cid=716531047&page=1" />
 

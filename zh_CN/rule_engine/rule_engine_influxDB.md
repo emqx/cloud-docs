@@ -27,7 +27,8 @@
 >
 >在使用数据集成前，请先创建部署。
 >
->对于专业版部署用户：请先完成[对等连接](../deployments/vpc_peering.md)，并确保以下涉及到的服务器都建立在对等连接下的 VPC 中，下文提到的 IP 均指资源的内网 IP
+>对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。(专业版部署若开通 [NAT 网关](../vas/nat-gateway.md)也可使用公网 IP 进行连接）
+
 
 ## 1. 安装并初始化 InfluxDB
 
@@ -126,12 +127,12 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 点击确定，返回到配置动作页面，默认选择的是刚才创建的资源。其他字段可以参照下表。
 
-| 参数   | 必填   | 类型   | 意义   |
-|:----|:----|:----|:----|
-| Measurement   | 是   | str   | 指定写入到 InfluxDB 的  measurement   |
-| Fields  | 是   | str   | 指定写入到 InfluxDB 的 fields 的值从哪里获取   |
-| Tags  | 否   | str  | 指定写入到 InfluxDB 的 tags 的值从哪里获取   |
-| Timestamp Key   | 否   | str   | 指定写入到 InfluxDB 的 timestamp 的值从哪里获取   |
+| 参数          | 必填 | 类型 | 意义                                            |
+| :------------ | :--- | :--- | :---------------------------------------------- |
+| Measurement   | 是   | str  | 指定写入到 InfluxDB 的  measurement             |
+| Fields        | 是   | str  | 指定写入到 InfluxDB 的 fields 的值从哪里获取    |
+| Tags          | 否   | str  | 指定写入到 InfluxDB 的 tags 的值从哪里获取      |
+| Timestamp Key | 否   | str  | 指定写入到 InfluxDB 的 timestamp 的值从哪里获取 |
 
 针对我们的情况，这部分可以这样填写
 
