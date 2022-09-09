@@ -1,4 +1,4 @@
-# Custom HTTP Authentication
+# HTTP Authentication/Access Control
 
 In addition to the default authentication, EMQX Cloud also allows users to connect to their own services and determine the login of the endpoint by returning status, enabling complex authentication logic and complex ACL verification. Custom authentication currently supports both permission-based authentication and access control authentication.
 

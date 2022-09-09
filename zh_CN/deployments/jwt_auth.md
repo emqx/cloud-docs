@@ -15,13 +15,13 @@
 
 客户端使用用户名或密码字段携带 JWT（取决于模块配置），发起连接时 EMQX Cloud 使用配置中的密钥、证书进行解密，如果能成功解密则认证成功，否则认证失败。
 
-默认配置下启用 JWT 认证后，你可以通过任意用户名+以下密码进行连接：
+默认配置下启用 JWT 认证后，你可以通过任意用户名+以下密码进行连接，即通过默认的密钥字段 `secret` 做验证：
 
 ```bash
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVggQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.JHtutBSV4FfPfYYZyj6yn4K76clOQ-zkS6-_7VjnfK8
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVggQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.wGxZTwkCZtYPzkS854aQ9WCnP8YGIQ_erFh5RIznhYk
 ```
 
-> 上述 JWT Token 仅做测试使用，可根据自己的业务需求用相关工具生成。此处提供一个在线生成工具：<https://www.jsonwebtoken.io/>。
+> 上述 JWT Token 仅做测试使用，可根据自己的业务需求用相关工具生成。此处提供一个在线生成工具：<https://www.jsonwebtoken.io/> ，也可以结合 JSON Web 密钥 (JWK) 生成器：<https://mkjwk.org> 进行测试。
 
 ## 认证配置
 
@@ -29,14 +29,14 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 
     ![jwt_auth](./_assets/../_assets/jwt_auth.png)
 
-2. 点击`配置认证`，进入 JWT 认证页面，填写信息，新建认证。
+2. 点击`配置认证`，进入 JWT 认证页面，填写信息，新建认证，本示例中通过配置 JWKs 服务器地址的方式进行认证。
 
-    EMQX Cloud Cloud 会按照 Secret、Pubkey 和 JWKs Addr 的固定顺序验证 JWT，没有配置的字段将被忽略。
+    > EMQX Cloud Cloud 会按照 **Secret -> Pubkey -> JWKs 服务器地址** 的固定顺序验证 JWT，没有配置的字段将被忽略。
 
    * 认证来源：客户端连接时存放 JWT 的字段，目前支持选择 username 或 password。
    * 密钥：签发 JWT 时使用的密钥。这里将用于验证 EMQX Cloud 收到的 JWT 是否合法，适用于 HMAC 算法签发的 JWT。
    * 公钥文件：将用于验证 EMQX Cloud 收到的 JWT 是否合法，适用于 RSA 或 ECDSA 算法签发的 JWT。
-   * JWKS 服务器地址：EMQX Cloud 将从 JWKS 服务器定期查询最新的公钥列表，并用于验证收到的 JWT 是否合法，适用于 RSA 或 ECDSA 算法签发的 JWT。
+   * JWKs 服务器地址：EMQX Cloud 将从 JWKs 服务器定期查询最新的公钥列表，并用于验证收到的 JWT 是否合法，适用于 RSA 或 ECDSA 算法签发的 JWT。
    * 验证声明字段：是否需要验证 JWT Payload 中的声明与“声明字段列表”一致。
    * 声明字段列表：用于验证 JWT Payload 中的声明是否合法。最常见的用法是，添加一个键为 username 值为 %u 的键值对，%u 作为占位符将在运行时被替换为客户端实际连接时使用的 Username，替换后的值将被用于与 JWT Payload 的同键声明的值比较，以起到 JWT 与 Username 一一对应的效果。声明字段列表中目前支持以下两种占位符：
       * %u：将在运行时被替换为客户端连接时使用的 Username。
