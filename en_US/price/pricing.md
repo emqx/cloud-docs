@@ -30,7 +30,7 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
       <td>1,000 connections / Up to 1,000 TPS</td>
       <td>from $ 0.18/hr</td>
       <td rowspan="3">100G/month</td>
-      <td rowspan="7">$ 0.15/GB</td>
+      <td rowspan="9">$ 0.15/GB</td>
    </tr>
    <tr>
       <td>5,000 connections / Up to 5,000 TPS</td>
@@ -41,7 +41,7 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
       <td>from $ 0.88/hr </td>
    </tr>
    <tr>
-      <td rowspan="5">Professional</td>
+      <td rowspan="4">Professional</td>
       <td>5,000 connections / Up to 10,000 TPS</td>
       <td>from $ 0.99/hr </td>
       <td rowspan="2">100G/month</td>
@@ -93,7 +93,7 @@ Note: Prices may vary depending on the public cloud platform selected and the de
    </tr>
    <tr>
       <td style="text-indent: 2em;">support MQTT v3.1, v3.1.1, v5.0 protocol version</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
