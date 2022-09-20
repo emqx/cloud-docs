@@ -18,7 +18,8 @@
 1. 运行 MongoDB 容器
 
    ```bash
-   docker run --name mongo -d -p 27017:27017 mongo 
+   # EMQX 目前支持到 MongoDB 5.x 的驱动，暂不支持 6.x
+   docker run --name mongo -d -p 27017:27017 mongo:5.0 
    ```
 
 2. 进入容器

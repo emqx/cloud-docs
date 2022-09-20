@@ -14,6 +14,7 @@ Before you start, you will need to complete the following:
 1. Install MongoDB
    
    ```bash
+   # EMQX currently supports MongoDB 5.x drivers, not 6.x yet
    docker run --name mongo -d -p 27017:27017 mongo:5.0
    ```
 
