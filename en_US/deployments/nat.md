@@ -1,7 +1,7 @@
 # NAT gateway configuration
 
-::: danger
-This feature is not available in the basic plan
+::: warning Note
+This feature is not available in the standard plan
 :::
 
 Please submit tickets to contact us.

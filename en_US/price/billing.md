@@ -11,8 +11,8 @@ EMQX Cloud's billing consists of two components.
 
 When you create a deployment, EMQX Cloud estimates the cost of use based on your instance specification selection, and you can see the estimated price on the confirmation page before you officially deploy.
 
-::: danger
-Note: When you create a deployment, EMQX Cloud will estimate the usage cost based on your instance specification selection, and you can see the estimated price on the confirmation page before the deployment.
+::: tip Note
+When you create a deployment, EMQX Cloud will estimate the usage cost based on your instance specification selection, and you can see the estimated price on the confirmation page before the deployment.
 :::
 
 

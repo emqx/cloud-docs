@@ -1,6 +1,6 @@
 # 配置 TLS/SSL
 
-::: danger
+::: warning
 该功能在基础版中不可用
 :::
 

@@ -1,7 +1,7 @@
 # Configure TLS/SSL
 
-::: danger
-This feature is not available for the basic plan
+::: warning Note
+This feature is not available for the standard plan
 :::
 
 EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:

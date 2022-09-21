@@ -1,6 +1,6 @@
 # 私网连接 PrivateLink 设置
 
-::: danger
+::: warning
 该功能在基础版中不可用
 :::
 

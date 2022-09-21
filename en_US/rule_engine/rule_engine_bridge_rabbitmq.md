@@ -1,6 +1,6 @@
 # Bridge device data to RabbitMQ using the Data Integrations
 
-::: danger
+::: warning Note
 This feature is not available in Standard Plan
 :::
 
