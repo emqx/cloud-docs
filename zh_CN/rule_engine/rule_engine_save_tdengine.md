@@ -1,6 +1,6 @@
 # EMQX Cloud 数据集成保存数据到 TDengine
 
-::: danger
+::: warning
 该功能在基础版中不可用
 :::
 

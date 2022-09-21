@@ -1,6 +1,6 @@
 # NAT Gateway
 
-::: danger
+::: warning Note
 This feature is not available in the standard deployment
 :::
 

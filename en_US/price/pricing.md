@@ -72,8 +72,8 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
 </table>
 
 
-::: danger
-Note: Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
+::: warning Note
+Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
 :::
 
 ## Feature Details

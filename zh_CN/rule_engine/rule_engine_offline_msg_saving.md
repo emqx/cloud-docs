@@ -1,12 +1,12 @@
 # 使用 EMQX Cloud 数据集成保存离线消息
 
-::: danger
+::: warning
 该功能在基础版中不可用
 :::
 
 我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成保存离线消息至云服务资源（第三方数据库或消息队列），本文以 Redis 为例实现该功能。
 
-::: danger
+::: warning
 保存离线消息需要 QoS > 0
 :::
 

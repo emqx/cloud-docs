@@ -1,6 +1,6 @@
 # EMQX Cloud 数据集成桥接数据到 Pulsar
 
-::: danger
+::: warning
 该功能在基础版中不可用
 :::
 

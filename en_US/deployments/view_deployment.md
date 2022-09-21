@@ -26,8 +26,8 @@ Here you can view the following deployment information:
 
 ## [TLS/SSL Configuration](./tls_ssl.md)
 
-::: danger
-This feature is not available in basic deployment.
+::: warning Note
+This feature is not available in standard deployment.
 :::
 
 EMQX Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supports **self-signed certificate** and **CA signed certificate**.
@@ -38,8 +38,8 @@ EMQX Cloud provides custom **one-way/two-way TLS/SSL** authentication, and suppo
 
 ## [VPC Peering Connection Configuration](./vpc_peering.md)
 
-::: danger
-This feature is not available in basic deployment
+::: warning Note
+This feature is not available in standard deployment
 :::
 
 EMQX Cloud supports peering connections with customers' existing VPC (Virtual Private Cloud) for cloud service providers in the same region. A VPC peering connection is a network connection between two VPCs. Through this connection, the instances in the two VPCs can communicate with each other as if they were in the same network.
