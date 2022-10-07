@@ -6,7 +6,8 @@ This feature is not available in the standard deployment
 
 NAT gateways can provide network address translation services to provide Professional deployments with the ability to access public network resources without the need for VPC peering connections.
 
-Before start, you will need to complete the following actions:
+Before start, you will need to complete the following actions:\
+
 * Professional deployments (EMQX clusters) have been created on EMQX Cloud.
 
 ## Service activation
@@ -16,7 +17,6 @@ You can choose to enable the NAT gateway service from the top menu bar - `VAS` o
 ![vas](./_assets/intro_01.png)
 
 ![overview_vas](./_assets/overview_vas.png)
-
 
 ## Usage
 

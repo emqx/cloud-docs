@@ -36,7 +36,7 @@ GET /subscriptions
 ### Request Example
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/subscriptions
+curl -u app_id:app_secret -X GET {api}/subscriptions
 ```
 
 ### Response Example
@@ -91,7 +91,7 @@ GET /subscriptions/{clientid}
 ### Request Message
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/subscriptions
+curl -u app_id:app_secret -X GET {api}/subscriptions
 ```
 
 ### Response Message

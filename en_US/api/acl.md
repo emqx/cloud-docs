@@ -232,7 +232,7 @@ GET /acl/clientid
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -285,7 +285,7 @@ GET /acl/username
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -338,7 +338,7 @@ GET /acl/$all
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -397,7 +397,7 @@ GET /acl/clientid/{clientid}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -446,7 +446,7 @@ GET /acl/username/{username}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -496,7 +496,7 @@ DELETE /acl/clientid/{clientid}/topic/{topic}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -533,7 +533,7 @@ DELETE /acl/username/{username}/topic/{topic}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -569,7 +569,7 @@ DELETE /acl/$all/topic/{topic}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 

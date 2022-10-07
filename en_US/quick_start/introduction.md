@@ -1,13 +1,11 @@
 # Get Started with EMQX Cloud
 
 Welcome to EMQX Cloud! EMQX Cloud is the first fully hosted MQTT 5.0 public cloud service in the world. With the support of EMQX Cloud,
-you can create an EMQX cluster on the cloud and use all the features of EMQX Enterprise Edition. This allows you to spend more time on business
-connections and less time for EMQX operation, maintenance, and management. This tutorial will guide you through the process of creating and connecting
-to EMQX Cloud deployment. Before starting, let's review some core concepts and phrases:
+you can create an EMQX cluster on the cloud and use all the features of EMQX Enterprise Edition. This allows you to spend more time on business connections and less time for EMQX operation, maintenance, and management. This tutorial will guide you through the process of creating and connecting to EMQX Cloud deployment. Before starting, let's review some core concepts and phrases:
 
-* Deployment: EMQX Enterprise cluster hosted on EMQX Cloud
-* Basic Plan: Single node version of EMQX Enterprise
-* Professional Plan: An EMQX Enterprise Edition cluster with separate networks, instances, and load balancing
+* Deployment: EMQX Enterprise cluster hosted on EMQX Cloud.
+* Basic Plan: Single node version of EMQX Enterprise.
+* Professional Plan: An EMQX Enterprise Edition cluster with separate networks, instances, and load balancing.
   
   <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/UX2KAM7FVLs/?autoplay=1&null" />
 
@@ -15,9 +13,9 @@ If you have not yet created an account for EMQX Cloud, the following steps will 
 
 ## Register Guide
 
-### [Register an account](https://www.emqx.com/en/signup?continue=https://www.emqx.com/en/cloud)
+### [Create an account](https://www.emqx.com/en/signup?continue=https://www.emqx.com/en/cloud)
 
-Start at the EMQX Cloud sign up page
+Start at the EMQX Cloud sign up page.
 
 1. Enter your personal information:
 

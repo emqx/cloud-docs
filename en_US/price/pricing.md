@@ -86,19 +86,19 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <th>Premium</th>
     </tr>
    <tr>
-      <td>Fully MQTT support</td>
+      <td>Full MQTT support</td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">support MQTT v3.1, v3.1.1, v5.0 protocol version</td>
+      <td style="text-indent: 2em;">MQTT v3.1, v3.1.1, v5.0</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">support MQTT over WebSocket</td>
+      <td style="text-indent: 2em;">MQTT over WebSocket</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>

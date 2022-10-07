@@ -1,12 +1,13 @@
 # How to delete an EMQX Account
+
 This document walks you through deleting your account.
 
 ## Prerequisites
+
 To delete your account, you must ensure that you have no:
 
- - Deployments
- - Outstanding payments
-
+- Deployments
+- Outstanding payments
 
 ## Delete All Deployments
 
@@ -38,8 +39,3 @@ You can't reuse the email address that is associated with the deleted account to
    b. Click Confirm Account Deletion
    c. If there are any requirements you have not yet met, you are prompted to complete them before deleting your account.
 4. You could tell us the reasons for leaving. Enter the email address before clicking Confirm and Delete button.
-
-
-
-
-

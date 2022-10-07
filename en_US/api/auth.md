@@ -8,7 +8,7 @@ GET /auth_username
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -66,7 +66,7 @@ GET /auth_username/{username}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -224,7 +224,7 @@ DELETE /auth_username/{username}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -254,7 +254,7 @@ GET /auth_clientid
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -312,7 +312,7 @@ GET /auth_clientid/{clientid}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 
@@ -462,7 +462,7 @@ DELETE /auth_clientid/{clientid}
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 

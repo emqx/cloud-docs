@@ -6,7 +6,7 @@ Accounts management fulfils enterprise users' multi-role management requirements
 
 A subaccount is an account created by an EMQX Cloud user. Subaccounts will be activated after email authentication. An EMQX Cloud user account currently cannot be registered as a subaccount. On the contrary, subaccount email can be registered as an EMQX Cloud user. Additionally, it can be registered as a subaccount under other EMQX Cloud user account.
 
-Here is the login page for subaccounts (for subaccounts login only)
+Subaccounts get a separate login page for subaccounts only.
 
 ![default_project](./_assets/login_1.png)
 
@@ -21,7 +21,8 @@ Here is the login page for subaccounts (for subaccounts login only)
 **Accountant**：Accountants have financial management permissions and can view projects and deployments. They can manage the billing, balance, invoices, etc.
 
 **Auditor**：Auditors can view projects, deployments,  accounts, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
-Role list
+
+Role list:
 
 <table>
    <tr>
@@ -274,7 +275,7 @@ Role list
       <td>&#10007</td>
    	</tr>
       <tr>
-      <td rowspan="3">Value Added Services</td>
+      <td rowspan="4">Value Added Services</td>
       <td>View VAS List</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -317,4 +318,3 @@ Role list
       <td>&#10003</td>
    </tr>
 </table>
-

@@ -24,7 +24,7 @@ POST /mqtt/subscribe
 ### Request Example
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '{"topic": "d","qos": 1,"clientid": "emqx_c_1"}' {api}/mqtt/subscribe
+curl -u app_id:app_secret -X POST -d '{"topic": "d","qos": 1,"clientid": "emqx_c_1"}' {api}/mqtt/subscribe
 ```
 
 ### Response Example
@@ -36,16 +36,19 @@ $ curl -u app_id:app_secret -X POST -d '{"topic": "d","qos": 1,"clientid": "emqx
 ```
 
 ## Unsubscribe
+
 ### URI
 POST /mqtt/unsubscribe
 
 ### Request Message
+
 | Name     | Type   | Required | Default | Description       |
 | -------- | ------ | -------- | ------- | ----------------- |
 | topic    | String | Optional |         | Topic             |
 | clientid | String | Required |         | Client identifier |
 
 ### Response Message
+
 | Name | Type    | Description |
 | :--- | :------ | :---------- |
 | code | Integer | 0           |
@@ -53,7 +56,7 @@ POST /mqtt/unsubscribe
 ### Request Example
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '{"topic": "a","clientid": "emqx_c_1"}' {api}/mqtt/unsubscribe
+curl -u app_id:app_secret -X POST -d '{"topic": "a","clientid": "emqx_c_1"}' {api}/mqtt/unsubscribe
 ```
 
 ### Response Example
@@ -67,9 +70,11 @@ $ curl -u app_id:app_secret -X POST -d '{"topic": "a","clientid": "emqx_c_1"}' {
 ## Batch Subscribe
 
 ### URI
+
 POST /mqtt/subscribe_batch
 
 ### Request Message
+
 | Name        | Type    | Required | Default | Description                                                                                           |
 | ----------- | ------- | -------- | ------- | ----------------------------------------------------------------------------------------------------- |
 | [].topic    | String  | Optional |         | Topic, with at least one of the `topics` specified                                                    |
@@ -90,7 +95,7 @@ POST /mqtt/subscribe_batch
 ### Request Example
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '[{"topic": "a", "qos": 1, "clientid": "testtopic/#"}, {"topic": "topic/a", "qos": 1, "clientid": "emqx_c_1"}]' {api}/mqtt/subscribe_batch
+curl -u app_id:app_secret -X POST -d '[{"topic": "a", "qos": 1, "clientid": "testtopic/#"}, {"topic": "topic/a", "qos": 1, "clientid": "emqx_c_1"}]' {api}/mqtt/subscribe_batch
 ```
 
 ### Response Example
