@@ -872,6 +872,10 @@
           "path": "rule_engine/rule_engine_save_hstreamdb"
         },
         {
+          "title": "Save data to ClickHouse",
+          "path": "rule_engine/rule_engine_save_clickhouse"
+        },
+        {
           "title": "Store device offline messages",
           "path": "rule_engine/rule_engine_offline_msg_saving"
         },
@@ -898,7 +902,7 @@
         },
         {
           "title": "Billing Information",
-          "path": "billing/billing_information" 
+          "path": "billing/billing_information"
         },
         {
           "title": "Invoice",
