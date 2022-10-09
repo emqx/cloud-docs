@@ -15,12 +15,12 @@ The invocation includes every message published from the device or client and ev
 
 
 ### Usage Statistics
-The statistics are real-time usage for coordinate point times. 
+The statistics are real-time usage for coordinate point times. In 1 hour chart, it will show the system invocations which is invoked in every 5 minutes for connection check. The system invacations will not be counted in billed invocations.
 
 ![chart](./_assets/device_shadow_12.png)
 
-## Shadow List
-In the shadow list you can create, edit, and delete shadow models, and import custom shadow models in bulk via CSV files.
+## Shadow Model List
+In the shadow model list you can create, edit, and delete shadow models, and import custom's shadow models in bulk via CSV files.
 
 ![list](./_assets/shadow_list.png)
 

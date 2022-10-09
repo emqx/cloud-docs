@@ -85,7 +85,7 @@ In addition to the `payload`, the message should also define the `method` that t
 ### Invocation Examples
 
 #### Entire Update
-Update the specified shadow model’s JSON entirely by `PUT`.
+Update the specified shadow model’s JSON **entirely** by `PUT`.
 
 Shadow model’s JSON
 ``` json
@@ -126,7 +126,7 @@ Shadow model’s JSON updated result
 ```
 
 #### Partial Update
-Update the specified shadow model’s JSON partially by `PATCH`.
+Update the specified shadow model’s JSON **partially** by `PATCH`.
 
 Shadow model’s JSON
 ``` json

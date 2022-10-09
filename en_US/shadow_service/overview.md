@@ -11,7 +11,6 @@ With Shadow Service, users do not need to set up cloud services, create VPC conn
 
 ## How to enable the service?
 
-
 Due to the architect infrastructure, Shadow Service is currently only available for the deployments managed on AWS. In addition, Shadow Service is only available for **Professional Plan**, so if you have purchased Standard Plan, it's not able to use this service for the time being.
 
 
@@ -21,14 +20,14 @@ If you have a running deployment that meets all the criteria above, on the deplo
 ![entry](./_assets/entry01.png)
 
 ### Access B:
-Click `Value-Added Services` on the top menu and click `Subscribe Now` on Shadow Service card to go to the service enablement. If you currently have a running AWS deployment, you can find the eligible deployment in the drop-down menu so you can continue with the provision.
+Click `VAS`(Value-Added Services) on the top menu and click `Subscribe` on Shadow Service card to go to the service enablement. If you currently have a professional deployment running in AWS, you can find the eligible deployment in the drop-down menu so you can continue with the provision.
 
 ![entry](./_assets/entry02.png)
 
 ### Brief Instruction
 The metrics for Shadow Service include memory, invocation, and traffic.
 
-1. The memory for Shadow Service is in three sizes: 1GB, 3GB, and 6GB. The size indicates the storage and the maximum amount of shadows. The maximum size of a shadow is **128 KB**. The estimated amount of shadows that can be created is based on the file size.
+1. The memory for Shadow Service is in three sizes: 1GB, 2GB, and 4GB. The size indicates the storage and the maximum amount of shadow models. The maximum size of a shadow is **128 KB**. The estimated amount of shadows that can be created is based on the file size.
 
 <table>
    <tr>
@@ -40,12 +39,12 @@ The metrics for Shadow Service include memory, invocation, and traffic.
       <td>8000</td>
    </tr>
    <tr>
-      <td>3 G</td>
-      <td>24,000</td>
+      <td>2 G</td>
+      <td>16,000</td>
    </tr>
    <tr>
-      <td>6 G</td>
-      <td>48,000</td>
+      <td>4 G</td>
+      <td>32,000</td>
    </tr>
 </table>
 

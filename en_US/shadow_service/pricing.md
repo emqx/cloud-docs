@@ -16,11 +16,11 @@ Shadow Service offers 3 sizes of memory and is billed according to the hours of 
       <td>0.08 USD per hour</td>
    </tr>
    <tr>
-      <td>3 GB</td>
+      <td>2 GB</td>
       <td>0.15 USD per hour </td>
    </tr>
    <tr>
-      <td>6 G</td>
+      <td>4 G</td>
       <td>0.30 USD per hour</td>
    </tr>
 </table>
