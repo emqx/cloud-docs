@@ -17,11 +17,12 @@ The device's messages communicate between the device and the broker by topics, w
    </tr>
    <tr>
       <td>shadow/${shadow_id}/reply</td>
-      <td>Topic for publishing. It's unique, for the device or the client subscribing messages from the service.</td>
+      <td>Topic for subscription. It's unique, for the device or the client subscribing messages from the service.</td>
    </tr>
 </table>
 
 In addition to the `payload`, the message should also define the `method` that tells the service how the message should be updated.
+
 <table>
    <tr>
       <th>Method</th>
@@ -29,11 +30,11 @@ In addition to the `payload`, the message should also define the `method` that t
    </tr>
    <tr>
       <td>PUT</td>
-      <td>Use this method in <strong>the topic for publishing</strong>. Corresponding to the PUT method of HTTP, the method is for updating the specified shadow model’s JSON entirely. See invocation examples below.</td>
+      <td>Use this method in <strong>the topic for publishing</strong>. Corresponding to the PUT method of HTTP, the method is for updating the specified shadow model’s JSON <strong>entirely</strong>. See invocation examples below.</td>
    </tr>
    <tr>
       <td>PATCH</td>
-      <td>Use this method in <strong>the topic for publishing</strong>. Corresponding to the PATCH method of HTTP, the method is for updating the specified shadow model’s JSON partially. See invocation examples below.</td>
+      <td>Use this method in <strong>the topic for publishing</strong>. Corresponding to the PATCH method of HTTP, the method is for updating the specified shadow model’s JSON <strong>partially</strong>. See invocation examples below.</td>
    </tr>
    <tr>
       <td>GET</td>
@@ -45,6 +46,14 @@ In addition to the `payload`, the message should also define the `method` that t
 
 ### Shadow Model JSON
 
+``` json
+{
+    "data": {},
+    "createAt": 1660201961567,
+    "lastTime": 1660204233317,
+    "version": 3
+}
+```
 <table>
    <tr>
       <th>Key</th>
@@ -73,21 +82,12 @@ In addition to the `payload`, the message should also define the `method` that t
    </tr>
 </table>
 
-``` json
-{
-    "data": {},
-    "createAt": 1660201961567,
-    "lastTime": 1660204233317,
-    "version": 3
-}
-```
-
 ### Invocation Examples
 
 #### Entire Update
 Update the specified shadow model’s JSON **entirely** by `PUT`.
 
-Shadow model’s JSON
+Original shadow model’s JSON
 ``` json
 {
     "Key01": {
@@ -128,7 +128,7 @@ Shadow model’s JSON updated result
 #### Partial Update
 Update the specified shadow model’s JSON **partially** by `PATCH`.
 
-Shadow model’s JSON
+Original Shadow model’s JSON
 ``` json
 {
     "Key01": {
@@ -202,8 +202,9 @@ The following ways of directly adding multi-level objects will report errors
 ```
 
 Create new multi-level object level by level.
+
+First Step
 ``` json
-//Step One
 {
     "method": "PATCH",
     "payload": {
@@ -213,8 +214,9 @@ Create new multi-level object level by level.
         "Key02": {}
     }
 }
-
-// Step Two
+```
+Second Step
+``` json
 {
     "method": "PATCH",
     "payload": {

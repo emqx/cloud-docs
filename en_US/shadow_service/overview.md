@@ -2,10 +2,10 @@
 
 ## What's Shadow Service?
 
-Shadow service is a **data cache** service provided by EMQX Cloud. Users can implement IoT applications quickly through Topics and APIs.
+Shadow service is a **data cache service** provided by EMQX Cloud. Users can implement IoT applications quickly through Topics and APIs.
 
 
-With Shadow Service, users do not need to set up cloud services, create VPC connections, or transfer data through Date Integration step by step. Instead, this capability is used to rapidly implement applications such as things models, device shadow, and other applications related to data reporting and distribution, resulting in significant savings in development time and costs.
+With Shadow Service, users do not need to set up cloud services, create VPC connections, or transfer data through data integration step by step. Instead, this capability is used to rapidly implement applications such as things models, device shadow, and other applications related to data reporting and distribution, resulting in significant savings in development and costs.
 
 ![Benefit](./_assets/benefit.png)
 
@@ -15,7 +15,7 @@ Due to the architect infrastructure, Shadow Service is currently only available 
 
 
 ### Access A:
-If you have a running deployment that meets all the criteria above, on the deployment page, click `Shadow Service` on the left menu and click `Subscribe` to enter the service enablement.
+If you have a running deployment that meets all the criteria above, on the deployment page, click `Shadow Service` on the left menu and click `Subscribe Now` to enter the service enablement.
 
 ![entry](./_assets/entry01.png)
 
@@ -27,12 +27,12 @@ Click `VAS`(Value-Added Services) on the top menu and click `Subscribe` on Shado
 ### Brief Instruction
 The metrics for Shadow Service include memory, invocation, and traffic.
 
-1. The memory for Shadow Service is in three sizes: 1GB, 2GB, and 4GB. The size indicates the storage and the maximum amount of shadow models. The maximum size of a shadow is **128 KB**. The estimated amount of shadows that can be created is based on the file size.
+1. The memory for Shadow Service is in three sizes: 1GB, 2GB, and 4GB. The size indicates the storage and the maximum amount of shadow models. The maximum size of a shadow JSON is **128 KB**. The estimated amount of shadows that can be created is based on the file size.
 
 <table>
    <tr>
       <th>Specification</th>
-      <th>Shadow Amount</th>
+      <th>Shadow Model Amount</th>
    </tr>
    <tr>
       <td>1 GB</td>
@@ -63,9 +63,9 @@ Shadow Service is available on a 7-day trial with the following rules.
 
 1. Only for Professional Plan deployments.
 2. Only 1GB service can be selected for the trial.
-3. The trial is available once for every account and cannot be applied again when the trial period ends or if the service is deleted during the trial period.
+3. The trial is available once for each account and cannot be applied again when the trial period ends or if the service is deleted during the trial period.
 3. After the trial ends, the service will be billed according to usage.
-4. At the end of the trial, if there is no credit card info in the account, the service will be deleted and the data related to the service will be deleted as well.
+4. At the end of the trial, if there is no credit card info of the account, the service will be deleted and the data related to the service will be deleted as well.
 
 ## Billing
 
@@ -81,5 +81,5 @@ Please note that when the service is in the billing phase, **it will still be bi
 
 ## Quick Guide
 
-Please see the [Overview](. /feature.md) for a quick-start guide on Shadow Service.
+Please see the [Features Overview](./feature.md) for a quick-start guide on Shadow Service.
 

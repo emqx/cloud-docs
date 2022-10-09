@@ -20,7 +20,7 @@ Shadow Service offers 3 sizes of memory and is billed according to the hours of 
       <td>0.15 USD per hour </td>
    </tr>
    <tr>
-      <td>4 G</td>
+      <td>4 GB</td>
       <td>0.30 USD per hour</td>
    </tr>
 </table>
@@ -31,20 +31,18 @@ Shadow Service offers 3 sizes of memory and is billed according to the hours of 
 The invocation includes every message published from the device or client, and every API call. 
 
 - The unit rate is **0.04 USD per 10,000 requests**.
-- When every 10,000 calls have been invoked, the charges are billed at that exact hour, which can be viewed in `Billing` - `Charges by Service` with the billing type `Value-Added Services`.
+- When each 10,000 calls have been invoked, the charges are billed at that exact hour, which can be viewed in `Billing` - `Charges by Service` with the billing type `Value-Added Services`.
 - At the end of each month, all unbilled invocations under 10,000 will be billed at unit rate. At the beginning of the following month, the invocation will be counted from 0.
-- After the service has been deleted, any unbilled invocation will not be billed.
+- If the service has been deleted, any unbilled invocation will not be billed.
 
 
 ## Traffic
 
-The invocation will generate traffic, including the messages that the device or client publish or subscribe, as well as the API calls from the application. Traffic will be attributed as part of the traffic of deployment and will be shared using the free monthly traffic. The excess traffic will be billed at $ 0.15/GB.
+The invocation will generate traffic, including the messages that the device or client publish or subscribe, as well as the API calls from the application. Traffic will be attributed as part of the traffic of deployment and will be shared using the free monthly traffic. The excess traffic will be billed at $0.15/GB.
 
 
 ## Billing example
-::: tip Tip
-The billing examples are for reference only.
-:::
+
 <table>
    <tr>
       <th>Scenario</th>
@@ -62,9 +60,9 @@ The billing examples are for reference only.
    </tr>
    <tr>
       <td>2GB, 30 days</td>
-      <td>2GB ｜ $ 0.15 per hour</td>
+      <td>2GB | $ 0.15 per hour</td>
       <td>15,000,000 </td>
-      <td>150 GB（Excess Traffic - 50 GB）
+      <td>150 GB（Excess Traffic: 50 GB）
       </td>
       <td>$ 175.5 = 0.15 * 24 * 30 + 1500 * 0.04 + 50 * 0.15</td>
    </tr>
@@ -77,6 +75,8 @@ The billing examples are for reference only.
    </tr>
 </table>
 
-
+::: tip Tip
+The billing examples are for reference only.
+:::
 
 

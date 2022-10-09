@@ -936,6 +936,27 @@
       ]
     },
     {
+      "title": "Shadow Service",
+      "children": [
+        {
+          "title": "Overview",
+          "path": "shadow_service/overview"
+        },
+        {
+          "title": "Pricing",
+          "path": "shadow_service/pricing"
+        },
+        {
+          "title": "Features",
+          "path": "shadow_service/feature"
+        },
+        {
+          "title": "Communication",
+          "path": "shadow_service/invoke"
+        }
+      ]
+    },
+    {
       "title": "API",
       "children": [
         {
@@ -969,6 +990,10 @@
         {
           "title": "Metrics",
           "path": "api/metrics"
+        },
+        {
+          "title" : "Shadow Service",
+          "path" : "api/shadow_service"
         }
       ]
     },
