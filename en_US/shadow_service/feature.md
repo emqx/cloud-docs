@@ -76,6 +76,6 @@ Click ID in the shadow model list, or click the Edit button to enter the shadow 
 Once a shadow model is created, ID cannot be modified anymore.
 :::
 
-Learn more about the publishing topics and the subscription topics from [Communication](. /invoke.md).
+Learn more about the publishing topics and the subscription topics from [Communication](./invoke.md).
 
 
