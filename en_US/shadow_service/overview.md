@@ -39,11 +39,11 @@ The metrics for Shadow Service include memory, invocation, and traffic.
       <td>8000</td>
    </tr>
    <tr>
-      <td>2 G</td>
+      <td>2 GB</td>
       <td>16,000</td>
    </tr>
    <tr>
-      <td>4 G</td>
+      <td>4 GB</td>
       <td>32,000</td>
    </tr>
 </table>
@@ -63,9 +63,9 @@ Shadow Service is available on a 7-day trial with the following rules.
 
 1. Only for Professional Plan deployments.
 2. Only 1GB service can be selected for the trial.
-3. The trial is available once for each account and cannot be applied again when the trial period ends or if the service is deleted during the trial period.
-3. After the trial ends, the service will be billed according to usage.
-4. At the end of the trial, if there is no credit card info of the account, the service will be deleted and the data related to the service will be deleted as well.
+3. The trial is available once for each account and cannot be applied again when the trial period ends or if the service is deleted during the trial period. 
+4. After the trial ends, the service will be billed according to usage.
+5. At the end of the trial, if there is no credit card info of the account, the service will be deleted and the data related to the service will be deleted as well.
 
 ## Billing
 
