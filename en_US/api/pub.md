@@ -3,9 +3,11 @@
 ## Message Publish
 
 ### URI
+
 POST /mqtt/publish
 
 ### Request Message
+
 | Name     | Type    | Required | Default | Description                                                                                                  |
 | -------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------ |
 | topic    | String  | Optional |         | For topic and topics, with at least one of them specified                                                    |
@@ -25,7 +27,7 @@ POST /mqtt/publish
 ### Request Example
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '{"topic": "topic/a","clientid": "emqx_c_1","payload": "Hello EMQX"}' {api}/mqtt/publish
+curl -u app_id:app_secret -X POST -d '{"topic": "topic/a","clientid": "emqx_c_1","payload": "Hello EMQX"}' {api}/mqtt/publish
 ```
 
 ### Response Example
@@ -39,9 +41,11 @@ $ curl -u app_id:app_secret -X POST -d '{"topic": "topic/a","clientid": "emqx_c_
 ## Batch Message Publish
 
 ### URI
+
 POST /mqtt/publish_batch
 
 ### Request Message
+
 | Name        | Type    | Required | Default | Description                                                                                                  |
 | ----------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------ |
 | [].]opic    | String  | Optional |         | For topic and topics, with at least one of them specified                                                    |
@@ -61,7 +65,7 @@ POST /mqtt/publish_batch
 ### Request Example
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '[{"topic": "a/b","clientid": "emqx_c_1","payload": "Hello EMQX"},{"topic": "a/b","clientid": "emqx_c_1","qos": 2,"payload": "Hi EMQX"}]' {api}/mqtt/publish_batch
+curl -u app_id:app_secret -X POST -d '[{"topic": "a/b","clientid": "emqx_c_1","payload": "Hello EMQX"},{"topic": "a/b","clientid": "emqx_c_1","qos": 2,"payload": "Hi EMQX"}]' {api}/mqtt/publish_batch
 ```
 
 ### Response Example

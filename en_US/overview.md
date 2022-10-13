@@ -14,7 +14,7 @@ EMQX Cloud supports massive devices and application-side connectivity, providing
 
 ![two-way-communication](./_assets/bidirection_communication.png)
 
-In this model, EMQX Cloud provides MQTT services to connect massive devices and applications. It supports two-way communication between applications and devices and two-way communication between devices and devices. This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone APP gets the status information of smart devices. Users can send control commands to smart devices through APP. Another example, in industrial scenarios, AGV robots communicate with each other instantly via the MQTT protocol to achieve multi-robot collaboration. The MQTT service supports not only the standard MQTT protocol, but also MQTT over WebSocket, CoAP, MQTT-SN, LwM2M, JT, /T808, etc.
+In this model, EMQX Cloud provides MQTT services to connect massive devices and applications. It supports application-device and device-device two-way communication. This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone app gets the status information of smart devices. Users can send control commands to smart devices through app. Another example, in industrial scenarios, AGV robots communicate with each other instantly via the MQTT protocol to achieve multi-robot collaboration. The MQTT service supports not only the standard MQTT protocol, but also MQTT over WebSocket, CoAP, MQTT-SN, LwM2M, JT, /T808, etc.
 
 ### *Data Collection*
 
@@ -26,11 +26,11 @@ In this model, the MQTT service provided by EMQX Cloud enables data collection, 
 
 ### *Hybrid Model*
 
-EMQX Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and Data Integrations, data is persisted while flowing from object to object and from object to application.
+EMQX Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and data integrations, data is persisted while flowing from object to object and from object to application.
 
 ![hybrid model](./_assets/hybrid_model.png)
 
-In this model, the MQTT service provided by EMQX Cloud not only bridges the gap between device and device, device and application but also persists the required data so that non-real-time applications can subsequently make use of the acquired data. Typical of these applications are artificial intelligence applications where the data acquired by the terminal needs to be sent to the cloud, where the computational model running in the cloud is calculated and fed back to the terminal, such as item or face recognition applications. At the same time, a copy of the data needs to be persisted in the database for subsequent offline training and improvement of the AI computational model.
+In this model, the MQTT service provided by EMQX Cloud not only bridges the device-device and device-application gaps, but also persists the required data so that non-real-time applications can subsequently make use of the acquired data. Typical of these applications are artificial intelligence applications where the data acquired by the terminal needs to be sent to the cloud, where the computational model running in the cloud is calculated and fed back to the terminal, such as item or face recognition applications. At the same time, a copy of the data needs to be persisted in the database for subsequent offline training and improvement of the AI computational model.
 
 ## Product Plans
 
@@ -49,13 +49,13 @@ EMQX Cloud, a fully managed EMQX access platform service, provides device access
 
 ### Device Access
 
-Supports massive device connections to the cloud, providing stable and reliable two-way communication capabilities between devices and devices, and between devices and applications.
+Supports a massive number of device connections to the cloud, providing stable and reliable device-device and device-application two-way communication capabilities.
 
-- Support standard MQTT protocol (including MQTT over WebSocket), using the standard MQTT client library to connect to the cloud
-- Support CoAP, MQTT-SN, LwM2M protocol, and private TCP protocol access to meet the needs of various systems access to the cloud
-- Provide different network devices and industrial/edge devices to access the cloud
-- Open source multi-lingual/platform access sample code, providing cross-platform migration guidance
-- Perfectly fits EMQ [edge computing](https://github.com/lf-edge/ekuiper), [edge industrial IoT](https://www.emqx.com/en/products/neuron) product ecology, supports dozens of industrial protocols to access the cloud
+- Supports standard MQTT protocol (including MQTT over WebSocket), using the standard MQTT client library to connect to the cloud.
+- Supports CoAP, MQTT-SN, LwM2M protocol, and private TCP protocol access to meet the needs of various systems access to the cloud.
+- Provides different network devices and industrial/edge devices to access the cloud.
+- Open source multi-lingual/platform access sample code, providing cross-platform migration guidance.
+- Perfectly fits EMQ [edge computing](https://github.com/lf-edge/ekuiper), [edge industrial IoT](https://www.emqx.com/en/products/neuron) product ecology, supports dozens of industrial protocols to access the cloud.
 
 :::tip
 Multi-protocol and private protocol support, please contact us by [ticket](feature/tickets.md) for opening.
@@ -69,9 +69,9 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 
 ![device_manager_2](./_assets/device_manage2.png)
 
-- **Device authentication information management**： The platform could add, delete, search, and update authentication information via REST API
+- **Device authentication information management**: The platform could add, delete, search, and update authentication information via REST API
 
-- **Device online status view**：
+- **Device online status view**:
 
   - The platform gets the list of online devices through REST API and queries whether the devices are online.
   - The platform rewrites the status of devices in the private database or sends it to the self-built service (Web service) when the devices are online or offline through the Data Integrations
@@ -79,20 +79,20 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 
 - **Device up/down history**:
 
-  - The platform writes the up/down information to the private database or sends it to the self-built service (Web service) when the device is online or offline through the Data Integrations.
+  - The platform writes the up/down information to the private database or sends it to the self-built service (Web service) when the device is online or offline through the data integrations.
   - ACL Permission Management: The platform adds, deletes, checks, and changes ACL permissions through REST API.
 
-- **Online device kick-off**: The platform kicks off the online device
+- **Online device kick-off**: The platform kicks off the online device.
 
-- **Proxy subscription**: The platform subscribes or unsubscribes topics for online devices through the REST API
+- **Proxy subscription**: The platform subscribes or unsubscribes topics for online devices through the REST API.
 
-- **Publishing messages to devices**: The platform publishes messages to specified topics through REST API or MQTT access, and supports batch operation
+- **Publishing messages to devices**: The platform publishes messages to specified topics through REST API or MQTT access and supports batch operation.
 
 - **Business statistics such as messages sent and received and number of connections**: Get the relevant statistics through REST API.
 
 **Professional and Premium plans only**
 
-- **Bridging/storage of device messages**: Store device events (up/down, subscribe/unsubscribe, message publishing) and message data to private databases (mainstream relational/non-relational, various temporal databases), message queues Kafka, and self-built web services via Data Integrations.
+- **Bridging/storage of device messages**: Store device events (up/down, subscribe/unsubscribe, message publishing) and message data to private databases (mainstream relational/non-relational, various temporal databases), message queues Kafka, and self-built web services via data integrations.
 
 **Premium Plan only**
 
@@ -101,44 +101,43 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 
 ### Data Integrations
 
-EMQX Cloud use Data Integrations to configure rules for processing and responding to devise messages and events.
+EMQX Cloud use data integrations to configure rules for processing and responding to devise messages and events.
 
-The Data Integrations not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
+Data integrations not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
 
 ![](./rule_engine/_assets/integration_intro_01.png)
 
 
 - **Send data to HTTP services and other MQTT services**:
-  - Send data to Web services
-  - Bridge data to MQTT Broker
+  - Send data to Web services.
+  - Bridge data to MQTT Broker.
 
 **Professional and Premium plans only**
 
 - **Save device event information, message data to database, drive business data with device events**:
-  - Save data to MySQL
-  - Save data to PostgreSQL
-  - Save data to Cassandra
-  - Save data to MongoDB
-  - Save data to DynamoDB
-  - Save data to Redis
-  - Save data to ClickHouse
-  - Save data to TDengine
-  - Save data to OpenTSDB
-  - Save data to TimescaleDB
-  - Save data to InfluxDB
+  - Save data to MySQL.
+  - Save data to PostgreSQL.
+  - Save data to Cassandra.
+  - Save data to MongoDB.
+  - Save data to DynamoDB.
+  - Save data to Redis.
+  - Save data to ClickHouse.
+  - Save data to TDengine.
+  - Save data to OpenTSDB.
+  - Save data to TimescaleDB.
+  - Save data to InfluxDB.
 
 **Professional and Premium plans only**
 
 - **Bridge data to Kafka, RabbitMQ, and other messaging and stream processing platforms**:
-  - Bridge data to Kafka
-  - Bridge data to Pulsar
-  - Bridge data to RocketMQ
-  - Bridge data to RabbitMQ
-  - Bridge data to RPC services
+  - Bridge data to Kafka.
+  - Bridge data to Pulsar.
+  - Bridge data to RocketMQ.
+  - Bridge data to RabbitMQ.
+  - Bridge data to RPC services.
 
 **Professional and Premium plans only**
 
 - **Consume messages and sent down to device, transaction-level platform commands sent down**
-  - Consume messages from Kafka to EMQX
-  - Consume messages from Pulsar to EMQX
-
+  - Consume messages from Kafka to EMQX.
+  - Consume messages from Pulsar to EMQX.

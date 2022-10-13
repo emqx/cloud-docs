@@ -32,16 +32,16 @@ The estimated total amount of the current month excludes taxes. The total amount
 
 For those who do not have a credit card or choose other payment methods, Available Credits is the balance for the prepiad payment. 
 
-- The bill is isseud monthly. You can check the details in the Bills page.
+- The bill is issued monthly. You can check the details in the Bills page.
 - The tax of the bills will be calculated according the information of you submit to the sales.
 - If the Available Credits is insufficient for the coming bill, the system will deduct all the remain Available Credits. The sales may contact you for further affairs.
 
 
 ## Add or Update a Payment Method
+
 See [Billing Information](./billing_information.md) for more details.
 
-
-## Cost Visualiztion
+## Cost Visualization
 
 ### Date-to-Month Usage Chart
 
@@ -70,6 +70,7 @@ On the Billing Overview page, a Usage chart displays the costs incurred by your 
 </table>
 
 ## Retry a Failed Payment
+
 If there is an overdue bill, in the top of the Billing Overview page, you will find a message alert. Click "TRY HERE TO PAY THE OVERDUE BILL(s) MANUALLY." to view the overdue bill in Bills page.
 
 View the payment method displayed in the Payment Method card. If this method appears incorrect, click **Change info** in that card.

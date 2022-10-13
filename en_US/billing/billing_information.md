@@ -4,15 +4,16 @@ To view and update your billing information:
 
 1. Navigate to the Billing Overview page.
 2. In the right top section of the page, you can find the Billing Information block.
-  - If you haven't added a card, click + button to add a new card.
-  - If you have added a card, your card information will be displayed in the block including card last four numbers, expire date, and when the card had been added.
-  - Click **Change Info** to update card information.
-  - Click **Got a problem?** if you have any issues in updating card information. You can contact us through the **Tickets** in the top menu or by emailing us.
+
+- If you haven't added a card, click + button to add a new card.
+- If you have added a card, your card information will be displayed in the block including card last four numbers, expire date, and when the card had been added.
+- Click **Change Info** to update card information.
+- Click **Got a problem?** if you have any issues in updating card information. You can contact us through the **Tickets** in the top menu or by emailing us.
 
 ![bill info](./_assets/overview_info.png)
 
-
 ## Add or Update your Billing Information
+
 ![bill info](./_assets/edit_payment_method.png)
 Please fill the details as needed.
 <table>
@@ -33,7 +34,7 @@ Please fill the details as needed.
          The form displays the VAT/GST ID field if you select a country other than the United States. To learn more about VAT/GST, see <a href="./taxation.md">Tax ID</a>.
          If your company's billing address is in a country other than the United States (USA), EMQX typically charges VAT if you do not enter a valid VAT ID Number on your billing information.
          - If your billing address is in Sweden, EMQX always charges VAT, even with a valid VAT ID Number.
-         - To learn more about VAT/GST by region, see <a href="./taxation.md">Taxation by Region</a>
+         - To learn more about VAT/GST by region, see <a href="./taxation.md">Taxation by Region.</a>
       </td>
    </tr>
    <tr>
@@ -98,7 +99,3 @@ To confirm your credit card information, EMQX Cloud charges $1.00 when you first
 - To accept your changes, click *Submit*.
 - To decline your changes, click *Cancel*.
 - To edit billing information, click *Previous*.
-
-
-
-

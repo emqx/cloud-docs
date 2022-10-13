@@ -27,7 +27,7 @@ Returns information for all clients under the cluster, with support for paging.
 
 ### Request Message
 
-None
+None.
 
 ### Response Message
 | Name                      | Type             | Description                                                                                                                    |
@@ -80,7 +80,9 @@ None
 ```bash
 $ curl -u app_id:app_secret -X GET {api}/clients?_page=1&_limit=10   
 ```
+
 ### Response Example
+
 ```JSON
 {
   "meta": {
@@ -132,11 +134,13 @@ $ curl -u app_id:app_secret -X GET {api}/clients?_page=1&_limit=10
   "code": 0
 }
 ```
+
 ## Check Information for the Specified Client
+
 ### URI
 GET /clients/{clientid}
 
-Return information for the specified client
+Return information for the specified client.
 
 **Parameter:**
 
@@ -144,7 +148,7 @@ Return information for the specified client
 | -------- | ------ | ----------- |
 | clientid | String | clientid    |
 ### Request Message
-None
+None.
 ### Response Message
 | Name | Type             | Description                                   |
 | ---- | ---------------- | --------------------------------------------- |
@@ -201,8 +205,11 @@ $ curl -u app_id:app_ssecret -X GET {api}/clients/emqx_c_1
   "code": 0
 }
 ```
+
 ## Kick off Client
+
 ### URI
+
 DELETE /clients/{clientid}
 Kick off the specified client. Note that kicking the client terminates the connection and the session.
 
@@ -211,17 +218,24 @@ Parameter:
 | Name     | Type   | Description |
 | -------- | ------ | ----------- |
 | clientid | String | clientid    |
+
 ### Request Message
-None
+
+None.
 ### Respond Message
+
 | Name | Type    | Description |
 | ---- | ------- | ----------- |
 | code | Integer | 0           |
+
 ### Request Example
+
 ```bash
 $ curl -u app_id:app_secret -X DELETE {api}/clients/emqx_c_1
 ```
+
 ### Response Example
+
 ```JSON
 {
   "code": 0
