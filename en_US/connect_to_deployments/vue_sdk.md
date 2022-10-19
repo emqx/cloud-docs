@@ -6,6 +6,8 @@ This article mainly introduces how to use `MQTT.js` in the Vue project, and impl
 
 [MQTT](https://www.emqx.com/en/mqtt) is a kind of **lightweight IoT messaging protocol** based on the publish/subscribe model. This protocol provides one-to-many message distribution and decoupling of applications. It has several advantages which are low transmission consumption and protocol data exchange, minimized network traffic, three different service quality levels of message which can meet different delivery needs.
 
+> To create an MQTT connection in Vue 3 application using MQTT.js, please refer to https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue3.js
+
 ## Preconditions
 
 > 1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
