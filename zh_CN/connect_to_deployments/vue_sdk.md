@@ -6,6 +6,8 @@
 
 [MQTT](https://www.emqx.com/zh/mqtt) 是一种基于发布/订阅模式的 **轻量级物联网消息传输协议**。该协议提供了一对多的消息分发和应用程序的解耦，具备很小的传输消耗和协议数据交换、最大限度减少网络流量和三种不同消息服务质量等级，满足不同投递需求的优势。
 
+> Vue 3 项目中使用 MQTT.js 实现 MQTT 连接，请参阅： https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue3.js
+
 ## 前提条件
 
 > 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
