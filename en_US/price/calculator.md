@@ -31,6 +31,6 @@ EMQX Cloud now supports cloud service providers including AWS Cloud, Azure and G
 
 | Platform | Region                                                       |
 | -------- | ------------------------------------------------------------ |
-| AWS      | us-east-1 (US East, N. Virginia), us-west-2 (US West, Oregon), eu-west-1 (EU, Ireland), ap-southeast-1 (Asia Pacific, Singapore), ap-south-1 (Asia Pacific, Mumbai) |
+| AWS      | us-east-1 (US East, N. Virginia), us-west-2 (US West, Oregon), eu-west-1 (EU, Ireland), ap-southeast-1 (Asia Pacific, Singapore), ap-south-1 (Asia Pacific, Mumbai), Asia Pacific (Hong Kong), us-west-1 (US West, N. California), Asia Pacific (Tokyo) |
 | Azure    | East US, Germany West Central, Southeast Asia |
-| GCP      | us-east1 (South Carolina), us-west1 (Oregon), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore) |
+| GCP      | us-east1 (South Carolina), us-west1 (Oregon), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |

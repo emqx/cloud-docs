@@ -30,21 +30,25 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
       <td>1,000 connections / Up to 1,000 TPS</td>
       <td>from $ 0.18/hr</td>
       <td rowspan="3">100G/month</td>
-      <td rowspan="9">$ 0.15/GB</td>
+      <td rowspan="7">$ 0.15/GB</td>
    </tr>
    <tr>
       <td>5,000 connections / Up to 5,000 TPS</td>
       <td>from $ 0.5/hr</td>
    </tr>
    <tr>
-      <td>1,0000 connections / Up to 5,000 TPS</td>
+      <td>10,000 connections / Up to 5,000 TPS</td>
       <td>from $ 0.88/hr </td>
    </tr>
    <tr>
-      <td rowspan="4">Professional</td>
+      <td rowspan="5">Professional</td>
+      <td>1,000 connections / Up to 1,000 TPS</td>
+      <td>from $ 0.36/hr </td>
+      <td rowspan="3">100G/month</td>
+   </tr>
+   <tr>
       <td>5,000 connections / Up to 10,000 TPS</td>
-      <td>from $ 0.99/hr </td>
-      <td rowspan="2">100G/month</td>
+      <td>from $ 0.99/hr</td>
    </tr>
    <tr>
       <td>10,000 connections / Up to 20,000 TPS</td>
@@ -53,16 +57,11 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
    <tr>
       <td>50,000 connections / Up to 50,000 TPS</td>
       <td>from $ 3.99/hr</td>
-      <td rowspan="2">1T/month</td>
+      <td rowspan="1">1T/month</td>
    </tr>
    <tr>
-      <td>100,000 connections / Up to 100,000 TPS</td>
-      <td>from $ 7.19/hr</td>
-   </tr>
-   <tr>
-      <td>>100,000 connections</td>
-      <td>from $ 7.19/hr</td>
-      <td colspan="2" align="center">Contact sales</td>
+      <td>≥100,000 connections</td>
+      <td colspan="3" align="center">Contact sales</td>
    </tr>
    <tr>
       <td>Premium</td>
@@ -86,7 +85,7 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <th>Premium</th>
     </tr>
    <tr>
-      <td>Full MQTT support</td>
+      <td>Protocols</td>
       <td></td>
       <td></td>
       <td></td>
@@ -104,49 +103,157 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>MQTT QoS level</td>
-      <td>QoS 0, 1, 2</td>
-      <td>QoS 0, 1, 2</td>
-      <td>QoS 0, 1, 2</td>
-   </tr>
-   <tr>
-      <td>Enterprise SSL Certificate</td>
+      <td style="text-indent: 2em;">MQTT-SN</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>MQTT username and password authentication certification</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Client and topic level ACL settings</td>
-      <td>&#10003</td>
+      <td style="text-indent: 2em;">CoAP</td>
+      <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>Message distribution</td>
+      <td style="text-indent: 2em;">LwM2M</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">JT/T808</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>Features</td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Message republish</td>
+      <td style="text-indent: 2em;">MQTT QoS 0, QoS 1, QoS 2</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Message bridging</td>
+      <td style="text-indent: 2em;">Retained Message</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Webhook</td>
+      <td style="text-indent: 2em;">Last Will Message</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Shared Subscription</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Username and Password Authentication</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Client and topic level Access control</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Monitoring API</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Project Management</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Role Authorization</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Subscription Management</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+    <tr>
+      <td style="text-indent: 2em;">Invoice</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Custom TLS certificate</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Authentication and Authorization through external data sources</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Device Management</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Device Shadow</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Edge Device Management</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>Data Integrations</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">SQL based data process</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Republish</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Bridging</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">WebHook</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -174,12 +281,6 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Data persistence</td>
-      <td></td>
-      <td></td>
-      <td></td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">MySQL</td>
@@ -266,69 +367,99 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>Architecture Design Consulting</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
+      <td>Connectivity</td>
+      <td></td>
+      <td></td>
+      <td></td>
    </tr>
    <tr>
-      <td>Project Integration Consulting</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Device management</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Device shadowing</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Edge device management</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Cluster</td>
-      <td>&#10007</td>
-      <td>Single region cluster</td>
-      <td>Multi-region clusters</td>
-   </tr>
-   <tr>
-      <td>Maximum number of connections</td>
+      <td style="text-indent: 2em;">Max number of connections</td>
       <td>10,000</td>
       <td>100,000</td>
-      <td>Unlimited</td>
+      <td>无限制</td>
    </tr>
    <tr>
-      <td>Support bare metal servers</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>VPC Peering Connections</td>
+      <td style="text-indent: 2em;">VPC peering (private network)</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>SLA</td>
+      <td style="text-indent: 2em;">NAT Gateway</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Internal Load Balance</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>Services</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Uptime SLA</td>
       <td>99%</td>
       <td>99.99%</td>
       <td>99.99%</td>
    </tr>
-   <tr>
-      <td>Client support</td>
+    <tr>
+      <td style="text-indent: 2em;">Customer Support</td>
       <td>8/5</td>
       <td>24/7</td>
       <td>24/7</td>
+   </tr>
+    <tr>
+      <td style="text-indent: 2em;">Multi-AZ cluster</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Bare Metal</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Architecture design consulting service</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Product integration consulting service</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>Cloud Provider</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">AWS</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Azure</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Google Cloud</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
    </tr>
 </table>
