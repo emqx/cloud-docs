@@ -28,14 +28,14 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
       <td>1,000 连接 / 最高 1,000 TPS</td>
       <td>¥0.68/小时 起</td>
       <td rowspan="3">100G/月</td>
-      <td rowspan="9">￥1.5/GB</td>
+      <td rowspan="7">￥1.5/GB</td>
    </tr>
    <tr>
       <td>5,000 连接 / 最高 5,000 TPS</td>
       <td>￥1.28/小时 起</td>
    </tr>
    <tr>
-      <td>1,0000 连接 / 最高 5,000 TPS</td>
+      <td>10,000 连接 / 最高 5,000 TPS</td>
       <td>￥1.68/小时 起</td>
    </tr>
    <tr>
@@ -55,16 +55,11 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
    <tr>
       <td>50,000 连接 / 最高 50,000 TPS</td>
       <td>￥10.99/小时 起</td>
-      <td rowspan="2">1T/月</td>
+      <td rowspan="1">1T/月</td>
    </tr>
    <tr>
-      <td>100,000 连接 / 最高 100,000 TPS</td>
-      <td>￥19.99/小时 起</td>
-   </tr>
-   <tr>
-      <td>>100,000 连接</td>
-      <td>￥19.99/小时 起</td>
-      <td colspan="2" align="center">联系商务</td>
+      <td>≥100,000 连接</td>
+      <td colspan="3" align="center">联系商务</td>
    </tr>
    <tr>
       <td>旗舰版</td>
@@ -88,52 +83,166 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
       <th>旗舰版</th>
     </tr>
    <tr>
-      <td>完整 MQTT 支持</td>
+      <td>协议支持</td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">支持 MQTT v3.1, v3.1.1, v5.0 协议版本</td>
+      <td style="text-indent: 2em;">MQTT v3.1, v3.1.1, v5.0</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">支持 MQTT over WebSocket</td>
+      <td style="text-indent: 2em;">MQTT over WebSocket</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>MQTT QoS 级别</td>
-      <td>QoS 0, 1, 2</td>
-      <td>QoS 0, 1, 2</td>
-      <td>QoS 0, 1, 2</td>
-   </tr>
-   <tr>
-      <td>企业 SSL 证书</td>
+      <td style="text-indent: 2em;">MQTT-SN</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>MQTT 用户名与密码认证</td>
+      <td style="text-indent: 2em;">CoAP</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">LwM2M</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">JT/T808</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>功能特性</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">MQTT QoS 0, QoS 1, QoS 2</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>客户端和主题级别的 ACL 设置</td>
+      <td style="text-indent: 2em;">消息保留</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>消息分发</td>
+      <td style="text-indent: 2em;">遗嘱消息</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">共享订阅</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">用户名与密码认证</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">客户端和主题级别的访问控制</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">监控 API</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">项目管理</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">角色权限</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">自动订阅管理</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+    <tr>
+      <td style="text-indent: 2em;">发票管理</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">企业 SSL 证书</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">支持第三方数据源认证与授权</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">自定义函数</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">设备管理</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">设备影子</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">边缘设备管理</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>数据集成</td>
       <td></td>
       <td></td>
       <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">基于 SQL 的数据处理</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">消息重发布</td>
@@ -148,7 +257,7 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Webhook</td>
+      <td style="text-indent: 2em;">WebHook</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -176,12 +285,6 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>数据持久化</td>
-      <td></td>
-      <td></td>
-      <td></td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">MySQL</td>
@@ -268,69 +371,129 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>架构设计咨询</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
+      <td>网络连接</td>
+      <td></td>
+      <td></td>
+      <td></td>
    </tr>
    <tr>
-      <td>项目集成咨询</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>设备管理</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>设备影子</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>边缘设备管理</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>集群</td>
-      <td>&#10007</td>
-      <td>单地域集群</td>
-      <td>多地域集群</td>
-   </tr>
-   <tr>
-      <td>最大连接数</td>
+      <td style="text-indent: 2em;">最大连接数</td>
       <td>10,000</td>
       <td>100,000</td>
       <td>无限制</td>
    </tr>
    <tr>
-      <td>支持裸金属服务器</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>VPC 对等连接</td>
+      <td style="text-indent: 2em;">VPC 对等连接（私有网络）</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>SLA</td>
+      <td style="text-indent: 2em;">私网连接（阿里云）</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">NAT 网关</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">内网 LB</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>服务支持</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">SLA 等级</td>
       <td>99%</td>
       <td>99.99%</td>
       <td>99.99%</td>
    </tr>
-   <tr>
-      <td>客户支持</td>
+    <tr>
+      <td style="text-indent: 2em;">客户支持</td>
       <td>8/5</td>
       <td>24/7</td>
       <td>24/7</td>
+   </tr>
+    <tr>
+      <td style="text-indent: 2em;">多可用区部署</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">支持裸金属服务器部署</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">架构设计咨询服务</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">产品集成咨询服务</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>公有云平台</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">阿里云</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">华为云</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">腾讯云</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">亚马逊云科技</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">AWS</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Azure</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Google Cloud</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
    </tr>
 </table>
