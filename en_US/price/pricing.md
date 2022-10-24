@@ -60,7 +60,7 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
       <td rowspan="1">1T/month</td>
    </tr>
    <tr>
-      <td>≥100,000 connections</td>
+      <td>>50,000 connections</td>
       <td colspan="3" align="center">Contact sales</td>
    </tr>
    <tr>
@@ -375,7 +375,7 @@ Prices may vary depending on the public cloud platform selected and the deployme
    <tr>
       <td style="text-indent: 2em;">Max number of connections</td>
       <td>10,000</td>
-      <td>100,000</td>
+      <td>50,000</td>
       <td>无限制</td>
    </tr>
    <tr>
