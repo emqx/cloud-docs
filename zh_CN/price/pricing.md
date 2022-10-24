@@ -58,7 +58,7 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
       <td rowspan="1">1T/月</td>
    </tr>
    <tr>
-      <td>≥100,000 连接</td>
+      <td>>50,000 连接</td>
       <td colspan="3" align="center">联系商务</td>
    </tr>
    <tr>
@@ -379,7 +379,7 @@ EMQX Cloud 分为基础版、专业版和旗舰版三个版本。
    <tr>
       <td style="text-indent: 2em;">最大连接数</td>
       <td>10,000</td>
-      <td>100,000</td>
+      <td>50,000</td>
       <td>无限制</td>
    </tr>
    <tr>
