@@ -20,7 +20,8 @@
 1. TDengine 安装
 
    ```bash
-   docker run --name tdengine -d -p 6030:6030 -p 6035:6035 -p 6041:6041 -p 6030-6040:6030-6040/udp tdengine/tdengine
+   # EMQX 目前支持到 TDengine 2.x ，暂不支持 3.x
+   docker run --name tdengine -d -p 6030:6030 -p 6035:6035 -p 6041:6041 -p 6030-6040:6030-6040/udp tdengine/tdengine:2.0.16.0
    ```
 
 2. 数据库创建

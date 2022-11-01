@@ -14,7 +14,8 @@ Before you start, you need to complete the following operations:
 1. Install TDengine
 
    ```bash
-   docker run --name tdengine -d -p 6030:6030 -p 6035:6035 -p 6041:6041 -p 6030-6040:6030-6040/udp tdengine/tdengine
+   # EMQX currently supports TDengine 2.x, not 3.x yet
+   docker run --name tdengine -d -p 6030:6030 -p 6035:6035 -p 6041:6041 -p 6030-6040:6030-6040/udp tdengine/tdengine:2.0.16.0
    ```
 
 2. New database
