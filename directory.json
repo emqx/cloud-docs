@@ -876,6 +876,10 @@
           "path": "rule_engine/rule_engine_save_clickhouse"
         },
         {
+          "title": "Save data to ClickHouse Cloud",
+          "path": "rule_engine/rule_engine_save_clickhouse_cloud"
+        },
+        {
           "title": "Store device offline messages",
           "path": "rule_engine/rule_engine_offline_msg_saving"
         },
