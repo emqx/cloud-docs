@@ -848,6 +848,10 @@
           "path": "rule_engine/rule_engine_save_mongodb"
         },
         {
+          "title": "Save data to MongoDB Atlas",
+          "path": "rule_engine/rule_engine_save_mongodb_atlas"
+        },
+        {
           "title": "Save data to InfluxDB",
           "path": "rule_engine/rule_engine_influxDB"
         },
@@ -1000,8 +1004,8 @@
           "path": "api/metrics"
         },
         {
-          "title" : "Shadow Service",
-          "path" : "api/shadow_service"
+          "title": "Shadow Service",
+          "path": "api/shadow_service"
         }
       ]
     },
