@@ -272,4 +272,8 @@
 }
 ```
 
-## [API 通信](../api/shadow_service.md)
+## API 通信
+
+EMQX Cloud 提供了 API 来获取影子服务的相关信息。
+
+请查看 [API - 影子服务专栏](../api/shadow_service.md)了解更多。
