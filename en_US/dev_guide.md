@@ -104,4 +104,4 @@ You can go to [Connect to Deployment](./connect_to_deployments/overview.md) to l
 
 ## Other functions
 
-For integration details and other integration function requirements, you can submit a [ticket](./feature/tickets.md) or send an email (cloud@emqx.io) for consultation.
+For integration details and other integration function requirements, you can submit a [ticket](./feature/tickets.md) or send an email (cloud-support@emqx.io) for consultation.

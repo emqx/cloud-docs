@@ -24,13 +24,13 @@ EMQX (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发�
 
 可以。
 
-如果您有特殊的使用需求，或者其他使用情况，可以提[工单](contact.md)或发送邮件(cloud@emqx.io)与我们取得联系，我们会在 24 小时之内回复。
+如果您有特殊的使用需求，或者其他使用情况，可以提[工单](contact.md)或发送邮件(cloud-support@emqx.io)与我们取得联系，我们会在 24 小时之内回复。
 
 ### 支持那些协议连接？
 
 EMQX Cloud 部署仅支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
 
-如需其他协议支持，您可以提[工单](contact.md)或发送邮件(cloud@emqx.io)与我们取得联系
+如需其他协议支持，您可以提[工单](contact.md)或发送邮件(cloud-support@emqx.io)与我们取得联系
 
 ### 我如何连接到部署？
 
@@ -95,7 +95,7 @@ EMQX Cloud 按集群实例规格与消息传输网络流量收费，而非消息
 
 ### 如何获取到代金券？
 
-如您需要体验独享部署所有功能，您可以提交[工单](contact.md)或发送邮件(cloud@emqx.io)与我们取得联系，我们会依据您的业务需求，发放一定数额代金券
+如您需要体验独享部署所有功能，您可以提交[工单](contact.md)或发送邮件(cloud-support@emqx.io)与我们取得联系，我们会依据您的业务需求，发放一定数额代金券
 
 ### 是否支持包年包月付费？
 

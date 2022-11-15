@@ -4,7 +4,7 @@
 
 Yes.
 
-If you have special requirements or other conditions, you can submit a ticket or send an email (cloud@emqx.io) to us, and we will reply within 24 hours.
+If you have special requirements or other conditions, you can submit a ticket or send an email (cloud-support@emqx.io) to us, and we will reply within 24 hours.
 
 ## How to connect to the deployment?
 

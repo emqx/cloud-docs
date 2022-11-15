@@ -16,4 +16,4 @@ You need to bind a credit card and the fee is charged monthly.
 
 ## How to get the coupons?
 
-If you need to experience all the features, you can submit a ticket or email cloud@emqx.io to get in touch with us, and we will issue a certain amount of coupons based on your needs.
+If you need to experience all the features, you can submit a ticket or email cloud-support@emqx.io to get in touch with us, and we will issue a certain amount of coupons based on your needs.

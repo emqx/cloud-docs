@@ -4,11 +4,11 @@
 
 EMQX Cloud deployment supports MQTT over TLS/SSL and WebSockets over TLS/SSL protocol connections.
 
-If you need other protocol support, you can submit a ticket or send an email (cloud@emqx.io) to us.
+If you need other protocol support, you can submit a ticket or send an email (cloud-support@emqx.io) to us.
 
 ## How can I scale deployment?
 
-**Professional Plan** deployments can be scaled smoothly without disrupting business. You can contact us by submitting a ticket or emailing cloud@emqx.io for more information.
+**Professional Plan** deployments can be scaled smoothly without disrupting business. You can contact us by submitting a ticket or emailing cloud-support@emqx.io for more information.
 
 ## How to bind a domain name？
 
@@ -56,7 +56,7 @@ You can use data integrations to integrate with other applications. Check [Data 
 
 ## The authentication data of the device is stored in my own database. Can I do the authentication of MQTT connections through my own database?
 
-It is not yet supported to get data directly from your own database. You can import data from csv files together. Or you can submit a ticket or send an email (cloud@emqx.io) to us.
+It is not yet supported to get data directly from your own database. You can import data from csv files together. Or you can submit a ticket or send an email (cloud-support@emqx.io) to us.
 
 ## How long can device logs be kept in the console?
 
