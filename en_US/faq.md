@@ -20,13 +20,13 @@ EMQX (Erlang/Enterprise/Elastic MQTT Broker) is an open source IoT MQTT message 
 
 Yes.
 
-If you have special usage requirements, or other usage conditions, you can submit a [ticket](./feature/tickets.md) or send an email (cloud@emqx.io) to us, and we will reply within 24 hours.
+If you have special usage requirements, or other usage conditions, you can submit a [ticket](./feature/tickets.md) or send an email (cloud-support@emqx.io) to us, and we will reply within 24 hours.
 
 ### Which protocol connections are supported?
 
 EMQX Cloud deployment only supports MQTT over TLS/SSL, WebSockets over TLS/SSL protocol connections.
 
-If you need other protocol support, you can submit a [ticket](./feature/tickets.md) or send an email(cloud@emqx.io) to us.
+If you need other protocol support, you can submit a [ticket](./feature/tickets.md) or send an email(cloud-support@emqx.io) to us.
 
 ### How do I connect to the deployment?
 
@@ -84,6 +84,6 @@ EMQX Cloud supports credit card payment. For more payment options please contact
 
 ### How to get the credits?
 
-If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or send an email (cloud@emqx.io) to get in touch with us and we will issue a certain amount of credits based on your business needs.
+If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or send an email (cloud-support@emqx.io) to get in touch with us and we will issue a certain amount of credits based on your business needs.
 
 Please pay attention to the update of EMQX cloud.

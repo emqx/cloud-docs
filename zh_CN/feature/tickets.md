@@ -5,21 +5,23 @@
 您可以通过下面的步骤进入进入工单系统：
 
 1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
-2. 点击左下角的 `工单`
+2. 点击顶部菜单中右上角的 `工单` 进入工单列表页面
 
-![工单](./_assets/tickets.png)
+![工单列表](./_assets/tickets.png)
 
 ### 创建工单
 
-1. 点击右上角的 `新建`
-2. 在弹出的页面中输入 `工单标题`、`描述`
+1. 点击右上角的 `新建` 按钮
+2. 在弹出的对话框中输入 `主题` 和 `描述`
 
-![](./_assets/creat_tickets01.png)
+![新建工单](./_assets/tickets_new.png)
 
-![](./_assets/creat_tickets02.png)
+![填写工单](./_assets/tickets_form.png)
 
-### 查看工单
+### 查看工单详情
 
-你可以点击 `工单状态` 对工单的状态进行筛选
+您可以点击工单列表中的主题名进入相应工单详情页面
 
-![工单状态](./_assets/check_tickets.png)
+![进入工单详情](./_assets/tickets_link_details.png)
+
+![工单详情](./_assets/tickets_details.png)

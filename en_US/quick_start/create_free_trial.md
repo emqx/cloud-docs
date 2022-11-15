@@ -14,7 +14,7 @@ For first-time EMQX Cloud customers, we have an opportunity for you to create a 
 
 - **Protocol：** Support for MQTT, WebSockets, MQTT over TLS/SSL, WebSockets over TLS protocol connections.
 
-  > For additional protocol support, you can submit a [ticket](../feature/tickets.md) or send email (cloud@emqx.io) to get in touch with us.
+  > For additional protocol support, you can submit a [ticket](../feature/tickets.md) or send email (cloud-support@emqx.io) to get in touch with us.
 
 - **Limitation：** The standard plan does not support custom [TLS/SSL](../deployments/./tls_ssl.md) and [VPC Peering](../deployments/vpc_peering.md).
 

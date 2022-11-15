@@ -27,7 +27,7 @@ You can select cloud platform, region, and specifications to get the hourly pric
 
 ## Supported Cloud Service Providers and Regions
 
-EMQX Cloud now supports cloud service providers including AWS Cloud, Azure and GCP. If you need other cloud service providers or regions, you can submit [tickets](../feature/tickets.md) or email(cloud@emqx.io) to contact us.
+EMQX Cloud now supports cloud service providers including AWS Cloud, Azure and GCP. If you need other cloud service providers or regions, you can submit [tickets](../feature/tickets.md) or email(cloud-support@emqx.io) to contact us.
 
 | Platform | Region                                                       |
 | -------- | ------------------------------------------------------------ |

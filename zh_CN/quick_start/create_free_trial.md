@@ -12,9 +12,9 @@ EMQX Cloud 免费试用部署规格如下：
 
 * 使用数据集成（基础版仅支持 Webhook 和 MQTT 桥接）、监控管理等 EMQX Cloud 自有的功能。
 
-* 支持 MQTT, WebSockets 协议连接。
+* 支持 MQTT，WebSockets 协议连接。
   
-  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提 [工单](../feature/tickets.md) 或发送邮件(cloud@emqx.io)与我们取得联系
+  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提 [工单](../feature/tickets.md) 或发送邮件(cloud-support@emqx.io)与我们取得联系。
 
 EMQX Cloud 免费试用部署注意事项：
 
@@ -32,7 +32,7 @@ EMQX Cloud 免费试用部署注意事项：
 
    ![login_console](./_assets/login.png)
 
-2. 单击创建部署按钮
+2. 单击新建部署按钮
 
    ![first_create_deployment](./_assets/first_create_deployment.png)
 
@@ -40,33 +40,33 @@ EMQX Cloud 免费试用部署注意事项：
 
    ![create_free_trial](./_assets/create_free_trial.png)
 
-4. 点击立即部署，并同意 EMQX 标准服务条款、免费试用申明
+4. 点击立即部署，并同意 EMQX Cloud 标准服务条款和免费试用申明条款
 
    ![free_trial_declare](./_assets/free_trial_declare.png)
 
-5. 等待 5 ~ 10 分钟，直至部署状态为**运行中**
+5. 等待 5 分钟左右，直至部署状态为**运行中**
 
    ![free_trial_running](./_assets/free_trial_running.png)
 
 ## 连接到您的免费试用部署
 
-在连接到您的免费试用部署之前，您需等待免费试用部署状态由 **等待中** 转为 **运行中**
+在连接到您的免费试用部署之前，您需等待免费试用部署状态由 **创建中** 转为 **运行中**
 
 1. 添加客户端认证信息
 
-   单击所需连接的部署进入部署概览页面，点击左侧认证鉴权/认证菜单，填写客户端或设备用户名和密码并点击添加。
+   单击所需连接的部署进入部署概览页面，点击左侧【认证鉴权】->【认证】菜单，点击添加按钮，输入客户端或设备用户名和密码并点击确认。
 
    ![add_users](./_assets/auth.png)
 
 2. 获取免费试用连接信息
 
-   点击概览菜单，您将看到部署连接信息以及连接端口。EMQX Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接
+   点击概览菜单，您将看到部署连接地址以及连接端口。EMQX Cloud 免费试用支持 TCP、WS、TLS、WSS 协议连接
 
    ![connections](./_assets/overview.png)
 
 3. MQTT X 连接到免费试用部署
 
-   EMQX Cloud 推荐使用 [MQTT X](https://mqttx.app/zh/) 测试连接和测试部署，您也可以使用熟悉的[SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
+   EMQX Cloud 推荐使用 [MQTT X](https://mqttx.app/zh/) 测试连接到部署，您也可以使用熟悉的 [SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
 
 * MQTT 连接
 
@@ -83,7 +83,3 @@ EMQX Cloud 免费试用部署注意事项：
 * WebSockets over TLS 连接
   
     ![mqttx_wss](./_assets/mqttx_wss.png)
-
-
-
-
