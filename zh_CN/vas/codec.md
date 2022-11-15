@@ -140,7 +140,7 @@
    ![vas_codec](./_assets/codec-result.png)
 
 ## 调用函数
-函数定义完成之后，就可以在数据集成的[规则]()中调用。请查看[数据集成](../rule_engine/introduction.md)了解更多内容。
+函数定义完成之后，就可以在数据集成的[规则](../rule_engine/rules.md)中调用。请查看[数据集成](../rule_engine/introduction.md)了解更多内容。
 
 如果需要快速验证脚本可以通过新建[空动作](../rule_engine/rule_engine_empty_action_debug.md)调用定义好的函数。
 
@@ -166,5 +166,5 @@
    ![vas_codec](./_assets/codec-log.png)
 
 
-以上就是自定义函数的基本使用方法，了解更多自定义函数的[场景案例 Demo]()。
+以上就是自定义函数的基本使用方法，了解更多自定义函数的场景案例 Demo。
 
