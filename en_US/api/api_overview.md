@@ -9,6 +9,7 @@ EMQX Cloud API follows the REST architecture. You can access the functions of EM
 | [Authentication management](./auth.md)          | Manage the creation, deletion and update of authentication information.                                         |
 | [ACL management](./acl.md)         | Manage the creation, deletion and update of ACL information.                                      |
 | [Client management](./client.md)         | View the online client information and kick off the client.                                 |
+| [Blacklist management](./banned.md)    | Manage the creation, deletion and get of blacklist information         |
 | [Message Subscription](./sub.md)        | Check subscribed message.                     |
 | [Topic Subscription](./topic.md)        | Subscribe, unsubscribe, batch subscribe, batch unsubscribe.                      |
 | [Message Publish](./topic.md)        | Publish, batch publish.                      |
