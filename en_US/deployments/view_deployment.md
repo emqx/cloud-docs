@@ -2,8 +2,6 @@
 
 In this tutorial, you will learn how to view deployment information, obtain connection addresses, view API addresses, etc.
 
-
-
 ## View deployment information
 
 Here you can view the following deployment information:
@@ -18,11 +16,9 @@ Here you can view the following deployment information:
 - Connection port:
 
   - Professional deployment port: **1883**(mqtt), **8083**(ws) are enabled by default, you can enable **8883**(mqtts) and **8084**(wss)through [Configuring TLS/SSL](./tls_ssl.md)
-  - Basic deployment port: open **11xxx(mqtt)**, **11xxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
+  - Basic deployment port: open **1xxxx(mqtt)**, **1xxxx(mqtts)**,  **8083(ws)**, **8084(wss)** by default
 
 ![base_info](./_assets/deployment_info.png)
-
-
 
 ## [TLS/SSL Configuration](./tls_ssl.md)
 
@@ -34,8 +30,6 @@ EMQX Cloud provides custom **one-way/two-way TLS/SSL** authentication, and suppo
 
 ![base_info](./_assets/tls_info.png)
 
-
-
 ## [VPC Peering Connection Configuration](./vpc_peering.md)
 
 ::: warning Note
@@ -46,11 +40,8 @@ EMQX Cloud supports peering connections with customers' existing VPC (Virtual Pr
 
 ![base_info](./_assets/vpc_peering_info.png)
 
-
-
-## [API access](../api/api_overview.md)
+## [REST API](../api/api_overview.md)
 
 EMQX Cloud provides REST API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
 
 ![base_info](./_assets/api_info.png)
-

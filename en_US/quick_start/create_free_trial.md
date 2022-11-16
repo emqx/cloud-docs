@@ -32,7 +32,7 @@ For first-time EMQX Cloud customers, we have an opportunity for you to create a 
 
 3. Select `create free trial` under standard plan.
 
-   ![free_trial](./_assets/freetrial_terms.png)
+   ![free_trial](./_assets/free_trial.png)
 
 4. Review the EMQX Cloud Standard Terms of Service and Free Trial Declaration Terms.
 
@@ -60,20 +60,28 @@ Before connecting to your free trial deployment, you need to wait for the deploy
 
 2. Add client authentication information.
 
-    Click the EMQX Dashboard button on the deployment details page, you will enter the EMQX Dashboard, and click the **Users & ACL** menu on the left.
+    Click the **Authentication** on the Authentication & ACL menu on the left.
 
     ![add_users](./_assets/auth.png)
 
 3. Connect to free trial deployment with MQTT X.
-   
+
     EMQX Cloud recommends using [MQTT X](https://mqttx.app/) to test the connection.
 
-   * MQTT connection
+   - MQTT connection
 
-     ![mqttx_mqtts](./_assets/mqttx_connect.png)
+     ![mqttx_mqtt](./_assets/mqttx_mqtt.png)
 
-   * WebSockets connection
+   - WebSockets connection
 
      ![mqttx_ws](./_assets/mqttx_ws.png)
+
+   - MQTT over TLS connection
+
+     ![mqttx_mqtts](./_assets/mqttx_mqtts.png)
+
+   - WebSockets over TLS connection
+
+     ![mqttx_wss](./_assets/mqttx_wss.png)
 
 4. [Use SDK or other tools to connect to the free trial deployments.](../connect_to_deployments/overview.md)

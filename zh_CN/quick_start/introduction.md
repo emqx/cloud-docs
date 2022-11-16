@@ -26,7 +26,7 @@
 
 ![login](./_assets/login.png)
 
-### [找回密码](https://www.emqx.com/zh/forgot-password?continue=https://www.emqx.com/cn/cloud)
+### [找回密码](https://accounts-zh.emqx.com/forgot-password?continue=https%3A%2F%2Fwww.emqx.com%2Fcn%2Fcloud)
 
 如果您忘记密码，我们将会向您的邮箱发送验证邮件。您可以在验证邮件中点击找回密码，创建新的密码。您将返回登录页面，输入新的密码，然后选择登录。
 
