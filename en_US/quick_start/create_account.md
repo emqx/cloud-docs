@@ -6,11 +6,11 @@ Start at the EMQX Cloud sign up page
 
 1. Enter your personal information:
 
+   * Full name
    * Email
    * Password
-   * Full name
-   * Phone number
    * Company
+   * Phone number
    * Use case
    * Country/Region
 
@@ -18,8 +18,7 @@ Start at the EMQX Cloud sign up page
 
 2. Click `Sign Up` to register to create your account.
    EMQX Cloud will automatically send a confirmation email to the email address you provided.
-3. Click on the link in the confirmation email to verify your new account. The link will verify your account
-   and redirect you to the login page.
+3. Click on the link in the confirmation email to verify your new account. The link will verify your account and redirect you to the login page.
 4. Now you are ready to log in to EMQX Cloud.
 
 ## [Login to the account](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud)

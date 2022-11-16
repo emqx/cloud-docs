@@ -1,10 +1,9 @@
 # Get Started with EMQX Cloud
 
-Welcome to EMQX Cloud! EMQX Cloud is the first fully hosted MQTT 5.0 public cloud service in the world. With the support of EMQX Cloud,
-you can create an EMQX cluster on the cloud and use all the features of EMQX Enterprise Edition. This allows you to spend more time on business connections and less time for EMQX operation, maintenance, and management. This tutorial will guide you through the process of creating and connecting to EMQX Cloud deployment. Before starting, let's review some core concepts and phrases:
+Welcome to EMQX Cloud! EMQX Cloud is the first fully hosted MQTT 5.0 cloud messaging service in the world. With the support of EMQX Cloud, you can create an EMQX cluster on the cloud and use the features of EMQX Enterprise Edition. This allows you to spend more time on business connections and less time for EMQX operation, maintenance, and management. This tutorial will guide you through the process of creating and connecting to EMQX Cloud deployment. Before starting, let's review some core concepts and phrases:
 
 * Deployment: EMQX Enterprise cluster hosted on EMQX Cloud.
-* Basic Plan: Single node version of EMQX Enterprise.
+* Standard Plan: Single node version of EMQX Enterprise.
 * Professional Plan: An EMQX Enterprise Edition cluster with separate networks, instances, and load balancing.
   
   <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/UX2KAM7FVLs/?autoplay=1&null" />
@@ -42,12 +41,11 @@ If you've already registered an account, you could log in by the following steps
 
 ![login](./_assets/log_in.png)
 
-### [Forget Password](https://www.emqx.com/en/forgot-password?continue=https://www.emqx.com/en/cloud)
+### [Forget Password](https://accounts.emqx.com/forgot-password?continue=https%3A%2F%2Fwww.emqx.com%2Fen%2Fcloud)
 
 If you forget your password, you could click on `Forget your password` and enter your email address, we will send a verification email to your mailbox.
 
-You can click Get back Password in the verification email to create a new password, 
-then you will be redirected to the login page. Enter the new password, and select `Sign in`.
+You can click Get back Password in the verification email to create a new password, then you will be redirected to the login page. Enter the new password, and select `Sign in`.
 ![login](./_assets/forget_password.png)
 
 ## Console Guide
@@ -68,4 +66,4 @@ You can follow these steps shown below to quickly complete the EMQX Cloud Consol
 
 4. Use the MQTT client or SDK that you are familiar with to [connect to the deployment](../connect_to_deployments/overview.md)
 
-   ![authentication](./_assets/mqttx_connect.png)
+   ![authentication](./_assets/mqttx_mqtt.png)
