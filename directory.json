@@ -473,6 +473,10 @@
           "path": "api/clients"
         },
         {
+          "title": "黑名单管理",
+          "path": "api/banned"
+        },
+        {
           "title": "订阅信息",
           "path": "api/subscriptions"
         },
@@ -986,6 +990,10 @@
         {
           "title": "Client Management",
           "path": "api/client"
+        },
+        {
+          "title": "Blacklist Management",
+          "path": "api/banned"
         },
         {
           "title": "Subscription",
