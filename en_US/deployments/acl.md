@@ -4,17 +4,19 @@ Authorization refers to the control of permissions on PUBLISH/SUBSCRIBE operatio
 
 Access control controls permissions for three granularity:
 
+> Note: ACL default is blacklist mode, ACL matching order is: All Users -> User/Client
+
 1. Client ID
 2. Username
 3. All users: That is, permissions on the topic are controlled without any distinction between client ID and username.
 
-Note: By default, access control is in blacklist mode, and only the latest record is valid for the same clientid/username + topic record.
+> Note: By default, access control is in blacklist mode, and only the latest record is valid for the same clientid/username + topic record.
 
 ## View ACL Information
 
 In the `ACL` page of `Authentication & ACL` menu on the left, access control information can be viewed, and the corresponding access control information can be viewed by switching the three granularity at the top.
 
-![auth](./_assets/acl.png)
+![acl](./_assets/acl.png)
 
 ## Add ACL Information
 

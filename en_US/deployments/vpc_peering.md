@@ -126,17 +126,17 @@ Before deleting the peering connection, please make sure that there is no associ
 
 After the Confluent Cloud cluster has been created, we could add peering by the following steps:
 
-* Go to the `Networking` section of the `Cluster settings` page and click on the `Add Peering` button.
+1. Go to the `Networking` section of the `Cluster settings` page and click on the `Add Peering` button.
 
    ![addPeering](./_assets/confluent_addPeering.png)
 
-* Fill in the vpc information. (You could get the information from `VPC Peering` section of the deployment console)
+2. Fill in the vpc information. (You could get the information from `VPC Peering` section of the deployment console)
 
    ![vpc_info](./_assets/confluent_vpc1.png)
 
    ![vpc_info](./_assets/aws_vpc_peering.png)
 
-* When the connection status is `Inactive`, go back to the deployment console to accept the peering request. Fill in the vpc information of the confluent cloud cluster and click `Confirm`. When the vpc status turns to `running`, you successfully create the vpc peering connection.
+3. When the connection status is `Inactive`, go back to the deployment console to accept the peering request. Fill in the vpc information of the confluent cloud cluster and click `Confirm`. When the vpc status turns to `running`, you successfully create the vpc peering connection.
 
    ![vpc](./_assets/aws_vpc_peeing_status.png)
 

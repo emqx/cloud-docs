@@ -6,19 +6,17 @@ The rule describes the three configurations of "where the data comes from", "how
 - Processing rules (SQL): Use `SELECT` clause and `WHERE` clause and built-in processing functions to filter and process data from context information;
 - Response action: If there is a processing result output, the rule will execute the corresponding action, such as persisting to the database, republishing the processed message, and forwarding the message to the message queue. A rule can configure multiple response actions.
 
-
-
 ## Create rules
+
 ::: tip Tip
 Before creating a rule, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md), and [created a resource](resources.md)
 :::
 
 1. We will attach the rule to the TimescaleDB resource as an example. Either create a rule directly from the notification or the resource detail page.
 
-![](./_assets/resource_05.png)
+![resource_05](./_assets/resource_05.png)
 
-![](./_assets/rule_intro_01.png)
-
+![rule_intro_01](./_assets/rule_intro_01.png)
 
 2. In the following rule, we read the time up_timestamp when the message is reported, the client ID, the message body (Payload) from the temp_hum/emqx topic and the temperature and humidity from the message body respectively.
 
@@ -27,20 +25,15 @@ SELECT
 timestamp div 1000 AS up_timestamp, clientid AS client_id, payload.temp AS temp, payload.hum AS hum
 FROM
 "temp_hum/emqx"
-
 ```
 
-![](./_assets/rule_intro_02.png)
-
+![rule_intro_02](./_assets/rule_intro_02.png)
 
 3. Create a new test SQL, click the switch button behind `SQL test`, fill in the corresponding test parameters, and finally click the `SQL test` button.
 
-![](./_assets/rule_intro_03.png)
-
+![rule_intro_03](./_assets/rule_intro_03.png)
 
 4. In the result text area, we will find the output data as expected. Then click the `Next` button to save the rule.
-
-
 
 ## Create Actions
 
@@ -52,43 +45,39 @@ An action solves the problem of "where to send the processed data". It tells EMQ
 
 ```sql
 INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
-
 ```
 
-![](./_assets/rule_intro_12.png)
+![rule_intro_12](./_assets/rule_intro_12.png)
 
 3. One rule can be associated with a few actions. Add another action, and we can change the target resource. For example, we can forward the data to Kafka cluster as well as save the data to RDS.
 
-![](./_assets/rule_intro_05.png)
+![rule_intro_05](./_assets/rule_intro_05.png)
 
-4. If there is a failure on the main action, we can set up a fallback action to ensure a double check. 
+4. If there is a failure on the main action, we can set up a fallback action to ensure a double check.
 
-![](./_assets/rule_intro_06.png)
-
+![rule_intro_06](./_assets/rule_intro_06.png)
 
 ## Rules Operations
 
 ### Edit Rules
+
 Click the edit icon to edit the rule. On this page, you can edit both the rule SQL Template and the actions.
 
-![](./_assets/rule_intro_07.png)
-![](./_assets/rule_intro_08.png)
+![rule_intro_07](./_assets/rule_intro_07.png)
+![rule_intro_08](./_assets/rule_intro_08.png)
   
-
 ### View Monitoring Status
 
 1. Click the rule monitoring icon on the rule list page.
 
-![](./_assets/rule_intro_09.png)
+![rule_intro_09](./_assets/rule_intro_09.png)
 
 2. The panel shows the detail of rule matching status.
 
-![](./_assets/rule_intro_10.png)
-
+![rule_intro_10](./_assets/rule_intro_10.png)
 
 ## Delete rules
 
 In the resource detail page, you can delete the rules in the rule list.
 
-![](./_assets/rule_intro_11.png)
-
+![rule_intro_11](./_assets/rule_intro_11.png)
