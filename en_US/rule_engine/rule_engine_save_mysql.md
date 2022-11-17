@@ -18,6 +18,7 @@ Before you start, you will need to complete the following:
        -e MYSQL_ROOT_PASSWORD=public \
        mysql/mysql-server:5.7
    ```
+
 2. Create a database
 
    ```bash
@@ -27,7 +28,7 @@ Before you start, you will need to complete the following:
    ```
 
 3. Create table
-   
+
    Use the following SQL command to create `temp_hum` table, and this table will be used for storing the temperature and humidity data reported by devices.
 
     ```sql
@@ -42,7 +43,7 @@ Before you start, you will need to complete the following:
     ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
     ```
 
-5. For professional deployment, set up to allow EMQX cluster IP segments to access the database (optional). To get the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
+4. For professional deployment, set up to allow EMQX cluster IP segments to access the database (optional). To get the deployment segments go to Deployment Details → View VPC Peering Connections Information to replicate the deployment VPC CIDR.
 
      ```sql
        # Professional Deployment CIDR: 10.11.x.%
@@ -52,7 +53,7 @@ Before you start, you will need to complete the following:
        GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'public' WITH GRANT OPTION;
      ```
 
-6. Insert test data and view data
+5. Insert test data and view data
 
    ```sql
      INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (FROM_UNIXTIME(1603963414), 'temp_hum-001', 19.1, 55);
@@ -69,7 +70,7 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    Click on `MySQL` under the Data Persistence.
 
    ![mysql](./_assets/mysql.png)
- 
+
    Fill in the information of the mysql database you have just created and click `Test`. If there is an error, you should check if the database configuration is correct. Then click on `New` to create MySQL resource.
 
    ![create resource](./_assets/create_mysql_resource.png)
@@ -84,12 +85,12 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    FROM
    "temp_hum/emqx"
    ```
-   
+
    ![mysql_new_rule](./_assets/mysql_new_rule.png)
 
    You can use `SQL Test` to see the result
 
-   ![mysql_new_rule](./_assets/mysql_create_rule.png) 
+   ![mysql_new_rule](./_assets/mysql_create_rule.png)
 
 3. Add Action
 
@@ -98,6 +99,7 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    ```sql
    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (FROM_UNIXTIME(${up_timestamp}/1000), ${client_id}, ${temp}, ${hum}) 
    ```
+
    ![rule_action](./_assets/mysql_new_action.png)
    Click on `Confirm` to create action.
 
@@ -106,7 +108,6 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    Click on the resource to see the detail.
 
    ![mysql_resource_detail](./_assets/mysql_resource_detail.png)
-
 
 5. Check Rules Monitoring
 
