@@ -270,4 +270,8 @@ Receive the message through the topic for subscription (shadow/${shadow_id}/repl
 }
 ```
 
-## [API Communication](../api/shadow_service.md)
+## API Communication
+
+EMQX Cloud provides APIs to get details from shadow services.
+
+Please see the [API - Shadow Services](../api/shadow_service.md) to learn more.

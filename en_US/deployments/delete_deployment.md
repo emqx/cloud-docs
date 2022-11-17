@@ -6,9 +6,9 @@ Before deleting the deployment, you need to make sure the deployment running sta
 
 2. Click the delete button and fill in the deployment name in the pop-up box
 
-::: tip
-When deleting the deployment, it will clear the Users and ACL, Data Integrations and other data and disconnect the online connection. At the same time, we will stop deployment billing.
-:::
+    ::: tip
+    When you delete a deployment, you will not be able to connect to the deployment, and all data and configuration of the deployment, as well as the enabled value-added services, will be deleted. We will stop billing for the deployment and value-added services.
+    :::
 
 3. Click `Confirm` to complete the deployment deletion
 

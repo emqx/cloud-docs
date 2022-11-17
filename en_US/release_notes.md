@@ -1,8 +1,18 @@
 # Version release
 
+## 2022-10-15
+
+* New Regions in AWS: Tokyo and Northern California
+* Support Shadow Service
+
+## 2022-9-19
+
+* Optimize deployment metrics
+* Available on the AWS Marketplace
+
 ## 2022-8-19
 
-* Add Available Credit as a payment method
+* Available Credit for remittance users
 
 ## 2022-7-19
 

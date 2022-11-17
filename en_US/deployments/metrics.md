@@ -4,21 +4,17 @@ EMQX Cloud provides four incremental metrics: messages, client, packets, and del
 
 ![metrics_line_detail](./_assets/metrics.png)
 
-
-
 ## Message
 
 It shows the incremental status of message sending and receiving in a certain period of time. The following 3 metrics are provided:
 
-| Indicator         | Meaning                                                      |
-| ----------------- | :----------------------------------------------------------- |
+| Indicator         | Meaning                                                                                      |
+| ----------------- | :------------------------------------------------------------------------------------------- |
 | messages_dropped  | The total number of messages discarded before forwarding to the subscription process in EMQX |
-| messages_received | Number of messages received from the client                  |
-| messages_sent     | Number of messages sent to the client                        |
+| messages_received | Number of messages received from the client                                                  |
+| messages_sent     | Number of messages sent to the client                                                        |
 
 ![metrics_line_detail](./_assets/metric_messages.png)
-
-
 
 ## Client
 
@@ -33,8 +29,6 @@ Shows the incremental situation of interaction with the client in a certain peri
 
 ![metrics_line_detail](./_assets/metric_clients.png)
 
-
-
 ## Packets
 
 It shows the increment of the number of bytes sent and received during the time period. The following 2 metrics are provided:
@@ -46,15 +40,13 @@ It shows the increment of the number of bytes sent and received during the time 
 
 ![metrics_line_detail](./_assets/metric_packets.png)
 
-
-
 ## Delivery
 
 It shows the increment of the number of discarded messages within a time period, and provides the following one indicator:
 
-| Indicagor        | Meaning                                         |
-| ---------------- | :---------------------------------------------- |
-| delivery_dropped | Number of message dropped when sending |
+| Indicator                   | Meaning                                                  |
+| --------------------------- | :------------------------------------------------------- |
+| delivery_dropped            | Number of message dropped when sending                   |
 | delivery_dropped_queue_full | Number of message dropped when the message queue is full |
 
 ![metrics_line_detail](./_assets/metric_delivery.png)

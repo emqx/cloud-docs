@@ -7,11 +7,9 @@ This feature is not available for the standard plan
 EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
 
 | Certification Mode     | Support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
-|------------------------|---------------------------------|--------------------|-------------------|-------------|-----------------------|
+| ---------------------- | ------------------------------- | ------------------ | ----------------- | ----------- | --------------------- |
 | one-way Authentication | Yes                             | required           | required          | required    | not required          |
 | two-way Authentication | Yes                             | required           | required          | required    | required              |
-
-
 
 ## Certificate Restrictions
 
@@ -64,26 +62,25 @@ EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL c
 2. Go to the deployment details and click on the `+TLS/SSL configuration` button to configure the certificate contents, either by uploading a file or by filling in the certificate contents directly
    - Type of certification:
      - One-way authentication: only the client verifies the server-side certificate
-       
+
        <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null" />
-   
+
      - Two-way authentication: the client and the server validate each other's certificates.
-       
+
        <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null" />
-     
-   - Certificate: server-side certificate
-   - Certificate chain: the certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
+
+   - Certificate body: server-side certificate
+   - Certificate chain: the server-side certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
    - Certificate private key: server-side private key
    - Client CA certificate: the client's CA certificate that is required when selecting two-way certification
 3. When you have completed the form, click on `Confirm`.
 
 ![tls](./_assets/tls.png)
 
-
-
 ## Test connections
 
 Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+
 - To create a new connection, enter the Name, Client ID is randomly generated
 - Select Host and fill in the deployed connection address and port
   - If you select an SSL connection, select ports `mqtts://` and `8883`
@@ -105,8 +102,6 @@ Deleting the certificate will disconnect the client from `8883` and `8084`, plea
 1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
 2. To access the deployment details, click on the delete button for the certificate in the `TLS/SSL Configuration` section.
 3. Click on "OK" in the dialog to complete the deletion.
-
-
 
 ## Creating Self-Signed TSL/SSL Certificate
 
@@ -140,7 +135,7 @@ openssl genrsa -out server.key 2048
 
 2. Create `openssl.cnf` file
 
-Replace the DNS.1 address with your deployment address
+Replace the IP.1 or DNS.1 address with your deployment address
 
 ```
 cat << EOF > ./openssl.cnf
@@ -170,6 +165,7 @@ subjectAltName = @alt_names
 
 [alt_names]
 # EMQX Cloud deployment connections address
+# IP.1 = <Connect Address>
 DNS.1 = tls.emqx.io
 EOF
 ```
@@ -194,18 +190,20 @@ openssl x509 -req \
 ```
 
 5. View server-side certificate information
+  
 ```bash
 openssl x509 -noout -text -in server.crt
 ```
 
 6. Verify the certificate
+
 ```bash
 openssl verify -CAfile server-ca.crt server.crt
 ```
 
 ### Creating a client Certificate
 
-For two-way authentication, you will need to generate the client CA certificate first 
+For two-way authentication, you will need to generate the client CA certificate first
 
 #### Generate client CA certificate
 
@@ -229,7 +227,7 @@ You should adjust `subj` to actual use.
 openssl genrsa -out client.key 2048
 ```
 
-2. Generate the client-side certificate request file `server.csr`
+2. Generate the client-side certificate request file `client.csr`
 
 ```bash
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
@@ -242,23 +240,24 @@ openssl x509 -req -days 365 -sha256 -in client.csr -CA client-ca.crt -CAkey clie
 ```
 
 4. View client-side certificate information
+
 ```bash
 openssl x509 -noout -text -in client.crt
 ```
 
 5. Verify the certificate
+
 ```bash
 openssl verify -CAfile client-ca.crt client.crt
 ```
-
-
 
 ## FAQ
 
 1. The certificate contains several certificates
   
    Purchased certificates contain intermediate certificates, which open the certificate in text form, and multiple certificates in the order of User Certificate - Intermediate Certificate - Root Certificate. Generally, a certificate contains a user certificate and several intermediate certificates, you need to separate the user certificate from the intermediate certificate and fill in the certificate chain with the intermediate certificate.
-   ```
+
+   ```bash
    -----BEGIN CERTIFICATE-----
    
    User Certificate
@@ -277,6 +276,7 @@ openssl verify -CAfile client-ca.crt client.crt
    
    -----END CERTIFICATE-----
    ```
+
 2. Lack of certificate chain
   
     Certificate chain completion: https://myssl.com/chain_download.html
