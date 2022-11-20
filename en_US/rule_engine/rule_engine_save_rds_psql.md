@@ -14,7 +14,7 @@ Before you start, you need to complete the following operations:
 
     - Use the same VPC that has been peered to the EMQX deployment.
     - Storage Autoscaling and Backups do not need to be enabled for testing.
-    - Do not enable public access. EMQX connects to the MySQL instance via private IP through VPC peering. Enabling public access would cause the AWS-generated endpoint address to point to the public IP address.
+    - Do not enable public access. EMQX connects to the PostgreSQL instance via private IP through VPC peering. Enabling public access would cause the AWS-generated endpoint address to point to the public IP address.
     - In Database Authentication, choose "Password authentication" for simplicity.
 
 2. Open port 5432 on the RDS instance's security group for requests from the EMQX cluster.
@@ -52,7 +52,7 @@ Before you start, you need to complete the following operations:
     sudo apt-get update
 
     # Install the latest version of PostgreSQL.
-    sudo apt-get -y install postgresql
+    sudo apt-get -y install postgresql-client
     ```
 
     Connect to PostgreSQL with the command `psql -h <hostname> -p 5432 -U <master_username> -W` and type in the password when prompted. The hostname can be found in the Amazon RDS console as shown below.
@@ -80,58 +80,58 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 1. Create PostgreSQL Resource.
 
-   Click on `PostgreSQL` under the Data Persistence.
+    Click on `PostgreSQL` under the Data Persistence.
 
-   ![EMQX Cloud - PostgreSQL Integration Tile](./_assets/rds_psql_integration_tile.png)
+    ![EMQX Cloud - PostgreSQL Integration Tile](./_assets/rds_psql_integration_tile.png)
 
-   Fill in the information of the PostgreSQL database you have just created and click `Test`. Make sure to add the port number at the end of the server hostname (`:5432`). If there is an error, you should check if the database configuration is correct. Then click on `New` to create PostgreSQL resource.
+    Fill in the information of the PostgreSQL database you have just created and click `Test`. Make sure to add the port number at the end of the server hostname (`:5432`). If there is an error, you should check if the database configuration is correct. Then click on `New` to create PostgreSQL resource.
 
-   ![EMQX Cloud - PostgreSQL Integration Configuration](./_assets/rds_psql_integration_config.png)
+    ![EMQX Cloud - PostgreSQL Integration Configuration](./_assets/rds_psql_integration_config.png)
 
 2. Create Rule.
 
-   Choose the MySQL resource under Configured Resources, click on `New Rule` and enter the following rule to match the SQL statement. In the following rule, we read the time when the message was reported `up_timestamp`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
+    Choose the MySQL resource under Configured Resources, click on `New Rule` and enter the following rule to match the SQL statement. In the following rule, we read the time when the message was reported `up_timestamp`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
 
-   ```sql
-   SELECT
-   timestamp AS up_timestamp, clientid AS client_id, payload.temp AS temp, payload.hum AS hum  
-   FROM
-   "temp_hum/emqx"
-   ```
+    ```sql
+    SELECT
+    timestamp AS up_timestamp, clientid AS client_id, payload.temp AS temp, payload.hum AS hum  
+    FROM
+    "temp_hum/emqx"
+    ```
 
-   You can use `SQL Test` to see the result.
+    You can use `SQL Test` to see the result.
 
-   ![PostgreSQL Integration - Add new rule](./_assets/postgresql_new_rule.png)
+    ![PostgreSQL Integration - Add new rule](./_assets/postgresql_new_rule.png)
 
 3. Add Action.
 
-   Click on the Next action in the bottom to enter action view. Select the resource created in the first step, select `Data Persistence - Data to PostgreSQL` as Action Type, and enter the following data to insert into the SQL template.
+    Click on the Next action in the bottom to enter action view. Select the resource created in the first step, select `Data Persistence - Data to PostgreSQL` as Action Type, and enter the following data to insert into the SQL template.
 
-   ```sql
-   INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (NOW(), ${client_id}, ${temp}, ${hum})
-   ```
+    ```sql
+    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (NOW(), ${client_id}, ${temp}, ${hum})
+    ```
 
-   ![PostgreSQL Integration - Add action](./_assets/postgresql_new_action.png)
+    ![PostgreSQL Integration - Add action](./_assets/postgresql_new_action.png)
 
-   Click on `Confirm` to create action.
+    Click on `Confirm` to create action.
 
 4. View Resource Detail.
 
-   Click on the resource to see the detail.
+    Click on the resource to see the detail.
 
-   ![PostgreSQL Integration - Resource Detail](./_assets/rds_psql_resource_detail.png)
+    ![PostgreSQL Integration - Resource detail](./_assets/rds_psql_resource_detail.png)
 
 5. Check Rules Monitoring.
 
-   Click the monitor icon of rule to see the metrics.
+    Click the monitor icon of rule to see the metrics.
 
-   ![PostgreSQL Integration - Rule Monitor](./_assets/rds_psql_rule_monitor.png)
+    ![PostgreSQL Integration - Rule monitor](./_assets/rds_psql_rule_monitor.png)
 
 ## Test
 
 1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data.
 
-   You need to replace `broker.emqx.io` with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
+    You need to replace `broker.emqx.io` with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
 
     - topic: `temp_hum/emqx`
     - payload: `{ "temp": "20.1", "hum": "57" }`
