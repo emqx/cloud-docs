@@ -836,6 +836,10 @@
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
         {
+          "title": "Bridge data to GCP Pub/Sub",
+          "path": "rule_engine/rule_engine_gcp_pubsub"
+        },
+        {
           "title": "Save data to TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaledb"
         },
