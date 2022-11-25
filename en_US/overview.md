@@ -67,8 +67,6 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 
 ![device_manager_1](./_assets/device_manage1.png)
 
-![device_manager_2](./_assets/device_manage2.png)
-
 - **Device authentication information management**: The platform could add, delete, search, and update authentication information via REST API
 
 - **Device online status view**:
@@ -105,8 +103,7 @@ EMQX Cloud use data integrations to configure rules for processing and respondin
 
 Data integrations not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
 
-![](./rule_engine/_assets/integration_intro_01.png)
-
+![integration_intro](./_assets/integration_intro_01.png)
 
 - **Send data to HTTP services and other MQTT services**:
   - Send data to Web services.
