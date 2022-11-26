@@ -419,6 +419,10 @@
           "path": "vas/codec"
         },
         {
+          "title": "自定义函数场景案例",
+          "path": "vas/codec_demo"
+        },
+        {
           "title": "影子服务",
           "path": "vas/shadows"
         }
