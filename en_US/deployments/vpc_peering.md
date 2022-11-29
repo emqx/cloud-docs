@@ -65,7 +65,29 @@ Before deleting the peering connection, please make sure that there are no assoc
 
 ## Azure VPC Peering Connection
 
-This feature is now not available. If you need to set up VPC peering connection with Azure, please submit [tickets](../feature/tickets.md) to contact us.
+### Step 1
+
+Go to the deployment console and click the **+ VPC Peering Connection** button. A pop-up window will appear and ask for information on **Subscription ID**, **Tenant ID**, **Resource Group Name**, and **VNet Name**.
+
+### Step 2
+
+Go to the **Virtual Networks** section in your Microsoft Azure workplace. Find the network you plan to build a VPC peering connection, and copy and paste the **Subscription ID**, **Resource Group Name**, and **VNet Name** into the pop-up window in the EMQX Cloud console.
+
+### Step 3
+
+In your Microsoft Azure workplace, go to the **Azure Active Directory** section, and copy and paste the **Tenant ID** into the pop-up window in the EMQX Cloud console.
+
+### Step 4
+
+After providing all the required information:
+
+1.  Click on the **Next** button.
+2.  Follow the guidelines shown on the page to set up the Vnet.
+3.  After doing all the steps, click on the **Validated** button to validate the setting of the connection and then click on **Initiate Peering**.
+
+### Step 5
+
+If all the provided information is correct, after several minutes, when the status of the VPC peering connection turns to "running," the VPC peering connection with your Azure services is created successfully.
 
 ## GCP VPC Peering Connection
 
