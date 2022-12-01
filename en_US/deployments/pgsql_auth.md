@@ -116,8 +116,8 @@ You can use the following placeholders in the authentication SQL, which will be 
 
 You can adapt the authentication SQL to your business needs, such as adding multiple query conditions, using database preprocessing functions, to achieve more business-related functionality. But in any case, the authentication SQL needs to meet the following conditions:
 
-1. the query result must contain a password field, which is used by EMQX Cloud to compare with the client password
-2. If the salt configuration is enabled, the query result must contain the salt field, which is used by EMQX Cloud as the salt value. 3.
+1. The query result must contain a password field. EMQX Cloud uses this field to compare with the client password. If other encryption methods other than plain are selected, the password field in the mqtt_user table needs to insert the string encrypted by the corresponding encryption algorithm.
+2. If the salt configuration is enabled, the query result must contain the salt field, which is used by EMQX Cloud as the salt value.
 3. There can only be one query result, and only the first result is taken as valid data when there are multiple results
 
 The default configuration example data is as follows.

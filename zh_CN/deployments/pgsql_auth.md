@@ -118,7 +118,7 @@ select password from mqtt_user where username = '%u' limit 1;
 
 可以根据业务需要调整认证 SQL，如添加多个查询条件、使用数据库预处理函数，以实现更多业务相关的功能。但是任何情况下认证 SQL 需要满足以下条件：
 
-1. 查询结果中必须包含 password 字段，EMQX Cloud 使用该字段与客户端密码比对
+1. 查询结果中必须包含 password 字段，EMQX Cloud 使用该字段与客户端密码比对，若选择了非明文的其他加密方式，mqtt_user 表中的 password 字段需要插入对应加密算法加密后的字符串
 2. 如果启用了加盐配置，查询结果中必须包含 salt 字段，EMQX Cloud 使用该字段作为 salt（盐）值
 3. 查询结果只能有一条，多条结果时只取第一条作为有效数据
 
