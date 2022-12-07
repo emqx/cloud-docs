@@ -382,7 +382,7 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <td style="text-indent: 2em;">Max number of connections</td>
       <td>10,000</td>
       <td>50,000</td>
-      <td>无限制</td>
+      <td>Unlimited</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">VPC peering (private network)</td>
