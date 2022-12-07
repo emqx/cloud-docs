@@ -8,7 +8,7 @@ EMQX Cloud has fewer usage restrictions than the public cloud IoT Hub platform. 
 
 | **Limitation Description**         | **EMQX**                                             | **Public Cloud IoT Hub**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |
-| The maximum number of simultaneous online long connections  | Depends on specifications, choice from 1000-10M+. For more than 200K please send tickets for application.| 10K-500K                                 |
+| The maximum number of simultaneous online long connections  | Depends on specifications, choice from 1000-10M+. For more than 50K please send tickets for application.| 10K-500K                                 |
 | Number of connections established per second     | 10K                                                   | 200-500                                |
 | Number of topics subscribed to by a single client   | Unlimited                                                  | 10-100                                 |
 | Single-client subscription requests per second  | Unlimited                                                  | 10-10K                                  |
