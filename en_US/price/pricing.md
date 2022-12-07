@@ -14,7 +14,7 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
 
 
 ## Definition
-**Connections :** The number of clients connecting to the deployment (including the sessions of offline clients) at the same time. Retained sessions, i.e. when the client disconnects, the session remains until the session times out.
+**Connections :** The number of clients connecting to the deployment (including disconnected clients that keep session) at the same time. [Retained sessions](https://www.emqx.com/en/blog/mqtt-session), i.e. when the client disconnects, the session remains until the session times out.
 **Traffic :** Traffic, including free traffic, measures all traffic flowing out of the deployment.
    - Traffic over VPC Peering or PrivateLink is not measured.
    - Traffic from messages received by the deployment, such as messages sent to the deployment from the clients, is not measured.
