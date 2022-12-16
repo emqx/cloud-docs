@@ -22,6 +22,10 @@ Yes.
 
 If you have special usage requirements, or other usage conditions, you can submit a [ticket](./feature/tickets.md) or send an email (cloud-support@emqx.io) to us, and we will reply within 24 hours.
 
+### How many deployments can I create?
+
+The EMQX Cloud allows you to create only 3 deployments per account by default, if you want to create more deployments please submit a ticket to increase the quota.
+
 ### Which protocol connections are supported?
 
 EMQX Cloud deployment only supports MQTT over TLS/SSL, WebSockets over TLS/SSL protocol connections.
