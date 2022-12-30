@@ -61,4 +61,4 @@ Serverless(Beta) 部署注意事项：
 
 * 连接之后即可以发布和订阅消息
    
-   ![mqttx_mqtt](./_assets/mqttx_serverless_connect.png)
+   ![mqttx_mqtt](./_assets/create_serverless_connect.png)
