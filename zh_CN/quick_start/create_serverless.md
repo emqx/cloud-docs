@@ -14,7 +14,7 @@ Serverless(Beta) 部署注意事项：
 
 
 
-## 开始创建免费试用部署
+## 创建部署
 
 1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
 
@@ -28,16 +28,16 @@ Serverless(Beta) 部署注意事项：
 
    ![create_serverless](./_assets/create_serverless.png)
 
-4. 点击立即部署，并同意 EMQX Cloud 标准服务条款和免费试用申明条款
+4. 点击立即部署，并同意 EMQX Cloud 标准服务条款和 Serverless 服务使用条款
 
 
-5. 等待 5 分钟左右，直至部署状态为**运行中**
+5. 稍事等待至部署状态为**运行中**
 
    ![serverless_running](./_assets/serverless_running.png)
 
 ## 连接到您的免费试用部署
 
-在连接到您的免费试用部署之前，您需等待免费试用部署状态由 **创建中** 转为 **运行中**
+在连接到您的部署之前，确认部署状态由 **创建中** 转为 **运行中**
 
 1. 添加客户端认证信息
 
@@ -58,4 +58,7 @@ Serverless(Beta) 部署注意事项：
 * 设置 MQTT X 的连接信息并连接到部署 
 
     ![mqttx_mqtt](./_assets/mqttx_serverless.png)
-  
+
+* 连接之后即可以发布和订阅消息
+   
+   ![mqttx_mqtt](./_assets/mqttx_serverless_connect.png)
