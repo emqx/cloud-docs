@@ -322,6 +322,10 @@
           "path": "rule_engine/rule_engine_bridge_rabbitmq"
         },
         {
+          "title": "桥接数据到 RocketMQ",
+          "path": "rule_engine/rule_engine_rocketmq"
+        },
+        {
           "title": "保存数据到 MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
@@ -838,6 +842,10 @@
         {
           "title": "Bridge data to GCP Pub/Sub",
           "path": "rule_engine/rule_engine_gcp_pubsub"
+        },
+        {
+          "title": "Bridge data to RocketMQ",
+          "path": "rule_engine/rule_engine_rocketmq"
         },
         {
           "title": "Save data to TimescaleDB",
