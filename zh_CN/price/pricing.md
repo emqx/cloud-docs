@@ -444,6 +444,12 @@ Serverless 在 Beta 测试期间不收取任何连接费用和流量费用。
       <td></td>
    </tr>
    <tr>
+      <td style="text-indent: 2em;">流量包</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
       <td style="text-indent: 2em;">影子服务</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -453,12 +459,6 @@ Serverless 在 Beta 测试期间不收取任何连接费用和流量费用。
       <td style="text-indent: 2em;">自定义函数</td>
       <td>&#10007</td>
       <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">流量包</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>

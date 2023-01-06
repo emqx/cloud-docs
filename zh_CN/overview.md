@@ -36,7 +36,7 @@ EMQX Cloud 提供的 MQTT 服务支持双向通信和数据采集模型的混合
 
 EMQX Cloud 分为三个版本，支持在全球主流的公有云上部署专属于您的全托管 MQTT 服务，从独立的开发者到全球化的行业领导者，都能找到合适的 EMQX Cloud 产品。
 
-TODO PIC
+![emqx_cloud_product](./_assets/product_edition.png)
 
 1. Serverless：共享集群的 MQTT 服务，按使用量计费，免费额度以内使用完全免费。最高1000同时在线连接。
 2. 专有版：独立集群的 MQTT 服务。<br/>
@@ -46,7 +46,7 @@ TODO PIC
 
 ## 产品能力
 
-EMQX Cloud 作为全托管的 EMQX 接入平台服务，提供了设备接入、设备管理、消息存储等功能。
+EMQX Cloud 作为全托管的 EMQX 接入平台服务，提供了设备接入、设备管理、数据集成（消息存储）等功能。
 
 ### 设备接入
 
