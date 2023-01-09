@@ -56,7 +56,7 @@ You can refer to [AWS Help](https://docs.aws.amazon.com/vpc/latest/privatelink/c
 
     ![lb](./_assets/p4.png)
 
-6. Click the Data Integration menu on the left, find the Redis resource, fill in the `Redis Server` on the New Resource page with the private connection service connection domain name and port, click `Test Connection`, and the resource will be available.
+6. Click the Data Integration menu on the left, find the Redis resource, fill in the `Redis Server` on the New Resource page with the private connection service connection domain and port, click `Test Connection`, and the resource will be available.
 
     ![lb](./_assets/privatelink_en_resource.png)
 

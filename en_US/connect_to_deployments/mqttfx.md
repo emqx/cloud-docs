@@ -18,7 +18,7 @@ TCP and TLS protocols are supported **but WebSocket**.
 Get the connection address and port in the [Deployment Overview](../deployments/view_deployment.md) (the following **xxxxx represents a random port**, the specific port information **please refer to the information on the deployment overview page**).
 
 - Professional plan address: IP; port: 1883(mqtt), 8083(ws) is enabled by default, you can enable port 8883(mqtts) and 8084(wss) by configuring TLS/SSL
-- Standard plan address: domain name ending with emqx.cloud suffix; port: xxxxx (mqtt), xxxxx (ws), xxxxx (mqtts), xxxxx (wss)
+- Standard plan address: domain ending with emqx.cloud suffix; port: xxxxx (mqtt), xxxxx (ws), xxxxx (mqtts), xxxxx (wss)
 
 ### Authentication
 

@@ -10,11 +10,11 @@ If you need other protocol support, you can submit a ticket or send an email (cl
 
 **Professional Plan** deployments can be scaled smoothly without disrupting business. You can contact us by submitting a ticket or emailing cloud-support@emqx.io for more information.
 
-## How to bind a domain name？
+## How to bind a domain？
 
 When you create a deployment in EMQX Cloud, you will be given an MQTT connection address, which is displayed as an IP in the Professional deployment and as a second-level domain ending in emqx.cloud in the Standard deployment.
 
-You may already have your own domain name and would like to be able to bind to your own domain.
+You may already have your own domain and would like to be able to bind to your own domain.
 
 > Note: mqtts and wss ports will not be available on Standard after the domain is bound.
 
