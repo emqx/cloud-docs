@@ -18,7 +18,7 @@ EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL c
   - 1024 bit RSA (RSA_1024)
   - 2048 bit RSA (RSA_2048)
 
-- The certificate must be an SSL/TLS X.509 version 3 certificate. It must contain the public key, the fully qualified domain name (FQDN) or IP address of the website, and information about the publisher. The certificate can be self-signed by your private key or the private key of the issuing CA. If the certificate is signed by a CA, the certificate chain must be included when importing the certificate.
+- The certificate must be an SSL/TLS X.509 version 3 certificate. It must contain the public key, the fully qualified domain (FQDN) or IP address of the website, and information about the publisher. The certificate can be self-signed by your private key or the private key of the issuing CA. If the certificate is signed by a CA, the certificate chain must be included when importing the certificate.
 
 - The certificate must be valid. The certificate cannot be imported within **60 days** before the beginning and end of the validity period.
 
