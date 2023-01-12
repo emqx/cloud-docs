@@ -4,13 +4,13 @@ We offer a variety of flexible product specifications to support the deployment 
 
 ## Product Plans
 
-EMQX Cloud is available in three plans: Standard, Professional, and Premium.
+EMQX Cloud is available in two plans: Standard, Professional.
 
 ![plan](./_assets/pricing.png)
 
 - Standard: Get started with EMQX easily. Minimal configuration required. The Standard plan offers a 14-day free trial.
 - Professional: For mission-critical applications with workloads. Advanced configuration controls, including TLS config, VPC peering, Data Integrations. The Professional plan is available for a 14-day free trial.
-- Premium: For building enterprise-grade IoT platforms. Supports industrial protocols, edge computing, and data persistence. Deployments can be customized to your needs.
+
 
 
 ## Definition
@@ -67,11 +67,6 @@ EMQX Cloud is available in three plans: Standard, Professional, and Premium.
    </tr>
    <tr>
       <td>>50,000 connections</td>
-      <td colspan="3" align="center">Contact sales</td>
-   </tr>
-   <tr>
-      <td>Premium</td>
-      <td>Unlimited</td>
       <td colspan="3" align="center">Contact sales</td>
    </tr>
 </table>

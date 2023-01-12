@@ -1,8 +1,8 @@
-# 创建免费试用部署
+# 创建免费专有版试用部署
 
 对于首次使用 EMQX Cloud 的客户，我们为您提供了 **一次** 长达 **14** 天的试用机会来免费了解和测试我们的产品。
 
-EMQX Cloud 免费试用部署规格如下：
+EMQX Cloud 专有版免费试用部署规格如下：
 
 * 基础版 1000 线规格提供一次最高 14 天的免费试用。
 
@@ -36,7 +36,7 @@ EMQX Cloud 免费试用部署注意事项：
 
    ![first_create_deployment](./_assets/first_create_deployment.png)
 
-3. 选择 `基础版免费试用`
+3. 选择专有版，并且选择 1000 连接规格的部署
 
    ![create_free_trial](./_assets/create_free_trial.png)
 
