@@ -2,20 +2,6 @@
 
 部署是由 EMQX Cloud 管理的 EMQX 集群。
 
-
-
-
-## [价格计算](../price/calculator.md)
-查看 EMQX Cloud 支持的云服务商、地区以及不同规格部署**每小时**价格。
-
-
-
-## [创建一个新的部署](./create_deployment.md)
-
-创建新的 EMQX Cloud 部署的分步指南。
-
-
-
 ## 部署
 
 查看和管理您创建的所有部署。

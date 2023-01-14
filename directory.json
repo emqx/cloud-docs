@@ -46,6 +46,10 @@
           "path": "quick_start/introduction"
         },
         {
+          "title": "创建 Serverless(Beta) 部署",
+          "path" : "quick_start/create_serverless"
+        },
+        {
           "title": "创建免费试用部署",
           "path": "quick_start/create_free_trial"
         },
@@ -267,7 +271,7 @@
       ]
     },
     {
-      "title": "数据集成",
+      "title": "与第三方数据系统集成",
       "children": [
         {
           "title": "数据集成简介",

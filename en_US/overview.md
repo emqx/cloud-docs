@@ -40,7 +40,7 @@ EMQX Cloud comes in three plans, each with multiple specifications, and we suppo
 
 1. Standard: Get started with EMQX easily. Minimal configuration required.
 2. Professional: For mission-critical applications with workloads. Advanced configuration controls, including TLS config, VPC peering, Data Integrations.
-3. Premium: For building enterprise-grade IoT platforms. Supports industrial protocols, edge computing, and data persistence. Deployments can be customized to your needs.
+3. BYOC: Bring Your Own Cloud. Run EMQX Cluster in your own cloud, managed by EMQX. Keep your data safe and secure in your own data center.For enterprise-reliable cloud environment. Coming soon.
 
 
 ## Product Capabilities
@@ -63,7 +63,7 @@ Multi-protocol and private protocol support, please contact us by [ticket](featu
 
 ### Device Management
 
-EMQX Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. The premium plan of EMQX Cloud provides enterprise-class device management capabilities, allowing users to create and manage device objects directly with the enterprise plan, and manage edge endpoint devices and gateway devices with features unique to the premium plan such as device shadowing and cloud edge collaboration.
+EMQX Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. 
 
 ![device_manager_1](./_assets/device_manage1.png)
 
@@ -88,14 +88,9 @@ EMQX Cloud Standard and Professional plans provide rich REST APIs that allow use
 
 - **Business statistics such as messages sent and received and number of connections**: Get the relevant statistics through REST API.
 
-**Professional and Premium plans only**
+**Professional only**
 
 - **Bridging/storage of device messages**: Store device events (up/down, subscribe/unsubscribe, message publishing) and message data to private databases (mainstream relational/non-relational, various temporal databases), message queues Kafka, and self-built web services via data integrations.
-
-**Premium Plan only**
-
-- **Device Shadowing**：Indirectly get the status of the device, whether it is offline or not, through device shadowing, and modify the device properties through device shadowing. Automatic synchronization of device shadow status when the device is online.
-- **Edge Computing**: Create and manage edge gateways and end devices through the Premium plan management platform, and configure edge gateways and devices.
 
 ### Data Integrations
 
@@ -109,7 +104,7 @@ Data integrations not only provides a clear and flexible "configuration-based" b
   - Send data to Web services.
   - Bridge data to MQTT Broker.
 
-**Professional and Premium plans only**
+**Professional plans only**
 
 - **Save device event information, message data to database, drive business data with device events**:
   - Save data to MySQL.
@@ -124,7 +119,7 @@ Data integrations not only provides a clear and flexible "configuration-based" b
   - Save data to TimescaleDB.
   - Save data to InfluxDB.
 
-**Professional and Premium plans only**
+**Professional plans only**
 
 - **Bridge data to Kafka, RabbitMQ, and other messaging and stream processing platforms**:
   - Bridge data to Kafka.
@@ -133,7 +128,7 @@ Data integrations not only provides a clear and flexible "configuration-based" b
   - Bridge data to RabbitMQ.
   - Bridge data to RPC services.
 
-**Professional and Premium plans only**
+**Professional plans only**
 
 - **Consume messages and sent down to device, transaction-level platform commands sent down**
   - Consume messages from Kafka to EMQX.
