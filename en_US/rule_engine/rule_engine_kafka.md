@@ -44,7 +44,7 @@ Kafka configuration
     
     ```
 
-   If the topic is successfuly created, the message pf `Created topic emqx` will be returned.
+   If the topic is successfuly created, the message of `Created topic emqx` will be returned.
 
 ## Deployment Data Integrations Configuration
 
