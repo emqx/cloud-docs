@@ -72,7 +72,7 @@ EMQX Cloud 数据集成 提供了以下七个可用的事件订阅主题。
 | disconnected_at | 终端连接断开时间 (s)                   |
 | event           | 事件类型，固定为 "client.disconnected" |
 | node            | 事件触发所在节点                       |
-| peername        | MQTT Session 过期时间                  |
+| expiry_interval | MQTT Session 过期时间                  |
 | sockname        | emqx 监听的 IPAddress 和 Port          |
 | timestamp       | 事件触发时间 (ms)                      |
 | username        | 用户名                                 |

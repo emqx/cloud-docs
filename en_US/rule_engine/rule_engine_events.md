@@ -73,7 +73,7 @@ The fields are explained as follows.
 | disconnected_at | Terminal disconnection completion time (s) |
 | event           | Event type, fixed at "client.disconnected" |
 | node            | Node name of the trigger event             |
-| peername        | IPAddress and Port of terminal             |
+| expiry_interval | MQTT Session Expiration time               |
 | sockname        | IPAddress and Port listened by emqx        |
 | timestamp       | Event trigger time (ms)                    |
 | username        | Current MQTT username                      |

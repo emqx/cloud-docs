@@ -43,7 +43,7 @@ Configure the required parameters for permission authentication on the form page
 
   ::: tip
 
-- If the current deployment is Basic deployment, please fill in the public address for the server address
+- If the current deployment is Standard deployment, please fill in the public address for the server address
 - If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the internal network address for the server address.
 - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
   :::

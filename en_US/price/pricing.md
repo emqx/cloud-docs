@@ -284,6 +284,18 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <td>&#10003</td>
    </tr>
    <tr>
+      <td style="text-indent: 2em;">GCP Pub/Sub</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Azure Event hubs</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
       <td style="text-indent: 2em;">MySQL</td>
       <td>&#10007</td>
       <td>&#10003</td>

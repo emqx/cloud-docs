@@ -165,8 +165,8 @@ subjectAltName = @alt_names
 
 [alt_names]
 # EMQX Cloud deployment connections address
-# IP.1 = <Connect Address>
-DNS.1 = tls.emqx.io
+# IP.1 = <IP Connect Address>
+DNS.1 = <Domain Connect Address>
 EOF
 ```
 

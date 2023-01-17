@@ -852,6 +852,10 @@
           "path": "rule_engine/rule_engine_rocketmq"
         },
         {
+          "title": "Bridge data to Azure Event hubs",
+          "path": "rule_engine/rule_engine_azure_event_hubs"
+        },
+        {
           "title": "Save data to TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaledb"
         },

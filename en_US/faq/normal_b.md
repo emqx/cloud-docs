@@ -6,11 +6,7 @@ EMQX Cloud deployment supports MQTT over TLS/SSL and WebSockets over TLS/SSL pro
 
 If you need other protocol support, you can submit a ticket or send an email (cloud-support@emqx.io) to us.
 
-## How can I scale deployment?
-
-**Professional Plan** deployments can be scaled smoothly without disrupting business. You can contact us by submitting a ticket or emailing cloud-support@emqx.io for more information.
-
-## How to bind a domain？
+## How to bind a domain name？
 
 When you create a deployment in EMQX Cloud, you will be given an MQTT connection address, which is displayed as an IP in the Professional deployment and as a second-level domain ending in emqx.cloud in the Standard deployment.
 
