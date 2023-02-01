@@ -79,6 +79,7 @@ This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - WebSocket Port: **8083**
+- WebSocket Secure Port: **8084**
 
 ### Connect
 
@@ -185,6 +186,28 @@ Use [MQTT 5.0 client tool - MQTT X](https://mqttx.app/) as another client to tes
 You can see that MQTT X can receive messages from the browser side normally, as can be seen when sending a message to the topic using MQTT X.
 
 ![reactmqtttest.png](https://assets.emqx.com/images/da008ae3544a83a3efa78266190ea364.png)
+
+## FAQ
+
+1. How to use self-signed certificates? How to use two-way TLS/SSL authentication?
+
+   Due to the browser limitations, it is not supported temporarily.
+   For more details, please refer to the following MQTT.js issues:
+   <https://github.com/mqttjs/MQTT.js/issues/1515>
+   <https://github.com/mqttjs/MQTT.js/issues/741>
+
+2. How to use one-way TLS/SSL authentication with CA signed certificates?
+
+   ```javascript
+   const options = {
+     clientId: "emqx_cloud_" + Math.random().toString(16).substring(2, 8),
+     // auth
+     username: "xxx",
+     password: "xxx",
+     // other params ...
+   };
+   const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", options);
+   ```
 
 ## More
 
