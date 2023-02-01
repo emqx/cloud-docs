@@ -72,9 +72,10 @@ vue create vue-mqtt-test
     data() {
       return {
         connection: {
-          protocol: "ws",
           host: "broker.emqx.io",
-          // ws: 8083; wss: 8084
+          // ws 协议，对应端口为 8083；wss 协议对应端口 8084。
+          // EMQX Cloud 部署，请以对应部署概览页面显示端口为准！！！
+          protocol: "ws",
           port: 8083,
           endpoint: "/mqtt",
           // for more options, please refer to https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options
@@ -232,6 +233,27 @@ destroyConnection() {
 ![vuemqttx.png](https://assets.emqx.com/images/2013cbab1bdffcae69b817bfebb4a33f.png)
 
 在 MQTT X 发送第二条消息之前，在浏览器端进行取消订阅操作，浏览器端将不会收到 MQTT X 发送的后续消息。
+
+## 常见问题
+
+1. 是否支持自签名 TLS/SSL 证书？是否支持双向 TLS/SSL 认证？
+
+   由于浏览器的限制，均暂不支持。参考 MQTT.js issue: <https://github.com/mqttjs/MQTT.js/issues/1515>; <https://github.com/mqttjs/MQTT.js/issues/741>
+
+2. 在云厂商自购的证书，如何实现单向 TLS/SSL 认证？
+
+   只需要将连接代码中的协议改为 wss，并将端口替换为 wss 协议对应的端口。示例如下：
+
+   ```javascript
+   const options = {
+     clientId: "emqx_vue_" + Math.random().toString(16).substring(2, 8),
+     // auth
+     username: "xxx",
+     password: "xxx",
+     // 其它参数......
+   };
+   this.client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", options);
+   ```
 
 ## 更多内容
 

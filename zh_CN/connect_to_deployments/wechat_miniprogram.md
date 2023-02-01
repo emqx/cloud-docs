@@ -4,11 +4,15 @@
 
 ## 前提条件
 
+::: tip
+EMQX Cloud 专业版部署建议绑定在云厂商自购的证书，选择单向认证且需在 EMQX Cloud 控制台部署详情页面配置 TLS/SSL 时上传证书链。
+:::
+
 1. [注册](https://mp.weixin.qq.com/wxopen/waregister?action=step1) 微信小程序账号，并下载 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 由于微信小程序安全要求比较高，在与后台服务器之间的通讯必须使用 https 或 wss 协议。所以需要登录 [微信公众平台](https://mp.weixin.qq.com/)，在左侧菜单【开发】->【开发管理】->【开发设置】->【服务器域名】中 socket 合法域名添加部署域名。
 
    - EMQX Cloud 专业版部署默认连接地址是 IP，需要用户自行进行域名绑定，且进行 TLS/SSL 配置（**证书链必填**，否则真机调试会失败）。当 TLS/SSL 的状态为 `运行中` 时，刷新页面，即可在部署概览页面看到连接端口中多了一个 8084 (wss)，请记住这个端口号，后续编写连接代码时，我们需要用到它。
    - 微信小程序仅支持通过 WebSocket 进行即时通信，EMQX Cloud 部署的 MQTT Over WebSocket 能够完全兼容使用在微信小程序上。因此在进行 MQTT 连接时，只能使用 wss 协议（**但是客户端连接代码中需要写成 wxs**）
-   - 更多域名相关配置说明，请参阅微信官方文档：<https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html>
+   - 更多域名相关配置及证书限制，请参阅微信官方文档：<https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html>
 
    ![设置小程序 socket 域名](./_assets/wechat-host.png)
 
@@ -18,17 +22,22 @@
 
 ## 安装依赖
 
-推荐使用 MQTT.js `v4.2.1` <https://unpkg.com/mqtt@4.2.1/dist/mqtt.min.js>（针对原生的微信小程序），**若调试器可以连接但真机调试仍有问题，建议尝试切换 MQTT.js 版本**。
+::: tip
+本地调试器连接成功，但真机调试有问题，建议尝试切换 MQTT.js 版本。请勿局限于本文推荐的相关版本，最新版本优先。
+:::
 
-> 原生微信小程序 MQTT.js 可用版本有 `v4.2.1`、`v4.2.0`、`v4.1.0` 和 `v2.18.8`
->
-> 使用 uniapp 框架搭建微信小程序 MQTT.js 可用版本有 `v4.1.0` 和 `v2.18.8`
+1. 下载到本地，然后使用相对路径引入
+   本文使用 MQTT.js `v4.2.1` <https://unpkg.com/mqtt@4.2.1/dist/mqtt.min.js>（针对原生的微信小程序）。
 
-在项目根目录下新建 utils 文件夹，将下载好的对应版本的 mqtt.min.js 文件放入该文件夹中，在 index.js 中通过如下方式引入 mqtt
+   > 原生微信小程序 MQTT.js 可用版本有 `v4.2.1`、`v4.2.0`、`v4.1.0` 和 `v2.18.8`
+   >
+   > 使用 uniapp 框架搭建微信小程序 MQTT.js 可用版本有 `v4.1.0` 和 `v2.18.8`
 
-```javascript
-import mqtt from "../../utils/mqtt.min.js";
-```
+   在项目根目录下新建 utils 文件夹，将下载好的对应版本的 mqtt.min.js 文件放入该文件夹中，在 index.js 中通过如下方式引入 mqtt
+
+   ```javascript
+   import mqtt from "../../utils/mqtt.min.js";
+   ```
 
 ## 连接关键代码
 
@@ -197,6 +206,32 @@ disconnect() {
 可以看到 MQTT X 可以正常接收来到来自小程序发送过来的消息，同样，使用 MQTT X 向该主题发送一条消息时，也可以看到小程序能正常接收到该消息。
 
 <img src="./_assets/wechat-receive-msg.png" alt="app2.png" style="zoom:50%;" />
+
+## 常见问题
+
+1. 如何使用 npm 安装 MQTT.js？
+
+   原生的微信小程序通过 npm 构建暂时还有问题，参阅微信开放社区文章：<https://developers.weixin.qq.com/community/develop/doc/00002ee4fa896808ec5d3f3c35bc00>。
+
+   uni-app 框架搭建的微信小程序对 npm 包的支持有限，请参阅：<https://uniapp.dcloud.net.cn/tutorial/page-script.html#npm%E6%94%AF%E6%8C%81>。
+   步骤如下：
+
+   ```shell
+      # 安装依赖
+      npm install mqtt@3.0.0
+      # 或
+      yarn add mqtt@3.0.0
+
+      # 引入
+      import mqtt from 'mqtt/dist/mqtt'
+      # 或
+      const mqtt = require('mqtt/dist/mqtt')
+   ```
+
+2. 是否支持自签名 TLS/SSL 证书？是否支持双向 TLS/SSL 认证？
+
+   由于微信小程序的证书限制，暂不支持，参阅 <https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html>。
+   建议使用从云厂商自购的证书，配置单向 TLS/SSL。
 
 ## 更多内容
 

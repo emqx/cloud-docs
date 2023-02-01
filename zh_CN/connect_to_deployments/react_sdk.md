@@ -81,6 +81,7 @@ React 起源于 Facebook 的内部项目，目前由 Facebook 企业和其强大
 - Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
 - TCP Port: **1883**
 - WebSocket Port: **8083**
+- WebSocket Secure Port: **8084**
 
 ### 连接代码
 
@@ -187,6 +188,27 @@ const mqttDisconnect = () => {
 可以看到 MQTT X 可以正常接收来自浏览器端发送的消息，同样，使用 MQTT X 向该主题发送一条消息时，也可以看到浏览器端可以正常接收到该消息。
 
 ![reactmqtttest.png](https://assets.emqx.com/images/da008ae3544a83a3efa78266190ea364.png)
+
+## 常见问题
+
+1. 是否支持自签名 TLS/SSL 证书？是否支持双向 TLS/SSL 认证？
+
+   由于浏览器的限制，均暂不支持。参考 MQTT.js issue: <https://github.com/mqttjs/MQTT.js/issues/1515>; <https://github.com/mqttjs/MQTT.js/issues/741>
+
+2. 云厂商自购的证书，如何实现单向 TLS/SSL 认证？
+
+   只需要将连接代码中的协议改为 wss，并将端口替换为 wss 协议对应的端口。示例如下：
+
+   ```javascript
+   const options = {
+     clientId: "emqx_react_" + Math.random().toString(16).substring(2, 8),
+     // auth
+     username: "xxx",
+     password: "xxx",
+     // 其它参数......
+   };
+   const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", options);
+   ```
 
 ## 更多内容
 
