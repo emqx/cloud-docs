@@ -219,13 +219,15 @@ $ curl -u app_id:app_ssecret -X GET {api}/clients/emqx_c_1
 }
 ```
 
-## 剔除客户端
+## 删除客户端
 
 ### URI
 
 DELETE /clients/{clientid}
 
-踢除指定客户端。注意踢除客户端操作会将连接与会话一并终结。
+删除指定客户端。
+
+注意：删除客户端操作会同时终结该客户端相关的连接与会话。
 
 参数:
 
