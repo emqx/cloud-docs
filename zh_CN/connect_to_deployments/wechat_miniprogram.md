@@ -29,9 +29,9 @@ EMQX Cloud 专业版部署建议绑定在云厂商自购的证书，选择单向
 1. 下载到本地，然后使用相对路径引入
    本文使用 MQTT.js `v4.2.1` <https://unpkg.com/mqtt@4.2.1/dist/mqtt.min.js>（针对原生的微信小程序）。
 
-   > 原生微信小程序 MQTT.js 可用版本有 `v4.2.1`、`v4.2.0`、`v4.1.0` 和 `v2.18.8`
+   > 原生微信小程序 MQTT.js 可用版本有 `v4.2.1`、`v4.2.0`、`v4.1.0` 和 `v2.18.9`
    >
-   > 使用 uniapp 框架搭建微信小程序 MQTT.js 可用版本有 `v4.1.0` 和 `v2.18.8`
+   > 使用 uniapp 框架搭建微信小程序 MQTT.js 可用版本有 `v4.1.0` 和 `v2.18.9`
 
    在项目根目录下新建 utils 文件夹，将下载好的对应版本的 mqtt.min.js 文件放入该文件夹中，在 index.js 中通过如下方式引入 mqtt
 
@@ -218,9 +218,14 @@ disconnect() {
 
    ```shell
       # 安装依赖
+      # vue 2
       npm install mqtt@3.0.0
       # 或
       yarn add mqtt@3.0.0
+      # vue 3
+      npm install mqtt@4.1.0
+      # 或
+      yarn add mqtt@4.1.0
 
       # 引入
       import mqtt from 'mqtt/dist/mqtt'
