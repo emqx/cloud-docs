@@ -219,13 +219,13 @@ disconnect() {
    ```shell
       # 安装依赖
       # vue 2
-      npm install mqtt@3.0.0
-      # 或
-      yarn add mqtt@3.0.0
-      # vue 3
       npm install mqtt@4.1.0
       # 或
       yarn add mqtt@4.1.0
+      # vue 3
+      npm install mqtt@4.2.1
+      # 或
+      yarn add mqtt@4.2.1
 
       # 引入
       import mqtt from 'mqtt/dist/mqtt'
@@ -237,6 +237,12 @@ disconnect() {
 
    由于微信小程序的证书限制，暂不支持，参阅 <https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html>。
    建议使用从云厂商自购的证书，配置单向 TLS/SSL。
+
+3. 使用 uni-app 框架搭建微信小程序时，MQTT.js 可用的版本有哪些？
+
+- 使用 Vue3 以 npm 的形式引入时：`v4.2.1`、`v4.1.0`、`v2.18.9`
+- 使用 Vue2 以 npm 的形式引入时：`v4.1.0`、`v2.18.9`
+- 使用 Vue2 以本地文件形式引入时：`v4.1.0`、`v2.18.9`
 
 ## 更多内容
 
