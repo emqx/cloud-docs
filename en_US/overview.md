@@ -36,16 +36,18 @@ In this model, the MQTT service provided by EMQX Cloud not only bridges the devi
 
 EMQX Cloud comes in three plans, each with multiple specifications, and we support the deployment of your own fully managed MQTT service on the world's leading public clouds.
 
-![edition](./_assets/pricing.png)
+TODO PIC
 
-1. Standard: Get started with EMQX easily. Minimal configuration required.
-2. Professional: For mission-critical applications with workloads. Advanced configuration controls, including TLS config, VPC peering, Data Integrations.
-3. BYOC: Bring Your Own Cloud. Run EMQX Cluster in your own cloud, managed by EMQX. Keep your data safe and secure in your own data center.For enterprise-reliable cloud environment. Coming soon.
+1. **Serverless**: Shared cluster MQTT Service, up to 1,000 sessions, only pay as you go.
+2. **Dedicated**: Independent cluster MQTT Service.</br>
+  a. **Standard**: An independent MQTT service for applications with standard throughput.</br>
+  b. **Professional**: A dedicated MQTT cluster for building mission-critical IoT applications. Supporting advanced features like data persistence, bridging, VPC peering, etc. Your best way to get a production-ready MQTT service.
+3. **BYOC**: Bring Your Own Cloud. Run EMQX Cluster in your own cloud, managed by EMQX. Keep your data safe and secure in your own data center.For enterprise-reliable cloud environment. Coming soon.
 
 
 ## Product Capabilities
 
-EMQX Cloud, a fully managed EMQX access platform service, provides device access, device management, message storage, and other capabilities.
+EMQX Cloud, a fully managed EMQX access platform service, provides device access, device management, and other capabilities.
 
 ### Device Access
 
@@ -63,7 +65,7 @@ Multi-protocol and private protocol support, please contact us by [ticket](featu
 
 ### Device Management
 
-EMQX Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. 
+EMQX Cloud Dedicated plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. 
 
 ![device_manager_1](./_assets/device_manage1.png)
 
@@ -100,36 +102,6 @@ Data integrations not only provides a clear and flexible "configuration-based" b
 
 ![integration_intro](./_assets/integration_intro_01.png)
 
-- **Send data to HTTP services and other MQTT services**:
-  - Send data to Web services.
-  - Bridge data to MQTT Broker.
-
-**Professional plans only**
-
-- **Save device event information, message data to database, drive business data with device events**:
-  - Save data to MySQL.
-  - Save data to PostgreSQL.
-  - Save data to Cassandra.
-  - Save data to MongoDB.
-  - Save data to DynamoDB.
-  - Save data to Redis.
-  - Save data to ClickHouse.
-  - Save data to TDengine.
-  - Save data to OpenTSDB.
-  - Save data to TimescaleDB.
-  - Save data to InfluxDB.
-
-**Professional plans only**
-
-- **Bridge data to Kafka, RabbitMQ, and other messaging and stream processing platforms**:
-  - Bridge data to Kafka.
-  - Bridge data to Pulsar.
-  - Bridge data to RocketMQ.
-  - Bridge data to RabbitMQ.
-  - Bridge data to RPC services.
-
-**Professional plans only**
-
-- **Consume messages and sent down to device, transaction-level platform commands sent down**
-  - Consume messages from Kafka to EMQX.
-  - Consume messages from Pulsar to EMQX.
+::: tip Tip
+Only **Dedicated** deployment has data integration. See [Data Integration](./rule_engine/introduction.md) to find more details.
+:::

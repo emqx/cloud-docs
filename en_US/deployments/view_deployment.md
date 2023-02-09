@@ -1,6 +1,27 @@
 # Deployment Overview
 
-In this tutorial, you will learn how to view deployment information, obtain connection addresses, view API addresses, etc.
+In this tutorial, you will learn how to view deployment information, obtain connection addresses, view port, etc.
+
+
+:::: tabs type:card
+::: tab Serverless 
+## View deployment information
+The Deployment overview page provides access to the status and connectivity information.
+
+![overview](./_assets/serverless_overview.png)
+
+
+- Status: The deployment running status and creation time.
+- Number of sessions: Concurrent sessions and maximum number of sessions, during Beta, the maximum is 100.
+- TPS: The current number of messages sent and received per second and the upper limit.
+- Session minutes: The total number of session minutes that have been used this month. This value is counted with a 1-hour delay.
+- Traffic: The amount of inbound and outbound traffic that has been generated this month. This value is counted with a 1-hour delay.
+- Deployment Name: The name of the customizable deployment.
+- Address: The host address.
+- Port: By default, ports 8883(mqtts) and 8084(wss) are enabled.
+
+:::
+::: tab Dedicated
 
 ## View deployment information
 
@@ -22,9 +43,6 @@ Here you can view the following deployment information:
 
 ## [TLS/SSL Configuration](./tls_ssl.md)
 
-::: warning Note
-This feature is not available in standard deployment.
-:::
 
 EMQX Cloud provides custom **one-way/two-way TLS/SSL** authentication, and supports **self-signed certificate** and **CA signed certificate**.
 
@@ -32,9 +50,7 @@ EMQX Cloud provides custom **one-way/two-way TLS/SSL** authentication, and suppo
 
 ## [VPC Peering Connection Configuration](./vpc_peering.md)
 
-::: warning Note
-This feature is not available in standard deployment
-:::
+
 
 EMQX Cloud supports peering connections with customers' existing VPC (Virtual Private Cloud) for cloud service providers in the same region. A VPC peering connection is a network connection between two VPCs. Through this connection, the instances in the two VPCs can communicate with each other as if they were in the same network.
 
@@ -45,3 +61,6 @@ EMQX Cloud supports peering connections with customers' existing VPC (Virtual Pr
 EMQX Cloud provides REST API to achieve integration with external systems, such as querying client information, publishing messages, and creating rules.
 
 ![base_info](./_assets/api_info.png)
+
+:::
+::::

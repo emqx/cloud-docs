@@ -1,12 +1,12 @@
 # Create a free trial deployment
 
-For first-time EMQX Cloud customers, we have an opportunity for you to create a free trial deployment of up to **14** days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQX Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following restrictions.
+For first-time EMQX Cloud customers, we have an opportunity for you to create a free trial of dedicated deployment up to **14** days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQX Cloud. Before creating a free trial deployment, you need to understand that the free trial has the following restrictions.
 
 - **Duration：** Free trial up to 14 days.
 
   > To extend your free trial, you can submit a [ticket](../feature/tickets.md) or contact us by email to get in touch with us.
 
-- **Specification：** 1000 client connections for the standard plan and 5000 client connections for the professional plan.
+- **Specification：** 1000 client connections for the standard plan and 1000 client connections for the professional plan.
 
 - **Traffic：** 100 GB free traffic per month.
 
