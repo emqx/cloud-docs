@@ -14,7 +14,7 @@ In EMQX Cloud, using Data Integrations has the following requirements:
   - If public access is needed in a professional environment, [NAT Gateway](../vas/nat-gateway.md) can offer the abilities.
 
 ::: tip
-Serverless deployments doesn't support Data Integrations.
+Serverless deployments don't support Data Integrations.
 :::
 
 ## General Flow

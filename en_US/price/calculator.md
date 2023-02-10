@@ -12,7 +12,7 @@ We offer a Serverless price calculator so you can estimate your approximate mont
 
 ![calculator](./_assets/calculator_serverless.png)
 
-You can check the price of Dedicated plas by selecting the specification.
+You can check the price of Dedicated plans by selecting the specification.
 
 ![calculator](./_assets/calculator_dedicated.png)
 

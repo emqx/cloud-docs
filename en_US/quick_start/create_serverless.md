@@ -2,7 +2,7 @@
 
 You can create a Serverless (Beta) deployment in a few easy steps.
 
-Currently only one Serverless(Beta) deployment can be created under each account. Until 2023.4.1, Serverless deployments are limited to a maximum of 100 sessions in Beta testing and are completely free to use.
+Currently only one Serverless (Beta) deployment can be created under each account. Until 2023.4.1, Serverless deployments are limited to a maximum of 100 sessions in Beta testing and are completely free to use.
 
 
 Notes for Serverless (Beta) deployments.

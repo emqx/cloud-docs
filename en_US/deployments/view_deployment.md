@@ -1,18 +1,18 @@
 # Deployment Overview
 
-In this tutorial, you will learn how to view deployment information, obtain connection addresses, view port, etc.
+In this tutorial, you will learn how to view deployment information, obtain connection address, view ports, etc.
 
 
 :::: tabs type:card
 ::: tab Serverless 
 ## View deployment information
-The Deployment overview page provides access to the status and connectivity information.
+The Deployment overview page provides access to the status and connection information.
 
 ![overview](./_assets/serverless_overview.png)
 
 
-- Status: The deployment running status and creation time.
-- Number of sessions: Concurrent sessions and maximum number of sessions, during Beta, the maximum is 100.
+- Status: Deployment running status and creation time.
+- Number of sessions: Concurrent sessions and maximum number of sessions, a maximum of 100 sessions are supported in the Beta version.
 - TPS: The current number of messages sent and received per second and the upper limit.
 - Session minutes: The total number of session minutes that have been used this month. This value is counted with a 1-hour delay.
 - Traffic: The amount of inbound and outbound traffic that has been generated this month. This value is counted with a 1-hour delay.
