@@ -20,6 +20,8 @@ The Deployment overview page provides access to the status and connection inform
 - Address: The host address.
 - Port: By default, ports 8883(mqtts) and 8084(wss) are enabled.
 
+Serverless deployment supports ports 8883(mqtts) and 8084(wss). If your client requires the CA file for MQTT connection, [download it here](https://assets.emqx.com/data/emqxsl-ca.crt).
+
 :::
 ::: tab Dedicated
 

@@ -1,14 +1,14 @@
-# Create Serverless (Beta)  deployment 
+# Create Serverless (Beta)  deployment
 
 You can create an EMQX Cloud Serverless (Beta) deployment in just a few steps. 
 
-::: EMQX Cloud Serverless is currently under free trial, you can experience the fully-managed MQTT services before 2023.4.1 under zero costs. This trial deployment currently supports up to 100 sessions. 
-
+::: tip
+EMQX Cloud Serverless is currently under free trial, you can experience the fully-managed MQTT services before 2023.4.1 under zero costs. This trial deployment currently supports up to 100 sessions. 
 :::
 
 Precausions:
 
-* Only one serverless  (Beta) deployment can be created under each account at the moment.
+* Only one serverless (Beta) deployment can be created under each account at the moment.
 * Deployment with no active client connections for 30 days will be stopped. To continue the trial, please start it manually in [EMQX Cloud console](https://cloud.emqx.com/console/). 
 * Deployment remains disabled for a consecutive 30 days after being stopped will be deleted.
 
@@ -28,8 +28,8 @@ Precausions:
 
 4. In the **Configuration** tab, you can view the deployment region, pricing, and your free quota information, or limit your monthly spending with the **Speed Limit** field. Here we will just click **Deploy** to start the deployment. Agree to the *EMQX Cloud Standard Terms of Service* and *Serverless Service Terms of Use*. Then click **Get Start**.
 
-   ::: Serverless (beta) is under free trial until 03/31/2023. And a maximum of 100 sessions are supported. For a production environment, please choose the Dedicated plan.
-
+   ::: tip
+   Serverless (beta) is under free trial until 03/31/2023. And a maximum of 100 sessions are supported. For a production environment, please choose the Dedicated plan.
    :::
 
 

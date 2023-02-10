@@ -23,7 +23,8 @@ EMQX Cloud Serverless is based on shared clusters and thus has placed some restr
 
 EMQX Cloud Dedicated version is based on independent clusters. The table below is a comparison between EMQX Cloud Dedicated version and other IoT Hubs. 
 
-::: These parameters are verified in strict performance tests. For *Unlimited*, it refers to there being no technical restrictions, the actual performance of EMQX depends on the deployment specification. 
+::: tip
+These parameters are verified in strict performance tests. For *Unlimited*, it refers to there being no technical restrictions, the actual performance of EMQX depends on the deployment specification. 
 
 :::
 

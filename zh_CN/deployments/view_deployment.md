@@ -18,6 +18,9 @@
 - 部署名称：可自定义的部署的名称。
 - 连接地址：域名地址。
 - 连接端口：默认开启 8883(mqtts) 和 8084(wss) 端口。
+
+Serverless 仅支持 8883(mqtts) 和 8084(wss) 端口。如果客户端需要 CA 文件，请[在此下载](https://assets.emqx.com/data/emqxsl-ca.crt)。
+
 :::
 ::: tab 专有版
 
