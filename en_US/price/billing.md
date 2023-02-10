@@ -1,6 +1,6 @@
 # Billing
 
-## EMQX Cloud Serverless
+## Serverless
 
 ### Billing items
 
@@ -9,16 +9,16 @@ EMQX Cloud Serverless is billed as per the usage of the deployment, which are th
 
 ### Billing method
 
-The bill is calculated based on the fees accumulated in the previous 24 hours, with collections taking place at 0:00 daily. You can go to the [Billings](../billing/overview.md) page in EMQX cloud console to find the detail.
+The bill is calculated based on the fees accumulated in the previous 24 hours, with collections taking place at 0:00 daily. You can go to the [Billings](../billing/overview.md) page in EMQX cloud console to find the details.
 
 ::: tip Tip
 
-Let's say in a 24-hour billing period,  a user has 120 sessions for 10 hours, 20 sessions for 10 hours, and 0 sessions for 4 hours, the total session minutes are: 120 * 60 * 10 + 20 * 60 * 10 + 0 = 84,000, and the session fee is 0 if this falls within the free quota. If the free quota has run out, the session fee will be 84,000 / 1,000,000 * 2 = 0.168, rounded up to $ 0.17.
+Assume in a 24-hour billing period,  a user has 120 sessions for 10 hours, 20 sessions for 10 hours, and 0 sessions for 4 hours, the total session minutes are: 120 * 60 * 10 + 20 * 60 * 10 + 0 = 84,000, and the session fee is 0 if this falls within the free quota. If the free quota has run out, the session fee will be 84,000 / 1,000,000 * 2 = 0.168, rounded up to $ 0.17.
 The traffic is calculated in the same way as the session.
 :::
 
 
-## EMQX Cloud Dedicated
+## Dedicated
 
 EMQX Cloud Dedicated Edition is charged based on product version, instance specifications, and network traffic for message transmission. There is no limit on the number of messages, API calls, or data integrations used. You can choose the appropriate product and specifications based on your business needs, ensuring that costs remain clear and controllable even as your business expands.
 

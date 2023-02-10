@@ -6,7 +6,7 @@ EMQX Cloud pricing calculator allows you to estimate the cost of deployments bas
 
 ## Visit EMQX Cloud pricing details
 
-- For users who are not logged in, you can go to [pricing page](https://www.emqx.com/en/cloud/pricing) to check the available plans.
+You can check the EMQX Cloud [pricing page](https://www.emqx.com/en/cloud/pricing) to check the available plans.
 
 We offer a Serverless price calculator so you can estimate your approximate monthly spending based on your business.
 
@@ -16,24 +16,22 @@ You can check the price of Dedicated plans by selecting the specification.
 
 ![calculator](./_assets/calculator_dedicated.png)
 
-
-- For users logged in, you can [Create deployment](https://cloud-intl.emqx.com/console/deployments/0?oper=new) to select plan, use price estimation to find the specific price.
+After logging in, you can reconfirm the pricing information after clicking [Create Deployment](https://cloud-intl.emqx.com/console/deployments/0?oper=new) and selecting the plan. 
 
 
 ## Serverless price equation
-Session fee = sessions * connection span (measured each minute or part thereof) / 1,000,000 * 2 <br />
+Session fee = sessions * connection span (measured per minute or part thereof) / 1,000,000 * 2 <br />
 Traffic fee = Inbound and outbound traffic（byte）/ 1024 / 1024 / 1024 * 0.15
 
-
 ::: warning
-Please refer to the bills as there may be a difference between the estimation and the actual price.
+There may be a difference between the estimation and the actual price. Please refer to the bill for the actual invoice numbers. 
 :::
 
 
-## Get the hourly price for deployment
+## Get an hourly price for deployment
 
-You can select cloud provider, region, and specifications to get the hourly price of deployment.
-  
+EMQX also offers an hourly pricing mode. On EMQX Cloud console, select the cloud provider, region, and specifications to get the hourly price of deployment.
+
   ![deployment_price](./_assets/calculator.png)
 
 > Standard Plan: Choose Azure Platform, US East (N. Virginia) area, the maximum number of connections is 1000, the message upstream and downstream TPS is 1000, the hourly price is 0.99, and the monthly cost is: 0.99 * 730 = 722.7

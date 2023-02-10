@@ -1,6 +1,6 @@
 # Specification limits
 
-## EMQX Cloud Serverless
+## Serverless
 
 EMQX Cloud Serverless is based on shared clusters and thus has placed some restrictions on each Serverless deployment to ensure a stable connection for each tenant. 
 
@@ -19,7 +19,7 @@ EMQX Cloud Serverless is based on shared clusters and thus has placed some restr
 | API invoke rate | 10 / sec                     | 10 / sec                  |
 
 
-## EMQX Cloud Dedicated version
+## Dedicated
 
 EMQX Cloud Dedicated version is based on independent clusters. The table below is a comparison between EMQX Cloud Dedicated version and other IoT Hubs. 
 
@@ -48,3 +48,4 @@ EMQX Cloud Dedicated version is based on independent clusters. The table below i
 | Topic number               | Unlimited              | 50 single product.                                     |
 | Permissions                      | Customize | Devices can only subscribe to a limited number of their own Topics for message distribution. |
 | Subscribe/unsubscribe response time | Immediate             | 5-10 seconds                                          |
+
