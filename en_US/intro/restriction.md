@@ -1,29 +1,31 @@
-# Limitations
+# Specification limits
 
-## Serverless
+## EMQX Cloud Serverless
 
-Serverless infrastructure based on shared clusters. To ensure that each tenant has a stable connection, restrictions are placed on each deployment.
+EMQX Cloud Serverless is based on shared clusters and thus has placed some restrictions on each Serverless deployment to ensure a stable connection for each tenant. 
 
-| **Restriction list**    | **Serverless (Beta)**    | **Serverless**                     |
+| **Limitations** | **Serverless (Beta)**    | **Serverless**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |
 | Concurrent maximum session |100                | 1000                |
 | Maximum TPS   | 1000                      | 1000                                |
-| Maximum TPS for a single client    | 100                 | 100          |
-| Subscription topics for a single client   | 10            | 10         |
+| Maximum TPS per client  | 100                 | 100          |
+| Maximum topic subscriptions per client | 10            | 10         |
 | Free session minutes | unlimited        | 1 million / month               |
 | Free traffic      | unlimited            | 1 GB / month                  |
 | MQTT port     | 8883                  | 8883                             |
 | Websocket port | 8084                 | 8084                            |
-| Maximum retained messages  | 1000               | 1000               |
-| Maximum shared subscription | 100            | 100                         |
+| Maximum piece of retained messages | 1000               | 1000               |
+| Maximum shared subscriptions | 100            | 100                         |
 | API invoke rate | 10 / sec                     | 10 / sec                  |
 
 
-## Dedicated
+## EMQX Cloud Dedicated version
 
-Dedicated has fewer usage restrictions than cloud IoT Hub platform. The limitations in the table below depend on the number of connections and the hardware performance, and the corresponding parameters have been rigorously tested for performance.
+EMQX Cloud Dedicated version is based on independent clusters. The table below is a comparison between EMQX Cloud Dedicated version and other IoT Hubs. 
 
-> The performance of the relevant items depends on the deployment specifications, and the specific data is subject to actual usage scenarios.
+::: These parameters are verified in strict performance tests. For *Unlimited*, it refers to there being no technical restrictions, the actual performance of EMQX depends on the deployment specification. 
+
+:::
 
 ### Connection
 
