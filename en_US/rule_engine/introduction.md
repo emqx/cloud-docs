@@ -13,6 +13,10 @@ In EMQX Cloud, using Data Integrations has the following requirements:
   - The resource technically only supports internal network access, so you need to configure [VPC peering](../deployments/vpc_peering.md) before creating the resource and open the security group.
   - If public access is needed in a professional environment, [NAT Gateway](../vas/nat-gateway.md) can offer the abilities.
 
+::: tip
+Serverless deployments don't support Data Integrations.
+:::
+
 ## General Flow
 
 The primary dimension of Data Integrations is the resource. A resource is a service provided by the cloud provider. It should already be set in the system architecture. Then choose the specific resource from the browse page.

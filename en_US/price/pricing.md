@@ -1,27 +1,26 @@
-# Product Pricing
+# Pricing
 
-We offer a variety of flexible product specifications to support the deployment of fully managed MQTT services exclusively for you on the world's leading public clouds.
+We offer a variety of flexible product plans to support the deployment of fully managed MQTT services exclusively for you on the leading clouds providers.
 
-## Product Plans
+## Serverless price detail
 
-EMQX Cloud is available in two plans: Standard, Professional.
-
-![plan](./_assets/pricing.png)
-
-- Standard: Get started with EMQX easily. Minimal configuration required. The Standard plan offers a 14-day free trial.
-- Professional: For mission-critical applications with workloads. Advanced configuration controls, including TLS config, VPC peering, Data Integrations. The Professional plan is available for a 14-day free trial.
+| **List**         | **Free quota**                  | **Price**           |
+| -------------------- | -------------------------------------------- | ------------------|
+| Session       |  1 million session minutes / month     | $ 2.00 per million session minutes                                |
+| Traffic     | 1 GB / month              | $ 0.15 / GB              |
 
 
 
-## Definition
-**Connections :** The number of clients connecting to the deployment (including disconnected clients that keep session) at the same time. [Retained sessions](https://www.emqx.com/en/blog/mqtt-session), i.e. when the client disconnects, the session remains until the session times out.
-**Traffic :** Traffic, including free traffic, measures all traffic flowing out of the deployment.
-   - Traffic over VPC Peering or PrivateLink is not measured.
-   - Traffic from messages received by the deployment, such as messages sent to the deployment from the clients, is not measured.
-   - If the NAT gateway is enabled, outgoing traffic from deployment will be measured.
+**Session:** The number of concurrent sessions (**including persistent sessions**).<br />
+**Session minutes:** 1 session minute stands for 1 session to the deployment in the span of a minute or part thereof.<br />
+**Traffic:** Both **inbound and outbound** traffic of deployment are measured.
 
 
-## Price Details
+::: tip Tip
+Serverless Beta is free to use. We won't charge any session fee or traffic fee.
+:::
+
+## Dedicated price detail
 
 <table>
    <tr>
@@ -29,7 +28,7 @@ EMQX Cloud is available in two plans: Standard, Professional.
       <th>Specification</th>
       <th>Base Fee</th>
       <th>Free Traffic</th>
-      <th>Overage Unit Price</th>
+      <th>Traffic exceeded</th>
    </tr>
    <tr>
       <td rowspan="3">Standard</td>
@@ -67,9 +66,15 @@ EMQX Cloud is available in two plans: Standard, Professional.
    </tr>
    <tr>
       <td>>50,000 connections</td>
-      <td colspan="3" align="center">Contact sales</td>
+      <td colspan="3" align="center">Contact us</td>
    </tr>
 </table>
+
+**Connections :** The number of clients connecting to the deployment (including disconnected clients that keep session) at the same time. [Retained sessions](https://www.emqx.com/en/blog/mqtt-session), i.e. when the client disconnects, the session remains until the session times out.<br />
+**Traffic :** Traffic, including free traffic, measures all traffic flowing out of the deployment.
+   - Traffic over VPC Peering or PrivateLink is not measured.
+   - Traffic from messages received by the deployment, such as messages sent to the deployment from the clients, is not measured.
+   - If the NAT gateway is enabled, outgoing traffic from deployment will be measured.
 
 
 ::: warning Note
@@ -81,10 +86,34 @@ Prices may vary depending on the public cloud platform selected and the deployme
 <table>
   <tr>
       <th></th>
+      <th>Serverless</th>
       <th>Standard</th>
       <th>Professional</th>
-      <th>Premium</th>
     </tr>
+   <tr>
+      <td><strong>Cloud Provider</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">AWS</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Azure</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">GCP</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
    <tr>
       <td>Protocols</td>
       <td></td>
@@ -106,25 +135,55 @@ Prices may vary depending on the public cloud platform selected and the deployme
    <tr>
       <td style="text-indent: 2em;">MQTT-SN</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">CoAP</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">LwM2M</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">JT/T808</td>
       <td>&#10007</td>
+      <td>&#10007</td>
       <td>&#10003</td>
+   </tr>
+   <tr>
+      <td>Connection</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Max number of connections</td>
+      <td>1000</td>
+      <td>10,000</td>
+      <td>Unlimited</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">VPC peering (private network)</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">NAT Gateway</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td style="text-indent: 2em;">Internal Load Balance</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
@@ -164,13 +223,13 @@ Prices may vary depending on the public cloud platform selected and the deployme
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Client and topic level Access control</td>
+      <td style="text-indent: 2em;">Client and Topic Access control</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Monitoring API</td>
+      <td style="text-indent: 2em;">Metrics monitor</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -189,7 +248,7 @@ Prices may vary depending on the public cloud platform selected and the deployme
    </tr>
    <tr>
       <td style="text-indent: 2em;">Subscription Management</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
@@ -202,31 +261,19 @@ Prices may vary depending on the public cloud platform selected and the deployme
    <tr>
       <td style="text-indent: 2em;">Custom TLS certificate</td>
       <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Authentication and Authorization through external data sources</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Device Management</td>
-      <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Device Shadow</td>
+      <td style="text-indent: 2em;">Authentication through external data sources</td>
       <td>&#10007</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Edge Device Management</td>
+      <td style="text-indent: 2em;">Log</td>
       <td>&#10007</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
@@ -237,116 +284,116 @@ Prices may vary depending on the public cloud platform selected and the deployme
    </tr>
    <tr>
       <td style="text-indent: 2em;">SQL based data process</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Republish</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Bridging</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">WebHook</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Kafka</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">RabbitMQ</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">RocketMQ</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Pulsar</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">GCP Pub/Sub</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Azure Event hubs</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">MySQL</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">PostgreSQL</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">MongoDB</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Redis</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Cassandra</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">DynamoDB</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">ClickHouse</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">OpenTSDB</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">InfluxDB</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
@@ -358,55 +405,25 @@ Prices may vary depending on the public cloud platform selected and the deployme
    <tr>
       <td style="text-indent: 2em;">Oracle DB</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">SQL Server</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">DolphinDB</td>
       <td>&#10007</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">TDengine</td>
       <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Connectivity</td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Max number of connections</td>
-      <td>10,000</td>
-      <td>50,000</td>
-      <td>Unlimited</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">VPC peering (private network)</td>
       <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">NAT Gateway</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Internal Load Balance</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
@@ -417,62 +434,20 @@ Prices may vary depending on the public cloud platform selected and the deployme
    </tr>
    <tr>
       <td style="text-indent: 2em;">Uptime SLA</td>
-      <td>99%</td>
-      <td>99.99%</td>
+      <td>-</td>
+      <td>99.95%</td>
       <td>99.99%</td>
    </tr>
     <tr>
       <td style="text-indent: 2em;">Customer Support</td>
+      <td>-</td>
       <td>8/5</td>
       <td>24/7</td>
-      <td>24/7</td>
    </tr>
-    <tr>
+   <tr>
       <td style="text-indent: 2em;">Multi-AZ cluster</td>
+      <td>&#10003</td>
       <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Bare Metal</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Architecture design consulting service</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Product integration consulting service</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td>Cloud Provider</td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">AWS</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Azure</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Google Cloud</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
       <td>&#10003</td>
    </tr>
 </table>

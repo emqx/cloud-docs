@@ -592,7 +592,11 @@
           "path": "quick_start/introduction"
         },
         {
-          "title": "Create a free trial deployment",
+          "title": "Create a serverless deployment",
+          "path": "quick_start/create_serverless"
+        },
+        {
+          "title": "Create a trial dedicated deployment",
           "path": "quick_start/create_free_trial"
         },
         {

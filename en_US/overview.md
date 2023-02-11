@@ -8,7 +8,7 @@ With the infrastructure provided by cloud providers, EMQX Cloud serves dozens of
 
 ## IoT Messaging Model
 
-### *Two-way communication*
+### Two-way communication
 
 EMQX Cloud supports massive devices and application-side connectivity, providing secure and reliable two-way communication for applications and IoT devices:
 
@@ -16,7 +16,7 @@ EMQX Cloud supports massive devices and application-side connectivity, providing
 
 In this model, EMQX Cloud provides MQTT services to connect massive devices and applications. It supports application-device and device-device two-way communication. This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone app gets the status information of smart devices. Users can send control commands to smart devices through app. Another example, in industrial scenarios, AGV robots communicate with each other instantly via the MQTT protocol to achieve multi-robot collaboration. The MQTT service supports not only the standard MQTT protocol, but also MQTT over WebSocket, CoAP, MQTT-SN, LwM2M, JT, /T808, etc.
 
-### *Data Collection*
+### Data Collection
 
 EMQX Cloud supports device data on the cloud. With the support of massive topics and data integration, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
 
@@ -24,7 +24,7 @@ EMQX Cloud supports device data on the cloud. With the support of massive topics
 
 In this model, the MQTT service provided by EMQX Cloud enables data collection, computation, and persistence. This model is suitable for IoT applications with data collection and persistence requirements, such as: in industrial scenarios, each IoT sensor collects real-time data to the edge gateway, uploads the data to the MQTT server through the edge gateway, and then the Data Integrations triggers data filtering, transformation, and simple calculation, and forwards the final result to other services or persists to the target database. EMQX Cloud provides a variety of access solutions for different functionalities of the network, industrial, and edge devices, and supports more than 70 industrial protocols.
 
-### *Hybrid Model*
+### Hybrid Model
 
 EMQX Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and data integrations, data is persisted while flowing from object to object and from object to application.
 
@@ -34,18 +34,20 @@ In this model, the MQTT service provided by EMQX Cloud not only bridges the devi
 
 ## Product Plans
 
-EMQX Cloud comes in three plans, each with multiple specifications, and we support the deployment of your own fully managed MQTT service on the world's leading public clouds.
+EMQX Cloud comes in three plans to help you deploy your own fully-managed MQTT services on the world's leading public clouds.
 
-![edition](./_assets/pricing.png)
+<!--TODO PIC-->
 
-1. Standard: Get started with EMQX easily. Minimal configuration required.
-2. Professional: For mission-critical applications with workloads. Advanced configuration controls, including TLS config, VPC peering, Data Integrations.
-3. BYOC: Bring Your Own Cloud. Run EMQX Cluster in your own cloud, managed by EMQX. Keep your data safe and secure in your own data center.For enterprise-reliable cloud environment. Coming soon.
+1. **Serverless**: MQTT service based on shared clusters, works in the pay-as-you-go mode, and supports up to 1,000 sessions.
+2. **Dedicated**: MQTT service based on independent clusters.</br>
+    a. **Standard**: Independent MQTT service suitable for scenarios with standard throughput and concurrent demands.</br>
+  b. **Professional**: Dedicated MQTT cluster service suitable for mission-critical IoT applications, with advanced features like data persistence, bridging, VPC peering, etc. Your best way to get a production-ready MQTT service.
+3. **BYOC**: Bring Your Own Cloud. deploy a fully-managed EMQX in your own cloud to achieve the maximum level of data security; suitable for the enterprise-reliable cloud environment. Coming soon.
 
 
 ## Product Capabilities
 
-EMQX Cloud, a fully managed EMQX access platform service, provides device access, device management, message storage, and other capabilities.
+EMQX Cloud, a fully managed EMQX access platform, provides device access, device management, and other capabilities.
 
 ### Device Access
 
@@ -63,7 +65,7 @@ Multi-protocol and private protocol support, please contact us by [ticket](featu
 
 ### Device Management
 
-EMQX Cloud Standard and Professional plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. 
+EMQX Cloud Dedicated plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. 
 
 ![device_manager_1](./_assets/device_manage1.png)
 
@@ -100,36 +102,6 @@ Data integrations not only provides a clear and flexible "configuration-based" b
 
 ![integration_intro](./_assets/integration_intro_01.png)
 
-- **Send data to HTTP services and other MQTT services**:
-  - Send data to Web services.
-  - Bridge data to MQTT Broker.
-
-**Professional plans only**
-
-- **Save device event information, message data to database, drive business data with device events**:
-  - Save data to MySQL.
-  - Save data to PostgreSQL.
-  - Save data to Cassandra.
-  - Save data to MongoDB.
-  - Save data to DynamoDB.
-  - Save data to Redis.
-  - Save data to ClickHouse.
-  - Save data to TDengine.
-  - Save data to OpenTSDB.
-  - Save data to TimescaleDB.
-  - Save data to InfluxDB.
-
-**Professional plans only**
-
-- **Bridge data to Kafka, RabbitMQ, and other messaging and stream processing platforms**:
-  - Bridge data to Kafka.
-  - Bridge data to Pulsar.
-  - Bridge data to RocketMQ.
-  - Bridge data to RabbitMQ.
-  - Bridge data to RPC services.
-
-**Professional plans only**
-
-- **Consume messages and sent down to device, transaction-level platform commands sent down**
-  - Consume messages from Kafka to EMQX.
-  - Consume messages from Pulsar to EMQX.
+::: tip Tip
+Only **Dedicated** deployment has data integration. See [Data Integration](./rule_engine/introduction.md) to find more details.
+:::
