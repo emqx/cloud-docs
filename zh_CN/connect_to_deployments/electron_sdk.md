@@ -83,7 +83,7 @@ npm install mqtt --save
 
 ```javascript
 // Open the DevTools.
-mainWindow.webContents.openDevTools();
+mainWindow.webContents.openDevTools()
 ```
 
 如此时未使用前端构建工具对前端页面进行打包构建的话，无法直接在 `renderer.js` 中加载到本地已经安装的 `MQTT.js` 模块。除使用构建工具方法外，还提供另外两种解决方法：
@@ -96,12 +96,63 @@ mainWindow.webContents.openDevTools();
      height: 600,
      webPreferences: {
        nodeIntegration: true,
-       preload: path.join(__dirname, "preload.js"),
+       preload: path.join(__dirname, 'preload.js'),
      },
-   });
+   })
    ```
 
 2. 可以在 `preload.js` 中进行引入 `MQTT.js` 模块操作。当没有 node integration 时，这个脚本仍然有能力去访问所有的 Node APIs, 但是当这个脚本执行执行完成之后，通过 Node 注入的全局对象（global objects）将会被删除。
+
+3. 可以在 main 主进程中引入 `MQTT.js` 并进行连接操作，使用 Electron 的 IPC 机制来实现不同的进程间相互通信。在 Electron 中，主进程使用 [`ipcMain`](https://www.electronjs.org/zh/docs/latest/api/ipc-main)，渲染进程使用 [`ipcRenderer`](https://www.electronjs.org/zh/docs/latest/api/ipc-renderer) 模块，通过开发人员定义的“通道”传递消息来进行通信。 这些通道是 **任意** （您可以随意命名它们）和 **双向** （您可以在两个模块中使用相同的通道名称）的。欲了解用法示例，请查看[进程间通信（IPC）教程](https://www.electronjs.org/zh/docs/latest/tutorial/ipc)。
+
+   例如主进程中，通过 ipcMain 监听连接操作，当用户点击连接时，render 进程中收集相应的配置信息通过 ipcRenderer 传递到主进程从而进行连接：
+
+   - 在主进程中接收渲染进程发送过来的连接数据，进行 MQTT 连接：
+
+   ```js
+   // main.js
+   ipcMain.on('onConnect', (event, connectUrl, connectOpt) => {
+     client = mqtt.connect(connectUrl, connectOpt)
+     client.on('connect', () => {
+       console.log('Client connected:' + options.clientId)
+     })
+     client.on('message', (topic, message) => {
+       console.log(`${message.toString()}\nOn topic: ${topic}`)
+     })
+   })
+   ```
+
+   - 在渲染进程中实现点击连接，从页面中获取连接数据并发送到主进程：
+
+   ```js
+   // render.js
+   function onConnect() {
+     const { host, port, clientId, username, password } = connection
+     const connectUrl = `mqtt://${host.value}:${port.value}`
+     const options = {
+       keepalive: 30,
+       protocolId: 'MQTT',
+       clean: true,
+       reconnectPeriod: 1000,
+       connectTimeout: 30 * 1000,
+       rejectUnauthorized: false,
+       clientId,
+       username,
+       password,
+     }
+     console.log('connecting mqtt client')
+     window.electronAPI.onConnect(connectUrl, options)
+   }
+   ```
+
+   - 在 preload 脚本中，实现进程间 IPC 通讯的 API 方法，建立通道：
+
+   ```js
+   // preload.js
+   contextBridge.exposeInMainWorld('electronAPI', {
+     onConnect: (data) => ipcRenderer.send('onConnect', data),
+   })
+   ```
 
 ## 连接
 
@@ -115,72 +166,89 @@ mainWindow.webContents.openDevTools();
 - TCP Port: **1883**
 - WebSocket Port: **8083**
 
-为更直观表达，示例的关键连接代码将在 `renderer.js` 文件中编写，并考虑到安全问题，将使用上文中如何引入 `MQTT.js` 里的方法 2，在 `preload.js` 文件中通过 Node.js API 的 `require` 方法加载已安装的 MQTT 模块，并挂载到全局的 `window` 对象中，这样在 `renderer.js` 中，便可以直接访问已加载的模块：
+为更直观表达，示例的关键连接代码将在 `renderer.js` 文件中编写，考虑到安全问题，将使用上文中如何引入 `MQTT.js` 里的方法 2，在 `preload.js` 文件中通过 Node.js API 的 `require` 方法加载已安装的 MQTT 模块，并挂载到全局的 `window` 对象中。
+
+> **注意：** 自 Electron 12 以来，默认开启了[上下文隔离（contextIsolation）](https://www.electronjs.org/docs/latest/tutorial/context-isolation)，虽然预加载脚本与其附着的渲染器共享同一个全局的 `window` 对象，但是并不能从中直接附加任何变动到 `window` 上。
+
+因此我们需要先在 webPreferences 中设置 `contextIsolation: false` 来关闭：
+
+```js
+const mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: false; // Version 12.0.0 above are enabled by default
+    }
+  })
+```
+
+这样在 `renderer.js` 中，便可以直接访问已加载的模块：
 
 - 引入 MQTT 模块
 
 ```javascript
 // preload.js
-const mqtt = require("mqtt");
-window.mqtt = mqtt;
+const mqtt = require('mqtt')
+window.mqtt = mqtt
 ```
 
 - 配置测试 MQTT 模块
 
 ```javascript
 // renderer.js
-const clientId = "mqttjs_" + Math.random().toString(16).substr(2, 8);
+const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 
-const host = "mqtt://broker.emqx.io:1883";
+const host = 'mqtt://broker.emqx.io:1883'
 
 const options = {
   keepalive: 30,
   clientId: clientId,
-  protocolId: "MQTT",
+  protocolId: 'MQTT',
   protocolVersion: 4,
   clean: true,
   reconnectPeriod: 1000,
   connectTimeout: 30 * 1000,
   will: {
-    topic: "WillMsg",
-    payload: "Connection Closed abnormally..!",
+    topic: 'WillMsg',
+    payload: 'Connection Closed abnormally..!',
     qos: 0,
     retain: false,
   },
   rejectUnauthorized: false,
-};
+}
 
 // 可查看到 mqtt 模块的信息
-console.log(mqtt);
+console.log(mqtt)
 
-console.log("connecting mqtt client");
-const client = mqtt.connect(host, options);
+console.log('connecting mqtt client')
+const client = mqtt.connect(host, options)
 
-client.on("error", (err) => {
-  console.log("Connection error: ", err);
-  client.end();
-});
+client.on('error', (err) => {
+  console.log('Connection error: ', err)
+  client.end()
+})
 
-client.on("reconnect", () => {
-  console.log("Reconnecting...");
-});
+client.on('reconnect', () => {
+  console.log('Reconnecting...')
+})
 
-client.on("connect", () => {
-  console.log("Client connected:" + clientId);
-  client.subscribe("testtopic/electron", {
+client.on('connect', () => {
+  console.log('Client connected:' + clientId)
+  client.subscribe('testtopic/electron', {
     qos: 0,
-  });
-  client.publish("testtopic/electron", "Electron connection demo...!", {
+  })
+  client.publish('testtopic/electron', 'Electron connection demo...!', {
     qos: 0,
     retain: false,
-  });
-});
+  })
+})
 
-client.on("message", (topic, message, packet) => {
+client.on('message', (topic, message, packet) => {
   console.log(
-    "Received Message: " + message.toString() + "\nOn topic: " + topic
-  );
-});
+    'Received Message: ' + message.toString() + '\nOn topic: ' + topic
+  )
+})
 ```
 
 可以看到，在编写完以上代码后并且运行该项目后可以在控制台看到以下内容输出：
@@ -198,43 +266,43 @@ MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简
 ### 连接关键代码
 
 ```javascript
-let client = null;
+let client = null
 
 const options = {
   keepalive: 30,
-  protocolId: "MQTT",
+  protocolId: 'MQTT',
   protocolVersion: 4,
   clean: true,
   reconnectPeriod: 1000,
   connectTimeout: 30 * 1000,
   will: {
-    topic: "WillMsg",
-    payload: "Connection Closed abnormally..!",
+    topic: 'WillMsg',
+    payload: 'Connection Closed abnormally..!',
     qos: 0,
     retain: false,
   },
-};
+}
 
 function onConnect() {
-  const { host, port, clientId, username, password } = connection;
-  const connectUrl = `mqtt://${host.value}:${port.value}`;
+  const { host, port, clientId, username, password } = connection
+  const connectUrl = `mqtt://${host.value}:${port.value}`
   options.clientId =
-    clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`;
-  options.username = username.value;
-  options.password = password.value;
-  console.log("connecting mqtt client");
-  client = mqtt.connect(connectUrl, options);
-  client.on("error", (err) => {
-    console.error("Connection error: ", err);
-    client.end();
-  });
-  client.on("reconnect", () => {
-    console.log("Reconnecting...");
-  });
-  client.on("connect", () => {
-    console.log("Client connected:" + options.clientId);
-    connectBtn.innerText = "Connected";
-  });
+    clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`
+  options.username = username.value
+  options.password = password.value
+  console.log('connecting mqtt client')
+  client = mqtt.connect(connectUrl, options)
+  client.on('error', (err) => {
+    console.error('Connection error: ', err)
+    client.end()
+  })
+  client.on('reconnect', () => {
+    console.log('Reconnecting...')
+  })
+  client.on('connect', () => {
+    console.log('Client connected:' + options.clientId)
+    connectBtn.innerText = 'Connected'
+  })
 }
 ```
 
@@ -243,18 +311,18 @@ function onConnect() {
 ```javascript
 function onSub() {
   if (client.connected) {
-    const { topic, qos } = subscriber;
+    const { topic, qos } = subscriber
     client.subscribe(
       topic.value,
       { qos: parseInt(qos.value, 10) },
       (error, res) => {
         if (error) {
-          console.error("Subscribe error: ", error);
+          console.error('Subscribe error: ', error)
         } else {
-          console.log("Subscribed: ", res);
+          console.log('Subscribed: ', res)
         }
       }
-    );
+    )
   }
 }
 ```
@@ -264,14 +332,14 @@ function onSub() {
 ```javascript
 function onUnsub() {
   if (client.connected) {
-    const { topic } = subscriber;
+    const { topic } = subscriber
     client.unsubscribe(topic.value, (error) => {
       if (error) {
-        console.error("Unsubscribe error: ", error);
+        console.error('Unsubscribe error: ', error)
       } else {
-        console.log("Unsubscribed: ", topic.value);
+        console.log('Unsubscribed: ', topic.value)
       }
-    });
+    })
   }
 }
 ```
@@ -281,11 +349,11 @@ function onUnsub() {
 ```javascript
 function onSend() {
   if (client.connected) {
-    const { topic, qos, payload } = publisher;
+    const { topic, qos, payload } = publisher
     client.publish(topic.value, payload.value, {
       qos: parseInt(qos.value, 10),
       retain: false,
-    });
+    })
   }
 }
 ```
@@ -294,13 +362,13 @@ function onSend() {
 
 ```javascript
 // 在 onConnect 函数中
-client.on("message", (topic, message) => {
-  const msg = document.createElement("div");
-  msg.className = "message-body";
-  msg.setAttribute("class", "message-body");
-  msg.innerText = `${message.toString()}\nOn topic: ${topic}`;
-  document.getElementById("article").appendChild(msg);
-});
+client.on('message', (topic, message) => {
+  const msg = document.createElement('div')
+  msg.className = 'message-body'
+  msg.setAttribute('class', 'message-body')
+  msg.innerText = `${message.toString()}\nOn topic: ${topic}`
+  document.getElementById('article').appendChild(msg)
+})
 ```
 
 ### 断开连接
@@ -308,11 +376,11 @@ client.on("message", (topic, message) => {
 ```javascript
 function onDisconnect() {
   if (client.connected) {
-    client.end();
-    client.on("close", () => {
-      connectBtn.innerText = "Connect";
-      console.log(options.clientId + " disconnected");
-    });
+    client.end()
+    client.on('close', () => {
+      connectBtn.innerText = 'Connect'
+      console.log(options.clientId + ' disconnected')
+    })
   }
 }
 ```
