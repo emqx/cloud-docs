@@ -1,25 +1,55 @@
-# 产品定价
+# 产品计费
 
 我们提供了多种灵活的产品规格，支持在全球主流的公有云上部署专属于您的全托管 MQTT 服务。
 
-## Serverless 价格详情
+## Serverless 计费
 
-| **计费项**         | **免费额度**                                      | **计费**           |
-| -------------------- | -------------------------------------------- | ------------------|
-| 连接       | 每月 1 百万连接分钟      | ¥ 8.00 每一百万连接分钟                                |
-| 流量     | 每月 1 GB                               | ¥ 1.5 / GB                                 |
+EMQX Cloud Serverless 按照部署实际使用量计费，连接实际产生的连接分钟数以及消息产生的流量进行计费。用户每个月开始都会获得一定的免费额度，且都会优先使用免费额度。当某一项免费额度用完之后，此项就会进入计费。
 
-::: tip Tip
-Serverless 在 Beta 测试期间不收取任何连接费用和流量费用。
-:::
+
+### 名词解释
 
 **连接分钟：** 1个连接分钟为1个客户端连接一分钟的计量单位，不足一分钟以一分钟计算。<br />
 **客户端连接：** 为同时在线客户端（**包含保留会话的离线客户端**）总数。[保留会话](https://www.emqx.com/zh/blog/mqtt-session)，即客户端断开连接时，会话仍然保持并保存离线消息，直到会话超时注销。<br />
 **流量：** 流量（包含免费流量）指所有**流入部署和流出部署的公网流量**。
 
+### 计费详情
 
-## 专有版价格详情
+| **计费项**         | **免费额度**                | **计费**           |
+| -------------------- | ----------------------- | ------------------|
+| 连接       | 每月 1 百万连接分钟      | ¥ 8.00 每一百万连接分钟                                |
+| 流量     | 每月 1 GB           | ¥ 1.5 / GB                                 |
 
+
+### Serverless 价格计算方式
+
+连接费用 = 连接的客户端 * 客户端连接的时间（以分钟计算，不足一分钟以一分钟计算） / 1,000,000 *  8 <br/>
+流量费用 = 部署流入和流出的消息产生的流量（byte）/ 1024 / 1024 / 1024 * 1.5
+
+::: tip Tip
+假设一个用户24小时之内，有10个小时客户端连接为120，有10个小时客户端连接为20，有4个小时客户端连接为0，则当天的连接分钟数为：120 * 60 * 10 + 20 * 60 * 10 + 0 = 84,000， 如果在免费额度内，则当天的连接费为0；如果免费额度已经用完，则当天的连接费用为 84,000 / 1,000,000 * 8 = 0.672, 四舍五入的价格为 ¥ 0.67。
+流量的计算方式同连接。
+:::
+
+EMQX Cloud 累积**24小时**的连接分钟数以及流量，在每天的0点进行结算，计入小时账单并从余额中扣费。您可以前往 [账单页面](<https://cloud.emqx.com/console/billing/overview>) 查看详细扣费信息。
+
+
+## 专有版计费
+
+EMQX Cloud 专有版按产品版本、实例规格与消息传输网络流量计费。不限制消息条数，API调用次数与数据集成的使用。您可根据您的业务情况选择对应的产品和规格，当业务扩张时也确保成本仍然清晰可控。
+
+### 名词解释
+
+**连接数：** 连接数为同时在线客户端（**包含保留会话的离线客户端**）总数。[保留会话](https://www.emqx.com/zh/blog/mqtt-session)，即客户端断开连接时，会话仍然保持并保存离线消息，直到会话超时注销。<br />
+**基础费用：** 根据部署时所选择的产品版本和实例规格（最大连接数、消息 TPS）对应的小时单价计算出的实例基础费用。实际使用中该部分费用仅跟时长相关，不会因为用量（连接数、消息 TPS）的变动而变动。<br />
+**流量:** 流量（包含免费流量）指所有**流出部署的公网流量** 。
+   - 通过 VPC 对等连接或私网连接的流量不计算在流量中。
+   - 部署接收到的消息的流量（如客户端发送给部署的消息）不计算在流量中。
+   - 如果开通了 NAT 网关，流出部署的即为公网流量，将计算在流量中。
+
+**流量费用:** 各实例规格均包含了一定量的免费流量。赠送的流量当月有效，如有剩余月底自动清空。当设备通信超出赠送的流量后超出部分将收取流量费用。
+
+### 计费详情
 <table>
    <tr>
       <th>版本</th>
@@ -68,421 +98,12 @@ Serverless 在 Beta 测试期间不收取任何连接费用和流量费用。
    </tr>
 </table>
 
-
-**连接数：** 连接数为同时在线客户端（**包含保留会话的离线客户端**）总数。[保留会话](https://www.emqx.com/zh/blog/mqtt-session)，即客户端断开连接时，会话仍然保持并保存离线消息，直到会话超时注销。<br />
-**流量：** 流量（包含免费流量）指所有**流出部署的公网流量**。
-   - 通过 VPC 对等连接或私网连接的流量不计算在流量中。
-   - 部署接收到的消息的流量（如客户端发送给部署的消息）不计算在流量中。
-   - 如果开通了 NAT 网关，流出部署的即为公网流量，将计算在流量中。
-
+您还可以在[价格页面](https://www.emqx.com/zh/cloud/pricing)获取到不同产品和规格对应部署每小时价格。
 
 ::: warning
 根据所选的公有云平台及部署地域的不同，价格可能存在差异。实际价格以部署页面显示价格为准。
 :::
 
-## 功能详情
+### 计费方式
 
-<table>
-  <tr>
-      <th></th>
-      <th>Serverless</th>
-      <th>基础版</th>
-      <th>专业版</th>
-    </tr>
-   <tr>
-      <td><strong>公有云平台</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">阿里云</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">华为云</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">腾讯云</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">亚马逊云科技</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>协议支持</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">MQTT v3.1, v3.1.1, v5.0</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Port:1883(mqtt),8083(ws)</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Port:8883(mqtts),8084(wss)</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">WebSocket</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">MQTT-SN</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">CoAP</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">LwM2M</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">JT/T808</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>连接</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">最大连接数</td>
-      <td>1000</td>
-      <td>10,000</td>
-      <td>无限制</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">VPC 对等连接（私有网络）</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">私网连接（阿里云）</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">NAT 网关</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">内网 LB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>功能特性</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">MQTT QoS 0, QoS 1, QoS 2</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">消息保留</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">遗嘱消息</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">共享订阅</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">用户名与密码认证</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">客户端和主题级别的访问控制</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">指标监控</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">告警</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">项目管理</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">角色权限管理</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">发票管理</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">企业 SSL 证书</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">支持第三方数据源认证与授权</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">日志</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>数据集成</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">基于 SQL 的数据处理</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">消息重发布</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">消息桥接</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">WebHook</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Kafka</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">RabbitMQ</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">RocketMQ</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Pulsar</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">MySQL</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">PostgreSQL</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">MongoDB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Redis</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Cassandra</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">DynamoDB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">ClickHouse</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">OpenTSDB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">InfluxDB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">TimescaleDB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Oracle DB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">SQL Server</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">DolphinDB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">TDengine</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>增值服务</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">流量包</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">影子服务</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">自定义函数</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>服务支持</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">SLA 等级</td>
-      <td>-</td>
-      <td>99.95%</td>
-      <td>99.99%</td>
-   </tr>
-    <tr>
-      <td style="text-indent: 2em;">客户支持</td>
-      <td>-</td>
-      <td>8/5</td>
-      <td>24/7</td>
-   </tr>
-    <tr>
-      <td style="text-indent: 2em;">多可用区部署</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-</table>
+每小时统计核算一次上小时内专有版部署消费情况（小时账单）并从余额扣费，然后累加到当月消费（月账单），您可以前往 [账单页面](<https://cloud.emqx.com/console/billing/overview>) 查看详细扣费信息。

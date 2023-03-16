@@ -5,36 +5,19 @@
       "path": "./"
     },
     {
-      "title": "产品简介",
-      "children": [
-        {
-          "title": "产品概述",
-          "path": "overview"
-        },
-        {
-          "title": "产品优势",
-          "path": "intro/advance"
-        },
-        {
-          "title": "产品限制",
-          "path": "intro/restriction"
-        }
-      ]
+      "title": "概览",
+      "path": "overview"
     },
     {
-      "title": "产品定价",
+      "title": "版本和定价",
       "children": [
         {
-          "title": "定价介绍",
+          "title": "版本介绍",
+          "path": "price/plans"
+        },
+        {
+          "title": "定价计费",
           "path": "price/pricing"
-        },
-        {
-          "title": "计费说明",
-          "path": "price/charging"
-        },
-        {
-          "title": "价格计算",
-          "path": "price/calculator"
         }
       ]
     },
@@ -46,16 +29,8 @@
           "path": "quick_start/introduction"
         },
         {
-          "title": "创建 Serverless(Beta) 部署",
-          "path": "quick_start/create_serverless"
-        },
-        {
-          "title": "创建免费试用部署",
-          "path": "quick_start/create_free_trial"
-        },
-        {
-          "title": "创建计费部署",
-          "path": "deployments/create_deployment"
+          "title": "创建 Serverless 部署",
+          "path" : "quick_start/create_serverless"
         },
         {
           "title": "使用 MQTT X 连接到部署",
@@ -64,7 +39,20 @@
       ]
     },
     {
-      "title": "功能概述",
+      "title": "创建部署",
+      "children" : [
+        {
+          "title": "创建 Serverless 部署",
+          "path": "create/serverless"
+        },
+        {
+          "title": "创建专有版部署",
+          "path": "create/dedicated"
+        },
+      ]
+    },
+    {
+      "title": "管理控制台",
       "children": [
         {
           "title": "项目中心",
@@ -83,113 +71,127 @@
           "path": "feature/user"
         },
         {
-          "title": "财务管理",
-          "path": "billing/introduction"
-        },
-        {
-          "title": "账单概览",
-          "path": "billing/overview"
-        },
-        {
-          "title": "代金券",
-          "path": "billing/coupon"
-        },
-        {
-          "title": "发票",
-          "path": "billing/invoices"
-        },
-        {
-          "title": "续费管理",
-          "path": "billing/subscription"
-        },
-        {
           "title": "工单",
           "path": "feature/tickets"
         }
       ]
     },
     {
-      "title": "部署和连接",
+      "title": "管理部署",
       "children": [
         {
-          "title": "部署简介",
-          "path": "deployments/introduction"
+          "title": "管理 Serverless 部署",
+          "children" : [
+            {
+              "title": "消费限额设置",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "认证",
+              "path": "deployments/auth_dedicated"
+            },
+            {
+              "title": "访问控制",
+              "path": "deployments/acl_dedicated"
+            },
+            {
+              "title": "监控",
+              "path": "deployments/monitors"
+            },
+            {
+              "title": "指标",
+              "path": "deployments/metrics"
+            },
+            {
+              "title": "告警",
+              "path": "deployments/alerts"
+            },
+            {
+              "title": "Webhook 告警",
+              "path": "deployments/alerts_webhook"
+            },
+            {
+              "title": "停止/删除部署",
+              "path": "deployments/stop_delete_deployment"
+            }
+          ]       
         },
         {
-          "title": "部署概览",
-          "path": "deployments/view_deployment"
-        },
-        {
-          "title": "TLS/SSL 设置",
-          "path": "deployments/tls_ssl"
-        },
-        {
-          "title": "VPC 对等连接设置",
-          "path": "deployments/vpc_peering"
-        },
-        {
-          "title": "私网连接 PrivateLink 设置",
-          "path": "deployments/privatelink"
-        },
-        {
-          "title": "认证",
-          "path": "deployments/auth"
-        },
-        {
-          "title": "访问控制",
-          "path": "deployments/acl"
-        },
-        {
-          "title": "自定义认证概述",
-          "path": "deployments/custom_auth"
-        },
-        {
-          "title": "HTTP 自定义认证",
-          "path": "deployments/http_auth"
-        },
-        {
-          "title": "MySQL 认证/访问控制",
-          "path": "deployments/mysql_auth"
-        },
-        {
-          "title": "PostgreSQL 认证/访问控制",
-          "path": "deployments/pgsql_auth"
-        },
-        {
-          "title": "Redis 认证/访问控制",
-          "path": "deployments/redis_auth"
-        },
-        {
-          "title": "JWT 认证",
-          "path": "deployments/jwt_auth"
-        },
-        {
-          "title": "监控",
-          "path": "deployments/monitors"
-        },
-        {
-          "title": "指标",
-          "path": "deployments/metrics"
-        },
-        {
-          "title": "Prometheus",
-          "path": "deployments/prometheus"
-        },
-        {
-          "title": "日志",
-          "path": "deployments/logs"
-        },
-        {
-          "title": "告警",
-          "path": "deployments/alerts"
-        },
-        {
-          "title": "Webhook 告警",
-          "path": "deployments/alerts_webhook"
-        },
-        {
-          "title": "停止/删除部署",
-          "path": "deployments/stop_delete_deployment"
+          "title": "管理专有版部署",
+          "children": [
+            {
+              "title": "TLS/SSL 设置",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "VPC 对等连接设置",
+              "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "私网连接 PrivateLink 设置",
+              "path": "deployments/privatelink"
+            },
+            {
+              "title": "认证",
+              "path": "deployments/auth_dedicated"
+            },
+            {
+              "title": "访问控制",
+              "path": "deployments/acl_dedicated"
+            },
+            {
+              "title": "自定义认证概述",
+              "path": "deployments/custom_auth"
+            },
+            {
+              "title": "HTTP 自定义认证",
+              "path": "deployments/http_auth"
+            },
+            {
+              "title": "MySQL 认证/访问控制",
+              "path": "deployments/mysql_auth"
+            },
+            {
+              "title": "PostgreSQL 认证/访问控制",
+              "path": "deployments/pgsql_auth"
+            },
+            {
+              "title": "Redis 认证/访问控制",
+              "path": "deployments/redis_auth"
+            },
+            {
+              "title": "JWT 认证",
+              "path": "deployments/jwt_auth"
+            },
+            {
+              "title": "监控",
+              "path": "deployments/monitors"
+            },
+            {
+              "title": "指标",
+              "path": "deployments/metrics"
+            },
+            {
+              "title": "Prometheus",
+              "path": "deployments/prometheus"
+            },
+            {
+              "title": "日志",
+              "path": "deployments/logs"
+            },
+            {
+              "title": "告警",
+              "path": "deployments/alerts"
+            },
+            {
+              "title": "Webhook 告警",
+              "path": "deployments/alerts_webhook"
+            },
+            {
+              "title": "停止/删除部署",
+              "path": "deployments/stop_delete_deployment"
+            }
+          ]
         }
       ]
     },
@@ -400,6 +402,31 @@
       ]
     },
     {
+      "title": "财务管理",
+      "children": [
+        {
+          "title": "账单概览",
+          "path": "billing/overview"
+        },
+        {
+          "title": "代金券",
+          "path": "billing/coupon"
+        },
+        {
+          "title": "发票",
+          "path": "billing/invoices"
+        },
+        {
+          "title": "续费管理",
+          "path": "billing/subscription"
+        },
+        {
+          "title": "欠费说明",
+          "path": "billing/overdue"
+        }
+      ]
+    },
+    {
       "title": "增值服务",
       "children": [
         {
@@ -432,36 +459,33 @@
         },
         {
           "title": "影子服务",
-          "path": "vas/shadows"
-        }
-      ]
-    },
-    {
-      "title": "影子服务",
-      "children": [
-        {
-          "title": "服务概览",
-          "path": "shadow_service/overview"
-        },
-        {
-          "title": "计费说明",
-          "path": "shadow_service/pricing"
-        },
-        {
-          "title": "功能简介",
-          "path": "shadow_service/feature"
-        },
-        {
-          "title": "调用和通信",
-          "path": "shadow_service/invoke"
-        },
-        {
-          "title": "场景案例：设备影子",
-          "path": "shadow_service/device_shadow"
-        },
-        {
-          "title": "场景案例：物模型管理应用",
-          "path": "shadow_service/things_model"
+          "children": 
+          [
+            {
+              "title": "服务概览",
+              "path": "shadow_service/overview"
+            },
+            {
+              "title": "计费说明",
+              "path": "shadow_service/pricing"
+            },
+            {
+              "title": "功能简介",
+              "path": "shadow_service/feature"
+            },
+            {
+              "title": "调用和通信",
+              "path": "shadow_service/invoke"
+            },
+            {
+              "title": "场景案例：设备影子",
+              "path": "shadow_service/device_shadow"
+            },
+            {
+              "title": "场景案例：物模型管理应用",
+              "path": "shadow_service/things_model"
+            }
+          ]
         }
       ]
     },
@@ -654,7 +678,7 @@
           "path": "deployments/vpc_peering"
         },
         {
-          "title": "PrivateLink",
+          "title": "PrivateLink Setting",
           "path": "deployments/privatelink"
         },
         {
