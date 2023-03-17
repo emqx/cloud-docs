@@ -30,7 +30,7 @@
         },
         {
           "title": "创建 Serverless 部署",
-          "path" : "quick_start/create_serverless"
+          "path" : "create/serverless"
         },
         {
           "title": "使用 MQTT X 连接到部署",
@@ -48,7 +48,7 @@
         {
           "title": "创建专有版部署",
           "path": "create/dedicated"
-        },
+        }
       ]
     },
     {
@@ -84,15 +84,15 @@
           "children" : [
             {
               "title": "消费限额设置",
-              "path": "deployments/tls_ssl"
+              "path": "deployments/spend_limit"
             },
             {
               "title": "认证",
-              "path": "deployments/auth_dedicated"
+              "path": "deployments/auth_serverless"
             },
             {
               "title": "访问控制",
-              "path": "deployments/acl_dedicated"
+              "path": "deployments/acl_serverless"
             },
             {
               "title": "监控",
