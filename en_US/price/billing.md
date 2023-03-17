@@ -18,6 +18,20 @@ The traffic is calculated in the same way as the session.
 :::
 
 
+### Spend limit
+After the launch of EMQX Cloud Serverless, **Spend Limit** will be added. Spend limit can control the monthly consumption of Serverless deployment within the set value or give reminders when it is reached. Spend limit can be set when creating deployments and can be modified afterwards.
+
+![spend_limit](./_assets/spend_limit.png)
+
+- When the spend limit is set to 0, Serverless deployment will **only consume the free quota**, which is 1 million session minutes and 1 GB traffic per month.
+- You can set the spend limit to an integer between 1 and 10,000, and you can choose the action triggered when the consumption reaches the spend limit for the current month. You can choose to stop the deployment or to receive a reminder and continue billing. If you choose the latter, we will send a reminder via email, and the deployment will continue to run and be billed.
+- When you set the spend limit greater than 0, you will need to provide a payment method if there is none currently.
+- Notice: If there is an overdue bill, Serverless deployment will still be stopped even if the spend limit has not been reached.
+
+::: warning
+If you have already created a Serverless (Beta) deployment, it will be automatically updated on April 1, 2023, and the maximum number of sessions will be scaled to 1000. At the same time, the spend limit will be set to 0 by default. This means that no additional charges will be incurred for the Serverless deployment until you make any changes to the spend limit by yourself.
+:::
+
 ## Dedicated
 
 EMQX Cloud Dedicated Edition is charged based on product version, instance specifications, and network traffic for message transmission. There is no limit on the number of messages, API calls, or data integrations used. You can choose the appropriate product and specifications based on your business needs, ensuring that costs remain clear and controllable even as your business expands.
