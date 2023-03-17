@@ -29,8 +29,8 @@
           "path": "quick_start/introduction"
         },
         {
-          "title": "创建 Serverless 部署",
-          "path" : "create/serverless"
+          "title": "创建专有版试用部署",
+          "path" : "quick_start/create_free_trial"
         },
         {
           "title": "使用 MQTT X 连接到部署",

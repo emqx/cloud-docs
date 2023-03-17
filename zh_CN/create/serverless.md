@@ -1,16 +1,8 @@
 # 创建 Serverless(Beta) 部署
 
-您可以简单几步就创建一个 Serverless(Beta) 部署。
+EMQX Cloud 已经推出了基于共享集群的 MQTT 服务 —— EMQX Cloud Serverless，赋予开发者或微小企业更低成本且高效测试开发物联网应用的能力。简单几步就创建一个 Serverless 部署。
 
 目前一个账号下只能创建一个 Serverless(Beta) 部署。在 2023.4.1 日之前，Serverless 在 Beta测试阶段，部署的最大连接上限为100，并且完全免费使用。
-
-
-Serverless(Beta) 部署注意事项：
-
-* 若部署持续 30 天没有活跃客户端连接，部署将会被停止。如需继续试用，请在控制台手动启用。
-
-* 如果部署停止 30 天没有开启，我们可能删除部署。
-
 
 
 ## 创建部署
@@ -34,9 +26,27 @@ Serverless(Beta) 部署注意事项：
 
    ![serverless_running](./_assets/serverless_running.png)
 
-## 连接到您的免费试用部署
 
-在连接到您的部署之前，确认部署状态由 **创建中** 转为 **运行中**
+## 部署概览页面
+
+部署概览页面可获取到部署最新的状态和连接信息：
+
+   ![serverless](./_assets/serverless_overview.png)
+
+- 部署状态：部署运行状态和创建时间。
+- 连接数：当前的连接数和最大连接数。
+- 消息上下行 TPS：当前每秒钟消息发送和接收条数和上限。
+- 连接分钟数：本月已经使用的总连接分钟数。此数值的统计有1小时的延时。
+- 流量：本月已经产生入网和出网的流量。此数值的统计有1小时的延时。
+- 部署名称：可自定义的部署的名称。
+- 连接地址：域名地址。
+- 连接端口：默认开启 8883(mqtts) 和 8084(wss) 端口。
+
+Serverless 仅支持 8883(mqtts) 和 8084(wss) 端口。如果客户端需要 CA 文件，请[在此下载](https://assets.emqx.com/data/emqxsl-ca.crt)。
+
+
+
+## 连接到您的免费试用部署
 
 1. 添加客户端认证信息
 
@@ -47,8 +57,6 @@ Serverless(Beta) 部署注意事项：
 2. 获取免费试用连接信息
 
    点击概览菜单，您将看到部署连接地址以及连接端口。Serverless(Beta) 默认支持 8883(mqtts), 8084(wss) 端口
-
-   ![connections](./_assets/serverless_overview.png)
 
 3. MQTT X 连接到免费试用部署
 
@@ -61,3 +69,11 @@ Serverless(Beta) 部署注意事项：
 * 连接之后即可以发布和订阅消息
    
    ![mqttx_mqtt](./_assets/create_serverless_connect.png)
+
+::: warning
+* 若部署持续 30 天没有活跃客户端连接，部署将会被停止。如需继续试用，请在控制台手动启用。
+* 如果部署停止之后 30 天没有开启，部署将会被删除。
+:::
+
+
+
