@@ -112,7 +112,7 @@
             },
             {
               "title": "停止/删除部署",
-              "path": "deployments/stop_delete_deployment"
+              "path": "deployments/stop_delete_deployment_serverless"
             }
           ]       
         },
