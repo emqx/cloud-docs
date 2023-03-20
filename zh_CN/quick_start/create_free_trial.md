@@ -42,7 +42,6 @@ EMQX Cloud 免费试用部署注意事项：
 
 4. 点击立即部署，并同意 EMQX Cloud 标准服务条款和免费试用申明条款
 
-   ![free_trial_declare](./_assets/free_trial_declare.png)
 
 5. 等待 5 分钟左右，直至部署状态为**运行中**
 
