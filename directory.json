@@ -47,7 +47,7 @@
         },
         {
           "title": "创建 Serverless(Beta) 部署",
-          "path" : "quick_start/create_serverless"
+          "path": "quick_start/create_serverless"
         },
         {
           "title": "创建免费试用部署",
@@ -654,7 +654,7 @@
           "path": "deployments/vpc_peering"
         },
         {
-          "title": "PrivateLink Setting",
+          "title": "PrivateLink",
           "path": "deployments/privatelink"
         },
         {
