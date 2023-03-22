@@ -18,38 +18,36 @@
 4. 要验证您的新账户，请点击确认邮件中的链接，该链接将会验证您的账户，并返回登录页面；
 5. 登录 EMQX Cloud。
 
-![login](./_assets/signup.png)
+<img src="./_assets/signup.png" alt="login" style="zoom: 33%;" />
 
 ### [登录账户](https://www.emqx.com/zh/signin?continue=https://www.emqx.com/cn/cloud)
 
 输入您的邮箱和密码，然后选择登录将跳转到 EMQX Cloud 控制台。
 
-![login](./_assets/login.png)
-
 ### [找回密码](https://accounts-zh.emqx.com/forgot-password?continue=https%3A%2F%2Fwww.emqx.com%2Fcn%2Fcloud)
 
-如果您忘记密码，我们将会向您的邮箱发送验证邮件。您可以在验证邮件中点击找回密码，创建新的密码。您将返回登录页面，输入新的密码，然后选择登录。
+如果您忘记密码，可在登陆页面点击忘记密码，我们将会向您的邮箱发送验证邮件。您可以在验证邮件中点击找回密码，创建新的密码并登陆。
 
-![login](./_assets/forgot_password.png)
+
 
 ## 控制台快速入门
 
 以下会为您介绍 EMQX Cloud 控制台的基本功能。
 
-1. 访问 EMQX Cloud [控制台](https://cloud.emqx.com/console/)，选择基础版或专业版创建部署
+1. 访问 EMQX Cloud [控制台](https://cloud.emqx.com/console/)，选择基础版或专业版创建部署。
 
-   > EMQX Cloud 为每位用户提供一次 14 天的基础版免费试用和 14 天的专业版免费试用
+   > EMQX Cloud 为每位用户提供一次 14 天的基础版免费试用和 14 天的专业版免费试用。
 
    ![add_users](./_assets/create_free_trial.png)
 
-2. 前往部署【认证鉴权】->【认证】页面 [添加认证信息](../deployments/auth.md)
+2. 前往部署【认证鉴权】->【认证】页面 [添加认证信息](../deployments/auth.md)。
 
    ![add_users](./_assets/auth.png)
 
-3. 点击左侧概览菜单，获取部署连接地址和连接端口
+3. 点击左侧概览菜单，获取部署连接地址和连接端口。
 
    ![add_users](./_assets/overview.png)
 
-4. 使用您熟悉的 MQTT 客户端或 SDK [连接到部署](../connect_to_deployments/overview.md)
+4. 使用您熟悉的 MQTT 客户端或 SDK [连接到部署](../connect_to_deployments/overview.md)。
 
    ![add_users](./_assets/mqttx_mqtt.png)
