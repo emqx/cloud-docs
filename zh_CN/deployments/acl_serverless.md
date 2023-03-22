@@ -10,13 +10,12 @@
 
 **特别说明**：访问控制默认采用**黑名单**模式，且 clientid/username + topic 唯一，即同一 clientid/username + topic 记录，仅最新一条记录有效
 
-![acl](./_assets/acl.png)
 
 ## 查看访问控制信息
 
 在左侧 `认证鉴权` 的 `访问控制` 页面，可以查看访问控制信息，可以在上方切换三种粒度查看对应的访问控制信息
 
-![view_acl](./_assets/view_acl.png)
+![acl](./_assets/acl_serverless.png)
 
 ## 添加访问控制信息
 
@@ -27,7 +26,7 @@
 - %u：用户名
 - %c：客户端 ID
 
-![add_acl](./_assets/add_acl.png)
+![add_acl](./_assets/add_acl_serverless.png)
 
 `用户名` 和 `全部用户` 的操作相同
 
@@ -35,4 +34,4 @@
 
 点击访问控制信息右侧的删除图标即可删除
 
-![delete_acl](./_assets/delete_acl.png)
+![delete_acl](./_assets/delete_acl_serverless.png)
