@@ -33,7 +33,7 @@
           "path" : "quick_start/create_free_trial"
         },
         {
-          "title": "使用 MQTT X 连接到部署",
+          "title": "使用 MQTT X 验证连接/部署",
           "path": "connect_to_deployments/mqttx"
         }
       ]
@@ -100,7 +100,7 @@
             },
             {
               "title": "指标",
-              "path": "deployments/metrics"
+              "path": "deployments/metrics_serverless"
             },
             {
               "title": "告警",
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "title": "连接到部署",
+      "title": "接入客户端/应用",
       "children": [
         {
           "title": "简介",
@@ -273,7 +273,7 @@
       ]
     },
     {
-      "title": "与第三方数据系统集成",
+      "title": "集成数据系统",
       "children": [
         {
           "title": "数据集成简介",

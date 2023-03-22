@@ -30,7 +30,6 @@ EMQX Cloud 免费试用部署注意事项：
 
 1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
 
-   ![login_console](./_assets/login.png)
 
 2. 单击新建部署按钮
 
