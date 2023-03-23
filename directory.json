@@ -10,6 +10,7 @@
     },
     {
       "title": "版本和定价",
+      "path": "price/overview",
       "children": [
         {
           "title": "版本介绍",
@@ -23,23 +24,21 @@
     },
     {
       "title": "快速入门",
+      "path" : "quick_start/introduction",
       "children": [
-        {
-          "title": "入门简介",
-          "path": "quick_start/introduction"
-        },
         {
           "title": "创建专有版试用部署",
           "path" : "quick_start/create_free_trial"
         },
         {
-          "title": "使用 MQTT X 验证连接/部署",
+          "title": "使用 MQTT X 连接/验证部署",
           "path": "connect_to_deployments/mqttx"
         }
       ]
     },
     {
       "title": "创建部署",
+      "path" : "create/overview",
       "children" : [
         {
           "title": "创建 Serverless 部署",
@@ -53,6 +52,7 @@
     },
     {
       "title": "管理控制台",
+      "path" : "feature/overview",
       "children": [
         {
           "title": "项目中心",
@@ -77,6 +77,62 @@
       ]
     },
     {
+      "title": "认证和访问控制",
+      "path" : "deployments/auth_overview",
+      "children": [
+        {
+          "title": "Serverless",
+          "children" : [
+            {
+              "title": "认证",
+              "path": "deployments/auth_serverless"
+            },
+            {
+              "title": "访问控制",
+              "path": "deployments/acl_serverless"
+            }
+          ]
+        },
+        {
+          "title": "专有版",
+          "children" : [
+            {
+              "title": "认证",
+              "path": "deployments/auth_dedicated"
+            },
+            {
+              "title": "访问控制",
+              "path": "deployments/acl_dedicated"
+            },
+            {
+              "title": "外部认证和访问控制",
+              "path": "deployments/custom_auth"
+            },
+            {
+              "title": "HTTP 自定义认证",
+              "path": "deployments/http_auth"
+            },
+            {
+              "title": "MySQL 认证/访问控制",
+              "path": "deployments/mysql_auth"
+            },
+            {
+              "title": "PostgreSQL 认证/访问控制",
+              "path": "deployments/pgsql_auth"
+            },
+            {
+              "title": "Redis 认证/访问控制",
+              "path": "deployments/redis_auth"
+            },
+            {
+              "title": "JWT 认证",
+              "path": "deployments/jwt_auth"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "管理部署",
       "children": [
         {
@@ -85,14 +141,6 @@
             {
               "title": "消费限额设置",
               "path": "deployments/spend_limit"
-            },
-            {
-              "title": "认证",
-              "path": "deployments/auth_serverless"
-            },
-            {
-              "title": "访问控制",
-              "path": "deployments/acl_serverless"
             },
             {
               "title": "监控",
@@ -132,38 +180,6 @@
               "path": "deployments/privatelink"
             },
             {
-              "title": "认证",
-              "path": "deployments/auth_dedicated"
-            },
-            {
-              "title": "访问控制",
-              "path": "deployments/acl_dedicated"
-            },
-            {
-              "title": "自定义认证概述",
-              "path": "deployments/custom_auth"
-            },
-            {
-              "title": "HTTP 自定义认证",
-              "path": "deployments/http_auth"
-            },
-            {
-              "title": "MySQL 认证/访问控制",
-              "path": "deployments/mysql_auth"
-            },
-            {
-              "title": "PostgreSQL 认证/访问控制",
-              "path": "deployments/pgsql_auth"
-            },
-            {
-              "title": "Redis 认证/访问控制",
-              "path": "deployments/redis_auth"
-            },
-            {
-              "title": "JWT 认证",
-              "path": "deployments/jwt_auth"
-            },
-            {
               "title": "监控",
               "path": "deployments/monitors"
             },
@@ -197,11 +213,8 @@
     },
     {
       "title": "接入客户端/应用",
+      "path" : "connect_to_deployments/overview",
       "children": [
-        {
-          "title": "简介",
-          "path": "connect_to_deployments/overview"
-        },
         {
           "title": "Python SDK 连接",
           "path": "connect_to_deployments/python_sdk"
@@ -273,12 +286,9 @@
       ]
     },
     {
-      "title": "集成数据系统",
+      "title": "数据集成",
+      "path": "rule_engine/introduction",
       "children": [
-        {
-          "title": "数据集成简介",
-          "path": "rule_engine/introduction"
-        },
         {
           "title": "资源管理",
           "path": "rule_engine/resources"
@@ -403,6 +413,7 @@
     },
     {
       "title": "财务管理",
+      "path": "billing/overview",
       "children": [
         {
           "title": "账单概览",
@@ -428,11 +439,8 @@
     },
     {
       "title": "增值服务",
+      "path": "vas/vas-intro",
       "children": [
-        {
-          "title": "增值服务简介",
-          "path": "vas/vas-intro"
-        },
         {
           "title": "增值服务计费说明",
           "path": "vas/vas-price"
@@ -491,11 +499,8 @@
     },
     {
       "title": "API",
+      "path": "api/introduction",
       "children": [
-        {
-          "title": "API 概览",
-          "path": "api/introduction"
-        },
         {
           "title": "认证管理",
           "path": "api/auth"
