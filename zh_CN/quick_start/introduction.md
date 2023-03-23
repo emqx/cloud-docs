@@ -1,10 +1,4 @@
-# 简介
-
-欢迎使用 EMQX Cloud，EMQX Cloud 是全球首个全托管的 MQTT 5.0 消息云服务。在 [EMQX Cloud](https://www.emqx.com/zh/cloud)支持下，您可以在云上创建 EMQX 集群并使用 EMQX 企业版的功能。这使得您可以专注于业务对接，减少运维和管理 EMQX 的时间成本。本教程将指导您完成创建和连接到 EMQX Cloud 部署。在开始之前，让我们先回顾一些核心概念：
-
-- 部署：EMQX Cloud 上托管的 EMQX 企业版集群
-- 基础版部署：单节点的 EMQX 企业版
-- 专业版部署：拥有独立网络、实例以及负载均衡的 EMQX 企业版集群
+# 快速入门
 
 如果您还没有创建 EMQX Cloud 账号，以下步骤会引导您完成账号的创建。若您已有相关账号，您可跳过本步骤直接查看控制台快速入门。
 
@@ -34,17 +28,25 @@
 
 以下会为您介绍 EMQX Cloud 控制台的基本功能。
 
-1. 访问 EMQX Cloud [控制台](https://cloud.emqx.com/console/)，选择基础版或专业版创建部署。
+1. 访问 EMQX Cloud [控制台](https://cloud.emqx.com/console/)。在起始页面可以浏览到控制台的概况。点击新建，前往项目列表页面。
 
-   > EMQX Cloud 为每位用户提供一次 14 天的基础版免费试用和 14 天的专业版免费试用。
+   ![index](./_assets/index_overview.png)
+
+   
+
+2. 点击新建部署，可以从现有的版本中选择一种部署开始创建。
 
    ![add_users](./_assets/create_free_trial.png)
 
-2. 前往部署【认证鉴权】->【认证】页面 [添加认证信息](../deployments/auth.md)。
+3. 您可以[创建 Serverless 部署](../create/serverless.md)，也可以选择[创建专有版部署](../create/dedicated.md)，获取 14 天的免费试用。
+
+4. 完成部署创建流程，只需要等待部署创建完成，即可以进入刚创建的部署查看连接配置。
+
+5. 前往部署【认证鉴权】->【认证】页面 [添加认证信息](../deployments/auth.md)。
 
    ![add_users](./_assets/auth.png)
 
-3. 点击左侧概览菜单，获取部署连接地址和连接端口。
+5. 点击左侧概览菜单，获取部署连接地址和连接端口，这里不同的产品版本端口会略有不同。
 
    ![add_users](./_assets/overview.png)
 
