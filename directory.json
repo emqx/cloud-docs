@@ -42,19 +42,21 @@
         },
         {
           "title": "创建专有版部署",
-          "path": "create/dedicated"
-        },
-        {
-          "title": "TLS/SSL 设置",
-          "path": "deployments/tls_ssl"
-        },
-        {
-          "title": "VPC 对等连接设置",
-          "path": "deployments/vpc_peering"
-        },
-        {
-          "title": "私网连接 PrivateLink 设置",
-          "path": "deployments/privatelink"
+          "path": "create/dedicated",
+          "children" : [
+            {
+              "title": "TLS/SSL 设置",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "VPC 对等连接设置",
+              "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "私网连接 PrivateLink 设置",
+              "path": "deployments/privatelink"
+            }
+          ]
         }
       ]
     },
@@ -142,68 +144,39 @@
     },
     {
       "title": "运维与监控",
+      "path" : "deployments/opration_overview",
       "children": [
         {
-          "title": "Serverless",
-          "children" : [
-            {
-              "title": "消费限额设置",
-              "path": "deployments/spend_limit"
-            },
-            {
-              "title": "监控",
-              "path": "deployments/monitors"
-            },
-            {
-              "title": "指标",
-              "path": "deployments/metrics_serverless"
-            },
-            {
-              "title": "告警",
-              "path": "deployments/alerts"
-            },
-            {
-              "title": "Webhook 告警",
-              "path": "deployments/alerts_webhook"
-            },
-            {
-              "title": "停止/删除部署",
-              "path": "deployments/stop_delete_deployment_serverless"
-            }
-          ]       
+          "title": "Serverless 消费限额设置",
+          "path": "deployments/spend_limit"
         },
         {
-          "title": "专有版",
-          "children": [
-            {
-              "title": "监控",
-              "path": "deployments/monitors"
-            },
-            {
-              "title": "指标",
-              "path": "deployments/metrics"
-            },
-            {
-              "title": "Prometheus",
-              "path": "deployments/prometheus"
-            },
-            {
-              "title": "日志",
-              "path": "deployments/logs"
-            },
-            {
-              "title": "告警",
-              "path": "deployments/alerts"
-            },
-            {
-              "title": "Webhook 告警",
-              "path": "deployments/alerts_webhook"
-            },
-            {
-              "title": "停止/删除部署",
-              "path": "deployments/stop_delete_deployment"
-            }
-          ]
+          "title": "监控",
+          "path": "deployments/monitors"
+        },
+        {
+          "title": "指标",
+          "path": "deployments/metrics"
+        },
+        {
+          "title": "告警",
+          "path": "deployments/alerts"
+        },
+        {
+          "title": "Webhook 告警",
+          "path": "deployments/alerts_webhook"
+        },
+        {
+          "title": "日志",
+          "path": "deployments/logs"
+        },
+        {
+          "title": "Prometheus",
+          "path": "deployments/prometheus"
+        },
+        {
+          "title": "停止/删除部署",
+          "path": "deployments/stop_delete_deployment"
         }
       ]
     },

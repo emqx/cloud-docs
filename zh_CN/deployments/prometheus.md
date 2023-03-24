@@ -3,6 +3,10 @@
 EMQX Cloud 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX Cloud 的关键指标。
 在本文中我们将介绍如何配置 Prometheus 服务，从 EMQX Cloud API 读取关键指标，以及如何使用 Grafana 查看指标。
 
+::: warning
+该功能仅适用于专有版部署。
+:::
+
 ## API 配置
 
 在 EMQX Cloud 部署控制台找到概览 - REST API，获取到 API 地址，点击新建应用，获取 APP ID、APP Secret。
