@@ -1,5 +1,11 @@
 # Logs
 
+:::
+
+This feature is only available on the Dedicated product Plan. 
+
+:::
+
 EMQX Cloud provides real-time online viewing of EMQX logs.
 
 ## View Deployment Logs
