@@ -4,7 +4,7 @@
 ::: tab Serverless 指标
 Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，可以查看每种指标对应的展示图表，某个时间点的详细信息。
 
-![metrics_line_detail](./_assets/metrics_serverless.png)
+<img src="./_assets/metrics_serverless.png" alt="metrics_line_detail" style="zoom: 33%;" />
 
 
 ## 连接
@@ -56,7 +56,7 @@ Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，
 
 专有版提供了消息、客户端、报文、交付四种增量指标，可以查看每种指标对应的展示图表，某个时间点的详细信息。
 
-![metrics_line_detail](./_assets/metrics.png)
+<img src="./_assets/metrics.png" alt="metrics_line_detail" style="zoom:50%;" />
 
 
 
@@ -70,7 +70,7 @@ Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，
 | messages_received | 接收来自客户端的消息数量                 |
 | messages_sent     | 发送给客户端的消息数量                   |
 
-![metrics_line_detail](./_assets/metric_messages.png)
+<img src="./_assets/metric_messages.png" alt="metrics_line_detail" style="zoom:50%;" />
 
 
 
@@ -85,7 +85,7 @@ Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，
 | client_subscribe    | 客户端订阅次数     |
 | client_unsubscribe  | 客户端取消订阅次数 |
 
-![metrics_line_detail](./_assets/metric_clients.png)
+<img src="./_assets/metric_clients.png" alt="metrics_line_detail" style="zoom:50%;" />
 
 
 
@@ -98,7 +98,7 @@ Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，
 | send_kibibytes     | 发送报文的千字节 |
 | received_kibibytes | 接受报文的千字节 |
 
-![metrics_line_detail](./_assets/metric_packages.png)
+<img src="./_assets/metric_packages.png" alt="metrics_line_detail" style="zoom:50%;" />
 
 
 
@@ -111,9 +111,8 @@ Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，
 | delivery_dropped | 发送时丢弃的消息总数 |
 | delivery_dropped_queue_full | 消息队列满而被丢弃的消息数 |
 
-![metrics_line_detail](./_assets/metric_delivery.png)
+<img src="./_assets/metric_delivery.png" alt="metrics_line_detail" style="zoom: 50%;" />
 
 :::
 ::::
-
 
