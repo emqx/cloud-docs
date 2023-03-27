@@ -550,57 +550,26 @@
     },
     {
       "title": "Introduction",
-      "children": [
-        {
-          "title": "Overview",
-          "path": "overview"
-        },
-        {
-          "title": "Advantages",
-          "path": "intro/advance"
-        },
-        {
-          "title": "Limitations",
-          "path": "intro/restriction"
-        }
-      ]
+      "path" : "overview"
     },
     {
-      "title": "Pricing",
+      "title": "Plans & Pricing",
+      "path": "price/overview",
       "children": [
         {
-          "title": "Product Plans",
-          "path": "price/pricing"
+          "title": "Plans",
+          "path": "price/plans"
         },
         {
-          "title": "Billing",
+          "title": "Pricing",
           "path": "price/billing"
-        },
-        {
-          "title": "Price Estimation",
-          "path": "price/calculator"
         }
       ]
     },
     {
-      "title": "Quick Start",
+      "title": "Quick start",
+      "path" : "quick_start/introduction",
       "children": [
-        {
-          "title": "Overview",
-          "path": "quick_start/introduction"
-        },
-        {
-          "title": "Create a serverless deployment",
-          "path": "quick_start/create_serverless"
-        },
-        {
-          "title": "Create a trial dedicated deployment",
-          "path": "quick_start/create_free_trial"
-        },
-        {
-          "title": "Create a billing deployment",
-          "path": "deployments/create_deployment"
-        },
         {
           "title": "Use MQTT X to connect to deployment",
           "path": "connect_to_deployments/mqttx"
@@ -608,14 +577,43 @@
       ]
     },
     {
-      "title": "Features",
+      "title": "Create deployment",
+      "path" : "create/overview",
+      "children" : [
+        {
+          "title": "Create Serverless deployment",
+          "path": "create/serverless"
+        },
+        {
+          "title": "Create Dedicated deployment",
+          "path": "create/dedicated",
+          "children" : [
+            {
+              "title": "TLS/SSL",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "VPC peering connection",
+              "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "PrivateLink",
+              "path": "deployments/privatelink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Projects & User",
+      "path" : "feature/overview",
       "children": [
         {
-          "title": "Project Center",
+          "title": "Project center",
           "path": "feature/project_center"
         },
         {
-          "title": "Project List",
+          "title": "Project list",
           "path": "feature/project"
         },
         {
@@ -623,7 +621,7 @@
           "path": "feature/role"
         },
         {
-          "title": "Subaccount Management",
+          "title": "Subaccount management",
           "path": "feature/user"
         },
         {
@@ -633,66 +631,71 @@
       ]
     },
     {
-      "title": "Deployment",
+      "title": "Authentication & ACL",
+      "path" : "deployments/auth_overview",
       "children": [
         {
-          "title": "Introduction",
-          "path": "deployments/introduction"
+          "title": "Serverless",
+          "children" : [
+            {
+              "title": "Authentication",
+              "path": "deployments/auth_serverless"
+            },
+            {
+              "title": "ACL",
+              "path": "deployments/acl_serverless"
+            }
+          ]
         },
         {
-          "title": "Deployment Overview",
-          "path": "deployments/view_deployment"
+          "title": "Dedicated",
+          "children" : [
+            {
+              "title": "Authentication",
+              "path": "deployments/auth_dedicated"
+            },
+            {
+              "title": "ACL",
+              "path": "deployments/acl_dedicated"
+            },
+            {
+              "title": "External Auth & ACL",
+              "path": "deployments/custom_auth"
+            },
+            {
+              "title": "HTTP Authentication & ACL",
+              "path": "deployments/http_auth"
+            },
+            {
+              "title": "MySQL Authentication & ACL",
+              "path": "deployments/mysql_auth"
+            },
+            {
+              "title": "PostgreSQL Authentication & ACL",
+              "path": "deployments/pgsql_auth"
+            },
+            {
+              "title": "Redis Authentication & ACL",
+              "path": "deployments/redis_auth"
+            },
+            {
+              "title": "JWT Authentication",
+              "path": "deployments/jwt_auth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Metrics & Monitors",
+      "path" : "deployments/operation_overview",
+      "children": [
+        {
+          "title": "Serverless spend limit",
+          "path": "deployments/spend_limit"
         },
         {
-          "title": "TLS/SSL",
-          "path": "deployments/tls_ssl"
-        },
-        {
-          "title": "VPC Peering Connection",
-          "path": "deployments/vpc_peering"
-        },
-        {
-          "title": "PrivateLink Setting",
-          "path": "deployments/privatelink"
-        },
-        {
-          "title": "Authentication",
-          "path": "deployments/auth"
-        },
-        {
-          "title": "ACL",
-          "path": "deployments/acl"
-        },
-        {
-          "title": "Custom Authentication Intro",
-          "path": "deployments/custom_auth"
-        },
-        {
-          "title": "HTTP Authentication & ACL",
-          "path": "deployments/http_auth"
-        },
-        {
-          "title": "MySQL Authentication & ACL",
-          "path": "deployments/mysql_auth"
-        },
-        {
-          "title": "PostgreSQL Authentication & ACL",
-          "path": "deployments/pgsql_auth"
-        },
-        {
-          "title": "Redis Authentication & ACL",
-          "path": "deployments/redis_auth"
-        },
-        {
-          "title": "JWT Authentication",
-          "path": "deployments/jwt_auth"
-        },
-        {
-          "title": "Data Integrations",
-          "path": "deployments/rule_engine"
-        },
-        {
-          "title": "Monitor",
+          "title": "Monitors",
           "path": "deployments/monitors"
         },
         {
@@ -700,38 +703,31 @@
           "path": "deployments/metrics"
         },
         {
-          "title": "Prometheus",
-          "path": "deployments/prometheus"
+          "title": "Alerts",
+          "path": "deployments/alerts"
+        },
+        {
+          "title": "Webhook alerts",
+          "path": "deployments/alerts_webhook"
         },
         {
           "title": "Logs",
           "path": "deployments/logs"
         },
         {
-          "title": "Alerts",
-          "path": "deployments/alerts"
+          "title": "Prometheus",
+          "path": "deployments/prometheus"
         },
         {
-          "title": "Webhook Alerts",
-          "path": "deployments/alerts_webhook"
-        },
-        {
-          "title": "Stop Deployment",
-          "path": "deployments/stop_deployment"
-        },
-        {
-          "title": "Delete Deployment",
-          "path": "deployments/delete_deployment"
+          "title": "Stop / delete deployment",
+          "path": "deployments/stop_delete_deployment"
         }
       ]
     },
     {
       "title": "Connect To Deployment",
+      "path" : "connect_to_deployments/overview",
       "children": [
-        {
-          "title": "Introduction",
-          "path": "connect_to_deployments/overview"
-        },
         {
           "title": "Python SDK connection",
           "path": "connect_to_deployments/python_sdk"
@@ -804,11 +800,8 @@
     },
     {
       "title": "Data Integrations",
+      "path": "rule_engine/introduction",
       "children": [
-        {
-          "title": "Introduction",
-          "path": "rule_engine/introduction"
-        },
         {
           "title": "Resource Management",
           "path": "rule_engine/resources"
@@ -929,11 +922,8 @@
     },
     {
       "title": "Billing",
+      "path" : "billing/introduction",
       "children": [
-        {
-          "title": "Billing Brief",
-          "path": "billing/introduction"
-        },
         {
           "title": "Billing Overview",
           "path": "billing/overview"
@@ -958,11 +948,8 @@
     },
     {
       "title": "VAS",
+      "path" : "vas/vas-intro",
       "children": [
-        {
-          "title": "VAS Introduction",
-          "path": "vas/vas-intro"
-        },
         {
           "title": "VAS Billing",
           "path": "vas/vas-price"
@@ -974,37 +961,34 @@
         {
           "title": "Internal Load Balancers",
           "path": "vas/intranet-lb"
-        }
-      ]
-    },
-    {
-      "title": "Shadow Service",
-      "children": [
-        {
-          "title": "Overview",
-          "path": "shadow_service/overview"
         },
         {
-          "title": "Pricing",
-          "path": "shadow_service/pricing"
-        },
-        {
-          "title": "Features",
-          "path": "shadow_service/feature"
-        },
-        {
-          "title": "Communication",
-          "path": "shadow_service/invoke"
+          "title" : "Shadow Service",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "shadow_service/overview"
+            },
+            {
+              "title": "Pricing",
+              "path": "shadow_service/pricing"
+            },
+            {
+              "title": "Features",
+              "path": "shadow_service/feature"
+            },
+            {
+              "title": "Communication",
+              "path": "shadow_service/invoke"
+            }
+          ]
         }
       ]
     },
     {
       "title": "API",
+      "path" : "api/api_overview",
       "children": [
-        {
-          "title": "API Overview",
-          "path": "api/api_overview"
-        },
         {
           "title": "Authentication Management",
           "path": "api/auth"
