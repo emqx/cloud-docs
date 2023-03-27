@@ -1,8 +1,8 @@
 # 停止和删除部署
 
 
-:::: tabs type:card
-::: tab Serverless 
+::::: tabs type:card
+:::: tab Serverless 
 
 ## 停止部署
 
@@ -31,9 +31,8 @@
 :::
 
 
-
-
-::: tab 专有版
+::::
+:::: tab 专有版
 
 
 ## 停止部署
@@ -67,8 +66,8 @@
 
 ![delete_deployment](./_assets/delete_deployment.png)
 
-
 ::::
+:::::
 
 
 
