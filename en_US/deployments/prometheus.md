@@ -1,5 +1,11 @@
 # Prometheus Monitoring Alerts
 
+:::warning
+
+This feature is only available on Dedicated Plan. 
+
+:::
+
 The Prometheus API is available in the EMQX Cloud and can be used to easily monitor critical metrics. In this article we will explain how to configure the Prometheus service, access to critical metrics from the EMQX Cloud API, and how to view metrics using Grafana.
 
 ## API Configuration

@@ -10,7 +10,7 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 
 3. 点击专有版面板上的 `立即创建`。
 
-   ![select_deployment_type](./_assets/select_deployment_type.png)
+   ![select_deployment_type](./_assets/create_serverless.png)
 
 4. 依据您的需求选择相应规格配置。
 
