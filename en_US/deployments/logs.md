@@ -1,8 +1,8 @@
 # Logs
 
-:::
+:::warning
 
-This feature is only available on the Dedicated product Plan. 
+This feature is only available on Dedicated Plan. 
 
 :::
 
