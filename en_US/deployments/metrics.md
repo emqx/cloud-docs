@@ -5,7 +5,7 @@
 
 EMQX Cloud provides four incremental metrics: **Sessions**, **Messages**, **Traffic**, and **Dropped Messages**. You can view the display chart corresponding to each indicator, and the detailed information at a certain point in time.
 
-<!--需要增加serverless 截图-->
+<img src="./_assets/metric_serverless.png" alt="metrics_line_detail" style="zoom: 33%;" />
 
 ## Sessions
 
@@ -47,7 +47,7 @@ Displays the incremental changes of the number of discarded messages within the 
 | delivery_dropped_expire     | Number of messages dropped due to message expiration      |
 
 :::
-::: tab 
+::: tab Dedicated
 
 Metrics of the Dedicated Plan
 

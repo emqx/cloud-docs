@@ -1,56 +1,38 @@
-# 认证鉴权
+# Authentication
 
-身份认证是大多数应用的重要组成部分，MQTT 协议支持用户名密码认证，启用身份认证能有效阻止非法客户端的连接。EMQX Cloud 中的认证指的是当一个客户端连接到 EMQX  Cloud 的时候，通过服务器端的配置来控制客户端连接服务器的权限。
+## Check Authentication Information
 
-EMQX Cloud 的认证支持包括两个层面：
+Go to the menu on the left and click on the `Authentication` under `Authentication & ACL` to view the authentication information.
 
-1. MQTT 协议本身在 CONNECT 报文中指定用户名和密码
+## Add Authentication Information
 
-2. 在传输层上，TLS 可以保证使用客户端证书的客户端到服务器的身份验证，并确保服务器向客户端验证服务器证书。
+Enter the username and password in the input box at the top of the page, and click the `Add` button to complete the addition of authentication information
 
-本节主要是指 MQTT 协议本身的认证。关于传输层上 TLS 验证，可以参考指南——配置 [TLS/SSL](./tls_ssl.md)
+![auth](./_assets/auth_info.png)
 
+## Batch Add Authentication Information
 
+Certification information can be imported in bulk through CSV files.
 
-## 认证
+1. Download the template
+2. Fill in the authentication information and submit the file
 
-### 查看认证信息
+   The sample template file is shown below:
 
-在左侧 `认证鉴权` 的 `认证` 页面，可以看到认证信息
+   ![auth](./_assets/auth_ex.png)
 
-![auth](./_assets/auth.png)
+3. Click `import` button
 
-### 添加认证信息
+   ![auth](./_assets/import_auth.png)
 
-在页面上方的输入框中依次输入用户名和密码，添加添加按钮即可完成认证信息的添加
+## Edit Authentication Information
 
-![add_auth](./_assets/add_auth.png)
+Click the `edit` button to the right of the authentication information to change the password of the username.
 
-### 批量添加认证信息
+![auth](./_assets/edit_auth.png)
 
-可以通过 CSV 文件批量导入认证信息
+## Delete Authentication Information
 
-1. 点击导入按钮
-2. 下载模板
-3. 填写认证信息后上传文件
-   
-   模板示例文件如下图所示
+Click the `delete` button to the right of the authentication information to delete the authentication information.
 
-   ![auth_csv](./_assets/auth_csv.png)
-
-4. 点击导入按钮导入
-
-   ![import_auth](./_assets/import_auth.png)
-
-### 编辑认证信息
-
-点击认证信息右侧的编辑按钮，可以修改用户名的密码
-
-![edit_auth](./_assets/edit_auth.png)
-
-### 删除认证信息
-
-点击认证信息右侧的删除按钮，可以对认证信息进行删除
-
-![delete_auth](./_assets/delete_auth.png)
-
+![auth](./_assets/delete_auth.png)
