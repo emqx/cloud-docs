@@ -1,68 +1,47 @@
-# 访问控制（ACL）
+# Access Control (ACL)
 
-鉴权是指对发布 (PUBLISH)/订阅 (SUBSCRIBE) 操作的 `权限控制`。
 
-访问控制对三个粒度进行权限控制
-
-1. 客户端 ID
-2. 用户名
-3. 全部用户：即对主题进行权限控制，不区分客户端 ID 和用户名
-
-**特别说明**：访问控制默认采用**黑名单**模式，且 clientid/username + topic 唯一，即同一 clientid/username + topic 记录，仅最新一条记录有效
+In the `ACL` page of `Authentication & ACL` menu on the left, access control information can be viewed, and the corresponding access control information can be viewed by switching the three granularity at the top.
 
 ![acl](./_assets/acl.png)
 
-## 查看访问控制信息
+## Add ACL Information
 
-在左侧 `认证鉴权` 的 `访问控制` 页面，可以查看访问控制信息，可以在上方切换三种粒度查看对应的访问控制信息
+Fill in the client id, topic, allow/deny, pub/sub/pubsub, and then click `Add`.
 
-![view_acl](./_assets/view_acl.png)
+You can use the following placeholders in your topic and EMQX Cloud will be automatically populated with client information when requested.
 
-## 添加访问控制信息
+- %u：Username
+- %c：Client ID
+  
+![auth](./_assets/add_acl.png)
 
-依次填入客户端 ID，主题，选择是否允许，选择动作：sub/pub/pubsub，点击添加按钮，完成添加
+Same process for `Username` and `All Users`.
 
-你可以在主题中使用以下占位符，请求时 EMQX Cloud将自动填充为客户端信息：
+## Batch Add ACL Information
 
-- %u：用户名
-- %c：客户端 ID
+ACL information can be imported in bulk through CSV files.
 
-![add_acl](./_assets/add_acl.png)
+> `All Users` are not supported
 
-`用户名` 和 `全部用户` 的操作相同
+1. Download the template
 
-## 批量导入访问控制信息
+2. Fill in the ACL information and submit the file
 
-可以通过 CSV 文件批量导入访问控制信息
+   The sample template file for `username` is shown below:
 
-> 全部用户不支持
+   ![acl](./_assets/username.png)
 
-1. 点击导入按钮
-2. 下载模板
-3. 填写访问控制信息后上传文件
+   The sample template file for `clientid` is shown below:
 
-   `username` 示例模板文件如下图所示
+   ![acl](./_assets/clientid.png)
 
-   ![acl_username_csv](./_assets/acl_username_csv.png)
+3. Click `import` button
 
-   `clientid` 示例模板文件如下图所示
+   ![acl](./_assets/import_auth.png)
 
-   ![acl_clientid_csv](./_assets/acl_clientid_csv.png)
+## Delete ACL Information
 
-4. 点击导入按钮导入
+Click the `delete` button to the right of the ACL information to delete the ACL information.
 
-   ![import_acl](./_assets/import_acl.png)
-
-导入字段说明
-
-- clientid： 客户端 ID
-- username：用户名
-- topic：访问控制的主题
-- action：动作（sub/pub/pubsub）
-- access：是否允许（allow/deny）
-
-## 删除访问控制信息
-
-点击访问控制信息右侧的删除图标即可删除
-
-![delete_acl](./_assets/delete_acl.png)
+![acl](./_assets/delete_auth.png)

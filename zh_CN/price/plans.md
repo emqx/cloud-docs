@@ -433,15 +433,15 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
    </tr>
    <tr>
       <td style="text-indent: 2em;">SLA 等级</td>
-      <td>-</td>
+      <td>99.9%</td>
       <td>99.95%</td>
       <td>99.99%</td>
    </tr>
     <tr>
       <td style="text-indent: 2em;">客户支持</td>
-      <td>-</td>
-      <td>8/5</td>
-      <td>24/7</td>
+      <td>8 x 5</td>
+      <td>8 x 5</td>
+      <td>24 x 7</td>
    </tr>
     <tr>
       <td style="text-indent: 2em;">多可用区部署</td>
