@@ -9,7 +9,7 @@
 ## 前提条件
 
 > 1. [安装](https://www.emqx.com/zh/downloads/MQTTX) MQTT X 客户端工具
-> 2. 已在 EMQX Cloud [创建部署](../deployments/create_deployment.md)，并且部署状态为 **运行中**
+> 2. 已在 EMQX Cloud 创建部署，并且部署状态为 **运行中**
 
 在下载和安装前请访问我们的 [官网](https://mqttx.app/zh) 或者是 [GitHub](https://github.com/emqx/MQTTX) 来了解并获取到最新的版本信息，使用最新版本有助于提高使用体验。如果你对本项目了解也可以直接 Clone [MQTT X](https://github.com/emqx/MQTTX) 的仓库源码，自行打包和使用。使用过程中，有任何问题都可以到 [GitHub issues](https://github.com/emqx/MQTTX/issues) 来发表问题和看法或者是 Fork 我们的项目，并向我们提交修改后的 PR，我们将会认真查阅和回复。
 
@@ -17,7 +17,7 @@
 
 ### Broker 信息
 
-[部署概览](../deployments/view_deployment.md) 页面可获取到连接地址和连接端口（以下 **xxxxx 表示随机端口**，具体端口信息**以部署概览页面信息为准**）。
+部署概览页面可获取到连接地址和连接端口（以下 **xxxxx 表示随机端口**，具体端口信息**以部署概览页面信息为准**）。
 
 - 专业版地址：IP；端口：默认开启 1883(mqtt)、8083(ws)，您可以通过配置 TLS/SSL 开启 8883(mqtts) 和 8084(wss) 端口
 - 基础版地址：以 emqx.cloud 后缀结尾的域名；端口：xxxxx(mqtt)，xxxxx(ws)，xxxxx(mqtts)，xxxxx(wss)

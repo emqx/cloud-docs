@@ -144,7 +144,7 @@
     },
     {
       "title": "运维与监控",
-      "path" : "deployments/opration_overview",
+      "path" : "deployments/operation_overview",
       "children": [
         {
           "title": "Serverless 消费限额设置",
