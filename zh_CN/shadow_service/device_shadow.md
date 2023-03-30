@@ -13,7 +13,7 @@
 
 ### 前期准备
 
-1. 创建用户名密码，并将设备连接到部署。设置用户名密码请查看[认证鉴权](../deployments/auth.md)。连接到部署请查看[连接指引](../connect_to_deployments/overview.md)。
+1. 创建用户名密码，并将设备连接到部署。设置用户名密码请查看[认证鉴权](../deployments/auth_dedicated.md)。连接到部署请查看[连接指引](../connect_to_deployments/overview.md)。
 2. 本文将使用 [MQTTX](../connect_to_deployments/mqttx.md) 作为客户端连接到部署并模拟设备。
 3. 开通影子服务，开通条件及流程请参考[影子服务概览](./overview.md)。
 

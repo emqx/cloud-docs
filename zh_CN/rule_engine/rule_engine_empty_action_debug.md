@@ -62,7 +62,7 @@ EMQX Cloud 中仅适用以下操作：
 
 1. 使用 [MQTT X](https://mqttx.app/) 测试
 
-   需要将 broker.emqx.io 替换成已创建的部署[连接地址](../deployments/view_deployment.md)，并添加[客户端认证信息](../deployments/auth.md)。
+   需要将 broker.emqx.io 替换成已创建的部署连接地址，并添加客户端认证信息。
 
    ![MQTTX](./_assets/empty_action_debug_mqttx_pub.png)
 

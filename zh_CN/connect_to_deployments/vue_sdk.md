@@ -10,7 +10,7 @@
 
 ## 前提条件
 
-> 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 1. 已经创建了部署，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
 > 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 本项目使用 [Vue CLI](https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create) 创建 Vue 项目进行开发和测试，可通过以下命令确认 Vue CLI 的版本（本示例版本为 **v4.x**）并创建一个新项目，也可以 [通过引用 Vue.js 创建 Vue 项目](https://cn.vuejs.org/v2/guide/installation.html)。
@@ -51,7 +51,7 @@ vue create vue-mqtt-test
 
 ## 连接
 
-> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
 
 ### 连接设置
 

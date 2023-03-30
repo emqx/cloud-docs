@@ -8,7 +8,7 @@
 
 ## 前提条件
 
-> 1. 已经创建了部署，在 [部署概览](../deployments/view_deployment.md) 下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
+> 1. 已经创建了部署，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
 > 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 本文中使用 [Arduino IDE](https://www.arduino.cc/en/guide/environment?setlang=cn)作为代码编辑和上传，ArduinoIDE 包含了一个用于写代码的文本编辑器、一个消息区、一个文本控制台以及一个带有常用功能按钮和文本菜单的工具栏。软件连接 Arduino 和 Genuino 之后，能给所连接的控制板上传程序，还能与控制板相互通信。
@@ -20,7 +20,7 @@
 2. 安装 PubSub client 库 项目 -> 加载库 -> 管理库... -> 搜索 PubSubClient -> 安装 PubSubClient by Nick O’Leary
 
 ## 连接
-> 请在控制台的 [部署概览](../deployments/view_deployment.md) 找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
  
 ### 连接设置
 

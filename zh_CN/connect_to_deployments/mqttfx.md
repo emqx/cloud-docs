@@ -9,13 +9,13 @@
 ## 前提条件
 
 > 1. [安装](http://www.mqttfx.jensd.de/index.php/download) MQTT.fx 客户端
-> 2. 已在 EMQX Cloud [创建部署](../deployments/create_deployment.md)，并且部署状态为 **运行中**
+> 2. 已在 EMQX Cloud 创建部署，并且部署状态为 **运行中**
 
 ## 连接配置
 
 ### Broker 信息
 
-[部署概览](../deployments/view_deployment.md) 页面可获取到连接地址和连接端口（以下 **xxxxx 表示随机端口**，具体端口信息**以部署概览页面信息为准**）。
+部署概览页面可获取到连接地址和连接端口（以下 **xxxxx 表示随机端口**，具体端口信息**以部署概览页面信息为准**）。
 
 - 专业版地址：IP；端口：默认开启 1883(mqtt)、8083(ws)，您可以通过配置 TLS/SSL 开启 8883(mqtts) 和 8084(wss) 端口
 - 基础版地址：以 emqx.cloud 后缀结尾的域名；端口：xxxxx(mqtt)，xxxxx(ws)，xxxxx(mqtts)，xxxxx(wss)
