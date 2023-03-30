@@ -9,7 +9,7 @@ Its language constructs and object-oriented approach aim to help programmers wri
 
 ## Preconditions
 
->1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+>1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
 >2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 This project uses Python 3.8 to develop and test. Confirm the Python version by the following command.
@@ -40,7 +40,7 @@ from paho.mqtt import client as mqtt_client
 
 ## Connection
 
->Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
+>Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connection Settings
 

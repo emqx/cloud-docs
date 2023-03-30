@@ -6,7 +6,7 @@ This article mainly introduces how to use the **paho.mqtt.m2mqtt** client librar
 
 ## Preconditions
 
->1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+>1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
 >2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 This project uses .NET 5.0 to develop and test. You can use the following commend to confirm the .NET version.
@@ -18,7 +18,7 @@ This project uses .NET 5.0 to develop and test. You can use the following commen
 ### Choose the MQTT client
 [paho.mqtt.m2mqtt](https://www.eclipse.org/paho/clients/dotnet/) is a MQTT client available for all .NET platforms with support for both MQTT v3.1 and v3.1.1.
 
-### .NET CLI install M2Mqtt 
+### .NET CLI install M2Mqtt
 Use the following command in the root of the project to install M2Mqtt.
 ```bash
 dotnet add package M2Mqtt --version 4.3.0
@@ -27,7 +27,7 @@ dotnet add package M2Mqtt --version 4.3.0
 
 ## Connection
 
->Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
+>Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
 
 ### Connect to the MQTT broker
 This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service is created based on [MQTT IoT cloud platform](https://www.emqx.com/en/cloud) to create. The accessing information of the broker is as follows:

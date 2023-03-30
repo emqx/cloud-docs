@@ -252,7 +252,7 @@ Before you start, you need to complete the following operations:
 
 1. Use [MQTT X](https://mqttx.app/) to connect the deployment
 
-   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQX Cloud Dashboard.
+   You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Cloud Dashboard.
 
     - topic: `temp_hum/emqx`
     - payload:

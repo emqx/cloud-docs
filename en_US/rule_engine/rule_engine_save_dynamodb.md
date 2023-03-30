@@ -97,7 +97,7 @@ You could create a new DynamoDB table by the following steps:
 
 1. Use [MQTT X](https://mqttx.app/) to simulate publishing temperature and humidity data
 
-   You need to replace broker.emqx.io with the deployment [connection address](../deployments/view_deployment.md) you have created and add the [client-side authentication information](../deployments/auth.md) in the EMQX Dashboard.
+   You need to replace broker.emqx.io with the deployment connection address you have created and add the client-side authentication information in the EMQX Dashboard.
    ![MQTTX](./_assets/psql_connect.png)
 
 2. View stored results
