@@ -4,7 +4,7 @@ In this tutorial, you will learn how to use [**Eclipse Paho Java Client**](https
 
 ## Prerequisites
 
->1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+>1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
 >2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 The project use Maven as the build tool.
@@ -34,7 +34,7 @@ mvn install
 
 ## Connection
 
-You can view the information of connection on  [Deployment Overview](../deployments/view_deployment.md). Please note that the port is not 1883 or 8883  if your  choose a Basic package, make sure you get the right port. And you must add the authentication on [Authentication & ACL](../deployments/auth.md) in advance.
+You can view the information of connection on Deployment Overview. Please note that the port is not 1883 or 8883  if your  choose a Basic package, make sure you get the right port. And you must add the authentication on Authentication & ACL in advance.
 
 ### Connect Options
 

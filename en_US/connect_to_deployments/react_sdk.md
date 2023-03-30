@@ -6,7 +6,7 @@ React (also known as React.js or ReactJS) is an open-source, front end, JavaScri
 
 ## Preconditions
 
-> 1. The deployment has been created. You can view connection-related information under [Deployment Overview](../deployments/view_deployment.md). Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
+> 1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
 > 2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
 
 ## New project
@@ -70,7 +70,7 @@ As React is a JavaScript library, it is possible to use MQTT.js as the MQTT clie
 
 ## Connection
 
-> Please find the relevant address and port information in the [Deployment Overview](../deployments/view_deployment.md) of the Console. Please note that if it is the standard plan, the port is not 1883 or 8883, please confirm the port.
+> Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the standard plan, the port is not 1883 or 8883, please confirm the port.
 
 ### Connection settings
 

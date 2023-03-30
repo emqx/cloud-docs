@@ -117,7 +117,7 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
    ![mysql_data](./_assets/insert_subs_mysql.png)
 2. Use [MQTT X](https://mqttx.app/) to connect the deployment
 
-   You need to replace broker.emqx.io with the created deployment [connection address](../deployments/view_deployment.md), and add [client authentication information](../deployments/auth.md) to the EMQX Dashboard.
+   You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Dashboard.
    In this case, set the clientID to client1
    ![mqttx_rusult](./_assets/connect_mqtt_get_subs_mysql.png)
 

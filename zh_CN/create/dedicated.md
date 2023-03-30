@@ -49,7 +49,7 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
   * 基础版部署端口：默认开启 15xxx(mqtt)，15xxx(mqtts)，8083(ws)， 8084(wss) 端口
 
 
-### [TLS/SSL 配置](./deployments/tls_ssl.md)
+### [TLS/SSL 配置](../deployments/tls_ssl.md)
 
 专业版提供自定义 **单双向 TLS/SSL** 认证，并支持 **自签名证书** 和 **CA 签名证书**。
 
