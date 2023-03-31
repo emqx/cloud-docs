@@ -1,4 +1,4 @@
-# Authentication
+# Authentication in Dedicated Plan
 
 ## Check Authentication Information
 
@@ -19,20 +19,18 @@ Certification information can be imported in bulk through CSV files.
 
    The sample template file is shown below:
 
-   ![auth](./_assets/auth_ex.png)
+   <img src="./_assets/auth_ex.png" alt="auth" style="zoom:33%;" />
 
 3. Click `import` button
 
-   ![auth](./_assets/import_auth.png)
+   <img src="./_assets/import_auth.png" alt="auth" style="zoom:50%;" />
 
 ## Edit Authentication Information
 
 Click the `edit` button to the right of the authentication information to change the password of the username.
 
-![auth](./_assets/edit_auth.png)
+<img src="./_assets/edit_auth.png" alt="auth" style="zoom:50%;" />
 
 ## Delete Authentication Information
 
 Click the `delete` button to the right of the authentication information to delete the authentication information.
-
-![auth](./_assets/delete_auth.png)

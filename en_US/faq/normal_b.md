@@ -61,3 +61,7 @@ EMQX Cloud does not keep device communication logs, only deployment event logs, 
 ## How long can device events be stored in the console?
 
 Device event data can be saved permanently.
+
+## How to calculate sessions?
+The definition for session: The number of sessions is calculated by adding the number of connected clients and the disconnected clients with sessions retained in the broker. Connected clients are those that connect to the broker after `CONNECT`, including those that are not disconnected within the `keepAlive` span. Disconnected clients that keep a session are clients that are offline but have `CleanSession` set to false, and such clients are counted in the session count. When a device `DISCONNECT` goes offline, or if it has not communicated for more than the keepAlive span, the device will go offline and will not be counted in the number of sessions.
+

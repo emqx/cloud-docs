@@ -1,189 +1,72 @@
-# EMQX Cloud Product Description
+# Product Overview
 
-EMQX Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain and easily collect, transmit, compute, and persist IoT data.
+EMQX Cloud is an IoT messaging middleware product that helps you easily collect, transmit, computer, and persist IoT data. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain quickly and securely.
 
-![emqx_cloud](./_assets/product_description_en.png)
+## Key Features 
 
 With the infrastructure provided by cloud providers, EMQX Cloud serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications.
 
-## IoT Messaging Model
+EMQX Cloud provides various solutions tailored to different business needs, and there are three primary models available:
 
-### Two-way communication
+### Two-Way Communication
 
 EMQX Cloud supports massive devices and application-side connectivity, providing secure and reliable two-way communication for applications and IoT devices:
 
-![two-way-communication](./_assets/bidirection_communication.png)
+<img src="./_assets/model_1.png" alt="two-way-communication" style="zoom:50%;" />
 
-In this model, EMQX Cloud provides MQTT services to connect massive devices and applications. It supports application-device and device-device two-way communication. This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone app gets the status information of smart devices. Users can send control commands to smart devices through app. Another example, in industrial scenarios, AGV robots communicate with each other instantly via the MQTT protocol to achieve multi-robot collaboration. The MQTT service supports not only the standard MQTT protocol, but also MQTT over WebSocket, CoAP, MQTT-SN, LwM2M, JT, /T808, etc.
+#### Use Cases
+
+This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone app gets the status information of smart devices. Users can send control commands to smart devices through app. 
 
 ### Data Collection
 
 EMQX Cloud supports device data on the cloud. With the support of massive topics and data integration, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
 
-![data collection](./_assets/data_collection.png)
+<img src="./_assets/model_2.png" alt="emqx_cloud_model_2" style="zoom: 40%;" />
 
-In this model, the MQTT service provided by EMQX Cloud enables data collection, computation, and persistence. This model is suitable for IoT applications with data collection and persistence requirements, such as: in industrial scenarios, each IoT sensor collects real-time data to the edge gateway, uploads the data to the MQTT server through the edge gateway, and then the Data Integrations triggers data filtering, transformation, and simple calculation, and forwards the final result to other services or persists to the target database. EMQX Cloud provides a variety of access solutions for different functionalities of the network, industrial, and edge devices, and supports more than 70 industrial protocols.
+#### Use Case
+
+The model described is an excellent fit for IoT applications where reliable data collection and persistence are essential. For example in Smart Industry scenarios, IoT sensors generate real-time data, which is collected by the edge gateway and sent to EMQX Cloud. EMQX Cloud will then filter, transform, and perform basic calculations on the data with our data integration capability before storing the data in a database or forwarding it to other services.  EMQX Cloud offers flexible access solutions for different network conditions, industries, and edge devices, supporting over 70 industrial protocols to provide efficient data management and reliable analysis.
 
 ### Hybrid Model
 
 EMQX Cloud provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and data integrations, data is persisted while flowing from object to object and from object to application.
 
-![hybrid model](./_assets/hybrid_model.png)
+<img src="./_assets/hybrid_model.png" alt="hybrid model" style="zoom:50%;" />
 
-In this model, the MQTT service provided by EMQX Cloud not only bridges the device-device and device-application gaps, but also persists the required data so that non-real-time applications can subsequently make use of the acquired data. Typical of these applications are artificial intelligence applications where the data acquired by the terminal needs to be sent to the cloud, where the computational model running in the cloud is calculated and fed back to the terminal, such as item or face recognition applications. At the same time, a copy of the data needs to be persisted in the database for subsequent offline training and improvement of the AI computational model.
+#### Use Case
+
+The model described can be used in Connected Cars, where the data collected by the vehicle's sensors is transmitted to the cloud. The cloud then processes this data using a computation model and provides instant feedback to the vehicle. An intelligent app can also send commands to the vehicle. Additionally, a copy of the data can be persistently in a database for other Connected Car applications.
+
+## Product Advantages
+
+When choosing EMQX Cloud as your messaging middleware for building IoT applications, you can enjoy the following benefits:
+
+### Comprehensive Protocol Support
+
+EMQX Cloud provides developers with extensive protocol support, enabling them to easily create various IoT applications with MQTT v3.1, v3.1.1, and v5.0 protocols, as well as MQTT over WebSocket. It offers complete support for MQTT message levels of QoS0, QoS1, and QoS2. Additionally, EMQX Cloud supports multiple communication protocols such as MQTT-SN, CoAP, LwM2M, and private TCP protocols, making it suitable for various industrial applications. Customizable private features are also available, allowing you to tailor the platform to meet the unique demands of your business.
+
+### Fast Deployment, Fully Managed
+
+EMQX Cloud allows you to easily create a fully managed MQTT cloud service within minutes. By registering and logging in and selecting your preferred deployment area, you can instantly access your service without the hassle of traditional operational setups. Our global service support team and EMQ experts will provide 24/7 uninterrupted technical support and operation services throughout the entire use cycle of EMQX Cloud. You can contact us anytime via tickets, emails, or phone calls for a quick response.
+
+### Flexible Billing and Scalability for Effective Cost Control"
+
+EMQX Cloud offers flexible billing methods to provide effective cost control. For businesses with low throughput and concurrency, a pay-as-you-go Serverless deployment is available, which only charges for actual resource usage. As your business scales, a proprietary deployment option is available, which charges according to cluster instance and message traffic, ensuring clear and controllable costs. Additionally, deployment capacity can be automatically estimated by connection and message throughput, and scalable plans can be made through close monitoring to smoothly adjust the cluster size with business growth.
+
+### High Availability and Data Security
+
+EMQX Cloud's Dedicated Plan utilizes a high-redundancy cluster architecture to ensure high service availability. It also provides a unique isolation environment that guarantees the security of your data and the stability of your business. Each deployment cluster has its own public IP address, dedicated VPC network, independent EMQX servers, and database servers, making it highly secure and reliable.
+
+### Flexible Data Integration Solutions
+
+EMQX Cloud's Professional Plan enables real-time pre-processing of device events and message data, which can be stored in over 40 cloud services and enterprise systems such as MySQL, Kafka, and InfluxDB, all hosted on the cloud.
 
 ## Product Plans
 
-EMQX Cloud comes in three plans to help you deploy your own fully-managed MQTT services on the world's leading public clouds.
+EMQX Cloud offers three different product plans, allowing you to deploy your fully managed MQTT service on popular public clouds worldwide. Whether you're an independent developer or a global industry leader, you can find the perfect EMQX Cloud product to suit your needs.
 
-<!--TODO PIC-->
-
-1. **Serverless**: MQTT service based on shared clusters, works in the pay-as-you-go mode, and supports up to 1,000 sessions.
-2. **Dedicated**: MQTT service based on independent clusters.</br>
-    a. **Standard**: Independent MQTT service suitable for scenarios with standard throughput and concurrent demands.</br>
-  b. **Professional**: Dedicated MQTT cluster service suitable for mission-critical IoT applications, with advanced features like data persistence, bridging, VPC peering, etc. Your best way to get a production-ready MQTT service.
-3. **BYOC**: Bring Your Own Cloud. deploy a fully-managed EMQX in your own cloud to achieve the maximum level of data security; suitable for the enterprise-reliable cloud environment. Coming soon.
-
-
-## Product Capabilities
-
-EMQX Cloud, a fully managed EMQX access platform, provides device access, device management, and other capabilities.
-
-### Device Access
-
-Supports a massive number of device connections to the cloud, providing stable and reliable device-device and device-application two-way communication capabilities.
-
-- Supports standard MQTT protocol (including MQTT over WebSocket), using the standard MQTT client library to connect to the cloud.
-- Supports CoAP, MQTT-SN, LwM2M protocol, and private TCP protocol access to meet the needs of various systems access to the cloud.
-- Provides different network devices and industrial/edge devices to access the cloud.
-- Open source multi-lingual/platform access sample code, providing cross-platform migration guidance.
-- Perfectly fits EMQ [edge computing](https://github.com/lf-edge/ekuiper), [edge industrial IoT](https://www.emqx.com/en/products/neuron) product ecology, supports dozens of industrial protocols to access the cloud.
-
-:::tip
-Multi-protocol and private protocol support, please contact us by [ticket](feature/tickets.md) for opening.
-:::
-
-### Device Management
-
-EMQX Cloud Dedicated plans provide rich REST APIs that allow users to integrate with their device management systems and IoT platforms through APIs and Data Integrations. 
-
-![device_manager_1](./_assets/device_manage1.png)
-
-- **Device authentication information management**: The platform could add, delete, search, and update authentication information via REST API
-
-- **Device online status view**:
-
-  - The platform gets the list of online devices through REST API and queries whether the devices are online.
-  - The platform rewrites the status of devices in the private database or sends it to the self-built service (Web service) when the devices are online or offline through the Data Integrations
-  - Device offline alarm: Notify the platform when the device is offline and determine whether it needs to be alarmed
-
-- **Device up/down history**:
-
-  - The platform writes the up/down information to the private database or sends it to the self-built service (Web service) when the device is online or offline through the data integrations.
-  - ACL Permission Management: The platform adds, deletes, checks, and changes ACL permissions through REST API.
-
-- **Online device kick-off**: The platform kicks off the online device.
-
-- **Proxy subscription**: The platform subscribes or unsubscribes topics for online devices through the REST API.
-
-- **Publishing messages to devices**: The platform publishes messages to specified topics through REST API or MQTT access and supports batch operation.
-
-- **Business statistics such as messages sent and received and number of connections**: Get the relevant statistics through REST API.
-
-**Professional only**
-
-- **Bridging/storage of device messages**: Store device events (up/down, subscribe/unsubscribe, message publishing) and message data to private databases (mainstream relational/non-relational, various temporal databases), message queues Kafka, and self-built web services via data integrations.
-
-### Data Integrations
-
-EMQX Cloud use data integrations to configure rules for processing and responding to devise messages and events.
-
-Data integrations not only provides a clear and flexible "configuration-based" business integration solution, but also simplifies the business development process, improves user ease of use, and reduces the coupling between business systems and EMQX.
-
-![integration_intro](./_assets/integration_intro_01.png)
-
-::: tip Tip
-Only **Dedicated** deployment has data integration. See [Data Integration](./rule_engine/introduction.md) to find more details.
-:::
-
-## EMQX Cloud 概览
-
-EMQX Cloud 是 EMQ 推出的一款面向物联网领域的 MQTT 消息中间件产品。作为全球首个 MQTT 5.0 消息云服务，EMQX Cloud 提供了一站式运维代管、独有隔离环境的 MQTT 消息服务。在万物互联的时代，EMQX Cloud 可以帮助您快速构建面向物联网领域的行业应用，轻松实现物联网数据的采集、传输、计算和持久化。
-
-
-<!-- ![emqx_cloud](./_assets/product_description_zh.png) -->
-
-## 功能概述
-
-借助云服务商提供的基础计算设施，EMQX Cloud 面向全球数十个国家与地区提供服务，为 5G 与万物互联应用提供低成本、安全可靠的云服务。
-
-EMQX Cloud 可用根据不同的业务场景架构不同的解决方案，主要的模型有 3 种：
-
-### 双向通信
-EMQX Cloud 支持海量设备及应用端连接，为应用程序及物联网设备提供安全可靠的双向通信能力。在该模型中，EMQX Cloud 提供的 MQTT 服务将海量设备与应用连接起来，支持应用与设备间的双向通信，也支持设备与设备间的双向通信。
-
-![emqx_cloud_model_1](./_assets/model_1.png)
-
-#### 应用场景举例：智能家居
-该模型适用于有类即时通讯需求的物联网应用，例如在典型的智能家居场景中，手机 APP 获取智能设备的状态信息，并且用户可以通过 APP 向智能设备发送控制指令，设备也可以随时上报状态信息到 APP 端。
-
-
-
-### 数据采集
-
-EMQX Cloud 支持设备数据上云，通过海量 Topic 及数据集成的支持，低代码的方式即可实现数据的采集、过滤、转换、计算及持久化。
-
-![emqx_cloud_model_2](./_assets/model_2.png)
-
-#### 应用场景举例：智慧工业
-该模型适用于有数据采集和持久化需求的物联网应用，比较典型的智慧工业场景，各个物联网传感器将实时采集的数据汇集到边缘网关，通过边缘网关将数据上传到 MQTT 服务器上，再由数据集成触发数据的过滤、转换和简单计算，并将最终结果转发至其他服务或持久化至目标数据库中。EMQX Cloud 提供了多种接入方案，涵盖了不同的网络条件、各种类型终端设备和边缘网关设备，支持70多种工业协议接入。
-
-
-### 混合模型
-
-EMQX Cloud 提供的 MQTT 服务支持双向通信和数据采集模型的混合应用。通过共享订阅、数据集成等能力，实现数据在物与物、物与应用间流转的同时进行持久化。这样不仅提供了设备与设备、设备与应用间通信的能力，同时提供了数据持久化的能力，以便非实时应用在后续对获取的数据加以利用。
-
-![emqx_cloud_model_3](./_assets/model_3.png)
-
-#### 应用场景举例：车联网
-比较典型的如车联网应用，车辆终端获取的数据需要发送至云端，通过云端运行的计算模型经过计算后即时反馈给终端，智能 APP 也可以向车辆发送指令。同时数据的副本需要持久化到数据库中，做更多车联场景的应用。
-
-
-## 产品优势
-
-当选择 EMQX Cloud 作为消息中间件来构建各类物联网应用时，您可享受到以下产品优势带来的各项便利：
-
-### 完整的协议支持
-支持 MQTT v3.1，v3.1.1 与 v5.0 协议版本，支持 MQTT WebSocket 服务，完整支持 QoS0, QoS1 与 QoS2 级别 MQTT 消息。
-
-除了标准的 MQTT 协议，我们还支持 MQTT-SN、CoAP、LwM2M、以及私有 TCP 协议在内的多种通信协议接入，覆盖各类行业应用；可根据您的特殊使用场景定制私有化功能，充分契合业务协议上的需求。
-
-
-### 快速部署，完全托管
-只需注册并登录，并选择所需部署的地区，即可快速获得一个全托管的 MQTT 云服务。一键部署，免除常见的运维烦恼。
-
-创建部署后，我们的全球服务支持团队和 EMQ 专家团队将在 EMQX Cloud 的整个使用周期内为您提供最高 7*24 不间断的技术支持和运维服务，您可以随时通过工单，电子邮件，电话等快速获得响应。
-
-
-### 计费方式多样，规格灵活伸缩，有效控制成本
-EMQX Cloud 拥有灵活的计费方式，对于吞吐和并发少的业务，可以使用按量计费的 Serverless 部署，只按照实际使用的资源进行计费。当业务量达到规模，可以使用专有版的部署，按集群实例与消息流量收费，而非消息条数，不限 API 与数据集成的使用，业务海量扩张的时候成本仍然清晰可控。
-
-部署还可以通过连接数与消息吞吐量自动预估容量，通过紧密的监控来制定伸缩计划，集群大小可随业务规模平滑调整。
-
-
-### 高可用性与数据安全
-EMQX Cloud 专有版采用高冗余集群架构，以确保服务的高可用性；通过独有隔离环境保障您数据安全与业务稳定性，每个部署集群都有自己的公共 IP、专用 VPC 网络、独立 EMQX 服务器与数据库服务器，这更安全，更可靠。
-
-
-### 灵活的数据集成方案
-EMQX Cloud 专业版支持实时预处理设备事件与消息数据，并存储到云上 MySQL、Kafka、InfluxDB 等 40+ 的数据库与消息队列资源中。
-
-
-## 产品版本简介
-
-EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属于您的全托管 MQTT 服务，从独立的开发者到全球化的行业领导者，都能找到合适的 EMQX Cloud 产品。
-
-前往[版本介绍](./price/plans.md)了解更多内容。
+For detailed feature descriptions and pricing of each product plan, see [Product Plans](./price/plans.md).
 
 ![emqx_cloud_product](./_assets/product_edition.png)
 

@@ -1,4 +1,4 @@
-# Access Control (ACL)
+# Access Control for Dedicated Plan
 
 
 In the `ACL` page of `Authentication & ACL` menu on the left, access control information can be viewed, and the corresponding access control information can be viewed by switching the three granularity at the top.
@@ -14,6 +14,7 @@ You can use the following placeholders in your topic and EMQX Cloud will be auto
 - %u：Username
 - %c：Client ID
   
+
 ![auth](./_assets/add_acl.png)
 
 Same process for `Username` and `All Users`.
@@ -43,5 +44,3 @@ ACL information can be imported in bulk through CSV files.
 ## Delete ACL Information
 
 Click the `delete` button to the right of the ACL information to delete the ACL information.
-
-![acl](./_assets/delete_auth.png)
