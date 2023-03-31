@@ -1,4 +1,4 @@
-# Introduction of Value Added Services
+# Value Added Services
 
 Value Added Services are highly available service plans provided and maintained by EMQX Cloud, it helps to meet the specific technical and product needs of our customers.
 
@@ -43,4 +43,3 @@ In addition to opening the service in the `VAS` you can also see the display whe
       <td>One cloud account for one trial.</td>
    </tr>
 </table>
-

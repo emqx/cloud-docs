@@ -1,69 +1,86 @@
-# Get Started with EMQX Cloud
+# Get Start
 
-Welcome to EMQX Cloud! EMQX Cloud is the first fully hosted MQTT 5.0 cloud messaging service in the world. With the support of EMQX Cloud, you can create an EMQX cluster on the cloud and use the features of EMQX Enterprise Edition. This allows you to spend more time on business connections and less time for EMQX operation, maintenance, and management. This tutorial will guide you through the process of creating and connecting to EMQX Cloud deployment. Before starting, let's review some core concepts and phrases:
+This chapter is designed to help you get started with EMQX Cloud product by providing a step-by-step guide on how to create an account and explore its features and characteristics. If you already have a relevant account, you can skip this section and move on to the next step, which is creating a deployment.
 
-* Deployment: EMQX Enterprise cluster hosted on EMQX Cloud.
-* Standard Plan: Single node version of EMQX Enterprise.
-* Professional Plan: An EMQX Enterprise Edition cluster with separate networks, instances, and load balancing.
-  
-  <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/UX2KAM7FVLs/?autoplay=1&null" />
+## Trial Policy
 
-If you have not yet created an account for EMQX Cloud, the following steps will guide you through the creation of your account. You can also skip this step to view the console quick guide.
+You can explore and try out EMQX products through our Serverless free quota or proprietary version's 14-day free trial plan.
 
-## Register Guide
+Free Tier for Serverless Plan:
 
-### [Create an account](https://www.emqx.com/en/signup?continue=https://www.emqx.com/en/cloud)
+- 1 million session minutes / month
+- 1 GB traffic / month
 
-Start at the EMQX Cloud sign up page.
+14 Days Free Trial for Dedicated Plan:
 
-1. Enter your personal information:
+* 1000 sessions
 
-   * Email
-   * Password
-   * Country / Region
+* 14  day free trial
 
-   ![login](./_assets/sign_up.png)
+* 100 GB free traffic
 
-2. Click `Sign Up` to register to create your account.
-   EMQX Cloud will automatically send a confirmation email to the email address you provided.
+* Data integration and monitoring
 
-3. Click on the link in the confirmation email to verify your new account. The link will verify your account and redirect you to the login page.
+* Support MQTT and WebSockets
 
-4. Now you are ready to log in to EMQX Cloud.
+  > For other prototol support, such as MQTT-SN, Lwm2m, JT/T808, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). 
 
-### [Login to the account](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud)
+Notes on the free trial deployment:
 
-If you've already registered an account, you could log in by the following steps:
+- If there are no client connections for 5 consecutive days during the trial period, the trial deployment will be stopped, but your deployment instance will be retained. If you want to continue the trial, please manually enable it in the Cloud Console.
+- After the trial period, your deployment will continue to run and will be charged hourly if your account has available balance. In case your account balance is insufficient, your deployment will be retained for three days. If you choose not to add funds during this time, the trial deployment will be automatically deleted. 
 
-1. Go to EMQX Cloud login page.
-2. Enter your email and password.
-3. Click `Sign in` to direct to the EMQX Cloud page.
+## Create EMQX Cloud Account
 
-![login](./_assets/log_in.png)
+### [Register an Account](https://accounts.emqx.com/signup?continue=https://www.emqx.com/cn/cloud)
 
-### [Forget Password](https://accounts.emqx.com/forgot-password?continue=https%3A%2F%2Fwww.emqx.com%2Fen%2Fcloud)
+1. Please provide the required information, including your name, email, password, and phone number.
+2. Click on the **Start free trial** button, and EMQX Cloud will automatically send a confirmation email to the email address you provided.
+4. Click the **Verify Email** button in the confirmation email. This link will verify your account and redirect you to the login page.
+5. Log in to EMQX Cloud
 
-If you forget your password, you could click on `Forget your password` and enter your email address, we will send a verification email to your mailbox.
+### [Log in the Cloud Console](https://accounts.emqx.com/signin?continue=https%3A%2F%2Fcloud-intl.emqx.com%2Fconsole%2Fdeployments%2F0%3Foper%3Dnew)
 
-You can click Get back Password in the verification email to create a new password, then you will be redirected to the login page. Enter the new password, and select `Sign in`.
-![login](./_assets/forget_password.png)
+Input your email and password, and click **Sign In**.
 
-## Console Guide
+### [Password Recovery](https://accounts.emqx.com/forgot-password?continue=https%3A%2F%2Fwww.emqx.com%2Fcn%2Fcloud)
 
-You can follow these steps shown below to quickly complete the EMQX Cloud Console Guide.
+In case you forget your password, you can click on "Forgot your Password?" on the login page, and we will send a verification email to your email address. You can then click on the link in the verification email to create a new password and log in.
 
-1. Visit EMQX Cloud [console](https://cloud-intl.emqx.com/console/) and create a free trial deployment
+## Create Deployment
 
-   ![console](./_assets/free_trial.png)
+After logging to [EMQX Cloud Console](https://cloud.emqx.com/console/), you will be directed to the overview page, where you can get a general view of the your current deployment, manage your projects and users, and perform other related tasks. The section below will guide you through the quick deployment creation process.
 
-2. Visit Authentication & ACL page to add authentication information
+1. Click **New Deployment**, and you will be directed to the **Project List** page.
 
-   ![authentication](./_assets/auth.png)
+   ![index](./_assets/index_overview.png)
 
-3. Click the menu on the left to get the deployment connection information and ports
+   
 
-   ![authentication](./_assets/overview.png)
+2. Click **+ New**.  You can choose from the available versions such as [creating a Serverless deployment](../create/serverless.md) or [creating a Dedicated deployment](../create/dedicated.md). If you opt for a free trial of the EMQX Cloud Dedicated version, you'll need to configure additional details such as the cloud platform, deployment region, connection specifications, and billing method. Once you've confirmed all the necessary deployment information, you can click on **Deploy Now** to proceed with the deployment process.
 
-4. Use the MQTT client or SDK that you are familiar with to [connect to the deployment](../connect_to_deployments/overview.md)
+   ![add_users](./_assets/create_free_trial.png)
 
-   ![authentication](./_assets/mqttx_mqtt.png)
+3. You have now completed the deployment creation process. You just need to wait for the deployment to finish creating, and then you can access your newly created deployment.  
+
+   ![add_users](./_assets/overview.png)
+
+:::tip Tip
+
+In this Overview page, you can also get the connection details, please ensure that you save the connection address and port information as we will be using it to test the connection using the MQTT X client. 
+
+:::
+
+## Configure Authentication 
+
+To ensure the security of your data, it is necessary to add authentication information for this deployment by using the **Authentication & ACL** module before formally accessing various clients/applications. You can do this by visiting the [**Authentication**](../deployments/auth_dedicated.md) page under **Authentication & ACL**, and clicking on the Add button. 
+
+![add_users](./_assets/auth.png)
+
+
+
+## Use MQTTX to Verify the Connection
+
+It is recommended to use [MQTT X](https://mqttx.app) to test the connection to EMQX Cloud deployments. Alternatively, you can use familiar [SDKs or other tools](../connect_to_deployments/overview.md) to connect to the deployment. Prior to using MQTT X to connect to the deployment, you need to obtain the deployment's connection address (Host) and port number (Port).
+
+The next page will explain how to test the connection using [MQTT X](../connect_to_deployments/mqttx.md).
