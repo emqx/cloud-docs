@@ -918,7 +918,7 @@
     },
     {
       "title": "Billing",
-      "path" : "billing/introduction",
+      "path" : "billing/overview",
       "children": [
         {
           "title": "Billing Overview",
@@ -947,7 +947,7 @@
       ]
     },
     {
-      "title": "VAS",
+      "title": "Value Added Services",
       "path" : "vas/vas-intro",
       "children": [
         {
