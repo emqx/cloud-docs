@@ -9,7 +9,7 @@ TCP and TLS protocols are supported **but WebSocket**.
 ## Preconditions
 
 > 1. [Install](http://www.mqttfx.jensd.de/index.php/download) MQTT.fx client
-> 2. Already [Create Deployment](../deployments/create_deployment.md) in EMQX Cloud, and the deployment status is **running**
+> 2. Already Create Deployment in EMQX Cloud, and the deployment status is **running**
 
 ## Connection configuration
 

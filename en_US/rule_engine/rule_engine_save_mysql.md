@@ -4,7 +4,7 @@ In this article, we will simulate temperature and humidity data and report these
 
 Before you start, you need to complete the following operations:
 
-- [Create a Professional or Premium EMQX Cloud deployment.](../deployments/create_deployment.md)
+- [Create a Dedicated deployment.](../create/dedicated.md)
 - [Create a VPC peering connection.](../deployments/vpc_peering.md) All IP addresses mentioned below refer to the internal network IP of the resource.
   - [NAT gateway service](../vas/nat-gateway.md) allows usage of public IP address to connect to resources.
 
