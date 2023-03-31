@@ -9,7 +9,7 @@ This article will introduce using MQTT X as an MQTT client testing tool to conne
 ## Preconditions
 
 > 1. [Install](https://www.emqx.com/en/downloads/MQTTX) MQTT X client tool
-> 2. Already [Create Deployment](../deployments/create_deployment.md) in EMQX Cloud, and the deployment status is **running**
+> 2. Already Create Deployment in EMQX Cloud, and the deployment status is **running**
 
 Before downloading and installing, please visit our [website](https://mqttx.app/) or [GitHub](https://github.com/emqx/MQTTX) to get the latest version information. The latest version helps to improve the using experience. If you are familiar with this project, you can also directly clone [MQTT X](https://github.com/emqx/MQTTX) repository source code, package and use it yourself. During using, if you have any questions, you can go to [GitHub issues](https://github.com/emqx/MQTTX/issues) to post questions and opinions or Fork our project, and submit a revised PR to us, We will carefully review and reply.
 

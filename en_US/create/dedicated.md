@@ -49,21 +49,21 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
   * 基础版部署端口：默认开启 15xxx(mqtt)，15xxx(mqtts)，8083(ws)， 8084(wss) 端口
 
 
-### [TLS/SSL 配置](./tls_ssl.md)
+### [TLS/SSL 配置](../deployments/tls_ssl.md)
 
 专业版提供自定义 **单双向 TLS/SSL** 认证，并支持 **自签名证书** 和 **CA 签名证书**。
 
 
-### [VPC 对等连接配置](./vpc_peering.md)
+### [VPC 对等连接配置](../deployments/vpc_peering.md)
 
 专业版支持同云服务商、同区域与客户已有 VPC(Virtual Private Cloud) 创建对等连接。 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两个 VPC 中的实例可以彼此通信，就像它们在同一网络中一样。
 
 
-### [私网连接 PrivateLink 配置](./privatelink.md)
+### [私网连接 PrivateLink 配置](../deployments/privatelink.md)
 专业版提供私网连接（PrivateLink）能够实现 EMQX Cloud 部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
 
 
-### [API 访问](../api/introduction.md)
+### [API 访问](../api/api_overview.md)
 
 提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 

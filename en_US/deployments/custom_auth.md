@@ -6,7 +6,7 @@ External authentication and access control help users to use their own services 
 
 After the service is configured, if the client needs to authenticate, EMQX Cloud will use the current client's information to populate the query and perform the user-configured authentication. The authentication is determined by the return.
 
-If built-in authentication is also enabled, EMQX Cloud will chain authentication in the order of [default authentication](auth.md), custom authentication as follows:
+If built-in authentication is also enabled, EMQX Cloud will chain authentication in the order of default authentication, custom authentication as follows:
 
 - Once the authentication is successful, terminate the authentication chain and allow the client to access
 - Once the authentication fails, terminate the authentication chain and prohibit the client from accessing
