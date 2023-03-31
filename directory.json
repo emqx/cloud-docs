@@ -147,10 +147,6 @@
       "path" : "deployments/operation_overview",
       "children": [
         {
-          "title": "Serverless 消费限额设置",
-          "path": "deployments/spend_limit"
-        },
-        {
           "title": "监控",
           "path": "deployments/monitors"
         },
@@ -403,6 +399,10 @@
         {
           "title": "欠费说明",
           "path": "billing/overdue"
+        },
+        {
+          "title": "Serverless 消费限额设置",
+          "path": "deployments/spend_limit"
         }
       ]
     },
@@ -545,7 +545,7 @@
   ],
   "en": [
     {
-      "title": "EMQX Cloud Overview",
+      "title": "Product Overview",
       "path": "./"
     },
     {
@@ -553,39 +553,39 @@
       "path" : "overview"
     },
     {
-      "title": "Plans & Pricing",
+      "title": "Plans and Pricing",
       "path": "price/overview",
       "children": [
         {
-          "title": "Plans",
+          "title": "Product Plans",
           "path": "price/plans"
         },
         {
-          "title": "Pricing",
+          "title": "Product Pricing",
           "path": "price/pricing"
         }
       ]
     },
     {
-      "title": "Quick start",
+      "title": "Quick Start",
       "path" : "quick_start/introduction",
       "children": [
         {
-          "title": "Use MQTT X to connect to deployment",
+          "title": "Use MQTT X to Test the Connection",
           "path": "connect_to_deployments/mqttx"
         }
       ]
     },
     {
-      "title": "Create deployment",
+      "title": "Create Deployment",
       "path" : "create/overview",
       "children" : [
         {
-          "title": "Create Serverless deployment",
+          "title": "Create Serverless Deployment",
           "path": "create/serverless"
         },
         {
-          "title": "Create Dedicated deployment",
+          "title": "Create Dedicated Deployment",
           "path": "create/dedicated",
           "children" : [
             {
@@ -593,11 +593,11 @@
               "path": "deployments/tls_ssl"
             },
             {
-              "title": "VPC peering connection",
+              "title": "VPC Peering Connection",
               "path": "deployments/vpc_peering"
             },
             {
-              "title": "PrivateLink",
+              "title": "Configure PrivateLink",
               "path": "deployments/privatelink"
             }
           ]
@@ -605,23 +605,23 @@
       ]
     },
     {
-      "title": "Projects & User",
+      "title": "Project and Account",
       "path" : "feature/overview",
       "children": [
         {
-          "title": "Project center",
+          "title": "Project Center",
           "path": "feature/project_center"
         },
         {
-          "title": "Project list",
+          "title": "Project List",
           "path": "feature/project"
         },
         {
-          "title": "Role & Authentication",
+          "title": "Role and Authentication",
           "path": "feature/role"
         },
         {
-          "title": "Subaccount management",
+          "title": "Subaccount Management",
           "path": "feature/user"
         },
         {
@@ -631,31 +631,31 @@
       ]
     },
     {
-      "title": "Authentication & ACL",
+      "title": "Authentication and ACL",
       "path" : "deployments/auth_overview",
       "children": [
         {
-          "title": "Serverless",
+          "title": "Serverless Plan",
           "children" : [
             {
               "title": "Authentication",
               "path": "deployments/auth_serverless"
             },
             {
-              "title": "ACL",
+              "title": "Access Control",
               "path": "deployments/acl_serverless"
             }
           ]
         },
         {
-          "title": "Dedicated",
+          "title": "Dedicated Plan",
           "children" : [
             {
               "title": "Authentication",
               "path": "deployments/auth_dedicated"
             },
             {
-              "title": "ACL",
+              "title": "Access Control",
               "path": "deployments/acl_dedicated"
             },
             {
@@ -691,10 +691,6 @@
       "path" : "deployments/operation_overview",
       "children": [
         {
-          "title": "Serverless spend limit",
-          "path": "deployments/spend_limit"
-        },
-        {
           "title": "Monitors",
           "path": "deployments/monitors"
         },
@@ -719,53 +715,53 @@
           "path": "deployments/prometheus"
         },
         {
-          "title": "Stop / delete deployment",
+          "title": "Stop/Delete deployment",
           "path": "deployments/stop_delete_deployment"
         }
       ]
     },
     {
-      "title": "Connect To Deployment",
+      "title": "Connection with Clients/Applications",
       "path" : "connect_to_deployments/overview",
       "children": [
         {
-          "title": "Python SDK connection",
+          "title": "Python SDK Connection",
           "path": "connect_to_deployments/python_sdk"
         },
         {
-          "title": "Go SDK connection",
+          "title": "Go SDK Connection",
           "path": "connect_to_deployments/golang_sdk"
         },
         {
-          "title": "Java SDK connection",
+          "title": "Java SDK Connection",
           "path": "connect_to_deployments/java_sdk"
         },
         {
-          "title": "Node.js SDK connection",
+          "title": "Node.js SDK Connection",
           "path": "connect_to_deployments/nodejs_sdk"
         },
         {
-          "title": "C SDK connection",
+          "title": "C SDK Connection",
           "path": "connect_to_deployments/c_sdk"
         },
         {
-          "title": "C# SDK connection",
+          "title": "C# SDK Connection",
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "WebSocket SDK connection",
+          "title": "WebSocket SDK Connection",
           "path": "https://www.emqx.com/en/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "Vue.js SDK connection",
+          "title": "Vue.js SDK Connection",
           "path": "connect_to_deployments/vue_sdk"
         },
         {
-          "title": "React SDK connection",
+          "title": "React SDK Connection",
           "path": "connect_to_deployments/react_sdk"
         },
         {
-          "title": "Electron SDK connection",
+          "title": "Electron SDK Connection",
           "path": "connect_to_deployments/electron_sdk"
         },
         {
@@ -793,7 +789,7 @@
           "path": "connect_to_deployments/openhab"
         },
         {
-          "title": "Shared subscription",
+          "title": "Shared Subscription",
           "path": "connect_to_deployments/shared_subscription"
         }
       ]
@@ -819,105 +815,105 @@
           "path": "rule_engine/rule_engine_republish"
         },
         {
-          "title": "Bridge data to Webhook",
+          "title": "Bridge Data to Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
         {
-          "title": "Bridge data to MQTT Broker",
+          "title": "Bridge Data to MQTT Broker",
           "path": "rule_engine/rule_engine_mqtt"
         },
         {
-          "title": "Bridge data to Kafka",
+          "title": "Bridge Data to Kafka",
           "path": "rule_engine/rule_engine_kafka"
         },
         {
-          "title": "Bridge data to Confluent Cloud",
+          "title": "Bridge Data to Confluent Cloud",
           "path": "rule_engine/rule_engine_confluent"
         },
         {
-          "title": "Bridge data to Pulsar",
+          "title": "Bridge Data to Pulsar",
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
         {
-          "title": "Bridge data to GCP Pub/Sub",
+          "title": "Bridge Data to GCP Pub/Sub",
           "path": "rule_engine/rule_engine_gcp_pubsub"
         },
         {
-          "title": "Bridge data to RocketMQ",
+          "title": "Bridge Data to RocketMQ",
           "path": "rule_engine/rule_engine_rocketmq"
         },
         {
-          "title": "Bridge data to Azure Event hubs",
+          "title": "Bridge Data to Azure Event Hubs",
           "path": "rule_engine/rule_engine_azure_event_hubs"
         },
         {
-          "title": "Save data to TimescaleDB",
+          "title": "Save Data to TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaledb"
         },
         {
-          "title": "Save data to Timescale Cloud",
+          "title": "Save Data to Timescale Cloud",
           "path": "rule_engine/rule_engine_save_timescale_cloud"
         },
         {
-          "title": "Save data to PostgreSQL",
+          "title": "Save Data to PostgreSQL",
           "path": "rule_engine/rule_engine_save_psql"
         },
         {
-          "title": "Save data to MySQL",
+          "title": "Save Data to MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
         {
-          "title": "Save data to MongoDB",
+          "title": "Save Data to MongoDB",
           "path": "rule_engine/rule_engine_save_mongodb"
         },
         {
-          "title": "Save data to MongoDB Atlas",
+          "title": "Save Data to MongoDB Atlas",
           "path": "rule_engine/rule_engine_save_mongodb_atlas"
         },
         {
-          "title": "Save data to InfluxDB",
+          "title": "Save Data to InfluxDB",
           "path": "rule_engine/rule_engine_influxDB"
         },
         {
-          "title": "Save data to InfluxDB 2.0",
+          "title": "Save Data to InfluxDB 2.0",
           "path": "rule_engine/rule_engine_influxDB_2.0"
         },
         {
-          "title": "Save data to Redis",
+          "title": "Save Data to Redis",
           "path": "rule_engine/rule_engine_save_redis"
         },
         {
-          "title": "Save data to SQL Server",
+          "title": "Save Data to SQL Server",
           "path": "rule_engine/rule_engine_save_sqlserver"
         },
         {
-          "title": "Save data to TDengine",
+          "title": "Save Data to TDengine",
           "path": "rule_engine/rule_engine_save_tdengine"
         },
         {
-          "title": "Save data to HStreamDB",
+          "title": "Save Data to HStreamDB",
           "path": "rule_engine/rule_engine_save_hstreamdb"
         },
         {
-          "title": "Save data to ClickHouse",
+          "title": "Save Data to ClickHouse",
           "path": "rule_engine/rule_engine_save_clickhouse"
         },
         {
-          "title": "Save data to ClickHouse Cloud",
+          "title": "Save Data to ClickHouse Cloud",
           "path": "rule_engine/rule_engine_save_clickhouse_cloud"
         },
         {
-          "title": "Store device offline messages",
+          "title": "Store Device Offline Messages",
           "path": "rule_engine/rule_engine_offline_msg_saving"
         },
         {
-          "title": "Get subscription topic information",
+          "title": "Get Subscription Topic Information",
           "path": "rule_engine/rule_engine_get_subscription"
         }
       ]
     },
     {
-      "title": "Developer Guides",
+      "title": "Developer Guide",
       "path": "dev_guide"
     },
     {
@@ -943,6 +939,10 @@
         {
           "title": "Taxation by Region",
           "path": "billing/taxation"
+        },
+        {
+          "title": "Serverless Spend Limit",
+          "path": "deployments/spend_limit"
         }
       ]
     },
@@ -1028,7 +1028,7 @@
       ]
     },
     {
-      "title": "Release note",
+      "title": "Release Note",
       "path": "release_notes"
     },
     {
