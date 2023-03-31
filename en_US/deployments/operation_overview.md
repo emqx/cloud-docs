@@ -1,25 +1,25 @@
-# 运维和监控
+# Operation and Management
 
-## [Serverless 消费限额](./spend_limit.md)
-设置消费限额可以让 Serverless 部署每个月的消费额度都控制在设定值之内。
+## [Serverless Spend Limit](./spend_limit.md)
+The spend limit allows you to control the monthly spending of the Serverless deployment. 
 
-## [监控](./monitors.md)
-监控指标，可实时查看连接数，TPS，订阅数和主题数等数据。
+## [Monitors](./monitors.md)
+EMQX Cloud provides monitoring metrics to view data such as TPS, number of connections, subscriptions, and topics in real time.
 
-## [指标](./metrics.md)
-可以查看每种指标对应的展示图表，某个时间点的详细信息。
+## [Metrics](./metrics.md)
+EMQX Cloud provides four incremental metrics: **Sessions**, **Messages**, **Traffic**, and **Dropped Messages**. You can view the display chart corresponding to each indicator, and the detailed information at a certain point in time.
 
-## [告警](./alerts.md)
-提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。
+## [Alerts](./alerts.md)
+EMQX Cloud provides complete alerts reminders and alerts integration, allowing users and operation and maintenance personnel to make corresponding treatment promptly based on these alerts. 
 
-## [Webhook 告警](./alerts_webhook.md)
-集成 Webhook，支持将告警发送到通信软件或是自己的服务中。
+## [Webhook Alerts](./alerts_webhook.md)
+EMQX Cloud integrates with Webhook, enabling alerts to be sent to IM software or to your own service. 
 
-## [日志](./spend_limit.md)
-实时在线查看日志功能。
+## [Logs](./logs.md)
+EMQX Cloud provides real-time online viewing of EMQX logs.
 
 ## [Prometheus](./prometheus.md)
-调用 Prometheus API 来监控 EMQX Cloud 的关键指标。
+The Prometheus API is available in the EMQX Cloud and can be used to easily monitor critical metrics. 
 
-## [停止/删除部署](./stop_delete_deployment.md)
-停止和删除部署相关说明
+## [Stop/Delete Deployment](./stop_delete_deployment.md)
+This page describes how to stop or delete a deployment. 

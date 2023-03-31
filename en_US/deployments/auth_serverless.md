@@ -1,28 +1,26 @@
-# Serverless 认证鉴权
+# Authentication in Serverless Plan
 
 
-## 查看认证信息
+## View Authentication Policy
 
-在左侧 `认证鉴权` 的 `认证` 页面，可以看到认证信息
+Click **Authentication & ACL** -> **Authentication** on the left navigation menu. 
 
 ![auth](./_assets/auth_serverless.png)
 
-## 添加认证信息
+## Add Authentication Policy
 
-在页面上方的输入框中依次输入用户名和密码，添加添加按钮即可完成认证信息的添加
+Input **Username** and **Password** in the **Add Authentication** dialog box and click **Confirm** to complete the action.
 
 ![add_auth](./_assets/add_auth_serverless.png)
 
 
-## 编辑认证信息
+## Edit Authentication Policy
 
-点击认证信息右侧的编辑按钮，可以修改用户名的密码
+Click the edit icon to the right of the target authentication policy to change the username and password.
 
 ![edit_auth](./_assets/edit_auth_serverless.png)
 
-## 删除认证信息
+## Delete Authentication Policy
 
-点击认证信息右侧的删除按钮，可以对认证信息进行删除
-
-![delete_auth](./_assets/delete_auth_serverless.png)
+Click the delete icon to the right of the target authentication policy to delete the username and password.
 

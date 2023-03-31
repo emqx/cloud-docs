@@ -1,37 +1,40 @@
-# Serverless 访问控制（ACL）
+# Access Control in Serverless Plan
 
-访问控制是指对发布 (PUBLISH)/订阅 (SUBSCRIBE) 操作的 `权限控制`。
+Access control pertains to controlling permissions for publish (PUBLISH) and subscribe (SUBSCRIBE) operations, which can be implemented at three levels:
 
-访问控制对三个粒度进行权限控制
+1. Client ID
+2. Username
+3. All users: controls permissions for topics without distinguishing between client ID and username.
 
-1. 客户端 ID
-2. 用户名
-3. 全部用户：即对主题进行权限控制，不区分客户端 ID 和用户名
+:::tip TIP
 
-**特别说明**：访问控制默认采用**黑名单**模式，且 clientid/username + topic 唯一，即同一 clientid/username + topic 记录，仅最新一条记录有效
+Access control uses a blacklist mode by default. Also, the combination of clientid/username + topic is unique, which means that only the latest record for the same clientid/username + topic is considered valid.
+
+:::
 
 
-## 查看访问控制信息
+## View Access Control Policy
 
-在左侧 `认证鉴权` 的 `访问控制` 页面，可以查看访问控制信息，可以在上方切换三种粒度查看对应的访问控制信息
+Click **Authentication & ACL** -> **ACL** on the left navigation menu. You can switch between the three levels to view corresponding access control policy.
 
 ![acl](./_assets/acl_serverless.png)
 
-## 添加访问控制信息
+## Add Access Control Policy
 
-依次填入客户端 ID，主题，选择是否允许，选择动作：sub/pub/pubsub，点击添加按钮，完成添加
+For example to add an access control policy for certain clients, you can follow the steps below:
 
-你可以在主题中使用以下占位符，请求时 EMQX Cloud将自动填充为客户端信息：
+On the **Client ID** tab, click **+ Add**, fill in the **Client ID**, **Topic**, select the action for this target user (**Publish**, **Subscribe**, or **Publish & Subscribe**), then add **Permission** (**Allow** or **Deny**), and then click **Confirm** to complete the addition. 
 
-- %u：用户名
-- %c：客户端 ID
+:::tip TIP
+
+Placeholders like %u (username) and %c (client ID) are allowed in the topic, and EMQX Cloud will automatically fill in the client information when a request is made.
+
+:::
 
 ![add_acl](./_assets/add_acl_serverless.png)
 
-`用户名` 和 `全部用户` 的操作相同
+The above steps also appy to the **Username** and **All Users** tab. 
 
-## 删除访问控制信息
+## Delete Access Control Policy
 
-点击访问控制信息右侧的删除图标即可删除
-
-![delete_acl](./_assets/delete_acl_serverless.png)
+To delete access control information, simply click the delete icon on the right-hand side of the access control policy.

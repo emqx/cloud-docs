@@ -1,54 +1,52 @@
-# 版本介绍
+# Product Plans
 
-EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属于您的全托管 MQTT 服务，从独立的开发者到全球化的行业领导者，都能找到合适的 EMQX Cloud 产品。
+As a globally available, fully-managed MQTT service platform, EMQX Cloud can be easily deployed on popular public clouds, providing a tailored solution to meet your specific requirements. To better serve the our users, whether you are individual developers or global industry leaders, EMQX Cloud offers three distinct product plans:
 
-1. **Serverless**：共享集群的 MQTT 服务，按使用量计费，免费额度以内使用完全免费。最高支持 1000 同时在线连接。
-2. **专有版**：独立集群的 MQTT 服务。专有版提供标准场景和高可用场景 2 种服务：<br/>
-    a. 基础版：适用于标准吞吐和并发量业务场景下的独立的 MQTT 服务。<br />
-    b. 专业版：高可用的 MQTT 集群服务，是您在生产环境试用的最佳选择。支持实时数据处理、数据持久化、消息分发、VPC 对等连接（私有网络）等高级功能。
-3. **BYOC**：Bring your own cloud。在你自己的云上部署 EMQX，所有数据都将保存在用户自己的数据中心内。满足企业业务数据私有化的场景需求。
+1. **Serverless Plan**: Provide MQTT services on a shared cluster that is charged based on usage. The service is entirely free for usage within the free quota, and support up to 1000 concurrent connections.
 
-## 各版本功能对比表
+2. **Dedicated Plan**: Provide MQTT services on a dedicated EMQX cluster and comes in distinct service plans:
+
+    a. **Dedicated Plan (Standard)**: Ideal for implementing MQTT services that require regular or typical throughput and concurrency scenarios in an independent setting.
+
+    b. **Dedicated Plan (Professional)**: Provide a high-availability cluster that's designed for implementing MQTT services in production environments. It comes packed with advanced features, including real-time data processing, data persistence, message distribution, and VPC peer-to-peer connections (private networks). 
+
+3. **BYOC**: Bring your own cloud. Seamlessly integrate EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise. 
+
+## Feature List
 
 <table>
   <tr>
       <th></th>
       <th>Serverless</th>
-      <th>专有版 - 基础版</th>
-      <th>专有版 - 专业版</th>
+      <th>Dedicated Plan (Standard)</th>
+      <th>Dedicated Plan (Professional)</th>
     </tr>
    <tr>
-      <td><strong>公有云平台</strong></td>
+      <td><strong>Cloud Platform</strong></td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">阿里云</td>
+      <td style="text-indent: 2em;">AWS</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">华为云</td>
+      <td style="text-indent: 2em;">Azure</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">腾讯云</td>
+      <td style="text-indent: 2em;">GCP</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">亚马逊云科技</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>协议支持</strong></td>
+      <td><strong>Protocols</strong></td>
       <td></td>
       <td></td>
       <td></td>
@@ -102,79 +100,73 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
       <td>&#10003</td>
    </tr>
    <tr>
-      <td><strong>连接</strong></td>
+      <td><strong>Connection</strong></td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">最大连接数</td>
+      <td style="text-indent: 2em;">Max number of connections</td>
       <td>1000</td>
       <td>10,000</td>
-      <td>无限制</td>
+      <td>Unlimited</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">最大 TPS 上限</td>
+      <td style="text-indent: 2em;">Maximum TPS</td>
       <td>1000</td>
       <td>5000</td>
-      <td>无限制</td>
+      <td>Unlimited</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">单客户端 TPS 上限</td>
+      <td style="text-indent: 2em;">Maximum TPS for a Single Client</td>
       <td>100</td>
-      <td>无限制</td>
-      <td>无限制</td>
+      <td>Unlimited</td>
+      <td>Unlimited</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">单客户端订阅主题限制</td>
+      <td style="text-indent: 2em;">Topic Subscription Limit for a Single Client</td>
       <td>10</td>
-      <td>无限制</td>
-      <td>无限制</td>
+      <td>Unlimited</td>
+      <td>Unlimited</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">VPC 对等连接（私有网络）</td>
+      <td style="text-indent: 2em;">VPC Peering (Private Network)</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">私网连接（阿里云）</td>
+      <td style="text-indent: 2em;">NAT Gateway</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">NAT 网关</td>
+      <td style="text-indent: 2em;">Internal Load Balance</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">内网 LB</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
-      <td><strong>试用/免费额度</strong></td>
+      <td><strong>Trial/Free Quota</strong></td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">部署试用</td>
+      <td style="text-indent: 2em;">Trial Deployment</td>
       <td>&#10007</td>
-      <td>14 天</td>
-      <td>14 天</td>
+      <td>14 Days</td>
+      <td>14 Days</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">免费额度</td>
-      <td>连接：1百万连接分钟/月<br />流量：1GB/月</td>
-      <td>流量：100 GB/月</td>
-      <td>流量：最高 1 TB/月</td>
+      <td style="text-indent: 2em;">Free Quota</td>
+      <td>Connection: 1,000,000 session minutes / month<br />Traffic: 1 GB / Month</td>
+      <td>Traffic：100 GB / Month</td>
+      <td>Traffic：Maximum 1 TB / Month</td>
    </tr>
    <tr>
-      <td><strong>功能特性</strong></td>
+      <td><strong>Features</strong></td>
       <td></td>
       <td></td>
       <td></td>
@@ -186,103 +178,103 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">消息保留</td>
+      <td style="text-indent: 2em;">Retained Message</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">遗嘱消息</td>
+      <td style="text-indent: 2em;">Will Message</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">共享订阅</td>
+      <td style="text-indent: 2em;">Shared Subscription</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">用户名与密码认证</td>
+      <td style="text-indent: 2em;">Username and Password Authentication</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">客户端和主题级别的访问控制</td>
+      <td style="text-indent: 2em;">Client and Topic Access control</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">指标监控</td>
+      <td style="text-indent: 2em;">Metrics Monitoring</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">告警</td>
+      <td style="text-indent: 2em;">Alarms</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">项目管理</td>
+      <td style="text-indent: 2em;">Project Management</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">角色权限管理</td>
+      <td style="text-indent: 2em;">Role Authorization</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">发票管理</td>
+      <td style="text-indent: 2em;">Invoice</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">企业 SSL 证书</td>
+      <td style="text-indent: 2em;">SSL Certificate</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">支持第三方数据源认证与授权</td>
+      <td style="text-indent: 2em;">Authentication with External Data Sources</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">日志</td>
+      <td style="text-indent: 2em;">Log</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td><strong>数据集成</strong></td>
+      <td><strong>Data Integrations</strong></td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">基于 SQL 的数据处理</td>
+      <td style="text-indent: 2em;">SQL-Based Data Processing</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">消息重发布</td>
+      <td style="text-indent: 2em;">Republish</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">消息桥接</td>
+      <td style="text-indent: 2em;">Bridging</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -402,79 +394,79 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
       <td>&#10003</td>
    </tr>
    <tr>
-      <td><strong>增值服务</strong></td>
+      <td><strong>Value Added Services</strong></td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">流量包</td>
+      <td style="text-indent: 2em;">Data Plan</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">影子服务</td>
+      <td style="text-indent: 2em;">Shadow Service</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">自定义函数</td>
+      <td style="text-indent: 2em;">User-Defined Function</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td><strong>服务支持</strong></td>
+      <td><strong>Service Support</strong></td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">SLA 等级</td>
-      <td>-</td>
+      <td style="text-indent: 2em;">Uptime SLA</td>
+      <td>99.9%</td>
       <td>99.95%</td>
       <td>99.99%</td>
    </tr>
     <tr>
-      <td style="text-indent: 2em;">客户支持</td>
-      <td>-</td>
-      <td>8/5</td>
-      <td>24/7</td>
+      <td style="text-indent: 2em;">Customer Support</td>
+      <td>8x5</td>
+      <td>8x5</td>
+      <td>24x7</td>
    </tr>
     <tr>
-      <td style="text-indent: 2em;">多可用区部署</td>
+      <td style="text-indent: 2em;">Multi-AZ Deployment</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
 </table>
 
-## 支持云服务商和地区
 
-### Serverlss
-| 平台   | 区域                   |
+## Cloud Providers and Regions
+
+### Serverless
+| Cloud Provider | Region           |
 | ------ | --------------- |
-| 阿里云 | - |
+| AWS | - |
 
 
-### 专有版 - 基础版
-| 平台   | 区域                   |
+### Dedicated Plan (Standard)
+| Cloud Provider | Region                                                       |
 | ------ | --------------- |
-| 阿里云 | 深圳，杭州 |
+| AWS | US East (N. Virginia)<br>EU (Frankfurt)<br/>Asia Pacific (Singapore), Asia Pacific (Hong Kong) |
 
 
-### 专有版 - 专业版
+### Dedicated Plan (Professional)
 
-阿里云、华为云、腾讯云和亚马逊云科技。如您需要其他云服务商或地区，您可以提 [工单](../feature/tickets.md)或邮件(cloud-support@emqx.io)与我们取得联系。
+To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). EMQX Cloud support team will assist you in the process of deploying your instance in the desired region.
 
-| 平台   | 区域                   |
+| Cloud Provider | Region                                                       |
 | ------ | ---------------------- |
-| 阿里云 | 北京，上海，深圳，杭州，张家口，成都 |
-| 华为云 | 华南-广州，华东-上海，华北-北京       |
-| 腾讯云 | 广州，上海，北京 |
-| 亚马逊云科技 | 宁夏，北京 |
+| AWS | US East (N. Virginia), US West (N. California), US West (Oregon)<br>EU (Ireland), EU (Frankfurt)<br>Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Azure | East US, Germany West Central, Southeast Asia<br/>europe-west3 (Frankfurt), europe-north1 (Finland)<br>asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |
+| Google Cloud | us-east1 (South Carolina), us-west1 (Oregon) |
 
-## 预估部署费用
-在创建部署之前，您可以前往 [价格方案](https://www.emqx.com/zh/cloud/pricing) 页面，依据实际业务需求预估创建部署所需费用。
+## Estimate Your Monthly Usage
+EMQ has offered a [Plans & Pricing](https://www.emqx.com/en/cloud/pricing) page, where you can estimate your monthly usage and select a plan that best suits your business needs.

@@ -1,10 +1,9 @@
-# 创建部署
+In this section, we will guide you through creating different versions of EMQ X Cloud deployments.
 
-在本节中我们将引导您创建不同版本的 EMQX Cloud 部署。
+## [Create a Serverless Deployment](./serverless.md)
 
-## [创建 Serverless 部署](./serverless.md)
-创建一个 Serverless 部署并且通过 MQTT X 工具连接到部署。
+Create a Serverless deployment and use the MQTT X tool to try the features.
 
+## [Create a Dedicated Deployment](./dedicated.md)
 
-## [创建专有版部署](./dedicated.md)
-创建一个专有版部署并且通过 MQTT X 工具连接到部署。
+Create a Dedicated deployment and use the MQTT X tool to try the features.

@@ -1,83 +1,83 @@
-# 创建专有版部署
+# Create a Dedicated Deployment
 
-EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连接上限和 TPS 上限，并且拥有更多的扩展能力。我们以其中专业版为例介绍如何创建和使用。
+EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters with higher connection and TPS limits, as well as greater scalability. This guide will use the Dedicated Plan (Professional) as an example to walk you through the steps of creating and utilizing EMQX Cloud.
 
-## 创建部署
+## Create a Deployment
 
-1. 登录账户，进入 EMQX Cloud [控制台](https://cloud.emqx.com/console/)。
+1. Log in to [EMQX Cloud Console](https://cloud.emqx.com/console/). 
 
-2. 在控制台首页或者部署列表页面都可以在指定项目下创建，点击新建部署进入创建步骤。
+2. You can create a new deployment for a specific project from either the Console homepage or the deployment list page. Click **+ New**.  
 
-3. 点击专有版面板上的 `立即创建`。
+3. Click **Create Now** on the **Dedicated** tab.
 
    ![select_deployment_type](./_assets/create_serverless.png)
 
-4. 依据您的需求选择相应规格配置。
+4. Choose the appropriate specifications and configurations based on your needs.
+
+   **Plan**: Choose the product plan.
+
+   **Choose Cloud Platform**: You can choose from AWS, Azure, or Google Cloud. 
+
+   **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). 
+
+   **Choose Spefication**: Each specification has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
+
+   **Billing Method**: Choose between **Hourly billing** or Annual prepaid (with a 15% of discount).
 
    ![select_deployment_spec](./_assets/select_deployment_spec.png)
 
-   - 选择云平台：专业版支持华为云、阿里云、腾讯云和 AWS 中国，如您有其他云服务提供商需求，您可以提交 [工单](../feature/tickets.md) 或通过邮件（cloud-support@emqx.io）和我们联系。
-   - 选择区域：专业版支持华为云（广州，上海，北京），阿里云（深圳，上海，杭州，北京，张家口，成都），腾讯云（广州，上海，北京），AWS 中国（北京，宁夏）如您有其他区域需求，您可以提交 [工单](../feature/tickets.md) 或通过邮件（cloud-support@emqx.io）和我们联系。
-   - 选择规格：每类规格限制了不同的连接数上限和 TPS 上限。后续可以通过升降部署规格实现增加和减少最大连接数和 TPS 上限。
-   - 可以选择按小时计费或包年计费进行购买。
+5. Double-check your setting in the **New Deployment** tab, and click **Deploy**. 
 
-6. 在 **确认** 页核对部署信息。 点击 **立即部署** 并同意 EMQX Cloud 标准服务条款。您将跳转到控制台部署详情页面。
-7. 等待 5 分钟左右直至部署运行状态为**运行中**即可使用。
+6. As part of the deployment process, you'll be asked to agree to the *EMQX Cloud Services Agreement*, please review the agreement carefully and accept it if you agree with its terms. 
+
+7. After agreeing to the agreement, the deployment process will begin and take about 5 minutes to complete. You can monitor the progress on the **Projects** page, and once the status changes to **Running**, your deployment has been successfully created and is ready for use.
 
 
-## 部署概览
+## Deployment Overview
 
-部署概览页面可获取到部署实时状态和连接信息：
+The deployment overview page provides real-time status and connection information for your deployment.
+
+- **Instance status:** Running status and duration of operation.
+- **Sessions:** Current and maximum connection counts.
+- **Pub&Sub TPS:** Current messages sent and received per second, as well as the TPS limit.
+- **Traffic:** Usage information for the deployed traffic, including monthly usage and free quota.
+- **Deployment name:** A customizable name for the deployment.
+- **Specifications:** The current specification of the deployment, including the ability to switch from hourly billing to annual billing.
+- **Address:**
+  - Professional Plan: IP
+  - Standard Plan: Domain name ending with emqx.cloud
+- **Ports:**
+  - Professional Plan: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable 8883 (mqtts) and 8084 (wss) ports.
+  - Standard Plan: `15xxx` (mqtt), `15xxx` (mqtts), `8083` (ws), and `8084` (wss) ports are enabled by default.
 
    ![dedicated](./_assets/dedicated_overview.png)
 
-* 实例状态：运行状态和运行时长
-* 连接数：当前连接数和最大连接数
-* 消息上下行 TPS：部署当前每秒钟消息发送和接收条数，以及 TPS 上限。
-* 流量： 部署本月已经使用的流量以及免费流量额度显示。
-* 部署名称：部署名称可自定义。
-* 部署规格：显示当前部署的规格。如果是按时计费类型的部署，可以在此转化为包年付费。
-* 连接地址
+To explore the advanced features included in the Dedicated Plan, you can click the links below.
 
-  * 专业版部署连接地址：IP
+### [Configure TLS/SSL](../deployments/tls_ssl.md)
 
-  * 基础版连接地址：以 emqx.cloud 后缀结尾的域名
-
-* 连接端口：
-
-  * 专业版部署端口：默认开启 1883(mqtt)、8083(ws)，您可以通过配置 TLS/SSL 开启 8883(mqtts) 和 8084(wss) 端口。
-  * 基础版部署端口：默认开启 15xxx(mqtt)，15xxx(mqtts)，8083(ws)， 8084(wss) 端口
+EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, and support self-signed certificates and CA-signed certificates.
 
 
-### [TLS/SSL 配置](../deployments/tls_ssl.md)
+### [VPC Peering Connections](../deployments/vpc_peering.md)
 
-专业版提供自定义 **单双向 TLS/SSL** 认证，并支持 **自签名证书** 和 **CA 签名证书**。
-
-
-### [VPC 对等连接配置](../deployments/vpc_peering.md)
-
-专业版支持同云服务商、同区域与客户已有 VPC(Virtual Private Cloud) 创建对等连接。 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两个 VPC 中的实例可以彼此通信，就像它们在同一网络中一样。
+VPC peering connection is a network connection between two VPCs. Through this connection, the instances in different VPCs can communicate with each other as if they are in the same network.
 
 
-### [私网连接 PrivateLink 配置](../deployments/privatelink.md)
-专业版提供私网连接（PrivateLink）能够实现 EMQX Cloud 部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
+### [Configure PrivateLink](../deployments/privatelink.md)
+PrivateLink enables the proprietary network VPC where the EMQX Cloud deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
 
 
-### [API 访问](../api/api_overview.md)
+### [REST API](../api/api_overview.md)
 
-提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
+EMQX Cloud API follows the REST architecture. You can access the functions of EMQX programmatically.
 
-### [内网负载均衡](../vas/intranet-lb.md)
+### [Internal Load Balancers](../vas/intranet-lb.md)
 
-内网负载均衡是一种在内网中对流量进行按需分发的服务，提供部署内网访问能力。内网负载均衡为增值服务，需要单独开通。
-
-
-### [NAT 网关](../vas/nat-gateway.md)
-
-NAT 网关可以提供网络地址转换服务，为专业版部署提供访问公网资源的能力。NAT 网关为增值服务，需要单独开通。
+Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
 
 
-## 连接到部署
+### [NAT Gateway](../vas/nat-gateway.md)
 
-您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTT X 连接到部署](../connect_to_deployments/mqttx.md)。
+NAT gateways can provide network address translation services to provide Professional deployments with the ability to access public network resources without the need for VPC peering connections.
 

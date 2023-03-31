@@ -1,24 +1,29 @@
-# 认证和访问控制
+# Authentication and ACL
 
-认证是大多数应用的重要组成部分，MQTT 协议支持用户名密码认证，启用身份认证能有效阻止非法客户端的连接。EMQX Cloud 中的认证指的是当一个客户端连接到 EMQX  Cloud 的时候，通过服务器端的配置来控制客户端连接服务器的权限。
+Authentication is a crucial component of most applications. In EMQX Cloud, authentication refers to controlling client connections to the server through server-side configuration when a client connects to EMQX Cloud.
 
-访问控制是指对 MQTT 客户端的发布和订阅操作进行权限控制。EMQX Cloud Serverless 和 专有版在认证和访问控制的设定上略有差别，并且专有版提供外部认证和访问控制的功能。
+Access control refers to permission control for MQTT client publishing and subscribing operations. There are slight differences in the authentication and access control settings between EMQX Cloud Serverless and Enterprise versions, and the Enterprise version provides external authentication and access control capabilities.
 
-## [认证 (Serverless)](./auth_serverless.md)
+## Serverless Plan
 
-设置 Serverless 认证
+### [Authentication](./auth_serverless.md)
 
-## [访问控制 (Serverless)](./acl_serverless.md)
+Set authentication for Serverless Plan. 
 
-设置 Serverless 访问控制
+### [Access Control](./acl_serverless.md)
 
-## [认证 (专有版)](./auth_dedicated.md)
+Set access control for Serverless Plan.
 
-设置 Serverless 认证
+## Dedicated Plan
 
-## [访问控制 (专有版)](./acl_dedicated.md)
+### [Authentication](./auth_dedicated.md)
 
-设置 Serverless 访问控制
+Set authentication for Dedicated Plan.
 
-## [外部认证和访问控制](./custom_auth.md)
-外部认证与访问控制帮助用户使用自己服务进行认证鉴权，目前支持使用 MySQL， PostgreSQL 作为数据源，也支持连接到 HTTP 服务做认证鉴权。
+### [Access Control](./acl_dedicated.md)
+
+Set access control for Dedicated Plan.
+
+### [External Authentication and Access Control](./custom_auth.md)
+
+External authentication and access control help users to use their own services for authentication and authentication, currently supporting the use of MySQL and PostgreSQL as the data source, and also supports connecting to HTTP services for authentication and authentication.

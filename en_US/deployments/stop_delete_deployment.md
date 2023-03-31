@@ -1,74 +1,58 @@
-# 停止和删除部署
-
+# Stop and Delete Deployments
 
 ::::: tabs type:card
-:::: tab Serverless 
+:::: tab Serverless Plan
 
-## 停止部署
+## Stop a Deployment
 
-1. 进入控制台，点击您所需要停止的部署，您将进入部署概览页面
-
-2. 点击停止按钮，并在弹出框中输入部署名称
-
-3. 点击确认，完成部署停止
+1. Go to the **Cloud Console** and click on the deployment you wan t to **stop** to access the deployment overview page.
+2. Click the **Stop** button and enter the name of the deployment in the pop-up box.
+3. Click **Confirm** to stop the deployment .
 
 ::: warning
-停止部署后，设备将不能连接到部署，您的数据和连接地址将会被保留。
+
+Stopping a deployment will disconnect devices from the deployment, but your data and connection address will be preserved.
 :::
 
+## Delete a Deployment
 
-## 删除部署
-
-1. 进入控制台，点击您所需要删除的部署，您将进入部署概览页面
-
-2. 点击删除按钮，并在弹出框中输入部署名称
-
-3. 点击确认，完成部署删除
-
+1. Go to the **Cloud Console** and click on the deployment you wan t to **delete** to access the deployment overview page.
+2. Click the **Delete** button and enter the name of the deployment in the pop-up box.
+3. Click **Confirm** to stop the deployment .
 
 ::: warning
-删除部署后，设备将不能连接到部署，部署所有数据和配置将会被删除。
+Deleting a deployment will disconnect devices from the deployment and remove all deployment data and configurations.
 :::
-
 
 ::::
-:::: tab 专有版
+:::: tab Dedicated Plan
 
 
-## 停止部署
+## Stop a Deployment
 ::: warning
-停止部署后您将不能连接到部署，您的数据和连接地址将会被保留，同时我们将收取数据保留费用。
-:::
-   
-停止部署之前，您需要确保部署运行状态为**运行中**。
-
-1. 进入控制台，点击您所需要停止的部署，您将进入部署详情页面
-
-2. 点击停止按钮，并在弹出框中输入部署名称
-
-3. 点击确认，完成部署停止
-
-![delete_deployment](./_assets/stop_deployment.png)
-
-
-## 删除部署
-::: warning
-删除部署后您将不能连接到部署，部署所有数据和配置将会被删除, 同时我们将停止部署计费。
+After stopping the deployment, you will no longer be able to connect to it, but your data and connection address will be preserved. Please note that data retention fees will apply.
 :::
 
-删除部署之前，您需要确保部署运行状态为**运行中**。
+Before stopping the deployment, please make sure that the deployment's status is **Running**.
 
-1. 进入控制台，点击您所需要删除的部署，您将进入部署详情页面
+1. Go to the **Cloud Console** and click on the deployment you wan t to **stop** to access the deployment overview page.
+2. Click the **Stop** button and enter the name of the deployment in the pop-up box.
+3. Click **Confirm** to stop the deployment .
 
-2. 点击删除按钮，并在弹出框中输入部署名称
 
-3. 点击确认，完成部署删除
+## Delete a Deployment
+::: warning
+After deleting the deployment, you will no longer be able to connect to it, and all deployment data and configurations will be removed. The deployment billing will also be stopped.
+:::
 
-![delete_deployment](./_assets/delete_deployment.png)
+Before deleting the deployment, please make sure that the deployment's status is **Running**.
+
+1. Go to the **Cloud Console** and click on the deployment you wan t to **delete** to access the deployment overview page.
+2. Click the **Delete** button and enter the name of the deployment in the pop-up box.
+3. Click **Confirm** to stop the deployment .
 
 ::::
 :::::
-
 
 
 

@@ -1,22 +1,22 @@
-# 管理控制台
+# Projects and Accounts
 
 
-## [项目中心](./project_center.md)
+## [Project Center](./project_center.md)
 
-项目中心提供了一个企业中多个组织或者部门独立使用和管理 MQTT 集群的能力，可以分配不同的角色对平台的各项能力进行更加精细化的管理。
+Project Center provides the ability for multiple organizations or departments in an enterprise to independently use and manage MQTT clusters, allowing different roles to be assigned to more granular management of the platform's capabilities. 
 
-## [项目列表](./project.md)
+## [Project List](./project.md)
 
-项目列表中可以直接查看每个项目下的部署，也可以在项目下创建新的部署。
+Project management is used to group deployments under different projects, making it easy to manage deployments according to the projects.
 
-## [角色权限](./role.md)
+## [Role and Authentication](./role.md)
 
-用户管理提供了企业用户对于多角色的管理需求，对不同角色分配了不同操作权限和项目权限。
+Accounts management fulfills enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. 
 
-## [子用户管理](./user.md)
+## [Subaccount Management](./user.md)
 
-创建子账号，并赋予子账号特定的权限，可以对资源和功能做精细化的管理。
+By creating sub-accounts and granting them specific permissions, you can have more precise control over the management of resources and functions.
 
-## [工单](./tickets.md)
+## [Tickets](./tickets.md)
 
-通过工单获得我们的技术支持。
+Get our technical support through a ticket.
