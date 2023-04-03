@@ -1,4 +1,4 @@
-# Get Start
+# Get Started
 
 This chapter is designed to help you get started with EMQX Cloud product by providing a step-by-step guide on how to create an account and explore its features and characteristics. If you already have a relevant account, you can skip this section and move on to the next step, which is creating a deployment.
 
