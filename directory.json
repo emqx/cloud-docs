@@ -181,51 +181,51 @@
       "path" : "connect_to_deployments/overview",
       "children": [
         {
-          "title": "通过 Python SDK 接入",
+          "title": "使用 Python SDK 接入",
           "path": "connect_to_deployments/python_sdk"
         },
         {
-          "title": "通过 Go SDK 接入",
+          "title": "使用 Go SDK 接入",
           "path": "connect_to_deployments/golang_sdk"
         },
         {
-          "title": "通过 Java SDK 接入",
+          "title": "使用 Java SDK 接入",
           "path": "connect_to_deployments/java_sdk"
         },
         {
-          "title": "通过 Node.js SDK 接入",
+          "title": "使用 Node.js SDK 接入",
           "path": "connect_to_deployments/nodejs_sdk"
         },
         {
-          "title": "通过 C SDK 接入",
+          "title": "使用 C SDK 接入",
           "path": "connect_to_deployments/c_sdk"
         },
         {
-          "title": "通过 C# SDK 接入",
+          "title": "使用 C# SDK 接入",
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "通过 Android Kotlin SDK 接入",
+          "title": "使用 Android Kotlin SDK 接入",
           "path": "https://www.emqx.com/zh/blog/android-connects-mqtt-using-kotlin"
         },
         {
-          "title": "通过 WebSocket SDK 接入",
+          "title": "使用 WebSocket SDK 接入",
           "path": "https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "通过 Vue.js SDK 接入",
+          "title": "使用 Vue.js SDK 接入",
           "path": "connect_to_deployments/vue_sdk"
         },
         {
-          "title": "通过 React SDK 接入",
+          "title": "使用 React SDK 接入",
           "path": "connect_to_deployments/react_sdk"
         },
         {
-          "title": "通过 Electron SDK 接入",
+          "title": "使用 Electron SDK 接入",
           "path": "connect_to_deployments/electron_sdk"
         },
         {
-          "title": "通过微信小程序 SDK 接入",
+          "title": "使用微信小程序 SDK 接入",
           "path": "connect_to_deployments/wechat_miniprogram"
         },
         {
