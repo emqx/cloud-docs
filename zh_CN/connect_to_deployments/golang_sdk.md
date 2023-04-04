@@ -1,4 +1,4 @@
-# 使用 Go SDK 连接到部署
+# 使用 Go SDK 连接
 
 本文主要介绍如何在 Go 项目中，使用 `paho.mqtt.golang` 库实现一个 MQTT 客戶端与 MQTT 服务器的连接、订阅、收发消息等功能。
 

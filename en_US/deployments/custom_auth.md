@@ -1,4 +1,4 @@
-# External authentication and access control
+# External Authentication and Access Control
 
 External authentication and access control help users to use their own services for authentication and authentication, currently supporting the use of MySQL and PostgreSQL as the data source, and also supports connecting to HTTP services for authentication and authentication.
 

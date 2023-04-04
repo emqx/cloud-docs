@@ -181,67 +181,67 @@
       "path" : "connect_to_deployments/overview",
       "children": [
         {
-          "title": "Python SDK 连接",
+          "title": "通过 Python SDK 接入",
           "path": "connect_to_deployments/python_sdk"
         },
         {
-          "title": "Go SDK 连接",
+          "title": "通过 Go SDK 接入",
           "path": "connect_to_deployments/golang_sdk"
         },
         {
-          "title": "Java SDK 连接",
+          "title": "通过 Java SDK 接入",
           "path": "connect_to_deployments/java_sdk"
         },
         {
-          "title": "Node.js SDK 连接",
+          "title": "通过 Node.js SDK 接入",
           "path": "connect_to_deployments/nodejs_sdk"
         },
         {
-          "title": "C SDK 连接",
+          "title": "通过 C SDK 接入",
           "path": "connect_to_deployments/c_sdk"
         },
         {
-          "title": "C# SDK 连接",
+          "title": "通过 C# SDK 接入",
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "Android Kotlin SDK 连接",
+          "title": "通过 Android Kotlin SDK 接入",
           "path": "https://www.emqx.com/zh/blog/android-connects-mqtt-using-kotlin"
         },
         {
-          "title": "WebSocket SDK 连接",
+          "title": "通过 WebSocket SDK 接入",
           "path": "https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "Vue.js SDK 连接",
+          "title": "通过 Vue.js SDK 接入",
           "path": "connect_to_deployments/vue_sdk"
         },
         {
-          "title": "React SDK 连接",
+          "title": "通过 React SDK 接入",
           "path": "connect_to_deployments/react_sdk"
         },
         {
-          "title": "Electron SDK 连接",
+          "title": "通过 Electron SDK 接入",
           "path": "connect_to_deployments/electron_sdk"
         },
         {
-          "title": "微信小程序 SDK 连接",
+          "title": "通过微信小程序 SDK 接入",
           "path": "connect_to_deployments/wechat_miniprogram"
         },
         {
-          "title": "使用 ESP8266 连接到部署",
+          "title": "连接 ESP8266",
           "path": "connect_to_deployments/esp8266"
         },
         {
-          "title": "使用 ESP32 连接到部署",
+          "title": "连接 ESP32",
           "path": "connect_to_deployments/esp32"
         },
         {
-          "title": "使用 MQTT X 连接到部署",
+          "title": "连接 MQTT X",
           "path": "connect_to_deployments/mqttx"
         },
         {
-          "title": "使用 MQTT.fx 连接到部署",
+          "title": "连接 MQTT.fx",
           "path": "connect_to_deployments/mqttfx"
         },
         {
@@ -275,95 +275,95 @@
           "path": "rule_engine/rule_engine_republish"
         },
         {
-          "title": "桥接数据到 Webhook",
+          "title": "集成 Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
         {
-          "title": "桥接数据到 MQTT Broker",
+          "title": "集成 MQTT Broker",
           "path": "rule_engine/rule_engine_mqtt"
         },
         {
-          "title": "桥接数据到 Kafka",
+          "title": "集成 Kafka",
           "path": "rule_engine/rule_engine_kafka"
         },
         {
-          "title": "桥接数据到 阿里云 Kafka",
+          "title": "集成阿里云 Kafka",
           "path": "rule_engine/rule_engine_aliyun_kafka"
         },
         {
-          "title": "桥接数据到 华为云 Kafka",
+          "title": "集成华为云 Kafka",
           "path": "rule_engine/rule_engine_huawei_kafka"
         },
         {
-          "title": "桥接数据到 Pulsar",
+          "title": "集成 Pulsar",
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
         {
-          "title": "桥接数据到 RabbitMQ",
+          "title": "集成 RabbitMQ",
           "path": "rule_engine/rule_engine_bridge_rabbitmq"
         },
         {
-          "title": "桥接数据到 RocketMQ",
+          "title": "集成 RocketMQ",
           "path": "rule_engine/rule_engine_rocketmq"
         },
         {
-          "title": "保存数据到 MySQL",
+          "title": "集成 MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
         {
-          "title": "保存数据到 阿里云 MySQL",
+          "title": "集成阿里云 MySQL",
           "path": "rule_engine/rule_engine_save_rds_mysql"
         },
         {
-          "title": "保存数据到 AWS RDS MySQL",
+          "title": "集成 AWS RDS MySQL",
           "path": "rule_engine/rule_engine_save_aws_rds_mysql"
         },
         {
-          "title": "保存数据到 TimescaleDB",
+          "title": "集成 TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaladb"
         },
         {
-          "title": "保存数据到 PostgreSQL",
+          "title": "集成 PostgreSQL",
           "path": "rule_engine/rule_engine_save_postgresql"
         },
         {
-          "title": "保存数据到 MongoDB",
+          "title": "集成 MongoDB",
           "path": "rule_engine/rule_engine_save_mongodb"
         },
         {
-          "title": "保存数据到 阿里云 MongoDB",
+          "title": "集成阿里云 MongoDB",
           "path": "rule_engine/rule_engine_aliyun_mongodb"
         },
         {
-          "title": "保存数据到 Redis",
+          "title": "集成 Redis",
           "path": "rule_engine/rule_engine_save_redis"
         },
         {
-          "title": "保存数据到 ClickHouse",
+          "title": "集成 ClickHouse",
           "path": "rule_engine/rule_engine_save_clickhouse"
         },
         {
-          "title": "保存数据到 InfluxDB 2.0",
+          "title": "集成 InfluxDB 2.0",
           "path": "rule_engine/rule_engine_influxDB_2.0"
         },
         {
-          "title": "保存数据到 SQL Server",
+          "title": "集成 SQL Server",
           "path": "rule_engine/rule_engine_save_sqlserver"
         },
         {
-          "title": "保存数据到 TDengine",
+          "title": "集成 TDengine",
           "path": "rule_engine/rule_engine_save_tdengine"
         },
         {
-          "title": "保存数据到 阿里云 Lindorm",
+          "title": "集成阿里云 Lindorm",
           "path": "rule_engine/rule_engine_aliyun_lindorm"
         },
         {
-          "title": "保存数据到 阿里云 Tablestore",
+          "title": "集成阿里云 Tablestore",
           "path": "rule_engine/rule_engine_save_tablestore"
         },
         {
-          "title": "保存数据到 HStreamDB",
+          "title": "集成 HStreamDB",
           "path": "rule_engine/rule_engine_save_hstreamdb"
         },
         {
@@ -567,11 +567,11 @@
       ]
     },
     {
-      "title": "Quick Start",
+      "title": "Get Started",
       "path" : "quick_start/introduction",
       "children": [
         {
-          "title": "Use MQTT X to Test the Connection",
+          "title": "Use MQTT X to Test Connection",
           "path": "connect_to_deployments/mqttx"
         }
       ]
@@ -725,43 +725,43 @@
       "path" : "connect_to_deployments/overview",
       "children": [
         {
-          "title": "Python SDK Connection",
+          "title": "Connect via Python SDK",
           "path": "connect_to_deployments/python_sdk"
         },
         {
-          "title": "Go SDK Connection",
+          "title": "Connect via Go SDK",
           "path": "connect_to_deployments/golang_sdk"
         },
         {
-          "title": "Java SDK Connection",
+          "title": "Connect via Java SDK",
           "path": "connect_to_deployments/java_sdk"
         },
         {
-          "title": "Node.js SDK Connection",
+          "title": "Connect via Node.js SDK",
           "path": "connect_to_deployments/nodejs_sdk"
         },
         {
-          "title": "C SDK Connection",
+          "title": "Connect via C SDK",
           "path": "connect_to_deployments/c_sdk"
         },
         {
-          "title": "C# SDK Connection",
+          "title": "Connect via C# SDK",
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "WebSocket SDK Connection",
+          "title": "Connect via WebSocket SDK",
           "path": "https://www.emqx.com/en/blog/connect-to-mqtt-broker-with-websocket"
         },
         {
-          "title": "Vue.js SDK Connection",
+          "title": "Connect via Vue.js SDK",
           "path": "connect_to_deployments/vue_sdk"
         },
         {
-          "title": "React SDK Connection",
+          "title": "Connect via React SDK",
           "path": "connect_to_deployments/react_sdk"
         },
         {
-          "title": "Electron SDK Connection",
+          "title": "Connect via Electron SDK",
           "path": "connect_to_deployments/electron_sdk"
         },
         {
@@ -815,91 +815,91 @@
           "path": "rule_engine/rule_engine_republish"
         },
         {
-          "title": "Bridge Data to Webhook",
+          "title": "Integrate with Webhook",
           "path": "rule_engine/rule_engine_web_hook"
         },
         {
-          "title": "Bridge Data to MQTT Broker",
+          "title": "Integrate with MQTT Broker",
           "path": "rule_engine/rule_engine_mqtt"
         },
         {
-          "title": "Bridge Data to Kafka",
+          "title": "Integrate with Kafka",
           "path": "rule_engine/rule_engine_kafka"
         },
         {
-          "title": "Bridge Data to Confluent Cloud",
+          "title": "Integrate with Confluent Cloud",
           "path": "rule_engine/rule_engine_confluent"
         },
         {
-          "title": "Bridge Data to Pulsar",
+          "title": "Integrate with Pulsar",
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
         {
-          "title": "Bridge Data to GCP Pub/Sub",
+          "title": "Integrate with GCP Pub/Sub",
           "path": "rule_engine/rule_engine_gcp_pubsub"
         },
         {
-          "title": "Bridge Data to RocketMQ",
+          "title": "Integrate with RocketMQ",
           "path": "rule_engine/rule_engine_rocketmq"
         },
         {
-          "title": "Bridge Data to Azure Event Hubs",
+          "title": "Integrate with Azure Event Hubs",
           "path": "rule_engine/rule_engine_azure_event_hubs"
         },
         {
-          "title": "Save Data to TimescaleDB",
+          "title": "Integrate with TimescaleDB",
           "path": "rule_engine/rule_engine_save_timescaledb"
         },
         {
-          "title": "Save Data to Timescale Cloud",
+          "title": "Integrate with Timescale Cloud",
           "path": "rule_engine/rule_engine_save_timescale_cloud"
         },
         {
-          "title": "Save Data to PostgreSQL",
+          "title": "Integrate with PostgreSQL",
           "path": "rule_engine/rule_engine_save_psql"
         },
         {
-          "title": "Save Data to MySQL",
+          "title": "Integrate with MySQL",
           "path": "rule_engine/rule_engine_save_mysql"
         },
         {
-          "title": "Save Data to MongoDB",
+          "title": "Integrate with MongoDB",
           "path": "rule_engine/rule_engine_save_mongodb"
         },
         {
-          "title": "Save Data to MongoDB Atlas",
+          "title": "Integrate with MongoDB Atlas",
           "path": "rule_engine/rule_engine_save_mongodb_atlas"
         },
         {
-          "title": "Save Data to InfluxDB",
+          "title": "Integrate with InfluxDB",
           "path": "rule_engine/rule_engine_influxDB"
         },
         {
-          "title": "Save Data to InfluxDB 2.0",
+          "title": "Integrate with InfluxDB 2.0",
           "path": "rule_engine/rule_engine_influxDB_2.0"
         },
         {
-          "title": "Save Data to Redis",
+          "title": "Integrate with Redis",
           "path": "rule_engine/rule_engine_save_redis"
         },
         {
-          "title": "Save Data to SQL Server",
+          "title": "Integrate with SQL Server",
           "path": "rule_engine/rule_engine_save_sqlserver"
         },
         {
-          "title": "Save Data to TDengine",
+          "title": "Integrate with TDengine",
           "path": "rule_engine/rule_engine_save_tdengine"
         },
         {
-          "title": "Save Data to HStreamDB",
+          "title": "Integrate with HStreamDB",
           "path": "rule_engine/rule_engine_save_hstreamdb"
         },
         {
-          "title": "Save Data to ClickHouse",
+          "title": "Integrate with ClickHouse",
           "path": "rule_engine/rule_engine_save_clickhouse"
         },
         {
-          "title": "Save Data to ClickHouse Cloud",
+          "title": "Integrate with ClickHouse Cloud",
           "path": "rule_engine/rule_engine_save_clickhouse_cloud"
         },
         {

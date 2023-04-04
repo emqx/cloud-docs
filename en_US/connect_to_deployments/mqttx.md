@@ -1,4 +1,4 @@
-# Connect to the Deployment with MQTT X
+# Use MQTT X to Test Connection
 
 This article will introduce using MQTT X as an MQTT client testing tool to connect the deployment of EMQX Cloud.
 

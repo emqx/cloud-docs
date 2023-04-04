@@ -1,4 +1,4 @@
-# Create Serverless (Beta)  deployment
+# Create Serverless (Beta)  Deployment
 
 You can create an EMQX Cloud Serverless (Beta) deployment in just a few steps. 
 

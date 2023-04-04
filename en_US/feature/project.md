@@ -2,25 +2,25 @@
 
 Project management is used to group deployments under different projects, making it easy to manage deployments according to the projects.
 
-## Default project
+## Default Project
 
 Deployments of unassociated projects will be grouped under the default deployment.
 
 ![default_project](./_assets/default_project.png)
 
-## Create project
+## Create Project
 
 Click **New Project**, enter the project name and description, you can create a new project.
 
 ![create_project](./_assets/create_project.png)
 
-## Create deployment under project
+## Create Deployment under Project
 
 Select the project on the left, you can create a new deployment under the selected project.
 
 ![create_deployment_under_project](./_assets/create_deployment_under_project.png)
 
-## Move project
+## Move Project
 
 Click on the menu in the upper right corner of the deployment and select **Move To**.
 
@@ -34,7 +34,7 @@ Once you click **Confirm**, you can move the deployment to a new project.
 
 ![new_project_deployments](./_assets/new_project_deployments.png)
 
-## Update project
+## Update Project
 
 Hover over the project to see the update button.
 
@@ -44,7 +44,7 @@ Click the button to update the project's name and description.
 
 ![update_project](./_assets/update_project.png)
 
-## Delete project
+## Delete Project
 
 > Make sure there are no deployments under the project before deleting it.
 
@@ -52,7 +52,7 @@ Hover over the project and click the **Delete** button to delete the project.
 
 ![delete_project](./_assets/delete_project.png)!
 
-## All deployments
+## All Deployments
 
 Click on **All Deployments** in the top right corner to see all deployments.
 

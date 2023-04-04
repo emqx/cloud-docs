@@ -1,4 +1,4 @@
-# 使用 EMQX Cloud 数据集成保存数据到 InfluxDB 2.0
+# 集成 InfluxDB 2.0
 
 ::: warning
 该功能在基础版中不可用

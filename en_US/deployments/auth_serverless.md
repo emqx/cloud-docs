@@ -1,4 +1,4 @@
-# Authentication in Serverless Plan
+# Authentication
 
 
 ## View Authentication Policy

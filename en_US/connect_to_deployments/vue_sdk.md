@@ -1,4 +1,4 @@
-# Connect to the Deployment with Vue.js
+# Connect via Vue.js
 
 This article mainly introduces how to use `MQTT.js` in the Vue project, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 

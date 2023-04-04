@@ -1,4 +1,4 @@
-# Bridge device data to RocketMQ using the Data Integrations
+# Integrate with RocketMQ
 
 [RocketMQ](https://rocketmq.apache.org/docs/4.x/) is a distributed message and streaming data platform with low latency, high performance, high reliability, trillion-level capacity, and flexible scalability.
 
@@ -43,7 +43,7 @@ Before you start, you need to complete the following operations:
       -v /opt/rocketmq/broker.conf:/etc/rocketmq/broker.conf \
       rocketmqinc/rocketmq \
       sh mqbroker -c /etc/rocketmq/broker.conf  
-    ```
+   ```
 
 3. Install RocketMQ Console
 

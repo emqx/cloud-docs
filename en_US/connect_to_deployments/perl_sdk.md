@@ -1,1 +1,1 @@
-# Connect to the Deployment with Perl SDK
+# Connect via Perl SDK

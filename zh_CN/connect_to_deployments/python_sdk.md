@@ -1,4 +1,4 @@
-# 使用 Python SDK 连接到部署
+# 使用 Python SDK 连接
 
 本文主要介绍如何在 Python 项目中使用 **paho-mqtt** 客户端库 ，实现客户端与 MQTT 服务器的连接、订阅、取消订阅、收发消息等功能。
 

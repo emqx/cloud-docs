@@ -1,4 +1,4 @@
-# 使用 Electron 连接到部署
+# 使用 Electron SDK 连接
 
 本文主要介绍如何在 Electron 项目中使用 [MQTT](https://www.emqx.com/zh/mqtt)，完成一个简单的 MQTT 桌面客户端并实现客户端与 MQTT 服务器的连接、订阅、取消订阅、收发消息等功能。
 
@@ -62,7 +62,7 @@
   # Install vue-cli and scaffold boilerplate
   npm install -g vue-cli
   vue init simulatedgreg/electron-vue my-project
-
+  
   # Install dependencies and run your app
   cd my-project
   yarn # or npm install

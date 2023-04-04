@@ -1,4 +1,4 @@
-# 使用 EMQX Cloud 数据集成桥接数据到华为云 Kafka
+# 集成华为云 Kafka
 
 :::warning
 该功能在基础版中不可用

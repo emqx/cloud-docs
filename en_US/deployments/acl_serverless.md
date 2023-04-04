@@ -1,4 +1,4 @@
-# Access Control in Serverless Plan
+# Access Control
 
 Access control pertains to controlling permissions for publish (PUBLISH) and subscribe (SUBSCRIBE) operations, which can be implemented at three levels:
 

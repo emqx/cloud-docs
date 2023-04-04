@@ -1,4 +1,4 @@
-# Forwarding Device Data to Webhook Using the Data Integrations
+# Integrate with Webhook
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud Data Integrations to dump the data into Webhook.
 
@@ -51,11 +51,11 @@ Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
 
    ```sql
    SELECT
-
+   
    timestamp as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum
-
+   
    FROM
-
+   
    "temp_hum/emqx"
    ```
 

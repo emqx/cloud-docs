@@ -1,4 +1,4 @@
-# Access Control(ACL) Management
+# Access Control Management
 
 ## Create ACL Rule Based on clientid
 

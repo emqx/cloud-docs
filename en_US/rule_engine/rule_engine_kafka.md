@@ -1,4 +1,4 @@
-# Bridge device data to Kafka using the Data Integrations
+# Integrate with Kafka
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud Data Integrations to bridge the data into Kafka.
 

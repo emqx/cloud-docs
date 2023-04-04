@@ -1,4 +1,4 @@
-# Bridge device data to Azure Event Hubs using the Data Integrations
+# Integrate with Azure Event Hubs
 
 [Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/) is a Big Data streaming platform and event ingestion service that can receive and process millions of events per second. Event Hubs can process and store events, data, or telemetry produced by distributed software and devices. Data sent to an event hub can be transformed and stored using any real-time analytics provider or batching/storage adapters.
 

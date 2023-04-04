@@ -1,4 +1,4 @@
-# 使用 EMQX Cloud 数据集成桥接数据到 MQTT Broker
+# 集成 MQTT Broker
 
 为了方便多个 MQTT Broker 进行消息桥接，你可以使用数据集成进行操作。
 

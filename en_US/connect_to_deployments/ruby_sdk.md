@@ -1,1 +1,1 @@
-# Connect to the Deployment with Ruby SDK
+# Connect via Ruby SDK

@@ -1,4 +1,4 @@
-# Easily Integrate EMQX Cloud MQTT Broker with Home Assistant
+# Connect with Home Assistant
 
 In recent years, as people's demand for home security, convenience, comfort and artistry has increased, home automation has become more and more popular. [Home Assistant](https://www.home-assistant.io/), a popular open-source home automation platform, provides a secure and convenient central control system. In this article, we will introduce you how to use EMQX Cloud MQTT Broker to connect with Home Assistant.
 

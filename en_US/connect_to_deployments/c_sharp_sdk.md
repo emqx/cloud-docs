@@ -1,4 +1,4 @@
-# Connect to the Deployment with C# SDK
+# Connect via C# SDK
 
 [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) is an **object-oriented** programming language provided by Microsoft that runs on **.NET Framework**.
 

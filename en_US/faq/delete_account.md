@@ -1,4 +1,4 @@
-# How to delete an EMQX Account
+# Delete EMQX Account
 
 This document walks you through deleting your account.
 

@@ -1,4 +1,4 @@
-# Save device data to ClickHouse using the Data Integrations
+# Integrate with ClickHouse
 
 [ClickHouse](https://clickhouse.com/docs/en/) is an open-source column-oriented DBMS (column-oriented DBMS) for data analysis (OLAP). It is currently used by many big manufacturers in China, including Tencent, Today's Headlines, Ctrip, Racer, Tiger, etc. The cluster size is up to thousands of nodes.
 

@@ -1,4 +1,4 @@
-# 使用 MQTT.fx 连接到部署
+# 连接 MQTT.fx
 
 本文将以 MQTT.fx 作为 MQTT 客户端测试工具，接入 MQTT 云服务 - EMQX Cloud 部署。
 

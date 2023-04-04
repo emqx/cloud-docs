@@ -1,4 +1,4 @@
-# Save device data to SQL Server using the Data Integrations
+# Integrate with SQL Server
 
 In this article, we will simulate the temperature and humidity data, and report these data to EMQX Cloud via the MQTT protocol, and then we will use EMQX Cloud Data Integrations to dump the data to SQL Server.
 

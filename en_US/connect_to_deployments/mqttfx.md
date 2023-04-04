@@ -1,4 +1,4 @@
-# Connect to the Deployment with MQTT.fx
+# Connect with MQTT.fx
 
 This article will take [MQTT.fx](http://www.mqttfx.jensd.de/) as [MQTT client](https://www.emqx.com/en/blog/introduction-to-the-commonly-used-mqtt-client-library) test tool to connect the deployment of EMQX Cloud.
 

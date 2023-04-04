@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成保存数据到 Redis
+# 集成 Redis
 
 ::: warning
 该功能在基础版中不可用
@@ -54,7 +54,7 @@ SELECT
     timestamp div 1000 as up_timestamp, clientid as client_id, payload as temp_hum
 FROM
     "temp_hum/emqx"
-  ```
+```
 
 ![规则创建2](./_assets/redis_create_rule_2.png)
 

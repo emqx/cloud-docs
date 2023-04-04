@@ -1,4 +1,4 @@
-# 使用 ESP32 连接到部署
+# 连接 ESP32
 
 本文主要介绍如何在 ESP32 项目中使用 `PubSubClient` ，实现客户端与 MQTT 服务器的连接、订阅、收发消息、取消订阅等功能。
 
@@ -21,7 +21,7 @@
 
 ## 连接
 > 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
- 
+
 ### 连接设置
 
 本文将使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
