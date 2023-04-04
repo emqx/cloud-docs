@@ -1,4 +1,4 @@
-# Connect to the Deployment with Electron
+# Connect via Electron SDK
 
 This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in Electron projects, and complete a simple MQTT desktop client, and implement the connection, subscription, unsubscribe, messaging and other functions between the client and [MQTT broker](https://www.emqx.com/en/cloud).
 
@@ -62,7 +62,7 @@ There are many ways to build a new project, but here is a brief list of a few:
   # Install vue-cli and scaffold boilerplate
   npm install -g vue-cli
   vue init simulatedgreg/electron-vue my-project
-
+  
   # Install dependencies and run your app
   cd my-project
   yarn # or npm install

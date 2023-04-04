@@ -1,4 +1,4 @@
-# Connect to the Deployment with React
+# Connect via React SDK
 
 This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in the React project for implementing connect, subscribe, messaging and unsubscribe, etc., between the client and MQTT broker.
 

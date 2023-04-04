@@ -1,4 +1,4 @@
-# Save device data to DynamoDB using Data Integrations
+# Integrate with DynamoDB
 
 In this article, we will simulate the temperature and humidity
 data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud Data Integrations to store the data to DynamoDB.
@@ -45,7 +45,7 @@ You could create a new DynamoDB table by the following steps:
 
    ```bash
    $ aws dynamodb create-table --cli-input-json file://temp_hum.json --endpoint-url http://localhost:8000
-   ```   
+   ```
 
 
 ## Configuration
@@ -60,11 +60,11 @@ You could create a new DynamoDB table by the following steps:
 
    ```sql
    SELECT 
-
+   
    timestamp as up_timestamp, clientid as client_id, payload.temp as temp, payload.hum as hum
-
+   
    FROM
-
+   
    "temp_hum/emqx"
    ```
    

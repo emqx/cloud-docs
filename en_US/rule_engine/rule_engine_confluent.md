@@ -1,4 +1,4 @@
-# Bridge device data to Confluent Cloud using the Data Integrations
+# Integrate with Confluent Cloud
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud Data Integrations to bridge the data into Confluent Cloud.
 

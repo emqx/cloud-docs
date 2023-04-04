@@ -1,4 +1,4 @@
-# 使用 EMQX Cloud 数据集成桥接数据到 RocketMQ
+# 集成 RocketMQ
 
 :::warning
 该功能在基础版中不可用
@@ -46,7 +46,7 @@
       -v /opt/rocketmq/broker.conf:/etc/rocketmq/broker.conf \
       rocketmqinc/rocketmq \
       sh mqbroker -c /etc/rocketmq/broker.conf  
-    ```
+   ```
 
 3. 安装 rockermq 控制台
 

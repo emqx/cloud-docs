@@ -1,4 +1,4 @@
-# Connect to the Deployment with C
+# Connect via C SDK
 
 This article mainly introduces how to use `Eclipse Paho C` in the C project, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 

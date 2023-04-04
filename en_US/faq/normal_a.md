@@ -1,4 +1,4 @@
-# Ordinary Business Questions
+# Business Related Questions
 
 ## What is EMQX ?
 

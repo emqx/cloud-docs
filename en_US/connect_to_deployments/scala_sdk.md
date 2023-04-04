@@ -1,1 +1,1 @@
-# Connect to the Deployment with Scala SDK
+# Connect via Scala SDK

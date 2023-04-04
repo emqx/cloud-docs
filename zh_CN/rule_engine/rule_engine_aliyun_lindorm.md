@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成保存数据到阿里云 Lindorm
+# 集成阿里云 Lindorm
 
 ::: warning
 该功能在基础版中不可用
@@ -65,7 +65,7 @@
       temp DOUBLE,
       hum DOUBLE,
       PRIMARY KEY(clientid));
-
+   
    describe table temp_hum;
    ```
 

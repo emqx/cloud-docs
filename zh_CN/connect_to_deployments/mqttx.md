@@ -1,4 +1,4 @@
-# 使用 MQTT X 连接到部署
+# 连接 MQTT X
 
 本文将介绍以 MQTT X 作为 MQTT 客户端测试工具，接入 MQTT 云服务 - EMQX Cloud 部署。
 

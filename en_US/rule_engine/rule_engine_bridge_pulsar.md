@@ -1,4 +1,4 @@
-# Bridge device data to Pulsar using the Data Integrations
+# Integrate with Pulsar
 
 ::: warning Note
 This feature is available in Professional Plan.

@@ -1,4 +1,4 @@
-# Deployment Related Question
+# Deployment Related Questions
 
 ## Can I extend the free trial deployment?
 

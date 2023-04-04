@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成保存数据到 MongoDB
+# 集成 MongoDB
 
 ::: warning
 该功能在基础版中不可用
@@ -72,7 +72,7 @@ FROM
   
 "temp_hum/emqx"
 
-  ```
+```
 
 ![规则创建1](./_assets/mongo_rule_1.png)
 ![规则创建2](./_assets/mongo_rule_2.png)

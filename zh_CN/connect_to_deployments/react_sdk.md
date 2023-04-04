@@ -1,4 +1,4 @@
-# 使用 React 连接到部署
+# 使用 React 连接
 
 本文主要介绍如何在 React 项目中使用 [MQTT](https://www.emqx.com/zh/mqtt)，实现客户端与 MQTT 服务器的连接、订阅、收发消息、取消订阅等功能。
 

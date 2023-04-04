@@ -1,4 +1,4 @@
-# Bridge device data to MQTT Broker Using the Data Integrations
+# Integrate with MQTT Broker
 
 In order to facilitate the message bridging of multiple MQTT Brokers, you can use the Data Integrations to operate.
 

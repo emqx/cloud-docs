@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成桥接数据到 RabbitMQ
+# 集成 RabbitMQ
 
 ::: warning
 该功能在基础版中不可用
@@ -89,34 +89,33 @@
    ```python
    # 导入 pika 库
    import pika
-
+   
    # 创建连接
    connection = pika.BlockingConnection(
        pika.ConnectionParameters(host='RabbitMQ 服务器公网 ip')
    )
    channel = connection.channel()
-
+   
    # 创建一个 exchange 取名为 messages
    channel.exchange_declare(exchange='messages', exchange_type='topic')
-
+   
    # 绑定 exchange 和 queue，并指定 routing_key
    result = channel.queue_declare(queue='test_queue', exclusive=True)
    queue_name = result.method.queue
    channel.queue_bind(exchange='messages', queue=queue_name, routing_key='emqx')
-
+   
    # 定义一个回调函数来处理接收到的消息
    def callback(ch, method, properties, body):
        print("[x] %r" % body)
-
+   
    # 定义一个 consumer，接收来自 queue 的消息
    channel.basic_consume(
        queue=queue_name, on_message_callback=callback, auto_ack=True
    )
-
+   
    print('[*] Waiting for messages. To exit press CTRL+C')
    channel.start_consuming()
    ```
 
    ![consume](./_assets/rabbitmq_consume.png)
-
 

@@ -1,4 +1,4 @@
-# Connect to the Deployment with ESP32
+# Connect with ESP32
 
 This article mainly introduces how to use `PubSubClient` in the ESP32 project, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 

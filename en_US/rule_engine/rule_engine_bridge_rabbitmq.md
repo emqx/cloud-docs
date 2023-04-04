@@ -1,4 +1,4 @@
-# Bridge device data to RabbitMQ using the Data Integrations
+# Integrate with RabbitMQ
 
 ::: warning Note
 This feature is available in Professional Plan.
@@ -95,30 +95,30 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    ```python
    # Import the pika library
    import pika
-
+   
    # Create a connection
    connection = pika.BlockingConnection(
        pika.ConnectionParameters(host='RabbitMQ server public ip')
    )
    channel = connection.channel()
-
+   
    # Create an exchange named messages
    channel.exchange_declare(exchange='messages', exchange_type='topic')
-
+   
    # Bind exchange and queue, and specify routing_key
    result = channel.queue_declare(queue='test_queue', exclusive=True)
    queue_name = result.method.queue
    channel.queue_bind(exchange='messages', queue=queue_name, routing_key='emqx')
-
+   
    # Define a callback function to handle the incoming messages
    def callback(ch, method, properties, body):
        print("[x] %r" % body)
-
+   
    # Define a consumer that receives messages from the queue
    channel.basic_consume(
        queue=queue_name, on_message_callback=callback, auto_ack=True
    )
-
+   
    print('[*] Waiting for messages. To exit press CTRL+C')
    channel.start_consuming()
    ```

@@ -1,4 +1,4 @@
-# 使用 Java SDK 连接到部署
+# 使用 Java SDK 连接
 
 在本教程中您将学习在 Java 中使用 [**Eclipse Paho Java Client**](https://github.com/eclipse/paho.mqtt.java) 客户端连接到 EMQX Cloud 部署。
 

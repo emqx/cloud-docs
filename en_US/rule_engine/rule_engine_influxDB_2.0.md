@@ -1,4 +1,4 @@
-# Save device data to InfluxDB 2.0 using the Data Integrations
+# Integrate with InfluxDB 2.0
 
 [InfluxDB V2](https://www.influxdata.com/) is an open source database for storing and analyzing time-series data, with built-in HTTP API, support for SQL-like statements, and unstructured features that are very friendly for users. Its powerful data throughput and stable performance make it very suitable for the IoT field.
 

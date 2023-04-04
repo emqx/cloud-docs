@@ -1,4 +1,4 @@
-# Specification limits
+# Specification Limits
 
 ## Serverless
 

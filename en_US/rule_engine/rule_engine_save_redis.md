@@ -1,4 +1,4 @@
-# Save device data to Redis using the Data Integrations
+# Integrate with Redis
 
 In this article, we will simulate the temperature and humidity
 data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud
@@ -45,7 +45,8 @@ After the resource is successfully created, you can return to the data integrati
 
 Our goal is to trigger the engine when the client sends a temperature and humidity message to the **temp_hum/emqx** topic. Here you need a certain process of SQL:
 * Only for 'temp_hum/emqx'
-   
+  
+
 Based on the above principles, our final SQL should look like this
 ```sql
 SELECT

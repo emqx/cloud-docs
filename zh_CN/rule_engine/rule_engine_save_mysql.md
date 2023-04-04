@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成保存数据到 MySQL
+# 集成 MySQL
 
 ::: warning
 该功能在基础版中不可用

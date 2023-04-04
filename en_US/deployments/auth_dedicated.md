@@ -1,4 +1,4 @@
-# Authentication in Dedicated Plan
+# Authentication
 
 ## Check Authentication Information
 

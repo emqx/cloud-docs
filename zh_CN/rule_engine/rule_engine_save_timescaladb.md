@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成保存数据到 TimescaleDB
+# 集成 TimescaleDB
 
 ::: warning
 该功能在基础版中不可用
@@ -41,7 +41,7 @@
 4. 插入测试数据，并查看数据
    ```sql
    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
-
+   
    select * from temp_hum;
    ```
    

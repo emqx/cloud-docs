@@ -1,4 +1,4 @@
-# Value Added services billing instructions
+# Billing Instructions
 
 ## NAT Gateway
 

@@ -1,4 +1,4 @@
-# 使用 EMQX Cloud 数据集成转发数据到 WebHook
+# 集成 WebHook
 
 在本文中我们将模拟温湿度数据并通过 MQTT 协议上报到 EMQX Cloud，然后使用 EMQX Cloud 数据集成将数据转存到 WebHook。
 
@@ -21,7 +21,7 @@
           self.send_response(200)
           self.end_headers()
           self.wfile.write(b'Hello, world!')
-
+   
        def do_POST(self):
           content_length = int(self.headers['Content-Length'])
           body = self.rfile.read(content_length)
@@ -102,6 +102,6 @@
       ```
    
 2. 查看数据转发结果
-    
+   
    ![result](./_assets/webhook_query_result.png)
 

@@ -1,4 +1,4 @@
-# Save device data to PostgreSQL using the Data Integrations
+# Integrate with PostgreSQL
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol, and then use the EMQX Cloud Data Integrations to dump the data into PostgreSQL.
 
@@ -41,7 +41,7 @@ Before you start, you need to complete the following operations:
 
     ```sql
     INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
-
+    
     SELECT * FROM temp_hum;
     ```
 

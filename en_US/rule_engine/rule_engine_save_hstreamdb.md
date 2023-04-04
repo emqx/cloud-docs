@@ -1,4 +1,4 @@
-# Save device data to HStreamDB using the Data Integrations
+# Integrate with HStreamDB
 
 [HStreamDB](https://www.emqx.com/en/products/hstreamdb) is a streaming database designed for large-scale real-time data stream management, including access, storage, processing, and distribution. It uses standard SQL (and its streaming extensions) as the main interface language, with real-time as the main feature, and aims to simplify the operation and management of data streams and the development of real-time applications.
 

@@ -1,4 +1,4 @@
-# Azure 事件中心 对接 EMQX Cloud
+# 集成 Azure 事件中心
 
 ::: warning
 该功能在基础版中不可用

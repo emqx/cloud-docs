@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成保存数据到阿里云 Tablestore
+# 集成 Tablestore
 
 ::: warning
 该功能在基础版中不可用

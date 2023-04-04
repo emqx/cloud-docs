@@ -1,4 +1,4 @@
-# EMQX Cloud 数据集成保存数据到  AWS RDS MySQL
+# 集成 AWS RDS MySQL
 
 ::: warning
 该功能在基础版中不可用
@@ -63,7 +63,7 @@
 
    ```sql
    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (FROM_UNIXTIME(1603963414), 'temp_hum-001', 19.1, 55);
-
+   
    SELECT * FROM temp_hum;
    ```
 

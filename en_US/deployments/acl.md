@@ -1,4 +1,4 @@
-# Access Control (ACL)
+# Access Control
 
 Authorization refers to the control of permissions on PUBLISH/SUBSCRIBE operations
 
@@ -27,6 +27,7 @@ You can use the following placeholders in your topic and EMQX Cloud will be auto
 - %u：Username
 - %c：Client ID
   
+
 ![auth](./_assets/add_acl.png)
 
 Same process for `Username` and `All Users`.

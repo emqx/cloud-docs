@@ -4,7 +4,7 @@ Project Center provides the ability for multiple organizations or departments in
 
 ![default_project](./_assets/pc_default.png)
 
-## Create new projects
+## Create New Projects
 
 Click the `New Project` button in the upper right corner to start the new project, which is divided into three steps:
 
@@ -24,7 +24,7 @@ Click the `New Project` button in the upper right corner to start the new projec
 
 ![default_project](./_assets/pc_step3.png)
 
-## Project list
+## Project List
 
 In the Project Center panel, you can see the number of running deployments and the number of deployments that have been stopped for each project.
 

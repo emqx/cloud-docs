@@ -1,4 +1,4 @@
-# Save device data to Timescale Cloud using the Data Integrations
+# Integrate with Timescale Cloud
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud Data Integrations to dump the data into Timescale Cloud.
 
@@ -47,7 +47,7 @@ Before you start, you will need to complete the following:
       To create a new table: 
    
       Use the following SQL statement to create `temp_hum` table. This table will be used to save the temperature and humidity data reported by devices.
-      
+   
    ```sql
    CREATE TABLE temp_hum (
        up_timestamp   TIMESTAMPTZ       NOT NULL,
@@ -62,7 +62,7 @@ Before you start, you will need to complete the following:
 4. Insert test data and view it
    ```sql
    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
-
+   
    select * from temp_hum;
    ```
    
@@ -75,7 +75,7 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    Click on `TimescaleDB` under the Data Persistence.
 
    ![timescaledb](./_assets/timescaledb.png)
- 
+
    Fill in the timescaledb database information you have just created and click `Test`. If there is an error, you should check if the database configuration is correct. Then click on `New` to create TimescaleDB resource.
 
    ![create resource](./_assets/timescaledb_create_resource.png)

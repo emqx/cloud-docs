@@ -1,4 +1,4 @@
-# Bridge device data to GCP Pub/Sub using the Data Integrations
+# Integrate with GCP Pub/Sub
 
 In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud Data Integrations to forward the data into [GCP Pub/Sub](https://cloud.google.com/pubsub).
 

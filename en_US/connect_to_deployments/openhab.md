@@ -1,4 +1,4 @@
-# Set up EMQX Cloud MQTT Broker with openHAB
+# Connect with OpenHAB
 
 [OpenHAB](https://www.openhab.org/) also known as open Home Automation Bus, is an open-source home automation software written in Java. With the strengths of integrating various devices, providing a clear user interface, and supporting the most flexible tools, openHAB becomes one of the most outstanding platforms in the field of home automation.
 

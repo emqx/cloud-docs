@@ -1,4 +1,4 @@
-# Access Control for Dedicated Plan
+# Access Control
 
 
 In the `ACL` page of `Authentication & ACL` menu on the left, access control information can be viewed, and the corresponding access control information can be viewed by switching the three granularity at the top.

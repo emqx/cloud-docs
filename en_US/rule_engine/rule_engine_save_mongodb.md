@@ -1,4 +1,4 @@
-# Save device data to MongoDB using the Data Integrations
+# Integrate with MongoDB
 
 In this article, we will simulate the temperature and humidity
 data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud
