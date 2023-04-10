@@ -1,17 +1,17 @@
 # Configure TLS/SSL
 
 ::: warning Note
-This feature is not available for the standard plan
+This feature is only available for the professional plan
 :::
 
-EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, as follows:
+EMQX Cloud **Professional Deployment** recommends customized certificate validation and provides both one-way/two-way TLS/SSL.
 
-| Certification Mode     | Support self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
+| Certification Mode     | Self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
 | ---------------------- | ------------------------------- | ------------------ | ----------------- | ----------- | --------------------- |
 | one-way Authentication | Yes                             | required           | required          | required    | not required          |
 | two-way Authentication | Yes                             | required           | required          | required    | required              |
 
-## Certificate Restrictions
+## Certificate Requirements
 
 - The certificate must specify the encryption algorithm and key size. EMQX Cloud supports the following algorithms:
 
@@ -56,44 +56,73 @@ EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL c
   -----END (RSA) PRIVATE KEY----- 
   ```
 
-## Create a Certificate
+## One-way TLS/SSL configuration
 
 1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
-2. Go to the deployment details and click on the `+TLS/SSL configuration` button to configure the certificate contents, either by uploading a file or by filling in the certificate contents directly
-   - Type of certification:
-     - One-way authentication: only the client verifies the server-side certificate
+2. Go to the deployment overview and click on the `+TLS/SSL configuration` button to configure the certificate contents, you can upload the file or fill in the certificate content directly.
+    - TLS/SSL type: choose one-way (only the client verifies the server-side certificate).
+    - Certificate body: custom server-side certificate
+    - Certificate chain: certificate chain, usually provided by the third-party organization when issuing the certificate, if it is missing you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
+    - Certificate private key: Private secret key.
+3. After filling in the form, click on `Confirm`.
 
-       <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null" />
-
-     - Two-way authentication: the client and the server validate each other's certificates.
-
-       <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null" />
-
-   - Certificate body: server-side certificate
-   - Certificate chain: the server-side certificate chain, which is usually provided when a third party issues a certificate, can be completed by going to [Certificate chain completion](https://myssl.com/chain_download.html) if it is missing.
-   - Certificate private key: server-side private key
-   - Client CA certificate: the client's CA certificate that is required when selecting two-way certification
-3. When you have completed the form, click on `Confirm`.
 
 ![tls](./_assets/tls.png)
 
-## Test connections
+### Testing One-way TLS with MQTT X
 
 Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
 
 - To create a new connection, enter the Name, Client ID is randomly generated
 - Select Host and fill in the deployed connection address and port
-  - If you select an SSL connection, select ports `mqtts://` and `8883`
-  - If you select WebSocket with SSL, select ports `wss://` and `8084`
+  - If you use MQTT over TLS, select ports `mqtts://` and `8883`
+  - If you use WebSocket over TLS, select ports `wss://` and `8084`
 - Enter the authentication information you have created: username and password
 - Select true on SSL/TLS
 - Certificate selection
-  - Certificates certified by third-party authorities, no CA certificate required
-  - For self-signed certificates, a server-side CA certificate is required or, for two-way certification, a client-side certificate and private key are required
-- Turn on strict mode
+  + If it is a certificate certified by CA authority, click "CA signed server".
+  + If it is self-signed certificate, click "Self signed" to provide self-signed server-side CA certificate.
 - Click on `Connect`
 
 ![mqttx_tls](./_assets/mqttx_tls.png)
+
+
+View [One-Way TLS/SSL Tutorial](https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null) for each step of the setup.
+
+## Two-way TLS/SSL configuration
+
+1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
+2. Go to the deployment overview and click on the `+TLS/SSL configuration` button to configure the certificate contents, you can upload the file or fill in the certificate content directly.
+    - TLS/SSL type: select two-way (client and server verify each other's certificates).
+    - Certificate body: custom server-side certificate
+    - Certificate chain: certificate chain, usually provided by the third-party organization when issuing the certificate, if it is missing you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
+    - Certificate private key: Private secret key.
+    - Client CA: When choosing two-way, you need to provide the client CA certificate.
+3. After filling in the form, click on `Confirm`.
+
+![tls](./_assets/tls_two.png)
+
+
+### Testing Two-way TLS with MQTT X
+
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+
+- To create a new connection, enter the Name, Client ID is randomly generated
+- Select Host and fill in the deployed connection address and port
+  - If you use MQTT over TLS, select ports `mqtts://` and `8883`
+  - If you use WebSocket over TLS, select ports `wss://` and `8084`
+- Enter the authentication information you have created: username and password
+- Select true on SSL/TLS
+- Certificate selection
+  + If it is a server-side CA certified by CA authority, click "Self signed" and fill in the certificate in CA File.
+  + If it is self-signed server-side certificate, click "Self signed" to provide self-signed server-side CA certificate.
+  + Two-way TLS also needs to fill in the client certificate file and client key file.
+- Click on `Connect`
+
+![mqttx_tls](./_assets/mqttx_tls_shuang.png)
+
+View [Two-Way TLS/SSL Tutorial](https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null) for each step of the setup.
+
 
 ## Delete the Certificate
 
@@ -107,7 +136,6 @@ Deleting the certificate will disconnect the client from `8883` and `8084`, plea
 
 Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
 
- <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/kYL0pQ0GC3k/?autoplay=1&null" />
 
 ### Generation of Server CA certificate
 
@@ -250,6 +278,10 @@ openssl x509 -noout -text -in client.crt
 ```bash
 openssl verify -CAfile client-ca.crt client.crt
 ```
+
+
+View [Create a self-signed TLS/SSL certificate tutorial](https://www.youtube.com/embed/kYL0pQ0GC3k/?autoplay=1&null) for each step of the setup.
+
 
 ## FAQ
 

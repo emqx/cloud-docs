@@ -37,6 +37,8 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
 The deployment overview page provides real-time status and connection information for your deployment.
 
+   ![dedicated](./_assets/dedicated_overview.png)
+
 - **Instance status:** Running status and duration of operation.
 - **Sessions:** Current and maximum connection counts.
 - **Pub&Sub TPS:** Current messages sent and received per second, as well as the TPS limit.
@@ -50,7 +52,7 @@ The deployment overview page provides real-time status and connection informatio
   - Professional Plan: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable 8883 (mqtts) and 8084 (wss) ports.
   - Standard Plan: `15xxx` (mqtt), `15xxx` (mqtts), `8083` (ws), and `8084` (wss) ports are enabled by default.
 
-   ![dedicated](./_assets/dedicated_overview.png)
+Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.
 
 To explore the advanced features included in the Dedicated Plan, you can click the links below.
 

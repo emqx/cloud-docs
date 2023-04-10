@@ -40,17 +40,13 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 - 流量：本月已经产生入网和出网的流量。此数值的统计有 1 小时的延时。
 - 部署名称：部署名称可自定义。
 - 连接地址：客户端/终端设备的连接地址。
-- 连接端口：默认开启 8883 (mqtts) 和 8084 (wss) 端口。
+- 连接端口：默认开启 8883 (mqtts) 和 8084 (wss) 端口。查看[端口连接指引](../deployments/port_guide_serverless.md)了解如何使用协议和端口。
 - 消费限额：部署当月最高消费限制设置，具体可查看[消费限额设置](../deployments/spend_limit.md)
 
 
-::: warning
-Serverless 仅支持 8883 (mqtts) 和 8084 (wss) 端口。如果客户端需要 CA 文件，请[在此下载](https://assets.emqx.com/data/emqxsl-ca.crt)。
-:::
 
 
-
-## 连接 Serverless 部署
+## 使用 MQTT X 连接 Serverless 部署
 
 1. 添加客户端认证信息
 
