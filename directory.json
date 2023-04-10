@@ -181,6 +181,14 @@
       "path" : "connect_to_deployments/overview",
       "children": [
         {
+          "title": "Serverless 连接指引",
+          "path": "deployments/port_guide_serverless"
+        },
+        {
+          "title": "专有版连接指引",
+          "path": "deployments/port_guide_dedicated"
+        },
+        {
           "title": "使用 Python SDK 接入",
           "path": "connect_to_deployments/python_sdk"
         },
@@ -243,10 +251,6 @@
         {
           "title": "连接 MQTT.fx",
           "path": "connect_to_deployments/mqttfx"
-        },
-        {
-          "title": "共享订阅",
-          "path": "connect_to_deployments/shared_subscription"
         }
       ]
     },
@@ -365,14 +369,6 @@
         {
           "title": "集成 HStreamDB",
           "path": "rule_engine/rule_engine_save_hstreamdb"
-        },
-        {
-          "title": "获取订阅关系",
-          "path": "rule_engine/rule_engine_get_subscription"
-        },
-        {
-          "title": "保存离线消息",
-          "path": "rule_engine/rule_engine_offline_msg_saving"
         }
       ]
     },
@@ -511,6 +507,18 @@
     {
       "title": "最佳实践",
       "children": [
+        {
+          "title": "如何使用共享订阅",
+          "path": "connect_to_deployments/shared_subscription"
+        },
+        {
+          "title": "获取订阅关系",
+          "path": "rule_engine/rule_engine_get_subscription"
+        },
+        {
+          "title": "保存离线消息",
+          "path": "rule_engine/rule_engine_offline_msg_saving"
+        },
         {
           "title": "数据集成 + Redis 实时获取主题下订阅的客户端",
           "path": "best_practices/save_topic_clients_to_redis"
@@ -725,6 +733,14 @@
       "path" : "connect_to_deployments/overview",
       "children": [
         {
+          "title": "Serverless connection guide",
+          "path": "deployments/port_guide_serverless"
+        },
+        {
+          "title": "Dedicated connection guide",
+          "path": "deployments/port_guide_dedicated"
+        },
+        {
           "title": "Connect via Python SDK",
           "path": "connect_to_deployments/python_sdk"
         },
@@ -787,10 +803,6 @@
         {
           "title": "Connect with openHAB",
           "path": "connect_to_deployments/openhab"
-        },
-        {
-          "title": "Shared Subscription",
-          "path": "connect_to_deployments/shared_subscription"
         }
       ]
     },
@@ -901,20 +913,8 @@
         {
           "title": "Integrate with ClickHouse Cloud",
           "path": "rule_engine/rule_engine_save_clickhouse_cloud"
-        },
-        {
-          "title": "Store Device Offline Messages",
-          "path": "rule_engine/rule_engine_offline_msg_saving"
-        },
-        {
-          "title": "Get Subscription Topic Information",
-          "path": "rule_engine/rule_engine_get_subscription"
         }
       ]
-    },
-    {
-      "title": "Developer Guide",
-      "path": "dev_guide"
     },
     {
       "title": "Billing",
@@ -982,6 +982,27 @@
               "path": "shadow_service/invoke"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "Developer Guide",
+      "path": "dev_guide"
+    },
+    {
+      "title": "Best Practices",
+      "children": [
+        {
+          "title": "Store Device Offline Messages",
+          "path": "rule_engine/rule_engine_offline_msg_saving"
+        },
+        {
+          "title": "Get Subscription Topic Information",
+          "path": "rule_engine/rule_engine_get_subscription"
+        },
+        {
+          "title": "Shared Subscription",
+          "path": "connect_to_deployments/shared_subscription"
         }
       ]
     },

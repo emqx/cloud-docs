@@ -46,21 +46,24 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 * 连接端口：
 
   * 专业版部署端口：默认开启 1883(mqtt)、8083(ws)，您可以通过配置 TLS/SSL 开启 8883(mqtts) 和 8084(wss) 端口。
-  * 基础版部署端口：默认开启 15xxx(mqtt)，15xxx(mqtts)，8083(ws)， 8084(wss) 端口
+  * 基础版部署端口：开启 15xxx(mqtt)，15xxx(mqtts)，8083(ws)， 8084(wss) 端口
+
+查看 [端口连接指引](../deployments/port_guide_serverless.md) 了解协议和端口。
+
 
 
 ### [TLS/SSL 配置](../deployments/tls_ssl.md)
 
-专业版提供自定义 **单双向 TLS/SSL** 认证，并支持 **自签名证书** 和 **CA 签名证书**。
+**专业版**提供**自定义单双向** TLS/SSL 认证，并支持 **自签名证书** 和 **CA 签名证书**。
 
 
 ### [VPC 对等连接配置](../deployments/vpc_peering.md)
 
-专业版支持同云服务商、同区域与客户已有 VPC(Virtual Private Cloud) 创建对等连接。 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两个 VPC 中的实例可以彼此通信，就像它们在同一网络中一样。
+**专业版**支持同云服务商、同区域与客户已有 VPC(Virtual Private Cloud) 创建对等连接。 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两个 VPC 中的实例可以彼此通信，就像它们在同一网络中一样。
 
 
 ### [私网连接 PrivateLink 配置](../deployments/privatelink.md)
-专业版提供私网连接（PrivateLink）能够实现 EMQX Cloud 部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
+**专业版**提供私网连接（PrivateLink）能够实现 EMQX Cloud 部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
 
 
 ### [API 访问](../api/introduction.md)
@@ -80,4 +83,7 @@ NAT 网关可以提供网络地址转换服务，为专业版部署提供访问�
 ## 连接到部署
 
 您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTT X 连接到部署](../connect_to_deployments/mqttx.md)。
+
+
+
 

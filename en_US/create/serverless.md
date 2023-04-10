@@ -32,11 +32,11 @@ The deployment overview page provides real-time status and connection informatio
 - **Traffic:** Usage information for the deployed traffic, including monthly usage and free quota.
 - **Deployment name:** A customizable name for the deployment.
 - **Address:** The address for the client/terminal device to connect EMQX Cloud.
-- **Ports:** `8883` (matts) and `8084` (wss) are enabled by default. 
+- **Ports:** `8883` (matts) and `8084` (wss) are enabled by default. Check out the [connection guide](../deployments/port_guide_serverless.md) to learn more.
 - **Spend Limit**: Maximum spending limit for the current month. For more information, please refer to the [Spend Limit](../deployments/spend_limit.md) page.
 
 ::: warning
-Serverless Plan only supports ports `8883` (mqtts) and `8084` (wss). If your client needs a CA file, you can click [here](https://assets.emqx.com/data/emqxsl-ca.crt) to download.
+Serverless deployment only supports ports `8883` (mqtts) and `8084` (wss). If your client needs a CA file, you can click [here](https://assets.emqx.com/data/emqxsl-ca.crt) to download.
 
 :::
 

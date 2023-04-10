@@ -1,25 +1,20 @@
-# 配置 TLS/SSL
+# 专业版 TLS/SSL 配置
 
 ::: warning
 该功能仅适用于专业版
 :::
 
-EMQX Cloud **专业版部署** 提供自定义单向/双向 TLS/SSL 配置，具体如下：
+EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提供单向/双向 TLS/SSL 两种验证模式，具体如下：
 
 | 认证方式 | 是否支持自签名证书 | 服务器证书 | 证书链 | 私有秘钥 | 客户端 CA 证书 |
-| -------- | ------------------ | ---------- | ------ | -------- | -------------- |
+| -------- | ------------- | ---------- | ------ | -------- | --------------|
 | 单向认证 | 支持               | 需要       | 需要   | 需要     | 不需要         |
 | 双向认证 | 支持               | 需要       | 需要   | 需要     | 需要           |
 
-**单向认证视频**
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=851870347&bvid=BV1FL4y137YM&cid=516019519&page=1" />
 
-**双向认证视频**
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=894345104&bvid=BV1sP4y1c7tN&cid=516012317&page=1" />
+## 证书要求
 
-## 证书限制
-
-- 证书必须指定加密算法和密钥大小。EMQX Cloud 支持下列算法：
+- 证书必须指定加密算法和密钥大小。支持下列算法：
 
     - 1024 位 RSA (RSA_1024)
     - 2048 位 RSA (RSA_2048)
@@ -62,24 +57,21 @@ EMQX Cloud **专业版部署** 提供自定义单向/双向 TLS/SSL 配置，具
       -----END (RSA) PRIVATE KEY----- 
       ```
 
-## 创建证书
+## 创建单向认证
 
 1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
 2. 进入部署详情，点击 `+TLS/SSL 配置` 按钮，配置证书内容，您可以上传文件或者直接填写证书内容
-    - TLS/SSL 认证类型：
-        - 单向认证：仅客户端验证服务端证书。
-        - 双向认证：客户端和服务端相互验证证书。
-    - 公钥证书：服务端证书
+    - TLS/SSL 认证类型：选择单向认证（仅客户端验证服务端证书）。
+    - 公钥证书：自定义的服务端证书
     - 证书链：证书链，通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html) 补全
     - 私钥：私有秘钥
-    - 客户端 CA 证书：选择双向认证时，需要提供客户端的 CA 证书
 3. 填写完成后，点击 `确定`。
 
 ![tls](./_assets/tls.png)
 
-## 测试连接
+### 使用 MQTT X 测试单向 TLS
 
-测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
+测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTT X 进行测试：
 
 - 新建连接，输入 Name，Client ID 随机生成即可
 - 选择 Host，填入部署的连接地址和端口
@@ -88,12 +80,49 @@ EMQX Cloud **专业版部署** 提供自定义单向/双向 TLS/SSL 配置，具
 - 输入创建的认证信息：用户名和密码
 - SSL/TLS 选择 true
 - 证书选择
-    - 第三方机构认证的证书，不需要提供 CA 证书
-    - 自签名证书，提供服务端 CA 证书，若双向认证，还需要提供客户端证书和私钥
-- 打开严格模式
-- 连接
+    - 如果是 CA 机构认证的证书，点击“CA signed server”
+    - 如果是自签名证书，点击“Self signed”，提供自签名服务端 CA 证书。
+- 点击连接
 
 ![mqttx_tls](./_assets/mqttx_tls.png)
+
+您还可以查看[单向认证教程视频](https://www.bilibili.com/video/BV1FL4y137YM/?vd_source=e6a065a33d39a5282d8618162b37ad71)了解每一步的设置。
+
+
+## 创建双向认证
+
+1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
+2. 进入部署详情，点击 `+TLS/SSL 配置` 按钮，配置证书内容，您可以上传文件或者直接填写证书内容
+    - TLS/SSL 认证类型：选择双向认证（客户端和服务端相互验证证书）。
+    - 公钥证书：自定义的服务端证书
+    - 证书链：证书链，通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html) 补全
+    - 私钥：私有秘钥
+    - 客户端 CA 证书：选择双向认证时，需要提供客户端的 CA 证书
+3. 填写完成后，点击 `确定`。
+
+![tls](./_assets/tls_shuang.png)
+
+
+### 使用 MQTT X 测试双向 TLS
+
+测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTT X 进行测试：
+
+- 新建连接，输入 Name，Client ID 随机生成即可
+- 选择 Host，填入部署的连接地址和端口
+    - 若选择 SSL 连接，选择 `mqtts://` 和 `8883` 端口
+    - 若选择 WebSocket with SSL，选择 `wss://` 和 `8084` 端口
+- 输入创建的认证信息：用户名和密码
+- SSL/TLS 选择 true
+- 证书选择
+    - 如果是 CA 机构认证的服务端证书，点击“Self signed”，在 CA File 填入证书。
+    - 如果是自签名证书，点击“Self signed”，提供自签名服务端 CA 证书
+    - 双向认证还需填入客户端证书以及客户端密钥。
+- 点击连接
+
+![mqttx_tls](./_assets/mqttx_tls_shuang.png)
+
+您还可以查看[双向认证教程视频](https://www.bilibili.com/video/BV1sP4y1c7tN/)了解每一步的设置。
+
 
 ## 删除证书
 
@@ -103,11 +132,12 @@ EMQX Cloud **专业版部署** 提供自定义单向/双向 TLS/SSL 配置，具
 2. 进入部署详情，点击 `TLS/SSL 配置` 部分的证书的删除按钮。
 3. 在对话框点击“确定”，完成删除。
 
+
 ## 生成自签名证书
 
 请先确保您已经安装了 [OpenSSL](https://www.openssl.org/)
 
-### 服务端证书生成
+### 生成自签名服务端证书
 
 1. CA 证书生成 `server-ca.crt`
 
@@ -202,7 +232,7 @@ openssl x509 -noout -text -in server.crt
 openssl verify -CAfile server-ca.crt server.crt
 ``` 
 
-### 客户端证书生成
+### 生成自签名客户端证书
 
 1. CA 证书生成 `client-ca.crt`
 
