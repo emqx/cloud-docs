@@ -24,7 +24,7 @@
 
 2. 在下面的规则语句中，我们从 temp_hum/emqx 主题中读取报告的时间`up_timestamp`，`clientid`，`payload`中的温度以及湿度。
 ::: tip Tip
-我们使用类 SQL 语句来实现数据的筛选、过滤和处理，关于如何编写规则 SQL，可通过以下示例了解更多。
+我们使用类 SQL 语句来实现数据的筛选、过滤和处理，关于如何编写规则 SQL，可通过以下文档了解更多。
 
 - [规则 SQL 语法与示列](https://docs.emqx.com/zh/enterprise/v4.4/rule/rule-engine_grammar_and_examples.html)
 - [SQL 语句中可用的字段](https://docs.emqx.com/zh/enterprise/v4.4/rule/rule-engine_field.html)
