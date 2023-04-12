@@ -1,15 +1,17 @@
 # Configure TLS/SSL
 
-::: warning Note
-This feature is only available for the professional plan
+::: tip Note
+This feature is only available for the professional plan.
 :::
 
-EMQX Cloud **Professional Deployment** recommends customized certificate validation and provides both one-way/two-way TLS/SSL.
+EMQX Cloud **Professional Deployment** recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
 
-| Certification Mode     | Self-signed certificate | Server certificate | Certificate chain | Private key | Client CA certificate |
+The following table provides an overview of different requirements for certifications in one-way and two-way authentication modes. 
+
+| Certification Mode     | Self-signed Certificate | Server Certificate | Certificate Chain | Private Key | Client CA Certificate |
 | ---------------------- | ------------------------------- | ------------------ | ----------------- | ----------- | --------------------- |
-| one-way Authentication | Yes                             | required           | required          | required    | not required          |
-| two-way Authentication | Yes                             | required           | required          | required    | required              |
+| One-way Authentication | Yes                             | Required          | Required         | Required   | Not required         |
+| Two-way Authentication | Yes                             | Required          | Required         | Required   | Required             |
 
 ## Certificate Requirements
 
@@ -40,7 +42,7 @@ EMQX Cloud **Professional Deployment** recommends customized certificate validat
   -----END CERTIFICATE----- 
   ```
 
-  - The certificate chain format
+  - Certificate chain format
 
   ```bash
   -----BEGIN CERTIFICATE-----
@@ -56,88 +58,110 @@ EMQX Cloud **Professional Deployment** recommends customized certificate validat
   -----END (RSA) PRIVATE KEY----- 
   ```
 
-## One-way TLS/SSL configuration
+## Configure One-Way TLS/SSL
 
-1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
-2. Go to the deployment overview and click on the `+TLS/SSL configuration` button to configure the certificate contents, you can upload the file or fill in the certificate content directly.
-    - TLS/SSL type: choose one-way (only the client verifies the server-side certificate).
-    - Certificate body: custom server-side certificate
-    - Certificate chain: certificate chain, usually provided by the third-party organization when issuing the certificate, if it is missing you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
-    - Certificate private key: Private secret key.
-3. After filling in the form, click on `Confirm`.
+The following instructions guide you to configure one-way TLS/SSL in [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [One-Way TLS/SSL Tutorial](https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null) for each step of the setup.
+
+1. Login to the EMQX Cloud Console.
+2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
+    - **TLS/SSL type**: Choose one-way (only the client verifies the server-side certificate).
+    - **Certificate body**: Custom server-side certificate.
+    - **Certificate chain**: It is usually provided by a third-party organization when issuing the certificate. If it is missing, you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
+    - **Certificate private key**: Private secret key.
+3. After filling in all the fields, click **Confirm**. On your deployment overview page, you should see the certificate information in **TLS/SSL Config**.
 
 
 ![tls](./_assets/tls.png)
 
-### Testing One-way TLS with MQTT X
+### Test One-Way TLS with MQTT X Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTT X Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
-- To create a new connection, enter the Name, Client ID is randomly generated
-- Select Host and fill in the deployed connection address and port
-  - If you use MQTT over TLS, select ports `mqtts://` and `8883`
-  - If you use WebSocket over TLS, select ports `wss://` and `8084`
-- Enter the authentication information you have created: username and password
-- Select true on SSL/TLS
-- Certificate selection
-  + If it is a certificate certified by CA authority, click "CA signed server".
-  + If it is self-signed certificate, click "Self signed" to provide self-signed server-side CA certificate.
-- Click on `Connect`
+1. In MQTT X Client, create a new connection.
+
+   In the **General** section, fill in the information as follows:
+
+   - **Name**: Type the name of the connection. 
+   - **Client ID**: The client ID is randomly generated. You can click the refresh button to regenerate the id.
+   - **Host**: Select the protocol from the drop-down list and fill in the deployed connection address and port.
+     - If you use MQTT over TLS, select ports `mqtts://` and `8883`.
+     - If you use WebSocket over TLS, select ports `wss://` and `8084`.
+
+   - **Username** and **Password**: Type the authentication information you have created.
+   - **SSL/TLS**: Click the toggle switch to enable SSL/TLS.
+   - **SSL Secure**: Click the toggle switch to enable SSL Secure.
+   - **Certificate**: Select the certification as needed.
+     - If it is a certificate certified by CA authority, click **CA signed server**.
+     - If it is self-signed certificate, click **Self signed** to provide self-signed server-side CA certificate. For information on how to create self-signed TSL/SSL certificate, see [Create Self-Signed TSL/SSL Certificate](#create-self-signed-tsl-ssl-certificate).
+
+2. Click **Connect**. 
 
 ![mqttx_tls](./_assets/mqttx_tls.png)
 
+## Configure Two-Way TLS/SSL
 
-View [One-Way TLS/SSL Tutorial](https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null) for each step of the setup.
+The following instructions guide you to configure two-way TLS/SSL in [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [Two-Way TLS/SSL Tutorial](https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null) for each step of the setup.
 
-## Two-way TLS/SSL configuration
-
-1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
-2. Go to the deployment overview and click on the `+TLS/SSL configuration` button to configure the certificate contents, you can upload the file or fill in the certificate content directly.
-    - TLS/SSL type: select two-way (client and server verify each other's certificates).
-    - Certificate body: custom server-side certificate
-    - Certificate chain: certificate chain, usually provided by the third-party organization when issuing the certificate, if it is missing you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
-    - Certificate private key: Private secret key.
-    - Client CA: When choosing two-way, you need to provide the client CA certificate.
-3. After filling in the form, click on `Confirm`.
+1. Login to the EMQX Cloud Console.
+2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
+    - **TLS/SSL type**: Select two-way (client and server verify each other's certificates).
+    - **Certificate body**: Custom server-side certificate.
+    - **Certificate chain**: It is usually provided by a third-party organization when issuing the certificate. If it is missing you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
+    - **Certificate private key**: Private secret key.
+    - **Client CA**: When choosing two-way, you need to provide the client CA certificate.
+3. After filling in all the fields, click on **Confirm**. On your deplyment overview page, you should see the certificate information in **TLS/SSL Config**.
 
 ![tls](./_assets/tls_two.png)
 
 
-### Testing Two-way TLS with MQTT X
+### Test Two-Way TLS with MQTT X Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md), you can connect and test using [MQTTX](<https://mqttx.app/>). In this tutorial we will use MQTTX for testing:
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTT X Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
-- To create a new connection, enter the Name, Client ID is randomly generated
-- Select Host and fill in the deployed connection address and port
-  - If you use MQTT over TLS, select ports `mqtts://` and `8883`
-  - If you use WebSocket over TLS, select ports `wss://` and `8084`
-- Enter the authentication information you have created: username and password
-- Select true on SSL/TLS
-- Certificate selection
-  + If it is a server-side CA certified by CA authority, click "Self signed" and fill in the certificate in CA File.
-  + If it is self-signed server-side certificate, click "Self signed" to provide self-signed server-side CA certificate.
-  + Two-way TLS also needs to fill in the client certificate file and client key file.
-- Click on `Connect`
+1. In MQTT X Client, create a new connection.
+
+   In the **General** section, fill in the information as follows:
+
+   - **Name**: Type the name of the connection. 
+   - **Client ID**: The client ID is randomly generated. You can click the refresh button to regenerate the id.
+   - **Host**: Select the protocol from the drop-down list and fill in the deployed connection address and port.
+     - If you use MQTT over TLS, select ports `mqtts://` and `8883`.
+     - If you use WebSocket over TLS, select ports `wss://` and `8084`.
+
+   - **Username** and **Password**: Type the authentication information you have created.
+   - **SSL/TLS**: Click the toggle switch to enable SSL/TLS.
+   - **SSL Secure**: Click the toggle switch to enable SSL Secure.
+   - **Certificate**: Select the certification as needed.
+     - If it is a server-side CA certified by CA authority, click **Self signed** and fill in the certificate in **CA File** field. For information on how to create self-signed TSL/SSL certificate, see [Create Self-Signed TSL/SSL Certificate](#create-self-signed-tsl-ssl-certificate).
+     - If it is self-signed server-side certificate, click **Self signed** to provide self-signed server-side CA certificate. 
+     - Two-way TLS also needs to fill in the client certificate file and client key file.
+
+2. Click **Connect**. 
 
 ![mqttx_tls](./_assets/mqttx_tls_shuang.png)
 
-View [Two-Way TLS/SSL Tutorial](https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null) for each step of the setup.
 
+## Delete Certificate
 
-## Delete the Certificate
-
-Deleting the certificate will disconnect the client from `8883` and `8084`, please ensure that this does not affect your business.
+Deleting the certificate will disconnect the client from `8883` and `8084`. Make sure that the deletion does not affect your business.
 
 1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
-2. To access the deployment details, click on the delete button for the certificate in the `TLS/SSL Configuration` section.
-3. Click on "OK" in the dialog to complete the deletion.
+2. Click the delete icon for the certificate in the **TLS/SSL Config** section.
+3. Click **OK** in the dialog to complete the deletion.
 
-## Creating Self-Signed TSL/SSL Certificate
+## Create Self-Signed TSL/SSL Certificate
 
-Make sure you have installed [OpenSSL](https://www.openssl.org/) first.
+The following intructions guide you to create self-signed TSL/SSL certificates. You can also watch [Create a self-signed TLS/SSL certificate tutorial](https://www.youtube.com/embed/kYL0pQ0GC3k/?autoplay=1&null) for each step of the setup.
 
+::: tip Prerequisite
 
-### Generation of Server CA certificate
+Make sure you have installed [OpenSSL](https://www.openssl.org/).
+
+:::
+
+### Generate Server-Side CA Certificate
+
+You can use the following statement to generate a server-side CA certificate. You should adjust `subj` to actual use.
 
 ```bash
 openssl req \
@@ -151,19 +175,15 @@ openssl req \
     -out server-ca.crt
 ```
 
-You should adjust `subj` to actual use.
+### Create a Server-Side Certificate
 
-### Creating a Server Certificate
-
-1. Generate server-side secret key `server.key`
+1. Generate server-side secret key `server.key`.
 
 ```bash
 openssl genrsa -out server.key 2048
 ```
 
-2. Create `openssl.cnf` file
-
-Replace the IP.1 or DNS.1 address with your deployment address
+2. Create `openssl.cnf` file. Replace the IP.1 or DNS.1 address with your deployment address.
 
 ```
 cat << EOF > ./openssl.cnf
@@ -198,13 +218,13 @@ DNS.1 = <Domain Connect Address>
 EOF
 ```
 
-3. Generate the server-side certificate request file `server.csr`
+3. Generate the server-side certificate request file `server.csr`.
 
 ```bash
 openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
-4. Sign the server-side certificate with a CA certificate `server.crt`
+4. Sign the server-side certificate with a CA certificate `server.crt`.
 
 ```bash
 openssl x509 -req \
@@ -217,23 +237,25 @@ openssl x509 -req \
     -extensions v3_req -extfile openssl.cnf
 ```
 
-5. View server-side certificate information
-  
+5. View server-side certificate information.
+
 ```bash
 openssl x509 -noout -text -in server.crt
 ```
 
-6. Verify the certificate
+6. Verify the certificate.
 
 ```bash
 openssl verify -CAfile server-ca.crt server.crt
 ```
 
-### Creating a client Certificate
+### Create a Client Certificate
 
-For two-way authentication, you will need to generate the client CA certificate first
+For two-way authentication, you need to generate the client CA certificate first. 
 
-#### Generate client CA certificate
+#### Generate Client CA Certificate
+
+You can use the following statement to generate a client CA certificate. You should adjust `subj` to actual use.
 
 ```bash
 openssl req \
@@ -247,41 +269,35 @@ openssl req \
     -out client-ca.crt
 ```
 
-You should adjust `subj` to actual use.
-
-1. Generate client-side secret key `client.key`
+1. Generate client-side secret key `client.key`.
 
 ```bash
 openssl genrsa -out client.key 2048
 ```
 
-2. Generate the client-side certificate request file `client.csr`
+2. Generate the client-side certificate request file `client.csr`.
 
 ```bash
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 ```
 
-3. Sign the client-side certificate with a CA certificate `client.crt`
+3. Sign the client-side certificate with a CA certificate `client.crt`.
 
 ```bash
 openssl x509 -req -days 365 -sha256 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
 ```
 
-4. View client-side certificate information
+4. View client-side certificate information.
 
 ```bash
 openssl x509 -noout -text -in client.crt
 ```
 
-5. Verify the certificate
+5. Verify the certificate.
 
 ```bash
 openssl verify -CAfile client-ca.crt client.crt
 ```
-
-
-View [Create a self-signed TLS/SSL certificate tutorial](https://www.youtube.com/embed/kYL0pQ0GC3k/?autoplay=1&null) for each step of the setup.
-
 
 ## FAQ
 
