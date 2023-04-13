@@ -4,9 +4,9 @@
 
 ### Stop a Deployment
 
-1. Go to the **Cloud Console** and click on the deployment you wan t to **stop** to access the deployment overview page.
+1. Go to the **Cloud Console**. Click on the deployment you want to **stop** to access the deployment overview page.
 2. Click the **Stop** button and enter the name of the deployment in the pop-up box.
-3. Click **Confirm** to stop the deployment .
+3. Click **Confirm** to stop the deployment.
 
 ::: warning
 Stopping a deployment will disconnect devices from the deployment, but your data and connection address will be preserved.
@@ -14,7 +14,7 @@ Stopping a deployment will disconnect devices from the deployment, but your data
 
 ### Delete a Deployment
 
-1. Go to the **Cloud Console** and click on the deployment you wan t to **delete** to access the deployment overview page.
+1. Go to the **Cloud Console**. Click on the deployment you want to **delete** to access the deployment overview page.
 2. Click the **Delete** button and enter the name of the deployment in the pop-up box.
 3. Click **Confirm** to stop the deployment .
 
@@ -46,7 +46,7 @@ Before deleting the deployment, please make sure that the deployment's status is
 
 1. Go to the **Cloud Console** and click on the deployment you wan t to **delete** to access the deployment overview page.
 2. Click the **Delete** button and enter the name of the deployment in the pop-up box.
-3. Click **Confirm** to stop the deployment .
+3. Click **Confirm** to stop the deployment.
 
 
 
