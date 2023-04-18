@@ -2,7 +2,8 @@
 
 共享订阅是在多个订阅者之间实现负载均衡的订阅方式，EMQX Cloud 采用 random 均衡策略，即在所有订阅者中随机选择一位订阅者获取消息。
 
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=254440768&bvid=BV1vY411G74L&cid=541242226&page=1" />
+您可以查看[教程视频](https://player.bilibili.com/player.html?aid=254440768&bvid=BV1vY411G74L&cid=541242226&page=1)进一步了解。
+
 
 ## 共享订阅前缀格式
 

@@ -7,7 +7,8 @@
 * 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。(专业版部署若开通 [NAT 网关](../vas/nat-gateway.md)也可使用公网 IP 进行连接）
 * 对于基础版用户：无需完成对等连接，下文提到的 IP 均指资源的公网 IP。
 
-<LazyIframeVideo vendor="bilibili" src="https:///player.bilibili.com/player.html?aid=297842723&bvid=BV1HF41137qq&cid=565385853&page=1" />
+您可以查看[视频教程](https:///player.bilibili.com/player.html?aid=297842723&bvid=BV1HF41137qq&cid=565385853&page=1)进一步了解。
+
 
 ## 创建 Web 服务器
 

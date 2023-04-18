@@ -10,7 +10,7 @@
 
 ## 阿里云平台私网连接 PrivateLink
 
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=810742292&bvid=BV1C34y1v7mt&cid=576712083&page=1" />
+您可以查看[教程视频](https://player.bilibili.com/player.html?aid=810742292&bvid=BV1C34y1v7mt&cid=576712083&page=1)进一步了解。
 
 ### 准备工作
 
