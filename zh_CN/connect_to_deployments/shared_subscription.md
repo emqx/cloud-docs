@@ -2,7 +2,8 @@
 
 共享订阅是在多个订阅者之间实现负载均衡的订阅方式，EMQX Cloud 采用 random 均衡策略，即在所有订阅者中随机选择一位订阅者获取消息。
 
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=254440768&bvid=BV1vY411G74L&cid=541242226&page=1" />
+您可以查看[教程视频](https://player.bilibili.com/player.html?aid=254440768&bvid=BV1vY411G74L&cid=541242226&page=1)进一步了解。
+
 
 ## 共享订阅前缀格式
 
@@ -49,16 +50,17 @@ EMQX Cloud 支持两种格式的共享订阅前缀，分别为带群组的共享
 
 ## 使用 MQTT X 测试共享订阅
 
-使用 MQTT X 模拟客户端订阅。
+1. 使用 MQTT X 模拟客户端订阅。
+
 * s1，s2 订阅主题 `$share/g1/test`，为带群组的共享订阅
 * s3 订阅主题 `test` 为普通订阅
 
 ![shared_subscription_1](./_assets/shared_subscription_1.png)
 
-使用 MQTT X 创建客户端 p1 向主题 `test` 发送3条信息
+2. 使用 MQTT X 创建客户端 p1 向主题 `test` 发送3条信息。
 
 ![shared_subscription_2](./_assets/shared_subscription_2.png)
 
-3个订阅者中，s1 接收到msg1，msg2，而 s2 接收到 msg3，s3 接收到所有3条 msg 信息
+3. 3个订阅者中，s1 接收到msg1，msg2，而 s2 接收到 msg3，s3 接收到所有3条 msg 信息。
 
 ![shared_subscription_3](./_assets/shared_subscription_3.png)

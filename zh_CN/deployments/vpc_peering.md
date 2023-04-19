@@ -16,7 +16,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 在连接过程中，您在阿里云上资源所在的 VPC 会作为发起端，而 EMQX Cloud 部署所在的 VPC 将作为接收端。
 
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=935751232&bvid=BV1DT4y117Pa&cid=746468224&page=1" />
+您可以查看[阿里云 VPC 连接视频教程](https://player.bilibili.com/player.html?aid=935751232&bvid=BV1DT4y117Pa&cid=746468224&page=1)了解更多。
 
 ### 创建对等连接
 
@@ -60,7 +60,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ## 华为云平台对等连接
 
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=253362125&bvid=BV1aY411b7JG&cid=489245559&page=1" />
+您可以查看[华为云 VPC 连接视频教程](https://player.bilibili.com/player.html?aid=253362125&bvid=BV1aY411b7JG&cid=489245559&page=1)了解更多。
 
 ### 创建对等连接
 
@@ -126,7 +126,8 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ## 腾讯云平台对等连接
 
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=253252178&bvid=BV1FY411b7ai&cid=489245566&page=1" />
+您可以查看[腾讯云 VPC 连接视频教程](https://player.bilibili.com/player.html?aid=253252178&bvid=BV1FY411b7ai&cid=489245566&page=1)了解更多。
+
 
 在腾讯云平台，VPC 对等连接又称为 [云联网](https://cloud.tencent.com/document/product/877)。
 
@@ -178,7 +179,8 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ## AWS 平台对等连接
 
-<LazyIframeVideo vendor="bilibili" src="https://player.bilibili.com/player.html?aid=340292743&bvid=BV1t94y1o7db&cid=565385787&page=1" />
+您可以查看[亚马逊云 VPC 连接视频教程](https://player.bilibili.com/player.html?aid=340292743&bvid=BV1t94y1o7db&cid=565385787&page=1)了解更多。
+
 
 ### 创建对等连接
 
