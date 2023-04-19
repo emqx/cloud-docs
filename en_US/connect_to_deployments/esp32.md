@@ -48,6 +48,7 @@ After you finish the connection settings, follow the steps below to write codes 
 
 > The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Serverless Auth](../deployments/auth_serverless.md) or [Dedicated Auth](../deployments/auth_dedicated.md) to set username and password.
 
+
 ```c
 // WiFi
 const char *ssid = "mousse"; // Enter your WiFi name
@@ -354,6 +355,7 @@ const char* ca_cert= \
 WiFiClientSecure espClient;
 // use wifi client to init mqtt client
 PubSubClient client(espClient); 
+
 
 
 void setup() {

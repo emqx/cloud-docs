@@ -47,8 +47,9 @@
 
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
+
 > 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
-> 
+
 
 ```c
 // WiFi
@@ -101,6 +102,7 @@ while (!client.connected()) {
 // publish and subscribe
 client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
 client.subscribe(topic); // subscribe message from the topic
+
 ```
 
 6. 设置回调函数将主题名称打印到串行端口并打印从 `esp32/test` 主题接收的消息。
@@ -197,8 +199,8 @@ TCP 端口和 TLS/SSL 端口连接在连接设置部分略有不同，发布和�
 
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
+
 > 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
-> 
 
 
 ```c
@@ -290,6 +292,7 @@ while (!client.connected()) {
 // publish and subscribe
 client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
 client.subscribe(topic); // subscribe message from the topic
+
 ```
 
 7. 设置回调函数将主题名称打印到串行端口并打印从 `esp32/test` 主题接收的消息。
@@ -389,6 +392,7 @@ void setup() {
     // publish and subscribe
     client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
     client.subscribe(topic); // subscribe message from the topic
+
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
