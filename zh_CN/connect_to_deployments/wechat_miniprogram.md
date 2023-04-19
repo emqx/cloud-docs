@@ -5,7 +5,7 @@
 ## 前提条件
 
 ::: tip
-EMQX Cloud 专业版部署建议绑定在云厂商自购的证书，选择单向认证且需在 EMQX Cloud 控制台部署详情页面配置 TLS/SSL 时上传证书链。
+EMQX Cloud 专业版部署建议绑定在云厂商自购的证书，选择单向认证且需在 EMQX Cloud 控制台部署详情页面[配置 TLS/SSL](<https://docs.emqx.com/zh/cloud/latest/deployments/tls_ssl.html>) 时**上传证书链**。
 :::
 
 1. [注册](https://mp.weixin.qq.com/wxopen/waregister?action=step1) 微信小程序账号，并下载 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 由于微信小程序安全要求比较高，在与后台服务器之间的通讯必须使用 https 或 wss 协议。所以需要登录 [微信公众平台](https://mp.weixin.qq.com/)，在左侧菜单【开发】->【开发管理】->【开发设置】->【服务器域名】中 socket 合法域名添加部署域名。
@@ -43,10 +43,13 @@ EMQX Cloud 专业版部署建议绑定在云厂商自购的证书，选择单向
 
 ### 建立连接
 
-> 1. 只能使用 wss 协议，但是微信小程序中需要写为 wxs
-> 2. 端口为 8084（EMQX Cloud 专业版部署），但实际的端口号以 EMQX Cloud 控制台对应部署的概览页面信息为准。
-> 3. 连接地址末尾不要忘了带上路径 /mqtt
-> 4. EMQX Cloud 部署需要先在部署详情页面的【认证鉴权】->【认证】中添加用户名密码，然后写入 `mqttOptions` 中
+::: tip
+
+1. 只能使用 wss 协议，但是微信小程序中需要写为 wxs
+2. 端口为 8084（EMQX Cloud 专业版部署），但实际的端口号以 EMQX Cloud 控制台对应部署的概览页面信息为准。
+3. 连接地址末尾不要忘了带上路径 /mqtt
+4. EMQX Cloud 部署需要先在部署详情页面的【认证鉴权】->【认证】中添加用户名密码，然后写入 `mqttOptions` 中
+:::
 
 ```javascript
 Page({
