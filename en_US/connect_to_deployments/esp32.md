@@ -24,7 +24,7 @@ This article uses the [Arduino IDE](https://www.arduino.cc/en/software) as the c
 
 This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
-- Broker: **broker-cn.emqx.io**
+- Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - SSL/TLS Port: **8883**
 
@@ -53,7 +53,7 @@ const char *ssid = "mousse"; // Enter your WiFi name
 const char *password = "qweqweqwe";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "broker-cn.emqx.io";// broker address
+const char *mqtt_broker = "broker.emqx.io";// broker address
 const char *topic = "esp32/test"; // define topic 
 const char *mqtt_username = "emqx"; // username for authentication
 const char *mqtt_password = "public";// password for authentication
@@ -126,7 +126,7 @@ const char *ssid = "mousse"; // Enter your WiFi name
 const char *password = "qweqweqwe";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "broker-cn.emqx.io";// broker address
+const char *mqtt_broker = "broker.emqx.io";// broker address
 const char *topic = "esp32/test"; // define topic 
 const char *mqtt_username = "emqx"; // username for authentication
 const char *mqtt_password = "public";// password for authentication
@@ -202,7 +202,7 @@ const char *ssid = "mousse"; // Enter your WiFi name
 const char *password = "qweqweqwe";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "broker-cn.emqx.io";// broker address
+const char *mqtt_broker = "broker.emqx.io";// broker address
 const char *topic = "esp32/test"; // define topic 
 const char *mqtt_username = "emqx"; // username for authentication
 const char *mqtt_password = "public";// password for authentication
@@ -282,7 +282,7 @@ while (!client.connected()) {
 
 ```c
 // publish and subscribe
-client.publish(topic, "hello emqx"); // publish to the topic
+client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish to the topic
 client.subscribe(topic); // subscribe from the topic
 ```
 
@@ -313,7 +313,7 @@ const char *ssid = "mousse"; // Enter your WiFi name
 const char *password = "qweqweqwe";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "broker-cn.emqx.io";// broker address
+const char *mqtt_broker = "broker.emqx.io";// broker address
 const char *topic = "esp32/test"; // define topic 
 const char *mqtt_username = "emqx"; // username for authentication
 const char *mqtt_password = "public";// password for authentication
@@ -379,7 +379,7 @@ void setup() {
         }
     }
     // publish and subscribe
-    client.publish(topic, "hello emqx"); // publish to the topic
+    client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish to the topic
     client.subscribe(topic); // subscribe from the topic
 }
 
