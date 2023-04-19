@@ -45,6 +45,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
     ::: tip
       * 如果当前部署为基础版，服务器地址请填写公网地址
       * 如果当前部署为专业版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址请填写内网地址
+      * 如果当前部署为 BYOC，需在您的公有云控制台创建 VPC 对等连接，请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址请填写内网地址
       * 若提示 Init resource failure! 需检查服务器地址是否无误、安全组是否开启
     :::
 
