@@ -50,6 +50,7 @@ Then when publisher publishes a message with topic `test` to the EMQX Cloud (tip
 ## Test shared subscription using MQTT X
 
 Simulate client subscriptions using MQTT X.
+
 * s1, s2 subscribe topic `$share/g1/test`
 * s3 subscribe topic `test`
 
