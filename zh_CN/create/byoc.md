@@ -12,7 +12,7 @@ EMQX Cloud BYOC 部署会在您自己的云基础设施中部署 EMQX 企业版�
 
 2. 在控制台首页或者部署列表页面都可以在指定项目下创建，点击新建部署进入创建步骤。
 
-3. 点击 BYOC 面板上的 `前往部署`。
+3. 点击 BYOC 面板上的 **前往部署**。
 
 4. 依据您的需求选择相应规格配置。
 
@@ -21,22 +21,50 @@ EMQX Cloud BYOC 部署会在您自己的云基础设施中部署 EMQX 企业版�
    - 部署名称：定义这个部署的名称，以便于在控制台中快速查找。
    - VPC 网段：在您的云账号中创建 VPC 时使用。您可以选择 10.0.0.0/8、172.16.0.0/12 或 192.168.0.0/16 三个 RFC 标准私网网段作为 VPC 的私网地址范围。
    - 集群规模：每个规模限制了不同的连接数上限和 TPS 上限，并提供了对应的机型推荐。后续也可以通过升降部署规格实现增加和减少最大连接数和 TPS 上限。
-   - Agent 节点实例规格：根据 `集群规模` 的选择，自动生成了对应云服务提供商的实例规格。BYOC Agent 节点用于管理 EMQX 节点，包括收集运行状态、采集日志和数据备份等。
-   - EMQX 节点实例规格：根据 `集群规模` 的选择，自动生成了对应云服务提供商的实例规格。EMQX 节点上运行 EMQX 企业版，负责提供 MQTT 消息服务。
-   - EMQX 节点实例数量：根据 `集群规模` 的选择，自动生成了推荐的实例数量。您可以修改 EMQX 节点的数量，最少 2 个节点，最多 5 个节点。
+   - Agent 节点实例规格：根据 **集群规模** 的选择，自动生成了对应云服务提供商的实例规格。BYOC Agent 节点用于管理 EMQX 节点，包括收集运行状态、采集日志和数据备份等。
+   - EMQX 节点实例规格：根据 **集群规模** 的选择，自动生成了对应云服务提供商的实例规格。EMQX 节点上运行 EMQX 企业版，负责提供 MQTT 消息服务。
+   - EMQX 节点实例数量：根据 **集群规模** 的选择，自动生成了推荐的实例数量。您可以修改 EMQX 节点的数量，最少 2 个节点，最多 5 个节点。
 
-5. 点击 **下一步** 进入`高级配置`，依据您的需求添加云资源标签。它可以用于标记和描述云资源，以便您更好地在云账号中组织和管理这些资源。您可以为此次部署中的 EMQX 资源打上至多 10 个标签。
+5. 点击 **下一步** 进入 **高级配置**，依据您的需求添加云资源标签。它可以用于标记和描述云资源，以便您更好地在云账号中组织和管理这些资源。您可以为此次部署中的 EMQX 资源打上至多 10 个标签。
 
-6. 点击 **下一步** 进入确认页面。检查配置无误后，点击 **前往部署**，查看部署指南。
+6. 点击 **下一步** 进入 **确认** 页面。检查配置无误后，点击 **前往部署**，查看 **部署指南**。
 
-7. 根据部署指南上的提示，下载并执行部署。
+7. 根据 **部署指南** 上的提示，下载并执行部署。
 
 
 ## 执行部署
 
-> 在执行部署前，请确保您已满足 [BYOC 部署前提条件](../deployments/byoc_prerequisite.md)。
+::: warning 
+在执行部署前，请确保您已满足 [BYOC 部署前提条件](../deployments/byoc_prerequisite.md)。
+:::
+准备一个可访问互联网的 Ubuntu 20.04 (AMD64) LTS 环境，根据网页 **部署指南** 中生成的操作步骤和命令执行部署。
 
-准备一个可访问互联网的 Ubuntu 20.04 (AMD64) LTS 环境，根据 [准备部署](#准备部署) 中生成的操作步骤进行操作。请依次复制文本框中的命令并将其粘贴到您的 Ubuntu 终端中。此命令包含您在设置页面中提供的值，以及系统预置的信息。
+::: tip
+请依次复制网页 **部署指南** 步骤中的命令并将其粘贴到您的 Ubuntu 命令行界面中。此命令包含您在设置页面中提供的值，以及系统预置的信息。
+:::
+
+操作步骤如下：
+
+1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+```bash
+wget -O create-byoc.tar.gz https://emqx-cloud-ami.oss-cn-shanghai.aliyuncs.com/byoc/aliyun_byoc_create.tar.gz
+```
+2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+```bash
+tar -zxvf create-byoc.tar.gz
+```
+3. 导航到解压后的文件夹目录下，根据以下命令，并修改对应参数的值，执行命令进行部署。
+
+```bash
+./byoc create \
+      --accessKey <Your AccessKey> \
+      --secretKey <Your SecretKey> \
+      --domain <Your Domain> \
+      --sslCertPath <Your Domain SSL Absolute Cert Path>  \
+      --emqxLicPath <Your EMQX License Absolute Path> \
+      --byocEndpoint https://cloud.emqx.com \
+      --byocKey abcdXXXXXXXXXX111
+```
 
 在执行`./byoc create`命令前，请填充您的参数后执行。参数释义如下：
 
@@ -46,7 +74,7 @@ EMQX Cloud BYOC 部署会在您自己的云基础设施中部署 EMQX 企业版�
 
 `--domain` 指定部署中 MQTT 服务的域名。您的 MQTT 设备将使用该域名访问到您的 MQTT 服务。
 
-`--sslCertPath` 域名 SSL 证书文件所在的绝对路径。请将证书文件提前复制到您的 Ubuntu 环境目录中。
+`--sslCertPath` 域名 TLS / SSL 证书文件所在的绝对路径。请将证书文件提前复制到您的 Ubuntu 环境目录中。
 
 `--emqxLicPath` EMQX Cloud BYOC 许可证文件所在的绝对路径。请将许可证文件提前复制到您的 Ubuntu 环境目录中。
 
@@ -54,20 +82,7 @@ EMQX Cloud BYOC 部署会在您自己的云基础设施中部署 EMQX 企业版�
 
 `--byocKey` 此次 BYOC 部署的认证密钥，用于 EMQX Cloud API 的安全认证。由 EMQX Cloud 控制台生成，请勿修改。
 
-示例：
-
-```bash
-./byoc create \
-    --accessKey LTAI5t7XXXXXXXXXXXX6A3923 \
-    --secretKey g3qQyYeqXXXXXXXXXXXXXLhXuXqN1d \
-    --domain myexample.mqttce.com \
-    --sslCertPath ～/mqttce.pem \
-    --emqxLicPath ~/byoc.lic \
-    --byocEndpoint https://cloud.emqx.com \
-    --byocKey aaabbbccc
-```
-
-该命令执行后，等待数分钟，出现以下文字，提示确认需要创建的云资源，输入“yes“回车后继续。
+该命令执行后，需等待数分钟，提示确认需要创建的云资源，输入“yes“回车后继续。
 
 ```bash
 Do you want to perform these actions?
@@ -77,7 +92,18 @@ Do you want to perform these actions?
   Enter a value: 
 ```
 
-当显示以下内容时，您需要根据提示，在您的 DNS 服务中添加一条域名解析记录，将部署的公网 IP 与您的域名进行绑定。当解析记录生效时，会显示 `HTTPS listener is ready`。
+## 添加 DNS 记录
+
+当 `./byoc create` 命令执行到最后阶段，将会显示以下内容。您可以在您的 DNS 服务中添加一条域名解析记录，将部署的公网 IP 与您的域名进行绑定。
+
+::: tip
+关于 DNS 和域名解析等基本概念，请参考 [DNS 概念](https://help.aliyun.com/document_detail/102237.html)。
+
+关于 DNS 域名解析服务，您可以选择主流云平台提供的 DNS 解析服务。以阿里云平台的云解析 DNS 服务为例，添加一条域名解析记录，操作步骤请参考 [添加网站解析](https://help.aliyun.com/document_detail/106535.html)。
+:::
+
+当解析记录生效时，会显示 `HTTPS listener is ready`。
+
 ```bash
 Apply complete! Resources: 30 added, 0 changed, 0 destroyed.
 
@@ -95,7 +121,8 @@ Checking if https://myexample.mqttce.com is resolved to the 120.55.12.49 of the 
 HTTPS listener is ready
 ```
 
-最后输出以下内容说明该部署执行成功。
+## 完成部署
+最终，命令行输出以下内容时，说明该部署执行成功。
 ```bash
 The deployment is successful! Here is the service information:
 --------------------------------------------------------
@@ -108,7 +135,7 @@ Thank you for choosing our service. Happy IoT!
 
 ## 部署概览
 
-完成部署后，回到`部署指南`页面，点击“完成部署”，将会跳转到我们的控制台页面，点击 BYOC 部署卡片进入概览页面，可获取到部署实时状态和连接信息：
+完成部署后，回到 **部署指南** 页面，点击 **完成部署**，将会跳转到我们的控制台页面，点击 BYOC 部署卡片进入概览页面，可获取到部署实时状态和连接信息：
 
    ![byoc](./_assets/byoc_deployment_console.png)
 
@@ -123,7 +150,7 @@ Thank you for choosing our service. Happy IoT!
 
 ### TLS/SSL 配置
 
-BYOC 提供 **自定义单向** TLS/SSL 认证，目前仅支持通过部署时指定 SSL 证书。SSL 证书支持 **自签名证书** 和 **CA 签名证书**。SSL 证书格式要求请参考专有版中 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。
+BYOC 提供 **自定义单向** TLS/SSL 认证，目前仅支持通过部署时指定 TLS/SSL 证书。TLS/SSL 证书支持 **自签名证书** 和 **CA 签名证书**。SSL 证书格式要求请参考专有版中 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。
 
 
 ### VPC 对等连接配置
