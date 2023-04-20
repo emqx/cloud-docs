@@ -127,21 +127,24 @@ In this case, the locally installed `MQTT.js` module cannot be loaded directly i
    ```js
    // render.js
    function onConnect() {
-     const { host, port, clientId, username, password } = connection
-     const connectUrl = `mqtt://${host.value}:${port.value}`
-     const options = {
-       keepalive: 30,
-       protocolId: 'MQTT',
-       clean: true,
-       reconnectPeriod: 1000,
-       connectTimeout: 30 * 1000,
-       rejectUnauthorized: false,
-       clientId,
-       username,
-       password,
-     }
-     console.log('connecting mqtt client')
-     window.electronAPI.onConnect(connectUrl, options)
+    const { protocol, host, port, clientId, username, password, path } = connection
+    let connectUrl = `${protocol.value}://${host.value}:${port.value}`
+    if (protocol.value === 'ws' || protocol.value === 'wss') {
+      connectUrl = connectUrl + path.value
+    }
+    const options = {
+      keepalive: 30,
+      protocolId: 'MQTT',
+      clean: true,
+      reconnectPeriod: 1000,
+      connectTimeout: 30 * 1000,
+      rejectUnauthorized: false,
+      clientId,
+      username,
+      password,
+    }
+    console.log('connecting mqtt client')
+    window.electronAPI.onConnect(connectUrl, options)
    }
    ```
 
@@ -164,7 +167,11 @@ This article will use the [free public MQTT broker](https://www.emqx.com/en/mqtt
 
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
+- SSL/TLS Port: **8883**
 - WebSocket Port: **8083**
+- WebSocket Secure Port: **8084**
+
+Here we use the mqtts or wss protocol with TLS one-way authentication,which only verifies the server's certificate and does not verify the client's certificate.If you require two-way authentication, please use TLS two-way authentication.
 
 To illustrate more intuitive, the key connection code for the example will be written in the renderer.js file. With the consideration of security, the installed MQTT module will be loaded via the require method of the Node.js API, in the preload.js file (using method 2 above). Also, this method injecting it in the global window object.
 
@@ -199,30 +206,30 @@ window.mqtt = mqtt
 // renderer.js
 const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 
-const host = 'mqtt://broker.emqx.io:1883'
+const { protocol, host, port, clientId, username, password, path } = connection
+  
+let connectUrl = `${protocol.value}://${host.value}:${port.value}`
+if (protocol.value === 'ws' || protocol.value === 'wss') {
+  connectUrl = connectUrl + path.value
+}
 
 const options = {
   keepalive: 30,
-  clientId: clientId,
   protocolId: 'MQTT',
   protocolVersion: 4,
   clean: true,
-  reconnectPeriod: 1000,
-  connectTimeout: 30 * 1000,
-  will: {
-    topic: 'WillMsg',
-    payload: 'Connection Closed abnormally..!',
-    qos: 0,
-    retain: false,
-  },
-  rejectUnauthorized: false,
+  connectTimeout: 30 * 1000, // ms
+  reconnectPeriod: 4000, // ms
+  clientId,
+  username, 
+  password
 }
 
 // Information about the mqtt module is available
 console.log(mqtt)
 
 console.log('connecting mqtt client')
-const client = mqtt.connect(host, options)
+const client = mqtt.connect(connectUrl, options)
 
 client.on('error', (err) => {
   console.log('Connection error: ', err)
@@ -265,6 +272,62 @@ The complete code is available here: [https://github.com/emqx/MQTT-Client-Exampl
 
 ### Key code
 
+Set the client ID, username, and password. The client ID needs to be guaranteed to be unique.
+
+<https://github.com/mqttjs/MQTT.js#mqttconnecturl-options>
+
+```javascript
+const clientId = "emqx_electron_" + Math.random().toString(16).substring(2, 8);
+const username = "emqx_test";
+const password = "emqx_test";
+```
+
+1. Using the mqtt protocol
+
+   ```javascript
+   const client = mqtt.connect("mqtt://broker.emqx.io:1883", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+2. Using the mqtts protocol
+
+   ```javascript
+   const client = mqtt.connect("mqtt://broker.emqx.io:8883", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+3. Using the ws protocol
+
+   ```javascript
+   const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+4. Using the wss protocol
+
+   ```javascript
+   const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+Complete connection establishment code
+
 ```javascript
 let client = null
 
@@ -273,19 +336,16 @@ const options = {
   protocolId: 'MQTT',
   protocolVersion: 4,
   clean: true,
-  reconnectPeriod: 1000,
-  connectTimeout: 30 * 1000,
-  will: {
-    topic: 'WillMsg',
-    payload: 'Connection Closed abnormally..!',
-    qos: 0,
-    retain: false,
-  },
+  connectTimeout: 30 * 1000, // ms
+  reconnectPeriod: 4000, // ms
 }
 
 function onConnect() {
-  const { host, port, clientId, username, password } = connection
-  const connectUrl = `mqtt://${host.value}:${port.value}`
+  const { protocol, host, port, clientId, username, password, path } = connection
+  let connectUrl = `${protocol.value}://${host.value}:${port.value}`
+  if (protocol.value === 'ws' || protocol.value === 'wss') {
+    connectUrl = connectUrl + path.value
+  }
   options.clientId =
     clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`
   options.username = username.value
@@ -306,7 +366,9 @@ function onConnect() {
 }
 ```
 
-### Subscribe to the topic
+#### Subscribe to the topic
+
+Set the topic to be subscribed to and its corresponding [QoS level](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos)(Optional) and call the MQTT. js `subscribe` method for subscription operations.
 
 ```javascript
 function onSub() {
@@ -327,7 +389,11 @@ function onSub() {
 }
 ```
 
-### Unsubscribe
+#### Unsubscribe
+
+When canceling a subscription, it is necessary to pass on topics that no longer require subscription and corresponding QoS (optional).
+
+<https://github.com/mqttjs/MQTT.js#mqttclientunsubscribetopictopic-array-options-callback>
 
 ```javascript
 function onUnsub() {
@@ -344,7 +410,11 @@ function onUnsub() {
 }
 ```
 
-### Publish messages
+#### Publish messages
+
+When publishing a message, it is necessary to inform MQTT Broker of the corresponding topic and message content.
+
+<https://github.com/mqttjs/MQTT.js#mqttclientpublishtopic-message-options-callback>
 
 ```javascript
 function onSend() {
@@ -358,7 +428,7 @@ function onSend() {
 }
 ```
 
-### Receive messages
+#### Receive messages
 
 ```javascript
 // In the onConnect function
@@ -370,7 +440,11 @@ client.on('message', (topic, message) => {
 })
 ```
 
-### Disconnect
+#### Disconnect
+
+Active disconnection by the client
+
+<https://github.com/mqttjs/MQTT.js#mqttclientendforce-options-callback>
 
 ```javascript
 function onDisconnect() {

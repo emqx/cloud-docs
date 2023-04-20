@@ -127,21 +127,25 @@ mainWindow.webContents.openDevTools()
    ```js
    // render.js
    function onConnect() {
-     const { host, port, clientId, username, password } = connection
-     const connectUrl = `mqtt://${host.value}:${port.value}`
-     const options = {
-       keepalive: 30,
-       protocolId: 'MQTT',
-       clean: true,
-       reconnectPeriod: 1000,
-       connectTimeout: 30 * 1000,
-       rejectUnauthorized: false,
-       clientId,
-       username,
-       password,
-     }
-     console.log('connecting mqtt client')
-     window.electronAPI.onConnect(connectUrl, options)
+    const { protocol, host, port, clientId, username, password, path } = connection
+    let connectUrl = `${protocol.value}://${host.value}:${port.value}`
+    if (protocol.value === 'ws' || protocol.value === 'wss') {
+      connectUrl = connectUrl + path.value
+    }
+   
+    const options = {
+      keepalive: 30,
+      protocolId: 'MQTT',
+      clean: true,
+      reconnectPeriod: 1000,
+      connectTimeout: 30 * 1000,
+      rejectUnauthorized: false,
+      clientId,
+      username,
+      password,
+    }
+    console.log('connecting mqtt client')
+    window.electronAPI.onConnect(connectUrl, options)
    }
    ```
 
@@ -162,9 +166,13 @@ mainWindow.webContents.openDevTools()
 
 本文将使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 
-- Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
+- Broker: **broker.emqx.io**
 - TCP Port: **1883**
+- SSL/TLS Port: **8883**
 - WebSocket Port: **8083**
+- WebSocket Secure Port: **8084**
+
+在本例子中使用 `mqtts` 、 `wss` 协议连接时，使用 TLS 单向认证，即只需要验证服务端证书而不需要验证客户端证书。如果您需要双向验证身份，请使用 TLS 双向认证。
 
 为更直观表达，示例的关键连接代码将在 `renderer.js` 文件中编写，考虑到安全问题，将使用上文中如何引入 `MQTT.js` 里的方法 2，在 `preload.js` 文件中通过 Node.js API 的 `require` 方法加载已安装的 MQTT 模块，并挂载到全局的 `window` 对象中。
 
@@ -199,30 +207,30 @@ window.mqtt = mqtt
 // renderer.js
 const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 
-const host = 'mqtt://broker.emqx.io:1883'
+const { protocol, host, port, clientId, username, password, path } = connection
+  
+let connectUrl = `${protocol.value}://${host.value}:${port.value}`
+if (protocol.value === 'ws' || protocol.value === 'wss') {
+  connectUrl = connectUrl + path.value
+}
 
 const options = {
   keepalive: 30,
-  clientId: clientId,
   protocolId: 'MQTT',
   protocolVersion: 4,
   clean: true,
-  reconnectPeriod: 1000,
-  connectTimeout: 30 * 1000,
-  will: {
-    topic: 'WillMsg',
-    payload: 'Connection Closed abnormally..!',
-    qos: 0,
-    retain: false,
-  },
-  rejectUnauthorized: false,
+  connectTimeout: 30 * 1000, // ms
+  reconnectPeriod: 4000, // ms
+  clientId,
+  username, 
+  password
 }
 
 // 可查看到 mqtt 模块的信息
 console.log(mqtt)
 
 console.log('connecting mqtt client')
-const client = mqtt.connect(host, options)
+const client = mqtt.connect(connectUrl, options)
 
 client.on('error', (err) => {
   console.log('Connection error: ', err)
@@ -265,6 +273,64 @@ MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简
 
 ### 连接关键代码
 
+#### 建立 MQTT 连接
+
+设置客户端 ID、用户名及密码。客户端 ID 需要被保证是唯一的。
+
+<https://github.com/mqttjs/MQTT.js#mqttconnecturl-options>
+
+```javascript
+const clientId = "emqx_electron_" + Math.random().toString(16).substring(2, 8);
+const username = "emqx_test";
+const password = "emqx_test";
+```
+
+1. 使用mqtt协议
+
+   ```javascript
+   const client = mqtt.connect("mqtt://broker.emqx.io:1883", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+2. 使用mqtts协议
+
+   ```javascript
+   const client = mqtt.connect("mqtt://broker.emqx.io:8883", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+3. 使用ws协议
+
+   ```javascript
+   const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+4. 使用wss协议
+
+   ```javascript
+   const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
+     clientId,
+     username,
+     password,
+     // ...other options
+   });
+   ```
+
+完整的建立连接代码
+
 ```javascript
 let client = null
 
@@ -273,19 +339,16 @@ const options = {
   protocolId: 'MQTT',
   protocolVersion: 4,
   clean: true,
-  reconnectPeriod: 1000,
-  connectTimeout: 30 * 1000,
-  will: {
-    topic: 'WillMsg',
-    payload: 'Connection Closed abnormally..!',
-    qos: 0,
-    retain: false,
-  },
+  connectTimeout: 30 * 1000, // ms
+  reconnectPeriod: 4000, // ms
 }
 
 function onConnect() {
-  const { host, port, clientId, username, password } = connection
-  const connectUrl = `mqtt://${host.value}:${port.value}`
+  const { protocol, host, port, clientId, username, password, path } = connection
+  let connectUrl = `${protocol.value}://${host.value}:${port.value}`
+  if (protocol.value === 'ws' || protocol.value === 'wss') {
+    connectUrl = connectUrl + path.value
+  }
   options.clientId =
     clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`
   options.username = username.value
@@ -306,7 +369,13 @@ function onConnect() {
 }
 ```
 
-### 订阅主题
+
+
+#### 订阅主题
+
+设置将要订阅的主题及对应 [QoS 等级](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos)（可选），并调用 MQTT.js `subscribe` 方法进行订阅操作。
+
+<https://github.com/mqttjs/MQTT.js#mqttclientsubscribetopictopic-arraytopic-object-options-callback>
 
 ```javascript
 function onSub() {
@@ -327,7 +396,11 @@ function onSub() {
 }
 ```
 
-### 取消订阅
+#### 取消订阅
+
+取消订阅的时候，需要传递不再需要订阅的主题和对应的 QoS（可选）。
+
+<https://github.com/mqttjs/MQTT.js#mqttclientunsubscribetopictopic-array-options-callback>
 
 ```javascript
 function onUnsub() {
@@ -344,7 +417,11 @@ function onUnsub() {
 }
 ```
 
-### 消息发布
+#### 消息发布
+
+发布消息时需要告知 MQTT Broker 对应的主题及消息内容。
+
+<https://github.com/mqttjs/MQTT.js#mqttclientpublishtopic-message-options-callback>
 
 ```javascript
 function onSend() {
@@ -358,7 +435,7 @@ function onSend() {
 }
 ```
 
-### 接收消息
+#### 接收消息
 
 ```javascript
 // 在 onConnect 函数中
@@ -371,7 +448,11 @@ client.on('message', (topic, message) => {
 })
 ```
 
-### 断开连接
+#### 断开连接
+
+客户端主动断开连接
+
+<https://github.com/mqttjs/MQTT.js#mqttclientendforce-options-callback>
 
 ```javascript
 function onDisconnect() {
