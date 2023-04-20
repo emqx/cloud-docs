@@ -20,7 +20,7 @@ Before connecting the ESP32 client to the MQTT Broker, you need to get the broke
 2. You can [create a deployment](../create/overview.md) as well. Find connection information in deployment overview. Make sure the deployment is running. Use the TCP port or TLS/SSL port to test the connection to the MQTT server.
 3. If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
 
-### Install Client in Arduino IDE
+### Arduino IDE
 This article uses the [Arduino IDE](https://www.arduino.cc/en/software) as the code editor and uploader. The open-source Arduino Software (IDE) makes it easy to write code and upload it to the board. This software can be used with any Arduino board.
 
 In Arduino IDE, complete the following installations:
@@ -91,7 +91,7 @@ while (!client.connected()) {
 }
 ```
 
-5. After the MQTT server is successfully connected, the ESP32 client will publish messages on topic `ESP32/test` to the MQTT server and subscribe to messages on topic `esp32/test`.
+5. After the MQTT server is successfully connected, ESP32 will publish messages on topic `esp32/test` to the MQTT server and subscribe to messages on topic `esp32/test`.
 
 ```c
 // publish and subscribe
