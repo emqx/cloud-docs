@@ -6,10 +6,18 @@
 
 ## 前提条件
 
-> 1. 已经创建了部署，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
-> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+### 获得 MQTT Broker
+1. 使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 
-本文中使用 [Arduino IDE](https://www.arduino.cc/en/guide/environment?setlang=cn)作为代码编辑和上传，ArduinoIDE 包含了一个用于写代码的文本编辑器、一个消息区、一个文本控制台以及一个带有常用功能按钮和文本菜单的工具栏。软件连接 Arduino 和 Genuino 之后，能给所连接的控制板上传程序，还能与控制板相互通信。
+- Broker: **broker.emqx.io**
+- TCP Port: **1883**
+- TLS/SSL Port: **8883**
+
+2. 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 TLS/SSL 端口  测试连接到 MQTT 服务器。
+3. 如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)，在部署控制台`认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+
+### Arduino IDE
+本文中使用 [Arduino IDE](https://www.arduino.cc/en/guide/environment?setlang=cn)作为代码编辑和上传，Arduino 集成开发环境（或是 ArduinoIDE）包含了一个用于写代码的文本编辑器、一个消息区、一个文本控制台以及一个带有常用功能按钮和文本菜单的工具栏。软件连接 Arduino 和 Genuino 之后，能给所连接的控制板上传程序，还能与控制板相互通信。
 
 ## 安装依赖
 
@@ -25,15 +33,6 @@
 
 ## 连接 MQTT 服务器
 
-
-本文将使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
-
-- Broker: **broker.emqx.io**
-- TCP Port: **1883**
-- SSL/TLS Port: **8883**
-
-> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口为 15xxx，请确认好端口。
-
 本文将分别介绍通过 TCP 端口和 SSL/TLS 端口来连接，对于使用 Serverless 部署的用户，请查看 SSL/TLS 端口连接示例。TCP 端口和 SSL/TLS 端口连接在连接设置部分略有不同，发布和订阅部分代码相同。
 
 ### 通过 TCP 端口连接
@@ -48,7 +47,9 @@
 
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
-   如果您在使用 EMQX Cloud, 请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。
+
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
+
 
 ```c
 // WiFi
@@ -95,12 +96,13 @@ while (!client.connected()) {
 }
 ```
 
-5. MQTT 服务器连接成功后，ESP32 将向 MQTT 服务器 esp/test 发布消息和订阅 `esp/test` 主题消息。
+5. MQTT 服务器连接成功后，ESP32 将向 MQTT 服务器发布消息和订阅 `esp32/test` 主题消息。
 
 ```c
 // publish and subscribe
-client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish to the topic
-client.subscribe(topic); // subscribe from the topic
+client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
+client.subscribe(topic); // subscribe message from the topic
+
 ```
 
 6. 设置回调函数将主题名称打印到串行端口并打印从 `esp32/test` 主题接收的消息。
@@ -163,9 +165,9 @@ void setup() {
          delay(2000);
      }
  }
- // publish and subscribe
- client.publish(topic, "Hi EMQX I'm ESP32 ^^");
- client.subscribe(topic);
+    // publish and subscribe
+    client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
+    client.subscribe(topic); // subscribe message from the topic
 }
 
 void callback(char *topic, byte *payload, unsigned int length) {
@@ -197,7 +199,9 @@ TCP 端口和 TLS/SSL 端口连接在连接设置部分略有不同，发布和�
 
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
-   如果您在使用 EMQX Cloud, 请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。
+
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
+
 
 ```c
 // WiFi
@@ -240,8 +244,10 @@ const char * ca_cert = \
 "CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4="\
 "-----END CERTIFICATE-----\n";
 
-WiFiClientSecure espClient; //
-PubSubClient client(espClient); //
+// init secure wifi client
+WiFiClientSecure espClient;
+// use wifi client to init mqtt client
+PubSubClient client(espClient); 
 ```
 
 4. 打开串行连接，以便于输出程序的结果并且连接到 Wi-Fi 网络。
@@ -284,8 +290,9 @@ while (!client.connected()) {
 
 ```c
 // publish and subscribe
-client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish to the topic
-client.subscribe(topic); // subscribe from the topic
+client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
+client.subscribe(topic); // subscribe message from the topic
+
 ```
 
 7. 设置回调函数将主题名称打印到串行端口并打印从 `esp32/test` 主题接收的消息。
@@ -347,8 +354,10 @@ const char* ca_cert= \
 "-----END CERTIFICATE-----\n";
 
 
+// init secure wifi client
 WiFiClientSecure espClient;
-PubSubClient client(espClient);
+// use wifi client to init mqtt client
+PubSubClient client(espClient); 
 
 
 void setup() {
@@ -381,8 +390,9 @@ void setup() {
         }
     }
     // publish and subscribe
-    client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish to the topic
-    client.subscribe(topic); // subscribe from the topic
+    client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
+    client.subscribe(topic); // subscribe message from the topic
+
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
