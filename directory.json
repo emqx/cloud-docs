@@ -24,7 +24,7 @@
     },
     {
       "title": "快速入门",
-      "path" : "quick_start/introduction",
+      "path": "quick_start/introduction",
       "children": [
         {
           "title": "使用 MQTT X 连接/验证部署",
@@ -34,8 +34,8 @@
     },
     {
       "title": "创建部署",
-      "path" : "create/overview",
-      "children" : [
+      "path": "create/overview",
+      "children": [
         {
           "title": "创建 Serverless 部署",
           "path": "create/serverless"
@@ -43,7 +43,7 @@
         {
           "title": "创建专有版部署",
           "path": "create/dedicated",
-          "children" : [
+          "children": [
             {
               "title": "TLS/SSL 设置",
               "path": "deployments/tls_ssl"
@@ -62,7 +62,7 @@
     },
     {
       "title": "项目和用户",
-      "path" : "feature/overview",
+      "path": "feature/overview",
       "children": [
         {
           "title": "项目中心",
@@ -88,11 +88,11 @@
     },
     {
       "title": "认证和访问控制",
-      "path" : "deployments/auth_overview",
+      "path": "deployments/auth_overview",
       "children": [
         {
           "title": "Serverless",
-          "children" : [
+          "children": [
             {
               "title": "认证",
               "path": "deployments/auth_serverless"
@@ -105,7 +105,7 @@
         },
         {
           "title": "专有版",
-          "children" : [
+          "children": [
             {
               "title": "认证",
               "path": "deployments/auth_dedicated"
@@ -144,7 +144,7 @@
     },
     {
       "title": "运维与监控",
-      "path" : "deployments/operation_overview",
+      "path": "deployments/operation_overview",
       "children": [
         {
           "title": "监控",
@@ -178,7 +178,7 @@
     },
     {
       "title": "接入客户端/应用",
-      "path" : "connect_to_deployments/overview",
+      "path": "connect_to_deployments/overview",
       "children": [
         {
           "title": "Serverless 连接指引",
@@ -251,6 +251,10 @@
         {
           "title": "连接 MQTT.fx",
           "path": "connect_to_deployments/mqttfx"
+        },
+        {
+          "title": "MQTT 客户端错误码",
+          "path": "connect_to_deployments/mqtt_client_error_codes"
         }
       ]
     },
@@ -432,8 +436,7 @@
         },
         {
           "title": "影子服务",
-          "children": 
-          [
+          "children": [
             {
               "title": "服务概览",
               "path": "shadow_service/overview"
@@ -558,7 +561,7 @@
     },
     {
       "title": "Introduction",
-      "path" : "overview"
+      "path": "overview"
     },
     {
       "title": "Plans and Pricing",
@@ -576,7 +579,7 @@
     },
     {
       "title": "Get Started",
-      "path" : "quick_start/introduction",
+      "path": "quick_start/introduction",
       "children": [
         {
           "title": "Use MQTT X to Test Connection",
@@ -586,8 +589,8 @@
     },
     {
       "title": "Create Deployment",
-      "path" : "create/overview",
-      "children" : [
+      "path": "create/overview",
+      "children": [
         {
           "title": "Create Serverless Deployment",
           "path": "create/serverless"
@@ -595,7 +598,7 @@
         {
           "title": "Create Dedicated Deployment",
           "path": "create/dedicated",
-          "children" : [
+          "children": [
             {
               "title": "TLS/SSL",
               "path": "deployments/tls_ssl"
@@ -614,7 +617,7 @@
     },
     {
       "title": "Project and Account",
-      "path" : "feature/overview",
+      "path": "feature/overview",
       "children": [
         {
           "title": "Project Center",
@@ -640,11 +643,11 @@
     },
     {
       "title": "Authentication and ACL",
-      "path" : "deployments/auth_overview",
+      "path": "deployments/auth_overview",
       "children": [
         {
           "title": "Serverless Plan",
-          "children" : [
+          "children": [
             {
               "title": "Authentication",
               "path": "deployments/auth_serverless"
@@ -657,7 +660,7 @@
         },
         {
           "title": "Dedicated Plan",
-          "children" : [
+          "children": [
             {
               "title": "Authentication",
               "path": "deployments/auth_dedicated"
@@ -696,7 +699,7 @@
     },
     {
       "title": "Metrics & Monitors",
-      "path" : "deployments/operation_overview",
+      "path": "deployments/operation_overview",
       "children": [
         {
           "title": "Monitors",
@@ -730,7 +733,7 @@
     },
     {
       "title": "Connection with Clients/Applications",
-      "path" : "connect_to_deployments/overview",
+      "path": "connect_to_deployments/overview",
       "children": [
         {
           "title": "Serverless connection guide",
@@ -803,6 +806,10 @@
         {
           "title": "Connect with openHAB",
           "path": "connect_to_deployments/openhab"
+        },
+        {
+          "title": "MQTT Client Error Codes",
+          "path": "connect_to_deployments/mqtt_client_error_codes"
         }
       ]
     },
@@ -918,7 +925,7 @@
     },
     {
       "title": "Billing",
-      "path" : "billing/overview",
+      "path": "billing/overview",
       "children": [
         {
           "title": "Billing Overview",
@@ -948,7 +955,7 @@
     },
     {
       "title": "Value Added Services",
-      "path" : "vas/vas-intro",
+      "path": "vas/vas-intro",
       "children": [
         {
           "title": "VAS Billing",
@@ -963,7 +970,7 @@
           "path": "vas/intranet-lb"
         },
         {
-          "title" : "Shadow Service",
+          "title": "Shadow Service",
           "children": [
             {
               "title": "Overview",
@@ -1008,7 +1015,7 @@
     },
     {
       "title": "API",
-      "path" : "api/api_overview",
+      "path": "api/api_overview",
       "children": [
         {
           "title": "Authentication Management",
