@@ -10,13 +10,17 @@
 
 ## 账号准备
 
-EMQX Cloud BYOC 将在您的云账号中创建部署，如您还没有对应公有云的账号，可按照云平台官方文档创建账号：[创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)。目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以提 [工单](../feature/tickets.md) 或 邮件（cloud-support@emqx.io）联系我们。
+EMQX Cloud BYOC 将在您的云账号中创建部署，如您还没有对应公有云的账号，可按照云平台官方文档创建账号：
+
+- [创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)
+  
+目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以提 [工单](../feature/tickets.md) 或 邮件（cloud-support@emqx.io）联系我们。
 
 | 平台   | 区域                                 |
 | ------ | ------------------------------------ |
 | 阿里云 | 北京，上海，深圳，杭州，张家口，成都 |
 
-此外，您还需要 EMQX Cloud 账号完成部署，如尚未创建账号，请前往 [EMQX Cloud 账号申请页面](https://accounts-zh.emqx.com/signup) 申请账号。
+此外，您还需要 EMQX Cloud 账号完成部署，如尚未注册，请前往 [EMQX Cloud 账号注册页面](https://accounts-zh.emqx.com/signup) 注册账号。
 
 ## 资源与权限
 
@@ -24,7 +28,11 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 
 ### 资源配额
 
-下表为 EMQX Cloud BYOC 部署所需的云资源与服务。如当前账号中资源不足，请联系云账号管理员增加相关服务配额。注：您可在 [配额中心控制台](https://quotas.console.aliyun.com/products) 中快速查看资源与服务的使用情况和配额。
+下表为 EMQX Cloud BYOC 部署所需的云资源与服务。如当前账号中资源不足，请联系云账号管理员增加相关服务配额。
+
+::: tip
+在阿里云平台，您可在 [配额中心控制台](https://quotas.console.aliyun.com/products) 中快速查看资源与服务的使用情况和配额。
+:::
 
 | 资源与服务           | 部署所需数量 |
 |-----------------|--------|
@@ -45,7 +53,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 
 ### 阿里云 RAM 权限
 
-使用阿里云主账户创建创建一个新的 RAM 用户，并为其分配足够的权限，用于创建 BYOC 部署。您可以使用我们提供的权限策略示例作为参考。
+使用阿里云主账户创建创建一个新的 RAM 用户，并为其分配足够的权限策略，用于创建 BYOC 部署。您可以使用我们提供的权限策略示例作为参考。
 
 ```bash
 {
@@ -152,7 +160,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 
 ## 域名及证书
 
-提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书。我们支持自定义单向 TLS/SSL 认证，并且只支持在部署时指定 TLS/SSL 证书。证书可以是自签名证书或 CA 签名证书。关于 SSL 证书格式要求，请参考 [TLS/SSL 配置 - 证书要求](https://chat.openai.com/deployments/tls_ssl.md#证书要求)。
+提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书。我们支持自定义单向 TLS/SSL 认证，并且只支持在部署时指定 TLS/SSL 证书。证书可以是自签名证书或 CA 签名证书。关于 SSL 证书格式要求，请参考 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。
 
 ## BYOC 许可证
 
