@@ -50,7 +50,7 @@
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
 
-> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。
 
 
 ```c
