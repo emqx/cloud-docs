@@ -1,17 +1,26 @@
-# 使用 Electron SDK 连接
+# 使用 Electron 通过 MQTT.js 连接到部署
 
 本文主要介绍如何在 Electron 项目中使用 [MQTT](https://www.emqx.com/zh/mqtt)，完成一个简单的 MQTT 桌面客户端并实现客户端与 MQTT 服务器的连接、订阅、取消订阅、收发消息等功能。
+
+## 前置准备
+
+### 获得 MQTT 服务器
+
+- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh/cloud)创建。服务器连接信息如下：
+
+  - 连接地址: **broker.emqx.io**
+  - TCP 端口: **1883**
+  - TCP SSL/TLS 端口：**8883**
+  - WebSocket 端口: **8083**
+  - WebSocket TLS/SSL 端口: **8084**
+
+- 您也可以自己[创建 EMQX Cloud 部署](../create/overview.md)，待部署状态为**运行中**，点击部署卡片进入概览页面便可获取相关连接信息。此外，您还需在部署的 `认证鉴权` > `认证` 页面中设置用户名和密码，用于后续的连接验证。
+
+### 新建项目
 
 [Electron](https://www.electronjs.org/) 是由 GitHub 开发的一个开源框架。它允许使用 `Node.js`（作为后端）和 [Chromium](https://zh.wikipedia.org/wiki/Chromium)（作为前端）完成桌面 GUI 应用程序的开发。Electron 现已被多个开源 Web 应用程序应用于跨平台的桌面端软件开发，著名项目包括 GitHub 的 Atom，微软的 Visual Studio Code，Slack 的桌面应用等。[^1]
 
 一个基础的 Electron 包含三个文件：`package.json`（元数据）、`main.js`（代码）和 `index.html`（图形用户界面）。框架由 Electron 可执行文件（Windows 中为 electron.exe、macOS 中为 electron.app、Linux 中为 electron）提供。开发者可以自行添加标志、自定义图标、重命名或编辑 Electron 可执行文件。
-
-## 前提条件
-
-> 1. 已经创建了部署，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
-> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
-
-## 新建项目
 
 新建项目的方式有很多种，以下简单列举几种：
 
@@ -86,7 +95,7 @@ npm install mqtt --save
 mainWindow.webContents.openDevTools()
 ```
 
-如此时未使用前端构建工具对前端页面进行打包构建的话，无法直接在 `renderer.js` 中加载到本地已经安装的 `MQTT.js` 模块。除使用构建工具方法外，还提供另外两种解决方法：
+如此时未使用前端构建工具对前端页面进行打包构建的话，无法直接在 `renderer.js` 中加载到本地已经安装的 `MQTT.js` 模块。除使用构建工具方法外，还提供另外三种解决方法：
 
 1. 可以在 webPreferences 中设置 nodeIntegration 为 true，当有此属性时, `webview` 中将具有 Node 集成, 并且可以使用像 `require` 和 `process` 这样的 node APIs 去访问低层系统资源。 Node 集成默认是禁用的。
 
@@ -105,74 +114,7 @@ mainWindow.webContents.openDevTools()
 
 3. 可以在 main 主进程中引入 `MQTT.js` 并进行连接操作，使用 Electron 的 IPC 机制来实现不同的进程间相互通信。在 Electron 中，主进程使用 [`ipcMain`](https://www.electronjs.org/zh/docs/latest/api/ipc-main)，渲染进程使用 [`ipcRenderer`](https://www.electronjs.org/zh/docs/latest/api/ipc-renderer) 模块，通过开发人员定义的“通道”传递消息来进行通信。 这些通道是 **任意** （您可以随意命名它们）和 **双向** （您可以在两个模块中使用相同的通道名称）的。欲了解用法示例，请查看[进程间通信（IPC）教程](https://www.electronjs.org/zh/docs/latest/tutorial/ipc)。
 
-   例如主进程中，通过 ipcMain 监听连接操作，当用户点击连接时，render 进程中收集相应的配置信息通过 ipcRenderer 传递到主进程从而进行连接：
-
-   - 在主进程中接收渲染进程发送过来的连接数据，进行 MQTT 连接：
-
-   ```js
-   // main.js
-   ipcMain.on('onConnect', (event, connectUrl, connectOpt) => {
-     client = mqtt.connect(connectUrl, connectOpt)
-     client.on('connect', () => {
-       console.log('Client connected:' + options.clientId)
-     })
-     client.on('message', (topic, message) => {
-       console.log(`${message.toString()}\nOn topic: ${topic}`)
-     })
-   })
-   ```
-
-   - 在渲染进程中实现点击连接，从页面中获取连接数据并发送到主进程：
-
-   ```js
-   // render.js
-   function onConnect() {
-    const { protocol, host, port, clientId, username, password, path } = connection
-    let connectUrl = `${protocol.value}://${host.value}:${port.value}`
-    if (protocol.value === 'ws' || protocol.value === 'wss') {
-      connectUrl = connectUrl + path.value
-    }
-   
-    const options = {
-      keepalive: 30,
-      protocolId: 'MQTT',
-      clean: true,
-      reconnectPeriod: 1000,
-      connectTimeout: 30 * 1000,
-      rejectUnauthorized: false,
-      clientId,
-      username,
-      password,
-    }
-    console.log('connecting mqtt client')
-    window.electronAPI.onConnect(connectUrl, options)
-   }
-   ```
-
-   - 在 preload 脚本中，实现进程间 IPC 通讯的 API 方法，建立通道：
-
-   ```js
-   // preload.js
-   contextBridge.exposeInMainWorld('electronAPI', {
-     onConnect: (data) => ipcRenderer.send('onConnect', data),
-   })
-   ```
-
 ## 连接
-
-> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
-
-### 连接设置
-
-本文将使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
-
-- Broker: **broker.emqx.io**
-- TCP Port: **1883**
-- SSL/TLS Port: **8883**
-- WebSocket Port: **8083**
-- WebSocket Secure Port: **8084**
-
-在本例子中使用 `mqtts` 、 `wss` 协议连接时，使用 TLS 单向认证，即只需要验证服务端证书而不需要验证客户端证书。如果您需要双向验证身份，请使用 TLS 双向认证。
 
 为更直观表达，示例的关键连接代码将在 `renderer.js` 文件中编写，考虑到安全问题，将使用上文中如何引入 `MQTT.js` 里的方法 2，在 `preload.js` 文件中通过 Node.js API 的 `require` 方法加载已安装的 MQTT 模块，并挂载到全局的 `window` 对象中。
 
@@ -201,177 +143,79 @@ const mqtt = require('mqtt')
 window.mqtt = mqtt
 ```
 
-- 配置测试 MQTT 模块
+### 通过 TCP 端口连接
 
-```javascript
-// renderer.js
-const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
+通过以下代码设置客户端 ID、用户名及密码，客户端 ID 应具有唯一性。
 
-const { protocol, host, port, clientId, username, password, path } = connection
-  
-let connectUrl = `${protocol.value}://${host.value}:${port.value}`
-if (protocol.value === 'ws' || protocol.value === 'wss') {
-  connectUrl = connectUrl + path.value
-}
-
-const options = {
-  keepalive: 30,
-  protocolId: 'MQTT',
-  protocolVersion: 4,
-  clean: true,
-  connectTimeout: 30 * 1000, // ms
-  reconnectPeriod: 4000, // ms
-  clientId,
-  username, 
-  password
-}
-
-// 可查看到 mqtt 模块的信息
-console.log(mqtt)
-
-console.log('connecting mqtt client')
-const client = mqtt.connect(connectUrl, options)
-
-client.on('error', (err) => {
-  console.log('Connection error: ', err)
-  client.end()
-})
-
-client.on('reconnect', () => {
-  console.log('Reconnecting...')
-})
-
-client.on('connect', () => {
-  console.log('Client connected:' + clientId)
-  client.subscribe('testtopic/electron', {
-    qos: 0,
-  })
-  client.publish('testtopic/electron', 'Electron connection demo...!', {
-    qos: 0,
-    retain: false,
-  })
-})
-
-client.on('message', (topic, message, packet) => {
-  console.log(
-    'Received Message: ' + message.toString() + '\nOn topic: ' + topic
-  )
-})
-```
-
-可以看到，在编写完以上代码后并且运行该项目后可以在控制台看到以下内容输出：
-
-![electronconsole.png](https://assets.emqx.com/images/eb708f312630c441bd6f2453af36372e.png)
-
-MQTT 模块运行正常。在设置好模块后，我们就可以编写一个简单的 UI 界面来手动输入 MQTT 连接时所需要的配置等，并在点击连接按钮后可以连接到 MQTT 服务器，此外还可以断开连接，订阅主题，收发消息等。
-
-### 应用程序界面
-
-![electronui.png](https://assets.emqx.com/images/f628816b73b31e6d3c695cd39c439ca6.png)
-
-项目完整代码请见：[https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron)。
-
-### 连接关键代码
-
-#### 建立 MQTT 连接
-
-设置客户端 ID、用户名及密码。客户端 ID 需要被保证是唯一的。
-
-<https://github.com/mqttjs/MQTT.js#mqttconnecturl-options>
-
-```javascript
-const clientId = "emqx_electron_" + Math.random().toString(16).substring(2, 8);
+```js
+const clientId = "emqx_vue3_" + Math.random().toString(16).substring(2, 8);
 const username = "emqx_test";
 const password = "emqx_test";
 ```
 
-1. 使用mqtt协议
+通过以下代码建立客户端与 MQTT Broker 的连接。
 
-   ```javascript
-   const client = mqtt.connect("mqtt://broker.emqx.io:1883", {
-     clientId,
-     username,
-     password,
-     // ...other options
-   });
-   ```
+```js
+const client = mqtt.connect("mqtt://broker.emqx.io:1883", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
 
-2. 使用mqtts协议
+### 通过 TCP TLS/SSL 端口连接
 
-   ```javascript
-   const client = mqtt.connect("mqtt://broker.emqx.io:8883", {
-     clientId,
-     username,
-     password,
-     // ...other options
-   });
-   ```
+启用 TLS/SSL 加密时，连接[参数选项](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options)与通过 TCP 端口建立连接一致，您只需注意将协议改为 `mqtts`，且匹配正确的端口号即可。
 
-3. 使用ws协议
+通过以下代码建立客户端与 MQTT Broker 的连接。
 
-   ```javascript
-   const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
-     clientId,
-     username,
-     password,
-     // ...other options
-   });
-   ```
+```js
+const client = mqtt.connect("mqtts://broker.emqx.io:8883", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
 
-4. 使用wss协议
+### 通过 WebSocket 端口连接
 
-   ```javascript
-   const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
-     clientId,
-     username,
-     password,
-     // ...other options
-   });
-   ```
+MQTT-WebSocket 统一使用 `/path` 作为连接路径，连接时需指明，而 EMQX Broker 使用的路径为 `/mqtt`。
 
-完整的建立连接代码
+因此使用 WebScoket 连接时，除了需要修改端口号以及切换协议为 `ws` 之外，您还需要加上 `/mqtt` 路径。
 
-```javascript
-let client = null
+通过以下代码建立客户端与 MQTT Broker 的连接。
 
-const options = {
-  keepalive: 30,
-  protocolId: 'MQTT',
-  protocolVersion: 4,
-  clean: true,
-  connectTimeout: 30 * 1000, // ms
-  reconnectPeriod: 4000, // ms
-}
+```js
+const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
 
-function onConnect() {
-  const { protocol, host, port, clientId, username, password, path } = connection
-  let connectUrl = `${protocol.value}://${host.value}:${port.value}`
-  if (protocol.value === 'ws' || protocol.value === 'wss') {
-    connectUrl = connectUrl + path.value
-  }
-  options.clientId =
-    clientId.value || `mqttjs_${Math.random().toString(16).substr(2, 8)}`
-  options.username = username.value
-  options.password = password.value
-  console.log('connecting mqtt client')
-  client = mqtt.connect(connectUrl, options)
-  client.on('error', (err) => {
-    console.error('Connection error: ', err)
-    client.end()
-  })
-  client.on('reconnect', () => {
-    console.log('Reconnecting...')
-  })
-  client.on('connect', () => {
-    console.log('Client connected:' + options.clientId)
-    connectBtn.innerText = 'Connected'
-  })
-}
+### 通过 WebSocket TLS/SSL 端口连接
+
+启用 TLS/SSL 加密时，连接[参数选项](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options)与通过 WebSocket 端口建立连接一致，您只需注意将协议改为 `wss`，且匹配正确的端口号即可。
+
+通过以下代码建立客户端与 MQTT Broker 的连接。
+
+```js
+const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
 ```
 
 
 
-#### 订阅主题
+## 订阅和发布
+
+### 订阅主题
 
 设置将要订阅的主题及对应 [QoS 等级](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos)（可选），并调用 MQTT.js `subscribe` 方法进行订阅操作。
 
@@ -396,7 +240,7 @@ function onSub() {
 }
 ```
 
-#### 取消订阅
+### 取消订阅
 
 取消订阅的时候，需要传递不再需要订阅的主题和对应的 QoS（可选）。
 
@@ -417,7 +261,7 @@ function onUnsub() {
 }
 ```
 
-#### 消息发布
+### 消息发布
 
 发布消息时需要告知 MQTT Broker 对应的主题及消息内容。
 
@@ -435,7 +279,7 @@ function onSend() {
 }
 ```
 
-#### 接收消息
+### 接收消息
 
 ```javascript
 // 在 onConnect 函数中
@@ -448,7 +292,7 @@ client.on('message', (topic, message) => {
 })
 ```
 
-#### 断开连接
+### 断开连接
 
 客户端主动断开连接
 
@@ -480,6 +324,6 @@ function onDisconnect() {
 
 ## 更多内容
 
-至此， 我们就完成了使用 Electron 创建一个简单的 MQTT 桌面客户端的过程，并模拟了客户端与 MQTT 服务器进行订阅、收发消息、取消订阅以及断开连接的场景。还值得一提的是，因为 Electron 项目同时包含了浏览器环境和 `Node.js` 环境，所以除 MQTT/TCP 连接外，还可以利用浏览器的 WebSocket API，同时实现 MQTT over WebSocket 的连接，只需修改上述代码中的连接协议和端口即可。具体如何使用 WebSocket 连接 MQTT 服务，可参考我们的博客 [使用 WebSocket 连接 MQTT 服务器](https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket)。可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron) 下载到示例的源码，同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
+至此， 我们就完成了使用 Electron 创建一个简单的 MQTT 桌面客户端的过程，并模拟了客户端与 MQTT 服务器进行订阅、收发消息、取消订阅以及断开连接的场景。可以在 [MQTT-Client-Electron 页面](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Electron)下载完整的示例源码，同时也欢迎前往 [MQTT Client 示例页面](https://github.com/emqx/MQTT-Client-Examples)探索更多其他语言的 Demo 示例。
 
 [^1]: https://zh.wikipedia.org/wiki/Electron
