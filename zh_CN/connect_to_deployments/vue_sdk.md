@@ -4,15 +4,6 @@
 
 本篇文档使用 Vue 3 进行代码演示，如果您使用 Vue 2，请参考 [Vue 2 MQTT 连接示例](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue.js)。
 
-::: tip
-理解 MQTT over WebSocket
-
-- MQTT 是一种构建于 TCP/IP 协议上的基于 `发布/订阅` 模式的轻量级消息传输协议。
-- WebSocket 是一种基于 TCP 的网络传输协议。在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就可以创建持久性的连接。
-- MQTT over WebSocket 是指先使用 WebSocket 建立连接，然后在 WebSocket 通道上使用 MQTT 协议进行通信。这样在 Web 浏览器环境可以直接收发 MQTT 消息。
-- MQTT-WebSocket 统一使用 `/path` 作为连接路径，连接时需指明，而 EMQX Broker 使用的路径为 `/mqtt`。
-  :::
-
 ## 前置准备
 
 ### 获得 MQTT 服务器
