@@ -10,6 +10,7 @@
 
 - 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 - 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。(专业版部署若开通 [NAT 网关](../vas/nat-gateway.md)也可使用公网 IP 进行连接）
+- 对于 BYOC 部署用户：请先对 BYOC 部署所在 VPC 与资源所在 VPC 建立对等连接，下文提到的 IP 均指资源的内网 IP。如需通过公网访问资源，请在您的公有云控制台中为 BYOC 部署所在 VPC 配置 NAT 网关，使用资源的公网 IP 进行连接。
 
 ## 购买阿里云 RDS MySQL
 
@@ -63,10 +64,11 @@
 
 2. 设置允许 EMQX 集群 IP 段访问数据库(可选)
 
-   对于专业版部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
+   - 对于专业版部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
+   - 对于 BYOC 部署，您可以在公有云控制台中查看对等连接信息，复制部署 VPC 网段。
 
    ```sql
-   # 专业版
+   # 专业版 / BYOC
    GRANT ALL PRIVILEGES ON *.* TO root@'10.13.89.%' IDENTIFIED BY '-abc12345' WITH GRANT OPTION;
 
    # 基础版

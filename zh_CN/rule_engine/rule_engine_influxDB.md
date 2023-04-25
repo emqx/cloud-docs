@@ -1,3 +1,4 @@
+<!-- deprecated -->
 # 集成 InfluxDB
 
 ::: warning

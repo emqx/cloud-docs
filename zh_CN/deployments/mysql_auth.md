@@ -98,10 +98,11 @@ EMQX Cloud 除了支持默认的认证鉴权方式，还可以使⽤外部 MySQL
   
 5. 设置允许 EMQX Cloud 集群 IP 段访问数据库(可选)
 
-   对于专业版部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
+   - 对于专业版部署，获取部署网段可以前往部署详情 → 查看对等连接信息，复制部署 VPC 网段。
+   - 对于 BYOC 部署，您可以在公有云控制台中查看对等连接信息，复制部署 VPC 网段。
 
    ```sql
-   # 专业版
+   # 专业版/ BYOC
    GRANT ALL PRIVILEGES ON *.* TO root@'10.11.30.%' IDENTIFIED BY 'public' WITH GRANT OPTION;
    
    # 基础版

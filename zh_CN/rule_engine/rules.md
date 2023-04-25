@@ -11,7 +11,9 @@
 
 ## 创建规则
 ::: tip Tip
-在专业版中创建一个规则之前, 你需要确定已经添加了 [VPC 对等连接](../deployments/vpc_peering.md), 以及 [完成创建资源](./resources.md)
+在专业版中创建一个规则之前, 你需要确定已经添加了 [VPC 对等连接](../deployments/vpc_peering.md), 以及 [完成创建资源](./resources.md)。
+
+在 BYOC 中添加一个规则之前，您需要确保 BYOC 部署所在的 VPC 中的实例可以连接到所需资源，以及 [完成创建资源](./resources.md)。
 :::
 
 1. 我们使用 Kafka 资源创建规则举例，可以在“已配置的资源”列表中创建规则，或者是从资源详情中新建规则
