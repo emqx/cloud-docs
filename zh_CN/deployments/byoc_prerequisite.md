@@ -2,11 +2,12 @@
 
 在部署 EMQX Cloud BYOC 之前，请确保完成以下准备工作：
 
-- 熟悉公有云服务和网络结构的基本概念，如 VPC、子网、ECS 等。
+- 熟悉公有云服务和网络结构的基本概念，如 VPC、子网、ECS、DNS 等。
 - 拥有公有云账号和 EMQX Cloud 账号。
 - 准备相关资源和权限。
 - 设置部署环境。
 - 准备 EMQX Cloud BYOC 许可证。
+- 准备用于 EMQX 服务的域名和 TLS/SSL 证书。
 
 ## 账号准备
 
@@ -60,93 +61,117 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
     "Version": "1",
     "Statement": [
         {
-        "Effect": "Allow",
-        "Action": [
-            "ecs:DeleteSecurityGroup",
-            "ecs:DescribeSecurityGroupAttribute",
-            "ecs:DescribeImages",
-            "ecs:DeleteImage",
-            "ecs:DescribeInstances",
-            "ecs:DeleteInstance",
-            "ecs:DescribeInstanceMaintenanceAttributes",
-            "ecs:DescribeInstanceRamRole",
-            "ecs:DescribeDisks",
-            "ecs:DescribeUserData",
-            "ecs:DescribeNetworkInterfaces",
-            "ecs:ListTagResources",
-            "ecs:DescribeSecurityGroups",
-            "ecs:DescribeKeyPairs",
-            "ecs:RunInstances",
-            "ecs:AuthorizeSecurityGroup",
-            "ecs:CreateSecurityGroup",
-            "ecs:ModifySecurityGroupPolicy",
-            "ecs:ImportKeyPair",
-            "ecs:DeleteKeyPairs",
-            "ecs:DetachKeyPair",
-            "ecs:ModifyImageSharePermission",
-            "ecs:CreateImage",
-            "ecs:StopInstance",
-            "ecs:StartInstance",
-            "ecs:AttachKeyPair",
-            "ecs:CreateInstance",
-            "ecs:AuthorizeSecurityGroupEgress",
-            "ecs:CreateKeyPair",
-            "ecs:DescribeRegions",
-            "ecs:DeleteSnapshot",
-            "ecs:RevokeSecurityGroup",
-            "ecs:RevokeSecurityGroupEgress",
-            "ecs:ModifySecurityGroupRule",
-            "ecs:ModifySecurityGroupAttribute",
-            "ecs:ModifySecurityGroupEgressRule"
-        ],
-        "Resource": "*"
-    },
+            "Effect": "Allow",
+            "Action": [
+                "ecs:DeleteSecurityGroup",
+                "ecs:DescribeSecurityGroupAttribute",
+                "ecs:DescribeImages",
+                "ecs:DeleteImage",
+                "ecs:DescribeInstances",
+                "ecs:DeleteInstance",
+                "ecs:DescribeInstanceMaintenanceAttributes",
+                "ecs:DescribeInstanceRamRole",
+                "ecs:DescribeDisks",
+                "ecs:DescribeUserData",
+                "ecs:DescribeNetworkInterfaces",
+                "ecs:ListTagResources",
+                "ecs:DescribeSecurityGroups",
+                "ecs:DescribeKeyPairs",
+                "ecs:RunInstances",
+                "ecs:AuthorizeSecurityGroup",
+                "ecs:CreateSecurityGroup",
+                "ecs:ModifySecurityGroupPolicy",
+                "ecs:ImportKeyPair",
+                "ecs:DeleteKeyPairs",
+                "ecs:DetachKeyPair",
+                "ecs:ModifyImageSharePermission",
+                "ecs:CreateImage",
+                "ecs:StopInstance",
+                "ecs:StartInstance",
+                "ecs:AttachKeyPair",
+                "ecs:CreateInstance",
+                "ecs:AuthorizeSecurityGroupEgress",
+                "ecs:CreateKeyPair",
+                "ecs:DescribeRegions",
+                "ecs:DeleteSnapshot",
+                "ecs:RevokeSecurityGroup",
+                "ecs:RevokeSecurityGroupEgress",
+                "ecs:ModifySecurityGroupRule",
+                "ecs:ModifySecurityGroupAttribute",
+                "ecs:ModifySecurityGroupEgressRule",
+                "ecs:AddTags",
+                "ecs:RemoveTags",
+                "ecs:DescribeTags",
+                "ecs:DescribeTagKeys",
+                "ecs:DescribeResourceByTags",
+                "ecs:TagResources",
+                "ecs:UntagResources",
+                "ecs:ReplaceSystemDisk"
+            ],
+            "Resource": "*"
+        },
         {
-        "Effect": "Allow",
-        "Action": [
-            "vpc:DescribeVpcs",
-            "vpc:DescribeVSwitchAttributes",
-            "vpc:DeleteVpc",
-            "vpc:DeleteVSwitch",
-            "vpc:ListTagResources",
-            "vpc:DescribeRouteTableList",
-            "vpc:CreateVSwitch",
-            "vpc:CreateVpc",
-            "vpc:DeleteVSwitch",
-            "vpc:DescribeVSwitches"
-        ],
-        "Resource": "*"
-    },
+            "Effect": "Allow",
+            "Action": [
+                "vpc:DescribeVpcs",
+                "vpc:DescribeVSwitchAttributes",
+                "vpc:DeleteVpc",
+                "vpc:DeleteVSwitch",
+                "vpc:ListTagResources",
+                "vpc:DescribeRouteTableList",
+                "vpc:CreateVSwitch",
+                "vpc:CreateVpc",
+                "vpc:DeleteVSwitch",
+                "vpc:DescribeVSwitches",
+                "vpc:TagResources",
+                "vpc:UnTagResources",
+                "vpc:DescribeTagKeys",
+                "vpc:DescribeTags",
+                "vpc:ModifyVpcAttribute",
+                "vpc:ModifyVSwitchAttribute"
+            ],
+            "Resource": "*"
+        },
         {
-        "Effect": "Allow",
-        "Action": [
-            "vpc:ReleaseEipAddress",
-            "vpc:DescribeEipAddresses",
-            "vpc:UnassociateEipAddress",
-            "vpc:AssociateEipAddress",
-            "vpc:AllocateEipAddress"
-        ],
-        "Resource": "*"
-    },
+            "Effect": "Allow",
+            "Action": [
+                "vpc:ReleaseEipAddress",
+                "vpc:DescribeEipAddresses",
+                "vpc:UnassociateEipAddress",
+                "vpc:AssociateEipAddress",
+                "vpc:AllocateEipAddress"
+            ],
+            "Resource": "*"
+        },
         {
-        "Effect": "Allow",
-        "Action": [
-            "slb:DescribeLoadBalancerAttribute",
-            "slb:DeleteLoadBalancer",
-            "slb:ListTagResources",
-            "slb:DescribeLoadBalancerTCPListenerAttribute",
-            "slb:AddBackendServers",
-            "slb:StartLoadBalancerListener",
-            "slb:SetLoadBalancerTCPListenerAttribute",
-            "slb:CreateLoadBalancerTCPListener",
-            "slb:DeleteLoadBalancerListener",
-            "slb:CreateLoadBalancer",
-            "slb:RemoveBackendServers",
-            "slb:RemoveTags",
-            "slb:RemoveVServerGroupBackendServers"
-        ],
-        "Resource": "*"
-    }
+            "Effect": "Allow",
+            "Action": [
+                "slb:DescribeLoadBalancerAttribute",
+                "slb:DeleteLoadBalancer",
+                "slb:ListTagResources",
+                "slb:DescribeLoadBalancerTCPListenerAttribute",
+                "slb:AddBackendServers",
+                "slb:StartLoadBalancerListener",
+                "slb:SetLoadBalancerTCPListenerAttribute",
+                "slb:CreateLoadBalancerTCPListener",
+                "slb:DeleteLoadBalancerListener",
+                "slb:CreateLoadBalancer",
+                "slb:RemoveBackendServers",
+                "slb:RemoveTags",
+                "slb:RemoveVServerGroupBackendServers",
+                "slb:AddTags",
+                "slb:DescribeTags",
+                "slb:SetLoadBalancerName",
+                "slb:AddAccessControlListEntry",
+                "slb:CreateAccessControlList",
+                "slb:DeleteAccessControlList",
+                "slb:RemoveAccessControlListEntry",
+                "slb:SetAccessControlListAttribute",
+                "slb:DescribeAccessControlLists",
+                "slb:DescribeAccessControlListAttribute"
+            ],
+            "Resource": "*"
+        }
     ]
 }
 ```
