@@ -4,20 +4,25 @@
 
 作为 ESP8266 的升级版本，[ESP32](https://www.espressif.com/zh-hans/products/socs/esp32) 是物联网项目的理想选择。除了 Wi-Fi 模块，该模块还包含蓝牙 4.0 模块。双核 CPU 工作频率为 80 至 240 MHz，包含两个 Wi-Fi 和蓝牙模块以及各种输入和输出引脚。
 
-## 前提条件
+本文将分别介绍通过 TCP 端口和 SSL/TLS 端口来连接 ESP32 客户端到 MQTT 服务器，对于使用 Serverless 部署的用户，请查看 SSL/TLS 端口连接示例。TCP 端口和 SSL/TLS 端口连接在连接设置部分略有不同，发布和订阅部分代码相同。
 
-### 获得 MQTT Broker
-1. 使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
+## 前置准备
+
+在进行连接之前，您需要准备好 MQTT 服务器和客户端。
+
+### 获得 MQTT 服务器
+使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
 
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - TLS/SSL Port: **8883**
 
-2. 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 TLS/SSL 端口  测试连接到 MQTT 服务器。
-3. 如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)，在部署控制台`认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 TLS/SSL 端口  测试连接到 MQTT 服务器。
+
+如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)，在部署控制台`认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 ### Arduino IDE
-本文中使用 [Arduino IDE](https://www.arduino.cc/en/guide/environment?setlang=cn)作为代码编辑和上传，Arduino 集成开发环境（或是 ArduinoIDE）包含了一个用于写代码的文本编辑器、一个消息区、一个文本控制台以及一个带有常用功能按钮和文本菜单的工具栏。软件连接 Arduino 和 Genuino 之后，能给所连接的控制板上传程序，还能与控制板相互通信。
+本文中使用 [Arduino IDE](https://www.arduino.cc/en/guide/environment?setlang=cn) 作为代码编辑和上传，Arduino 集成开发环境（或是 ArduinoIDE）包含了一个用于写代码的文本编辑器、一个消息区、一个文本控制台以及一个带有常用功能按钮和文本菜单的工具栏。软件连接 Arduino 和 Genuino 之后，能给所连接的控制板上传程序，还能与控制板相互通信。
 
 ## 安装依赖
 
@@ -31,12 +36,9 @@
 
    点击**项目** -> **加载库** -> **管理库...**。搜索 PubSubClient，安装 PubSubClient by Nick O’Leary。
 
-## 连接 MQTT 服务器
+## 通过 TCP 端口连接
 
-本文将分别介绍通过 TCP 端口和 SSL/TLS 端口来连接，对于使用 Serverless 部署的用户，请查看 SSL/TLS 端口连接示例。TCP 端口和 SSL/TLS 端口连接在连接设置部分略有不同，发布和订阅部分代码相同。
-
-### 通过 TCP 端口连接
-连接设置完成后，在 Arduino IDE 中按以下步骤编写代码：
+本章节介绍了如何在 Arduino IDE 中通过 TCP 端口连接 ESP32 和 MQTT 服务器。
 
 1. 导入 WiFi 和 PubSubClient 库。
 
@@ -48,7 +50,7 @@
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
 
-> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版 / BYOC 认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版 / BYOC 认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。
 
 
 ```c
@@ -186,8 +188,8 @@ void loop() {
 }
 ```
 
-### 通过 TLS/SSL 端口进行连接
-TCP 端口和 TLS/SSL 端口连接在连接设置部分略有不同，发布和订阅部分代码相同。
+## 通过 TLS/SSL 端口连接
+本章节介绍了如何在 Arduino IDE 中通过 TLS/SSL 端口连接 ESP32 和 MQTT 服务器。TCP 端口和 TLS/SSL 端口连接在连接设置部分略有不同，发布和订阅部分代码相同。
 
 1. 导入 WiFi 和 PubSubClient 库。
 
@@ -418,7 +420,7 @@ void loop() {
 
 在成功连接 MQTT 服务器后，您可以使用 Arduino IDE 和 MQTT X 测试连接。
 
-1. 请使用 Arduino IDE 将完整代码上传到 ESP32，并打开串口监视器，选择 115200 波特率查看 ESP32 连接情况
+1. 请使用 Arduino IDE 将完整代码上传到 ESP32，并打开串口监视器，选择 115200 波特率查看 ESP32 连接情况。
    ![esp32_connection](./_assets/esp32_connection.png)
 2. 建立 MQTT X 客户端 与 MQTT 服务器的连接, 并向 ESP32 发送消息。
    ![esp32_mqttx](./_assets/esp32_mqttx.png)

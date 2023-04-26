@@ -1,230 +1,208 @@
-# 使用 Vue.js 连接到部署
+# 使用 Vue.js 通过 MQTT.js 连接到部署
 
-本文主要介绍如何在 Vue 项目中使用 `MQTT.js` ，实现客户端与 MQTT 服务器的连接、订阅、收发消息、取消订阅等功能。
+本文主要介绍如何在 Vue 3 框架搭建的 Web 应用程序中使用 `MQTT.js` ，实现客户端与 MQTT 服务器的连接、订阅、收发消息、取消订阅等功能。
 
-[Vue.js](https://cn.vuejs.org) 是一款由尤雨溪及其团队开发的渐进式 Javascript 前端框架。该框架具备数据双向绑定、组件化、响应式和轻量等特点，搭配其脚手架 Vue CLI 使得开发者更加容易上手，大大减少了学习成本。同时其配备一个专用的状态管理模式 Vuex ，在这里可以集中管理所有组件的状态。
+本篇文档使用 Vue 3 进行代码演示，如果您使用 Vue 2，请参考 [Vue 2 MQTT 连接示例](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue.js)。
 
-[MQTT](https://www.emqx.com/zh/mqtt) 是一种基于发布/订阅模式的 **轻量级物联网消息传输协议**。该协议提供了一对多的消息分发和应用程序的解耦，具备很小的传输消耗和协议数据交换、最大限度减少网络流量和三种不同消息服务质量等级，满足不同投递需求的优势。
+::: tip
+理解 MQTT over WebSocket
 
-> Vue 3 项目中使用 MQTT.js 实现 MQTT 连接，请参阅： https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue3.js
+- MQTT 是一种构建于 TCP/IP 协议上的基于 `发布/订阅` 模式的轻量级消息传输协议。
+- WebSocket 是一种基于 TCP 的网络传输协议。在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就可以创建持久性的连接。
+- MQTT over WebSocket 是指先使用 WebSocket 建立连接，然后在 WebSocket 通道上使用 MQTT 协议进行通信。这样在 Web 浏览器环境可以直接收发 MQTT 消息。
+- MQTT-WebSocket 统一使用 `/path` 作为连接路径，连接时需指明，而 EMQX Broker 使用的路径为 `/mqtt`。
+  :::
 
-## 前提条件
+## 前置准备
 
-> 1. 已经创建了部署，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
-> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+### 获得 MQTT 服务器
 
-本项目使用 [Vue CLI](https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create) 创建 Vue 项目进行开发和测试，可通过以下命令确认 Vue CLI 的版本（本示例版本为 **v4.x**）并创建一个新项目，也可以 [通过引用 Vue.js 创建 Vue 项目](https://cn.vuejs.org/v2/guide/installation.html)。
+- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh/cloud)创建。服务器连接信息如下：
 
-```shell
-# 检查 Vue CLI 版本
-vue --version
+  - 连接地址: **broker.emqx.io**
+  - WebSocket 端口: **8083**
+  - WebSocket TLS/SSL 端口: **8084**
 
-# 创建项目
-vue create vue-mqtt-test
-```
+- 您也可以自己[创建 EMQX Cloud 部署](../create/overview.md)，待部署状态为**运行中**，点击部署卡片进入概览页面便可获取相关连接信息。此外，您还需在部署的 `认证鉴权` > `认证` 页面中设置用户名和密码，用于后续的连接验证。
+
+### 创建 Vue 3 应用
+
+本文参考 Vue 官方文档中的[创建一个 Vue 应用](https://cn.vuejs.org/guide/quick-start.html#creating-a-vue-application)章节进行示例代码的开发和测试。使用的 node 版本为 16.16.0。
 
 ## 安装依赖
 
-[MQTT.js](https://github.com/mqttjs/MQTT.js) 是一个 MQTT 协议的客户端库，使用 JavaScript 编写，用于 Node.js 和 浏览器环境中。是 JavaScript 生态中目前使用最为广泛的 [MQTT 客户端库](https://www.emqx.com/zh/blog/introduction-to-the-commonly-used-mqtt-client-library)。
+[MQTT.js](https://github.com/mqttjs/MQTT.js) 是一个完全开源的 MQTT 协议的客户端库，使用 JavaScript 编写，可用于 Node.js 和浏览器环境。有关 `MQTT.js` 的更多内容和使用方法，您可以前往查阅 [MQTT.js GitHub 页面](https://github.com/mqttjs/MQTT.js#table-of-contents)。
 
-以下 2、3 方法更适用于通过直接引用 Vue.js 创建的 Vue 项目，本示例使用 **yarn 命令**。
+MQTT.js 支持通过 NPM 或 Yarn 安装，通过 CDN 或相对路径引入。本示例将通过 NPM 命令安装 MQTT.js，直接引入文件的方法更适用于通过 CDN 使用 Vue 的项目。
 
-1. 通过命令行安装，可以使用 npm 或 yarn 命令（二者选一）
+- 使用 NPM 或 Yarn：
 
-   ```shell
-   npm install mqtt --save
-   # 或者 yarn
-   yarn add mqtt
-   ```
+  安装 MQTT.js 依赖
 
-2. 通过 CDN 引入
+  ```shell
+  # 使用 NPM
+  npm install mqtt
+  # 或使用 Yarn
+  yarn add mqtt
+  ```
 
-   ```html
-   <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
-   ```
+  成功安装后，还需引入 MQTT.js，您可以查阅 [Vite Support](https://github.com/mqttjs/MQTT.js/issues/1269) 了解更详细的配置。
 
-3. 下载到本地，然后使用相对路径引入
+  ```js
+  import * as mqtt from "mqtt/dist/mqtt.min";
+  ```
 
-   ```html
-   <script src="/your/path/to/mqtt.min.js"></script>
-   ```
+- 通过 CDN 引入：
 
-## 连接
+  ```html
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  ```
 
-> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+- 下载到本地，然后使用相对路径引入：
 
-### 连接设置
+  ```html
+  <script src="/your/path/to/mqtt.min.js"></script>
+  ```
 
-本文将使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
+## 通过 WebSocket 端口连接
 
-- Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
-- TCP 端口: **1883**
-- WebSocket 端口: **8083**
-- WebSocket Secure 端口: **8084**
+通过以下代码设置客户端 ID、用户名及密码，客户端 ID 应具有唯一性。
 
-### 连接关键代码
-
-```html
-<script>
-  import mqtt from "mqtt";
-
-  export default {
-    data() {
-      return {
-        connection: {
-          host: "broker.emqx.io",
-          // ws 协议，对应端口为 8083；wss 协议对应端口 8084。
-          // EMQX Cloud 部署，请以对应部署概览页面显示端口为准！！！
-          protocol: "ws",
-          port: 8083,
-          endpoint: "/mqtt",
-          // for more options, please refer to https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options
-          clean: true,
-          connectTimeout: 30 * 1000, // ms
-          reconnectPeriod: 4000, // ms
-          clientId: "emqx_vue_" + Math.random().toString(16).substring(2, 8),
-          // auth
-          username: "emqx_test",
-          password: "emqx_test",
-        },
-        subscription: {
-          topic: "topic/mqttx",
-          qos: 0,
-        },
-        publish: {
-          topic: "topic/browser",
-          qos: 0,
-          payload: '{ "msg": "Hello, I am browser." }',
-        },
-        receiveNews: "",
-        qosList: [0, 1, 2],
-        client: {
-          connected: false,
-        },
-        subscribeSuccess: false,
-        connecting: false,
-        retryTimes: 0,
-      };
-    },
-
-    methods: {
-      initData() {
-        this.client = {
-          connected: false,
-        };
-        this.retryTimes = 0;
-        this.connecting = false;
-        this.subscribeSuccess = false;
-      },
-      handleOnReConnect() {
-        this.retryTimes += 1;
-        if (this.retryTimes > 5) {
-          try {
-            this.client.end();
-            this.initData();
-            this.$message.error(
-              "Connection maxReconnectTimes limit, stop retry"
-            );
-          } catch (error) {
-            this.$message.error(error.toString());
-          }
-        }
-      },
-      createConnection() {
-        try {
-          this.connecting = true;
-          const { protocol, host, port, endpoint, ...options } =
-            this.connection;
-          const connectUrl = `${protocol}://${host}:${port}${endpoint}`;
-          this.client = mqtt.connect(connectUrl, options);
-          if (this.client.on) {
-            this.client.on("connect", () => {
-              this.connecting = false;
-              console.log("Connection succeeded!");
-            });
-            this.client.on("reconnect", this.handleOnReConnect);
-            this.client.on("error", (error) => {
-              console.log("Connection failed", error);
-            });
-            this.client.on("message", (topic, message) => {
-              this.receiveNews = this.receiveNews.concat(message);
-              console.log(`Received message ${message} from topic ${topic}`);
-            });
-          }
-        } catch (error) {
-          this.connecting = false;
-          console.log("mqtt.connect error", error);
-        }
-      },
-    },
-  };
-</script>
+```js
+const clientId = "emqx_vue3_" + Math.random().toString(16).substring(2, 8);
+const username = "emqx_test";
+const password = "emqx_test";
 ```
+
+通过以下代码建立客户端与 MQTT Broker 的连接。
+
+```js
+const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
+
+## 通过 WebSocket TLS/SSL 端口连接
+
+启用 TLS/SSL 加密时，连接[参数选项](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options)与通过 WebSocket 端口建立连接一致，您只需注意将协议改为 `wss`，且匹配正确的端口号即可。
+
+通过以下代码建立客户端与 MQTT Broker 的连接。
+
+```js
+const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
+
+## 订阅和发布
 
 ### 订阅主题
 
+设置将要订阅的主题及对应 [QoS 等级](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos)。
+
 ```js
-doSubscribe() {
-  const { topic, qos } = this.subscription
-  this.client.subscribe(topic, { qos }, (error, res) => {
-    if (error) {
-      console.log('Subscribe to topics error', error)
-      return
+// 设置将要订阅的主题和 QoS
+const subscription = ref({
+  topic: "topic/mqttx",
+  qos: 0 as mqtt.QoS,
+});
+
+const doSubscribe = () => {
+  const { topic, qos } = subscription.value;
+  client.subscribe(
+    topic,
+    { qos },
+    (error: Error, granted: mqtt.ISubscriptionGrant[]) => {
+      if (error) {
+        console.log("subscribe error:", error);
+        return;
+      }
+      console.log("subscribe successfully:", granted);
     }
-    this.subscribeSuccess = true
-    console.log('Subscribe to topics res', res)
-  })
-},
+  );
+};
 ```
 
 ### 取消订阅
 
+通过以下代码取消订阅，此时应指定取消订阅的主题及对应的 QoS 等级。
+
 ```js
-doUnSubscribe() {
-  const { topic } = this.subscription
-  this.client.unsubscribe(topic, error => {
+const doUnSubscribe = () => {
+  const { topic, qos } = subscription.value;
+  client.unsubscribe(topic, { qos }, (error) => {
     if (error) {
-      console.log('Unsubscribe error', error)
+      console.log("unsubscribe error:", error);
+      return;
     }
-  })
-}
+    console.log(`unsubscribed topic: ${topic}`);
+  });
+};
 ```
 
-### 消息发布
+### 发布消息
+
+发布消息时需要告知 MQTT Broker 目标主题及消息内容。
 
 ```js
-doPublish() {
-  const { topic, qos, payload } = this.publish
-  this.client.publish(topic, payload, { qos }, error => {
+// 设置发布的主题、消息及 QoS
+const publish = ref({
+  topic: "topic/browser",
+  payload: '{ "msg": "Hello, I am browser." }',
+  qos: 0 as mqtt.QoS,
+});
+
+const doPublish = () => {
+  const { topic, qos, payload } = publish.value;
+  client.publish(topic, payload, { qos }, (error) => {
     if (error) {
-      console.log('Publish error', error)
+      console.log("publish error:", error);
+      return;
     }
-  })
-}
+    console.log(`published message: ${payload}`);
+  });
+};
+```
+
+### 接收消息
+
+通过以下代码指定客户端对消息事件进行监听，并在收到消息后执行回调函数，将接收到的消息及其主题打印到控制台。
+
+```js
+client.on("message", (topic: string, message) => {
+  console.log(`received message: ${message} from topic: ${topic}`);
+});
 ```
 
 ### 断开连接
 
+如客户端希望主动断开连接，可以通过如下代码实现：
+
 ```js
-destroyConnection() {
-  if (this.client.connected) {
+const destroyConnection = () => {
+  if (client.connected) {
     try {
-      this.client.end(false, () => {
-        this.initData()
-        console.log('Successfully disconnected!')
-      })
+      client.end(false, () => {
+        console.log("disconnected successfully");
+      });
     } catch (error) {
-      console.log('Disconnect failed', error.toString())
+      console.log("disconnect error:", error);
     }
   }
-}
+};
 ```
 
-项目完整代码请见：[https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue.js](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue.js)。
+以上部分仅列出了一些关键代码，项目完整代码请见：[MQTT Client - Vue3](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue3.js)，您可以进行下载并体验。
 
 ## 测试验证
 
-我们使用 Vue 编写了如下简单的浏览器应用，该应用具备：创建连接、订阅主题、收发消息、取消订阅、断开连接等功能。
+我们使用 Vue 3 编写了一个简单的 [MQTT 客户端](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue3.js)，该客户端具备：创建连接、订阅主题、收发消息、取消订阅、断开连接等功能。
 
 ![vueui.png](https://assets.emqx.com/images/b6563b0eb66eb51a2a02776889016a18.png)
 
@@ -238,23 +216,8 @@ destroyConnection() {
 
 1. 是否支持自签名 TLS/SSL 证书？是否支持双向 TLS/SSL 认证？
 
-   由于浏览器的限制，均暂不支持。参考 MQTT.js issue: <https://github.com/mqttjs/MQTT.js/issues/1515>; <https://github.com/mqttjs/MQTT.js/issues/741>
-
-2. 在云厂商自购的证书，如何实现单向 TLS/SSL 认证？
-
-   只需要将连接代码中的协议改为 wss，并将端口替换为 wss 协议对应的端口。示例如下：
-
-   ```javascript
-   const options = {
-     clientId: "emqx_vue_" + Math.random().toString(16).substring(2, 8),
-     // auth
-     username: "xxx",
-     password: "xxx",
-     // 其它参数......
-   };
-   this.client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", options);
-   ```
+   由于浏览器的限制，均暂不支持。参考 MQTT.js issue: [如何在浏览器环境中使用双向认证？](https://github.com/mqttjs/MQTT.js/issues/1515)和 [Node.js 中双向认证可用，但在浏览器中不支持](https://github.com/mqttjs/mqtt.js/issues/741)。
 
 ## 更多内容
 
-综上所述，我们实现了在 Vue 项目中创建 MQTT 连接，模拟了客户端与 MQTT 服务器进行订阅、收发消息、取消订阅以及断开连接的场景。可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue.js) 下载到示例的源码，同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
+综上所述，我们实现了在 Vue 3 项目中创建 MQTT 连接，模拟了客户端与 MQTT 服务器进行订阅、收发消息、取消订阅以及断开连接的场景。可以在 [MQTT Client - Vue3 页面](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Vue3.js)下载完整的示例源码，同时也欢迎前往 [MQTT Client 示例页面](https://github.com/emqx/MQTT-Client-Examples)探索更多其他语言的 Demo 示例。
