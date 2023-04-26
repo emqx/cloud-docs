@@ -77,7 +77,11 @@
 删除部署后您将不能连接到部署，部署所有数据和配置将会被删除。
 :::
 
+::: tip
 删除部署之前，您需要确保部署运行状态为**运行中**。
+
+删除部署之前，您需要删除在部署所属 VPC 中额外添加的资源（交换机、网关、安全组、自定义路由表、网络ACL、DHCP选项集、云企业网）。否则，VPC 将会无法删除。
+:::
 
 进入控制台，点击您所需要删除的部署，进入部署详情页面。点击 **删除** 按钮，弹出 **删除部署指引**，如下图所示：
 
@@ -95,12 +99,12 @@
 wget -O delete-byoc.tar.gz https://emqx-cloud-ami.oss-cn-shanghai.aliyuncs.com/byoc/aliyun_byoc_delete.tar.gz
 ```
 
-2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+1. 在 Ubuntu 命令行界面，解压下载的工具包文件。
 ```bash
 tar -zxvf delete-byoc.tar.gz
 ```
 
-3. 导航到解压的目录下，根据以下命令，并修改对应参数的值，执行命令进行部署的删除。
+1. 导航到解压的目录下，根据以下命令，并修改对应参数的值，执行命令进行部署的删除。
 ```bash
 ./byoc delete \
       --accessKey <Your Access Key> \
