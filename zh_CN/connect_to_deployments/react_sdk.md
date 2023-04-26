@@ -1,17 +1,20 @@
-# 使用 React 连接
+# 使用 React 通过 MQTT.js 连接到部署
 
-本文主要介绍如何在 React 项目中使用 [MQTT](https://www.emqx.com/zh/mqtt)，实现客户端与 MQTT 服务器的连接、订阅、收发消息、取消订阅等功能。
+本文主要介绍如何在 React 框架搭建的 Web 应用程序中使用 `MQTT.js` ，实现客户端与 MQTT 服务器的连接、订阅、收发消息、取消订阅等功能。
 
-React 是一款用于构建用户界面的开源 JavaScript 库。React 视图通常采用包含以自定义 HTML 规定的其他组件的组件渲染。React 为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对视图进行了有效更新，实现了在现代单页应用中组件之间的干净分离。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，目前是 Web 开发的主流工具之一。
+## 前置准备
 
-React 起源于 Facebook 的内部项目，目前由 Facebook 企业和其强大的开源社区进行维护。React 目前正在被 Netflix、Instagram、Imgur、Airbnb 等很多知名网站的主页使用。该框架首先于 2011 年部署于 Facebook 的 newsfeed，随后于 2012 年部署于 Instagram。在 2013 年 5 月在 JSConf US 开源。
+### 获得 MQTT 服务器
 
-## 前提条件
+- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh/cloud)创建。服务器连接信息如下：
 
-> 1. 已经创建了部署，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
-> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+  - 连接地址: **broker.emqx.io**
+  - WebSocket 端口: **8083**
+  - WebSocket TLS/SSL 端口: **8084**
 
-## 新建项目
+- 您也可以自己[创建 EMQX Cloud 部署](../create/overview.md)，待部署状态为**运行中**，点击部署卡片进入概览页面便可获取相关连接信息。此外，您还需在部署的 `认证鉴权` > `认证` 页面中设置用户名和密码，用于后续的连接验证。
+
+### 创建 React 应用
 
 参考链接：[https://zh-hans.reactjs.org/docs/getting-started.html](https://zh-hans.reactjs.org/docs/getting-started.html)
 
@@ -44,11 +47,11 @@ React 起源于 Facebook 的内部项目，目前由 Facebook 企业和其强大
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   ```
 
-## 安装 MQTT 客户端库
+## 安装依赖
 
-因为 React 是一款 JavaScript 库，因此可以使用 MQTT.js 作为 MQTT 客户端库。
+[MQTT.js](https://github.com/mqttjs/MQTT.js) 是一个完全开源的 MQTT 协议的客户端库，使用 JavaScript 编写，可用于 Node.js 和浏览器环境。有关 `MQTT.js` 的更多内容和使用方法，您可以前往查阅 [MQTT.js GitHub 页面](https://github.com/mqttjs/MQTT.js#table-of-contents)。
 
-> 以下 2，3 方法更适用于通过 CDN 链接 引用 React 创建的项目。
+MQTT.js 支持通过 NPM 或 Yarn 安装，通过 CDN 或相对路径引入。本示例将通过 Yarn 命令安装 MQTT.js，直接引入文件的方法更适用于通过 CDN 使用 Vue 的项目。
 
 1. 通过命令行安装，可以使用 npm 或 yarn 命令（二者选一）
 
@@ -70,87 +73,90 @@ React 起源于 Facebook 的内部项目，目前由 Facebook 企业和其强大
    <script src="/your/path/to/mqtt.min.js"></script>
    ```
 
-## 连接
+## 通过 WebSocket 端口连接
 
-> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口。
+通过以下代码设置客户端 ID、用户名及密码，客户端 ID 应具有唯一性。
 
-### 连接设置
-
-本文将使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
-
-- Broker: **broker.emqx.io**（国内可以使用 broker-cn.emqx.io）
-- TCP Port: **1883**
-- WebSocket Port: **8083**
-- WebSocket Secure Port: **8084**
-
-### 连接代码
-
-```javascript
-const [client, setClient] = useState(null);
-const mqttConnect = (host, mqttOption) => {
-  setConnectStatus("Connecting");
-  setClient(mqtt.connect(host, mqttOption));
-};
-useEffect(() => {
-  if (client) {
-    console.log(client);
-    client.on("connect", () => {
-      setConnectStatus("Connected");
-    });
-    client.on("error", (err) => {
-      console.error("Connection error: ", err);
-      client.end();
-    });
-    client.on("reconnect", () => {
-      setConnectStatus("Reconnecting");
-    });
-    client.on("message", (topic, message) => {
-      const payload = { topic, message: message.toString() };
-      setPayload(payload);
-    });
-  }
-}, [client]);
+```js
+const clientId = "emqx_react_" + Math.random().toString(16).substring(2, 8);
+const username = "emqx_test";
+const password = "emqx_test";
 ```
+
+通过以下代码建立客户端与 MQTT Broker 的连接。
+
+```js
+const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
+
+## 通过 WebSocket TLS/SSL 端口连接
+
+启用 TLS/SSL 加密时，连接[参数选项](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options)与通过 WebSocket 端口建立连接一致，您只需注意将协议改为 `wss`，且匹配正确的端口号即可。
+
+通过以下代码建立客户端与 MQTT Broker 的连接。
+
+```js
+const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
+
+## 订阅和发布
 
 ### 订阅主题
 
+设置将要订阅的主题及对应 [QoS 等级](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos)。
+
 ```javascript
 const mqttSub = (subscription) => {
-  if (client) {
-    const { topic, qos } = subscription;
-    client.subscribe(topic, { qos }, (error) => {
-      if (error) {
-        console.log("Subscribe to topics error", error);
-        return;
-      }
-      setIsSub(true);
-    });
+    if (client) {
+      const { topic, qos } = subscription
+      client.subscribe(topic, { qos }, (error) => {
+        if (error) {
+          console.log('Subscribe to topics error', error)
+          return
+        }
+        console.log(`Subscribe to topics: ${topic}`)
+        setIsSub(true)
+      })
+    }
   }
-};
 ```
 
 ### 取消订阅
 
+通过以下代码取消订阅，此时应指定取消订阅的主题及对应的 QoS 等级。
+
 ```javascript
 const mqttUnSub = (subscription) => {
   if (client) {
-    const { topic } = subscription;
-    client.unsubscribe(topic, (error) => {
+    const { topic, qos } = subscription
+    client.unsubscribe(topic, { qos }, (error) => {
       if (error) {
-        console.log("Unsubscribe error", error);
-        return;
+        console.log('Unsubscribe error', error)
+        return
       }
-      setIsSub(false);
-    });
+      console.log(`unsubscribed topic: ${topic}`)
+      setIsSub(false)
+    })
   }
-};
+}
 ```
 
-### 消息发布
+### 发布消息
 
 ```javascript
 const mqttPublish = (context) => {
   if (client) {
+    // 发布的主题、消息及 QoS
     const { topic, qos, payload } = context;
     client.publish(topic, payload, { qos }, (error) => {
       if (error) {
@@ -161,21 +167,38 @@ const mqttPublish = (context) => {
 };
 ```
 
+### 接收消息
+
+通过以下代码指定客户端对消息事件进行监听，并在收到消息后执行回调函数，将接收到的消息及其主题打印到控制台。
+
+```js
+client.on("message", (topic: string, message) => {
+  console.log(`received message: ${message} from topic: ${topic}`);
+});
+```
+
 ### 断开连接
+
+如客户端希望主动断开连接，可以通过如下代码实现：
 
 ```javascript
 const mqttDisconnect = () => {
-  if (client) {
-    client.end(() => {
-      setConnectStatus("Connect");
-    });
+  if (client.connected) {
+    try {
+      client.end(false, () => {
+        setConnectStatus('Connect')
+        console.log('disconnected successfully')
+      })
+    } catch (error) {
+      console.log('disconnect error:', error)
+    }
   }
-};
+}
 ```
 
-完整项目示例代码：[https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React)。
+以上部分仅列出了一些关键代码，项目完整代码请见：[MQTT Client - React](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React)，您可以进行下载并体验。
 
-## 测试
+## 测试验证
 
 我们使用 React 编写了如下简单的浏览器应用，该应用具备：创建连接、订阅主题、收发消息、取消订阅、断开连接等功能。
 
@@ -193,27 +216,12 @@ const mqttDisconnect = () => {
 
 1. 是否支持自签名 TLS/SSL 证书？是否支持双向 TLS/SSL 认证？
 
-   由于浏览器的限制，均暂不支持。参考 MQTT.js issue: <https://github.com/mqttjs/MQTT.js/issues/1515>; <https://github.com/mqttjs/MQTT.js/issues/741>
-
-2. 云厂商自购的证书，如何实现单向 TLS/SSL 认证？
-
-   只需要将连接代码中的协议改为 wss，并将端口替换为 wss 协议对应的端口。示例如下：
-
-   ```javascript
-   const options = {
-     clientId: "emqx_react_" + Math.random().toString(16).substring(2, 8),
-     // auth
-     username: "xxx",
-     password: "xxx",
-     // 其它参数......
-   };
-   const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", options);
-   ```
+   由于浏览器的限制，均暂不支持。参考 MQTT.js issue: [如何在浏览器环境中使用双向认证？](https://github.com/mqttjs/MQTT.js/issues/1515)和 [Node.js 中双向认证可用，但在浏览器中不支持](https://github.com/mqttjs/mqtt.js/issues/741)。
 
 ## 更多内容
 
 综上所述，我们实现了在 React 项目中创建 MQTT 连接，模拟了客户端与 MQTT 服务器进行订阅、收发消息、取消订阅以及断开连接的场景。
 
-本文使用的 React 版本为 v16.13.1，因此将使用 Hook Component 特性来作为示例代码演示，如有需求也可参考完整的示例代码中的 `ClassMqtt` 组件来使用 Class Component 特性来进行项目构建。
+本文使用的 React 版本为 v18.2.0，因此将使用 Hook Component 特性来作为示例代码演示，如有需求也可参考完整的示例代码中的 `ClassMqtt` 组件来使用 Class Component 特性来进行项目构建。
 
-可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React) 下载到示例的源码，同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
+可以在 [MQTT Client - React 页面](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React)下载完整的示例源码，同时也欢迎前往 [MQTT Client 示例页面](https://github.com/emqx/MQTT-Client-Examples)探索更多其他语言的 Demo 示例。
