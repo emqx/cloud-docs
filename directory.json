@@ -63,7 +63,7 @@
           "path": "create/byoc",
           "children" : [
             {
-              "title": "部署前提条件",
+              "title": "部署前置准备",
               "path": "deployments/byoc_prerequisite"
             }
           ]
