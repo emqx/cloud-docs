@@ -1,15 +1,18 @@
-# Connect via React SDK
+# Connect to Deployment using MQTT.js with React
 
-This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in the React project for implementing connect, subscribe, messaging and unsubscribe, etc., between the client and MQTT broker.
+This article mainly introduces how to use MQTT.js in a web application built on the React framework, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 
-React (also known as React.js or ReactJS) is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with rendering data to the DOM, and so creating React applications usually requires the use of additional libraries for state management and routing. Redux and React Router are respective examples of such libraries.[^1]
+## Prerequisites
 
-## Preconditions
+### Get MQTT Broker
 
-> 1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
-> 2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+  - Address: **broker.emqx.io**
+  - WebSocket Port: **8083**
+  - WebSocket over TLS/SSL Port: **8084**
+- You can also [create an EMQX Cloud deployment](../create/overview.md). after the deployment status is ***\*running\****, you can get the connection information in the deployment overview page. In addition, you should set a username and password in the `Authentication & ACL` > `Authentication` page for connection verification.
 
-## New project
+### Creating a React Application
 
 Reference link: [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)
 
@@ -42,11 +45,11 @@ Reference link: [https://reactjs.org/docs/getting-started.html](https://reactjs.
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   ```
 
-## Install the MQTT client library
+## Install Dependencies
 
-As React is a JavaScript library, it is possible to use MQTT.js as the MQTT client library.
+[MQTT.js](https://github.com/mqttjs/MQTT.js) is a fully open-source client-side library for the MQTT protocol, written in JavaScript and available for Node.js and browsers. For more information and usage of `MQTT.js`, please refer to the [MQTT.js GitHub](https://github.com/mqttjs/MQTT.js#table-of-contents).
 
-> The following methods 2, 3 are more suitable for referencing projects created by React via CDN links.
+MQTT.js can be installed via NPM or Yarn, or can be imported through CDN or relative path. This example will install MQTT.js through NPM command. Directly importing files is more suitable for projects that use Vue through CDN.
 
 1. Installation via the command line, either using the npm or yarn command (one or the other)
 
@@ -68,83 +71,87 @@ As React is a JavaScript library, it is possible to use MQTT.js as the MQTT clie
    <script src="/your/path/to/mqtt.min.js"></script>
    ```
 
-## Connection
+## Connect over WebSocket Port
 
-> Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the standard plan, the port is not 1883 or 8883, please confirm the port.
+You can set a client ID, username, and password with the following code. The client ID should be unique.
 
-### Connection settings
-
-This article will use [the free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) which is provided by EMQX. This service is based on EMQX's [MQTT IoT cloud platform](https://www.emqx.com/en/cloud) to create. The server access information is as follows.
-
-- Broker: **broker.emqx.io**
-- TCP Port: **1883**
-- WebSocket Port: **8083**
-- WebSocket Secure Port: **8084**
-
-### Connect
-
-```javascript
-const [client, setClient] = useState(null);
-const mqttConnect = (host, mqttOption) => {
-  setConnectStatus("Connecting");
-  setClient(mqtt.connect(host, mqttOption));
-};
-useEffect(() => {
-  if (client) {
-    console.log(client);
-    client.on("connect", () => {
-      setConnectStatus("Connected");
-    });
-    client.on("error", (err) => {
-      console.error("Connection error: ", err);
-      client.end();
-    });
-    client.on("reconnect", () => {
-      setConnectStatus("Reconnecting");
-    });
-    client.on("message", (topic, message) => {
-      const payload = { topic, message: message.toString() };
-      setPayload(payload);
-    });
-  }
-}, [client]);
+```js
+const clientId = "emqx_react_" + Math.random().toString(16).substring(2, 8);
+const username = "emqx_test";
+const password = "emqx_test";
 ```
+
+You can establish a connection between the client and the MQTT broker using the following code: 
+
+```js
+const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
+
+## Connect over WebSocket TLS/SSL Port
+
+If TLS/SSL encryption is enabled, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are the same as for establishing a connection via the WebSocket port, you just need to be careful to change the protocol to `wss` and match the correct port number.
+
+You can establish a connection between the client and the MQTT broker using the following code:
+
+```js
+const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
+  clientId,
+  username,
+  password,
+  // ...other options
+});
+```
+
+## Subscribe and Publish
 
 ### Subscribe
 
+Specify a topic and the corresponding [QoS level](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos) to be subscribed.
+
 ```javascript
 const mqttSub = (subscription) => {
-  if (client) {
-    const { topic, qos } = subscription;
-    client.subscribe(topic, { qos }, (error) => {
-      if (error) {
-        console.log("Subscribe to topics error", error);
-        return;
-      }
-      setIsSub(true);
-    });
+    if (client) {
+      const { topic, qos } = subscription
+      client.subscribe(topic, { qos }, (error) => {
+        if (error) {
+          console.log('Subscribe to topics error', error)
+          return
+        }
+        console.log(`Subscribe to topics: ${topic}`)
+        setIsSub(true)
+      })
+    }
   }
-};
 ```
 
 ### Unsubscribe
 
+You can unsubscribe using the following code, specifying the topic and corresponding QoS level to be unsubscribed.
+
 ```javascript
 const mqttUnSub = (subscription) => {
   if (client) {
-    const { topic } = subscription;
-    client.unsubscribe(topic, (error) => {
+    const { topic, qos } = subscription
+    client.unsubscribe(topic, { qos }, (error) => {
       if (error) {
-        console.log("Unsubscribe error", error);
-        return;
+        console.log('Unsubscribe error', error)
+        return
       }
-      setIsSub(false);
-    });
+      console.log(`unsubscribed topic: ${topic}`)
+      setIsSub(false)
+    })
   }
-};
+}
 ```
 
 ### Publish
+
+When publishing a message, the MQTT broker must be provided with information about the target topic and message content.
 
 ```javascript
 const mqttPublish = (context) => {
@@ -159,19 +166,36 @@ const mqttPublish = (context) => {
 };
 ```
 
+### Receive Messages
+
+The following code listens for message events and prints the received message and topic to the console when a message is received.
+
+```js
+client.on("message", (topic: string, message) => {
+  console.log(`received message: ${message} from topic: ${topic}`);
+});
+```
+
 ### Disconnect
+
+To disconnect the client from the broker, use the following code:
 
 ```javascript
 const mqttDisconnect = () => {
-  if (client) {
-    client.end(() => {
-      setConnectStatus("Connect");
-    });
+  if (client.connected) {
+    try {
+      client.end(false, () => {
+        setConnectStatus('Connect')
+        console.log('disconnected successfully')
+      })
+    } catch (error) {
+      console.log('disconnect error:', error)
+    }
   }
-};
+}
 ```
 
-The complete project example code: [https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React).
+The above section only shows some key code snippets, for the full project code, please refer to [MQTT Client - React](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React). You can download and try it out yourself.
 
 ## Test
 
@@ -191,30 +215,13 @@ You can see that MQTT X can receive messages from the browser side normally, as 
 
 1. How to use self-signed certificates? How to use two-way TLS/SSL authentication?
 
-   Due to the browser limitations, it is not supported temporarily.
-   For more details, please refer to the following MQTT.js issues:
-   <https://github.com/mqttjs/MQTT.js/issues/1515>
-   <https://github.com/mqttjs/MQTT.js/issues/741>
-
-2. How to use one-way TLS/SSL authentication with CA signed certificates?
-
-   ```javascript
-   const options = {
-     clientId: "emqx_cloud_" + Math.random().toString(16).substring(2, 8),
-     // auth
-     username: "xxx",
-     password: "xxx",
-     // other params ...
-   };
-   const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", options);
-   ```
+   Due to the browser limitations, it is not supported temporarily. For more details, please refer to the MQTT.js issue: [How to use TLS/SSL two-way authentication connections in browser?](https://github.com/mqttjs/MQTT.js/issues/1515) and [Two-way authentication is available in Node.js, but not supported in browsers](https://github.com/mqttjs/mqtt.js/issues/741).
 
 ## More
 
-In summary, we have implemented the creation of an MQTT connection in the React project, and simulated subscribing, sending and receiving messages, unsubscribing and disconnecting between the client and MQTT broker.
+In conclusion, we have implemented creating MQTT connections in a React project and simulated scenarios of subscribing, publishing messages, unsubscribing, and disconnecting between clients and MQTT servers. 
 
-In this article, we use React v16.13.1, so the Hook Component feature will be used as example code to demonstrate, or if required, you can refer to the ClassMqtt component in the full example code to use the Class Component feature for project building.
+In this article, we use React v18.2.0, so the Hook Component feature will be used as example code to demonstrate, or if required, you can refer to the `ClassMqtt` component in the full example code to use the Class Component feature for project building.
 
-You can download the source code of the example [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React), and you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
+You can download the complete example source code on the [MQTT Client - React page](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React), and we also welcome you to explore more demo examples in other languages on the [MQTT Client example page](https://github.com/emqx/MQTT-Client-Examples).
 
-[^1]: https://en.wikipedia.org/wiki/React_(web_framework)
