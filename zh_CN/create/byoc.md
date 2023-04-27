@@ -164,8 +164,14 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，两个�
 私网连接（PrivateLink）能够实现 BYOC 部署所在的 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。请参考各公有云 VPC 私网连接文档进行配置：
 - [阿里云私网连接 PrivateLink](https://help.aliyun.com/product/120462.html)
 
+### NAT 网关配置
+
+公有云平台提供的 NAT 网关可以提供网络地址转换服务，为 BYOC 部署提供访问公网资源的能力，无需 VPC 对等连接。您可以在 BYOC 部署所在 VPC 内添加 NAT 网关，请参考各公有云 NAT 网关文档进行配置：
+- [阿里云公网 NAT 网关](https://help.aliyun.com/document_detail/121139.html)
 
 ## 连接到部署
 
 您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTT X 连接到部署](../connect_to_deployments/mqttx.md)。
 
+https://docs.emqx.com/zh/cloud/latest/create/byoc.html#vpc-对等连接配置
+https://docs.emqx.com/zh/cloud/latest/create/byoc.html#nat-网关配置
