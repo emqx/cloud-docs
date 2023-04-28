@@ -6,21 +6,17 @@
 
 本文将主要介绍如何在 MicroPython 中使用 `umqtt` 客户端库，实现客户端与 MQTT 服务端的连接、订阅、收发消息等功能。
 
-
-
 ## 先决条件
 
 ### 1. 安装 MicroPython 固件
 
-如何在 ESP32、ESP8266、Raspberry Pi Pico 这些硬件平台上安装 MicroPython 不是本文的重点，如果您还没有安装 MicroPython，那么可以先参考这里：
+如何在 ESP32、ESP8266、Raspberry Pi Pico 这些硬件平台上安装 MicroPython 不是本文的重点，但它是必要的。如果您还没有安装 MicroPython，那么可以先参考这里：
 
 [如何在 ESP32 中安装 MicroPython？](https://docs.micropython.org/en/latest/esp32/tutorial/intro.html#)
 
 [如何在 ESP8266 中安装 MicroPython？](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html#intro)
 
 [如何在 Raspberry Pi Pico 中安装 MicroPython？](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html#drag-and-drop-micropython)
-
-
 
 ### 2. 接入网络
 
@@ -52,9 +48,7 @@ import wifi
 wifi.connect()
 ```
 
-> main.py 需要自行创建。
-
-
+> `main.py` 需要自行创建。
 
 ## 正式开始
 
@@ -71,8 +65,6 @@ wifi.connect()
 由于客户端必须通过身份验证才能接入 Serverless，所以我们还需要进入认证页面，为客户端添加认证信息，这里我们添加了一个用户名为 `emqx`，密码为 `public` 的认证信息：
 
 ![micropython_serverless_authn](./_assets/micropython_serverless_authn.png)
-
-
 
 ### 在 MicroPython 中安装 `umqtt`
 
@@ -92,8 +84,6 @@ Installing to: /Users/zhouzibo/.micropython/lib/
 Installing micropython-umqtt.simple 1.3.4 from https://micropython.org/pi/umqtt.simple/umqtt.simple-1.3.4.tar.g
 ```
 
-
-
 ### 客户端代码
 
 首先，我们导入本示例中将会用到的模块，分别是 `random`、`time`、`json`、`wifi`，以及 `umqtt.simple`：
@@ -106,8 +96,6 @@ import wifi
 
 from umqtt.simple import MQTTClient
 ```
-
-
 
 #### 连接
 
@@ -142,8 +130,6 @@ def connect():
 
 如果 MicroPython 后续的版本解决了这一问题，我们也将及时更新这部分文档。
 
-
-
 #### 设置回调并订阅主题
 
 接下来，我们实现了 `on_message` 回调函数，它的唯一作用就是在消息到达后打印消息的主题和内容。我们需要在订阅主题前将客户端的回调设置为 `on_message` 函数，以免错过消息：
@@ -158,11 +144,9 @@ def subscribe(client):
     client.subscribe(TOPIC)
 ```
 
-
-
 #### 循环发布和接收
 
-在本示例中，我们将使用同一个客户端来进行循环的消息发布和接收。以下代码的主要作用就是不断构造新的消息内容并发布，然后调用 `wait_msg()` 阻塞地等待从 MQTT 服务端转发的消息。一旦消息到达，就会触发 `on_message` 回调打印消息内容，回调完成后等待一秒再进入下一次循环：
+在本示例中，我们将使用同一个客户端来进行循环的消息发布和接收。以下代码的主要作用就是不断构造新的消息内容并发布，然后调用 `wait_msg()` 阻塞地等待从 MQTT 服务端转发的消息。一旦消息到达，就会触发 `on_message` 回调打印消息内容，回调完成后我们将等待一秒然后进入下一次循环：
 
 ```
 def loop_publish(client):
@@ -179,8 +163,6 @@ def loop_publish(client):
         time.sleep(1)
 ```
 
-
-
 #### 主函数
 
 在主函数中，我们首先调用 `wifi.connect()` 让设备接入网络，然后依次调用前面实现的连接、订阅和循环发布函数：
@@ -195,8 +177,6 @@ def run():
 if __name__ == "__main__":
     run()
 ```
-
-
 
 ### 测试验证
 
@@ -214,8 +194,6 @@ Received '{"msg": 1}' from topic 'raspberry/mqtt'
 Send '{"msg": 2}' to topic 'raspberry/mqtt'
 Received '{"msg": 2}' from topic 'raspberry/mqtt'
 ```
-
-
 
 ## 更多内容
 
