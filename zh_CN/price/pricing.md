@@ -122,7 +122,7 @@ EMQX Cloud 专有版按产品版本、实例规格与消息传输网络流量计
 
 ## BYOC 计费
 
-EMQX Cloud BYOC 会在您的云平台账号中部署 EMQX 服务，您需要支付云平台资源费用和 EMQX Cloud BYOC 许可证费用。
+EMQX Cloud BYOC 会在您的云平台账号中部署 EMQX 服务，相关费用包括云平台资源费用和 EMQX Cloud BYOC 许可证费用。
 
 ### 费用组成
 
