@@ -15,7 +15,7 @@ EMQX Cloud BYOC 将在您的云账号中创建部署，如您还没有对应公�
 
 - [创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)
   
-目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以提 [工单](../feature/tickets.md) 或 邮件（cloud-support@emqx.io）联系我们。
+目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以通过 [工单](../feature/tickets.md) 或 邮件(cloud-support@emqx.io) 与我们联系。
 
 | 平台   | 区域                                 |
 | ------ | ------------------------------------ |

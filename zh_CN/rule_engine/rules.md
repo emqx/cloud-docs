@@ -10,7 +10,7 @@
 
 
 ## 创建规则
-::: tip Tip
+::: tip
 在专业版中创建一个规则之前, 你需要确定已经添加了 [VPC 对等连接](../deployments/vpc_peering.md), 以及 [完成创建资源](./resources.md)。
 
 在 BYOC 中添加一个规则之前，您需要确保 BYOC 部署所在的 VPC 中的实例可以连接到所需资源，以及 [完成创建资源](./resources.md)。
@@ -25,7 +25,7 @@
 
 
 2. 在下面的规则语句中，我们从 temp_hum/emqx 主题中读取报告的时间`up_timestamp`，`clientid`，`payload`中的温度以及湿度。
-::: tip Tip
+::: tip
 我们使用类 SQL 语句来实现数据的筛选、过滤和处理，关于如何编写规则 SQL，可通过以下文档了解更多。
 
 - [规则 SQL 语法与示列](https://docs.emqx.com/zh/enterprise/v4.4/rule/rule-engine_grammar_and_examples.html)
