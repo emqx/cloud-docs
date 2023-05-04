@@ -4,7 +4,7 @@
 
 [umqtt](https://github.com/micropython/micropython-lib/tree/master/micropython/umqtt.simple) is a simple MQTT client for MicroPython that supports message callbacks and provides two implementations of blocking and non-blocking for receiving messages. But currently it only supports MQTT v3.1.1 and does not support QoS 2 yet.
 
-This article will mainly introduce how to use the `umqtt` client library in MicroPython to realize the functions of connecting, subscribing, sending and receiving messages between the client and the MQTT server.
+This article will mainly introduce how to use the `umqtt` library in MicroPython to realize the functions of connecting, subscribing, sending and receiving messages between the client and the MQTT server.
 
 ## Prerequisites
 
@@ -66,24 +66,6 @@ Since the client must pass identity verification to access Serverless, we also n
 
 ![micropython_serverless_authn](./_assets/micropython_serverless_authn.png)
 
-### Install `umqtt` in MicroPython
-
-Here we use `upip` to install `umqtt`, execute the following statement in the REPL:
-
-```
->>> import upip
->>> upip.install('micropython-umqtt.simple')
-```
-
-> \>\>\> is not what we need to type.
-
-If the installation was successful, we will see the following output:
-
-```
-Installing to: /Users/zhouzibo/.micropython/lib/
-Installing micropython-umqtt.simple 1.3.4 from https://micropython.org/pi/umqtt.simple/umqtt.simple-1.3.4.tar.g
-```
-
 ### Client Code
 
 First, we import the modules that will be used in this example, namely `random`, `time`, `json`, `wifi`, and `umqtt.simple`:
@@ -99,7 +81,7 @@ from umqtt.simple import MQTTClient
 
 #### Connect
 
-Next, we need to initialize some connection information, which are the MQTT server address, port, and the Client ID, user name, and password used for connection. Finally, there is a topic that we will use later on for publish-subscribe:
+Next, we need to initialize some connection information, which are the MQTT server address, port, and the Client ID, username, and password used for connection. Finally, there is a topic that we will use later on for publish-subscribe:
 
 ```
 SERVER = "xxxx.ala.cn-hangzhou.emqxsl.cn"
@@ -114,21 +96,40 @@ We can get the connection address and port of the MQTT server by viewing the ser
 
 ![micropython_serverless_address](./_assets/micropython_serverless_address.png)
 
-Next, we implement the connection function, which will use the previously initialized connection information to initiate a connection to the MQTT Server. For the sake of communication security, EMQX Cloud Serverless only accepts TLS connections, so we also need to set the `ssl` parameter to `True`:
+For the sake of communication security, EMQX Cloud Serverless only accepts TLS connections. We can click the download button on the right side of `CA Certficate` in the serverless instance details to download the CA certificate that issued the serverless certificate, and then trust this certificate in the client.
+
+MicroPython currently only supports certificates in PEM format, so we don't need to convert the certificate format. The following code indicates that we set `cadata` to the content of the read CA certificate file, which means we trust the CA certificate, and set `cert_reqs` to `ssl.CERT_REQUIRED`, which means that the client will ask the server to send a certificate during the handshake:
+
+```
+with open('emqxsl-ca.crt', 'rb') as f:
+    cadata = f.read()
+ssl_params = dict()
+ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
+ssl_params["cadata"] = cadata
+```
+
+In addition to SSL-related connection parameters, we also need to specify the connection address, Client ID and other information. The complete connection code is as follows:
 
 ```python
 def connect():
-    client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True)
+  	with open('emqxsl-ca.crt', 'rb') as f:
+        cadata = f.read()
+    ssl_params = dict()
+    ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
+    ssl_params["cadata"] = cadata
+    client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True, ssl_params = ssl_params)
     client.connect()
     print('Connected to MQTT Broker "{server}"'.format(server=SERVER))
     return client
 ```
 
-So far, the latest version of MicroPython is 1.19.1. In this version, MicroPython's support for TLS is still not perfect, and the actual implementation is inconsistent with the document. For example, the `ussl` module of MicroPython does not provide parameters such as `ca_certs` and `cert_reqs` as the documentation says.
+Here we are using MicroPython 1.20.0, this version supplements the previously missing `cert_reqs`, `cadata` parameters. If you are using a version lower than 1.20.0, then you will not need to specify the SSL parameter, like this:
 
-As a result, MicroPython's TLS client does not have the ability to verify the identity of the server, so it introduces a certain risk of man-in-the-middle attacks.
+```
+client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True)
+```
 
-If the subsequent version of MicroPython solves this problem, we will also update this part of the document in time.
+Of course, this also means that the client will not have the ability to verify the identity of the server, which will introduce a certain risk of man-in-the-middle attacks.
 
 #### Set a callback and subscribe to a topic
 

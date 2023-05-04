@@ -4,7 +4,7 @@
 
 [umqtt](https://github.com/micropython/micropython-lib/tree/master/micropython/umqtt.simple) 是一个用于 MicroPython 的简单 MQTT 客户端，支持消息回调，并且为接收消息提供了阻塞和非阻塞的两种实现。但目前它仅支持 MQTT v3.1.1，并且尚不支持 QoS 2。
 
-本文将主要介绍如何在 MicroPython 中使用 `umqtt` 客户端库，实现客户端与 MQTT 服务端的连接、订阅、收发消息等功能。
+本文将主要介绍如何在 MicroPython 中使用 `umqtt` 库，实现客户端与 MQTT 服务端的连接、订阅、收发消息等功能。
 
 ## 先决条件
 
@@ -66,24 +66,6 @@ wifi.connect()
 
 ![micropython_serverless_authn](./_assets/micropython_serverless_authn.png)
 
-### 在 MicroPython 中安装 `umqtt`
-
-这里我们使用 `upip` 来安装 `umqtt`，在 REPL 中执行以下语句：
-
-```
->>> import upip
->>> upip.install('micropython-umqtt.simple')
-```
-
-> \>\>\> 不是我们需要输入的内容。
-
-如果安装成功，我们将看到以下输出：
-
-```
-Installing to: /Users/zhouzibo/.micropython/lib/
-Installing micropython-umqtt.simple 1.3.4 from https://micropython.org/pi/umqtt.simple/umqtt.simple-1.3.4.tar.g
-```
-
 ### 客户端代码
 
 首先，我们导入本示例中将会用到的模块，分别是 `random`、`time`、`json`、`wifi`，以及 `umqtt.simple`：
@@ -114,21 +96,42 @@ MQTT 服务器的连接地址和端口，我们可以通过查看 Serverless 的
 
 ![micropython_serverless_address](./_assets/micropython_serverless_address.png)
 
-接下来，我们实现了连接函数，这个函数将使用前面初始化的连接信息向 MQTT Server 发起连接。出于通信安全的考虑，EMQX Cloud Serverless 只接受 TLS 连接，所以我们还需要将 `ssl` 这个参数设置为 `True`：
+出于通信安全的考虑，EMQX Cloud Serverless 只接受 TLS 连接。我们可以点击 Serverless 实例详情中连接端口右侧的证书图标，下载签发 Serverless 证书的 CA 证书，以便在客户端中信任这个证书。
+
+![micropython_serverless_cafile](./_assets/micropython_serverless_cafile.png)
+
+MicroPython 目前仅支持 PEM 格式的证书，所以我们不需要对证书进行格式转换。以下代码表示，我们将 `cadata` 设置为读取到的 CA 证书文件内容，表示信任该 CA 证书，将 `cert_reqs` 设置为 `ssl.CERT_REQUIRED`，表示客户端将要求服务端在握手时发送证书：
+
+```
+with open('emqxsl-ca.crt', 'rb') as f:
+    cadata = f.read()
+ssl_params = dict()
+ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
+ssl_params["cadata"] = cadata
+```
+
+除了 SSL 相关的连接参数，我们还需要指定连接地址、Client ID 等信息，完整的连接代码如下：
 
 ```python
 def connect():
-    client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True)
+  	with open('emqxsl-ca.crt', 'rb') as f:
+        cadata = f.read()
+    ssl_params = dict()
+    ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
+    ssl_params["cadata"] = cadata
+    client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True, ssl_params = ssl_params)
     client.connect()
     print('Connected to MQTT Broker "{server}"'.format(server=SERVER))
     return client
 ```
 
-到目前为止，MicroPython 的最新版本为 1.19.1，在这一版本中，MicroPython 对 TLS 的支持仍然不够完善，并且实际的实现与文档并不一致，譬如 MicroPython 的 `ussl` 模块，并没有像文档所说提供了 `ca_certs`、`cert_reqs` 这些参数。
+这里我们使用的是 MicroPython 1.20.0，这一版本补充了之前遗漏的 `cert_reqs`、`cadata` 参数。如果你使用的是低于 1.20.0 的版本，那么你将不需要指定 SSL 参数：
 
-这导致 MicroPython 的 TLS 客户端，其实是不具备验证服务端身份的能力的，所以引入了一定的中间人攻击的风险。
+```
+client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True)
+```
 
-如果 MicroPython 后续的版本解决了这一问题，我们也将及时更新这部分文档。
+当然这也意味着此时客户端将不具备验证服务端身份的能力，这将引入一定的中间人攻击的风险。
 
 #### 设置回调并订阅主题
 
@@ -183,7 +186,9 @@ if __name__ == "__main__":
 运行代码，控制台输出如下：
 
 ```
-Connected on 192.168.0.32
+Waiting for connection...
+Waiting for connection...
+Connected on 192.168.0.145
 Connected to MQTT Broker "broker.emqx.io"
 Send '{"msg": 0}' to topic 'raspberry/mqtt'
 Received '{"msg": 0}' from topic 'raspberry/mqtt'
