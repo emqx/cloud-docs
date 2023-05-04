@@ -1,174 +1,190 @@
-# Connect via Node.js SDK
+# Connect to deployment through MQTT.js using Node.js
 
-This article mainly introduces how to use MQTT in the Node.js project to realize the functions of connecting, subscribing, unsubscribing, sending and receiving messages between the client and the MQTT server.
+This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in the Node.js project to realize the functions of connecting, subscribing, unsubscribing, sending and receiving messages between the client and the [MQTT broker](https://www.emqx.com/en/cloud).
 
-[Node.js](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine. Before the emergence of Node.js, JavaScript was usually used as a client-side programming language, and the programs are written in JavaScript often ran on the user's browser. The appearance of node.js enables JavaScript to be used for server-side programming.
+## Pre preparation
 
-[MQTT](https://www.emqx.com/en/mqtt) is a lightweight IoT messaging protocol based on the publish/subscribe model. It can provide real-time and reliable messaging services for networked devices with very little code and bandwidth. It is widely used in the industries such as the IoT, mobile Internet, smart hardware, Internet of Vehicles and power energy.
-
-## Preconditions
-
-> 1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
-> 2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
-
-This project uses Node.js v14.14.0 for development and testing. Readers can confirm the version of Node.js with the following command.
+This project uses Node.js v16.19.1 for development and testing. Readers can confirm the version of Node.js with the following command.
 
 ```shell
 node --version
 
-v14.14.0
+v16.19.1
 ```
 
-## Install dependencies
+### Get MQTT Broker
 
-[MQTT.js](https://github.com/mqttjs/MQTT.js) is a client library of the MQTT protocol, written in JavaScript and used in Node.js and browser environments. It is currently the most widely used [MQTT client library](https://www.emqx.com/en/blog/introduction-to-the-commonly-used-mqtt-client-library) in the JavaScript ecosystem.
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+  - Address: **broker.emqx.io**
+  - TCP Port: **1883**
+  - SSL/TLS Port: **8883**
+  - WebSocket Port: **8083**
+  - WebSocket over TLS/SSL Port: **8084**
+- You can also [create an EMQX Cloud deployment](../create/overview.md). after the deployment status is **running**, you can get the connection information in the deployment overview page. In addition, you should set a username and password in the `Authentication & ACL` > `Authentication` page for connection verification.
 
-```shell
-# create a new project
-npm init -y
+## Install Dependencies
 
-# Install dependencies
-npm install mqtt --save
+[MQTT.js](https://github.com/mqttjs/MQTT.js) is a fully open-source client-side library for the MQTT protocol, written in JavaScript and available for Node.js and browsers. For more information and usage of `MQTT.js`, please refer to the [MQTT.js GitHub](https://github.com/mqttjs/MQTT.js#table-of-contents).
+
+MQTT.js can be installed via NPM or Yarn, or can be imported through CDN or relative path. This example will install MQTT.js through Yarn command.
+
+- Using NPM or Yarn：
+
+  Install MQTT.js
+
+  ```shell
+  # NPM
+  npm install mqtt
+  # or Yarn
+  yarn add mqtt
+  ```
+
+## Connect through TCP port
+
+You can set a client ID, username, and password with the following code. The client ID should be unique.
+
+```js
+const clientId = 'emqx_nodejs_' + Math.random().toString(16).substring(2, 8)
+const username = 'emqx_test'
+const password = 'emqx_test'
 ```
 
-After the installation, we create a new index.js file in the current directory as the entry file of the project, in which we can implement the complete logic of the MQTT connection test.
+Establish a connection between the client and MQTT Broker using the following code.
 
-## Connection
-
-> Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
-
-### Connection settings
-
-This article will use [Free Public MQTT Server](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX, which is created based on EMQX's [MQTT IoT Cloud Platform](https://www.emqx.com/en/cloud). The server access information is as follows:
-
-- Broker: **broker.emqx.io**
-- TCP Port: **1883**
-- SSL/TLS Port: **8883**
-
-Import the MQTT.js client library
-
-> Note: In the Node.js environment, please use the commonjs specification to import dependency modules
-
-```javascript
-const mqtt = require("mqtt");
-```
-
-### Set MQTT Broker connection parameters
-
-Set the MQTT Broker connection address, port and topic. Here we use the function of generating random numbers in JavaScript to generate the client ID.
-
-```javascript
-const host = "broker.emqx.io";
-const port = "1883";
-const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
-```
-
-### Write MQTT connect function
-
-We use the connection parameters just set to connect, and the URL for the connection is spliced through the host and port ports defined above. Then, we call the built-in connect function of the MQTT module, and it will return a Client instance after the connection is successful.
-
-```javascript
-const connectUrl = `mqtt://${host}:${port}`;
-
-const client = mqtt.connect(connectUrl, {
+```js
+const client = mqtt.connect('mqtt://broker.emqx.io:1883', {
   clientId,
-  clean: true,
-  connectTimeout: 4000,
-  username: "emqx",
-  password: "public",
-  reconnectPeriod: 1000,
-});
+  username,
+  password,
+  // ...other options
+})
 ```
 
-### Subscribe to topics
+## Connect through TCP TLS/SSL port
 
-We use the on function of the returned Client instance to monitor the connection status, and subscribe to the topic in the callback function after the connection is successful. At this point, we call the subscribe function of the Client instance to subscribe to the topic `/nodejs/mqtt` after the connection is successful.
+When TLS/SSL encryption is enabled, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are consistent with establishing a connection through the TCP port. You only need to pay attention to changing the protocol to `mqtts` and matching the correct port number.
 
-```javascript
-const topic = "/nodejs/mqtt";
-client.on("connect", () => {
-  console.log("Connected");
-  client.subscribe([topic], () => {
-    console.log(`Subscribe to topic '${topic}'`);
-  });
-});
-```
+Establish a connection between the client and MQTT Broker using the following code.
 
-After subscribing to the topic successfully, we then use the on function to monitor the function of receiving the message. When the message is received, we can get the topic and message in the callback function of this function.
-
-> Note: The message in the callback function is of Buffer type and needs to be converted into a string by the toString function
-
-```javascript
-client.on("message", (topic, payload) => {
-  console.log("Received Message:", topic, payload.toString());
-});
-```
-
-### Publish messages
-
-After completing the above topic subscription and message monitoring, we will write a function for publishing messages.
-
-> Note: The message needs to be published after the MQTT connection is successful, so we write it in the callback function after the connection is successful
-
-```javascript
-client.on("connect", () => {
-  client.publish(
-    topic,
-    "nodejs mqtt test",
-    { qos: 0, retain: false },
-    (error) => {
-      if (error) {
-        console.error(error);
-      }
-    }
-  );
-});
-```
-
-### Complete code
-
-The code for server connection, topic subscription, message publishing and receiving.
-
-```javascript
-const mqtt = require("mqtt");
-
-const host = "broker.emqx.io";
-const port = "1883";
-const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
-
-const connectUrl = `mqtt://${host}:${port}`;
-const client = mqtt.connect(connectUrl, {
+```js
+const client = mqtt.connect('mqtts://broker.emqx.io:8883', {
   clientId,
-  clean: true,
-  connectTimeout: 4000,
-  username: "emqx",
-  password: "public",
-  reconnectPeriod: 1000,
-});
-
-const topic = "/nodejs/mqtt";
-client.on("connect", () => {
-  console.log("Connected");
-  client.subscribe([topic], () => {
-    console.log(`Subscribe to topic '${topic}'`);
-  });
-  client.publish(
-    topic,
-    "nodejs mqtt test",
-    { qos: 0, retain: false },
-    (error) => {
-      if (error) {
-        console.error(error);
-      }
-    }
-  );
-});
-client.on("message", (topic, payload) => {
-  console.log("Received Message:", topic, payload.toString());
-});
+  username,
+  password,
+  // ...other options
+})
 ```
 
-For the complete code of the project, please see: [https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js).
+## Connect through WebSocket port
+
+MQTT WebSocket uniformly uses `/path` as the connection path, which needs to be specified when connecting, while EMQX Broker uses `/mqtt` as the path.
+
+Therefore, when using WebScoket connection, in addition to modifying the port number and switching the protocol to `ws`, you also need to add the `/mqtt` path.
+
+Establish a connection between the client and MQTT Broker using the following code.
+
+```js
+const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', {
+  clientId,
+  username,
+  password,
+  // ...other options
+})
+```
+
+## Connect through WebSoket TLS/SSL port
+
+When TLS/SSL encryption is enabled, the connection [parameter option](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) is consistent with establishing a connection through the WebSocket port. You only need to pay attention to changing the protocol to 'wss' and matching the correct port number
+
+Establish a connection between the client and MQTT Broker using the following code.
+
+```js
+const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
+  clientId,
+  username,
+  password,
+  // ...other options
+})
+```
+
+## Subscribe and Publish
+
+### Subscribe
+
+Specify a topic and the corresponding [QoS level](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos) to be subscribed.
+
+```javascript
+const topic = '/nodejs/mqtt'
+const qos = 0
+
+client.subscribe(topic, { qos }, (error) => {
+  if (error) {
+    console.log('subscribe error:', error)
+    return
+  }
+  console.log(`Subscribe to topic '${topic}'`)
+})
+```
+
+### Unsubscribe
+
+You can unsubscribe using the following code, specifying the topic and corresponding QoS level to be unsubscribed.
+
+```javascript
+const topic = '/nodejs/mqtt'
+const qos = 0
+client.unsubscribe(topic, { qos }, (error) => {
+  if (error) {
+    console.log('unsubscribe error:', error)
+    return
+  }
+  console.log(`unsubscribed topic: ${topic}`)
+})
+```
+
+### Publish
+
+When publishing a message, the MQTT broker must be provided with information about the target topic and message content.
+
+```javascript
+const topic = '/nodejs/mqtt'
+const payload = 'nodejs mqtt test'
+const qos = 0
+
+client.publish(topic, payload, { qos }, (error) => {
+  if (error) {
+    console.error(error)
+  }
+})
+```
+
+### Receive Messages
+
+The following code listens for message events and prints the received message and topic to the console when a message is received.
+
+```javascript
+client.on('message', (topic, payload) => {
+  console.log('Received Message:', topic, payload.toString())
+})
+```
+
+### Disconnect
+
+To disconnect the client from the broker, use the following code:
+
+```javascript
+if (client.connected) {
+  try {
+    client.end(false, () => {
+      console.log('disconnected successfully')
+    })
+  } catch (error) {
+    console.log('disconnect error:', error)
+  }
+}
+```
+
+The above section only shows some key code snippets, for the full project code, please refer to [MQTT-Client-Node.js](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js). You can download and try it out yourself.
 
 ## Test
 
@@ -200,4 +216,4 @@ We can see that the message sent by MQTT X is printed in the console.
 
 ## More
 
-So far, we have used Node.js as an MQTT client to connect to the [public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker), and realizes the connection, message publishing and subscription between the test client and MQTT server. You can download the source code of the example [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js), and you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
+In conclusion, we have implemented creating MQTT connections in a Node.js project and simulated scenarios of subscribing, publishing messages, unsubscribing, and disconnecting between clients and MQTT servers. You can download the complete example source code on the [MQTT-Client-Node.js page](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js), and we also welcome you to explore more demo examples in other languages on the [MQTT Client example page](https://github.com/emqx/MQTT-Client-Examples).
