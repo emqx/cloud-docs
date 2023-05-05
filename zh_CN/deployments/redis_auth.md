@@ -9,7 +9,7 @@ EMQX Cloud 除了支持默认的认证鉴权方式，还可以使⽤外部 Redis
 * 一旦认证成功，终止认证链并允许客户端接入
 * 一旦认证失败，终止认证链并禁止客户端接入
 
-![auth_chain](./_assets/../_assets/redis_auth_chain.png)
+![auth_chain](./_assets/redis_auth_chain.png)
 
 ## ACL 鉴权链
 
