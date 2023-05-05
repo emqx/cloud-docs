@@ -4,7 +4,7 @@ EMQX Cloud 除了支持默认的认证鉴权方式，还可以使⽤外部 Redis
 
 ## 认证链
 
-若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) -> Redis 认证的顺序进行链式认证：
+若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](./auth_dedicated.md) -> Redis 认证的顺序进行链式认证：
 
 * 一旦认证成功，终止认证链并允许客户端接入
 * 一旦认证失败，终止认证链并禁止客户端接入
@@ -13,7 +13,7 @@ EMQX Cloud 除了支持默认的认证鉴权方式，还可以使⽤外部 Redis
 
 ## ACL 鉴权链
 
-若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](https://docs.emqx.com/zh/cloud/latest/deployments/acl.html) ->  Redis ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
+若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](./acl_dedicated.md) ->  Redis ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
 
 - 一旦通过鉴权，终止链并允许客户端通过验证
 - 一旦鉴权失败，终止链并禁止客户端通过验证
@@ -43,19 +43,19 @@ EMQX Cloud 除了支持默认的认证鉴权方式，还可以使⽤外部 Redis
 
 1. 在 EMQX Cloud 部署左侧菜单栏点击 `认证鉴权` - `外部认证授权`，选择 Redis 认证/访问控制。
 
-    ![redis_auth](./_assets/../_assets/redis_auth.png)
+    ![redis_auth](./_assets/redis_auth.png)
 
 2. 点击`配置认证`，进入 Redis 认证/访问控制页面，填写信息，新建认证。
 
     ::: tip
       * 如果当前部署为基础版，服务器地址请填写公网地址
-      * 如果当前部署为专业版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址请填写内网地址
+      * 如果当前部署为专业版，需创建 [VPC 对等连接](./vpc_peering.md)，服务器地址请填写内网地址
       * 若提示 Init resource failure! 需检查服务器地址是否无误、安全组是否开启
     :::
 
-    ![redis_auth](./_assets/../_assets/redis_auth_info.png)
+    ![redis_auth](./_assets/redis_auth_info.png)
 
-3. 由于 EMQX Cloud ACL 默认是`黑名单模式`，如需开启 Redis ACL 白名单，需要提交[工单](https://docs.emqx.com/zh/cloud/latest/feature/tickets.html#%E5%B7%A5%E5%8D%95%E8%81%94%E7%B3%BB)后台开启。
+3. 由于 EMQX Cloud ACL 默认是`黑名单模式`，如需开启 Redis ACL 白名单，需要提交[工单](../feature/tickets.md#工单联系)后台开启。
 
 ### 权限认证原理
 
@@ -140,7 +140,7 @@ HSET mqtt_acl:test topic/2 2
 
 EMQX Cloud 多数外部认证均可以启用哈希方法，数据源中仅保存密码密文，保证数据安全。启用哈希方法时，用户可以为每个客户端都指定一个 salt（盐）并配置加盐规则，数据库中存储的密码是按照加盐规则与哈希方法处理后的密文。
 
-> 可参考：[加盐规则与哈希方法](https://www.emqx.io/docs/zh/v4.3/advanced/auth.html#%E8%AE%A4%E8%AF%81%E6%96%B9%E5%BC%8F)。
+> 可参考：[加盐规则与哈希方法](https://www.emqx.io/docs/zh/v4.3/advanced/auth.html#%E5%AF%86%E7%A0%81%E5%8A%A0%E7%9B%90%E8%A7%84%E5%88%99%E4%B8%8E%E5%93%88%E5%B8%8C%E6%96%B9%E6%B3%95)。
 
 ```bash
 ## 不加盐，明文

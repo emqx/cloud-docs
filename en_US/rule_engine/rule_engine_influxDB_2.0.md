@@ -96,7 +96,7 @@ Click Test to view the obtained data results. If the settings are correct, the t
 ![create_rule](./_assets/influxdbv2_rule_1.png)
 ![create_rule](./_assets/influxdbv2_rule_2.png)
 
-::: tip Tip
+::: tip
 If the test fails, please check whether the SQL is compliant and whether the topic in the test is consistent with the SQL filled in.
 :::
 

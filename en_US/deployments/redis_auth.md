@@ -4,16 +4,16 @@ In addition to supporting the default authentication method, EMQX Cloud can also
 
 ## Authentication Chain
 
-If default authentication is also enabled, EMQX Cloud will chain authentication in the order of [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) -> Redis authentication.
+If default authentication is also enabled, EMQX Cloud will chain authentication in the order of [default authentication](./auth_dedicated.md) -> Redis authentication.
 
 * Once the authentication is successful, terminate the authentication chain and the client is accessible
 * Once authentication fails, terminate the authentication chain and disable client access
 
-![auth_chain](./_assets/../_assets/redis_auth_chain.png)
+![auth_chain](./_assets/redis_auth_chain.png)
 
 ## ACL Authentication Chain
 
-If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](https://docs.emqx.com/en/cloud/latest/deployments/acl.html)-> Redis ACL-> System Defaults (All Pub/Sub allowed).
+If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](./acl_dedicated.md)-> Redis ACL-> System Defaults (All Pub/Sub allowed).
 
 - Once the authentication is passed, terminate the chain and allow the client to pass the authentication
 - Once authentication has failed, terminate the chain and deny the client to pass authentication
@@ -41,19 +41,19 @@ In your cloud server, create a Redis service. For demonstration purposes, here i
 
 1. Click `Authentication Authentication` - `External Authentication Authorization` in the left menu bar of the EMQX Cloud deployment and select Redis Authentication/Access Control.
 
-    ![redis_auth](./_assets/../_assets/redis_auth.png)
+    ![redis_auth](./_assets/redis_auth.png)
 
 2. Click `Configure Authentication` to go to the Redis Authentication/Access Control page and fill in the information to create a new authentication.
 
     ::: tip
      * If the current deployment is Basic deployment, please fill in the public address for the server address
-     * If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the internal network address for the server address.
+     * If the current deployment is Professional deployment, you need to create a [VPC peer connection](./vpc_peering.md), please fill in the internal network address for the server address.
      * If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
     :::
 
-    ![redis_auth](./_assets/../_assets/redis_auth_info.png)
+    ![redis_auth](./_assets/redis_auth_info.png)
 
-3. Since EMQX Cloud ACL is in **blacklist mode** by default, if you want to enable Redis ACL whitelist, you need to submit a [ticket](https://docs.emqx.com/en/cloud/latest/feature/tickets.html#contact-by-tickets) to make it work.
+3. Since EMQX Cloud ACL is in **blacklist mode** by default, if you want to enable Redis ACL whitelist, you need to submit a [ticket](../feature/tickets.md#contact-by-tickets) to make it work.
 
 ### Permissions authentication principle
 

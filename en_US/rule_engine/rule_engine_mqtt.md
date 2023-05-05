@@ -51,7 +51,7 @@ On the deployment page, drop down to select the MQTT Bridge resource type.
    ![create resource](./_assets/mqttbridge_resource.png)
 
    Then click Test. If "test available" returns, it means the test was successful.
-   ::: tip Tip
+   ::: tip
    If the test fails, please check whether the [VPC peering connection](../deployments/vpc_peering.md) is completed and whether the IP address is correct.
    :::
 

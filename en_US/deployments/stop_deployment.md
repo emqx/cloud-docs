@@ -1,6 +1,6 @@
 # Stop Deployment
 
-::: tip Tip
+::: tip
 After the deployment is stopped you will not be able to connect to the deployment, your data and connection address will be retained, and we will charge you a data retention fee.
 :::
 

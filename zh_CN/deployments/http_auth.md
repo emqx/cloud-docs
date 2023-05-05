@@ -15,7 +15,7 @@ EMQX Cloud 在设备连接事件中使用当前客户端相关信息作为参数
 
 ## 认证链
 
-若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) -> HTTP 认证的顺序进行链式认证：
+若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](./auth_dedicated.md) -> HTTP 认证的顺序进行链式认证：
 
 - 一旦认证成功，终止认证链并允许客户端接入
 - 一旦认证失败，终止认证链并禁止客户端接入
@@ -24,7 +24,7 @@ EMQX Cloud 在设备连接事件中使用当前客户端相关信息作为参数
 
 ## ACL 鉴权链
 
-若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](https://docs.emqx.com/zh/cloud/latest/deployments/acl.html) ->  HTTP ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
+若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](./acl_dedicated.md) ->  HTTP ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
 
 - 一旦通过鉴权，终止链并允许客户端通过验证
 - 一旦鉴权失败，终止链并禁止客户端通过验证

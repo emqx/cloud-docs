@@ -29,7 +29,7 @@ Before you start, you need to complete the following operations:
 
 3. New subscription relationship table
 
-   ::: tip Tip
+   ::: tip
    The subscription relationship table structure cannot be modified, please use the above SQL statement to create
    :::
 

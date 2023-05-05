@@ -75,7 +75,7 @@ The invocation will generate traffic, including the messages that the device or 
    </tr>
 </table>
 
-::: tip Tip
+::: tip
 The billing examples are for reference only.
 :::
 

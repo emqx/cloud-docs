@@ -48,7 +48,7 @@ On the deployment page, select the Data Integrations and click Create.
 
 On the Create Resource page, fill in  **\<Server IP>:8089**for the server address
 
-::: tip Tip
+::: tip
 Currently, InfluxDB uses a UDP port. Therefore, it is impossible to detect whether the connection is successful
 :::
 
@@ -115,7 +115,7 @@ Click Test to view the get data results. If the settings are correct, the test o
 ```
 ![SQL](./_assets/influxDB_create_rule_2.png)
 
-::: tip Tip
+::: tip
 If test fails, please check whether the SQL is compliant, and whether the topic in the test is consistent with the SQL filled in.
 :::
 
@@ -179,6 +179,6 @@ time                humidity location temperature
 1592984201145230677 46.4     bedroom  25
 ```
 
-::: tip Tip
+::: tip
 In influxDB, the data type is subject to the first value. If you pass the string to humidity and temperature by mistake, it can be cleared by entering the command `DROP SERIES FROM home_sensor` in the database
 :::

@@ -51,7 +51,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
 
-::: tip Tip
+::: tip
 Before deleting the peering connection, please make sure that there are no associated resources in the deployment, otherwise there will be unpredictable risks
 :::
 
@@ -132,7 +132,7 @@ If all the provided information is correct, after several minutes, when the stat
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
 
-::: tip Tip
+::: tip
 Before deleting the peering connection, please make sure that there is no associated resources in the deployment, otherwise there will be unpredictable risks
 :::
 
@@ -166,7 +166,7 @@ After the Confluent Cloud cluster has been created, we could add peering by the 
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
 
-::: tip Tip
+::: tip
 Before deleting the peering connection, please make sure that there are no associated resources in the deployment, otherwise there will be unpredictable risks
 :::
 
