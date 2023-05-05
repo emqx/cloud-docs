@@ -168,7 +168,9 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
                 "slb:RemoveAccessControlListEntry",
                 "slb:SetAccessControlListAttribute",
                 "slb:DescribeAccessControlLists",
-                "slb:DescribeAccessControlListAttribute"
+                "slb:DescribeAccessControlListAttribute",
+                "slb:TagResources",
+                "slb:UntagResources"
             ],
             "Resource": "*"
         }
