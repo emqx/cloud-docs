@@ -16,7 +16,7 @@
 
 - 您也可以自己[创建 EMQX Cloud 部署](../create/overview.md)，待部署状态为**运行中**，点击部署卡片进入概览页面便可获取相关连接信息。此外，您还需在部署的 `认证鉴权` > `认证` 页面中设置用户名和密码，用于后续的连接验证。
 
-### 新建项目
+### 创建 Electron 应用
 
 [Electron](https://www.electronjs.org/) 是由 GitHub 开发的一个开源框架。它允许使用 `Node.js`（作为后端）和 [Chromium](https://zh.wikipedia.org/wiki/Chromium)（作为前端）完成桌面 GUI 应用程序的开发。Electron 现已被多个开源 Web 应用程序应用于跨平台的桌面端软件开发，著名项目包括 GitHub 的 Atom，微软的 Visual Studio Code，Slack 的桌面应用等。[^1]
 

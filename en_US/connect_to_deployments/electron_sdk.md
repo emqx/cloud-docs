@@ -1,20 +1,20 @@
-# Connect to deployment through MQTT.js using Electron
+# Connect to Deployment using Electron via MQTT.js SDK
 
 This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in Electron projects, and complete a simple MQTT desktop client, and implement the connection, subscription, unsubscribe, messaging and other functions between the client and [MQTT broker](https://www.emqx.com/en/cloud).
 
 ## Pre preparation
 
-### Obtain MQTT server
+### Deploy MQTT Broker
 
-- Using the [free public MQTT server](https://www.emqx.com/zh/mqtt/public-mqtt5-broker) provided by EMQX (Only supports one-way authentication), this service is based on EMQX's [fully hosted MQTT message cloud service](https://www.emqx.com/zh/cloud) Create. The server connection information is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
   - Broker: **broker.emqx.io**
   - TCP Port: 1883
   - SSL/TLS Port: 8883
   - WebSocket Port: 8083
   - WebSocket TLS/SSL Port: 8084
-- You can also create [your own EMQX Cloud deployment](../create/overview.md), and the deployment status is **running**. Click on the deployment card to enter the overview page to obtain relevant connection information. In addition, you also need to set a username and password on the deployed `Authentication & ACL` > `Authentication` page for subsequent connection verification.
+- You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Authentication & ACL** -> **Authentication** section for the setting.
 
-### New project
+### Creating a Electron Application
 
 [Electron](https://www.electronjs.org/) is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologies: it combines the Chromium rendering engine and the Node.js runtime. Electron is the main GUI framework behind several notable open-source projects including Atom, GitHub Desktop, Light Table, Visual Studio Code, and WordPress Desktop.[^1]
 
@@ -141,7 +141,7 @@ const mqtt = require('mqtt')
 window.mqtt = mqtt
 ```
 
-### Connect through TCP port
+### Connect over TCP port
 
 Set the client ID, username, and password using the following code, and the client ID should be unique.
 
@@ -162,9 +162,9 @@ const client = mqtt.connect('mqtt://broker.emqx.io:1883', {
 })
 ```
 
-### Connect through TCP TLS/SSL port
+### Connect over TCP Secure port
 
-When TLS/SSL encryption is enabled, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are consistent with establishing a connection through the TCP port. You only need to pay attention to changing the protocol to `mqtts` and matching the correct port number.
+If TLS/SSL encryption is enabled, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are consistent with establishing a connection through the TCP port. You only need to pay attention to changing the protocol to `mqtts` and matching the correct port number.
 
 Establish a connection between the client and MQTT Broker using the following code.
 
@@ -177,7 +177,7 @@ const client = mqtt.connect('mqtts://broker.emqx.io:8883', {
 })
 ```
 
-### Connect through WebSocket port
+### Connect over WebSocket port
 
 MQTT WebSocket uniformly uses `/path` as the connection path, which needs to be specified when connecting, while EMQX Broker uses `/mqtt` as the path.
 
@@ -194,9 +194,9 @@ const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', {
 })
 ```
 
-### Connect through WebSoket TLS/SSL port
+### Connect over WebSocket Secure port
 
-When TLS/SSL encryption is enabled, the connection [parameter option](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) is consistent with establishing a connection through the WebSocket port. You only need to pay attention to changing the protocol to 'wss' and matching the correct port number
+If TLS/SSL encryption is enabled, the connection [parameter option](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) is consistent with establishing a connection through the WebSocket port. You only need to pay attention to changing the protocol to 'wss' and matching the correct port number
 
 Establish a connection between the client and MQTT Broker using the following code.
 
@@ -211,7 +211,7 @@ const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
 
 ## Subscription and Publishing
 
-### Subscribe to the topic
+### Subscribe to Topics
 
 Set the topic to be subscribed to and its corresponding [QoS level](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos)(Optional) and call the MQTT. js `subscribe` method for subscription operations.
 
@@ -234,7 +234,7 @@ function onSub() {
 }
 ```
 
-### Unsubscribe
+### Unsubscribe to Topics
 
 When canceling a subscription, it is necessary to pass on topics that no longer require subscription and corresponding QoS (optional).
 
@@ -285,7 +285,7 @@ client.on('message', (topic, message) => {
 })
 ```
 
-### Disconnect
+### Disconnect from MQTT Broker
 
 Active disconnection by the client
 
@@ -303,7 +303,7 @@ function onDisconnect() {
 }
 ```
 
-## Test
+## Test the Connection
 
 At this point, we test the sending and receiving of messages with a [MQTT 5.0 client tool - MQTT X](https://mqttx.app), also written in Electron.
 
