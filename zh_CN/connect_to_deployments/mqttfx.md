@@ -19,6 +19,7 @@
 
 - 专业版地址：IP；端口：默认开启 1883(mqtt)、8083(ws)，您可以通过配置 TLS/SSL 开启 8883(mqtts) 和 8084(wss) 端口
 - 基础版地址：以 emqx.cloud 后缀结尾的域名；端口：xxxxx(mqtt)，xxxxx(ws)，xxxxx(mqtts)，xxxxx(wss)
+- BYOC 地址：部署时指定的域名；端口：1883(mqtt)，8083(ws)，8883(mqtts)，8884(wss)
 
 ### 认证信息
 

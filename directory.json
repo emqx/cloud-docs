@@ -57,6 +57,16 @@
               "path": "deployments/privatelink"
             }
           ]
+        },
+        {
+          "title": "创建 BYOC 部署",
+          "path": "create/byoc",
+          "children" : [
+            {
+              "title": "部署前置准备",
+              "path": "deployments/byoc_prerequisite"
+            }
+          ]
         }
       ]
     },
@@ -104,7 +114,7 @@
           ]
         },
         {
-          "title": "专有版",
+          "title": "专有版 / BYOC",
           "children": [
             {
               "title": "认证",

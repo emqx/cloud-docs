@@ -71,7 +71,7 @@
 
 ![detail](./_assets/shadow_detail.png)
 
-::: tip Tip
+::: tip
 影子模型一旦创建，就无法对 ID 进行修改
 :::
 

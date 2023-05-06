@@ -1,3 +1,4 @@
+<!-- deprecated -->
 # 简介
 
 部署是由 EMQX Cloud 管理的 EMQX 集群。
