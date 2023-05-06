@@ -20,5 +20,5 @@ docker run -p ${PORT}:8080 -it --name cloud-doc-preview \
     -v "$THIS_DIR"/zh_CN:/app/docs/zh/cloud/latest \
     -e DOCS_TYPE=cloud \
     -e VERSION=latest \
-    --platform=linux/amd64 \
+    --platform linux/amd64 \
 ghcr.io/emqx/docs-emqx-com-frontend:latest
