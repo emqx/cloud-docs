@@ -1,4 +1,4 @@
-# Connect to deployment through MQTT.js using Node.js
+# Connect to Deployment using Node.js via MQTT.js SDK
 
 This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in the Node.js project to realize the functions of connecting, subscribing, unsubscribing, sending and receiving messages between the client and the [MQTT broker](https://www.emqx.com/en/cloud).
 
@@ -12,7 +12,7 @@ node --version
 v16.19.1
 ```
 
-### Get MQTT Broker
+### Deploy MQTT Broker
 
 - You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
   - Address: **broker.emqx.io**
@@ -20,7 +20,7 @@ v16.19.1
   - SSL/TLS Port: **8883**
   - WebSocket Port: **8083**
   - WebSocket over TLS/SSL Port: **8084**
-- You can also [create an EMQX Cloud deployment](../create/overview.md). after the deployment status is **running**, you can get the connection information in the deployment overview page. In addition, you should set a username and password in the `Authentication & ACL` > `Authentication` page for connection verification.
+- You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Authentication & ACL** -> **Authentication** section for the setting.
 
 ## Install Dependencies
 
@@ -39,7 +39,7 @@ MQTT.js can be installed via NPM or Yarn, or can be imported through CDN or rela
   yarn add mqtt
   ```
 
-## Connect through TCP port
+## Connect over TCP port
 
 You can set a client ID, username, and password with the following code. The client ID should be unique.
 
@@ -60,9 +60,9 @@ const client = mqtt.connect('mqtt://broker.emqx.io:1883', {
 })
 ```
 
-## Connect through TCP TLS/SSL port
+## Connect over TCP Secure port
 
-When TLS/SSL encryption is enabled, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are consistent with establishing a connection through the TCP port. You only need to pay attention to changing the protocol to `mqtts` and matching the correct port number.
+If TLS/SSL encryption is enabled, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are consistent with establishing a connection through the TCP port. You only need to pay attention to changing the protocol to `mqtts` and matching the correct port number.
 
 Establish a connection between the client and MQTT Broker using the following code.
 
@@ -75,7 +75,7 @@ const client = mqtt.connect('mqtts://broker.emqx.io:8883', {
 })
 ```
 
-## Connect through WebSocket port
+## Connect over WebSocket Port
 
 MQTT WebSocket uniformly uses `/path` as the connection path, which needs to be specified when connecting, while EMQX Broker uses `/mqtt` as the path.
 
@@ -92,9 +92,9 @@ const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', {
 })
 ```
 
-## Connect through WebSoket TLS/SSL port
+## Connect over WebSocket Secure Port
 
-When TLS/SSL encryption is enabled, the connection [parameter option](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) is consistent with establishing a connection through the WebSocket port. You only need to pay attention to changing the protocol to 'wss' and matching the correct port number
+If TLS/SSL encryption is enabled, the connection [parameter option](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) is consistent with establishing a connection through the WebSocket port. You only need to pay attention to changing the protocol to 'wss' and matching the correct port number
 
 Establish a connection between the client and MQTT Broker using the following code.
 
@@ -109,7 +109,7 @@ const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
 
 ## Subscribe and Publish
 
-### Subscribe
+### Subscribe to Topics
 
 Specify a topic and the corresponding [QoS level](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos) to be subscribed.
 
@@ -126,7 +126,7 @@ client.subscribe(topic, { qos }, (error) => {
 })
 ```
 
-### Unsubscribe
+### Unsubscribe to Topics
 
 You can unsubscribe using the following code, specifying the topic and corresponding QoS level to be unsubscribed.
 
@@ -142,7 +142,7 @@ client.unsubscribe(topic, { qos }, (error) => {
 })
 ```
 
-### Publish
+### Publish Messages
 
 When publishing a message, the MQTT broker must be provided with information about the target topic and message content.
 
@@ -168,7 +168,7 @@ client.on('message', (topic, payload) => {
 })
 ```
 
-### Disconnect
+### Disconnect from MQTT Broker
 
 To disconnect the client from the broker, use the following code:
 
@@ -186,7 +186,7 @@ if (client.connected) {
 
 The above section only shows some key code snippets, for the full project code, please refer to [MQTT-Client-Node.js](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Node.js). You can download and try it out yourself.
 
-## Test
+## Test the Connection
 
 We add a line of startup script to the script field in the package.json file.
 

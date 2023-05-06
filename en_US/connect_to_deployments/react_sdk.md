@@ -1,16 +1,16 @@
-# Connect to Deployment using MQTT.js with React
+# Connect to Deployment using React via MQTT.js SDK
 
 This article mainly introduces how to use MQTT.js in a web application built on the React framework, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 
 ## Prerequisites
 
-### Get MQTT Broker
+### Deploy MQTT Broker
 
 - You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
   - Address: **broker.emqx.io**
   - WebSocket Port: **8083**
   - WebSocket over TLS/SSL Port: **8084**
-- You can also [create an EMQX Cloud deployment](../create/overview.md). after the deployment status is ***\*running\****, you can get the connection information in the deployment overview page. In addition, you should set a username and password in the `Authentication & ACL` > `Authentication` page for connection verification.
+- You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Authentication & ACL** -> **Authentication** section for the setting.
 
 ### Creating a React Application
 
@@ -92,7 +92,7 @@ const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
 });
 ```
 
-## Connect over WebSocket TLS/SSL Port
+## Connect over WebSocket Secure Port
 
 If TLS/SSL encryption is enabled, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are the same as for establishing a connection via the WebSocket port, you just need to be careful to change the protocol to `wss` and match the correct port number.
 
@@ -109,7 +109,7 @@ const client = mqtt.connect("wss://broker.emqx.io:8084/mqtt", {
 
 ## Subscribe and Publish
 
-### Subscribe
+### Subscribe to Topics
 
 Specify a topic and the corresponding [QoS level](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos) to be subscribed.
 
@@ -129,7 +129,7 @@ const mqttSub = (subscription) => {
   }
 ```
 
-### Unsubscribe
+### Unsubscribe to Topics
 
 You can unsubscribe using the following code, specifying the topic and corresponding QoS level to be unsubscribed.
 
@@ -149,7 +149,7 @@ const mqttUnSub = (subscription) => {
 }
 ```
 
-### Publish
+### Publish Messages
 
 When publishing a message, the MQTT broker must be provided with information about the target topic and message content.
 
@@ -176,7 +176,7 @@ client.on("message", (topic: string, message) => {
 });
 ```
 
-### Disconnect
+### Disconnect from MQTT Broker
 
 To disconnect the client from the broker, use the following code:
 
@@ -197,7 +197,7 @@ const mqttDisconnect = () => {
 
 The above section only shows some key code snippets, for the full project code, please refer to [MQTT Client - React](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React). You can download and try it out yourself.
 
-## Test
+## Test the Connection
 
 We have written the following simple browser application using React with the ability to create connections, subscribe to topics, send and receive messages, unsubscribe, and disconnect.
 
