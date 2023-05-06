@@ -50,7 +50,7 @@
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
 
-> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版 / BYOC 认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。
 
 
 ```c
@@ -202,7 +202,7 @@ void loop() {
 2. 设置 Wi-Fi 名称和密码，以及 MQTT 服务器连接地址和端口。
 
 
-> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，请参考 [Serverless 认证鉴权](../deployments/auth_serverless.md)和[专有版 / BYOC 认证鉴权](../deployments/auth_dedicated.md)设置用户名和密码。。
 
 
 ```c
@@ -218,7 +218,7 @@ const char *mqtt_password = "public";// password for authentication
 const int mqtt_port = 8883;// port of MQTT over TLS/SSL
 ```
 
-3. 添加服务端证书。如果您在使用公共 MQTT Broker、Serverless 部署或基础版部署的 TLS/SSL 端口连接，在此[下载 CA 证书](https://assets.emqx.com/data/emqxsl-ca.crt)。 如您使用专业版部署的 TLS/SSL 端口连接，请使用自己的服务端证书。
+3. 添加服务端证书。如果您在使用公共 MQTT Broker、Serverless 部署或基础版部署的 TLS/SSL 端口连接，在此[下载 CA 证书](https://assets.emqx.com/data/emqxsl-ca.crt)。 如您使用专业版 / BYOC 部署的 TLS/SSL 端口连接，请使用自己的服务端证书。
 
 ```c
 // load DigiCert Global Root CA ca_cert

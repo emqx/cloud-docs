@@ -50,9 +50,9 @@ Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，
 | delivery_dropped_queue_full | 消息队列满而被丢弃的消息数 |
 | delivery_dropped_expire | 消息过期而被丢弃的消息数 |
 
-## 专有版指标
+## 专有版 / BYOC 指标
 
-专有版提供了消息、客户端、报文、交付四种增量指标，可以查看每种指标对应的展示图表，某个时间点的详细信息。
+专有版和 BYOC 提供了消息、客户端、报文、交付四种增量指标，可以查看每种指标对应的展示图表，某个时间点的详细信息。
 
 <img src="./_assets/metrics.png" alt="metrics_line_detail" style="zoom:50%;" />
 

@@ -23,7 +23,7 @@ Serverless 免费试用额度：
 
 * 支持 MQTT，WebSockets 协议连接。
 
-  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以提 [工单](../feature/tickets.md) 或发送邮件(cloud-support@emqx.io)与我们取得联系。
+  > 如需其他协议(MQTT-SN、Lwm2m、JT/T808等)支持，您可以通过 [工单](../feature/tickets.md) 或 邮件(cloud-support@emqx.io) 与我们联系。
 
 免费试用部署注意事项：
 
@@ -63,7 +63,7 @@ Serverless 免费试用额度：
 
    
 
-2. 点击**新建部署**，可以从现有的版本中选择一种部署开始创建，如[创建 Serverless 部署](../create/serverless.md)或[创建专有版部署](../create/dedicated.md)，如选择免费试用 EMQX Cloud 专有版，您还需再配置云平台、部署区域、连接规格、计费方式等信息。最后确认你的部署信息，点击**立即部署**。
+2. 点击**新建部署**，可以从现有的版本中选择一种部署开始创建，可[创建 Serverless 部署](../create/serverless.md)、[创建专有版部署](../create/dedicated.md)或[创建 BYOC 部署](../create/byoc.md)，如选择免费试用 EMQX Cloud 专有版，您还需再配置云平台、部署区域、连接规格、计费方式等信息。最后确认你的部署信息，点击**立即部署**。
 
    ![add_users](./_assets/create_free_trial.png)
 

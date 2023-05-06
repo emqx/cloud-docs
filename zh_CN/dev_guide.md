@@ -124,4 +124,4 @@
 
 ## 其他功能
 
-集成细节以及其他集成功能需求您可以提 [工单](./feature/tickets.md)或发送邮件（cloud-support@emqx.io）咨询
+了解集成细节以及其他集成功能需求，您可以通过 [工单](./feature/tickets.md) 或 邮件(cloud-support@emqx.io) 与我们联系。
