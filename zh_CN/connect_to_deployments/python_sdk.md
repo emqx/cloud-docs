@@ -6,9 +6,7 @@
 Python 的设计哲学强调代码的可读性和简洁的语法（尤其是使用空格缩进划分代码块，而非使用大括号或者关键词）。
 Python 让开发者能够用更少的代码表达想法，不管是小型还是大型程序，该语言都试图让程序的结构清晰明了。
 
-## 前提条件
-> 1. 已经创建了部署，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。同时你可以使用 WebSocket 测试连接到 MQTT 服务器。
-> 2. 在 `认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+## 前置准备
 
 本项目使用 Python 3.8 进行开发测试，可用如下命令确认 Python 的版本。
 
@@ -16,6 +14,18 @@ Python 让开发者能够用更少的代码表达想法，不管是小型还是�
 ➜  ~ python3 --version             
 Python 3.8.6
 ```
+
+### 获得 MQTT 服务器
+
+- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh/cloud)创建。服务器连接信息如下：
+
+    - 连接地址: **broker.emqx.io**
+    - TCP Port: **1883**
+    - SSL/TLS Port: **8883**
+    - WebSocket 端口: **8083**
+    - WebSocket TLS/SSL 端口: **8084**
+
+- 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口  测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)，在部署控制台`认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 ## 安装 MQTT 客户端
 
@@ -34,13 +44,11 @@ pip install paho-mqtt
 from paho.mqtt import client as mqtt_client
 ```
 
-## 连接
+## 通过 TCP 端口连接
 
-> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 或 8883 端口，请确认好端口
+> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 端口，请确认好端口
 
-### 连接设置
-
-设置 MQTT Broker 连接地址，端口以及 topic，同时我们调用 Python `random.randint` 函数随机生成 MQTT 客户端 id。
+- 设置 MQTT Broker 连接地址，端口以及 topic，同时我们调用 Python `random.randint` 函数随机生成 MQTT 客户端 id。
 
 ```python
 broker = 'broker.emqx.io'
@@ -52,9 +60,44 @@ username = 'emqx'
 password = '**********'
 ```
 
-### 编写 MQTT 连接函数
+- 编写连接回调函数 `on_connect`，该函数将在客户端连接后被调用，在该函数中可以依据 `rc` 来判断客户端是否连接成功。
 
-编写连接回调函数 `on_connect`，该函数将在客户端连接后被调用，在该函数中可以依据 `rc` 来判断客户端是否连接成功。
+```python
+def connect_mqtt():
+    def on_connect(client, userdata, flags, rc):
+        if rc == 0:
+            print("Connected to MQTT Broker!")
+        else:
+            print("Failed to connect, return code %d\n", rc)
+
+    # Set Connecting Client ID
+    client = mqtt_client.Client(client_id)
+    client.username_pw_set(username, password)
+    client.on_connect = on_connect
+    client.connect(broker, port)
+    return client
+```
+
+## 通过 SSL/TLS 端口连接
+
+> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 8883 端口，请确认好端口
+
+本节介绍了如何通过 SSL/TLS 单向认证方式连接到部署。若您需使用双向认证方式，可以参考[这里](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/pub_sub_two_way_tls.py)。
+
+- 设置 MQTT Broker 连接地址，端口以及 topic，同时我们调用 Python `random.randint` 函数随机生成 MQTT 客户端 id。
+
+```python
+broker = 'broker.emqx.io'
+port = 8883
+topic = 'python/mqtt'
+client_id = f'python-mqtt-{random.randint(0, 1000)}'
+# 如果 broker 需要鉴权，设置用户名密码
+username = 'emqx'
+password = '**********'
+```
+
+- 设置 CA 证书，如果您使用 Serverless 或者基础版部署，您可以在部署概览中下载 CA 证书文件。如果您使用专业版部署，请参考[专业版 TLS/SSL 配置](../deployments/tls_ssl.md)进行证书配置。
+- 编写连接回调函数 `on_connect`，该函数将在客户端连接后被调用，在该函数中可以依据 `rc` 来判断客户端是否连接成功。
 
 ```python
 def connect_mqtt():
@@ -65,6 +108,8 @@ def connect_mqtt():
             print("Failed to connect, return code %d\n", rc)
     # Set Connecting Client ID
     client = mqtt_client.Client(client_id)
+    # Set CA certificate
+    client.tls_set(ca_certs='./server-ca.crt')
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)
@@ -78,19 +123,19 @@ def connect_mqtt():
 首先定义一个 while 循环语句，在循环中我们将设置每秒调用 MQTT 客户端 `publish` 函数向 `python/mqtt` 主题发送消息。
 
 ```python
- def publish(client):
-     msg_count = 0
-     while True:
-         time.sleep(1)
-         msg = f"messages: {msg_count}"
-         result = client.publish(topic, msg)
-         # result: [0, 1]
-         status = result[0]
-         if status == 0:
-             print(f"Send `{msg}` to topic `{topic}`")
-         else:
-             print(f"Failed to send message to topic {topic}")
-         msg_count += 1
+def publish(client):
+    msg_count = 0
+    while True:
+        time.sleep(1)
+        msg = f"messages: {msg_count}"
+        result = client.publish(topic, msg)
+        # result: [0, 1]
+        status = result[0]
+        if status == 0:
+            print(f"Send `{msg}` to topic `{topic}`")
+        else:
+            print(f"Failed to send message to topic {topic}")
+        msg_count += 1
 ```
 
 ### 订阅消息
@@ -136,6 +181,7 @@ def connect_mqtt():
             print("Failed to connect, return code %d\n", rc)
 
     client = mqtt_client.Client(client_id)
+    # client.tls_set(ca_certs='./server-ca.crt')
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)
@@ -194,6 +240,7 @@ def connect_mqtt() -> mqtt_client:
             print("Failed to connect, return code %d\n", rc)
 
     client = mqtt_client.Client(client_id)
+    # client.tls_set(ca_certs='./server-ca.crt')
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)

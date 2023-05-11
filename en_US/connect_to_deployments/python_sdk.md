@@ -6,11 +6,7 @@ This document describes how to use the **paho-mqtt** client library in Python pr
 Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. 
 Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects
 
-
-## Preconditions
-
->1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
->2. Set the user name and password in `Authentication & ACL` > `Authentication` for connection verification.
+## Prerequisites
 
 This project uses Python 3.8 to develop and test. Confirm the Python version by the following command.
 
@@ -19,6 +15,17 @@ This project uses Python 3.8 to develop and test. Confirm the Python version by 
 Python 3.8.6
 ```
 
+### Deploy MQTT Broker
+
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+
+  + Broker: **broker.emqx.io**
+  + TCP Port: **1883**
+  + TLS/SSL Port: **8883**
+  + WebSocket Port: **8083**
+  + WebSocket TLS/SSL Port: **8084**
+
+- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth_overview.html) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
 
 ## Install MQTT client
 
@@ -38,13 +45,11 @@ pip install paho-mqtt
 from paho.mqtt import client as mqtt_client
 ```
 
-## Connection
+## Connect over TCP Port
 
->Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the basic edition, the port is not 1883 or 8883, please confirm the port.
+> Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the basic edition, the port is not 1883, please confirm the port.
 
-### Connection Settings
-
-Set the host, port and topic of MQTT Broker connection. At the same time, we call the Python function 'random.randint' to randomly generate the MQTT client id.
+- Set the host, port and topic of MQTT Broker connection. At the same time, we call the Python function 'random.randint' to randomly generate the MQTT client id.
 
 ```python
 broker = 'broker.emqx.io'
@@ -55,9 +60,7 @@ username = 'emqx'
 password = '**********'
 ```
 
-### Write MQTT connection function
-
-Write the connect callback function 'on_connect'. 
+- Write the connect callback function 'on_connect'. 
 This function will be called after connecting the client, and we can determine whether the client is connected successfully according to 'rc' in this function.
 
 ```python
@@ -75,6 +78,44 @@ def connect_mqtt():
     return client
 ```
 
+## Connect over SSL/TLS Port
+
+> Please find the relevant address and port information in the Deployment Overview of the Console. Please note that if it is the basic edition, the port is not 8883, please confirm the port.
+
+This section introduces how to connect to a deployment with SSL/TLS one-way authentication. If you need to use two-way authentication, you can refer to [here](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Python3/pub_sub_two_way_tls.py).
+
+- Set the host, port and topic of MQTT Broker connection. At the same time, we call the Python function 'random.randint' to randomly generate the MQTT client id.
+
+```python
+broker = 'broker.emqx.io'
+port = 8883
+topic = 'python/mqtt'
+client_id = f'python-mqtt-{random.randint(0, 1000)}'
+username = 'emqx'
+password = '**********'
+```
+
+- Setting the CA certificate. If you are using Serverless or Basic deployment, you can download CA certificate file in the Deployment Overview of the Console. If you are using Professional deployment, please refer to [Configure TLS/SSL](../deployments/tls_ssl.md) for certificate configuration.
+- Write the connect callback function 'on_connect'. 
+This function will be called after connecting the client, and we can determine whether the client is connected successfully according to 'rc' in this function.
+
+```python
+def connect_mqtt():
+    def on_connect(client, userdata, flags, rc):
+        if rc == 0:
+            print("Connected to MQTT Broker!")
+        else:
+            print("Failed to connect, return code %d\n", rc)
+    # Set Connecting Client ID
+    client = mqtt_client.Client(client_id)
+    # Set CA certificate
+    client.tls_set(ca_certs='./server-ca.crt')
+    client.username_pw_set(username, password)
+    client.on_connect = on_connect
+    client.connect(broker, port)
+    return client
+```
+
 ## Publish and Subscribe
 
 ### Publish messages
@@ -82,19 +123,19 @@ def connect_mqtt():
 First, we define a while loop. In this loop, and we will set the MQTT client 'publish' function to send messages to the topic 'python/mqtt' every second.
 
 ```python
- def publish(client):
-     msg_count = 0
-     while True:
-         time.sleep(1)
-         msg = f"messages: {msg_count}"
-         result = client.publish(topic, msg)
-         # result: [0, 1]
-         status = result[0]
-         if status == 0:
-             print(f"Send `{msg}` to topic `{topic}`")
-         else:
-             print(f"Failed to send message to topic {topic}")
-         msg_count += 1
+def publish(client):
+    msg_count = 0
+    while True:
+     time.sleep(1)
+     msg = f"messages: {msg_count}"
+     result = client.publish(topic, msg)
+     # result: [0, 1]
+     status = result[0]
+     if status == 0:
+         print(f"Send `{msg}` to topic `{topic}`")
+     else:
+         print(f"Failed to send message to topic {topic}")
+     msg_count += 1
 ```
 
 ### Subscribe
@@ -141,6 +182,7 @@ def connect_mqtt():
             print("Failed to connect, return code %d\n", rc)
 
     client = mqtt_client.Client(client_id)
+    # client.tls_set(ca_certs='./server-ca.crt')
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)
@@ -199,6 +241,7 @@ def connect_mqtt() -> mqtt_client:
             print("Failed to connect, return code %d\n", rc)
 
     client = mqtt_client.Client(client_id)
+    # client.tls_set(ca_certs='./server-ca.crt')
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)
