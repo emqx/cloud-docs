@@ -4,67 +4,84 @@
 
 With the high flexibility and ease of use, openHAB provides a particular binding for users to connect MQTT Broker. In this article, we will introduce to you the process of setting up EMQX Cloud MQTT Broker with openHAB.
 
+## Prerequisites
 
+### Get MQTT Broker
 
-## What is MQTT?
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
-MQTT, known as Message Queuing Telemetry Transport, is a lightweight IoT messaging protocol based on the publish/subscribe model and is becoming the standard for IoT communications with its simplicity, QoS support, lightweight and bandwidth-saving features.
+- Broker: **broker.emqx.io**
+- MQTT Port: **1883**
+- MQTT over TLS/SSL Port: **8883**
 
+You can [create a deployment](../create/overview.md) as well. Find connection information in deployment overview. Make sure the deployment is running. Use the TCP port or TLS/SSL port to test the connection to the MQTT server.
 
+If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
 
-## Why EMQX Cloud MQTT?
+## OpenHAB Initialization
 
-[EMQX Cloud](https://www.emqx.com/en/cloud) is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. It serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications.
+If you are using MQTT for OpenHAB for the first time, please refer to the [quick start](https://www.openhab.org/addons/bindings/mqtt/).
 
-EMQX Cloud is available in three plans: Basic, Professional, and Premium, which offers a variety of flexible product specifications to support the deployment of fully managed MQTT services exclusively for you on the world's leading public clouds. Need more information with EMQX Cloud's product plan? Click[ here](https://docs.emqx.io/en/cloud/latest/pricing.html).
+1. Install OpenHAB
 
-Such a powerful product is a great choice to integrate with openHAB. You could check out the[ documentation](https://docs.emqx.io/en/cloud/latest/) to get more information regarding EMQX Cloud。
+   In this example, we use Docker to quickly install OpenHAB.
 
-
-
-## Binding EMQX MQTT Broker with openHAB 3
-
-If it's your first time using EMQX Cloud, don't worry. We will guide you through connecting Home Assistant with EMQX Cloud.
-
-1. [Create](https://www.emqx.com/en/signin?continue=https://www.emqx.com/en/cloud) an EMQX Cloud Account.
-
-2. Login to EMQX Cloud [console](https://cloud.emqx.io/console/) and start a new deployment.
-
-   ```tip
-   For the first-time EMQX Cloud customers, we have an opportunity for you to create a free trial deployment of up to 14 days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQX Cloud. 
+   ```bash
+   docker run -d --name=openhab --restart=always --network=host \
+    -v /opt/openhab/conf:/openhab/conf \
+    -v /opt/openhab/userdata:/openhab/userdata \
+    -v /opt/openhab/addons:/openhab/addons \
+    openhab/openhab
    ```
 
-3. After the new deployment is created, and the status is **running**, add the client authentication information (you could choose to add manually or import from the file).  
+   Then access the OpenHAB service via the local IP with the corresponding port, e.g., x.x.x.x:8080, to create an account.
 
-   ![add_users](https://docs.emqx.io/assets/img/auth.6543e1b4.png)
+   ![openhab_create_account](./_assets/openhab_create_account.png)
 
-4. Install openHAB. You could easily get openHAB installed by following the steps shown [here](https://www.openhab.org/docs/installation/). OpenHAB could be run on various systems based on your preference. 
+   Next, you can select language, region, time zone, location of your home. Once configuration is finished, you will be redirected to openHAB console.
 
-5. After the openHAB is installed, run the openHAB and go to [console](http://localhost:8080/).
+   ![openhab_console](./_assets/openhab_console.png)
 
-6. Go to `Settings` and install MQTT Binding:
+2. Install Bindings
 
-   ![image-binding](./_assets/image-binding.png)
+   Go to `Settings` ---> `Bingdings` ---> `MQTT Binding` and install MQTT Binding:
 
-7. Add MQTT to `Things`
+   ![openhab_binding](./_assets/openhab_binding.png)
 
-   ![image-thing](./_assets/image-thing.png)
+3. Add `MQTT Broker` to `Things`
 
-8. Select `MQTT Broker` and fill in the information of the deployment we created before.
+   ![openhab_add_thing_1](./_assets/openhab_add_thing_1.png)
 
-   ![image-broker](./_assets/image-broker.png)
+   Then select `MQTT Broker` and fill in the information of the deployment we created before.
 
-   For the username and password, fill in the authentication information as mentioned before.
+   ![openhab_add_thing_2](./_assets/openhab_add_thing_2.png)
 
-   ![image-info](./_assets/image-info.png)
+## Connect over TCP Port
 
-   
+This section describes how to connect a openhab client to MQTT broker over TCP port.
 
-9. When there is a little green label shows `ONLINE`, you are successfully connecting openHAB with EMQX Cloud. Congrats!
+- Fill in the broker address, port, username and password (if it exists).
+- Select `TCP` for MQTT transport.
 
-   ![image-things](./_assets/image-things.png)
+![openhab_mqtt_connection](./_assets/openhab_mqtt_connection.png)
 
-   You could also check the status from the EMQX Cloud's monitor page.
+## Connect over TLS/SSL Port
 
-   ![image-monitor](./_assets/image-monitor.png)
+This section describes how to connect a openhab client to MQTT broker over TLS/SSL port.
 
+- Fill in the broker address, port, username, and password (if they exist).
+- Enable `Secure Connection`.
+- Select `TCP` for MQTT transport.
+
+![openhab_mqtts_connection_1](./_assets/openhab_mqtts_connection_1.png)
+![openhab_mqtts_connection_2](./_assets/openhab_mqtts_connection_2.png)
+
+## Test Connection
+
+Go to `Settings` ---> `Things` ---> `MQTT Broker`, when there is a little green label that says "online, you are successfully connecting openHAB with EMQX Cloud. Congrats!
+
+![openhab_connection](./_assets/openhab_connection.png)
+
+You can also check the status from the EMQX Cloud's monitor page.
+
+![openhab_monitor](./_assets/openhab_monitor.png)
