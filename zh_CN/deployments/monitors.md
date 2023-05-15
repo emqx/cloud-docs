@@ -1,19 +1,28 @@
 # 监控
 
-EMQX Cloud 提供了监控指标，可实时查看连接数，TPS，订阅数和主题数等数据。
+在监控页面中，可以看到部署的连接指标、客户端详情以及订阅的信息
 
 
 
-## 基础信息
+## 部署指标
 包含以下几个监控指标
-* 集群状态和集群运行时长
-* 每秒钟消息发送条数
-* 每秒钟消息接收条数
-* 连接数
-* 订阅数
+* 部署当前的总的连接数量
+* 部署当前总 TPS
+	- 部署总 TPS 包含了每秒钟接收和发送的消息的总速率
+* 消息流出速率
+* 消息流入速率
+* [保留消息](https://www.emqx.com/zh/blog/mqtt5-features-retain-message)数量
 * 主题数
+	- 主题数为当前所有客户端订阅的主题总数
+* 订阅数
+	- 订阅数为当前每个客户端中订阅主题的总数
+* [共享订阅](https://www.emqx.com/zh/blog/introduction-to-mqtt5-protocol-shared-subscription)数量
 
-![monitor_base](./_assets/monitor_base.png)
+::: tip
+订阅数是按客户端计算的，而主题是唯一的订阅，同一主题可能被不同的客户端订阅。
+:::
+
+![monitor](./_assets/monitor_base.png)
 
 
 
