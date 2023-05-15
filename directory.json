@@ -67,6 +67,10 @@
               "path": "deployments/byoc_prerequisite"
             }
           ]
+        },
+        {
+          "title": "配额和限制",
+          "path": "create/restriction"
         }
       ]
     },
