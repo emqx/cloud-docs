@@ -4,7 +4,7 @@ EMQX Cloud resources are the key concept for Data Integrations. Most of the reso
 
 In a professional plan, we provide all the resources. However, in a standard plan, only `MQTT Bridge`, `Republish`, `Webhook`, `debug mode` are available. Because other resources require a VPC peering and can only be connected through internal network.
 
-::: tip Tip
+::: tip
 Before adding a resource, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md). Or you can open [NAT Gateway](../vas/vas-intro.md) to connect to the service without VPC peering.
 :::
 

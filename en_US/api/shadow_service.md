@@ -169,7 +169,7 @@ POST /shadows
 | shadowID    | String | ID of shadow models  |
 | shadowName  | String | Name of shadow models |
 
-::: tip Tip
+::: tip
 ID of shadow models is optional, the system will automatically generate one.
 :::
 
@@ -215,7 +215,7 @@ PUT /shadows/${shadow_id}
 | description | String | Description of shadow models |
 | shadowName  | String | Name of shadow models |
 
-::: tip Tip
+::: tip
 The ID of shadow model can't be modified once it's created.
 :::
 
@@ -366,7 +366,7 @@ PATCH /shadows/${shadow_id}/json
 
 ### Request Example
 
-::: tip Tip
+::: tip
 If you need to update a multi-level object incrementally, please update **level by level**. Do not add a multi-level object directly, it will return an error.
 :::
 

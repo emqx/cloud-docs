@@ -4,16 +4,16 @@ In addition to supporting the default authentication and authentication method, 
 
 ## Authentication Chain
 
-If default authentication is also enabled, EMQX Cloud will chain [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html)-> MySQL authentication in the following order Authentication.
+If default authentication is also enabled, EMQX Cloud will chain [default authentication](./auth_dedicated.md)-> MySQL authentication in the following order Authentication.
 
 - Once authentication is successful, the chain is terminated and the client is accessible
 - Once authentication fails, terminate the chain and disable client access
 
-![auth_chain](./_assets/../_assets/mysql_auth_chain.png)
+![auth_chain](./_assets/mysql_auth_chain.png)
 
 ## ACL Authentication Chain
 
-If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](https://docs.emqx.com/en/cloud/latest/deployments/acl.html)-> MySQL ACL-> System Defaults (All Pub/Sub allowed).
+If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](./acl_dedicated.md)-> MySQL ACL-> System Defaults (All Pub/Sub allowed).
 
 - Once the authentication is passed, terminate the chain and allow the client to pass the authentication
 - Once authentication has failed, terminate the chain and deny the client to pass authentication
@@ -109,17 +109,17 @@ If multiple ACL modules are enabled at the same time, EMQX Cloud will chain auth
 
 1. Click `Authentication Authentication` - `External Authentication Authorization` in the left menu bar of EMQX Cloud deployment and select MySQL Authentication/Access Control.
 
-    ![mysql_auth](./_assets/../_assets/mysql_auth.png)
+    ![mysql_auth](./_assets/mysql_auth.png)
 
 2. Click `Configure Authentication` to enter MySQL Authentication/Access Control page, fill in the information and create a new authentication.
 
     ::: tip
      - If the current deployment is Basic deployment, please fill in the public address for the server address
-     - If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the internal network address for the server address.
+     - If the current deployment is Professional deployment, you need to create a [VPC peer connection](./vpc_peering.md), please fill in the internal network address for the server address.
      - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
     :::
 
-    ![mysql_auth](./_assets/../_assets/mysql_auth_info.png)
+    ![mysql_auth](./_assets/mysql_auth_info.png)
 
 ### Permissions authentication principle
 

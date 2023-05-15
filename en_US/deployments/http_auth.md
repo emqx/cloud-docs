@@ -12,7 +12,7 @@ EMQX Cloud requests permission from a user-defined authentication service using 
 
 ## Authentication Chain
   
-If default authentication is also enabled, EMQX Cloud will follow [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) -> HTTP authentication for chain authentication:
+If default authentication is also enabled, EMQX Cloud will follow [default authentication](./auth_dedicated.md) -> HTTP authentication for chain authentication:
 
 - Once authentication is successful, terminate the authentication chain and the client is accessible
 - Once authentication fails, terminate the authentication chain and disable client access
@@ -21,7 +21,7 @@ If default authentication is also enabled, EMQX Cloud will follow [default authe
 
 ## ACL Authentication Chain
 
-If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](https://docs.emqx.com/en/cloud/latest/deployments/acl.html)-> HTTP ACL-> System Defaults (All Pub/Sub allowed).
+If multiple ACL modules are enabled at the same time, EMQX Cloud will chain authentication in the order of [Default Authentication Database ACL](./acl_dedicated.md)-> HTTP ACL-> System Defaults (All Pub/Sub allowed).
 
 - Once the authentication is passed, terminate the chain and allow the client to pass the authentication
 - Once authentication has failed, terminate the chain and deny the client to pass authentication
@@ -44,7 +44,7 @@ Configure the required parameters for permission authentication on the form page
   ::: tip
 
 - If the current deployment is Standard deployment, please fill in the public address for the server address
-- If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the internal network address for the server address.
+- If the current deployment is Professional deployment, you need to create a [VPC peer connection](./vpc_peering.md), please fill in the internal network address for the server address.
 - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
   :::
 
