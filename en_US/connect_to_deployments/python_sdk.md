@@ -1,19 +1,11 @@
-# Connect via Python SDK
+# Connect via Paho Python
 
 This document describes how to use the **paho-mqtt** client library in Python projects to connect to the MQTT server, subscribe, unsubscribe, send and receive messages.
 
-[Python](https://www.python.org/) is an interpreted, high-level, general-purpose programming language. 
-Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. 
-Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects
+[paho-mqtt](https://www.eclipse.org/paho/clients/python/) is currently using more MQTT client library in Python.
+It provides support for MQTT V5.0, V3.1, and V3.1.1 for client classes on Python 2.7.9+ or 3.6+. It also provides some helper functions to make publishing one off messages to an MQTT server very straightforward.
 
 ## Prerequisites
-
-This project uses Python 3.8 to develop and test. Confirm the Python version by the following command.
-
-```
-➜  ~ python3 --version             
-Python 3.8.6
-```
 
 ### Deploy MQTT Broker
 
@@ -27,11 +19,15 @@ Python 3.8.6
 
 - You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth_overview.html) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
 
-## Install MQTT client
+### Check Python version
+This project uses Python 3.8 to develop and test. Confirm the Python version by the following command.
 
-[paho-mqtt](https://www.eclipse.org/paho/clients/python/) is currently using more MQTT client library in Python.
-It provides support for MQTT V5.0, V3.1, and V3.1.1 for client classes on Python 2.7.9+ or 3.6+. 
-It also provides some helper functions to make publishing one off messages to an MQTT server very straightforward.
+```
+➜  ~ python3 --version             
+Python 3.8.6
+```
+
+## Install MQTT client
 
 1. Pip is a package-management system written in Python used to install and manage software packages. Use the following command to install paho-mqtt.
 
@@ -118,9 +114,35 @@ def connect_mqtt():
 
 ## Publish and Subscribe
 
-### Publish messages
+This section introduces how to subscribe to topics and publish messages after you successfully connect to the MQTT broker.
 
-First, we define a while loop. In this loop, and we will set the MQTT client 'publish' function to send messages to the topic 'python/mqtt' every second.
+### Subscribe to Topics
+
+- Set the topic for subscription and the [QoS Level](https://www.emqx.com/en/blog/introduction-to-mqtt-qos) of the topic.
+- Write the message callback function 'on_message'. This function will be called after the client received messages from the MQTT Broker. In this function, we will print out the name of subscribed topics and the received messages.
+
+```python
+def subscribe(client: mqtt_client):
+    def on_message(client, userdata, msg):
+        print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+
+    client.subscribe(topic, qos=0)
+    client.on_message = on_message
+```
+
+### Unsubscribe to Topics
+
+Use the following codes to unsubscribe to topics. You need to define the topic for unsubscription and the QoS level.
+
+```python
+def unsubscribe(client: mqtt_client):
+    client.on_message = None
+    client.unsubscribe(topic)
+```
+
+### Publish Messages
+- Inform MQTT Broker about the topic and payload when publishing messages.
+- First, we define a while loop. In this loop, and we will set the MQTT client 'publish' function to send messages to the topic 'python/mqtt' every second.
 
 ```python
 def publish(client):
@@ -138,19 +160,28 @@ def publish(client):
         msg_count += 1
 ```
 
-### Subscribe
+### Receive Messages
 
-Write the message callback function 'on_message'. This function will be called after the client received messages from the MQTT Broker. 
-In this function, we will print out the name of subscribed topics and the received messages.
+The following code specifies that the client listens for message events and executes a callback function after receiving a message, printing the received message and its topic to the console.
 
 ```python
-def subscribe(client: mqtt_client):
-    def on_message(client, userdata, msg):
+def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
-
-    client.subscribe(topic)
-    client.on_message = on_message
+        
+client.on_message = on_message
 ```
+
+### Disconnect from MQTT Broker
+
+If the client wants to disconnect actively, use the following code:
+
+```python
+def disconnect(client: mqtt_client):
+    client.loop_stop()
+    client.disconnect()
+```
+
+The above section only lists some key codes. For the complete code of the project, please refer to [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/). You can download and experience it.
 
 ## The full code
 

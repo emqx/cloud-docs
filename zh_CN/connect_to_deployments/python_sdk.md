@@ -1,19 +1,11 @@
-# 使用 Python SDK 连接
+# 使用 Paho Python 连接到部署
 
 本文主要介绍如何在 Python 项目中使用 **paho-mqtt** 客户端库 ，实现客户端与 MQTT 服务器的连接、订阅、取消订阅、收发消息等功能。
 
-[Python](https://www.python.org/) 是一种广泛使用的解释型、高级编程、通用型编程语言。
-Python 的设计哲学强调代码的可读性和简洁的语法（尤其是使用空格缩进划分代码块，而非使用大括号或者关键词）。
-Python 让开发者能够用更少的代码表达想法，不管是小型还是大型程序，该语言都试图让程序的结构清晰明了。
+[paho-mqtt](https://www.eclipse.org/paho/clients/python/) 是目前 Python 中使用较多的 MQTT 客户端库，
+它在 Python 2.7.9+ 或 3.6+ 上为客户端类提供了对 MQTT v5.0，v3.1 和 v3.1.1 的支持。它还提供了一些帮助程序功能，使将消息发布到 MQTT 服务器变得非常简单。
 
 ## 前置准备
-
-本项目使用 Python 3.8 进行开发测试，可用如下命令确认 Python 的版本。
-
-```
-➜  ~ python3 --version             
-Python 3.8.6
-```
 
 ### 获得 MQTT 服务器
 
@@ -27,11 +19,15 @@ Python 3.8.6
 
 - 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口  测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)，在部署控制台`认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
+### 检查 Python 版本
+本项目使用 Python 3.8 进行开发测试，可用如下命令确认 Python 的版本。
+
+```
+➜  ~ python3 --version             
+Python 3.8.6
+```
+
 ## 安装 MQTT 客户端
-
-[paho-mqtt](https://www.eclipse.org/paho/clients/python/) 是目前 Python 中使用较多的 MQTT 客户端库，
-它在 Python 2.7.9+ 或 3.6+ 上为客户端类提供了对 MQTT v5.0，v3.1 和 v3.1.1 的支持。它还提供了一些帮助程序功能，使将消息发布到 MQTT 服务器变得非常简单。
-
 1. Pip 是 Python 包管理工具，该工具提供了对 Python 包的查找、下载、安装、卸载的功能，使用以下命令安装 paho-mqtt。
 
 ```bash
@@ -116,11 +112,37 @@ def connect_mqtt():
     return client
 ```
 
-## 发布和订阅
+## 订阅和发布
+
+本节主要介绍了如何在已连接到部署的情况下订阅主题并发布消息。
+
+### 订阅主题
+
+- 设置将要订阅的主题及对应 [QoS 等级](https://www.emqx.com/zh/blog/introduction-to-mqtt-qos)。
+- 编写消息回调函数 `on_message`，该函数将在客户端从 MQTT Broker 收到消息后被调用，在该函数中我们将打印出订阅的 topic 名称以及接收到的消息内容。
+
+```python
+def subscribe(client: mqtt_client):
+    def on_message(client, userdata, msg):
+        print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+
+    client.subscribe(topic=topic, qos=0)
+    client.on_message = on_message
+```
+
+### 取消订阅
+
+通过以下代码取消订阅，此时应指定取消订阅的主题。
+
+```python
+def unsubscribe(client: mqtt_client):
+    client.on_message = None
+    client.unsubscribe(topic)
+```
 
 ### 发布消息
-
-首先定义一个 while 循环语句，在循环中我们将设置每秒调用 MQTT 客户端 `publish` 函数向 `python/mqtt` 主题发送消息。
+- 发布消息时需要告知 MQTT Broker 目标主题及消息内容。
+- 首先定义一个 while 循环语句，在循环中我们将设置每秒调用 MQTT 客户端 `publish` 函数向 `python/mqtt` 主题发送消息。
 
 ```python
 def publish(client):
@@ -138,18 +160,28 @@ def publish(client):
         msg_count += 1
 ```
 
-### 订阅消息
+### 接收消息
 
-编写消息回调函数 `on_message`，该函数将在客户端从 MQTT Broker 收到消息后被调用，在该函数中我们将打印出订阅的 topic 名称以及接收到的消息内容。
+通过以下代码指定客户端对消息事件进行监听，并在收到消息后执行回调函数，将接收到的消息及其主题打印到控制台。
 
 ```python
-def subscribe(client: mqtt_client):
-    def on_message(client, userdata, msg):
+def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
-
-    client.subscribe(topic)
-    client.on_message = on_message
+        
+client.on_message = on_message
 ```
+
+### 断开连接
+
+如客户端希望主动断开连接，可以通过如下代码实现：
+
+```python
+def disconnect(client: mqtt_client):
+    client.loop_stop()
+    client.disconnect()
+```
+
+以上部分仅列出了一些关键代码，项目完整代码请见[这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/)，您可以进行下载并体验。
 
 ## 完整代码
 
