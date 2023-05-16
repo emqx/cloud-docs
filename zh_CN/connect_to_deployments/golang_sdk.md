@@ -83,7 +83,7 @@ go version go1.15.13 darwin/amd64
         opts.SetUsername(username)
         opts.SetPassword(password)
         opts.SetClientID(client_id)
-        opts.SetKeepAlive(60)
+        opts.SetKeepAlive(time.Second * 60)
         client := mqtt.NewClient(opts)
         token := client.Connect()
         // 如果连接失败，则终止程序
@@ -121,7 +121,7 @@ go version go1.15.13 darwin/amd64
         opts.SetUsername(username)
         opts.SetPassword(password)
         opts.SetClientID(client_id)
-        opts.SetKeepAlive(60)
+        opts.SetKeepAlive(time.Second * 60)
     
         // Optional: 设置CA证书
         // opts.SetTLSConfig(loadTLSConfig("caFilePath"))
@@ -249,7 +249,7 @@ func createMqttClient() mqtt.Client {
 	opts.SetUsername(username)
 	opts.SetPassword(password)
 	opts.SetClientID(client_id)
-	opts.SetKeepAlive(60)
+	opts.SetKeepAlive(time.Second * 60)
 
 	// Optional: 设置CA证书
 	// opts.SetTLSConfig(loadTLSConfig("caFilePath"))

@@ -85,7 +85,7 @@ This section introduces how to connect to MQTT Broker over TCP Protocol.
         opts.SetUsername(username)
         opts.SetPassword(password)
         opts.SetClientID(client_id)
-        opts.SetKeepAlive(60)
+        opts.SetKeepAlive(time.Second * 60)
         client := mqtt.NewClient(opts)
         token := client.Connect()
         // if connection failed, exit
@@ -126,7 +126,7 @@ This section introduces how to connect to MQTT Broker over SSL/TLS Protocol.
         opts.SetUsername(username)
         opts.SetPassword(password)
         opts.SetClientID(client_id)
-        opts.SetKeepAlive(60)
+        opts.SetKeepAlive(time.Second * 60)
     
         // Optional: set server CA
         // opts.SetTLSConfig(loadTLSConfig("caFilePath"))
@@ -254,7 +254,7 @@ func createMqttClient() mqtt.Client {
 	opts.SetUsername(username)
 	opts.SetPassword(password)
 	opts.SetClientID(client_id)
-	opts.SetKeepAlive(60)
+	opts.SetKeepAlive(time.Second * 60)
 
 	// Optional: set server CA
 	// opts.SetTLSConfig(loadTLSConfig("caFilePath"))
