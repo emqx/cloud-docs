@@ -1,6 +1,6 @@
 # 创建 Serverless 部署
 
-EMQX Cloud 已经推出了基于共享集群的 MQTT 服务 —— EMQX Cloud Serverless，赋予开发者或微小企业更低成本且高效测试开发物联网应用的能力。简单几步就创建一个 Serverless 部署。
+EMQX Cloud 已经推出了安全可伸缩的 MQTT 服务 —— EMQX Cloud Serverless，赋予开发者或微小企业更低成本且高效测试开发物联网应用的能力。简单几步就创建一个 Serverless 部署。
 
 Serverless 部署最大的优势在于连接场景只按照实际的使用量进行计费，Serverless 详细的计费方式请查看[定价计费](../price/pricing.md)部分。
 

@@ -1,0 +1,39 @@
+# Quotas and Limits
+
+For each type of EMQX Cloud deployment, there are default quotas (or limits). You can contact us to change some quotas, but others cannot be changed.
+
+## Serverless
+| **Name**         | **Default**                | **Adjustable**     |
+| --------------------| ----------------------- | ------------------|
+| Maximum internal authentication entries   | 2000                | NO                 |
+| Maximum internal ACL entries     | 2000                | NO                   |
+| Maximum message queue length     | 1000                | NO                   |
+| Session expiry time（MQTT 3.x）     | 2 hours                | NO                   |
+| Maximum retained messages     | 2000                | NO                   |
+| Maximum size of a retained message     | 1mb                | NO                   |
+| Retained message expiry interval     | Never                | NO                   |
+| Client ID maximun length（MQTT 3.x）     | 23                | NO                   |
+| Client ID maximun length（MQTT 5.0）     | 256                | NO                   |
+| Maximum subscriptions for a single client     | 10                | NO                   |
+| TCP connect timeout     | 10s                | NO                   |
+| Number of deployment    | 1                | YES                   |
+| Number of subaccount     | 20                | NO                   |
+
+
+## Dedicated and BYOC
+
+| **Name**         | **Default**                | **Adjustable**           |**Need to restart deployment or not** |
+| --------------------| ----------------------- | ------------------|------------------|
+| Maximum internal authentication entries      |  Session specification * 2      | NO                  |-|
+| Maximum internal ACL entries     | Session specification * 2      | NO                   |-|
+| Maximum message queue length     | 1000                | YES                   |NO|
+| Session expiry time（MQTT 3.x）     | 2 hours                | NO                   |NO|
+| Maximum retained messages    | Session specification * 10    | YES                   |NO|
+| Maximum size of a retained message     | 1mb                | YES                   |NO|
+| Retained message expiry interval     | Never                | YES                   |NO|
+| Client ID maximun length（MQTT 3.x）     | 23                | YES                   |YES|
+| Client ID maximun length（MQTT 5.0）     | 256                | YES                   |YES|
+| API HTTP QPS     | 100/s                | NO                   |-|
+| TCP connect timeout     | 10s                | YES                   |YES|
+| Number of deployment     | 3                | YES                   |NO|
+| Number of subaccount     | 20                | NO                   |-|
