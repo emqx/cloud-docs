@@ -543,6 +543,10 @@
       ]
     },
     {
+      "title": "关于 MQTT",
+      "path": "https://www.emqx.com/zh/mqtt"
+    },
+    {
       "title": "产品动态",
       "path": "release_notes"
     },
@@ -626,6 +630,10 @@
               "path": "deployments/privatelink"
             }
           ]
+        },
+        {
+          "title": "Quotas and Limits",
+          "path": "create/restriction"
         }
       ]
     },
@@ -1068,6 +1076,10 @@
           "path": "api/shadow_service"
         }
       ]
+    },
+    {
+      "title": "About MQTT",
+      "path": "https://www.emqx.com/en/mqtt"
     },
     {
       "title": "Release Note",
