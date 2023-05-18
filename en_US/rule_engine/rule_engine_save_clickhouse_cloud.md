@@ -2,11 +2,11 @@
 
 [ClickHouse](https://clickhouse_cloud.com/docs/en/) is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP). ClickHouse’s performance exceeds all other column-oriented database management systems. It processes billions of rows and tens of gigabytes of data per server second.
 
-A couple days ago, ClickHouse announced the launch of [ClickHouse Cloud](https://clickhouse_cloud.com/cloud), a lightning-fast cloud-based database that simplifies and accelerates insights and analytics for modern digital enterprises.
+In 2022, ClickHouse announced the launch of [ClickHouse Cloud](https://clickhouse.com/cloud), a lightning-fast cloud-based database that simplifies and accelerates insights and analytics for modern digital enterprises.
 
 In this article, we will simulate temperature and humidity data and report it to EMQX Cloud via the MQTT protocol, and then use the EMQX Cloud data integrations to dump the data to ClickHouse Cloud.
 
-![flow](./_assets/flow.png)
+![flow](./_assets/clickhouse_cloud_flow.png)
 
 Before you start, you need to complete the following operations:
 
@@ -15,9 +15,9 @@ Before you start, you need to complete the following operations:
 
 ## ClickHouse Cloud configuration
 
-[ClickHouse Cloud](https://clickhouse_cloud.com/cloud) is in public beta and you can apply for a free trial at the official ClickHouse website. It offers a 14-day free trial.
+[ClickHouse Cloud](https://clickhouse.com/cloud) is in general available, you can apply for a free trial at the official ClickHouse website. It offers a 14-day free trial.
 
-ClickHouse provides a [quick start](https://clickhouse_cloud.com/docs/en/quick-start), just follow the steps on the doc and you will get an instance up and running in minutes. During this setup, the ClickHouse instance was created on AWS in N. Virginia (us-east-1) as an EMQX Cloud instance was also deployed in the same region.
+ClickHouse provides a [quick start](https://clickhouse.com/docs/en/quick-start), just follow the steps on the doc and you will get an instance up and running in minutes. During this setup, the ClickHouse instance was created on AWS in N. Virginia (us-east-1) as an EMQX Cloud instance was also deployed in the same region.
 
 During the setup process, you will also need to pay attention to the connection settings. In this article, we use "Anywhere", but if you choose a specific location, you will need to add the NAT gateway IP address you got from your EMQX Cloud deployment to the whitelist.
 
