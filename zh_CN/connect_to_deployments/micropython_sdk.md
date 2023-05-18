@@ -100,7 +100,9 @@ MQTT 服务器的连接地址和端口，我们可以通过查看 Serverless 的
 
 ![micropython_serverless_cafile](./_assets/micropython_serverless_cafile.png)
 
-MicroPython 目前仅支持 PEM 格式的证书，所以我们不需要对证书进行格式转换。以下代码表示，我们将 `cadata` 设置为读取到的 CA 证书文件内容，表示信任该 CA 证书，将 `cert_reqs` 设置为 `ssl.CERT_REQUIRED`，表示客户端将要求服务端在握手时发送证书：
+MicroPython 目前仅支持 PEM 格式的证书，所以我们不需要对证书进行格式转换。以下代码表示，我们将 `cadata` 设置为读取到的 CA 证书文件内容，表示信任该 CA 证书，将 `cert_reqs` 设置为 `ssl.CERT_REQUIRED`，表示客户端将要求服务端在握手时发送证书。
+
+最后，我们还需要通过 `server_hostname` 选项将 SNI 设置为我们的连接地址，这一步是非常必要的，因为 Serverless 需要根据 SNI 来区分租户，而 MicroPython 默认不会发送 SNI，这将导致我们连接失败：
 
 ```
 with open('emqxsl-ca.crt', 'rb') as f:
@@ -108,6 +110,7 @@ with open('emqxsl-ca.crt', 'rb') as f:
 ssl_params = dict()
 ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
 ssl_params["cadata"] = cadata
+ssl_params["server_hostname"] = SERVER
 ```
 
 除了 SSL 相关的连接参数，我们还需要指定连接地址、Client ID 等信息，完整的连接代码如下：
@@ -119,6 +122,7 @@ def connect():
     ssl_params = dict()
     ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
     ssl_params["cadata"] = cadata
+    ssl_params["server_hostname"] = SERVER
     client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True, ssl_params = ssl_params)
     client.connect()
     print('Connected to MQTT Broker "{server}"'.format(server=SERVER))
@@ -189,7 +193,7 @@ if __name__ == "__main__":
 Waiting for connection...
 Waiting for connection...
 Connected on 192.168.0.145
-Connected to MQTT Broker "broker.emqx.io"
+Connected to MQTT Broker "xxxx.ala.cn-hangzhou.emqxsl.cn"
 Send '{"msg": 0}' to topic 'raspberry/mqtt'
 Received '{"msg": 0}' from topic 'raspberry/mqtt'
 
@@ -202,4 +206,4 @@ Received '{"msg": 2}' from topic 'raspberry/mqtt'
 
 ## 更多内容
 
-现在，我们已经成功演示了如何在 MicroPython 中使用 `umqtt` 客户端库连接到 EMQX Cloud Serverless，你可以在 [这里]() 下载示例代码。同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples)上找到更多其他语言的 Demo 示例。
+现在，我们已经成功演示了如何在 MicroPython 中使用 `umqtt` 客户端库连接到 EMQX Cloud Serverless，你可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython) 下载示例代码。同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples)上找到更多其他语言的 Demo 示例。

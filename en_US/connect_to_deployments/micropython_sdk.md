@@ -98,7 +98,9 @@ We can get the connection address and port of the MQTT server by viewing the ser
 
 For the sake of communication security, EMQX Cloud Serverless only accepts TLS connections. We can click the download button on the right side of `CA Certficate` in the serverless instance details to download the CA certificate that issued the serverless certificate, and then trust this certificate in the client.
 
-MicroPython currently only supports certificates in PEM format, so we don't need to convert the certificate format. The following code indicates that we set `cadata` to the content of the read CA certificate file, which means we trust the CA certificate, and set `cert_reqs` to `ssl.CERT_REQUIRED`, which means that the client will ask the server to send a certificate during the handshake:
+MicroPython currently only supports certificates in PEM format, so we don't need to convert the certificate format. The following code indicates that we set `cadata` to the content of the read CA certificate file, which means we trust the CA certificate, and set `cert_reqs` to `ssl.CERT_REQUIRED`, which means that the client will ask the server to send a certificate during the handshake.
+
+Finally, we also need to set SNI as our connection address through the `server_hostname` option. This step is very necessary, because Serverless needs to distinguish tenants based on SNI, and MicroPython will not send SNI by default, which will cause our connection to fail::
 
 ```
 with open('emqxsl-ca.crt', 'rb') as f:
@@ -106,6 +108,7 @@ with open('emqxsl-ca.crt', 'rb') as f:
 ssl_params = dict()
 ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
 ssl_params["cadata"] = cadata
+ssl_params["server_hostname"] = SERVER
 ```
 
 In addition to SSL-related connection parameters, we also need to specify the connection address, Client ID and other information. The complete connection code is as follows:
@@ -117,6 +120,7 @@ def connect():
     ssl_params = dict()
     ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
     ssl_params["cadata"] = cadata
+    ssl_params["server_hostname"] = SERVER
     client = MQTTClient(CLIENT_ID, SERVER, PORT, USERNAME, PASSWORD, ssl = True, ssl_params = ssl_params)
     client.connect()
     print('Connected to MQTT Broker "{server}"'.format(server=SERVER))
@@ -200,4 +204,4 @@ Received '{"msg": 2}' from topic 'raspberry/mqtt'
 
 ## More
 
-Now, we have successfully demonstrated how to use `umqtt` client library to connect to EMQX Cloud Serverless in MicroPython, you can download the sample code at [here](). At the same time, you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
+Now, we have successfully demonstrated how to use `umqtt` client library to connect to EMQX Cloud Serverless in MicroPython, you can download the sample code at [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython). At the same time, you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
