@@ -36,4 +36,4 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 | API HTTP QPS     | 100/s                | NO                   |-|
 | TCP connect timeout     | 10s                | YES                   |YES|
 | Number of deployment     | 3                | YES                   |NO|
-| Number of subaccount     | 20                | NO                   |-|
+| Number of subaccounts    | 20                | NO                   |-|
