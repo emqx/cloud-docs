@@ -16,7 +16,7 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 | Client ID maximun length（MQTT 5.0）     | 256                | NO                   |
 | Maximum subscriptions for a single client     | 10                | NO                   |
 | TCP connect timeout     | 10s                | NO                   |
-| Number of deployment    | 1                | YES                   |
+| Number of deployments    | 1                | YES                   |
 | Number of subaccount     | 20                | NO                   |
 
 
