@@ -2,7 +2,7 @@
 
 ## Serverless
 
-EMQX Cloud Serverless is based on shared clusters and thus has placed some restrictions on each Serverless deployment to ensure a stable connection for each tenant. 
+EMQX Cloud Serverless is deployed on a multi-tenant architecture, which imposes certain restrictions on each Serverless deployment. These limitations are in place to ensure a stable connection for each tenant. 
 
 | **Limitations** | **Serverless (Beta)**    | **Serverless**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |

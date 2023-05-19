@@ -1,8 +1,8 @@
 # Create a Serverless Deployment
 
-EMQX Cloud Serverless Plan offers a cost-effective and efficient way for developers or small businesses to test and develop IoT applications. This plan is based on shared clusters and can be easily deployed in just a few simple steps.
+EMQX Cloud Serverless Plan offers a cost-effective and efficient way for developers or small businesses to test and develop IoT applications. This plan is based on secure and scalable clusters and can be easily deployed in just a few simple steps.
 
-One of the biggest advantages of using Serverless deployment is that the billing for connection scenarios is based on actual usage. For more detailed information on the billing system, please refer to the pricing section in [Pricing and Billing](../price/pricing.md)."
+One of the biggest advantages of using Serverless deployment is that the billing for connection scenarios is based on actual usage. For more detailed information on the billing system, please refer to the pricing section in [Pricing and Billing](../price/pricing.md).
 
 
 ## Create a Deployment
@@ -42,17 +42,22 @@ Serverless deployment only supports ports `8883` (mqtts) and `8084` (wss). If yo
 
 ## Connection Test for the Deployment
 
-EMQX Cloud recommends using [MQTT X](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) to connect to it. Before connecting to the deployment using MQTT X, you first need to obtain the deployment connection address (Host) and port (Port) and also use a user for authentication.
+EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) to connect to it. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and also use a user for authentication.
+
+::: warning
+
+- The deployment will be stopped if there are no active client connections for 30 consecutive days. To continue using it, please manually enable it in the console. 
+- If the deployment remains inactive for 30 days after being stopped, it will be deleted.
+
+:::
 
 1. Get the connection information. Click **Overview** on the left navigation menu to find the deployment connection address and port. 
 
-2. Add client authentication information. Go to the deployment overview page, click **Authentication & ACL** -> **Authentication**. Then, click on the **Add** button, enter the username and password for the client or device, and click **Confirm**.
+2. Add client authentication information. Go to the deployment overview page, and click **Authentication & ACL** -> **Authentication**. Then, click on the **Add** button, enter the username and password for the client or device, and click **Confirm**.
 
    ![add_users](./_assets/serverless_auth.png)
 
-
-
-Now you can set up the connection information in MQTT X as follows and start to test the connection. 
+Now you can set up the connection information in MQTTX as follows and start to test the connection. 
 
 ![mqttx_mqtt](./_assets/mqttx_serverless.png)
 
@@ -61,14 +66,6 @@ Now you can set up the connection information in MQTT X as follows and start to 
 After the connection succeeds, you can try to subscribe and publish. 
 
 ![mqttx_mqtt](./_assets/create_serverless_connect.png)
-
-
-::: warning
-
-- If there are no active client connections for 30 consecutive days, the deployment will be stopped. To continue using it, please manually enable it in the console. 
-- If the deployment remains inactive for 30 days after being stopped, it will be deleted.
-
-:::
 
 
 

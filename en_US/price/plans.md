@@ -1,8 +1,8 @@
 # Product Plans
 
-As a globally available, fully-managed MQTT service platform, EMQX Cloud can be easily deployed on popular public clouds, providing a tailored solution to meet your specific requirements. To better serve the our users, whether you are individual developers or global industry leaders, EMQX Cloud offers three distinct product plans:
+As a globally available, fully-managed MQTT service platform, EMQX Cloud can be easily deployed on popular public clouds, providing a tailored solution to meet your specific requirements. To better serve our users, whether you are individual developers or global industry leaders, EMQX Cloud offers three distinct product plans:
 
-1. **Serverless Plan**: Provide MQTT services on a shared cluster that is charged based on usage. The service is entirely free for usage within the free quota, and support up to 1000 concurrent connections.
+1. **Serverless Plan**: Provide MQTT services on a secure and scalable cluster that is charged based on usage. The service is entirely free for usage within the free quota, and supports up to 1000 concurrent connections.
 
 2. **Dedicated Plan**: Provide MQTT services on a dedicated EMQX cluster and comes in distinct service plans:
 
@@ -10,7 +10,7 @@ As a globally available, fully-managed MQTT service platform, EMQX Cloud can be 
 
     b. **Dedicated Plan (Professional)**: Provide a high-availability cluster that's designed for implementing MQTT services in production environments. It comes packed with advanced features, including real-time data processing, data persistence, message distribution, and VPC peer-to-peer connections (private networks). 
 
-3. **BYOC**: Bring your own cloud. Seamlessly integrate EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise. 
+3. **BYOC**: Bring your own cloud. Seamlessly integrate the EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise. 
 
 ## Feature List
 
