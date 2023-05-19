@@ -20,7 +20,7 @@ In the **Deployments** section, you can view real-time metrics in the current de
 | Shared subscriptions    | The total number of shared subscriptions.<br>For knowledge about shared subscriptions, see [Shared subscription - MQTT 5.0 new features](https://www.emqx.com/en/blog/introduction-to-mqtt5-protocol-shared-subscription). |
 
 ::: tip
-The number of subscriptions is calculated per client. If two different clients subscribe to the same topic, it is counted as 2 subscriptions.
+The number of subscriptions is calculated per client. If two clients subscribe to the same topic, they will be counted as 2 subscriptions.
 :::
 
 ## Clients
