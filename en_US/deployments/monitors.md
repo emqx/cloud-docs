@@ -14,7 +14,7 @@ In the **Deployments** section, you can view real-time metrics in the current de
 | Total TPS               | The total number of transactions processed by the current deloyment within a second, containing the total rate of messages received and sent per second. |
 | Total messages sent     | The total number of messages sent within a second.           |
 | Total messages received | The total number of messages received within a second.       |
-| Retained messages       | The total number of retained messages in the deployment. <br>For knowledge about retained message, see [The Beginner's Guide to MQTT Retained Messages](https://www.emqx.com/en/blog/mqtt5-features-retain-message). |
+| Retained messages       | The total number of retained messages in the deployment. <br>For knowledge about retained message, see [_The Beginner's Guide to MQTT Retained Messages_](https://www.emqx.com/en/blog/mqtt5-features-retain-message). |
 | Topics                  | The total number of topics currently subscribed by all clients. |
 | Subscriptions           | The total number of subscriptions established by each client. |
 | Shared subscriptions    | The total number of shared subscriptions.<br>For knowledge about shared subscriptions, see [Shared subscription - MQTT 5.0 new features](https://www.emqx.com/en/blog/introduction-to-mqtt5-protocol-shared-subscription). |
