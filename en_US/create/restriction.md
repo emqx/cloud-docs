@@ -1,9 +1,9 @@
 # Quotas and Limits
 
-For each type of EMQX Cloud deployment, there are default quotas (or limits). You can contact us to change some quotas, but others cannot be changed.
+EMQX Cloud sets default quotas (or limits) for each deployment and the default value of some of the quotas can be adjusted. The following tables show the default value of the quotas in different deployments and whether they can be adjusted. If you need to adjust the quotas, please [contact us](../feature/tickets.md).
 
 ## Serverless
-| **Name**         | **Default**                | **Adjustable**     |
+| Quotas   | **Default Value**          | **Adjustable**     |
 | --------------------| ----------------------- | ------------------|
 | Maximum internal authentication entries   | 2000                | NO                 |
 | Maximum internal ACL entries     | 2000                | NO                   |
@@ -22,7 +22,7 @@ For each type of EMQX Cloud deployment, there are default quotas (or limits). Yo
 
 ## Dedicated and BYOC
 
-| **Name**         | **Default**                | **Adjustable**           |**Need to restart deployment or not** |
+| **Quotas** | **Default Value**          | **Adjustable**           |**Requires Deployment Restart** |
 | --------------------| ----------------------- | ------------------|------------------|
 | Maximum internal authentication entries      |  Session specification * 2      | NO                  |-|
 | Maximum internal ACL entries     | Session specification * 2      | NO                   |-|
