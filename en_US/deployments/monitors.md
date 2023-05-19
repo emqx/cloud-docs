@@ -17,7 +17,7 @@ In the **Deployments** section, you can view real-time metrics in the current de
 | Retained messages       | The total number of retained messages in the deployment. <br>For knowledge about retained message, see [_The Beginner's Guide to MQTT Retained Messages_](https://www.emqx.com/en/blog/mqtt5-features-retain-message). |
 | Topics                  | The total number of topics currently subscribed by all clients. |
 | Subscriptions           | The total number of subscriptions established by each client. |
-| Shared subscriptions    | The total number of shared subscriptions.<br>For knowledge about shared subscriptions, see [Shared subscription - MQTT 5.0 new features](https://www.emqx.com/en/blog/introduction-to-mqtt5-protocol-shared-subscription). |
+| Shared subscriptions    | The total number of shared subscriptions.<br>For knowledge about shared subscriptions, see [_Shared subscription - MQTT 5.0 new features_](https://www.emqx.com/en/blog/introduction-to-mqtt5-protocol-shared-subscription). |
 
 ::: tip
 The number of subscriptions is calculated per client. If two clients subscribe to the same topic, they will be counted as 2 subscriptions.
