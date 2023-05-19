@@ -61,7 +61,7 @@
         {
           "title": "创建 BYOC 部署",
           "path": "create/byoc",
-          "children" : [
+          "children": [
             {
               "title": "部署前置准备",
               "path": "deployments/byoc_prerequisite"
@@ -249,6 +249,10 @@
         {
           "title": "使用微信小程序 SDK 接入",
           "path": "connect_to_deployments/wechat_miniprogram"
+        },
+        {
+          "title": "使用 MicroPython + 树莓派接入",
+          "path": "connect_to_deployments/micropython_raspberrypi"
         },
         {
           "title": "连接 ESP8266",
@@ -804,6 +808,10 @@
         {
           "title": "Connect via Electron SDK",
           "path": "connect_to_deployments/electron_sdk"
+        },
+        {
+          "title": "Connect via MicroPython + Raspberry Pi",
+          "path": "connect_to_deployments/micropython_raspberrypi"
         },
         {
           "title": "Connect with MQTT X",
