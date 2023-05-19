@@ -46,7 +46,7 @@ mvn install
 
 ## Connect over TCP Port
 
-> You can view the information of connection on Deployment Overview. Please note that the port is not 1883 if your choose a Basic package, make sure you get the right port. And you must add the authentication on Authentication & ACL in advance.
+> The example code will use a public MQTT server for connection. If you have created your own deployment, please find the corresponding connection address in the deployment console and set the username and password accordingly.
 
 ### Connect Options
 
@@ -108,9 +108,9 @@ public class SampleCallback implements MqttCallback {
 
 ## Connect over SSL/TLS Port
 
-> You can view the information of connection on Deployment Overview. Please note that the port is not 8883 if your choose a Basic package, make sure you get the right port. And you must add the authentication on Authentication & ACL in advance.
+> The example code will use a public MQTT server for connection. If you have created your own deployment, please find the corresponding connection address in the deployment console and set the username and password accordingly.
 
-This section introduces how to connect to a deployment with SSL/TLS one-way authentication. If you need to use two-way authentication, you can refer to [here](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Java/src/main/java/io/emqx/mqtt/MqttSample.java).
+This section introduces how to connect to a deployment with SSL/TLS one-way authentication. If you need to use two-way authentication, you can refer to [here](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Java/src/main/java/io/emqx/mqtt/MqttTwoWayTlsSample.java).
 
 ### Connect Options
 
