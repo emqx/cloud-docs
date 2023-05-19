@@ -46,7 +46,7 @@ mvn install
 
 ## 通过 TCP 端口连接
 
-> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 1883 端口，请确认好端口。并且在 [认证鉴权](../deployments/auth_dedicated.md) 中添加认证信息。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并设置用户名和密码。 注意如果使用基础版，默认端口可能不是 1883，请确认好端口。并且在 [认证鉴权](../deployments/auth_dedicated.md) 中添加认证信息。
 
 ### 连接设置
 
@@ -108,9 +108,9 @@ public class SampleCallback implements MqttCallback {
 
 ## 通过 SSL/TLS 端口连接
 
-> 请在控制台的部署概览找到相关的地址以及端口信息，需要注意如果是基础版，端口不是 8883 端口，请确认好端口。并且在 [认证鉴权](../deployments/auth_dedicated.md) 中添加认证信息。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并设置用户名和密码。 注意如果使用基础版，默认端口可能不是 8883，请确认好端口。并且在 [认证鉴权](../deployments/auth_dedicated.md) 中添加认证信息。
 
-本节介绍了如何通过 SSL/TLS 单向认证方式连接到部署。若您需使用双向认证方式，可以参考[这里](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Java/src/main/java/io/emqx/mqtt/MqttSample.java)。
+本节介绍了如何通过 SSL/TLS 单向认证方式连接到部署。若您需使用双向认证方式，可以参考[这里](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Java/src/main/java/io/emqx/mqtt/MqttTwoWayTlsSample.java)。
 
 ### 连接设置
 
