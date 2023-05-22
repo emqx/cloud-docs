@@ -2,46 +2,100 @@
 
 In recent years, as people's demand for home security, convenience, comfort and artistry has increased, home automation has become more and more popular. [Home Assistant](https://www.home-assistant.io/), a popular open-source home automation platform, provides a secure and convenient central control system. In this article, we will introduce you how to use EMQX Cloud MQTT Broker to connect with Home Assistant.
 
-## What is MQTT Broker
+## Prerequisites
 
-MQTT is a lightweight, publish-subscribe network protocol that transports messages between devices. An MQTT broker is a server that receives all messages from the clients and then routes the messages to the appropriate destination clients. 
+### Get MQTT Broker
 
-## Why EMQX Cloud?
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
-[EMQX Cloud](https://www.emqx.com/en/cloud) is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. It serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications. 
+- Broker: **broker.emqx.io**
+- MQTT Port: **1883**
+- WebSocket Port: **8083**
+- MQTT over TLS/SSL Port: **8883**
+- WebSocket over TLS/SSL Port: **8084**
 
-EMQX Cloud is available in three plans: Basic, Professional, and Premium, which offers a variety of flexible product specifications to support the deployment of fully managed MQTT services exclusively for you on the world's leading public clouds. Need more information with EMQX Cloud's product plan? Click [here](https://docs.emqx.io/en/cloud/latest/pricing.html).
+You can [create a deployment](../create/overview.md) as well. Find connection information in deployment overview. Make sure the deployment is running. Use the TCP port or TLS/SSL port to test the connection to the MQTT server.
 
-Such a powerful product is a great choice to integrate with Home Assistant. You could check out the [documentation](https://docs.emqx.io/en/cloud/latest/) to get more information regarding EMQX Cloud
+If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
 
-## Set up Home Assistant with EMQX Cloud
+## Home Assistant Initialization
 
-If it's your first time using EMQX Cloud, don't worry. We will guid you through to connect Home Assistant with EMQX Cloud.
+If you are using MQTT for Home Assistant for the first time, please refer to the [quick start](https://www.home-assistant.io/integrations/mqtt).
 
-1. [Create](https://www.emqx.com/en/signup?continue=https://www.emqx.com/cn/cloud) a EMQX Cloud Account.
+1. Install Home Assistant
 
-2. Login to EMQX Cloud [console](https://cloud.emqx.io/console/) and start a new deployment.
+   In this example, we use Docker to quickly install Home Assistant.
 
-   ```tip
-   For first-time EMQX Cloud customers, we have an opportunity for you to create a free trial deployment of up to 14 days in length. The free trial deployment is an ideal way for you to learn and explore the features of EMQX Cloud. 
+   ```bash
+   docker run -d --name="home-assistant" -v /opt/homeassistant/config:/config -p 8123:8123 homeassistant/home-assistant
    ```
 
-3. After the new deployment is created and the status is **running**, add the client authentication information (you could choose to add manually or import from the file.  
+   Then access the Home Assistant service via the local IP with the corresponding port, e.g., x.x.x.x:8123, to create an account.
 
-   ![add_users](https://docs.emqx.io/assets/img/auth.6543e1b4.png)
+   ![homeassistant_create_account](./_assets/homeassistant_create_account.png)
 
-4. Go to Home Assistant's configuration to add integration.
+2. Enable advanced mode (**optional**)
 
-5. Select MQTT and fill in the deployment information
+   Advanced broker options are accessible only when advanced mode is enabled, such as MQTT features, Websocket, and TLS/SSL verification.
 
-   ![image-mqtt](./_assets/image-mqtt.png)
+   ![homeassistant_advaced_mode](./_assets/homeassistant_advaced_mode.png)
 
-   ![image-console](./_assets/image-console.png)
+3. Add Integration
 
-   You should enter the `Connect Address` for Broker and the `Connect Port (mqtt)` for Port. Enter the username and password you created in the authentication page. 
+   Go to Home Assistant's settings, choose `Devices & Services`.
 
-6. Click `Submit` button
+   ![homeassistant_choose_type](./_assets/homeassistant_choose_type.png)
 
-7. Your EMQX Cloud deployment is now integrating with Home Assistant, congratulations!
+   Click `+ Add Integration` and fill in MQTT.
 
-   ![image-integration](./_assets/image-integration.png)
+   ![homeassistant_add_integration](./_assets/homeassistant_add_integration.png)
+
+   Then you could enter the `Connection information` for the broker.
+
+## Connect over TCP Port
+
+   This section describes how to connect a homeassistant client to MQTT broker over TCP port.
+
+1. MQTT connection
+
+   - Fill in the broker address, port, username and password (if it exists).
+   - Select `TCP` for MQTT transport.
+
+   ![homeassistant_mqtt_connection](./_assets/homeassistant_mqtt_connection.png)
+
+2. WebSocket connection
+
+   - Fill in the broker address, port, username, and password (if they exist).
+   - Select `WebSocket` for MQTT transport and fill in the WebSocket path as `/mqtt`.
+
+   ![homeassistant_ws_connection](./_assets/homeassistant_ws_connection.png)
+
+## Connect over TLS/SSL Port
+
+   This section describes how to connect a homeassistant client to MQTT broker over TLS/SSL port.
+
+1. MQTT over TLS/SSL connection
+
+   - Fill in the broker address, port, username, and password (if they exist).
+   - Select `Auto` for broker certificate verification.
+   - Select `TCP` for MQTT transport.
+
+   ![homeassistant_mqtts_connection](./_assets/homeassistant_mqtts_connection.png)
+
+2. WebSocket over TLS/SSL connection
+
+   - Fill in the broker address, port, username, and password (if they exist).
+   - Select `Auto` for broker certificate verification.
+   - Select `WebSocket` for MQTT transport and fill in the WebSocket path as `/mqtt`.
+
+   ![homeassistant_wss_connection](./_assets/homeassistant_wss_connection.png)
+
+## Test Connection
+
+   After filling in the connection information, click the `Submit` button. Your EMQX Cloud deployment is now integrating with Home Assistant. Congratulations!
+
+   ![homeassistant_connection](./_assets/homeassistant_connection.png)
+
+   Click `Configure` to complete the publish or subscribe topic.
+
+   ![homeassistant_pub_sub](./_assets/homeassistant_pub_sub.png)

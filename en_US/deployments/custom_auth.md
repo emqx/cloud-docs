@@ -18,8 +18,8 @@ When multiple authentication methods are enabled at the same time, the system wi
 
 ## View the detailed implementation of external authentication/access control
 
-[HTTP authentication/access control](http_auth.md)
+[HTTP authentication/access control](./http_auth.md)
 
-[MySQL authentication/access control](https://docs.emqx.com/zh/cloud/latest/deployments/mysql_auth.html)
+[MySQL authentication/access control](./mysql_auth.md)
 
-[PostgreSQL authentication/access control](https://docs.emqx.com/zh/cloud/latest/deployments/pgsql_auth.html)
+[PostgreSQL authentication/access control](./pgsql_auth.md)

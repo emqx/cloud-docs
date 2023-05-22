@@ -4,19 +4,19 @@
 
 This document provides a guide plan for EMQX Cloud to integrate the user's own device management system or IoT platform for device authentication, device action and status management, and message data integration management. The contents are as follows:
 
-- **Device authentication information management:** The platform uses REST API to add, delete, check, and modify authentication information. For API usage, refer to [Authentication Management](https://docs.emqx.io/en/cloud/latest/api/auth.html).
+- **Device authentication information management:** The platform uses REST API to add, delete, check, and modify authentication information. For API usage, refer to [Authentication Management](./api/auth.md).
 - **View online status of device:**
-  - The platform obtains a list of online devices through the REST API to check whether the device is online. For API usage, please refer to [Client Management](https://docs.emqx.io/en/cloud/latest/api/client.html).
+  - The platform obtains a list of online devices through the REST API to check whether the device is online. For API usage, please refer to [Client Management](./api/client.md).
   - The platform uses data integrations to rewrite the status of the device in the private database or send it to a self-built service (Web service) when the device is online or offline.
 - **Device offline alarm:** Notify the platform when the device is offline to determine whether an alarm is needed.
 - **Device online and offline history:**
   - The platform uses data integrations to write the online and offline information into a private database or send it to a self-built service (Web service) when the device is online or offline.
-- **Device publish and subscribe to ACL permission management:** The platform uses the REST API to add, delete, check and modify ACL permissions. For API usage, refer to [Access Control (ACL) Management](https://docs.emqx.io/en/cloud/latest/api/acl.html).
+- **Device publish and subscribe to ACL permission management:** The platform uses the REST API to add, delete, check and modify ACL permissions. For API usage, refer to [Access Control (ACL) Management](./api/acl.md).
 - **Kick online device offline:** The platform kicked off online devices.
-- **Proxy subscription:** The platform uses the REST API to subscribe or unsubscribe to topics for **online devices**. For API usage, please refer to [Topic subscription](https://docs.emqx.io/en/cloud/latest/api/topic.html).
-- **Publish a message to the device:** The platform publishes messages to specified topics through REST API or MQTT access and supports batch operations. For API usage, refer to [Message Publish](https://docs.emqx.io/en/cloud/latest/api/pub.html).
+- **Proxy subscription:** The platform uses the REST API to subscribe or unsubscribe to topics for **online devices**. For API usage, please refer to [Topic subscription](./api/topic.md).
+- **Publish a message to the device:** The platform publishes messages to specified topics through REST API or MQTT access and supports batch operations. For API usage, refer to [Message Publish](./api/pub.md).
 - **Get device messages for bridging/storing:** Through data integrations, device events (online and offline, subscription/unsubscription, message publishing) and message data are stored in private databases (mainstream relational/non-relational, various time series databases), Kafka message queues, and self-built web services.
-- **Business( such as message sending and receiving, connections) statistics:** Get relevant statistics through REST API. For API usage, please refer to [Metrics](https://docs.emqx.io/en/cloud/latest/api/metrics.html).
+- **Business( such as message sending and receiving, connections) statistics:** Get relevant statistics through REST API. For API usage, please refer to [Metrics](./api/metrics.md).
 
   ![img](./_assets/product_description_en.png)
 
@@ -68,7 +68,7 @@ The platform uses REST API to add, delete, check, and modify ACL permissions.
 
 For abnormal devices or devices that need to be forced offline, the platform can use REST API to kick online devices offline.
 
-​            ![img](./_assets/http_rest_api.png)
+​  ![img](./_assets/http_rest_api.png)
 
 ## Proxy subscription
 

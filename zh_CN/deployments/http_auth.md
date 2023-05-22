@@ -15,7 +15,7 @@ EMQX Cloud 在设备连接事件中使用当前客户端相关信息作为参数
 
 ## 认证链
 
-若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) -> HTTP 认证的顺序进行链式认证：
+若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](./auth_dedicated.md) -> HTTP 认证的顺序进行链式认证：
 
 - 一旦认证成功，终止认证链并允许客户端接入
 - 一旦认证失败，终止认证链并禁止客户端接入
@@ -24,7 +24,7 @@ EMQX Cloud 在设备连接事件中使用当前客户端相关信息作为参数
 
 ## ACL 鉴权链
 
-若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](https://docs.emqx.com/zh/cloud/latest/deployments/acl.html) ->  HTTP ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
+若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](./acl_dedicated.md) ->  HTTP ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
 
 - 一旦通过鉴权，终止链并允许客户端通过验证
 - 一旦鉴权失败，终止链并禁止客户端通过验证
@@ -44,10 +44,14 @@ EMQX Cloud 在设备连接事件中使用当前客户端相关信息作为参数
 
 在表单页配置权限认证的必填参数，包括认证请求地址、认证请求参数、HTTP 请求方法和请求内容的类型。其余的参数如果没有特殊要求使用默认值即可。
 
-![http_auth](./_assets/http_auth_1.png)
+::: tip
+* 如果当前部署为基础版，服务器地址填写公网地址。
+* 如果当前部署为专业版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址填写内网地址。
+* 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
+* 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
+:::
 
->  - 如果当前部署为基础版，请求地址请填写公网服务验证地址
->  - 如果当前部署为专业版，请求地址请填写内网 IP 服务验证地址
+![http_auth](./_assets/http_auth_1.png)
 
 
 ### 请求参数占位符

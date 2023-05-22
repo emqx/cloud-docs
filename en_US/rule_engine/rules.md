@@ -8,7 +8,7 @@ The rule describes the three configurations of "where the data comes from", "how
 
 ## Create rules
 
-::: tip Tip
+::: tip
 Before creating a rule, you need to ensure that you have added [VPC peering connection](../deployments/vpc_peering.md), and [created a resource](resources.md)
 :::
 
@@ -20,7 +20,7 @@ Before creating a rule, you need to ensure that you have added [VPC peering conn
 
 2. In the following rule, we read the time up_timestamp when the message is reported, the client ID, the message body (Payload) from the temp_hum/emqx topic and the temperature and humidity from the message body respectively.
 
-::: tip Tip
+::: tip
 In EMQX Cloud, the rules uses SQL-like statements to select, filter, and process data. To learn how to write rules in SQL, you can refer to the following links:
 
 - [Syntax and examples of SQL statements](https://docs.emqx.com/en/enterprise/v4.4/rule/rule-engine_grammar_and_examples.html)

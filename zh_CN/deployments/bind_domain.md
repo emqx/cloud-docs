@@ -1,3 +1,4 @@
+<!-- deprecated -->
 # 绑定域名
 
 在 EMQX Cloud 建立部署后，您会获得一个 MQTT 连接地址，该地址在专业版部署里以 IP 显示，在基础版中以 emqx.cloud 结尾的二级域名显示。

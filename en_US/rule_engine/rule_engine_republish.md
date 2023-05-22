@@ -61,7 +61,7 @@ Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
   ```
 
   The test output is consistent with expectations, and we can proceed to the next steps.
-  ::: tip Tip
+  ::: tip
   If the test fails, please check whether the SQL is compliant
   :::
 

@@ -4,12 +4,12 @@
 
 ## 认证链
 
-若同时启用默认认证模块，EMQX Cloud Cloud 将按照[默认认证](https://docs.emqx.com/zh/cloud/latest/deployments/auth.html#%E8%AE%A4%E8%AF%81) -> JWT 认证的顺序进行链式认证：
+若同时启用默认认证模块，EMQX Cloud Cloud 将按照[默认认证](./auth_dedicated.md) -> JWT 认证的顺序进行链式认证：
 
 * 一旦认证成功，终止认证链并允许客户端接入
 * 一旦认证失败，终止认证链并禁止客户端接入
 
-![auth_chain](./_assets/../_assets/jwt_auth_chain.png)
+![auth_chain](./_assets/jwt_auth_chain.png)
 
 ## JWT 认证原理
 
@@ -27,7 +27,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 
 1. 在 EMQX Cloud Cloud 部署左侧菜单栏点击 `认证鉴权` - `外部认证授权`，选择 JWT 认证。
 
-    ![jwt_auth](./_assets/../_assets/jwt_auth.png)
+    ![jwt_auth](./_assets/jwt_auth.png)
 
 2. 点击`配置认证`，进入 JWT 认证页面，填写信息，新建认证，本示例中通过配置 JWKs 服务器地址的方式进行认证。
 
@@ -43,9 +43,10 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
       * %c：将在运行时被替换为客户端连接时使用的 Client ID。
 
     ::: tip
-      * 如果当前部署为基础版，服务器地址请填写公网地址
-      * 如果当前部署为专业版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址请填写内网地址
-      * 若提示 Init resource failure! 需检查服务器地址是否无误、安全组是否开启
+      * 如果当前部署为基础版，服务器地址填写公网地址。
+      * 如果当前部署为专业版，需创建 [VPC 对等连接](./vpc_peering.md)，服务器地址填写内网地址。
+      * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
+      * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
     :::
 
-    ![jwt_auth](./_assets/../_assets/jwt_auth_info.png)
+    ![jwt_auth](./_assets/jwt_auth_info.png)

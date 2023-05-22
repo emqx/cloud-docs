@@ -72,7 +72,7 @@ Click ID in the shadow model list, or click the Edit button to enter the shadow 
 
 ![detail](./_assets/shadow_detail.png)
 
-::: tip Tip
+::: tip
 Once a shadow model is created, ID cannot be modified anymore.
 :::
 

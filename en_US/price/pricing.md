@@ -26,7 +26,7 @@ EMQX Cloud Serverless Plan is billed based on the actual usage of your deploymen
 Session fee = sessions * connection span (measured per minute or part thereof) / 1,000,000 * 2
 Traffic fee = Inbound and outbound traffic（byte）/ 1024 / 1024 / 1024 * 0.15
 
-::: tip Tips
+::: tips
 
 Assume in a 24-hour billing period, a user has 120 sessions for 10 hours, 20 sessions for 10 hours, and 0 sessions for 4 hours, the total session minutes are: 120 * 60 * 10 + 20 * 60 * 10 + 0 = 84,000, and the session fee is 0 if this falls within the free quota. If the free quota has run out, the session fee will be 84,000 / 1,000,000 * 2 = 0.168, rounded up to $ 0.17. The traffic is calculated in the same way as the session.
 
@@ -114,7 +114,7 @@ EMQX Cloud's Dedicated Plan is charged based on the selected product plan (Stand
    </tr>
 </table>
 
-::: tip Tips
+::: tips
 Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
 :::
 

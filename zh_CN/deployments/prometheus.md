@@ -1,10 +1,10 @@
 # Prometheus 监控告警
 
-EMQX Cloud 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX Cloud 的关键指标。
+EMQX Cloud 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX Cloud 的关键指标。
 在本文中我们将介绍如何配置 Prometheus 服务，从 EMQX Cloud API 读取关键指标，以及如何使用 Grafana 查看指标。
 
 ::: warning
-该功能仅适用于专有版部署。
+该功能仅适用于专有版和 BYOC 部署。
 :::
 
 ## API 配置

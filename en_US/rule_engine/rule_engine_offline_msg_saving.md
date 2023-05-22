@@ -56,7 +56,7 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 
    Click on Add Action in the bottom left corner, drop down and select → Offline Message → Save Offline Message to Redis, select the resource created in the first step.
 
-   ::: tip Tip
+   ::: tip
    Here you need to plan for the Redis Key expiration time, and it is recommended to save no more than 100 messages offline
    :::
 
@@ -74,7 +74,7 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 
    You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Dashboard.
 
-   ::: tip Tip
+   ::: tip
 
    QoS > 0 required to send messages
    :::
@@ -94,7 +94,7 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 3. Use [MQTT X](https://mqttx.app/) to consume offline data
    In MQTT X, subscribe to topic temp_hum/emqx to get offline data.
 
-   ::: tip Tip
+   ::: tip
    The QoS of the subscription topic must be greater than 0, otherwise the message will be received repeatedly.
    :::
 

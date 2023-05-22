@@ -4,12 +4,12 @@
 
 ## Authentication Chain
 
-If default authentication is also enabled, EMQX Cloud will follow [default authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth.html) -> JWT authentication for chain authentication:
+If default authentication is also enabled, EMQX Cloud will follow [default authentication](./auth_dedicated.md) -> JWT authentication for chain authentication:
 
 - Once authentication is successful, terminate the authentication chain and the client is accessible
 - Once authentication fails, terminate the authentication chain and disable client access
 
-![auth_chain](./_assets/../_assets/jwt_auth_chain.png)
+![auth_chain](./_assets/jwt_auth_chain.png)
 
 ## JWT Authentication Rules
 
@@ -26,7 +26,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 
 1. Click on `Authentication Authentication` - `External Authentication Authorization` in the left menu bar of the EMQX Cloud deployment and select JWT Authentication.
 
-![jwt_auth](./_assets/../_assets/jwt_auth_en.png)
+![jwt_auth](./_assets/jwt_auth_en.png)
 
 2. Click `Configure Authentication` to enter the JWT authentication page, fill in the information, and create a new authentication. In this example, the authentication is performed by configuring the JWKs server address.
 
@@ -43,8 +43,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 
   ::: tip
   - If the current deployment is Basic deployment, please fill in the public address for the server address
-  - If the current deployment is Professional deployment, you need to create a [VPC peer connection](https://docs.emqx.com/en/cloud/latest/deployments/vpc_peering.html), please fill in the internal network address for the server address.
+  - If the current deployment is Professional deployment, you need to create a [VPC peer connection](./vpc_peering.md), please fill in the internal network address for the server address.
   - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
   :::
 
-![jwt_auth](./_assets/../_assets/jwt_auth_info_en.jpeg)
+![jwt_auth](./_assets/jwt_auth_info_en.jpeg)
