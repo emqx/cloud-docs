@@ -966,6 +966,14 @@
           "path": "billing/billing_information"
         },
         {
+          "title": "Billing from AWS Marketplace",
+          "path": "billing/aws_marketplace"
+        },
+        {
+          "title": "Billing from GCP Marketplace",
+          "path": "billing/gcp_marketplace"
+        },
+        {
           "title": "Invoice",
           "path": "billing/invoices"
         },
