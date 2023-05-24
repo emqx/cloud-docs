@@ -255,19 +255,23 @@
           "path": "connect_to_deployments/micropython_raspberrypi"
         },
         {
-          "title": "连接 ESP8266",
+          "title": "使用 ESP8266 连接",
           "path": "connect_to_deployments/esp8266"
         },
         {
-          "title": "连接 ESP32",
+          "title": "使用 ESP32 连接",
           "path": "connect_to_deployments/esp32"
         },
         {
-          "title": "连接 MQTT X",
+          "title": "使用 ESP32 + MicroPython 连接",
+          "path": "connect_to_deployments/esp32_with_micropython"
+        },
+        {
+          "title": "使用 MQTT X 连接",
           "path": "connect_to_deployments/mqttx"
         },
         {
-          "title": "连接 MQTT.fx",
+          "title": "使用 MQTT.fx 连接",
           "path": "connect_to_deployments/mqttfx"
         },
         {
@@ -828,6 +832,10 @@
         {
           "title": "Connect with ESP32",
           "path": "connect_to_deployments/esp32"
+        },
+        {
+          "title": "Connect with ESP32 + MicrPython",
+          "path": "connect_to_deployments/esp32_with_micropython"
         },
         {
           "title": "Connect with Home Assistant",
