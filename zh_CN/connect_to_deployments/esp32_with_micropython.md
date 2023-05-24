@@ -184,7 +184,7 @@ if __name__ == "__main__":
 
 ## 完整代码
 
-** WiFi 连接代码：**
+**WiFi 连接代码：**
 
 ```python
 import network
