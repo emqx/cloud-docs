@@ -24,7 +24,7 @@ The following situation will course a failure of link.
 1. The EMQX account already has been set up a credit card.
 2. The EMQX account uses Available Credits.
 3. The EMQX account already has been linked to a Marketplace EMQX Cloud product.
-4. If you still encounter a problem, please submit a [ticket](../feature/ticketss.md) to get help.
+4. If you still encounter a problem, please submit a [ticket](../feature/tickets.md) to get help.
 :::
 
 
