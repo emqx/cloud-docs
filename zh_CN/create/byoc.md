@@ -55,16 +55,16 @@
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。<!--这里有客户需要替换的地方吗？-->
 	
 	```bash
-	wget -O create-byoc.tar.gz https://emqx-cloud-ami.oss-cn-shanghai.aliyuncs.com/byoc/aliyun_byoc_create.tar.gz
+	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.0/create-aliyun-byoc-deployment.tar.gz
 	```
 
-3. 在 Ubuntu 命令行界面，通过以下命令解压缩。
+3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
 
    ```bash
-   tar -zxvf create-byoc.tar.gz
+   tar -zxvf create-aliyun-byoc-deployment.tar.gz && cd create-aliyun-byoc-deployment
    ```
 
-4. 导航到解压后的文件夹目录，运行以下命令执行部署。
+4. 运行以下命令执行部署。
 
    ```bash
    ./byoc create \
