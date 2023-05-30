@@ -15,7 +15,7 @@ The invocation includes every message published from the device or client and ev
 
 
 ### Usage Statistics
-The statistics are real-time usage for coordinate point times. In 1 hour chart, it will show the system invocations which is invoked in every 5 minutes for connection check. The system invacations will not be counted in billed invocations.
+The statistics are real-time usage for coordinate point times. In 1 hour chart, it will show the system invocations which is invoked in every 5 minutes for connection check. The system invocations will not be counted in billed invocations.
 
 ![chart](./_assets/device_shadow_12.png)
 

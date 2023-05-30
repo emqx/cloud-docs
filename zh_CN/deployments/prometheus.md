@@ -265,7 +265,7 @@ emqx_packets_subscribe_received 0
     ./prometheus --config.file=prometheus.yml
    ```
 
-    通过本地 IP + 对应端⼝，如：x.x.x.x:9090 访问您的 Prometheus 服务，检查 Status - Targets 以确认新的 scrape_config 文件已被读取。如果状态显示异常，您可能需要检查配置文件，重新启动 Prometheus 服务。
+    通过本地 IP + 对应端⼝，如：x.x.x.x:9090 访问您的 Prometheus 服务，检查 Status - Targets 以确认新的 scrape_config 文件已被读取。如果状态显示异常，您可能需要检查配置文件，重新启动 Prometheus 服务。
 
     ![Prometheus_service](./_assets/prometheus_service.png)
 

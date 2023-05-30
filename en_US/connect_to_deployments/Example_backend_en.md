@@ -44,7 +44,7 @@ This section introduces how to connect XXX to the MQTT Broker over TCP port.
    ```
 
 2. <!--Describe how to set the username and password-->
-   <!--There is no need to set user name and password if you use the public MQTT broker. If you create your own deployment, you need to demonstrade how to set the username and password.-->
+   <!--There is no need to set user name and password if you use the public MQTT broker. If you create your own deployment, you need to demonstrate how to set the username and password.-->
 
    ```
    XXXX
@@ -70,7 +70,7 @@ This section introduces how to connect XXX to the MQTT Broker over SSL/TLS port.
    ```
 
 2. <!--Describe how to set the username and password-->
-   <!--There is no need to set user name and password if you use the public MQTT broker. If you create your own deployment, you need to demonstrade how to set the username and password.-->
+   <!--There is no need to set user name and password if you use the public MQTT broker. If you create your own deployment, you need to demonstrate how to set the username and password.-->
 
    ```
    XXXX

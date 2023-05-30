@@ -174,9 +174,9 @@ As you can see, the message just sent has been stored in InfluxDB.
 ```plain
 > select * from "home_sensor"
 name: home_sensor
-time                humidity location temperature
-----                -------- -------- -----------
-1592984201145230677 46.4     bedroom  25
+time                humidity location temperature
+----                -------- -------- -----------
+1592984201145230677 46.4     bedroom  25
 ```
 
 ::: tip

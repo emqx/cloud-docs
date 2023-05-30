@@ -129,14 +129,14 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data.
+1. Use [MQTTX](https://mqttx.app/) to simulate reporting temperature and humidity data.
 
     You need to replace `broker.emqx.io` with the deployment connection address you have created and add the client-side authentication information in the EMQX Dashboard.
 
     - topic: `temp_hum/emqx`
     - payload: `{ "temp": "20.1", "hum": "57" }`
 
-    ![Sending messages to EMQX cloud from MQTT X](./_assets/rds_psql_mqttx.png)
+    ![Sending messages to EMQX cloud from MQTTX](./_assets/rds_psql_mqttx.png)
 
 2. View data dump results.
 

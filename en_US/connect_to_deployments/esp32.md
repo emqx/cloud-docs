@@ -414,11 +414,11 @@ void loop() {
 
 ## Test Connection
 
-After the ESP32 client has successfully connected to the MQTT broker, you can use the Arduino IDE and MQTT X to test the connection.
+After the ESP32 client has successfully connected to the MQTT broker, you can use the Arduino IDE and MQTTX to test the connection.
 
 1. Open the serial monitor, select 115200 baud rate, and check the ESP32 connection status.
    ![esp32_connection](./_assets/esp32_connection.png)
-2. Establish the connection between MQTT X client and MQTT broker, and send messages to ESP32.
+2. Establish the connection between MQTTX client and MQTT broker, and send messages to ESP32.
    ![esp32_mqttx](./_assets/esp32_mqttx.png)
 
 ## More

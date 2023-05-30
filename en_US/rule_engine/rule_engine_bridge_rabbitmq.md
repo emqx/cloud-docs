@@ -53,7 +53,7 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 3. Add Action
 
-   Click on the Next action in the bottom to enter action view. Select the resource created in the first step, select `Data forward - Data bridge to RabbitMQ` as Action Type, and setup the following parameters.
+   Click on the Next action in the bottom to enter action view. Select the resource created in the first step, select `Data forward - Data bridge to RabbitMQ` as Action Type, and set up the following parameters.
 
    - RabbitMQ Exchange: `messages`
    - RabbitMQ Exchange Type: `topic`
@@ -75,7 +75,7 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 ## Testing
 
-1. use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
+1. use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting
 
    You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information.
     - topic: `temp_hum/emqx`

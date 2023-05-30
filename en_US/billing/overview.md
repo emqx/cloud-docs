@@ -8,7 +8,7 @@ You can either pay as you go in an hourly basis or make an annual prepaid purcha
 
 Billing for each EMQX Cloud deployment and service accrues at hourly intervals. Any usage that is less than an hour is billed for the full hour. All billing computations are conducted in Coordinated Universal Time (UTC). 
 
-Billing accrues hourly, with a monthly-in-arrears bill cycle. If you deprovision deployments that have accrued billed usage during the current month, billing will no longer accrue for these deployments, but billed usage accrued so far in the bill cycle will appear on your next bill and invoice.
+Billing accrues hourly, with a monthly-in-arrears bill cycle. If you de-provision deployments that have accrued billed usage during the current month, billing will no longer accrue for these deployments, but billed usage accrued so far in the bill cycle will appear on your next bill and invoice.
 
 Billing occurs on the first day of the month for the previous month. For example, if you start a deployment on September 15, you’re billed on October 1 for your usage from September 15-30.
 
@@ -28,9 +28,9 @@ The estimated total amount of the current month excludes taxes. The total amount
 
 ### Available Credits
 
-**Avaiable Credits** in the bottom right corner of the card shows the credits can be consumed that is held by the prepaid users. 
+**Available Credits** in the bottom right corner of the card shows the credits can be consumed that is held by the prepaid users. 
 
-For those who do not have a credit card or choose other payment methods, Available Credits is the balance for the prepiad payment. 
+For those who do not have a credit card or choose other payment methods, Available Credits is the balance for the prepaid payment. 
 
 - The bill is issued monthly. You can check the details in the Bills page.
 - The tax of the bills will be calculated according the information of you submit to the sales.

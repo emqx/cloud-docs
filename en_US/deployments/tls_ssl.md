@@ -73,11 +73,11 @@ The following instructions guide you to configure one-way TLS/SSL in [EMQX Cloud
 
 ![tls](./_assets/tls.png)
 
-### Test One-Way TLS with MQTT X Client
+### Test One-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTT X Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
-1. In MQTT X Client, create a new connection.
+1. In MQTTX Client, create a new connection.
 
    In the **General** section, fill in the information as follows:
 
@@ -109,16 +109,16 @@ The following instructions guide you to configure two-way TLS/SSL in [EMQX Cloud
     - **Certificate chain**: It is usually provided by a third-party organization when issuing the certificate. If it is missing you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
     - **Certificate private key**: Private secret key.
     - **Client CA**: When choosing two-way, you need to provide the client CA certificate.
-3. After filling in all the fields, click on **Confirm**. On your deplyment overview page, you should see the certificate information in **TLS/SSL Config**.
+3. After filling in all the fields, click on **Confirm**. On your deployment overview page, you should see the certificate information in **TLS/SSL Config**.
 
 ![tls](./_assets/tls_two.png)
 
 
-### Test Two-Way TLS with MQTT X Client
+### Test Two-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTT X Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
-1. In MQTT X Client, create a new connection.
+1. In MQTTX Client, create a new connection.
 
    In the **General** section, fill in the information as follows:
 
@@ -151,7 +151,7 @@ Deleting the certificate will disconnect the client from `8883` and `8084`. Make
 
 ## Create Self-Signed TSL/SSL Certificate
 
-The following intructions guide you to create self-signed TSL/SSL certificates. You can also watch [Create a self-signed TLS/SSL certificate tutorial](https://www.youtube.com/embed/kYL0pQ0GC3k/?autoplay=1&null) for each step of the setup.
+The following instructions guide you to create self-signed TSL/SSL certificates. You can also watch [Create a self-signed TLS/SSL certificate tutorial](https://www.youtube.com/embed/kYL0pQ0GC3k/?autoplay=1&null) for each step of the setup.
 
 ::: tip Prerequisite
 

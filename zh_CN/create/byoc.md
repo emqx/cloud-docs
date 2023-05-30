@@ -171,4 +171,4 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，两个�
 
 ## 连接到部署
 
-您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTT X 连接到部署](../connect_to_deployments/mqttx.md)。
+您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTTX 连接到部署](../connect_to_deployments/mqttx.md)。

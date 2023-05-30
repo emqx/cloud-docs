@@ -26,7 +26,7 @@ Serverless is based on the EMQX multi-tenancy architecture, with multiple users 
 
 ### How to write client-side code for TLS/SSL connection?
 
-You can ckeck sample code (TLS-related sample code) to write client-side code.
+You can check sample code (TLS-related sample code) to write client-side code.
 
 [Python](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3)<br>
 [Java](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java)<br>

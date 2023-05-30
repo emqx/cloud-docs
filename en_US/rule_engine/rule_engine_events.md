@@ -12,7 +12,7 @@ The Rule of Data Integrations provides several event topics available for FROM c
 | $events/session_subscribed   | Subscribe            |
 | $events/session_unsubscribed | Unsubscribe          |
 
-This article will introduce the useage of event topics, and the meaning of each field from three aspects: client connect and disconnect events, message events, topic subscribe and unsubscribe events.
+This article will introduce the usage of event topics, and the meaning of each field from three aspects: client connect and disconnect events, message events, topic subscribe and unsubscribe events.
 
 ## Client connect and disconnect events
 

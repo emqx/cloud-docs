@@ -49,7 +49,7 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
 
 1. New Resource
 
-   Click on Data Integrations on the left menu bar → Resources, click on New Resource and drop down to select the TDengine resource type. Fill in the information from the newly created TDengine database: the default user name is **root**, and the default password is **taosdata**. TDengine does not configure the database name in the resource, please configure it in SQL. If there is an error, you should promptly check whether the database configuration is correct.
+   Click on Data Integrations on the left menu bar → Resources, click on New Resource and drop down to select the TDengine resource type. Fill in the information from the newly created TDengine database: the default username is **root**, and the default password is **taosdata**. TDengine does not configure the database name in the resource, please configure it in SQL. If there is an error, you should promptly check whether the database configuration is correct.
    ![data integrations](./_assets/data_integration_tdengine.png)
    ![create resource](./_assets/tdengine_resource.png)
 
@@ -86,11 +86,11 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to connect the deployment
+1. Use [MQTTX](https://mqttx.app/) to connect the deployment
 
    You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Cloud Dashboard.
 
-   ![mqttx_rusult](./_assets/tdengine_mqttx.png)
+   ![mqttx_result](./_assets/tdengine_mqttx.png)
 
 2. View the data saving results
 

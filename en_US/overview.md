@@ -1,6 +1,6 @@
 # Product Overview
 
-EMQX Cloud is an IoT messaging middleware product that helps you easily collect, transmit, computer, and persist IoT data. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain quickly and securely.
+EMQX Cloud is an IoT messaging middleware product that helps you easily collect, transmit, computer, and persist IoT data. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Cloud provides a one-stop O&M collocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain quickly and securely.
 
 ## Key Features 
 
@@ -50,7 +50,7 @@ EMQX Cloud provides developers with extensive protocol support, enabling them to
 
 EMQX Cloud allows you to easily create a fully managed MQTT cloud service within minutes. By registering and logging in and selecting your preferred deployment area, you can instantly access your service without the hassle of traditional operational setups. Our global service support team and EMQ experts will provide 24/7 uninterrupted technical support and operation services throughout the entire use cycle of EMQX Cloud. You can contact us anytime via tickets, emails, or phone calls for a quick response.
 
-### Flexible Billing and Scalability for Effective Cost Control"
+### Flexible Billing and Scalability for Effective Cost Control
 
 EMQX Cloud offers flexible billing methods to provide effective cost control. For businesses with low throughput and concurrency, a pay-as-you-go Serverless deployment is available, which only charges for actual resource usage. As your business scales, a proprietary deployment option is available, which charges according to cluster instance and message traffic, ensuring clear and controllable costs. Additionally, deployment capacity can be automatically estimated by connection and message throughput, and scalable plans can be made through close monitoring to smoothly adjust the cluster size with business growth.
 

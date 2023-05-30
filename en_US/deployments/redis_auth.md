@@ -112,8 +112,8 @@ You can adapt the ACL query command to suit your business needs, but in any case
 
 An example of the ACL rule data format and structure is as follows.
 
-* username: the user name of the connected client
-* clientid: the clientid of the connecting client
+* username: the username of the connected client
+* clientid: the client id of the connecting client
 * topic: the topic to subscribe/publish to
 * access: allowed actions: subscribe (1), publish (2), both subscribe and publish (3)
 

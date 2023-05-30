@@ -13,7 +13,7 @@ In order to achieve this function, we will complete the following 4 tasks:
 1. Login and initialize InfluxDB
 2. Create a resource
 3. Create a rule and response action
-4. Connect to MQTT X to send data
+4. Connect to MQTTX to send data
 5. View results in the InfluxDB console
 
 Before you start, you will need to complete the following:
@@ -112,15 +112,15 @@ Tags: location ${location}
 
 ![create_action](./_assets/influxdbv2_action.png)
 
-## 5. Connect to MQTT X to send data
+## 5. Connect to MQTTX to send data
 
-We recommend you to use MQTT X, an elegant cross-platform MQTT 5.0 desktop client to subscribe/publish messages.
+We recommend you to use MQTTX, an elegant cross-platform MQTT 5.0 desktop client to subscribe/publish messages.
 
 >If you are using EMQX Cloud for the first time, you can go to [Deployment Connection Guide](../connect_to_deployments/overview.md) to view the MQTT client connection and test guide
 
-We will be using the MQTT X desktop version in this tutorial.
+We will be using the MQTTX desktop version in this tutorial.
 
-In the MQTT X console, click on the `add` button and fill in the deployment information to connect to the deployment, Enter the topic name and payload message to publish the message
+In the MQTTX console, click on the `add` button and fill in the deployment information to connect to the deployment, Enter the topic name and payload message to publish the message
 
 ![MQTTX](./_assets/influxdbv2_mqttx.png)
 

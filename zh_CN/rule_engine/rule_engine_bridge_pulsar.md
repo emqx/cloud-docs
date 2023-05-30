@@ -78,7 +78,7 @@
 
 ## 测试
 
-1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
+1. 使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署连接地址，并添加客户端认证信息。
     - topic: `temp_hum/emqx`

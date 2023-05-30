@@ -30,7 +30,7 @@ This page mainly introduces how to use MQTT.js in XXX project to implement the c
 
 ## Connect over Websocket
 
-<!--There is no need to set user name and password if you use the public MQTT broker. If you create your own deployment, you need to describe how to set the username and password.-->
+<!--There is no need to set username and password if you use the public MQTT broker. If you create your own deployment, you need to describe how to set the username and password.-->
 
 Use the following code to establish a connection between the client and MQTT Broker.
 

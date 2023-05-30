@@ -64,9 +64,9 @@ Before connecting to your free trial deployment, you need to wait for the deploy
 
     ![add_users](./_assets/auth.png)
 
-3. Connect to free trial deployment with MQTT X.
+3. Connect to free trial deployment with MQTTX.
 
-    EMQX Cloud recommends using [MQTT X](https://mqttx.app/) to test the connection.
+    EMQX Cloud recommends using [MQTTX](https://mqttx.app/) to test the connection.
 
    - MQTT connection
 

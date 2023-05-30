@@ -33,7 +33,7 @@ Placeholders like %u (username) and %c (client ID) are allowed in the topic, and
 
 ![add_acl](./_assets/add_acl_serverless.png)
 
-The above steps also appy to the **Username** and **All Users** tab. 
+The above steps also apply to the **Username** and **All Users** tab. 
 
 ## Delete Access Control Policy
 

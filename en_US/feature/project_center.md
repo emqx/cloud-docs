@@ -30,7 +30,7 @@ In the Project Center panel, you can see the number of running deployments and t
 
 ![default_project](./_assets/pc_default.png)
 
-Subaccounts with project management permissions can display buttons to add an subaccount, edit a project and delete a project when mousing over the project block.
+Subaccounts with project management permissions can display buttons to add a subaccount, edit a project and delete a project when mousing over the project block.
 
 ![default_project](./_assets/pc-opts.png)
 

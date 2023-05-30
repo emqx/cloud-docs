@@ -40,7 +40,7 @@ These parameters are verified in strict performance tests. For *Unlimited*, it r
 | Single-client message downstream     | Unlimited                                                  | 50-100 messages/second                          |
 | Single client throughput bandwidth per second | Unlimited                                                  | 512-1024KB                             |
 | Single message length         | Default 1024KB 1-256MB. Adjustable on request.                      | 256KB                                  |
-| Maximum offline message storage length| Unlimited                                              | 1 week
+| Maximum offline message storage length| Unlimited                                              | 1 week |
 
 ### Topic Limitation
 

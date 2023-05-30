@@ -71,7 +71,7 @@ Before you start, you need to complete the following operations:
 
 ## EMQX Cloud Data Integrations configuration
 
-Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
+Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
 
 1. New Resource
 
@@ -115,13 +115,13 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
    ```
 
    ![mysql_data](./_assets/insert_subs_mysql.png)
-2. Use [MQTT X](https://mqttx.app/) to connect the deployment
+2. Use [MQTTX](https://mqttx.app/) to connect the deployment
 
    You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Dashboard.
    In this case, set the clientID to client1
-   ![mqttx_rusult](./_assets/connect_mqtt_get_subs_mysql.png)
+   ![mqttx_result](./_assets/connect_mqtt_get_subs_mysql.png)
 
 3. View subscription relationships in the Dashboard
 
-   Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord and view the client subscription relationship in `Subscriptions`.
+   Go to Deployment Details and click on EMQX Dashboard to go to Dashboard and view the client subscription relationship in `Subscriptions`.
    ![monitor](./_assets/dashboard_get_subs_mysql.png)

@@ -81,7 +81,7 @@ Before you can configure PrivateLink, you need to complete the following prerequ
 
     ![lb](./_assets/privatelink_status.png)
 
-5. Click the Data Integration menu on the left, find the resource type, fill in the `Server` on the New Resource page with the private connection service connection domain and port, databse and user infomation，click `Test`, and the resource will be available.
+5. Click the Data Integration menu on the left, find the resource type, fill in the `Server` on the New Resource page with the private connection service connection domain and port, database and user information，click `Test`, and the resource will be available.
 
     ![lb](./_assets/privatelink_en_resource.png)
 

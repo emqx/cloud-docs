@@ -26,7 +26,7 @@ EMQX Cloud Serverless Plan is billed based on the actual usage of your deploymen
 Session fee = sessions * connection span (measured per minute or part thereof) / 1,000,000 * 2
 Traffic fee = Inbound and outbound traffic（byte）/ 1024 / 1024 / 1024 * 0.15
 
-::: tips
+::: tip
 
 Assume in a 24-hour billing period, a user has 120 sessions for 10 hours, 20 sessions for 10 hours, and 0 sessions for 4 hours, the total session minutes are: 120 * 60 * 10 + 20 * 60 * 10 + 0 = 84,000, and the session fee is 0 if this falls within the free quota. If the free quota has run out, the session fee will be 84,000 / 1,000,000 * 2 = 0.168, rounded up to $ 0.17. The traffic is calculated in the same way as the session.
 
@@ -36,9 +36,9 @@ The bill is calculated based on the fees accumulated in the previous 24 hours, w
 
 ### Spend Limit
 
-Spend Limit helps you control how much money your Serverless deployment spends each month and you'll receive a reminder when you reach that limit. You can set the Spend Limit when you create your deployment, and you can change it later.
+Spend Limit helps you control how much money your Serverless deployment spends each month, and you'll receive a reminder when you reach that limit. You can set the Spend Limit when you create your deployment, and you can change it later.
 
-The spend limit can be an integer between 0 to 10000:
+The spend limit can be an integer from 0 to 10000:
 
 - If it is set to 0, the deployment will only consume the free quota, which is 1 million connection minutes and 1 GB of traffic per month. When the free quota is used up, the deployment will be stopped.
 - If it is set to an integer between 1 and 10,000, an action should also be selected when the consumption of the deployment reaches the limit for the month, such as stopping the deployment or reminding and continuing to charge. If there is an overdue bill, regardless of the action you previously set, the deployment will be stopped.
@@ -114,7 +114,7 @@ EMQX Cloud's Dedicated Plan is charged based on the selected product plan (Stand
    </tr>
 </table>
 
-::: tips
+::: tip
 Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
 :::
 

@@ -44,7 +44,7 @@ Kafka configuration
     
     ```
 
-   If the topic is successfuly created, the message of `Created topic emqx` will be returned.
+   If the topic is successfully created, the message of `Created topic emqx` will be returned.
 
 ## Deployment Data Integrations Configuration
 
@@ -55,7 +55,7 @@ Go to the `Data Integrations` page
    On the data integration page, click kafka resources, fill in the kafka connection details, and then click test. Please check the kafka service if the test fails.
    ![create resource](./_assets/kafka_create_resource.png)
 
-2. Click the New button after the test is passed and you will see the Create Resource successfully message.
+2. Click the New button after the test is passed, and you will see the Create Resource successfully message.
 
    ![kafka_created_successfully](./_assets/kafka_created_successfully.png)
 
@@ -104,7 +104,7 @@ Go to the `Data Integrations` page
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
+1. Use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting
 
    You need to replace broker.emqx.io with the created deployment connection address, add client authentication information to the EMQX Dashboard.
    ![MQTTX](./_assets/mqttx_publish.png)

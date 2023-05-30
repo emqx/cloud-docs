@@ -282,15 +282,15 @@ emqx_packets_subscribe_received 0
 
 2. Configure Grafana
 
-    Access Grafana's dashbroad via the local IP + the corresponding port, e.g. x.x.x.x:3000. The initial ID and password are admin. You can change the password when logging in for the first time.
+    Access Grafana dashboard via the local IP + the corresponding port, e.g. x.x.x.x:3000. The initial ID and password are admin. You can change the password when logging in for the first time.
 
     ![Grafana](./_assets/grafana_data_sources.png)
 
 3. Import Grafana Data Templates
 
-    EMQX Cloud provides template files for Grafana's Dashboard. These templates contain a display of all EMQX Cloud monitoring data. Users can import them directly into Grafana to display EMQX monitoring status icons.
+    EMQX Cloud provides template files for Grafana Dashboard. These templates contain a display of all EMQX Cloud monitoring data. Users can import them directly into Grafana to display EMQX monitoring status icons.
 
-    Accesss to the template ：[emqx_prometheus/grafana_template/EMQ.json](https://github.com/emqx/emqx-prometheus/blob/master/grafana_template/EMQ.json)，The EMQ.json file can be uploaded locally via Upload JSON file, or written manually via the import panel json.
+    Access to the template ：[emqx_prometheus/grafana_template/EMQ.json](https://github.com/emqx/emqx-prometheus/blob/master/grafana_template/EMQ.json)，The EMQ.json file can be uploaded locally via Upload JSON file, or written manually via the import panel json.
 
     ![Grafana](./_assets/grafana_template.png)
 

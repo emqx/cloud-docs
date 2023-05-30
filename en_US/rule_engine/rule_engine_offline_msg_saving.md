@@ -21,7 +21,7 @@ Before you start, you need to complete the following operations:
 
 ## Data Integrations configuration
 
-Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
+Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
 
 1. New Resource
 
@@ -70,7 +70,7 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
+1. Use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting
 
    You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Dashboard.
 
@@ -91,8 +91,8 @@ Go to Deployment Details and click on EMQX Dashbaord to go to Dashbaord.
 
    ![redis](./_assets/offonline_redis_query_result.png)
 
-3. Use [MQTT X](https://mqttx.app/) to consume offline data
-   In MQTT X, subscribe to topic temp_hum/emqx to get offline data.
+3. Use [MQTTX](https://mqttx.app/) to consume offline data
+   In MQTTX, subscribe to topic temp_hum/emqx to get offline data.
 
    ::: tip
    The QoS of the subscription topic must be greater than 0, otherwise the message will be received repeatedly.

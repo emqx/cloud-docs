@@ -27,7 +27,7 @@
       "path": "quick_start/introduction",
       "children": [
         {
-          "title": "使用 MQTT X 连接/验证部署",
+          "title": "使用 MQTTX 连接/验证部署",
           "path": "connect_to_deployments/mqttx"
         }
       ]
@@ -267,7 +267,7 @@
           "path": "connect_to_deployments/esp32_with_micropython"
         },
         {
-          "title": "使用 MQTT X 连接",
+          "title": "使用 MQTTX 连接",
           "path": "connect_to_deployments/mqttx"
         },
         {
@@ -608,7 +608,7 @@
       "path": "quick_start/introduction",
       "children": [
         {
-          "title": "Use MQTT X to Test Connection",
+          "title": "Use MQTTX to Test Connection",
           "path": "connect_to_deployments/mqttx"
         }
       ]
@@ -818,7 +818,7 @@
           "path": "connect_to_deployments/micropython_raspberrypi"
         },
         {
-          "title": "Connect with MQTT X",
+          "title": "Connect with MQTTX",
           "path": "connect_to_deployments/mqttx"
         },
         {

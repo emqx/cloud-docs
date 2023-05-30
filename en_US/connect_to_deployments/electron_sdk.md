@@ -14,7 +14,7 @@ This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) i
   - WebSocket TLS/SSL Port: 8084
 - You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Authentication & ACL** -> **Authentication** section for the setting.
 
-### Creating a Electron Application
+### Creating an Electron Application
 
 [Electron](https://www.electronjs.org/) is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologies: it combines the Chromium rendering engine and the Node.js runtime. Electron is the main GUI framework behind several notable open-source projects including Atom, GitHub Desktop, Light Table, Visual Studio Code, and WordPress Desktop.[^1]
 
@@ -114,7 +114,7 @@ In this case, the locally installed `MQTT.js` module cannot be loaded directly i
 
 ## Connection
 
-To illustrate more intuitive, the key connection code for the example will be written in the renderer.js file. With the consideration of security, the installed MQTT module will be loaded via the require method of the Node.js API, in the preload.js file (using method 2 above). Also, this method injecting it in the global window object.
+To illustrate more intuitive, the key connection code for the example will be written in the renderer.js file. With the consideration of security, the installed MQTT module will be loaded via the required method of the Node.js API, in the preload.js file (using method 2 above). Also, this method injecting it in the global window object.
 
 > **Note:** [Context isolation (contextIsolation)](https://www.electronjs.org/docs/latest/tutorial/context-isolation) has been enabled by default since Electron 12, Although preload scripts share a `window` global with the renderer they're attached to, you cannot directly attach any variables from the preload script to `window` because of the [`contextIsolation`](https://www.electronjs.org/docs/latest/tutorial/context-isolation) default.
 
@@ -181,7 +181,7 @@ const client = mqtt.connect('mqtts://broker.emqx.io:8883', {
 
 MQTT WebSocket uniformly uses `/path` as the connection path, which needs to be specified when connecting, while EMQX Broker uses `/mqtt` as the path.
 
-Therefore, when using WebScoket connection, in addition to modifying the port number and switching the protocol to `ws`, you also need to add the `/mqtt` path.
+Therefore, when using WebSocket connection, in addition to modifying the port number and switching the protocol to `ws`, you also need to add the `/mqtt` path.
 
 Establish a connection between the client and MQTT Broker using the following code.
 
@@ -305,13 +305,13 @@ function onDisconnect() {
 
 ## Test the Connection
 
-At this point, we test the sending and receiving of messages with a [MQTT 5.0 client tool - MQTT X](https://mqttx.app), also written in Electron.
+At this point, we test the sending and receiving of messages with a [MQTT 5.0 client tool - MQTTX](https://mqttx.app), also written in Electron.
 
-When using MQTT X to send a message to the client, you can see that the message is received properly:
+When using MQTTX to send a message to the client, you can see that the message is received properly:
 
 ![electronmessage.png](https://assets.emqx.com/images/bfb62b9f23f6836627d8e129d38b9160.png)
 
-Send a message to MQTT X using the client you wrote yourself, and now you can see that MQTT X is also receiving the message properly:
+Send a message to MQTTX using the client you wrote yourself, and now you can see that MQTTX is also receiving the message properly:
 
 ![mqttx.png](https://assets.emqx.com/images/cc97fe533fcce20765530970d7696f58.png)
 

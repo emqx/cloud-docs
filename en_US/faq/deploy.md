@@ -8,7 +8,7 @@ If you have special requirements or other conditions, you can submit a ticket or
 
 ## How to connect to the deployment?
 
-You can connect via client such as [MQTT X](https://mqttx.app). You can also connect via the SDK, see [Connect to Deployments](../connect_to_deployments/overview.md) for more information.
+You can connect via client such as [MQTTX](https://mqttx.app). You can also connect via the SDK, see [Connect to Deployments](../connect_to_deployments/overview.md) for more information.
 
 ## What are the common causes for connection failure?
 
@@ -18,7 +18,7 @@ You can connect via client such as [MQTT X](https://mqttx.app). You can also con
 
 ## My deployment has been deleted by mistake, can I recover it?
 
-You need to double check the right deployment name before deleting a deployment. Deployments cannot be recovered after they have been deleted.
+You need to double-check the right deployment name before deleting a deployment. Deployments cannot be recovered after they have been deleted.
 
 ## How can I get the messages sent by the client in deployment console?
 

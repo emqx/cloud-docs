@@ -1,6 +1,6 @@
 # Connect via Eclipse Paho Java
 
-In this tutorial, you will learn how to use [**Eclipse Paho Java Client**](https://github.com/eclipse/paho.mqtt.java) to implement the connection, subscription, messaging, unsubscription, and other functions between the client and MQTT broker..
+In this tutorial, you will learn how to use [**Eclipse Paho Java Client**](https://github.com/eclipse/paho.mqtt.java) to implement the connection, subscription, messaging, unsubscription, and other functions between the client and MQTT broker.
 
 Eclipse Paho Java is an open-source MQTT client library that can be used to implement MQTT communication protocol in Java applications. It offers multiple APIs for simplifying the implementation and usage of MQTT protocol and supports various MQTT versions. Using it, one can easily create MQTT clients, send or receive messages, and handle operations such as connecting, subscribing, and unsubscribing. Eclipse Paho Java also offers advanced features like auto-reconnect and SSL secure connectivity. It is a powerful and easy-to-use MQTT client library that can help Java developers quickly implement the MQTT communication protocol.
 
@@ -24,7 +24,7 @@ The project use Maven as the build tool, please [install Maven](https://maven.ap
 ## Create project
 
 1. Create a Maven project with `Intellij IDEA`, refer to [Creating a Maven project](https://www.jetbrains.com/idea/guide/tutorials/working-with-maven/creating-a-project/)
-2. Craet package `io.emqx.mqtt` under `src/main/java`
+2. Create package `io.emqx.mqtt` under `src/main/java`
 
 ### Add MQTT dependency
 
@@ -50,7 +50,7 @@ mvn install
 
 ### Connect Options
 
-Create `MqttSample.java`, setup the broker, port, topic and authentication.
+Create `MqttSample.java`, set up the broker, port, topic and authentication.
 
 ```Java
 String topic = "test/topic";
@@ -114,7 +114,7 @@ This section introduces how to connect to a deployment with SSL/TLS one-way auth
 
 ### Connect Options
 
-Create `MqttSample.java`, setup the broker, port, topic, authentication and CA certificate.
+Create `MqttSample.java`, set up the broker, port, topic, authentication and CA certificate.
 
 ```Java
 String topic = "test/topic";

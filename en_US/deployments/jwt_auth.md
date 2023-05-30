@@ -30,13 +30,13 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 
 2. Click `Configure Authentication` to enter the JWT authentication page, fill in the information, and create a new authentication. In this example, the authentication is performed by configuring the JWKs server address.
 
-> EMQX Cloud Cloud will authenticate JWTs in a fixed order of **Secret, Pubkey and JWKs Addr**. Fields that are not configured will be ignored.
+> EMQX Cloud will authenticate JWTs in a fixed order of **Secret, Pubkey and JWKs Addr**. Fields that are not configured will be ignored.
 
 - Authentication source: The field where the JWT is stored when the client connects, currently supports username or password.
 - Key: The key used to issue the JWT. This will be used to verify that the JWT received by EMQX Cloud is legitimate and is applicable to JWTs issued by the HMAC algorithm.
 - Public Key File: This will be used to verify that the JWT received by EMQX Cloud is legitimate and is applicable to JWTs issued by RSA or ECDSA algorithms.
 - JWKs Server Address: EMQX Cloud will periodically query the latest public key list from the JWKs server and will be used to verify that the received JWT is legitimate, for JWTs issued by RSA or ECDSA algorithms.
-- Validate Declaration Fields: Whether or not you need to validate that the declarations in the JWT Payload match the Declaration Fields List.
+- Validate Declaration Fields: Whether you need to validate that the declarations in the JWT Payload match the Declaration Fields List.
 - Declaration Field List: Used to verify that the declarations in the JWT Payload are legal. The most common use is to add a key-value pair with the key username and the value %u, where %u is replaced at runtime as a placeholder with the Username used by the client to actually connect. The following two placeholders are currently supported in the declaration field list.
   - %u: will be replaced at runtime with the Username used by the client when connecting.
   - %c: will be replaced at runtime with the Client ID used by the client when connecting.

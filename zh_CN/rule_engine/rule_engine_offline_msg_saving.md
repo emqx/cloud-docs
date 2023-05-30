@@ -77,7 +77,7 @@
 
 ## 测试
 
-1. 使用 [MQTT X](https://mqttx.app/) 模拟温湿度数据上报
+1. 使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报
 
    需要将 broker.emqx.io 替换成已创建的部署连接地址，并添加客户端认证信息。
 
@@ -97,9 +97,9 @@
 
     ![redis](./_assets/offonline_redis_query_result.png)
 
-3. 使用 [MQTT X](https://mqttx.app/) 消费离线数据
+3. 使用 [MQTTX](https://mqttx.app/) 消费离线数据
 
-   在 MQTT X 中，订阅主题 `temp_hum/emqx`，获取离线数据。
+   在 MQTTX 中，订阅主题 `temp_hum/emqx`，获取离线数据。
 
    ::: tip
    订阅主题的 QoS 必须大于 0，否则消息会被重复接收

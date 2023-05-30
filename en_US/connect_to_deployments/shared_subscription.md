@@ -47,16 +47,16 @@ Then when publisher publishes a message with topic `test` to the EMQX Cloud (tip
 * Only one of s1, s2, s3 will receive msg
 * s4 will receive msg
 
-## Test shared subscription using MQTT X
+## Test shared subscription using MQTTX
 
-Simulate client subscriptions using MQTT X.
+Simulate client subscriptions using MQTTX.
 
 * s1, s2 subscribe topic `$share/g1/test`
 * s3 subscribe topic `test`
 
 ![shared_subscription_1](./_assets/shared_subscription_1.png)
 
-Create client P1 using MQTT X to send 3 messages to the topic `test`
+Create client P1 using MQTTX to send 3 messages to the topic `test`
 
 ![shared_subscription_2](./_assets/shared_subscription_2.png)
 
