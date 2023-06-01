@@ -1,80 +1,83 @@
-# 升级策略
+# Upgrade Policy
 
-本节介绍了 EMQX Cloud 的平台升级、EMQX 部署升级和功能废止的策略。
+This page introduces the strategies for platform upgrades, EMQX deployment upgrades, and feature deprecation in EMQX Cloud.
 
-## 控制台升级
+## Console Upgrades
 
-控制台升级是指除了部署升级和功能废止之外，对 EMQX Cloud 控制台相关功能、界面、用户体验等所有内容在内的升级。
+Console upgrades involve all aspects of the EMQX Cloud console, including functionality, interface, and user experience, apart from deployment upgrades and feature deprecation.
 
-### 潜在用户影响
-- 较小影响：功能的升级都会考虑到用户的数据安全以及功能的兼容性，对用户的业务产生较小的影响。
-- 没有影响：新功能上线，没有使用到该功能就没有影响。
+### Potential User Impact
+- Minor Impact: Functionality upgrades will consider user data security and compatibility, resulting in a minor impact on user operations.
+- No Impact: If a new feature is introduced and not utilized by users, there will be no impact.
 
-### 举例
-- 支持新的支付方式
-- 监控界面增加新的部署监控指标
-- 增加新的部署可用区
+### Examples
+- Support for new payment methods
+- Adding new deployment monitoring metrics to the Metrics page
+- Adding new deployment regions
 
-### 升级频率
-两周一次
+### Frequency
+Every two weeks
 
-### 升级通知
-有时通知：沟通可能包括电子邮件通知、更新的文件和发文说明，或者销售和客户的沟通。
+### Notifications
+Occasional notifications: Communication may include email notifications, updated documents, and articles, or communication with sales and customers.
 
-### 升级时间
-由 EMQX Cloud 统一进行升级。
-
-
-## 部署升级
-
-EMQX Cloud 部署升级包括所有产品部署的版本升级。
-
-### 潜在用户影响
-- 较大影响：EMQX 版本升级或者重大更新，已经连接的设备会闪断，需要客户端支持设备自动重连。
-- 较小影响：EMQX 小升级，主要为了修复潜在的 bug，一般使用热更新的方式，对设备端不会造成影响。
-- 没有影响：EMQX 安全补丁等，对已连接设备不会造成影响。
-
-### 举例
-- Serverless 支持控制台批量导入认证数据
-- EMQX 部署版本升级
-- 对 API 请求地址的变更
-
-### 升级频率
-- Serverless 新功能的升级通常几个月一次
-- EMQX 部署版本升级，建议一年半到两年一次
-::: warning
-EMQX Cloud 将对一个 EMQX 版本最多维护 2 年时间。
-:::
+### Upgrade Approach
+EMQX Cloud conducts the upgrade.
 
 
-### 升级通知
-升级前 90 天开始和用户进行确认，告知升级的范围、影响，协商升级的时间。
+## Deployment Upgrades
+
+EMQX Cloud deployment upgrades include version upgrades for all deployed products.
+
+### Potential User Impact
+- Major Impact: EMQX version upgrades or significant updates may cause temporary disconnection of connected devices, requiring client-side support for automatic reconnection.
+- Minor Impact: Minor EMQX upgrades primarily aim to fix potential bugs and are generally applied through hot updates, causing no impact on the device side.
+- No Impact: EMQX security patches and similar updates have no impact on already connected devices.
+
+### Examples
+- Serverless support for bulk import of authentication data via the console
+- Upgrades to EMQX deployment versions
+- Changes to API request addresses
+
+### Frequency
+- Serverless feature upgrades typically occur every few months.
+
+- EMQX deployment version upgrades are recommended every 1.5 to 2 years. 
+
+  ::: warning 
+
+  EMQX Cloud provides support for a specific EMQX version for a maximum of 2 years. 
+
+  :::
 
 
-### 升级方式
-根据每个各户的版本和业务情况会有不同的时间。会与客户协调，避开高风险时间，尽早进行升级，但 EMQX Cloud 最后保留升级的权利。
+### Notification
+Confirmation and notification of upgrades, including details of the scope and impact, are provided to users 90 days before the upgrade. The upgrade time is negotiated.
 
 
-## 功能废止
-任何从 EMQX Cloud 中移除的客户可能使用的功能。
+### Upgrade Approach
+Upgrade timing may vary based on user versions and business requirements. EMQX Cloud coordinates with customers to schedule upgrades, aiming to avoid high-risk periods. However, EMQX Cloud retains the final authority for upgrades.
 
 
-### 潜在用户影响
-- 较大影响：如果用户在使用该功能，移除功能会对业务产生较大影响。
-- 没有影响：没有使用到该功能就没有影响。
-
-### 举例
-- 删除某个 API 接口
-- 下架某个增值服务
-
-### 升级频率
-很少发生
-
-### 废止通知
-废止前 90 天开始和用户进行确认，告知升级的范围、影响，协商时间。或者通过电子邮件通知、更新的文件和发文说明，告知用户。
+## Discontinued Features
+Discontinued features refer to the removal of any feature that users may have been utilizing in EMQX Cloud.
 
 
-### 升级方式
-由 EMQX Cloud 统一进行升级。
+### Potential User Impact
+- Major Impact: The removal of a feature that users actively use can significantly impact their operations.
+- No Impact: If a feature is not being used, its removal has no impact.
 
+### Examples
+- Deletion of a specific API interface
+- Removal of a value-added service
+
+### Frequency
+Rarely occurs
+
+### Notifications
+Confirmation and notification of discontinued features are provided to users 90 days before the removal, informing them about the scope and impact. This may be done through email notifications, updated documents, and articles.
+
+
+### Upgrade Approach
+EMQX Cloud conducts the upgrade.
 
