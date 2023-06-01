@@ -411,7 +411,7 @@
           "path": "billing/subscription"
         },
         {
-          "title": "欠费说明",
+          "title": "到期和欠费",
           "path": "billing/overdue"
         },
         {

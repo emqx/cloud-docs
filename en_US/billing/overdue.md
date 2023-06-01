@@ -2,18 +2,17 @@
 
 
 ## Expiring soon
-
-If you have a deployment with annual billing under your account, we will send a reminder to the relevant email address 15 days before the expiration of the deployment. Please pay attention to the email and plan whether you need to renew your subscription.
+A reminder will be sent to the email associated with your account 15 days prior to the expiration date. Please carefully review the email and decide if you wish to renew your subscription.
 
 
 ## Overdue and Expiry
 
 ### Serverless
-When your account has an overdue bill, Serverless deployments running under the account will be stopped (they will not be deleted). If you need to continue using it, you can pay the overdue bill and manually turn it on in the console. If you do not need to continue using it, you can delete the deployment from the console deployment details.
+If your account has an unpaid bill, any Serverless deployments associated with it will be stopped, but not removed. To resume using them, you must settle the overdue bill and manually restart them through the console. Alternatively, if you have no further use for them, you can delete the deployment from the deployment list in the console.
 
 
-### Hourly billing Dedicated
-When your account has an overdue bill, any active hourly billing deployments under your account will be stopped upon confirmation. During this period, the data, connection addresses and value-added services subscribed to will be retained and the corresponding retention fees will be charged. If you need to continue using the account, you can pay the overdue bill and manually turn it on in the console. If you do not need to continue using the service, you can delete the deployment from the console deployment details. Deployments in arrears stop will be deleted after a maximum of 7 days.
+### Dedicated on hourly billing
+If you have an unpaid bill on your account, any deployments on hourly billing will be stopped after our confirmation. However, your data, connection addresses, and subscribed value-added services will still be retained, and you will be charged retention fees. If you wish to continue using the MQTT service, you must pay the overdue bill and manually restart it through the console. Alternatively, if you no longer require the service, you can delete the deployment from the console. Deployments that have been stopped due to overdue payments will be automatically deleted within a maximum of 7 days.
 
-### Annual prepaid Dedicated
-When your annual deployment package expires, the deployment will be stopped after confirmation. If you want to continue your annual subscription or have other needs, you can always contact your dedicated sales consultant or contact us for the latest service offer. If you do not need to continue using the service, you can delete the deployment from the console deployment details. Deployments will be deleted after a maximum of 7 days from the expiration date.
+### Dedicated on prepaid
+Once your deployments on prepaid expire, the deployment will be stopped after our confirmation. In case you wish to extend your subscription or require any other assistance, you can reach out to your assigned sales consultant or get in touch with us for the latest service proposal. If you no longer require the service, you can remove the deployment from the console. The deployments will be deleted after a maximum of 7 days from the expiration date.
