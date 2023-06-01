@@ -1,6 +1,6 @@
 # Upgrade Policy
 
-This page introduces the strategies for platform upgrades, EMQX deployment upgrades, and feature deprecation in EMQX Cloud.
+This page introduces the strategies for platform upgrades, EMQX deployment upgrades, and discontinued features in EMQX Cloud.
 
 ## Console Upgrades
 
