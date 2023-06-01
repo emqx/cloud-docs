@@ -555,8 +555,17 @@
       "path": "https://www.emqx.com/zh/mqtt"
     },
     {
-      "title": "产品动态",
-      "path": "release_notes"
+      "title": "产品动态和升级策略",
+      "children": [
+        {
+          "title" : "产品动态",
+          "path": "release_notes"
+        },
+        {
+          "title" : "升级策略",
+          "path": "upgrade_policy"
+        }
+      ]
     },
     {
       "title": "常见问题",
@@ -576,6 +585,10 @@
         {
           "title": "财务相关问题",
           "path": "faq/billing"
+        },
+        {
+          "title": "部署升级策略",
+          "path": "faq/upgrade"
         }
       ]
     }
