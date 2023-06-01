@@ -47,7 +47,7 @@ EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to
 ::: warning
 
 - The deployment will be stopped if there are no active client connections for 30 consecutive days. To continue using it, please manually enable it in the console. 
-- If the deployment remains inactive for 30 days after being stopped, it will be deleted.
+- If the deployment remains inactive for 30 days after being stopped, it would be deleted.
 
 :::
 

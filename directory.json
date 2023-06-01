@@ -419,7 +419,7 @@
           "path": "billing/subscription"
         },
         {
-          "title": "欠费说明",
+          "title": "到期和欠费",
           "path": "billing/overdue"
         },
         {
@@ -992,6 +992,10 @@
         {
           "title": "Taxation by Region",
           "path": "billing/taxation"
+        },
+        {
+          "title": "Overdue and Expiry",
+          "path": "billing/overdue"
         },
         {
           "title": "Serverless Spend Limit",
