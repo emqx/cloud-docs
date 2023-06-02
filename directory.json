@@ -555,8 +555,17 @@
       "path": "https://www.emqx.com/zh/mqtt"
     },
     {
-      "title": "产品动态",
-      "path": "release_notes"
+      "title": "产品动态和升级策略",
+      "children": [
+        {
+          "title" : "产品动态",
+          "path": "release_notes"
+        },
+        {
+          "title" : "升级策略",
+          "path": "upgrade_policy"
+        }
+      ]
     },
     {
       "title": "常见问题",
@@ -1110,8 +1119,17 @@
       "path": "https://www.emqx.com/en/mqtt"
     },
     {
-      "title": "Release Note",
-      "path": "release_notes"
+      "title": "Release Note & Upgrade policy",
+      "children": [
+        {
+          "title" : "Release Note",
+          "path": "release_notes"
+        },
+        {
+          "title" : "Upgrade policy",
+          "path": "upgrade_policy"
+        }
+      ]
     },
     {
       "title": "FAQ",
