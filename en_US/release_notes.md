@@ -1,98 +1,135 @@
-# Version Release
+<!-- markdownlint-disable MD001 --> 
 
-## 2022-10-15
+# Release Notes
+
+## 2023
+
+#### 2023-5
+* Subscription from Google Cloud Marketplace
+* Update monitor metrics
+
+#### 2023-4
+* Release EMQX Serverless
+* Spend limit for EMQX Serverless
+* AWS Ohio region
+
+#### 2023-3
+
+* Brand new welcome page
+
+#### 2023-2
+
+* Release EMQX Serverless (Beta)
+
+## 2022
+
+#### 2022-12
+
+* 1000 Specification for Dedicated 
+
+#### 2022-11
+
+* Data Integration provides GCP Pub/Sub
+
+#### 2022-10
 
 * New Regions in AWS: Tokyo and Northern California
-* Support Shadow Service
+* Shadow Service
 
-## 2022-9-19
+#### 2022-9
 
 * Optimize deployment metrics
 * Available on the AWS Marketplace
 
-## 2022-8-19
+#### 2022-8
 
 * Available Credit for remittance users
 
-## 2022-7-19
+#### 2022-7
 
 * Deployment logs support multi-criteria search
 * Modification of the billing subject information
 
-## 2022-6-19
+#### 2022-6
 
 * AWS platform added Hong Kong region
 * GCP platform added Taiwan region
 
-## 2022-5-19
+#### 2022-5
 
 * Added multiple custom Authentication sources
 * Added multiple custom Data Integration Resources
 
-## 2022-3-19
+#### 2022-3
 
 * Replace Rule Engine with Data Integration
 
-## 2022-1-19
+#### 2022-1
 
 * Support Intranet and NAT Gateway LB VAS
 
-## 2021-11-19
+## 2021
+
+#### 2021-11
 
 * Support Subaccount Management
 
-## 2021-09-19
+#### 2021-09
 
 * Support Project Management
 
-## 2021-08-19
+#### 2021-08
 
 * Support Google Cloud Platform
 
-## 2021-07-19
+#### 2021-07
 
 * Support Azure Cloud Platform
 
-## 2021-06-19
+#### 2021-06
 
 * Optimization of User Interface Design
 
-## 2021-05-13
+#### 2021-05
 
 * New Pricing Plans
 
-## 2021-03-15
+#### 2021-03
 
 * New UI design
 
-## 2020-12-21
+## 2020
+
+#### 2020-12
 
 * Support the creation of 180-day free trial
 
-## 2020-09-17
+#### 2020-09
 
 * Deployment a dedicated dashboard
 
-## 2020-07-15
+#### 2020-07
 
 * Support TLS/SSL one-way/two-way authentication
 
-## 2020-05-12
+#### 2020-05
 
 * China station is online
 
-## 2020-03-09
+#### 2020-03
 
 * Remove the dashboard and fix the bug
 
-## 2020-01-07
+#### 2020-01
 
 * Start to support the rule engine with some other improvements
 
-## 2019-11-30
+## 2019
+
+#### 2019-11
 
 * Update pricing and fix some bugs
 
-## 2019-09-30
+#### 2019-09
 
 * EMQX Cloud Service released
