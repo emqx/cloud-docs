@@ -6,7 +6,7 @@ All value added services offered by EMQX Cloud can be found in the top menu bar 
 
 ![](./_assets/intro_01.png)
 
-Some value added services are associated with the deployment you purchased and you can only activate them after you purchase the Professional or Standard deployment, so please pay attention to the description of the service. If you have purchased multiple deployments, please select the deployment you need to create service instances for.
+Some value added services are associated with the deployment you purchased, and you can only activate them after you purchase the Professional or Standard deployment, so please pay attention to the description of the service. If you have purchased multiple deployments, please select the deployment you need to create service instances for.
 
 ![](./_assets/intro_02.png)
 

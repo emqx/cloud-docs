@@ -46,7 +46,7 @@
                     'link': './quick_start/introduction.html',
                   },
                   {
-                    'name': 'Use MQTT X to connect to deployment',
+                    'name': 'Use MQTTX to connect to deployment',
                     'link': './connect_to_deployments/mqttx.html',
                   },
                 ],

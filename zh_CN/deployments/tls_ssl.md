@@ -69,9 +69,9 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 
 ![tls](./_assets/tls.png)
 
-### 使用 MQTT X 测试单向 TLS
+### 使用 MQTTX 测试单向 TLS
 
-测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTT X 进行测试：
+测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
 
 - 新建连接，输入 Name，Client ID 随机生成即可
 - 选择 Host，填入部署的连接地址和端口
@@ -103,9 +103,9 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 ![tls](./_assets/tls_shuang.png)
 
 
-### 使用 MQTT X 测试双向 TLS
+### 使用 MQTTX 测试双向 TLS
 
-测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTT X 进行测试：
+测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
 
 - 新建连接，输入 Name，Client ID 随机生成即可
 - 选择 Host，填入部署的连接地址和端口

@@ -102,7 +102,7 @@ If multiple ACL modules are enabled at the same time, EMQX Cloud will chain auth
 
 ### Principle of permission authentication
 
-When authenticating, EMQX Cloud will use the current client information to populate and execute the user name and password authentication SQL configured by the user, and query the authentication data in the database of the client.
+When authenticating, EMQX Cloud will use the current client information to populate and execute the username and password authentication SQL configured by the user, and query the authentication data in the database of the client.
 
 ```sql
 select password from mqtt_user where username = '%u' limit 1;

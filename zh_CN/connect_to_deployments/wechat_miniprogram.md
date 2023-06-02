@@ -202,11 +202,11 @@ disconnect() {
 
 <img src="./_assets/wechat-overview.png" alt="小程序概览页面" style="zoom:50%;" />
 
-小程序进行连接并订阅主题 testtopic/miniprogram 之后，使用 [MQTT 5.0 客户端工具 - MQTT X](https://mqttx.app/zh) 作为另一个客户端订阅主题 testtopic/# 并发送一条消息到主题 testtopic/miniprogram
+小程序进行连接并订阅主题 testtopic/miniprogram 之后，使用 [MQTT 5.0 客户端工具 - MQTTX](https://mqttx.app/zh) 作为另一个客户端订阅主题 testtopic/# 并发送一条消息到主题 testtopic/miniprogram
 
-![使用 MQTT X 发送消息](./_assets/wechat-mqttx.png)
+![使用 MQTTX 发送消息](./_assets/wechat-mqttx.png)
 
-可以看到 MQTT X 可以正常接收来到来自小程序发送过来的消息，同样，使用 MQTT X 向该主题发送一条消息时，也可以看到小程序能正常接收到该消息。
+可以看到 MQTTX 可以正常接收来到来自小程序发送过来的消息，同样，使用 MQTTX 向该主题发送一条消息时，也可以看到小程序能正常接收到该消息。
 
 <img src="./_assets/wechat-receive-msg.png" alt="app2.png" style="zoom:50%;" />
 

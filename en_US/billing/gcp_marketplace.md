@@ -14,11 +14,10 @@ EMQX Cloud supports paying for usage via the Google Cloud Marketplace. You can l
 	c. Click **SUBSCRIBE**.
 6. In the modal, click **GO TO PRODUCT PAGE**.
 7. Return to the product page, click **MANAGE ON PROVIDER** to redirect to EMQX Cloud website.
-7. Set up EMQX account.
-
+8. Set up EMQX account.
 	- If you are already signed in to an existing EMQX account, you are automatically redirected to the index page. A modal will display the status of linking to your GCP Billing Account.
-- If you are not already signed in to an existing EMQX account, you are prompted to sign in to an EMQX account. Upon successful sign-in, you are automatically redirected to the index page. A modal will display the status of linking to your GCP Billing Account.
-8. Wait for GCP to finish syncing.
+    - If you are not already signed in to an existing EMQX account, you are prompted to sign in to an EMQX account. Upon successful sign-in, you are automatically redirected to the index page. A modal will display the status of linking to your GCP Billing Account.
+9. Wait for GCP to finish syncing.
 	EMQX Cloud index page displays a pop-up notifying you that account syncing status. Additionally, the Payment Method field of the Billing page will change to GCP Marketplace Subscription when the sync is complete.
 	
 

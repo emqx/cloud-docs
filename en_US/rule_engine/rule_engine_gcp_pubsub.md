@@ -42,7 +42,7 @@ Go to the `Data Integrations` page
 
    ![gcp_pubsub_resource](./_assets/gcp_pubsub_resource.png)
 
-2. Click the New button after the test is passed and you will see the Create Resource successfully message.
+2. Click the New button after the test is passed, and you will see the Create Resource successfully message.
 
    ![gcp_pubsub_resource_details](./_assets/gcp_pubsub_resource_details.png)
 
@@ -70,7 +70,7 @@ Go to the `Data Integrations` page
 
 5. Add Action to Rule
 
-   Click Next to add a GCP Pub/Sub forwarding action to the rule once the SQL test succeeds. To demonstrate how to forword the data reported by the device to GCP Pub/Sub, we'll utilize the following GCP Pub/Sub topic and message template.
+   Click Next to add a GCP Pub/Sub forwarding action to the rule once the SQL test succeeds. To demonstrate how to forward the data reported by the device to GCP Pub/Sub, we'll utilize the following GCP Pub/Sub topic and message template.
 
    ```bash
    # GCP Pub/Sub message template 
@@ -89,7 +89,7 @@ Go to the `Data Integrations` page
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
+1. Use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting
 
    You need to replace broker.emqx.io with the created deployment connection address, add client authentication information to the EMQX Dashboard.
 

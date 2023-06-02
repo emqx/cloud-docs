@@ -2,7 +2,7 @@
 
 In order to facilitate the message bridging of multiple MQTT Brokers, you can use the Data Integrations to operate.
 
-This guide will create a a data integration bridged by MQTT Broker to achieve the following functions:
+This guide will create a data integration bridged by MQTT Broker to achieve the following functions:
 
 - Forward all messages sent to the greet topic to another MQTT Broker
 

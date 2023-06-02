@@ -14,7 +14,7 @@ Before you start, you will need to complete the following:
 
 You could create a new DynamoDB table by the following steps:
 
-1. Download DynamoDB locally (using macOS X as an example):
+1. Download DynamoDB locally (using Mac OS X as an example):
    
    ```bash
    $ brew install dynamodb-local
@@ -95,7 +95,7 @@ You could create a new DynamoDB table by the following steps:
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate publishing temperature and humidity data
+1. Use [MQTTX](https://mqttx.app/) to simulate publishing temperature and humidity data
 
    You need to replace broker.emqx.io with the deployment connection address you have created and add the client-side authentication information in the EMQX Dashboard.
    ![MQTTX](./_assets/psql_connect.png)

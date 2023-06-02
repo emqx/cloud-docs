@@ -15,8 +15,8 @@
           [
             {
               'imgName': 'mqttx',
-              'name': 'MQTT X',
-              'description': 'MQTT X 是 EMQ 开源的一款优雅的跨平台 MQTT 5.0 桌面客户端，它支持 macOS、Linux 和 Windows。',
+              'name': 'MQTTX',
+              'description': 'MQTTX 是 EMQ 开源的一款优雅的跨平台 MQTT 5.0 桌面客户端，它支持 macOS、Linux 和 Windows。',
               'link': './mqttx.html',
             },
             {

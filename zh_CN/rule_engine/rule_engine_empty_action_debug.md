@@ -60,7 +60,7 @@ EMQX Cloud 中仅适用以下操作：
 
 ## 测试
 
-1. 使用 [MQTT X](https://mqttx.app/) 测试
+1. 使用 [MQTTX](https://mqttx.app/) 测试
 
    需要将 broker.emqx.io 替换成已创建的部署连接地址，并添加客户端认证信息。
 

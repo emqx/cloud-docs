@@ -4,7 +4,7 @@
 
 ### What's EMQX Cloud？
 
-EMQX Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain and easily realize the collection, transmission, computation, and persistence of IoT data.
+EMQX Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. As the world's first fully managed MQTT 5.0 public cloud service, EMQX Cloud provides a one-stop O&M collocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain and easily realize the collection, transmission, computation, and persistence of IoT data.
 
 ### What is EMQX Cloud deployment?
 
@@ -88,6 +88,6 @@ EMQX Cloud supports credit card payment. For more payment options please contact
 
 ### How to get the credits?
 
-If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or send an email (cloud-support@emqx.io) to get in touch with us and we will issue a certain amount of credits based on your business needs.
+If you need to experience all the functions of the Standard Deployment, you can submit a [ticket](./feature/tickets.md) or send an email (cloud-support@emqx.io) to get in touch with us, and we will issue a certain amount of credits based on your business needs.
 
 Please pay attention to the update of EMQX cloud.

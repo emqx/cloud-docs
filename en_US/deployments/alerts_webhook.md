@@ -2,7 +2,7 @@
 
 EMQX Cloud integrates with Webhook, enabling alerts to be sent to IM software or to your own service. Testing whether the Webhook is correctly configured by sending the message through test function.
 
-Now we suppoert Slack and a common webhook from your service.
+Now we support Slack and a common webhook from your service.
 
 ## Send an alert to Slack
 1. Create a Webhook in Slack and get the Webhook URL address. For more information, see [Sending messages using Incoming Webhooks](https://api.slack.com/messaging/webhooks?spm=a2c4g.11186623.0.0.2fa63db5J0PRQp)；

@@ -20,7 +20,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
    **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). 
 
-   **Choose Spefication**: Each specification has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
+   **Choose Specification**: Each specification has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
 
    **Billing Method**: Choose between **Hourly billing** or Annual prepaid (with a 15% of discount).
 

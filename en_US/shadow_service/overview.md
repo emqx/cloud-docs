@@ -20,7 +20,7 @@ If you have a running deployment that meets all the criteria above, on the deplo
 ![entry](./_assets/entry01.png)
 
 ### Access B:
-Click `VAS`(Value-Added Services) on the top menu and click `Subscribe` on Shadow Service card to go to the service enablement. If you currently have a professional deployment running in AWS, you can find the eligible deployment in the drop-down menu so you can continue with the provision.
+Click `VAS`(Value-Added Services) on the top menu and click `Subscribe` on Shadow Service card to go to the service enablement. If you currently have a professional deployment running in AWS, you can find the eligible deployment in the drop-down menu, so you can continue with the provision.
 
 ![entry](./_assets/entry02.png)
 

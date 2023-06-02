@@ -16,11 +16,11 @@ This is the browse page for all the resources that EMQX Cloud lists. The most co
 
 ## Set up a resource
 
-We set up a TimescaleDB Resource for an example. Filling in the corresponding resource configuration and click `Test` Button. If the connection is successful, We will receive a message and click to see the detail. Otherwise please check the resource configuration.
+We set up a TimescaleDB Resource for an example. Filling in the corresponding resource configuration and click `Test` Button. If the connection is successful, We will receive a message and click to see the detail. Otherwise, please check the resource configuration.
 
    ![resource-add](./_assets/resource_02.png)
 
-If you created a resource, it will be listed on the overview page. You can add another resource as well. All the resources you created will be listed on the overview page. You can browse all the resources through the link 'Add New Resouce' or 'View All Resources'.
+If you created a resource, it will be listed on the overview page. You can add another resource as well. All the resources you created will be listed on the overview page. You can browse all the resources through the link 'Add New Resource' or 'View All Resources'.
 
    ![resource-add](./_assets/resource_03.png)
 

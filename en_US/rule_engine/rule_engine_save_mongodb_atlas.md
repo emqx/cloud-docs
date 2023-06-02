@@ -1,6 +1,6 @@
 # Integrate with MongoDB Atlas
 
-[MongoDB Atlas](https://www.mongodb.com/docs/atlas/) is a multi-cloud database service by the same people that build MongoDB. Atlas simplifies deploying and managing your databases while offering the versatility you need to build resilient and performant global applications on the cloud providers of your choice.
+[MongoDB Atlas](https://www.mongodb.com/docs/atlas/) is a multi-cloud database service by the same people that build MongoDB. Atlas simplifies deploying and managing your databases while offering the versatility you need to build resilient and performant global applications on the cloud providers of your choice.
 
 In this article, we will simulate the temperature and humidity data, and publish these data to EMQX Cloud via the MQTT protocol, and then we will use the EMQX Cloud Data Integrations to store the data to MongoDB Atlas.
 
@@ -84,7 +84,7 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate publishing temperature and humidity data
+1. Use [MQTTX](https://mqttx.app/) to simulate publishing temperature and humidity data
 
    You need to replace broker.emqx.io with the deployment connection address you have created and add the client-side authentication information in the EMQX Cloud console.
 

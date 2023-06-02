@@ -5,7 +5,7 @@
 该功能在基础版中不可用
 :::
 
-[InfluxDB](https://www.influxdata.com/) 是一个用于存储和分析时间序列数据的开源数据库，内置 HTTP API，类 SQL 语句的支持和无结构的特性对使用者而言都非常友好。它强大的数据吞吐能力以及稳定的性能表现使其非常适合 IoT 领域。
+[InfluxDB](https://www.influxdata.com/) 是一个用于存储和分析时间序列数据的开源数据库，内置 HTTP API，类 SQL 语句的支持和无结构的特性对使用者而言都非常友好。它强大的数据吞吐能力以及稳定的性能表现使其非常适合 IoT 领域。
 
 通过 EMQX Cloud 数据集成，我们可以自定义 Template 文件，然后将 JSON 格式的 MQTT 消息转换为 Measurement 写入 InfluxDB。
 
@@ -103,9 +103,9 @@ SQL 中的 payload 表示我们向 EMQX Cloud 传的数据。其 JSON 结构如�
 
 ```json
 {
-  "temperature": 25,
-  "location": "bedroom",
-  "humidity": 46.4
+  "temperature": 25,
+  "location": "bedroom",
+  "humidity": 46.4
 }
 ```
 ![配置SQL](./_assets/influxDB_SQL_setting.png)
@@ -183,9 +183,9 @@ $ select * from "home_sensor"
 ```plain
 > select * from "home_sensor"
 name: home_sensor
-time                humidity location temperature
-----                -------- -------- -----------
-1592984201145230677 46.4     bedroom  25
+time                humidity location temperature
+----                -------- -------- -----------
+1592984201145230677 46.4     bedroom  25
 ```
 
 > 注意：

@@ -17,7 +17,7 @@ Before you start, you need to complete the following operations:
 
 [ClickHouse Cloud](https://clickhouse.com/cloud) is in general available, you can apply for a free trial at the official ClickHouse website. It offers a 14-day free trial.
 
-ClickHouse provides a [quick start](https://clickhouse.com/docs/en/quick-start), just follow the steps on the doc and you will get an instance up and running in minutes. During this setup, the ClickHouse instance was created on AWS in N. Virginia (us-east-1) as an EMQX Cloud instance was also deployed in the same region.
+ClickHouse provides a [quick start](https://clickhouse.com/docs/en/quick-start), just follow the steps on the doc, and you will get an instance up and running in minutes. During this setup, the ClickHouse instance was created on AWS in N. Virginia (us-east-1) as an EMQX Cloud instance was also deployed in the same region.
 
 During the setup process, you will also need to pay attention to the connection settings. In this article, we use "Anywhere", but if you choose a specific location, you will need to add the NAT gateway IP address you got from your EMQX Cloud deployment to the whitelist.
 
@@ -27,7 +27,7 @@ After the provisioning, you should be able to see the service running:
 
 ![service](./_assets/service.png)
 
-Click on the link in the panel and you will find the connection string, which is needed when setting up the integration with EMQX Cloud.
+Click on the link in the panel, and you will find the connection string, which is needed when setting up the integration with EMQX Cloud.
 
 ![conn_info](./_assets/conn_info.png)
 
@@ -84,11 +84,11 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
 
    ```sql
    SELECT
-      clientid as client_id,
-      (timestamp div 1000) as timestamp,
-      topic as topic,
-      payload.temp as temp,
-      payload.hum as hum
+      clientid as client_id,
+      (timestamp div 1000) as timestamp,
+      topic as topic,
+      payload.temp as temp,
+      payload.hum as hum
    FROM
    "/temp_hum"
    ```
@@ -107,11 +107,11 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
 
    ```bash
    {
-     "client_id": "c_emqx",
-     "hum": 0.68,
-     "temp": 28.5,
-     "timestamp": 1665568455,
-     "topic": "/temp_hum"
+     "client_id": "c_emqx",
+     "hum": 0.68,
+     "temp": 28.5,
+     "timestamp": 1665568455,
+     "topic": "/temp_hum"
    }
    ```
 
@@ -120,7 +120,7 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
    Click Next to go to the Actions screen, select the resource created in step 1, select `Data Persistence - Save Data to ClickHouse Cloud` for the action type and enter the following data to insert into the SQL template and click confirm.
 
    ```sql
-   INSERT INTO temp_hum (client_id, timestamp, topic, temp, hum) VALUES ('${client_id}', ${timestamp}, '${topic}', ${temp}, ${hum})
+   INSERT INTO temp_hum (client_id, timestamp, topic, temp, hum) VALUES ('${client_id}', ${timestamp}, '${topic}', ${temp}, ${hum})
    ```
 
    ![action](./_assets/clickhouse_cloud_action.png)
@@ -133,7 +133,7 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data.
+1. Use [MQTTX](https://mqttx.app/) to simulate reporting temperature and humidity data.
 
    You need to replace broker.emqx.io with the deployment connection address you have created and add the client-side authentication information in the EMQX Cloud console.
 
@@ -163,6 +163,6 @@ Go to your deployment and click on the `Data Integrations` menu bar on the left.
    SELECT * FROM emqxcloud.temp_hum
    ```
 
-   You will see the data you published to EMQX Cloud is now stored in ClickHouse Cloud.
+   You will see the data you published to EMQX Cloud is now stored in ClickHouse Cloud.
 
    ![ClickHouse Cloud_result](./_assets/clickhouse_cloud_result.png)

@@ -22,5 +22,5 @@ At the end of the trial you will be billed at **$0.05/hour** and will be charged
 Details of the charges can be viewed in `Billing` page.
 
 ::: tip
-When the deployment where the value added service is running is stopped, the non-trial value added service will be billed normally. In order not to incur additional charges, please delete the valu added service under this deployment.
+When the deployment where the value added service is running is stopped, the non-trial value added service will be billed normally. In order not to incur additional charges, please delete the value added service under this deployment.
 :::

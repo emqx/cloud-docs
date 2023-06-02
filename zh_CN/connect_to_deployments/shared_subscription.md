@@ -48,16 +48,16 @@ EMQX Cloud 支持两种格式的共享订阅前缀，分别为带群组的共享
 * 订阅者 s1，s2，s3 只有一个会收到 msg
 * 订阅者 s4 可以正常收到 msg
 
-## 使用 MQTT X 测试共享订阅
+## 使用 MQTTX 测试共享订阅
 
-1. 使用 MQTT X 模拟客户端订阅。
+1. 使用 MQTTX 模拟客户端订阅。
 
 * s1，s2 订阅主题 `$share/g1/test`，为带群组的共享订阅
 * s3 订阅主题 `test` 为普通订阅
 
 ![shared_subscription_1](./_assets/shared_subscription_1.png)
 
-2. 使用 MQTT X 创建客户端 p1 向主题 `test` 发送3条信息。
+2. 使用 MQTTX 创建客户端 p1 向主题 `test` 发送3条信息。
 
 ![shared_subscription_2](./_assets/shared_subscription_2.png)
 

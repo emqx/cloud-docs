@@ -121,7 +121,7 @@
 
    ![mysql数据插入](./_assets/insert_get_subs_mysql.png)
 
-2. 使用 [MQTT X](https://mqttx.app/) 连接部署
+2. 使用 [MQTTX](https://mqttx.app/) 连接部署
 
    需要将 broker.emqx.io 替换成已创建的部署连接地址，并添加客户端认证信息。
 

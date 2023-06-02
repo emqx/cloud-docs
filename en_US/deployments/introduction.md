@@ -65,7 +65,7 @@ Enables internal and external communication between deployments and your busines
 
 ### NAT Gateway settings
 
-Enable the deployment to access public network resources by creating NAT gateways for the professiional plan.
+Enable the deployment to access public network resources by creating NAT gateways for the professional plan.
 
 
 ## Scaling deployment specifications

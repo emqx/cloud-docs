@@ -4,7 +4,7 @@ EMQX Cloud is a comprehensive, fully-managed MQTT messaging cloud service that s
 
 EMQX Cloud can be quickly and easily deployed in just a few minutes. With support for 17 different regions across AWS, Google Cloud, and Microsoft Azure, it's an ideal choice for running your MQTT services globally. 
 
-To better serve the our users, whether you are individual developers or global industry leaders, EMQX Cloud offers three distinct product plans:
+To better serve our users, whether you are individual developers or global industry leaders, EMQX Cloud offers three distinct product plans:
 
 1. **Serverless Plan**: Provide MQTT services on a secure and scalable cluster that is charged based on usage. The service is entirely free for usage within the free quota, and supports up to 1000 concurrent connections.
 

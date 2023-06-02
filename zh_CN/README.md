@@ -46,7 +46,7 @@
                     'link': './quick_start/introduction.html',
                   },
                   {
-                    'name': '使用 MQTT X 连接/验证',
+                    'name': '使用 MQTTX 连接/验证',
                     'link': './connect_to_deployments/mqttx.html',
                   },
                 ],

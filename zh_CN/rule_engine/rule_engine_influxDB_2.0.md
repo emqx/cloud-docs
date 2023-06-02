@@ -4,7 +4,7 @@
 该功能在基础版中不可用
 :::
 
-[InfluxDB 2.0](https://www.influxdata.com/) 是一个用于存储和分析时间序列数据的开源数据库，内置 HTTP API，类 SQL 语句的支持和无结构的特性对使用者而言都非常友好。它强大的数据吞吐能力以及稳定的性能表现使其非常适合 IoT 领域。
+[InfluxDB 2.0](https://www.influxdata.com/) 是一个用于存储和分析时间序列数据的开源数据库，内置 HTTP API，类 SQL 语句的支持和无结构的特性对使用者而言都非常友好。它强大的数据吞吐能力以及稳定的性能表现使其非常适合 IoT 领域。
 
 通过 EMQX Cloud 数据集成，我们可以自定义 Template 文件，然后将 JSON 格式的 MQTT 消息转换为 Measurement 写入 InfluxDB 2.0。
 
@@ -148,11 +148,11 @@ FROM "emqx/test"
 
 ## 5. 测试
 
-我们推荐你使用 MQTT X，一个优雅的跨平台 MQTT 5.0 桌面客户端来订阅/发布消息。
+我们推荐你使用 MQTTX，一个优雅的跨平台 MQTT 5.0 桌面客户端来订阅/发布消息。
 
 >如果您是第一次使用 EMQX Cloud 可以前往[部署连接指南](../connect_to_deployments/overview.md)，查看 MQTT 客户端连接和测试指南
 
-在 MQTT X 控制台，点击 "添加 "按钮，填写部署信息以连接到部署，然后输入 topic 和 payload 以发布消息。
+在 MQTTX 控制台，点击 "添加 "按钮，填写部署信息以连接到部署，然后输入 topic 和 payload 以发布消息。
 
 我们尝试向 emqx/test 主题发送下面的数据
 

@@ -11,7 +11,7 @@ To delete your account, you must ensure that you have no:
 
 ## Delete All Deployments
 
-To delete a deployment, navigate to the deployments page, enter the deployment detail and click the Delete button on the top right corner. The deployment will be permanently deleted after a double-check.
+To delete a deployment, navigate to the deployments page, enter the deployment detail and click the Delete button in the top right corner. The deployment will be permanently deleted after a double-checked.
 
 ![delete](./_assets/delete_01.png)
 

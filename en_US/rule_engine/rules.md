@@ -57,7 +57,7 @@ INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${
 
 ![rule_intro_12](./_assets/rule_intro_12.png)
 
-3. One rule can be associated with a few actions. Add another action, and we can change the target resource. For example, we can forward the data to Kafka cluster as well as save the data to RDS.
+3. One rule can be associated with a few actions. Add another action, and we can change the target resource. For example, we can forward the data to Kafka cluster as well as saving the data to RDS.
 
 ![rule_intro_05](./_assets/rule_intro_05.png)
 

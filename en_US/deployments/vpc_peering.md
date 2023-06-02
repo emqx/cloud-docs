@@ -126,7 +126,7 @@ If all the provided information is correct, after several minutes, when the stat
    2. In **Network**, select your GCP network
    3. In **Targets**, select **All instances in the network**, or you can select other option according to your situation.
    4. In **Source IP ranges**, fill in the CIDR of deployment in step 1
-   5. Seletc your Protocols and ports.
+   5. Select your Protocols and ports.
 
 ### Delete peering connections
 

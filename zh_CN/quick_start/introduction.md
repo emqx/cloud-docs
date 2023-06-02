@@ -73,7 +73,7 @@ Serverless 免费试用额度：
 
 :::tip 提示
 
-请保存好该连接地址和端口信息，接下来我们将通过 MQTT X 客户端测试连接情况，需要提供该信息。
+请保存好该连接地址和端口信息，接下来我们将通过 MQTTX 客户端测试连接情况，需要提供该信息。
 
 :::
 
@@ -85,14 +85,14 @@ Serverless 免费试用额度：
 
 :::tip 提示
 
-请妥善保管此用户信息，后续测试 MQTT X 客户端连接情况时，也需要填写此时创建的**用户名**和**密码**信息。
+请妥善保管此用户信息，后续测试 MQTTX 客户端连接情况时，也需要填写此时创建的**用户名**和**密码**信息。
 
 :::
 
 ## 通过 MQTTX 验证连接
 
-EMQX Cloud 推荐使用 [MQTT X](https://mqttx.app/zh/) 测试连接到部署，您也可以使用熟悉的 [SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTT X 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
+EMQX Cloud 推荐使用 [MQTTX](https://mqttx.app/zh/) 测试连接到部署，您也可以使用熟悉的 [SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTTX 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
 
-接下来，我们将介绍如何通过  [MQTT X](https://mqttx.app/zh/) 进行测试。
+接下来，我们将介绍如何通过  [MQTTX](https://mqttx.app/zh/) 进行测试。
 
-[通过 MQTT X 测试连接](../connect_to_deployments/mqttx.md)
+[通过 MQTTX 测试连接](../connect_to_deployments/mqttx.md)

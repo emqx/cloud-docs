@@ -19,7 +19,7 @@ Before you start, you need to complete the following operations:
 
 2. Connect to the RDS instance.
 
-    - Go to the [Download MySQL Workbench](http://dev.mysql.com/downloads/workbench/) page to download and install MySQL Workbench. For more information on using MySQL, see the [MySQL Documentation](http://dev.mysql.com/doc/). You will be prompted to login, sign up, or begin your download.  You can click *No thanks, just start my download for a quick download*.
+    - Go to the [Download MySQL Workbench](http://dev.mysql.com/downloads/workbench/) page to download and install MySQL Workbench. For more information on using MySQL, see the [MySQL Documentation](http://dev.mysql.com/doc/). You will be prompted to log in, sign up, or begin your download.  You can click *No thanks, just start my download for a quick download*.
     - Use the AWS Console to open port 3306 of the RDS instance's Security Group to the EMQX deployment's CIDR block and to your local machine's IP address.
       - The EMQX CIDR block can be found at the EMQX console in the deployment's Overview page by clicking the View button in the VPC Peering Connection section.
       - Your IP address can be found at <http://checkip.amazonaws.com/>
@@ -52,7 +52,7 @@ Before you start, you need to complete the following operations:
     SELECT * FROM temp_hum;
     ```
 
-    ![Executing MySQL Worbench commands into RDS database](./_assets/rds_mysqlworkbench_exec.png)
+    ![Executing MySQL Workbench commands into RDS database](./_assets/rds_mysqlworkbench_exec.png)
 
 ## Data Integrations Configuration
 
@@ -113,14 +113,14 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate reporting temperature and humidity data.
+1. Use [MQTTX](https://mqttx.app/) to simulate reporting temperature and humidity data.
 
     You need to replace broker.emqx.io with the deployment connection address you have created and add the client-side authentication information in the EMQX Dashboard.
 
     - topic: `temp_hum/emqx`
     - payload: `{ "temp": "20.1", "hum": "57" }`
 
-    ![Sending messages to EMQX cloud from MQTT X](./_assets/mqttx_publish.png)
+    ![Sending messages to EMQX cloud from MQTTX](./_assets/mqttx_publish.png)
 
 2. View data dump results
 

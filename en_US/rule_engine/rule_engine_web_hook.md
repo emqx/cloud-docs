@@ -83,7 +83,7 @@ Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
 
 ## Test
 
-1. Use [MQTT X](https://mqttx.app/) to simulate temperature and humidity data reporting
+1. Use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting
 
    You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Dashboard.
    ![MQTTX](./_assets/webhook_mqttx_publish.png)

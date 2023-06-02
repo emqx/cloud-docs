@@ -82,7 +82,7 @@ NAT 网关可以提供网络地址转换服务，为专业版部署提供访问�
 
 ## 连接到部署
 
-您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTT X 连接到部署](../connect_to_deployments/mqttx.md)。
+您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTTX 连接到部署](../connect_to_deployments/mqttx.md)。
 
 
 

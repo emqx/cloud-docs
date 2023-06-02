@@ -86,7 +86,6 @@ curl -u app_id:app_secret -X GET {api}/auth_username/user1
 ### Response Example
 
 ```JSON
-```JSON
 {
     "data": {
         "username": "user1"

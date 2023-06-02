@@ -418,11 +418,11 @@ void loop() {
 
 ## 测试连接
 
-在成功连接 MQTT 服务器后，您可以使用 Arduino IDE 和 MQTT X 测试连接。
+在成功连接 MQTT 服务器后，您可以使用 Arduino IDE 和 MQTTX 测试连接。
 
 1. 请使用 Arduino IDE 将完整代码上传到 ESP32，并打开串口监视器，选择 115200 波特率查看 ESP32 连接情况。
    ![esp32_connection](./_assets/esp32_connection.png)
-2. 建立 MQTT X 客户端 与 MQTT 服务器的连接, 并向 ESP32 发送消息。
+2. 建立 MQTTX 客户端 与 MQTT 服务器的连接, 并向 ESP32 发送消息。
    ![esp32_mqttx](./_assets/esp32_mqttx.png)
 
 ## 更多内容

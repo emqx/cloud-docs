@@ -196,11 +196,11 @@ We have created a simple MQTT client using Vue 3 that includes functions such as
 
 ![vueui.png](https://assets.emqx.com/images/b6563b0eb66eb51a2a02776889016a18.png)
 
-Use [MQTT 5.0 client tool - MQTT X](https://mqttx.app/) as another client to test messaging.
+Use [MQTT 5.0 client tool - MQTTX](https://mqttx.app/) as another client to test messaging.
 
 ![vuemqttx.png](https://assets.emqx.com/images/2013cbab1bdffcae69b817bfebb4a33f.png)
 
-If you unsubscribe on the browser-side, before MQTT X sends the second message, the browser will not receive the subsequent messages from MQTT X.
+If you unsubscribe on the browser-side, before MQTTX sends the second message, the browser will not receive the subsequent messages from MQTTX.
 
 ## FAQ
 

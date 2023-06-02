@@ -18,8 +18,8 @@
           [
             {
               'imgName': 'mqttx',
-              'name': 'MQTT X',
-              'description': 'MQTT X is an elegant cross-platform MQTT 5.0 desktop client open sourced by EMQ, which supports macOS, Linux, Windows.',
+              'name': 'MQTTX',
+              'description': 'MQTTX is an elegant cross-platform MQTT 5.0 desktop client open sourced by EMQ, which supports macOS, Linux, Windows.',
               'link': './mqttx.html',
             },
             {

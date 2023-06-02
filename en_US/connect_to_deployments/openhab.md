@@ -58,7 +58,7 @@ If you are using MQTT for OpenHAB for the first time, please refer to the [quick
 
 ## Connect over TCP Port
 
-This section describes how to connect a openhab client to MQTT broker over TCP port.
+This section describes how to connect an openhab client to MQTT broker over TCP port.
 
 - Fill in the broker address, port, username and password (if it exists).
 - Select `TCP` for MQTT transport.
@@ -67,7 +67,7 @@ This section describes how to connect a openhab client to MQTT broker over TCP p
 
 ## Connect over TLS/SSL Port
 
-This section describes how to connect a openhab client to MQTT broker over TLS/SSL port.
+This section describes how to connect an openhab client to MQTT broker over TLS/SSL port.
 
 - Fill in the broker address, port, username, and password (if they exist).
 - Enable `Secure Connection`.
@@ -78,7 +78,7 @@ This section describes how to connect a openhab client to MQTT broker over TLS/S
 
 ## Test Connection
 
-Go to `Settings` ---> `Things` ---> `MQTT Broker`, when there is a little green label that says "online, you are successfully connecting openHAB with EMQX Cloud. Congrats!
+Go to `Settings` ---> `Things` ---> `MQTT Broker`, when there is a little green label that says "online", you are successfully connecting openHAB with EMQX Cloud. Congrats!
 
 ![openhab_connection](./_assets/openhab_connection.png)
 
