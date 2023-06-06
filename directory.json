@@ -65,6 +65,10 @@
             {
               "title": "部署前置准备",
               "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "BYOC 许可证",
+              "path": "deployments/byoc_license"
             }
           ]
         },
