@@ -5,49 +5,54 @@ In this article, we will simulate temperature and humidity data and report these
 Before you start, you will need to complete the following:
 
 - Deployments have already been created on EMQX Cloud (EMQX Cluster).
-- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
-
-  <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/7EheLmjaHCk/?autoplay=1&null" />
+- For Professional deployment users: Please complete [NAT gateway](../vas/nat-gateway.md) first, all IPs mentioned below refer to the public IP of the resource.
 
 ## Create a Timescale Cloud service
 
-1. Login the Timescale Cloud and click `Create a new service`
+1. Login to the Timescale Cloud and go to `Create a Service` page, select a `Region`.
 
-   ![service_1](./_assets/timescale_cloud_1.png)
+   ![timescale_cloud_create_service_1](./_assets/timescale_cloud_create_service_1.png)
 
-2. Config the service of your needs and click `Create service`
+   Then click `Create service`.
 
-   ![service_2](./_assets/timescale_cloud_2.png)
+   ![timescale_cloud_create_service_2](./_assets/timescale_cloud_create_service_2.png)
 
-3. Install psql 
-   
+2. Initiate your Timescale Cloud instance.
+
+   After the instance is created, the `connection information` is obtained on this page. You can also download the cheatsheet for further use.
+
+   ![timescale_cloud_create_service_3](./_assets/timescale_cloud_create_service_3.png)
+   ![timescale_cloud_create_service_4](./_assets/timescale_cloud_create_service_4.png)
+
+3. Install psql.
+
    For macOS:
+
    ```bash
    brew doctor
    brew update
    brew install libpq
    ```
-   
+
    For Linux:
+
    ```bash
    sudo apt-get update
    sudo apt-get install postgresql-client
    ```
 
-4. Connect to your database using psql
+4. Connect to your database using psql.
 
-   ![service_3](./_assets/timescale_cloud_3.png)
-   
    Enter the following command in the terminal to build the connection:
 
    ```bash
-   $ psql -x "postgres://{YOUR_USERNAME_HERE}:{YOUR_PASSWORD_HERE}@{YOUR_HOSTNAME_HERE}:{YOUR_PORT_HERE}/{YOUR_DB_HERE}"
+   psql -x "postgres://{YOUR_USERNAME_HERE}:{YOUR_PASSWORD_HERE}@{YOUR_HOSTNAME_HERE}:{YOUR_PORT_HERE}/{YOUR_DB_HERE}"
    ```
 
-      To create a new table: 
-   
+      To create a new table:
+
       Use the following SQL statement to create `temp_hum` table. This table will be used to save the temperature and humidity data reported by devices.
-   
+
    ```sql
    CREATE TABLE temp_hum (
        up_timestamp   TIMESTAMPTZ       NOT NULL,
@@ -59,26 +64,29 @@ Before you start, you will need to complete the following:
    SELECT create_hypertable('temp_hum', 'up_timestamp');
    ```
 
-4. Insert test data and view it
+5. Insert test data and view it.
+
    ```sql
    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
    
    select * from temp_hum;
    ```
-   
+
+   ![timescale_cloud_create_service_5](./_assets/timescale_cloud_create_service_5.png)
+
 ## Data Integrations Configuration
 
 Go to Deployment Details and click on `Data Integrations` on the left menu bar.
 
 1. Create TimescaleDB Resource
-   
+
    Click on `TimescaleDB` under the Data Persistence.
 
-   ![timescaledb](./_assets/timescaledb.png)
+   ![timescale_cloud](./_assets/timescale_cloud.png)
 
    Fill in the timescaledb database information you have just created and click `Test`. If there is an error, you should check if the database configuration is correct. Then click on `New` to create TimescaleDB resource.
 
-   ![create resource](./_assets/timescaledb_create_resource.png)
+   ![timescale_cloud_resource](./_assets/timescale_cloud_resource.png)
 
 2. Create Rule
 
@@ -90,7 +98,9 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    FROM
    "temp_hum/emqx"
    ```
-   ![rule_engine](./_assets/timescaledb_new_rule.png)
+
+   ![timescale_cloud_rule_1](./_assets/timescale_cloud_rule_1.png)
+   ![timescale_cloud_rule_2](./_assets/timescale_cloud_rule_1.png)
 
 3. Create Action
 
@@ -99,34 +109,37 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    ```sql
    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
    ```
-   ![rule_engine](./_assets/timescaledb_new_action.png)
+
+   ![timescale_cloud_action](./_assets/timescale_cloud_action.png)
+
    Click on `Confirm` to create action.
 
-4. View Resource Detail
+4. After successfully binding the action to the rule, click `View Details` to see the rule sql statement and the bound actions.
 
-   Click on the resource to see the detail.
+   ![timescale_cloud_rule_details](./_assets/timescale_cloud_rule_details.png)
 
-   ![timescale_resource_detail](./_assets/timescaledb_resource_detail.png)
+5. To see the created rules, go to `Data Integrations/View Created Rules`. Click the Monitor button to see the detailed match data of the rule.
 
-
-5. Check Rule Monitoring
-
-   Click the monitor icon of rule to see the metrics
-
-   ![view monitor](./_assets/timescaledb_monitor.png)
-
+   ![timescale_cloud_rule_monitor](./_assets/timescale_cloud_rule_monitor.png)
 
 ## Test
 
 1. Use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting
 
    You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Dashboard.
-   
-   ![MQTTX](./_assets/mqttx_publish.png)
-   
-2. View data dump results
+
+   ![timescale_cloud_mqttx](./_assets/timescale_cloud_mqttx.png)
+
+2. View rules monitoring
+
+   Check the rule monitoring and add one to the "Success" number.
+
+   ![timescale_cloud_monitor_result](./_assets/timescale_cloud_monitor_result.png)
+
+3. View data dump results
 
    ```sql
    select * from temp_hum order by up_timestamp desc limit 10;
    ```
-   ![view](./_assets/timescale_cloud_view.png)
+
+   ![timescale_cloud_result](./_assets/timescale_cloud_result.png)
