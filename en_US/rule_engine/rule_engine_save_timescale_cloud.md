@@ -1,53 +1,63 @@
 # Integrate with Timescale Cloud
 
-In this article, we will simulate temperature and humidity data and report these data to EMQX Cloud via the MQTT protocol and then use the EMQX Cloud Data Integrations to dump the data into Timescale Cloud.
+This page introduces how to use the data integrations feature in EMQX Cloud to ingest data into Timescale Cloud. In the following demonstrations, you can simulate how to send temperature and humidity data to EMQX Cloud and then ingest the data into Timescale Cloud by confiuring the data integration in EMQX Cloud.
 
-Before you start, you will need to complete the following:
+Before you start, you need to complete the following:
 
-- Deployments have already been created on EMQX Cloud (EMQX Cluster).
-- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
+- Create deployments on EMQX Cloud (EMQX Cluster).
+- If you are a Professional deployment user, you can enable the [NAT gateway](../vas/nat-gateway.md) service first. All IPs mentioned below refer to the public IP of the resource.
 
-  <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/7EheLmjaHCk/?autoplay=1&null" />
+## Create a Timescale Cloud Service
 
-## Create a Timescale Cloud service
+This section introduces how to create a service in Timescale Cloud and connect to the service.
 
-1. Login the Timescale Cloud and click `Create a new service`
+1. Log in to Timescale Cloud and you will be navigated to the **Create a service** page. 
 
-   ![service_1](./_assets/timescale_cloud_1.png)
+2. On the **Create a service** page, select a region from the drop-down list of the **Region** field. Click **Create service** at the bottom of the page.
 
-2. Config the service of your needs and click `Create service`
+   ::: tip
 
-   ![service_2](./_assets/timescale_cloud_2.png)
+   It is better to select a region that is close to the region of the EMQX Cloud.
 
-3. Install psql 
-   
+   :::
+
+   ![timescale_cloud_create_service_1](./_assets/timescale_cloud_create_service_1.png)
+
+3. After the service is created, you can follow the instructions on this page to connect to your service. Or, you can follow the steps below to connect to your service. Store your **Username** and **Password** properly.
+
+   :::tip
+
+   You can also download the cheatsheet for further use.
+
+   :::
+
+   ![timescale_cloud_create_service_3](./_assets/timescale_cloud_create_service_3.png)
+
+3. Install psql using the commands below.
+
    For macOS:
+
    ```bash
    brew doctor
    brew update
    brew install libpq
    ```
-   
+
    For Linux:
+
    ```bash
    sudo apt-get update
    sudo apt-get install postgresql-client
    ```
 
-4. Connect to your database using psql
-
-   ![service_3](./_assets/timescale_cloud_3.png)
-   
-   Enter the following command in the terminal to build the connection:
+4. In the psql terminal, run the following command to connect to your database.
 
    ```bash
-   $ psql -x "postgres://{YOUR_USERNAME_HERE}:{YOUR_PASSWORD_HERE}@{YOUR_HOSTNAME_HERE}:{YOUR_PORT_HERE}/{YOUR_DB_HERE}"
+   psql -x "postgres://{YOUR_USERNAME_HERE}:{YOUR_PASSWORD_HERE}@{YOUR_HOSTNAME_HERE}:{YOUR_PORT_HERE}/{YOUR_DB_HERE}"
    ```
+   
+5. Use the following SQL statement to create a new table `temp_hum` . This table will be used to save the temperature and humidity data reported by devices.
 
-      To create a new table: 
-   
-      Use the following SQL statement to create `temp_hum` table. This table will be used to save the temperature and humidity data reported by devices.
-   
    ```sql
    CREATE TABLE temp_hum (
        up_timestamp   TIMESTAMPTZ       NOT NULL,
@@ -58,31 +68,43 @@ Before you start, you will need to complete the following:
    
    SELECT create_hypertable('temp_hum', 'up_timestamp');
    ```
+   
+5. Insert test data and view it.
 
-4. Insert test data and view it
    ```sql
    INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
    
    select * from temp_hum;
    ```
+
+   ![timescale_cloud_create_service_5](./_assets/timescale_cloud_create_service_5.png)
+
+7. After you connect to your service, you can click **I stored my password, go to service overview**. On the overview page, you can see your connection information.
+
+   ![timescale_cloud_create_service_4](./_assets/timescale_cloud_create_service_4.png)
+
+## Configure Data Integrations in EMQX Cloud 
+
+This section provides instructions on how to configure a Timescale data integration in EMQX Cloud Console using the service you created in Timescale Cloud to save data from the device to the Timescale.
+
+1. Sign in to your Cloud Console and go to the deployment details page. 
+
+2. Click **Data Integrations** from the left navigation menu. Under **Data Persistence**, click **TimescaleDB**.
+
+   ![timescale_cloud](./_assets/timescale_cloud.png)
    
-## Data Integrations Configuration
+3. Fill in the Timescaledb connection information you get in [Create a Timescale Cloud Service](#create-a-timescale-cloud-service). Set the **Pool Size** to `1`. Click **Test** to test the connection.
 
-Go to Deployment Details and click on `Data Integrations` on the left menu bar.
+   - If the connection fails, you need to check if the database configuration is correct. 
+   - If the connection is successful, click **New** to create a TimescaleDB resource.
 
-1. Create TimescaleDB Resource
-   
-   Click on `TimescaleDB` under the Data Persistence.
+   ![timescale_cloud_resource](./_assets/timescale_cloud_resource.png)
 
-   ![timescaledb](./_assets/timescaledb.png)
+4. Under **Configured Resources**, select the TimescaleDB resource. Click **New Rule** and enter the following rule to match the SQL statement. The `SELECT` part of the rule includes the following fields:
 
-   Fill in the timescaledb database information you have just created and click `Test`. If there is an error, you should check if the database configuration is correct. Then click on `New` to create TimescaleDB resource.
-
-   ![create resource](./_assets/timescaledb_create_resource.png)
-
-2. Create Rule
-
-   Choose the TimescaleDB resource under Configured Resources, click on `New Rule` and enter the following rule to match the SQL statement. In the following rule we read the time `up_timestamp` when the message is reported, the client ID, the message body (Payload) from the `temp_hum/emqx` topic and the temperature and humidity from the message body respectively.
+   - `up_timestamp`: The real time when the message is sent.
+   - `client ID`: The ID of the device that sends the message. 
+   - `Payload`: The payload of the message on topic `temp_hum/emqx`, which contains the temperature and humidity data.
 
    ```sql
    SELECT 
@@ -90,43 +112,57 @@ Go to Deployment Details and click on `Data Integrations` on the left menu bar.
    FROM
    "temp_hum/emqx"
    ```
-   ![rule_engine](./_assets/timescaledb_new_rule.png)
 
-3. Create Action
+   ![timescale_cloud_rule_1](./_assets/timescale_cloud_rule_1.png)
 
-   Click on the `Next` button in the bottom to enter action view. Select the resource created in the first step and enter the following data to insert into the SQL template.
+3. Enable **SQL Test** by clicking the toogle switch. Fill in the required fields and click **SQL Test** to test if the rule works. 
+
+   You should get the expected result as shown in the screenshot.
+
+   ![timescale_cloud_rule_2](./_assets/timescale_cloud_rule_2.png)
+   
+3. Click the **Next** button at the bottom to create an action. Select the resource created before from the drop-down list. In **SQL Template**, enter the following data to insert them into the SQL template.
 
    ```sql
-   INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
+INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
    ```
-   ![rule_engine](./_assets/timescaledb_new_action.png)
-   Click on `Confirm` to create action.
-
-4. View Resource Detail
-
-   Click on the resource to see the detail.
-
-   ![timescale_resource_detail](./_assets/timescaledb_resource_detail.png)
-
-
-5. Check Rule Monitoring
-
-   Click the monitor icon of rule to see the metrics
-
-   ![view monitor](./_assets/timescaledb_monitor.png)
-
-
-## Test
-
-1. Use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting
-
-   You need to replace broker.emqx.io with the created deployment connection address, and add client authentication information to the EMQX Dashboard.
    
-   ![MQTTX](./_assets/mqttx_publish.png)
-   
-2. View data dump results
+   ![timescale_cloud_action](./_assets/timescale_cloud_action.png)
+
+4. Click **Confirm** to create the action. You will be prompted to add another rule if needed. Otherwise, you can click **View Details**.
+
+8. On the details page, you can see the rule sql and the associated action. 
+
+   :::tip
+
+   You can also see all created rules by clicking **Data Integrations** -> **View Created Rules**. 
+
+   :::
+
+   ![timescale_cloud_rule_details](./_assets/timescale_cloud_rule_details.png)
+
+5. Click the icon in the **Monitor** column to see the detailed metrics of the rule.
+
+   ![timescale_cloud_rule_monitor](./_assets/timescale_cloud_rule_monitor.png)
+
+## Test Data Integration
+
+This section demonstrates how to use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting and test if the data integration work properly.
+
+1. Start the MQTTX. In connection information, replace `broker.emqx.io` with the created deployment connection address. Add client authentication information in the EMQX Cloud Console.
+
+1. In MQTTX, send messages containing the temperature and huminidy data in the payload.
+
+   ![timescale_cloud_mqttx](./_assets/timescale_cloud_mqttx.png)
+
+2. View metrics of the rule in the EMQX Cloud Console. The number of incoming message shown in **Success** should be added by 1 after a message is sent.
+
+   ![timescale_cloud_monitor_result](./_assets/timescale_cloud_monitor_result.png)
+
+3. In the psql terminal, use the command below to view data ingested into the Timescale database.
 
    ```sql
    select * from temp_hum order by up_timestamp desc limit 10;
    ```
-   ![view](./_assets/timescale_cloud_view.png)
+
+   ![timescale_cloud_result](./_assets/timescale_cloud_result.png)
