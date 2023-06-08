@@ -128,7 +128,8 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
                 "vpc:DescribeTagKeys",
                 "vpc:DescribeTags",
                 "vpc:ModifyVpcAttribute",
-                "vpc:ModifyVSwitchAttribute"
+                "vpc:ModifyVSwitchAttribute",
+                "vpc:DescribeVpcAttribute"
             ],
             "Resource": "*"
         },
