@@ -17,12 +17,10 @@
 
 ![subscription](./_assets/subscription_05.png)
 
-![subscription](./_assets/subscription_02.png)
 
 2. 如果账户余额中没有足够的费用，自动扣费将失败，并生成一笔未支付的订单。可以在【财务管理】- 【订单】中查看到该笔订单。在进行支付之后，即可完成部署的续费。
 
 ![subscription](./_assets/subscription_03.png)
 
-![subscription](./_assets/subscription_04.png)
 
 3. 续费的订单有效期为7天，在此时间内，如果部署到期，部署的服务将停止，直到订单支付成功后，重新可变成运行状态。

@@ -2,9 +2,9 @@
 
 Your billing address determines your region.
 
-If your billing address is **in** the United States (USA), we will assess and collect sales tax according to the rules and regulations in each state.
+If your billing address is **in** the United States (USA), we will assess and collect sales tax according to the rules and regulations of each state.
 
-If your billing address is **outside** the United States (USA), VAT/GST will be applied to your purchases. If you enter a valid VAT/GST ID, we will not charge you VAT/GST (except for customers in Sweden). By entering a VAT/GST ID, you are confirming you are a VAT/GST registered business.
+If your billing address is **outside** the United States (USA), VAT/GST will be applied to your purchases. If you enter a valid VAT/GST ID, we will not charge you VAT/GST (except for customers in Germany). By entering a VAT/GST ID, you are confirming you are a VAT/GST registered business.
 
 ## Tax ID types
 
@@ -99,7 +99,7 @@ EMQX Cloud charges GST if you do not enter a valid GST ID Number. Provide a vali
 EMQX Cloud Consulting charges VAT if you do not enter a valid VAT ID Number. Provide a valid VAT ID Number on your billing information to incur no VAT charges.
 
 ::: tip
-If your billing address is in Sweden, EMQX Cloud always charges VAT, even with a valid VAT ID Number.
+If your billing address is in Germany, EMQX Cloud always charges VAT, even with a valid VAT ID Number.
 :::
 
 ### India
