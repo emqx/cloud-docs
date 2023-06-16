@@ -1,24 +1,25 @@
 # View and Edit Your Billing Information
 
-To view and update your billing information:
+You can view and update your billing information on the Billing Overview page. Go to the Cloud Console and select **Billing** -> **Overview** from the top menu.
 
-1. Navigate to the Billing Overview page.
-2. In the right top section of the page, you can find the Billing Information block.
+## View Billing Information
 
-- If you haven't added a card, click + button to add a new card.
+On the top right area of the Overview page, you can see **Pagyment Info**.
+
+- If you haven't added a card, click **+ Add** to add a new card.
 - If you have added a card, your card information will be displayed in the block including card last four numbers, expire date, and when the card had been added.
 - Click **Change Info** to update card information.
 - Click **Got a problem?** if you have any issues in updating card information. You can contact us through the **Tickets** in the top menu or by emailing us.
 
 
-## Add or Update your Billing Information
+## Add or Update Billing Information
 
-Please fill the details as needed.
+On the **Edit Payment Method** pop-up dialogue, fill the required fields. The following table provides instructions on how to fill each field.
 <table>
    <tr>
       <th>Field</th>
       <th>Necessity</th>
-      <th>Action</th>
+      <th>Instruction</th>
    </tr>
    <tr>
       <td>Country</td>
@@ -60,8 +61,8 @@ Please fill the details as needed.
       <td>Conditional</td>
       <td>
          The form displays the VAT/GST ID field if you select a country other than the United States.
-         If your company's billing address is in a country other than the United States (USA), EMQX typically charges VAT if you do not enter a valid VAT ID Number on your billing information.<br>
-         - If your billing address is in Germany, EMQX always charges VAT, even with a valid VAT ID Number.<br>
+         If your company's billing address is in a country other than the United States (USA), EMQX typically charges VAT if you do not enter a valid VAT ID number on your billing information.<br>
+         - If your billing address is in Germany, EMQX always charges VAT, even with a valid VAT ID number.<br>
          - To learn more about VAT/GST, see <a href="./taxation.html">Taxation by Region.</a>
       </td>
    </tr>
@@ -74,16 +75,17 @@ Please fill the details as needed.
    </tr>
 </table>
 
-Click *Next* to update card information.
 
-## Edit or Update your Credit Card Information
+After you complet the setting, click **Next** to add or update the card information.
 
-Please fill the details as needed.
+## Edit or Update Credit Card Information
+
+Fill the required fields according to the instructions in the table below.
 <table>
    <tr>
       <th>Field</th>
       <th>Necessity</th>
-      <th>Action</th>
+      <th>Instruction</th>
    </tr>
    <tr>
       <td>Name on Card</td>
@@ -97,22 +99,25 @@ Please fill the details as needed.
    </tr>
 </table>
 
+
 :::tip
 To confirm your credit card information, EMQX Cloud charges $1.00 when you first link a credit card to your account. After EMQX Cloud confirms your information, it refunds the $1.00 charge. If you encounter any issues with linking a credit card to your account, reach out to your card provider or banking institution to verify whether they declined the initial charge, which would prevent EMQX Cloud from confirming your information.
 :::
 
-- To accept your changes, click *Submit*.
-- To decline your changes, click *Cancel*.
-- To edit billing information, click *Previous*.
+After you complete the setting, you can:
+
+- Click **Submit** to submit your changes, or click **Cancel** to dismiss your changes;
+- Click **Previous** to go back to edit your information again.
 
 
 ### US Bank Account
 
 If your billing address is located in the USA, you can choose either Credit Card or US Bank Account as your payment method.
 
-To enable US Bank Account, click the Bank Account tab, then enter the bank's name in the search bar to choose the preferred bank to link. The popup window will take you to the bank verification system provided by the bank to authorize the linkage.
+To enable US Bank Account, click the **Bank Account** tab, then enter the bank's name in the search bar to choose the preferred bank to link. The pop-up window will take you to the bank verification system provided by the bank to authorize the linkage.
 
 :::tip
 - Only one payment method can be chosen at the same time.
-- US Bank Account transactions take a considerable amount of time to process. It may take up to 4-7 business days to receive confirmation of a payment's success or failure.
+- US bank account transactions require a significant amount of time for processing. It may take anywhere from 4 to 7 business days to receive confirmation regarding the success or failure of a payment.
+
 :::

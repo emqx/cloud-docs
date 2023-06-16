@@ -1,20 +1,20 @@
 # Taxation by Region
 
-Your billing address determines your region.
+The region for taxation purposes is determined by your billing address.
 
-If your billing address is **in** the United States (USA), we will assess and collect sales tax according to the rules and regulations of each state.
+If your billing address is **within** the United States (USA), sales tax will be assessed and collected according to the rules and regulations of each state.
 
-If your billing address is **outside** the United States (USA), VAT/GST will be applied to your purchases. If you enter a valid VAT/GST ID, we will not charge you VAT/GST (except for customers in Germany). By entering a VAT/GST ID, you are confirming you are a VAT/GST registered business.
+If your billing address is **outside** the United States (USA), VAT/GST will be applied to your purchases. However, if you provide a valid VAT/GST ID, you will be exempt from VAT/GST charges (except for customers in Germany). By entering a VAT/GST ID, you confirm that you are a VAT/GST registered business.
 
 ## Tax ID types
 
-If you are in the listed countries, please enter the specific type of Tax ID. Providing your VAT/GST ID will ensure that you are not charged additional tax. If you can not provide/or we can not verify a VAT/GST ID, you will be charged taxes as required by your country's tax code. If you have a different type of Tax ID that doesn't match the default type, contact us and get help.
+If you are located in one of the listed countries, please enter the specific type of Tax ID. By providing your VAT/GST ID, you will avoid any additional tax charges. If you are unable to provide a VAT/GST ID or if we are unable to verify it, you will be subject to taxes as mandated by your country's tax regulations. If you have a different type of Tax ID that doesn't match the default type, contact us and get help.
 
 <table>
    <tr>
-      <th>COUNTRY</th>
-      <th>TAX ID DESCRIPTION</th>
-      <th>EXAMPLE</th>
+      <th>Country</th>
+      <th>Tax ID Description</th>
+      <th>Example</th>
    </tr>
    <tr>
       <td>Australia</td>
@@ -78,6 +78,7 @@ If you are in the listed countries, please enter the specific type of Tax ID. Pr
    </tr>
 </table>
 
+
 You can find out other supported Tax IDs [here](https://stripe.com/docs/billing/customer/tax-ids). Fill in the VAT/GST ID with the corresponding ID. For example, if your registered business is in Hong Kong, enter the Hong Kong BR number with 8 digits.
 
 ## Tax Rates
@@ -88,15 +89,15 @@ We will calculate the taxes based on your billing address and whether you have f
 
 ### Australia
 
-EMQX Cloud charges GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+EMQX Cloud applies GST charges if a valid GST ID number is not provided. To avoid GST charges, please ensure that you enter a valid GST ID number in your billing information.
 
 ### Canada
 
-EMQX Cloud charges GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+EMQX Cloud applies GST charges if a valid GST ID number is not provided. To avoid GST charges, please ensure that you enter a valid GST ID number in your billing information.
 
 ### European Union (EU)
 
-EMQX Cloud Consulting charges VAT if you do not enter a valid VAT ID Number. Provide a valid VAT ID Number on your billing information to incur no VAT charges.
+EMQX Cloud applies GST charges if a valid GST ID number is not provided. To avoid GST charges, please ensure that you enter a valid GST ID number in your billing information.
 
 ::: tip
 If your billing address is in Germany, EMQX Cloud always charges VAT, even with a valid VAT ID Number.
@@ -104,12 +105,12 @@ If your billing address is in Germany, EMQX Cloud always charges VAT, even with 
 
 ### India
 
-EMQX Cloud charges GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+EMQX Cloud applies GST charges if a valid GST ID number is not provided. To avoid GST charges, please ensure that you enter a valid GST ID number in your billing information.
 
 ### United Kingdom (UK)
 
-EMQX Cloud charges VAT if you do not enter a valid VAT ID Number. Provide a valid VAT ID Number on your billing information to incur no VAT charges.
+EMQX Cloud applies GST charges if a valid GST ID number is not provided. To avoid GST charges, please ensure that you enter a valid GST ID number in your billing information.
 
 ### Singapore
 
-EMQX Cloud charges GST if you do not enter a valid GST ID Number. Provide a valid GST ID Number on your billing information to incur no GST charges.
+EMQX Cloud applies GST charges if a valid GST ID number is not provided. To avoid GST charges, please ensure that you enter a valid GST ID number in your billing information.
