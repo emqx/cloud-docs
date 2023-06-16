@@ -999,6 +999,10 @@
           "path": "billing/coupon"
         },
         {
+          "title": "Subscriptions",
+          "path": "billing/subscription"
+        },
+        {
           "title": "Taxation by Region",
           "path": "billing/taxation"
         },
