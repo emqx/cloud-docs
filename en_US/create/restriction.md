@@ -7,7 +7,9 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 |-------------------------------------------| ----------------------- | ------------------|
 | Maximum internal authentication entries   | 2000                | NO                 |
 | Maximum internal ACL entries              | 2000                | NO                   |
+| Anonymous access     | No anonymous access      | NO                   |
 | Maximum message queue length              | 1000                | NO                   |
+| Maximum message size              | 1mb                | NO                   |
 | Session expiry time（MQTT 3.x）             | 2 hours                | NO                   |
 | Maximum retained messages                 | 2000                | NO                   |
 | Maximum size of a retained message        | 1mb                | NO                   |
@@ -26,7 +28,10 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 |-----------------------------------------| ----------------------- | ------------------|------------------|
 | Maximum internal authentication entries |  Session specification * 2      | NO                  |-|
 | Maximum internal ACL entries            | Session specification * 2      | NO                   |-|
+| External authentication supported at the same time            | 2      | NO                   |-|
+| Anonymous access     | No anonymous access      | YES                   |NO|
 | Maximum message queue length            | 1000                | YES                   |NO|
+| Maximum message size              | 1mb                | YES                   |NO|
 | Session expiry time（MQTT 3.x）           | 2 hours                | NO                   |NO|
 | Maximum retained messages               | Session specification * 10    | YES                   |NO|
 | Maximum size of a retained message      | 1mb                | YES                   |NO|
@@ -35,5 +40,7 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 | Client ID maximum length（MQTT 5.0）      | 256                | YES                   |YES|
 | API HTTP QPS                            | 100/s                | NO                   |-|
 | TCP connect timeout                     | 10s                | YES                   |YES|
+| Maximum resources that can be created in Data Integration     | 10               | NO                   |-|
+| Maximum rules that can be created in Data Integration     | 50               | NO                   |-|
 | Number of deployments                   | 3                | YES                   |NO|
 | Number of subaccounts                   | 20                | NO                   |-|

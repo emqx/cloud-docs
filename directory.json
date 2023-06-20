@@ -155,6 +155,10 @@
             {
               "title": "JWT 认证",
               "path": "deployments/jwt_auth"
+            },
+            {
+              "title": "黑名单",
+              "path": "deployments/blacklist"
             }
           ]
         }
