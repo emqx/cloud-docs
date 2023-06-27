@@ -164,7 +164,7 @@ Return to the **Deployment Guide** page and click **Complete**. It will lead you
 * **Specifications**: The maximum number of sessions, maximum Pub&Sub TPS, and billing mode of the current deployment.
 * **Expiration**: The expiration day of applied EMQX Cloud BYOC License. You can check the license details and update the license here.
 * **Address**: The domain name specified by the user at deployment time.
-* By default, ports 1883 (MQTT), 8083 (WS), 8883 (MQTTS), and 8084 (WSS) are enabled. If you want to customize the port, you can contact us through the [ticket](../feature/tickets.md) or [email](cloud-support@emqx.io).
+* By default, ports 1883 (MQTT), 8083 (WS), 8883 (MQTTS), and 8084 (WSS) are enabled. If you want to customize the port, you can contact us through a [ticket](../feature/tickets.md) or [email](mailto:cloud-support@emqx.io).
 
 
 ## Advanced Network Settings
