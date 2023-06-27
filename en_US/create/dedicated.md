@@ -1,12 +1,12 @@
-# Create a Dedicated Deployment
+# Create Dedicated Deployment
 
 EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters with higher connection and TPS limits, as well as greater scalability. This guide will use the Dedicated Plan (Professional) as an example to walk you through the steps of creating and utilizing EMQX Cloud.
 
-## Create a Deployment
+## Create Deployment
 
-1. Log in to [EMQX Cloud Console](https://cloud.emqx.com/console/). 
+1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
 
-2. You can create a new deployment for a specific project from either the Console homepage or the deployment list page. Click **+ New**.  
+2. You can create a new deployment for a specific project from either the console homepage or the deployment list page. Click **+ New**.  
 
 3. Click **Create Now** on the **Dedicated** tab.
 
@@ -18,7 +18,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
    **Choose Cloud Platform**: You can choose from AWS, Azure, or Google Cloud. 
 
-   **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). 
+   **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or [email][cloud-support@emqx.io]. 
 
    **Choose Specification**: Each specification has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
 
@@ -33,11 +33,11 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 7. After agreeing to the agreement, the deployment process will begin and take about 5 minutes to complete. You can monitor the progress on the **Projects** page, and once the status changes to **Running**, your deployment has been successfully created and is ready for use.
 
 
-## Deployment Overview
+## View Deployment
 
-The deployment overview page provides real-time status and connection information for your deployment.
+After the deployment is created, it will appear on the Cloud console home page. Click the Dedicated deployment card to enter the deployment overview page. On the overview page, you can check the real-time status and connection information for your deployment.
 
-   ![dedicated](./_assets/dedicated_overview.png)
+![dedicated](./_assets/dedicated_overview.png)
 
 - **Instance status:** Running status and duration of operation.
 - **Sessions:** Current and maximum connection counts.
@@ -54,11 +54,11 @@ The deployment overview page provides real-time status and connection informatio
 
 Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.
 
-To explore the advanced features included in the Dedicated Plan, you can click the links below.
+To explore the advanced features of the Dedicated Plan, click the links below.
 
 ### [Configure TLS/SSL](../deployments/tls_ssl.md)
 
-EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration, and support self-signed certificates and CA-signed certificates.
+EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration and supports self-signed and CA-signed certificates.
 
 
 ### [VPC Peering Connections](../deployments/vpc_peering.md)

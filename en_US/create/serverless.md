@@ -1,13 +1,13 @@
-# Create a Serverless Deployment
+# Create Serverless Deployment
 
 EMQX Cloud Serverless Plan offers a cost-effective and efficient way for developers or small businesses to test and develop IoT applications. This plan is based on secure and scalable clusters and can be easily deployed in just a few simple steps.
 
 One of the biggest advantages of using Serverless deployment is that the billing for connection scenarios is based on actual usage. For more detailed information on the billing system, please refer to the pricing section in [Pricing and Billing](../price/pricing.md).
 
 
-## Create a Deployment
+## Create Deployment
 
-1. Log in to [EMQX Cloud Console](https://cloud.emqx.com/console/). 
+1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
 2. You can create a new deployment for a specific project from either the Console homepage or the deployment list page. Click **+ New**.  
 3. Click **Start for free** on the **Serverless** tab.![create_serverless](./_assets/create_serverless.png)
 
@@ -19,9 +19,9 @@ One of the biggest advantages of using Serverless deployment is that the billing
 6. After agreeing to the agreement, the deployment process will begin. You can monitor the progress on the **Projects** page, and once the status changes to **Running**, your deployment has been successfully created and is ready for use.
 
 
-## Deployment Overview
+## View Deployment
 
-The deployment overview page provides real-time status and connection information for your deployment.
+After the deployment is created, it will appear on the Cloud console home page. Click the Serverless deployment card to enter the deployment overview page. On the overview page, you can check the real-time status and connection information for your deployment.
 
    ![serverless](./_assets/serverless_overview.png)
 
@@ -40,7 +40,7 @@ Serverless deployment only supports ports `8883` (mqtts) and `8084` (wss). If yo
 
 :::
 
-## Connection Test for the Deployment
+## Test Connection for the Deployment
 
 EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) to connect to it. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and also use a user for authentication.
 
