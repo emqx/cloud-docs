@@ -19,10 +19,10 @@ The EMQX Cloud BYOC deployment will be created in your cloud account. If you do 
 
 Currently, BYOC supports the following public clouds and regions. If you need support from other cloud service providers or regions, you can submit a ticket or send an [email](mailto:cloud-support@emqx.io) to contact us.
 
-| Cloud Provider    | Region                                       |
-|-------------------|----------------------------------------------|
-| Google Cloud      | us-east1 (South Carolina), us-west1 (Oregon) |
-| AWS (coming soon) |                                              |
+| Cloud Provider    | Region                                                                                                                                                                                      |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Google Cloud      | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |
+| AWS (coming soon) |                                                                                                                                                                                             |
 
 In addition, you also need an EMQX Cloud account to complete the deployment. If you have not registered, please go to the [EMQX Cloud account registration page](https://accounts.emqx.com/signup) to register an account.
 
@@ -99,6 +99,7 @@ includedPermissions:
 - compute.firewalls.create
 - compute.networks.updatePolicy
 - compute.images.create
+- compute.images.setLabels
 - compute.addresses.use
 - compute.subnetworks.create
 - compute.instances.getSerialPortOutput
@@ -181,7 +182,7 @@ To deploy EMQX Cloud BYOC, you need an Ubuntu 20.04 LTS (AMD64) environment that
 
 ## Domain Name and Certificate
 
-Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX Cloud supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment. The certificate can be a self-signed certificate or a CA-signed certificate. Please refer to the TLS/SSL Configuration-Certificate Requirements for SSL certificate format requirements.
+Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX Cloud BYOC supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment. The certificate can be a self-signed certificate or a CA-signed certificate. Please refer to the TLS/SSL Configuration-Certificate Requirements for SSL certificate format requirements.
 
 ## BYOC License
 
