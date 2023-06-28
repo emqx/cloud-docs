@@ -2,15 +2,16 @@
 
 The Rule of Data Integrations provides several event topics available for FROM clause.
 
-| Event topic name             | Explanation          |
-| ---------------------------- | -------------------- |
-| $events/client_connected     | Client connect       |
-| $events/client_disconnected  | Client disconnect    |
-| $events/message_delivered    | Message delivery     |
-| $events/message_acked        | Message acknowledged |
-| $events/message_dropped      | Message dropped      |
-| $events/session_subscribed   | Subscribe            |
-| $events/session_unsubscribed | Unsubscribe          |
+| Event topic name             | Explanation                     |
+| ---------------------------- | ------------------------------- |
+| $events/client_connected     | Client connect                  |
+| $events/client_disconnected  | Client disconnect               |
+| $events/message_delivered    | Message delivery                |
+| $events/message_acked        | Message acknowledged            |
+| $events/message_dropped      | Message dropped when routing    |
+| $events/delivery_dropped     | Message dropped when delivering |
+| $events/session_subscribed   | Subscribe                       |
+| $events/session_unsubscribed | Unsubscribe                     |
 
 This article will introduce the usage of event topics, and the meaning of each field from three aspects: client connect and disconnect events, message events, topic subscribe and unsubscribe events.
 
@@ -170,7 +171,7 @@ The fields are explained as follows.
 
 ### Message dropped
 
-The topic of client disconnect is `$events/message_dropped`, click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.
+The topic of a message dropped is `$events/message_dropped`, which triggers the trigger rule when a message has no subscribers. Click on Rules on the left menu bar, click on Create, and enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
@@ -180,25 +181,59 @@ The topic of client disconnect is `$events/message_dropped`, click on Rules on t
    ```  
 
 You can test the SQL, view the return field after firing this rule.
-![client_dropped](./_assets/rule_engine_event_client_dropped.png)
+![message_dropped](./_assets/rule_engine_event_client_dropped.png)
 
 The fields are explained as follows.
 
-| field               | Explanation                                   |
-| ------------------- | --------------------------------------------- |
-| clientid            | Client ID                                     |
-| event               | Event type, fixed at "message.dropped"        |
-| flags               | MQTT message flags                            |
-| id                  | MQTT message ID                               |
-| node                | Node name of the trigger event                |
-| payload             | MQTT payload                                  |
-| peerhost            | Client IPAddress                              |
-| publish_received_at | Time when PUBLISH message reaches Broker (ms) |
-| qos                 | Enumeration of message QoS 0,1,2              |
-| reason              | Reason for message dropped                    |
-| timestamp           | Event trigger time (ms)                       |
-| topic               | MQTT topic                                    |
-| username            | Current MQTT username                         |
+| Field               | Explanation                                                                                                                                                                                                                  |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                  | MQTT message id                                                                                                                                                                                                              |
+| reason              | Reasons of dropping, possible reasons: <br>no_subscribers: no clients subscribes the topic<br>receive_maximum_exceeded: awaiting_rel queue is full<br>packet_identifier_inuse: send a qos2 message with unreleased packet ID |  |
+| clientid            | Client ID of the sender                                                                                                                                                                                                      |
+| username            | Username of the sender                                                                                                                                                                                                       |
+| payload             | MQTT payload                                                                                                                                                                                                                 |
+| peerhost            | Client IPAddress                                                                                                                                                                                                             |
+| topic               | MQTT topic                                                                                                                                                                                                                   |
+| qos                 | Enumeration of message QoS 0,1,2                                                                                                                                                                                             |
+| flags               | Flags                                                                                                                                                                                                                        |
+| pub_props           | The PUBLISH Properties (MQTT 5.0 only)                                                                                                                                                                                       |
+| timestamp           | Event trigger time(millisecond)                                                                                                                                                                                              |
+| publish_received_at | Time when PUBLISH message reaches Broker (ms)                                                                                                                                                                                |
+| node                | Node name of the trigger event                                                                                                                                                                                               |
+
+### Delivery_dropped
+
+The topic of delivery_dropped is `$events/delivery_dropped, trigger rule when subscriber's message queue is full. Click on Rules on the left menu bar, click on Create, and enter the following rule to match the SQL statement:
+
+   ```sql
+    SELECT
+        *
+    FROM
+        "$events/delivery_dropped"
+   ```  
+
+You can test the SQL, view the return field after firing this rule.
+![delivery_dropped](./_assets/rule_engine_event_delivery_dropped.png)
+
+The fields are explained as follows.
+
+| Field               | Explanation                                                                                                                                                                                                                                                                      |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                  | MQTT message id                                                                                                                                                                                                                                                                  |
+| reason              | Reasons of dropping, possible reasons: <br>queue_full: the message queue is full(QoS>0)<br>no_local: it's not allowed for the client to received messages published by themselves<br>expired: the message or the session is expired<br>qos0_msg: the message queue is full(QoS0) |  |
+| clientid            | Client ID of the sender                                                                                                                                                                                                                                                          |
+| from_clientid       | Client ID of the sender                                                                                                                                                                                                                                                          |
+| from_username       | Username of the sender                                                                                                                                                                                                                                                           |
+| username            | Username of the sender                                                                                                                                                                                                                                                           |
+| payload             | MQTT payload                                                                                                                                                                                                                                                                     |
+| peerhost            | Client IPAddress                                                                                                                                                                                                                                                                 |
+| topic               | MQTT topic                                                                                                                                                                                                                                                                       |
+| qos                 | Enumeration of message QoS 0,1,2                                                                                                                                                                                                                                                 |
+| flags               | Flags                                                                                                                                                                                                                                                                            |
+| pub_props           | The PUBLISH Properties (MQTT 5.0 only)                                                                                                                                                                                                                                           |
+| timestamp           | Event trigger time(millisecond)                                                                                                                                                                                                                                                  |
+| publish_received_at | Time when PUBLISH message reaches Broker (ms)                                                                                                                                                                                                                                    |
+| node                | Node name of the trigger event                                                                                                                                                                                                                                                   |
 
 ## Topic subscribe and unsubscribe events
 

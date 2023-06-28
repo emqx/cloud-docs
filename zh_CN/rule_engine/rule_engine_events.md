@@ -2,15 +2,16 @@
 
 EMQX Cloud 数据集成 提供了以下七个可用的事件订阅主题。
 
-| 事件主题名                   | 释义         |
-| ---------------------------- | ------------ |
-| $events/client_connected     | 设备上线     |
-| $events/client_disconnected  | 设备下线     |
-| $events/message_delivered    | 消息投递     |
-| $events/message_acked        | 消息确认     |
-| $events/message_dropped      | 消息丢弃     |
-| $events/session_subscribed   | 设备订阅     |
-| $events/session_unsubscribed | 设备取消订阅 |
+| 事件主题名                   | 释义                     |
+| ---------------------------- | ------------------------ |
+| $events/client_connected     | 设备上线                 |
+| $events/client_disconnected  | 设备下线                 |
+| $events/message_delivered    | 消息投递                 |
+| $events/message_acked        | 消息确认                 |
+| $events/message_dropped      | 消息在转发的过程中被丢弃 |
+| $events/delivery_dropped     | 消息在投递的过程中被丢弃 |
+| $events/session_subscribed   | 设备订阅                 |
+| $events/session_unsubscribed | 设备取消订阅             |
 
 本文将从设备上下线、消息通知和主题订阅通知，三个方面分别介绍事件订阅主题使用和各个字段的含义。
 
@@ -165,7 +166,7 @@ EMQX Cloud 数据集成 提供了以下七个可用的事件订阅主题。
 | topic               | MQTT 主题                           |
 | username            | 用户名                              |
 
-### 消息丢弃
+### 消息在转发的过程中被丢弃
 
 消息丢弃的消息主题为 `$events/message_dropped`，在规则面板中点击创建规则，然后输入如下规则匹配 SQL 语句便可完成消息丢弃规则的创建，当有消息被丢弃便会触发该规则。
 
@@ -181,22 +182,55 @@ EMQX Cloud 数据集成 提供了以下七个可用的事件订阅主题。
 
 各字段释义如下。
 
-| 字段                | 释义                                |
-| ------------------- | ----------------------------------- |
-| clientid            | 客户端 ID                           |
-| event               | 事件类型，固定为 "message.dropped"  |
-| flags               | MQTT 消息的 Flags                   |
-| id                  | MQTT 消息 ID                        |
-| node                | 事件触发所在节点                    |
-| payload             | MQTT 消息体                         |
-| peerhost            | 客户端的 IPAddress                  |
-| publish_received_at | PUBLISH 消息到达 Broker 的时间 (ms) |
-| qos                 | MQTT 消息的 QoS                     |
-| reason              | 消息丢弃原因                        |
-| timestamp           | 事件触发时间 (ms)                   |
-| topic               | MQTT 主题                           |
-| username            | 用户名                              |
+| 字段                | 释义                                                                                                                                                     |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| clientid            | 客户端 ID                                                                                                                                                |
+| reason              | 消息丢弃原因，可能的原因：<br>no_subscribers: 没有订阅者<br>receive_maximum_exceeded: awaiting_rel 队列已满<br>packet_identifier_inuse: 消息 ID 已被使用 |
+| clientid            | 消息来源 Client ID                                                                                                                                       |
+| username            | 消息来源用户名                                                                                                                                           |
+| payload             | MQTT 消息体                                                                                                                                              |
+| peerhost            | 客户端的 IPAddress                                                                                                                                       |
+| topic               | MQTT 主题                                                                                                                                                |
+| qos                 | MQTT 消息的 QoS                                                                                                                                          |
+| flags               | MQTT 消息的 Flags                                                                                                                                        |
+| pub_props           | PUBLISH Properties (仅适用于 MQTT 5.0)                                                                                                                   |
+| timestamp           | 事件触发时间 (ms)                                                                                                                                        |
+| publish_received_at | PUBLISH 消息到达 Broker 的时间 (ms)                                                                                                                      |
+| node                | 事件触发所在节点                                                                                                                                         |
 
+### 消息在投递的过程中被丢弃
+
+消息丢弃的消息主题为 `$events/delivery_dropped`，在规则面板中点击创建规则，然后输入如下规则匹配 SQL 语句便可完成消息丢弃规则的创建，当订阅者的消息队列满导致消息被丢弃便会触发该规则。
+
+   ```sql
+    SELECT
+        *
+    FROM
+        "$events/delivery_dropped"
+   ```
+
+使用 SQL 测试，查看触发该规则后返回字段，也可在 SQL 语句中使用 SELECT 和 WHERE 子句进行筛选与过滤。
+![消息丢弃](./_assets/rule_engine_event_delivery_dropped.png)
+
+各字段释义如下。
+
+| 字段                | 解释                                                                                                                                                                                  |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                  | MQTT 消息 ID                                                                                                                                                                          |
+| reason              | 消息丢弃原因，可能的原因：<br>queue_full: 消息队列已满(QoS>0)<br>no_local: 不允许客户端接收自己发布的消息<br>expired: 消息或者会话过期<br>qos0_msg: QoS0 的消息因为消息队列已满被丢弃 |
+| from_clientid       | 消息来源 Client ID                                                                                                                                                                    |
+| from_username       | 消息来源用户名                                                                                                                                                                        |
+| clientid            | 消息目的 Client ID                                                                                                                                                                    |
+| username            | 消息目的用户名                                                                                                                                                                        |
+| payload             | MQTT 消息体                                                                                                                                                                           |
+| peerhost            | 客户端的 IPAddress                                                                                                                                                                    |
+| topic               | MQTT 主题                                                                                                                                                                             |
+| qos                 | MQTT 消息的 QoS                                                                                                                                                                       |
+| flags               | MQTT 消息的 Flags                                                                                                                                                                     |
+| pub_props           | PUBLISH Properties (仅适用于 MQTT 5.0)                                                                                                                                                |
+| timestamp           | 事件触发时间 (ms)                                                                                                                                                                     |
+| publish_received_at | PUBLISH 消息到达 Broker 的时间 (ms)                                                                                                                                                   |
+| node                | 事件触发所在节点                                                                                                                                                                      |
 
 ## 设备主题订阅通知
 
