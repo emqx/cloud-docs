@@ -671,6 +671,17 @@
           ]
         },
         {
+          "title": "Create BYOC Deployment",
+          "path": "create/byoc",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "BYOC Deployment Prerequisite",
+              "path": "deployments/byoc_prerequisite"
+            }
+          ]
+        },
+        {
           "title": "Quotas and Limits",
           "path": "create/restriction"
         }
