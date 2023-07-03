@@ -90,15 +90,17 @@ If multiple ACL modules are enabled at the same time, EMQX Cloud will chain auth
     - allow: disable (0), allow (1)
     - ipaddr: set IP address
     - username: the username of the connected client, if the value here is set to $all, it means the rule applies to all users
-    - clientid: clientid of the connected client
+    - clientid: client id of the connected client
     - access: allowed operations: subscribe (1), publish (2), both subscribe and publish (3)
     - topic: the topic of the control, you can use wildcards, and you can add placeholders to the topic to match the client information, e.g. t/%c will replace the topic with the current clientid when matching
-    Set the EMQX Cloud cluster IP segment to be allowed to access the database (optional)
 
-    For Professional deployment, to get the deployment segment, you can go to Deployment Details → View Peer Connection Information and copy the deployment VPC CIDR.
+5. Set the EMQX Cloud cluster IP segment to be allowed to access the database (optional)
+
+   - For Professional Plan deployment, you can go to the deployment details and navigate to **View Peer Connection Information** to obtain the deployment's VPC CIDR.
+   - For BYOC Plan deployment, you can view the peer connection information and obtain the deployment's VPC subnet directly in the public cloud console.
 
     ```sql
-    # Professional
+    # Professional / BYOC
     GRANT ALL PRIVILEGES ON *. * TO root@'10.11.30.%' IDENTIFIED BY 'public' WITH GRANT OPTION;
     
     # Standard
@@ -113,11 +115,12 @@ If multiple ACL modules are enabled at the same time, EMQX Cloud will chain auth
 
 2. Click `Configure Authentication` to enter MySQL Authentication/Access Control page, fill in the information and create a new authentication.
 
-    ::: tip
-     - If the current deployment is Basic deployment, please fill in the public address for the server address
-     - If the current deployment is Professional deployment, you need to create a [VPC peer connection](./vpc_peering.md), please fill in the internal network address for the server address.
-     - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
-    :::
+   ::: tip
+   - For Basic Plan users: Please fill in the public address for the server address.
+   - For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, then fill in the internal network address for the server address.
+   - For BYOC Plan users: Please [establish a peering connection](../create/byoc.md#vpc-peering-configuration) between the VPC where BYOC is deployed and the VPC where the resources are located, then fill in the internal network address for the server address.
+   - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled.
+   :::
 
     ![mysql_auth](./_assets/mysql_auth_info.png)
 

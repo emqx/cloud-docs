@@ -16,6 +16,9 @@ In EMQX Cloud, using Data Integrations has the following requirements:
 - Professional Deployment
   - The resource technically only supports internal network access, so you need to configure [VPC peering](../deployments/vpc_peering.md) before creating the resource and open the security group.
   - If public access is needed in a professional environment, [NAT Gateway](../vas/nat-gateway.md) can offer the abilities.
+- BYOC Deployment
+  - It is recommended to access resources through an internal network to enhance network security and performance. Before creating resources, you need to configure a peering connection between the VPC where the resources are located and the VPC where the BYOC deployment is located in the cloud platform console. Additionally, you should open relevant security groups. For detailed steps, please refer to the [Create BYOC Deployment - VPC Peering Configuration](../create/byoc.md#vpc-peering-configuration) section.
+  - If you need to access resources through the public network, please configure a NAT gateway for the VPC where the BYOC deployment is located in your cloud platform console.
 
 ::: tip
 Serverless deployments don't support Data Integrations.

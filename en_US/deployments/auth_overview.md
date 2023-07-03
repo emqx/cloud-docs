@@ -14,15 +14,15 @@ Set authentication for Serverless Plan.
 
 Set access control for Serverless Plan.
 
-## Dedicated Plan
+## Dedicated / BYOC Plan
 
 ### [Authentication](./auth_dedicated.md)
 
-Set authentication for Dedicated Plan.
+Set authentication for Dedicated / BYOC Plan.
 
 ### [Access Control](./acl_dedicated.md)
 
-Set access control for Dedicated Plan.
+Set access control for Dedicated / BYOC Plan.
 
 ### [External Authentication and Access Control](./custom_auth.md)
 

@@ -1,6 +1,6 @@
 # BYOC 许可证
 
-使用 EMQX Cloud BYOC 服务时，您需要向 EMQ 支付订阅费以获取一个正式的 EMQX Cloud BYOC 许可证。如需了解许可证价格详情，请[联系我们](https://www.emqx.com/zh/contact?product=cloud)。
+使用 EMQX Cloud BYOC 服务时，您需要向 EMQ 支付订阅费以获取一个正式的 EMQX Cloud BYOC 许可证。如需了解许可证价格详情，请[联系我们](https://www.emqx.com/zh/contact?product=cloud&productEdition=BYOC)。
 
 本节主要介绍如何在控制台查看和更新 BYOC 部署的许可证。
 

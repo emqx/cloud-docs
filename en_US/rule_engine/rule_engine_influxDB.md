@@ -17,8 +17,9 @@ To achieve this function, we will complete the following 4 tasks:
 
 Before you start, you will need to complete the following:
 
-* Deployments have already been created on EMQX Cloud (EMQX Cluster).
-* For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
+- A deployment (EMQX Cluster) has been created on EMQX Cloud.
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
+- For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 
 ## 1. Install and initialize InfluxDB
 

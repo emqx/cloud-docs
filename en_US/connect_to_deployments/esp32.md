@@ -46,7 +46,7 @@ This section describes how to connect an ESP32 client to MQTT broker over TCP po
 
 2. Set the Wi-Fi name and password, as well as the MQTT server connection address and port, and set the topic to `esp32/test.`
 
-> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Serverless Auth](../deployments/auth_serverless.md) or [Dedicated Auth](../deployments/auth_dedicated.md) to set username and password.
+> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Serverless Auth](../deployments/auth_serverless.md) or [Dedicated / BYOC Auth](../deployments/auth_dedicated.md) to set username and password.
 
 
 ```c
@@ -196,7 +196,7 @@ This section describes how to connect an ESP32 client to MQTT broker over TLS/SS
 
 2. Set Wi-Fi name and password, and connection address and port.
 
-> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Serverless Auth](../deployments/auth_serverless.md) or [Dedicated Auth](../deployments/auth_dedicated.md) to set username and password.
+> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Serverless Auth](../deployments/auth_serverless.md) or [Dedicated / BYOC Auth](../deployments/auth_dedicated.md) to set username and password.
 
 
 ```c

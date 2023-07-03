@@ -212,7 +212,7 @@
           "path": "deployments/port_guide_serverless"
         },
         {
-          "title": "专有版连接指引",
+          "title": "专有版 / BYOC 连接指引",
           "path": "deployments/port_guide_dedicated"
         },
         {
@@ -678,6 +678,10 @@
             {
               "title": "BYOC Deployment Prerequisite",
               "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "BYOC License",
+              "path": "deployments/byoc_license"
             }
           ]
         },
@@ -732,7 +736,7 @@
           ]
         },
         {
-          "title": "Dedicated Plan",
+          "title": "Dedicated / BYOC Plan",
           "collapsed": true,
           "children": [
             {
@@ -815,7 +819,7 @@
           "path": "deployments/port_guide_serverless"
         },
         {
-          "title": "Dedicated connection guide",
+          "title": "Dedicated / BYOC connection guide",
           "path": "deployments/port_guide_dedicated"
         },
         {

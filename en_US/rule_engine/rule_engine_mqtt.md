@@ -14,9 +14,10 @@ In order to achieve this function, we will complete the following 4 tasks:
 4. Complete the data integrations creation and test
 
 :::tip Tip
-- Deployments have already been created on EMQX Cloud (EMQX Cluster).
-- For Professional deployment users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources)
-- For basic deployment users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource
+- A deployment (EMQX Cluster) has been created on EMQX Cloud.
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
+- For Basic Plan users: There is no need to complete peering connection, and the IP mentioned below refers to the public IP of the resource.
+- For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 :::
 
 ## Create Mosquitto service

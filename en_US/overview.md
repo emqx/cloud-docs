@@ -56,11 +56,11 @@ EMQX Cloud offers flexible billing methods to provide effective cost control. Fo
 
 ### High Availability and Data Security
 
-EMQX Cloud's Dedicated Plan utilizes a high-redundancy cluster architecture to ensure high service availability. It also provides a unique isolation environment that guarantees the security of your data and the stability of your business. Each deployment cluster has its own public IP address, dedicated VPC network, independent EMQX servers, and database servers, making it highly secure and reliable.
+EMQX Cloud's Dedicated Plan and BYOC Plan utilizes a high-redundancy cluster architecture to ensure high service availability. It also provides a unique isolation environment that guarantees the security of your data and the stability of your business. Each deployment cluster has its own public IP address, dedicated VPC network, independent EMQX servers, and database servers, making it highly secure and reliable.
 
 ### Flexible Data Integration Solutions
 
-EMQX Cloud's Professional Plan enables real-time pre-processing of device events and message data, which can be stored in over 40 cloud services and enterprise systems such as MySQL, Kafka, and InfluxDB, all hosted on the cloud.
+EMQX Cloud's Professional Plan and BYOC Plan enables real-time pre-processing of device events and message data, which can be stored in over 40 cloud services and enterprise systems such as MySQL, Kafka, and InfluxDB, all hosted on the cloud.
 
 ## Product Plans
 

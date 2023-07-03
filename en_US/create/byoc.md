@@ -66,7 +66,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
 2. In the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 	
 	```bash
-	wget https://cloudassets.emqx.com/byoc/1.0/create-gcp-byoc-deployment.tar.gz
+	wget https://cloudassets.emqx.com/en/byoc-deployments/1.1/create-gcp-byoc-deployment.tar.gz
 	```
 
 3. Use the command line below to unzip the downloaded toolkit and navigate to the unzipped folder directory.

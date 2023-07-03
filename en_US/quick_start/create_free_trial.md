@@ -36,7 +36,7 @@ For first-time EMQX Cloud customers, we have an opportunity for you to create a 
 
 4. Review the EMQX Cloud Standard Terms of Service and Free Trial Declaration Terms.
 
-   ![freetrial_term](./_assets/service_terms.png)
+   ![free_trial_term](./_assets/service_terms.png)
 
 5. Wait for 5-10 minutes until the deployment status is **running**.
 

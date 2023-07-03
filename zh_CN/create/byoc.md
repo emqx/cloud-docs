@@ -59,7 +59,7 @@
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。<!--这里有客户需要替换的地方吗？-->
 	
 	```bash
-	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.0/create-aliyun-byoc-deployment.tar.gz
+	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/create-aliyun-byoc-deployment.tar.gz
 	```
 
 3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
@@ -72,6 +72,7 @@
 
    ```bash
    ./byoc create \
+         --platform aliyun \
          --accessKey <Your AccessKey> \
          --secretKey <Your SecretKey> \
          --domain <Your Domain> \
@@ -89,7 +90,7 @@
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，支持 **自签名证书** 和 **CA 签名证书**。SSL 证书格式要求请参考 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
    - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
 
-   此外，上述命令中的 `--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+   此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 5. 等待数分钟，系统提示确认需要创建的云资源，输入 `yes` 回车后继续。
 
