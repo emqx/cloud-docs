@@ -45,9 +45,9 @@ Displays the incremental changes of the number of discarded messages within the 
 | delivery_dropped_queue_full | Number of messages dropped when the message queue is full |
 | delivery_dropped_expire     | Number of messages dropped due to message expiration      |
 
-## Dedicated
+## Dedicated / BYOC
 
-Metrics of the Dedicated Plan
+Metrics of the Dedicated Plan and BYOC Plan
 
 ### Message
 

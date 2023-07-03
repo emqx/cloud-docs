@@ -1,12 +1,13 @@
-# Dedicated Connection Guide
+# Connection Guide for Dedicated Plan and BYOC Plan
 
 
 ## Ports overview
 
-| **Plans**  | **TCP port(mqtt)**   | **MQTT over TLS/SSL port (mqtts)**   |**WebSocket port(ws)**   | **WebSocket over TLS/SSL port(wss)**   |
-| -------------- | ----------------------- | ------------------|------------------|------------------|
-| Standard     | 15xxx      | 15xxx         |8083      | 8084         |
-| Professional     | 1883     | 8883 (Need TLS/SSL configuration)  | 8083    | 8084 (Need TLS/SSL configuration)       |
+| **Plans**    | **TCP port(mqtt)** | **MQTT over TLS/SSL port (mqtts)** | **WebSocket port(ws)** | **WebSocket over TLS/SSL port(wss)** |
+|--------------|--------------------|------------------------------------|------------------------|--------------------------------------|
+| Standard     | 15xxx              | 15xxx                              | 8083                   | 8084                                 |
+| Professional | 1883               | 8883 (Need TLS/SSL configuration)  | 8083                   | 8084 (Need TLS/SSL configuration)    |
+| BYOC         | 1883               | 8883                               | 8083                   | 8084                                 |
 
 
 ### What are MQTT over TCP and WebSocket?
@@ -43,6 +44,10 @@ Standard deployment uses one-way TLS. EMQX provides and maintains server-side CA
 ### How do I use the MQTT over TLS/SSL port and the WebSocket over TLS/SSL port of a professional deployment?
 
 Professional deployment supports customized one-way/two-way TLS/SSL. You need to enable it via [Configure TLS/SSL](../deployments/tls_ssl.md).
+
+### How do I use the MQTT over TLS/SSL port and the WebSocket over TLS/SSL port of a BYOC deployment?
+
+The BYOC deployment supports customized one-way TLS/SSL certificates which configured during creating the deployment. You can connect directly through port 8883 (mqtts) and port 8084 (wss) on the deployment overview.
 
 
 ### How to write client-side code for TLS/SSL connection?

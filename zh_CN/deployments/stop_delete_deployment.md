@@ -96,17 +96,18 @@
 操作步骤如下：
 1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
 ```bash
-wget -O delete-byoc.tar.gz https://emqx-cloud-ami.oss-cn-shanghai.aliyuncs.com/byoc/aliyun_byoc_delete.tar.gz
+wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/delete-aliyun-byoc-deployment.tar.gz
 ```
 
-1. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
 ```bash
-tar -zxvf delete-byoc.tar.gz
+tar -zxf delete-aliyun-byoc-deployment.tar.gz && cd delete-aliyun-byoc-deployment
 ```
 
-1. 导航到解压的目录下，根据以下命令，并修改对应参数的值，执行命令进行部署的删除。
+3. 导航到解压的目录下，根据以下命令，并修改对应参数的值，执行命令进行部署的删除。
 ```bash
 ./byoc delete \
+      --platform aliyun \
       --accessKey <Your Access Key> \
       --secretKey <Your Secret Key> \
       --byocEndpoint https://cloud.emqx.com \

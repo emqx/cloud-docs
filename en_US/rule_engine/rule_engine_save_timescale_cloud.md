@@ -4,8 +4,9 @@ This page introduces how to use the data integrations feature in EMQX Cloud to i
 
 Before you start, you need to complete the following:
 
-- Create deployments on EMQX Cloud (EMQX Cluster).
-- If you are a Professional deployment user, you can enable the [NAT gateway](../vas/nat-gateway.md) service first. All IPs mentioned below refer to the public IP of the resource.
+- A deployment (EMQX Cluster) has been created on EMQX Cloud.
+- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
+- For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 
 ## Create a Timescale Cloud Service
 
