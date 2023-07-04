@@ -770,6 +770,10 @@
             {
               "title": "JWT Authentication",
               "path": "deployments/jwt_auth"
+            },
+            {
+              "title": "Blacklist",
+              "path": "deployments/blacklist"
             }
           ]
         }
