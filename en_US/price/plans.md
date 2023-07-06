@@ -464,9 +464,9 @@ To deploy your EMQX Cloud in a different region, you can submit a request via a 
 
 | Cloud Provider | Region                                                       |
 | ------ | ---------------------- |
-| AWS | US East (N. Virginia), US West (N. California), US West (Oregon)<br>EU (Ireland), EU (Frankfurt)<br>Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Azure | East US, Germany West Central, Southeast Asia<br/>europe-west3 (Frankfurt), europe-north1 (Finland)<br>asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |
-| Google Cloud | us-east1 (South Carolina), us-west1 (Oregon) |
+| AWS | <strong>US: </strong>US East (Ohio), US West (N. California), US West (Oregon)<br><strong>EU: </strong> EU (Ireland), EU (Frankfurt)<br><strong>Aisa: </strong>Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Azure | <strong>US: </strong>East US, West US 2 <br><strong>EU: </strong>West Europe, West Central <br/><strong>Asia: </strong>Southeast Asia |
+| Google Cloud | <strong>US: </strong>us-east1 (South Carolina), us-west1 (Oregon) us-central1(lowa) <br/><strong>EU: </strong>europe-west3(Frankfurt), europe-north1(Finland) <br/><strong>Asia: </strong>asia-south1(Mumbai), asia-southeast1(Singapore), asia-east1(Taiwan)|
 
 ## Estimate Your Monthly Usage
 EMQ has offered a [Plans & Pricing](https://www.emqx.com/en/cloud/pricing) page, where you can estimate your monthly usage and select a plan that best suits your business needs.

@@ -1,9 +1,18 @@
 # Access Control
 
+Access control pertains to controlling permissions for publish (PUBLISH) and subscribe (SUBSCRIBE) operations, which can be implemented at three levels:
 
-In the `ACL` page of `Authentication & ACL` menu on the left, access control information can be viewed, and the corresponding access control information can be viewed by switching the three granularity at the top.
+1. Client ID
+2. Username
+3. All users: controls permissions for topics without distinguishing between client ID and username.
 
-![acl](./_assets/acl.png)
+:::tip TIP
+
+- Access control uses a blacklist mode by default. The mode can be switched to whilelist via [ticket](../feature/tickets.md). <br/>
+- The combination of clientid/username + topic is unique, which means that only the latest record for the same clientid/username + topic is considered valid.
+
+:::
+
 
 ## Add ACL Information
 
