@@ -43,6 +43,7 @@
         {
           "title": "创建专有版部署",
           "path": "create/dedicated",
+          "collapsed": true,
           "children": [
             {
               "title": "TLS/SSL 设置",
@@ -61,10 +62,15 @@
         {
           "title": "创建 BYOC 部署",
           "path": "create/byoc",
+          "collapsed": true,
           "children": [
             {
               "title": "部署前置准备",
               "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "BYOC 许可证",
+              "path": "deployments/byoc_license"
             }
           ]
         },
@@ -106,6 +112,7 @@
       "children": [
         {
           "title": "Serverless",
+          "collapsed": true,
           "children": [
             {
               "title": "认证",
@@ -119,6 +126,7 @@
         },
         {
           "title": "专有版 / BYOC",
+          "collapsed": true,
           "children": [
             {
               "title": "认证",
@@ -151,6 +159,10 @@
             {
               "title": "JWT 认证",
               "path": "deployments/jwt_auth"
+            },
+            {
+              "title": "黑名单",
+              "path": "deployments/blacklist"
             }
           ]
         }
@@ -193,13 +205,14 @@
     {
       "title": "接入客户端/应用",
       "path": "connect_to_deployments/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Serverless 连接指引",
           "path": "deployments/port_guide_serverless"
         },
         {
-          "title": "专有版连接指引",
+          "title": "专有版 / BYOC 连接指引",
           "path": "deployments/port_guide_dedicated"
         },
         {
@@ -283,6 +296,7 @@
     {
       "title": "数据集成",
       "path": "rule_engine/introduction",
+      "collapsed": true,
       "children": [
         {
           "title": "资源管理",
@@ -401,6 +415,7 @@
     {
       "title": "财务管理",
       "path": "billing/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "账单概览",
@@ -431,6 +446,7 @@
     {
       "title": "增值服务",
       "path": "vas/vas-intro",
+      "collapsed": true,
       "children": [
         {
           "title": "增值服务计费说明",
@@ -458,6 +474,7 @@
         },
         {
           "title": "影子服务",
+          "collapsed": true,
           "children": [
             {
               "title": "服务概览",
@@ -490,6 +507,7 @@
     {
       "title": "API",
       "path": "api/introduction",
+      "collapsed": true,
       "children": [
         {
           "title": "认证管理",
@@ -531,6 +549,7 @@
     },
     {
       "title": "最佳实践",
+      "collapsed": true,
       "children": [
         {
           "title": "如何使用共享订阅",
@@ -556,6 +575,7 @@
     },
     {
       "title": "产品动态和升级策略",
+      "collapsed": true,
       "children": [
         {
           "title" : "产品动态",
@@ -569,6 +589,7 @@
     },
     {
       "title": "常见问题",
+      "collapsed": true,
       "children": [
         {
           "title": "一般业务问题",
@@ -633,6 +654,7 @@
         {
           "title": "Create Dedicated Deployment",
           "path": "create/dedicated",
+          "collapsed": true,
           "children": [
             {
               "title": "TLS/SSL",
@@ -645,6 +667,21 @@
             {
               "title": "Configure PrivateLink",
               "path": "deployments/privatelink"
+            }
+          ]
+        },
+        {
+          "title": "Create BYOC Deployment",
+          "path": "create/byoc",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "BYOC Deployment Prerequisite",
+              "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "BYOC License",
+              "path": "deployments/byoc_license"
             }
           ]
         },
@@ -686,6 +723,7 @@
       "children": [
         {
           "title": "Serverless Plan",
+          "collapsed": true,
           "children": [
             {
               "title": "Authentication",
@@ -698,7 +736,8 @@
           ]
         },
         {
-          "title": "Dedicated Plan",
+          "title": "Dedicated / BYOC Plan",
+          "collapsed": true,
           "children": [
             {
               "title": "Authentication",
@@ -731,6 +770,10 @@
             {
               "title": "JWT Authentication",
               "path": "deployments/jwt_auth"
+            },
+            {
+              "title": "Blacklist",
+              "path": "deployments/blacklist"
             }
           ]
         }
@@ -773,13 +816,14 @@
     {
       "title": "Connection with Clients/Applications",
       "path": "connect_to_deployments/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Serverless connection guide",
           "path": "deployments/port_guide_serverless"
         },
         {
-          "title": "Dedicated connection guide",
+          "title": "Dedicated / BYOC connection guide",
           "path": "deployments/port_guide_dedicated"
         },
         {
@@ -863,6 +907,7 @@
     {
       "title": "Data Integrations",
       "path": "rule_engine/introduction",
+      "collapsed": true,
       "children": [
         {
           "title": "Resource Management",
@@ -973,6 +1018,7 @@
     {
       "title": "Billing",
       "path": "billing/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Billing Overview",
@@ -999,6 +1045,10 @@
           "path": "billing/coupon"
         },
         {
+          "title": "Subscriptions",
+          "path": "billing/subscription"
+        },
+        {
           "title": "Taxation by Region",
           "path": "billing/taxation"
         },
@@ -1015,6 +1065,7 @@
     {
       "title": "Value Added Services",
       "path": "vas/vas-intro",
+      "collapsed": true,
       "children": [
         {
           "title": "VAS Billing",
@@ -1057,6 +1108,7 @@
     },
     {
       "title": "Best Practices",
+      "collapsed": true,
       "children": [
         {
           "title": "Store Device Offline Messages",
@@ -1075,6 +1127,7 @@
     {
       "title": "API",
       "path": "api/api_overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Authentication Management",
@@ -1120,6 +1173,7 @@
     },
     {
       "title": "Release Note & Upgrade policy",
+      "collapsed": true,
       "children": [
         {
           "title" : "Release Note",
@@ -1133,6 +1187,7 @@
     },
     {
       "title": "FAQ",
+      "collapsed": true,
       "children": [
         {
           "title": "Ordinary Business",

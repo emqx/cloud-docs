@@ -2,7 +2,7 @@
 
 :::warning
 
-This feature is only available on Dedicated Plan. 
+This feature is available on Dedicated Plan and BYOC Plan. 
 
 :::
 

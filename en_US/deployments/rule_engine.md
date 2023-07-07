@@ -11,6 +11,8 @@ In EMQX Cloud, using the Data Integrations has the following requirements and re
   - Only Webhook and MQTT bridges are open for the resource type.
 - Professional Plan
   - The resource only supports internal network access, so you need to configure VPC peering before creating the resource and open the security group.
+- BYOC Plan
+  - The resource only supports internal network access, so you need to configure VPC peering before creating the resource and open the security group.
 
 ## [Rule Management](../rule_engine/rules.md)
 

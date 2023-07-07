@@ -42,9 +42,10 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
   - %c: will be replaced at runtime with the Client ID used by the client when connecting.
 
   ::: tip
-  - If the current deployment is Basic deployment, please fill in the public address for the server address
-  - If the current deployment is Professional deployment, you need to create a [VPC peer connection](./vpc_peering.md), please fill in the internal network address for the server address.
-  - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
+  - For Basic Plan users: Please fill in the public address for the server address.
+  - For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, then fill in the internal network address for the server address.
+  - For BYOC Plan users: Please [establish a peering connection](../create/byoc.md#vpc-peering-configuration) between the VPC where BYOC is deployed and the VPC where the resources are located, then fill in the internal network address for the server address.
+  - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled.
   :::
 
 ![jwt_auth](./_assets/jwt_auth_info_en.jpeg)

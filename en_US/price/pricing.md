@@ -121,3 +121,14 @@ Prices may vary depending on the public cloud platform selected and the deployme
 ### Billing Method
 
 For Dedicated Plan deployments, charges are calculated every hour based on usage for the previous hour, and charged from your account balance. The hourly charges are then accumulated into monthly charges, which you can view in detail on the [Billing Overview](https://cloud.emqx.com/console/billing/overview) page.
+
+## BYOC Plan
+
+EMQX Cloud BYOC will deploy the EMQX service in your cloud platform account, and the associated costs include cloud platform resource fees and EMQX Cloud BYOC license fees.
+
+### Cost Components
+
+| **Item**                 | **Description**                                                                                                                          |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Cloud Platform Resources | When EMQX Cloud BYOC is deployed and running, it utilizes virtual machines, networks, and other resources under your cloud platform account. You will be billed by the cloud platform provider for the usage of these resources. |
+| EMQX Cloud BYOC License  | To use the EMQX Cloud BYOC service, you need to subscribe and obtain an official EMQX Cloud BYOC license from EMQ. For details on license pricing, please [contact us](https://www.emqx.com/contact?product=cloud). |

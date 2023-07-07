@@ -21,6 +21,7 @@ Get the connection address and port in the Deployment Overview (the following **
 
 - Professional plan address: IP; port: 1883(mqtt), 8083(ws) is enabled by default, you can enable port 8883(mqtts) and 8084(wss) by configuring TLS/SSL
 - Standard plan address: domain ending with emqx.cloud suffix; port: xxxxx (mqtt), xxxxx (ws), xxxxx (mqtts), xxxxx (wss)
+- BYOC plan address: the domain name specified at deployment time; port: 1883 (mqtt), 8083 (ws), 8883 (mqtts), 8884 (wss)
 
 ### Authentication
 

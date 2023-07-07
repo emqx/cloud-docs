@@ -92,11 +92,12 @@ If multiple ACL modules are enabled at the same time, EMQX Cloud will chain auth
 
 2. Click `Configure Authentication` to enter the PostgreSQL Authentication/Access Control page, fill in the information and create a new authentication.
 
-    ::: tip
-     - If the current deployment is Basic deployment, please fill in the public address for the server address
-     - If the current deployment is Professional deployment, you need to create a [VPC peer connection](./vpc_peering.md), please fill in the internal network address for the server address.
-     - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled
-    :::
+   ::: tip
+   - For Basic Plan users: Please fill in the public address for the server address.
+   - For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, then fill in the internal network address for the server address.
+   - For BYOC Plan users: Please [establish a peering connection](../create/byoc.md#vpc-peering-configuration) between the VPC where BYOC is deployed and the VPC where the resources are located, then fill in the internal network address for the server address.
+   - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled.
+   :::
 
     ![pgsql_auth](./_assets/pgsql_auth_info.png)
 
