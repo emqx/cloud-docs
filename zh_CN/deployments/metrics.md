@@ -1,114 +1,112 @@
+<!-- markdownlint-disable MD001 -->
+
 # 部署指标
 
+指标提供了在一段时间范围内部署的关键数据状态和变化。您可以在部署详情页，点击左侧导航目录中的的**指标**进入页面查看。
+
 ## Serverless 指标
-Serverless 提供了连接、消息、流量、丢弃消息四种增量指标，可以查看每种指标对应的展示图表，某个时间点的详细信息。
-
-<img src="./_assets/metrics_serverless.png" alt="metrics_line_detail" style="zoom: 33%;" />
+Serverless 部署的指标页面提供了连接数、流入流出消息、报文流量、订阅数和丢弃消息这 5 种指标，可以查看每类指标对应的展示图表，某个时间点的详细信息。
 
 
-### 连接
+### 连接数
+连接数图表展示了在选择时间段内，连接到部署的客户端的数量。这里连接的客户端数也包含了保留会话的离线客户端。[保留会话](https://www.emqx.com/zh/blog/mqtt-session)，即客户端断开连接时，会话仍然保持并保存离线消息，直到会话超时注销。
 
-展示在时间段内，当前时间点的连接数。它提供以下 1 种指标：
-
-| 指标                | 意义               |
-| ------------------- | :----------------- |
-| sessions    | session 数量 |
+<img src="./_assets/metric_serverless_1.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
+### 订阅数
+订阅数图表展示在选择的时间段内部署的总订阅数。
 
+<img src="./_assets/metric_serverless_2.png" alt="metrics_detail" style="zoom: 33%;" />
 
-### 消息
+### 消息流入流出
+消息流入流出图表展示在选择的时间段内，部署接收到的消息数以及发送出去的消息数。
+- 部署接收到的消息为从设备或应用端发送到部署的消息数。
+- 部署发送的消息为从部署发送到设备或应用端的消息。
 
-展示在时间段内，消息的收发的增量情况。提供以下 2 种指标：
+<img src="./_assets/metric_serverless_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
-| 指标              | 意义                                     |
-| ----------------- | :--------------------------------------- |
-| messages_received | 接收来自客户端的消息数量                 |
-| messages_sent     | 发送给客户端的消息数量                   |
+### 报文流量
 
+报文流量图表展示在选择的时间段内，部署接收到的消息以及发送出去的消息报文流量，包含以下3种数据：
+- 总流量：接收和发送消息的报文总量。
+- 接受报文流量：从设备或应用端发送到部署的消息的报文总量。
+- 发送报文流量：从部署发送到设备或应用端的消息的报文总量。
 
-
-### 流量
-
-展示在时间段内，收发消息所产生的流量情况。提供以下 3 种指标：
-
-| 指标               | 意义             |
-| ------------------ | :--------------- |
-| send_kibibytes     | 发送报文的千字节 |
-| received_kibibytes | 接受报文的千字节 |
-| total_kibibytes | 一共收发报文的千字节 |
-
-
+<img src="./_assets/metric_serverless_4.png" alt="metrics_detail" style="zoom: 33%;" />
 
 ### 丢弃消息
 
-展示在时间段内，丢弃的消息数量增量情况，提供以下 3 种指标：
+丢弃消息图表展示在选择的时间段内，部署在发送阶段丢弃的消息。部署在发送阶段丢弃的消息可能是因为消息过大，消息队列满了，过期了等原因。因为没有订阅而丢弃的消息**不会**统计在这个指标中。
 
-| 指标             | 意义                 |
-| ---------------- | :------------------- |
-| delivery_dropped | 发送时丢弃的消息总数 |
-| delivery_dropped_queue_full | 消息队列满而被丢弃的消息数 |
-| delivery_dropped_expire | 消息过期而被丢弃的消息数 |
+<img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
 ## 专有版 / BYOC 指标
 
-专有版和 BYOC 提供了消息、客户端、报文、交付四种增量指标，可以查看每种指标对应的展示图表，某个时间点的详细信息。
+专有版和 BYOC 部署的指标页面提供了连接数**、**流入流出消息**、**报文流量、订阅数和丢弃消息这 5 种指标。您可以查看每类指标对应的展示图表，以及在某个时间点的详细信息。对于有一些指标，标明了 API 中对应的指标名称，如果您需要了解和查看更多的指标，可以通过 [API - 指标](../api/metrics.md) 获取更多的指标信息。
 
-<img src="./_assets/metrics.png" alt="metrics_line_detail" style="zoom:50%;" />
+::: tip
+如果表格中没有对应的 API 指标名称，则表明改指标不能从 API 中获取。
+:::
 
 
+### 连接数
 
-### 消息
+连接数图表展示了在选择的时间段内，连接到部署的客户端数量。这里连接的客户端数也包含了保留会话的离线客户端。[保留会话](https://www.emqx.com/zh/blog/mqtt-session)，即客户端断开连接时，会话仍然保持并保存离线消息，直到会话超时注销。图表提供 3 种指标：
 
-展示在时间段内，消息的收发的增量情况。提供以下 3 种指标：
-
-| 指标              | 意义                                     |
+|对应的 API 指标            | 描述                                     |
 | ----------------- | :--------------------------------------- |
-| messages_dropped  | EMQX 内部转发到订阅进程前丢弃的消息总数 |
-| messages_received | 接收来自客户端的消息数量                 |
-| messages_sent     | 发送给客户端的消息数量                   |
+| - | 连接数 |
+| client.connected |当前时刻新增的客户端数              |
+| client.disconnected     | 当前时刻断开的客户端数      |
 
-<img src="./_assets/metric_messages.png" alt="metrics_line_detail" style="zoom:50%;" />
+<img src="./_assets/metrics_dedicated_1.png" alt="metrics_detail" style="zoom: 33%;" />
+
+### 订阅数
+
+订阅数图表提供3种指标，展示在选择的时间段内部署的订阅数情况。
+
+|对应的 API 指标            | 描述                                     |
+| ----------------- | :--------------------------------------- |
+| - | 总订阅数|
+| client.subscribe | 当前时刻新增订阅的数量  |
+| client.unsubscribe    | 当前时刻取消订阅的数量  |
+
+<img src="./_assets/metrics_dedicated_2.png" alt="metrics_detail" style="zoom: 33%;" />
+
+### 消息流入流出
+消息流入流出图表提供2种指标，展示了在选择的时间段内部署接收到的消息数以及发送出去的消息数。
+
+|对应的 API 指标            | 描述                                     |
+| ----------------- | :--------------------------------------- |
+| messages.received | 从设备或应用端发送到部署的消息数   |
+| messages.sent     | 从部署发送到设备或应用端的消息   |
+
+<img src="./_assets/metrics_dedicated_3.png" alt="metrics_detail" style="zoom: 33%;" />
+
+### 报文流量
+报文流量图表提供2种指标，展示在选择时间段内，部署接收到的消息以及发送出去的消息报文流量。
 
 
+|对应的 API 指标            | 描述                                     |
+| ----------------- | :--------------------------------------- |
+| bytes.received | 从设备或应用端发送到部署的消息的报文总量（in KiB）  |
+| bytes.sent     | 从部署发送到设备或应用端的消息的报文总量（in KiB）  |
 
-### 客户端
-
-展示在时间段内，与客户端交互的增量情况。它提供以下 4 种指标：
-
-| 指标                | 意义               |
-| ------------------- | :----------------- |
-| client_connected    | 客户端成功连接次数 |
-| client_disconnected | 客户端断开连接次数 |
-| client_subscribe    | 客户端订阅次数     |
-| client_unsubscribe  | 客户端取消订阅次数 |
-
-<img src="./_assets/metric_clients.png" alt="metrics_line_detail" style="zoom:50%;" />
-
-
-
-### 报文
-
-展示在时间段内，收发的字节数的增量情况。提供以下 2 种指标：
-
-| 指标               | 意义             |
-| ------------------ | :--------------- |
-| send_kibibytes     | 发送报文的千字节 |
-| received_kibibytes | 接受报文的千字节 |
-
-<img src="./_assets/metric_packages.png" alt="metrics_line_detail" style="zoom:50%;" />
-
+<img src="./_assets/metrics_dedicated_4.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
 ### 丢弃消息
+丢弃消息图表展示在选择的时间段内，因没有订阅而丢弃的消息数和部署在发送阶段丢弃的消息。
+- 因没有订阅而丢弃的消息是指没有对应的主题的订阅，发送到该主题的消息都会被丢弃。
+- 部署在发送阶段丢弃的消息可能是因为消息过大，消息队列满了，过期了等原因。
 
-展示在时间段内，丢弃的消息数量增量情况，提供以下 1 种指标：
+|对应的 API 指标            | 描述                                     |
+| ----------------- | :--------------------------------------- |
+| messages.dropped.no_subscribers | 没有订阅而丢弃的消息数  |
+| delivery.dropped    | 部署在发送阶段丢弃的消息数 |
 
-| 指标             | 意义                 |
-| ---------------- | :------------------- |
-| delivery_dropped | 发送时丢弃的消息总数 |
-| delivery_dropped_queue_full | 消息队列满而被丢弃的消息数 |
+<img src="./_assets/metrics_dedicated_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
-<img src="./_assets/metric_delivery.png" alt="metrics_line_detail" style="zoom: 50%;" />
 
 

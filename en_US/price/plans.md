@@ -1,16 +1,12 @@
 # Product Plans
 
-As a globally available, fully-managed MQTT service platform, EMQX Cloud can be easily deployed on popular public clouds, providing a tailored solution to meet your specific requirements. To better serve our users, whether you are individual developers or global industry leaders, EMQX Cloud offers three distinct product plans:
+EMQX Cloud is a globally available, fully-managed MQTT service platform that can be easily deployed on popular public clouds, offering a tailored solution to meet your specific requirements. Whether you are an individual developer or a global industry leader, EMQX Cloud provides three distinct product plans to better serve you:
 
-1. **Serverless Plan**: Provide MQTT services on a secure and scalable cluster that is charged based on usage. The service is entirely free for usage within the free quota, and supports up to 1000 concurrent connections.
-
-2. **Dedicated Plan**: Provide MQTT services on a dedicated EMQX cluster and comes in distinct service plans:
-
-    a. **Dedicated Plan (Standard)**: Ideal for implementing MQTT services that require regular or typical throughput and concurrency scenarios in an independent setting.
-
-    b. **Dedicated Plan (Professional)**: Provide a high-availability cluster that's designed for implementing MQTT services in production environments. It comes packed with advanced features, including real-time data processing, data persistence, message distribution, and VPC peer-to-peer connections (private networks). 
-
-3. **BYOC**: Bring Your Own Cloud. Seamlessly integrate the EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise. 
+- **Serverless Plan**: Provides MQTT services on a secure and scalable cluster with usage-based pricing. The service is completely free within the free quota and supports up to 1000 concurrent connections.
+- **Dedicated Plan**: Provides MQTT services on a dedicated EMQX cluster with different service plans:
+    - **Dedicated Plan (Standard)**: Ideal for implementing MQTT services that require regular or typical throughput and concurrency scenarios in an independent environment.
+    - **Dedicated Plan (Professional)**: Provides a high-availability cluster designed for MQTT services in production environments. It includes advanced features, including real-time data processing, data persistence, message distribution, and VPC peer-to-peer connections (private networks). 
+- **BYOC (Bring Your Own Cloud):** Seamlessly integrates the EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise. 
 
 ## Feature List
 
@@ -512,8 +508,7 @@ As a globally available, fully-managed MQTT service platform, EMQX Cloud can be 
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
-</table>
-
+</table
 
 ## Cloud Providers and Regions
 
@@ -526,7 +521,7 @@ As a globally available, fully-managed MQTT service platform, EMQX Cloud can be 
 ### Dedicated Plan (Standard)
 | Cloud Provider | Region                                                       |
 | ------ | --------------- |
-| AWS | US East (N. Virginia)<br>EU (Frankfurt)<br/>Asia Pacific (Singapore), Asia Pacific (Hong Kong) |
+| AWS | US East (N. Virginia) <br />EU (Frankfurt)<br />Asia Pacific (Singapore), Asia Pacific (Hong Kong) |
 
 
 ### Dedicated Plan (Professional)
@@ -535,9 +530,9 @@ To deploy your EMQX Cloud in a different region, you can submit a request via a 
 
 | Cloud Provider | Region                                                       |
 | ------ | ---------------------- |
-| AWS | US East (N. Virginia), US West (N. California), US West (Oregon)<br>EU (Ireland), EU (Frankfurt)<br>Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Azure | East US, Germany West Central, Southeast Asia<br/>europe-west3 (Frankfurt), europe-north1 (Finland)<br>asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |
-| Google Cloud | us-east1 (South Carolina), us-west1 (Oregon) |
+| AWS | **US:** US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Azure | **US:** East US, West US 2 <br />**EU:** West Europe, West Central <br />**Asia:** Southeast Asia |
+| Google Cloud | **Asia:** asia-south1(Mumbai), asia-southeast1(Singapore), asia-east1(Taiwan) |
 
 ### BYOC Plan
 
