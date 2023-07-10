@@ -77,14 +77,15 @@ This section introduces how to connect to MQTT Broker over TCP Protocol.
     ``` go
     func createMqttClient() mqtt.Client {
         connectAddress := fmt.Sprintf("%s://%s:%d", protocol,broker, port)
-        client_id := fmt.Sprintf("go-client-%d", rand.Int())
+        rand.Seed(time.Now().UnixNano())
+        clientID := fmt.Sprintf("go-client-%d", rand.Int())
     
         fmt.Println("connect address: ", connectAddress)
         opts := mqtt.NewClientOptions()
         opts.AddBroker(connectAddress)
         opts.SetUsername(username)
         opts.SetPassword(password)
-        opts.SetClientID(client_id)
+        opts.SetClientID(clientID)
         opts.SetKeepAlive(time.Second * 60)
         client := mqtt.NewClient(opts)
         token := client.Connect()
@@ -118,14 +119,15 @@ This section introduces how to connect to MQTT Broker over SSL/TLS Protocol.
     ``` go
     func createMqttClient() mqtt.Client {
         connectAddress := fmt.Sprintf("%s://%s:%d", protocol, broker, port)
-        client_id := fmt.Sprintf("go-client-%d", rand.Int())
+        rand.Seed(time.Now().UnixNano())
+	    clientID := fmt.Sprintf("go-client-%d", rand.Int())
     
         fmt.Println("connect address: ", connectAddress)
         opts := mqtt.NewClientOptions()
         opts.AddBroker(connectAddress)
         opts.SetUsername(username)
         opts.SetPassword(password)
-        opts.SetClientID(client_id)
+        opts.SetClientID(clientID)
         opts.SetKeepAlive(time.Second * 60)
     
         // Optional: set server CA
@@ -246,14 +248,15 @@ func main() {
 
 func createMqttClient() mqtt.Client {
 	connectAddress := fmt.Sprintf("%s://%s:%d", protocol, broker, port)
-	client_id := fmt.Sprintf("go-client-%d", rand.Int())
+	rand.Seed(time.Now().UnixNano())
+	clientID := fmt.Sprintf("go-client-%d", rand.Int())
 
 	fmt.Println("connect address: ", connectAddress)
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(connectAddress)
 	opts.SetUsername(username)
 	opts.SetPassword(password)
-	opts.SetClientID(client_id)
+	opts.SetClientID(clientID)
 	opts.SetKeepAlive(time.Second * 60)
 
 	// Optional: set server CA
