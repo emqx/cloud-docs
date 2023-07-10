@@ -75,14 +75,15 @@ go version go1.15.13 darwin/amd64
     ``` go
     func createMqttClient() mqtt.Client {
         connectAddress := fmt.Sprintf("%s://%s:%d", protocol,broker, port)
-        client_id := fmt.Sprintf("go-client-%d", rand.Int())
+        rand.Seed(time.Now().UnixNano())
+	    clientID := fmt.Sprintf("go-client-%d", rand.Int())
     
         fmt.Println("connect address: ", connectAddress)
         opts := mqtt.NewClientOptions()
         opts.AddBroker(connectAddress)
         opts.SetUsername(username)
         opts.SetPassword(password)
-        opts.SetClientID(client_id)
+        opts.SetClientID(clientID)
         opts.SetKeepAlive(time.Second * 60)
         client := mqtt.NewClient(opts)
         token := client.Connect()
@@ -113,14 +114,15 @@ go version go1.15.13 darwin/amd64
     ``` go
     func createMqttClient() mqtt.Client {
         connectAddress := fmt.Sprintf("%s://%s:%d", protocol, broker, port)
-        client_id := fmt.Sprintf("go-client-%d", rand.Int())
+        rand.Seed(time.Now().UnixNano())
+	    clientID := fmt.Sprintf("go-client-%d", rand.Int())
     
         fmt.Println("connect address: ", connectAddress)
         opts := mqtt.NewClientOptions()
         opts.AddBroker(connectAddress)
         opts.SetUsername(username)
         opts.SetPassword(password)
-        opts.SetClientID(client_id)
+        opts.SetClientID(clientID)
         opts.SetKeepAlive(time.Second * 60)
     
         // Optional: 设置CA证书
@@ -241,14 +243,15 @@ func main() {
 
 func createMqttClient() mqtt.Client {
 	connectAddress := fmt.Sprintf("%s://%s:%d", protocol, broker, port)
-	client_id := fmt.Sprintf("go-client-%d", rand.Int())
+	rand.Seed(time.Now().UnixNano())
+	clientID := fmt.Sprintf("go-client-%d", rand.Int())
 
 	fmt.Println("connect address: ", connectAddress)
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(connectAddress)
 	opts.SetUsername(username)
 	opts.SetPassword(password)
-	opts.SetClientID(client_id)
+	opts.SetClientID(clientID)
 	opts.SetKeepAlive(time.Second * 60)
 
 	// Optional: 设置CA证书
