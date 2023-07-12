@@ -2,7 +2,7 @@
 
 Metrics provide key data states and changes in deployments over a period of time. You can view them on the deployment details page by clicking on **Metrics** in the left navigation menu.
 
-## Serverless
+## Serverless Metrics
 
 The Metrics page for serverless deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view the corresponding graphical charts for each type of metric and detailed information at a specific point in time.
 
@@ -46,7 +46,7 @@ The Dreopped Message chart shows the messages that are discarded during the send
 <img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
-## Dedicated / BYOC
+## Dedicated / BYOC Metrics
 
 The Metrics page for Dedicated and BYOC deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API - Metrics](../api/metrics.md).
 
