@@ -508,7 +508,7 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
-</table
+</table>
 
 ## Cloud Providers and Regions
 
