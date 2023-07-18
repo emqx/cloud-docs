@@ -244,8 +244,8 @@
           "path": "https://www.emqx.com/zh/blog/android-connects-mqtt-using-kotlin"
         },
         {
-          "title": "使用 WebSocket SDK 接入",
-          "path": "https://www.emqx.com/zh/blog/connect-to-mqtt-broker-with-websocket"
+          "title": "使用 JavaScript SDK 接入",
+          "path": "connect_to_deployments/js_sdk"
         },
         {
           "title": "使用 Vue.js SDK 接入",
@@ -578,11 +578,11 @@
       "collapsed": true,
       "children": [
         {
-          "title" : "产品动态",
+          "title": "产品动态",
           "path": "release_notes"
         },
         {
-          "title" : "升级策略",
+          "title": "升级策略",
           "path": "upgrade_policy"
         }
       ]
@@ -851,8 +851,8 @@
           "path": "connect_to_deployments/c_sharp_sdk"
         },
         {
-          "title": "Connect via WebSocket SDK",
-          "path": "https://www.emqx.com/en/blog/connect-to-mqtt-broker-with-websocket"
+          "title": "Connect via JavaScript SDK",
+          "path": "connect_to_deployments/js_sdk"
         },
         {
           "title": "Connect via Vue.js SDK",
@@ -1176,11 +1176,11 @@
       "collapsed": true,
       "children": [
         {
-          "title" : "Release Note",
+          "title": "Release Note",
           "path": "release_notes"
         },
         {
-          "title" : "Upgrade policy",
+          "title": "Upgrade policy",
           "path": "upgrade_policy"
         }
       ]

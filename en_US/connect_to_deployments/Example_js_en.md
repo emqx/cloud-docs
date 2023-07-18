@@ -28,7 +28,7 @@ This page mainly introduces how to use MQTT.js in XXX project to implement the c
 
 <!--Describe the steps for how to install or import MQTT.js based on different projects and other dependencies if any.-->
 
-## Connect over Websocket
+## Connect over WebSocket
 
 <!--There is no need to set username and password if you use the public MQTT broker. If you create your own deployment, you need to describe how to set the username and password.-->
 
@@ -38,7 +38,7 @@ Use the following code to establish a connection between the client and MQTT Bro
 XXXX
 ```
 
-## Connect over Websocket TLS/SSL
+## Connect over WeSocket TLS/SSL
 
 <!--Introduce the differences between the ws port and the wss port, and the connection precautions. For example, when enabling TLS/SSL encryption, the connection [parameter options](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) are consistent with establishing a connection through the WebSocket port. You only need to pay attention to changing the protocol to `wss` and matching the correct port number.-->
 
