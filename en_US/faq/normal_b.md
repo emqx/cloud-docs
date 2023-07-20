@@ -32,7 +32,7 @@ It will cause an interruption to the connectivity for a few seconds.
 
 ## How do I connect my own services to the MQTT service via local network when I have built a VPC peer-to-peer connection?
 
-If you need an internal network connection to deploy to MQTT, you will need to submit a ticket and contact us to open SLB.
+If you need an internal network connection to the professional deployment, you can purchase [Internal Load Balancers](../vas/intranet-lb.md) to achieve that. It'a [Value Added Service](../vas/vas-intro.md) provided by us.
 
 ## Is API supported？
 
@@ -56,9 +56,9 @@ It is not yet supported to get data directly from your own database. You can imp
 
 EMQX Cloud does not keep device communication logs, only deployment event logs, which are kept for 7 days by default.
 
-## How long can device events be stored in the console?
+## How long can device events be stored?
 
-Device event data can be saved permanently.
+Device event data can be permanently integrated into third-party storage through [event topics](../rule_engine/rule_engine_events.md).
 
 ## How to calculate sessions?
 The definition for session: The number of sessions is calculated by adding the number of connected clients and the disconnected clients with sessions retained in the broker. Connected clients are those that connect to the broker after `CONNECT`, including those that are not disconnected within the `keepAlive` span. Disconnected clients that keep a session are clients that are offline but have `CleanSession` set to false, and such clients are counted in the session count. When a device `DISCONNECT` goes offline, or if it has not communicated for more than the keepAlive span, the device will go offline and will not be counted in the number of sessions.
