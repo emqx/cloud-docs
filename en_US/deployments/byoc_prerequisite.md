@@ -19,10 +19,11 @@ The EMQX Cloud BYOC deployment will be created in your cloud account. If you do 
 
 Currently, BYOC supports the following public clouds and regions. If you need support from other cloud service providers or regions, you can submit a ticket or send an [email](mailto:cloud-support@emqx.io) to contact us.
 
-| Cloud Provider    | Region                                                                                                                                                                                      |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Google Cloud      | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |
-| AWS (coming soon) |                                                                                                                                                                                             |
+| Cloud Provider | Region                                                                                                                                                                                                          |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AWS            | US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Google Cloud   | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
+
 
 In addition, you also need an EMQX Cloud account to complete the deployment. If you have not registered, please go to the [EMQX Cloud account registration page](https://accounts.emqx.com/signup) to register an account.
 
@@ -37,14 +38,34 @@ The following table shows the cloud resources and services required for EMQX Clo
 ::: tip
 
 Your cloud administrator can quickly view the usage and quotas of resources and services in the cloud quota.
+- [AWS service quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html)
 - [Quotas on Google Cloud](https://cloud.google.com/docs/quota_detail/view_manage)
 
-[//]: # "- [AWS service quotas]&#40;https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html&#41;"
 
 :::
 
 :::: tabs
+::: tab "AWS"
 
+| Resources and Services       | Required Quantity for Deployment |
+|------------------------------|----------------------------------|
+| VPC                          | 1                                |
+| Subnets                      | 3                                |
+| Security groups              | 1                                |
+| Route tables*                | 3                                |
+| Load balancers               | 1                                |
+| LB listeners                 | 6                                |
+| Target groups                | 6                                |
+| Internet gateways            | 1                                |
+| Key pairs                    | 1                                |
+| EC2 instances                | N*+1                             |
+| Amazon Machine Images (AMIs) | 1                                |
+| IAM policies                 | 1                                |
+
+*Route tables: Include a default routing table which is not used.
+
+*N: Refers to the number of EMQX nodes.
+:::
 ::: tab "Google Cloud"
 
 | Resources and Services | Required Quantity for Deployment |
@@ -69,7 +90,99 @@ Your cloud administrator can quickly view the usage and quotas of resources and 
 Your role needs to have the necessary Identity and Access Management (IAM) permissions to run commands to create the cloud resources in your cloud account. You need to ask your cloud administrator to assign sufficient permissions for creating BYOC deployments and generate the corresponding credential.
 
 :::: tabs
+::: tab "AWS"
 
+To create a custom policy, you can utilize the provided policy definition by following the steps in the [Creating policies using the JSON editor](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) documentation. After creating the custom policy, you can attach it to an IAM user. Finally, generate the access key for this IAM user by following the steps in the [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) documentation.
+
+Here is the policy definition in JSON:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DeleteSubnet",
+        "ec2:ReplaceRouteTableAssociation",
+        "ec2:DescribeInstances",
+        "elasticloadbalancing:RegisterTargets",
+        "ec2:CreateKeyPair",
+        "ec2:CreateImage",
+        "ec2:AttachInternetGateway",
+        "ec2:ReplaceRoute",
+        "ec2:AssociateRouteTable",
+        "ec2:DeleteRouteTable",
+        "elasticloadbalancing:DeleteLoadBalancer",
+        "ec2:DescribeInternetGateways",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "ec2:CreateRoute",
+        "ec2:CreateInternetGateway",
+        "ec2:DescribeVolumes",
+        "ec2:DeleteInternetGateway",
+        "ec2:DescribeKeyPairs",
+        "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+        "elasticloadbalancing:ModifyTargetGroupAttributes",
+        "ec2:DescribeRouteTables",
+        "ec2:ImportKeyPair",
+        "ec2:CreateTags",
+        "elasticloadbalancing:CreateTargetGroup",
+        "ec2:RegisterImage",
+        "ec2:CreateRouteTable",
+        "ec2:RunInstances",
+        "ec2:DetachInternetGateway",
+        "ec2:StopInstances",
+        "ec2:DisassociateRouteTable",
+        "ec2:DescribeVolumeAttribute",
+        "ec2:DescribeInstanceCreditSpecifications",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
+        "ec2:DescribeSecurityGroupRules",
+        "elasticloadbalancing:AddTags",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DeleteVpc",
+        "ec2:CreateSubnet",
+        "ec2:DescribeSubnets",
+        "elasticloadbalancing:ModifyLoadBalancerAttributes",
+        "ec2:DeleteKeyPair",
+        "ec2:AttachVolume",
+        "ec2:DeregisterImage",
+        "ec2:GetDefaultCreditSpecification",
+        "ec2:DeleteSnapshot",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeRegions",
+        "ec2:CreateVpc",
+        "ec2:ModifyImageAttribute",
+        "ec2:DescribeVpcAttribute",
+        "ec2:ModifySubnetAttribute",
+        "elasticloadbalancing:CreateListener",
+        "elasticloadbalancing:DescribeListeners",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateSnapshot",
+        "ec2:ModifyVpcAttribute",
+        "ec2:DescribeInstanceStatus",
+        "elasticloadbalancing:CreateLoadBalancer",
+        "ec2:TerminateInstances",
+        "elasticloadbalancing:DescribeTags",
+        "ec2:DescribeTags",
+        "elasticloadbalancing:DeleteTargetGroup",
+        "elasticloadbalancing:CreateLoadBalancerListeners",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeImages",
+        "ec2:DescribeVpcs",
+        "ec2:DeleteSecurityGroup",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DeleteListener"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+:::
 ::: tab "Google Cloud"
 
 To create a custom role using the gcloud CLI, you can utilize the provided role definition by following the steps outlined in the [Creating Custom Roles](https://cloud.google.com/iam/docs/creating-custom-roles) documentation. After creating the custom role, you can bind it to a service account. Finally, generate the service account key.
