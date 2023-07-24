@@ -58,13 +58,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
 :::: tabs
 ::: tab "AWS"
 
-1. Open the prepared Ubuntu 20.04 (AMD64) environment.
-
-   ::: tip
-
-   This Ubuntu environment should be able to access the internet.
-
-   :::
+1. Open the prepared Ubuntu 20.04 (AMD64) environment. This Ubuntu environment should be able to access the internet.
 
 2. In the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 
@@ -117,13 +111,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
 :::
 ::: tab "Google Cloud"
 
-1. Open the prepared Ubuntu 20.04 (AMD64) environment. 
-
-   ::: tip
-
-   This Ubuntu environment should be able to access the internet.
-
-   :::
+1. Open the prepared Ubuntu 20.04 (AMD64) environment. This Ubuntu environment should be able to access the internet.
 
 2. In the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 	
