@@ -538,10 +538,10 @@ To deploy your EMQX Cloud in a different region, you can submit a request via a 
 
 To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). EMQX Cloud support team will assist you in the process of deploying your instance in the desired region.
 
-| Cloud Provider    | Region                                                                                                                                                                                      |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Google Cloud      | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |
-| AWS (Coming soon) |                                                                                                                                                                                             |
+| Cloud Provider | Region                                                                                                                                                                                                          |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AWS            | US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Google Cloud   | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
 
 
 
