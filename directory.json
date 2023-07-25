@@ -1033,6 +1033,10 @@
           "path": "billing/aws_marketplace"
         },
         {
+          "title": "Billing from Azure Marketplace",
+          "path": "billing/azure_marketplace"
+        },
+        {
           "title": "Billing from GCP Marketplace",
           "path": "billing/gcp_marketplace"
         },
