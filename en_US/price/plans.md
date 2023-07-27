@@ -528,20 +528,20 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
 
 To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). EMQX Cloud support team will assist you in the process of deploying your instance in the desired region.
 
-| Cloud Provider | Region                                                       |
-| ------ | ---------------------- |
-| AWS | **US:** US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Azure | **US:** East US, West US 2 <br />**EU:** West Europe, West Central <br />**Asia:** Southeast Asia |
-| Google Cloud | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1(Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1(Mumbai), asia-southeast1(Singapore), asia-east1(Taiwan) |
+| Cloud Provider | Region                                                                                                                                                                                                                                            |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AWS            | **US:** US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Azure          | **US:** East US, West US 2 <br />**EU:** West Europe, West Central <br />**Asia:** Southeast Asia                                                                                                                                                 |
+| Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1(Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1(Mumbai), asia-southeast1(Singapore), asia-east1(Taiwan)                         |
 
 ### BYOC Plan
 
 To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). EMQX Cloud support team will assist you in the process of deploying your instance in the desired region.
 
-| Cloud Provider | Region                                                                                                                                                                                                          |
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AWS            | US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Google Cloud   | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
+| Cloud Provider | Region                                                                                                                                                                                                                                            |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AWS            | **US:** US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
 
 ## Estimate Your Monthly Usage
 EMQ has offered a [Plans & Pricing](https://www.emqx.com/en/cloud/pricing) page, where you can estimate your monthly usage and select a plan that best suits your business needs. For BYOC Plan, the cost of cloud infrastructure primarily depends on your contract with the cloud service provider.

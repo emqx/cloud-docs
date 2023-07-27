@@ -13,16 +13,15 @@ Before deploying EMQX Cloud Bring Your Own Cloud (BYOC), make sure to complete t
 
 The EMQX Cloud BYOC deployment will be created in your cloud account. If you do not have a corresponding public cloud account, you can create an account according to the official documentation of the cloud platform you preferred, for example:
 
+- [Create an AWS account in your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html)
 - [Create a Google Cloud Platform account](https://cloud.google.com/docs/get-started)
-
-[//]: # "- [Create an AWS account in your organization]&#40;https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html&#41;  "
 
 Currently, BYOC supports the following public clouds and regions. If you need support from other cloud service providers or regions, you can submit a ticket or send an [email](mailto:cloud-support@emqx.io) to contact us.
 
-| Cloud Provider | Region                                                                                                                                                                                                          |
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AWS            | US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Google Cloud   | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
+| Cloud Provider | Region                                                                                                                                                                                                                                            |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AWS            | **US:** US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
+| Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
 
 
 In addition, you also need an EMQX Cloud account to complete the deployment. If you have not registered, please go to the [EMQX Cloud account registration page](https://accounts.emqx.com/signup) to register an account.
@@ -92,7 +91,7 @@ Your role needs to have the necessary Identity and Access Management (IAM) permi
 :::: tabs
 ::: tab "AWS"
 
-To create a custom policy, you can utilize the provided policy definition by following the steps in the [Creating policies using the JSON editor](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) documentation. After creating the custom policy, you can attach it to an IAM user. Finally, generate the access key for this IAM user by following the steps in the [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) documentation.
+To create a custom policy, you can utilize the provided policy definition by following the steps in the [Creating policies using the JSON editor](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) documentation. After creating the custom policy, you can attach it to an IAM user or a group of users. Finally, generate the access key for the IAM user by following the steps in the [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) documentation.
 
 Here is the policy definition in JSON:
 ```json
