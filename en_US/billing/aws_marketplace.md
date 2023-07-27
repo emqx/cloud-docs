@@ -1,6 +1,6 @@
 # Manage Billing from AWS Marketplace
 
-EMQX Cloud supports paying for usage via the AWS Marketplace. You can link an EMQX account to an AWS Billing Account, as well as delete an existing subscription.
+EMQX Cloud supports paying for usage via the AWS Marketplace. You can link an EMQX account to an AWS Billing Account and delete an existing subscription.
 
 
 ## Link an AWS Billing Account to EMQX Cloud
@@ -10,16 +10,16 @@ EMQX Cloud supports paying for usage via the AWS Marketplace. You can link an EM
 3. Search for "EMQX Cloud (Pay as you go)" in the search bar. Alternatively, you can click **AWS Marketplace** at the bottom of the EMQX Cloud Sign in and Sign up page to go to the target page.
 4. On the EMQX Cloud product overview page, click **View purchase options**.
 5. On the Subscribe to EMQX Cloud (Pay As You Go) page, click **Subscribe**.
-6. In the green banner displays at the top of the page, click **Set Up Your Account** button to redirect to EMQX Cloud website. 
+6. In the green banner displayed at the top of the page, click the **Set Up Your Account** button to redirect to EMQX Cloud website. 
 7. Set up EMQX account.
 
-	- If you are already signed in to an existing EMQX account, you are automatically redirected to the index page. A modal will display the status of linking to your AWS Billing Account.
-- If you are not already signed in to an existing EMQX account, you are prompted to sign in to an EMQX account. Upon successful sign-in, you are automatically redirected to the index page. A modal will display the status of linking to your AWS Billing Account.
+	- You are automatically redirected to the index page if you are already signed in to an existing EMQX account. A modal will display the status of linking to your AWS Billing Account.
+	- If you are not already signed in to an existing EMQX account, you are prompted to sign in to an EMQX account. Upon successful sign-in, you are automatically redirected to the index page. A modal will display the status of linking to your AWS Billing Account.
 8. Wait for AWS to finish syncing.
-	EMQX Cloud index page displays a pop-up notifying you that account syncing status. Additionally, the Payment Method field of the Billing page will change to AWS Marketplace Subscription when the sync is complete.
+	EMQX Cloud index page displays a pop-up notifying you of the account syncing status. Additionally, the Payment Method field of the Billing page will change to AWS Marketplace Subscription when the sync is complete.
 
 ::: warning
-The following situations will cause a failure on account linking.
+The following situations will cause a failure in account linking.
 
 1. The EMQX account already has been set up a credit card.
 2. The EMQX account uses Available Credits.

@@ -543,7 +543,5 @@ To deploy your EMQX Cloud in a different region, you can submit a request via a 
 | Google Cloud      | us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa), europe-west3 (Frankfurt), europe-north1 (Finland), asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan) |
 | AWS (Coming soon) |                                                                                                                                                                                             |
 
-
-
 ## Estimate Your Monthly Usage
 EMQ has offered a [Plans & Pricing](https://www.emqx.com/en/cloud/pricing) page, where you can estimate your monthly usage and select a plan that best suits your business needs. For BYOC Plan, the cost of cloud infrastructure primarily depends on your contract with the cloud service provider.
