@@ -4,7 +4,7 @@ You can view and update your billing information on the Billing Overview page. G
 
 ## View Billing Information
 
-On the top right area of the Overview page, you can see **Pagyment Info**.
+On the top right area of the Overview page, you can see **Payment Info**.
 
 - If you haven't added a card, click **+ Add** to add a new card.
 - If you have added a card, your card information will be displayed in the block including card last four numbers, expire date, and when the card had been added.
@@ -76,7 +76,7 @@ On the **Edit Payment Method** pop-up dialogue, fill the required fields. The fo
 </table>
 
 
-After you complet the setting, click **Next** to add or update the card information.
+After you complete the setting, click **Next** to add or update the card information.
 
 ## Edit or Update Credit Card Information
 
