@@ -20,7 +20,7 @@
 
    **云平台相关配置**
 
-   - **选择云平台**：选择**阿里云**。
+   - **选择云平台**：可选择**阿里云**或**亚马逊云科技（AWS 中国）**。
 
      如您希望部署在其他云平台，可通过[工单](../feature/tickets.md)或邮件（cloud-support@emqx.io）联系我们。
 
@@ -54,6 +54,8 @@
 
 我们将在联网的 Ubuntu 20.04 (AMD64) LTS 环境中完成部署，正式部署前，请首先将部署所需的 TLS / SSL 证书和 BYOC 许可证文件提前复制到您的 Ubuntu 环境目录。
 
+:::: tabs
+::: tab "阿里云"
 1. 打开提前准备好的 Ubuntu 20.04 (AMD64) LTS 环境。注意：此 Ubuntu 应能够直接访问互联网。
 
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。<!--这里有客户需要替换的地方吗？-->
@@ -101,7 +103,58 @@
    
      Enter a value: 
    ```
+:::
+::: tab "亚马逊云科技"
 
+1. 打开提前准备好的 Ubuntu 20.04 (AMD64) LTS 环境。注意：此 Ubuntu 应能够直接访问互联网。
+
+2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+
+   ```bash
+   wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/create-aws_cn-byoc-deployment.tar.gz
+   ```
+
+3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
+
+   ```bash
+   tar -zxf create-aws_cn-byoc-deployment.tar.gz && cd create-aws_cn-byoc-deployment
+   ```
+
+4. 运行以下命令执行部署。
+
+   ```bash
+   ./byoc create \
+         --platform aws_cn \
+         --accessKey <Your AccessKey> \
+         --secretKey <Your SecretKey> \
+         --domain <Your Domain> \
+         --sslCertPath <Your Domain SSL Absolute Cert Path>  \
+         --emqxLicPath <Your EMQX License Absolute Path> \
+         --byocEndpoint https://cloud.emqx.com \
+         --byocKey abcdXXXXXXXXXX111
+   ```
+
+   注意：执行 `./byoc create` 命令前，请将以下字段填充为实际参数：
+
+   - `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
+   - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
+   - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。
+   - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，支持 **自签名证书** 和 **CA 签名证书**。SSL 证书格式要求请参考 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
+   - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
+
+   此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+
+5. 等待数分钟，系统提示确认需要创建的云资源，输入 `yes` 回车后继续。
+
+   ```bash
+   Do you want to perform these actions?
+     Terraform will perform the actions described above.
+     Only 'yes' will be accepted to approve.
+   
+     Enter a value: 
+   ```
+:::
+::::
 ## 添加 DNS 记录
 
 部署创建完成后，系统将返回以下内容。您可根据返回的 IP 地址，在 DNS 服务中添加一条域名解析记录，将部署的公网 IP 与您的域名进行绑定。
@@ -163,16 +216,19 @@ Thank you for choosing our service. Happy IoT!
 
 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，两个位于不同网络中的 VPC（Virtual Private Cloud） 也可以彼此通信。该功能由云服务商提供，支持在同云服务商、同区域内，BYOC 部署所在的 VPC 与客户其他 VPC 创建对等连接。 请参考各公有云 VPC 对等连接文档进行配置：
 - [阿里云 VPC 对等连接](https://help.aliyun.com/document_detail/418507.html)
+- [亚马逊云科技 VPC 对等连接](https://docs.amazonaws.cn/vpc/latest/peering/peering-configurations-full-access.html)
 
 
 ### 私网连接 PrivateLink 配置
 私网连接（PrivateLink）能够实现 BYOC 部署所在的 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。请参考各公有云 VPC 私网连接文档进行配置：
 - [阿里云私网连接 PrivateLink](https://help.aliyun.com/product/120462.html)
+- [Amazon PrivateLink](https://docs.amazonaws.cn/vpc/latest/privatelink/getting-started.html)
 
 ### NAT 网关配置
 
 公有云平台提供的 NAT 网关可以提供网络地址转换服务，为 BYOC 部署提供访问公网资源的能力，无需 VPC 对等连接。您可以在 BYOC 部署所在 VPC 内添加 NAT 网关，请参考各公有云 NAT 网关文档进行配置：
 - [阿里云公网 NAT 网关](https://help.aliyun.com/document_detail/121139.html)
+- [亚马逊云科技 NAT 网关](https://docs.amazonaws.cn/vpc/latest/userguide/vpc-nat-gateway.html)
 
 ## 连接到部署
 
