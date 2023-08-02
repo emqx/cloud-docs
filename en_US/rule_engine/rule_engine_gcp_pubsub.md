@@ -77,6 +77,11 @@ Go to the `Data Integrations` page
    {"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
    ```
 
+   Fill in the Attributes and Ordering Key to facilitate better data visualization on the GCP Pub/Sub side.
+
+   * Attributes: Both key and value attribute templates support the use of ${var} to fetch the corresponding field value output by the rule.
+   * The Ordering Key template supports the use of ${var} to fetch the corresponding field value output by the rule.
+
    ![gcp_pubsub_action](./_assets/gcp_pubsub_action.png)
 
 6. After successfully binding the action to the rule, click View Details to see the rule sql statement and the bound actions.

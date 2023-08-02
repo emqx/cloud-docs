@@ -3,6 +3,20 @@
 Shared subscription is a subscription method that achieves load balancing among multiple subscribers,
 EMQX Cloud adopts a random balance strategy, select randomly among all subscribers.
 
+::: tip
+**Important Notice: Persistent Sessions (clean_session=false) and Shared Subscriptions Cannot Be Used Simultaneously**
+
+If you are using shared subscription functionality, it is essential to set the client's clean_session to true.
+
+**Reasons are as follows:**
+
+1. **Persistent session functionality** allows subscribers to resume data flow immediately after reconnecting without losing messages, which is crucial for ensuring reliable message delivery. However, this conflicts with the concept of **load balancing**. Shared subscriptions typically allow another device within a group to take over data flow when one device goes offline. However, if a device remains offline for an extended period, the message buffer of the persistent session might overflow, resulting in message loss.
+
+2. When clean_session is set to false, and a device remains offline for an extended period, messages may **continue to accumulate**. The persistent session keeps delivering messages to the device, but the device does not process them. Suppose a device goes offline due to some reason, but the session persists, and other message publishers continue to send messages to that device's session. As the device is offline, these messages cannot be processed promptly, leading to a continuous accumulation of messages in the session. Additionally, these accumulated messages won't be forwarded to other devices since they are considered part of the same device's session. Over time, message accumulation can become increasingly severe, ultimately consuming memory and storage resources, negatively impacting system stability and performance.
+
+**To ensure system reliability and efficient resource utilization, it is essential to set clean_session to true when using shared subscriptions**. This ensures that messages can be appropriately shared among other devices when a device goes offline, avoiding continuous accumulation and resource wastage.
+:::
+
 ## Shared subscription prefixes formats
 
 EMQX Cloud supports shared subscription prefixes in two formats:
@@ -10,10 +24,10 @@ shared subscription with groups (prefixed with `$share/<group-name>/`) and share
 
 Examples of two shared subscription prefixes formats are as follows.
 
-| prefixes formats | Example | Prefix | Real topic name |
-|:----|:----|:----|:----|
-| Shared subscription with groups | $share/abc/t/1 | $share/abc/ | t/1 |
-| Shared subscription without group | $queue/t/1 | $queue/ | t/1 |
+| prefixes formats                  | Example        | Prefix      | Real topic name |
+| :-------------------------------- | :------------- | :---------- | :-------------- |
+| Shared subscription with groups   | $share/abc/t/1 | $share/abc/ | t/1             |
+| Shared subscription without group | $queue/t/1     | $queue/     | t/1             |
 
 ## Shared subscription with groups
 
