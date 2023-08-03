@@ -199,6 +199,10 @@
         {
           "title": "停止/删除部署",
           "path": "deployments/stop_delete_deployment"
+        },
+        {
+          "title": "BYOC 托管运维服务",
+          "path": "deployments/byoc_operation_maintenance"
         }
       ]
     },
@@ -810,6 +814,10 @@
         {
           "title": "Stop/Delete deployment",
           "path": "deployments/stop_delete_deployment"
+        },
+        {
+          "title": "BYOC operation and maintenance service",
+          "path": "deployments/byoc_operation_maintenance"
         }
       ]
     },

@@ -22,4 +22,7 @@
 调用 Prometheus API 来监控 EMQX Cloud 的关键指标。
 
 ## [停止/删除部署](./stop_delete_deployment.md)
-停止和删除部署相关说明
+停止和删除部署相关说明。
+
+## [BYOC 托管运维服务](./byoc_operation_maintenance.md)
+查看 BYOC 部署监控运维服务列表。
