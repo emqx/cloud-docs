@@ -1,67 +1,47 @@
-# Shared subscription
+# Shared Subscription
 
-Shared subscription is a subscription method that achieves load balancing among multiple subscribers,
-EMQX Cloud adopts a random balance strategy, select randomly among all subscribers.
-
-::: tip
-**Important Notice: Persistent Sessions (clean_session=false) and Shared Subscriptions Cannot Be Used Simultaneously**
-
-If you are using shared subscription functionality, it is essential to set the client's clean_session to true.
-
-**Reasons are as follows:**
-
-1. **Persistent session functionality** allows subscribers to resume data flow immediately after reconnecting without losing messages, which is crucial for ensuring reliable message delivery. However, this conflicts with the concept of **load balancing**. Shared subscriptions typically allow another device within a group to take over data flow when one device goes offline. However, if a device remains offline for an extended period, the message buffer of the persistent session might overflow, resulting in message loss.
-
-2. When clean_session is set to false, and a device remains offline for an extended period, messages may **continue to accumulate**. The persistent session keeps delivering messages to the device, but the device does not process them. Suppose a device goes offline due to some reason, but the session persists, and other message publishers continue to send messages to that device's session. As the device is offline, these messages cannot be processed promptly, leading to a continuous accumulation of messages in the session. Additionally, these accumulated messages won't be forwarded to other devices since they are considered part of the same device's session. Over time, message accumulation can become increasingly severe, ultimately consuming memory and storage resources, negatively impacting system stability and performance.
-
-**To ensure system reliability and efficient resource utilization, it is essential to set clean_session to true when using shared subscriptions**. This ensures that messages can be appropriately shared among other devices when a device goes offline, avoiding continuous accumulation and resource wastage.
-:::
-
-## Shared subscription prefixes formats
-
-EMQX Cloud supports shared subscription prefixes in two formats:
-shared subscription with groups (prefixed with `$share/<group-name>/`) and shared subscription without group (prefixed with `$queue/`).
+A shared subscription is a subscription mode to implement load balancing among multiple subscribers. Clients can be divided into multiple subscription groups, and messages are still forwarded to all subscription groups, but only one client within each subscription group receives the message at a time. YEMQX Cloud supports shared subscription prefixes in two formats: shared subscription with groups (prefixed with `$share/<group-name>/`) and shared subscription without group (prefixed with `$queue/`).
 
 Examples of two shared subscription prefixes formats are as follows.
 
 | prefixes formats                  | Example        | Prefix      | Real topic name |
-| :-------------------------------- | :------------- | :---------- | :-------------- |
+| --------------------------------- | -------------- | ----------- | --------------- |
 | Shared subscription with groups   | $share/abc/t/1 | $share/abc/ | t/1             |
 | Shared subscription without group | $queue/t/1     | $queue/     | t/1             |
 
-## Shared subscription with groups
+You can use client tools to connect to EMQX Cloud and try this messaging service. This section introduces how shared subscription works and provides a demonstration of how to use the [MQTTX Desktop](https://mqttx.app/) to simulate clients and try the shared subscription feature.
 
-Shared subscriptions prefixed with `$share/<group-name>/` are shared subscriptions with groups.
-group-name can be any string. Subscribers who belong to the same group will receive messages with load balancing, but EMQX Cloud will broadcast messages to different groups.
+## Shared Subscription for Groups
 
-### Example
+You can enable a shared subscription for groups of subscribers by adding the prefixed `$share/<group-name>` to the original topic. The group name can be any string. EMQX Cloud forwards messages to different groups at the same time and subscribers belonging to the same group receive messages with load balancing.
 
-* subscribers s1, s2, and s3 belong to group g1, subscribe topic `$share/g1/test`
-* subscribers s4 and s5 belong to group g2, subscribe topic `$share/g2/test`
-* subscriber s6 subscribe topic `test`
+For example, if subscribers `s1`, `s2`, and `s3` are members of group `g1`, subscribers `s4` and `s5` are members of group `g2`, and all subscribers subscribe to the original topic `t1`. The shared subscription topics must be `$share/g1/t1` and `$share/g2/t1`. When EMQX publishes a message `msg1` to the original topic `t1`:
 
-Then when publisher publishes a message with topic `test` to the EMQX Cloud (tip: this topic does not need to be prefixed).
+- EMQX Could sends `msg1` to both groups `g1` and `g2`.
+- Only one of `s1`, `s2`, `s3` will receive `msg1`.
+- Only one of `s4` and `s5` will receive `msg1`.
 
-* Only one of s1, s2, s3 will receive msg
-* Only one of s4, s5 will receive msg
-* s6 will receive msg
+<img src="./_assets/shared_subscription_group.png" alt="shared_subscription_group" style="zoom:50%;" />
 
-## Shared subscription without group
+## Shared Subscription Not for Groups
 
-Shared subscriptions prefixed with `$queue/` are shared subscriptions without groups. 
-It is a special case of $share subscription, which is quite similar to all subscribers in a subscription group.
+Shared subscription topics prefixed with `$queue/` are for subscribers not in groups. It is a special case of a shared subscription topic with a `$share` prefix. You can understand it as all subscribers in a subscription group such as `$share/$queue`.
 
-### Example
+<img src="./_assets/shared_subscription_queue.jpg" alt="shared_subscription_queue" style="zoom:50%;" />
 
-* subscribers s1, s2, and s3 subscribe topic `$queue/test`
-* subscriber s4 subscribe topic `test` 
 
-Then when publisher publishes a message with topic `test` to the EMQX Cloud (tip: this topic does not need to be prefixed).
 
-* Only one of s1, s2, s3 will receive msg
-* s4 will receive msg
+## Shared Subscription and Session
 
-## Test shared subscription using MQTTX
+The concept of shared subscription and the use of a persistent session in MQTT clients presents a contradiction, making it impossible to use both features simultaneously. If you are using the shared subscription functionality, it is essential to enable the clean session feature on the client by setting the `clean_session` parameter to `true`.
+
+The persistent session (`clean_session=false`) feature ensures that subscribers can resume data flow immediately after reconnecting without losing any messages. This is vital for maintaining reliable message delivery. By setting the `clean_session` parameter to `false`, the session persists even when the client goes offline, allowing the device to continue receiving messages. However, since the device is offline, it may not process the received messages promptly, leading to a potential accumulation of messages within the session over time.
+
+When the shared subscription is enabled and another device within the same group takes over the data flow of the offline device, it won't receive any of the accumulated messages because they are considered part of the session of the original device. Consequently, if the device remains offline for an extended period, the message buffer of the persistent session could overflow, resulting in message loss. This situation can disrupt load balancing and eventually lead to the depletion of memory and storage resources, negatively impacting the system's stability and overall performance.
+
+For more information on the persistent session, see [MQTT Persistent Session and Clean Session Explained](https://www.emqx.com/en/blog/mqtt-session).
+
+## Test Shared Subscription Using MQTTX
 
 Simulate client subscriptions using MQTTX.
 
