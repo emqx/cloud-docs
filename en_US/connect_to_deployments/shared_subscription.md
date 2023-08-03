@@ -1,15 +1,15 @@
 # Shared Subscription
 
-A shared subscription is a subscription mode to implement load balancing among multiple subscribers. Clients can be divided into multiple subscription groups, and messages are still forwarded to all subscription groups, but only one client within each subscription group receives the message at a time. YEMQX Cloud supports shared subscription prefixes in two formats: shared subscription with groups (prefixed with `$share/<group-name>/`) and shared subscription without group (prefixed with `$queue/`).
+A shared subscription is a subscription mode to implement load balancing among multiple subscribers. Clients can be divided into multiple subscription groups, and messages are still forwarded to all subscription groups, but only one client within each subscription group receives the message at a time. YEMQX Cloud supports shared subscription prefixes in two formats: shared subscription for groups (prefixed with `$share/<group-name>/`) and shared subscription not for groups (prefixed with `$queue/`).
 
 Examples of two shared subscription prefixes formats are as follows.
 
 | prefixes formats                  | Example        | Prefix      | Real topic name |
 | --------------------------------- | -------------- | ----------- | --------------- |
-| Shared subscription with groups   | $share/abc/t/1 | $share/abc/ | t/1             |
-| Shared subscription without group | $queue/t/1     | $queue/     | t/1             |
+| Shared subscription for groups    | $share/abc/t/1 | $share/abc/ | t/1             |
+| Shared subscription not for group | $queue/t/1     | $queue/     | t/1             |
 
-You can use client tools to connect to EMQX Cloud and try this messaging service. This section introduces how shared subscription works and provides a demonstration of how to use the [MQTTX Desktop](https://mqttx.app/) to simulate clients and try the shared subscription feature.
+You can use client tools to connect to EMQX Cloud and try this messaging service. This page introduces how shared subscription works and provides a demonstration of how to use the [MQTTX Desktop](https://mqttx.app/) to simulate clients and try the shared subscription feature.
 
 ## Shared Subscription for Groups
 

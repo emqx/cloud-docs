@@ -7,7 +7,7 @@
 | 带群组格式   | $share/abc/t/1 | $share/abc/ | t/1        |
 | 不带群组格式 | $queue/t/1     | $queue/     | t/1        |
 
-您可以使用客户端工具连接 EMQX Cloud 并尝试这个消息服务。 本节介绍了共享订阅的机制并演示了如何使用 [MQTTX Desktop](https://mqttx.app/zh) 来模拟客户端尝试通过共享订阅来接收消息。
+您可以使用客户端工具连接 EMQX Cloud 并尝试这个消息服务。 本页介绍了共享订阅的机制并演示了如何使用 [MQTTX Desktop](https://mqttx.app/zh) 来模拟客户端尝试通过共享订阅来接收消息。
 
 ## 带群组的共享订阅
 
