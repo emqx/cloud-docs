@@ -20,9 +20,10 @@ Serverless 部署的指标页面提供了连接数、流入流出消息、报文
 <img src="./_assets/metric_serverless_2.png" alt="metrics_detail" style="zoom: 33%;" />
 
 ### 消息流入流出
-消息流入流出图表展示在选择的时间段内，部署接收到的消息数以及发送出去的消息数。
+消息流入流出图表展示在选择的时间段内，部署接收到的消息数、发送出去的消息数和未被订阅的消息数。
 - 部署接收到的消息为从设备或应用端发送到部署的消息数。
 - 部署发送的消息为从部署发送到设备或应用端的消息。
+- 未订阅消息数为没有被订阅而会被丢弃的消息数。
 
 <img src="./_assets/metric_serverless_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
@@ -37,7 +38,7 @@ Serverless 部署的指标页面提供了连接数、流入流出消息、报文
 
 ### 丢弃消息
 
-丢弃消息图表展示在选择的时间段内，部署在发送阶段丢弃的消息。部署在发送阶段丢弃的消息可能是因为消息过大，消息队列满了，过期了等原因。因为没有订阅而丢弃的消息**不会**统计在这个指标中。
+丢弃消息图表展示在选择的时间段内，因过期而丢弃的消息数以及队列满而丢弃的消息数。
 
 <img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
@@ -75,12 +76,13 @@ Serverless 部署的指标页面提供了连接数、流入流出消息、报文
 <img src="./_assets/metrics_dedicated_2.png" alt="metrics_detail" style="zoom: 33%;" />
 
 ### 消息流入流出
-消息流入流出图表提供2种指标，展示了在选择的时间段内部署接收到的消息数以及发送出去的消息数。
+消息流入流出图表提供3种指标，展示了在选择的时间段内部署接收到的消息数，发送出去的消息数和未被订阅的消息数。
 
 |对应的 API 指标            | 描述                                     |
 | ----------------- | :--------------------------------------- |
 | messages.received | 从设备或应用端发送到部署的消息数   |
 | messages.sent     | 从部署发送到设备或应用端的消息   |
+| messages.dropped.no_subscribers | 没有订阅而丢弃的消息数  |
 
 <img src="./_assets/metrics_dedicated_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
@@ -97,14 +99,14 @@ Serverless 部署的指标页面提供了连接数、流入流出消息、报文
 
 
 ### 丢弃消息
-丢弃消息图表展示在选择的时间段内，因没有订阅而丢弃的消息数和部署在发送阶段丢弃的消息。
-- 因没有订阅而丢弃的消息是指没有对应的主题的订阅，发送到该主题的消息都会被丢弃。
-- 部署在发送阶段丢弃的消息可能是因为消息过大，消息队列满了，过期了等原因。
+丢弃消息图表展示在选择的时间段内，因过期而丢弃的消息数和队列满了而丢弃的消息。
+- 发送时由于消息过期而被丢弃的消息数量。
+- 发送时由于消息队列满而被丢弃的 QoS 不为 0 的消息数量。
 
 |对应的 API 指标            | 描述                                     |
 | ----------------- | :--------------------------------------- |
-| messages.dropped.no_subscribers | 没有订阅而丢弃的消息数  |
-| delivery.dropped    | 部署在发送阶段丢弃的消息数 |
+| delivery.dropped.expired | 因过期而被丢弃的消息  |
+| delivery.dropped.queue_full    | 因队列满而被丢弃的消息 |
 
 <img src="./_assets/metrics_dedicated_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
