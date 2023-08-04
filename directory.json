@@ -816,7 +816,7 @@
           "path": "deployments/stop_delete_deployment"
         },
         {
-          "title": "BYOC operation and maintenance service",
+          "title": "BYOC Operation and Maintenance Service",
           "path": "deployments/byoc_operation_maintenance"
         }
       ]
