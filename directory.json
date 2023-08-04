@@ -199,6 +199,10 @@
         {
           "title": "停止/删除部署",
           "path": "deployments/stop_delete_deployment"
+        },
+        {
+          "title": "BYOC 托管运维服务",
+          "path": "deployments/byoc_operation_maintenance"
         }
       ]
     },
@@ -808,8 +812,12 @@
           "path": "deployments/prometheus"
         },
         {
-          "title": "Stop/Delete deployment",
+          "title": "Stop/Delete Deployment",
           "path": "deployments/stop_delete_deployment"
+        },
+        {
+          "title": "BYOC Operation and Maintenance Service",
+          "path": "deployments/byoc_operation_maintenance"
         }
       ]
     },
@@ -819,11 +827,11 @@
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless connection guide",
+          "title": "Serverless Connection Guide",
           "path": "deployments/port_guide_serverless"
         },
         {
-          "title": "Dedicated / BYOC connection guide",
+          "title": "Dedicated / BYOC Connection Guide",
           "path": "deployments/port_guide_dedicated"
         },
         {
@@ -922,7 +930,7 @@
           "path": "rule_engine/rule_engine_events"
         },
         {
-          "title": "Republish messages",
+          "title": "Republish Messages",
           "path": "rule_engine/rule_engine_republish"
         },
         {
@@ -1184,7 +1192,7 @@
           "path": "release_notes"
         },
         {
-          "title": "Upgrade policy",
+          "title": "Upgrade Policy",
           "path": "upgrade_policy"
         }
       ]

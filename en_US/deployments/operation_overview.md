@@ -23,3 +23,6 @@ The Prometheus API is available in the EMQX Cloud and can be used to easily moni
 
 ## [Stop/Delete Deployment](./stop_delete_deployment.md)
 This page describes how to stop or delete a deployment. 
+
+## [BYOC operation and maintenance service](./byoc_operation_maintenance.md)
+This page shows the service list of operation and maintenance for BYOC deployment.
