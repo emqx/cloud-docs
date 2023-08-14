@@ -41,7 +41,7 @@ The Packets chart shows the traffic of the messages received and sent by the dep
 
 ### Dropped Messages
 
-The Dreopped Message chart shows the messages that are discarded during the sending phase within the selected time period. The reasons for messages being dropped can be that messages are too large in size, the message queue is full, or message expiration. 
+The Dropped Message chart shows the messages that are discarded during the sending phase within the selected time period. The reasons for messages being dropped can be that messages are too large in size, the message queue is full, or the message expires. 
 
 <img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
@@ -98,22 +98,19 @@ The Packets chart provides 2 metrics, showing the traffic of messages received a
 
 | Metrics in API   | Description                  |
 | ------------------ | :--------------------------- |
-| bytes.received    | Kilobytes of message packets received from device or application at the moment.     |
+| bytes.received    | Kilobytes of message packets received from the device or application at the moment. |
 | bytes.sent | Kilobytes of message packets sent to the device or application at the moment. |
 
 <img src="./_assets/metric_dedicated_4.png" alt="metrics_detail" style="zoom: 33%;" />
 
 ### Dropped Messages
 
-The Dropped Messages chart shows the number of messages dropped due to expriation and message queue is full within the selected time period.
-
-- The dropped messages for message expiration.
-- The dropped messages for message queue being full.
+The Dropped Messages chart shows the number of messages that are dropped during delivery due to either expiration or the message queue reaching its capacity within the selected time period.
 
 | Metrics in API   | Description                  |
 | ------------------ | :--------------------------- |
-| delivery.dropped.expired  | The dropped messages for message expiration. |
-| delivery.dropped.queue_full | The dropped messages for message queue being full. |
+| delivery.dropped.expired  | Messages dropped due to message expiration. |
+| delivery.dropped.queue_full | Messages dropped due to a full message queue. |
 
 <img src="./_assets/metric_dedicated_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
