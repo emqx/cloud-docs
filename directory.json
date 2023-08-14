@@ -954,6 +954,10 @@
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
         {
+          "title": "Integrate with AWS RDS",
+          "path": "rule_engine/rule_engine_aws_rds"
+        },
+        {
           "title": "Integrate with GCP Pub/Sub",
           "path": "rule_engine/rule_engine_gcp_pubsub"
         },
