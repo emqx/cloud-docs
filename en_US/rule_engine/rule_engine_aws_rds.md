@@ -23,7 +23,7 @@ This data integration feature is not available in the Standard Plan.
 
 Before creating the data integration, make sure that you have [created a dedicated deployment](../create/dedicated.md).
 
-For Professional Plan deployment users, you need to complete the creation of VPC peering connections first. The IP mentioned in this tutorial refers to the resources' private IP. (If [NAT gateway service](../vas/nat-gateway.md) is enabled, public IP can also be used for the connection.)
+For Professional Plan deployment users, you must complete the creation of VPC peering connections first. The IP mentioned in this tutorial refers to the resources' private IP. (If [NAT gateway service](../vas/nat-gateway.md) is enabled, public IP can also be used for the connection.)
 
 ## Create and Connect to a MySQL DB Instance
 
@@ -31,7 +31,7 @@ This section describes how to create a MySQL database instance in AWS RDS and us
 
 ### Create a MySQL DB Instance
 
-You can refer to the step 2 in [Creating and connecting to a MySQL DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html) for some general instructions, but you also need to refer to the following instructions to configure some settings specific for the data integration with EMQX Cloud.
+You can refer to step 2 in [Creating and connecting to a MySQL DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html) for some general instructions, but you also need to refer to the following instructions to configure some settings specific to the data integration with EMQX Cloud.
 
 1. Sign in to the [AWS Management Console](https://console.aws.amazon.com/ec2/), and search for "RDS". 
 
@@ -53,11 +53,11 @@ You can refer to the step 2 in [Creating and connecting to a MySQL DB instance](
    - **Instance configuration**
    - **Storage**
 
-7. Configure the connectivity information. In **VPC security group (firewall)**, select **Create new**. Enter a name in the **New VPC security group name** textbox.
+7. Configure the connectivity information. In **VPC security group (firewall)**, you can select **Choose existing** if you already have an existing VPC group or select **Create new**. Enter a name in the **New VPC security group name** textbox.
 
-   This information will be used later for [creating VPC peering connection](#create-vpc-peering-connection). <!--如果只有"VPC security group"这部分内容是需要配置的话，是否可以只截这部分的图？-->
-
-![img](./_assets/wps2.png)
+   This information will be used later for [creating VPC peering connection](#create-vpc-peering-connection). <!--Update the screenshot to only keep "VPC security group"configuration.-->
+   
+   ![img](./_assets/wps2.png)
 
 8. Complete the rest of the configrations according to your business needs.
 9. Click the **Create database** button at the bottom. 
@@ -65,7 +65,7 @@ You can refer to the step 2 in [Creating and connecting to a MySQL DB instance](
 
 ### Connect to MySQL DB Instance
 
-You need to create an EC2 instance and use the EC2 instance to connect to your AWS RDS MySQL instance. For detailed information, refer to the step 1 and step 3 in [Creating and connecting to a MySQL DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html).
+You need to create an EC2 instance and use the EC2 instance to connect to your AWS RDS MySQL instance. For detailed information, refer to step 1 and step 3 in [Creating and connecting to a MySQL DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html).
 
 ::: tip Note
 
@@ -77,11 +77,16 @@ In the upper-right corner of the Amazon RDS console, you need to select the AWS 
 
 After you connect to the AWS RDS MySQL instance, you need to create an MQTT database and a data table to store the data.
 
-1. Use EC2 to create a database named `mqtt` in the MySQL instance you created previously. <!--提供一下代码示例？这样可以方便用户直接粘贴-->
+1. Use EC2 to create a database named `mqtt` in the MySQL instance you created previously. 
+
+   ```sql
+   CREATE DATABASE emqx;
+   USE emqx;
+   ```
 
 ![img](./_assets/wps3.png)
 
-2. Create a data table named "temp_hum". <!-- 如果以下代码示例是正确的，是否可以将截图删除？-->
+2. Create a data table named "temp_hum". 
 
    ```bash
    CREATE TABLE `temp_hum` (
@@ -95,26 +100,24 @@ After you connect to the AWS RDS MySQL instance, you need to create an MQTT data
    ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
    ```
 
-![img](./_assets/wps19.png)
-
 ## Create VPC Peering Connection with AWS RDS MySQL
 
-By default, EMQX Cloud is deployed in a Virual Private Cloud (VPC), which can not send data to third-party systems over the public network. To enable access to the AWS RDS MySQL database, you need to create the VPC peering connection in EMQX Cloud Console. For more information on VPC peering connections, you can refer to [VPC Peering Connections](../deployments/vpc_peering.md).
+By default, EMQX Cloud is deployed in a Virual Private Cloud (VPC), which can not send data to third-party systems over the public network. To enable access to the AWS RDS MySQL database, you need to create the VPC peering connection between EMQX Cloud Console and AWS RDS MySQL . For more information on VPC peering connections, you can refer to [VPC Peering Connections](../deployments/vpc_peering.md).
 
 1. Sign in to [EMQX Cloud Console](https://cloud-intl.emqx.com/console) and go to your deployment. 
 
 2. On the Overview page, scroll down to find **VPC Peering Connection**. Click the **+ VPC Peering Connection** button. 
 
-3. In the pop-up dialog, check the information on **Region of Deployment**, **VPC ID of Deployment**, **CIDR of Deployment**, and **Account ID of EMQX Cloud**. Save the information for later use. Do not close the dialogue. <!-- 为什么需要保存这些信息？如果窗口不关闭，可以随时copy这些信息-->
+3. In the pop-up dialog, check the information on **Region of Deployment**, **VPC ID of Deployment**, **CIDR of Deployment**, and **Account ID of EMQX Cloud**. Do not close the dialogue. 
     ![img](./_assets/wps4.png)
 
 4. Go to the AWS Management console, search for "VPC". 
 
-5. On the VPC dashboard, click **Peering Connections** in the navigation pane , and click the **Create peering connection** button.
+5. On the VPC dashboard, click **Peering Connections** in the navigation pane , and click the **Create peering connection** button. On **Peering connection settings** page, configure the following fields:
 
-   - **Name**: Type the security group name you entered in [Create a MySQL DB Instance](create-a-mysql-db-instance).
+   - **Name**: Type the security group name you configured in [Create a MySQL DB Instance](#create-a-mysql-db-instance).
 
-   - **VPC ID (Requester)**: The local VPC ID refers to the VPC to which AWS RDS MySQL belongs. Select the VPC you configurated in [Create a MySQL DB Instance](create-a-mysql-db-instance). You can view the information on your database details page.
+   - **VPC ID (Requester)**: The local VPC ID refers to the VPC to which AWS RDS MySQL belongs. Select the VPC you configurated in [Create a MySQL DB Instance](#create-a-mysql-db-instance). You can view the information on your database details page.
 
      ![img](./_assets/wps6.png)
 
@@ -133,7 +136,7 @@ By default, EMQX Cloud is deployed in a Virual Private Cloud (VPC), which can no
 6. The following details page will be displayed once the peering connection is created. Save the information of **Peering connection ID** and **Requester VPC** for later use.
    ![img](./_assets/wps7.png)
 
-7. Return to EMQX Cloud console, fill in the information saved in step 3, and click the **Confirm** button to complete the peering connection creation.
+7. Return to EMQX Cloud Console, fill in the information saved in step 3, and click the **Confirm** button to complete the peering connection creation.
 
    - **Peering ID**: Fill in the `Peering connection ID`.
    - **VPC ID**: Fill in the `Requester VPC`.
@@ -150,9 +153,14 @@ By default, EMQX Cloud is deployed in a Virual Private Cloud (VPC), which can no
 
    ![img](./_assets/wps10.png)
 
-10. Go to **Security** -> **Security Groups**, click the Security group ID of your database you configured in  [Create a MySQL DB Instance](create-a-mysql-db-instance). You can find the information on your database details page.
+10. Go to **Security** -> **Security Groups**, click the Security group ID of your database you configured in [Create a MySQL DB Instance](#create-a-mysql-db-instance). You can find the information on your database details page.
 
-11. Click **Edit inbound rule** -> **Add rule** to add a new rule. <!-- 如何选这些选项？这一步的目的？-->   ![img](./_assets/wps11.png)
+11. Click **Edit inbound rule** -> **Add rule** to add a new rule. <!-- 如何选这些选项？这一步的目的？--> 
+
+     - **Type**: Select `All TCP`.
+     - **Source**: Enter EMQX Cloud CIDR of deployment `10.31.70.0/24`.
+
+     ![img](./_assets/wps11.png)
 
 ## Create Data Integration
 
@@ -215,7 +223,7 @@ EMQX Cloud provides a powerful [rule engine](./rules.md) that can transform, and
    {"temp": 18, "hum": 56}
    ```
 
-   You can click **SQL Test** to test the rule and see the results.
+   You can enable **SQL Test** by clicking the toggle switch to test the rule and see the results. <!-- Separate the following screenshot into 2 parts-->
 
    ![img](./_assets/wps16.png)
 
