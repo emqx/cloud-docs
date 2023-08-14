@@ -41,7 +41,7 @@ The Packets chart shows the traffic of the messages received and sent by the dep
 
 ### Dropped Messages
 
-The Dreopped Message chart shows the messages that are discarded during the sending phase within the selected time period. The reasons for messages being dropped can be that messages are too large in size, the message queue is full, or message expiration. The number of messages that are dropped for not being subscribed **will not be included** in this chart.
+The Dropped Message chart shows the messages that are discarded during the sending phase within the selected time period. The reasons for messages being dropped can be that messages are too large in size, the message queue is full, or the message expires. 
 
 <img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
@@ -81,12 +81,13 @@ The Subscriptions chart provides 3 metrics to display the subscription status wi
 
 ### Messages
 
-The Messages chart provides 2 metrics, showing the number of messages received and sent by the deployment during the selected time period.
+The Messages chart provides 3 metrics, showing the number of messages received and sent by the deployment during the selected time period, and the messages with no subscribers.
 
 |Metrics in API       |   Description                                   |
 | ----------------- | :--------------------------------------- |
 | messages.received | The number of messages received from the device or application at the moment.         |
 | messages.sent | The number of messages sent to the device or application at the moment. |
+| messages.dropped.no_subscribers | The number of messages will be dropped because of no subscribers. |
 
 <img src="./_assets/metric_dedicated_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
@@ -97,22 +98,19 @@ The Packets chart provides 2 metrics, showing the traffic of messages received a
 
 | Metrics in API   | Description                  |
 | ------------------ | :--------------------------- |
-| bytes.received    | Kilobytes of message packets received from device or application at the moment.     |
+| bytes.received    | Kilobytes of message packets received from the device or application at the moment. |
 | bytes.sent | Kilobytes of message packets sent to the device or application at the moment. |
 
 <img src="./_assets/metric_dedicated_4.png" alt="metrics_detail" style="zoom: 33%;" />
 
 ### Dropped Messages
 
-The Dropped Messages chart shows the number of messages dropped due to lack of subscribers and messages discarded by the deployment during the sending phase within the selected time period.
-
-- The dropped messages for unsubscribed refer to messages are discarded because there are no subscriptions for the corresponding topics. Any messages sent to that topic will be discarded.
-- The dropped messages in delivery may occur due to reasons such as message size exceeding the limit, message queue being full, or message expiration.
+The Dropped Messages chart shows the number of messages that are dropped during delivery due to either expiration or the message queue reaching its capacity within the selected time period.
 
 | Metrics in API   | Description                  |
 | ------------------ | :--------------------------- |
-| messages.dropped.no_subscribers   | The dropped messages for no subscriptions to the topic. |
-| delivery.dropped | The dropped messages in delivery. |
+| delivery.dropped.expired  | Messages dropped due to message expiration. |
+| delivery.dropped.queue_full | Messages dropped due to a full message queue. |
 
 <img src="./_assets/metric_dedicated_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
