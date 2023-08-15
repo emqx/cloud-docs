@@ -84,6 +84,12 @@ Your cloud administrator can quickly view the usage and quotas of resources and 
 
 ::::
 
+::: warning
+On Google Cloud, please make sure that the default network exists in your GCP account, if not, please create it. During the deployment process, we use packer as the system image packaging tool, which needs to create the resources required for packaging under the VPC default network.
+
+If the default network cannot be created due to security policies, you can submit a ticket or send an [email](mailto:cloud-support@emqx.io) to contact us.
+:::
+
 ### IAM Permissions
 
 Your role needs to have the necessary Identity and Access Management (IAM) permissions to run commands to create the cloud resources in your cloud account. You need to ask your cloud administrator to assign sufficient permissions for creating BYOC deployments and generate the corresponding credential.
@@ -289,12 +295,17 @@ Please note that you should replace `<project-id>`, `<yaml-file-path>`, `<servic
 
 To deploy EMQX Cloud BYOC, you need an Ubuntu 20.04 LTS (AMD64) environment that can be connected to the public network. You can:
 
-- (Recommended) Use the Ubuntu 20.04 LTS image to create a virtual machine instance in the cloud account.
+- (Recommended) Use the Ubuntu 20.04 LTS image to create a virtual machine instance in the cloud account. The memory of the instance shouldn't be less than 1 GiB.
 - Use a local Ubuntu 20.04 LTS environment.
 
 ## Domain Name and Certificate
 
-Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX Cloud BYOC supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment. The certificate can be a self-signed certificate or a CA-signed certificate. Please refer to the TLS/SSL Configuration-Certificate Requirements for SSL certificate format requirements.
+Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX Cloud BYOC supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment.
+
+::: warning
+The certificate need to be a CA-signed certificate. Please refer to the [TLS/SSL Configuration for BYOC plan](../deployments/byoc_ssl.md) for TLS/SSL certificate format requirements.
+:::
+
 
 ## BYOC License
 

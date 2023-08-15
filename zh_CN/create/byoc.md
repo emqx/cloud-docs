@@ -61,7 +61,7 @@
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。<!--这里有客户需要替换的地方吗？-->
 	
 	```bash
-	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/create-aliyun-byoc-deployment.tar.gz
+	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/create-aliyun-byoc-deployment.tar.gz
 	```
 
 3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
@@ -111,7 +111,7 @@
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
 
    ```bash
-   wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/create-aws_cn-byoc-deployment.tar.gz
+   wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/create-aws_cn-byoc-deployment.tar.gz
    ```
 
 3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
