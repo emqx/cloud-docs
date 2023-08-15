@@ -1,4 +1,4 @@
- # 专业版 TLS/SSL 配置
+# 专业版 TLS/SSL 配置
 
 ::: warning
 该功能仅适用于专业版
