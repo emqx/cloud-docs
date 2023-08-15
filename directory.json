@@ -68,6 +68,10 @@
               "path": "deployments/byoc_prerequisite"
             },
             {
+              "title": "TLS/SSL 设置",
+              "path": "deployments/byoc_ssl"
+            },
+            {
               "title": "执行部署",
               "path": "create/byoc"
             },
