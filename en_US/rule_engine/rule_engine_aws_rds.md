@@ -55,12 +55,16 @@ You can refer to step 2 in [Creating and connecting to a MySQL DB instance](http
 
 7. Configure the connectivity information. In **VPC security group (firewall)**, you can select **Choose existing** if you already have an existing VPC group or select **Create new**. Enter a name in the **New VPC security group name** textbox.
 
-   This information will be used later for [creating VPC peering connection](#create-vpc-peering-connection). <!--Update the screenshot to only keep "VPC security group"configuration.-->
+   This information will be used later for [creating VPC peering connection](#create-vpc-peering-connection). 
+
    
-   ![img](./_assets/wps2.png)
+
+   <img src="./_assets/wps2.png" alt="img" style="zoom:67%;" />
 
 8. Complete the rest of the configrations according to your business needs.
+
 9. Click the **Create database** button at the bottom. 
+
 10. In the **Databases** list, choose the name of the new MySQL DB instance to show its details. When the status changes to **Available**, you can connect to the DB instance.
 
 ### Connect to MySQL DB Instance
@@ -109,7 +113,7 @@ By default, EMQX Cloud is deployed in a Virual Private Cloud (VPC), which can no
 2. On the Overview page, scroll down to find **VPC Peering Connection**. Click the **+ VPC Peering Connection** button. 
 
 3. In the pop-up dialog, check the information on **Region of Deployment**, **VPC ID of Deployment**, **CIDR of Deployment**, and **Account ID of EMQX Cloud**. Do not close the dialogue. 
-    ![img](./_assets/wps4.png)
+    <img src="./_assets/wps4.png" alt="img" style="zoom:67%;" />
 
 4. Go to the AWS Management console, search for "VPC". 
 
@@ -223,9 +227,11 @@ EMQX Cloud provides a powerful [rule engine](./rules.md) that can transform, and
    {"temp": 18, "hum": 56}
    ```
 
-   You can enable **SQL Test** by clicking the toggle switch to test the rule and see the results. <!-- Separate the following screenshot into 2 parts-->
+   You can enable **SQL Test** by clicking the toggle switch to test the rule and see the results. 
 
-   ![img](./_assets/wps16.png)
+   
+
+   <img src="./_assets/wps16.png" alt="img" style="zoom:70%;" />
 
 2. Click the **Next** button at the bottom to create an action. 
 
@@ -274,7 +280,7 @@ The demonstration in this section simulates temperature and humidity data and re
 
    The data sent to EMQX Cloud should be processed by the rule engine and inserted into MySQL automatically.
 
-   ![img](./_assets/wps20.png) 
+   <img src="./_assets/wps20.png" alt="img" style="zoom:67%;" /> 
 
 3. Check the rule monitoring and the number of success should be increased.
 
@@ -282,4 +288,4 @@ The demonstration in this section simulates temperature and humidity data and re
 
 4. Check the data persisted into the AWS RDS MySQL database `mqtt` using EC2. There should be data inserted to the table `temp_hum`.
 
-![img](./_assets/wps22.png) 
+<img src="./_assets/wps22.png" alt="img" style="zoom:80%;" /> 
