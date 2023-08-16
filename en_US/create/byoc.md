@@ -89,8 +89,8 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
    - `--accessKey`: Enter your access key ID for your AWS IAM user.
    - `--secretKey`: Enter your access key secret for your AWS IAM user.
    - `--domain`: Enter the domain name of the MQTT service in the deployment through which subsequent clients will access the MQTT service.
-   - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Self-signed certificates and CA-signed certificates are supported. For SSL certificate format requirements, refer to [TLS/SSL Configuration - Certificate Requirements](../deployments/tls_ssl.md#Certificate-Requirements). Note: BYOC provides custom one-way TLS/SSL authentication.
-   - `--emqxLicPath`：Enter the absolute path where the EMQX Cloud BYOC license file is located.
+   - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Self-signed certificates and CA-signed certificates are supported. For SSL certificate format requirements, refer to [TLS/SSL Configuration - Certificate Requirements](../deployments/tls_ssl.md#required-certificate-components). Note: BYOC provides custom one-way TLS/SSL authentication.
+   - `--emqxLicPath`: Enter the absolute path where the EMQX Cloud BYOC license file is located.
 
    Do not modify the following three values that are automatically filled in when the deployment guide is generated in the console.
 

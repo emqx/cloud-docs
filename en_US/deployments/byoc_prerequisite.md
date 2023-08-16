@@ -85,7 +85,7 @@ Your cloud administrator can quickly view the usage and quotas of resources and 
 ::::
 
 ::: warning
-On Google Cloud, please make sure that the default network exists in your GCP account, if not, please create it. During the deployment process, we use packer as the system image packaging tool, which needs to create the resources required for packaging under the VPC default network.
+If you're using Google Cloud, it's important to verify the presence of the default network in your GCP account. If it's not already in place, please create it. During the deployment process, we use packer as the system image packaging tool. This requires the creation of necessary resources for packaging within the default network of the Virtual Private Cloud (VPC).
 
 If the default network cannot be created due to security policies, you can submit a ticket or send an [email](mailto:cloud-support@emqx.io) to contact us.
 :::
@@ -295,7 +295,7 @@ Please note that you should replace `<project-id>`, `<yaml-file-path>`, `<servic
 
 To deploy EMQX Cloud BYOC, you need an Ubuntu 20.04 LTS (AMD64) environment that can be connected to the public network. You can:
 
-- (Recommended) Use the Ubuntu 20.04 LTS image to create a virtual machine instance in the cloud account. The memory of the instance shouldn't be less than 1 GiB.
+- (Recommended) Use the Ubuntu 20.04 LTS image to create a virtual machine instance in the cloud account. The memory of the instance must be more than 1 GiB.
 - Use a local Ubuntu 20.04 LTS environment.
 
 ## Domain Name and Certificate
@@ -303,7 +303,7 @@ To deploy EMQX Cloud BYOC, you need an Ubuntu 20.04 LTS (AMD64) environment that
 Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX Cloud BYOC supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment.
 
 ::: warning
-The certificate need to be a CA-signed certificate. Please refer to the [TLS/SSL Configuration for BYOC plan](../deployments/byoc_ssl.md) for TLS/SSL certificate format requirements.
+The certificate needs to be a CA-signed certificate. Please refer to the [TLS/SSL Configuration for BYOC Plan](../deployments/byoc_ssl.md) for TLS/SSL certificate format requirements.
 :::
 
 
