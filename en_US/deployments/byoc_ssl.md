@@ -63,5 +63,5 @@ Base64–encoded Private Key Content
 
 ## Use PEM File in "byoc create" Command
 
-Ensure you have the PEM file ready and easily accessible before initiating the `./byoc create` command. When using the `./byoc create` command to deploy your BYOC environment, you need to specify the absolute path where the PEM file is located in the parameter `--sslCertPath`. For more information on how to configure the parameter, see [Run Deployment](../create/byoc.md#run-deployment).
+During the BYOC deployment, make sure that the PEM file is copied to your Ubuntu environment directory and can be easily accessed before initiating the `./byoc create` command. When using the `./byoc create` command to deploy your BYOC environment, you need to specify the absolute path where the PEM file is located in the parameter `--sslCertPath`. For more information on how to configure the parameter, see [Run Deployment](../create/byoc.md#run-deployment).
 
