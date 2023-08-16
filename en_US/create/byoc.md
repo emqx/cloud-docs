@@ -63,7 +63,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
 2. In the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 
    ```bash
-   wget https://cloudassets.emqx.com/en/byoc-deployments/1.1/create-aws-byoc-deployment.tar.gz
+   wget https://cloudassets.emqx.com/en/byoc-deployments/1.2/create-aws-byoc-deployment.tar.gz
    ```
 
 3. Use the command line below to unzip the downloaded toolkit and navigate to the unzipped folder directory.
@@ -87,10 +87,10 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
    ```
 
    - `--accessKey`: Enter your access key ID for your AWS IAM user.
-   - `--secretKey`: Enter your secret access key for your AWS IAM user.
+   - `--secretKey`: Enter your access key secret for your AWS IAM user.
    - `--domain`: Enter the domain name of the MQTT service in the deployment through which subsequent clients will access the MQTT service.
-   - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Self-signed certificates and CA-signed certificates are supported. For SSL certificate format requirements, refer to [TLS/SSL Configuration - Certificate Requirements](../deployments/tls_ssl.md#Certificate-Requirements). Note: BYOC provides custom one-way TLS/SSL authentication.
-   - `--emqxLicPath`：Enter the absolute path where the EMQX Cloud BYOC license file is located.
+   - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Only CA-signed certificates are supported. For SSL certificate format requirements, refer to [Configure TLS/SSL](../deployments/byoc_ssl.md). Note: BYOC provides custom one-way TLS/SSL authentication.
+   - `--emqxLicPath`: Enter the absolute path where the EMQX Cloud BYOC license file is located.
 
    Do not modify the following three values that are automatically filled in when the deployment guide is generated in the console.
 
@@ -116,7 +116,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
 2. In the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 	
 	```bash
-	wget https://cloudassets.emqx.com/en/byoc-deployments/1.1/create-gcp-byoc-deployment.tar.gz
+	wget https://cloudassets.emqx.com/en/byoc-deployments/1.2/create-gcp-byoc-deployment.tar.gz
 	```
 
 3. Use the command line below to unzip the downloaded toolkit and navigate to the unzipped folder directory.
@@ -142,7 +142,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
    - `--projectID`: Enter your Google Cloud project ID. You can find it in the project selector at the top bar of Google Cloud Console.
    - `--authJSONPath`: Enter the path to the JSON file for your [Google Cloud service account key](https://cloud.google.com/iam/docs/keys-create-delete#creating).
    - `--domain`: Enter the domain name of the MQTT service in the deployment through which subsequent clients will access the MQTT service.
-   - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Self-signed certificates and CA-signed certificates are supported. For SSL certificate format requirements, refer to [TLS/SSL Configuration - Certificate Requirements](../deployments/tls_ssl.md#Certificate-Requirements). Note: BYOC provides custom one-way TLS/SSL authentication.
+   - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Only CA-signed certificates are supported. For SSL certificate format requirements, refer to [Configure TLS/SSL](../deployments/byoc_ssl.md). Note: BYOC provides custom one-way TLS/SSL authentication.
    - `--emqxLicPath`：Enter the absolute path where the EMQX Cloud BYOC license file is located.
 
    Do not modify the following three values that are automatically filled in when the deployment guide is generated in the console.

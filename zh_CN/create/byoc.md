@@ -61,7 +61,7 @@
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。<!--这里有客户需要替换的地方吗？-->
 	
 	```bash
-	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/create-aliyun-byoc-deployment.tar.gz
+	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/create-aliyun-byoc-deployment.tar.gz
 	```
 
 3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
@@ -89,7 +89,7 @@
    - `--accessKey`：您公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看。
    - `--secretKey`：您公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
    - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。
-   - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，支持 **自签名证书** 和 **CA 签名证书**。SSL 证书格式要求请参考 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
+   - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
    - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
 
    此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
@@ -111,7 +111,7 @@
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
 
    ```bash
-   wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/create-aws_cn-byoc-deployment.tar.gz
+   wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/create-aws_cn-byoc-deployment.tar.gz
    ```
 
 3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
@@ -139,7 +139,7 @@
    - `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
    - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
    - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。
-   - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，支持 **自签名证书** 和 **CA 签名证书**。SSL 证书格式要求请参考 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
+   - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
    - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
 
    此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。

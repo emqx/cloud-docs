@@ -94,9 +94,11 @@
 :::
 
 操作步骤如下：
+:::
+::: tab "阿里云"
 1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
 ```bash
-wget https://cloudassets.emqx.com/cn/byoc-deployments/1.1/delete-aliyun-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/delete-aliyun-byoc-deployment.tar.gz
 ```
 
 2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
@@ -113,13 +115,12 @@ tar -zxf delete-aliyun-byoc-deployment.tar.gz && cd delete-aliyun-byoc-deploymen
       --byocEndpoint https://cloud.emqx.com \
       --byocKey abcdXXXXXXXXXX111
 ```
-在执行`./byoc delete`命令前，请填充您的参数后执行。参数释义如下：
+注意：在执行`./byoc delete`命令前，请填充您的参数后执行。参数释义如下：
 
-`--accessKey` 您的公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看您的 AccessKey ID。
+- `--accessKey` 您的公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看您的 AccessKey ID。
+- `--secretKey` 您的公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
 
-`--secretKey` 您的公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
-
-`--byocKey` 此次 BYOC 删除部署的认证密钥，用于 EMQX Cloud API 的安全认证。由 EMQX Cloud 控制台生成，请勿修改。
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 该命令执行后，提示确认需要删除的云资源，输入“yes“回车后继续。
 
@@ -134,6 +135,48 @@ Do you really want to destroy all resources?
 ```bash
 Delete the deployment successfully!
 ```
+:::
+::: tab "亚马逊云科技"
+1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+```bash
+wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/delete-aws_cn-byoc-deployment.tar.gz
+```
+
+2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+```bash
+tar -zxf delete-aws_cn-byoc-deployment.tar.gz && cd delete-aws_cn-byoc-deployment
+```
+
+3. 导航到解压的目录下，根据以下命令，并修改对应参数的值，执行命令进行部署的删除。
+```bash
+./byoc delete \
+      --platform aws_cn \
+      --accessKey <Your Access Key> \
+      --secretKey <Your Secret Key> \
+      --byocEndpoint https://cloud.emqx.com \
+      --byocKey abcdXXXXXXXXXX111
+```
+注意：在执行`./byoc delete`命令前，请填充您的参数后执行。参数释义如下：
+
+- `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
+- `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
+
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+
+该命令执行后，提示确认需要删除的云资源，输入“yes“回车后继续。
+
+```bash
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: 
+```
+最终，命令行输出以下内容时，说明部署删除成功。
+```bash
+Delete the deployment successfully!
+```
+:::
 
 
 

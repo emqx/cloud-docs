@@ -61,12 +61,19 @@
         },
         {
           "title": "创建 BYOC 部署",
-          "path": "create/byoc",
           "collapsed": true,
           "children": [
             {
               "title": "部署前置准备",
               "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "TLS/SSL 设置",
+              "path": "deployments/byoc_ssl"
+            },
+            {
+              "title": "执行部署",
+              "path": "create/byoc"
             },
             {
               "title": "BYOC 许可证",
@@ -676,12 +683,19 @@
         },
         {
           "title": "Create BYOC Deployment",
-          "path": "create/byoc",
           "collapsed": true,
           "children": [
             {
-              "title": "BYOC Deployment Prerequisite",
+              "title": "Deployment Prerequisites",
               "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "TLS/SSL",
+              "path": "deployments/byoc_ssl"
+            },
+            {
+              "title": "Create Deployment",
+              "path": "create/byoc"
             },
             {
               "title": "BYOC License",

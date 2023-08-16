@@ -311,12 +311,16 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 
 为了部署 EMQX Cloud BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可：
 
-- （推荐）在云账号中使用 Ubuntu 20.04 LTS 镜像创建一个虚拟机实例
+- （推荐）在云账号中使用 Ubuntu 20.04 LTS 镜像创建一个虚拟机实例，且实例的内存需要至少 1 GiB。
 - 本地 Ubuntu 20.04 LTS 环境
 
 ## 域名及证书
 
-提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书。我们支持自定义单向 TLS/SSL 认证，并且只支持在部署时指定 TLS/SSL 证书。证书可以是自签名证书或 CA 签名证书。关于 SSL 证书格式要求，请参考 [TLS/SSL 配置 - 证书要求](../deployments/tls_ssl.md#证书要求)。
+提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书。我们支持自定义单向 TLS/SSL 认证，并且只支持在部署时指定 TLS/SSL 证书。
+
+::: warning
+BYOC 部署仅接受 CA 签名证书。关于 TLS/SSL 证书格式要求，请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
+:::
 
 ## BYOC 许可证
 
