@@ -88,7 +88,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
 
    - `--accessKey`: Enter your access key ID for your AWS IAM user.
    - `--secretKey`: Enter your access key secret for your AWS IAM user.
-   - `--domain`: Enter the domain name of the MQTT service in the deployment through which subsequent clients will access the MQTT service.
+   - `--domain`: Enter the domain name (like your.domain.com) of the MQTT service in the deployment through which subsequent clients will access the MQTT service.
    - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Only CA-signed certificates are supported. For SSL certificate format requirements, refer to [Configure TLS/SSL](../deployments/byoc_ssl.md). Note: BYOC provides custom one-way TLS/SSL authentication.
    - `--emqxLicPath`: Enter the absolute path where the EMQX Cloud BYOC license file is located.
 
@@ -141,7 +141,7 @@ We will complete the deployment in an Ubuntu 20.04 (AMD64) environment with a pu
 
    - `--projectID`: Enter your Google Cloud project ID. You can find it in the project selector at the top bar of Google Cloud Console.
    - `--authJSONPath`: Enter the path to the JSON file for your [Google Cloud service account key](https://cloud.google.com/iam/docs/keys-create-delete#creating).
-   - `--domain`: Enter the domain name of the MQTT service in the deployment through which subsequent clients will access the MQTT service.
+   - `--domain`: Enter the domain name (like your.domain.com) of the MQTT service in the deployment through which subsequent clients will access the MQTT service.
    - `--sslCertPath`: Specify the absolute path where the TLS/SSL certificate is located. Only CA-signed certificates are supported. For SSL certificate format requirements, refer to [Configure TLS/SSL](../deployments/byoc_ssl.md). Note: BYOC provides custom one-way TLS/SSL authentication.
    - `--emqxLicPath`：Enter the absolute path where the EMQX Cloud BYOC license file is located.
 
