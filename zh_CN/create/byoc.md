@@ -88,7 +88,7 @@
 
    - `--accessKey`：您公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看。
    - `--secretKey`：您公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
-   - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。
+   - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。例如：your.domain.com。
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
    - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
 
@@ -138,7 +138,7 @@
 
    - `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
    - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
-   - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。
+   - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。例如：your.domain.com。
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
    - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
 
