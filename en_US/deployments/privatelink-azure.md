@@ -8,8 +8,8 @@ The following contents are demonstrated on this page:
   - [Create Load Balancer](#create-load-balancer)
   - [Create a Private Link Service](#create-a-private-link-service)
 - [Enable PrivateLink in Your Deployment](#enable-privatelink-in-your-deployment)
-- [Test PrivateLink Connection](test-privatelink-connection)
-- [Remove PrivateLink](remove-privatelink)
+- [Test PrivateLink Connection](#test-privatelink-connection)
+- [Remove PrivateLink](#remove-privatelink)
 
 ## Create a Private Link Service Using the Azure Portal
 
