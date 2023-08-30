@@ -17,7 +17,7 @@ To access the Azure services through a private connection from the EMQX Cloud, y
 
 ::: tip Prerequisites
 
-This demonstration assumes that you have already have the Azure account and created your own virtual network. For more information about creating the virtual network, see the [Azure documentation](https://learn.microsoft.com/en-us/azure/private-link/create-private-link-service-portal?tabs=dynamic-ip#load-balancer-virtual-network).
+This demonstration assumes that you already have an Azure account and have created your own virtual network. For more information about creating the virtual network, see the [Azure documentation](https://learn.microsoft.com/en-us/azure/private-link/create-private-link-service-portal?tabs=dynamic-ip#load-balancer-virtual-network).
 
 :::
 
