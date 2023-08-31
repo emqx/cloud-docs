@@ -677,7 +677,18 @@
             },
             {
               "title": "Configure PrivateLink",
-              "path": "deployments/privatelink"
+              "path": "deployments/privatelink",
+              "collapsed":true,
+              "children": [
+                {
+                  "title": "AWS PrivateLink",
+                  "path": "deployments/privatelink-aws"
+                },
+                {
+                  "title": "Azure PrivateLink",
+                  "path": "deployments/privatelink-azure"
+                }
+              ]
             }
           ]
         },
