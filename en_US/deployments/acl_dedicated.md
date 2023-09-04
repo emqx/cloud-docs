@@ -8,7 +8,7 @@ Access control pertains to controlling permissions for publish (PUBLISH) and sub
 
 :::tip TIP
 
-- Access control uses a blacklist mode by default. The mode can be switched to whilelist via [ticket](../feature/tickets.md). <br/>
+- Access control uses a blacklist mode by default, ACL matching order is: All Users -> User/Client. The mode can be switched to whilelist via [ticket](../feature/tickets.md). <br/>
 - The combination of clientid/username + topic is unique, which means that only the latest record for the same clientid/username + topic is considered valid.
 
 :::
