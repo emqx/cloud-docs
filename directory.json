@@ -516,45 +516,75 @@
       ]
     },
     {
-      "title": "API",
+      "title": "APIs",
       "path": "api/introduction",
       "collapsed": true,
       "children": [
         {
-          "title": "认证管理",
-          "path": "api/auth"
+          "title": "专有版 / BYOC API",
+          "path": "api/dedicated",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "认证管理",
+              "path": "api/auth"
+            },
+            {
+              "title": "访问控制管理",
+              "path": "api/acl"
+            },
+            {
+              "title": "客户端管理",
+              "path": "api/clients"
+            },
+            {
+              "title": "黑名单管理",
+              "path": "api/banned"
+            },
+            {
+              "title": "订阅信息",
+              "path": "api/subscriptions"
+            },
+            {
+              "title": "主题订阅",
+              "path": "api/subscribe"
+            },
+            {
+              "title": "消息发布",
+              "path": "api/publish"
+            },
+            {
+              "title": "指标",
+              "path": "api/metrics"
+            },
+            {
+              "title": "影子服务",
+              "path": "api/shadow_service"
+            }
+          ]
         },
         {
-          "title": "访问控制管理",
-          "path": "api/acl"
-        },
-        {
-          "title": "客户端管理",
-          "path": "api/clients"
-        },
-        {
-          "title": "黑名单管理",
-          "path": "api/banned"
-        },
-        {
-          "title": "订阅信息",
-          "path": "api/subscriptions"
-        },
-        {
-          "title": "主题订阅",
-          "path": "api/subscribe"
-        },
-        {
-          "title": "消息发布",
-          "path": "api/publish"
-        },
-        {
-          "title": "指标",
-          "path": "api/metrics"
-        },
-        {
-          "title": "影子服务",
-          "path": "api/shadow_service"
+          "title": "Serverless API",
+          "path": "api/serverless",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "认证管理",
+              "path": "api/auth_v5"
+            },
+            {
+              "title": "客户端管理",
+              "path": "api/clients_v5"
+            },
+            {
+              "title": "订阅管理",
+              "path": "api/subscriptions_v5"
+            },
+            {
+              "title": "消息发布",
+              "path": "api/publish_v5"
+            }
+          ]
         }
       ]
     },
