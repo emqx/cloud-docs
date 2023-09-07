@@ -573,6 +573,10 @@
               "path": "api/auth_v5"
             },
             {
+              "title": "访问控制管理",
+              "path": "api/alc_v5"
+            },
+            {
               "title": "客户端管理",
               "path": "api/clients_v5"
             },
