@@ -110,6 +110,21 @@
         {
           "title": "工单",
           "path": "feature/tickets"
+        },
+        {
+          "title": "SSO",
+          "path": "feature/sso_overview",
+          "collapsed": true,
+          "children": [
+            {
+              "title" : "配置 Okta SSO",
+              "path" : "feature/sso_okta"
+            },
+            {
+              "title" : "配置 Azure AD SSO",
+              "path" : "feature/sso_azure"
+            }
+          ]
         }
       ]
     },
