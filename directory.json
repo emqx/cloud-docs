@@ -521,6 +521,33 @@
       "collapsed": true,
       "children": [
         {
+          "title": "Serverless API",
+          "path": "api/serverless",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "认证管理",
+              "path": "api/auth_v5"
+            },
+            {
+              "title": "访问控制管理",
+              "path": "api/alc_v5"
+            },
+            {
+              "title": "客户端管理",
+              "path": "api/clients_v5"
+            },
+            {
+              "title": "订阅管理",
+              "path": "api/subscriptions_v5"
+            },
+            {
+              "title": "消息发布",
+              "path": "api/publish_v5"
+            }
+          ]
+        },
+        {
           "title": "专有版 / BYOC API",
           "path": "api/dedicated",
           "collapsed": true,
@@ -560,33 +587,6 @@
             {
               "title": "影子服务",
               "path": "api/shadow_service"
-            }
-          ]
-        },
-        {
-          "title": "Serverless API",
-          "path": "api/serverless",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "认证管理",
-              "path": "api/auth_v5"
-            },
-            {
-              "title": "访问控制管理",
-              "path": "api/alc_v5"
-            },
-            {
-              "title": "客户端管理",
-              "path": "api/clients_v5"
-            },
-            {
-              "title": "订阅管理",
-              "path": "api/subscriptions_v5"
-            },
-            {
-              "title": "消息发布",
-              "path": "api/publish_v5"
             }
           ]
         }
