@@ -30,6 +30,9 @@ GET /subscriptions
 | data[].clientid | String           | 客户端标识符       |
 | data[].topic    | String           | 订阅主题           |
 | data[].qos      | Integer          | QoS 等级           |
+| nl      | Integer | No Local                                                   |
+| rap      | Integer | Retain as Published                                    |
+| rh      | Integer | Retain Handling                                        |
 | meta            | Object           | 分页信息           |
 | meta.page       | Integer          | 页码               |
 | meta.limit      | Integer          | 每页显示的数据条数 |
@@ -38,37 +41,45 @@ GET /subscriptions
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/subscriptions
+curl -u app_id:app_secret -X GET {api}/subscriptions
 ```
 
 ### 响应示例
 
 ```JSON
+// HTTP status response code
+200
+// HTTP response body
 {
   "meta": {
     "page": 1,
-    "limit": 50,
+    "limit": 100,
     "hasnext": false,
-    "count": 1
+    "count": 2
   },
   "data": [
     {
       "topic": "t/a",
       "qos": 0,
       "node": "emqx@10.12.50.91",
-      "clientid": "mqttx_b646e941"
+      "clientid": "client_1",
+      "nl": 0,
+      "rap": 0,
+      "rh": 0,
     },
     {
       "topic": "t/b",
       "qos": 1,
       "node": "emqx@10.12.50.91",
-      "clientid": "mqttx_b646e942"
+      "clientid": "client_2",
+      "nl": 0,
+      "rap": 0,
+      "rh": 0,
     }
   ]
 }
 ```
 
-TODO： 请求参数需要确认， 返回字段确认
 
 ## 获取指定客户端所有订阅信息
 
@@ -77,7 +88,6 @@ TODO： 请求参数需要确认， 返回字段确认
 GET /clients/{client_id}/subscriptions
 
 ### 请求消息
-
 
 
 ### 响应消息
@@ -89,11 +99,14 @@ GET /clients/{client_id}/subscriptions
 | data[].clientid | String           | 客户端标识符 |
 | data[].topic    | String           | 订阅主题     |
 | data[].qos      | Integer          | QoS 等级     |
+| nl      | Integer | No Local                                                   |
+| rap      | Integer | Retain as Published                                    |
+| rh      | Integer | Retain Handling                                        |
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/clients/mqttx_b646e941/subscriptions
+curl -u app_id:app_secret -X GET {api}/clients/client_1/subscriptions
 ```
 
 ### 响应示例
@@ -105,17 +118,20 @@ $ curl -u app_id:app_secret -X GET {api}/clients/mqttx_b646e941/subscriptions
       "topic": "t/a",
       "qos": 0,
       "node": "emqx@10.12.50.36",
-      "clientid": "mqttx_b646e941"
+      "clientid": "client_1",
+      "nl": 0,
+      "rap": 0,
+      "rh": 0,
     },
     {
       "topic": "t/b",
       "qos": 1,
       "node": "emqx@10.12.50.36",
-      "clientid": "mqttx_b646e941"
+      "clientid": "client_1",
+      "nl": 0,
+      "rap": 0,
+      "rh": 0,
     }
   ]
 }
 ```
-
-
-TODO： 请求参数需要确认， 返回字段确认

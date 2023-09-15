@@ -18,13 +18,16 @@ POST /publish
 
 ### 响应消息
 
-状态码
+| 名称 | 类型    | 描述 |
+| :--- | :------ | :--- |
+| id | String | id    |
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '{"topic": "t/a","qos": 1,"payload": "Hello EMQX"}' {api}/publish
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"topic": "t/a","qos": 1,"payload": "Hello EMQX"}' {api}/publish
 ```
+
 
 ### 响应示例
 
@@ -47,7 +50,6 @@ $ curl -u app_id:app_secret -X POST -d '{"topic": "t/a","qos": 1,"payload": "Hel
 }
 ```
 
-TODO: properties 参数是否原来就有？是否要写？respones body 有几种？
 
 ## 批量消息发布
 
@@ -67,12 +69,15 @@ POST /publish/bulk
 
 ### 响应消息
 
-状态码
+| 名称 | 类型    | 描述 |
+| :--- | :------ | :--- |
+| id | String | id    |
+
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '[{"topic": "t/a","qos": 0,"payload": "Hello EMQX"},{"topic": "t/b","qos": 1,"payload": "Hi EMQX"}]' {api}/publish/bulk
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"topic": "t/a","qos": 0,"payload": "Hello EMQX"},{"topic": "t/b","qos": 1,"payload": "Hi EMQX"}]' {api}/publish/bulk
 ```
 
 ### 响应示例
@@ -81,9 +86,14 @@ $ curl -u app_id:app_secret -X POST -d '[{"topic": "t/a","qos": 0,"payload": "He
 // HTTP status response code
 200
 // HTTP response body
-{
-  "id": "000600D09A099053F445000014C30000"
-}
+[
+    {
+        "id": "00060563A10558877ACA0C006CFA0000"
+    },
+    {
+        "id": "00060563A10558BF7ACA0C006CFA0001"
+    }
+]
 ```
 
 ```JSON
@@ -95,5 +105,3 @@ $ curl -u app_id:app_secret -X POST -d '[{"topic": "t/a","qos": 0,"payload": "He
   "reason_code": 16
 }
 ```
-
-TODO: properties 参数是否原来就有？是否要写？respones body 有几种？
