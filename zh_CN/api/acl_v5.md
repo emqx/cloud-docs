@@ -1,6 +1,6 @@
 # 访问控制（ACL）管理
 
-## 创建基于 client id 的 ACL 规则
+## 创建/批量创建基于 client id 的 ACL 规则
 
 ### URI
 
@@ -23,7 +23,7 @@ POST /authorization/sources/built_in_database/rules/clients
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients
 ```
 
 ### 响应示例
@@ -33,9 +33,8 @@ $ curl -u app_id:app_secret -X POST -d '{"clientid": "client1","rules":[{"topic"
 204 
 ```
 
-TODO： 响应形式需要确认，请求格式需要确认
 
-## 创建基于 username 的 ACL 规则
+## 创建/批量创建基于 username 的 ACL 规则
 
 ### URI
 
@@ -58,7 +57,7 @@ POST /authorization/sources/built_in_database/rules/users
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/users
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/users
 ```
 
 ### 响应示例
@@ -68,9 +67,8 @@ $ curl -u app_id:app_secret -X POST -d '{"username": "emqx_user","rules":[{"topi
 204 
 ```
 
-TODO： 响应形式需要确认，请求格式需要确认
 
-## 创建基于所有的 ACL 规则
+## 创建/批量创建基于所有的 ACL 规则
 
 ### URI
 
@@ -92,7 +90,7 @@ POST /authorization/sources/built_in_database/rules/all
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X POST -d '{"rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/all
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/all
 ```
 
 ### 响应示例
@@ -101,7 +99,6 @@ $ curl -u app_id:app_secret -X POST -d '{"rules":[{"topic": "t/a","action": "sub
 // HTTP status response code
 204 
 ```
-
 
 
 ## 查看基于 client id 所有的 ACL 规则
@@ -131,7 +128,7 @@ GET /authorization/sources/built_in_database/rules/clients
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/clients
+curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/clients
 ```
 
 ### 响应示例
@@ -145,12 +142,12 @@ $ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database
         {
           "action": "publish",
           "permission": "allow",
-          "topic": "test/toopic/1"
+          "topic": "test/topic/1"
         },
         {
           "action": "subscribe",
           "permission": "allow",
-          "topic": "test/toopic/2"
+          "topic": "test/topic/2"
         },
         {
           "action": "all",
@@ -169,7 +166,6 @@ $ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database
 }
 ```
 
-TODO： 请求参数待确认
 
 ## 查看基于 username 所有的 ACL 规则
 
@@ -189,7 +185,7 @@ GET /authorization/sources/built_in_database/rules/users
 | rules            | Array of Objects | 所有认证数据       |
 | rules[].topic    | String           | 主题               |
 | rules[].action   | String           | 动作               |
-| rules[].permission   | String           | 是否允许           |
+| rules[].permission | String           | 是否允许           |
 | meta            | Object           | 分页信息           |
 | meta.page       | Integer          | 页码               |
 | meta.limit      | Integer          | 每页显示的数据条数 |
@@ -198,7 +194,7 @@ GET /authorization/sources/built_in_database/rules/users
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/users
+curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/users
 ```
 
 ### 响应示例
@@ -221,12 +217,12 @@ $ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database
         {
           "action": "publish",
           "permission": "allow",
-          "topic": "test/toopic/1"
+          "topic": "test/topic/1"
         },
         {
           "action": "subscribe",
           "permission": "allow",
-          "topic": "test/toopic/2"
+          "topic": "test/topic/2"
         },
         {
           "action": "all",
@@ -245,8 +241,6 @@ $ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database
   }
 }
 ```
-
-TODO： 请求参数待确认
 
 
 ## 查看基于所有的 ACL 规则
@@ -275,7 +269,7 @@ GET /authorization/sources/built_in_database/rules/all
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/all
+curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/all
 ```
 
 ### 响应示例
@@ -286,12 +280,12 @@ $ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database
     {
       "action": "publish",
       "permission": "allow",
-      "topic": "test/toopic/1"
+      "topic": "test/topic/1"
     },
     {
       "action": "subscribe",
       "permission": "allow",
-      "topic": "test/toopic/2"
+      "topic": "test/topic/2"
     },
     {
       "action": "all",
@@ -331,7 +325,7 @@ GET /authorization/sources/built_in_database/rules/clients/{clientid}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/clients/client1
+curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database/rules/clients/client1
 ```
 
 ### 响应示例
@@ -343,12 +337,12 @@ $ curl -u app_id:app_secret -X GET {api}/authorization/sources/built_in_database
     {
       "action": "publish",
       "permission": "allow",
-      "topic": "test/toopic/1"
+      "topic": "test/topic/1"
     },
     {
       "action": "subscribe",
       "permission": "allow",
-      "topic": "test/toopic/2"
+      "topic": "test/topic/2"
     },
     {
       "action": "all",
@@ -388,7 +382,7 @@ GET /authorization/sources/built_in_database/rules/users/{username}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/acl/authorization/sources/built_in_database/rules/users/user1
+curl -u app_id:app_secret -X GET {api}/acl/authorization/sources/built_in_database/rules/users/user1
 ```
 
 ### 响应示例
@@ -399,7 +393,7 @@ $ curl -u app_id:app_secret -X GET {api}/acl/authorization/sources/built_in_data
     {
       "action": "publish",
       "permission": "allow",
-      "topic": "test/toopic/1"
+      "topic": "test/topic/1"
     }
   ],
   "username": "user1"
@@ -436,7 +430,7 @@ PUT /authorization/sources/built_in_database/rules/clients/{clientid}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X PUT -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients/client1
+curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients/client1
 ```
 
 ### 响应示例
@@ -475,7 +469,7 @@ PUT /authorization/sources/built_in_database/rules/users/{username}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X PUT -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/acl/authorization/sources/built_in_database/rules/users/user1
+curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/acl/authorization/sources/built_in_database/rules/users/user1
 ```
 
 ### 响应示例
@@ -504,7 +498,7 @@ DELETE /authorization/sources/built_in_database/rules/clients/{clientid}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X DELETE {api}/authorization/sources/built_in_database/rules/clients/clientid1
+curl -u app_id:app_secret -X DELETE {api}/authorization/sources/built_in_database/rules/clients/clientid1
 ```
 
 ### 响应示例
@@ -532,7 +526,7 @@ DELETE /authorization/sources/built_in_database/rules/users/{username}
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X DELETE {api}/authorization/sources/built_in_database/rules/users/user1
+curl -u app_id:app_secret -X DELETE {api}/authorization/sources/built_in_database/rules/users/user1
 ```
 
 ### 响应示例
@@ -558,9 +552,8 @@ DELETE /authorization/sources/built_in_database/rules/all
 状态码
 
 ### 请求示例
-
 ```bash
-$ curl -u app_id:app_secret -X DELETE {api}/authorization/sources/built_in_database/rules/all
+curl -u app_id:app_secret -X DELETE {api}/authorization/sources/built_in_database/rules/all
 ```
 
 ### 响应示例

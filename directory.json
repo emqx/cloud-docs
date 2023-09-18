@@ -531,7 +531,7 @@
             },
             {
               "title": "访问控制管理",
-              "path": "api/alc_v5"
+              "path": "api/acl_v5"
             },
             {
               "title": "客户端管理",
