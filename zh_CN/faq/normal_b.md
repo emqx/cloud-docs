@@ -73,3 +73,33 @@ EMQX Cloud 不会保存设备通讯日志，只会保存部署日志，部署日
 
 ## 如何计算连接数？
 连接数的定义为：在线的客户端和保留会话的离线客户端数量之和。在线客户端是指 `CONNECT` 之后连接到服务器的客户端，包括 `keepAlive` 时间范围内没有断开的客户端。 保留会话的离线客户是指客户端虽然离线了，但是设置了 `CleanSession` 为 false，这样的客户端也会被计算在连接数之内。当设备 `DISCONNECT` 下线，或者超过了 keep alive 的时间，没有通信，设备都会下线，不会计算在连接数当中。
+
+## TPS 是如何计算的？
+TPS - Transaction Per Second， 用来计量部署每秒钟处理的消息的数量。以下的 MQTT 消息和 HTTP 消息会计入 TPS 中。
+| 消息类型     | 消息流向   | 描述              |
+| -------- | ------ | ---------------------- |
+| MQTT PUBLISH | 从设备或服务发送 | 从设备或应用服务发送消息到部署，部署接收到消息   |
+| MQTT PUBLISH | 从部署发送 | 从部署发送消息到订阅端（设备或应用服务），订阅端接收到消息 |
+| MQTT RETAINED | 从设备或服务发送或从部署发送 | 保留消息的发布和接收 |
+| HTTP PUBLISH | 从服务发送 | 通过 POST /mqtt/publish 以及 POST /mqtt/publish_batch API 发送的消息 |
+
+
+
+以下的 MQTT 消息**不会**计入 TPS 中
+
+| 消息类型  | 描述              |
+| -------- | ---------------------- |
+| MQTT CONNECT | 连接服务端   |
+| MQTT CONNACK | 确认连接请求   |
+| MQTT PUBACK | 发布确认 |
+| MQTT PUBREC | 发布收到（QoS2，第一步） |
+| MQTT PUBREL | 发布释放（QoS2，第二步） |
+| MQTT PUBCOMP | 发布完成（QoS2，第三步） |
+| MQTT SUBSCRIBE | 订阅主题 |
+| MQTT SUBACK | 订阅确认 |
+| MQTT UNSUBSCRIBE | 取消订阅 |
+| MQTT UNSUBACK | 取消订阅确认 |
+| MQTT PINGREQ | 心跳请求 |
+| MQTT PINGRESP | 心跳响应 |
+| MQTT DISCONNECT | 断开连接 |
+
