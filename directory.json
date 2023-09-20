@@ -738,6 +738,7 @@
     {
       "title": "Project and Account",
       "path": "feature/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Project Center",
@@ -758,12 +759,28 @@
         {
           "title": "Tickets",
           "path": "feature/tickets"
+        },
+        {
+          "title": "Single Sign-On (SSO)",
+          "path": "feature/sso_overview",
+          "collapsed": true,
+          "children":[
+            {
+              "title": "Configure Okta SSO",
+              "path": "feature/sso_okta"
+            },
+            {
+              "title": "Configure Azure AD SSO",
+              "path": "feature/sso_azure"
+            }
+          ]
         }
       ]
     },
     {
       "title": "Authentication and ACL",
       "path": "deployments/auth_overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Serverless Plan",
@@ -826,6 +843,7 @@
     {
       "title": "Metrics & Monitors",
       "path": "deployments/operation_overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Monitors",

@@ -1,4 +1,4 @@
-# Introduction
+# Role and Authentication
 
 Accounts management fulfills enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. Different personnel can be invited within the enterprise to do detailed management of resources.
 
