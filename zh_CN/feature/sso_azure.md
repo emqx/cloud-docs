@@ -51,7 +51,9 @@
 
      ![sso](./_assets/azure_2.png)
 
-2. 在 Microsoft Azure 中点击左侧导航菜单中的 **Certificates & secrets**。在主页面中选择 **Client secrets**，点击 **+ New client secret**，填写描述和过期时间，生成 Client secret。复制 **Secrete ID**。
+2. 在 Microsoft Azure 中点击左侧导航菜单中的 **Certificates & secrets**。
+
+2. 在主页面中选择 **Client secrets**，点击 **+ New client secret**，填写描述和过期时间，生成 Client secret。复制 **Secrete ID**。
 
      ![sso](./_assets/azure_3.png)
 
@@ -76,9 +78,9 @@
 ## 步骤五：在 EMQX Cloud 中创建子用户
 1. 用 EMQX Cloud 主账号进入控制台的用户管理页面。
 2. 点击右上角 **+ 新建用户**。
-3. 在弹窗内的账号中输入和在 Okta 中授权的相同的邮箱账号： Jack@emqx.io。并且给该账号分配一个角色。请参考[多角色管理](./role.md)来设置不同的角色。
- ![sso](./_assets/sso3.png)
+3. 在弹窗内的账号中输入和在 Okta 中授权的相同的邮箱账号： Jack@emqx.io。并且给该账号分配一个角色。请参考[角色权限](./role.md)来设置不同的角色。
+ <img src="./_assets/sso3.png" alt="sso" style="zoom:67%;" />
 4. 最后使用用户管理页面中的子账号登录地址进行登录，点击**使用企业账号登录**，浏览器将会跳转到 Microsoft 的登录界面。
-![sso](./_assets/sso4.png)
+<img src="./_assets/sso4.png" alt="sso" style="zoom:67%;" />
 5. 在 Microsoft 的登录界面上完成登录流程，浏览器会自动返回到 EMQX Cloud 完成 SSO 登录。
 
