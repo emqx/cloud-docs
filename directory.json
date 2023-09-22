@@ -117,12 +117,12 @@
           "collapsed": true,
           "children": [
             {
-              "title" : "配置 Okta SSO",
-              "path" : "feature/sso_okta"
+              "title": "配置 Okta SSO",
+              "path": "feature/sso_okta"
             },
             {
-              "title" : "配置 Azure AD SSO",
-              "path" : "feature/sso_azure"
+              "title": "配置 Azure AD SSO",
+              "path": "feature/sso_azure"
             }
           ]
         }
@@ -592,6 +592,10 @@
         {
           "title": "数据集成 + Redis 实时获取主题下订阅的客户端",
           "path": "best_practices/save_topic_clients_to_redis"
+        },
+        {
+          "title": "如何排查消息丢失",
+          "path": "best_practices/how_to_troubleshoot_message_loss"
         }
       ]
     },
@@ -693,7 +697,7 @@
             {
               "title": "Configure PrivateLink",
               "path": "deployments/privatelink",
-              "collapsed":true,
+              "collapsed": true,
               "children": [
                 {
                   "title": "AWS PrivateLink",
@@ -1177,6 +1181,10 @@
         {
           "title": "Shared Subscription",
           "path": "connect_to_deployments/shared_subscription"
+        },
+        {
+          "title": "How to Troubleshoot Message Loss",
+          "path": "best_practices/how_to_troubleshoot_message_loss"
         }
       ]
     },
