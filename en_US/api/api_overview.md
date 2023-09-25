@@ -1,35 +1,28 @@
-# REST API
+# API
 
-EMQX Cloud API follows the REST architecture. You can access the functions of EMQX programmatically.
+The EMQX Cloud API follows RESTful definitions, providing you with programmatic access to manage deployments in EMQX Cloud. Through the API, you can manage authentication, clients, topics, and access more metric information.
 
-## API Overview
+The API has the following features:
 
-| API         | Description                                     |
-| ----------- | ----------------------------------------------- |
-| [Authentication management](./auth.md)          | Manage the creation, deletion and update of authentication information.                                         |
-| [ACL management](./acl.md)         | Manage the creation, deletion and update of ACL information.                                      |
-| [Client management](./client.md)         | View the online client information and kick off the client.                                 |
-| [Blacklist management](./banned.md)    | Manage the creation, deletion and get of blacklist information         |
-| [Message Subscription](./sub.md)        | Check subscribed message.                     |
-| [Topic Subscription](./topic.md)        | Subscribe, unsubscribe, batch subscribe, batch unsubscribe.                      |
-| [Message Publish](./topic.md)        | Publish, batch publish.                      |
-| [Metrics](./metrics.md)        | Check metrics.                     |
+- JSON Format: All response content is presented in JSON format.
+- HTTPS Only: You can only access the API via HTTPS, ensuring that all data sent over the network is encrypted using TLS.
+- Key-based Access and Digest Authentication: Before accessing the EMQX Cloud API, you must generate an API key. All requests are authenticated through HTTP digest authentication, ensuring that the API key is never sent over the network.
 
 ## How to Use API
+
+You can get the API access address in the API access section under the deployment details page.
+
+### Authentication
+
+HTTP API uses [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) method, ID and password must be filled in AppID and AppSecret respectively. You can add and remove AppID/AppSecret by creating new application in the API access under the deployment details page.
+
+![api](./_assets/api.png)
 
 ### Construct Request
 
 The request address consists of the following parts:
 
 {API}/{resource-path}?{query-string}
-
-You can get the API access address in the API access section under the deployment details page.
-
-![api](./_assets/api.png)
-
-### Authentication
-
-HTTP API uses [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) method, ID and password must be filled in AppID and AppSecret respectively. You can add and remove AppID/AppSecret by creating new application in the API access under the deployment details page.
 
 ## Response code
 
@@ -71,3 +64,10 @@ The possible result codes are as follows:
 | 113         | User already exists.                            |
 | 114         | Old password is wrong.                          |
 | 115         | Illegal subject.                                |
+
+## API Versions
+
+Depending on the different EMQX versions used in EMQX Cloud, the API is also divided into versions based on EMQX 4.x and EMQX 5.x. Please choose the API version that corresponds to the type of deployment you have activated.
+
+- [Serverless API](./serverless.md)
+- [Enterprise / BYOC API](./byoc.md)

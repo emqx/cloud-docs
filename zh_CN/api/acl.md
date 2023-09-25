@@ -1,5 +1,7 @@
 # 访问控制（ACL）管理
 
+本页 API 文档提供了与访问控制 （ACL）管理相关的各种操作信息，包括创建 、查看 、更新和删除 ACL 规则。
+
 ## 创建基于 client id 的 ACL 规则
 
 ### URI
@@ -224,7 +226,7 @@ $ curl -u app_id:app_secret -X POST -d '[{"clientid": "emqx_c_1","topic": "topic
 }
 ```
 
-## 查看基于 client id 所有的 ACL 规则
+## 查看基于 clientid 所有的 ACL 规则
 
 ### URI
 
@@ -380,7 +382,7 @@ $ curl -u app_id:app_secret -X GET {api}/acl/\$all
 }
 ```
 
-## 查看指定 client id 的 ACL 规则
+## 查看指定 clientid 的 ACL 规则
 
 ### URI
 

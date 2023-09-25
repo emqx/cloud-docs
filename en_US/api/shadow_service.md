@@ -1,4 +1,4 @@
-# Shadow Service
+# Shadow Service API
 
 You can create the IoT application based on the Shadow Service APIs.
 

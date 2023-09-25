@@ -1,5 +1,7 @@
 # 客户端 API
 
+本页 API 文档提供了与管理 MQTT 客户端相关的各种操作信息，包括查看客户端信息、为客户端订阅和取消订阅主题，以及断开客户端连接。
+
 ## 查看所有客户端
 
 ### URI
@@ -253,9 +255,7 @@ curl -u app_id:app_ssecret -X GET {api}/clients/client_1
 }
 ```
 
-
-
-## 剔除客户端
+## 踢除客户端
 
 ### URI
 
@@ -336,8 +336,6 @@ curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"topi
   "rh": 0,
 }
 ```
-
-
 
 ## 指定客户端取消订阅主题
 

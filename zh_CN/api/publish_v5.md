@@ -1,4 +1,6 @@
-# 消息发布
+# 消息发布 API
+
+本页 API 文档提供了与消息发布相关的操作信息，包括发布消息和批量发布消息。
 
 ## 发布消息
 
@@ -51,7 +53,7 @@ curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"topi
 ```
 
 
-## 批量消息发布
+## 批量发布消息
 
 ### URI
 

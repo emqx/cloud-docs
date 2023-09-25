@@ -1,6 +1,8 @@
-# Authentication Management
+# Authentication Management API
 
-## Check Username Authentication Information
+This API documentation provides various operation information related to managing authentication information on username and client ID, including viewing and creating authentication information, updating authentication passwords, and deleting authentication information.
+
+## View Username Authentication Information
 
 ### URI
 
@@ -52,7 +54,7 @@ curl -u app_id:app_secret -X GET {api}/auth_username
 }
 ```
 
-## Check the Authentication Information for the specified username
+## View Specified User Name Authentication Information
 
 ### URI
 
@@ -171,7 +173,7 @@ curl -u app_id:app_secret -X POST -d '[{"username": "api_user1", "password": "pa
 }
 ```
 
-## Update the Username Authentication Password
+## Update Username Authentication Password
 
 ### URI
 
@@ -245,7 +247,7 @@ curl -u app_id:app_secret -X DELETE {api}/auth_username/api_user1
 }
 ```
 
-## Check Client Authentication Information
+## View Client Authentication Information
 
 ### URI
 
@@ -297,7 +299,7 @@ curl -u app_id:app_secret -X GET {api}/auth_clientid
 }
 ```
 
-## Check the Authentication Information for the specified username
+## View Authentication Information for Specific Client
 
 ### URI
 
@@ -409,7 +411,7 @@ curl -u app_id:app_secret -X POST -d '[{"clientid": "test1", "password": "passwo
 }
 ```
 
-## Update the Client Authentication Password
+## Update Client Authentication Password
 
 ### URI
 

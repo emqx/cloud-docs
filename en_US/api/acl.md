@@ -1,4 +1,6 @@
-# Access Control Management
+# Access Control Management API
+
+This API documentation provides various operation information related to Access Control (ACL) management, including creating, viewing, updating, and deleting ACL rules.
 
 ## Create ACL Rule Based on clientid
 
@@ -96,7 +98,7 @@ curl -u app_id:app_secret -X POST -d '{"username": "user1","topic": "a/b","actio
 }
 ```
 
-## Create ACL Rule Based on Everything
+## Create ACL Rule Based on All
 
 ### URI
 
@@ -153,7 +155,7 @@ POST /acl
 
 | Name         | Type   | Description              |
 | :----------- | :----- | :----------------------- |
-| [0].clientid | String | [0].clientid             |
+| [0].clientid | String | clientid                 |
 | [0].topic    | String | Topic                    |
 | [0].action   | String | Action: sub, pub, pubsub |
 | [0].access   | String | If allowed: allow, deny  |
@@ -224,7 +226,7 @@ curl -u app_id:app_secret -X POST -d '[{"clientid": "emqx_c_1","topic": "topic/A
 }
 ```
 
-## Check ACL Rules Based on client id
+## View ACL Rules by clientid
 
 ### URI
 
@@ -277,7 +279,7 @@ curl -u app_id:app_secret -X GET {api}/acl/clientid
 }
 ```
 
-## Check ACL Rules Based on username
+## View ACL Rules by username
 
 ### URI
 
@@ -330,7 +332,7 @@ curl -u app_id:app_secret -X GET {api}/acl/username
 }
 ```
 
-## Check ACL Rules Based on All
+## View ACL Rules Based on ALL
 
 ### URI
 
@@ -383,7 +385,7 @@ curl -u app_id:app_secret -X GET {api}/acl/\$all
 }
 ```
 
-## Check ACL Rules for Specified Client Id
+## View ACL Rules by Specified clientid
 
 ### URI
 
@@ -393,7 +395,7 @@ GET /acl/clientid/{clientid}
 
 | Name     | Type   | Description |
 | :------- | :----- | :---------- |
-| clientid | String | clientid    |
+| clientid | String | Client ID   |
 
 ### Request Message
 
@@ -432,7 +434,7 @@ curl -u app_id:app_secret -X GET {api}/acl/clientid/emqx_c_1
 }
 ```
 
-## Check ACL Rules for Specified Username
+## View ACL Rules by Specified username
 
 ### URI
 
@@ -481,7 +483,7 @@ curl -u app_id:app_secret -X GET {api}/acl/username/emqx_u_1
 }
 ```
 
-## Delete the ACL Rule Specified by the Specified client id
+## Delete ACL Rule Specified by Specific clientid
 
 ### URI
 
@@ -491,7 +493,7 @@ DELETE /acl/clientid/{clientid}/topic/{topic}
 
 | Name     | Type   | Description                               |
 | :------- | :----- | :---------------------------------------- |
-| clientid | String | clientid                                  |
+| clientid | String | Client ID                                 |
 | topic    | String | topic, may need to use UrlEncode encoding |
 
 ### Request Message
@@ -518,7 +520,7 @@ curl -u app_id:app_secret -X DELETE {api}/acl/clientid/emqx_c_1/topic/topic%2fA
 }
 ```
 
-## Delete the ACL Rule Specified by the Specified username
+## Delete the ACL Rule Specified by Specific username
 
 ### URI
 
@@ -555,7 +557,7 @@ curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2uA
 }
 ```
 
-## Delete based on All Specified ACL Rules
+## Delete ACL Rules Specified by Based on All 
 
 ### URI
 

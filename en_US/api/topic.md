@@ -1,4 +1,6 @@
-# Topic Subscription
+# Topic Subscriptions API
+
+This API documentation provides information on operations related to topic subscription and unsubscription, and batch topic subscription and unsubscription.
 
 ## Subscribe
 
@@ -118,7 +120,7 @@ curl -u app_id:app_secret -X POST -d '[{"topic": "a", "qos": 1, "clientid": "tes
 }
 ```
 
-## Batch unsubscribe
+## Batch Unsubscribe
 
 ### URI
 
