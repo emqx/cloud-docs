@@ -70,5 +70,5 @@ HTTP API 使用 [Basic 认证](https://zh.m.wikipedia.org/zh-hans/HTTP%E5%9F%BA%
 基于 EMQX Cloud 使用的 EMQX 内核版本的不同，API 也分为基于 EMQX 4.x 和 EMQX 5.x 版本。请选择您开通的部署类型对应的 API 版本。
 
 - [Serverless API](./serverless.md)
-- [专有版 / BYOC API](./dedicated.md)
+- [专有版 / BdeYOC API](./dedicated.md)
 
