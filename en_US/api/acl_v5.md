@@ -15,7 +15,7 @@ POST /authorization/sources/built_in_database/rules/clients
 | clientid      | String | client id                  |
 | rules         | Object | Rules to define            |
 | [].topic      | String | Topic                      |
-| [].action     | String | Action: sub, pub, pubsub   |
+| [].action     | String | Action: publish, subscribe, all   |
 | [].permission | String | Allow or deny: allow, deny |
 
 ### Response Message
@@ -25,7 +25,7 @@ Status code
 ### Request Example
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"clientid": "client1","rules":[{"topic": "t/a","action": "subscribe","permission": "allow"}]}]' {api}/authorization/sources/built_in_database/rules/clients
 ```
 
 ### Response Example
@@ -48,7 +48,7 @@ POST /authorization/sources/built_in_database/rules/users
 | username      | String | username                   |
 | rules         | Object | Rules to define            |
 | [].topic      | String | Topic                      |
-| [].action     | String | Action: sub, pub, pubsub   |
+| [].action     | String | Action: publish, subscribe, all  |
 | [].permission | String | Allow or deny: allow, deny |
 
 ### Response Message
@@ -58,7 +58,7 @@ Status code
 ### Request Example
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/users
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"username": "emqx_user","rules":[{"topic": "t/a","action": "subscribe","permission": "allow"}]}]' {api}/authorization/sources/built_in_database/rules/users
 ```
 
 ### Response Example
@@ -80,7 +80,7 @@ POST /authorization/sources/built_in_database/rules/all
 | ------------- | ------ | -------------------------- |
 | rules         | Object | Rules to define            |
 | [].topic      | String | Topic                      |
-| [].action     | String | Action: sub, pub, pubsub   |
+| [].action     | String | Action: publish, subscribe, all   |
 | [].permission | String | Allow or deny: allow, deny |
 
 ### Response Message
@@ -90,7 +90,7 @@ Status code
 ### Request Example
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/all
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"rules":[{"topic": "t/a","action": "publish","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/all
 ```
 
 ### Response Example
@@ -416,7 +416,7 @@ PUT /authorization/sources/built_in_database/rules/clients/{clientid}
 | clientid           | String           | client id               |
 | rules              | Array of Objects | All authentication data |
 | rules[].topic      | String           | Topic                   |
-| rules[].action     | String           | Action                  |
+| rules[].action     | String           | Action: publish, subscribe, all |
 | rules[].permission | String           | Allow or deny           |
 
 ### Response Message
@@ -426,7 +426,7 @@ Status code
 ### Request Example
 
 ```bash
-curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients/client1
+curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "subscribe","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients/client1
 ```
 
 ### Response Example
@@ -455,7 +455,7 @@ PUT /authorization/sources/built_in_database/rules/users/{username}
 | username           | String           | Access control username |
 | rules              | Array of Objects | All authentication data |
 | rules[].topic      | String           | Topic                   |
-| rules[].action     | String           | Action                  |
+| rules[].action     | String           | Action: publish, subscribe, all  |
 | rules[].permission | String           | Allow or deny           |
 
 ### Response Message
@@ -465,7 +465,7 @@ Status code
 ### Request Example
 
 ```bash
-curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/acl/authorization/sources/built_in_database/rules/users/user1
+curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "subscribe","permission": "allow"}]}' {api}/acl/authorization/sources/built_in_database/rules/users/user1
 ```
 
 ### Response Example
