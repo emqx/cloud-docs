@@ -1,10 +1,14 @@
-## Check All the Clients
+# Clients API
+
+This API documentation provides information on various operations related to managing MQTT clients, including viewing all client information, viewing a specific client information, and kicking clients.
+
+## Clients
 
 ### URI
 
 GET /clients
 
-Returns information for all clients under the cluster, with support for paging.
+Returns information for all clients under the cluster, with support for pagination.
 
 **Parameters:**
 
@@ -206,12 +210,12 @@ $ curl -u app_id:app_ssecret -X GET {api}/clients/emqx_c_1
 }
 ```
 
-## Kick off Client
+## Kick a Client
 
 ### URI
 
 DELETE /clients/{clientid}
-Kick off the specified client. Note that kicking the client terminates the connection and the session.
+Kick a specified client off. Note that kicking the client terminates the connection and the session.
 
 Parameter:
 

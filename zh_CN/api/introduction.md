@@ -1,37 +1,28 @@
-# REST API
+# API
 
-EMQX Cloud  API 遵循 REST 体系结构，您可以通过编程方式访问 EMQX 的功能。
+EMQX Cloud API 遵循 RESTful 定义，为您提供编程访问 EMQX Cloud 中管理部署的能力。通过 API，您可以对认证、客户端、主题等进行管理，并可以获取到更多的指标信息。
 
-## API 概览
+API 具有以下特征：
 
-| API                          | 描述                                   |
-| ---------------------------- | -------------------------------------- |
-| [认证管理](auth.md)          | 管理认证信息的创建，删除和更新         |
-| [访问控制管理](acl.md)       | 管理访问控制的创建，删除和更新         |
-| [客户端管理](clients.md)     | 查看在线客户端信息，剔除客户端         |
-| [黑名单管理](banned.md)       | 黑名单信息的创建，删除和查看      |
-| [订阅信息](subscriptions.md) | 查看订阅信息                           |
-| [主题订阅](subscribe.md)     | 订阅，取消订阅，批量订阅，批量取消订阅 |
-| [消息发布](publish.md)       | 消息发布，批量消息发布                 |
-| [指标](metrics.md)           | 查看指标                               |
+- JSON 格式：所有响应内容均以 JSON 格式呈现。
+- 仅支持 HTTPS：您只能通过 HTTPS 访问 API，确保所有通过网络发送的数据都使用 TLS 加密。
+- 基于密钥的访问和摘要认证。在访问 EMQX Cloud API 之前，您必须生成 API 密钥。所有请求都通过 HTTP 摘要认证进行身份验证，并确保 API 密钥永远不会通过网络发送。
 
 ## 如何调用 API
 
-### 构造请求
-
-请求地址由以下几个部分组成
-
-{API}/{resource-path}?{query-string}
-
-您可以在部署详情页面下的 API 访问中，获取到 API 访问地址
-
-![api—access](./_assets/api_access.png)
+您可以在部署详情页面下的 API 访问中，获取到 API 访问地址。
 
 ### 认证鉴权
 
 HTTP API 使用 [Basic 认证](https://zh.m.wikipedia.org/zh-hans/HTTP%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81) 方式，id 和 password 须分别填写 AppID 和 AppSecret。 您可以在部署详情页面下的 API 访问中，通过创建应用访问来添加和删除 AppID/AppSecret。
 
 ![api-app](./_assets/api_secret.png)
+
+### 构造请求
+
+请求地址由以下几个部分组成：
+
+{API}/{resource-path}?{query-string}
 
 ## 响应码
 
@@ -73,3 +64,11 @@ HTTP API 使用 [Basic 认证](https://zh.m.wikipedia.org/zh-hans/HTTP%E5%9F%BA%
 | 113    | 用户已存在                 |
 | 114    | 旧密码错误                 |
 | 115    | 不合法的主题               |
+
+## API 版本说明
+
+基于 EMQX Cloud 使用的 EMQX 内核版本的不同，API 也分为基于 EMQX 4.x 和 EMQX 5.x 版本。请选择您开通的部署类型对应的 API 版本。
+
+- [Serverless API](./serverless.md)
+- [专有版 / BdeYOC API](./dedicated.md)
+

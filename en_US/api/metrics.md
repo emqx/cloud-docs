@@ -1,6 +1,8 @@
-# Metrics
+# Metrics API
 
-## Statistical Metrics
+This API documentation provides operations related to view statistical metrics for the deployment.
+
+## View Statistical Metrics
 
 ### URI
 

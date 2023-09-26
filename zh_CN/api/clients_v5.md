@@ -1,6 +1,6 @@
 # 客户端 API
 
-本页 API 文档提供了与管理 MQTT 客户端相关的各种操作信息，包括查看所有客户端信息、查看指定客户端信息，以及踢除客户端。
+本页 API 文档提供了与管理 MQTT 客户端相关的各种操作信息，包括查看客户端信息、为客户端订阅和取消订阅主题，以及断开客户端连接。
 
 ## 查看所有客户端
 
@@ -31,6 +31,7 @@ GET /clients
 | _gte_connected_at | Integer | 客户端连接创建时间，小于等于查找                                 |
 | _lte_connected_at | Integer | 客户端连接创建时间，大于等于查找                                 |
 
+
 ### 请求消息
 
 无
@@ -38,8 +39,7 @@ GET /clients
 ### 响应消息
 
 | 名称                     | 类型             | 描述                                                                                            |
-| ------------------------ | ---------------- | ----------------------------------------------------------------------------------------------- |
-| code                     | Integer          | 0                                                                                               |
+| ------------------------ | ---------------- | ----------------------------------------------------------------------------------------------- | 
 | data                     | Array of Objects | 所有客户端的信息                                                                                |
 | data[].node              | String           | 客户端所连接的节点名称                                                                          |
 | data[].clientid          | String           | 客户端标识符                                                                                    |
@@ -85,7 +85,7 @@ GET /clients
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X GET {api}/clients?_page=1&_limit=10
+curl -u app_id:app_secret -X GET {api}/clients?_page=1&_limit=50
 ```
 
 ### 响应示例
@@ -94,53 +94,70 @@ $ curl -u app_id:app_secret -X GET {api}/clients?_page=1&_limit=10
 {
   "meta": {
     "page": 1,
-    "limit": 10000,
+    "limit": 50,
     "hasnext": false,
     "count": 1
   },
   "data": [
     {
-      "recv_cnt": 45,
-      "send_pkt": 44,
-      "clean_start": true,
-      "expiry_interval": 0,
-      "proto_ver": 4,
-      "recv_msg": 0,
-      "connected_at": "2021-03-18 02:15:57",
-      "recv_oct": 164,
-      "is_bridge": false,
-      "connected": true,
-      "max_awaiting_rel": 100,
-      "heap_size": 610,
-      "mqueue_dropped": 0,
-      "recv_pkt": 2,
-      "ip_address": "127.0.0.1",
-      "max_subscriptions": 0,
-      "created_at": "2021-03-18 02:15:57",
-      "awaiting_rel": 0,
-      "mountpoint": "undefined",
-      "node": "emqx@10.12.50.91",
-      "proto_name": "MQTT",
-      "mailbox_len": 0,
-      "send_msg": 2,
-      "clientid": "emqx_c_1",
-      "mqueue_len": 0,
-      "inflight": 0,
-      "max_mqueue": 1000,
-      "subscriptions_cnt": 4,
-      "keepalive": 60,
-      "reductions": 35471,
-      "zone": "external",
-      "send_cnt": 44,
-      "username": "test",
-      "send_oct": 159,
-      "port": 3107,
-      "max_inflight": 32
+        "peersni": "qe92461d.dev-ala.cn-hangzhou.mqttce.com",
+        "reductions": 10276,
+        "expiry_interval": 0,
+        "clean_start": true,
+        "send_msg.dropped.expired": 0,
+        "recv_msg.qos0": 3,
+        "mqueue_dropped": 0,
+        "recv_cnt": 9,
+        "send_cnt": 3,
+        "keepalive": 60,
+        "recv_oct": 257,
+        "heap_size": 987,
+        "recv_pkt": 6,
+        "recv_msg.dropped.await_pubrel_timeout": 0,
+        "proto_ver": 5,
+        "inflight_max": 32,
+        "send_msg.dropped": 0,
+        "created_at": "2023-09-15T09:36:20.871+00:00",
+        "awaiting_rel_max": 100,
+        "inflight_cnt": 0,
+        "ip_address": "115.236.21.86",
+        "mqueue_len": 0,
+        "send_msg.qos2": 0,
+        "send_pkt": 3,
+        "subscriptions_cnt": 0,
+        "send_msg.dropped.too_large": 0,
+        "recv_msg": 3,
+        "send_msg.dropped.queue_full": 0,
+        "send_msg": 0,
+        "node": "emqxsl-dev@10.66.128.31",
+        "awaiting_rel_cnt": 0,
+        "listener": "tcp:default",
+        "connected": true,
+        "username": "aip_user2",
+        "recv_msg.qos1": 0,
+        "proto_name": "MQTT",
+        "port": 13312,
+        "send_msg.qos1": 0,
+        "is_persistent": false,
+        "enable_authn": true,
+        "mailbox_len": 0,
+        "subscriptions_max": 10,
+        "recv_msg.qos2": 0,
+        "connected_at": "2023-09-15T09:36:20.871+00:00",
+        "tenant_id_from": "peersni",
+        "is_bridge": false,
+        "clientid": "mqttx_07cb8109",
+        "send_oct": 25,
+        "send_msg.qos0": 0,
+        "mqueue_max": 1000,
+        "cn": null,
+        "recv_msg.dropped": 0,
+        "dn": null
     }
-  ],
-  "code": 0
+  ]
 }
 ```
+
 
 ## 查看指定客户端的信息
 
@@ -164,7 +181,6 @@ GET /clients/{clientid}
 
 | 名称 | 类型             | 描述                                    |
 | ---- | ---------------- | --------------------------------------- |
-| code | Integer          | 0                                       |
 | data | Array of Objects | 客户端的信息，详细请参见 `GET /clients` |
 
 ### 请求示例
@@ -172,54 +188,70 @@ GET /clients/{clientid}
 查询指定客户端
 
 ```bash
-$ curl -u app_id:app_ssecret -X GET {api}/clients/emqx_c_1
+curl -u app_id:app_ssecret -X GET {api}/clients/client_1
 ```
+
 
 ### 响应示例
 
 ```JSON
+// HTTP status response code
+200
+// HTTP response body
 {
-  "data": [
-    {
-      "recv_cnt": 49,
-      "send_pkt": 48,
-      "clean_start": true,
-      "expiry_interval": 0,
-      "proto_ver": 4,
-      "recv_msg": 0,
-      "connected_at": "2021-03-18 02:15:57",
-      "recv_oct": 172,
-      "is_bridge": false,
-      "connected": true,
-      "max_awaiting_rel": 100,
-      "heap_size": 610,
-      "mqueue_dropped": 0,
-      "recv_pkt": 2,
-      "ip_address": "127.0.0.1",
-      "max_subscriptions": 0,
-      "created_at": "2021-03-18 02:15:57",
-      "awaiting_rel": 0,
-      "mountpoint": "undefined",
-      "node": "emqx@10.12.50.91",
-      "proto_name": "MQTT",
-      "mailbox_len": 0,
-      "send_msg": 2,
-      "clientid": "emqx_c_1",
-      "mqueue_len": 0,
-      "inflight": 0,
-      "max_mqueue": 1000,
-      "subscriptions_cnt": 4,
-      "keepalive": 60,
-      "reductions": 38501,
-      "zone": "external",
-      "send_cnt": 48,
-      "username": "test",
-      "send_oct": 167,
-      "port": 3107,
-      "max_inflight": 32
-    }
-  ],
-  "code": 0
+    "peersni": "qe92461d.dev-ala.cn-hangzhou.mqttce.com",
+    "reductions": 21041,
+    "expiry_interval": 0,
+    "clean_start": true,
+    "send_msg.dropped.expired": 0,
+    "recv_msg.qos0": 5,
+    "mqueue_dropped": 0,
+    "recv_cnt": 18,
+    "send_cnt": 10,
+    "keepalive": 60,
+    "recv_oct": 361,
+    "heap_size": 987,
+    "recv_pkt": 15,
+    "recv_msg.dropped.await_pubrel_timeout": 0,
+    "proto_ver": 5,
+    "inflight_max": 32,
+    "send_msg.dropped": 0,
+    "created_at": "2023-09-15T09:36:20.871+00:00",
+    "awaiting_rel_max": 100,
+    "inflight_cnt": 0,
+    "ip_address": "115.236.21.86",
+    "mqueue_len": 0,
+    "send_msg.qos2": 0,
+    "send_pkt": 10,
+    "subscriptions_cnt": 0,
+    "send_msg.dropped.too_large": 0,
+    "recv_msg": 5,
+    "send_msg.dropped.queue_full": 0,
+    "send_msg": 0,
+    "node": "emqxsl-dev@10.66.128.31",
+    "awaiting_rel_cnt": 0,
+    "listener": "tcp:default",
+    "connected": true,
+    "username": "aip_user2",
+    "recv_msg.qos1": 0,
+    "proto_name": "MQTT",
+    "port": 13312,
+    "send_msg.qos1": 0,
+    "is_persistent": false,
+    "enable_authn": true,
+    "mailbox_len": 0,
+    "subscriptions_max": 10,
+    "recv_msg.qos2": 0,
+    "connected_at": "2023-09-15T09:36:20.871+00:00",
+    "tenant_id_from": "peersni",
+    "is_bridge": false,
+    "clientid": "mqttx_07cb8109",
+    "send_oct": 39,
+    "send_msg.qos0": 0,
+    "mqueue_max": 1000,
+    "cn": null,
+    "recv_msg.dropped": 0,
+    "dn": null
 }
 ```
 
@@ -231,11 +263,6 @@ DELETE /clients/{clientid}
 
 踢除指定客户端。注意踢除客户端操作会将连接与会话一并终结。
 
-参数:
-
-| 参数     | 类型   | 描述     |
-| -------- | ------ | -------- |
-| clientid | String | clientid |
 
 ### 请求信息
 
@@ -243,21 +270,188 @@ DELETE /clients/{clientid}
 
 ### 响应消息
 
-| 名称 | 类型    | 描述 |
-| ---- | ------- | ---- |
-| code | Integer | 0    |
+状态码
 
 ### 请求示例
 
 ```bash
-$ curl -u app_id:app_secret -X DELETE {api}/clients/emqx_c_1
+curl -u app_id:app_secret -X DELETE {api}/clients/client_1
+```
+
+### 响应示例
+
+```HTTP
+// HTTP status response code
+204 
+```
+
+## 指定客户端订阅主题
+
+### URI
+
+POST /clients/{client_id}/subscribe
+
+### 请求消息
+
+| 名称     | 类型    | 描述                                                  |
+| -------- | ------- | ----------------------------------------------------- |
+| topic    | String  | 需要订阅的主题                |
+| qos      | Integer | QoS                                                   |
+| nl      | Integer | No Local                                                   |
+| rap      | Integer | Retain as Published                                    |
+| rh      | Integer | Retain Handling                                        |
+
+### 响应消息
+
+| 名称 | 类型    | 描述 |
+| ---- | ------- | ---- |
+| clientid | String | Clientid   |
+| topic | String |  订阅的主题   |
+| qos | Integer | QoS   |
+| node | String | 节点信息   |
+| nl      | Integer | No Local                                                   |
+| rap      | Integer | Retain as Published                                    |
+| rh      | Integer | Retain Handling                                        |
+
+### 请求示例
+
+```bash
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"topic": "t/a","qos": 1}' {api}/clients/client_1/subscribe
 ```
 
 ### 响应示例
 
 ```JSON
+// HTTP status response code
+200
+// HTTP response body
 {
-  "code": 0
+  "clientid": "client_1",
+  "topic": "t/a",
+  "qos": 1,
+  "nl": 0,
+  "node": "emqxsl-dev@10.66.128.31",
+  "qos": 0,
+  "rap": 0,
+  "rh": 0,
 }
+```
+
+## 指定客户端取消订阅主题
+
+### URI
+
+POST /clients/{client_id}/unsubscribe
+
+### 请求消息
+
+| 名称     | 类型    | 描述                                                  |
+| -------- | ------- | ----------------------------------------------------- |
+| topic    | String  | 需要取消订阅的主题             |
+
+### 响应消息
+
+状态码
+
+### 请求示例
+
+```bash
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"topic": "t/a"}' {api}/clients/client_1/unsubscribe'
+```
+
+### 响应示例
+
+```HTTP
+// HTTP status response code
+204
+```
+
+
+## 指定客户端批量订阅主题
+
+### URI
+
+POST /clients/{client_id}/subscribe/bulk
+
+### 请求消息
+
+| 名称        | 类型    | 描述                                                  |
+| ----------- | ------- | ----------------------------------------------------- |
+| [].topic    | String  | 需要订阅的主题                   |
+| [].qos      | Integer | QoS 等级                                              |
+
+### 响应消息
+
+| 名称            | 类型             | 描述         |
+| --------------- | ---------------- | ------------ |
+| data            | Array of Objects | 所有订阅信息 |
+| data[].clientid | String           | clientid     |
+| data[].topic    | String           | 订阅主题     |
+
+### 请求示例
+
+```bash
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"topic": "t/a", "qos": 1}, {"topic": "t/b", "qos": 0}]' {api}/clients/client_1/subscribe/bulk
+```
+
+
+### 响应示例
+
+```JSON
+// HTTP status response code
+200
+// HTTP response body
+{
+    "data": [
+        {
+            "topic": "t/a",
+            "clientid": "client_1",
+            "nl": 0,
+            "node": "emqxsl-dev@10.66.128.31",
+            "qos": 1,
+            "rap": 0,
+            "rh": 0,
+        },
+        {
+            "topic": "t/b",
+            "clientid": "client_1",
+            "nl": 0,
+            "node": "emqxsl-dev@10.66.128.31",
+            "qos": 0,
+            "rap": 0,
+            "rh": 0,
+        }
+    ]
+}
+```
+
+
+## 指定客户端批量取消订阅主题
+
+### URI
+
+POST /clients/{client_id}/unsubscribe/bulk
+
+### 请求消息
+
+| 名称        | 类型    | 描述                                                  |
+| ----------- | ------- | ----------------------------------------------------- |
+| [].topic    | String  | 需要取消订阅的主题                   |
+
+### 响应消息
+
+状态码
+
+### 请求示例
+
+```bash
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"topic": "t/a"},{"topic": "t/b"}]' {api}/clients/client_1/unsubscribe/bulk
+```
+
+### 响应示例
+
+```HTTP
+// HTTP status response code
+204 
 ```
 

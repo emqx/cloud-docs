@@ -1,6 +1,8 @@
-# Blacklist Management
+# Banned Clients API
 
-## Check Blacklist Information
+This API documentation provides information on various operations related to managing banned clients list, including viewing banned clients, add clients to the banned clients list, and delete banned clients.
+
+## View Banned Clients 
 
 ### URI
 
@@ -73,7 +75,7 @@ $ curl -u app_id:app_secret -X GET {api}/banned
 }
 ```
 
-## create blacklist information
+## Create Banned Clients
 
 ### URI
 
@@ -127,7 +129,7 @@ $ curl -u app_id:app_secret -X POST {api}/banned -d '{"who":"example","as":"clie
 }
 ```
 
-## Delete blacklist information
+## Delete Banned Clients
 
 ### URI
 
