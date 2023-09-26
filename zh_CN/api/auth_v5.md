@@ -146,7 +146,8 @@ curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"user
 201
 // HTTP response body
 {
-  "user_id": "user1"
+  "user_id": "user1",
+  "is_superuser": false
 }
 ```
 
@@ -170,7 +171,7 @@ POST /authentication/password_based%3Abuilt_in_database/import_users?type=plain
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"username": "api_user1", "password": "password"},{"username": "api_user2", "password": "password"}]' {api}/authentication/password_based%3Abuilt_in_database/import_users?type=plain
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"user_id": "api_user1", "password": "password"},{"user_id": "api_user2", "password": "password"}]' {api}/authentication/password_based%3Abuilt_in_database/import_users?type=plain
 ```
 
 

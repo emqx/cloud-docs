@@ -15,7 +15,7 @@ POST /authorization/sources/built_in_database/rules/clients
 | clientid | String | client id                  |
 | rules | Object | 需要定义的规则                   |
 | [].topic    | String | 主题                   |
-| [].action   | String | 动作：sub, pub, pubsub |
+| [].action   | String | 动作：publish, subscribe, all |
 | [].permission   | String | 是否允许：allow, deny  |
 
 ### 响应消息
@@ -25,7 +25,7 @@ POST /authorization/sources/built_in_database/rules/clients
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"clientid": "client1","rules":[{"topic": "t/a","action": "subscribe","permission": "allow"}]}]' {api}/authorization/sources/built_in_database/rules/clients
 ```
 
 ### 响应示例
@@ -49,7 +49,7 @@ POST /authorization/sources/built_in_database/rules/users
 | username | String | username                  |
 | rules | Object | 需要定义的规则                   |
 | [].topic    | String | 主题                   |
-| [].action   | String | 动作：sub, pub, pubsub |
+| [].action   | String | 动作：publish, subscribe, all |
 | [].permission   | String | 是否允许：allow, deny  |
 
 ### 响应消息
@@ -59,7 +59,7 @@ POST /authorization/sources/built_in_database/rules/users
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/users
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '[{"username": "emqx_user","rules":[{"topic": "t/a","action": "publish","permission": "allow"}]}]' {api}/authorization/sources/built_in_database/rules/users
 ```
 
 ### 响应示例
@@ -82,7 +82,7 @@ POST /authorization/sources/built_in_database/rules/all
 | -------- | ------ | ---------------------- |
 | rules | Object | 需要定义的规则                   |
 | [].topic    | String | 主题                   |
-| [].action   | String | 动作：sub, pub, pubsub |
+| [].action   | String | 动作：publish, subscribe, all |
 | [].permission   | String | 是否允许：allow, deny  |
 
 ### 响应消息
@@ -92,7 +92,7 @@ POST /authorization/sources/built_in_database/rules/all
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/all
+curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"rules":[{"topic": "t/a","action": "publish","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/all
 ```
 
 ### 响应示例
@@ -422,7 +422,7 @@ PUT /authorization/sources/built_in_database/rules/clients/{clientid}
 | clientid       | String | client id       |
 | rules            | Array of Objects | 所有认证数据       |
 | rules[].topic    | String           | 主题               |
-| rules[].action   | String           | 动作               |
+| rules[].action   | String           | 动作：publish, subscribe, all   |
 | rules[].permission   | String      | 是否允许           |
 
 ### 响应消息
@@ -432,7 +432,7 @@ PUT /authorization/sources/built_in_database/rules/clients/{clientid}
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients/client1
+curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"clientid": "client1","rules":[{"topic": "t/a","action": "publish","permission": "allow"}]}' {api}/authorization/sources/built_in_database/rules/clients/client1
 ```
 
 ### 响应示例
@@ -461,7 +461,7 @@ PUT /authorization/sources/built_in_database/rules/users/{username}
 | username       | String | 访问控制用户名       |
 | rules            | Array of Objects | 所有认证数据       |
 | rules[].topic    | String           | 主题               |
-| rules[].action   | String           | 动作               |
+| rules[].action   | String           | 动作：publish, subscribe, all               |
 | rules[].permission   | String           | 是否允许           |
 
 ### 响应消息
@@ -471,7 +471,7 @@ PUT /authorization/sources/built_in_database/rules/users/{username}
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "sub","permission": "allow"}]}' {api}/acl/authorization/sources/built_in_database/rules/users/user1
+curl -u app_id:app_secret -X PUT -H 'Content-Type: application/json' -d '{"username": "emqx_user","rules":[{"topic": "t/a","action": "subscribe","permission": "allow"}]}' {api}/acl/authorization/sources/built_in_database/rules/users/user1
 ```
 
 ### 响应示例
