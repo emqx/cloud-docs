@@ -99,7 +99,7 @@ Your role needs to have the necessary Identity and Access Management (IAM) permi
 
 To create a custom policy, you can utilize the provided policy definition by following the steps in the [Creating policies using the JSON editor](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) documentation. After creating the custom policy, you can attach it to an IAM user or a group of users. Finally, generate the access key for the IAM user by following the steps in the [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) documentation.
 
-Here is the policy definition in JSON:
+Here is the policy definition in JSON (**For creating & deleting deployment**)
 ```json
 {
   "Version": "2012-10-17",
@@ -183,6 +183,36 @@ Here is the policy definition in JSON:
         "elasticloadbalancing:DeleteListener"
       ],
       "Resource": "*"
+    }
+  ]
+}
+```
+Here is the policy definition in JSON (**For stopping & starting deployment only**)
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
     }
   ]
 }
@@ -287,6 +317,19 @@ gcloud projects add-iam-policy-binding <project-id> --member=serviceAccount:<ser
 gcloud iam service-accounts keys create <json-file> --iam-account=<service-account-name>@<project-id>.iam.gserviceaccount.com
 ```
 Please note that you should replace `<project-id>`, `<yaml-file-path>`, `<service-account-name>`, and `<json-file>` with the actual values or placeholders specific to your use case.
+
+
+If you want to set the permissions to **start and stop** the deployment separately, please define the following definitions.
+
+```yaml
+title: "EMQX Cloud BYOC creation"
+description: "The minimum role definition for stopping or starting an EMQX Cloud BYOC deployment"
+stage: "GA"
+includedPermissions:
+- compute.instances.get
+- compute.instances.start
+- compute.instances.stop
+```
 :::
 
 ::::
