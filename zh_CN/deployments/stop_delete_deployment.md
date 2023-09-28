@@ -67,7 +67,6 @@
 
 ## BYOC 停止和删除部署
 
-
 ### 停止部署
 ::: warning
 停止部署后您将不能连接到部署，您的数据和连接地址将会被保留。
@@ -75,13 +74,166 @@
 
 进入控制台，点击您所需要删除的部署，进入部署详情页面。点击 **停止** 按钮，弹出 **停止部署指引**，如下图所示：
 
-TODO
+![byoc_stop_deployment](./_assets/byoc_stop_deployment.png)
 
-准备一个可访问互联网的 Ubuntu 20.04 (AMD64) LTS 环境，根据网页 **停止部署指引** 中生成的操作步骤和停止命令。
+准备一个可访问互联网的 Ubuntu 20.04 (AMD64) LTS 环境，根据网页 **停止部署指引** 中生成的操作步骤和停止命令。在执行操作之前，请确保已经设置了正确的[启动和停止的权限策略](../deployments/byoc_prerequisite.md#云平台账号权限)。
+
+::: tip
+请依次复制网页 **停止部署指引** 中的命令并将其粘贴到您的 Ubuntu 命令行界面中。此命令包含您在设置页面中提供的值，以及系统预置的信息。
+:::
+
+操作步骤如下：
+:::: tabs
+::: tab "阿里云"
+1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+```bash
+wget https://cloudassets.emqx.com/cn/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+```
+
+2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+```bash
+tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
+```
+
+3. 根据以下命令，修改对应参数的值，执行命令停止部署。
+```bash
+./byoc stop \
+      --platform aliyun \
+      --accessKey <Your Access Key> \
+      --secretKey <Your Secret Key> \
+      --byocEndpoint https://cloud.emqx.com \
+      --byocKey abcdXXXXXXXXXX111
+```
+注意：在执行`./byoc stop`命令前，请填充您的参数后执行。参数释义如下：
+
+- `--accessKey` 您的公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看您的 AccessKey ID。
+- `--secretKey` 您的公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
+
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 
+最终，命令行输出以下内容时，说明部署停止成功。
+```bash
+Stop the deployment successfully!
+```
+:::
+::: tab "亚马逊云科技"
+1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+```bash
+wget https://cloudassets.emqx.com/cn/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+```
+
+2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+```bash
+tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
+```
+
+3. 根据以下命令，修改对应参数的值，执行命令停止部署。
+```bash
+./byoc stop \
+      --platform aws_cn \
+      --accessKey <Your Access Key> \
+      --secretKey <Your Secret Key> \
+      --byocEndpoint https://cloud.emqx.com \
+      --byocKey abcdXXXXXXXXXX111
+```
+注意：在执行`./byoc stop`命令前，请填充您的参数后执行。参数释义如下：
+
+- `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
+- `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
+
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 
+最终，命令行输出以下内容时，说明部署停止成功。
+```bash
+Stop the deployment successfully!
+```
+:::
+::::
+
+
+### 启动部署
+
+进入控制台，点击您所需要删除的部署，进入部署详情页面。点击 **启动** 按钮，弹出 **启动部署指引**，如下图所示：
+
+![byoc_start_deployment](./_assets/byoc_start_deployment.png)
+
+准备一个可访问互联网的 Ubuntu 20.04 (AMD64) LTS 环境，根据网页 **停止部署指引** 中生成的操作步骤和停止命令。在执行操作之前，请确保已经设置了正确的[启动和停止的权限策略](../deployments/byoc_prerequisite.md#云平台账号权限)。
+
+::: tip
+请依次复制网页 **启动部署指引** 中的命令并将其粘贴到您的 Ubuntu 命令行界面中。此命令包含您在设置页面中提供的值，以及系统预置的信息。
+:::
+
+操作步骤如下：
+:::: tabs
+::: tab "阿里云"
+1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+```bash
+wget https://cloudassets.emqx.com/cn/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+```
+
+2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+```bash
+tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
+```
+
+3. 根据以下命令，修改对应参数的值，执行命令启动部署。
+```bash
+./byoc start \
+      --platform aliyun \
+      --accessKey <Your Access Key> \
+      --secretKey <Your Secret Key> \
+      --byocEndpoint https://cloud.emqx.com \
+      --byocKey abcdXXXXXXXXXX111
+```
+注意：在执行`./byoc start`命令前，请填充您的参数后执行。参数释义如下：
+
+- `--accessKey` 您的公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看您的 AccessKey ID。
+- `--secretKey` 您的公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
+
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+
+
+最终，命令行输出以下内容时，说明部署启动成功。
+```bash
+Start the deployment successfully!
+```
+:::
+::: tab "亚马逊云科技"
+1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+```bash
+wget https://cloudassets.emqx.com/cn/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+```
+
+2. 在 Ubuntu 命令行界面，解压下载的工具包文件。
+```bash
+tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
+```
+
+3. 根据以下命令，修改对应参数的值，执行命令启动部署。
+```bash
+./byoc start \
+      --platform aws_cn \
+      --accessKey <Your Access Key> \
+      --secretKey <Your Secret Key> \
+      --byocEndpoint https://cloud.emqx.com \
+      --byocKey abcdXXXXXXXXXX111
+```
+注意：在执行`./byoc start`命令前，请填充您的参数后执行。参数释义如下：
+
+- `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
+- `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
+
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+
+
+最终，命令行输出以下内容时，说明部署启动成功。
+```bash
+Start the deployment successfully!
+```
+:::
+::::
 
 ### 删除部署
 ::: warning
@@ -188,7 +340,7 @@ Do you really want to destroy all resources?
 Delete the deployment successfully!
 ```
 :::
-
+::::
 
 
 

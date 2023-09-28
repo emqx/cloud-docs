@@ -91,7 +91,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 
 使用阿里云主账户创建一个新的 RAM 用户，并为其分配足够的权限策略，用于创建 BYOC 部署。您可以使用我们提供的权限策略示例作为参考。
 
-```bash
+```json
 {
     "Version": "1",
     "Statement": [
@@ -213,6 +213,38 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
     ]
 }
 ```
+
+在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考如下
+```json
+{
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:StartInstance",
+        "ecs:StopInstance"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:tag/used-by": [
+            "emqx-cloud"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
 :::
 ::: tab "亚马逊云科技"
 
@@ -305,9 +337,40 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
   ]
 }
 ```
+
+在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考如下
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
+    }
+  ]
+}
+```
 :::
 ::::
-## 准备启动环境 
+## 准备启动环境
 
 为了部署 EMQX Cloud BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可：
 

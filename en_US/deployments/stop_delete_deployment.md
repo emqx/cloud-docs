@@ -63,7 +63,7 @@ Here is the deployment stop process:
 ::: tab "AWS"
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.mqttce.com/byoc-test/1.0/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
 ```
 
 2. On the Ubuntu command line interface, unzip the downloaded toolkit and navigate to the unzipped folder directory.
@@ -97,7 +97,7 @@ Stop the deployment successfully!
 ::: tab "Google Cloud"
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.mqttce.com/byoc-test/1.0/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
 ```
 
 2. On the Ubuntu command line interface, unzip the downloaded toolkit and navigate to the unzipped folder directory.
@@ -143,7 +143,7 @@ Here is the deployment start process:
 ::: tab "AWS"
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.mqttce.com/byoc-test/1.0/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
 ```
 
 2. On the Ubuntu command line interface, unzip the downloaded toolkit and navigate to the unzipped folder directory.
@@ -177,7 +177,7 @@ Start the deployment successfully!
 ::: tab "Google Cloud"
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.mqttce.com/byoc-test/1.0/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
 ```
 
 2. On the Ubuntu command line interface, unzip the downloaded toolkit and navigate to the unzipped folder directory.
