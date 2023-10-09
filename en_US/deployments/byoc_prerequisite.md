@@ -99,7 +99,7 @@ Your role needs to have the necessary Identity and Access Management (IAM) permi
 
 To create a custom policy, you can utilize the provided policy definition by following the steps in the [Creating policies using the JSON editor](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor) documentation. After creating the custom policy, you can attach it to an IAM user or a group of users. Finally, generate the access key for the IAM user by following the steps in the [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) documentation.
 
-Here is the policy definition in JSON:
+Here is the policy definition in JSON (**For creating deployment**)
 ```json
 {
   "Version": "2012-10-17",
@@ -108,84 +108,166 @@ Here is the policy definition in JSON:
       "Sid": "VisualEditor0",
       "Effect": "Allow",
       "Action": [
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:DeleteSubnet",
-        "ec2:ReplaceRouteTableAssociation",
-        "ec2:DescribeInstances",
-        "elasticloadbalancing:RegisterTargets",
-        "ec2:CreateKeyPair",
-        "ec2:CreateImage",
-        "ec2:AttachInternetGateway",
-        "ec2:ReplaceRoute",
         "ec2:AssociateRouteTable",
-        "ec2:DeleteRouteTable",
-        "elasticloadbalancing:DeleteLoadBalancer",
-        "ec2:DescribeInternetGateways",
-        "elasticloadbalancing:DescribeLoadBalancers",
-        "ec2:CreateRoute",
+        "ec2:AttachInternetGateway",
+        "ec2:AuthorizeSecurityGroupIngress",
         "ec2:CreateInternetGateway",
-        "ec2:DescribeVolumes",
-        "ec2:DeleteInternetGateway",
-        "ec2:DescribeKeyPairs",
-        "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
-        "elasticloadbalancing:ModifyTargetGroupAttributes",
-        "ec2:DescribeRouteTables",
-        "ec2:ImportKeyPair",
-        "ec2:CreateTags",
-        "elasticloadbalancing:CreateTargetGroup",
-        "ec2:RegisterImage",
+        "ec2:CreateImage",
+        "ec2:CreateKeyPair",
+        "ec2:CreateRoute",
         "ec2:CreateRouteTable",
-        "ec2:RunInstances",
-        "ec2:DetachInternetGateway",
-        "ec2:StopInstances",
-        "ec2:DisassociateRouteTable",
-        "ec2:DescribeVolumeAttribute",
-        "ec2:DescribeInstanceCreditSpecifications",
-        "elasticloadbalancing:DescribeLoadBalancerAttributes",
-        "elasticloadbalancing:DescribeTargetGroupAttributes",
-        "ec2:DescribeSecurityGroupRules",
-        "elasticloadbalancing:AddTags",
-        "ec2:DescribeInstanceTypes",
-        "ec2:DeleteVpc",
-        "ec2:CreateSubnet",
-        "ec2:DescribeSubnets",
-        "elasticloadbalancing:ModifyLoadBalancerAttributes",
-        "ec2:DeleteKeyPair",
-        "ec2:AttachVolume",
-        "ec2:DeregisterImage",
-        "ec2:GetDefaultCreditSpecification",
-        "ec2:DeleteSnapshot",
-        "ec2:DescribeInstanceAttribute",
-        "ec2:DescribeRegions",
-        "ec2:CreateVpc",
-        "ec2:ModifyImageAttribute",
-        "ec2:DescribeVpcAttribute",
-        "ec2:ModifySubnetAttribute",
-        "elasticloadbalancing:CreateListener",
-        "elasticloadbalancing:DescribeListeners",
-        "ec2:DescribeNetworkInterfaces",
         "ec2:CreateSecurityGroup",
-        "ec2:CreateSnapshot",
-        "ec2:ModifyVpcAttribute",
-        "ec2:DescribeInstanceStatus",
-        "elasticloadbalancing:CreateLoadBalancer",
-        "ec2:TerminateInstances",
-        "elasticloadbalancing:DescribeTags",
-        "ec2:DescribeTags",
-        "elasticloadbalancing:DeleteTargetGroup",
-        "elasticloadbalancing:CreateLoadBalancerListeners",
-        "ec2:DescribeSecurityGroups",
+        "ec2:CreateSubnet",
+        "ec2:CreateTags",
+        "ec2:CreateVpc",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceCreditSpecifications",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInternetGateways",
         "ec2:DescribeImages",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSecurityGroupRules",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
         "ec2:DescribeVpcs",
+        "ec2:DescribeVpcAttribute",
         "ec2:DeleteSecurityGroup",
-        "elasticloadbalancing:DescribeTargetHealth",
+        "ec2:DeleteKeyPair",
+        "ec2:ImportKeyPair",
+        "ec2:RunInstances",
+        "ec2:ModifyImageAttribute",
+        "ec2:ModifySubnetAttribute",
+        "ec2:ModifyVpcAttribute",
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:CreateListener",
+        "elasticloadbalancing:CreateLoadBalancer",
+        "elasticloadbalancing:CreateTargetGroup",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeTags",
         "elasticloadbalancing:DescribeTargetGroups",
-        "elasticloadbalancing:DeleteListener"
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "elasticloadbalancing:ModifyLoadBalancerAttributes",
+        "elasticloadbalancing:ModifyTargetGroupAttributes",
+        "elasticloadbalancing:RegisterTargets"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
     }
   ]
 }
+```
+Here is the policy definition in JSON (**For deleting deployment**)
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInstanceCreditSpecifications",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeImages",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DetachInternetGateway",
+        "ec2:DisassociateRouteTable",
+        "ec2:ModifyInstanceAttribute",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeTags",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetGroupAttributes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteInternetGateway",
+        "ec2:DeleteKeyPair",
+        "ec2:DeleteVpc",
+        "ec2:DeleteRouteTable",
+        "ec2:DeleteSubnet",
+        "ec2:DeregisterImage",
+        "ec2:TerminateInstances",
+        "elasticloadbalancing:DeleteLoadBalancer",
+        "elasticloadbalancing:DeleteListener",
+        "elasticloadbalancing:DeleteTargetGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
+    }
+  ]
+}
+```
+Here is the policy definition in JSON (**For stopping & starting deployment**)
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
+    }
+  ]
+}
+
+
 ```
 :::
 ::: tab "Google Cloud"
@@ -287,6 +369,19 @@ gcloud projects add-iam-policy-binding <project-id> --member=serviceAccount:<ser
 gcloud iam service-accounts keys create <json-file> --iam-account=<service-account-name>@<project-id>.iam.gserviceaccount.com
 ```
 Please note that you should replace `<project-id>`, `<yaml-file-path>`, `<service-account-name>`, and `<json-file>` with the actual values or placeholders specific to your use case.
+
+
+If you want to set the permissions to **start and stop** the deployment separately, please define the following definitions.
+
+```yaml
+title: "EMQX Cloud BYOC operation"
+description: "The minimum role definition for stopping or starting an EMQX Cloud BYOC deployment"
+stage: "GA"
+includedPermissions:
+- compute.instances.get
+- compute.instances.start
+- compute.instances.stop
+```
 :::
 
 ::::
