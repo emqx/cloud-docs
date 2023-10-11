@@ -16,6 +16,7 @@ EMQX Cloud BYOC 将在您的云账号中创建部署，如您还没有对应公�
 - [创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)
 - [创建亚马逊云科技账号](https://www.amazonaws.cn/about-aws/china/faqs/signup-process/)
   
+
 目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以通过 [工单](../feature/tickets.md) 或 邮件(cloud-support@emqx.io) 与我们联系。
 
 | 平台     | 区域                 |
@@ -32,7 +33,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 ### 资源配额
 
 下表为 EMQX Cloud BYOC 部署所需的云资源与服务（以阿里云为例）。如当前账号中资源不足，请联系云账号管理员增加相关服务配额。
- 
+
 ::: tip
 在阿里云，您可在 [配额中心控制台](https://quotas.console.aliyun.com/products) 中快速查看资源与服务的使用情况和配额。
 在亚马逊云，您可在 [Service Quotas 控制面板](https://console.amazonaws.cn/servicequotas/home) 中快速查看资源与服务的使用情况和配额。
@@ -189,7 +190,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 }
 ```
 
-在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考如下
+在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考示例如下：
 ```json
 {
   "Version": "1",
@@ -282,7 +283,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 }
 ```
 
-在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考如下
+在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考示例如下：
 ```json
 {
   "Version": "1",
@@ -396,7 +397,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 }
 ```
 
-在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考如下
+在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考示例如下：
 ```json
 {
   "Version": "2012-10-17",
@@ -457,7 +458,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 }
 ```
 
-在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考如下
+在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考示例如下：
 ```json
 {
   "Version": "2012-10-17",
@@ -491,16 +492,16 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 ::::
 ## 准备启动环境
 
-为了部署 EMQX Cloud BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可：
+为了部署 EMQX Cloud BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可以使用以下两种方式之一：
 
 - （推荐）在云账号中使用 Ubuntu 20.04 LTS 镜像创建一个虚拟机实例，且实例的内存需要至少 1 GiB。
-- 本地 Ubuntu 20.04 LTS 环境
+- 使用本地 Ubuntu 20.04 LTS 环境。
 
 ## 域名及证书
 
 提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书。我们支持自定义单向 TLS/SSL 认证，并且只支持在部署时指定 TLS/SSL 证书。
 
-::: warning
+::: warning 注意
 BYOC 部署仅接受 CA 签名证书。关于 TLS/SSL 证书格式要求，请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
 :::
 
