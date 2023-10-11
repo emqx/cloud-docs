@@ -221,7 +221,7 @@ tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
 ```bash
 Stop the deployment successfully!
 ```
-::::
+:::
 ::: tab "亚马逊云科技"
 
 1. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
