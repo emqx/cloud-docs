@@ -39,11 +39,10 @@ EMQX Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议�
 
 
 ## 如何与自己现有的系统对接？
-可以使用数据集成与您现有功能做对接，详情查看 [数据集成](../rule_engine/introduction.md)
+可以使用数据集成与您现有功能做对接，详情查看 [数据集成](../rule_engine/introduction.md)。
 
 ## 设备的认证信息存储在自己的数据库中，是否支持通过我自己的数据库做MQTT连接的认证？
-目前还不支持通过直接获取自己的MySQL的数据，可以通过将数据导出，EMQX Cloud支持csv文件的数据导入，可以批量导入认证信息。或者通过工单或发送邮件(cloud-support@emqx.io)与我们取得联系。
-
+EMQX Cloud 专有版支持从用户自己的数据库中获取到认证信息，请查看文档[外部认证和访问控制](../deployments/custom_auth.md)。
 
 ## 控制台的设备日志可以保存多久？
 EMQX Cloud 不会保存设备通讯日志，只会保存部署日志，部署日志默认保存7天。

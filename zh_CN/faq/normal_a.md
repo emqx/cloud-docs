@@ -11,8 +11,8 @@ EMQX Cloud 是由 EMQ 团队提供的 EMQX 在线 SaaS 服务。
 EMQX Cloud 为应用程序及设备提供安全可靠的双向通信能力，在支持大规模集群海量设备连接的基础上同时提供了其他增值能力，如设备管理、数据集成、数据持久化与 Kafka 数据桥接等，覆盖了各类 IoT 应用场景并保留了私有化定制拓展能力。
 
 
-## EMQX Cloud 和 EMQX Enterprise 有什么关系？
-部署是由 EMQX Cloud 托管的 EMQX Enterprise 集群。客户可以根据自己的需求选择配置并可随时伸缩。
+## EMQX Cloud 部署和 EMQX Enterprise 是什么关系？
+EMQX Cloud 部署是全托管的 EMQX Enterprise 集群。客户可以根据自己的需求选择配置并可随时伸缩。
 
 
 ## EMQX Cloud支持哪些云平台？

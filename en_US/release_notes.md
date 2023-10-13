@@ -4,6 +4,18 @@
 
 ## 2023
 
+#### 2023-10
+* Serverless API
+* Serverless authentication bacth upload
+
+#### 2023-9
+* BYOC deployment Start/Stop 
+* SSO - integration of Identity providers
+
+#### 2023-6
+* Subscription from Google Cloud Marketplace
+* Update monitor metrics
+
 #### 2023-5
 * Subscription from Google Cloud Marketplace
 * Update monitor metrics
