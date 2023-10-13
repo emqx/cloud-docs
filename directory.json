@@ -219,7 +219,7 @@
           "path": "deployments/prometheus"
         },
         {
-          "title": "停止/删除部署",
+          "title": "启停/删除部署",
           "path": "deployments/stop_delete_deployment"
         },
         {
@@ -900,7 +900,7 @@
           "path": "deployments/prometheus"
         },
         {
-          "title": "Stop/Delete Deployment",
+          "title": "Start/Stop/Delete Deployment",
           "path": "deployments/stop_delete_deployment"
         },
         {

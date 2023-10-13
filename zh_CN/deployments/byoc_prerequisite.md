@@ -16,6 +16,7 @@ EMQX Cloud BYOC 将在您的云账号中创建部署，如您还没有对应公�
 - [创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)
 - [创建亚马逊云科技账号](https://www.amazonaws.cn/about-aws/china/faqs/signup-process/)
   
+
 目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以通过 [工单](../feature/tickets.md) 或 邮件(cloud-support@emqx.io) 与我们联系。
 
 | 平台     | 区域                 |
@@ -32,7 +33,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 ### 资源配额
 
 下表为 EMQX Cloud BYOC 部署所需的云资源与服务（以阿里云为例）。如当前账号中资源不足，请联系云账号管理员增加相关服务配额。
- 
+
 ::: tip
 在阿里云，您可在 [配额中心控制台](https://quotas.console.aliyun.com/products) 中快速查看资源与服务的使用情况和配额。
 在亚马逊云，您可在 [Service Quotas 控制面板](https://console.amazonaws.cn/servicequotas/home) 中快速查看资源与服务的使用情况和配额。
@@ -91,128 +92,228 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 
 使用阿里云主账户创建一个新的 RAM 用户，并为其分配足够的权限策略，用于创建 BYOC 部署。您可以使用我们提供的权限策略示例作为参考。
 
-```bash
+```json
 {
-    "Version": "1",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ecs:DeleteSecurityGroup",
-                "ecs:DescribeSecurityGroupAttribute",
-                "ecs:DescribeImages",
-                "ecs:DeleteImage",
-                "ecs:DescribeInstances",
-                "ecs:DeleteInstance",
-                "ecs:DescribeInstanceMaintenanceAttributes",
-                "ecs:DescribeInstanceRamRole",
-                "ecs:DescribeDisks",
-                "ecs:DescribeUserData",
-                "ecs:DescribeNetworkInterfaces",
-                "ecs:ListTagResources",
-                "ecs:DescribeSecurityGroups",
-                "ecs:DescribeKeyPairs",
-                "ecs:RunInstances",
-                "ecs:AuthorizeSecurityGroup",
-                "ecs:CreateSecurityGroup",
-                "ecs:ModifySecurityGroupPolicy",
-                "ecs:ImportKeyPair",
-                "ecs:DeleteKeyPairs",
-                "ecs:DetachKeyPair",
-                "ecs:ModifyImageSharePermission",
-                "ecs:CreateImage",
-                "ecs:StopInstance",
-                "ecs:StartInstance",
-                "ecs:AttachKeyPair",
-                "ecs:CreateInstance",
-                "ecs:AuthorizeSecurityGroupEgress",
-                "ecs:CreateKeyPair",
-                "ecs:DescribeRegions",
-                "ecs:DeleteSnapshot",
-                "ecs:RevokeSecurityGroup",
-                "ecs:RevokeSecurityGroupEgress",
-                "ecs:ModifySecurityGroupRule",
-                "ecs:ModifySecurityGroupAttribute",
-                "ecs:ModifySecurityGroupEgressRule",
-                "ecs:AddTags",
-                "ecs:RemoveTags",
-                "ecs:DescribeTags",
-                "ecs:DescribeTagKeys",
-                "ecs:DescribeResourceByTags",
-                "ecs:TagResources",
-                "ecs:UntagResources",
-                "ecs:ReplaceSystemDisk"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "vpc:DescribeVpcs",
-                "vpc:DescribeVSwitchAttributes",
-                "vpc:DeleteVpc",
-                "vpc:DeleteVSwitch",
-                "vpc:ListTagResources",
-                "vpc:DescribeRouteTableList",
-                "vpc:CreateVSwitch",
-                "vpc:CreateVpc",
-                "vpc:DeleteVSwitch",
-                "vpc:DescribeVSwitches",
-                "vpc:TagResources",
-                "vpc:UnTagResources",
-                "vpc:DescribeTagKeys",
-                "vpc:DescribeTags",
-                "vpc:ModifyVpcAttribute",
-                "vpc:ModifyVSwitchAttribute",
-                "vpc:DescribeVpcAttribute"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "vpc:ReleaseEipAddress",
-                "vpc:DescribeEipAddresses",
-                "vpc:UnassociateEipAddress",
-                "vpc:AssociateEipAddress",
-                "vpc:AllocateEipAddress"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "slb:DescribeLoadBalancerAttribute",
-                "slb:DeleteLoadBalancer",
-                "slb:ListTagResources",
-                "slb:DescribeLoadBalancerTCPListenerAttribute",
-                "slb:AddBackendServers",
-                "slb:StartLoadBalancerListener",
-                "slb:SetLoadBalancerTCPListenerAttribute",
-                "slb:CreateLoadBalancerTCPListener",
-                "slb:DeleteLoadBalancerListener",
-                "slb:CreateLoadBalancer",
-                "slb:RemoveBackendServers",
-                "slb:RemoveTags",
-                "slb:RemoveVServerGroupBackendServers",
-                "slb:AddTags",
-                "slb:DescribeTags",
-                "slb:SetLoadBalancerName",
-                "slb:AddAccessControlListEntry",
-                "slb:CreateAccessControlList",
-                "slb:DeleteAccessControlList",
-                "slb:RemoveAccessControlListEntry",
-                "slb:SetAccessControlListAttribute",
-                "slb:DescribeAccessControlLists",
-                "slb:DescribeAccessControlListAttribute",
-                "slb:TagResources",
-                "slb:UntagResources"
-            ],
-            "Resource": "*"
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:AddTags",
+        "ecs:AttachKeyPair",
+        "ecs:AuthorizeSecurityGroup",
+        "ecs:AuthorizeSecurityGroupEgress",
+        "ecs:CreateInstance",
+        "ecs:CreateImage",
+        "ecs:CreateKeyPair",
+        "ecs:CreateSecurityGroup",
+        "ecs:DescribeDisks",
+        "ecs:DescribeImages",
+        "ecs:DescribeInstances",
+        "ecs:DescribeInstanceMaintenanceAttributes",
+        "ecs:DescribeInstanceRamRole",
+        "ecs:DescribeKeyPairs",
+        "ecs:DescribeNetworkInterfaces",
+        "ecs:DescribeRegions",
+        "ecs:DescribeSecurityGroups",
+        "ecs:DescribeSecurityGroupAttribute",
+        "ecs:DescribeUserData",
+        "ecs:DeleteKeyPairs",
+        "ecs:DeleteSecurityGroup",
+        "ecs:DetachKeyPair",
+        "ecs:ImportKeyPair",
+        "ecs:ListTagResources",
+        "ecs:ModifyImageSharePermission",
+        "ecs:ModifySecurityGroupPolicy",
+        "ecs:RunInstances",
+        "ecs:TagResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:StartInstance",
+        "ecs:StopInstance",
+        "ecs:DeleteImage",
+        "ecs:DeleteInstance",
+        "ecs:DeleteSnapshot"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:tag/used-by": [
+            "emqx-cloud"
+          ]
         }
-    ]
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "vpc:AllocateEipAddress",
+        "vpc:AssociateEipAddress",
+        "vpc:CreateVpc",
+        "vpc:CreateVSwitch",
+        "vpc:DescribeEipAddresses",
+        "vpc:DescribeRouteTableList",
+        "vpc:DescribeVpcs",
+        "vpc:DescribeVSwitches",
+        "vpc:DescribeVSwitchAttributes",
+        "vpc:DeleteVpc",
+        "vpc:DeleteVSwitch",
+        "vpc:ListTagResources",
+        "vpc:ReleaseEipAddress",
+        "vpc:TagResources",
+        "vpc:UnassociateEipAddress"
+      ],
+      "Resource": "*"
+    },{
+      "Effect": "Allow",
+      "Action": [
+        "slb:AddAccessControlListEntry",
+        "slb:AddBackendServers",
+        "slb:CreateAccessControlList",
+        "slb:CreateLoadBalancer",
+        "slb:CreateLoadBalancerTCPListener",
+        "slb:DescribeAccessControlListAttribute",
+        "slb:DescribeLoadBalancerAttribute",
+        "slb:DescribeLoadBalancerTCPListenerAttribute",
+        "slb:StartLoadBalancerListener",
+        "slb:SetLoadBalancerTCPListenerAttribute",
+        "slb:ListTagResources",
+        "slb:TagResources"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 ```
+
+在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考示例如下：
+```json
+{
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DescribeDisks",
+        "ecs:DescribeInstanceMaintenanceAttributes",
+        "ecs:DescribeInstanceRamRole",
+        "ecs:DescribeImages",
+        "ecs:DescribeInstances",
+        "ecs:DescribeKeyPairs",
+        "ecs:DescribeNetworkInterfaces",
+        "ecs:DescribeUserData",
+        "ecs:DescribeSecurityGroups",
+        "ecs:DescribeSecurityGroupAttribute",
+        "ecs:ListTagResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DeleteKeyPairs",
+        "ecs:DeleteImage",
+        "ecs:DeleteInstance",
+        "ecs:DeleteSecurityGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:tag/used-by": [
+            "emqx-cloud"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "vpc:DescribeRouteTableList",
+        "vpc:DescribeVpcs",
+        "vpc:DescribeVSwitchAttributes",
+        "vpc:ListTagResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "vpc:DeleteVpc",
+        "vpc:DeleteVSwitch"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "acs:ResourceTag/used-by": [
+            "emqx-cloud"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "slb:DescribeLoadBalancerAttribute",
+        "slb:DescribeAccessControlListAttribute",
+        "slb:ListTagResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "slb:DeleteLoadBalancer",
+        "slb:DeleteLoadBalancerListener",
+        "slb:DeleteAccessControlList"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "slb:tag/used-by": [
+            "emqx-cloud"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考示例如下：
+```json
+{
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:StartInstance",
+        "ecs:StopInstance"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:tag/used-by": [
+            "emqx-cloud"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
 :::
 ::: tab "亚马逊云科技"
 
@@ -226,99 +327,181 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
       "Sid": "VisualEditor0",
       "Effect": "Allow",
       "Action": [
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:DeleteSubnet",
-        "ec2:ReplaceRouteTableAssociation",
-        "ec2:DescribeInstances",
-        "elasticloadbalancing:RegisterTargets",
-        "ec2:CreateKeyPair",
-        "ec2:CreateImage",
-        "ec2:AttachInternetGateway",
-        "ec2:ReplaceRoute",
         "ec2:AssociateRouteTable",
-        "ec2:DeleteRouteTable",
-        "elasticloadbalancing:DeleteLoadBalancer",
-        "ec2:DescribeInternetGateways",
-        "elasticloadbalancing:DescribeLoadBalancers",
-        "ec2:CreateRoute",
+        "ec2:AttachInternetGateway",
+        "ec2:AuthorizeSecurityGroupIngress",
         "ec2:CreateInternetGateway",
-        "ec2:DescribeVolumes",
-        "ec2:DeleteInternetGateway",
-        "ec2:DescribeKeyPairs",
-        "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
-        "elasticloadbalancing:ModifyTargetGroupAttributes",
-        "ec2:DescribeRouteTables",
-        "ec2:ImportKeyPair",
-        "ec2:CreateTags",
-        "elasticloadbalancing:CreateTargetGroup",
-        "ec2:RegisterImage",
+        "ec2:CreateImage",
+        "ec2:CreateKeyPair",
+        "ec2:CreateRoute",
         "ec2:CreateRouteTable",
-        "ec2:RunInstances",
-        "ec2:DetachInternetGateway",
-        "ec2:StopInstances",
-        "ec2:DisassociateRouteTable",
-        "ec2:DescribeVolumeAttribute",
-        "ec2:DescribeInstanceCreditSpecifications",
-        "elasticloadbalancing:DescribeLoadBalancerAttributes",
-        "elasticloadbalancing:DescribeTargetGroupAttributes",
-        "ec2:DescribeSecurityGroupRules",
-        "elasticloadbalancing:AddTags",
-        "ec2:DescribeInstanceTypes",
-        "ec2:DeleteVpc",
-        "ec2:CreateSubnet",
-        "ec2:DescribeSubnets",
-        "elasticloadbalancing:ModifyLoadBalancerAttributes",
-        "ec2:DeleteKeyPair",
-        "ec2:AttachVolume",
-        "ec2:DeregisterImage",
-        "ec2:GetDefaultCreditSpecification",
-        "ec2:DeleteSnapshot",
-        "ec2:DescribeInstanceAttribute",
-        "ec2:DescribeRegions",
-        "ec2:CreateVpc",
-        "ec2:ModifyImageAttribute",
-        "ec2:DescribeVpcAttribute",
-        "ec2:ModifySubnetAttribute",
-        "elasticloadbalancing:CreateListener",
-        "elasticloadbalancing:DescribeListeners",
-        "ec2:DescribeNetworkInterfaces",
         "ec2:CreateSecurityGroup",
-        "ec2:CreateSnapshot",
-        "ec2:ModifyVpcAttribute",
-        "ec2:DescribeInstanceStatus",
-        "elasticloadbalancing:CreateLoadBalancer",
-        "ec2:TerminateInstances",
-        "elasticloadbalancing:DescribeTags",
-        "ec2:DescribeTags",
-        "elasticloadbalancing:DeleteTargetGroup",
-        "elasticloadbalancing:CreateLoadBalancerListeners",
-        "ec2:DescribeSecurityGroups",
+        "ec2:CreateSubnet",
+        "ec2:CreateTags",
+        "ec2:CreateVpc",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceCreditSpecifications",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInternetGateways",
         "ec2:DescribeImages",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSecurityGroupRules",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
         "ec2:DescribeVpcs",
+        "ec2:DescribeVpcAttribute",
         "ec2:DeleteSecurityGroup",
-        "elasticloadbalancing:DescribeTargetHealth",
+        "ec2:DeleteKeyPair",
+        "ec2:ImportKeyPair",
+        "ec2:RunInstances",
+        "ec2:ModifyImageAttribute",
+        "ec2:ModifySubnetAttribute",
+        "ec2:ModifyVpcAttribute",
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:CreateListener",
+        "elasticloadbalancing:CreateLoadBalancer",
+        "elasticloadbalancing:CreateTargetGroup",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeTags",
         "elasticloadbalancing:DescribeTargetGroups",
-        "elasticloadbalancing:DeleteListener"
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "elasticloadbalancing:ModifyLoadBalancerAttributes",
+        "elasticloadbalancing:ModifyTargetGroupAttributes",
+        "elasticloadbalancing:RegisterTargets"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
+    }
+  ]
+}
+```
+
+在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考示例如下：
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInstanceCreditSpecifications",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeImages",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DetachInternetGateway",
+        "ec2:DisassociateRouteTable",
+        "ec2:ModifyInstanceAttribute",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeTags",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetGroupAttributes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteInternetGateway",
+        "ec2:DeleteKeyPair",
+        "ec2:DeleteVpc",
+        "ec2:DeleteRouteTable",
+        "ec2:DeleteSubnet",
+        "ec2:DeregisterImage",
+        "ec2:TerminateInstances",
+        "elasticloadbalancing:DeleteLoadBalancer",
+        "elasticloadbalancing:DeleteListener",
+        "elasticloadbalancing:DeleteTargetGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
+    }
+  ]
+}
+```
+
+在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考示例如下：
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/used-by": "emqx-cloud"
+        }
+      }
     }
   ]
 }
 ```
 :::
 ::::
-## 准备启动环境 
+## 准备启动环境
 
-为了部署 EMQX Cloud BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可：
+为了部署 EMQX Cloud BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可以使用以下两种方式之一：
 
 - （推荐）在云账号中使用 Ubuntu 20.04 LTS 镜像创建一个虚拟机实例，且实例的内存需要至少 1 GiB。
-- 本地 Ubuntu 20.04 LTS 环境
+- 使用本地 Ubuntu 20.04 LTS 环境。
 
 ## 域名及证书
 
 提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书。我们支持自定义单向 TLS/SSL 认证，并且只支持在部署时指定 TLS/SSL 证书。
 
-::: warning
+::: warning 注意
 BYOC 部署仅接受 CA 签名证书。关于 TLS/SSL 证书格式要求，请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
 :::
 
