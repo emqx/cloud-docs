@@ -541,14 +541,6 @@
           "collapsed": true,
           "children": [
             {
-              "title": "认证管理",
-              "path": "api/auth_v5"
-            },
-            {
-              "title": "访问控制管理",
-              "path": "api/acl_v5"
-            },
-            {
               "title": "客户端管理",
               "path": "api/clients_v5"
             },
@@ -1250,14 +1242,6 @@
           "path": "api/serverless",
           "collapsed": true,
           "children": [
-            {
-              "title": "Authentication Management",
-              "path": "api/auth_v5"
-            },
-            {
-              "title": "ACL Management",
-              "path": "api/acl_v5"
-            },
             {
               "title": "Client Management",
               "path": "api/clients_v5"

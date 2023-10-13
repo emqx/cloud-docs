@@ -23,3 +23,7 @@ When multiple authentication methods are enabled at the same time, the system wi
 [MySQL authentication/access control](./mysql_auth.md)
 
 [PostgreSQL authentication/access control](./pgsql_auth.md)
+
+[redis authentication/access control](./redis_auth.md)
+
+[JWT authentication/access control](./jwt_auth.md)

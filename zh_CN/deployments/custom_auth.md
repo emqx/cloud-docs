@@ -22,3 +22,7 @@
 [MySQL 认证/访问控制](./mysql_auth.md)
  
 [PostgreSQL 认证/访问控制](./pgsql_auth.md)
+
+[Redis 认证/访问控制](./redis_auth.md)
+
+[JWT 认证/访问控制](./jwt_auth.md)

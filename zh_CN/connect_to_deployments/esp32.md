@@ -312,6 +312,27 @@ void callback(char *topic, byte *payload, unsigned int length) {
 }
 ```
 
+8. 重新连接函数
+```c
+void reconnect() {
+  while (!client.connected()) {
+    Serial.println("Reconnecting to MQTT broker...");
+    String client_id = "esp8266-client-";
+    client_id += String(WiFi.macAddress());
+    if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+        Serial.println("Reconnected to MQTT broker.");
+        client.subscribe(mqtt_topic);
+    } else {
+        Serial.print("Failed to reconnect to MQTT broker, rc=");
+        Serial.print(client.state());
+        Serial.println("Retrying in 5 seconds.");
+        delay(5000);
+    }
+  }
+}
+```
+
+
 完整代码示例如下：
 
 ```c
@@ -406,6 +427,23 @@ void callback(char* topic, byte* payload, unsigned int length) {
     }
     Serial.println();
     Serial.println("-----------------------");
+}
+
+void reconnect() {
+  while (!client.connected()) {
+    Serial.println("Reconnecting to MQTT broker...");
+    String client_id = "esp8266-client-";
+    client_id += String(WiFi.macAddress());
+    if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+        Serial.println("Reconnected to MQTT broker.");
+        client.subscribe(mqtt_topic);
+    } else {
+        Serial.print("Failed to reconnect to MQTT broker, rc=");
+        Serial.print(client.state());
+        Serial.println("Retrying in 5 seconds.");
+        delay(5000);
+    }
+  }
 }
 
 void loop() {

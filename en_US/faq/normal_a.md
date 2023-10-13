@@ -12,9 +12,9 @@ Over the past few years EMQ has provided mature MQTT middleware and IoT platform
 
 EMQX Cloud provides secure and reliable bi-directional communication between applications and devices, supporting massive device connectivity in large clusters while providing other value-added capabilities such as device management, rules engine, data persistence, and Kafka data bridging, covering various IoT application scenarios and retaining the ability to customize and expand.
 
-## What is the relation between EMQX Cloud and EMQX Enterprise？
+## What is the relation between EMQX Cloud deployment and EMQX Enterprise？
 
-EMQX Cloud is an EMQX Enterprise cluster hosted by EMQ. Customers can scale based on their demands.
+EMQX Cloud deployment is a fully managed EMQX Enterprise cluster hosted by EMQ. Customers can scale based on their demands.
 
 ## Which platforms does EMQX Cloud support?
 
