@@ -10,7 +10,7 @@
 
 :::tip TIP
 
-- 访问控制默认采用**黑名单**模式，如需切换到白名单模式，请提交[工单](../feature/tickets.md)。 <br/>
+- 访问控制默认采用**黑名单**模式，匹配顺序为: 全部用户 ACL  -> 用户名/客户端 ACL。如需切换到白名单模式，请提交[工单](../feature/tickets.md)。 <br/>
 - clientid/username + topic 唯一，即同一 clientid/username + topic 记录，仅最新一条记录有效。
 
 :::

@@ -72,12 +72,16 @@
               "path": "deployments/byoc_ssl"
             },
             {
+              "title": "BYOC 许可证",
+              "path": "deployments/byoc_license"
+            },
+            {
               "title": "执行部署",
               "path": "create/byoc"
             },
             {
-              "title": "BYOC 许可证",
-              "path": "deployments/byoc_license"
+              "title": "VPC 对等连接设置",
+              "path": "deployments/byoc_vpc_peering"
             }
           ]
         },
@@ -677,7 +681,18 @@
             },
             {
               "title": "Configure PrivateLink",
-              "path": "deployments/privatelink"
+              "path": "deployments/privatelink",
+              "collapsed":true,
+              "children": [
+                {
+                  "title": "AWS PrivateLink",
+                  "path": "deployments/privatelink-aws"
+                },
+                {
+                  "title": "Azure PrivateLink",
+                  "path": "deployments/privatelink-azure"
+                }
+              ]
             }
           ]
         },
@@ -966,6 +981,10 @@
         {
           "title": "Integrate with Pulsar",
           "path": "rule_engine/rule_engine_bridge_pulsar"
+        },
+        {
+          "title": "Integrate with AWS RDS",
+          "path": "rule_engine/rule_engine_aws_rds"
         },
         {
           "title": "Integrate with GCP Pub/Sub",
