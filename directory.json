@@ -1219,6 +1219,10 @@
       "collapsed": true,
       "children": [
         {
+          "title": "Serverless Usage and Management",
+          "path": "best_practices/serverless_practice"
+        },
+        {
           "title": "Store Device Offline Messages",
           "path": "rule_engine/rule_engine_offline_msg_saving"
         },
