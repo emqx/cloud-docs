@@ -604,6 +604,10 @@
       "collapsed": true,
       "children": [
         {
+          "title": "Serverless 使用和管理",
+          "path": "best_practices/serverless_practice"
+        },
+        {
           "title": "如何使用共享订阅",
           "path": "connect_to_deployments/shared_subscription"
         },
