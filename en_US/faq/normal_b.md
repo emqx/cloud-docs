@@ -63,3 +63,30 @@ Device event data can be permanently integrated into third-party storage through
 ## How to calculate sessions?
 The definition for session: The number of sessions is calculated by adding the number of connected clients and the disconnected clients with sessions retained in the broker. Connected clients are those that connect to the broker after `CONNECT`, including those that are not disconnected within the `keepAlive` span. Disconnected clients that keep a session are clients that are offline but have `CleanSession` set to false, and such clients are counted in the session count. When a device `DISCONNECT` goes offline, or if it has not communicated for more than the keepAlive span, the device will go offline and will not be counted in the number of sessions.
 
+## TPS definition
+TPS, or Transactions Per Second, is used to measure the number of messages processed per second in a deployment.The following MQTT messages and HTTP messages will be counted into TPS.
+
+| Type     | Flow direction   | Description             |
+| -------- | ------ | ---------------------- |
+| MQTT PUBLISH | Sent from device or Apps | Sending messages from devices or applications to the deployment, and the deployment receives the messages.   |
+| MQTT PUBLISH | Sent from deployment | Sending messages from the deployment to the subscriber (device or application service), and the subscriber receives the messages. |
+| MQTT RETAINED | Sending from devices or services, or sending from the deployment. | Publish or recieve retained messages |
+| HTTP PUBLISH | Sent from Apps | Sending messages by API: POST /mqtt/publish and POST /mqtt/publish_batch |
+
+The following MQTT messages **will not** be counted into TPS.
+
+| Type  | Description              |
+| -------- | ---------------------- |
+| MQTT CONNECT | Client requests a connection to a server   |
+| MQTT CONNACK | Acknowledge connection request   |
+| MQTT PUBACK | Publish acknowledgment |
+| MQTT PUBREC | Assured publish received (part 1) |
+| MQTT PUBREL | Publish Release (assured delivery part 2) |
+| MQTT PUBCOMP | Publish Complete (assured delivery part 3) |
+| MQTT SUBSCRIBE | Client Subscribe request |
+| MQTT SUBACK | Subscribe Acknowledgment |
+| MQTT UNSUBSCRIBE | Client Unsubscribe request |
+| MQTT UNSUBACK | Unsubscribe Acknowledgment |
+| MQTT PINGREQ | PING Request |
+| MQTT PINGRESP | PING Response |
+| MQTT DISCONNECT | Client is Disconnecting |

@@ -1,3 +1,4 @@
+
 # Create Serverless Deployment
 
 EMQX Cloud Serverless Plan offers a cost-effective and efficient way for developers or small businesses to test and develop IoT applications. This plan is based on secure and scalable clusters and can be easily deployed in just a few simple steps.
@@ -44,12 +45,7 @@ Serverless deployment only supports ports `8883` (mqtts) and `8084` (wss). If yo
 
 EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) to connect to it. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and also use a user for authentication.
 
-::: warning
 
-- The deployment will be stopped if there are no active client connections for 30 consecutive days. To continue using it, please manually enable it in the console. 
-- If the deployment remains inactive for 30 days after being stopped, it would be deleted.
-
-:::
 
 1. Get the connection information. Click **Overview** on the left navigation menu to find the deployment connection address and port. 
 
@@ -66,6 +62,13 @@ Now you can set up the connection information in MQTTX as follows and start to t
 After the connection succeeds, you can try to subscribe and publish. 
 
 ![mqttx_mqtt](./_assets/create_serverless_connect.png)
+
+
+## Stopped and Deleted by the system
+
+**Stopped by the system**: The deployment will be stopped if there are no active client connections for 30 consecutive days. If you want to continue using it, please manually enable it in the console. 
+
+**Deleted by the system**: The deployment will be deleted if it still remains inactive for 30 days after being stopped.
 
 
 
