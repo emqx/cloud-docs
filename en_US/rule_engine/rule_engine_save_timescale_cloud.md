@@ -84,7 +84,7 @@ This section introduces how to create a service in Timescale Cloud and connect t
 
    ![timescale_cloud_create_service_4](./_assets/timescale_cloud_create_service_4.png)
 
-## Configure Data Integrations in EMQX Cloud 
+## Configure Data Integrations in EMQX Cloud
 
 This section provides instructions on how to configure a Timescale data integration in EMQX Cloud Console using the service you created in Timescale Cloud to save data from the device to the Timescale.
 
@@ -125,7 +125,7 @@ This section provides instructions on how to configure a Timescale data integrat
 3. Click the **Next** button at the bottom to create an action. Select the resource created before from the drop-down list. In **SQL Template**, enter the following data to insert them into the SQL template.
 
    ```sql
-INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
+   INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) VALUES (to_timestamp(${up_timestamp}), ${client_id}, ${temp}, ${hum})
    ```
    
    ![timescale_cloud_action](./_assets/timescale_cloud_action.png)
