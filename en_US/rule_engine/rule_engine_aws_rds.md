@@ -5,7 +5,7 @@ AWS RDS (Amazon Relational Database Service) is a managed relational database se
 
 AWS RDS supports multiple database engines, including MySQL, PostgreSQL, Oracle, SQL Server, and Amazon Aurora (a highly compatible database engine with MySQL and PostgreSQL). 
 
-This tutorial introduces how to persist the MQTT data to AWS RDS MySQL by creating a data integration with AWS RDS MySQL in EMQX Cloud. Through the data integration, clients can report the temperature and humidity data to EMQX Cloud using the MQTT protocol, and further store the data in AWS RDS MySQL. In this tutorial, we also demonstrate how to use [MQTTX](https://www.emqx.com/en/products/mqttx) to test the data integration. The tutorial includes the following steps:
+This tutorial introduces how to persist the MQTT data to AWS RDS MySQL by creating a data integration with AWS RDS MySQL in EMQX Cloud. Through the data integration, clients can report the temperature and humidity data to EMQX Cloud using the MQTT protocol and store the data in AWS RDS MySQL. In this tutorial, we also demonstrate how to use [MQTTX](https://www.emqx.com/en/products/mqttx) to test the data integration. The tutorial includes the following steps:
 
 1. [Create and Connect to a MySQL DB Instance](#create-and-connect-to-a-mysql-db-instance)
 2. [Create MySQL Database and Data Table](#create-mysql-database-and-data-table) 
