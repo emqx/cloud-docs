@@ -171,7 +171,7 @@ confluent kafka topic produce <topic-name>
 confluent kafka topic consume -b <topic-name>
 ```
 
-#### Build VPC Peering Connection with EMQX Cloud Deployment
+#### Establish VPC Peering Connection with EMQX Cloud Deployment
 
 After you create the cluster, you need to add peering in Confluent Cloud console.
 
@@ -186,9 +186,8 @@ After you create the cluster, you need to add peering in Confluent Cloud console
   <img src="./_assets/../../deployments/_assets/aws_vpc_peering.png" alt="vpc_info" style="zoom:67%;" />
 
 3. Check the VPC Peering Connection status.
-
-  - If the connection status is `Inactive`, go to the Cloud deployment to accept the peering request. Enter the vpc information of the confluent cloud cluster and click **Confirm**. 
-  - When the vpc status turns to `running`, you successfully create the vpc peering connection.
+   - If the connection status is `Inactive`, go to the Cloud deployment to accept the peering request. Enter the vpc information of the confluent cloud cluster and click **Confirm**. 
+   - When the vpc status turns to `running`, you successfully create the vpc peering connection.
 
   ![vpc](./_assets/../../deployments/_assets/aws_vpc_peeing_status.png)
 
