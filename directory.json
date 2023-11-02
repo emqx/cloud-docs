@@ -764,6 +764,10 @@
             {
               "title": "BYOC License",
               "path": "deployments/byoc_license"
+            },
+            {
+              "title": "VPC Peering Setting",
+              "path": "deployments/byoc_vpc_peering"
             }
           ]
         },
