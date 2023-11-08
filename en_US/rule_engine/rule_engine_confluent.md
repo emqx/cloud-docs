@@ -214,7 +214,7 @@ In the above steps, we have completed the prerequisite settings of private netwo
    - `temp`: the temperature data in the message payload
    - `Hum`: the humidity data in the message payload
 
-   ```sql
+```sql
 SELECT 
    timestamp as up_timestamp, 
    clientid as client_id, 
@@ -222,7 +222,7 @@ SELECT
    payload.hum as hum
    FROM
    "temp_hum/emqx"
-   ```
+```
    
    ![rule sql](./_assets/kafka_create_sql.png)
 
@@ -230,7 +230,7 @@ SELECT
 
    ![rule sql](./_assets/kafka_create_sql_test.png)
 
-6. Click **Next** to add an action to the rule. Select `Data forward - Data bridge to Kafka from the **Action Type** drop-down list. Use the following Kafka topic and message template. Click **Confirm**.
+6. Click **Next** to add an action to the rule. Use the following Kafka topic and message template. Click **Confirm**.
 
    ```bash
    # kafka topic
@@ -250,7 +250,7 @@ SELECT
 
    ![monitor](./_assets/kafka_monitor.png)
 
-## Test Data Bridge 
+## Test Data Bridge
 
 1. Use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting.
 
