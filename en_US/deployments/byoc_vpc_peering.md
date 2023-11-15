@@ -109,7 +109,7 @@ This section demonstrates how to create a VPC peering connections in GCP. You ca
       * If the network that you want to peer with is in a different project, select **In another project**. Specify the project ID that includes the network you want to peer with and the name of the VPC network.
     * You can configure the other options based on your actual situation.
     * Click **Create**.
-      <img src="_assets/byoc_vpc_peering_gcp_1.png" alt="BYOC VPC Peering on GCP" style="zoom:67%;" />
+      <img src="./_assets/byoc_vpc_peering_gcp_1.png" alt="BYOC VPC Peering on GCP" style="zoom:67%;" />
 
     The status of peering connection will be inactive. You need to set up the peering connection from the target service VPC to complete the connection.
 
@@ -120,6 +120,6 @@ This section demonstrates how to create a VPC peering connections in GCP. You ca
     * Select the VPC of BYOC deployment, with the name like `emqxbyoc-xxxx-network`.
     * You can configure the other options based on your actual situation.
     * Click **Create**.
-    <img src="_assets/byoc_vpc_peering_gcp_2.png" alt="BYOC VPC Peering on GCP" style="zoom:67%;" />
+    <img src="./_assets/byoc_vpc_peering_gcp_2.png" alt="BYOC VPC Peering on GCP" style="zoom:67%;" />
 
     After creating the peering connection from both sides, you need to wait for the status of VPC network peering to be active.

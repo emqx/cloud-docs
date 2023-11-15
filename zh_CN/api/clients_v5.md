@@ -24,13 +24,12 @@ GET /clients
 | clean_start       | Bool    | 客户端是否使用了全新的会话                                       |
 | proto_name        | Enum    | 客户端协议名称， 可取值有：`MQTT`,`CoAP`,`LwM2M`,`MQTT-SN`       |
 | proto_ver         | Integer | 客户端协议版本                                                   |
-| _like_clientid    | String  | 客户端标识符，子串方式模糊查找                                   |
-| _like_username    | String  | 客户端用户名，子串方式模糊查找                                   |
 | _gte_created_at   | Integer | 客户端会话创建时间，小于等于查找                                 |
 | _lte_created_at   | Integer | 客户端会话创建时间，大于等于查找                                 |
 | _gte_connected_at | Integer | 客户端连接创建时间，小于等于查找                                 |
 | _lte_connected_at | Integer | 客户端连接创建时间，大于等于查找                                 |
-
+<!-- | _like_clientid    | String  | 客户端标识符，子串方式模糊查找                                   |
+| _like_username    | String  | 客户端用户名，子串方式模糊查找                                   | -->
 
 ### 请求消息
 
