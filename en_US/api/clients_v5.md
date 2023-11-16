@@ -24,13 +24,12 @@ Returns information about all clients in the cluster, with support for paginatio
 | clean_start       | Bool    | Whether the client is using a clean session                  |
 | proto_name        | Enum    | Client protocol name, can be: `MQTT`, `CoAP`, `LwM2M`, `MQTT-SN` |
 | proto_ver         | Integer | Client protocol version                                      |
-| _like_clientid    | String  | Client identifier, substring match                           |
-| _like_username    | String  | Client username, substring match                             |
 | _gte_created_at   | Integer | Client session creation time, less than or equal to          |
 | _lte_created_at   | Integer | Client session creation time, greater than or equal to       |
 | _gte_connected_at | Integer | Client connection creation time, less than or equal to       |
 | _lte_connected_at | Integer | Client connection creation time, greater than or equal to    |
-
+<!-- | _like_clientid    | String  | Client identifier, substring match                           |
+| _like_username    | String  | Client username, substring match                             | -->
 ### Request Message
 
 None
