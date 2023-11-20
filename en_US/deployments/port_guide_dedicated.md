@@ -70,7 +70,7 @@ You can check sample code (TLS-related sample code) to write client's code.
 
 If you encounter problems when connecting to a deployment, follow the steps in this guide based on your deployment plan (Professional or Standard) for troubleshooting and self-diagnosis.
 
-#### Dedicated - Standard Plan
+### Dedicated - Standard Plan
 
 If you encounter problems connecting to the EMQX Cloud Standard plan, self-diagnose and troubleshoot using the following steps:
 
@@ -80,9 +80,9 @@ If you encounter problems connecting to the EMQX Cloud Standard plan, self-diagn
    - MQTTS and WSS ports: These ports support secure transmission using TLS/SSL encryption, providing higher security, suitable for scenarios requiring encrypted communication, such as production environments or sensitive data transmission.
 3. **Test network connectivity**. Use the `telnet` command to test the network connectivity between your server and the Standard plan. For example, you can run the following command to test connection to the Standard plan's MQTT port: telnet <Basic Edition deployment's domain name> 15xxx. Replace `<Basic Edition deployment's domain name>` with your actual deployment address.
 4. **Verify authentication information**. EMQX Cloud Standard plan does not support anonymous authentication. Please ensure that you have correctly configured the MQTT client's username and password in the EMQX Cloud console and have made the correct configuration during the client connection.
-5. **Test using the MQTTX client**. We recommend using MQTTX as a MQTT client testing tool. It's a free and easy-to-use cross-platform MQTT 5.0 client. You can use it to verify if the inability to connect is due to issues with the client code. For detailed instructions, see: [MQTTX Documentation](https://docs.emqx.com/zh/cloud/latest/connect_to_deployments/mqttx.html).
+5. **Test using the MQTTX client**. We recommend using MQTTX as a MQTT client testing tool. It's a free and easy-to-use cross-platform MQTT 5.0 client. You can use it to verify if the inability to connect is due to issues with the client code. For detailed instructions, see: [MQTTX Documentation](../connect_to_deployments/mqttx.md).
 
-#### Dedicated - Professional Plan
+### Dedicated - Professional Plan
 
 If you encounter problems connecting to the Professional plan, self-diagnose and troubleshoot using the following steps:
 
@@ -101,7 +101,7 @@ If you encounter problems connecting to the Professional plan, self-diagnose and
 
 4. **Verify authentication information**. EMQX Cloud Professional plan also does not support anonymous authentication. Please ensure that you have correctly configured the MQTT client's username and password in the EMQX Cloud console and have made the correct configuration during the client connection.
 
-5. **Test using the MQTTX client**. We recommend using MQTTX as a MQTT client testing tool. It's a free and easy-to-use cross-platform MQTT 5.0 client. You can use it to verify if the inability to connect is due to issues with the client code. For detailed instructions, see: [MQTTX Documentation](https://chat.openai.com/connect_to_deployments/mqttx.md).
+5. **Test using the MQTTX client**. We recommend using MQTTX as a MQTT client testing tool. It's a free and easy-to-use cross-platform MQTT 5.0 client. You can use it to verify if the inability to connect is due to issues with the client code. For detailed instructions, see: [MQTTX Documentation](../connect_to_deployments/mqttx.md).
 
 ### Get Help via Support Ticket
 
