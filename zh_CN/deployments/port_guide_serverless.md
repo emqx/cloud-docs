@@ -2,12 +2,15 @@
 
 # Serverless 连接指引
 
+本页为您介绍了连接 Serverless 部署所使用的协议并提供了连接问题的排查指南。
+
+## Serverless 连接 Q&A
 
 ### 什么是 TCP MQTT 和 WebSocket 连接？
 
-标准的 MQTT 是基于TCP/IP协议栈构建的异步通信消息协议，是一种轻量级的发布、订阅信息传输协议。可以在不可靠的网络环境中进行扩展，适用于设备硬件存储空间或网络带宽有限的场景。
+标准的 MQTT 是基于 TCP/IP 协议栈构建的异步通信消息协议，是一种轻量级的发布、订阅信息传输协议。可以在不可靠的网络环境中进行扩展，适用于设备硬件存储空间或网络带宽有限的场景。
 
-WebSocket协议是基于TCP的一种新的网络协议，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输，客户端和服务器之间的数据交换变得更加简单。这里 WebSocket 更准确的是指先使用 WebSocket 建立连接，然后在 WebSocket 通道上使用 MQTT 协议进行通信，即 MQTT over WebSocket。主要是用于浏览器环境的连接。
+WebSocket 协议是基于 TCP 的一种新的网络协议，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输，客户端和服务器之间的数据交换变得更加简单。这里 WebSocket 更准确的是指先使用 WebSocket 建立连接，然后在 WebSocket 通道上使用 MQTT 协议进行通信，即 MQTT over WebSocket。主要是用于浏览器环境的连接。
 
 标准的 MQTT 和 WebSocket 都是不加密的。会有一定的安全风险。
 
@@ -39,22 +42,24 @@ Serverless 基于 EMQX 多租户架构，多个用户共享一个 EMQX 集群。
 Serverless 使用 EMQX 提供并且维护服务端 CA 的单向 TLS 验证。某些客户端需要提供服务端 CA 进行校验，请[在此下载](https://assets.emqx.com/data/emqxsl-ca.crt)。
 
 
-### 无法连接问题排查指南
+## 连接问题排查指南
+
+如果您无法连接 Serverless 部署，请根据以下步骤进行问题排查。
 
 1. **核对连接地址**，确保您使用的是 EMQX Cloud Serverless 提供的**正确域名**进行连接。请注意，不支持通过 CNAME 将 EMQX Cloud 的域名指向您自己的域名，如果您的应用场景需要使用非加密的 TCP 端口连接，请使用我们的专业版部署。
 
 
 2. **确认连接端口**，EMQX Cloud Serverless 仅支持通过 MQTT over TLS (端口 8883) 和 Websocket over TLS (端口 8084) 进行连接，请注意，不支持通过 1883 和 8083 端口连接到部署。如果您的应用场景需要使用非加密的 TCP 端口连接，请使用我们的专业版部署。
- 
+
 
 3. **测试网络连通性**，使用 `telnet` 命令来测试您的服务器与 EMQX Cloud Serverless之间的网络连通性，例如：`telnet broker.emqx.io 8883`。（请替换为您的实际部署地址）
- 
+
 
 4. **验证认证信息**， EMQX Cloud **不支持匿名认证**。请确认您已经在 EMQX Cloud 控制台中设置了 MQTT 客户端的用户名和密码，并在客户端连接时进行了正确的配置。
- 
 
-5. **检查 SNI (Server Name Indication) 配**置，客户端连接时必须提供正确的 SNI 信息。如果 SNI 配置错误或未在连接请求中包含 SNI 信息，EMQX Cloud 将拒绝连接，并返回错误代码 -5。
- 
+
+5. **检查 SNI (Server Name Indication) 配置**，客户端连接时必须提供正确的 SNI 信息。如果 SNI 配置错误或未在连接请求中包含 SNI 信息，EMQX Cloud 将拒绝连接，并返回错误代码 -5。
+
 
 6. **使用 MQTTX 客户端进行测试**，我们推荐使用 MQTTX 作为 MQTT 客户端测试工具，它是一个免费且易于使用的跨平台 MQTT 5.0 客户端。您可以通过它来验证是否是客户端代码的问题导致无法连接。详细的使用说明，请参见：[MQTTX 使用文档](../connect_to_deployments/mqttx.md)。
 
