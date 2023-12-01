@@ -14,4 +14,4 @@ The table below summarizes the API documentation for EMQX Cloud Dedicated / BYOC
 | [Message Publishing](./pub.md)                 | Publish messages and batch message publishing.               |
 | [Metrics](./metrics.md)                        | View metrics.                                                |
 | [Shadow Service](./shadow_service.md)          | Get shadow service information for creating your own IoT application. |
-
+| [Data Integration](./rules.md)          | Get 'Resource, Rule, Action' information for creating your own IoT application. |
