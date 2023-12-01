@@ -1050,6 +1050,10 @@
           "path": "rule_engine/rule_engine_confluent"
         },
         {
+          "title": "Integrate with Upstash for Kafka",
+          "path": "rule_engine/rule_engine_upstash_kafka"
+        },
+        {
           "title": "Integrate with Pulsar",
           "path": "rule_engine/rule_engine_bridge_pulsar"
         },
@@ -1104,6 +1108,10 @@
         {
           "title": "Integrate with Redis",
           "path": "rule_engine/rule_engine_save_redis"
+        },
+        {
+          "title": "Integrate with Upstash for Redis",
+          "path": "rule_engine/rule_engine_upstash_redis"
         },
         {
           "title": "Integrate with SQL Server",
