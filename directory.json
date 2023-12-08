@@ -596,6 +596,10 @@
               "path": "api/metrics"
             },
             {
+              "title": "数据集成",
+              "path": "api/rules"
+            },
+            {
               "title": "影子服务",
               "path": "api/shadow_service"
             }
@@ -1316,6 +1320,10 @@
             {
               "title": "Metrics",
               "path": "api/metrics"
+            },
+            {
+              "title": "Data Integration",
+              "path": "api/rules"
             },
             {
               "title": "Shadow Service",
