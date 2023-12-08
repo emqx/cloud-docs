@@ -2,9 +2,12 @@
 
 This API documentation provides information on various operations related to Data Integration usage, including resource, rules and actions.
 
-Manage the resources of the rules engine. A resource is an instance of a resource type and is used to maintain related resources such as database connections.
+:::warning Tips for resource and rule maximum quantity
+To ensure the stability of the deployment, EMQX Cloud recommends a certain range of resources and rules. The recommended number of resources is no more than 10, the number of rules is no more than 50, and the number of actions under each rule is no more than 10.
+:::
 
 ## Create Resource
+A resource is an instance of a resource type and is used to maintain related resources such as database connections.
 
 ### URI
 
@@ -16,8 +19,7 @@ POST /resources
 | -------- | ------- | ------------------------------------------------------------ |
 | type    | String  | Resource type name that specify which resource type to use to create the resource |
 | config   | Object  | Resource parameters that should conform to the format specified in the params of the corresponding resource type.|
-| description | String  | Optional, resource description |
-
+| description | String  | Optional, resource description. |
 
 
 ### Response Message
@@ -78,11 +80,11 @@ None.
 | Name | Type    | Description |
 | ---- | ------- | ----------- |
 | code | Integer | 0           |
-| data | Object | Rule object  |
-| data[].id | String | Resource ID  |
+| data | Object | Resource object.  |
+| data[].id | String | Resource ID.  |
 | data[].type | String | The name of the resource type to which the resource belongs  |
-| data[].config | Object | Configuration of resources, and parameters are expressed in key-value form.For details, please refer to the following examples  |
-| data[].status | Array | Status information for the resource. See the status of resources on the Dashboard for details. |
+| data[].config | Object | Configuration of resources, and parameters are expressed in key-value form.For details, please refer to the following examples.  |
+| data[].status | Array | Status information for the resource. See the status of resources on Console for details. |
 | data[].description | Object | A description of the resource. |
 
 ### Request Example
@@ -265,14 +267,14 @@ POST /rules
 | data[].id | String | Rule ID  |
 | data[].rawsql | String | SQL statement, consistent with rawsql in the request.  |
 | data[].for | String | Topic list, indicates which topics can be matched by this rule.  |
-| data[].metrics | Array | Metrics, see Rule Metrics on Dashboard for details.  |
+| data[].metrics | Array | Metrics.  |
 | data[].description | String | The description of the rule, consistent with the description in the request. |
 | data[].created_at | Integer | UNIX timestamp in microseconds. |
 | data[].actions | Array | Action list, and each action is an Object. |
 | data[].actions[].id | String | Action ID. |
 | data[].actions[].params | Object | Action parameters, consistent with actions.params in the request. |
 | data[].actions[].name | String | Action name, consistent with actions.name in the request. |
-| data[].actions[].metrics | Array | Metrics, see Rule Metrics on Dashboard for details. |
+| data[].actions[].metrics | Array | Metrics. |
 
 ### Request Example
 
@@ -316,7 +318,7 @@ $ curl -u app_id:app_secret -X POST -d '{"rawsql":"select * from \"t/a\"","actio
 
 
 ## View Rule
-Get the details of a rule, including the rule's SQL, Topics list, action list, etc. It also returns the value of the statistical index for the current rule and action.
+Get the details of a rule, including the rule's SQL, Topics list, action list, etc. It also returns the value of the metrics for the current rule and action.
 
 ### URI
 
@@ -326,8 +328,7 @@ GET /rules/{rule_id}
 
 | Name     | Type   | Description |
 | :------- | :----- | :---------- |
-| rule_id | String | Optional, Rule ID. If rule_id is not specified then
-returns all created rules in an array.|
+| rule_id | String | Optional, Rule ID. If rule_id is not specified then returns all created rules in an array.|
 
 ### Request Message
 
@@ -343,14 +344,14 @@ None.
 | data[].id | String | Rule ID  |
 | data[].rawsql | String | SQL statement, consistent with rawsql in the request.  |
 | data[].for | String | Topic list, indicates which topics can be matched by this rule.  |
-| data[].metrics | Array | Metrics, see Rule Metrics on Dashboard for details.  |
+| data[].metrics | Array | Metrics.  |
 | data[].description | String | The description of the rule, consistent with the description in the request. |
 | data[].created_at | Integer | UNIX timestamp in microseconds. |
 | data[].actions | Array | Action list, and each action is an Object. |
 | data[].actions[].id | String | Action ID. |
 | data[].actions[].params | Object | Action parameters, consistent with actions.params in the request. |
 | data[].actions[].name | String | Action name, consistent with actions.name in the request. |
-| data[].actions[].metrics | Array | Metrics, see Rule Metrics on Dashboard for details. |
+| data[].actions[].metrics | Array | Metrics. |
 
 ### Request Example
 
@@ -425,14 +426,14 @@ PUT /rules/{rule_id}
 | data[].id | String | Rule ID  |
 | data[].rawsql | String | SQL statement, consistent with rawsql in the request.  |
 | data[].for | String | Topic list, indicates which topics can be matched by this rule.  |
-| data[].metrics | Array | Metrics, see Rule Metrics on Dashboard for details.  |
+| data[].metrics | Array | Metrics.  |
 | data[].description | String | The description of the rule, consistent with the description in the request. |
 | data[].created_at | Integer | UNIX timestamp in microseconds. |
 | data[].actions | Array | Action list, and each action is an Object. |
 | data[].actions[].id | String | Action ID. |
 | data[].actions[].params | Object | Action parameters, consistent with actions.params in the request. |
 | data[].actions[].name | String | Action name, consistent with actions.name in the request. |
-| data[].actions[].metrics | Array | Metrics, see Rule Metrics on Dashboard for details. |
+| data[].actions[].metrics | Array | Metrics. |
 
 ### Request Example
 
@@ -545,6 +546,23 @@ $ curl -u app_id:app_secret -X GET {api}/actions
 ### Response Example
 
 ```json
-
+{
+    "data": [{
+        "types": [],
+        "title": {
+            "zh": "空动作 (调试)",
+            "en": "Do Nothing (debug)"
+        },
+        "params": {},
+        "name": "do_nothing",
+        "for": "$any",
+        "description": {
+            "zh": "此动作什么都不做，并且不会失败 (用以调试)",
+            "en": "This action does nothing and never fails. It's for debug purpose"
+        },
+        "app": "emqx_rule_engine"
+    }, ...],
+    "code": 0
+}
 ```
 
