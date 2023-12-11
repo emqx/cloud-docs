@@ -2,6 +2,8 @@
 
 EMQX Cloud sets default quotas (or limits) for each deployment and the default value of some of the quotas can be adjusted. The following tables show the default value of the quotas in different deployments and whether they can be adjusted. If you need to adjust the quotas, please [contact us](../feature/tickets.md).
 
+
+
 ## Serverless
 | Quotas                                    | **Default Value**          | **Adjustable**     |
 |-------------------------------------------| ----------------------- | ------------------|
@@ -50,8 +52,8 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 | Number of deployments                   | 3                | YES                   |NO|
 | Number of subaccounts                   | 20                | NO |-|               
 
-[1] The number can be adjusted to the same as the session specification. It's recommended to use external auth if the credentials are more than 100,000.<br>
-[2] The number can be adjusted to the same as the session specification. It's recommended to use external auth if the credentials are more than 100,000.<br>
+[1] The number can be adjusted by submitting a ticket. It's recommended to use external auth if the credentials are more than 100,000.<br>
+[2] The number can be adjusted by submitting a ticket. It's recommended to use external auth if the credentials are more than 100,000.<br>
 [3] The number can be adjusted to the same as the session specification.<br>
-[4] The maximum size can be adjusted to 256MB. Please note that modifying message size will be subject to bandwidth limitations, resulting in a decrease in TPS.<br>
+[4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of trasnmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
 [5] Support TLS 1.0、1.1、1.2、1.3.

@@ -22,7 +22,7 @@ GET /clients
 | ip_address        | String  | 客户端 IP 地址                                                   |
 | conn_state        | Enum    | 客户端当前连接状态， 可取值有：`connected`,`idle`,`disconnected` |
 | clean_start       | Bool    | 客户端是否使用了全新的会话                                       |
-| proto_name        | Enum    | 客户端协议名称， 可取值有：`MQTT`,`CoAP`,`LwM2M`,`MQTT-SN`       |
+| proto_name        | Enum    | 客户端协议名称， 可取值有：`MQTT`,`CoAP`,`MQTT-SN`       |
 | proto_ver         | Integer | 客户端协议版本                                                   |
 | _like_clientid    | String  | 客户端标识符，子串方式模糊查找                                   |
 | _like_username    | String  | 客户端用户名，子串方式模糊查找                                   |

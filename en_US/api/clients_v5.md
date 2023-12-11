@@ -22,7 +22,7 @@ Returns information about all clients in the cluster, with support for paginatio
 | ip_address        | String  | Client IP address                                            |
 | conn_state        | Enum    | Client's current connection state, can be: `connected`, `idle`, `disconnected` |
 | clean_start       | Bool    | Whether the client is using a clean session                  |
-| proto_name        | Enum    | Client protocol name, can be: `MQTT`, `CoAP`, `LwM2M`, `MQTT-SN` |
+| proto_name        | Enum    | Client protocol name, can be: `MQTT`, `CoAP`, `MQTT-SN` |
 | proto_ver         | Integer | Client protocol version                                      |
 | _gte_created_at   | Integer | Client session creation time, less than or equal to          |
 | _lte_created_at   | Integer | Client session creation time, greater than or equal to       |

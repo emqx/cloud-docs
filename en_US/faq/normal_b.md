@@ -8,11 +8,8 @@ If you need other protocol support, you can submit a ticket or send an email (cl
 
 ## How to bind a domain name？
 
-When you create a deployment in EMQX Cloud, you will be given an MQTT connection address, which is displayed as a domain in the deployment.
+When you create a **Professional deployment**, you will be given an MQTT connection address, which is displayed as a domain in the deployment.You may already have your own domain and would like to be able to link to it.
 
-You may already have your own domain and would like to be able to bind to it.
-
-> Note: mqtts and wss ports will not be available on Standard after the domain is bound.
 
 ### Steps
 
@@ -21,6 +18,10 @@ You may already have your own domain and would like to be able to bind to it.
 2. Point the CNAME record from mqtt.abc.com to xxx.emqx.cloud in your domain settings panel.
 
 3. Once the DNS resolution has taken effect, you can connect to the MQTT service via mqtt.abc.com.
+
+:::tip
+**Serverless and Dedicated - Basic deployments do not support using CNAME to bind custom domains.** It is recommended to use the default domain connection address provided by EMQX Cloud to ensure correct allocation and management of connections.
+:::
 
 ## How to set up NAT gateway configuration?
 

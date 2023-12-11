@@ -22,7 +22,7 @@ EMQX Cloud Professional and Premium plans use a highly redundant cluster archite
 
 ## Multiple protocol access and private customization extensions
 
-Supports multiple communication protocols including MQTT, MQTT-SN, CoAP, LwM2M, and private TCP protocols, covering various industry applications. It can customize private functions according to your special usage scenarios to fully meet business needs.
+Supports multiple communication protocols including MQTT, MQTT-SN, CoAP, and private TCP protocols, covering various industry applications. It can customize private functions according to your special usage scenarios to fully meet business needs.
 
 ## Capacity estimation and scaling
 
