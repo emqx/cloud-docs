@@ -23,7 +23,7 @@ Free Tier for Serverless Plan:
 
 * Support MQTT and WebSockets
 
-  > For other prototol support, such as MQTT-SN, Lwm2m, JT/T808, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). 
+  > For other prototol support, such as MQTT-SN, CoAP, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). 
 
 Notes on the free trial deployment:
 
@@ -71,7 +71,7 @@ In this Overview page, you can also get the connection details, please ensure th
 
 :::
 
-## Configure Authentication 
+## Configure Authentication
 
 To ensure the security of your data, it is necessary to add authentication information for this deployment by using the **Authentication & ACL** module before formally accessing various clients/applications. You can do this by visiting the [**Authentication**](../deployments/auth_dedicated.md) page under **Authentication & ACL**, and clicking on the Add button. 
 

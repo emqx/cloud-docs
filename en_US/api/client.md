@@ -20,7 +20,7 @@ Returns information for all clients under the cluster, with support for paginati
 | ip_address        | String  | False    | Client IP address                                                                                     |
 | conn_state        | Enum    | False    | The current connection status of the client, the possible values are`connected`,`idle`,`disconnected` |
 | clean_start       | Bool    | False    | Whether the client uses a new session                                                                 |
-| proto_name        | Enum    | False    | Client protocol name, the possible values are`MQTT`,`CoAP`,`LwM2M`,`MQTT-SN`                          |
+| proto_name        | Enum    | False    | Client protocol name, the possible values are`MQTT`,`CoAP`,`MQTT-SN`                          |
 | proto_ver         | Integer | False    | Client protocol version                                                                               |
 | _like_clientid    | String  | False    | Fuzzy search of client identifier by substring method                                                 |
 | _like_username    | String  | False    | Client user name, fuzzy search by substring                                                           |

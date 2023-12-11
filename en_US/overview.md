@@ -2,7 +2,7 @@
 
 EMQX Cloud is an IoT messaging middleware product that helps you easily collect, transmit, computer, and persist IoT data. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Cloud provides a one-stop O&M collocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Cloud can help you quickly build industry applications for the IoT domain quickly and securely.
 
-## Key Features 
+## Key Features
 
 With the infrastructure provided by cloud providers, EMQX Cloud serves dozens of countries and regions around the world, providing low-cost, secure, and reliable cloud services for 5G and Internet of Everything applications.
 
@@ -44,7 +44,7 @@ When choosing EMQX Cloud as your messaging middleware for building IoT applicati
 
 ### Comprehensive Protocol Support
 
-EMQX Cloud provides developers with extensive protocol support, enabling them to easily create various IoT applications with MQTT v3.1, v3.1.1, and v5.0 protocols, as well as MQTT over WebSocket. It offers complete support for MQTT message levels of QoS0, QoS1, and QoS2. Additionally, EMQX Cloud supports multiple communication protocols such as MQTT-SN, CoAP, LwM2M, and private TCP protocols, making it suitable for various industrial applications. Customizable private features are also available, allowing you to tailor the platform to meet the unique demands of your business.
+EMQX Cloud provides developers with extensive protocol support, enabling them to easily create various IoT applications with MQTT v3.1, v3.1.1, and v5.0 protocols, as well as MQTT over WebSocket. It offers complete support for MQTT message levels of QoS0, QoS1, and QoS2. Additionally, EMQX Cloud supports multiple communication protocols such as MQTT-SN, CoAP, and private TCP protocols, making it suitable for various industrial applications. Customizable private features are also available, allowing you to tailor the platform to meet the unique demands of your business.
 
 ### Fast Deployment, Fully Managed
 

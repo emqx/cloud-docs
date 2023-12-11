@@ -103,13 +103,6 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">LwM2M</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-   </tr>
-   <tr>
       <td style="text-indent: 2em;">JT/T808</td>
       <td>&#10007</td>
       <td>&#10007</td>
