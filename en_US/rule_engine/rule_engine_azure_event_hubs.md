@@ -7,8 +7,8 @@ In this article, we will simulate temperature and humidity data and report these
 Before you start, you need to complete the following operations:
 
 - A deployment (EMQX Cluster) has been created on EMQX Cloud.
-- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
-- For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
+- For Professional Plan users: Please create the [NAT gateway](../vas/nat-gateway.md) to use public IP to connect to resources.
+- For BYOC Plan users: Please create the [NAT gateway](../vas/nat-gateway.md) to use a public IP to connect to resources.
 
 ## Azure Event Hubs configuration
 
@@ -89,6 +89,8 @@ Go to the `Data Integrations` page，select the Kafka resource as the access met
 
    Click Next to add a Kafka forwarding action to the rule once the SQL test succeeds. To demonstrate how to bridge the data reported by the device to Azure Event Hubs, we'll utilize the following Kafka topic and message template.
 
+  > Note: It appears that Azure Event Hubs exhibit incompatibility issues when the response action **"Produce Required Acks"** is configured as "none." To resolve this, kindly adjust the "Produce Required Acks" setting to a value other than "none." This modification will enhance connection stability and mitigate the recurring occurrence of connection crashes.
+
    ```bash
    # kafka topic (Azure Event Hub name)
    emqx-hub
@@ -99,11 +101,11 @@ Go to the `Data Integrations` page，select the Kafka resource as the access met
 
    ![action](./_assets/azure_event_hubs_action.png)
 
-5. After successfully binding the action to the rule, click View Details to see the rule sql statement and the bound actions.
+1. After successfully binding the action to the rule, click View Details to see the rule sql statement and the bound actions.
 
    ![monitor](./_assets/azure_event_hubs_rule_engine_detail.png)
 
-6. To see the created rules, go to Data Integrations/View Created Rules. Click the Monitor button to see the detailed match data of the rule.
+2. To see the created rules, go to Data Integrations/View Created Rules. Click the Monitor button to see the detailed match data of the rule.
 
    ![monitor](./_assets/azure_event_hubs_monitor.png)
 
