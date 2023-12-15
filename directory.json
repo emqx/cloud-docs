@@ -324,6 +324,21 @@
       ]
     },
     {
+      "title": "数据集成_v5",
+      "path": "data_integration/introduction",
+      "collapsed": false,
+      "children": [
+        {
+          "title": "连接器",
+          "path": "data_integration/connectors"
+        },
+        {
+          "title": "规则",
+          "path": "data_integration/rules"
+        }
+      ]
+    },
+    {
       "title": "数据集成",
       "path": "rule_engine/introduction",
       "collapsed": true,
