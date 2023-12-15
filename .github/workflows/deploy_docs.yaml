@@ -78,7 +78,7 @@ jobs:
     - name: generate version config
       run: |
         cd docs-files
-        python3 .github/scripts/generate_version.py $(git tag | egrep "v[0-9](\.[0-9])*$" | xargs echo -n) > ../frontend/docs/public/api/${DOCS_TYPE}_versions.json
+        python3 .github/scripts/generate_version.py $(git tag | egrep "v[0-9]+\.[0-9]+$" | xargs echo -n) > ../frontend/docs/public/api/${DOCS_TYPE}_versions.json
         cat ../frontend/docs/public/api/${DOCS_TYPE}_versions.json
 
     - name: build docs
@@ -94,14 +94,14 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
-    - name: upload ee file to s3
+    - name: upload files to s3
       run: |
         aws s3 rm --recursive s3://docs-emqx-com/zh/${DOCS_TYPE}/${VERSION} || true
         aws s3 rm --recursive s3://docs-emqx-com/en/${DOCS_TYPE}/${VERSION} || true
         aws s3 cp --recursive frontend/docs/.vitepress/dist/ s3://docs-emqx-com/
         aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DOCS_CLOUDFRONT_ID }} --paths "/zh/${DOCS_TYPE}/${VERSION}/*" "/en/${DOCS_TYPE}/${VERSION}/*" "/api/${DOCS_TYPE}_versions.json" "/sitemap_${DOCS_TYPE}_${VERSION}.xml"
 
-    - name: upload dist to cos
+    - name: upload files to cos
       run: |
         pip3 install coscmd
         coscmd config -a ${{ secrets.TENCENT_COS_ID }} -s ${{ secrets.TENCENT_COS_KEY }} -b docs-1302406139 -r ap-shanghai
