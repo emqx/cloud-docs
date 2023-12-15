@@ -9,3 +9,5 @@ EMQX Cloud is an MQTT messaging middleware product for the IoT domain from EMQ. 
 ```
 
 Now, open <http://localhost:8080/en/cloud/latest/>, if `directory.json` has been updated, you can re-run the above command to update the docs.
+
+test commit
