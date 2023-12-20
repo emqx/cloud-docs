@@ -6,9 +6,9 @@ In this article, we will simulate temperature and humidity data and report these
 
 Before you start, you need to complete the following operations:
 
-- A deployment (EMQX Cluster) has been created on EMQX Cloud.
-- For Professional Plan users: Please create the [NAT gateway](../vas/nat-gateway.md) to use public IP to connect to resources.
-- For BYOC Plan users: Please create the [NAT gateway](../vas/nat-gateway.md) to use a public IP to connect to resources.
+- Create a deployment (EMQX Cluster) on EMQX Cloud.
+- For Professional Plan deployment users, you must complete the creation of VPC peering connections first. The IP mentioned in this tutorial refers to the resources' private IP. (If [NAT gateway service](../vas/nat-gateway.md) is enabled, public IP can also be used for the connection.)
+- For BYOC Plan users, you must establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 
 ## Azure Event Hubs configuration
 
@@ -29,17 +29,42 @@ Azure Event Hubs provides you with a Kafka endpoint. This endpoint enables your 
 
    ![azure_event_hubs_namespace_1](./_assets/azure_event_hubs_namespace_1.png)
 
-2. Create an event hub
+   On the Network tab, select Private Network. Then please create a private endpoint.
+   ![azure_event_hubs_namespace_2](./_assets/azure_event_hubs_namespace_2.png)
+
+2. Create a private endpoint
+
+   Please follow the following steps to create a private endpoint so that the EMQX cluster can access your Event hubs via private network.
+
+   **Step 1**: On the Basics page, select the corresponding subscription, resource group, and instance details.
+   ![azure_event_hubs_endpoint_1](./_assets/azure_event_hubs_endpoint_1.png)
+
+   **Step 2**: On the Resource page, keep the default configuration.
+   ![azure_event_hubs_endpoint_2](./_assets/azure_event_hubs_endpoint_2.png)
+
+   **Step 3**:On the Virtual Network page, select the network and subnet that are peered with EMQX Cloud VPC, and select static IP in the private IP configuration.
+   ![azure_event_hubs_endpoint_3](./_assets/azure_event_hubs_endpoint_3.png)
+
+   **Step 4**: On the DNS page, select yes to integrate private DNS zone.
+   ![azure_event_hubs_endpoint_4](./_assets/azure_event_hubs_endpoint_4.png)
+
+   **Step 5**: After the creation is complete, you can see that the status of the private endpoint is "succeeded" in the network tab of this namespace.
+   ![azure_event_hubs_endpoint_5](./_assets/azure_event_hubs_endpoint_5.png)
+
+   **Step 6**: Click on the private endpoint, record the "FQDN" and "IP addresses", and send it to us through a [supprot ticket](https://docs.emqx.com/en/cloud/latest/feature/tickets.html), and the devops team will add resolution for you.
+   ![azure_event_hubs_endpoint_6](./_assets/azure_event_hubs_endpoint_6.png)
+
+3. Create an Event hub
 
    On the namespace page, select + Event hub on the command bar.
 
    ![azure_event_hubs_1](./_assets/azure_event_hubs_1.png)
 
-   Type a name for your event hub, then select Review + create.
+   Type a name for your Event hub, then select Review + create.
 
    ![azure_event_hubs_2](./_assets/azure_event_hubs_2.png)
 
-3. Authorizing access to Event Hubs resources using SAS (Shared Access Signatures)
+4. Authorizing access to Event Hubs resources using SAS (Shared Access Signatures)
 
    On the event hubs page, select + Shared Access Signatures on the command bar.Fill in the policy name and corresponding permissions.
 
@@ -48,7 +73,7 @@ Azure Event Hubs provides you with a Kafka endpoint. This endpoint enables your 
    Then you can get the connection string and authentication information for further use.
    ![azure_event_hubs_sas_2](./_assets/azure_event_hubs_sas_2.png)
 
-4. Create a consumer group (Optional)
+5. Create a consumer group (Optional)
    On the event hubs page, Click + Consumer group on the command bar.
 
    ![azure_event_hubs_consumer_group](./_assets/azure_event_hubs_consumer_group.png)
