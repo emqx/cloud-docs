@@ -1,34 +1,58 @@
 # 规则
 
-规则描述了「数据从哪里来」、「如何筛选并处理数据」、「处理结果到哪里去」三个配置，即一条可用的规则包含三个要素：
+规则是 EMQX 提供的规则引擎的组件， 是 EMQX 内置基于 SQL 的数据处理组件，搭配[连接器](./connectors.md)使用无需编写代码即可实现一站式的 IoT 数据提取、过滤、转换、存储与处理，以加速应用集成和业务创新。
 
-- 触发事件：规则通过事件触发，触发时事件给规则注入事件的上下文信息（数据源），通过 SQL 的 FROM 子句指定事件类型；
+## 规则的组成
+规则描述了 **数据来源**、**数据处理过程**、**处理结果去向** 三个方面：
 
-- 处理规则（SQL）：使用 SELECT 子句和 WHERE 子句以及内置处理函数，从上下文信息中过滤和处理数据；
+- **数据来源**：规则的数据源可以是消息或事件，也可以是外部的数据系统。规则通过 SQL 的 FROM 子句指定数据的来源；
+- **数据处理过程**：规则通过 SQL 语句和函数来描述数据的处理过程。SQL 的 WHERE 子句用于过滤数据，SELECT 子句以及 SQL 函数用于提取和转换数据；
+- **处理结果去向**：规则可以定义一个或多个动作来处理 SQL 的输出结果。如果 SQL 执行通过，规则将按顺序执行相应的动作，比如将处理结果存储到数据库、或者重新发布到另一个 MQTT 主题等。
 
-- 响应动作：如果有处理结果输出，规则将执行相应的动作，如持久化到数据库、重新发布处理后的消息、转发消息到消息队列等。一条规则可以配置多个响应动作。
+![rules](./_assets/rule_01.png)
 
+### 规则 SQL 语句简介
+SQL 语句用于指定规则的数据来源、定义数据处理过程等。下面给出了一个 SQL 语句的例子：
+
+```sql
+SELECT
+    payload.data as d
+FROM
+    "t/#"
+WHERE
+    clientid = "foo"
+```
+
+在上述 SQL 语句里：
+
+- 数据来源：主题为 t/# 的消息；
+- 数据处理过程：如果发送消息的客户端 ID 为 foo，则从消息内容中选出 data 字段并赋值给新的变量 d。
+
+::: tip
+"." 语法要求数据必须是 JSON 或者 Map 类型，如果是其他数据类型，须要使用 SQL 函数做数据类型转换。
+:::
+
+我们使用类 SQL 语句来实现数据的筛选、过滤和处理，关于如何编写规则 SQL，可通过以下文档了解更多。
+
+- [规则 SQL 语法与示列](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-syntax.html)
+- [SQL 数据源和字段](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-events-and-fields.html)
+- [内置 SQL 函数](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-builtin-functions.html)
+- [jq 函数](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-jq.html)
+
+### 动作
+动作解决了"将处理过的数据发送到哪里"的问题。它告诉 EMQX Cloud 如何处理规则所产生的数据。目前规则支持以下两种动作：
+
+- 内置动作：目前支持的内置动作为 [消息重新发布](./republish.md)。
+- 关联连接器的动作：通过定义好的连接器将数据发送到各类目标服务中。
 
 ## 创建规则
 
-1. 我们使用 Kafka 资源创建规则举例，可以在连接器列表中创建规则，或者是从数据集成页面新建规则
+1. 我们使用 Kafka 资源创建规则举例，可以在连接器列表中创建规则，或者是从数据集成页面新建规则。
 
-
-![](./_assets/rule_intro_01.png)
-
-![](./_assets/rule_intro_12.png)
+![rules](./_assets/rule_02.png)
 
 
 2. 在下面的规则语句中，我们从 temp_hum/emqx 主题中读取报告的时间`up_timestamp`，`clientid`，`payload`中的温度以及湿度。
-::: tip
-我们使用类 SQL 语句来实现数据的筛选、过滤和处理，关于如何编写规则 SQL，可通过以下文档了解更多。
-
-- [规则 SQL 语法与示列](https://docs.emqx.com/zh/enterprise/v4.4/rule/rule-engine_grammar_and_examples.html)
-- [SQL 语句中可用的字段](https://docs.emqx.com/zh/enterprise/v4.4/rule/rule-engine_field.html)
-- [SQL 语句中可用的函数](https://docs.emqx.com/zh/enterprise/v4.4/rule/rule-engine_buildin_function.html)
-:::
-
-![](./_assets/rule_intro_02.png)
 
 ```sql
 SELECT
@@ -38,63 +62,55 @@ FROM
 ```
 
 
-1. 创建一个新的测试SQL，点击` SQL 测试`后面的切换按钮，填写相应的测试参数，最后点击` SQL 测试`按钮。
+3. 创建一个新的测试SQL，点击`启用调试`后面的切换按钮，填写相应的测试参数，最后点击**测试**按钮。
 
-![](./_assets/rule_intro_03.png)
+![](./_assets/rule_03.png)
 
-4. 在测试输出，我们可以看到预期的数据处理结果，规则完成之后，我们点击'下一步'并保存。
+4. 在测试输出，我们可以看到预期的数据处理结果，规则完成之后，我们点击**下一步**并保存。
 
 
 ## 创建动作
+接下来为规则绑定动作。EMQX 会根据对应的不同的类型的连接器来显示不同的动作的配置项。
 
-动作解决了"将处理过的数据发送到哪里"的问题。它告诉 EMQX Cloud 如何处理规则所产生的数据。通常情况下，我们为目标资源设置配置和SQL模板。
+1. 控制台将预设一些默认值。如果需要，您可以改变它们。
 
-1. EMQX Cloud 将设置配置的默认值。如果需要，你可以改变它们。
-
-2. 对SQL模板进行编码，这里我们将取得的变量保存到 Kafka，并点击 "确认"来创建一个动作。
-
-![](./_assets/rule_intro_04.png)
+2. 我们填写发送到 Kafka 的主题`emqx`，分辨对消息的键和消息的值填入参数，您也可以根据自己业务进行修改，再点击 "确认"来创建一个动作。
 
 ```
-{"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
+#消息的键
+${client_id}
+
+#消息的值
+{"temp": ${temp}, "hum": ${hum}}
 ```
 
 3. 一个规则可以关联多个动作。一个动作配置完成之后，还可以添加另一个动作，同时还可以改变目标连接器。例如，我们可以一个动作把数据转发给 Kafka，同时另一个动作把数据保转发到 HTTP 服务。
 
-![](./_assets/rule_intro_05.png)
+4. 最后我们向 'temp_hum/emqx' 主题发送消息来做验证。
+```json
+{
+  "temp": "27.5",
+  "hum": "41.8"
+}
+```
 
 
 ## 规则操作
 
 ### 查看规则统计
-
+在规则列表点击规则 ID，在运行统计页面可以查看到规则的统计以及此规则下所有动作的统计。
+![](./_assets/rule_04.png)
 
 ### 编辑规则
 
-点击编辑图标来编辑该规则。在编辑页面，你可以编辑规则的 SQL 模板，同时可以编辑、添加动作。
-
-![](./_assets/rule_intro_07.png)
-
-编辑页面
-
-![](./_assets/rule_intro_08.png)
-
+点击规则列表上的编辑图标来编辑该规则。在编辑页面，你可以编辑规则的 SQL 模板，同时可以编辑、添加动作。
+![](./_assets/rule_05.png)
 
 ### 启用和停用规则
+可以在规则列表上启用和停用规则。点击‘是否启用’开关即可开启或停用规则。
 
-你可以在规则列表上启用和停用规则。
+### 删除规则
+可以在规则列表删除规则。点击删除按钮，输入规则 ID 后可删除规则。
 
-
-1. 点击规则列表页上的规则监控图标。
-
-![](./_assets/rule_intro_09.png)
-
-2. 状态面板上会显示规则命中的数据详情。
-
-![](./_assets/rule_intro_10.png)
-
-## 删除规则
-
-在资源详情页，你可以删除该资源关联的规则。
-
-![](./_assets/rule_intro_11.png)
+### 编辑和删除动作
+可以在动作列表点击'动作名称'或编辑按钮，重新编辑动作。点击删除按钮删除动作。
