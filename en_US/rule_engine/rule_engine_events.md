@@ -85,7 +85,9 @@ Here are some common reasons for client disconnections.
 
 | types                    | reason                                                                                                                                                                                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| normal                   | MQTT client disconnects normally                                                                                                                                                                                                     |
+| normal                   | MQTT client disconnects normally                                                                               |
+| discarded                   |Because clients with the same ClientID and have clean_start = true set.                  |
+| takeovered                   |Because clients with the same ClientID and have clean_start = false set.                                |
 | kicked                   | Using the REST API to kick out clients                                                                                                                                                                                               |
 | keepalive_timeout        | MQTT keepalive timeout                                                                                                                                                                                                               |
 | not_authorized           | Authentication fails, or Pub/Sub without permission will actively disconnect the client when acl_nomatch = disconnect                                                                                                                |
