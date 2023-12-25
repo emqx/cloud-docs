@@ -27,3 +27,9 @@ The maximum expiration time is 1 year. The minimum expiration time is 5 minutes,
 **Note**
 
 Optional.
+
+::: warning
+EMQX Cloud comes with a default 'Flapping' protection mechanism. This mechanism aims to protect your broker from potential malicious connection attempts. If a client reconnects more than 120 times within one minute, it will be automatically added to the blacklist. The client ID will be retained in the blacklist for 60 minutes, during which time the specific client ID will be unable to reconnect to your deployment.
+
+If you believe this repetitive behavior is normal for the MQTT client, you can visit the 'Blacklist' in the 'Authentication and Access Control' section and manually remove the client ID from the blacklist.
+:::

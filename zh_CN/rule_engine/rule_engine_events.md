@@ -85,6 +85,9 @@ EMQX Cloud 数据集成 提供了以下七个可用的事件订阅主题。
 | Reason 类型              | 原因                                                                                                                         |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | normal                   | MQTT 客户端正常断开                                                                                                          |
+| discarded            | 因为相同 ClientID 的客户端上线且设置 clean_start = true                                                              |
+| takeovered            | 因为相同 ClientID 的客户端上线且设置 clean_start = false                                                              |
+| normal                   | MQTT 客户端正常断开                                                                                                          |
 | kicked                   | 服务端踢出，通过 REST API                                                                                                    |
 | keepalive_timeout        | MQTT keepalive 超时                                                                                                          |
 | not_authorized           | 认证失败，或者 acl_nomatch = disconnect 时没有权限的 Pub/Sub 会主动断开客户端                                                |
