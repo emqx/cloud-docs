@@ -1,6 +1,6 @@
-# Data Integrations Overview
+# Data Integration Overview
 
-The EMQX Cloud Data Integrations is used to configure the rules for handling and responding to EMQX message flows and device events. The Data Integrations not only provides a clear and flexible "configurable" architecture solution, but also simplifies the development process, improves user usability, and reduces the coupling degree between the business system and EMQX Cloud. It also provides a superior infrastructure for customization of EMQX Cloud's proprietary capabilities.
+The EMQX Cloud Data Integration is used to configure the rules for handling and responding to EMQX message flows and device events. The Data Integrations not only provides a clear and flexible "configurable" architecture solution, but also simplifies the development process, improves user usability, and reduces the coupling degree between the business system and EMQX Cloud. It also provides a superior infrastructure for customization of EMQX Cloud's proprietary capabilities.
 
 ::: warning Note
 This feature is not available for the Serverless plan
@@ -8,7 +8,7 @@ This feature is not available for the Serverless plan
 
 ![integration_intro_01](./_assets/integration_intro_01.png)
 
-In EMQX Cloud, using Data Integrations has the following requirements:
+In EMQX Cloud, using Data Integration has the following requirements:
 
 - Standard Deployment
   - The resource only supports public access, so you need to ensure that the resource has public access and open security groups before creating the resource.
