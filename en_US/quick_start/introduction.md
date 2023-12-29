@@ -57,7 +57,7 @@ After logging to [EMQX Cloud Console](https://cloud.emqx.com/console/), you will
 
    
 
-2. Click **+ New**.  You can choose from the available versions such as [creating a Serverless deployment](../create/serverless.md), [creating a Dedicated deployment](../create/dedicated.md) or [creating a BYOC deployment](../create/byoc.md). If you opt for a free trial of the EMQX Cloud Dedicated version, you'll need to configure additional details such as the cloud platform, deployment region, connection specifications, and billing method. Once you've confirmed all the necessary deployment information, you can click on **Deploy Now** to proceed with the deployment process.
+2. Click **+ New**.  You can choose from the available versions such as [creating a Serverless deployment](../create/serverless.md), [creating a Dedicated deployment](../create/dedicated.md) or [creating a BYOC deployment](../create/byoc.md). If you opt for a free trial of the EMQX Cloud Dedicated version, you'll need to configure additional details such as the cloud platform, deployment region, connection tier, and billing method. Once you've confirmed all the necessary deployment information, you can click on **Deploy Now** to proceed with the deployment process.
 
    ![add_users](./_assets/create_free_trial.png)
 

@@ -13,7 +13,7 @@ The subscription management feature provides control over the automatic renewal 
 
 ## Subscription Rules
 
-1. When automatic renewal is enabled for a deployment, the system will attempt to deduct the required amount for one year of the current specification deployment using the reserved payment method. This deduction occurs 12 hours prior to the expiration time.
+1. When automatic renewal is enabled for a deployment, the system will attempt to deduct the required amount for one year of the current deployment using the reserved payment method. This deduction occurs 12 hours prior to the expiration time.
 
 
 2. The automatic deduction will not be successful if there is an issue with the payment method.

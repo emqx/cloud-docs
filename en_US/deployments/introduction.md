@@ -68,8 +68,8 @@ Enables internal and external communication between deployments and your busines
 Enable the deployment to access public network resources by creating NAT gateways for the professional plan.
 
 
-## Scaling deployment specifications
-Upgrade or reduce deployment specifications based on demand
+## Scaling deployment tier
+Upgrade or reduce deployment tier based on demand
 
 
 ## [Pause and Delete Deployment](./delete_deployment.md)

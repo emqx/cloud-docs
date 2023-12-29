@@ -6,7 +6,7 @@ For first-time EMQX Cloud customers, we have an opportunity for you to create a 
 
   > To extend your free trial, you can submit a [ticket](../feature/tickets.md) or contact us by email to get in touch with us.
 
-- **Specification：** 1000 client connections for the standard plan and 1000 client connections for the professional plan.
+- **tier** 1000 client connections for the standard plan and 1000 client connections for the professional plan.
 
 - **Traffic：** 100 GB free traffic per month.
 

@@ -1,4 +1,4 @@
-# Specification Limits
+# Tier Limits
 
 ## Serverless
 
@@ -24,7 +24,7 @@ EMQX Cloud Serverless is deployed on a multi-tenant architecture, which imposes 
 EMQX Cloud Dedicated version is based on independent clusters. The table below is a comparison between EMQX Cloud Dedicated version and other IoT Hubs. 
 
 ::: tip
-These parameters are verified in strict performance tests. For *Unlimited*, it refers to there being no technical restrictions, the actual performance of EMQX depends on the deployment specification. 
+These parameters are verified in strict performance tests. For *Unlimited*, it refers to there being no technical restrictions, the actual performance of EMQX depends on the deployment tier. 
 
 :::
 
@@ -32,7 +32,7 @@ These parameters are verified in strict performance tests. For *Unlimited*, it r
 
 | **Limitation Description**         | **Dedicated**                                             | **Cloud IoT Hub**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |
-| The maximum number of simultaneous online long connections  | Depends on specifications, choice from 1000-10M+. For more than 50K please send tickets for application.| 10K-500K                                 |
+| The maximum number of simultaneous online long connections  | Depends on tier, choice from 1000-10M+. For more than 50K please send tickets for application.| 10K-500K                                 |
 | Number of connections established per second     | 10K                                                   | 200-500                                |
 | Number of topics subscribed to by a single client   | Unlimited                                                  | 10-100                                 |
 | Single-client subscription requests per second  | Unlimited                                                  | 10-10K                                  |
