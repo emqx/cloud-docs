@@ -84,7 +84,7 @@ In the Output Result, you can see the expected data processing results.
 
 ## Add Actions
 
-After you have created the rule, click the **Next** button on the **New Rule** step page to proceed to the **New Action** step page. On the **New Actions** step page, select the associated Connector from the **Connector** dropdown box. The page will display different action configuration options based on the type of associated Connector selected. See the detailed action configuration examples in [Add Republish Action](#) and [Add Action for Forwarding Data to Target Services](#).
+After you have created the rule, click the **Next** button on the **New Rule** step page to proceed to the **New Action** step page. On the **New Actions** step page, select the associated Connector from the **Connector** dropdown box. The page will display different action configuration options based on the type of associated Connector selected. See the detailed action configuration examples in [Add Republish Action](#add-republish-action) and [Add Action for Forwarding Data to Target Services](#add-action-for-forwarding-data-to-target-services).
 
 A rule can be associated with multiple actions. When you click **Confirm** to complete the action creation, a **Successful new rule** pop-up appears. If you want to add another action, you can click **Continue** to proceed and select another Connector. For example, one action can forward data to Kafka while another action sends data to an HTTP service.
 

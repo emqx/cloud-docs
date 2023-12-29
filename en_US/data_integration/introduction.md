@@ -10,10 +10,6 @@ As a fully managed MQTT message cloud service, EMQX Cloud connects Internet of T
 
 ![data_integration_intro](./_assets/integration_intro_01.png)
 
-As devices or applications establish connections with the deployment, the MQTT broker takes charge of routing messages. The introduction of data integration adds a layer of versatility, offering a suite of components for data processing driven by SQL statements—commonly known as the 'Rule Engine'. Users have the flexibility to define processing rules and subsequently dispatch the refined data to various cloud services. The Serverless Data Integration, now equipped with a straightforward interface configuration, seamlessly connects with Kafka and HTTP services. This simplicity empowers users to effortlessly integrate their deployment with other critical business systems.
-
-[看上上面这段说明放在哪里比较好]
-
 ## How It Works
 
 EMQX Cloud Data Integration is an out-of-the-box feature. Devices connect to Cloud Serverless deployments via the MQTT protocol and send message streams and device events. With the built-in rules, the received message data is processed by pre-defined rules, and then the rules trigger an action to forward the processed data to cloud resources through configured connectors. You can easily create connectors and rules, and add actions to the rules on the Data Integration page of your deployment without any coding work.
