@@ -1017,7 +1017,38 @@
       ]
     },
     {
-      "title": "Data Integrations",
+      "title": "Data Integration (Serverless)",
+      "path": "data_integration/introduction",
+      "collapsed": false,
+      "children": [
+        {
+          "title": "Connector",
+          "path": "data_integration/connectors"
+        },
+        {
+          "title": "Rules",
+          "path": "data_integration/rules"
+        },
+        {
+          "title" : "Message Republish",
+          "path": "data_integration/republish"
+        },
+        {
+          "title" : "Null Action (Debug)",
+          "path": "data_integration/empty_action_debug"
+        },
+        {
+          "title" : "HTTP Server",
+          "path": "data_integration/http_server"
+        },
+        {
+          "title" : "Kafka",
+          "path": "data_integration/kafka"
+        },
+      ]
+    },
+    {
+      "title": "Data Integration (Dedicated)",
       "path": "rule_engine/introduction",
       "collapsed": true,
       "children": [
