@@ -1044,7 +1044,7 @@
         {
           "title" : "Kafka",
           "path": "data_integration/kafka"
-        },
+        }
       ]
     },
     {
