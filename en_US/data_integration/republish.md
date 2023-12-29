@@ -12,7 +12,7 @@ Configuring the message republishing feature through data integration does not r
 
 ## Create a Rule
 
-1. In the **Data Integration** page, under the **Data Forward** service category, click **Message Republish**. If you have already created other connectors, click **New Connector**, and then select **Message Republish** under the **Data Forward** service category.
+1. In the **Data Integration** page, under the **Data Forward** service category, click **Republish**. If you have already created other connectors, click **New Connector**, and then select **Republish** under the **Data Forward** service category.
 
 2. Define the rule SQL in the **SQL Editor** to trigger the engine whenever `msg` in any message contains the string `hello`:
 
@@ -57,7 +57,7 @@ Configuring the message republishing feature through data integration does not r
 
 1. On the **New Rule** step page, click **Next** to add an action.
 2. On the **New Action** step page, configure the following information:
-   - **Connector**: Keep the default value "Republish".
+   - **Connector**: Keep the default value `Republish`.
    - **Topic**: Set the target topic as `greet`.
    - **Payload**: Fill in `${msg} -- forward from emqx cloud` as the message content template.
    - Leave QoS at its default value. 

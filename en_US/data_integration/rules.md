@@ -47,16 +47,23 @@ The "." syntax requires the data to be in JSON or Map format. If it is in anothe
 
 For detailed information on the format and usage of Rule SQL statements, refer to the [SQL Manual](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-syntax.html).
 
-## Create a Rule
+## Create Rules
 
-This section demonstrates how to create a rule for data forward to Kafka. In that case, it is supposed that you have already created a Kafka Connector. 
+Go to your deployment and click **Data Integration (Beta)** from the left-navigation menu to enter the Data Integration page. 
 
-1. Go to your deployment and click **Data Integration (Beta)** from the left-navigation menu.
-2. On the Data Integration page, click **New Rule** in the upper left corner of the **Rule List** to create a new rule. You can also create a new rule by clicking the rule creation button in the Connector list.
+If you have created a Connector for connecting to the cloud resources, click **New Rule** in the upper left corner of the **Rule List** to enter the **New Rule** page. You can also create a new rule by clicking the rule creation button in the Connector list.
 
 ![rules](./_assets/rule_02.png)
 
-3. In the **SQL Editor**, enter the SQL statement below. By specifying this statement, the rule reads the reported `timestamp`, `clientid`, and `temperature` and `humidity` contained in the payload of the message published to the `temp_hum/emqx` topic.
+If you want to create a rule for [message republish](./republish.md), click **Republish** from the **Data Forward** category to start the rule creation process.
+
+<img src="./_assets/republish_03.png" alt="republish_03" style="zoom:67%;" />
+
+### Define a Data Source
+
+On the **New Rule** page, enter a name for your rule and add a note to facilitate future management.
+
+In the **SQL Editor**, you can customize the statements to add a data source that suits your business needs. For this demonstration, enter the SQL statement below:
 
 ```sql
 SELECT
@@ -65,43 +72,46 @@ FROM
   "temp_hum/emqx"
 ```
 
-4. Click the **Enable Test** toggle switch to create a new test SQL. Fill in the appropriate test parameters, and click the **Test** button. 
+By specifying this SQL statement, the rule reads the reported `timestamp`, `clientid`, and `temperature` and `humidity` contained in the payload of the message published to the `temp_hum/emqx` topic.
 
-   In the Output Result, you can see the expected data processing results.
+### Test the SQL Statements
+
+Click the **Enable Test** toggle switch to create a new test SQL. Fill in the appropriate test parameters, and click the **Test** button. 
+
+In the Output Result, you can see the expected data processing results.
 
 ![rule_03](./_assets/rule_03.png)
 
-5.  Click the **Next** button to add an action.
-
 ## Add Actions
 
-Next, you can add actions to the rule. EMQX will display different action configuration options based on the type of associated Connector. This demonstration takes the example of forwarding data to Kafka via a Kafka Connector.
+After you have created the rule, click the **Next** button on the **New Rule** step page to proceed to the **New Action** step page. On the **New Actions** step page, select the associated Connector from the **Connector** dropdown box. The page will display different action configuration options based on the type of associated Connector selected. See the detailed action configuration examples in [Add Republish Action](#) and [Add Action for Forwarding Data to Target Services](#).
 
-The console will pre-set some default values. You can change them if necessary.
+A rule can be associated with multiple actions. When you click **Confirm** to complete the action creation, a **Successful new rule** pop-up appears. If you want to add another action, you can click **Continue** to proceed and select another Connector. For example, one action can forward data to Kafka while another action sends data to an HTTP service.
 
-1. Select the associated Kafka Connector from the **Connector** dropdown box.
+### Add Republish Action
 
-2. Configure the following information:
+The following steps demonstrate how to add an action to republish the original messages received from the topic `t/#` to another topic `a/1`.
 
-   - **Kafka Topic**: Specify the topic sent to Kafka, for example, `emqx`.
+1. Select **Republish** from the **Connector** dropdown box. 
+2. Configure the following settings:
+   - **Topic**: Set the target topic, `a/1` in this example;
+   - **QoS**: Set the QoS of the republished message, `0` in this example;
+   - **Retain**: Set whether to forward this message as a retained message, for this tutorial, keep the default setting, `false`;
+   - **Payload**: Enter `${payload}`, indicating the republished message will have the same payload as the original message, without any modifications.
+   - **MQTT 5.0 Message Properties**: Click the toggle switch to configure the user properties and MQTT properties as necessary. The properties options allow you to add rich message metadata descriptions for the republished message.
+     - **Payload Format Indicator**: Enter a value to indicate whether the payload of the message is in a specific format. When the value is set to `false`, the message is considered as undetermined bytes. When set to `true`, it indicates that the payload within the message body is UTF-8 encoded character data. This will help MQTT clients or MQTT servers parse message content more efficiently without the need for explicit formatting or type identification for the message body.
+     - **Message Expiry Interval**: Enter a value (in seconds) to specify a time interval after which the message should expire and be considered invalid if it hasn't been delivered to the intended recipient.
+     - **Content Type**: Enter a value to specify the type or format of the payload content within the republished message (MIME type), for example, `text/plain` represents a text file, `audio/aac` represents an audio file, and `application/json` signifies an application message in JSON format.
+     - **Response Topic**: Enter the specific MQTT topic to which you want the response message to be published. For example, if you want responses to be sent to a topic named "response/my_device," you would enter: `response/my_device`.
+     - **Correlation Data**: Enter a unique identifier or data to correlate a response message with the original request message. For example, you could enter a unique request identifier, a transaction ID, or any other information that is meaningful in your application context.
 
-   - **Message Key** and **Message Value**: Enter parameters as follows, and you can also modify them according to your business.
-
-     ```bash
-     # Message Key
-     ${client_id}
-     
-     # Message Value
-     {"temp": ${temp}, "hum": ${hum}}
-     ```
-
-   - Leave other options as default.
-
-3. Click the **Confirm** button to complete the action creation.
-
+3. Click **Confirm** to complete the action creation.
 4. In the **Successful new rule** pop-up, click **Back to Rules** to complete the rule creation. 
 
-   A rule can be associated with multiple actions. If you want to add another action, you can click **Continue** to proceed and select another Connector. For example, one action can forward data to Kafka while another action sends data to an HTTP service.
+
+### Add Action for Forwarding Data to Target Services 
+
+You can also add actions to forward the processed results to target services using associated Connectors. On the **New Action** step page, select the target Connector from the Connector drop-down list. For details on the action configuration, see [Ingest MQTT Data into HTTP Server](./http_server.md) and [Stream MQTT Data into Apache Kafka](./kafka.md).
 
 ## View Rule Statistics
 
