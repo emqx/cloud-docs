@@ -10,6 +10,10 @@ As a fully managed MQTT message cloud service, EMQX Cloud connects Internet of T
 
 ![data_integration_intro](./_assets/integration_intro_01.png)
 
+As devices or applications establish connections with the deployment, the MQTT broker takes charge of routing messages. The introduction of data integration adds a layer of versatility, offering a suite of components for data processing driven by SQL statements—commonly known as the 'Rule Engine'. Users have the flexibility to define processing rules and subsequently dispatch the refined data to various cloud services. The Serverless Data Integration, now equipped with a straightforward interface configuration, seamlessly connects with Kafka and HTTP services. This simplicity empowers users to effortlessly integrate their deployment with other critical business systems.
+
+[看上上面这段说明放在哪里比较好]
+
 ## How It Works
 
 EMQX Cloud Data Integration is an out-of-the-box feature. Devices connect to Cloud Serverless deployments via the MQTT protocol and send message streams and device events. With the built-in rules, the received message data is processed by pre-defined rules, and then the rules trigger an action to forward the processed data to cloud resources through configured connectors. You can easily create connectors and rules, and add actions to the rules on the Data Integration page of your deployment without any coding work.
@@ -32,14 +36,15 @@ The following is the basic process for creating data integrations:
 
 ![data_integration_intro](./_assets/integration_intro_02.png)
 
-1. Select a connector. You can select the service you need to connect to from the Data Integration initial page in your deployment and configure the connector.
+1. Create a connector. You can select the service you need to connect to from the Data Integration initial page in your deployment and configure the connector.
 2. Create a rule to process the data collected from the device. The rule can collect and process data the way you want using SQL statements.
 3. Attach actions to the rule. The processed data will be forwarded to the cloud service through the configured connector when the rule triggers an action.
 4. Test whether the created data integration can run correctly.
 
+
 ## Data Integration Beta Statements
 
-The data integration feature has been set for a Beta testing period, ending on February 29, 2024 (the end date for overseas stations is January 31, 2024). During the Beta period, data integration is free to use and will not be billed. After the trial period ends, a free quota for data integration will be provided: 1 million rule actions per month. Any usage beyond the free quota will be charged at ¥1.80 per million rule actions.
+The data integration feature has been set for a Beta testing period, ending on February 29, 2024. During the Beta period, data integration is free to use and will not be billed. After the trial period ends, a free quota for data integration will be provided: 1 million rule actions per month. Any usage beyond the free quota will be charged at $0.25 per million rule actions.
 
 During the Beta period, the limits on the number of connectors, rules, and actions that can be created for data integration are as follows:
 
