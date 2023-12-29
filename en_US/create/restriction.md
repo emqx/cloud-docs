@@ -31,14 +31,14 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 
 | **Quotas**                              | **Default Value**          | **Adjustable**           |**Requires Deployment Restart** |
 |-----------------------------------------| ----------------------- | ------------------|------------------|
-| Maximum internal authentication entries |  Session specification * 2 [\*1]    | -                  |-|
-| Maximum internal ACL entries            | Session specification * 2  [\*2]    | -                   |-|
+| Maximum internal authentication entries |  Session tier * 2 [\*1]    | -                  |-|
+| Maximum internal ACL entries            | Session tier * 2  [\*2]    | -                   |-|
 | External authentication supported at the same time            | 2      | NO                   |-|
 | Anonymous access     | No anonymous access      | YES                   |NO|
 | Maximum message queue length            | 1000                | YES[\*3]                   |NO|
 | Maximum message size              | 1 MB                | YES[\*4]                   |NO|
 | Session expiry time（MQTT 3.x）           | 2 hours                | YES                   |NO|
-| Maximum retained messages               | Session specification * 10    | NO                   |-|
+| Maximum retained messages               | Session tier * 10    | NO                   |-|
 | Maximum size of a retained message      | 1 MB                | YES                   |NO|
 | Retained message expiry interval        | Never                | YES                   |NO|
 | Client ID maximum length（MQTT 3.x）      | 23                | YES                   |YES|
@@ -54,6 +54,6 @@ EMQX Cloud sets default quotas (or limits) for each deployment and the default v
 
 [1] It's recommended to use external auth if the credentials are more than 100,000.<br>
 [2] It's recommended to use external auth if the credentials are more than 100,000.<br>
-[3] The number can be adjusted to the same as the session specification.<br>
+[3] The number can be adjusted to the same as the session tier.<br>
 [4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of trasnmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
 [5] Support TLS 1.0、1.1、1.2、1.3.

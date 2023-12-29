@@ -51,16 +51,16 @@ If you have already created a Serverless (Beta) deployment, it will automaticall
 
 ## Dedicated Plan
 
-EMQX Cloud's Dedicated Plan is charged based on the selected product plan (Standard or Professional), instance specifications, and message transmission network traffic. There are no restrictions on the number of messages, API calls, or data integration usage. You can select the appropriate product plan based on your business needs, and be confident that the costs remain transparent and manageable even as your business expands.
+EMQX Cloud's Dedicated Plan is charged based on the selected product plan (Standard or Professional), instance tier, and message transmission network traffic. There are no restrictions on the number of messages, API calls, or data integration usage. You can select the appropriate product plan based on your business needs, and be confident that the costs remain transparent and manageable even as your business expands.
 
 
 ### Billing Unit
 
 **Session**: Total number of  clients that are currently connected simultaneously, including offline clients that have enabled [Persistent sessions](https://www.emqx.com/en/blog/mqtt-session).
 
-**Base Fee**: The base fee for the instance is calculated based on the hourly unit price corresponding to the selected product plan and instance specifications (maximum connection number, message TPS) at the time of deployment. In practical usage, this fee is only related to the duration of usage and will not be affected by changes in usage (connection number, message TPS).
+**Base Fee**: The base fee for the instance is calculated based on the hourly unit price corresponding to the selected product plan and instance tier (maximum connection number, message TPS) at the time of deployment. In practical usage, this fee is only related to the duration of usage and will not be affected by changes in usage (connection number, message TPS).
 
-**Traffic Fee**: Each instance specification includes a certain amount of free traffic, which is valid for the current month and will be automatically cleared at the end of the month if any remains. When device communication exceeds the gifted traffic, additional traffic fees will be charged. Here, traffic, including free traffic, measures all traffic flowing out of the deployment, including:
+**Traffic Fee**: Each instance tier includes a certain amount of free traffic, which is valid for the current month and will be automatically cleared at the end of the month if any remains. When device communication exceeds the gifted traffic, additional traffic fees will be charged. Here, traffic, including free traffic, measures all traffic flowing out of the deployment, including:
 
    - Traffic over VPC Peering or PrivateLink is not measured.
    - Traffic from messages received by the deployment, such as messages sent to the deployment from the clients, is not measured.
@@ -69,7 +69,7 @@ EMQX Cloud's Dedicated Plan is charged based on the selected product plan (Stand
 <table>
    <tr>
       <th>Plan</th>
-      <th>Specification</th>
+      <th>tier</th>
       <th>Base Fee</th>
       <th>Free Traffic</th>
       <th>Traffic exceeded</th>

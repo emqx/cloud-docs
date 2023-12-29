@@ -1,6 +1,6 @@
 # Price Estimation
 
-EMQX Cloud pricing calculator allows you to estimate the cost of deployments based on actual business requirements. EMQX Cloud pricing calculator is useful for customers who have never used EMQX Cloud before and who want to scale the specifications.
+EMQX Cloud pricing calculator allows you to estimate the cost of deployments based on actual business requirements. EMQX Cloud pricing calculator is useful for customers who have never used EMQX Cloud before and who want to scale the tier.
 
 
 
@@ -12,7 +12,7 @@ We offer a Serverless price calculator so you can estimate your approximate mont
 
 ![calculator](./_assets/calculator_serverless.png)
 
-You can check the price of Dedicated plans by selecting the specification.
+You can check the price of Dedicated plans by selecting the tier.
 
 ![calculator](./_assets/calculator_dedicated.png)
 
@@ -30,7 +30,7 @@ There may be a difference between the estimation and the actual price. Please re
 
 ## Get an hourly price for deployment
 
-EMQX also offers an hourly pricing mode. On EMQX Cloud console, select the cloud provider, region, and specifications to get the hourly price of deployment.
+EMQX also offers an hourly pricing mode. On EMQX Cloud console, select the cloud provider, region, and tier to get the hourly price of deployment.
 
   ![deployment_price](./_assets/calculator.png)
 

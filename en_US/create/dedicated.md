@@ -12,7 +12,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
    ![select_deployment_type](./_assets/create_serverless.png)
 
-4. Choose the appropriate specifications and configurations based on your needs.
+4. Choose the appropriate tier and configurations based on your needs.
 
    **Plan**: Choose the product plan.
 
@@ -20,7 +20,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
    **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or [email][cloud-support@emqx.io]. 
 
-   **Choose Specification**: Each specification has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
+   **Choose Tier**: Each tier has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
 
    **Billing Method**: Choose between **Hourly billing** or Annual prepaid (with a 15% of discount).
 
@@ -44,7 +44,7 @@ After the deployment is created, it will appear on the Cloud console home page. 
 - **Pub&Sub TPS:** Current messages sent and received per second, as well as the TPS limit.
 - **Traffic:** Usage information for the deployed traffic, including monthly usage and free quota.
 - **Deployment name:** A customizable name for the deployment.
-- **Specifications:** The current specification of the deployment, including the ability to switch from hourly billing to annual billing.
+- **Tiers:** The current tier of the deployment, including the ability to switch from hourly billing to annual billing.
 - **Address:**
   - Professional Plan: IP
   - Standard Plan: Domain name ending with emqx.cloud

@@ -20,19 +20,19 @@ The traffic is calculated in the same way as the session.
 
 ## Dedicated
 
-EMQX Cloud Dedicated Edition is charged based on product version, instance specifications, and network traffic for message transmission. There is no limit on the number of messages, API calls, or data integrations used. You can choose the appropriate product and specifications based on your business needs, ensuring that costs remain clear and controllable even as your business expands.
+EMQX Cloud Dedicated Edition is charged based on product version, instance tier, and network traffic for message transmission. There is no limit on the number of messages, API calls, or data integrations used. You can choose the appropriate product and tier based on your business needs, ensuring that costs remain clear and controllable even as your business expands.
 
 The billing plan consists of two parts:
 
 | Item         | Description                                                  |
 | ----------- | ----------------------------------------------------------- |
-| Base Fee    | The base cost of the instance is calculated based on the hourly unit price corresponding to the product plan and instance specifications (maximum connections, message TPS) selected at the time of deployment. In practice, this part of the cost is only related to the length of time, and will not change due to changes in usage (number of connections, message TPS).
-| Traffic Fee | Each instance specification includes a certain amount of free traffic. The free traffic is valid for the month and will be automatically emptied at the end of the month if there is any remaining traffic. When the device traffic exceeds the amount of free traffic, the excess will be charged. |
+| Base Fee    | The base cost of the instance is calculated based on the hourly unit price corresponding to the product plan and instance tier (maximum connections, message TPS) selected at the time of deployment. In practice, this part of the cost is only related to the length of time, and will not change due to changes in usage (number of connections, message TPS).
+| Traffic Fee | Each instance tier includes a certain amount of free traffic. The free traffic is valid for the month and will be automatically emptied at the end of the month if there is any remaining traffic. When the device traffic exceeds the amount of free traffic, the excess will be charged. |
 
-When you create a deployment, the deployment will estimate the usage cost based on your selected instance specifications. You can check the estimated price on the confirmation page before you deploy.
+When you create a deployment, the deployment will estimate the usage cost based on your selected instance tier. You can check the estimated price on the confirmation page before you deploy.
 
 ::: tip Note
-When you create a deployment, EMQX Cloud will estimate the usage cost based on your instance specification selection, and you can see the estimated price on the confirmation page before the deployment.
+When you create a deployment, EMQX Cloud will estimate the usage cost based on your instance tier selection, and you can see the estimated price on the confirmation page before the deployment.
 :::
 
 

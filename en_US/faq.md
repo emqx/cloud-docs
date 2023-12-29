@@ -78,7 +78,7 @@ You can use the Data Integrations to connect with your existing functions. For d
 
 ### How to bill?
 
-EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and data integrations.
+EMQX Cloud charges based on the cluster instance tiers and message transmission network traffic, not the number of messages, and does not limit the use of API and data integrations.
 
 For detailed billing rules, you can view [Product Pricing](./price/pricing.md).
 
