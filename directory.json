@@ -324,7 +324,38 @@
       ]
     },
     {
-      "title": "数据集成",
+      "title": "数据集成（Severless）",
+      "path": "data_integration/introduction",
+      "collapsed": false,
+      "children": [
+        {
+          "title": "连接器",
+          "path": "data_integration/connectors"
+        },
+        {
+          "title": "规则",
+          "path": "data_integration/rules"
+        },
+        {
+          "title" : "HTTP Server",
+          "path": "data_integration/http_server"
+        },
+        {
+          "title" : "Kafka",
+          "path": "data_integration/kafka"
+        },
+        {
+          "title" : "消息重新发布",
+          "path": "data_integration/republish"
+        },
+        {
+          "title" : "空动作（调试）",
+          "path": "data_integration/empty_action_debug"
+        }
+      ]
+    },
+    {
+      "title": "数据集成（专有版）",
       "path": "rule_engine/introduction",
       "collapsed": true,
       "children": [
