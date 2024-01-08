@@ -546,7 +546,7 @@ None.
 ### Request Example
 
 ```bash
-curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2uA
+curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2fA
 ```
 
 ### Response Example
@@ -557,7 +557,7 @@ curl -u app_id:app_secret -X DELETE {api}/acl/username/emqx_u_1/topic/topic%2uA
 }
 ```
 
-## Delete ACL Rules Specified by Based on All 
+## Delete ACL Rules Specified by Based on All
 
 ### URI
 
