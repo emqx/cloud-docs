@@ -54,46 +54,58 @@
 
 
 ```c
-// WiFi
-const char *ssid = "mousse"; // Enter your WiFi name
-const char *password = "qweqweqwe";  // Enter WiFi password
+// WiFi Credentials
+const char *ssid = "WIFI_SSID";            // Replace with your WiFi name
+const char *password = "WIFI_PASSWORD";  // Replace with your WiFi password
 
-// MQTT Broker
-const char *mqtt_broker = "broker.emqx.io";// broker address
-const char *topic = "esp32/test"; // define topic 
-const char *mqtt_username = "emqx"; // username for authentication
-const char *mqtt_password = "public";// password for authentication
-const int mqtt_port = 1883;// port of MQTT over TCP
+// MQTT Broker Settings
+const char *mqtt_broker = "broker.emqx.io";
+const char *mqtt_topic = "emqx/esp32";
+const char *mqtt_username = "emqx";
+const char *mqtt_password = "public";
+const int mqtt_port = 1883;
 ```
 
 3. 打开串行连接，以便于输出程序的结果并且连接到 Wi-Fi 网络。
 
 ```c
-// Set software serial baud to 115200;
-Serial.begin(115200);
-// connecting to a WiFi network
-WiFi.begin(ssid, password);
-while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi..");
+void setup() {
+    Serial.begin(115200);
+    connectToWiFi();
+    mqtt_client.setServer(mqtt_broker, mqtt_port);
+    mqtt_client.setKeepAlive(60);
+    mqtt_client.setCallback(mqttCallback); // Corrected callback function name
+    connectToMQTT();
+}
+
+void connectToWiFi() {
+    WiFi.begin(ssid, password);
+    Serial.print("Connecting to WiFi");
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("\nConnected to WiFi");
 }
 ```
 
 4. 使用 PubSubClient 连接到公共 MQTT Broker。
 
 ```c
-client.setServer(mqtt_broker, mqtt_port);
-client.setCallback(callback);
-while (!client.connected()) {
-    String client_id = "esp32-client-";
-    client_id += String(WiFi.macAddress());
-    Serial.printf("The client %s connects to the public mqtt broker\n", client_id.c_str());
-    if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
-        Serial.println("Public emqx mqtt broker connected");
-    } else {
-        Serial.print("failed with state ");
-        Serial.print(client.state());
-        delay(2000);
+void connectToMQTT() {
+    while (!mqtt_client.connected()) {
+        String client_id = "esp32-client-" + String(WiFi.macAddress());
+        Serial.printf("Connecting to MQTT Broker as %s.....\n", client_id.c_str());
+        if (mqtt_client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+            Serial.println("Connected to MQTT broker");
+            mqtt_client.subscribe(mqtt_topic);
+            mqtt_client.publish(mqtt_topic, "Hi EMQX I'm ESP32 ^^"); // Publish message upon successful connection
+        } else {
+            Serial.print("Failed, rc=");
+            Serial.print(mqtt_client.state());
+            Serial.println(" try again in 5 seconds");
+            delay(5000);
+        }
     }
 }
 ```
@@ -102,23 +114,22 @@ while (!client.connected()) {
 
 ```c
 // publish and subscribe
-client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
-client.subscribe(topic); // subscribe message from the topic
+mqtt_client.subscribe(mqtt_topic);
+mqtt_client.publish(mqtt_topic, "Hi EMQX I'm ESP32 ^^"); // Publish message upon successful connection
 
 ```
 
 6. 设置回调函数将主题名称打印到串行端口并打印从 `esp32/test` 主题接收的消息。
 
 ```c
-void callback(char *topic, byte *payload, unsigned int length) {
-    Serial.print("Message arrived in topic: ");
-    Serial.println(topic);
-    Serial.print("Message:");
-    for (int i = 0; i < length; i++) {
+void mqttCallback(char *mqtt_topic, byte *payload, unsigned int length) {
+    Serial.print("Message received on mqtt_topic: ");
+    Serial.println(mqtt_topic);
+    Serial.print("Message: ");
+    for (unsigned int i = 0; i < length; i++) {
         Serial.print((char) payload[i]);
     }
-    Serial.println();
-    Serial.println("-----------------------");
+    Serial.println("\n-----------------------");
 }
 ```
 
@@ -128,63 +139,79 @@ void callback(char *topic, byte *payload, unsigned int length) {
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-// WiFi
-const char *ssid = "mousse"; // Enter your WiFi name
-const char *password = "qweqweqwe";  // Enter WiFi password
+// WiFi Credentials
+const char *ssid = "WIFI_SSID";            // Replace with your WiFi name
+const char *password = "WIFI_PASSWORD";  // Replace with your WiFi password
 
-// MQTT Broker
-const char *mqtt_broker = "broker.emqx.io";// broker address
-const char *topic = "esp32/test"; // define topic 
-const char *mqtt_username = "emqx"; // username for authentication
-const char *mqtt_password = "public";// password for authentication
-const int mqtt_port = 1883;// port of MQTT over TCP
+// MQTT Broker Settings
+const char *mqtt_broker = "broker.emqx.io";
+const char *mqtt_topic = "emqx/esp32";
+const char *mqtt_username = "emqx";
+const char *mqtt_password = "public";
+const int mqtt_port = 1883;
 
 WiFiClient espClient;
-PubSubClient client(espClient);
+PubSubClient mqtt_client(espClient);
+
+// Function Declarations
+void connectToWiFi();
+
+void connectToMQTT();
+
+void mqttCallback(char *mqtt_topic, byte *payload, unsigned int length);
 
 void setup() {
- // Set software serial baud to 115200;
- Serial.begin(115200);
- // connecting to a WiFi network
- WiFi.begin(ssid, password);
- while (WiFi.status() != WL_CONNECTED) {
-     delay(500);
-     Serial.println("Connecting to WiFi..");
- }
- Serial.println("Connected to the WiFi network");
- //connecting to a mqtt broker
- client.setServer(mqtt_broker, mqtt_port);
- client.setCallback(callback);
- while (!client.connected()) {
-     String client_id = "esp32-client-";
-     client_id += String(WiFi.macAddress());
-     Serial.printf("The client %s connects to the public mqtt broker\n", client_id.c_str());
-     if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
-         Serial.println("Public emqx mqtt broker connected");
-     } else {
-         Serial.print("failed with state ");
-         Serial.print(client.state());
-         delay(2000);
-     }
- }
-    // publish and subscribe
-    client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
-    client.subscribe(topic); // subscribe message from the topic
+    Serial.begin(115200);
+    connectToWiFi();
+    mqtt_client.setServer(mqtt_broker, mqtt_port);
+    mqtt_client.setKeepAlive(60);
+    mqtt_client.setCallback(mqttCallback); // Corrected callback function name
+    connectToMQTT();
 }
 
-void callback(char *topic, byte *payload, unsigned int length) {
- Serial.print("Message arrived in topic: ");
- Serial.println(topic);
- Serial.print("Message:");
- for (int i = 0; i < length; i++) {
-     Serial.print((char) payload[i]);
- }
- Serial.println();
- Serial.println("-----------------------");
+void connectToWiFi() {
+    WiFi.begin(ssid, password);
+    Serial.print("Connecting to WiFi");
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("\nConnected to WiFi");
 }
+
+void connectToMQTT() {
+    while (!mqtt_client.connected()) {
+        String client_id = "esp32-client-" + String(WiFi.macAddress());
+        Serial.printf("Connecting to MQTT Broker as %s.....\n", client_id.c_str());
+        if (mqtt_client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+            Serial.println("Connected to MQTT broker");
+            mqtt_client.subscribe(mqtt_topic);
+            mqtt_client.publish(mqtt_topic, "Hi EMQX I'm ESP32 ^^"); // Publish message upon successful connection
+        } else {
+            Serial.print("Failed, rc=");
+            Serial.print(mqtt_client.state());
+            Serial.println(" try again in 5 seconds");
+            delay(5000);
+        }
+    }
+}
+
+void mqttCallback(char *mqtt_topic, byte *payload, unsigned int length) {
+    Serial.print("Message received on mqtt_topic: ");
+    Serial.println(mqtt_topic);
+    Serial.print("Message: ");
+    for (unsigned int i = 0; i < length; i++) {
+        Serial.print((char) payload[i]);
+    }
+    Serial.println("\n-----------------------");
+}
+
 
 void loop() {
- client.loop();
+    if (!mqtt_client.connected()) {
+        connectToMQTT();
+    }
+    mqtt_client.loop();
 }
 ```
 
@@ -206,84 +233,120 @@ void loop() {
 
 
 ```c
-// WiFi
-const char *ssid = "mousse"; // Enter your WiFi name
-const char *password = "qweqweqwe";  // Enter WiFi password
+// WiFi credentials
+const char *ssid = "WIFI_SSID";             // Replace with your WiFi name
+const char *password = "WIFI_PASSWORD";   // Replace with your WiFi password
 
-// MQTT Broker
-const char *mqtt_broker = "broker.emqx.io";// broker address
-const char *topic = "esp32/test"; // define topic 
-const char *mqtt_username = "emqx"; // username for authentication
-const char *mqtt_password = "public";// password for authentication
-const int mqtt_port = 8883;// port of MQTT over TLS/SSL
+// MQTT Broker settings
+const char *mqtt_broker = "broker.emqx.io";
+const char *mqtt_topic = "emqx/esp32";
+const char *mqtt_username = "emqx";
+const char *mqtt_password = "public";
+const int mqtt_port = 8883;
 ```
 
 3. 添加服务端证书。如果您在使用公共 MQTT Broker、Serverless 部署或基础版部署的 TLS/SSL 端口连接，在此[下载 CA 证书](https://assets.emqx.com/data/emqxsl-ca.crt)。 如您使用专业版 / BYOC 部署的 TLS/SSL 端口连接，请使用自己的服务端证书。
 
 ```c
-// load DigiCert Global Root CA ca_cert
-const char * ca_cert = \
-  "-----BEGIN CERTIFICATE-----\n"\
-"MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh\n"\
-"MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\n"\
-"d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD\n"\
-"QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT\n"\
-"MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j\n"\
-"b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG\n"\
-"9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB\n"\
-"CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97\n"\
-"nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt\n"\
-"43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P\n"\
-"T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4\n"\
-"gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO\n"\
-"BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR\n"\
-"TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw\n"\
-"DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr\n"\
-"hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg\n"\
-"06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF\n"\
-"PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls\n"\
-"YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk\n"\
-"CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4="\
-"-----END CERTIFICATE-----\n";
+// Root CA Certificate
+// Load DigiCert Global Root G2, which is used by EMQX Public Broker: broker.emqx.io
+const char *ca_cert = R"EOF(
+-----BEGIN CERTIFICATE-----
+MIIDjjCCAnagAwIBAgIQAzrx5qcRqaC7KGSxHQn65TANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0xMzA4MDExMjAwMDBaFw0zODAxMTUxMjAwMDBaMGExCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IEcyMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuzfNNNx7a8myaJCtSnX/RrohCgiN9RlUyfuI
+2/Ou8jqJkTx65qsGGmvPrC3oXgkkRLpimn7Wo6h+4FR1IAWsULecYxpsMNzaHxmx
+1x7e/dfgy5SDN67sH0NO3Xss0r0upS/kqbitOtSZpLYl6ZtrAGCSYP9PIUkY92eQ
+q2EGnI/yuum06ZIya7XzV+hdG82MHauVBJVJ8zUtluNJbd134/tJS7SsVQepj5Wz
+tCO7TG1F8PapspUwtP1MVYwnSlcUfIKdzXOS0xZKBgyMUNGPHgm+F6HmIcr9g+UQ
+vIOlCsRnKPZzFBQ9RnbDhxSJITRNrw9FDKZJobq7nMWxM4MphQIDAQABo0IwQDAP
+BgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHQ4EFgQUTiJUIBiV
+5uNu5g/6+rkS7QYXjzkwDQYJKoZIhvcNAQELBQADggEBAGBnKJRvDkhj6zHd6mcY
+1Yl9PMWLSn/pvtsrF9+wX3N3KjITOYFnQoQj8kVnNeyIv/iPsGEMNKSuIEyExtv4
+NeF22d+mQrvHRAiGfzZ0JFrabA0UWTW98kndth/Jsw1HKj2ZL7tcu7XUIOGZX1NG
+Fdtom/DzMNU+MeKNhJ7jitralj41E6Vf8PlwUHBHQRFXGU7Aj64GxJUTFy8bJZ91
+8rGOmaFvE7FBcf6IKshPECBV1/MUReXgRPTqh5Uykw7+U0b6LJ3/iyK5S9kJRaTe
+pLiaWN0bfVKfjllDiIGknibVb63dDcY3fe0Dkhvld1927jyNxF1WW6LZZm6zNTfl
+MrY=
+-----END CERTIFICATE-----
+)EOF";
 
-// init secure wifi client
-WiFiClientSecure espClient;
-// use wifi client to init mqtt client
-PubSubClient client(espClient); 
+// Load DigiCert Global Root CA ca_cert, which is used by EMQX Cloud Serverless Deployment
+/*
+const char* ca_cert = R"EOF(
+-----BEGIN CERTIFICATE-----
+MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB
+CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97
+nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt
+43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P
+T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4
+gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO
+BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR
+TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw
+DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr
+hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg
+06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF
+PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
+YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
+CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
+-----END CERTIFICATE-----
+*/
 ```
 
 4. 打开串行连接，以便于输出程序的结果并且连接到 Wi-Fi 网络。
 
 ```c
-// Set software serial baud to 115200;
-Serial.begin(115200);
-// connecting to a WiFi network
-WiFi.begin(ssid, password);
-while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi..");
+void setup() {
+    Serial.begin(115200);
+    connectToWiFi();
+
+    // Set Root CA certificate
+    esp_client.setCACert(ca_cert);
+
+    mqtt_client.setServer(mqtt_broker, mqtt_port);
+    mqtt_client.setKeepAlive(60);
+    mqtt_client.setCallback(mqttCallback);
+    connectToMQTT();
 }
-Serial.println("Connected to the WiFi network");
+
+void connectToWiFi() {
+    WiFi.begin(ssid, password);
+    Serial.print("Connecting to WiFi");
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("\nConnected to WiFi");
+}
 ```
 
 5. 设置证书并使用 PubSubClient 连接到公共 MQTT Broker。
 
 ```c
-// set root ca cert
-espClient.setCACert(ca_cert);
-// connecting to a mqtt broker
-client.setServer(mqtt_broker, mqtt_port);
-client.setCallback(callback);
-while (!client.connected()) {
-    String client_id = "esp32-client-";
-    client_id += String(WiFi.macAddress());
-    Serial.printf("The client %s connects to the public mqtt broker\n", client_id.c_str());
-    if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
-        Serial.println("Public emqx mqtt broker connected");
-    } else {
-        Serial.print("failed with state ");
-        Serial.print(client.state());
-        delay(2000);
+void connectToMQTT() {
+    while (!mqtt_client.connected()) {
+        String client_id = "esp32-client-" + String(WiFi.macAddress());
+        Serial.printf("Connecting to MQTT Broker as %s...\n", client_id.c_str());
+        if (mqtt_client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+            Serial.println("Connected to MQTT broker");
+            mqtt_client.subscribe(mqtt_topic);
+            mqtt_client.publish(mqtt_topic, "Hi EMQX I'm ESP32 ^^");  // Publish message upon connection
+        } else {
+            Serial.print("Failed to connect to MQTT broker, rc=");
+            Serial.print(mqtt_client.state());
+            Serial.println(" Retrying in 5 seconds.");
+            delay(5000);
+        }
     }
 }
 ```
@@ -292,8 +355,8 @@ while (!client.connected()) {
 
 ```c
 // publish and subscribe
-client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
-client.subscribe(topic); // subscribe message from the topic
+mqtt_client.subscribe(mqtt_topic);
+mqtt_client.publish(mqtt_topic, "Hi EMQX I'm ESP32 ^^");  // Publish message upon connection
 
 ```
 
@@ -314,21 +377,14 @@ void callback(char *topic, byte *payload, unsigned int length) {
 
 8. 重新连接函数
 ```c
-void reconnect() {
-  while (!client.connected()) {
-    Serial.println("Reconnecting to MQTT broker...");
-    String client_id = "esp8266-client-";
-    client_id += String(WiFi.macAddress());
-    if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
-        Serial.println("Reconnected to MQTT broker.");
-        client.subscribe(mqtt_topic);
-    } else {
-        Serial.print("Failed to reconnect to MQTT broker, rc=");
-        Serial.print(client.state());
-        Serial.println("Retrying in 5 seconds.");
-        delay(5000);
+void mqttCallback(char *topic, byte *payload, unsigned int length) {
+    Serial.print("Message received on topic: ");
+    Serial.println(topic);
+    Serial.print("Message: ");
+    for (unsigned int i = 0; i < length; i++) {
+        Serial.print((char) payload[i]);
     }
-  }
+    Serial.println("\n-----------------------");
 }
 ```
 
@@ -340,117 +396,140 @@ void reconnect() {
 #include <PubSubClient.h>
 #include <WiFiClientSecure.h>
 
-// WiFi
-const char *ssid = "mousse"; // Enter your WiFi name
-const char *password = "qweqweqwe";  // Enter WiFi password
+// WiFi credentials
+const char *ssid = "WIFI_SSID";             // Replace with your WiFi name
+const char *password = "WIFI_PASSWORD";   // Replace with your WiFi password
 
-// MQTT Broker
-const char *mqtt_broker = "broker.emqx.io";// broker address
-const char *topic = "esp32/test"; // define topic 
-const char *mqtt_username = "emqx"; // username for authentication
-const char *mqtt_password = "public";// password for authentication
-const int mqtt_port = 8883;// port of MQTT over TLS/SSL
+// MQTT Broker settings
+const char *mqtt_broker = "broker.emqx.io";
+const char *mqtt_topic = "emqx/esp32";
+const char *mqtt_username = "emqx";
+const char *mqtt_password = "public";
+const int mqtt_port = 8883;
 
-// load DigiCert Global Root CA ca_cert
-const char* ca_cert= \
-"-----BEGIN CERTIFICATE-----\n" \
-"MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh\n" \
-"MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\n" \
-"d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD\n" \
-"QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT\n" \
-"MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j\n" \
-"b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG\n" \
-"9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB\n" \
-"CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97\n" \
-"nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt\n" \
-"43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P\n" \
-"T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4\n" \
-"gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO\n" \
-"BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR\n" \
-"TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw\n" \
-"DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr\n" \
-"hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg\n" \
-"06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF\n" \
-"PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls\n" \
-"YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk\n" \
-"CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=" \
-"-----END CERTIFICATE-----\n";
+// WiFi and MQTT client initialization
+WiFiClientSecure esp_client;
+PubSubClient mqtt_client(esp_client);
+
+// Root CA Certificate
+// Load DigiCert Global Root G2, which is used by EMQX Public Broker: broker.emqx.io
+const char *ca_cert = R"EOF(
+-----BEGIN CERTIFICATE-----
+MIIDjjCCAnagAwIBAgIQAzrx5qcRqaC7KGSxHQn65TANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0xMzA4MDExMjAwMDBaFw0zODAxMTUxMjAwMDBaMGExCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IEcyMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuzfNNNx7a8myaJCtSnX/RrohCgiN9RlUyfuI
+2/Ou8jqJkTx65qsGGmvPrC3oXgkkRLpimn7Wo6h+4FR1IAWsULecYxpsMNzaHxmx
+1x7e/dfgy5SDN67sH0NO3Xss0r0upS/kqbitOtSZpLYl6ZtrAGCSYP9PIUkY92eQ
+q2EGnI/yuum06ZIya7XzV+hdG82MHauVBJVJ8zUtluNJbd134/tJS7SsVQepj5Wz
+tCO7TG1F8PapspUwtP1MVYwnSlcUfIKdzXOS0xZKBgyMUNGPHgm+F6HmIcr9g+UQ
+vIOlCsRnKPZzFBQ9RnbDhxSJITRNrw9FDKZJobq7nMWxM4MphQIDAQABo0IwQDAP
+BgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHQ4EFgQUTiJUIBiV
+5uNu5g/6+rkS7QYXjzkwDQYJKoZIhvcNAQELBQADggEBAGBnKJRvDkhj6zHd6mcY
+1Yl9PMWLSn/pvtsrF9+wX3N3KjITOYFnQoQj8kVnNeyIv/iPsGEMNKSuIEyExtv4
+NeF22d+mQrvHRAiGfzZ0JFrabA0UWTW98kndth/Jsw1HKj2ZL7tcu7XUIOGZX1NG
+Fdtom/DzMNU+MeKNhJ7jitralj41E6Vf8PlwUHBHQRFXGU7Aj64GxJUTFy8bJZ91
+8rGOmaFvE7FBcf6IKshPECBV1/MUReXgRPTqh5Uykw7+U0b6LJ3/iyK5S9kJRaTe
+pLiaWN0bfVKfjllDiIGknibVb63dDcY3fe0Dkhvld1927jyNxF1WW6LZZm6zNTfl
+MrY=
+-----END CERTIFICATE-----
+)EOF";
+
+// Load DigiCert Global Root CA ca_cert, which is used by EMQX Cloud Serverless Deployment
+/*
+const char* ca_cert = R"EOF(
+-----BEGIN CERTIFICATE-----
+MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB
+CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97
+nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt
+43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P
+T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4
+gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO
+BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR
+TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw
+DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr
+hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg
+06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF
+PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
+YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
+CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
+-----END CERTIFICATE-----
+*/
 
 
-// init secure wifi client
-WiFiClientSecure espClient;
-// use wifi client to init mqtt client
-PubSubClient client(espClient); 
+// Function Declarations
+void connectToWiFi();
+
+void connectToMQTT();
+
+void mqttCallback(char *topic, byte *payload, unsigned int length);
 
 
 void setup() {
-    // Set software serial baud to 115200;
     Serial.begin(115200);
-    // connecting to a WiFi network
+    connectToWiFi();
+
+    // Set Root CA certificate
+    esp_client.setCACert(ca_cert);
+
+    mqtt_client.setServer(mqtt_broker, mqtt_port);
+    mqtt_client.setKeepAlive(60);
+    mqtt_client.setCallback(mqttCallback);
+    connectToMQTT();
+}
+
+void connectToWiFi() {
     WiFi.begin(ssid, password);
+    Serial.print("Connecting to WiFi");
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
-        Serial.println("Connecting to WiFi..");
+        Serial.print(".");
     }
-    Serial.println("Connected to the WiFi network");
+    Serial.println("\nConnected to WiFi");
+}
 
-    // set root ca cert
-    espClient.setCACert(ca_cert);
-    // connecting to a mqtt broker
-    client.setServer(mqtt_broker, mqtt_port);
-    client.setCallback(callback);
-    while (!client.connected()) {
-        String client_id = "esp32-client-";
-        client_id += String(WiFi.macAddress());
-        Serial.printf("The client %s connects to the public mqtt broker\n", client_id.c_str());
-        if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
-            Serial.println("Public emqx mqtt broker connected");
+void connectToMQTT() {
+    while (!mqtt_client.connected()) {
+        String client_id = "esp32-client-" + String(WiFi.macAddress());
+        Serial.printf("Connecting to MQTT Broker as %s...\n", client_id.c_str());
+        if (mqtt_client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+            Serial.println("Connected to MQTT broker");
+            mqtt_client.subscribe(mqtt_topic);
+            mqtt_client.publish(mqtt_topic, "Hi EMQX I'm ESP32 ^^");  // Publish message upon connection
         } else {
             Serial.print("Failed to connect to MQTT broker, rc=");
-            Serial.print(client.state());
-            Serial.println("Retrying in 5 seconds.");
+            Serial.print(mqtt_client.state());
+            Serial.println(" Retrying in 5 seconds.");
             delay(5000);
         }
     }
-    // publish and subscribe
-    client.publish(topic, "Hi EMQX I'm ESP32 ^^"); // publish message to the topic
-    client.subscribe(topic); // subscribe message from the topic
-
 }
 
-void callback(char* topic, byte* payload, unsigned int length) {
-    Serial.print("Message arrived in topic: ");
+void mqttCallback(char *topic, byte *payload, unsigned int length) {
+    Serial.print("Message received on topic: ");
     Serial.println(topic);
-    Serial.print("Message:");
-    for (int i = 0; i < length; i++) {
+    Serial.print("Message: ");
+    for (unsigned int i = 0; i < length; i++) {
         Serial.print((char) payload[i]);
     }
-    Serial.println();
-    Serial.println("-----------------------");
+    Serial.println("\n-----------------------");
 }
 
-void reconnect() {
-  while (!client.connected()) {
-    Serial.println("Reconnecting to MQTT broker...");
-    String client_id = "esp8266-client-";
-    client_id += String(WiFi.macAddress());
-    if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
-        Serial.println("Reconnected to MQTT broker.");
-        client.subscribe(mqtt_topic);
-    } else {
-        Serial.print("Failed to reconnect to MQTT broker, rc=");
-        Serial.print(client.state());
-        Serial.println("Retrying in 5 seconds.");
-        delay(5000);
-    }
-  }
-}
 
 void loop() {
-  if (!client.connected()) {
-    reconnect();
-  }
-  client.loop();
+    if (!mqtt_client.connected()) {
+        connectToMQTT();
+    }
+    mqtt_client.loop();
 }
 ```
 

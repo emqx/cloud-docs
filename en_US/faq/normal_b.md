@@ -61,6 +61,17 @@ EMQX Cloud does not keep device communication logs, only deployment event logs, 
 
 Device event data can be permanently integrated into third-party storage through [event topics](../rule_engine/rule_engine_events.md).
 
+## Is it possible to use offline messages?
+In general, MQTT clients will not receive messages if they are offline only when they are connected to the message server. However, if the client has a fixed ClientID, clean_session is false, and the QoS settings meet the server's configuration requirements, the server can keep a certain amount of offline messages for the client when the client is offline and send them to the client when the client connects again.
+
+Offline messages are useful when the network connection is not very stable, or when there are certain requirements on QoS.
+
+## How long are offline messages held?
+The default is 2 hours for MQTT v3 protocols, and for MQTT v5 protocols it is set according to the value of session_expiry_interval in the client. After the expiration time, the messages in the queue will be lost.
+
+## How to do offline message staging?
+Given the instability of message staging, we recommend storing offline messages. We recommend storing offline messages on a disk. Here we need to use the professional version of the Data Integration Service, which can save offline messages to a database like Redis. After the device comes online and consumes the message, the corresponding offline message will also be deleted.
+
 ## How to calculate sessions?
 The definition for session: The number of sessions is calculated by adding the number of connected clients and the disconnected clients with sessions retained in the broker. Connected clients are those that connect to the broker after `CONNECT`, including those that are not disconnected within the `keepAlive` span. Disconnected clients that keep a session are clients that are offline but have `CleanSession` set to false, and such clients are counted in the session count. When a device `DISCONNECT` goes offline, or if it has not communicated for more than the keepAlive span, the device will go offline and will not be counted in the number of sessions.
 
