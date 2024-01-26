@@ -27,21 +27,21 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
    </tr>
    <tr>
       <td style="text-indent: 2em;">AWS</td>
-      <td>&#10003</td>
+      <td>-</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Azure</td>
-      <td>&#10007</td>
+      <td>-</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>Coming soon</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">GCP</td>
-      <td>&#10007</td>
+      <td>-</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -167,17 +167,17 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
    </tr>
    <tr>
       <td style="text-indent: 2em;">Trial Deployment</td>
-      <td>&#10007</td>
+      <td>-</td>
       <td>14 Days</td>
       <td>14 Days</td>
       <td>Contact Us</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Free Quota</td>
-      <td>Connection: 1,000,000 session minutes / month<br />Traffic: 1 GB / Month</td>
-      <td>Traffic：100 GB / Month</td>
-      <td>Traffic：Maximum 1 TB / Month</td>
-      <td>&#10007</td>
+      <td style="text-indent: 2em;">Free Quota<br /> (For every month)</td>
+      <td>Connection: 1 million session minutes<br />Traffic: 1 GB <br />Date Integration: 1 million rule actions</td>
+      <td>Traffic：100 GB</td>
+      <td>Traffic：Maximum 1 TB</td>
+      <td>-</td>
    </tr>
    <tr>
       <td><strong>Features</strong></td>
@@ -293,14 +293,14 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
    </tr>
    <tr>
       <td style="text-indent: 2em;">SQL-Based Data Processing</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Republish</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -314,14 +314,14 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
    </tr>
    <tr>
       <td style="text-indent: 2em;">WebHook</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Kafka</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -446,34 +446,6 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
       <td>&#10003</td>
    </tr>
    <tr>
-      <td><strong>Value Added Services</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Data Plan</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">Shadow Service</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
-   </tr>
-   <tr>
-      <td style="text-indent: 2em;">User-Defined Function</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
-   </tr>
-   <tr>
       <td><strong>Service Support</strong></td>
       <td></td>
       <td></td>
@@ -506,9 +478,9 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
 ## Cloud Providers and Regions
 
 ### Serverless
-| Cloud Provider | Region           |
-| ------ | --------------- |
-| AWS | - |
+| Region |
+| ------ |
+| North America, Asia-Pacific  |
 
 
 ### Dedicated Plan (Standard)

@@ -71,7 +71,7 @@ httpd.serve_forever()
 
 Before creating data integration rules, you need to create an HTTP Server connector for accessing HTTP services.
 
-1. Go to your deployment. Click **Data Integration (Beta)** from the left-navigation menu. 
+1. Go to your deployment. Click **Data Integration** from the left-navigation menu. 
 2. If it is the first time for you to create a connector, select **HTTP Server** under the **Web Service** category. If you have already created connectors, select **New Connector** and then select **HTTP Service** under the **Web Service** category.
 3. On the **New Connector** page, configure the following options:
    - **Connector Name**: The system will automatically generate a connector name, or you can name it yourself. In this example, you can use `my_httpserver`.

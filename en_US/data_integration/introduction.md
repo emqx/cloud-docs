@@ -1,18 +1,18 @@
-# Data Integration (Beta) Overview
+# Data Integration Overview
 
 ::: tip 
 
-This section introduces the Data Integration (Beta) feature for Serverless deployments. If your deployment is a Dedicated version, refer to [Data Integration (Dedicated)](../rule_engine/introduction.md). 
+This section introduces the Data Integration feature for Serverless deployments. If your deployment is a Dedicated version, please refer to [Data Integration (Dedicated)](../rule_engine/introduction.md). 
 
 :::
 
 As a fully managed MQTT message cloud service, EMQX Cloud connects Internet of Things (IoT) devices via the MQTT protocol and delivers messages in real time. Building on this foundation, Data Integration enhances EMQX Cloud's capability of connecting with other cloud resources, enabling seamless integration of devices with other business systems. EMQX Cloud Data Integration not only provides a clear and flexible "configurable" architecture solution but also simplifies the development process. It improves user availability, reduces the coupling between business systems and EMQX Cloud, and provides a better infrastructure for data forwarding.
 
-![data_integration_intro](./_assets/integration_intro_01.png)
+![data_integration_intro](./_assets/integration_intro_01.jpg)
 
 ## How It Works
 
-EMQX Cloud Data Integration is an out-of-the-box feature. Devices connect to Cloud Serverless deployments via the MQTT protocol and send message streams and device events. With the built-in rules, the received message data is processed by pre-defined rules, and then the rules trigger an action to forward the processed data to cloud resources through configured connectors. You can easily create connectors and rules, and add actions to the rules on the Data Integration page of your deployment without any coding work.
+As devices or applications establish connections with the Serverless deployment, the MQTT broker takes charge of routing messages. The data will enter the Rule Engine for processing, a component that handles data using SQL statements. The processed data will be forwarded to the target service by an Action. Actions are divided into Sink (sending data to a service) and Source (receiving data from a service). Currently, Data Integration of Serverless supports Sink mode to integrate data into cloud services.
 
 ### [Connectors](./connectors.md)
 
@@ -26,7 +26,7 @@ Rules describe "where data comes from" and "how to filter and process data." Rul
 
 Actions determine "where the processed data goes." A rule can correspond to one or more actions, and actions need to be set with defined connectors, which means where the data is sent.
 
-## Creation Process
+## Work Flow
 
 The following is the basic process for creating data integrations:
 
@@ -38,14 +38,14 @@ The following is the basic process for creating data integrations:
 4. Test whether the created data integration can run correctly.
 
 
-## Data Integration Beta Statements
+## Data Integration Pricing and Limitation
 
-The data integration feature has been set for a Beta testing period, ending on February 29, 2024. During the Beta period, data integration is free to use and will not be billed. After the trial period ends, a free quota for data integration will be provided: 1 million rule actions per month. Any usage beyond the free quota will be charged at $0.25 per million rule actions.
+A free quota for data integration is provided: 1 million rule actions per month. Any usage beyond the free quota will be charged at $0.25 per million rule actions.
 
-During the Beta period, the limits on the number of connectors, rules, and actions that can be created for data integration are as follows:
+The limits on the number of connectors, rules, and actions that can be created for data integration are as follows:
 
 | Quota Name                                       | Amount |
 | ------------------------------------------------ | ------ |
-| Number of Connectors that can be Created         | 2      |
-| Number of Rules that Can Be Created              | 4      |
+| Number of Connectors        | 2      |
+| Number of Rules              | 4      |
 | Number of Associated Actions Under a Single Rule | 1      |
