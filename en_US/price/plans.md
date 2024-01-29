@@ -173,8 +173,8 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
       <td>Contact Us</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Free Quota<br /> (For every month)</td>
-      <td>Connection: 1 million session minutes<br />Traffic: 1 GB <br />Date Integration: 1 million rule actions</td>
+      <td style="text-indent: 2em;">Free Quota<br />(Per month)</td>
+      <td>Connection: 1 million session minutes<br />Traffic: 1 GB <br />Date Integration: 1 million rule action executions</td>
       <td>Traffic：100 GB</td>
       <td>Traffic：Maximum 1 TB</td>
       <td>-</td>
@@ -474,6 +474,7 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
       <td>&#10003</td>
    </tr>
 </table>
+
 
 ## Cloud Providers and Regions
 

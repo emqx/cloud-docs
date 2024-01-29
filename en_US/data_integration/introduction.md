@@ -12,7 +12,7 @@ As a fully managed MQTT message cloud service, EMQX Cloud connects Internet of T
 
 ## How It Works
 
-As devices or applications establish connections with the Serverless deployment, the MQTT broker takes charge of routing messages. The data will enter the Rule Engine for processing, a component that handles data using SQL statements. The processed data will be forwarded to the target service by an Action. Actions are divided into Sink (sending data to a service) and Source (receiving data from a service). Currently, Data Integration of Serverless supports Sink mode to integrate data into cloud services.
+In Serverless deployments, as devices or applications establish connections, the MQTT broker routes the messages. Upon arrival, these messages are processed by the Rule Engine, a powerful component that utilizes SQL statements for data manipulation. This processed data is then forwarded to the target service by an "Action". Actions are categorized into two types: "Sink", for sending data to a service, and "Source", for receiving data from a service. Presently, the Data Integration feature of the Serverless deployment primarily operates in "Sink" mode, facilitating the seamless integration of data into various cloud services.
 
 ### [Connectors](./connectors.md)
 
@@ -38,14 +38,14 @@ The following is the basic process for creating data integrations:
 4. Test whether the created data integration can run correctly.
 
 
-## Data Integration Pricing and Limitation
+## Pricing and Usage Limits
 
-A free quota for data integration is provided: 1 million rule actions per month. Any usage beyond the free quota will be charged at $0.25 per million rule actions.
+EMQX Cloud provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
 
-The limits on the number of connectors, rules, and actions that can be created for data integration are as follows:
+To maintain optimal performance and manageability, EMQX Cloud imposes the following constraints on the creation of connectors, rules, and actions within each data integration:
 
-| Quota Name                                       | Amount |
-| ------------------------------------------------ | ------ |
-| Number of Connectors        | 2      |
-| Number of Rules              | 4      |
-| Number of Associated Actions Under a Single Rule | 1      |
+| Category                         | Maximum Allowed |
+| -------------------------------- | --------------- |
+| Total Connectors per Integration | 2               |
+| Total Rules per Integration      | 4               |
+| Actions Associated Per Rule      | 1               |

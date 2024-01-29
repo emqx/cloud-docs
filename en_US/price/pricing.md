@@ -8,13 +8,13 @@ EMQX Cloud Serverless Plan is billed based on the actual usage of your deploymen
 
 ### Billing Unit
 
-**Session Minute**: One session minute stands for one connection to the deployment in the span of a minute, dnd any fraction of a minute is rounded up to one minute.
+**Session Minute**: Represents a connection to the deployment for any duration within a one-minute timeframe. For billing purposes, any partial minute of connection is rounded up and considered as a full minute. 
 
-**Session**: Total number of clients that are currently connected simultaneously, including offline clients that have enabled [Persistent sessions](https://www.emqx.com/en/blog/mqtt-session).
+**Session**: The total number of clients that are currently connected simultaneously, including offline clients that have enabled [persistent sessions](https://www.emqx.com/en/blog/mqtt-session).
 
 **Traffic:** Traffic (including free traffic) refers to all public network traffic that flows in and out of your deployment.
 
-**Rule Action:** Total number of executed actions in [Data Integration](../data_integration/introduction.md).
+**Rule Action:** The total number of action execution times in [Data Integration](../data_integration/introduction.md).
 
 ### Billing Plan
 
@@ -22,13 +22,13 @@ EMQX Cloud Serverless Plan is billed based on the actual usage of your deploymen
 | -------------------- | -------------------------------------------- | ------------------|
 | Session       |  1 million session minutes / month     | $ 2.00 per million session minutes                                |
 | Traffic     | 1 GB / month              | $ 0.15 / GB              |
-| Rule Action     | 1 million rule actions / month              | $ 0.25 per million rule actions             |
+| Rule Action     | 1 million rule action executions / month | $ 0.25 per million rule action executions |
 
 ### Billing method
 
 **Session fee** = sessions * connection span (measured per minute or part thereof) / 1,000,000 * 2 <br />
 **Traffic fee** = Inbound and outbound traffic（byte）/ 1024 / 1024 / 1024 * 0.15 <br />
-**Rule Action fee** = Number of executed actions / 1,000,000 * 0.25
+**Rule Action fee** = Number of rule action executions / 1,000,000 * 0.25
 
 ::: tip
 
@@ -42,12 +42,10 @@ The bill is calculated based on the fees accumulated in the previous 24 hours, w
 
 Spend Limit helps you control how much money your Serverless deployment spends each month, and you'll receive a reminder when you reach that limit. You can set the Spend Limit when you create your deployment, and you can change it later.
 
-The spend limit can be an integer from 0 to 10000:
+The spending limit can be an integer from 0 to 10000:
 
-- If it is set to 0, the deployment will only consume the free quota, which is 1 million connection minutes, 1 GB of traffic and 1 million rule actions per month. When the free quota is used up, the deployment will be stopped.
+- If it is set to 0, the deployment will only consume the free quota, which is 1 million connection minutes, 1 GB of traffic, and 1 million rule action executions per month. When the free quota is used up, the deployment will be stopped.
 - If it is set to an integer between 1 and 10,000, an action should also be selected when the consumption of the deployment reaches the limit for the month, such as stopping the deployment or reminding and continuing to charge. If there is an overdue bill, regardless of the action you previously set, the deployment will be stopped.
-
-
 
 ## Dedicated Plan
 
