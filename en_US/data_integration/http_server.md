@@ -4,7 +4,7 @@ The HTTP Service Data Integration in EMQX Cloud offers a quick way to integrate 
 
 This page provides a detailed introduction to the functional features of HTTP Service Data Integration. It also offers practical guidance for creating the data integration, including creating an HTTP Server connector, creating rules, and testing rules.
 
-## How It Work
+## How It Works
 
 HTTP Service Data Integration is an out-of-the-box feature in EMQX Cloud that can be easily configured for integrating EMQX with external services. With HTTP Services, users can write code in their preferred programming languages and frameworks to implement custom, flexible, and complex data processing logic.
 
