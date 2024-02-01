@@ -4,7 +4,7 @@ The HTTP Service Data Integration in EMQX Cloud offers a quick way to integrate 
 
 This page provides a detailed introduction to the functional features of HTTP Service Data Integration. It also offers practical guidance for creating the data integration, including creating an HTTP Server connector, creating rules, and testing rules.
 
-## How It Work
+## How It Works
 
 HTTP Service Data Integration is an out-of-the-box feature in EMQX Cloud that can be easily configured for integrating EMQX with external services. With HTTP Services, users can write code in their preferred programming languages and frameworks to implement custom, flexible, and complex data processing logic.
 
@@ -71,7 +71,7 @@ httpd.serve_forever()
 
 Before creating data integration rules, you need to create an HTTP Server connector for accessing HTTP services.
 
-1. Go to your deployment. Click **Data Integration (Beta)** from the left-navigation menu. 
+1. Go to your deployment. Click **Data Integration** from the left-navigation menu. 
 2. If it is the first time for you to create a connector, select **HTTP Server** under the **Web Service** category. If you have already created connectors, select **New Connector** and then select **HTTP Service** under the **Web Service** category.
 3. On the **New Connector** page, configure the following options:
    - **Connector Name**: The system will automatically generate a connector name, or you can name it yourself. In this example, you can use `my_httpserver`.
