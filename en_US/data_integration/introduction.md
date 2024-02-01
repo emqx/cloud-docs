@@ -42,6 +42,7 @@ The following is the basic process for creating data integrations:
 
 EMQX Cloud provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
 
+<<<<<<< HEAD
 To maintain optimal performance and manageability, EMQX Cloud imposes the following constraints on the creation of connectors, rules, and actions within each deployment:
 
 | Category                    | Maximum Allowed |
@@ -49,3 +50,12 @@ To maintain optimal performance and manageability, EMQX Cloud imposes the follow
 | Total Connectors            | 2               |
 | Total Rules                 | 4               |
 | Actions Associated Per Rule | 1               |
+=======
+To maintain optimal performance and manageability, EMQX Cloud imposes the following constraints on the creation of connectors, rules, and actions within each data integration:
+
+| Category                         | Maximum Allowed |
+| -------------------------------- | --------------- |
+| Total Connectors per Integration | 2               |
+| Total Rules per Integration      | 4               |
+| Actions Associated Per Rule      | 1               |
+>>>>>>> 4148381 (feat(docs): Serverless data integration RC (#478))
