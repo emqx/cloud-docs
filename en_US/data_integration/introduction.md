@@ -1,18 +1,18 @@
-# Data Integration (Beta) Overview
+# Data Integration Overview
 
 ::: tip 
 
-This section introduces the Data Integration (Beta) feature for Serverless deployments. If your deployment is a Dedicated version, refer to [Data Integration (Dedicated)](../rule_engine/introduction.md). 
+This section introduces the Data Integration feature for Serverless deployments. If your deployment is a Dedicated version, please refer to [Data Integration (Dedicated)](../rule_engine/introduction.md). 
 
 :::
 
 As a fully managed MQTT message cloud service, EMQX Cloud connects Internet of Things (IoT) devices via the MQTT protocol and delivers messages in real time. Building on this foundation, Data Integration enhances EMQX Cloud's capability of connecting with other cloud resources, enabling seamless integration of devices with other business systems. EMQX Cloud Data Integration not only provides a clear and flexible "configurable" architecture solution but also simplifies the development process. It improves user availability, reduces the coupling between business systems and EMQX Cloud, and provides a better infrastructure for data forwarding.
 
-![data_integration_intro](./_assets/integration_intro_01.png)
+![data_integration_intro](./_assets/integration_intro_01.jpg)
 
 ## How It Works
 
-EMQX Cloud Data Integration is an out-of-the-box feature. Devices connect to Cloud Serverless deployments via the MQTT protocol and send message streams and device events. With the built-in rules, the received message data is processed by pre-defined rules, and then the rules trigger an action to forward the processed data to cloud resources through configured connectors. You can easily create connectors and rules, and add actions to the rules on the Data Integration page of your deployment without any coding work.
+In Serverless deployments, as devices or applications establish connections, the MQTT broker routes the messages. Upon arrival, these messages are processed by the Rule Engine, a powerful component that utilizes SQL statements for data manipulation. This processed data is then forwarded to the target service by an "Action". Actions are categorized into two types: "Sink", for sending data to a service, and "Source", for receiving data from a service. Presently, the Data Integration feature of the Serverless deployment primarily operates in "Sink" mode, facilitating the seamless integration of data into various cloud services.
 
 ### [Connectors](./connectors.md)
 
@@ -26,7 +26,7 @@ Rules describe "where data comes from" and "how to filter and process data." Rul
 
 Actions determine "where the processed data goes." A rule can correspond to one or more actions, and actions need to be set with defined connectors, which means where the data is sent.
 
-## Creation Process
+## Work Flow
 
 The following is the basic process for creating data integrations:
 
@@ -38,14 +38,14 @@ The following is the basic process for creating data integrations:
 4. Test whether the created data integration can run correctly.
 
 
-## Data Integration Beta Statements
+## Pricing and Usage Limits
 
-The data integration feature has been set for a Beta testing period, ending on February 29, 2024. During the Beta period, data integration is free to use and will not be billed. After the trial period ends, a free quota for data integration will be provided: 1 million rule actions per month. Any usage beyond the free quota will be charged at $0.25 per million rule actions.
+EMQX Cloud provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
 
-During the Beta period, the limits on the number of connectors, rules, and actions that can be created for data integration are as follows:
+To maintain optimal performance and manageability, EMQX Cloud imposes the following constraints on the creation of connectors, rules, and actions within each data integration:
 
-| Quota Name                                       | Amount |
-| ------------------------------------------------ | ------ |
-| Number of Connectors that can be Created         | 2      |
-| Number of Rules that Can Be Created              | 4      |
-| Number of Associated Actions Under a Single Rule | 1      |
+| Category                         | Maximum Allowed |
+| -------------------------------- | --------------- |
+| Total Connectors per Integration | 2               |
+| Total Rules per Integration      | 4               |
+| Actions Associated Per Rule      | 1               |
