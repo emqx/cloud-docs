@@ -263,12 +263,20 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
    </tr>
    <tr>
       <td style="text-indent: 2em;">基于 SQL 的数据处理</td>
+<<<<<<< HEAD
+=======
+      <td>&#10003</td>
+>>>>>>> 560d340 (fix(docs): release notes (#480))
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">消息重发布</td>
+<<<<<<< HEAD
+=======
+      <td>&#10003</td>
+>>>>>>> 560d340 (fix(docs): release notes (#480))
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -280,7 +288,12 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
       <td>&#10003</td>
    </tr>
    <tr>
+<<<<<<< HEAD
       <td style="text-indent: 2em;">HTTP Server</td>
+=======
+      <td style="text-indent: 2em;">WebHook</td>
+      <td>&#10003</td>
+>>>>>>> 560d340 (fix(docs): release notes (#480))
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -288,6 +301,10 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
    <tr>
       <td style="text-indent: 2em;">Kafka</td>
       <td>&#10003</td>
+<<<<<<< HEAD
+=======
+      <td>&#10007</td>
+>>>>>>> 560d340 (fix(docs): release notes (#480))
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
@@ -428,9 +445,9 @@ EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属
 ## 支持云服务商和地区
 
 ### Serverless
-| 平台   | 区域                   |
-| ------ | --------------- |
-| 阿里云 | - |
+| 区域              |
+|  --------------- |
+| 杭州  |
 
 
 ### 专有版
