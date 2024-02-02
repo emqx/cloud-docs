@@ -2,7 +2,9 @@
 
 # Release Notes
 
-## 2023
+
+#### 2023-12
+* Data Integration in Serverless 
 
 #### 2023-10
 * Serverless API
