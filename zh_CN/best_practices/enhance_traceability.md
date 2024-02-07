@@ -1,4 +1,4 @@
-# 使用 EMQX 事件主题和 TimescaleDB 集成增强消息可追溯性
+# 使用 EMQX 事件主题和 TimescaleDB 集成追踪消息延迟
 
 EMQX Cloud 的消息收集和传输能力可以充分利用[事件主题](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-events-and-fields.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BA%8B%E4%BB%B6)功能，以实现整个传输过程中的全面端到端消息监控。这一能力使用户能够生成详细的日志，以跟踪消息从发布者的起点，经过 EMQX Cloud，到达订阅者的终点。全面的监控涵盖了各种场景，允许精确检测任何消息延迟。此外，用户可以灵活地通过 EMQX Cloud 的数据集成功能，轻松将关键监控数据传输到外部数据库或消息队列。
 

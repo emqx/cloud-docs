@@ -665,6 +665,10 @@
         {
           "title": "如何排查消息丢失",
           "path": "best_practices/how_to_troubleshoot_message_loss"
+        },
+        {
+          "title": "追踪消息延迟",
+          "path": "best_practices/enhance_traceability"
         }
       ]
     },
