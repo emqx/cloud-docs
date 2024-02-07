@@ -14,12 +14,14 @@ The following conditions must be met before the demonstration:
 - **Data Integration**: Set up EMQX data integration to capture `$events/message_delivered` and `$events/message_acked` events, recording them in TimescaleDB.
 - **Strategy**: To guarantee the reception of `message_acked events`, use **at least QoS 1 level**.
 
-## Configure Timestamps
+### Timestamp Definitions
 
-1. Message Payload Timestamp (`publish_at`): The timestamp when the client publishes a message.
-2. EMQX Received Message Timestamp (`publish_received_at`): The timestamp when EMQX receives the message.
-3. EMQX Processing Timestamp (`message_delivered`): The timestamp when EMQX processes the message and places it into the TCP packet.
-4. Subscriber Client ACK Timestamp (`message_acked`): The timestamp when the subscribing client receives the message and sends an acknowledgment (ACK).
+The following timestamp fields are defined for the demonstration:
+
+- Message Payload Timestamp (`publish_at`): The timestamp when the client publishes a message.
+- EMQX Received Message Timestamp (`publish_received_at`): The timestamp when EMQX receives the message.
+- EMQX Processing Timestamp (`message_delivered`): The timestamp when EMQX processes the message and places it into the TCP packet.
+- Subscriber Client ACK Timestamp (`message_acked`): The timestamp when the subscribing client receives the message and sends an acknowledgment (ACK).
 
 ## Set Up a Timescale Instance
 
@@ -80,7 +82,7 @@ This section demonstrates how to create a Timescale instance and create a table 
 
 ## Configure TimescaleDB Data Integration in EMQX Cloud
 
-This section demonstrates how to create a data inegration with Timescale for forwarding the message traces from the clients to Timescale.
+This section demonstrates how to create a data integration with TimescaleDB for forwarding the message traces from the clients to TimescaleDB.
 
 1. Sign in to your Cloud Console and navigate to the deployment details page. 
 
@@ -98,7 +100,7 @@ This section demonstrates how to create a data inegration with Timescale for for
    - `timestamp`: Event Timestamp (ms)
    - `publish_received_at`: Time when PUBLISH message reaches Broker (ms)
    - `up_timestamp`: Time when the pub client reports data (ms)
-   - `payload`
+   - `payload`: MQTT payload
 
    ```sql
    SELECT
@@ -309,15 +311,15 @@ This section provides some SQL query statements that can help retrieve the infor
 
 ### How to Calculate Delay
 
-- Pub_Client to EMQX Delay: `publish_received_at` minus  `publish_at`.
-- EMQX Processing Delay: `message_delivered timestamp` minus `publish_received_at`.
-- EMQX to Sub_Client Delay: `message_acked timestamp` minus `message_delivered timestamp`.
-- Total Transmission Delay: `message_acked` minus `publish_at`.
+- Pub_Client to EMQX Delay: `publish_received_at` timestamp minus `publish_at` timestamp.
+- EMQX Processing Delay: `message_delivered` timestamp minus `publish_received_at` timestamp.
+- EMQX to Sub_Client Delay: `message_acked timestamp` timestamp minus `message_delivered timestamp` timestamp.
+- Total Transmission Delay: `message_acked` timestamp minus `publish_at` timestamp.
 
 ::: tip
 
-1. If a message lacks a `publish_at` timestamp, calculating the Client to EMQX Delay is not possible.
-2. Without QoS 0, the `message_acked` event will not trigger, making the calculation of EMQX to Subscribing Client Delay impossible.
+- If a message lacks a `publish_at` timestamp, calculating the Client to EMQX Delay is not possible.
+- Without QoS 0, the `message_acked` event will not trigger, making the calculation of EMQX to Subscribing Client Delay impossible.
 
 :::
 
