@@ -11,10 +11,9 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 3. 选择专有版面板。
 
    ![select_deployment_type](./_assets/create_serverless.png)
-   TODO 更新图片
+   <!--TODO 更新图片-->
 
 4. 依据您的需求选择相应规格配置。
-
 
    - 类型： 基础版（单节点）和专业版（多节点）
    - 云平台和区域：请查看[云服务商和地区](../price/plans.md#支持云服务商和地区)支持
@@ -27,12 +26,12 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 7. 部署创建需要一定的时间，当部署运行状态为**运行中**后，部署创建完成并可使用。
 
 
-## 了解部署信息
+## 查看部署信息
 
 部署概览页面可获取到部署实时状态和连接信息：
 
-   ![dedicated](./_assets/dedicated_overview.png)
-   TODO 更新图片
+  ![dedicated](./_assets/dedicated_overview.png)
+<!--   TODO 更新图片-->
 
 ### 基本信息
 
@@ -56,6 +55,9 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 
 建议查看 [端口连接指引](../deployments/port_guide_dedicated.md) 了解协议和端口。
 
+## 部署功能使用
+
+您可以通过一下具体章节了解转有版部署特有功能的使用。
 
 ### [REST API](../api/introduction.md)
 
@@ -75,8 +77,6 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 ### [私网连接（PrivateLink）](../deployments/privatelink.md)
 仅**专业版**提供私网连接（PrivateLink）能够实现 EMQX Cloud 部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
 
-
-
 ### [内网负载均衡](../vas/intranet-lb.md)
 
 仅**专业版**支持。内网负载均衡是一种在内网中对流量进行按需分发的服务，提供部署内网访问能力。内网负载均衡为增值服务，需要单独开通。
@@ -90,7 +90,6 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 ## 连接到部署
 
 您可以使用任何 MQTT 客户端工具连接到部署进行测试，我们推荐使用 [MQTTX 连接到部署](../connect_to_deployments/mqttx.md)。
-
 
 
 

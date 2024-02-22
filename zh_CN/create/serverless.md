@@ -16,7 +16,7 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 3. 选择 Serverless 面板。
 
    ![create_serverless](./_assets/create_serverless.png)
-   TODO 更新图片
+   <!--TODO 更新图片-->
 
 4. 在配置步骤，您可以设置 Serverless 部署的本月最大[消费限额](../deployments/spend_limit.md)，默认值为 0，即为只使用免费额度。消费限额在部署创建之后也可以进行修改。
 
@@ -27,12 +27,12 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 7. 部署将进入创建，当状态显示为**运行中**后，部署创建完成并可使用。
 
 
-## 了解部署信息
+## 查看部署信息
 
 部署概览页面可获取到部署实时状态和连接信息：
 
-  ![serverless](./_assets/serverless_overview.png)
-  TODO 更新图片
+![serverless](./_assets/serverless_overview.png)
+  <!--TODO 更新图片-->
 
 ### 基本信息
 
@@ -53,18 +53,14 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 
 ## 使用 MQTTX 连接 Serverless 部署
 
-1. 添加客户端认证信息。
+除了使用 MQTTX 客户端，您也可以使用 [SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTTX 连接到部署之前您需要先获取到部署的连接地址 (Host) 和端口 (Port) 以及认证信息。
 
-   左侧菜单**认证鉴权**->**认证**菜单，点击**添加**按钮，输入客户端或设备用户名和密码并点击**确认**。
+1. 获取连接信息。在概览页找到连接地址以及连接端口。Serverless 默认支持 8883(mqtts), 8084(wss) 端口。
 
-2. 获取连接信息。
-
-   在概览页找到连接地址以及连接端口。Serverless 默认支持 8883(mqtts), 8084(wss) 端口。
+2. 添加客户端认证信息。点击左侧菜单中的**访问控制**->**认证**，点击**添加**按钮，输入客户端或设备用户名和密码并点击**确认**。
 
 3. 设置 [MQTTX](https://mqttx.app/zh/) 连接信息并连接到部署。
 
-   除了使用 MQTTX 客户端，您也可以使用 [SDK 或其他工具](../connect_to_deployments/overview.md)连接到部署。在使用 MQTTX 连接到部署之前您需要先获取到部署连接地址(Host)和端口(Port)。
-   
    ![mqttx_mqtt](./_assets/mqttx_serverless.png)
 
 4. 连接成功之后即可以发布和订阅消息。
@@ -72,7 +68,7 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
    ![mqttx_mqtt](./_assets/create_serverless_connect.png)
 
 
-## 系统停止和删除规则
+## 部署停止和删除
 
 **系统停止**：若部署持续 30 天没有活跃客户端连接，部署将会被系统停止。如需继续使用，请在控制台手动启用。
 
