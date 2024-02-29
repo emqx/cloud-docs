@@ -2,7 +2,7 @@
 
 EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters with higher connection and TPS limits, as well as greater scalability. This guide will use the Dedicated Plan (Professional) as an example to walk you through the steps of creating and utilizing EMQX Cloud.
 
-## Create Deployment
+## Create a Deployment
 
 1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
 
@@ -14,19 +14,15 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
 4. Choose the appropriate tier and configurations based on your needs.
 
-   **Plan**: Choose the product plan.
-
-   **Choose Cloud Platform**: You can choose from AWS, Azure, or Google Cloud. 
-
-   **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or [email][cloud-support@emqx.io]. 
-
-   **Choose Tier**: Each tier has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
-
-   **Billing Method**: Choose between **Hourly billing** or Annual prepaid (with a 15% of discount).
+   - **Plan**: Choose the product plan.
+- **Choose Cloud Platform**: You can choose from AWS, Azure, or Google Cloud. 
+   - **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or [email][cloud-support@emqx.io]. 
+- **Choose Tier**: Each tier has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
+   - **Billing Method**: Choose between **Hourly billing** or Annual prepaid (with a 15% of discount).
 
    ![select_deployment_spec](./_assets/select_deployment_spec.png)
 
-5. Double-check your setting in the **New Deployment** tab, and click **Deploy**. 
+5. Double-check your settings in the **New Deployment** tab, and click **Deploy**. 
 
 6. As part of the deployment process, you'll be asked to agree to the *EMQX Cloud Services Agreement*, please review the agreement carefully and accept it if you agree with its terms. 
 
@@ -54,7 +50,13 @@ After the deployment is created, it will appear on the Cloud console home page. 
 
 Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.
 
-To explore the advanced features of the Dedicated Plan, click the links below.
+## Dedicated Deployment Features
+
+To explore the advanced features of the Dedicated Plan, refer to the following links to the specific sections.
+
+### [REST API](../api/introduction.md)
+
+Provides REST APIs for integration with external systems, such as querying client information, publishing messages, and creating rules.
 
 ### [Configure TLS/SSL](../deployments/tls_ssl.md)
 
@@ -69,11 +71,6 @@ VPC peering connection is a network connection between two VPCs. Through this co
 ### [Configure PrivateLink](../deployments/privatelink.md)
 PrivateLink enables the proprietary network VPC where the EMQX Cloud deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
 
-
-### [REST API](../api/api_overview.md)
-
-EMQX Cloud API follows the REST architecture. You can access the functions of EMQX programmatically.
-
 ### [Internal Load Balancers](../vas/intranet-lb.md)
 
 Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
@@ -83,3 +80,6 @@ Intranet load balancing is a service that distributes traffic on demand in the i
 
 NAT gateways can provide network address translation services to provide Professional deployments with the ability to access public network resources without the need for VPC peering connections.
 
+## Connect to the Deployment
+
+You can use any MQTT client tool to connect to the deployment for testing. It is recommended to use [MQTTX to connect to the deployment](../connect_to_deployments/mqttx.md).

@@ -80,7 +80,7 @@
       "children": [
         {
           "title": "默认认证",
-          "path": "default_auth"
+          "path": "deployments/default_auth"
         },
         {
            "title": "扩展认证",
@@ -88,24 +88,24 @@
            "collapsed": true,
            "children":[
              {
-               "title": "HTTP 自定义认证",
+               "title": "HTTP 密码认证",
                "path": "deployments/http_auth"
+             },
+             {
+              "title": "Redis 密码认证",
+              "path": "deployments/redis_auth"
+             },
+             {
+              "title": "MySQL 密码认证",
+              "path": "deployments/mysql_auth"
+             },
+             {
+              "title": "PostgreSQL 密码认证",
+              "path": "deployments/pgsql_auth"
              },
              {
               "title": "JWT 认证",
               "path": "deployments/jwt_auth"
-             },
-             {
-              "title": "Redis 认证/访问控制",
-              "path": "deployments/redis_auth"
-             },
-             {
-              "title": "MySQL 认证/访问控制",
-              "path": "deployments/mysql_auth"
-             },
-             {
-              "title": "PostgreSQL 认证/访问控制",
-              "path": "deployments/pgsql_auth"
              }
            ]
         },
@@ -130,23 +130,19 @@
            "collapsed": true,
            "children":[
              {
-              "title": "HTTP 自定义认证",
+              "title": "基于 HTTP 进行授权",
               "path": "deployments/http_authz"
              },
              {
-              "title": "JWT 认证",
-              "path": "deployments/jwt_authz"
-             },
-             {
-              "title": "Redis 认证/访问控制",
+              "title": "基于 Redis 进行授权",
               "path": "deployments/redis_authz"
              },
              {
-              "title": "MySQL 认证/访问控制",
+              "title": "基于 MySQL 进行授权",
               "path": "deployments/mysql_authz"
              },
              {
-              "title": "PostgreSQL 认证/访问控制",
+              "title": "基于 PostgreSQL 进行授权",
               "path": "deployments/pgsql_authz"
              }
            ]
@@ -333,7 +329,7 @@
     {
       "title": "数据集成",
       "path": "data_integration/introduction",
-      "collapsed": false,
+      "collapsed": true,
       "children": [
         {
           "title": "连接器",
@@ -488,14 +484,6 @@
         {
           "title": "流量包",
           "path": "vas/traffic-pack"
-        },
-        {
-          "title": "自定义函数",
-          "path": "vas/codec"
-        },
-        {
-          "title": "自定义函数场景案例",
-          "path": "vas/codec_demo"
         }
       ]
     },

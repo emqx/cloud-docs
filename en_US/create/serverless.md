@@ -36,39 +36,34 @@ After the deployment is created, it will appear on the Cloud console home page. 
 - **Ports:** `8883` (mqtts) and `8084` (wss) are enabled by default. Check out the [connection guide](../deployments/port_guide_serverless.md) to learn more.
 - **Spend Limit**: Maximum spending limit for the current month. For more information, please refer to the [Spend Limit](../deployments/spend_limit.md) page.
 
-::: warning
+::: warning Note
 Serverless deployment only supports ports `8883` (mqtts) and `8084` (wss). If your client needs a CA file, you can click [here](https://assets.emqx.com/data/emqxsl-ca.crt) to download.
 
 :::
 
-## Test Connection for the Deployment
+## Connect to Serverless Deployment Using MQTTX
 
-EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) to connect to it. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and also use a user for authentication.
-
-
+EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) for connection. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and user authentication information.
 
 1. Get the connection information. Click **Overview** on the left navigation menu to find the deployment connection address and port. 
 
-2. Add client authentication information. Go to the deployment overview page, and click **Authentication & ACL** -> **Authentication**. Then, click on the **Add** button, enter the username and password for the client or device, and click **Confirm**.
+2. Add client authentication information. Click on **Access Control** -> **Authentication** in the left menu, click the **Add** button, enter the username and password for the client or device, and then click **Confirm**.
 
    ![add_users](./_assets/serverless_auth.png)
 
-Now you can set up the connection information in MQTTX as follows and start to test the connection. 
+3. Set up the connection information in [MQTTX](https://mqttx.app/zh/) and connect to the deployment.
 
-![mqttx_mqtt](./_assets/mqttx_serverless.png)
+   ![mqttx_mqtt](./_assets/mqttx_serverless.png)
 
+4. After a successful connection, you can publish and subscribe to messages.
 
+   ![mqttx_mqtt](./_assets/create_serverless_connect.png)
 
-After the connection succeeds, you can try to subscribe and publish. 
+## Deployment Stopping and Deletion
 
-![mqttx_mqtt](./_assets/create_serverless_connect.png)
+**Stopped by the system**: If there are no active client connections to the deployment for 30 consecutive days, the deployment will be stopped by the system. If you wish to continue using it, please manually enable it in the console.
 
-
-## Stopped and Deleted by the system
-
-**Stopped by the system**: The deployment will be stopped if there are no active client connections for 30 consecutive days. If you want to continue using it, please manually enable it in the console. 
-
-**Deleted by the system**: The deployment will be deleted if it still remains inactive for 30 days after being stopped.
+**Deleted by the system**: If the deployment is not activated within 30 days after being stopped, it can be deleted.
 
 
 
