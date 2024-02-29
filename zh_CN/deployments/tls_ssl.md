@@ -1,7 +1,7 @@
 # 专业版 TLS/SSL 配置
 
-::: warning
-该功能仅适用于专业版
+::: warning 注意
+该功能仅适用于专有版-专业版。
 :::
 
 EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提供单向/双向 TLS/SSL 两种验证模式，具体如下：
@@ -60,29 +60,29 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 ## 创建单向认证
 
 1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
-2. 进入部署详情，点击 `+TLS/SSL 配置` 按钮，配置证书内容，您可以上传文件或者直接填写证书内容
+2. 进入部署详情，点击 **TLS/SSL 配置** 按钮，配置证书内容，您可以上传文件或者直接填写证书内容。
     - TLS/SSL 认证类型：选择单向认证（仅客户端验证服务端证书）。
-    - 公钥证书：自定义的服务端证书
-    - 证书链：证书链，通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html) 补全
-    - 私钥：私有秘钥
-3. 填写完成后，点击 `确定`。
+    - 公钥证书：自定义的服务端证书。
+    - 证书链：证书链，通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html) 补全。
+    - 私钥：私有秘钥。
+3. 填写完成后，点击 **确定**。
 
 ![tls](./_assets/tls.png)
 
 ### 使用 MQTTX 测试单向 TLS
 
-测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
+测试之前，请确保创建了认证信息，参考 [认证](./default_auth.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
 
-- 新建连接，输入 Name，Client ID 随机生成即可
-- 选择 Host，填入部署的连接地址和端口
-    - 若选择 SSL 连接，选择 `mqtts://` 和 `8883` 端口
-    - 若选择 WebSocket with SSL，选择 `wss://` 和 `8084` 端口
-- 输入创建的认证信息：用户名和密码
-- SSL/TLS 选择 true
-- 证书选择
-    - 如果是 CA 机构认证的证书，点击“CA signed server”
-    - 如果是自签名证书，点击“Self signed”，提供自签名服务端 CA 证书。
-- 点击连接
+1. 新建连接，输入 Name，Client ID 随机生成即可。
+2. 选择 Host，填入部署的连接地址和端口。
+    - 若选择 SSL 连接，选择 `mqtts://` 和 `8883` 端口。
+    - 若选择 WebSocket with SSL，选择 `wss://` 和 `8084` 端口。
+3. 输入创建的认证信息：用户名和密码。
+4. 启用 **SSL/TLS**。
+5. 选择证书：
+    - 如果是 CA 机构认证的证书，点击 `CA signed server`。
+    - 如果是自签名证书，点击 `Self signed`，提供自签名服务端 CA 证书。
+6. 点击右上角的**连接**。
 
 ![mqttx_tls](./_assets/mqttx_tls.png)
 
@@ -92,32 +92,32 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 ## 创建双向认证
 
 1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
-2. 进入部署详情，点击 `+TLS/SSL 配置` 按钮，配置证书内容，您可以上传文件或者直接填写证书内容
+2. 进入部署详情，点击 **TLS/SSL 配置** 按钮，配置证书内容，您可以上传文件或者直接填写证书内容:
     - TLS/SSL 认证类型：选择双向认证（客户端和服务端相互验证证书）。
-    - 公钥证书：自定义的服务端证书
-    - 证书链：证书链，通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html) 补全
-    - 私钥：私有秘钥
-    - 客户端 CA 证书：选择双向认证时，需要提供客户端的 CA 证书
-3. 填写完成后，点击 `确定`。
+    - 公钥证书：自定义的服务端证书。
+    - 证书链：证书链，通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html) 补全。
+    - 私钥：私有秘钥。
+    - 客户端 CA 证书：选择双向认证时，需要提供客户端的 CA 证书。
+3. 填写完成后，点击 **确定**。
 
 ![tls](./_assets/tls_shuang.png)
 
 
 ### 使用 MQTTX 测试双向 TLS
 
-测试之前，请确保创建了认证信息，参考 [认证和鉴权](./auth_dedicated.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
+测试之前，请确保创建了认证信息，参考 [认证](./default_auth.md)，您可以使用 [MQTTX](<https://mqttx.app/>) 连接和测试。在本教程中我们将使用用 MQTTX 进行测试：
 
-- 新建连接，输入 Name，Client ID 随机生成即可
-- 选择 Host，填入部署的连接地址和端口
+1. 新建连接，输入 Name，Client ID 随机生成即可。
+2. 选择 Host，填入部署的连接地址和端口。
     - 若选择 SSL 连接，选择 `mqtts://` 和 `8883` 端口
     - 若选择 WebSocket with SSL，选择 `wss://` 和 `8084` 端口
-- 输入创建的认证信息：用户名和密码
-- SSL/TLS 选择 true
-- 证书选择
-    - 如果是 CA 机构认证的服务端证书，点击“Self signed”，在 CA File 填入证书。
-    - 如果是自签名证书，点击“Self signed”，提供自签名服务端 CA 证书
+3. 输入创建的认证信息：用户名和密码。
+4. 启用 SSL/TLS。
+5. 选择证书：
+    - 如果是 CA 机构认证的服务端证书，点击 `Self signed`，在 CA File 填入证书。
+    - 如果是自签名证书，点击 `Self signed`，提供自签名服务端 CA 证书。
     - 双向认证还需填入客户端证书以及客户端密钥。
-- 点击连接
+6. 点击右上角的**连接**。
 
 ![mqttx_tls](./_assets/mqttx_tls_shuang.png)
 
@@ -129,17 +129,17 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 删除证书会断开客户端到 `8883` 和 `8084` 的连接，请确保这不会影响到您的业务。
 
 1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
-2. 进入部署详情，点击 `TLS/SSL 配置` 部分的证书的删除按钮。
+2. 进入部署详情，点击 **TLS/SSL 配置**部分的证书的删除按钮。
 3. 在对话框点击“确定”，完成删除。
 
 
 ## 生成自签名证书
 
-请先确保您已经安装了 [OpenSSL](https://www.openssl.org/)
+请先确保您已经安装了 [OpenSSL](https://www.openssl.org/)。
 
 ### 生成自签名服务端证书
 
-1. CA 证书生成 `server-ca.crt`
+1. CA 证书生成 `server-ca.crt`。
 
    subj 依据实际使用情况调整。
 
@@ -154,13 +154,13 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
        -keyout server-ca.key \
        -out server-ca.crt
    ```
-2. 服务端秘钥生成 `server.key`
+2. 服务端秘钥生成 `server.key`。
 
 ```bash
 openssl genrsa -out server.key 2048
 ```
 
-3. 创建 `openssl.cnf` 文件
+3. 创建 `openssl.cnf` 文件。
 
 **替换 IP.1 地址为当前部署地址**
 
@@ -201,13 +201,13 @@ IP.1 = <当前部署的地址>
 EOF
 ```
 
-4. 生成服务端证书请求文件 `server.csr`
+4. 生成服务端证书请求文件 `server.csr`。
 
 ```bash
 openssl req -new -key server.key -config openssl.cnf -out server.csr
 ```
 
-5. 用 CA 证书给服务端证书签名，生成服务端证书 `server.crt`
+5. 用 CA 证书给服务端证书签名，生成服务端证书 `server.crt`。
 
 ```bash
 openssl x509 -req \
@@ -220,21 +220,21 @@ openssl x509 -req \
     -extensions v3_req -extfile openssl.cnf
 ```
 
-6. 查看服务端证书信息
+6. 查看服务端证书信息。
 
 ```bash
 openssl x509 -noout -text -in server.crt
 ```
 
-7. 验证证书
+7. 验证证书。
 
 ```bash
 openssl verify -CAfile server-ca.crt server.crt
-``` 
+```
 
 ### 生成自签名客户端证书
 
-1. CA 证书生成 `client-ca.crt`
+1. CA 证书生成 `client-ca.crt`。
 
    subj 依据实际使用情况调整。
 
@@ -250,31 +250,31 @@ openssl verify -CAfile server-ca.crt server.crt
        -out client-ca.crt
    ```
    
-2. 客户端秘钥生成 `client.key`
+2. 客户端秘钥生成 `client.key`。
 
 ```bash
 openssl genrsa -out client.key 2048
 ```
 
-3. 生成客户端证书请求文件 `client.csr`
+3. 生成客户端证书请求文件 `client.csr`。
 
 ```bash
 openssl req -new -key client.key -out client.csr -subj "/CN=Client"
 ```
 
-4. 用 CA 证书给客户端证书签名，生成 `client.crt`
+4. 用 CA 证书给客户端证书签名，生成 `client.crt`。
 
 ```bash
 openssl x509 -req -days 365 -sha256 -in client.csr -CA client-ca.crt -CAkey client-ca.key -CAcreateserial -out client.crt
 ```
 
-6. 查看客户端端证书信息
+6. 查看客户端端证书信息。
 
 ```bash
 openssl x509 -noout -text -in client.crt
 ```
 
-7. 验证证书
+7. 验证证书。
 
 ```bash
 openssl verify -CAfile client-ca.crt client.crt
@@ -282,12 +282,12 @@ openssl verify -CAfile client-ca.crt client.crt
 
 ## 常见问题
 
-1. 证书内容包含多个证书
+1. 证书内容包含多个证书。
 
    购买的证书包含中间证书，以文本形式打开证书，多个证书是按照用户证书 - 中间证书 - Root 证书的顺序。一般来说，证书包含用户证书和多个中间证书，您需要将用户证书和中间证书分离开，并将中间证书填入到证书链中。
    ```
    -----BEGIN CERTIFICATE-----
-
+   
    用户证书
    
    -----END CERTIFICATE-----
@@ -304,8 +304,7 @@ openssl verify -CAfile client-ca.crt client.crt
    
    -----END CERTIFICATE-----
    ```
-2. 缺少证书链
+2. 缺少证书链。
 
    证书链补全：<https://myssl.com/chain_download.html>
-
 

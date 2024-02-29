@@ -27,7 +27,7 @@ Get the connection address and port in the Deployment Overview (the following **
 
 All deployments of EMQX Cloud have user authentication enabled, so when using MQTTX to test the connection, **you need to fill in the Username and Password fields**.
 
-> Set the Username and Password in `Authentication & ACL` > `Authentication`, which can be added one by one, or can be imported at once
+> Set the Username and Password in `Access Control` > `Authentication`, which can be added one by one, or can be imported at once
 
 ### Protocol
 
