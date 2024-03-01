@@ -4,7 +4,7 @@
 
 EMQX Cloud Serverless is deployed on a multi-tenant architecture, which imposes certain restrictions on each Serverless deployment. These limitations are in place to ensure a stable connection for each tenant. 
 
-| **Limitations** | **Serverless (Beta)**    | **Serverless**                     |
+| **Limitations** | **Serverless**    | **Serverless**                     |
 | -------------------- | ----------------------------------------------------- | -------------------------------------- |
 | Concurrent maximum session |100                | 1000                |
 | Maximum TPS   | 1000                      | 1000                                |
