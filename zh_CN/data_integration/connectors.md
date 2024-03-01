@@ -5,9 +5,6 @@
 - [HTTP Server 连接器](./http_server.md#创建-http-server-连接器)：转发数据到 HTTP 服务。
 - [Kafka 连接器](./kafka.md#创建-kafka-连接器)：EMQX Cloud 以生产者的模式将数据转发到 Kafka 服务。
 
-::: tip
- Serverless Beta 试用期间，可以创建的连接器总数为 2 个。
-:::
 
 ## 创建连接器
 
