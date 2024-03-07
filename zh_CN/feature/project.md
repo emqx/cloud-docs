@@ -50,6 +50,14 @@
 
 ## 关联子用户账号
 
-选择一个项目，点击右上角关联账号按钮，可设置该项目[子用户](./user.md)。
+选择一个项目，点击右上角关联账号按钮，可设置该项目[子用户](./role.md)。
 
 ![delete_project](./_assets/link_subuser.png)
+
+选择子账号，并未账号添加角色。
+
+![delete_project](./_assets/add_subuser.png)
+
+确认关联的账号，或者可以继续添加子账号。
+
+![delete_project](./_assets/confirm_subuser.png)

@@ -199,7 +199,7 @@
       <td>&#10007</td>
    </tr>
    <tr>
-      <td rowspan="5">项目中心</td>
+      <td rowspan="5">项目管理</td>
       <td>查看项目列表</td>
       <td>&#10003</td>
       <td>&#10003</td>
