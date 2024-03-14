@@ -122,7 +122,7 @@
       "children": [
         {
           "title": "默认授权",
-          "path": "default_authz"
+          "path": "deployments/default_authz"
         },
         {
            "title": "扩展授权",
