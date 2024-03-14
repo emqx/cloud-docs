@@ -120,6 +120,11 @@ Prices may vary depending on the public cloud platform selected and the deployme
 
 For Dedicated Plan deployments, charges are calculated every hour based on usage for the previous hour, and charged from your account balance. The hourly charges are then accumulated into monthly charges, which you can view in detail on the [Billing Overview](https://cloud.emqx.com/console/billing/overview) page.
 
+### Pricing of suspended depoyment
+**Dedicated deployment in hourly billing** will incur data retention fees at the following rates when suspended:
+- Standard: $0.02 / hour
+- Professional: $0.06 / hour
+
 ## BYOC Plan
 
 EMQX Cloud BYOC will deploy the EMQX service in your cloud platform account, and the associated costs include cloud platform resource fees and EMQX Cloud BYOC license fees.
