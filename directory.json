@@ -357,79 +357,79 @@
         },
         {
           "title": "Pulsar",
-          "path": "rule_engine/rule_engine_bridge_pulsar"
+          "path": "data_integration/pulsar"
         },
         {
           "title": "RabbitMQ",
-          "path": "rule_engine/rule_engine_bridge_rabbitmq"
+          "path": "data_integration/rabbitmq"
         },
         {
           "title": "RocketMQ",
-          "path": "rule_engine/rule_engine_rocketmq"
+          "path": "data_integration/rocketmq"
         },
         {
           "title": "MySQL",
-          "path": "rule_engine/rule_engine_save_mysql"
+          "path": "data_integration/mysql"
         },
         {
           "title": "Redis",
-          "path": "rule_engine/rule_engine_save_redis"
+          "path": "data_integration/redis"
         },
         {
           "title": "MongDB",
-          "path": "rule_engine/rule_engine_save_mongodb"
+          "path": "data_integration/mongodb"
         },
         {
           "title": "PostgreSQL",
-          "path":"rule_engine/rule_engine_save_postgresql"
+          "path":"data_integration/postgresql"
         },
         {
           "title": "Cassandra",
-          "path": "rule_engine/cassandra"
+          "path": "data_integration/cassandra"
         },
         {
           "title": "ClickHouse",
-          "path": "rule_engine/rule_engine_save_clickhouse"
+          "path": "data_integration/clickhouse"
         },
         {
           "title": "DynamoDB",
-          "path": "rule_engine/dynamoDB"
+          "path": "data_integration/dynamoDB"
         },
         {
           "title": "InfluxDB",
-          "path": "rule_engine/rule_engine_influxDB"
+          "path": "data_integration/influxDB"
         },
         {
           "title": "MatrixDB",
-          "path": "rule_engine/MatrixDB"
+          "path": "data_integration/MatrixDB"
         },
         {
           "title": "Microsoft SQL Server",
-          "path": "rule_engine/microsoft_sql_server"
+          "path": "data_integration/microsoft_sql_server"
         },
         {
           "title": "OpenTSDB",
-          "path": "rule_engine/opentsdb"
+          "path": "data_integration/opentsdb"
         },
         {
           "title": "Oracle Database",
-          "path": "rule_engine/oracle_atabase"
+          "path": "data_integration/oracle_atabase"
         },
         {
           "title": "TDengine",
-          "path": "rule_engine/tdengine"
+          "path": "data_integration/tdengine"
         },
         {
           "title": "TimescaleDB",
-          "path": "rule_engine/rule_engine_save_timescaladb"
+          "path": "data_integration/timescaladb"
         },
         {
           "title": "HStreamDB",
-          "path": "rule_engine/rule_engine_save_hstreamdb"
+          "path": "data_integration/hstreamdb"
         },
         {
           "title": "Apache IoTDB",
-          "path": "rule_engine/apache_iotdb"
+          "path": "data_integration/apache_iotdb"
         } 
         ]
     },
@@ -935,80 +935,88 @@
           "path": "data_integration/kafka"
         },
         {
+          "title" : "Upstash for Kafka",
+          "path": "data_integration/kafka_upstash"
+        },
+        {
           "title": "Pulsar",
-          "path": "rule_engine/rule_engine_bridge_pulsar"
+          "path": "data_integration/pulsar"
         },
         {
           "title": "RabbitMQ",
-          "path": "rule_engine/rule_engine_bridge_rabbitmq"
+          "path": "data_integration/rabbitmq"
         },
         {
           "title": "RocketMQ",
-          "path": "rule_engine/rule_engine_rocketmq"
+          "path": "data_integration/rocketmq"
         },
         {
           "title": "MySQL",
-          "path": "rule_engine/rule_engine_save_mysql"
-        },
-        {
-          "title": "Redis",
-          "path": "rule_engine/rule_engine_save_redis"
-        },
-        {
-          "title": "MongDB",
-          "path": "rule_engine/rule_engine_save_mongodb"
+          "path": "data_integration/mysql"
         },
         {
           "title": "PostgreSQL",
-          "path":"rule_engine/rule_engine_save_postgresql"
+          "path":"data_integration/postgresql"
+        },
+        {
+          "title": "Redis",
+          "path": "data_integration/redis"
+        },
+        {
+          "title": "Upstash for Redis",
+          "path": "data_integration/redis_upstash"
+        },
+        {
+          "title": "MongDB",
+          "path": "data_integration/mongodb"
         },
         {
           "title": "Cassandra",
-          "path": "rule_engine/cassandra"
+          "path": "data_integration/cassandra"
         },
         {
           "title": "ClickHouse",
-          "path": "rule_engine/rule_engine_save_clickhouse"
+          "path": "data_integration/clickhouse"
         },
         {
           "title": "DynamoDB",
-          "path": "rule_engine/dynamoDB"
+          "path": "data_integration/dynamoDB"
         },
         {
           "title": "InfluxDB",
-          "path": "rule_engine/rule_engine_influxDB"
+          "path": "data_integration/influxDB"
         },
         {
           "title": "MatrixDB",
-          "path": "rule_engine/MatrixDB"
+          "path": "data_integration/MatrixDB"
         },
         {
           "title": "Microsoft SQL Server",
-          "path": "rule_engine/microsoft_sql_server"
+          "path": "data_integration/microsoft_sql_server"
         },
         {
           "title": "OpenTSDB",
-          "path": "rule_engine/opentsdb"
+          "path": "data_integration/opentsdb"
         },
         {
           "title": "Oracle Database",
-          "path": "rule_engine/oracle_atabase"
+          "path": "data_integration/oracle_atabase"
         },
         {
           "title": "TDengine",
-          "path": "rule_engine/tdengine"
+          "path": "data_integration/tdengine"
         },
         {
           "title": "TimescaleDB",
-          "path": "rule_engine/rule_engine_save_timescaladb"
+          "path": "data_integration/timescaladb"
         },
         {
           "title": "HStreamDB",
-          "path": "rule_engine/rule_engine_save_hstreamdb"
+          "path": "data_integration/hstreamdb"
         },
         {
           "title": "Apache IoTDB",
-          "path": "rule_engine/apache_iotdb"
+          "path": "data_integration/apache_iotdb"
         } 
       ]
     },
