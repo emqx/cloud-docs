@@ -44,7 +44,7 @@ SELECT password_hash, salt, is_superuser FROM mqtt_user WHERE username = ${usern
 ```
 
 ## MySQL 配置
-在部署中点击 **访问控制** - **扩展认证**，点击 **MySQL 配置认证**，新建认证。
+在部署中点击 **访问控制** -> **认证** -> **扩展认证**，点击 **MySQL 配置认证**，新建认证。
 
 您可按照如下说明完成相关配置：
 

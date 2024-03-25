@@ -50,7 +50,7 @@ SELECT password_hash, salt, is_superuser FROM mqtt_user WHERE username = ${usern
 
 ## Configure MySQL Authentication
 
-In the deployment, click **Access Control** -> **Extended Authentication**, click **MySQL Configure Authentication**, and create a new authentication.
+In the deployment, click **Access Control** -> **Authentication** -> **Extended Authentication**, click **MySQL Configure Authentication**, and create a new authentication.
 
 You can complete the related configurations as follows:
 
@@ -76,7 +76,6 @@ You can complete the related configurations as follows:
 
 - If the current deployment is a dedicated edition, create a [VPC Peering Connection](./vpc_peering.md), and use the internal network address as the server address.
 - If the current deployment is a BYOC edition, you need to create a VPC Peering Connection in your public cloud console. For details, refer to the section Creating BYOC Deployment - VPC Peering Connection Configuration. Use the internal network address as the server address.
-
-If you see an "Init resource failure!" message, please check if the server address is correct and if the security group is open. 
+- If you see an "Init resource failure!" message, please check if the server address is correct and if the security group is open. 
 
 :::

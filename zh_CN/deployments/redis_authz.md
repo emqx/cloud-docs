@@ -32,9 +32,9 @@ cmd = "HGETALL mqtt_acl:${username}"
 ```
 
 
-## Redis 配置
+## 配置 Redis 授权
 
-在部署中点击 **访问控制** - **扩展授权**，点击 **Redis 配置授权**，新建授权。
+在部署中点击 **访问控制** -> **授权** -> **扩展授权**，点击 **Redis 配置授权**，新建授权。
 
 - 部署模式：选择 Redis 数据库的部署模式，可选值：单节点、Sentinel、Cluster
 - 服务（列表）：填入 Redis 服务器地址 (host:port) ；当部署模式选为 Sentinel 或 Cluster，您需在此提供所有相关 Redis 服务器的地址，不同地址之间以 , 分隔，格式为 host1:port1,host2:port2,...

@@ -41,8 +41,8 @@ FROM mqtt_acl
 ```
 
 
-## MySQL 配置
-在部署中点击 **访问控制** - **扩展授权**，点击 **MySQL 配置授权**，新建授权。
+## 配置 MySQL 授权
+在部署中点击 **访问控制** -> **授权** -> **扩展授权**，点击 **MySQL 配置授权**，新建授权。
 
 您可按照如下说明完成相关配置：
 
@@ -57,5 +57,5 @@ FROM mqtt_acl
 * 如果当前部署为专有版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址填写内网地址。
 * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
 * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
-:::
+  :::
 
