@@ -2,8 +2,6 @@
 
 EMQX 支持通过外部 HTTP 服务进行密码认证。客户端连接时，EMQX 将使用客户端信息构造 HTTP 请求，并根据请求返回的内容判断认证结果，从而实现复杂的认证鉴权逻辑。
 
-
-
 ## HTTP 认证原理
 
 认证过程类似一个 HTTP API 调用，EMQX 作为请求客户端需要按照 "API" 要求的格式构造并向 HTTP 服务发起请求，而 HTTP 服务需要按照 "客户端" 的要求返回结果：
@@ -50,7 +48,7 @@ Body:
 
 
 ::: tip
-* 如果当前部署为专有版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址填写内网地址。
+* 如果当前部署为专有版，需创建 [VPC 对等连接](./vpc_peering.md)，服务器地址填写内网地址。
 * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
 * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
 :::

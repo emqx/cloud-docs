@@ -189,7 +189,7 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-      <td rowspan="5">Project Center</td>
+      <td rowspan="5">Project Management</td>
       <td>View project list</td>
       <td>&#10003</td>
       <td>&#10003</td>

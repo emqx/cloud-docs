@@ -1,8 +1,6 @@
 # Alerts
 
-EMQX Cloud provides complete alerts reminders and alerts integration, allowing users and operation and maintenance personnel to make corresponding treatment promptly based on these alerts. EMQX Cloud provides the following alerts events:
-
-![alert_integrations](./_assets/alerts.png)
+EMQX Cloud provides complete alerts reminders and alerts integration, allowing users and operation and maintenance personnel to make corresponding treatment promptly based on these alerts. 
 
 ## Alerts Event
 
