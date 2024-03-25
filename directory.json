@@ -393,15 +393,15 @@
         },
         {
           "title": "DynamoDB",
-          "path": "data_integration/dynamoDB"
+          "path": "data_integration/dynamodb"
         },
         {
           "title": "InfluxDB",
-          "path": "data_integration/influxDB"
+          "path": "data_integration/influxdb"
         },
         {
           "title": "MatrixDB",
-          "path": "data_integration/MatrixDB"
+          "path": "data_integration/matrixdb"
         },
         {
           "title": "Microsoft SQL Server",
@@ -413,7 +413,7 @@
         },
         {
           "title": "Oracle Database",
-          "path": "data_integration/oracle_atabase"
+          "path": "data_integration/oracle_database"
         },
         {
           "title": "TDengine",
@@ -421,7 +421,7 @@
         },
         {
           "title": "TimescaleDB",
-          "path": "data_integration/timescaladb"
+          "path": "data_integration/timescaledb"
         },
         {
           "title": "HStreamDB",
@@ -980,15 +980,15 @@
         },
         {
           "title": "DynamoDB",
-          "path": "data_integration/dynamoDB"
+          "path": "data_integration/dynamodb"
         },
         {
           "title": "InfluxDB",
-          "path": "data_integration/influxDB"
+          "path": "data_integration/influxdb"
         },
         {
           "title": "MatrixDB",
-          "path": "data_integration/MatrixDB"
+          "path": "data_integration/matrixdb"
         },
         {
           "title": "Microsoft SQL Server",
@@ -1000,7 +1000,7 @@
         },
         {
           "title": "Oracle Database",
-          "path": "data_integration/oracle_atabase"
+          "path": "data_integration/oracle_database"
         },
         {
           "title": "TDengine",
@@ -1008,7 +1008,7 @@
         },
         {
           "title": "TimescaleDB",
-          "path": "data_integration/timescaladb"
+          "path": "data_integration/timescaledb"
         },
         {
           "title": "HStreamDB",
