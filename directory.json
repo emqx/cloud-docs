@@ -902,7 +902,7 @@
       ]
     },
     {
-      "title": "Data Integration (Serverless)",
+      "title": "Data Integration",
       "path": "data_integration/introduction",
       "collapsed": false,
       "children": [
