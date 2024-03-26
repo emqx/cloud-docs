@@ -1,5 +1,9 @@
 # VPC Peering Connections
 
+::: tip Note
+This feature is only available for the Dedicated plan.
+:::
+
 VPC peering connection is a network connection between two VPCs. Through this connection, the instances in different VPCs can communicate with each other as if they are in the same network.
 
 ## Precautions

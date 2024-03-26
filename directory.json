@@ -122,7 +122,7 @@
       "children": [
         {
           "title": "默认授权",
-          "path": "default_authz"
+          "path": "deployments/default_authz"
         },
         {
            "title": "扩展授权",
@@ -152,14 +152,11 @@
     {
       "title": "项目和用户管理",
       "path": "feature/overview",
+      "collapsed": true,
       "children": [
         {
-          "title": "创建项目",
-          "path": "feature/project_center"
-        },
-        {
           "title": "管理项目",
-          "path": "deployments/project"
+          "path": "feature/project"
         },
         {
           "title": "角色和权限",
@@ -213,11 +210,14 @@
         },
         {
           "title": "告警",
-          "path": "deployments/alerts"
-        },
-        {
-          "title": "Webhook 告警",
-          "path": "deployments/alerts_webhook"
+          "path": "deployments/alerts",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "Webhook 告警",
+              "path": "deployments/alerts_webhook"
+            }
+          ]
         }
       ]
     },
@@ -906,7 +906,7 @@
       ]
     },
     {
-      "title": "Data Integration (Serverless)",
+      "title": "Data Integration",
       "path": "data_integration/introduction",
       "collapsed": false,
       "children": [

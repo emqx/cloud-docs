@@ -8,7 +8,7 @@ A subaccount is an account created by an EMQX Cloud user. Subaccounts will be ac
 
 Subaccounts get a separate login page for subaccounts only.
 
-![default_project](./_assets/login_1.png)
+<img src="./_assets/login_1.png" alt="default_project" style="zoom:67%;" />
 
 ## Accounts Categories
 
@@ -189,7 +189,7 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-      <td rowspan="5">Project Center</td>
+      <td rowspan="5">Project Management</td>
       <td>View project list</td>
       <td>&#10003</td>
       <td>&#10003</td>
