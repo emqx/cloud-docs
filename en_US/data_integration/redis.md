@@ -95,13 +95,13 @@ Before creating data integration rules, you need to first create a Redis connect
 
 7. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Redis.
 
-1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
-2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the temp_hum/emqx topic. Here you need a certain process of SQL:
+2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the `temp_hum/emqx` topic. Here you need a certain process of SQL:
 
    ```sql
     SELECT
@@ -153,15 +153,15 @@ You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature a
      }
      ```
 
-2. View stored results
+2. View stored results.
 
-- For Redis installed via Docker, you need to access the container first and then execute `redis-cli` to connect to the Redis service.
-- For services created via Redis Cloud, select the Redis CLI connection option, copy the command, and execute it in the command line to connect to the Redis service.
+   - For Redis installed via Docker, you need to access the container first and then execute `redis-cli` to connect to the Redis service.
+   - For services created via Redis Cloud, select the Redis CLI connection option, copy the command, and execute it in the command line to connect to the Redis service.
 
-```bash
-127.0.0.1:6379> HGETALL test_client
-1) "1710921138"
-2) "{\n  \"temp\": 27.5,\n  \"hum\": 41.8\n}"
-```
+   ```bash
+   127.0.0.1:6379> HGETALL test_client
+   1) "1710921138"
+   2) "{\n  \"temp\": 27.5,\n  \"hum\": 41.8\n}"
+   ```
 
 3. View operational data in the console. Click the rule ID in the rule list, and you can see the statistics of the rule and the statistics of all actions under this rule.

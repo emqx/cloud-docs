@@ -66,12 +66,12 @@ OK
 
 #### 使用 Redis Cloud 创建 Redis 服务
 
-1. 登录 [Redis Cloud](https://redis.com/cloud/overview/) 控制台，并创建一个订阅，在这个示例中可以选择 Fixed 版本
-2. 创建一个数据库
-3. 在数据库的配置页面可以查看到连接所需的地址、用户名以及密码
-4. 您可以点击连接按钮，选择 Redis CLI 选项并复制命令，在命令行执行命令，连接服务进行验证
+1. 登录 [Redis Cloud](https://redis.com/cloud/overview/) 控制台，并创建一个订阅，在这个示例中可以选择 Fixed 版本。
+2. 创建一个数据库。
+3. 在数据库的配置页面可以查看到连接所需的地址、用户名以及密码。
+4. 您可以点击连接按钮，选择 Redis CLI 选项并复制命令，在命令行执行命令，连接服务进行验证。
 
-更多详细信息可以参考：[Redis Cloud 官方文档](https://docs.redis.com/)
+更多详细信息可以参考：[Redis Cloud 官方文档](https://docs.redis.com/)。
 
 ## 创建连接器
 
@@ -151,15 +151,15 @@ OK
      }
      ```
 
-2. 查看数据转存结果
+2. 查看数据转存结果。
 
-- 通过 Docker 安装的 Redis 需要先先进入容器，然后执行 `redis-cli` 连接到 Redis 服务
-- 通过 Redis Cloud 创建的服务，选择 Redis CLI 连接选项，复制命令，在命令行执行命令连接到 Redis 服务
+   - 通过 Docker 安装的 Redis 需要先先进入容器，然后执行 `redis-cli` 连接到 Redis 服务。
+   - 通过 Redis Cloud 创建的服务，选择 Redis CLI 连接选项，复制命令，在命令行执行命令连接到 Redis 服务。
 
-```bash
-127.0.0.1:6379> HGETALL test_client
-1) "1710921138"
-2) "{\n  \"temp\": 27.5,\n  \"hum\": 41.8\n}"
-```
+   ```bash
+   127.0.0.1:6379> HGETALL test_client
+   1) "1710921138"
+   2) "{\n  \"temp\": 27.5,\n  \"hum\": 41.8\n}"
+   ```
 
 3. 在控制台查看运行数据。在规则列表点击规则 ID，在运行统计页面可以查看到规则的统计以及此规则下所有动作的统计。
