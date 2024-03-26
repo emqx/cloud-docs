@@ -4,13 +4,13 @@ EMQX supports identity verification through username and password. When a client
 
 ## View Authentication Information
 
-Click on **Access Control** -> **Client Authentication** in the left-side menu of the deployment to view authentication information.
+Click on **Access Control** -> **Authentication** in the left-side menu of the deployment to view authentication information.
 
 ## Add Authentication Information
 
 On the Client Authentication page, select **+ Add**. Enter the username and password in the input fields and click the **Confirm** button to complete the addition of authentication information.
 
-## Bulk Add Authentication Information
+## Import Authentication Information
 
 You can import authentication information in bulk via a CSV file.
 
@@ -18,7 +18,7 @@ You can import authentication information in bulk via a CSV file.
 
 2. Download the template. An example of the template file is shown below:
 
-   ![auth_csv](https://chat.openai.com/g/g-aAzkOrn2h-ruan-jian-wen-dang-xie-zuo-zhu-shou/c/_assets/auth_csv.png)
+   ![auth_csv](./_assets/auth_csv.png)
 
 3. Fill in the authentication information and upload the file.
 

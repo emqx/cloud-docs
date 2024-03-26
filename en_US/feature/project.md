@@ -46,8 +46,17 @@ Select a project, and click the delete button in the top right corner.
 
 ![delete_project](./_assets/delete_project.png)
 
-## Link Subuser Accounts
+## Link Subaccounts
 
-Select a project, click the link account button in the top right corner, you can set the [subuser](https://chat.openai.com/g/g-aAzkOrn2h-ruan-jian-wen-dang-xie-zuo-zhu-shou/c/user.md) for this project.
+1. Select a project, click the Authorization button in the top right corner, you can set [subaccounts](./user.md) for this project.
 
-![delete_project](./_assets/link_subuser.png)
+   ![delete_project](./_assets/link_subuser.png)
+
+2. In the Authorization dialog, click **Add** to enter subaccounts and select roles for the subaccounts.
+
+   ![add_subuser](./_assets/add_subuser.png)
+
+3. Click **Confirm** to add the subaccount, or you can continue to add more subaccounts.
+
+   ![confirm_subuser](./_assets/confirm_subuser.png)
+

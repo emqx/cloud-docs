@@ -15,7 +15,7 @@
 
 在 Payload 弹窗中可以查看保留消息的具体的 Payload 内容。可以点击复制按钮来快速复制保留消息的 Payload。在左下角的下拉框中还可以对 Payload 进行格式化输出，这对于一些特殊的 Payload 格式，如 JSON 或 Hex 格式的，可以更加直观地查看。
 
-![retain](./_assets/retain_payload.png)
+<img src="./_assets/retain_payload.png" alt="retain" style="zoom:67%;" />
 
 ### 删除保留消息
 

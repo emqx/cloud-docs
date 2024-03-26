@@ -45,7 +45,7 @@ Placeholders can be used in topics to dynamically replace current client informa
 
 Placeholders can only be used to replace an entire field in a topic, e.g., `a/b/${username}/c/d`, but cannot be used to replace a part of a field, e.g., `a/b${username}c/d`.
 
-## Batch Add Authorization Information
+## Import Authorization Information
 
 You can import authorization information in batch via a CSV file.
 

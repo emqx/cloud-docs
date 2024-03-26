@@ -1,3 +1,5 @@
+<!-- deprecated -->
+
 # Deployment Overview
 
 In this tutorial, you will learn how to view deployment information, obtain connection address, view ports, etc.

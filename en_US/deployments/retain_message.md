@@ -18,7 +18,7 @@ You can view the Payload of the retained message. Click the view button in the O
 
 In the Payload popup, you can view the specific content of the Payload of the retained message. You can click the copy button to quickly copy the Payload of the retained message. In the dropdown box in the lower left corner, you can also format the output of the Payload, which allows for more intuitive viewing for some special Payload formats, such as JSON or Hex format.
 
-![retain](./_assets/retain_payload.png)
+<img src="./_assets/retain_payload.png" alt="retain" style="zoom:67%;" />
 
 ### Delete Retained Messages
 

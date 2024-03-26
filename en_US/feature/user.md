@@ -22,9 +22,9 @@ You can click the **Subaccount** from the top menu to enter the Subaccounts page
  > The first link is for first time activation of login, and the second link is the link for the subsequent login, please don't get confused.
 5. After subaccount login, you can manage the platform according to the permissions set by the system. If you need the permissions of a certain project, please contact the administrator.
 
-## Subaccounts
+## Manage Subaccounts
 
-The subaccounts function is only open to subaccounts with two roles: the administrator has full operational privileges and the auditors can view the user list.
+The account management function is only open to subaccounts with two roles: the administrator has full operational privileges and the auditors can view the user list.
 
 Please note that subaccounts are not available for the account's default project.
 
@@ -38,7 +38,7 @@ The account list shows the current subaccounts information, and the status will 
 
 It is important to note that the project authorization function is disabled when the role of the subaccount is changed to Accountant, Auditor, or Administrator. That's because the Administrator has all project permissions by default, and Accountant and Auditor have all project read-only permissions by default.
 
-![default_project](./_assets/authorize.png)
+<img src="./_assets/authorize.png" alt="default_project" style="zoom:50%;" />
 
 > When a subaccount has both project administrator and project user roles, remember to switch between roles for authorization
 
@@ -46,7 +46,7 @@ It is important to note that the project authorization function is disabled when
 
 **Change Password**：Currently, only the administrator can change passwords for subaccounts.
 
-![default_project](./_assets/more_1.png)
+<img src="./_assets/more_1.png" alt="default_project" style="zoom:67%;" />
 
 **Change Role**：Modifying or reassigning roles for subaccounts.
 
