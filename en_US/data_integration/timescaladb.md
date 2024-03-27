@@ -44,6 +44,13 @@ This section introduces the preparatory work needed to create TimescaleDB Data I
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
+### Set Up Deployment
+
+Before you start, you need to create a deployment (EMQX Cluster) on EMQX Cloud and configure the networking.
+
+- For Professional Plan users: Please create [ VPC Peering Connections](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource (Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
+- For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
+
 ### Install Timescale and Create Data Table
 
 EMQX Cloud supports integration with self-deployed TimescaleDB or Timescale Service on the cloud. You can use Timescale Service as a cloud service or deploy a TimescaleDB instance using Docker.
@@ -124,7 +131,7 @@ If you are using TimescaleDB Cloud for the first time, you can refer to the [hel
     temp           DOUBLE PRECISION  NULL,
     hum            DOUBLE PRECISION  NULL
     );
-
+    
     SELECT create_hypertable('temp_hum', 'up_timestamp');
     ```
 
@@ -132,7 +139,7 @@ If you are using TimescaleDB Cloud for the first time, you can refer to the [hel
 
     ```bash
     INSERT INTO temp_hum(up_timestamp, client_id, temp, hum) values (to_timestamp(1603963414), 'temp_hum-001', 19.1, 55);
-
+    
     SELECT * from temp_hum;
     ```
 
@@ -154,11 +161,11 @@ Before creating data integration rules, you need to first create a TimescaleDB c
 4. Click the **Test** button. If the TimescaleDB service is accessible, a success prompt will be returned.
 5. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to TimescaleDB.
 
-1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
 2. Enter the rule matching SQL statement in the **SQL editor**. The following SQL example reads the message reporting time `up_timestamp`, client ID, and message body (Payload) from messages sent to the `temp_hum/emqx` topic, extracting temperature and humidity.
 
@@ -191,7 +198,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 8. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
-## Test Rules
+## Test the Rule
 
 You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting, but you can also use any other client.
 
