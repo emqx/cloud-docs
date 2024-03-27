@@ -83,36 +83,36 @@
           "path": "deployments/default_auth"
         },
         {
-           "title": "扩展认证",
-           "path": "deployments/custom_auth",
-           "collapsed": true,
-           "children":[
-             {
-               "title": "HTTP 密码认证",
-               "path": "deployments/http_auth"
-             },
-             {
+          "title": "扩展认证",
+          "path": "deployments/custom_auth",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "HTTP 密码认证",
+              "path": "deployments/http_auth"
+            },
+            {
               "title": "Redis 密码认证",
               "path": "deployments/redis_auth"
-             },
-             {
+            },
+            {
               "title": "MySQL 密码认证",
               "path": "deployments/mysql_auth"
-             },
-             {
+            },
+            {
               "title": "PostgreSQL 密码认证",
               "path": "deployments/pgsql_auth"
-             },
-             {
+            },
+            {
               "title": "JWT 认证",
               "path": "deployments/jwt_auth"
-             }
-           ]
+            }
+          ]
         },
         {
           "title": "黑名单",
           "path": "deployments/blacklist"
-         }
+        }
       ]
     },
     {
@@ -125,27 +125,27 @@
           "path": "deployments/default_authz"
         },
         {
-           "title": "扩展授权",
-           "path": "deployments/custom_authz",
-           "collapsed": true,
-           "children":[
-             {
+          "title": "扩展授权",
+          "path": "deployments/custom_authz",
+          "collapsed": true,
+          "children": [
+            {
               "title": "基于 HTTP 进行授权",
               "path": "deployments/http_authz"
-             },
-             {
+            },
+            {
               "title": "基于 Redis 进行授权",
               "path": "deployments/redis_authz"
-             },
-             {
+            },
+            {
               "title": "基于 MySQL 进行授权",
               "path": "deployments/mysql_authz"
-             },
-             {
+            },
+            {
               "title": "基于 PostgreSQL 进行授权",
               "path": "deployments/pgsql_authz"
-             }
-           ]
+            }
+          ]
         }
       ]
     },
@@ -190,7 +190,7 @@
     {
       "title": "监控",
       "path": "deployments/monitors",
-      "collapsed":true,
+      "collapsed": true,
       "children": [
         {
           "title": "指标",
@@ -223,8 +223,8 @@
     },
     {
       "title": "问题分析",
-      "collapsed":true,
-      "children":[
+      "collapsed": true,
+      "children": [
         {
           "title": "日志",
           "path": "deployments/logs"
@@ -340,19 +340,19 @@
           "path": "data_integration/rules"
         },
         {
-          "title" : "消息重新发布",
+          "title": "消息重新发布",
           "path": "data_integration/republish"
         },
         {
-          "title" : "空动作（调试）",
+          "title": "空动作（调试）",
           "path": "data_integration/empty_action_debug"
         },
         {
-          "title" : "HTTP Server",
+          "title": "HTTP Server",
           "path": "data_integration/http_server"
         },
         {
-          "title" : "Kafka",
+          "title": "Kafka",
           "path": "data_integration/kafka"
         },
         {
@@ -381,7 +381,7 @@
         },
         {
           "title": "PostgreSQL",
-          "path":"data_integration/postgresql"
+          "path": "data_integration/postgresql"
         },
         {
           "title": "Cassandra",
@@ -430,8 +430,8 @@
         {
           "title": "Apache IoTDB",
           "path": "data_integration/apache_iotdb"
-        } 
-        ]
+        }
+      ]
     },
     {
       "title": "财务管理",
@@ -657,36 +657,36 @@
           "path": "default_auth"
         },
         {
-           "title": "Extended Authentication",
-           "path": "deployments/custom_auth",
-           "collapsed": true,
-           "children":[
-             {
-               "title": "HTTP Authentication",
-               "path": "deployments/http_auth"
-             },
-             {
+          "title": "Extended Authentication",
+          "path": "deployments/custom_auth",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "HTTP Authentication",
+              "path": "deployments/http_auth"
+            },
+            {
               "title": "JWT Authentication",
               "path": "deployments/jwt_auth"
-             },
-             {
+            },
+            {
               "title": "Redis Authentication",
               "path": "deployments/redis_auth"
-             },
-             {
+            },
+            {
               "title": "MySQL Authentication",
               "path": "deployments/mysql_auth"
-             },
-             {
+            },
+            {
               "title": "PostgreSQL Authentication",
               "path": "deployments/pgsql_auth"
-             }
-           ]
+            }
+          ]
         },
         {
           "title": "Blacklist",
           "path": "deployments/blacklist"
-         }
+        }
       ]
     },
     {
@@ -699,31 +699,31 @@
           "path": "default_authz"
         },
         {
-           "title": "Extended Authorization",
-           "path": "deployments/custom_authz",
-           "collapsed": true,
-           "children":[
-             {
+          "title": "Extended Authorization",
+          "path": "deployments/custom_authz",
+          "collapsed": true,
+          "children": [
+            {
               "title": "HTTP Authorization",
               "path": "deployments/http_authz"
-             },
-             {
+            },
+            {
               "title": "JWT Authorization",
               "path": "deployments/jwt_authz"
-             },
-             {
+            },
+            {
               "title": "Redis Authorization",
               "path": "deployments/redis_authz"
-             },
-             {
+            },
+            {
               "title": "MySQL Authorization",
               "path": "deployments/mysql_authz"
-             },
-             {
+            },
+            {
               "title": "PostgreSQL Authorization",
               "path": "deployments/pgsql_authz"
-             }
-           ]
+            }
+          ]
         }
       ]
     },
@@ -756,7 +756,7 @@
           "title": "Single Sign-On (SSO)",
           "path": "feature/sso_overview",
           "collapsed": true,
-          "children":[
+          "children": [
             {
               "title": "Configure Okta SSO",
               "path": "feature/sso_okta"
@@ -802,8 +802,8 @@
     },
     {
       "title": "Diagnose",
-      "collapsed":true,
-      "children":[
+      "collapsed": true,
+      "children": [
         {
           "title": "Logs",
           "path": "deployments/logs"
@@ -919,24 +919,28 @@
           "path": "data_integration/rules"
         },
         {
-          "title" : "Message Republish",
+          "title": "Message Republish",
           "path": "data_integration/republish"
         },
         {
-          "title" : "Null Action (Debug)",
+          "title": "Null Action (Debug)",
           "path": "data_integration/empty_action_debug"
         },
         {
-          "title" : "HTTP Server",
+          "title": "HTTP Server",
           "path": "data_integration/http_server"
         },
         {
-          "title" : "Kafka",
+          "title": "Kafka",
           "path": "data_integration/kafka"
         },
         {
-          "title" : "Upstash for Kafka",
+          "title": "Upstash for Kafka",
           "path": "data_integration/kafka_upstash"
+        },
+        {
+          "title": "Confluent",
+          "path": "data_integration/confluent"
         },
         {
           "title": "Pulsar",
@@ -956,7 +960,7 @@
         },
         {
           "title": "PostgreSQL",
-          "path":"data_integration/postgresql"
+          "path": "data_integration/postgresql"
         },
         {
           "title": "Redis",
@@ -1017,7 +1021,7 @@
         {
           "title": "Apache IoTDB",
           "path": "data_integration/apache_iotdb"
-        } 
+        }
       ]
     },
     {
