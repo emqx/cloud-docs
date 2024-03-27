@@ -10,20 +10,18 @@ Serverless 部署最大的优势在于只按照实际的使用量进行计费，
 1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)。
 
 
-2. 在控制台首页或者部署管理页面点击**新建部署**进入创建步骤。
+3. 在控制台首页或者部署管理页面点击**新建部署**进入创建步骤。
 
-
-3. 选择 **Serverless**。
+4. 选择 **Serverless**。
 
    ![create_serverless](./_assets/create_serverless.png)
 
-4. 在创建选项中，您可以设置 Serverless 部署的本月最大[消费限额](../deployments/spend_limit.md)，默认值为 0，即为只使用免费额度。消费限额在部署创建之后也可以进行修改。
+5. 在创建选项中，您可以设置 Serverless 部署的本月最大[消费限额](../deployments/spend_limit.md)，默认值为 0，即为只使用免费额度。消费限额在部署创建之后也可以进行修改。
+6. 设置部署名称和项目。
 
-5. 设置部署名称和项目。
+7. 点击**立即部署**，并同意 EMQX Cloud 标准服务条款和 Serverless 服务使用条款。
 
-6. 点击**立即部署**，并同意 EMQX Cloud 标准服务条款和 Serverless 服务使用条款。
-
-7. 部署将进入创建，当状态显示为**运行中**后，部署创建完成并可使用。
+8. 部署将进入创建，当状态显示为**运行中**后，部署创建完成并可使用。
 
 
 ## 查看部署信息
@@ -31,7 +29,6 @@ Serverless 部署最大的优势在于只按照实际的使用量进行计费，
 部署概览页面可获取到部署实时状态和连接信息：
 
 ![serverless](./_assets/serverless_overview.png)
-
 ### 基本信息
 
 - 实例状态：部署实例运行状态和创建时间。

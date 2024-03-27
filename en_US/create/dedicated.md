@@ -15,8 +15,11 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service clusters with with h
 4. Configure the specification according to your needs.
 
    - **Cloud Provider & Region**: See [Cloud Service Providers and Regions](../price/plans.md#supported-cloud-service-providers-and-regions) for support.
+
    - **Tier**: Select the specification from the drop-down box. Each specification limits a different maximum number of connections and TPS. If your requirements are not met, you can [contact us](https://www.emqx.com/contact?product=cloud).
+
    - **Billing Method**: You can select `Hourly billing` (to pay by the hour) or `Annual prepaid` (an annual billing plan).
+
    - **Deployment Name & Project**: Provide a name for your deployment and select the appropriate project.
 
 5. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Cloud Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.

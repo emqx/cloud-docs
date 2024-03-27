@@ -27,7 +27,6 @@ You can import authentication information in bulk via a CSV file.
 ## Edit Authentication Information
 
 Click the edit icon on the right side of the authentication information to modify the password for a username.
-
 ## Delete Authentication Information
 
 Click the delete icon on the right side of the authentication information to delete it.

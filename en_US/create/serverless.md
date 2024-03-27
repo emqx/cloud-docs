@@ -45,8 +45,8 @@ After the deployment is created, it will appear on the Cloud console home page. 
 
 - **Address:** The address for the client/terminal device to connect EMQX Cloud.
 - **Ports:** `8883` (mqtts) and `8084` (wss) are enabled by default. Check out the [connection guide](../deployments/port_guide_serverless.md) to learn more.
-- **CA Certificate**: If the client needs to verify the server's CA, click to download this certificate.
 
+- **CA Certificate**: If the client needs to verify the server's CA, click to download this certificate
 ## Connect to Serverless Deployment Using MQTTX
 
 EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) for connection. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and user authentication information.
