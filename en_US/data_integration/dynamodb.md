@@ -128,7 +128,7 @@ Before creating data integration rules, you need to first create a DynamoDB conn
 4. Click the **Test** button. If the DynamoDB service is accessible, a success prompt will be returned.
 5. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to DynamoDB.
 
@@ -175,7 +175,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 7. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
-## Test Rules
+## Test the Rule
 
 You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting, but you can also use any other client.
 
@@ -194,14 +194,14 @@ You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature a
 
 2. Check if the message has been forwarded to DynamoDB.
 
-   ① View results in NoSQL Workbench (Optional).
+   - View results in NoSQL Workbench (Optional).
 
-    **[NoSQL Workbench](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.settingup.html)** for Amazon DynamoDB is a cross-platform client-side GUI application for modern database development and operations. You can reach out to it to connect to DynamoDB. Go to the **Operation Builder** page. Select the table 'temp_hum'. Here you can see the results of the temperature and humidity data forwarding.
+     **[NoSQL Workbench](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.settingup.html)** for Amazon DynamoDB is a cross-platform client-side GUI application for modern database development and operations. You can reach out to it to connect to DynamoDB. Go to the **Operation Builder** page. Select the table 'temp_hum'. Here you can see the results of the temperature and humidity data forwarding.
 
-    ② Check whether the data is written into the data table (Optional).
+   -  Check whether the data is written into the data table (Optional).
 
-    ```bash
-    docker run --rm -e AWS_ACCESS_KEY_ID=root -e AWS_SECRET_ACCESS_KEY=public -e AWS_DEFAULT_REGION=us-west-2 amazon/aws-cli dynamodb scan --table-name=temp_hum --endpoint-url http://host.docker.internal:8000
-    ```
+     ```bash
+     docker run --rm -e AWS_ACCESS_KEY_ID=root -e AWS_SECRET_ACCESS_KEY=public -e AWS_DEFAULT_REGION=us-west-2 amazon/aws-cli dynamodb scan --table-name=temp_hum --endpoint-url http://host.docker.internal:8000
+     ```
 
 3. View operational data in the console. Click the rule ID in the rule list, and you can see the statistics of the rule and the statistics of all actions under this rule.
