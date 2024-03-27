@@ -1021,6 +1021,10 @@
         {
           "title": "Apache IoTDB",
           "path": "data_integration/apache_iotdb"
+        },
+        {
+          "title": "Azure Event Hubs",
+          "path": "data_integration/azure_event_hubs"
         }
       ]
     },
@@ -1126,7 +1130,7 @@
           "title": "How to Troubleshoot Message Loss",
           "path": "best_practices/how_to_troubleshoot_message_loss"
         },
-        { 
+        {
           "title": "Enhance Message Traceability",
           "path": "best_practices/enhance_traceability"
         }
