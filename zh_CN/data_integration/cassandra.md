@@ -98,7 +98,7 @@ docker exec -it cassa cqlsh "-e \
 
 1. 点击连接器列表**操作**列下的新建规则图标或在**规则列表**中点击**新建规则**进入**新建规则**步骤页。
 
-2. 在 SQL 编辑器中输入规则，在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度：
+2. 在 SQL 编辑器中输入规则，在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `arrived`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度：
 
    ```sql
      SELECT

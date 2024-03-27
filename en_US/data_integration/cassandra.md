@@ -14,7 +14,7 @@ Cassandra data integration is an out-of-the-box feature in EMQX Cloud that combi
 
 The diagram below illustrates a typical architecture of data integration between EMQX and Cassandra:
 
-![EMQX Cloud Integration Cassandra](./assets/emqx-integration-cassandra.png)
+![EMQX Cloud Integration Cassandra](./_assets/data_integration_cassandra.png)
 
 Ingesting MQTT data into Cassandra works as follows:
 
@@ -78,7 +78,7 @@ Before creating data integration rules, you need to first create a Cassandra con
 
 1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
 
-2. If it is the first time for you to create a connector, select **Microsoft SQL server** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **Microsoft SQL server** under the **Data Persistence** category.
+2. If it is the first time for you to create a connector, select **Cassandra** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **Cassandra** under the **Data Persistence** category.
 
 3. Enter the connection information:
 
@@ -93,13 +93,13 @@ Before creating data integration rules, you need to first create a Cassandra con
 
 6. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Cassandra.
 
 1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
-2. Enter the rule matching SQL statement in the **SQL Editor**. In the following rule, we read the time when the message was reported `up_timestamp`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
+2. Enter the rule matching SQL statement in the **SQL Editor**. In the following rule, we read the time when the message was reported `arrived`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
 
    ```sql
      SELECT
