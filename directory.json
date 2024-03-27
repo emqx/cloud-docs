@@ -1125,20 +1125,10 @@
         {
           "title": "How to Troubleshoot Message Loss",
           "path": "best_practices/how_to_troubleshoot_message_loss"
-<<<<<<< HEAD
-        },
-        { 
-          "title": "Enhance Message Traceability",
-          "path": "best_practices/enhance_traceability"
-=======
-<<<<<<< Updated upstream
-=======
         },
         {
           "title": "Enhance Message Traceability",
           "path": "best_practices/enhance_traceability"
->>>>>>> Stashed changes
->>>>>>> 5b16d6f (feat(docs.5.x): add data_integration_timescaledb)
         }
       ]
     },
