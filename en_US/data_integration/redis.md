@@ -99,7 +99,7 @@ Before creating data integration rules, you need to first create a Redis connect
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Redis.
 
-1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
 2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the `temp_hum/emqx` topic. Here you need a certain process of SQL:
 
@@ -112,12 +112,11 @@ Next, you need to create a rule to specify the data to be written and add corres
       "temp_hum/emqx"
    ```
 
-   ::: tip
+     ::: tip
 
-   If you are a beginner user, click **SQL Examples** and **Enable Test** to learn and test the SQL rule.
+      If you are a beginner user, click **SQL Examples** and **Enable Test** to learn and test the SQL rule.
 
-   :::
-
+      :::
 3. Click **Next** to add an action.
 
 4. Select the connector you just created from the **Connector** dropdown box.

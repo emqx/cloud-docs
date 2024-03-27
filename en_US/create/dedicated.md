@@ -1,33 +1,30 @@
 # Create Dedicated Deployment
 
-EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters with higher connection and TPS limits, as well as greater scalability. This guide will use the Dedicated Plan (Professional) as an example to walk you through the steps of creating and utilizing EMQX Cloud.
+EMQX Cloud's Dedicated Plan offers independent MQTT service clusters with with higher connection and Transactions Per Second (TPS) limits. It also supports more advanced features and complex network architectures. This guide uses the Dedicated Plan (Professional) as an example to walk you through the steps of creating and utilizing EMQX Cloud.
 
 ## Create a Deployment
 
 1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
 
-2. You can create a new deployment for a specific project from either the console homepage or the deployment list page. Click **+ New**.  
+2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
-3. Click **Create Now** on the **Dedicated** tab.
+3. Select the **Dedicated** tab.
 
-   ![select_deployment_type](./_assets/create_serverless.png)
+   ![select_deployment_type](./_assets/create_dedicated.png)
 
-4. Choose the appropriate tier and configurations based on your needs.
+4. Configure the specification according to your needs.
 
-   - **Plan**: Choose the product plan.
-- **Choose Cloud Platform**: You can choose from AWS, Azure, or Google Cloud. 
-   - **Choose Region**: Choose the region to deploy EMQX Cloud. To deploy your EMQX Cloud in a different region, you can submit a request via a [ticket](../feature/tickets.md) or [email][cloud-support@emqx.io]. 
-- **Choose Tier**: Each tier has different limits on the maximum number of connections and transactions per second (TPS), which can be upgraded or downgraded in later stages.
-   - **Billing Method**: Choose between **Hourly billing** or Annual prepaid (with a 15% of discount).
+   - **Cloud Provider & Region**: See [Cloud Service Providers and Regions](../price/plans.md#supported-cloud-service-providers-and-regions) for support.
 
-   ![select_deployment_spec](./_assets/select_deployment_spec.png)
+   - **Tier**: Select the specification from the drop-down box. Each specification limits a different maximum number of connections and TPS. If your requirements are not met, you can [contact us](https://www.emqx.com/contact?product=cloud).
 
-5. Double-check your settings in the **New Deployment** tab, and click **Deploy**. 
+   - **Billing Method**: You can select `Hourly billing` (to pay by the hour) or `Annual prepaid` (an annual billing plan).
 
-6. As part of the deployment process, you'll be asked to agree to the *EMQX Cloud Services Agreement*, please review the agreement carefully and accept it if you agree with its terms. 
+   - **Deployment Name & Project**: Provide a name for your deployment and select the appropriate project.
 
-7. After agreeing to the agreement, the deployment process will begin and take about 5 minutes to complete. You can monitor the progress on the **Projects** page, and once the status changes to **Running**, your deployment has been successfully created and is ready for use.
+5. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Cloud Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
 
+6. Upon accepting the terms, the deployment will begin. Once the deployment status changes to **Running**, your deployment is successfully created and ready for use.
 
 ## View Deployment
 
@@ -35,18 +32,17 @@ After the deployment is created, it will appear on the Cloud console home page. 
 
 ![dedicated](./_assets/dedicated_overview.png)
 
-- **Instance status:** Running status and duration of operation.
+### Basic Information
+
+- **Instance Status:** Running status and duration of operation.
 - **Sessions:** Current and maximum connection counts.
 - **Pub&Sub TPS:** Current messages sent and received per second, as well as the TPS limit.
 - **Traffic:** Usage information for the deployed traffic, including monthly usage and free quota.
-- **Deployment name:** A customizable name for the deployment.
-- **Tiers:** The current tier of the deployment, including the ability to switch from hourly billing to annual billing.
-- **Address:**
-  - Professional Plan: IP
-  - Standard Plan: Domain name ending with emqx.cloud
-- **Ports:**
-  - Professional Plan: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable 8883 (mqtts) and 8084 (wss) ports.
-  - Standard Plan: `15xxx` (mqtt), `15xxx` (mqtts), `8083` (ws), and `8084` (wss) ports are enabled by default.
+
+### Connection Information
+
+- **Address**: The IP address
+- **Ports**: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable `8883` (mqtts) and `8084` (wss) ports.
 
 Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.
 

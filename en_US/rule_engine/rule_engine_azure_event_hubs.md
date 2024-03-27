@@ -70,7 +70,7 @@ Azure Event Hubs provides you with a Kafka endpoint. This endpoint enables your 
 
    ![azure_event_hubs_sas_1](./_assets/azure_event_hubs_sas_1.png)
 
-   Then you can get the connection string and authentication information for further use.
+   Afterwards, you can obtain the `Connection string-primary key`, which serves as the Kafka password for further use.
    ![azure_event_hubs_sas_2](./_assets/azure_event_hubs_sas_2.png)
 
 5. Create a consumer group (Optional)
@@ -84,7 +84,16 @@ Go to the `Data Integrations` page，select the Kafka resource as the access met
 
 1. Create kafka resources and verify that they are available.
 
-   Click kafka resources, fill in the kafka connection details, enable SSL and then click test. Please check the Azure Event Hubs service if the test fails.
+   To configure Kafka resources, follow these steps:
+
+   - Click on "Kafka Resources" to access the Kafka connection details.
+   - Fill in the required Kafka connection information:
+     - Kafka Server: `<NamespaceName>.servicebus.windows.net:9093`
+     - Kafka Username: `$ConnectionString`
+     - Kafka Password: `Endpoint=sb://<NamespaceName>.servicebus.windows.net/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>;EntityPath=<EventHubName>`
+   - Ensure that SSL is enabled.
+  
+   After filling in the details, click on the "Test" button.
 
    ![azure_event_hubs_create_resource](./_assets/azure_event_hubs_create_resource.png)
 

@@ -49,7 +49,7 @@ For detailed information on the format and usage of Rule SQL statements, refer t
 
 ## Create Rules
 
-Go to your deployment and click **Data Integration (Beta)** from the left-navigation menu to enter the Data Integration page. 
+Go to your deployment and click **Data Integration** from the left-navigation menu to enter the Data Integration page. 
 
 If you have created a Connector for connecting to the cloud resources, click **New Rule** in the upper left corner of the **Rule List** to enter the **New Rule** page. You can also create a new rule by clicking the rule creation button in the Connector list.
 
@@ -109,7 +109,7 @@ The following steps demonstrate how to add an action to republish the original m
 4. In the **Successful new rule** pop-up, click **Back to Rules** to complete the rule creation. 
 
 
-### Add Action for Forwarding Data to Target Services 
+### Add Action for Forwarding Data to Target Services
 
 You can also add actions to forward the processed results to target services using associated Connectors. On the **New Action** step page, select the target Connector from the Connector drop-down list. For details on the action configuration, see [Ingest MQTT Data into HTTP Server](./http_server.md) and [Stream MQTT Data into Apache Kafka](./kafka.md).
 
