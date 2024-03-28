@@ -1,11 +1,11 @@
 {
   "cn": [
     {
-      "title": "EMQX Cloud",
+      "title": "EMQX Cloud 文档中心",
       "path": "./"
     },
     {
-      "title": "概览",
+      "title": "EMQX Cloud 概览",
       "path": "overview"
     },
     {
@@ -63,6 +63,32 @@
             {
               "title": "私网连接 PrivateLink 设置",
               "path": "deployments/privatelink"
+            }
+          ]
+        },
+        {
+          "title": "创建 BYOC 部署",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "部署前置准备",
+              "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "TLS/SSL 设置",
+              "path": "deployments/byoc_ssl"
+            },
+            {
+              "title": "BYOC 许可证",
+              "path": "deployments/byoc_license"
+            },
+            {
+              "title": "执行部署",
+              "path": "create/byoc"
+            },
+            {
+              "title": "VPC 对等连接设置",
+              "path": "deployments/byoc_vpc_peering"
             }
           ]
         },
@@ -159,7 +185,7 @@
       "children": [
         {
           "title": "项目管理",
-          "path": "deployments/project"
+          "path": "feature/project"
         },
         {
           "title": "角色和权限",
@@ -563,11 +589,11 @@
   ],
   "en": [
     {
-      "title": "Product Overview",
+      "title": "Introduction",
       "path": "./"
     },
     {
-      "title": "Introduction",
+      "title": "Product Overview",
       "path": "overview"
     },
     {
@@ -636,6 +662,32 @@
                   "path": "deployments/privatelink-azure"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "title": "Create BYOC Deployment",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "Deployment Prerequisite",
+              "path": "deployments/byoc_prerequisite"
+            },
+            {
+              "title": "TLS/SSL",
+              "path": "deployments/byoc_ssl"
+            },
+            {
+              "title": "BYOC License",
+              "path": "deployments/byoc_license"
+            },
+            {
+              "title": "Create Deployment",
+              "path": "create/byoc"
+            },
+            {
+              "title": "VPC Peering Setting",
+              "path": "deployments/byoc_vpc_peering"
             }
           ]
         },
@@ -910,7 +962,7 @@
     {
       "title": "Data Integration",
       "path": "data_integration/introduction",
-      "collapsed": false,
+      "collapsed": true,
       "children": [
         {
           "title": "Connector",
