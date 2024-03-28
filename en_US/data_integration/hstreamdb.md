@@ -221,7 +221,7 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
 
    ```yaml
    version: '3.9'
-
+   
    services:
      step-ca:
        image: smallstep/step-ca:0.23.0
@@ -233,7 +233,7 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
        environment:
          - DOCKER_STEPCA_INIT_NAME=HStream
          - DOCKER_STEPCA_INIT_DNS_NAMES=step-ca
-
+   
      generate-hstream-cert:
        image: smallstep/step-ca:0.23.0
        container_name: quickstart-tls-generate-hstream-cert
@@ -256,7 +256,7 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
            --san localhost \
            --san 127.0.0.1 \
            --san < server ip >
-
+   
      hserver0:
        image: hstreamdb/hstream:v0.19.3
        container_name: quickstart-tls-hserver-0
@@ -311,10 +311,10 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
            --enable-tls \
            --advertised-listeners l1:hstream://< server ip >:26570 \
            --listeners-security-protocol-map l1:plaintext
-
+   
            # NOTE:
            # advertised-listeners ip addr should same as container addr for tls listener
-
+   
      hserver1:
        image: hstreamdb/hstream:v0.19.3
        container_name: quickstart-tls-hserver-1
@@ -369,10 +369,10 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
            --enable-tls \
            --advertised-listeners l1:hstream://< server ip >:26572 \
            --listeners-security-protocol-map l1:plaintext
-
+   
            # NOTE:
            # advertised-listeners ip addr should same as container addr for tls listener
-
+   
      hserver-init:
        image: hstreamdb/hstream:v0.19.3
        container_name: quickstart-tls-hserver-init
@@ -396,7 +396,7 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
                [ $$timeout -le 0 ] && echo 'Timeout!' && exit 1;
            done; \
            /usr/local/bin/hadmin server --host hserver0 --port 26570 init
-
+   
      hstore:
        image: hstreamdb/hstream:v0.19.3
        container_name: quickstart-tls-hstore
@@ -413,7 +413,7 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
            --use-tcp --tcp-host $$(hostname -I | awk '{print $$1}') \
            --user-admin-port 6440 \
            --no-interactive
-
+   
      zookeeper:
        image: zookeeper:3.8.1
        container_name: quickstart-tls-zk
@@ -424,7 +424,7 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
        volumes:
          - data_zk_data:/data
          - data_zk_datalog:/datalog
-
+   
    networks:
      quickstart-tls:
        #ipam:
@@ -432,7 +432,7 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
        #  config:
        #    - subnet: "172.100.0.0/24"
        name: quickstart-tls
-
+   
    volumes:
      data_store:
        name: quickstart_tls_data_store
@@ -495,9 +495,9 @@ tls-deploy
 
    </details>
 
-## Create a HStreamDB Connector
+## Create an HStreamDB Connector
 
-Before creating data integration rules, you need to first create a HStreamDB connector to access the HStreamDB server.
+Before creating data integration rules, you need to first create an HStreamDB connector to access the HStreamDB server.
 
 1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
 
@@ -507,7 +507,7 @@ Before creating data integration rules, you need to first create a HStreamDB con
 
    - **Server URL**: IP address and port of the server.
    - **gRPC Timeout**: Specify the maximum amount of time the system will wait for a response from the HStreamDB server when a gRPC request is made. The default value is `30` seconds.
-   - You can click the toggle switch to enable the TLS connection if required. When TLS is enabled, disable **TLS Verify**. Upload the certificates and key generated under the `tls-deploy/ca` directory
+   - You can click the toggle switch to enable the TLS connection if required. When TLS is enabled, disable **TLS Verify**. Upload the certificates and key generated under the `tls-deploy/ca` directory:
      - Upload `ca/hstream.crt` to **TLS Cert**.
      - Upload `ca/hstream.key` to **TLS Key**.
      - Upload `ca/certs/root_ca.crt` to **CA Cert**.
