@@ -101,7 +101,7 @@ Fill the required fields according to the instructions in the table below.
 
 
 :::tip
-To confirm your credit card information, EMQX Cloud charges $1.00 when you first link a credit card to your account. After EMQX Cloud confirms your information, it refunds the $1.00 charge. If you encounter any issues with linking a credit card to your account, reach out to your card provider or banking institution to verify whether they declined the initial charge, which would prevent EMQX Cloud from confirming your information.
+To confirm your credit card information, EMQX Platform charges $1.00 when you first link a credit card to your account. After EMQX Platform confirms your information, it refunds the $1.00 charge. If you encounter any issues with linking a credit card to your account, reach out to your card provider or banking institution to verify whether they declined the initial charge, which would prevent EMQX Platform from confirming your information.
 :::
 
 After you complete the setting, you can:

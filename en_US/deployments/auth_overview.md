@@ -1,6 +1,6 @@
 # Authentication
 
-Authentication is an important component of most applications. The MQTT protocol supports username and password authentication, and enabling identity verification can effectively prevent illegal client connections. In EMQX Cloud, authentication refers to controlling the client's permissions to connect to the server through server-side configuration when a client connects to EMQX Cloud. To provide better security, EMQX supports multiple authentication mechanisms.
+Authentication is an important component of most applications. The MQTT protocol supports username and password authentication, and enabling identity verification can effectively prevent illegal client connections. In EMQX Platform, authentication refers to controlling the client's permissions to connect to the server through server-side configuration when a client connects to EMQX Platform. To provide better security, EMQX supports multiple authentication mechanisms.
 
 ## [Password Authentication (Default)](./default_auth.md)
 

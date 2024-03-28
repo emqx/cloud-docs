@@ -1,6 +1,6 @@
 # Product Plans
 
-EMQX Cloud is a globally available, fully-managed MQTT service platform that can be easily deployed on popular public clouds, offering a tailored solution to meet your specific requirements. Whether you are an individual developer or a global industry leader, EMQX Cloud provides three distinct product plans to better serve you:
+EMQX Platform is a globally available, fully-managed MQTT service platform that can be easily deployed on popular public clouds, offering a tailored solution to meet your specific requirements. Whether you are an individual developer or a global industry leader, EMQX Platform provides three fully-managed product plans to better serve you:
 
 - **Serverless Plan**: Secure and scalable MQTT service, billed based on usage, completely free within the free quota. Supports up to 1000 sessions.
 - **Dedicated Plan**: Deployed in an independent cloud environment, the MQTT cluster service supports advanced features such as real-time data processing, data persistence, message distribution, VPC peering (private network), etc. Highly available and high-performance, it is the best choice for your production environment usage.
@@ -426,7 +426,7 @@ EMQX Cloud is a globally available, fully-managed MQTT service platform that can
 | AWS            | **US:** US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
 | Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
 
-To deploy your EMQX Cluster in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). EMQX Cloud support team will assist you in the process of deploying your instance in the desired region.
+To deploy your EMQX Cluster in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). EMQX support team will assist you in the process of deploying your instance in the desired region.
 
 ## Estimate Your Monthly Usage
 EMQ has offered a [Plans & Pricing](https://www.emqx.com/en/pricing) page, where you can estimate your monthly usage and select a plan that best suits your business needs. For BYOC Plan, the cost of cloud infrastructure primarily depends on your contract with the cloud service provider.

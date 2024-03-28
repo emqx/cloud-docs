@@ -10,7 +10,7 @@ A single piece of client permission data consists of the following parts:
 
 ## [Default Authorization](./default_auth.md)
 
-EMQX Cloud provides a default authentication method, which will authorize based on rules stored in the built-in database.
+EMQX Platform provides a default authentication method, which will authorize based on rules stored in the built-in database.
 
 ## [Extended Authorization](./custom_auth.md)
 
@@ -26,5 +26,5 @@ In addition to the default authorization based on the built-in database, it also
 | **Version**       | **Default Authorization** | **Extended Authorization** |
 | ----------------- | ------------------------- | -------------------------- |
 | Serverless        | ✓                         | ✗                          |
-| Dedicated Edition | ✓                         | ✓                          |
+| Dedicated | ✓                         | ✓                          |
 | BYOC              | ✓                         | ✓                          |

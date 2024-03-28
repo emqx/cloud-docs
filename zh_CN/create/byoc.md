@@ -1,14 +1,14 @@
 # 创建 BYOC 部署
 
-作为一款 MQTT 消息中间件，EMQX Cloud BYOC 支持在您自己的云基础设施中创建部署，确保数据只在您的环境中，安全可控。这种部署方式可以提高数据安全性和可控性，同时也可以避免数据泄漏等风险。另外，EMQX Cloud BYOC 还能够提供更好的性能和可扩展性，以满足不同场景下的需求。本节将介绍如何创建和使用 BYOC 部署。
+作为一款 MQTT 消息中间件，EMQX BYOC 支持在您自己的云基础设施中创建部署，确保数据只在您的环境中，安全可控。这种部署方式可以提高数据安全性和可控性，同时也可以避免数据泄漏等风险。另外，EMQX BYOC 还能够提供更好的性能和可扩展性，以满足不同场景下的需求。本节将介绍如何创建和使用 BYOC 部署。
 
 ## 前置准备
 
-创建 BYOC 部署前，您应首先准备好对应公有云的账号、做好云资源规划、并申请 EMQX Cloud BYOC 产品许可证等。详细信息，请参考[部署前置准备页面](../deployments/byoc_prerequisite.md)。
+创建 BYOC 部署前，您应首先准备好对应公有云的账号、做好云资源规划、并申请 EMQX BYOC 产品许可证等。详细信息，请参考[部署前置准备页面](../deployments/byoc_prerequisite.md)。
 
 ## 准备部署
 
-1. 登录账户，进入 EMQX Cloud [控制台](https://cloud.emqx.com/console/)。
+1. 登录账户，进入 EMQX Platform [控制台](https://cloud.emqx.com/console/)。
 
 2. 在控制台首页或部署列表页，点击**新建部署**。
 
@@ -34,7 +34,7 @@
 
    **EMQX 集群相关配置**
    ::: tip
-   最大连接数需要与您申请的 EMQX Cloud BYOC 许可证保持一致。部署完成后，如需修改相关配置，可通过工单联系我们。
+   最大连接数需要与您申请的 EMQX BYOC 许可证保持一致。部署完成后，如需修改相关配置，可通过工单联系我们。
    :::
    - **最大连接数**：指定部署集群的 MQTT 设备最大连接数。部署完成后，也可通过工单联系我们进行升降此部署规格。
 
@@ -94,9 +94,9 @@
 
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
    
-   - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
+   - `--emqxLicPath`：输入 EMQX BYOC 许可证文件所在的绝对路径。
    
-     此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+     此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 5. 等待数分钟，系统提示确认需要创建的云资源，输入 `yes` 回车后继续。
 
    ```bash
@@ -143,9 +143,9 @@
    - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
    - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。例如：your.domain.com。
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
-   - `--emqxLicPath`：输入 EMQX Cloud BYOC 许可证文件所在的绝对路径。
+   - `--emqxLicPath`：输入 EMQX BYOC 许可证文件所在的绝对路径。
 
-   此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+   此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 5. 等待数分钟，系统提示确认需要创建的云资源，输入 `yes` 回车后继续。
 

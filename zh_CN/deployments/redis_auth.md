@@ -1,6 +1,6 @@
 # Redis 认证
 
-作为密码认证方式的一种，EMQX Cloud 支持通过集成 Redis 进行密码认证。EMQX 支持三种 Redis 部署模式：单节点、Redis Sentinel、Redis Cluster，本节将介绍如何进行相关配置。
+作为密码认证方式的一种，EMQX Platform 支持通过集成 Redis 进行密码认证。EMQX 支持三种 Redis 部署模式：单节点、Redis Sentinel、Redis Cluster，本节将介绍如何进行相关配置。
 
 ## 数据结构与查询指令
 Redis 认证器支持使用 [Redis hashes](https://redis.io/docs/manual/data-types/#hashes) 存储认证数据，用户需要提供一个查询指令模板，且确保查询结果包含以下字段：
@@ -11,7 +11,7 @@ Redis 认证器支持使用 [Redis hashes](https://redis.io/docs/manual/data-typ
 
 ### 加密规则
 
-EMQX Cloud 多数外部认证均可以启用哈希方法，数据源中仅保存密码密文，保证数据安全。启用哈希方法时，用户可以为每个客户端都指定一个 salt（盐）并配置加盐规则，数据库中存储的密码是按照加盐规则与哈希方法处理后的密文。
+外部认证均可以启用哈希方法，数据源中仅保存密码密文，保证数据安全。启用哈希方法时，用户可以为每个客户端都指定一个 salt（盐）并配置加盐规则，数据库中存储的密码是按照加盐规则与哈希方法处理后的密文。
 
 > 可参考：[加盐规则与哈希方法](https://www.emqx.io/docs/zh/v4.3/advanced/auth.html#%E5%AF%86%E7%A0%81%E5%8A%A0%E7%9B%90%E8%A7%84%E5%88%99%E4%B8%8E%E5%93%88%E5%B8%8C%E6%96%B9%E6%B3%95)。
 

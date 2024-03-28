@@ -1,10 +1,10 @@
 # Create Dedicated Deployment
 
-EMQX Cloud's Dedicated Plan offers independent MQTT service clusters with with higher connection and Transactions Per Second (TPS) limits. It also supports more advanced features and complex network architectures. This guide uses the Dedicated Plan (Professional) as an example to walk you through the steps of creating and utilizing EMQX Cloud.
+EMQX Dedicated Plan offers independent MQTT service clusters with with higher connection and Transactions Per Second (TPS) limits. It also supports more advanced features and complex network architectures. This guide uses the Dedicated Plan as an example to walk you through the steps of creating and utilizing EMQX Platform.
 
 ## Create a Deployment
 
-1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
+1. Log in to [EMQX Platform console](https://cloud-intl.emqx.com/console/). 
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
@@ -19,7 +19,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service clusters with with h
    - **Billing Method**: You can select `Hourly billing` (to pay by the hour) or `Annual prepaid` (an annual billing plan).
    - **Deployment Name & Project**: Provide a name for your deployment and select the appropriate project.
 
-5. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Cloud Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
+5. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Platform Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
 
 6. Upon accepting the terms, the deployment will begin. Once the deployment status changes to **Running**, your deployment is successfully created and ready for use.
 
@@ -53,7 +53,7 @@ Provides REST APIs for integration with external systems, such as querying clien
 
 ### [Configure TLS/SSL](../deployments/tls_ssl.md)
 
-EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration and supports self-signed and CA-signed certificates.
+EMQX Dedicated Deployment provides custom one-way/two-way TLS/SSL configuration and supports self-signed and CA-signed certificates.
 
 
 ### [VPC Peering Connections](../deployments/vpc_peering.md)
@@ -62,7 +62,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 
 ### [Configure PrivateLink](../deployments/privatelink.md)
-PrivateLink enables the proprietary network VPC where the EMQX Cloud deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
+PrivateLink enables the proprietary network VPC where the EMQX Platform deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
 
 ### [Internal Load Balancers](../vas/intranet-lb.md)
 
