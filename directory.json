@@ -15,6 +15,7 @@
     {
       "title": "版本和定价",
       "path": "price/overview",
+      "collapsed":true,
       "children": [
         {
           "title": "版本介绍",
@@ -29,6 +30,7 @@
     {
       "title": "快速入门",
       "path": "quick_start/introduction",
+      "collapsed":true,
       "children": [
         {
           "title": "使用 MQTTX 连接/验证部署",
@@ -39,6 +41,7 @@
     {
       "title": "创建部署",
       "path": "create/overview",
+      "collapsed":true,
       "children": [
         {
           "title": "创建 Serverless 部署",
@@ -122,7 +125,7 @@
       "children": [
         {
           "title": "默认授权",
-          "path": "default_authz"
+          "path": "deployments/default_authz"
         },
         {
            "title": "扩展授权",
@@ -152,13 +155,10 @@
     {
       "title": "项目和用户管理",
       "path": "feature/overview",
+      "collapsed":true,
       "children": [
         {
-          "title": "创建项目",
-          "path": "feature/project_center"
-        },
-        {
-          "title": "管理项目",
+          "title": "项目管理",
           "path": "deployments/project"
         },
         {
@@ -166,7 +166,7 @@
           "path": "feature/role"
         },
         {
-          "title": "子用户管理",
+          "title": "用户管理",
           "path": "feature/user"
         },
         {
@@ -213,11 +213,14 @@
         },
         {
           "title": "告警",
-          "path": "deployments/alerts"
-        },
-        {
-          "title": "Webhook 告警",
-          "path": "deployments/alerts_webhook"
+          "path": "deployments/alerts",
+          "collapsed":true,
+          "children":[
+            {
+              "title": "Webhook 告警",
+              "path": "deployments/alerts_webhook"
+            }
+          ]
         }
       ]
     },
@@ -574,6 +577,7 @@
     {
       "title": "Plans and Pricing",
       "path": "price/overview",
+      "collapsed":true,
       "children": [
         {
           "title": "Product Plans",
@@ -588,6 +592,7 @@
     {
       "title": "Get Started",
       "path": "quick_start/introduction",
+      "collapsed":true,
       "children": [
         {
           "title": "Use MQTTX to Test Connection",
@@ -598,6 +603,7 @@
     {
       "title": "Create Deployment",
       "path": "create/overview",
+      "collapsed":true,
       "children": [
         {
           "title": "Create Serverless Deployment",
@@ -650,7 +656,7 @@
       "children": [
         {
           "title": "Default Authentication",
-          "path": "default_auth"
+          "path": "deployments/default_auth"
         },
         {
            "title": "Extended Authentication",
@@ -692,7 +698,7 @@
       "children": [
         {
           "title": "Default Authorization",
-          "path": "default_authz"
+          "path": "deployments/default_authz"
         },
         {
            "title": "Extended Authorization",
@@ -729,11 +735,7 @@
       "collapsed": true,
       "children": [
         {
-          "title": "Project Center",
-          "path": "feature/project_center"
-        },
-        {
-          "title": "Project List",
+          "title": "Project Management",
           "path": "feature/project"
         },
         {
@@ -783,16 +785,20 @@
           "path": "deployments/subscription_management"
         },
         {
-          "title": "Retain Message",
+          "title": "Retained Message",
           "path": "deployments/retain_message"
         },
         {
           "title": "Alerts",
-          "path": "deployments/alerts"
-        },
-        {
-          "title": "Webhook alerts",
-          "path": "deployments/alerts_webhook"
+          "path": "deployments/alerts",
+          "collapsed":true,
+          "children":[
+            {
+              "title": "Webhook alerts",
+              "path": "deployments/alerts_webhook"
+            }
+          ]
+
         }
       ]
     },
@@ -902,7 +908,7 @@
       ]
     },
     {
-      "title": "Data Integration (Serverless)",
+      "title": "Data Integration",
       "path": "data_integration/introduction",
       "collapsed": false,
       "children": [
@@ -1013,7 +1019,11 @@
         {
           "title": "Apache IoTDB",
           "path": "data_integration/apache_iotdb"
-        } 
+        },
+        {
+          "title":"GCP PubSub",
+          "path":"data_integration/gcp_pubsub"
+        }
       ]
     },
     {
