@@ -204,7 +204,7 @@ Before creating data integration rules, you need to first create a Confluent con
 4. Click the **Test** button. If the Confluent service is accessible, a success prompt will be returned.
 5. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to new a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Confluent.
 
@@ -241,7 +241,7 @@ Next, you need to new a rule to specify the data to be written and add correspon
 
 Now you have successfully created the rule, and you can see the newly created rule on the Integration -> Rules page, as well as the newly created `action-xxx` on the Actions tab.
 
-## Test the Confluent Rule
+## Test the Rule
 
 To test whether the Confluent Producer rule works as you expect, you can use [MQTTX](https://mqttx.app/) to simulate a client publishing MQTT messages to EMQX.
 

@@ -129,7 +129,7 @@ Before creating data integration rules, you need to first create a MongoDB conne
 6. Click the **Test** button. If the MongoDB service is accessible, a success prompt will be returned.
 7. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to MongoDB.
 

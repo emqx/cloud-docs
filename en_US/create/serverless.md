@@ -6,18 +6,23 @@ EMQX Cloud Serverless Plan offers a cost-effective and efficient way for develop
 One of the biggest advantages of using Serverless deployment is that the billing for connection scenarios is based on actual usage. For more detailed information on the billing system, please refer to the pricing section in [Pricing and Billing](../price/pricing.md).
 
 
-## Create Deployment
+## Create a Deployment
 
-1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
-2. You can create a new deployment for a specific project from either the Console homepage or the deployment list page. Click **+ New**.  
-3. Click **Start for free** on the **Serverless** tab.![create_serverless](./_assets/create_serverless.png)
+1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/).
 
-4. In the **New Deployment** page, you can set the monthly Spend Limit for your Serverless deployment to control usage and avoid unexpected charges beyond the free resources. It's initially set to 0, but can be modified after creation. Then click **Deploy** at the page bottom to start the process. 
+2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
-![create_serverless](./_assets/create_serverless_spendlimit.png)
+3. Select the **Serverless** tab.
 
-5. As part of the deployment process, you'll be asked to agree to the *EMQX Cloud Services Agreement*, please review the agreement carefully and accept it if you agree with its terms. 
-6. After agreeing to the agreement, the deployment process will begin. You can monitor the progress on the **Projects** page, and once the status changes to **Running**, your deployment has been successfully created and is ready for use.
+   ![create_serverless](./_assets/create_serverless.png)
+
+4. Specify the monthly **Spend Limit** for your Serverless deployment. This feature helps manage usage and prevent incurring charges beyond the complimentary resources. By default, it is set to 0 but can be adjusted after creation.
+
+5. Under **Deployment Name & Project**, provide a name for your deployment and select the appropriate project.
+
+6. Click the **Deploy** button on the right to launch the deployment. This stage will prompt you to review and accept the *EMQX Cloud Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
+
+7. Upon accepting the terms, the deployment will begin. The deployment's progress can be tracked on the **Projects** page. Once the status updates to **Running**, your deployment is successfully established and is now operational.
 
 
 ## View Deployment

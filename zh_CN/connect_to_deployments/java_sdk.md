@@ -16,7 +16,7 @@ Eclipse Paho Java 是一个开源的 MQTT 客户端库，可用于在 Java 应�
     - WebSocket 端口: **8083**
     - WebSocket TLS/SSL 端口: **8084**
 
-- 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口  测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)，在部署控制台`认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
+- 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口  测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[客户端认证](../deployments/auth_overview.md)，在部署控制台**访问控制**->**认证** 中设置用户名和密码，用于连接验证。
 
 ### 安装 Maven
 本项目使用 Maven 进行项目的构建，请[安装 Maven](https://maven.apache.org/install.html)。
@@ -46,7 +46,7 @@ mvn install
 
 ## 通过 TCP 端口连接
 
-> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并设置用户名和密码。 注意如果使用基础版，默认端口可能不是 1883，请确认好端口。并且在 [认证鉴权](../deployments/auth_dedicated.md) 中添加认证信息。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并参考 [默认认证](../deployments/default_auth.md)设置用户名和密码。
 
 ### 连接设置
 
@@ -108,7 +108,7 @@ public class SampleCallback implements MqttCallback {
 
 ## 通过 SSL/TLS 端口连接
 
-> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并设置用户名和密码。 注意如果使用基础版，默认端口可能不是 8883，请确认好端口。并且在 [认证鉴权](../deployments/auth_dedicated.md) 中添加认证信息。
+> 示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并参考 [默认认证](../deployments/default_auth.md)设置用户名和密码。
 
 本节介绍了如何通过 SSL/TLS 单向认证方式连接到部署。若您需使用双向认证方式，可以参考[这里](https://github.com/emqx/MQTT-Client-Examples/blob/master/mqtt-client-Java/src/main/java/io/emqx/mqtt/MqttTwoWayTlsSample.java)。
 

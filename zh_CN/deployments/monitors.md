@@ -10,7 +10,7 @@
 查看当前接入服务器或会话尚未过期的的客户端的各项信息和指标数据。
 
 
-## [订阅](./subscription_management.md)
+## [订阅管理](./subscription_management.md)
 订阅显示了当前部署所有客户端订阅的主题，反映了客户端和主题的映射关系。
 
 ## [保留消息](./retain_message.md)
