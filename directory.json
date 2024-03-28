@@ -931,6 +931,10 @@
           "path": "data_integration/http_server"
         },
         {
+          "title": "GCP Pub/Sub",
+          "path": "data_integration/gcp_pubsub"
+        },
+        {
           "title": "Kafka",
           "path": "data_integration/kafka"
         },
