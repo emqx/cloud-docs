@@ -1027,6 +1027,10 @@
           "path": "data_integration/apache_iotdb"
         },
         {
+          "title": "AWS Kinesis",
+          "path": "data_integration/amazon_kinesis"
+        },
+        {
           "title": "Azure Event Hubs",
           "path": "data_integration/azure_event_hubs"
         }
