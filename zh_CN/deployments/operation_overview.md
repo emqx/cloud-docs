@@ -19,7 +19,7 @@
 实时在线查看日志功能。
 
 ## [Prometheus](./prometheus.md)
-调用 Prometheus API 来监控 EMQX Cloud 的关键指标。
+调用 Prometheus API 来监控 EMQX 部署的关键指标。
 
 ## [停止/删除部署](./stop_delete_deployment.md)
 停止和删除部署相关说明。

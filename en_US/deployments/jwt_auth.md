@@ -4,7 +4,7 @@
 
 ## How JWT Authentication Works
 
-Clients carry the JWT in either the username or password fields (depending on the module configuration) when initiating a connection. EMQX Cloud uses the key or certificate configured to decrypt the JWT. If the decryption is successful, authentication is considered successful; otherwise, it fails.
+Clients carry the JWT in either the username or password fields (depending on the module configuration) when initiating a connection. EMQX Platform uses the key or certificate configured to decrypt the JWT. If the decryption is successful, authentication is considered successful; otherwise, it fails.
 
 With the default configuration, once JWT authentication is enabled, connections can be made using any username and the following password, which verifies against the default key field `secret`:
 

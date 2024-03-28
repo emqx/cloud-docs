@@ -1,6 +1,6 @@
 # Redis Authentication
 
-As one method of password authentication, EMQX Cloud supports password authentication through the integration of Redis. EMQX supports three Redis deployment modes: Single Node, Redis Sentinel, and Redis Cluster. This section will introduce how to perform related configurations.
+As one method of password authentication, EMQX Platform supports password authentication through the integration of Redis. EMQX supports three Redis deployment modes: Single Node, Redis Sentinel, and Redis Cluster. This section will introduce how to perform related configurations.
 
 ## Data Structure and Query Command
 
@@ -12,7 +12,7 @@ The Redis authenticator supports using [Redis hashes](https://redis.io/docs/manu
 
 ### Encryption Rules
 
-Most external authentications in EMQX Cloud can enable a hashing method, where only the password's ciphertext is saved in the data source to ensure data security. When enabling the hashing method, users can specify a salt for each client and configure a salting rule, with the password in the database being the ciphertext processed according to the salting rule and hashing method.
+Most external authentications in EMQX Platform can enable a hashing method, where only the password's ciphertext is saved in the data source to ensure data security. When enabling the hashing method, users can specify a salt for each client and configure a salting rule, with the password in the database being the ciphertext processed according to the salting rule and hashing method.
 
 > For reference: Salting Rules and Hashing Methods.
 

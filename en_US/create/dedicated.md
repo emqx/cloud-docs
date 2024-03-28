@@ -1,10 +1,11 @@
 # Create Dedicated Deployment
 
-EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters with higher connection and TPS limits, as well as greater scalability. This guide will use the Dedicated Plan (Professional) as an example to walk you through the steps of creating and utilizing EMQX Cloud.
+
+EMQX Dedicated Plan offers independent MQTT service clusters with with higher connection and Transactions Per Second (TPS) limits. It also supports more advanced features and complex network architectures. This guide uses the Dedicated Plan as an example to walk you through the steps of creating and utilizing EMQX Platform.
 
 ## Create a Deployment
 
-1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
+1. Log in to [EMQX Platform console](https://cloud-intl.emqx.com/console/). 
 
 2. You can create a new deployment for a specific project from either the console homepage or the deployment list page. Click **+ New**.  
 
@@ -27,6 +28,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 6. As part of the deployment process, you'll be asked to agree to the *EMQX Cloud Services Agreement*, please review the agreement carefully and accept it if you agree with its terms. 
 
 7. After agreeing to the agreement, the deployment process will begin and take about 5 minutes to complete. You can monitor the progress on the **Projects** page, and once the status changes to **Running**, your deployment has been successfully created and is ready for use.
+
 
 
 ## View Deployment
@@ -60,7 +62,7 @@ Provides REST APIs for integration with external systems, such as querying clien
 
 ### [Configure TLS/SSL](../deployments/tls_ssl.md)
 
-EMQX Cloud **Professional Deployment** provides custom one-way/two-way TLS/SSL configuration and supports self-signed and CA-signed certificates.
+EMQX Dedicated Deployment provides custom one-way/two-way TLS/SSL configuration and supports self-signed and CA-signed certificates.
 
 
 ### [VPC Peering Connections](../deployments/vpc_peering.md)
@@ -69,7 +71,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 
 ### [Configure PrivateLink](../deployments/privatelink.md)
-PrivateLink enables the proprietary network VPC where the EMQX Cloud deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
+PrivateLink enables the proprietary network VPC where the EMQX Platform deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
 
 ### [Internal Load Balancers](../vas/intranet-lb.md)
 

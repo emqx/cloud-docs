@@ -1,10 +1,10 @@
 # Upgrade Policy
 
-This page introduces the strategies for console upgrades, EMQX upgrades, and deprecations in EMQX Cloud.
+This page introduces the strategies for console upgrades, EMQX upgrades, and deprecations in EMQX Platform.
 
 ## Console Upgrades
 
-Console upgrades involve all aspects of the EMQX Cloud console, including functionality, interface, and user experience, apart from EMQX upgrades and deprecations.
+Console upgrades involve all aspects of the EMQX Platform console, including functionality, interface, and user experience, apart from EMQX upgrades and deprecations.
 
 ### Potential User Impact
 - Minimal: Functionality upgrades will consider user data security and compatibility, resulting in a minor impact on user operations.
@@ -22,7 +22,7 @@ Every two weeks.
 Sometimes communicated: Communication may include email notifications, updated documents, and release notes, and/or communication from sales and customer operations.
 
 ### Upgrade Approach
-EMQX Cloud conducts the upgrade.
+EMQX Platform conducts the upgrade.
 
 
 ## EMQX Deployment Upgrades
@@ -46,7 +46,7 @@ EMQX deployment upgrades include version upgrades for all deployed products.
 
   ::: warning 
 
-  EMQX Cloud provides support for a specific EMQX version for a maximum of 2 years. 
+  EMQX Platform provides support for a specific EMQX version for a maximum of 2 years. 
 
   :::
 
@@ -56,11 +56,11 @@ Confirmation and notification of upgrades, including details of the scope and im
 
 
 ### Upgrade Approach
-Upgrade timing may vary based on user versions and business requirements. EMQX Cloud coordinates with customers to schedule upgrades, aiming to avoid high-risk periods. However, EMQX Cloud retains the final authority for upgrades.
+Upgrade timing may vary based on user versions and business requirements. EMQX Platform coordinates with customers to schedule upgrades, aiming to avoid high-risk periods. However, EMQX Platform retains the final authority for upgrades.
 
 
 ## Deprecations
-Deprecations refer to the removal of any feature that users may have been utilizing in EMQX Cloud.
+Deprecations refer to the removal of any feature that users may have been utilizing in EMQX Platform.
 
 
 ### Potential User Impact
@@ -79,5 +79,5 @@ Confirmation and notification of discontinued features are provided to users 90 
 
 
 ### Upgrade Approach
-EMQX Cloud conducts the upgrade.
+EMQX Platform conducts the upgrade.
 

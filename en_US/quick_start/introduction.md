@@ -1,10 +1,10 @@
 # Get Started
 
-This section guides you through a quick experience of the various functions and features of the EMQX Cloud product, starting from creating an account. If you already have an account, you can skip this step and directly check [Create Deployment](../create/overview.md).
+This section guides you through a quick experience of the various functions and features of the EMQX Platform product, starting from creating an account. If you already have an account, you can skip this step and directly check [Create Deployment](../create/overview.md).
 
-## EMQX Cloud Trial
+## EMQX Platform Trial
 
-You can explore and try out EMQX products through our Serverless free quota or proprietary version's 14-day free trial plan.
+You can explore and try out EMQX products through our Serverless free quota or Dedicated plan's 14-day free trial.
 
 Free Tier for Serverless Plan includes:
 
@@ -17,7 +17,7 @@ Free Tier for Serverless Plan includes:
 * 1000 sessions
 * 14 days free trial
 * 100 GB free traffic
-* Data integration, monitoring management, and other EMQX Cloud proprietary features
+* Data integration, monitoring management, and other proprietary features
 * Supports MQTT, WebSockets protocol connections.
 
 Free trial deployment precautions:
@@ -26,17 +26,17 @@ Free trial deployment precautions:
 - After the trial expires, if your account has an available balance, the deployment will continue to run and charges will automatically be applied on an hourly basis.
 - After the trial expires, if your account has no available balance, the deployment will be preserved for 3 days. After 3 days, the trial deployment will be automatically deleted.
 
-## Create and Log into an EMQX Cloud Account
+## Create and Log into an EMQX Platform Account
 
 ### [Sign Up](https://accounts.emqx.com/signup?continue=https://www.emqx.com/cn/cloud)
 
 1. Enter the required information such as name, email, password, and mobile number; according to regulatory requirements, registration requires mobile verification for real-name authentication.
-2. Click **Start free trial**, and EMQX Cloud will automatically send a confirmation email to the email address you provided.
+2. Click **Start free trial**, and EMQX Platform will automatically send a confirmation email to the email address you provided.
 4. To verify your new account, click the link in the confirmation email, which will verify your account and return you to the login page.
 
 ### [Sign In](https://accounts.emqx.com/signin?continue=https%3A%2F%2Fcloud-intl.emqx.com%2Fconsole%2Fdeployments%2F0%3Foper%3Dnew)
 
-Enter your email and password, then click **Sign In** to be redirected to the EMQX Cloud console.
+Enter your email and password, then click **Sign In** to be redirected to the EMQX Platform console.
 
 ### [Password Recovery](https://accounts.emqx.com/forgot-password?continue=https%3A%2F%2Fwww.emqx.com%2Fcn%2Fcloud)
 
@@ -44,7 +44,7 @@ If you forget your password, you can click **Forgot your password?** on the logi
 
 ## Create a Deployment
 
-Log into the [EMQX Cloud Console](https://cloud.emqx.com/console/), where you can view the summary information of the current deployment, manage projects and users, etc. Next, we will guide you through the quick process of creating a deployment.
+Log into the [EMQX Platform Console](https://cloud.emqx.com/console/), where you can view the summary information of the current deployment, manage projects and users, etc. Next, we will guide you through the quick process of creating a deployment.
 
 1. On the start page, click **New Deployment** to go to the deployment creation page.
 
@@ -52,7 +52,7 @@ Log into the [EMQX Cloud Console](https://cloud.emqx.com/console/), where you ca
 
    
 
-2. Choose a deployment to create from the existing versions, you can create a [Serverless Deployment](../create/serverless.md) or a  [Dedicated deployment](../create/dedicated.md). If you opt for a free trial of the EMQX Cloud Dedicated version, you will also need to configure the cloud platform, deployment region, connection specifications, billing method, etc. Finally, confirm your deployment information and click **Deploy Now**.
+2. Choose a deployment to create from the existing versions, you can create a [Serverless Deployment](../create/serverless.md) or a  [Dedicated deployment](../create/dedicated.md). If you opt for a free trial of the EMQX Dedicated version, you will also need to configure the cloud platform, deployment region, connection specifications, billing method, etc. Finally, confirm your deployment information and click **Deploy Now**.
 
    ![add_users](./_assets/create_free_trial.png)
 
@@ -74,6 +74,6 @@ Keep this user information safe. Later, when testing MQTTX client connections, y
 
 ## Use MQTTX to Verify Connection
 
-EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to your deployment, but you can also use familiar [SDKs or other tools](../connect_to_deployments/overview.md) to connect to your deployment. Before using MQTTX to connect to your deployment, you need to obtain the deployment's authentication information.
+EMQX Platform recommends using [MQTTX](https://mqttx.app) to test the connection to your deployment, but you can also use familiar [SDKs or other tools](../connect_to_deployments/overview.md) to connect to your deployment. Before using MQTTX to connect to your deployment, you need to obtain the deployment's authentication information.
 
 Next, we will introduce how to test the connection using [MQTTX](https://mqttx.app/zh/). For detailed content, refer to [Testing Connection with MQTTX](../connect_to_deployments/mqttx.md).

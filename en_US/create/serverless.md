@@ -1,16 +1,17 @@
 
 # Create Serverless Deployment
 
-EMQX Cloud Serverless Plan offers a cost-effective and efficient way for developers or small businesses to test and develop IoT applications. This plan is based on secure and scalable clusters and can be easily deployed in just a few simple steps.
+EMQX Serverless Plan offers a cost-effective and efficient way for developers or small businesses to test and develop IoT applications. This plan is based on secure and scalable clusters and can be easily deployed in just a few simple steps.
 
 One of the biggest advantages of using Serverless deployment is that the billing for connection scenarios is based on actual usage. For more detailed information on the billing system, please refer to the pricing section in [Pricing and Billing](../price/pricing.md).
 
 
 ## Create Deployment
 
-1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/). 
+1. Log in to [EMQX Platform console](https://cloud-intl.emqx.com/console/). 
 2. You can create a new deployment for a specific project from either the Console homepage or the deployment list page. Click **+ New**.  
 3. Click **Start for free** on the **Serverless** tab.![create_serverless](./_assets/create_serverless.png)
+
 
 4. In the **New Deployment** page, you can set the monthly Spend Limit for your Serverless deployment to control usage and avoid unexpected charges beyond the free resources. It's initially set to 0, but can be modified after creation. Then click **Deploy** at the page bottom to start the process. 
 
@@ -18,6 +19,7 @@ One of the biggest advantages of using Serverless deployment is that the billing
 
 5. As part of the deployment process, you'll be asked to agree to the *EMQX Cloud Services Agreement*, please review the agreement carefully and accept it if you agree with its terms. 
 6. After agreeing to the agreement, the deployment process will begin. You can monitor the progress on the **Projects** page, and once the status changes to **Running**, your deployment has been successfully created and is ready for use.
+
 
 
 ## View Deployment
@@ -43,7 +45,7 @@ Serverless deployment only supports ports `8883` (mqtts) and `8084` (wss). If yo
 
 ## Connect to Serverless Deployment Using MQTTX
 
-EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) for connection. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and user authentication information.
+EMQX Platform recommends using [MQTTX](https://mqttx.app) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) for connection. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and user authentication information.
 
 1. Get the connection information. Click **Overview** on the left navigation menu to find the deployment connection address and port. 
 

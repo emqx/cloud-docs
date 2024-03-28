@@ -4,7 +4,7 @@
 
 After the initial activation of the NAT Gateway, you will automatically receive a 14-day free trial. After the first trial instance ends or is deleted, the next created instance will be charged.
 
-At the end of the trial you will be billed at **$0.10/hour** and will be charged on an hourly basis to your account balance under your main EMQX Cloud account. If the account balance is insufficient, the service will be automatically deleted.
+At the end of the trial you will be billed at **$0.10/hour** and will be charged on an hourly basis to your account balance under your main EMQX Platform account. If the account balance is insufficient, the service will be automatically deleted.
 
 Details of the charges can be viewed in the **Billing** page.
 
@@ -17,7 +17,7 @@ When the deployment hosting the value-added service is stopped, value-added serv
 
 After the initial activation, you will automatically receive a 14-day free trial. Charges will apply to the next instance created after the first trial instance ends or is deleted.
 
-At the end of the trial you will be billed at **$0.05/hour** and will be charged on an hourly basis to your account balance under your main EMQX Cloud account. If the account balance is insufficient, the service will be automatically deleted.
+At the end of the trial you will be billed at **$0.05/hour** and will be charged on an hourly basis to your account balance under your main EMQX Platform account. If the account balance is insufficient, the service will be automatically deleted.
 
 Details of the charges can be viewed on the **Billing** page.
 

@@ -4,7 +4,7 @@
 This feature is only available for the Dedicated plan.
 :::
 
-EMQX Cloud **Professional Deployment** recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
+EMQX Dedicated Deployment recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
 
 The following table provides an overview of different requirements for certifications in one-way and two-way authentication modes. 
 
@@ -15,7 +15,7 @@ The following table provides an overview of different requirements for certifica
 
 ## Certificate Requirements
 
-- The certificate must specify the encryption algorithm and key size. EMQX Cloud supports the following algorithms:
+- The certificate must specify the encryption algorithm and key size. EMQX Dedicated supports the following algorithms:
 
   - 1024 bit RSA (RSA_1024)
   - 2048 bit RSA (RSA_2048)
@@ -60,9 +60,9 @@ The following table provides an overview of different requirements for certifica
 
 ## Configure One-Way TLS/SSL
 
-The following instructions guide you to configure one-way TLS/SSL in [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [One-Way TLS/SSL Tutorial](https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null) for each step of the setup.
+The following instructions guide you to configure one-way TLS/SSL in [EMQX Platform Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [One-Way TLS/SSL Tutorial](https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null) for each step of the setup.
 
-1. Login to the EMQX Cloud Console.
+1. Login to the EMQX Platform Console.
 2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
     - **TLS/SSL type**: Choose one-way (only the client verifies the server-side certificate).
     - **Certificate body**: Custom server-side certificate.
@@ -75,7 +75,7 @@ The following instructions guide you to configure one-way TLS/SSL in [EMQX Cloud
 
 ### Test One-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect and test the TLS/SSL configuration. 
 
 1. In MQTTX Client, create a new connection.
 
@@ -100,9 +100,9 @@ Before testing, make sure that you have created authentication information, refe
 
 ## Configure Two-Way TLS/SSL
 
-The following instructions guide you to configure two-way TLS/SSL in [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [Two-Way TLS/SSL Tutorial](https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null) for each step of the setup.
+The following instructions guide you to configure two-way TLS/SSL in [EMQX Platform Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [Two-Way TLS/SSL Tutorial](https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null) for each step of the setup.
 
-1. Login to the EMQX Cloud Console.
+1. Login to the EMQX Platform Console.
 2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
     - **TLS/SSL type**: Select two-way (client and server verify each other's certificates).
     - **Certificate body**: Custom server-side certificate.
@@ -116,7 +116,7 @@ The following instructions guide you to configure two-way TLS/SSL in [EMQX Cloud
 
 ### Test Two-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect and test the TLS/SSL configuration. 
 
 1. In MQTTX Client, create a new connection.
 
@@ -145,7 +145,7 @@ Before testing, make sure that you have created authentication information, refe
 
 Deleting the certificate will disconnect the client from `8883` and `8084`. Make sure that the deletion does not affect your business.
 
-1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
+1. Login to the [EMQX Platform Console](<https://cloud-intl.emqx.com/console>).
 2. Click the delete icon for the certificate in the **TLS/SSL Config** section.
 3. Click **OK** in the dialog to complete the deletion.
 
@@ -212,7 +212,7 @@ subjectAltName = @alt_names
 subjectAltName = @alt_names
 
 [alt_names]
-# EMQX Cloud deployment connections address
+# EMQX Platform deployment connections address
 # IP.1 = <IP Connect Address>
 DNS.1 = <Domain Connect Address>
 EOF

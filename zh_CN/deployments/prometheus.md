@@ -1,7 +1,7 @@
 # Prometheus 监控告警
 
-EMQX Cloud 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX Cloud 的关键指标。
-在本文中我们将介绍如何配置 Prometheus 服务，从 EMQX Cloud API 读取关键指标，以及如何使用 Grafana 查看指标。
+EMQX Platform 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX Platform 的关键指标。
+在本文中我们将介绍如何配置 Prometheus 服务，从 EMQX Platform API 读取关键指标，以及如何使用 Grafana 查看指标。
 
 ::: warning
 该功能仅适用于专有版和 BYOC 部署。
@@ -9,7 +9,7 @@ EMQX Cloud 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX 
 
 ## API 配置
 
-在 EMQX Cloud 部署控制台找到概览 - REST API，获取到 API 地址，点击新建应用，获取 APP ID、APP Secret。
+在 EMQX Platform 部署控制台找到概览 - REST API，获取到 API 地址，点击新建应用，获取 APP ID、APP Secret。
 
 ![cloud_prometheus_api](./_assets/prometheus_api.png)
 
@@ -287,7 +287,7 @@ emqx_packets_subscribe_received 0
 
 3. 导⼊ Grafana 数据模板
 
-    EMQX Cloud 提供了 Grafana 的 Dashboard 的模板文件。这些模板包含了所有 EMQX Cloud 监控数据的展示。用户可直接导入到 Grafana 中，进行显示 EMQX 的监控状态的图标。
+    EMQX Platform 提供了 Grafana 的 Dashboard 的模板文件。这些模板包含了所有 EMQX Platform 监控数据的展示。用户可直接导入到 Grafana 中，进行显示 EMQX 的监控状态的图标。
 
     模板文件位于：[emqx_prometheus/grafana_template/EMQ.json](https://github.com/emqx/emqx-prometheus/blob/master/grafana_template/EMQ.json)，可通过 Upload JSON file 的方式上传本地的 EMQ.json ⽂件，或者通过 Import via panel json 手动编写。
 
@@ -295,11 +295,11 @@ emqx_packets_subscribe_received 0
 
 ## 指标详解
 
-完成整套系统搭建并运行一段时间后，EMQX Cloud Prometheus 收集到的数据将展示在 Grafana 上，包括客户端数、订阅数、主题数、消息数、报文数等业务信息历史统计，可以查看每种指标对应的展示图表，某个时间点的详细信息.
+完成整套系统搭建并运行一段时间后，EMQX Platform Prometheus 收集到的数据将展示在 Grafana 上，包括客户端数、订阅数、主题数、消息数、报文数等业务信息历史统计，可以查看每种指标对应的展示图表，某个时间点的详细信息.
 
 ![Grafana](./_assets/emqx_grafana_metrics.png)
 
-Prometheus 跟踪您的 EMQX Cloud 部署的以下指标数据。
+Prometheus 跟踪您的 EMQX Platform 部署的以下指标数据。
 
 | 指标名                               | 指标类型 | 指标说明                            |
 | ------------------------------------ | -------- | ----------------------------------- |

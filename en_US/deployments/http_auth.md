@@ -27,7 +27,7 @@ Body:
 
 In the deployment, click **Access Control** -> **Authentication** -> **Extended Authentication**, then click **HTTP Configure Authentication** to create a new authentication.
 
-For identity verification, EMQX Cloud will use the current client information to fill and initiate the user-configured authentication query request, querying the client's authentication data on the HTTP server side.
+For identity verification, EMQX Platform will use the current client information to fill and initiate the user-configured authentication query request, querying the client's authentication data on the HTTP server side.
 
 You can complete the related configurations as follows:
 

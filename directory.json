@@ -228,10 +228,6 @@
         {
           "title": "日志",
           "path": "deployments/logs"
-        },
-        {
-          "title": "Websocket 工具",
-          "path": "deployment/websocket_tool"
         }
       ]
     },
@@ -650,7 +646,7 @@
       "children": [
         {
           "title": "Default Authentication",
-          "path": "default_auth"
+          "path": "deployments/default_auth"
         },
         {
            "title": "Extended Authentication",
@@ -692,7 +688,7 @@
       "children": [
         {
           "title": "Default Authorization",
-          "path": "default_authz"
+          "path": "deployments/default_authz"
         },
         {
            "title": "Extended Authorization",
@@ -702,10 +698,6 @@
              {
               "title": "HTTP Authorization",
               "path": "deployments/http_authz"
-             },
-             {
-              "title": "JWT Authorization",
-              "path": "deployments/jwt_authz"
              },
              {
               "title": "Redis Authorization",
@@ -803,10 +795,6 @@
         {
           "title": "Logs",
           "path": "deployments/logs"
-        },
-        {
-          "title": "Websocket Tool",
-          "path": "deployment/websocket_tool"
         }
       ]
     },

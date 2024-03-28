@@ -1,14 +1,14 @@
 # AWS PrivateLink
 
-This page provides instructions on how to enable the PrivateLink feature for the EMQX Cloud deployment on the Amazon AWS platform. Once the PrivateLink is enabled, the EMQX Cloud deployment can access AWS hosted services through a private connection in your virtual network. In the private connection, the EMQX Cloud deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
+This page provides instructions on how to enable the PrivateLink feature for the EMQX Platform deployment on the Amazon AWS platform. Once the PrivateLink is enabled, the EMQX Platform deployment can access AWS hosted services through a private connection in your virtual network. In the private connection, the EMQX Platform deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
 
 <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/vu_3KW4pq9A/?autoplay=1&null" />
 
 ## Create Endpoint Service Using AWS PrivateLink
 
-When creating Endpoint Service in AWS, the LB Availability Zone [AZ ID](https://us-east-1.console.aws.amazon.com/ram/home?region=us-east-1#Home) created should be identical to that in the EMQX Cloud deployment. To get the AZ ID in EMQX cloud:
+When creating Endpoint Service in AWS, the LB Availability Zone [AZ ID](https://us-east-1.console.aws.amazon.com/ram/home?region=us-east-1#Home) created should be identical to that in the EMQX Platform deployment. To get the AZ ID in EMQX Platform:
 
-Login to [EMQX Cloud Console](<https://cloud.emqx.com/console>), go to the desired deployment creation details, and click the `+PrivateLink` button to get the deployment availability zone.
+Login to [EMQX Platform Console](<https://cloud.emqx.com/console>), go to the desired deployment creation details, and click the `+PrivateLink` button to get the deployment availability zone.
 
 ![lb](./_assets/deployment_privatelink_details.png)
 
@@ -30,7 +30,7 @@ Before you can configure PrivateLink, you need to complete the following prerequ
    Then register target group and create instance.
    ![lb](./_assets/lb_target_group_3.png)
 
-4. Create and configure the Load Balancer with the AZ ID you obtained from EMQX Cloud Console.
+4. Create and configure the Load Balancer with the AZ ID you obtained from EMQX Platform Console.
 
    Select the type of load balancing as **Network Load Balancer**.
    ![lb](./_assets/lb_type.png)
@@ -57,15 +57,15 @@ Before you can configure PrivateLink, you need to complete the following prerequ
 
    You can refer to [AWS Help](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html#create-endpoint-service-nlb) to complete the above configuration.
 
-## Enable EMQX Cloud PrivateLink
+## Enable EMQX Platform PrivateLink
 
-1. After getting the AWS ARN where the deployment is located in EMQX Cloud console, add it to the allowed principals entry of your AWS Platform-Endpoint Service.
+1. After getting the AWS ARN where the deployment is located in EMQX Platform console, add it to the allowed principals entry of your AWS Platform-Endpoint Service.
 
    ![lb](./_assets/endpoint_service_grant.png)
 
    Once added, click `Allow principals and go to the next step`.
 
-2. Locate the Endpoint service on your AWS platform, copy the service name, fill it to the EMQX Cloud Endpoint service name, and click `Create PrivateLink`.
+2. Locate the Endpoint service on your AWS platform, copy the service name, fill it to the EMQX Platform Endpoint service name, and click `Create PrivateLink`.
 
    ![lb](./_assets/p6.png)
 
@@ -85,7 +85,7 @@ Before you can configure PrivateLink, you need to complete the following prerequ
 
 To remove the private connection, you need to ensure that the PrivateLink status is `running`.
 
-> - If you need to remove the PrivateLink service from your AWS platform, please remove the PrivateLink from EMQX Cloud console first, otherwise it will cause PrivateLink status of the deployment to be `failed`.
+> - If you need to remove the PrivateLink service from your AWS platform, please remove the PrivateLink from EMQX Platform console first, otherwise it will cause PrivateLink status of the deployment to be `failed`.
 > - Please ensure that there are no associated resources in the deployment before removing the PrivateLink, otherwise it will lead to unpredictable risks.
 
 1. Go to Deployment Details
