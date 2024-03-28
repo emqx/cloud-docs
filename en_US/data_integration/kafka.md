@@ -74,7 +74,7 @@ This section introduces the preparatory work needed to create Kafka Data Integra
 
 Before creating data integration rules, you need to first create a Kafka connector to access the Kafka server.
 
-1. Go to your deployment. Click **Data Integration (Beta)** from the left-navigation menu. 
+1. Go to your deployment. Click **Data Integration** from the left-navigation menu. 
 2. If it is the first time for you to create a connector, select **Kafka** under the **Data Forward** category. If you have already created connectors, select **New Connector** and then select **Kafka** under the **Data Forward** category.
 3. On the **New Connector** page, configure the following options:
    - **Connector Name**: The system will automatically generate a connector name, or you can name it yourself. In this example, you can use `my_kafkaserver`.
@@ -83,7 +83,7 @@ Before creating data integration rules, you need to first create a Kafka connect
 4. Click the **Test** button. If the Kafka service is accessible, a success prompt will be returned. 
 5. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Kafka.
 
@@ -129,7 +129,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 7. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
-## Test Rules
+## Test the Rule
 
 You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting, but you can also use any other client.
 

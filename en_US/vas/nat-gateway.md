@@ -1,27 +1,27 @@
 # NAT Gateway
 
 ::: warning Note
-This feature is not available in the standard deployment.
+
+This feature is exclusive to the Dedicated Edition. You need to create a Dedicated Edition deployment before purchasing this service. 
+
 :::
 
-NAT gateways can provide network address translation services to provide Professional deployments with the ability to access public network resources without the need for VPC peering connections.
+The NAT gateway provides network address translation services. Before the NAT gateway is activated, some functions of the Dedicated Edition deployment, such as extended authentication and data integration, cannot access public network resources. Once activated, it allows access through public network addresses.
 
-Before start, you will need to complete the following actions:
+## Activate the Service
 
-* Professional deployments (EMQX clusters) have been created on EMQX Cloud.
+You can activate the NAT Gateway service by selecting the NAT Gateway card in the top menu bar under **Value-Added Services (VAS)** or choosing to open it from the tag bar at the bottom of the deployment overview.
 
-## Service Activation
+## Use the Service
 
-You can choose to enable the NAT gateway service from the top menu bar - `VAS` or at the bottom of the deployment overview.
+After purchasing the NAT Gateway value-added service, you can see the creation status of the NAT Gateway in the corresponding deployment overview, waiting for it to be completed. Once the NAT Gateway's status is running, the deployment can access public network resources.
 
-![vas](./_assets/intro_01.png)
+## Test the Service
 
-![overview_vas](./_assets/overview_vas.png)
+### Access Public Network Resources Without NAT Gateway
 
-## Usage
+![no_nat_gateway_access_resource](./_assets/no_nat_gateway_access_resource.png)
 
-After completing the NAT gateway value added service purchase, you can see the NAT gateway creation status at the appropriate deployment overview and wait for the creation to complete.
+### Access Public Network Resources After Activating NAT Gateway
 
-![intranet_lb_info](./_assets/nat_gateway_info.png)
-
-When the status of the NAT gateway is running, the deployment can access public network resources.
+![nat_gateway_access_resource](./_assets/nat_gateway_access_resource.png)

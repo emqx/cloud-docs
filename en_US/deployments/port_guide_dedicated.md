@@ -8,7 +8,6 @@ The following table lists the protocols and ports used for connecting to the Ded
 
 | **Plans**                | **TCP port(mqtt)** | **MQTT over TLS/SSL port (mqtts)** | **WebSocket port(ws)** | **WebSocket over TLS/SSL port(wss)** |
 | ------------------------ | ------------------ | ---------------------------------- | ---------------------- | ------------------------------------ |
-| Dedicated - Standard     | 15xxx              | 15xxx                              | 8083                   | 8084                                 |
 | Decicated - Professional | 1883               | 8883 (Need TLS/SSL configuration)  | 8083                   | 8084 (Need TLS/SSL configuration)    |
 | BYOC                     | 1883               | 8883                               | 8083                   | 8084                                 |
 
@@ -37,20 +36,13 @@ MQTT over TLS/SSL and WebSocket over TLS/SSL means to add TLS/SSL encryption to 
 The MQTT over TLS/SSL port is 8883, which corresponds to the 'mqtts'. The WebSocket over TLS/SSL port is 8084, which corresponds to the 'wss'.
 
 
-### How to Use MQTT over TLS/SSL and WebSocket over TLS/SSL Ports in a Standard Plan?
+### How to Use MQTT over TLS/SSL and WebSocket over TLS/SSL Ports in a Dedicated Plan?
 
-For the Standard plan, you can connect directly through port 15xxx (mqtts) and port 8084 (wss) on the deployment overview.
-
-The standard plan uses one-way TLS. EMQX provides and maintains server-side CA. Some clients may need a server-side CA for verification, please [download here](https://assets.emqx.com/data/emqxsl-ca.crt).
-
-
-### How to Use MQTT over TLS/SSL and WebSocket over TLS/SSL Ports in a Professional Plan?
-
-The Professional plan supports customized one-way/two-way TLS/SSL. You need to enable it via [Configure TLS/SSL](../deployments/tls_ssl.md).
+The Dedicated plan supports customized one-way/two-way TLS/SSL. You need to enable it via [Configure TLS/SSL](../deployments/tls_ssl.md). Then, you can connect directly through port 8883 (mqtts) and port 8084 (wss) on the deployment overview.
 
 ### How to Use MQTT over TLS/SSL and WebSocket over TLS/SSL Ports in a BYOC Deployment?
 
-The BYOC deployment supports customized one-way TLS/SSL certificates which configured during creating the deployment. You can connect directly through port 8883 (mqtts) and port 8084 (wss) on the deployment overview.
+The BYOC deployment supports customized one-way TLS/SSL certificates which are configured during the creation of the deployment. You can connect directly through port 8883 (mqtts) and port 8084 (wss) on the deployment overview.
 
 
 ### How to Write Client's Code for TLS/SSL Connection?
@@ -70,19 +62,7 @@ You can check sample code (TLS-related sample code) to write client's code.
 
 If you encounter problems when connecting to a deployment, follow the steps in this guide based on your deployment plan (Professional or Standard) for troubleshooting and self-diagnosis.
 
-### Dedicated - Standard Plan
-
-If you encounter problems connecting to the EMQX Cloud Standard plan, self-diagnose and troubleshoot using the following steps:
-
-1. **Check the connection address**. Ensure you are using the **correct domain name** provided by the Standard plan for connection. The Standard plan supports using a domain name as the connection address and supports CNAME pointing of EMQX Cloud's domain name to your own domain name for custom domain name configuration.
-2. **Confirm the connection port**. The Standard plan by default opens the 15xxx (MQTT), 15xxx (MQTTS), 8083 (WebSocket), and 8084 (WSS) ports. The roles of different ports are as follows:
-   - MQTT and WebSocket ports: These ports support plaintext transmission without encryption during transmission, suitable for scenarios where data encryption is not required, such as internal network communication or development environments.
-   - MQTTS and WSS ports: These ports support secure transmission using TLS/SSL encryption, providing higher security, suitable for scenarios requiring encrypted communication, such as production environments or sensitive data transmission.
-3. **Test network connectivity**. Use the `telnet` command to test the network connectivity between your server and the Standard plan. For example, you can run the following command to test connection to the Standard plan's MQTT port: telnet <Basic Edition deployment's domain name> 15xxx. Replace `<Basic Edition deployment's domain name>` with your actual deployment address.
-4. **Verify authentication information**. EMQX Cloud Standard plan does not support anonymous authentication. Please ensure that you have correctly configured the MQTT client's username and password in the EMQX Cloud console and have made the correct configuration during the client connection.
-5. **Test using the MQTTX client**. We recommend using MQTTX as a MQTT client testing tool. It's a free and easy-to-use cross-platform MQTT 5.0 client. You can use it to verify if the inability to connect is due to issues with the client code. For detailed instructions, see: [MQTTX Documentation](../connect_to_deployments/mqttx.md).
-
-### Dedicated - Professional Plan
+### Dedicated Plan
 
 If you encounter problems connecting to the Professional plan, self-diagnose and troubleshoot using the following steps:
 
@@ -91,7 +71,7 @@ If you encounter problems connecting to the Professional plan, self-diagnose and
 2. **Confirm the connection port**. The Professional plan by default opens the 1883 (MQTT) and 8083 (WebSocket) ports. You can open the secure 8883 (MQTTS) and 8084 (WSS) ports through TLS/SSL configuration. The roles of different ports are as follows:
 
    - MQTT and WebSocket ports: These ports support plaintext transmission without encryption during transmission, suitable for scenarios where data encryption is not required, such as internal network communication or development environments.
-   - MQTTS and WSS ports: These ports support secure transmission using TLS/SSL encryption, providing higher security, suitable for scenarios requiring encrypted communication, such as production environments or sensitive data transmission.
+   - MQTTS and WSS ports: These ports support secure transmission using TLS/SSL encryption, providing higher security, and are suitable for scenarios requiring encrypted communication, such as production environments or sensitive data transmission.
 
 3. **Test network connectivity**. Use the `telnet` command to test the network connectivity between your server and the Professional plan. 
 
