@@ -943,6 +943,10 @@
           "path": "data_integration/kafka_upstash"
         },
         {
+          "title": "Confluent",
+          "path": "data_integration/confluent"
+        },
+        {
           "title": "Pulsar",
           "path": "data_integration/pulsar"
         },
