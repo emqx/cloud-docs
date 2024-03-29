@@ -365,6 +365,10 @@
           "path": "data_integration/rules"
         },
         {
+          "title": "事件订阅",
+          "path": "rule_engine/rule_engine_events"
+        },
+        {
           "title" : "消息重新发布",
           "path": "data_integration/republish"
         },
@@ -959,6 +963,10 @@
         {
           "title": "Rules",
           "path": "data_integration/rules"
+        },
+        {
+          "title": "Event Topics",
+          "path": "rule_engine/rule_engine_events"
         },
         {
           "title" : "Message Republish",
