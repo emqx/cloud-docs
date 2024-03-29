@@ -10,7 +10,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
 3. Select the **Dedicated** tab.
 
-   [![select_deployment_type](./_assets/create_dedicated.png)](https://github.com/emqx/cloud-docs/blob/0cad09e14d2a1c201a366e6536ef5d6e46f27af3/en_US/create/_assets/create_dedicated.png)
+   ![select_deployment_type](./_assets/create_dedicated.png)
 
 4. Configure the specifications according to your needs.
 
