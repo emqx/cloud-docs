@@ -2,7 +2,7 @@
 
 您可以通过下面的步骤进入进入工单系统：
 
-1. 登录 [EMQX Platform 控制台](https://cloud.emqx.com/console/)。
+1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)。
 2. 点击顶部菜单中右上角的 **工单** 进入工单列表页面。
 
 ![工单列表](./_assets/tickets.png)
