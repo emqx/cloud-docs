@@ -1,20 +1,20 @@
 # Stream MQTT Data into HStreamDB
 
-[HStreamDB](https://hstream.io/) is an open-source streaming data platform that enables you to efficiently ingest, store, process, and distribute all real-time messages, events, and other data streams in one unified platform. Through EMQX Cloud's integration with HStreamDB, you can save MQTT messages and client events to HStreamDB, achieving large-scale IoT data collection, transmission, and storage, and enabling real-time processing, monitoring, and analysis of data streams using standard SQL and materialized views.
+[HStreamDB](https://hstream.io/) is an open-source streaming data platform that enables you to efficiently ingest, store, process, and distribute all real-time messages, events, and other data streams in one unified platform. Through EMQX Platform's integration with HStreamDB, you can save MQTT messages and client events to HStreamDB, achieving large-scale IoT data collection, transmission, and storage, and enabling real-time processing, monitoring, and analysis of data streams using standard SQL and materialized views.
 
-This page provides a comprehensive introduction to the data integration between EMQX Cloud and HStreamDB with practical instructions on creating and validating the data integration.
+This page provides a comprehensive introduction to the data integration between EMQX Platform and HStreamDB with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-HStreamDB data integration is an out-of-the-box feature of EMQX Cloud that combines EMQX Cloud's device connectivity and message transmission capabilities with HStreamDB's robust data storage and processing capabilities. With the built-in rule engine component, the data streaming and processing process is simplified between the two platforms.
+HStreamDB data integration is an out-of-the-box feature of EMQX Platform that combines EMQX Platform's device connectivity and message transmission capabilities with HStreamDB's robust data storage and processing capabilities. With the built-in rule engine component, the data streaming and processing process is simplified between the two platforms.
 
 The diagram below illustrates a typical architecture of data integration between EMQX and HStreamDB:
 
-![EMQX Cloud Integration HStreamDB](./_assets/data_integration_hstreamdb.png)
+![EMQX Platform Integration HStreamDB](./_assets/data_integration_hstreamdb.png)
 
-EMQX Cloud forwards MQTT data to HStreamDB through the rule engine and configured Sink, and the complete process is as follows:
+EMQX Platform forwards MQTT data to HStreamDB through the rule engine and configured Sink, and the complete process is as follows:
 
-1. **Message publication and reception**: IoT devices establish successful connections through the MQTT protocol and subsequently publish telemetry and status data to specific topics. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
+1. **Message publication and reception**: IoT devices establish successful connections through the MQTT protocol and subsequently publish telemetry and status data to specific topics. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
 2. **Rule engine processes messages**: Using the built-in rule engine, MQTT messages from specific sources can be processed based on topic matching. The rule engine matches corresponding rules and processes messages, such as data format conversion, filtering specific information, or enriching messages with context information.
 3. **Data streaming into HStreamDB**: Rule triggers the action of forwarding messages to HStreamDB where data can be easily configured to HStreamDB stream name, partition key and record, facilitating subsequent data processing and analysis.
 
@@ -28,8 +28,8 @@ After MQTT message data is written to Apache HStreamDB, you can engage in flexib
 
 The data integration with HStreamDB brings the following features and advantages to your business:
 
-- **Reliable IoT Data Message Delivery**: EMQX Cloud can reliably batch and send MQTT messages to HStreamDB, enabling the integration of IoT devices with HStreamDB and application systems.
-- **MQTT Message Transformation**: Using the rule engine, EMQX Cloud can filter and transform MQTT messages. Messages can undergo data extraction, filtering, enrichment, and transformation before being sent to HStreamDB.
+- **Reliable IoT Data Message Delivery**: EMQX Platform can reliably batch and send MQTT messages to HStreamDB, enabling the integration of IoT devices with HStreamDB and application systems.
+- **MQTT Message Transformation**: Using the rule engine, EMQX Platform can filter and transform MQTT messages. Messages can undergo data extraction, filtering, enrichment, and transformation before being sent to HStreamDB.
 - **Large-Scale Data Stream Storage**: HStreamDB supports the reliable storage of millions of data streams in a specially designed distributed, fault-tolerant log storage cluster. It can replay or push real-time data stream updates to applications as needed. Perfectly integrating with EMQX's message model, it achieves large-scale IoT data collection, transmission, and storage.
 - **Cluster and Scalability**: Built with a cloud-native architecture, EMQX and HStreamDB support online scaling and dynamic expansion and contraction of clusters, allowing flexible horizontal scaling to meet growing business demands.
 - **Flexible Processing Capabilities**: In HStreamDB, you can use familiar SQL to filter, transform, aggregate, and join multiple data streams. It also supports real-time processing, monitoring, and analysis of data streams using standard SQL and materialized views, providing real-time data insights.

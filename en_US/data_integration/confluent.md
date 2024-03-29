@@ -1,8 +1,8 @@
 # Stream MQTT Data into Confluent Cloud
 
-Confluent Cloud is a fully-managed events streaming platform based on on Apache Kafka, delivered as a fully managed service. This tutorial introduces how to stream the MQTT data to Confluent Cloud by creating a data integration with Confluent Cloud in EMQX Cloud. Through the data integration, clients can report the temperature and humidity data to EMQX Cloud using the MQTT protocol and stream the data into Confluent Cloud. This tutorial also demonstrates how to use [MQTTX](https://www.emqx.com/en/products/mqttx) to test the data integration.
+Confluent Cloud is a fully-managed events streaming platform based on on Apache Kafka, delivered as a fully managed service. This tutorial introduces how to stream the MQTT data to Confluent Cloud by creating a data integration with Confluent Cloud in EMQX Platform. Through the data integration, clients can report the temperature and humidity data to EMQX Platform using the MQTT protocol and stream the data into Confluent Cloud. This tutorial also demonstrates how to use [MQTTX](https://www.emqx.com/en/products/mqttx) to test the data integration.
 
-This page provides a detailed introduction to the functional features of Confluent Data Integration and offers practical guidance for creating it. The content includes creating Kafka connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to the EMQX Cloud via the MQTT protocol and store the data in Confluent through configured data integration.
+This page provides a detailed introduction to the functional features of Confluent Data Integration and offers practical guidance for creating it. The content includes creating Kafka connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to the EMQX Platform via the MQTT protocol and store the data in Confluent through configured data integration.
 
 ## How It Works
 
@@ -28,7 +28,7 @@ These features enhance integration capabilities and flexibility, helping you est
 
 ## Before You Start
 
-This section describes the preparatory work needed to configure Confluent data integration on the EMQX Cloud console.
+This section describes the preparatory work needed to configure Confluent data integration on the EMQX Platform console.
 
 ### Prerequisites
 
@@ -56,7 +56,7 @@ The following sections demonstrate how to set up a Confluent Cloud cluster in pu
 
    ① Login to the Confluent Cloud console and create a cluster. In this demo, you can select Basic cluster as an example, and click **Begin Configuration**.
 
-   ② Select region/zones. Considering the latency, it is recommended that the EMQX Cloud deployment region matches the region of the Confluent Cloud. Click **Continue**.
+   ② Select region/zones. Considering the latency, it is recommended that the EMQX Platform deployment region matches the region of the Confluent Cloud. Click **Continue**.
 
    ③ Enter your cluster name and click **Launch cluster**. Now you have a running cluster in the cloud.
 
@@ -73,9 +73,9 @@ The following sections demonstrate how to set up a Confluent Cloud cluster in pu
 
    ③Create API Key and download the key for later configuration.
 
-4. Enable NAT Gateway in EMQX Cloud
+4. Enable NAT Gateway in EMQX Platform
 
-   ① Login to EMQX Cloud console, and enter the deployment Overview page.
+   ① Login to EMQX Platform console, and enter the deployment Overview page.
 
    ② Click the **NAT Gateway** tab on the lower section of the page, and click **Subscribe Now**. Learn more about [NAT Gateway](../vas/nat-gateway.md).
 
@@ -87,7 +87,7 @@ If you have or want to create Confluent Enterprise / Didicated clusters, you can
 
 1. Login to the Confluent Cloud console and create a cluster. In this demo, you can select Dedicated cluster as an example, and click **Begin Configuration**.
 
-2. Select region/zones. Make sure the EMQX Cloud deployment region matches the region of the Confluent Cloud. Click **Continue**.
+2. Select region/zones. Make sure the EMQX Platform deployment region matches the region of the Confluent Cloud. Click **Continue**.
 
 3. Select **VPC Peering** for Networking so this cluster can be accessed only by VPC peering
     connection. Specify a CIDR block for the cluster and Click **Continue**.
@@ -176,13 +176,13 @@ confluent kafka topic produce <topic-name>
 confluent kafka topic consume -b <topic-name>
 ```
 
-##### Establish VPC Peering Connection with EMQX Cloud Deployment
+##### Establish VPC Peering Connection with EMQX Platform Deployment
 
 After you create the cluster, you need to add peering in Confluent Cloud console.
 
 1. From the navigation menu, click **Cluster settings**, and then click the **Networking** tab. Click the **Add Peering** button.
 
-2. Enter the vpc information. You can get the information from the **VPC Peering Connection** section on the deployment Overview page of your deployment on the EMQX Cloud console. Click the **Save** button.
+2. Enter the vpc information. You can get the information from the **VPC Peering Connection** section on the deployment Overview page of your deployment on the EMQX Platform console. Click the **Save** button.
 
 3. Check the VPC Peering Connection status.
    - If the connection status is `Inactive`, go to the Cloud deployment to accept the peering request. Enter the vpc information of the confluent cloud cluster and click **Confirm**.

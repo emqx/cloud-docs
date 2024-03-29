@@ -1,21 +1,21 @@
 # Ingest MQTT Data into MongoDB
 
-[MongoDB](https://www.mongodb.com/), a leading NoSQL database, is renowned for its flexibility in schema design, scalability, and capacity to store large volumes of structured and semi-structured data. By integrating EMQX Cloud with MongoDB, users can efficiently ingest MQTT messages and client events directly into MongoDB. This facilitates long-term series data storage and advanced querying capabilities within MongoDB. The integration ensures a single-directional flow, where MQTT messages from EMQX Cloud are written into the MongoDB database. This powerful combination is a solid foundation for businesses looking to manage their IoT data effectively.
+[MongoDB](https://www.mongodb.com/), a leading NoSQL database, is renowned for its flexibility in schema design, scalability, and capacity to store large volumes of structured and semi-structured data. By integrating EMQX Platform with MongoDB, users can efficiently ingest MQTT messages and client events directly into MongoDB. This facilitates long-term series data storage and advanced querying capabilities within MongoDB. The integration ensures a single-directional flow, where MQTT messages from EMQX Platform are written into the MongoDB database. This powerful combination is a solid foundation for businesses looking to manage their IoT data effectively.
 
-This page provides a comprehensive introduction to the data integration between EMQX Cloud and MongoDB with practical instructions on creating and validating the data integration.
+This page provides a comprehensive introduction to the data integration between EMQX Platform and MongoDB with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-MongoDB data integration is an out-of-the-box feature in EMQX Cloud designed to bridge the gap between MQTT-based IoT data and MongoDB's powerful data storage capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Cloud to MongoDB for storage and management, eliminating the need for complex coding.
+MongoDB data integration is an out-of-the-box feature in EMQX Platform designed to bridge the gap between MQTT-based IoT data and MongoDB's powerful data storage capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Platform to MongoDB for storage and management, eliminating the need for complex coding.
 
 The diagram below illustrates a typical architecture of data integration between EMQX and MongoDB.
 
-![EMQX Cloud MongoDB Data Integration](./_assets/data_integration_mongodb.png)
+![EMQX Platform MongoDB Data Integration](./_assets/data_integration_mongodb.png)
 
 Ingesting MQTT data into MongoDB works as follows:
 
-1. **Message publication and reception**: IoT devices, whether they are part of connected vehicles, IIoT systems, or energy management platforms, establish successful connections to EMQX Cloud through the MQTT protocol and publish MQTT messages to specific topics. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
-2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Cloud. The rules, based on predefined criteria, determine which messages need to be routed to MongoDB. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
+1. **Message publication and reception**: IoT devices, whether they are part of connected vehicles, IIoT systems, or energy management platforms, establish successful connections to EMQX Platform through the MQTT protocol and publish MQTT messages to specific topics. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
+2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Platform. The rules, based on predefined criteria, determine which messages need to be routed to MongoDB. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
 3. **Data ingestion into MongoDB**: Once the rule engine identifies a message for MongoDB storage, it triggers an action of forwarding the messages to MongoDB. Processed data will be seamlessly written into the collection of the MongoDB database.
 4. **Data storage and utilization**: With the data now stored in MongoDB, businesses can harness its querying power for various use cases. For instance, in the realm of connected vehicles, this stored data can inform fleet management systems about vehicle health, optimize route planning based on real-time metrics, or track assets. Similarly, in IIoT settings, the data might be used to monitor machinery health, forecast maintenance, or optimize production schedules.
 
@@ -31,7 +31,7 @@ The data integration with MongoDB offers a range of features and benefits tailor
 
 - **Real-time Data Processing**
 
-  EMQX Cloud is built for handling real-time data streams, ensuring efficient and reliable data transmission from source systems to MongoDB. It enables organizations to capture and analyze data in real-time, making it ideal for use cases requiring immediate insights and actions.
+  EMQX Platform is built for handling real-time data streams, ensuring efficient and reliable data transmission from source systems to MongoDB. It enables organizations to capture and analyze data in real-time, making it ideal for use cases requiring immediate insights and actions.
 
 - **Flexible MongoDB Connection Options**
 
@@ -43,7 +43,7 @@ The data integration with MongoDB offers a range of features and benefits tailor
 
 - **Flexible Data Transformation**
 
-  EMQX Cloud provides a powerful SQL-based Rule Engine, allowing organizations to pre-process data before storing it in MongoDB. It supports various data transformation mechanisms, such as filtering, routing, aggregation, and enrichment, enabling organizations to shape the data according to their needs.
+  EMQX Platform provides a powerful SQL-based Rule Engine, allowing organizations to pre-process data before storing it in MongoDB. It supports various data transformation mechanisms, such as filtering, routing, aggregation, and enrichment, enabling organizations to shape the data according to their needs.
 
 - **NoSQL**
 
@@ -51,7 +51,7 @@ The data integration with MongoDB offers a range of features and benefits tailor
 
 - **Reliable Data Storage**
 
-  Once the EMQX Cloud rule engine processes and routes the message, it is stored in MongoDB with the platform's proven reliability, ensuring data integrity and consistent availability.
+  Once the EMQX Platform rule engine processes and routes the message, it is stored in MongoDB with the platform's proven reliability, ensuring data integrity and consistent availability.
 
 - **Operational Metrics and Advanced Analytics**
 
@@ -65,7 +65,7 @@ This MongoDB data integration fortifies your IoT infrastructure, ensuring that v
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create MongoDB Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create MongoDB Data Integration in EMQX Platform.
 
 ### Prerequisites
 
@@ -122,7 +122,7 @@ Before creating data integration rules, you need to first create a MongoDB conne
    - **Password**: Enter `public`.
    - **Auth Source**: Enter the aatabase name associated with the user's credentials.
    - **Use Legacy Protocol**: Determine if MongoDB's legacy communication protocol should be used (MongoDB introduced a new wire protocol in version 3.6, with the legacy protocol retained for backward compatibility.). This setting can be set to `true`, `false`, or `auto`. In `auto` mode (default option), EMQX will automatically determine which protocol to use based on the detected MongoDB version.
-   - **Srv Record**: Disabled by default. Once enabled, it allows EMQX Cloud to use DNS SRV records to discover the MongoDB hosts it should connect to, which makes it easier to connect to replica sets or sharded clusters without having to specify each host in the connection string.
+   - **Srv Record**: Disabled by default. Once enabled, it allows EMQX Platform to use DNS SRV records to discover the MongoDB hosts it should connect to, which makes it easier to connect to replica sets or sharded clusters without having to specify each host in the connection string.
    - If you want to establish an encrypted connection, click the **Enable TLS** toggle switch.
 
 5. Advanced Settings (Optional): Refer to [Advanced Configuration](https://docs.emqx.com/en/enterprise/latest/data-integration/data-bridge-mongodb.html#advanced-configurations).

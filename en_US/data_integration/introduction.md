@@ -8,7 +8,7 @@ As a fully managed MQTT message cloud service, EMQX Platform connects Internet o
 
 ## How It Works
 
-In Serverless deployments, as devices or applications establish connections, the MQTT broker routes the messages. Upon arrival, these messages are processed by the Rule Engine, a powerful component that utilizes SQL statements for data manipulation. This processed data is then forwarded to the target service by an "Action". Actions are categorized into two types: "Sink", for sending data to a service, and "Source", for receiving data from a service. Presently, the Data Integration feature of the Serverless deployment primarily operates in "Sink" mode, facilitating the seamless integration of data into various cloud services.
+As devices or applications establish connections, the MQTT broker routes the messages. Upon arrival, these messages are processed by the Rule Engine, a powerful component that utilizes SQL statements for data manipulation. This processed data is then forwarded to the target service by an "Action". Actions are categorized into two types: "Sink", for sending data to a service, and "Source", for receiving data from a service. Presently, the Data Integration operates only in "Sink" mode, facilitating the seamless integration of data into various cloud services. It will support "Source" mode in the future updates.
 
 ### [Connectors](./connectors.md)
 
@@ -40,7 +40,18 @@ The data integration function in different deployments requires different levels
 **Serverless Deployment**
 
 - Data sources only support public network access. Therefore, before creating a data source, you need to ensure the data source has the capability of public network access and open the security group.
-- Only supports Kafka and HTTP Server types of data integration.
+- Only supports Kafka and HTTP Server connectors.
+- Serverless Data Integration employs a pay-as-you-go mode, explaining as follows:
+
+EMQX Serverless provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
+
+To maintain optimal performance and manageability, EMQX Platform imposes the following constraints on the creation of connectors, rules, and actions within each deployment:
+
+| Category                    | Maximum Allowed |
+| --------------------------- | --------------- |
+| Total Connectors            | 2               |
+| Total Rules                 | 4               |
+| Actions Associated Per Rule | 1               |
 
 **Dedicated Deployment**
 
@@ -52,14 +63,5 @@ The data integration function in different deployments requires different levels
 - It is recommended to access data sources through an internal network to improve network security and performance. Before creating, you need to configure a peering connection between the VPC where the resources are located and the VPC where the BYOC deployment is located in the public cloud console, and also open the relevant security group. For related steps, please refer to the [Create VPC Peering Connections](../deployments/byoc_vpc_peering.md) section.
 - If you need to access resources through the public network, please configure a NAT gateway for the VPC where the BYOC deployment is located in your public cloud console.
 
-## Pricing and Usage Limits
 
-EMQX Platform provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
 
-To maintain optimal performance and manageability, EMQX Platform imposes the following constraints on the creation of connectors, rules, and actions within each deployment:
-
-| Category                    | Maximum Allowed |
-| --------------------------- | --------------- |
-| Total Connectors            | 2               |
-| Total Rules                 | 4               |
-| Actions Associated Per Rule | 1               |

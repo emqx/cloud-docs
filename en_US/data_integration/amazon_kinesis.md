@@ -2,15 +2,15 @@
 
 [AWS Kinesis](https://aws.amazon.com/cn/kinesis/) is a fully managed real-time streaming data processing service on AWS that facilitates easy collection, processing, and analysis of streaming data. It can economically and efficiently handle streaming data of any scale in real-time and offers high flexibility, capable of low-latency processing of any amount of streaming data from hundreds of thousands of sources.
 
-EMQX Cloud supports seamless integration with [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/), enabling the connection of massive IoT devices for real-time message collection and transmission. Through the data integration, it connects to Amazon Kinesis Data Streams for real-time data analysis and complex stream processing.
+EMQX Platform supports seamless integration with [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/), enabling the connection of massive IoT devices for real-time message collection and transmission. Through the data integration, it connects to Amazon Kinesis Data Streams for real-time data analysis and complex stream processing.
 
-This page provides a detailed introduction to the functional features of Kafka Data Integration and offers practical guidance for creating it. The content includes creating Amazon Kinesis connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to EMQX Cloud via the MQTT protocol and store the data in Amazon Kinesis through configured data integration.
+This page provides a detailed introduction to the functional features of Kafka Data Integration and offers practical guidance for creating it. The content includes creating Amazon Kinesis connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to EMQX Platform via the MQTT protocol and store the data in Amazon Kinesis through configured data integration.
 
 ## How It Works
 
 Amazon Kinesis data integration is an out-of-the-box feature of EMQX designed to help users seamlessly integrate MQTT data streams with Amazon Kinesis and leverage its rich services and capabilities for IoT application development.
 
-![EMQX Cloud Integration Amazon Kinesis](./_assets/data_integration_amazon_kinesis.png)
+![EMQX Platform Integration Amazon Kinesis](./_assets/data_integration_amazon_kinesis.png)
 
 EMQX forwards MQTT data to Amazon Kinesis through the rule engine and Sink. The complete process is as follows:
 
@@ -26,7 +26,7 @@ After MQTT message data is written to Amazon Kinesis, you can perform flexible a
 
 ## Features and Advantages
 
-The data integration between EMQX Cloud and AWS Kinesis Data Streams can bring the following functionalities and advantages to your business:
+The data integration between EMQX Platform and AWS Kinesis Data Streams can bring the following functionalities and advantages to your business:
 
 - **Reliable Data Transmission and Sequence Guarantee**: Both EMQX and AWS Kinesis Data Streams provide reliable data transmission mechanisms. EMQX ensures the reliable transmission of messages through the MQTT protocol, while AWS Kinesis Data Streams uses partitions and sequence numbers to guarantee message ordering. Together, they ensure that messages sent from devices accurately reach their destination and are processed in the correct order.
 - **Real-time Data Processing**: High-frequency data from devices can undergo preliminary real-time processing through EMQX's rule SQL, effortlessly filtering, extracting, enriching, and transforming MQTT messages. After sending data to AWS Kinesis Data Streams, further real-time analysis can be implemented by combining AWS Lambda and AWS-managed Apache Flink.
@@ -37,7 +37,7 @@ Utilizing AWS Kinesis Data Streams to build a streaming data pipeline significan
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create AWS Kinesis Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create AWS Kinesis Data Integration in EMQX Platform.
 
 ### Prerequisites
 

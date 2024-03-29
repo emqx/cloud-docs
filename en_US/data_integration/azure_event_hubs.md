@@ -1,8 +1,8 @@
 # Stream MQTT Data into Azure Event Hubs
 
-[Azure Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs) is a managed event streaming platform by Microsoft for real-time data ingestion. EMQX Cloud's integration with Azure Event Hub provides users with reliable data transport and processing capabilities, especially in high-throughput scenarios. This integration allows Azure Event Hubs to act as a conduit for data between EMQX Cloud and various Azure cloud services, including Azure Blob Storage, Azure Stream Analytics, and applications deployed on Azure virtual machines. Currently, EMQX Cloud supports integration with Azure Event Hub through SASL/PLAIN authentication and endpoints compatible with the Apache Kafka protocol.
+[Azure Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs) is a managed event streaming platform by Microsoft for real-time data ingestion. EMQX Platform's integration with Azure Event Hub provides users with reliable data transport and processing capabilities, especially in high-throughput scenarios. This integration allows Azure Event Hubs to act as a conduit for data between EMQX Platform and various Azure cloud services, including Azure Blob Storage, Azure Stream Analytics, and applications deployed on Azure virtual machines. Currently, EMQX Platform supports integration with Azure Event Hub through SASL/PLAIN authentication and endpoints compatible with the Apache Kafka protocol.
 
-This page offers a comprehensive overview of Azure Event Hubs Data Integration functionality and provides practical guidance on its implementation. It covers the creation of Azure Event Hubs connectors, setting up rules, and testing them. Additionally, it demonstrates how to transmit simulated temperature and humidity data to EMQX Cloud via the MQTT protocol and store this data in Azure Event Hubs through configured data integration.
+This page offers a comprehensive overview of Azure Event Hubs Data Integration functionality and provides practical guidance on its implementation. It covers the creation of Azure Event Hubs connectors, setting up rules, and testing them. Additionally, it demonstrates how to transmit simulated temperature and humidity data to EMQX Platform via the MQTT protocol and store this data in Azure Event Hubs through configured data integration.
 
 ## How It Works
 
@@ -22,7 +22,7 @@ After MQTT message data is written to Azure Event Hubs, you can perform flexible
 
 ## Features and Advantages
 
-The data integration between EMQX Cloud and Azure Event Hubs can bring the following functions and advantages to your business:
+The data integration between EMQX Platform and Azure Event Hubs can bring the following functions and advantages to your business:
 
 **High-Performance Massive Message Throughput**: EMQX supports connections with a massive number of MQTT clients, with millions of messages per second continuously ingested into Azure Event Hubs. This enables extremely low message transmission and storage latency, and message volume control can be achieved by configuring retention time on Azure Event Hubs.
 
@@ -36,7 +36,7 @@ These functionalities enhance integration capabilities and flexibility, helping 
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create Kafka Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create Kafka Data Integration in EMQX Platform.
 
 ### Prerequisites
 
@@ -70,7 +70,7 @@ Azure Event Hubs provides you with a Kafka endpoint. This endpoint enables your 
 
     **Step 1**: On the Basics page, select the corresponding **subscription**, **resource group**, and instance details.
     **Step 2**: On the Resource page, keep the default configuration.
-    **Step 3**:On the **Virtual Network** page, select the network and subnet that are peered with EMQX Cloud VPC, and select static IP in the private IP configuration.
+    **Step 3**:On the **Virtual Network** page, select the network and subnet that are peered with EMQX Platform VPC, and select static IP in the private IP configuration.
     **Step 4**: On the DNS page, select yes to integrate **private DNS zone**. After the creation is complete, you can see that the status of the private endpoint is "succeeded" in the network tab of this namespace.
     **Step 6**: Click on the private endpoint, record the **FQDN** and **IP addresses**, and send it to us through a supprot ticket, and the devops team will add resolution for you.
 
@@ -168,4 +168,4 @@ You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature a
 
     For more information about using the Kafka CLI, see [Use the Kafka CLI to Send and Receive Messages to/from Azure Event Hubs for Apache Kafka Ecosystem](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/kafka-cli).
 
-3. View operational data in the EMQX Cloud console. Click the rule ID in the rule list, and you can see the statistics of the rule and the statistics of all actions under this rule.
+3. View operational data in the EMQX Platform console. Click the rule ID in the rule list, and you can see the statistics of the rule and the statistics of all actions under this rule.

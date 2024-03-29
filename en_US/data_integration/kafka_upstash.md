@@ -2,15 +2,15 @@
 
 Upstash is a cloud-based, serverless data platform designed to streamline the integration of Redis databases and Kafka into applications, eliminating the need for managing infrastructure. With its serverless architecture, Upstash enables developers to leverage the capabilities of Redis, a high-performance, in-memory data store, and Kafka, without the complexities of deployment, scaling, or maintenance.
 
-This page provides an in-depth overview of the functional features of Upstash Data Integration, along with practical guidance for its implementation. It covers essential tasks such as creating Kafka connectors, defining rules, and testing their effectiveness. Additionally, it demonstrates the process of reporting simulated temperature and humidity data to EMQX Cloud using the MQTT protocol and storing this data in Upstash through the configured data integration.
+This page provides an in-depth overview of the functional features of Upstash Data Integration, along with practical guidance for its implementation. It covers essential tasks such as creating Kafka connectors, defining rules, and testing their effectiveness. Additionally, it demonstrates the process of reporting simulated temperature and humidity data to EMQX Platform using the MQTT protocol and storing this data in Upstash through the configured data integration.
 
 ## How It Works
 
-Upstash Kafka Data Integration is an out-of-the-box feature in EMQX Cloud, bridging MQTT-based IoT data and Kafka's powerful data processing capabilities. Through its built-in rule engine component, the integration simplifies the data flow and processing between the two platforms without complex coding.
+Upstash Kafka Data Integration is an out-of-the-box feature in EMQX Platform, bridging MQTT-based IoT data and Kafka's powerful data processing capabilities. Through its built-in rule engine component, the integration simplifies the data flow and processing between the two platforms without complex coding.
 
 The basic workflow for forwarding message data to Kafka is as follows:
 
-1. **Message Publishing**: Devices successfully connect to the EMQX Cloud deployment via the MQTT protocol and periodically publish messages containing status data. When EMQX Cloud receives these messages, it initiates the matching process in its rule engine.
+1. **Message Publishing**: Devices successfully connect to the EMQX Platform deployment via the MQTT protocol and periodically publish messages containing status data. When EMQX Platform receives these messages, it initiates the matching process in its rule engine.
 2. **Message Data Processing**: These MQTT messages can be processed based on topic-matching rules through the built-in rule engine. When a message arrives and passes through the rule engine, the engine evaluates predefined processing rules for that message. If any rules specify payload transformations, these transformations are applied, such as data format conversion, filtering specific information, or enriching the payload with additional context.
 3. **Sending to Upstash for Kafka**: Rules defined in the rule engine trigger the action of forwarding messages to Kafka. Using Kafka Data Integration, MQTT topics are mapped to predefined Kafka topics, and all processed messages and data are written into Kafka topics.
 
@@ -28,7 +28,7 @@ These features enhance integration capabilities and flexibility, helping you bui
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create Kafka Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create Kafka Data Integration in EMQX Platform.
 
 ### Prerequisites
 
@@ -43,7 +43,7 @@ To begin using Upstash, visit https://upstash.com/ and create an account.
 
 1. Once you logged in, you can create a Kafka cluster by clicking on the Create Cluster button.
 
-2. Type a valid name. Select the region in which you would like your cluster to be deployed. To optimize performance, it is recommended to choose the region that is closest to your EMQX Cloud deployment's region.
+2. Type a valid name. Select the region in which you would like your cluster to be deployed. To optimize performance, it is recommended to choose the region that is closest to your EMQX Platform deployment's region.
 
 3. Select the cluster type. Currently there are two options, choose single replica for testing/development, multi replica for production use cases.
 

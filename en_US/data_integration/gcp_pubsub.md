@@ -1,16 +1,16 @@
 # Stream MQTT Data into GCP Pub/Sub
 
-Google Cloud Pub/Sub is an asynchronous messaging service designed to achieve extremely high reliability and scalability. EMQX Cloud supports seamless integration with Google Cloud Pub/Sub for real-time extraction, processing, and analysis of MQTT data. It can push data to various Google Cloud services such as Cloud Functions, App Engine, Cloud Run, Kubernetes Engine, and Compute Engine. Alternatively, it can also distribute data from Google Cloud to MQTT, helping users rapidly build IoT applications on GCP.
+Google Cloud Pub/Sub is an asynchronous messaging service designed to achieve extremely high reliability and scalability. EMQX Platform supports seamless integration with Google Cloud Pub/Sub for real-time extraction, processing, and analysis of MQTT data. It can push data to various Google Cloud services such as Cloud Functions, App Engine, Cloud Run, Kubernetes Engine, and Compute Engine. Alternatively, it can also distribute data from Google Cloud to MQTT, helping users rapidly build IoT applications on GCP.
 
-This page provides a comprehensive introduction to the data integration between EMQX Cloud nand GCP Pub/Sub with practical instructions on creating and validating the data integration.
+This page provides a comprehensive introduction to the data integration between EMQX Platform nand GCP Pub/Sub with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-GCP Pub/Sub data integration is an out-of-the-box feature of EMQX Cloud designed to help users seamlessly integrate MQTT data streams with Google Cloud and leverage its rich services and capabilities for IoT application development.
+GCP Pub/Sub data integration is an out-of-the-box feature of EMQX Platform designed to help users seamlessly integrate MQTT data streams with Google Cloud and leverage its rich services and capabilities for IoT application development.
 
 ![data_integration_gcp_pubsub](./_assets/data_integration_gcp_pubsub.png)
 
-EMQX Cloud forwards MQTT data to GCP Pub/Sub through the rule engine and Sink. Taking the example of a GCP Pub/Sub producer role, the complete process is as follows:
+EMQX Platform forwards MQTT data to GCP Pub/Sub through the rule engine and Sink. Taking the example of a GCP Pub/Sub producer role, the complete process is as follows:
 
 1. **IoT Devices Publish Messages**: Devices publish telemetry and status data through specific topics, triggering the rule engine.
 2. **Rule Engine Processes Messages**: Using the built-in rule engine, MQTT messages from specific sources are processed based on topic matching. The rule engine matches corresponding rules and processes messages, such as converting data formats, filtering specific information, or enriching messages with contextual information.
@@ -30,7 +30,7 @@ The data integration with GCP Pub/Sub offers a range of features and benefits:
 - **Flexible Rules Engine**: With the built-in rules engine, specific source messages and events can be processed based on topic matching. Messages and events can be manipulated, such as data format conversion, filtering out specific information, or enriching messages with context information. Combining this with GCP Pub/Sub allows for further processing and analysis.
 - **Rich Contextual Information**: Through the GCP Pub/Sub data integration, you can add richer contextual information to messages, mapping client attributes to Pub/Sub attributes, sorting keys, and more. This aids in performing more precise analysis and processing in subsequent application development and data handling.
 
-In summary, integrating EMQX Cloud and GCP Pub/Sub enables highly reliable, scalable message delivery, along with extensive tools and services for data analysis and integration. This empowers you to build robust IoT applications and implement flexible business logic based on event-driven capabilities.
+In summary, integrating EMQX Platform and GCP Pub/Sub enables highly reliable, scalable message delivery, along with extensive tools and services for data analysis and integration. This empowers you to build robust IoT applications and implement flexible business logic based on event-driven capabilities.
 
 ## Before You Start
 

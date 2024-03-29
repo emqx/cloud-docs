@@ -2,15 +2,15 @@
 
 [DynamoDB](https://www.amazonaws.cn/en/dynamodb/) is a fully managed, high-performance, serverless key-value store database service on AWS. It is designed for applications that require fast, scalable, and reliable data storage. EMQX supports integration with DynamoDB, enabling you to save MQTT messages and client events to DynamoDB, facilitating the registration and management of IoT devices, as well as the long-term storage and real-time analysis of device data. Through the DynamoDB data integration, MQTT messages and client events can be stored in DynamoDB, and events can also trigger updates or deletions of data within DynamoDB, thereby enabling the recording of information such as device online status and connection history.
 
-This page provides a detailed introduction to the functional features of DynamoDB Data Integration and offers practical guidance for creating it. The content includes creating DynamoDB connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to EMQX Cloud via the MQTT protocol and store the data in DynamoDB through configured data integration.
+This page provides a detailed introduction to the functional features of DynamoDB Data Integration and offers practical guidance for creating it. The content includes creating DynamoDB connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to EMQX Platform via the MQTT protocol and store the data in DynamoDB through configured data integration.
 
 ## How It Works
 
-DynamoDB data integration is an out-of-the-box feature in EMQX Cloud that combines EMQX's device connectivity and message transmission capabilities with DynamoDB's powerful data storage capabilities. With a built-in data integration component, the integration simplifies the process of ingesting data from EMQX to DynamoDB for storage and management, eliminating the need for complex coding.
+DynamoDB data integration is an out-of-the-box feature in EMQX Platform that combines EMQX's device connectivity and message transmission capabilities with DynamoDB's powerful data storage capabilities. With a built-in data integration component, the integration simplifies the process of ingesting data from EMQX to DynamoDB for storage and management, eliminating the need for complex coding.
 
 The diagram below illustrates a typical architecture of data integration between EMQX and DynamoDB:
 
-![EMQX Cloud Integration AWS DynamoDB](./_assets/data_integration_aws_dynamodb.png)
+![EMQX Platform Integration AWS DynamoDB](./_assets/data_integration_aws_dynamodb.png)
 
 Ingesting MQTT data into DynamoDB works as follows:
 
@@ -23,14 +23,14 @@ Ingesting MQTT data into DynamoDB works as follows:
 
 The data integration with DynamoDB offers a range of features and benefits tailored to ensure efficient data transmission, storage, and utilization:
 
-- **Real-time Data Streaming**: EMQX Cloud is built for handling real-time data streams, ensuring efficient and reliable data transmission from source systems to DynamoDB. It enables organizations to capture and analyze data in real-time, making it ideal for use cases requiring immediate insights and actions.
-- **Flexibility in Data Transformation**: EMQX Cloud provides a powerful SQL-based Rule Engine, allowing organizations to pre-process data before storing it in DynamoDB. It supports various data transformation mechanisms, such as filtering, routing, aggregation, and enrichment, enabling organizations to shape the data according to their needs.
+- **Real-time Data Streaming**: EMQX Platform is built for handling real-time data streams, ensuring efficient and reliable data transmission from source systems to DynamoDB. It enables organizations to capture and analyze data in real-time, making it ideal for use cases requiring immediate insights and actions.
+- **Flexibility in Data Transformation**: EMQX Platform provides a powerful SQL-based Rule Engine, allowing organizations to pre-process data before storing it in DynamoDB. It supports various data transformation mechanisms, such as filtering, routing, aggregation, and enrichment, enabling organizations to shape the data according to their needs.
 - **Flexible Data Model**: DynamoDB uses key-value and document data models, suitable for storing and managing structured device events and message data, allowing for easy storage of different MQTT message structures.
-- **Powerful Scalability**: EMQX Cloud offers cluster scalability, capable of seamless horizontal scaling based on device connections and message volume; DynamoDB, requiring no server or infrastructure management, automatically handles underlying resource management and scaling. The combination of both provides high-performance and highly reliable data storage and scalability.
+- **Powerful Scalability**: EMQX Platform offers cluster scalability, capable of seamless horizontal scaling based on device connections and message volume; DynamoDB, requiring no server or infrastructure management, automatically handles underlying resource management and scaling. The combination of both provides high-performance and highly reliable data storage and scalability.
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create DynamoDB Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create DynamoDB Data Integration in EMQX Platform.
 
 ### Prerequisites
 

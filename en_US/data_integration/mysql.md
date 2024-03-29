@@ -2,18 +2,18 @@
 
 [MySQL](https://www.mysql.com/) is a widely used relational database with high reliability and stability, and can be quickly installed, configured and used. MySQL data integration can efficiently store MQTT messages in the MySQL database, and also supports real-time updating or deletion of data in MySQL through event triggering. With the help of MySQL data integration, you can easily implement functions such as message storage, device online/offline status update, and device behavior recording to achieve flexible IoT data storage and device management functions.
 
-This page introduces the data integration between EMQX Cloud and MySQL with practical instructions on creating and validating the data integration.
+This page introduces the data integration between EMQX Platform and MySQL with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-MySQL data integration is an out-of-the-box feature in EMQX Cloud, which enables complex business development through simple configuration. In a typical IoT application, EMQX Cloud, as the IoT platform, is responsible for device connection and transmitting messages. MySQL, as the data storage platform, is responsible for storing device status and metadata, as well as message data storage and data analysis.
+MySQL data integration is an out-of-the-box feature in EMQX Platform, which enables complex business development through simple configuration. In a typical IoT application, EMQX Platform, as the IoT platform, is responsible for device connection and transmitting messages. MySQL, as the data storage platform, is responsible for storing device status and metadata, as well as message data storage and data analysis.
 
-![EMQX Cloud MySQL Data Integration](./_assets/data_integration_mysql.jpg)
+![EMQX Platform MySQL Data Integration](./_assets/data_integration_mysql.jpg)
 
-EMQX Cloud forwards device events and data to MySQL through the rule engine. Applications can read the data in MySQL to sense the device status, obtain device online and offline records, and analyze device data. The specific workflow is as follows:
+EMQX Platform forwards device events and data to MySQL through the rule engine. Applications can read the data in MySQL to sense the device status, obtain device online and offline records, and analyze device data. The specific workflow is as follows:
 
-- **IoT devices connect to EMQX Cloud**: After IoT devices are successfully connected through the MQTT protocol, online events will be triggered. The events include information such as device ID, source IP address, and other attributes.
-- **Message publication and reception**: The devices publish telemetry and status data to specific topics. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
+- **IoT devices connect to EMQX Platform**: After IoT devices are successfully connected through the MQTT protocol, online events will be triggered. The events include information such as device ID, source IP address, and other attributes.
+- **Message publication and reception**: The devices publish telemetry and status data to specific topics. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
 - **Rule Engine Processing Messages**: With the built-in rules engine, messages and events from specific sources can be processed based on topic matching. The rules engine matches the corresponding rules and processes messages and events, such as converting data formats, filtering out specific information, or enriching messages with contextual information.
 - **Write to MySQL**: The rule triggers the writing of messages to MySQL. With the help of SQL templates, users can extract data from the rule processing results to construct SQL and send it to MySQL for execution, so that specific fields of the message can be written or updated into the corresponding tables and columns of the database.
 
@@ -26,9 +26,9 @@ After the event and message data are written to MySQL, you can connect to MySQL 
 
 The data integration with MySQL can bring the following features and advantages to your business:
 
-- **Flexible Event Handling**: Through the EMQX Cloud rules engine, MySQL can handle device lifecycle events, greatly facilitating the development of various management and monitoring tasks required for implementing IoT applications. By analyzing event data, you can promptly detect device failures, abnormal behavior, or trend changes to take appropriate measures.
-- **Message Transformation**: Messages can undergo extensive processing and transformation through EMQX Cloud rules before being written to MySQL, making storage and usage more convenient.
-- **Flexible Data Operations**: With SQL templates provided by EMQX Cloud, it's easy to write or update data from specific fields to the corresponding tables and columns in the MySQL database, enabling flexible data storage and management.
+- **Flexible Event Handling**: Through the EMQX Platform rules engine, MySQL can handle device lifecycle events, greatly facilitating the development of various management and monitoring tasks required for implementing IoT applications. By analyzing event data, you can promptly detect device failures, abnormal behavior, or trend changes to take appropriate measures.
+- **Message Transformation**: Messages can undergo extensive processing and transformation through EMQX Platform rules before being written to MySQL, making storage and usage more convenient.
+- **Flexible Data Operations**: With SQL templates provided by EMQX Platform, it's easy to write or update data from specific fields to the corresponding tables and columns in the MySQL database, enabling flexible data storage and management.
 - **Integration of Business Processes**: The data integration allows you to integrate device data with MySQL's rich ecosystem applications, facilitating integration with systems like ERP, CRM, or other custom business systems to achieve advanced business processes and automation.
 - **Runtime Metrics**: Support for viewing runtime metrics of each rule, such as total message count, success/failure counts, current rates, and more.
 
@@ -36,12 +36,12 @@ Through flexible event handling, extensive message transformation, flexible data
 
 ## Before You Start
 
-This section describes the preparations you need to complete before you start to create the MySQL data integration in EMQX Cloud, including installing the MySQL server and creating data tables.
+This section describes the preparations you need to complete before you start to create the MySQL data integration in EMQX Platform, including installing the MySQL server and creating data tables.
 
 ### Prerequisites
 
 - Knowledge about [Data Integration](./introduction.md)
-- Knowledge about EMQX Cloud data integration [rules](./rules.md)
+- Knowledge about EMQX Platform data integration [rules](./rules.md)
 
 ### Install MySQL Server
 

@@ -1,20 +1,20 @@
 # Ingest MQTT Data into InfluxDB
 
-[InfluxDB](https://www.influxdata.com/) is a database for storing and analyzing time series data. Its powerful data throughput capability and stable performance make it very suitable to be applied in the field of Internet of Things (IoT). EMQX Cloud now supports connection to mainstream versions of InfluxDB Cloud, InfluxDB OSS, or InfluxDB Enterprise.
+[InfluxDB](https://www.influxdata.com/) is a database for storing and analyzing time series data. Its powerful data throughput capability and stable performance make it very suitable to be applied in the field of Internet of Things (IoT). EMQX Platform now supports connection to mainstream versions of InfluxDB Cloud, InfluxDB OSS, or InfluxDB Enterprise.
 
-This page provides a comprehensive introduction to the data integration between EMQX Cloud and InfluxDB with practical instructions on creating and validating the data integration.
+This page provides a comprehensive introduction to the data integration between EMQX Platform and InfluxDB with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-InfluxDB data integration is an out-of-the-box feature in EMQX Cloud that combines EMQX Cloud's real-time data capturing and transmission capabilities with InfluxDB's data storage and analysis functionality. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Cloud to InfluxDB for storage and analysis, eliminating the need for complex coding. EMQX Cloud forwards device data to InfluxDB for storage and analysis through the rule engine and Sink. After analyzing the data, InfluxDB generates reports, charts, and other data analysis results, and then presents them to users through InfluxDB's visualization tools.
+InfluxDB data integration is an out-of-the-box feature in EMQX Platform that combines EMQX Platform's real-time data capturing and transmission capabilities with InfluxDB's data storage and analysis functionality. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Platform to InfluxDB for storage and analysis, eliminating the need for complex coding. EMQX Platform forwards device data to InfluxDB for storage and analysis through the rule engine and Sink. After analyzing the data, InfluxDB generates reports, charts, and other data analysis results, and then presents them to users through InfluxDB's visualization tools.
 
 The diagram below illustrates the typical data integration architecture between EMQX and InfluxDB in an energy storage scenario.
 
-![EMQX Cloud InfluxDB Data Integration](./_assets/data_integration_influxdb.jpg)
+![EMQX Platform InfluxDB Data Integration](./_assets/data_integration_influxdb.jpg)
 
-EMQX Cloud and InfluxDB provide an extensible IoT platform for efficiently collecting and analyzing energy consumption data in real-time. In this architecture, EMQX Cloud serves as the IoT platform, handling device access, message transmission, and data routing, while InfluxDB serves as the data storage and analysis platform, responsible for data storage and analysis functions. The workflow is as follows:
+EMQX Platform and InfluxDB provide an extensible IoT platform for efficiently collecting and analyzing energy consumption data in real-time. In this architecture, EMQX Platform serves as the IoT platform, handling device access, message transmission, and data routing, while InfluxDB serves as the data storage and analysis platform, responsible for data storage and analysis functions. The workflow is as follows:
 
-1. **Message publication and reception**: Energy storage devices and Industrial IoT devices establish successful connections to EMQX Cloud through the MQTT protocol and regularly publish energy consumption data using the MQTT protocol, including information such as power consumption, input/output power, etc. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
+1. **Message publication and reception**: Energy storage devices and Industrial IoT devices establish successful connections to EMQX Platform through the MQTT protocol and regularly publish energy consumption data using the MQTT protocol, including information such as power consumption, input/output power, etc. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
 2. **Message data processing**: Using the built-in rule engine, messages from specific sources can be processed based on topic matching. When a message arrives, it passes through the rule engine, which matches it with the corresponding rule and processes the message data, such as transforming data formats, filtering specific information, or enriching messages with contextual information.
 3. **Data ingestion into InfluxDB**: Rules defined in the rule engine trigger the operation of writing messages to InfluxDB. The InfluxDB Sink provides Line Protocol templates that allow flexible definitions of the data format to be written, mapping specific fields from the message to the corresponding measurement and field in InfluxDB.
 
@@ -27,15 +27,15 @@ After energy consumption data is written to InfluxDB, you can use Line Protocol 
 
 The InfluxDB data integration offers the following features and advantages:
 
-- **Efficient Data Processing**: EMQX Cloud can handle a massive number of IoT device connections and message throughput, while InfluxDB excels in data writing, storage, and querying, providing outstanding performance to meet the data processing needs of IoT scenarios without overburdening the system.
-- **Message Transformation**: Messages can undergo extensive processing and transformation through EMQX Cloud rules before being written into InfluxDB.
-- **Scalability**: Both EMQX Cloud and InfluxDB are capable of cluster scaling, allowing flexible horizontal expansion of clusters as business needs grow.
+- **Efficient Data Processing**: EMQX Platform can handle a massive number of IoT device connections and message throughput, while InfluxDB excels in data writing, storage, and querying, providing outstanding performance to meet the data processing needs of IoT scenarios without overburdening the system.
+- **Message Transformation**: Messages can undergo extensive processing and transformation through EMQX Platform rules before being written into InfluxDB.
+- **Scalability**: Both EMQX Platform and InfluxDB are capable of cluster scaling, allowing flexible horizontal expansion of clusters as business needs grow.
 - **Rich Query Capabilities**: InfluxDB offers optimized functions, operators, and indexing techniques, enabling efficient querying and analysis of timestamped data, and accurately extracting valuable insights from IoT time-series data.
 - **Efficient Storage**: InfluxDB uses encoding methods with high compression ratios, significantly reducing storage costs. It also allows customization of storage durations for different data types to avoid unnecessary data occupying storage space.
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create InfluxDB Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create InfluxDB Data Integration in EMQX Platform.
 
 ### Prerequisites
 

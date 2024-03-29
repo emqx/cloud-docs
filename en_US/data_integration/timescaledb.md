@@ -2,7 +2,7 @@
 
 [TimescaleDB](https://www.amazon.cn/en/TimescaleDB/) (Timescale) is a database specifically designed for storing and analyzing time-series data. Its exceptional data throughput and reliable performance make it an ideal choice for the Internet of Things (IoT) domain, providing efficient and scalable data storage and analysis solutions for IoT applications.
 
-This page provides a detailed introduction to the functional features of TimescaleDB Data Integration and offers practical guidance for creating it. The content includes creating TimescaleDB connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to EMQX Cloud via the MQTT protocol and store the data in TimescaleDB through configured data integration.
+This page provides a detailed introduction to the functional features of TimescaleDB Data Integration and offers practical guidance for creating it. The content includes creating TimescaleDB connectors, creating rules, and testing rules. It demonstrates how to report simulated temperature and humidity data to EMQX Platform via the MQTT protocol and store the data in TimescaleDB through configured data integration.
 
 ## How It Works
 
@@ -10,7 +10,7 @@ TimescaleDB data integration is a built-in feature in EMQX that combines the rea
 
 The diagram below illustrates the typical architecture of EMQX and TimescaleDB data integration in the industrial IoT.
 
-![EMQX Cloud Integration TimescaleDB](./_assets/data_integration_timescaledb.png)
+![EMQX Platform Integration TimescaleDB](./_assets/data_integration_timescaledb.png)
 
 EMQX and TimescaleDB provide a scalable IoT platform for efficiently collecting and analyzing energy consumption data in real-time. In this architecture, EMQX serves as the IoT platform, responsible for device access, message transmission, and data routing, while TimescaleDB acts as the data storage and analysis platform, handling data storage and analysis functions.
 
@@ -37,7 +37,7 @@ The TimescaleDB data integration in EMQX brings the following features and advan
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create TimescaleDB Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create TimescaleDB Data Integration in EMQX Platform.
 
 ### Prerequisites
 
@@ -46,14 +46,14 @@ This section introduces the preparatory work needed to create TimescaleDB Data I
 
 ### Set Up Deployment
 
-Before you start, you need to create a deployment (EMQX Cluster) on EMQX Cloud and configure the networking.
+Before you start, you need to create a deployment (EMQX Cluster) on EMQX Platform and configure the networking.
 
 - For Professional Plan users: Please create [ VPC Peering Connections](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource (Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
 - For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 
 ### Install Timescale and Create Data Table
 
-EMQX Cloud supports integration with self-deployed TimescaleDB or Timescale Service on the cloud. You can use Timescale Service as a cloud service or deploy a TimescaleDB instance using Docker.
+EMQX Platform supports integration with self-deployed TimescaleDB or Timescale Service on the cloud. You can use Timescale Service as a cloud service or deploy a TimescaleDB instance using Docker.
 
 #### Create Timescale Service Instance and Table on the Cloud
 
@@ -96,7 +96,7 @@ If you are using TimescaleDB Cloud for the first time, you can refer to the [hel
 
     Access the Timescale instance details page, navigate to `Operations` -> `Database Parameters` -> `Common Parameters`, and increase the maximum number of connections to 100 or higher.
 
-    ![EMQX Cloud Integration TimescaleDB](./_assets/data_integration_timescaledb_max_conn.png)
+    ![EMQX Platform Integration TimescaleDB](./_assets/data_integration_timescaledb_max_conn.png)
 
 #### Install TimescaleDB via Docker and Create a Table
 

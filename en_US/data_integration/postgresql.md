@@ -1,8 +1,8 @@
 # Ingest MQTT Data into PostgreSQL
 
-[PostgreSQL](https://www.postgresql.org/) is the world's most advanced open-source relational database, possessing robust data processing capabilities suitable for everything from simple applications to complex data tasks. EMQX Cloud supports integration with PostgreSQL, enabling efficient handling of real-time data streams from IoT devices. This integration supports large-scale data storage, precise querying, and complex data association analysis while ensuring data integrity. Leveraging EMQX's efficient message routing and PostgreSQL's flexible data model, it's easy to monitor device statuses, track events, and audit operations, providing businesses with deep data insights and robust business intelligence support.
+[PostgreSQL](https://www.postgresql.org/) is the world's most advanced open-source relational database, possessing robust data processing capabilities suitable for everything from simple applications to complex data tasks. EMQX Platform supports integration with PostgreSQL, enabling efficient handling of real-time data streams from IoT devices. This integration supports large-scale data storage, precise querying, and complex data association analysis while ensuring data integrity. Leveraging EMQX's efficient message routing and PostgreSQL's flexible data model, it's easy to monitor device statuses, track events, and audit operations, providing businesses with deep data insights and robust business intelligence support.
 
-This page introduces the data integration between EMQX Cloud and PostgreSQL with practical instructions on creating and validating the data integration.
+This page introduces the data integration between EMQX Platform and PostgreSQL with practical instructions on creating and validating the data integration.
 
 ::: tip
 This page is also applicable to MatrixDB.
@@ -10,16 +10,16 @@ This page is also applicable to MatrixDB.
 
 ## How It Works
 
-PostgreSQL data integration is an out-of-the-box feature in EMQX Cloud designed to bridge the gap between MQTT-based IoT data and PostgreSQL's powerful data storage capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Cloud to PostgreSQL for storage and management, eliminating the need for complex coding.
+PostgreSQL data integration is an out-of-the-box feature in EMQX Platform designed to bridge the gap between MQTT-based IoT data and PostgreSQL's powerful data storage capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Platform to PostgreSQL for storage and management, eliminating the need for complex coding.
 
-The diagram below illustrates a typical architecture of data integration between EMQX Cloud and PostgreSQL:
+The diagram below illustrates a typical architecture of data integration between EMQX Platform and PostgreSQL:
 
 ![EMQX Integration PostgreSQL](./_assets/data-integration-postgesql.png)
 
 Ingesting MQTT data into PostgreSQL works as follows:
 
-- **IoT devices connect to EMQX Cloud**: After IoT devices are successfully connected through the MQTT protocol, online events will be triggered. The events include information such as device ID, source IP address, and other attributes.
-- **Message publication and reception**: The devices publish telemetry and status data to specific topics. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
+- **IoT devices connect to EMQX Platform**: After IoT devices are successfully connected through the MQTT protocol, online events will be triggered. The events include information such as device ID, source IP address, and other attributes.
+- **Message publication and reception**: The devices publish telemetry and status data to specific topics. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
 - **Rule Engine Processing Messages**: With the built-in rules engine, messages and events from specific sources can be processed based on topic matching. The rules engine matches the corresponding rules and processes messages and events, such as converting data formats, filtering out specific information, or enriching messages with contextual information.
 - **Write to PostgreSQL**: The rule triggers the writing of messages to PostgreSQL. With the help of SQL templates, users can extract data from the rule processing results to construct SQL and send it to PostgreSQL for execution, so that specific fields of the message can be written or updated into the corresponding tables and columns of the database.
 
@@ -33,7 +33,7 @@ After the event and message data are written to PostgreSQL, you can connect to P
 PostgreSQL is a popular open-source relational database with a rich set of features. The data integration with PostgreSQL can bring the following features and advantages to your business:
 
 - **Flexible Event Handling**: Through the EMQX rules engine, PostgreSQL can handle device lifecycle events, greatly facilitating the development of various management and monitoring tasks required for implementing IoT applications. By analyzing event data, you can promptly detect device failures, abnormal behavior, or trend changes to take appropriate measures.
-- **Message Transformation**: Messages can undergo extensive processing and transformation through EMQX Cloud rules before being written to PostgreSQL, making storage and usage more convenient.
+- **Message Transformation**: Messages can undergo extensive processing and transformation through EMQX Platform rules before being written to PostgreSQL, making storage and usage more convenient.
 - **Flexible Data Operations**: With SQL templates provided by PostgreSQL data bridging, it's easy to write or update data from specific fields to the corresponding tables and columns in the PostgreSQL database, enabling flexible data storage and management.
 - **Integration of Business Processes**: PostgreSQL data bridging allows you to integrate device data with PostgreSQL's rich ecosystem applications, facilitating integration with systems like ERP, CRM, or other custom business systems to achieve advanced business processes and automation.
 - **Combining IoT with GIS Technology**: PostgreSQL offers GIS data storage and querying capabilities, supporting geospatial indexing, geofencing and alerts, real-time location tracking, and geographical data processing, among others. Combined with EMQX's reliable message transmission capability, it can efficiently process and analyze geographical location information from mobile devices such as vehicles, enabling real-time monitoring, intelligent decision-making, and business optimization.
@@ -43,7 +43,7 @@ Through flexible event handling, extensive message transformation, flexible data
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create PostgreSQL Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create PostgreSQL Data Integration in EMQX Platform.
 
 ### Prerequisites
 

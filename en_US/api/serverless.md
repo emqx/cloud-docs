@@ -1,6 +1,6 @@
 # Serverless API Overview
 
-The table below summarizes the API documentation for EMQX Cloud Serverless deployment.
+The table below summarizes the API documentation for EMQX Serverless deployment.
 
 
 | API                                               | Description                                                  |
