@@ -83,7 +83,7 @@ Before creating data integration rules, you need to first create a Google PubSub
 4. Click the **Test** button. If the Google PubSub service is accessible, a success prompt will be returned.
 5. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to GCP PubSub.
 
@@ -112,7 +112,7 @@ Next, you need to create a rule to specify the data to be written and add corres
    - **Action Name**: The system will automatically generate an action name, or you can name it yourself.
 
    - **GCP PubSub Topic**: Enter the topic ID xxx you created in Create and Manage Topic in GCP.
-  
+    
    - **Payload Template**: Leave it blank or define a template.
      - If left blank, it will encode all visible inputs from the MQTT message using JSON format, such as clientid, topic, payload, etc.
      - If using the defined template, placeholders of the form ${variable_name} will be filled with the corresponding value from the MQTT context. For example, ${topic} will be replaced with my/topic if such is the MQTT message topic.
@@ -122,7 +122,7 @@ Next, you need to create a rule to specify the data to be written and add corres
    ```sql
         # GCP Pub/Sub message template 
     {"up_timestamp": ${up_timestamp}, "client_id": ${client_id}, "temp": ${temp}, "hum": ${hum}}
-    ```
+   ```
 
    - **Attributes Template and Ordering Key Template**(optional): Similarly, you can define templates for formatting the attributes and/or ordering key of the outgoing message.
      - For Attributes, both keys and values may use placeholders of the form ${variable_name}. Such values will be extracted from the MQTT context. If a key template resolves to an empty string, that key is omitted from the outgoing message to GCP PubSub.
@@ -133,7 +133,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 7. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
-## Test Rules
+## Test the Rule
 
 You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting, but you can also use any other client.
 

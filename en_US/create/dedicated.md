@@ -1,6 +1,5 @@
 # Create Dedicated Deployment
 
-
 EMQX Dedicated Plan offers independent MQTT service clusters with higher connection and Transactions Per Second (TPS) limits. It also supports more advanced features and complex network architectures. This guide uses the Dedicated Plan as an example to walk you through the steps of creating and utilizing the EMQX Platform.
 
 ## Create a Deployment
@@ -25,8 +24,8 @@ EMQX Dedicated Plan offers independent MQTT service clusters with higher connect
 6. Upon accepting the terms, the deployment will begin. Once the deployment status changes to **Running**, your deployment is successfully created and ready for use.
 
 ## View Deployment
-
 After the deployment is created, it will appear on the EMQX Platform console home page. Click the Dedicated deployment card to enter the deployment overview page. On the overview page, you can check the real-time status and connection information for your deployment.
+
 
 ![dedicated](./_assets/dedicated_overview.png)
 
@@ -57,6 +56,7 @@ Provides REST APIs for integration with external systems, such as querying clien
 EMQX Dedicated deployment provides custom one-way/two-way TLS/SSL configuration and supports self-signed and CA-signed certificates.
 
 
+
 ### [VPC Peering Connections](../deployments/vpc_peering.md)
 
 VPC peering connection is a network connection between two VPCs. Through this connection, the instances in different VPCs can communicate with each other as if they are in the same network.
@@ -65,6 +65,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 ### [Configure PrivateLink](../deployments/privatelink.md)
 PrivateLink enables the proprietary network VPC where the EMQX Platform deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
 
+
 ### [Internal Load Balancers](../vas/intranet-lb.md)
 
 Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
@@ -72,7 +73,7 @@ Intranet load balancing is a service that distributes traffic on demand in the i
 
 ### [NAT Gateway](../vas/nat-gateway.md)
 
-NAT gateways can provide network address translation services to provide Professional deployments with the ability to access public network resources without the need for VPC peering connections.
+NAT gateways can provide network address translation services to provide Dedicated deployments with the ability to access public network resources without the need for VPC peering connections.
 
 ## Connect to the Deployment
 

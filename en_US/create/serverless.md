@@ -6,6 +6,7 @@ One of the biggest advantages of using Serverless deployment is that it is bille
 
 ## Create a Deployment
 
+
 1. Log in to [EMQX Platform console](https://cloud-intl.emqx.com/console/).
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
@@ -23,8 +24,8 @@ One of the biggest advantages of using Serverless deployment is that it is bille
 7. Upon accepting the terms, the deployment will begin. The deployment's progress can be tracked on the **Projects** page. Once the status updates to **Running**, your deployment is successfully established and is now operational.
 
 ## View Deployment
-
 After the deployment is created, it will appear on the EMQX Platform console home page. Click the Serverless deployment card to enter the deployment overview page. On the overview page, you can check the real-time status and connection information for your deployment.
+
 
 [![serverless](./_assets/serverless_overview.png)](https://github.com/emqx/cloud-docs/blob/docs_5.x_dev_update/en_US/create/_assets/serverless_overview.png)
 
@@ -42,10 +43,10 @@ After the deployment is created, it will appear on the EMQX Platform console hom
 
 - **Address:** The address for the client/terminal device to connect to EMQX Platform.
 - **Ports:** `8883` (mqtts) and `8084` (wss) are enabled by default. Check out the [connection guide](../deployments/port_guide_serverless.md) to learn more.
+
 - **CA Certificate**: If the client needs to verify the server's CA, click to download this certificate.
 
 ## Connect to Serverless Deployment Using MQTTX
-
 EMQX Platform recommends using [MQTTX](https://mqttx.app/) to test the connection to the deployment, but you can also use your preferred [SDK or other tools](../connect_to_deployments/overview.md) for connection. Before connecting to the deployment using MQTTX, you first need to obtain the deployment connection address (Host) and port (Port) and user authentication information.
 
 1. Get the connection information. Click **Overview** on the left navigation menu to find the deployment connection address and port.
@@ -53,6 +54,7 @@ EMQX Platform recommends using [MQTTX](https://mqttx.app/) to test the connectio
 2. Add client authentication information. Click on **Access Control** -> **Authentication** in the left menu, click the **Add** button, enter the username and password for the client or device, and then click **Confirm**.
 
    ![serverless_auth](./_assets/serverless_auth.png)
+
 
 3. Set up the connection information in [MQTTX](https://mqttx.app/zh/) and connect to the deployment.
 
