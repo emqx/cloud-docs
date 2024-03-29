@@ -4,7 +4,7 @@
 
 #### 2024-3
 * EMQX Cloud is known as EMQX Platform
-* EMQX Dedicated is upgrade to v5 version with bunch of new features
+* EMQX Dedicated is upgraded to v5 version with a bunch of new features.
 
 #### 2023-12
 * Data Integration in Serverless 
