@@ -4,7 +4,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
 
 ## Create a Deployment
 
-1. Log in to [EMQX Cloud console](https://cloud-intl.emqx.com/console/).
+1. Log in to [EMQX Platform console](https://cloud-intl.emqx.com/console/).
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
