@@ -3,7 +3,7 @@
 # Release Notes
 
 #### 2024-3
-* EMQX Cloud is known as EMQX Platform
+* EMQX Cloud is known as EMQX Platform.
 * EMQX Dedicated is upgraded to v5 version with a bunch of new features.
 
 #### 2023-12
