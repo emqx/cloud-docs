@@ -19,7 +19,7 @@ EMQX Cloud's Dedicated Plan offers independent MQTT service instances/clusters w
    - **Billing Method**: You can select `Hourly billing` (to pay by the hour) or `Annual prepaid` (an annual billing plan).
    - **Deployment Name & Project**: Provide a name for your deployment and select the appropriate project.
 
-5. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Cloud Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
+5. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Platform Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
 
 6. Upon accepting the terms, the deployment will begin. Once the deployment status changes to **Running**, your deployment is successfully created and ready for use.
 
