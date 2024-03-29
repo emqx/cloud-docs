@@ -122,7 +122,7 @@ Before creating data integration rules, you need to first create a PostgreSQL co
 
 8. Click the **New** button to complete the creation.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to PostgreSQL.
 
@@ -168,7 +168,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 8. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
-## Test Rules
+## Test the Rule
 
 You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting, but you can also use any other client.
 

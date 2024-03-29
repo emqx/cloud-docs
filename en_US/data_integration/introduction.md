@@ -1,14 +1,8 @@
 # Data Integration Overview
 
-::: tip 
-
-This section introduces the Data Integration feature for Serverless deployments. If your deployment is a Dedicated version, please refer to [Data Integration (Dedicated)](../rule_engine/introduction.md). 
-
-:::
-
 As a fully managed MQTT message cloud service, EMQX Cloud connects Internet of Things (IoT) devices via the MQTT protocol and delivers messages in real time. Building on this foundation, Data Integration enhances EMQX Cloud's capability of connecting with other cloud resources, enabling seamless integration of devices with other business systems. EMQX Cloud Data Integration not only provides a clear and flexible "configurable" architecture solution but also simplifies the development process. It improves user availability, reduces the coupling between business systems and EMQX Cloud, and provides a better infrastructure for data forwarding.
 
-![data_integration_intro](./_assets/integration_intro_01.jpg)
+![data_integration_intro](./_assets/integration_intro_01.png)
 
 ## How It Works
 
@@ -16,7 +10,7 @@ In Serverless deployments, as devices or applications establish connections, the
 
 ### [Connectors](./connectors.md)
 
-Connectors help to connect to the cloud service products you purchase from the cloud platform, which can be message queue services like Kafka or storage services like RDS. A "connector" is equivalent to the "resource" of the data integration for the Dedicated version, providing a way to connect to a cloud service.
+A connector serves as the underlying connection channel for Sink/Source, used to connect to the cloud service products you purchase from the cloud platform. The cloud service products can be message queue services like Kafka or storage services like RDS. 
 
 ### [Rules](./rules.md)
 
@@ -37,6 +31,24 @@ The following is the basic process for creating data integrations:
 3. Attach actions to the rule. The processed data will be forwarded to the cloud service through the configured connector when the rule triggers an action.
 4. Test whether the created data integration can run correctly.
 
+## Network Setting Required by Deployments
+
+The data integration function in different deployments requires different levels of data source access and networking.
+
+**Serverless Deployment**
+
+- Data sources only support public network access. Therefore, before creating a data source, you need to ensure the data source has the capability of public network access and open the security group.
+- Only supports Kafka and HTTP Server types of data integration.
+
+**Dedicated Deployment**
+
+- It is recommended to access data sources through an internal network. Therefore, before creating, you need to configure [VPC peering](../deployments/vpc_peering.md) first and also open the security group.
+- If you need to access it through the public network, you can enable a [NAT gateway](../vas/nat-gateway.md).
+
+**BYOC Deployment**
+
+- It is recommended to access data sources through an internal network to improve network security and performance. Before creating, you need to configure a peering connection between the VPC where the resources are located and the VPC where the BYOC deployment is located in the public cloud console, and also open the relevant security group. For related steps, please refer to the [Create VPC Peering Connections](../deployments/byoc_vpc_peering.md) section.
+- If you need to access resources through the public network, please configure a NAT gateway for the VPC where the BYOC deployment is located in your public cloud console.
 
 ## Pricing and Usage Limits
 
