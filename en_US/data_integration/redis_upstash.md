@@ -2,20 +2,20 @@
 
 Upstash is a cloud-based, serverless data platform that empowers developers to seamlessly integrate Redis databases and Kafka into their applications without the hassle of managing infrastructure. Offering a serverless architecture, Upstash allows users to enjoy the benefits of Redis, a high-performance, in-memory data store, and Kafka, without dealing with the complexities of deployment, scaling, or maintenance.
 
-This page provides an in-depth overview of the functional features of Upstash Data Integration, along with practical guidance for its implementation. It covers essential tasks such as creating Kafka connectors, defining rules, and testing their effectiveness. Additionally, it demonstrates the process of reporting simulated temperature and humidity data to EMQX Cloud using the MQTT protocol and storing this data in Upstash through the configured data integration.
+This page provides an in-depth overview of the functional features of Upstash Data Integration, along with practical guidance for its implementation. It covers essential tasks such as creating Kafka connectors, defining rules, and testing their effectiveness. Additionally, it demonstrates the process of reporting simulated temperature and humidity data to EMQX Platform using the MQTT protocol and storing this data in Upstash through the configured data integration.
 
 ## How It Works
 
-Upstash Redis Data Integration is an out-of-the-box feature in EMQX Cloud, bridging MQTT-based IoT data and Kafka's powerful data processing capabilities. Through its built-in rule engine component, the integration simplifies the data flow and processing between the two platforms without complex coding.
+Upstash Redis Data Integration is an out-of-the-box feature in EMQX Platform, bridging MQTT-based IoT data and Kafka's powerful data processing capabilities. Through its built-in rule engine component, the integration simplifies the data flow and processing between the two platforms without complex coding.
 
-The diagram below illustrates a typical architecture of data integration between EMQX Cloud and Redis:
+The diagram below illustrates a typical architecture of data integration between EMQX Platform and Redis:
 
 ![EMQX Cloud Integration Redis](./_assets/data_integration_redis.png)
 
 Ingesting MQTT data into Upstash Redis works as follows:
 
-1. **Message publication and reception**: Industrial IoT devices establish successful connections to EMQX Cloud deployment through the MQTT protocol and publish real-time MQTT data from machines, sensors, and product lines based on their operational states, readings, or triggered events to EMQX Cloud. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
-2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Cloud. The rules, based on predefined criteria, determine which messages need to be routed to Redis. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
+1. **Message publication and reception**: Industrial IoT devices establish successful connections to EMQX Platform deployment through the MQTT protocol and publish real-time MQTT data from machines, sensors, and product lines based on their operational states, readings, or triggered events to EMQX Platform. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
+2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Platform. The rules, based on predefined criteria, determine which messages need to be routed to Redis. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
 3. **Data ingestion into Redis**: Once the rules engine has processed the data, it triggers actions to execute preset Redis commands for caching, counting, and other operations on the data.
 4. **Data storage and utilization**: By reading data stored in Redis, enterprises can leverage its rich data operation capabilities to implement various use cases. For example, in the logistics field, it's possible to obtain the latest status of devices, as well as carry out GPS geographical location analysis based on data and perform operations like real-time data analysis and sorting. This facilitates functionalities like real-time tracking, route recommendations, and more.
 
@@ -24,13 +24,13 @@ Ingesting MQTT data into Upstash Redis works as follows:
 The data integration with Redis offers a range of features and benefits tailored to ensure efficient data transmission, processing, and utilization:
 
 - **High Performance and Scalability**: Supported by EMQX's distributed architecture and Redis's cluster mode, applications can seamlessly scale with increasing data volumes. Even for large datasets, consistent performance and responsiveness are ensured.
-- **Real-time Data Streams**: EMQX Cloud is built specifically for handling real-time data streams, ensuring efficient and reliable data transmission from devices to Redis. Redis is capable of quickly executing data operations, meeting the needs for real-time data caching and making it an ideal data storage component for EMQX Cloud.
-- **Real-time Data Analysis**: Redis can be used for real-time data analysis, capable of computing real-time metrics like device connections, message publishing, and specific business indicators. EMQX Cloud, on the other hand, can handle real-time message transmission and processing, providing real-time data inputs for data analysis.
-- **Geographic Location Analysis**: Redis offers geospatial data structures and commands for storing and querying geographic location information. Combined with EMQX Cloud's powerful device connection capabilities, it can be widely applied in various IoT applications like logistics, connected vehicles, smart cities, and more.
+- **Real-time Data Streams**: EMQX Platform is built specifically for handling real-time data streams, ensuring efficient and reliable data transmission from devices to Redis. Redis is capable of quickly executing data operations, meeting the needs for real-time data caching and making it an ideal data storage component for EMQX Platform.
+- **Real-time Data Analysis**: Redis can be used for real-time data analysis, capable of computing real-time metrics like device connections, message publishing, and specific business indicators. EMQX Platform, on the other hand, can handle real-time message transmission and processing, providing real-time data inputs for data analysis.
+- **Geographic Location Analysis**: Redis offers geospatial data structures and commands for storing and querying geographic location information. Combined with EMQX Platform's powerful device connection capabilities, it can be widely applied in various IoT applications like logistics, connected vehicles, smart cities, and more.
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create Upstash For Redis Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create Upstash For Redis Data Integration in EMQX Platform.
 
 ### Prerequisites
 
@@ -45,7 +45,7 @@ To begin using Upstash, visit https://upstash.com/ and create an account.
 
 1. Once you logged in, you can create a Redis Database by clicking on the **Create Database** button.
 
-2. Type a valid name. Select the region in which you would like your database to be deployed. To optimize performance, it is recommended to choose the region that is closest to your EMQX Cloud deployment's region.
+2. Type a valid name. Select the region in which you would like your database to be deployed. To optimize performance, it is recommended to choose the region that is closest to your deployment's region.
 
 3. Click **Create**. Now you have a serverless Redis Database.
 
@@ -53,18 +53,7 @@ To begin using Upstash, visit https://upstash.com/ and create an account.
 
 Enter the database console, now you have the information needed for the next steps.
 
-## Before You Start
-
-This section introduces the preparatory work needed to create Upstash for Redis Data Integration in EMQX Cloud.
-
-### Prerequisites
-
-- Understand [rules](./rules.md).
-- Understand [data integration](./introduction.md).
-
 ## Create a Connector
-
-This section introduces the preparatory work needed to create Upstash for Redis Data Integration in EMQX Cloud.
 
 1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
 
@@ -88,7 +77,7 @@ This section introduces the preparatory work needed to create Upstash for Redis 
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Upstash for Redis.
 
-1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
 2. Enter the rule matching SQL statement in the **SQL Editor**. In the following rule, we read the time when the message was reported `arrived`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
 
@@ -112,7 +101,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 4. Select the connector you just created from the **Connector** dropdown box.
 
-5. Configure **Redis Command Template**, We read the up_timestamp, client ID, temperature and humidity form the topic and save to Redis:
+5. Configure **Redis Command Template**. The "up_timestamp", "client ID", "temperature", and "humidity" data will be read from the topic and saved to Redis:
 
    ```sql
    HMSET ${client_id} ${up_timestamp} ${temp}

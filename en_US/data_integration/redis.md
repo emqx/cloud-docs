@@ -2,20 +2,20 @@
 
 [Redis](https://redis.io/) is an open-source, in-memory data store used by millions of developers as a database, cache, streaming engine, and message broker. EMQX supports integration with Redis so you can save MQTT messages and client events to Redis. With Redis data integration, you can use Redis for message caching and statistics of client events.
 
-This page provides a detailed overview of the data integration between EMQX Cloud and Redis with practical instructions on creating and validating the data integration.
+This page provides a detailed overview of the data integration between EMQX Platform and Redis with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-Redis data integration is an out-of-the-box feature in EMQX Cloud that combines the real-time data capturing and transmission capabilities of EMQX Cloud with Redis's rich data structures and powerful Key-Value read and write performance capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Cloud to Redis for data caching and operations., eliminating the need for complex coding.
+Redis data integration is an out-of-the-box feature in EMQX Platform that combines the real-time data capturing and transmission capabilities of EMQX Platform with Redis's rich data structures and powerful Key-Value read and write performance capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Platform to Redis for data caching and operations., eliminating the need for complex coding.
 
-The diagram below illustrates a typical architecture of data integration between EMQX Cloud and Redis:
+The diagram below illustrates a typical architecture of data integration between EMQX Platform and Redis:
 
 ![EMQX Cloud Integration Redis](./_assets/data_integration_redis.png)
 
 Ingesting MQTT data into Redis works as follows:
 
-1. **Message publication and reception**: Industrial IoT devices establish successful connections to EMQX Cloud deployment through the MQTT protocol and publish real-time MQTT data from machines, sensors, and product lines based on their operational states, readings, or triggered events to EMQX Cloud. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
-2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Cloud. The rules, based on predefined criteria, determine which messages need to be routed to Redis. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
+1. **Message publication and reception**: Industrial IoT devices establish successful connections to EMQX Platform deployment through the MQTT protocol and publish real-time MQTT data from machines, sensors, and product lines based on their operational states, readings, or triggered events to EMQX Platform. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
+2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Platform. The rules, based on predefined criteria, determine which messages need to be routed to Redis. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
 3. **Data ingestion into Redis**: Once the rules engine has processed the data, it triggers actions to execute preset Redis commands for caching, counting, and other operations on the data.
 4. **Data storage and utilization**: By reading data stored in Redis, enterprises can leverage its rich data operation capabilities to implement various use cases. For example, in the logistics field, it's possible to obtain the latest status of devices, as well as carry out GPS geographical location analysis based on data and perform operations like real-time data analysis and sorting. This facilitates functionalities like real-time tracking, route recommendations, and more.
 
@@ -24,9 +24,9 @@ Ingesting MQTT data into Redis works as follows:
 The data integration with Redis offers a range of features and benefits tailored to ensure efficient data transmission, processing, and utilization:
 
 - **High Performance and Scalability**: Supported by EMQX's distributed architecture and Redis's cluster mode, applications can seamlessly scale with increasing data volumes. Even for large datasets, consistent performance and responsiveness are ensured.
-- **Real-time Data Streams**: EMQX Cloud is built specifically for handling real-time data streams, ensuring efficient and reliable data transmission from devices to Redis. Redis is capable of quickly executing data operations, meeting the needs for real-time data caching and making it an ideal data storage component for EMQX Cloud.
-- **Real-time Data Analysis**: Redis can be used for real-time data analysis, capable of computing real-time metrics like device connections, message publishing, and specific business indicators. EMQX Cloud, on the other hand, can handle real-time message transmission and processing, providing real-time data inputs for data analysis.
-- **Geographic Location Analysis**: Redis offers geospatial data structures and commands for storing and querying geographic location information. Combined with EMQX Cloud's powerful device connection capabilities, it can be widely applied in various IoT applications like logistics, connected vehicles, smart cities, and more.
+- **Real-time Data Streams**: EMQX Platform is built specifically for handling real-time data streams, ensuring efficient and reliable data transmission from devices to Redis. Redis is capable of quickly executing data operations, meeting the needs for real-time data caching and making it an ideal data storage component for EMQX Platform.
+- **Real-time Data Analysis**: Redis can be used for real-time data analysis, capable of computing real-time metrics like device connections, message publishing, and specific business indicators. EMQX Platform, on the other hand, can handle real-time message transmission and processing, providing real-time data inputs for data analysis.
+- **Geographic Location Analysis**: Redis offers geospatial data structures and commands for storing and querying geographic location information. Combined with EMQX Platform's powerful device connection capabilities, it can be widely applied in various IoT applications like logistics, connected vehicles, smart cities, and more.
 
 ## Before You Start
 
@@ -35,7 +35,7 @@ This section describes the preparations you need to complete before you start to
 ### Prerequisites
 
 - Knowledge about [data integration](./introduction.md)
-- Knowledge about EMQX Cloud data integration [rules](./rules.md)
+- Knowledge about EMQX Platform data integration [rules](./rules.md)
 
 ### Install Redis Server
 
@@ -122,7 +122,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 4. Select the connector you just created from the **Connector** dropdown box.
 
-5. Configure **Redis Command Template**, We read the up_timestamp, client ID, temperature and humidity form the topic and save to Redis.
+5. Configure **Redis Command Template**. The "up_timestamp", "client ID", "temperature", and "humidity" data will be read from the topic and saved to Redis:
 
    ```bash
     HMSET ${client_id} ${up_timestamp} ${temp_hum}
