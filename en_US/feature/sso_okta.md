@@ -1,16 +1,16 @@
 # Configure SSO with Okta Authorization
 
-If you manage your enterprise accounts using Okta, you can choose Okta as the authorization server for EMQX Platform and enable Single Sign-On (SSO). Additionally, you need to configure OpenID Connect (OIDC) settings in Okta. This page provides examples of OIDC configurations in both EMQX and Okta to help you understand the end-to-end configuration process for connecting an Enterprise Identity Provider (IdP) with EMQX Platform to enable SSO.
+If you manage your enterprise accounts using Okta, you can choose Okta as the authorization server for EMQX Cloud and enable Single Sign-On (SSO). Additionally, you need to configure OpenID Connect (OIDC) settings in Okta. This page provides examples of OIDC configurations in both EMQX and Okta to help you understand the end-to-end configuration process for connecting an Enterprise Identity Provider (IdP) with EMQX Cloud to enable SSO.
 
 ## Prerequisites
 
-- An EMQX Platform Root account.
+- An EMQX Cloud Root account.
 - An administrator account for Okta Workforce Identity.
 - Be familiarity with Okta's enterprise account management. Refer to [Okta documentation](https://help.okta.com/oie/en-us/content/topics/identity-engine/oie-get-started.htm) for guidance.
 
-## Step 1: Enable SSO in EMQX Platform
+## Step 1: Enable SSO in EMQX Cloud
 
-1. Log in to Cloud Console using your EMQX Platform Root account.
+1. Log in to Cloud Console using your EMQX Cloud Root account.
 
 2. Click on the user icon in the upper right corner and select **SSO** from the dropdown menu.
 
@@ -48,11 +48,11 @@ If you manage your enterprise accounts using Okta, you can choose Okta as the au
 
 6. After completing the configuration, click **Save** to access the General page of the created application.
 
-## Step 3: Configure SSO Information in EMQX Platform
+## Step 3: Configure SSO Information in EMQX Cloud
 
-Go to the **Configure SSO** page in EMQX Platform and follow these steps:
+Go to the **Configure SSO** page in EMQX Cloud and follow these steps:
 
-1. On the **Configure SSO** page in EMQX Platform, configure the following information:
+1. On the **Configure SSO** page in EMQX Cloud, configure the following information:
 
    - **Domain**: Enter `trial-9021952.okta.com` as the Okta domain. The Domain field format is `{YourOktasubdomain}.okta.com`.
    - **Client ID**: Enter the Client ID obtained from the Okta application overview page.
@@ -81,9 +81,9 @@ Go to the **Configure SSO** page in EMQX Platform and follow these steps:
 
 6. You can see that the application has been authorized (**Assigned**). Click **Done** to complete the application authorization for the user.
 
-## Step 5: Create Subaccount in EMQX Platform
+## Step 5: Create Subaccount in EMQX Cloud
 
-1. Using your EMQX Platform Root account, go to the user management page in the Cloud Console.
+1. Using your EMQX Cloud Root account, go to the user management page in the Cloud Console.
 
 2. Click **+ New User** in the upper right corner.
 
@@ -95,4 +95,4 @@ Go to the **Configure SSO** page in EMQX Platform and follow these steps:
 
    <img src="./_assets/sso4.png" alt="sso" style="zoom:67%;" />
 
-5. Complete the login process on the Okta login page, and the browser will automatically return to EMQX Platform to complete the SSO login.
+5. Complete the login process on the Okta login page, and the browser will automatically return to EMQX Cloud to complete the SSO login.

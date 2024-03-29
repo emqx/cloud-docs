@@ -1,50 +1,25 @@
 # Metrics
 
-Metrics provide key data states and changes in deployments over a period of time. You can view them on the deployment details page by clicking **Monitor**->**Metrics** in the left navigation menu.
+Metrics provide key data states and changes in deployments over a period of time. You can view them on the deployment details page by clicking on **Metrics** in the left navigation menu.
 
-## Real Time Metrics
+## Serverless Metrics
 
-Here you can observe the real-time metrics of your deployment.
-
-| Metric                 | Description                                                  |
-| ---------------------- | ------------------------------------------------------------ |
-| Sessions               | The total number of clients currently connected to the deployment, including offline clients with retained sessions. |
-| Total TPS              | The total number of messages processed per second by the current deployment, including the total rate of messages received and sent per second. |
-| Total message sent     | The number of messages per second currently flowing out of the deployment. |
-| Total message received | The number of messages per second currently flowing into the deployment. |
-| Retained messages      | The total number of retained messages in the deployment. <br>For an introduction to retained messages, see [The Beginner's Guide to MQTT Retained Messages](https://www.emqx.com/blog/mqtt5-features-retain-message). |
-| Topics                 | The total number of topics currently subscribed to by all clients. |
-| Subscriptions          | The total number of subscribed topics in each client.        |
-| Shared subscriptions   | The total number of shared subscriptions in the deployment. <br>For an introduction to shared subscriptions, see [MQTT Shared Subscriptions: Practical Guidelines and Use Cases ](https://www.emqx.com/blog/introduction-to-mqtt5-protocol-shared-subscription). |
-
-::: tip
-
-Subscription count is calculated per client. If 2 different clients are subscribed to the same topic, the subscription count is considered as 2. 
-
-:::
-
-## Timeline
-
-CIick the **Timeline** tab, you can see the metrics data of the deployment within a period of time.
-
-### Serverless Timeline Metrics
-
-The Timeline page for serverless deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view the corresponding graphical charts for each type of metric and detailed information at a specific point in time.
+The Metrics page for serverless deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view the corresponding graphical charts for each type of metric and detailed information at a specific point in time.
 
 
-#### Sessions
+### Sessions
 The Sessions chart displays the number of clients connected to the deployment within the selected time period. The number of sessions also includes offline clients that have enabled [persistent sessions](https://www.emqx.com/en/blog/mqtt-session). Persistent sessions refer to sessions that remain active and store offline messages even when the client disconnects until the session times out and is cleared.
 
 <img src="./_assets/metric_serverless_1.png" alt="metrics_detail" style="zoom: 33%;" />
 
-#### Subscriptions
+### Subscriptions
 
 The Subscriptions chart displays the total number of subscriptions within the selected time period.
 
 <img src="./_assets/metric_serverless_2.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
-#### Messages
+### Messages
 The Messages chart displays the number of messages received and sent by the deployment within the selected time period.
 
 - Inbound messages are the messages received from the device or application.
@@ -53,7 +28,7 @@ The Messages chart displays the number of messages received and sent by the depl
 <img src="./_assets/metric_serverless_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
-#### Packets
+### Packets
 
 The Packets chart shows the traffic of the messages received and sent by the deployment during the selected time period, including the following three types of data:
 
@@ -64,23 +39,23 @@ The Packets chart shows the traffic of the messages received and sent by the dep
 <img src="./_assets/metric_serverless_4.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
-#### Dropped Messages
+### Dropped Messages
 
 The Dropped Message chart shows the messages that are discarded during the sending phase within the selected time period. The reasons for messages being dropped can be that messages are too large in size, the message queue is full, or the message expires. 
 
 <img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
-### Dedicated / BYOC Timeline Metrics
+## Dedicated / BYOC Metrics
 
-The Timeline metrics for Dedicated and BYOC deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API - Metrics](../api/metrics.md).
+The Metrics page for Dedicated and BYOC deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API - Metrics](../api/metrics.md).
 
 ::: tip
 If there is no corresponding API metric in the table, it means that the metric cannot be retrieved from the API.
 :::
 
 
-#### Sessions
+### Sessions
 The Sessions chart displays the number of concurrent sessions within a selected time period. The number of sessions includes offline clients that have enabled [persistent sessions](https://www.emqx.com/en/blog/mqtt-session). The chart provides 3 metrics:
 
 
@@ -93,7 +68,7 @@ The Sessions chart displays the number of concurrent sessions within a selected 
 
 <img src="./_assets/metric_dedicated_1.png" alt="metrics_detail" style="zoom: 33%;" />
 
-#### Subscriptions
+### Subscriptions
 The Subscriptions chart provides 3 metrics to display the subscription status within the selected time period.
 
 |Metrics in API       |   Description                                   |
@@ -104,7 +79,7 @@ The Subscriptions chart provides 3 metrics to display the subscription status wi
 
 <img src="./_assets/metric_dedicated_2.png" alt="metrics_detail" style="zoom: 33%;" />
 
-#### Messages
+### Messages
 
 The Messages chart provides 3 metrics, showing the number of messages received and sent by the deployment during the selected time period, and the messages with no subscribers.
 
@@ -116,7 +91,9 @@ The Messages chart provides 3 metrics, showing the number of messages received a
 
 <img src="./_assets/metric_dedicated_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
-#### Packets
+
+
+### Packets
 The Packets chart provides 2 metrics, showing the traffic of messages received and sent by the deployment during the selected time period.
 
 | Metrics in API   | Description                  |
@@ -126,7 +103,7 @@ The Packets chart provides 2 metrics, showing the traffic of messages received a
 
 <img src="./_assets/metric_dedicated_4.png" alt="metrics_detail" style="zoom: 33%;" />
 
-#### Dropped Messages
+### Dropped Messages
 
 The Dropped Messages chart shows the number of messages that are dropped during delivery due to either expiration or the message queue reaching its capacity within the selected time period.
 

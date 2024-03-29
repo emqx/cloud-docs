@@ -26,12 +26,11 @@ For example to add an access control policy for certain clients, you can follow 
 
 On the **Client ID** tab, click **+ Add**, fill in the **Client ID**, **Topic**, select the action for this target user (**Publish**, **Subscribe**, or **Publish & Subscribe**), then add **Permission** (**Allow** or **Deny**), and then click **Confirm** to complete the addition. 
 
-Placeholders can be used in topics to support dynamic themes. The supported placeholders are as follows:
+:::tip TIP
 
-- ${clientid}
-- ${username}
+Placeholders like %u (username) and %c (client ID) are allowed in the topic, and EMQX Cloud will automatically fill in the client information when a request is made.
 
-Placeholders can be used as topic segments, like a/b/${username}/c/d.
+:::
 
 ![add_acl](./_assets/add_acl_serverless.png)
 

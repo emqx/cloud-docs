@@ -1,6 +1,6 @@
 # Create Deployment
 
-This section guides you through creating EMQX Platform deployments under different product plans.
+This section guides you through creating EMQX Cloud deployments under different product plans.
 
 ## [Create a Serverless Deployment](./serverless.md)
 

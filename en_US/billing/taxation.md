@@ -4,7 +4,7 @@ The region for taxation purposes is determined by your billing address.
 
 If your billing address is **within** the United States (USA), sales tax will be assessed and collected according to the rules and regulations of each state.
 
-If your billing address is **outside** the United States (USA), such as the regions listed below, EMQX Platform applies VAT/GST charges to your purchases. However, if you provide a valid VAT/GST ID, you will be exempt from VAT/GST charges (except for customers in Germany). By entering a VAT/GST ID, you confirm that you are a VAT/GST registered business.
+If your billing address is **outside** the United States (USA), such as the regions listed below, EMQX Cloud applies VAT/GST charges to your purchases. However, if you provide a valid VAT/GST ID, you will be exempt from VAT/GST charges (except for customers in Germany). By entering a VAT/GST ID, you confirm that you are a VAT/GST registered business.
 
 - Australia
 - Canada
@@ -14,7 +14,7 @@ If your billing address is **outside** the United States (USA), such as the regi
 - Singapore
 
 ::: tip
-If your billing address is in Germany, EMQX Platform always charges VAT, even with a valid VAT ID Number.
+If your billing address is in Germany, EMQX Cloud always charges VAT, even with a valid VAT ID Number.
 :::
 
 ## Tax ID types

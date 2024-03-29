@@ -1,16 +1,16 @@
 # Configure SSO with Azure AD Authorization
 
-If you manage your enterprise accounts using Azure Active Directory (Microsoft Enterprise ID, referred to as Azure AD), you can choose Azure AD as the authorization server for EMQX Platform and enable Single Sign-On (SSO). Additionally, you need to configure OpenID Connect (OIDC) settings in Azure AD. This page provides examples of OIDC configurations in both EMQX and Azure AD to help you understand the end-to-end configuration process for connecting an Enterprise Identity Provider (IdP) with EMQX Platform to enable SSO.
+If you manage your enterprise accounts using Azure Active Directory (Microsoft Enterprise ID, referred to as Azure AD), you can choose Azure AD as the authorization server for EMQX Cloud and enable Single Sign-On (SSO). Additionally, you need to configure OpenID Connect (OIDC) settings in Azure AD. This page provides examples of OIDC configurations in both EMQX and Azure AD to help you understand the end-to-end configuration process for connecting an Enterprise Identity Provider (IdP) with EMQX Cloud to enable SSO.
 
 ## Prerequisites
 
-- An EMQX Platform Root account.
+- An EMQX Cloud Root account.
 - An Azure AD tenant, and an administrator user within the Azure AD tenant.
 - You need to perform Azure AD operations using an administrator user (with global admin privileges). For guidance on creating users and authorizing users in Azure AD, refer to [Azure AD documentation](https://learn.microsoft.com/zh-cn/azure/active-directory/fundamentals/).
 
-## Step 1: Enable SSO in EMQX Platform
+## Step 1: Enable SSO in EMQX Cloud
 
-1. Log in to Cloud Console using your EMQX Platform Root account.
+1. Log in to Cloud Console using your EMQX Cloud Root account.
 2. Click on the user icon in the upper right corner and select **SSO** from the dropdown menu.
 3. Enter the SSO configuration flow and click **Enable SSO**.
 4. Select`Azure AD` as the OIDC Identity Provider and click **Next**.
@@ -38,11 +38,11 @@ If you manage your enterprise accounts using Azure Active Directory (Microsoft E
 
 5. After filling out the information, click **Register** to access the Overview page for the newly registered application `emqx-cloud-sso`.
 
-## Step 3: Configure SSO Information in EMQX Platform
+## Step 3: Configure SSO Information in EMQX Cloud
 
-Go to the **Configure SSO** page in EMQX Platform and follow these steps:
+Go to the **Configure SSO** page in EMQX Cloud and follow these steps:
 
-1. On the **Configure SSO** page in EMQX Platform, configure the following information:
+1. On the **Configure SSO** page in EMQX Cloud, configure the following information:
 
    - **Tenant ID**: Enter the Directory (tenant) ID from the `emqx-cloud-sso` application Overview page in Azure Portal.
 
@@ -58,7 +58,7 @@ Go to the **Configure SSO** page in EMQX Platform and follow these steps:
 
      <img src="./_assets/azure_3.png" alt="sso" style="zoom:67%;" />
 
-4. Paste the Secret ID into the **Client Secret** field on the EMQX Platform **Configure SSO** page.
+4. Paste the Secret ID into the **Client Secret** field on the EMQX Cloud **Configure SSO** page.
 
 5. Click **Confirm** to complete the configuration.
 
@@ -77,9 +77,9 @@ Go to the **Configure SSO** page in EMQX Platform and follow these steps:
 
 4. After selecting users, click **Assign** to complete user authorization.
 
-## Step 5: Create Subaccount in EMQX Platform
+## Step 5: Create Subaccount in EMQX Cloud
 
-1. Using your EMQX Platform Root account, go to the user management page in the Cloud Console.
+1. Using your EMQX Cloud Root account, go to the user management page in the Cloud Console.
 
 2. Click **+ New User** in the upper right corner.
 
@@ -90,5 +90,5 @@ Go to the **Configure SSO** page in EMQX Platform and follow these steps:
 4. Use the login URL for subaccounts from the user management page to log in. Click **Log in through an identity provider**, and the browser will redirect to the Microsoft login page.
   <img src="./_assets/sso4.png" alt="sso" style="zoom:67%;" />
 
-5. Complete the login process on the Microsoft login page, and the browser will automatically return to EMQX Platform to complete the SSO login.
+5. Complete the login process on the Microsoft login page, and the browser will automatically return to EMQX Cloud to complete the SSO login.
 

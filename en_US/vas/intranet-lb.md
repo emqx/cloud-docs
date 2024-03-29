@@ -1,23 +1,28 @@
 # Internal Load Balancers
 
 ::: warning Note
-
-This feature is exclusive to the Dedicated Edition. You need to create a Dedicated Edition deployment before purchasing this service. 
-
+This feature is not available in the standard deployment
 :::
 
-Internal Load Balancing is a service that distributes traffic on-demand within an internal network, expanding the application system's throughput by distributing traffic to different backend servers. It can also eliminate single points of failure in the system, enhancing the application system's availability. Once internal load balancing is enabled, your other service applications can connect to the EMQX deployment via an internal network address.
+Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
 
-Before you begin, you need to complete the creation of [VPC Peering](https://chat.openai.com/g/g-aAzkOrn2h-ruan-jian-wen-dang-xie-zuo-zhu-shou/deployments/vpc_peering.md). The IP addresses mentioned below refer to the resource's internal network IP.
+Before start, you will need to complete the following actions:
 
-## Activate the Service
+* Professional deployments (EMQX clusters) have been created on EMQX Cloud.
+* [Create the vpc peer connection](../deployments/vpc_peering.md). All IPs mentioned below refer to the resource's internal IP.
 
-You can activate the Internal Load Balancing service by selecting the Internal Load Balancing card in the top menu bar under **Value-Added Services (VAS)** or choosing to open it from the tag bar at the bottom of the deployment overview.
+## Service activation
 
-## Use the Service
+You can choose to enable the intranet load balancing service from the top menu bar - `VAS` or at the bottom of the deployment overview.
 
-After purchasing the Internal Load Balancing value-added service, you can see the creation status of internal load balancing in the corresponding deployment overview, waiting for it to be completed.
+![vas](./_assets/intro_01.png)
+
+![overview_vas](./_assets/overview_vas.png)
+
+## Usage
+
+After completing the intranet load balancing value added service purchase, you can see the intranet load balancing creation status at the corresponding deployment overview and wait for the creation to complete.
 
 ![intranet_lb_info](./_assets/intranet_lb_info.png)
 
-When the status of the internal load balancer is running, you can connect terminals under the VPC that has completed VPC peering to the deployment via the internal network address. The connection ports are consistent with the public network connection ports: MQTT port is 1883, and the WebSocket port is 8083.
+When the status of the intranet load balancing is running, you can connect the endpoints under the VPC that have completed peering to the deployment through the internal network IP of the internal network address on the same port as the public connection port: mqtt(1883) and websocket(8083).

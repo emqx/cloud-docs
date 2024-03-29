@@ -4,11 +4,11 @@ Accounts management fulfills enterprise users' multi-role management requirement
 
 ## Subaccounts System
 
-A subaccount is an account created by an EMQX Platform user. Subaccounts will be activated after email authentication. An EMQX Platform user account currently cannot be registered as a subaccount. On the contrary, subaccount email can be registered as an EMQX Platform user. Additionally, it can be registered as a subaccount under other EMQX Platform user account.
+A subaccount is an account created by an EMQX Cloud user. Subaccounts will be activated after email authentication. An EMQX Cloud user account currently cannot be registered as a subaccount. On the contrary, subaccount email can be registered as an EMQX Cloud user. Additionally, it can be registered as a subaccount under other EMQX Cloud user account.
 
 Subaccounts get a separate login page for subaccounts only.
 
-<img src="./_assets/login_1.png" alt="default_project" style="zoom:67%;" />
+![default_project](./_assets/login_1.png)
 
 ## Accounts Categories
 
@@ -189,7 +189,7 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-      <td rowspan="5">Project Management</td>
+      <td rowspan="5">Project Center</td>
       <td>View project list</td>
       <td>&#10003</td>
       <td>&#10003</td>

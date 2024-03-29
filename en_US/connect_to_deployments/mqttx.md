@@ -1,6 +1,6 @@
 # Use MQTTX to Test Connection
 
-This article will introduce using MQTTX as an MQTT client testing tool to connect the deployment of EMQX Platform.
+This article will introduce using MQTTX as an MQTT client testing tool to connect the deployment of EMQX Cloud.
 
 [MQTTX](https://mqttx.app) is a cross-platform MQTT 5.0 client tool open sourced by [EMQ](https://emqx.com/en), which can run on macOS, Linux and Windows, and supports formatting MQTT payload.
 
@@ -9,7 +9,7 @@ This article will introduce using MQTTX as an MQTT client testing tool to connec
 ## Preconditions
 
 > 1. [Install](https://www.emqx.com/en/downloads/MQTTX) MQTTX client tool
-> 2. Already Create Deployment in EMQX Platform, and the deployment status is **running**
+> 2. Already Create Deployment in EMQX Cloud, and the deployment status is **running**
 
 Before downloading and installing, please visit our [website](https://mqttx.app/) or [GitHub](https://github.com/emqx/MQTTX) to get the latest version information. The latest version helps to improve the using experience. If you are familiar with this project, you can also directly clone [MQTTX](https://github.com/emqx/MQTTX) repository source code, package and use it yourself. During using, if you have any questions, you can go to [GitHub issues](https://github.com/emqx/MQTTX/issues) to post questions and opinions or Fork our project, and submit a revised PR to us, We will carefully review and reply.
 
@@ -25,7 +25,7 @@ Get the connection address and port in the Deployment Overview (the following **
 
 ### Authentication
 
-All deployments of EMQX Platform have user authentication enabled, so when using MQTTX to test the connection, **you need to fill in the Username and Password fields**.
+All deployments of EMQX Cloud have user authentication enabled, so when using MQTTX to test the connection, **you need to fill in the Username and Password fields**.
 
 > Set the Username and Password in `Access Control` > `Authentication`, which can be added one by one, or can be imported at once
 
@@ -49,7 +49,7 @@ All deployments of EMQX Platform have user authentication enabled, so when using
 
 ### Name & Client ID
 
-The name is an identification of this connection, the client ID has been filled in by default, and you can click the refresh icon on the right to refresh. After filling in the appeal information correctly, click the connect button in the upper right corner to connect to the EMQX Platform deployment.
+The name is an identification of this connection, the client ID has been filled in by default, and you can click the refresh icon on the right to refresh. After filling in the appeal information correctly, click the connect button in the upper right corner to connect to the EMQX Cloud deployment.
 
 ### More
 

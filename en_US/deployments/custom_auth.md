@@ -1,31 +1,29 @@
-# Extended Authentication
+# External Authentication and Access Control
 
-Extended Authentication enables users to utilize their own services for authentication, supporting external databases such as MySQL and Redis as data sources, or connecting to HTTP services for authentication and authorization.
+External authentication and access control help users to use their own services for authentication and authentication, currently supporting the use of MySQL and PostgreSQL as the data source, and also supports connecting to HTTP services for authentication and authentication.
 
-## Extended Authentication Data Sources
+## Principles and rules
 
-[HTTP Authentication](./http_auth.md)
+After the service is configured, if the client needs to authenticate, EMQX Cloud will use the current client's information to populate the query and perform the user-configured authentication. The authentication is determined by the return.
 
-[MySQL Authentication](./mysql_auth.md)
+If built-in authentication is also enabled, EMQX Cloud will chain authentication in the order of default authentication, custom authentication as follows:
 
-[PostgreSQL Authentication](./pgsql_auth.md)
+- Once the authentication is successful, terminate the authentication chain and allow the client to access
+- Once the authentication fails, terminate the authentication chain and prohibit the client from accessing
 
-[Redis Authentication](./redis_auth.md)
+When multiple authentication methods are enabled at the same time, the system will execute queries in the order of **module enablement** by default. For example, if MySQL authentication is enabled first and PostgreSQL is enabled second, the order is as follows:
 
-[JWT Authentication](./jwt_auth.md)
+- For the same kind of authentication, when the result is returned by MySQL, it will be used to determine whether the authentication is passed or not, and will not query PostgreSQL again.
+- For the same kind of authentication, when the result isn't returned by MySQL, it will query PostgreSQL in the enabled order and use the result returned by PostgreSQL to make a judgment.
 
-::: tip
+## View the detailed implementation of external authentication/access control
 
-A maximum of 2 extended authentication data sources can be created. 
+[HTTP authentication/access control](./http_auth.md)
 
-:::
+[MySQL authentication/access control](./mysql_auth.md)
 
-## Authentication Order
+[PostgreSQL authentication/access control](./pgsql_auth.md)
 
-After adding extended authentication data sources, users can sort the authentication sources. On the Extended Authentication page, click **Authentication Order** to enter the sorting page. The deployment will authenticate in the order from left to right, with the default authentication chain order being default authentication -> extended authentication.
+[redis authentication/access control](./redis_auth.md)
 
-- If authentication succeeds, the authentication chain is terminated, and the client is allowed to connect.
-- If authentication fails, the authentication chain is terminated, and the client is denied access.
-- If the current data source does not match, it moves to the next authentication source for authentication.
-
-Custom authentication chains: Authentication data source icons can be dragged and arranged left and right to organize the order of authentication. ![auth_management](./_assets/auth_management.png)
+[JWT authentication/access control](./jwt_auth.md)

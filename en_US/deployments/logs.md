@@ -6,7 +6,7 @@ This feature is available on Dedicated Plan and BYOC Plan.
 
 :::
 
-EMQX Platform provides real-time online viewing of EMQX logs.
+EMQX Cloud provides real-time online viewing of EMQX logs.
 
 ## View Deployment Logs
 

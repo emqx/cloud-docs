@@ -12,7 +12,7 @@ This article mainly introduces how to use `MQTT.js` in JavaScript to implement t
   - WebSocket Port: **8083**
   - WebSocket over TLS/SSL Port: **8084**
 
-- You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, check [Authentication](../deployments/auth_overview.md) and set the username and password in **Access Control** -> **Authentication** for verification.
+- You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Authentication & ACL** -> **Authentication** section for the setting.
 
 ## Install Dependencies
 

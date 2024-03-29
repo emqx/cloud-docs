@@ -1,15 +1,11 @@
 # VPC Peering Connections
 
-::: tip Note
-This feature is only available for the Dedicated plan.
-:::
-
 VPC peering connection is a network connection between two VPCs. Through this connection, the instances in different VPCs can communicate with each other as if they are in the same network.
 
 ## Precautions
 
-1. EMQX Platform only supports creating peering connection at **the same region**.
-2. EMQX Platform does not accept CIDR in the range of 10.11.1.0/24 ~ 10.64.255.0/24.
+1. EMQX Cloud only supports creating peering connection at **the same region**.
+2. EMQX Cloud does not accept CIDR in the range of 10.11.1.0/24 ~ 10.64.255.0/24.
 3. Peering connections are bound to resources. Please create peering connections before creating resources.
 
 ## AWS Cloud VPC Peering Connection
@@ -18,13 +14,13 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
 ### Creating peering connection
 
-1. Log in to [EMQX Platform console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQX Platform` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
+1. Log in to [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button, and record `Region of deployment`，`VPC ID of deployment`，`CIDR of deployment`，`Account ID of EMQX Cloud` in the pop-up dialog box, which need to be used later. Please don’t close this dialog box
 
    ![create-vpc1](./_assets/aws_vpc_peering.png)
 
 2. Log in to the Amazon Web Services console, switch to the region where `Region of deployment` is recorded in step 1, go to `Networking & Content Delivery` -> `VPC` -> `Peering Connection`, and click the button of `Create Peering Connection`
 
-   * Select `Another account` of `Account`，`Account ID` , fill in the `Account ID of EMQX Platform` recorded in step 1
+   * Select `Another account` of `Account`，`Account ID` , fill in the `Account ID of EMQX Cloud` recorded in step 1
    * Select `This region(us-east-1)` of `Region`
    * For VPC (Accepter), fill in the `VPC ID of deployment` in step 1.
 
@@ -36,7 +32,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![aws-vpc1](./_assets/aws-vpc1.png)
 
-4. Return to  [EMQX Platform console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
+4. Return to  [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
 
    * For Peering ID,  fill in the recorded `VPC Peering Connection`
    * For VPC ID,  fill in the recorded `Requester VPC ID`
@@ -75,11 +71,11 @@ Go to the deployment console and click the **+ VPC Peering Connection** button. 
 
 ### Step 2
 
-Go to the **Virtual Networks** section in your Microsoft Azure workplace. Find the network you plan to build a VPC peering connection, and copy and paste the **Subscription ID**, **Resource Group Name**, and **VNet Name** into the pop-up window in the EMQX Platform console.
+Go to the **Virtual Networks** section in your Microsoft Azure workplace. Find the network you plan to build a VPC peering connection, and copy and paste the **Subscription ID**, **Resource Group Name**, and **VNet Name** into the pop-up window in the EMQX Cloud console.
 
 ### Step 3
 
-In your Microsoft Azure workplace, go to the **Azure Active Directory** section, and copy and paste the **Tenant ID** into the pop-up window in the EMQX Platform console.
+In your Microsoft Azure workplace, go to the **Azure Active Directory** section, and copy and paste the **Tenant ID** into the pop-up window in the EMQX Cloud console.
 
 ### Step 4
 
@@ -97,14 +93,14 @@ If all the provided information is correct, after several minutes, when the stat
 
 ### Creating peering connection
 
-1. Log in to [EMQX Platform console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
+1. Log in to [EMQX Cloud console](<https://cloud-intl.emqx.com/console>), go to the deployment details page, click the `+ VPC Peering Connection` button,  fill in the information
     * Project ID: GCP Project ID of your peering VPC
     * VPC Network Name :  Network Name of your peering VPC
 
    and record the information below:
     * VPC Network Name of deployment
     * CIDR of deployment
-    * Project ID of EMQX Platform
+    * Project ID of EMQX Cloud
 
    ![gcp_create_peering](./_assets/gcp_vpc_peering.png)
 
@@ -114,18 +110,18 @@ If all the provided information is correct, after several minutes, when the stat
     3. In **Name**, enter a name for your peering connection.
     4. In **Your VPC Network**, enter the name of your GCP VPC network.
     5. In **Peered VPC network**, select **In another project**.
-    6. In **Project ID**, enter EMQX Platform Project ID. You can find this name in the VPC Peering view in EMQX Platform.
-    7. In **VPC network name**, enter your EMQX Platform VPC Network Name. You can find this name in the VPC Peering view in EMQX Platform.
+    6. In **Project ID**, enter EMQX Cloud Project ID. You can find this name in the VPC Peering view in EMQX Cloud.
+    7. In **VPC network name**, enter your EMQX Cloud VPC Network Name. You can find this name in the VPC Peering view in EMQX Cloud.
     8. Click **CREATE**.
 
    ![gcp_peering](./_assets/gcp_peering.png)
 
 3. You will see the status of peering connection is **Active** if succeeded.
    ![gcp_console_peering](./_assets/gcp_console_peering.png)
-   and you will see the status of VPC Peering on EMQX Platform is **running**.
+   and you will see the status of VPC Peering on EMQX Cloud is **running**.
    ![gcp_peering_result](./_assets/gcp_vpc_peering_status.png)
 
-4. Create firewall to allow your EMQX Platform deployment to access your GCP network
+4. Create firewall to allow your EMQX CLoud deployment to access your GCP network
    1. Click **Firewall**, and Click **CREATE FIREWALL RULE**.
    2. In **Network**, select your GCP network
    3. In **Targets**, select **All instances in the network**, or you can select other option according to your situation.

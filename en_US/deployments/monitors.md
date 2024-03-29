@@ -1,23 +1,38 @@
-# Monitor
+# Monitors
 
-The **Monitor** feature of the deployment provides monitoring data for the deployment, including metrics for clients and messages, as well as detailed information about subscriptions and retained messages. It allows you to easily observe the operational status of your deployment, manage client connections within the deployment, and set up alerts for metrics.
+On the **Monitor** page of a deployment, you can view the monitoring data of the deployment, including metrics about connection and messaging, and detailed information on clients and subscriptions. It provides an easy way for you to observe the operation situations and manage the client connections in your deployment.
 
-## [Metrics](./metrics.md)
+## Deployment metrics
 
-Provides monitoring for various metrics of the deployment.
+In the **Deployments** section, you can view real-time metrics in the current deployment.
 
-## [Clients](./clients.md)
+![monitor](./_assets/monitor.png)
 
-View information and metrics for clients currently connected to the server or whose sessions have not yet expired.
+| Metrics                 | Descriptions                                                                                                                                                                                                                 |
+| ----------------------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Sessions                | The total number of clients concurrently connected to the deployment, including the offline clients with live sessions.                                                                                                      |
+| Total TPS               | The total number of transactions processed by the current deployment within a second, containing the total rate of messages received and sent per second.                                                                    |
+| Total messages sent     | The total number of messages sent within a second.                                                                                                                                                                           |
+| Total messages received | The total number of messages received within a second.                                                                                                                                                                       |
+| Retained messages       | The total number of retained messages in the deployment. <br>For knowledge about retained message, see [_The Beginner's Guide to MQTT Retained Messages_](https://www.emqx.com/en/blog/mqtt5-features-retain-message).       |
+| Topics                  | The total number of topics currently subscribed by all clients.                                                                                                                                                              |
+| Subscriptions           | The total number of subscriptions established by each client.                                                                                                                                                                |
+| Shared subscriptions    | The total number of shared subscriptions.<br>For knowledge about shared subscriptions, see [_Shared subscription - MQTT 5.0 new features_](https://www.emqx.com/en/blog/introduction-to-mqtt5-protocol-shared-subscription). |
 
-## [Subscriptions](./subscription_management.md)
+::: tip
+The number of subscriptions is calculated per client. If two clients subscribe to the same topic, they will be counted as 2 subscriptions.
+:::
 
-Subscriptions show the topics subscribed to by all clients in the current deployment, reflecting the mapping relationship between clients and topics.
+## Clients
 
-## [Retained Messages](./retain_message.md)
+The **Clients** section lists the detailed information about the identity and connection status of each client. By clicking **More**, you can search a specific client by more fields. By clicking the **Kick Out** button at the end of a client entry, you can kick a client offline to terminate the connection of the client.
 
-View and manage retained messages in the deployment.
+![client](./_assets/client.png)
 
-## [Alerts](./alerts.md)
+## Subscriptions
 
-Monitor key metrics within the deployment and set up alerts, including options for alert integration methods.
+The **Subscriptions** section list the information about the topics subscribed by each client, including the client ID, topic and Quality of Service (QoS). You can search by all these fields. Wildcard is supported when you search by the **Topic** field. For example, if you want to search `a/b`, you can type `a/b`, `a/+` or `a/#`. 
+
+By clicking **More**, there is a text box where you can type the group name of a shared subscription for search. After clicking **Search**, you can view all the clients that belong to the same group and the topic of the shared subscription. 
+
+![Subscriptions](./_assets/subscription.png)

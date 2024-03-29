@@ -19,7 +19,7 @@ You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mq
 
 You can [create a deployment](../create/overview.md) as well. Find connection information in deployment overview. Make sure the deployment is running. Use the TCP port or TLS/SSL port to test the connection to the MQTT server.
 
-If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in **Access Control** -> **Authentication** for verification.
+If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
 
 ### Arduino IDE
 This article uses the [Arduino IDE](https://www.arduino.cc/en/software) as the code editor and uploader. The open-source Arduino Software (IDE) makes it easy to write code and upload it to the board. This software can be used with any Arduino board.
@@ -46,7 +46,7 @@ This section describes how to connect an ESP32 client to MQTT broker over TCP po
 
 2. Set the Wi-Fi name and password, as well as the MQTT server connection address and port, and set the topic to `esp32/test.`
 
-> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Default Authentication](../deployments/default_auth.md) to set username and password.
+> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Serverless Auth](../deployments/auth_serverless.md) or [Dedicated / BYOC Auth](../deployments/auth_dedicated.md) to set username and password.
 
 
 ```c
@@ -223,7 +223,7 @@ This section describes how to connect an ESP32 client to MQTT broker over TLS/SS
 
 2. Set Wi-Fi name and password, and connection address and port.
 
-> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Default Authentication](../deployments/default_auth.md) to set username and password.
+> The sample code will use a public MQTT server to connect, and the public MQTT server does not require a username and password. If you create a deployment, please refer to [Serverless Auth](../deployments/auth_serverless.md) or [Dedicated / BYOC Auth](../deployments/auth_dedicated.md) to set username and password.
 
 
 ```c

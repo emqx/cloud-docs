@@ -20,7 +20,7 @@
   - WebSocket Port: **8083**
   - WebSocket TLS/SSL Port: **8084**
 
-- 您也可以自己[创建 EMQX Platform 部署](../create/overview.md)，在部署概览页面可以获取部署实时状态和连接信息，请确保部署状态为运行中。使用 WebSocket 测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[客户端认证](../deployments/auth_overview.md)。在部署控制台**访问控制** -> **认证** 中设置用户名和密码，用于连接验证。
+- 您也可以自己[创建 EMQX Cloud 部署](../create/overview.md)，在部署概览页面可以获取部署实时状态和连接信息，请确保部署状态为运行中。使用 WebSocket 测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)。在部署控制台`认证鉴权` > `认证` 中设置用户名和密码，用于连接验证。
 
 ### XXX【例如 Vue CLI】
 

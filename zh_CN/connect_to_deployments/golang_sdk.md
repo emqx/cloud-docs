@@ -12,7 +12,7 @@
     - 连接地址: broker.emqx.io
     - TCP Port: 1883
     - SSL/TLS Port: 8883
-- 您也可以自己[创建部署](https://github.com/emqx/cloud-docs/blob/master/zh_CN/create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口 测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[客户端认证](../deployments/auth_overview.md)，在部署控制台**访问控制**->**认证** 中设置用户名和密码，用于连接验证。
+- 您也可以自己[创建部署](https://github.com/emqx/cloud-docs/blob/master/zh_CN/create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口 测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证鉴权](https://github.com/emqx/cloud-docs/blob/master/zh_CN/deployments/auth_overview.md)，在部署控制台认证鉴权 > 认证 中设置用户名和密码，用于连接验证。
 
 ## 安装依赖
 
@@ -56,8 +56,9 @@ go version go1.15.13 darwin/amd64
 
 1. 连接设置
 
-    示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并参考 [默认认证](../deployments/default_auth.md)设置用户名和密码。
-    
+    示例代码将使用公共 MQTT 服务器来连接，公共 MQTT 服务器无需设置用户名和密码。如果您创建了部署，请在部署控制台找到相应的连接地址，并设置用户名和密码。
+    注意如果使用基础版，默认端口可能不是 1883，请确认好端口。并且在 [认证鉴权](../deployments/auth_dedicated.md) 中添加认证信息。
+
     ``` go
     const protocol = "tcp"
     const broker = "broker.emqx.io" // MQTT Broker 连接地址
@@ -66,7 +67,7 @@ go version go1.15.13 darwin/amd64
     const username = "emqx"
     const password = "******"
     ```
-    
+
 2. 连接关键代码
 
     我们编写一个函数, 用于创建并返回 MQTT 客户端。

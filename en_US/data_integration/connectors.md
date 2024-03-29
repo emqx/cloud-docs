@@ -5,7 +5,11 @@ Connectors are used to connect EMQX Cloud to cloud resources, which are services
 - [HTTP Server Connector](./http_server.md#creating-an-http-server-connector), for forwarding data to an HTTP service.
 - [Kafka Connector](./kafka.md#creating-a-kafka-connector), for forwarding data to Kafka service as a producer.
 
+::: tip 
 
+During the Serverless Beta trial period, you can create a total of 2 connectors. 
+
+:::
 
 ## Create a Connector
 

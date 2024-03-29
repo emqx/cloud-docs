@@ -39,7 +39,7 @@ EMQX Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议�
 
 
 ## 如何与自己现有的系统对接？
-可以使用数据集成与您现有功能做对接，详情查看 [数据集成](../data_integration/introduction.md)。
+可以使用数据集成与您现有功能做对接，详情查看 [数据集成](../rule_engine/introduction.md)。
 
 ## 设备的认证信息存储在自己的数据库中，是否支持通过我自己的数据库做MQTT连接的认证？
 EMQX Cloud 专有版支持从用户自己的数据库中获取到认证信息，请查看文档[外部认证和访问控制](../deployments/custom_auth.md)。

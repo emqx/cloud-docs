@@ -16,7 +16,7 @@ Rules specify how to retrieve data from a **data source**, perform **data transf
 
   For a detailed explanation of the syntax and built-in SQL functions, see [Rule SQL Reference](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-syntax.html) and [Built-in SQL Functions](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-builtin-functions.html). To learn more about SQL functions, you can also refer to [jq Functions](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-jq.html).
 
-- **Actions**: Actions solve the problem of "where to send the processed data". They tell EMQX Platform how to handle the data produced by the rule. After the input is processed according to the specified rules, one or more actions can be defined to process the SQL execution results. The rule engine will sequentially perform corresponding actions. Currently, rules support the following two types of actions:
+- **Actions**: Actions solve the problem of "where to send the processed data". They tell EMQX Cloud how to handle the data produced by the rule. After the input is processed according to the specified rules, one or more actions can be defined to process the SQL execution results. The rule engine will sequentially perform corresponding actions. Currently, rules support the following two types of actions:
 
   - Built-in Actions: Currently, you can republish the processing results to another MQTT topic through [Message Republish](./republish.md).
   - Store the processing results in a database: Send data to various target services through predefined [Connectors](./connectors.md).
@@ -49,7 +49,7 @@ For detailed information on the format and usage of Rule SQL statements, refer t
 
 ## Create Rules
 
-Go to your deployment and click **Data Integration** from the left-navigation menu to enter the Data Integration page. 
+Go to your deployment and click **Data Integration (Beta)** from the left-navigation menu to enter the Data Integration page. 
 
 If you have created a Connector for connecting to the cloud resources, click **New Rule** in the upper left corner of the **Rule List** to enter the **New Rule** page. You can also create a new rule by clicking the rule creation button in the Connector list.
 
@@ -109,7 +109,7 @@ The following steps demonstrate how to add an action to republish the original m
 4. In the **Successful new rule** pop-up, click **Back to Rules** to complete the rule creation. 
 
 
-### Add Action for Forwarding Data to Target Services
+### Add Action for Forwarding Data to Target Services 
 
 You can also add actions to forward the processed results to target services using associated Connectors. On the **New Action** step page, select the target Connector from the Connector drop-down list. For details on the action configuration, see [Ingest MQTT Data into HTTP Server](./http_server.md) and [Stream MQTT Data into Apache Kafka](./kafka.md).
 
