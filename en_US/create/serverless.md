@@ -31,20 +31,21 @@ After the deployment is created, it will appear on the Cloud console home page. 
 
    ![serverless](./_assets/serverless_overview.png)
 
-- **Instance status:** Running status and duration of operation.
-- **Sessions:** Current and maximum connection counts.
+### Basic Information
+
+- **Instance Status:** Running status and duration of operation.
+- **Sessions:** Current number of connections and maximum connection limits.
 - **Pub&Sub TPS:** Current messages sent and received per second, as well as the TPS limit.
-- **Session minutes**: Total number of session minutes used this month. This value is calculated with a one-hour delay.
+- **Session Minutes**: Total number of session minutes used this month. The count of this value has a delay of 1 hour.
 - **Traffic:** Usage information for the deployed traffic, including monthly usage and free quota.
-- **Deployment name:** A customizable name for the deployment.
+- **Rule Actions**: The number of rule actions executed this month. The count of this value has a delay of 1 hour.
+- **Spend Limit**: The maximum spending limit set for the deployment in the current month. For more information, see the [Spend Limit](https://github.com/emqx/cloud-docs/blob/docs_5.x_dev_update/en_US/deployments/spend_limit.md) settings.
+
+### Connection Information
+
 - **Address:** The address for the client/terminal device to connect EMQX Cloud.
-- **Ports:** `8883` (mqtts) and `8084` (wss) are enabled by default. Check out the [connection guide](../deployments/port_guide_serverless.md) to learn more.
-- **Spend Limit**: Maximum spending limit for the current month. For more information, please refer to the [Spend Limit](../deployments/spend_limit.md) page.
-
-::: warning Note
-Serverless deployment only supports ports `8883` (mqtts) and `8084` (wss). If your client needs a CA file, you can click [here](https://assets.emqx.com/data/emqxsl-ca.crt) to download.
-
-:::
+- **Ports:** `8883` (mqtts) and `8084` (wss) are enabled by default. Check out the [connection guide](https://github.com/emqx/cloud-docs/blob/docs_5.x_dev_update/en_US/deployments/port_guide_serverless.md) to learn more.
+- **CA Certificate**: If the client needs to verify the server's CA, click to download this certificate.
 
 ## Connect to Serverless Deployment Using MQTTX
 
@@ -54,7 +55,7 @@ EMQX Cloud recommends using [MQTTX](https://mqttx.app) to test the connection to
 
 2. Add client authentication information. Click on **Access Control** -> **Authentication** in the left menu, click the **Add** button, enter the username and password for the client or device, and then click **Confirm**.
 
-   ![add_users](./_assets/serverless_auth.png)
+   ![add_users](./_assets/add_users.png)
 
 3. Set up the connection information in [MQTTX](https://mqttx.app/zh/) and connect to the deployment.
 

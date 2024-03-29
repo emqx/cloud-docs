@@ -16,8 +16,7 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 3. 选择 Serverless 面板。
 
    ![create_serverless](./_assets/create_serverless.png)
-   <!--TODO 更新图片-->
-
+   
 4. 在配置步骤，您可以设置 Serverless 部署的本月最大[消费限额](../deployments/spend_limit.md)，默认值为 0，即为只使用免费额度。消费限额在部署创建之后也可以进行修改。
 
 5. 设置部署名称和项目。
@@ -32,7 +31,6 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 部署概览页面可获取到部署实时状态和连接信息：
 
 ![serverless](./_assets/serverless_overview.png)
-  <!--TODO 更新图片-->
 
 ### 基本信息
 

@@ -30,18 +30,17 @@ After the deployment is created, it will appear on the Cloud console home page. 
 
 ![dedicated](./_assets/dedicated_overview.png)
 
-- **Instance status:** Running status and duration of operation.
+### Basic Information
+
+- **Instance Status:** Running status and duration of operation.
 - **Sessions:** Current and maximum connection counts.
 - **Pub&Sub TPS:** Current messages sent and received per second, as well as the TPS limit.
 - **Traffic:** Usage information for the deployed traffic, including monthly usage and free quota.
-- **Deployment name:** A customizable name for the deployment.
-- **Tiers:** The current tier of the deployment, including the ability to switch from hourly billing to annual billing.
-- **Address:**
-  - Professional Plan: IP
-  - Standard Plan: Domain name ending with emqx.cloud
-- **Ports:**
-  - Professional Plan: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable 8883 (mqtts) and 8084 (wss) ports.
-  - Standard Plan: `15xxx` (mqtt), `15xxx` (mqtts), `8083` (ws), and `8084` (wss) ports are enabled by default.
+
+### Connection Information
+
+- **Address**: The IP address
+- **Ports**: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable `8883` (mqtts) and `8084` (wss) ports.
 
 Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.
 
