@@ -6,7 +6,7 @@ This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) i
 
 ### Deploy MQTT Broker
 
-- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
   - Broker: **broker.emqx.io**
   - TCP Port: 1883
   - SSL/TLS Port: 8883

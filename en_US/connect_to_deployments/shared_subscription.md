@@ -1,6 +1,6 @@
 # Shared Subscription
 
-A shared subscription is a subscription mode to implement load balancing among multiple subscribers. Clients can be divided into multiple subscription groups, and messages are still forwarded to all subscription groups, but only one client within each subscription group receives the message at a time. EMQX Cloud supports shared subscription prefixes in two formats: shared subscription for groups (prefixed with `$share/<group-name>/`) and shared subscription not for groups (prefixed with `$queue/`).
+A shared subscription is a subscription mode to implement load balancing among multiple subscribers. Clients can be divided into multiple subscription groups, and messages are still forwarded to all subscription groups, but only one client within each subscription group receives the message at a time. EMQX Platform supports shared subscription prefixes in two formats: shared subscription for groups (prefixed with `$share/<group-name>/`) and shared subscription not for groups (prefixed with `$queue/`).
 
 Examples of two shared subscription prefixes formats are as follows.
 
@@ -9,11 +9,11 @@ Examples of two shared subscription prefixes formats are as follows.
 | Shared subscription for groups    | $share/abc/t/1 | $share/abc/ | t/1             |
 | Shared subscription not for group | $queue/t/1     | $queue/     | t/1             |
 
-You can use client tools to connect to EMQX Cloud and try this messaging service. This page introduces how shared subscription works and provides a demonstration of how to use the [MQTTX Desktop](https://mqttx.app/) to simulate clients and try the shared subscription feature.
+You can use client tools to connect to EMQX Platform and try this messaging service. This page introduces how shared subscription works and provides a demonstration of how to use the [MQTTX Desktop](https://mqttx.app/) to simulate clients and try the shared subscription feature.
 
 ## Shared Subscription for Groups
 
-You can enable a shared subscription for groups of subscribers by adding the prefixed `$share/<group-name>` to the original topic. The group name can be any string. EMQX Cloud forwards messages to different groups at the same time and subscribers belonging to the same group receive messages with load balancing.
+You can enable a shared subscription for groups of subscribers by adding the prefixed `$share/<group-name>` to the original topic. The group name can be any string. EMQX Platform forwards messages to different groups at the same time and subscribers belonging to the same group receive messages with load balancing.
 
 For example, if subscribers `s1`, `s2`, and `s3` are members of group `g1`, subscribers `s4` and `s5` are members of group `g2`, and all subscribers subscribe to the original topic `t1`. The shared subscription topics must be `$share/g1/t1` and `$share/g2/t1`. When EMQX publishes a message `msg1` to the original topic `t1`:
 

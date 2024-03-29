@@ -1,6 +1,6 @@
 # TLS/SSL Configuration for BYOC Plan
 
-To protect the confidentiality of data transmission within your MQTT ecosystem, EMQX Cloud BYOC Plan supports establishing secure and encrypted communication channels using SSL and TLS encryption protocols. This page introduces how to enable TSL/SSL communication on a one-way authentication mode by preparing the certificate to create a Privacy Enhanced Mail (PEM) file.
+To protect the confidentiality of data transmission within your MQTT ecosystem, EMQX BYOC Plan supports establishing secure and encrypted communication channels using SSL and TLS encryption protocols. This page introduces how to enable TSL/SSL communication on a one-way authentication mode by preparing the certificate to create a Privacy Enhanced Mail (PEM) file.
 
 ## One-Way Authentication Mode
 
@@ -22,7 +22,7 @@ To configure TLS/SSL for your BYOC deployment, you need to prepare a single PEM 
 
 When preparing your certificate for TLS/SSL configuration, consider the following guidelines:
 
-- Certificates must specify encryption algorithms and key sizes. EMQX Cloud supports 1024-bit RSA (RSA_1024) and 2048-bit RSA (RSA_2048) algorithms.
+- Certificates must specify encryption algorithms and key sizes. EMQX BYOC supports 1024-bit RSA (RSA_1024) and 2048-bit RSA (RSA_2048) algorithms.
 
 - Certificates must adhere to the SSL/TLS X.509 version 3 standard. They should contain the public key, the fully qualified domain name (FQDN) or IP address of the website, and publisher information.
 

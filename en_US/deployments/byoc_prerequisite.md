@@ -1,17 +1,17 @@
 # Deployment Prerequisites
 
-Before deploying EMQX Cloud Bring Your Own Cloud (BYOC), make sure to complete the following preparations:
+Before deploying EMQX Platform Bring Your Own Cloud (BYOC), make sure to complete the following preparations:
 
 - Familiarize yourself with the basic concepts of public cloud services and network structures, such as VPC, subnet, ECS, etc.
-- Have a public cloud account and an EMQX Cloud account.
+- Have a public cloud account and an EMQX Platform account.
 - Prepare relevant cloud resources and cloud account permissions.
 - Set up the deployment bootstrap environment.
 - Prepare a domain name and the corresponding TLS/SSL certificate for EMQX service.
-- Prepare an EMQX Cloud BYOC license.
+- Prepare an EMQX BYOC license.
 
 ## Account Preparation
 
-The EMQX Cloud BYOC deployment will be created in your cloud account. If you do not have a corresponding public cloud account, you can create an account according to the official documentation of the cloud platform you preferred, for example:
+The EMQX BYOC deployment will be created in your cloud account. If you do not have a corresponding public cloud account, you can create an account according to the official documentation of the cloud platform you preferred, for example:
 
 - [Create an AWS account in your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html)
 - [Create a Google Cloud Platform account](https://cloud.google.com/docs/get-started)
@@ -24,15 +24,15 @@ Currently, BYOC supports the following public clouds and regions. If you need su
 | Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
 
 
-In addition, you also need an EMQX Cloud account to complete the deployment. If you have not registered, please go to the [EMQX Cloud account registration page](https://accounts.emqx.com/signup) to register an account.
+In addition, you also need an EMQX Platform account to complete the deployment. If you have not registered, please go to the [EMQX Platform account registration page](https://accounts.emqx.com/signup) to register an account.
 
 ## Resources and Permissions
 
-EMQX Cloud BYOC deployment requires you to create various cloud resources and services in your cloud account. Make sure that the relevant cloud account has reserved enough resources quota and completed the setting of relevant permissions.
+EMQX BYOC deployment requires you to create various cloud resources and services in your cloud account. Make sure that the relevant cloud account has reserved enough resources quota and completed the setting of relevant permissions.
 
 ### Resource Quotas
 
-The following table shows the cloud resources and services required for EMQX Cloud BYOC deployment. If the resources in the current account are insufficient, please contact the cloud account administrator to increase the relevant service quotas.
+The following table shows the cloud resources and services required for EMQX BYOC deployment. If the resources in the current account are insufficient, please contact the cloud account administrator to increase the relevant service quotas.
 
 ::: tip
 
@@ -276,8 +276,8 @@ To create a custom role using the gcloud CLI, you can utilize the provided role 
 
 1. Create a YAML file with the following definitions for your custom role. You need two separate roles: one for creating a BYOC deployment, and another for deleting a BYOC deployment.
 ```yaml
-title: "EMQX Cloud BYOC creation"
-description: "The minimum role definition for creating an EMQX Cloud BYOC deployment"
+title: "EMQX BYOC creation"
+description: "The minimum role definition for creating an EMQX BYOC deployment"
 stage: "GA"
 includedPermissions:
 - compute.firewalls.get
@@ -324,8 +324,8 @@ includedPermissions:
 - compute.forwardingRules.setLabels
 ```
 ```yaml
-title: "EMQX Cloud BYOC deleting"
-description: "The minimum role definition for deleting an EMQX Cloud BYOC deployment"
+title: "EMQX BYOC deleting"
+description: "The minimum role definition for deleting an EMQX BYOC deployment"
 stage: "GA"
 includedPermissions:
 - compute.firewalls.get
@@ -374,8 +374,8 @@ Please note that you should replace `<project-id>`, `<yaml-file-path>`, `<servic
 If you want to set the permissions to **start and stop** the deployment separately, please define the following definitions.
 
 ```yaml
-title: "EMQX Cloud BYOC operation"
-description: "The minimum role definition for stopping or starting an EMQX Cloud BYOC deployment"
+title: "EMQX BYOC operation"
+description: "The minimum role definition for stopping or starting an EMQX BYOC deployment"
 stage: "GA"
 includedPermissions:
 - compute.instances.get
@@ -388,14 +388,14 @@ includedPermissions:
 
 ## Prepare the Startup Environment
 
-To deploy EMQX Cloud BYOC, you need an Ubuntu 20.04 LTS (AMD64) environment that can be connected to the public network. Either of the following ways works:
+To deploy EMQX BYOC, you need an Ubuntu 20.04 LTS (AMD64) environment that can be connected to the public network. Either of the following ways works:
 
 - (Recommended) Use the Ubuntu 20.04 LTS image to create a virtual machine instance in the cloud account. The memory of the instance must be more than 1 GiB.
 - Use a local Ubuntu 20.04 LTS environment.
 
 ## Domain Name and Certificate
 
-Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX Cloud BYOC supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment.
+Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX BYOC supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment.
 
 ::: warning
 The certificate needs to be a CA-signed certificate. Please refer to the [TLS/SSL Configuration for BYOC Plan](../deployments/byoc_ssl.md) for TLS/SSL certificate format requirements.
@@ -404,4 +404,4 @@ The certificate needs to be a CA-signed certificate. Please refer to the [TLS/SS
 
 ## BYOC License
 
-Prepare the EMQX Cloud BYOC license. You can contact sales to apply for a BYOC license. Our sales team will determine the license specifications based on the number of devices connected and the number of Pub&Sub transactions per second (TPS).
+Prepare the EMQX BYOC license. You can contact sales to apply for a BYOC license. Our sales team will determine the license specifications based on the number of devices connected and the number of Pub&Sub transactions per second (TPS).

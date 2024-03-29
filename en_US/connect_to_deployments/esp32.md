@@ -12,7 +12,7 @@ Before the connection, you need to get the broker and client ready.
 
 ### Get MQTT Broker
 
-You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - SSL/TLS Port: **8883**
@@ -271,7 +271,7 @@ MrY=
 -----END CERTIFICATE-----
 )EOF";
 
-// Load DigiCert Global Root CA ca_cert, which is used by EMQX Cloud Serverless Deployment
+// Load DigiCert Global Root CA ca_cert, which is used by EMQX Serverless Deployment
 /*
 const char* ca_cert = R"EOF(
 -----BEGIN CERTIFICATE-----
@@ -433,7 +433,7 @@ MrY=
 -----END CERTIFICATE-----
 )EOF";
 
-// Load DigiCert Global Root CA ca_cert, which is used by EMQX Cloud Serverless Deployment
+// Load DigiCert Global Root CA ca_cert, which is used by EMQX Serverless Deployment
 /*
 const char* ca_cert = R"EOF(
 -----BEGIN CERTIFICATE-----
