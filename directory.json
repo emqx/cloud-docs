@@ -9,10 +9,6 @@
       "path": "overview"
     },
     {
-      "title": "新功能介绍",
-      "path": "new_features"
-    },
-    {
       "title": "版本和定价",
       "path": "price/overview",
       "collapsed":true,

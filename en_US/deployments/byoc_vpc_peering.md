@@ -2,7 +2,7 @@
 
 A Virtual Private Cloud (VPC) peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate as if they are within the same network. 
 
-If you need to transfer data between EMQX Cloud BYOC deployment and other cloud services, you need to configure a peer connection between the VPC where the deployment is located and your other VPCs. This guide describes how to create a peering connection and configure the relevant settings in the cloud platforms when the BYOC is deployed in AWS and Google Cloud Platform.
+If you need to transfer data between EMQX BYOC deployment and other cloud services, you need to configure a peer connection between the VPC where the deployment is located and your other VPCs. This guide describes how to create a peering connection and configure the relevant settings in the cloud platforms when the BYOC is deployed in AWS and Google Cloud Platform.
 
 ## Precautions
 
