@@ -376,6 +376,10 @@
           "path": "data_integration/redis"
         },
         {
+          "title": "Redis Upstash",
+          "path": "data_integration/redis_upstash"
+        },
+        {
           "title": "MongDB",
           "path": "data_integration/mongodb"
         },
