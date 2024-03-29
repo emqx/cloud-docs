@@ -27,7 +27,7 @@ Body:
 
 In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, then click **HTTP Authorization** to create a new authorization.
 
-For identity authorization, EMQX Cloud will use the current client information to fill in and initiate the authorization query request configured by the user, querying the client's authorization data on the HTTP server side.
+For identity authorization, EMQX Platform will use the current client information to fill in and initiate the authorization query request configured by the user, querying the client's authorization data on the HTTP server side.
 
 You can complete the related configuration according to the following instructions:
 

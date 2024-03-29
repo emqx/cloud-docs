@@ -16,7 +16,7 @@ Rules specify how to retrieve data from a **data source**, perform **data transf
 
   For a detailed explanation of the syntax and built-in SQL functions, see [Rule SQL Reference](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-syntax.html) and [Built-in SQL Functions](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-builtin-functions.html). To learn more about SQL functions, you can also refer to [jq Functions](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-jq.html).
 
-- **Actions**: Actions solve the problem of "where to send the processed data". They tell EMQX Cloud how to handle the data produced by the rule. After the input is processed according to the specified rules, one or more actions can be defined to process the SQL execution results. The rule engine will sequentially perform corresponding actions. Currently, rules support the following two types of actions:
+- **Actions**: Actions solve the problem of "where to send the processed data". They tell EMQX Platform how to handle the data produced by the rule. After the input is processed according to the specified rules, one or more actions can be defined to process the SQL execution results. The rule engine will sequentially perform corresponding actions. Currently, rules support the following two types of actions:
 
   - Built-in Actions: Currently, you can republish the processing results to another MQTT topic through [Message Republish](./republish.md).
   - Store the processing results in a database: Send data to various target services through predefined [Connectors](./connectors.md).

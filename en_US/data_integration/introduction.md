@@ -1,6 +1,8 @@
 # Data Integration Overview
 
-As a fully managed MQTT message cloud service, EMQX Cloud connects Internet of Things (IoT) devices via the MQTT protocol and delivers messages in real time. Building on this foundation, Data Integration enhances EMQX Cloud's capability of connecting with other cloud resources, enabling seamless integration of devices with other business systems. EMQX Cloud Data Integration not only provides a clear and flexible "configurable" architecture solution but also simplifies the development process. It improves user availability, reduces the coupling between business systems and EMQX Cloud, and provides a better infrastructure for data forwarding.
+
+As a fully managed MQTT message cloud service, EMQX Platform connects Internet of Things (IoT) devices via the MQTT protocol and delivers messages in real time. Building on this foundation, Data Integration enhances EMQX Platform's capability of connecting with other cloud resources, enabling seamless integration of devices with other business systems. EMQX Platform Data Integration not only provides a clear and flexible "configurable" architecture solution but also simplifies the development process. It improves user availability, reduces the coupling between business systems and EMQX Platform, and provides a better infrastructure for data forwarding.
+
 
 ![data_integration_intro](./_assets/integration_intro_01.png)
 
@@ -52,9 +54,9 @@ The data integration function in different deployments requires different levels
 
 ## Pricing and Usage Limits
 
-EMQX Cloud provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
+EMQX Platform provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
 
-To maintain optimal performance and manageability, EMQX Cloud imposes the following constraints on the creation of connectors, rules, and actions within each deployment:
+To maintain optimal performance and manageability, EMQX Platform imposes the following constraints on the creation of connectors, rules, and actions within each deployment:
 
 | Category                    | Maximum Allowed |
 | --------------------------- | --------------- |

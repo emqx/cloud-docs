@@ -466,5 +466,5 @@ Disconnected
 
 ## 更多内容
 
-以上为您演示了如何使用 paho.mqtt.java 客户端库连接到 EMQX Cloud，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java) 下载到示例的源码。
+以上为您演示了如何使用 paho.mqtt.java 客户端库连接到 EMQX Platform，可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java) 下载到示例的源码。
 同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多起他语言的 Demo 示例。

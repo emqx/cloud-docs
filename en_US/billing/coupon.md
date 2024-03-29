@@ -12,7 +12,6 @@ The coupon will show all the coupons owned by the account, including the coupon 
 | BYOC                                         | ✗                                   |
 | Value-added Service - NAT Gateway            | ✓                                   |
 | Value-added Service - Internal Load Balancer | ✓                                   |
-| Value-added Service - Traffic Package        | ✗                                   |
 
 ## View Coupons
 

@@ -1,17 +1,17 @@
 # 使用微信小程序连接到部署
 
-本文主要介绍在微信小程序中使用 `MQTT.js` 连接到 [EMQX Cloud](https://www.emqx.com/zh/cloud) 部署，进行订阅、取消订阅、收发消息等功能。
+本文主要介绍在微信小程序中使用 `MQTT.js` 连接到 [EMQX Platform](https://www.emqx.com/zh/cloud) 部署，进行订阅、取消订阅、收发消息等功能。
 
 ## 前提条件
 
 ::: tip
-EMQX Cloud 专业版部署建议绑定在云厂商自购的证书，选择单向认证且需在 EMQX Cloud 控制台部署详情页面[配置 TLS/SSL](<https://docs.emqx.com/zh/cloud/latest/deployments/tls_ssl.html>) 时**上传证书链**。
+EMQX 专有版部署建议绑定在云厂商自购的证书，选择单向认证且需在 EMQX Platform 控制台部署详情页面[配置 TLS/SSL](<https://docs.emqx.com/zh/cloud/latest/deployments/tls_ssl.html>) 时**上传证书链**。
 :::
 
 1. [注册](https://mp.weixin.qq.com/wxopen/waregister?action=step1) 微信小程序账号，并下载 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 由于微信小程序安全要求比较高，在与后台服务器之间的通讯必须使用 https 或 wss 协议。所以需要登录 [微信公众平台](https://mp.weixin.qq.com/)，在左侧菜单【开发】->【开发管理】->【开发设置】->【服务器域名】中 socket 合法域名添加部署域名。
 
-   - EMQX Cloud 专业版部署默认连接地址是 IP，需要用户自行进行域名绑定，且进行 TLS/SSL 配置（**证书链必填**，否则真机调试会失败）。当 TLS/SSL 的状态为 `运行中` 时，刷新页面，即可在部署概览页面看到连接端口中多了一个 8084 (wss)，请记住这个端口号，后续编写连接代码时，我们需要用到它。
-   - 微信小程序仅支持通过 WebSocket 进行即时通信，EMQX Cloud 部署的 MQTT Over WebSocket 能够完全兼容使用在微信小程序上。因此在进行 MQTT 连接时，只能使用 wss 协议（**但是客户端连接代码中需要写成 wxs**）
+   - EMQX 专有版部署默认连接地址是 IP，需要用户自行进行域名绑定，且进行 TLS/SSL 配置（**证书链必填**，否则真机调试会失败）。当 TLS/SSL 的状态为 `运行中` 时，刷新页面，即可在部署概览页面看到连接端口中多了一个 8084 (wss)，请记住这个端口号，后续编写连接代码时，我们需要用到它。
+   - 微信小程序仅支持通过 WebSocket 进行即时通信，EMQX Platform 部署的 MQTT Over WebSocket 能够完全兼容使用在微信小程序上。因此在进行 MQTT 连接时，只能使用 wss 协议（**但是客户端连接代码中需要写成 wxs**）
    - 更多域名相关配置及证书限制，请参阅微信官方文档：<https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html>
 
    ![设置小程序 socket 域名](./_assets/wechat-host.png)
@@ -46,9 +46,9 @@ EMQX Cloud 专业版部署建议绑定在云厂商自购的证书，选择单向
 ::: tip
 
 1. 只能使用 wss 协议，但是微信小程序中需要写为 wxs
-2. 端口为 8084（EMQX Cloud 专业版部署），但实际的端口号以 EMQX Cloud 控制台对应部署的概览页面信息为准。
+2. 端口为 8084（EMQX 专有版部署），但实际的端口号以 EMQX Platform 控制台对应部署的概览页面信息为准。
 3. 连接地址末尾不要忘了带上路径 /mqtt
-4. EMQX Cloud 部署需要先在部署详情页面的【认证鉴权】->【认证】中添加用户名密码，然后写入 `mqttOptions` 中
+4. EMQX Platform 部署需要先在部署详情页面的**访问控制** -> **认证**中添加用户名密码，然后写入 `mqttOptions` 中。
 :::
 
 ```javascript
@@ -78,7 +78,7 @@ Page({
   },
 
   connect() {
-    // MQTT-WebSocket 统一使用 /path 作为连接路径，连接时需指明，但在 EMQX Cloud 部署上使用的路径为 /mqtt
+    // MQTT-WebSocket 统一使用 /path 作为连接路径，连接时需指明，但在 EMQX Platform 部署上使用的路径为 /mqtt
     // 因此不要忘了带上这个 /mqtt !!!
     // 微信小程序中需要将 wss 协议写为 wxs，且由于微信小程序出于安全限制，不支持 ws 协议
     try {

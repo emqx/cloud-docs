@@ -257,10 +257,6 @@
         {
           "title": "日志",
           "path": "deployments/logs"
-        },
-        {
-          "title": "Websocket 工具",
-          "path": "deployment/websocket_tool"
         }
       ]
     },
@@ -762,10 +758,6 @@
               "path": "deployments/http_authz"
              },
              {
-              "title": "JWT Authorization",
-              "path": "deployments/jwt_authz"
-             },
-             {
               "title": "Redis Authorization",
               "path": "deployments/redis_authz"
              },
@@ -861,10 +853,6 @@
         {
           "title": "Logs",
           "path": "deployments/logs"
-        },
-        {
-          "title": "Websocket Tool",
-          "path": "deployment/websocket_tool"
         }
       ]
     },
