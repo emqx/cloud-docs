@@ -1,18 +1,18 @@
-# Ingest MQTT Data into Redis
+# Ingest MQTT Data into Upstash for Redis
 
-[Redis](https://redis.io/) is an open-source, in-memory data store used by millions of developers as a database, cache, streaming engine, and message broker. EMQX supports integration with Redis so you can save MQTT messages and client events to Redis. With Redis data integration, you can use Redis for message caching and statistics of client events.
+Upstash is a cloud-based, serverless data platform that empowers developers to seamlessly integrate Redis databases and Kafka into their applications without the hassle of managing infrastructure. Offering a serverless architecture, Upstash allows users to enjoy the benefits of Redis, a high-performance, in-memory data store, and Kafka, without dealing with the complexities of deployment, scaling, or maintenance.
 
-This page provides a detailed overview of the data integration between EMQX Platform and Redis with practical instructions on creating and validating the data integration.
+This page provides an in-depth overview of the functional features of Upstash Data Integration, along with practical guidance for its implementation. It covers essential tasks such as creating Kafka connectors, defining rules, and testing their effectiveness. Additionally, it demonstrates the process of reporting simulated temperature and humidity data to EMQX Platform using the MQTT protocol and storing this data in Upstash through the configured data integration.
 
 ## How It Works
 
-Redis data integration is an out-of-the-box feature in EMQX Platform that combines the real-time data capturing and transmission capabilities of EMQX Platform with Redis's rich data structures and powerful Key-Value read and write performance capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Platform to Redis for data caching and operations., eliminating the need for complex coding.
+Upstash Redis Data Integration is an out-of-the-box feature in EMQX Platform, bridging MQTT-based IoT data and Kafka's powerful data processing capabilities. Through its built-in rule engine component, the integration simplifies the data flow and processing between the two platforms without complex coding.
 
 The diagram below illustrates a typical architecture of data integration between EMQX Platform and Redis:
 
 ![EMQX Cloud Integration Redis](./_assets/data_integration_redis.png)
 
-Ingesting MQTT data into Redis works as follows:
+Ingesting MQTT data into Upstash Redis works as follows:
 
 1. **Message publication and reception**: Industrial IoT devices establish successful connections to EMQX Platform deployment through the MQTT protocol and publish real-time MQTT data from machines, sensors, and product lines based on their operational states, readings, or triggered events to EMQX Platform. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
 2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Platform. The rules, based on predefined criteria, determine which messages need to be routed to Redis. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
@@ -30,66 +30,44 @@ The data integration with Redis offers a range of features and benefits tailored
 
 ## Before You Start
 
-This section describes the preparations you need to complete before you start to create the Redis data integration, including how to set up the Redis server.
+This section introduces the preparatory work needed to create Upstash For Redis Data Integration in EMQX Platform.
 
 ### Prerequisites
 
-- Knowledge about [data integration](./introduction.md)
-- Knowledge about EMQX Platform data integration [rules](./rules.md)
+- Understand [rules](./rules.md).
+- Understand [data integration](./introduction.md).
 
-### Install Redis Server
+### Set Up Upstash for Redis Database
 
-#### Install Redis via Docker
+To begin using Upstash, visit https://upstash.com/ and create an account.
 
-Install and run Redis via Docker:
+#### Create a Redis Database
 
-```bash
-# Start a Redis container
-docker run --name redis -p 6379:6379 -d redis
+1. Once you logged in, you can create a Redis Database by clicking on the **Create Database** button.
 
-# Access the container
-docker exec -it redis bash
+2. Type a valid name. Select the region in which you would like your database to be deployed. To optimize performance, it is recommended to choose the region that is closest to your deployment's region.
 
-# Access the Redis server
-redis-cli
+3. Click **Create**. Now you have a serverless Redis Database.
 
-# Verify the installation
-127.0.0.1:6379> set emqx_cloud "Hello World"
-OK
-127.0.0.1:6379> get emqx_cloud
-"Hello World"
-```
+#### View Details
 
-Now you have successfully installed Redis and verified the installation with the `SET` and `GET` commands. For more Redis commands, see [Redis Commands](https://redis.io/commands/).
-
-#### Create Redis Service using Redis Cloud
-
-1. Login to the [Redis Cloud](https://redis.com/cloud/overview/) console and create a subscription. In this demo, you can select the Fixed Plan.
-2. Create a database.
-3. In the configuration page of the database, you can find the required connection details such as address, username, and password.
-4. You can click the connect button, select the Redis CLI option, copy the command, and use it in the command line to connect to the service for verification.
-
-For more detailed information, please refer to the [Redis Cloud Documentation](https://docs.redis.com/)
+Enter the database console, now you have the information needed for the next steps.
 
 ## Create a Connector
 
-Before creating data integration rules, you need to first create a Redis connector to access the Redis server.
-
 1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
 
-2. If it is the first time for you to create a connector, select **Redis** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **Redis** under the **Data Persistence** category.
+2. If it is the first time for you to create a connector, select **Upstash for Redis** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **Upstash for Redis** under the **Data Persistence** category.
 
 3. **Connector Name**: The system will automatically generate a connector name.
 
-4. Set **Redis Mode** as the business needs, for example, `single`.
+4. Enter the connection information:
 
-5. Enter the connection information:
+   - **Server Host**: The information in **Endpoints** and **Port** on Redis detail page.
+   - **Password**: The information in **Password** on Redis detail page.
+   - Leave others as default.
 
-   - **Server Host**: IP address and port of the server.
-   - **Database ID**: Enter `0`.
-   - **Username and Password**: Redis services created with Redis Cloud require copying the username and password from the Configuration page of the database and entering them.
-   - Configure the other options according to your business needs.
-   - If you want to establish an encrypted connection, click the **Enable TLS** toggle switch.
+5. Advanced Settings (Optional).
 
 6. Click the **Test** button. If the Redis service is accessible, a success prompt will be returned.
 
@@ -97,19 +75,20 @@ Before creating data integration rules, you need to first create a Redis connect
 
 ## Create a Rule
 
-Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Redis.
+Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to Upstash for Redis.
 
-1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
-2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the `temp_hum/emqx` topic. Here you need a certain process of SQL:
+2. Enter the rule matching SQL statement in the **SQL Editor**. In the following rule, we read the time when the message was reported `arrived`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
 
    ```sql
-    SELECT
-      timestamp div 1000 as up_timestamp,
-      clientid as client_id,
-      payload as temp_hum
-    FROM
-      "temp_hum/emqx"
+   SELECT
+     timestamp as up_timestamp,
+     clientid as client_id,
+     payload.temp as temp,
+     payload.hum as hum
+   FROM
+     "temp_hum/emqx"
    ```
 
    ::: tip
@@ -124,8 +103,8 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 5. Configure **Redis Command Template**. The "up_timestamp", "client ID", "temperature", and "humidity" data will be read from the topic and saved to Redis:
 
-   ```bash
-    HMSET ${client_id} ${up_timestamp} ${temp_hum}
+   ```sql
+   HMSET ${client_id} ${up_timestamp} ${temp}
    ```
 
 6. Click the **Confirm** button to complete the rule creation.
@@ -151,15 +130,6 @@ You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature a
      }
      ```
 
-2. View stored results.
-
-   - For Redis installed via Docker, you need to access the container first and then execute `redis-cli` to connect to the Redis service.
-   - For services created via Redis Cloud, select the Redis CLI connection option, copy the command, and execute it in the command line to connect to the Redis service.
-
-   ```bash
-   127.0.0.1:6379> HGETALL test_client
-   1) "1710921138"
-   2) "{\n  \"temp\": 27.5,\n  \"hum\": 41.8\n}"
-   ```
+2. View data in Upstash Console. In Data Browser, we select the client enrty, then we can check the messages.
 
 3. View operational data in the console. Click the rule ID in the rule list, and you can see the statistics of the rule and the statistics of all actions under this rule.
