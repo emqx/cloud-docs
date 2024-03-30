@@ -1,8 +1,8 @@
 ---
 {
-  'title': 'EMQX Cloud Overview',
-  'description': 'EMQX Cloud is a fully managed MQTT 5.0 IoT cloud service. It can process a huge amount of data in real-time to and from connected IoT devices and applications.',
-  'introduction': "EMQX Cloud is an MQTT middleware for the IoT from EMQ. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Cloud provides a one-stop O&M colocation and a unique isolated environment for MQTT services. In the era of Internet of Everything, EMQX Cloud can help you quickly build industry applications and easily realize the collection, transmission, computation and persistence of IoT data.",
+  'title': 'EMQX Platform Introduction',
+  'description': 'EMQX Platform is a fully managed MQTT 5.0 IoT cloud service. It can process a huge amount of data in real-time to and from connected IoT devices and applications.',
+  'introduction': "One MQTT Platform for the IoT from EMQ. As the world's first MQTT 5.0 messaging service, EMQX Platform provides fully-managed environment or On-Premise for MQTT services. EMQX Platform can help you quickly build industry applications and easily realize the collection, transmission, computation and persistence of IoT data.",
   'headers':
     [
       { 'title': 'Product Introduction', 'slug': 'product-introductione' },
@@ -177,7 +177,7 @@
               'subMenus':
                 [
                   {
-                    'name': 'Which platforms does EMQX Cloud support?',
+                    'name': 'Which platforms does EMQX Platform support?',
                     'link': './faq/normal_a.html#which-platforms-does-emqx-cloud-support',
                   },
                   {

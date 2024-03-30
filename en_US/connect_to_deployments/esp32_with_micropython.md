@@ -107,7 +107,7 @@ ssl_params["cert_reqs"] = ssl.CERT_REQUIRED
 ssl_params["cadata"] = cadata
 ```
 
-If you deploy an EMQX Cloud Serverless instance, you also need to set the SNI (Server Name Indication) to your connection address using the `server_hostname` option. This step is essential because Serverless needs to differentiate tenants based on SNI. By default, MicroPython will not send SNI, which will cause our connection to fail:
+If you deploy an EMQX Platform Serverless instance, you also need to set the SNI (Server Name Indication) to your connection address using the `server_hostname` option. This step is essential because Serverless needs to differentiate tenants based on SNI. By default, MicroPython will not send SNI, which will cause our connection to fail:
 
 ```
 ssl_params["server_hostname"] = SERVER
@@ -283,4 +283,4 @@ Received '{"msg": 2}' from topic 'raspberry/mqtt'
 
 ## More
 
-Now, you can successfully connect to EMQX Cloud on ESP32 using MicroPython's umqtt module. You can download the sample code at [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython). At the same time, you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
+Now, you can successfully connect to EMQX Platform on ESP32 using MicroPython's umqtt module. You can download the sample code at [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython). At the same time, you can also find more demo examples in other languages on [GitHub](https://github.com/emqx/MQTT-Client-Examples).

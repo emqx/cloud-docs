@@ -1,12 +1,12 @@
 # API
 
-The EMQX Cloud API follows RESTful definitions, providing you with programmatic access to manage deployments in EMQX Cloud. Through the API, you can manage authentication, clients, topics, and access more metric information.
+The EMQX Platform API follows RESTful definitions, providing you with programmatic access to manage deployments in EMQX Platform. Through the API, you can manage authentication, clients, topics, and access more metric information.
 
 The API has the following features:
 
 - JSON Format: All response content is presented in JSON format.
 - HTTPS Only: You can only access the API via HTTPS, ensuring that all data sent over the network is encrypted using TLS.
-- Key-based Access and Digest Authentication: Before accessing the EMQX Cloud API, you must generate an API key. All requests are authenticated through HTTP digest authentication, ensuring that the API key is never sent over the network.
+- Key-based Access and Digest Authentication: Before accessing the EMQX Platform API, you must generate an API key. All requests are authenticated through HTTP digest authentication, ensuring that the API key is never sent over the network.
 
 ## How to Use API
 
@@ -67,7 +67,7 @@ The possible result codes are as follows:
 
 ## API Versions
 
-Depending on the different EMQX versions used in EMQX Cloud, the API is also divided into versions based on EMQX 4.x and EMQX 5.x. Please choose the API version that corresponds to the type of deployment you have activated.
+Depending on the different EMQX versions used in EMQX Platform, the API is also divided into versions based on EMQX 4.x and EMQX 5.x. Please choose the API version that corresponds to the type of deployment you have activated.
 
 - [Serverless API](./serverless.md)
 - [Dedicated / BYOC API](./dedicated.md)

@@ -8,7 +8,7 @@ Eclipse Paho Java is an open-source MQTT client library that can be used to impl
 
 ### Deploy MQTT Broker
 
-- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
     + Broker: **broker.emqx.io**
     + TCP Port: **1883**
@@ -16,7 +16,7 @@ Eclipse Paho Java is an open-source MQTT client library that can be used to impl
     + WebSocket Port: **8083**
     + WebSocket TLS/SSL Port: **8084**
 
-- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth_overview.html) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
+- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in **Access Control** -> **Authentication** for verification.
 
 ### Install Maven
 The project use Maven as the build tool, please [install Maven](https://maven.apache.org/install.html) first.
@@ -464,4 +464,4 @@ That's the whole process of connecting, subscribing, publishing, and receiving t
 
 ## More
 
-The above shows you how to connect to EMQX Cloud using the paho.mqtt.java client library, You can see the source code on [GitHub](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java). You can also find more examples of other language on [GitHub](https://github.com/emqx/MQTT-Client-Examples).
+The above shows you how to connect to EMQX Platform using the paho.mqtt.java client library, You can see the source code on [GitHub](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Java). You can also find more examples of other language on [GitHub](https://github.com/emqx/MQTT-Client-Examples).

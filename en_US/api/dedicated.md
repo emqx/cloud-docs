@@ -1,6 +1,6 @@
 # Dedicated / BYOC API Overview
 
-The table below summarizes the API documentation for EMQX Cloud Dedicated / BYOC deployments.
+The table below summarizes the API documentation for EMQX Dedicated / BYOC deployments.
 
 
 | API                                            | Description                                                  |

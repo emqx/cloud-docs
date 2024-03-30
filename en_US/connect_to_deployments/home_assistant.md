@@ -1,12 +1,12 @@
 # Connect with Home Assistant
 
-In recent years, as people's demand for home security, convenience, comfort and artistry has increased, home automation has become more and more popular. [Home Assistant](https://www.home-assistant.io/), a popular open-source home automation platform, provides a secure and convenient central control system. In this article, we will introduce you how to use EMQX Cloud MQTT Broker to connect with Home Assistant.
+In recent years, as people's demand for home security, convenience, comfort and artistry has increased, home automation has become more and more popular. [Home Assistant](https://www.home-assistant.io/), a popular open-source home automation platform, provides a secure and convenient central control system. In this article, we will introduce you how to use EMQX Platform MQTT Broker to connect with Home Assistant.
 
 ## Prerequisites
 
 ### Get MQTT Broker
 
-You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
 - Broker: **broker.emqx.io**
 - MQTT Port: **1883**
@@ -92,7 +92,7 @@ If you are using MQTT for Home Assistant for the first time, please refer to the
 
 ## Test Connection
 
-   After filling in the connection information, click the `Submit` button. Your EMQX Cloud deployment is now integrating with Home Assistant. Congratulations!
+   After filling in the connection information, click the `Submit` button. Your EMQX Platform deployment is now integrating with Home Assistant. Congratulations!
 
    ![homeassistant_connection](./_assets/homeassistant_connection.png)
 

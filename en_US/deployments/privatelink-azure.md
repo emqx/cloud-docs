@@ -1,6 +1,6 @@
 # Azure PrivateLink
 
-This page provides instructions on how to enable the PrivateLink feature for the EMQX Cloud deployment on the Microsoft Azure platform. Once the PrivateLink is enabled, the EMQX Cloud deployment can access Azure PaaS Services and Azure hosted customer-owned/partner services through a private connection in your virtual network. In the private connection, the EMQX Cloud deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
+This page provides instructions on how to enable the PrivateLink feature for the EMQX Platform deployment on the Microsoft Azure platform. Once the PrivateLink is enabled, the EMQX Platform deployment can access Azure PaaS Services and Azure hosted customer-owned/partner services through a private connection in your virtual network. In the private connection, the EMQX Platform deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
 
 The following contents are demonstrated on this page:
 
@@ -13,7 +13,7 @@ The following contents are demonstrated on this page:
 
 ## Create a Private Link Service Using the Azure Portal
 
-To access the Azure services through a private connection from the EMQX Cloud, you need to create a Private Link Service in Azure and expose the service to EMQX Cloud. This section demonstrates how to create a private link service by using the Azure portal. 
+To access the Azure services through a private connection from the EMQX Platform, you need to create a Private Link Service in Azure and expose the service to EMQX Platform. This section demonstrates how to create a private link service by using the Azure portal. 
 
 ::: tip Prerequisites
 
@@ -123,12 +123,12 @@ Create a Private Link service behind the load balancer you created in the previo
 
 By creating a PrivateLink connection in your deployment, you enable the PrivateLink feature for your deployment.
 
-1. Go to your deployment in EMQX Cloud Console. Scroll down the **Overview** page until you see **PrivateLink**. Click **+ PrivateLink**. On the pop-up dialogue, copy the Azure subscription ID in the **Subscription ID** field.
+1. Go to your deployment in EMQX Platform Console. Scroll down the **Overview** page until you see **PrivateLink**. Click **+ PrivateLink**. On the pop-up dialogue, copy the Azure subscription ID in the **Subscription ID** field.
 
 ![azure private](./_assets/azure_privatelink_9.png)
 
 2. Go to the private link service `demo` you created in Azure Portal. 
-3. Click **Access security** under **Settings**. Select **Restricted by subscription** and click **Add subscription**. Paste the Azure subscription ID copied from EMQX Cloud Console in the **Subscription** textbox.
+3. Click **Access security** under **Settings**. Select **Restricted by subscription** and click **Add subscription**. Paste the Azure subscription ID copied from EMQX Platform Console in the **Subscription** textbox.
 
 ![azure private](./_assets/azure_privatelink_10.png)
 
@@ -136,7 +136,7 @@ By creating a PrivateLink connection in your deployment, you enable the PrivateL
 
 ![azure private](./_assets/azure_privatelink_11.png)
 
-5. Go to the EMQX Cloud Console. Click **Next Step**, paste the alias you just copied in the **Enter the ID of Private Link Service** textbox. Click **Create PrivateLink**.
+5. Go to the EMQX Platform Console. Click **Next Step**, paste the alias you just copied in the **Enter the ID of Private Link Service** textbox. Click **Create PrivateLink**.
 
 <img src="./_assets/azure_privatelink_12.png" alt="azure private" style="zoom:67%;" />
 
@@ -159,14 +159,14 @@ In this section, you can test if the PrivateLink works properly by connecting to
 
 ![azure private](./_assets/azure_privatelink_15.png)
 
-## Remove PrivateLink 
+## Remove PrivateLink
 
 Before removing a PrivateLink connection, you need to check the following:
 
 - Ensure that the PrivateLink status is running.
 - Verify that there are no linked resources within the deployment, as neglecting this step could lead to unpredictable risks.
 
-> If you intend to remove the private link service from your Azure platform, it is important to first remove the PrivateLink from the EMQX Cloud Console. Failing to do so may result in a "Failed" PrivateLink status for the deployment.  
+> If you intend to remove the private link service from your Azure platform, it is important to first remove the PrivateLink from the EMQX Platform Console. Failing to do so may result in a "Failed" PrivateLink status for the deployment.  
 
 1. Go to the deployment details page.
 

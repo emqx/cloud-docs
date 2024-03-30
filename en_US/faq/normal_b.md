@@ -47,7 +47,7 @@ Support [one-way](../deployments/tls_ssl.md), [two-way](../deployments/tls_ssl.m
 
 ## How to integrate with other systems?
 
-You can use data integrations to integrate with other applications. Check [Data Integrations](../rule_engine/introduction.md) for more details.
+You can use data integrations to integrate with other applications. Check [Data Integrations](../data_integration/introduction.md) for more details.
 
 ## The authentication data of the device is stored in my own database. Can I do the authentication of MQTT connections through my own database?
 EMQX Cloud Dedicated supports authentication from the user's own database, see the document [External Authentication and Access Control](../deployments/custom_auth.md).

@@ -29,7 +29,7 @@ View the deployment connection address, port and status.
 
 Add and import MQTT authentication and ACL information.
 
-### [Data Integrations](../rule_engine/introduction.md)
+### [Data Integrations](../data_integration/introduction.md)
 
 Flow device or client data to the database and elsewhere by adding rules and resources.
 

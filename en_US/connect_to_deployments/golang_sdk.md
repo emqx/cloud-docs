@@ -8,11 +8,11 @@ This article guides you to use the `paho.mqtt.golang` Library in go project to r
 ## Prerequisites
 
 ### Deploy MQTT Broker
-- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
    - Broker: broker.emqx.io
    - TCP Port: 1883
    - TLS/SSL Port: 8883
-- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth_overview.html) and set the username and password in Authentication & ACL > Authentication for verification.
+- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in **Access Control** -> **Authentication** for verification.
 
 ## Installation Dependency
 
@@ -108,7 +108,7 @@ This section introduces how to connect to MQTT Broker over SSL/TLS Protocol.
    ``` go
     const protocol = "ssl"
     const port = 8883
-    ```
+   ```
 
 2. The Key Code of Connection
 
@@ -120,7 +120,7 @@ This section introduces how to connect to MQTT Broker over SSL/TLS Protocol.
     func createMqttClient() mqtt.Client {
         connectAddress := fmt.Sprintf("%s://%s:%d", protocol, broker, port)
         rand.Seed(time.Now().UnixNano())
-	    clientID := fmt.Sprintf("go-client-%d", rand.Int())
+        clientID := fmt.Sprintf("go-client-%d", rand.Int())
     
         fmt.Println("connect address: ", connectAddress)
         opts := mqtt.NewClientOptions()

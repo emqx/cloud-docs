@@ -1,59 +1,62 @@
-# Project List
+# Project Management
 
-Project management is used to group deployments under different projects, making it easy to manage deployments according to the projects.
+Projects provide the capability for multiple organizations or departments within a company to use and manage MQTT clusters independently, allowing for more detailed management of the platform's capabilities by assigning different roles. Based on projects, each organization or department can manage its own MQTT cluster independently and account for it separately. Under the multi-project mechanism, deployments must be established under a project, and a deployment can only belong to one project.
 
-## Default Project
+## Project List
 
-Deployments of unassociated projects will be grouped under the default deployment.
+Click **Deployments** in the top menu bar to enter the page, where you can see the project list on the left side of the page.
 
 ![default_project](./_assets/default_project.png)
 
-## Create Project
+## Create a Project
 
-Click **New Project**, enter the project name and description, you can create a new project.
+Click **New Project**. Enter the project name and note in the pop-up, then click **Confirm** to create a new project.
 
 ![create_project](./_assets/create_project.png)
 
-## Create Deployment under Project
+## Create a Deployment under a Project
 
-Select the project on the left, you can create a new deployment under the selected project.
+Select a project on the left, you can create a deployment under the selected project.
 
 ![create_deployment_under_project](./_assets/create_deployment_under_project.png)
 
-## Move Project
+## Move Deployment to Another Project
 
-Click on the menu in the upper right corner of the deployment and select **Move To**.
+1. Click the menu in the top right corner of the deployment, and select **Move to**.
 
 ![move_project_menu](./_assets/move_project_menu.png)
 
-Select the target project in the project list.
+2. From the **Choose Project** dropdown, select the target project.
 
 ![move_project](./_assets/move_project.png)
 
-Once you click **Confirm**, you can move the deployment to a new project.
+3. After clicking **Confirm**, the deployment can be moved to the target project.
 
-![new_project_deployments](./_assets/new_project_deployments.png)
+## Update a Project
 
-## Update Project
-
-Hover over the project to see the update button.
+Select a project, click the edit button in the top right corner, and you can update the project name and description.
 
 ![update_project_menu](./_assets/update_project_menu.png)
 
-Click the button to update the project's name and description.
+## Delete a Project
 
-![update_project](./_assets/update_project.png)
+> Please ensure there are no deployments under the project before deleting it.
 
-## Delete Project
+Select a project, and click the delete button in the top right corner.
 
-> Make sure there are no deployments under the project before deleting it.
+![delete_project](./_assets/delete_project.png)
 
-Hover over the project and click the **Delete** button to delete the project.
+## Link Subaccounts
 
-![delete_project](./_assets/delete_project.png)!
+1. Select a project, click the Authorization button in the top right corner, you can set [subaccounts](./user.md) for this project.
 
-## All Deployments
+   ![delete_project](./_assets/link_subuser.png)
 
-Click on **All Deployments** in the top right corner to see all deployments.
+2. In the Authorization dialog, click **Add** to enter subaccounts and select roles for the subaccounts.
 
-![all_deployments](./_assets/all_deployments.png)
+   ![add_subuser](./_assets/add_subuser.png)
+
+3. Click **Confirm** to add the subaccount, or you can continue to add more subaccounts.
+
+   ![confirm_subuser](./_assets/confirm_subuser.png)
+

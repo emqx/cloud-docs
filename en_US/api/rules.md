@@ -3,7 +3,7 @@
 This API documentation provides information on various operations related to Data Integration usage, including resource, rules and actions.
 
 :::warning Tips for resource and rule maximum quantity
-To ensure the stability of the deployment, EMQX Cloud recommends a certain range of resources and rules. The recommended number of resources is no more than 10, the number of rules is no more than 50, and the number of actions under each rule is no more than 10.
+To ensure the stability of the deployment, EMQX Platform recommends a certain range of resources and rules. The recommended number of resources is no more than 10, the number of rules is no more than 50, and the number of actions under each rule is no more than 10.
 :::
 
 ## Create Resource

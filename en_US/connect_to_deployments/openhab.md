@@ -2,13 +2,13 @@
 
 [OpenHAB](https://www.openhab.org/) also known as open Home Automation Bus, is an open-source home automation software written in Java. With the strengths of integrating various devices, providing a clear user interface, and supporting the most flexible tools, openHAB becomes one of the most outstanding platforms in the field of home automation.
 
-With the high flexibility and ease of use, openHAB provides a particular binding for users to connect MQTT Broker. In this article, we will introduce to you the process of setting up EMQX Cloud MQTT Broker with openHAB.
+With the high flexibility and ease of use, openHAB provides a particular binding for users to connect MQTT Broker. In this article, we will introduce to you the process of setting up EMQX Platform MQTT Broker with openHAB.
 
 ## Prerequisites
 
 ### Get MQTT Broker
 
-You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
 - Broker: **broker.emqx.io**
 - MQTT Port: **1883**
@@ -78,10 +78,10 @@ This section describes how to connect an openhab client to MQTT broker over TLS/
 
 ## Test Connection
 
-Go to `Settings` ---> `Things` ---> `MQTT Broker`, when there is a little green label that says "online", you are successfully connecting openHAB with EMQX Cloud. Congrats!
+Go to `Settings` ---> `Things` ---> `MQTT Broker`, when there is a little green label that says "online", you are successfully connecting openHAB with EMQX Platform. Congrats!
 
 ![openhab_connection](./_assets/openhab_connection.png)
 
-You can also check the status from the EMQX Cloud's monitor page.
+You can also check the status from the EMQX Platform's monitor page.
 
 ![openhab_monitor](./_assets/openhab_monitor.png)

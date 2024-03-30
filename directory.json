@@ -715,16 +715,21 @@
   ],
   "en": [
     {
-      "title": "Product Overview",
+      "title": "Introduction",
       "path": "./"
     },
     {
-      "title": "Introduction",
+      "title": "Product Overview",
       "path": "overview"
+    },
+    {
+      "title": "What's New",
+      "path": "new_features"
     },
     {
       "title": "Plans and Pricing",
       "path": "price/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Product Plans",
@@ -739,6 +744,7 @@
     {
       "title": "Get Started",
       "path": "quick_start/introduction",
+      "collapsed": true,
       "children": [
         {
           "title": "Use MQTTX to Test Connection",
@@ -749,6 +755,7 @@
     {
       "title": "Create Deployment",
       "path": "create/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "Create Serverless Deployment",
@@ -789,7 +796,7 @@
           "collapsed": true,
           "children": [
             {
-              "title": "Deployment Prerequisites",
+              "title": "Deployment Prerequisite",
               "path": "deployments/byoc_prerequisite"
             },
             {
@@ -797,12 +804,12 @@
               "path": "deployments/byoc_ssl"
             },
             {
-              "title": "Create Deployment",
-              "path": "create/byoc"
-            },
-            {
               "title": "BYOC License",
               "path": "deployments/byoc_license"
+            },
+            {
+              "title": "Create Deployment",
+              "path": "create/byoc"
             },
             {
               "title": "VPC Peering Setting",
@@ -817,16 +824,92 @@
       ]
     },
     {
+      "title": "Start/Stop/Delete Deployment",
+      "path": "deployments/stop_delete_deployment"
+    },
+    {
+      "title": "Client Authentication",
+      "path": "deployments/auth_overview",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "Default Authentication",
+          "path": "deployments/default_auth"
+        },
+        {
+          "title": "Extended Authentication",
+          "path": "deployments/custom_auth",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "HTTP Authentication",
+              "path": "deployments/http_auth"
+            },
+            {
+              "title": "JWT Authentication",
+              "path": "deployments/jwt_auth"
+            },
+            {
+              "title": "Redis Authentication",
+              "path": "deployments/redis_auth"
+            },
+            {
+              "title": "MySQL Authentication",
+              "path": "deployments/mysql_auth"
+            },
+            {
+              "title": "PostgreSQL Authentication",
+              "path": "deployments/pgsql_auth"
+            }
+          ]
+        },
+        {
+          "title": "Blacklist",
+          "path": "deployments/blacklist"
+        }
+      ]
+    },
+    {
+      "title": "Client Authorization",
+      "path": "deployments/authz_overview",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "Default Authorization",
+          "path": "deployments/default_authz"
+        },
+        {
+          "title": "Extended Authorization",
+          "path": "deployments/custom_authz",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "HTTP Authorization",
+              "path": "deployments/http_authz"
+            },
+            {
+              "title": "Redis Authorization",
+              "path": "deployments/redis_authz"
+            },
+            {
+              "title": "MySQL Authorization",
+              "path": "deployments/mysql_authz"
+            },
+            {
+              "title": "PostgreSQL Authorization",
+              "path": "deployments/pgsql_authz"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "Project and Account",
       "path": "feature/overview",
       "collapsed": true,
       "children": [
         {
-          "title": "Project Center",
-          "path": "feature/project_center"
-        },
-        {
-          "title": "Project List",
+          "title": "Project Management",
           "path": "feature/project"
         },
         {
@@ -845,7 +928,7 @@
           "title": "Single Sign-On (SSO)",
           "path": "feature/sso_overview",
           "collapsed": true,
-          "children":[
+          "children": [
             {
               "title": "Configure Okta SSO",
               "path": "feature/sso_okta"
@@ -859,104 +942,46 @@
       ]
     },
     {
-      "title": "Authentication and ACL",
-      "path": "deployments/auth_overview",
+      "title": "Monitoring",
+      "path": "deployments/monitors",
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless Plan",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "Authentication",
-              "path": "deployments/auth_serverless"
-            },
-            {
-              "title": "Access Control",
-              "path": "deployments/acl_serverless"
-            }
-          ]
+          "title": "Metrics",
+          "path": "deployments/metrics"
         },
         {
-          "title": "Dedicated / BYOC Plan",
+          "title": "Clients",
+          "path": "deployments/clients"
+        },
+        {
+          "title": "Subscription Management",
+          "path": "deployments/subscription_management"
+        },
+        {
+          "title": "Retained Message",
+          "path": "deployments/retain_message"
+        },
+        {
+          "title": "Alerts",
+          "path": "deployments/alerts",
           "collapsed": true,
           "children": [
             {
-              "title": "Authentication",
-              "path": "deployments/auth_dedicated"
-            },
-            {
-              "title": "Access Control",
-              "path": "deployments/acl_dedicated"
-            },
-            {
-              "title": "External Auth & ACL",
-              "path": "deployments/custom_auth"
-            },
-            {
-              "title": "HTTP Authentication & ACL",
-              "path": "deployments/http_auth"
-            },
-            {
-              "title": "MySQL Authentication & ACL",
-              "path": "deployments/mysql_auth"
-            },
-            {
-              "title": "PostgreSQL Authentication & ACL",
-              "path": "deployments/pgsql_auth"
-            },
-            {
-              "title": "Redis Authentication & ACL",
-              "path": "deployments/redis_auth"
-            },
-            {
-              "title": "JWT Authentication",
-              "path": "deployments/jwt_auth"
-            },
-            {
-              "title": "Blacklist",
-              "path": "deployments/blacklist"
+              "title": "Webhook alerts",
+              "path": "deployments/alerts_webhook"
             }
           ]
         }
       ]
     },
     {
-      "title": "Metrics & Monitors",
-      "path": "deployments/operation_overview",
+      "title": "Diagnose",
       "collapsed": true,
       "children": [
         {
-          "title": "Monitors",
-          "path": "deployments/monitors"
-        },
-        {
-          "title": "Metrics",
-          "path": "deployments/metrics"
-        },
-        {
-          "title": "Alerts",
-          "path": "deployments/alerts"
-        },
-        {
-          "title": "Webhook alerts",
-          "path": "deployments/alerts_webhook"
-        },
-        {
           "title": "Logs",
           "path": "deployments/logs"
-        },
-        {
-          "title": "Prometheus",
-          "path": "deployments/prometheus"
-        },
-        {
-          "title": "Start/Stop/Delete Deployment",
-          "path": "deployments/stop_delete_deployment"
-        },
-        {
-          "title": "BYOC Operation and Maintenance Service",
-          "path": "deployments/byoc_operation_maintenance"
         }
       ]
     },
@@ -1052,9 +1077,9 @@
       ]
     },
     {
-      "title": "Data Integration (Serverless)",
+      "title": "Data Integration",
       "path": "data_integration/introduction",
-      "collapsed": false,
+      "collapsed": true,
       "children": [
         {
           "title": "Connector",
@@ -1065,143 +1090,108 @@
           "path": "data_integration/rules"
         },
         {
-          "title" : "Message Republish",
-          "path": "data_integration/republish"
-        },
-        {
-          "title" : "Null Action (Debug)",
-          "path": "data_integration/empty_action_debug"
-        },
-        {
-          "title" : "HTTP Server",
-          "path": "data_integration/http_server"
-        },
-        {
-          "title" : "Kafka",
-          "path": "data_integration/kafka"
-        }
-      ]
-    },
-    {
-      "title": "Data Integration (Dedicated)",
-      "path": "rule_engine/introduction",
-      "collapsed": true,
-      "children": [
-        {
-          "title": "Resource Management",
-          "path": "rule_engine/resources"
-        },
-        {
-          "title": "Rule Management",
-          "path": "rule_engine/rules"
-        },
-        {
           "title": "Event Topics",
           "path": "rule_engine/rule_engine_events"
         },
         {
-          "title": "Republish Messages",
-          "path": "rule_engine/rule_engine_republish"
+          "title": "Message Republish",
+          "path": "data_integration/republish"
         },
         {
-          "title": "Integrate with Webhook",
-          "path": "rule_engine/rule_engine_web_hook"
+          "title": "Null Action (Debug)",
+          "path": "data_integration/empty_action_debug"
         },
         {
-          "title": "Integrate with MQTT Broker",
-          "path": "rule_engine/rule_engine_mqtt"
+          "title": "HTTP Server",
+          "path": "data_integration/http_server"
         },
         {
-          "title": "Integrate with Kafka",
-          "path": "rule_engine/rule_engine_kafka"
+          "title": "Kafka",
+          "path": "data_integration/kafka"
         },
         {
-          "title": "Integrate with Confluent Cloud",
-          "path": "rule_engine/rule_engine_confluent"
+          "title": "Upstash for Kafka",
+          "path": "data_integration/kafka_upstash"
         },
         {
-          "title": "Integrate with Upstash for Kafka",
-          "path": "rule_engine/rule_engine_upstash_kafka"
+          "title": "Pulsar",
+          "path": "data_integration/pulsar"
         },
         {
-          "title": "Integrate with Pulsar",
-          "path": "rule_engine/rule_engine_bridge_pulsar"
+          "title": "RabbitMQ",
+          "path": "data_integration/rabbitmq"
         },
         {
-          "title": "Integrate with AWS RDS",
-          "path": "rule_engine/rule_engine_aws_rds"
+          "title": "RocketMQ",
+          "path": "data_integration/rocketmq"
         },
         {
-          "title": "Integrate with GCP Pub/Sub",
-          "path": "rule_engine/rule_engine_gcp_pubsub"
+          "title": "MySQL",
+          "path": "data_integration/mysql"
         },
         {
-          "title": "Integrate with RocketMQ",
-          "path": "rule_engine/rule_engine_rocketmq"
+          "title": "PostgreSQL",
+          "path": "data_integration/postgresql"
         },
         {
-          "title": "Integrate with Azure Event Hubs",
-          "path": "rule_engine/rule_engine_azure_event_hubs"
+          "title": "Redis",
+          "path": "data_integration/redis"
         },
         {
-          "title": "Integrate with TimescaleDB",
-          "path": "rule_engine/rule_engine_save_timescaledb"
+          "title": "Upstash for Redis",
+          "path": "data_integration/redis_upstash"
         },
         {
-          "title": "Integrate with Timescale Cloud",
-          "path": "rule_engine/rule_engine_save_timescale_cloud"
+          "title": "MongDB",
+          "path": "data_integration/mongodb"
         },
         {
-          "title": "Integrate with PostgreSQL",
-          "path": "rule_engine/rule_engine_save_psql"
+          "title": "Cassandra",
+          "path": "data_integration/cassandra"
         },
         {
-          "title": "Integrate with MySQL",
-          "path": "rule_engine/rule_engine_save_mysql"
+          "title": "ClickHouse",
+          "path": "data_integration/clickhouse"
         },
         {
-          "title": "Integrate with MongoDB",
-          "path": "rule_engine/rule_engine_save_mongodb"
+          "title": "DynamoDB",
+          "path": "data_integration/dynamodb"
         },
         {
-          "title": "Integrate with MongoDB Atlas",
-          "path": "rule_engine/rule_engine_save_mongodb_atlas"
+          "title": "InfluxDB",
+          "path": "data_integration/influxdb"
         },
         {
-          "title": "Integrate with InfluxDB",
-          "path": "rule_engine/rule_engine_influxDB"
+          "title": "Microsoft SQL Server",
+          "path": "data_integration/microsoft_sql_server"
         },
         {
-          "title": "Integrate with InfluxDB 2.0",
-          "path": "rule_engine/rule_engine_influxDB_2.0"
+          "title": "OpenTSDB",
+          "path": "data_integration/opentsdb"
         },
         {
-          "title": "Integrate with Redis",
-          "path": "rule_engine/rule_engine_save_redis"
+          "title": "TDengine",
+          "path": "data_integration/tdengine"
         },
         {
-          "title": "Integrate with Upstash for Redis",
-          "path": "rule_engine/rule_engine_upstash_redis"
+          "title": "TimescaleDB",
+          "path": "data_integration/timescaledb"
         },
         {
-          "title": "Integrate with SQL Server",
-          "path": "rule_engine/rule_engine_save_sqlserver"
+          "title": "HStreamDB",
+          "path": "data_integration/hstreamdb"
         },
         {
-          "title": "Integrate with TDengine",
-          "path": "rule_engine/rule_engine_save_tdengine"
+          "title": "Apache IoTDB",
+          "path": "data_integration/apache_iotdb"
         },
         {
-          "title": "Integrate with HStreamDB",
-          "path": "rule_engine/rule_engine_save_hstreamdb"
+          "title": "GCP PubSub",
+          "path": "data_integration/gcp_pubsub"
         },
         {
-          "title": "Integrate with ClickHouse",
-          "path": "rule_engine/rule_engine_save_clickhouse"
-        },
-        {
-          "title": "Integrate with ClickHouse Cloud",
-          "path": "rule_engine/rule_engine_save_clickhouse_cloud"
+          "title": "Elasticsearch",
+          "path": "data_integration/elasticsearch"
         }
       ]
     },
@@ -1272,61 +1262,6 @@
         {
           "title": "Internal Load Balancers",
           "path": "vas/intranet-lb"
-        },
-        {
-          "title": "Shadow Service",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "shadow_service/overview"
-            },
-            {
-              "title": "Pricing",
-              "path": "shadow_service/pricing"
-            },
-            {
-              "title": "Features",
-              "path": "shadow_service/feature"
-            },
-            {
-              "title": "Communication",
-              "path": "shadow_service/invoke"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Developer Guide",
-      "path": "dev_guide"
-    },
-    {
-      "title": "Best Practices",
-      "collapsed": true,
-      "children": [
-        {
-          "title": "Serverless Usage and Management",
-          "path": "best_practices/serverless_practice"
-        },
-        {
-          "title": "Store Device Offline Messages",
-          "path": "rule_engine/rule_engine_offline_msg_saving"
-        },
-        {
-          "title": "Get Subscription Topic Information",
-          "path": "rule_engine/rule_engine_get_subscription"
-        },
-        {
-          "title": "Shared Subscription",
-          "path": "connect_to_deployments/shared_subscription"
-        },
-        {
-          "title": "How to Troubleshoot Message Loss",
-          "path": "best_practices/how_to_troubleshoot_message_loss"
-        },
-        { 
-          "title": "Enhance Message Traceability",
-          "path": "best_practices/enhance_traceability"
         }
       ]
     },
@@ -1404,8 +1339,34 @@
       ]
     },
     {
-      "title": "About MQTT",
-      "path": "https://www.emqx.com/en/mqtt"
+      "title": "Developer Guide",
+      "path": "dev_guide"
+    },
+    {
+      "title": "Best Practices",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "Serverless Usage and Management",
+          "path": "best_practices/serverless_practice"
+        },
+        {
+          "title": "Store Device Offline Messages",
+          "path": "rule_engine/rule_engine_offline_msg_saving"
+        },
+        {
+          "title": "Get Subscription Topic Information",
+          "path": "rule_engine/rule_engine_get_subscription"
+        },
+        {
+          "title": "Shared Subscription",
+          "path": "connect_to_deployments/shared_subscription"
+        },
+        {
+          "title": "How to Troubleshoot Message Loss",
+          "path": "best_practices/how_to_troubleshoot_message_loss"
+        }
+      ]
     },
     {
       "title": "Release Note & Upgrade policy",

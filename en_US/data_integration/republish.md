@@ -1,6 +1,6 @@
 # Message Republish
 
-Through EMQX Cloud Data Integration, it's possible to republish messages that meet certain conditions to other topics without writing any code. In EMQX Cloud, you can create rules, define rule SQL to filter and process data from source messages and add a "Message Republish" action to the rule to forward the processed results via message publishing.
+Through EMQX Platform Data Integration, it's possible to republish messages that meet certain conditions to other topics without writing any code. In EMQX Platform, you can create rules, define rule SQL to filter and process data from source messages and add a "Message Republish" action to the rule to forward the processed results via message publishing.
 
 This page provides a demonstration of how to create data integration to republish a message to the `greet` topic whenever any message's `msg` contains the string `hello`. The main steps include:
 
@@ -59,7 +59,7 @@ Configuring the message republishing feature through data integration does not r
 2. On the **New Action** step page, configure the following information:
    - **Connector**: Keep the default value `Republish`.
    - **Topic**: Set the target topic as `greet`.
-   - **Payload**: Fill in `${msg} -- forward from emqx cloud` as the message content template.
+   - **Payload**: Fill in `${msg} -- forward from EMQX Platform` as the message content template.
    - Leave QoS at its default value. For more information on options for **MQTT 5.0 Message Properties**, see [Add Republish Action](./republish.md#add-republish-action).
 
 3. Click **Confirm** to complete the action and rule creation.
