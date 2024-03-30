@@ -16,7 +16,7 @@ You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mq
 
 You can [create a deployment](../create/overview.md) as well. Find connection information in deployment overview. Make sure the deployment is running. Use the TCP port or TLS/SSL port to test the connection to the MQTT server.
 
-If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
+If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in `Access Control` > `Authentication` for verification.
 
 ## OpenHAB Initialization
 

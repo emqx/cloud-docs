@@ -17,9 +17,9 @@ It provides support for MQTT V5.0, V3.1, and V3.1.1 for client classes on Python
   + WebSocket Port: **8083**
   + WebSocket TLS/SSL Port: **8084**
 
-- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth_overview.html) and set the username and password in `Authentication & ACL` > `Authentication` for verification.
+- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check Access Control -> [Authentication](../deployments/default_auth.md) and set the username and password for verification.
 
-### Check Python version
+### Check Python Version
 This project uses Python 3.8 to develop and test. Confirm the Python version by the following command.
 
 ```

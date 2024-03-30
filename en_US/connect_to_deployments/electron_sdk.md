@@ -12,7 +12,7 @@ This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) i
   - SSL/TLS Port: 8883
   - WebSocket Port: 8083
   - WebSocket TLS/SSL Port: 8084
-- You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Authentication & ACL** -> **Authentication** section for the setting.
+- You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Access Control** -> **[Authentication](../deployments/default_auth.md)** for the setting.
 
 ### Creating an Electron Application
 

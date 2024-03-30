@@ -38,7 +38,7 @@ Logs analysis reconfigures the ability to parse and search for logs, providing t
 Check that client authentication is correctly configured.
 ```
 
-### Client ACL authentication failed (warning)
+### Client authorization failed (warning)
 
 * Log
 ```

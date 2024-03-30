@@ -1,10 +1,10 @@
 # Serverless Deployment Usage and Management Practices
 
-This page introduces the practices and considerations for free quotas and paid usage when using the Serverless deployments of EMQX Cloud.
+This page introduces the practices and considerations for free quotas and paid usage when using the Serverless deployments of EMQX Platform.
 
 ## Free Quota for Serverless Deployments
 
-When creating a Serverless deployment in the EMQX Cloud console, keep the monthly spend limit at the default value of 0. This allows you to create a free deployment with 1 million session minutes and 1 GB of traffic per month. You can refer to the [Create Serverless Deployment](../create/serverless.md) for specific steps.
+When creating a Serverless deployment in the EMQX Platform console, keep the monthly spend limit at the default value of 0. This allows you to create a free deployment with 1 million session minutes and 1 GB of traffic per month. You can refer to the [Create Serverless Deployment](../create/serverless.md) for specific steps.
 
 ### Frequently Asked Questions
 
