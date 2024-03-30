@@ -54,22 +54,25 @@ In the deployment, click **Access Control** -> **Authentication** -> **Extended 
 
 You can complete the related configurations as follows:
 
-- Service: Enter the MySQL server address (host:port).
-- Database: Enter the MySQL database name.
-- Username (Optional): Enter the username.
-- Password (Optional): Enter the password.
-- TLS Configuration: Configure whether to enable TLS.
-- Connection Pool Size (Optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the MySQL database; default value: 8.
-- Query Timeout: Enter the connection timeout duration; units available: hours, minutes, seconds, milliseconds.
-- Password Encryption Method: Select the hashing algorithm used to store the password, such as plain, md5, sha, bcrypt, pbkdf2, etc.
-- For algorithms plain, md5, sha, sha256, or sha512, configure:
-  - Salt Mode: Specifies how the salt is combined with the password. Except for migrating credentials from external storage to the EMQX built-in database, this option generally does not need to be changed; options: suffix (add salt at the end of the password), prefix (add salt at the beginning of the password), disable (do not use salt). Note: If choosing plain, the salt mode should be set to disable.
-- For the bcrypt algorithm, configure:
-  - Salt Rounds: Specifies the number of computation iterations (2^Salt Rounds), also known as the cost factor. Default value: 10, options: 4–31; the higher the value, the higher the security of the encryption. Therefore, it is recommended to use a larger value, but the time taken for user verification will also increase. You can configure this according to business requirements.
-- For the pkbdf2 algorithm, configure:
-  - Pseudorandom Function: Specifies the hashing function used to generate the key, such as sha256.
-  - Iteration Count: Specifies the number of hashes, default value: 4096.
-  - Key Length (Optional): Specifies the desired length of the key. If not specified, the key length will be determined by the pseudorandom function.
+- **Server**: Enter the MySQL server address (host:port).
+- **Database**: Enter the MySQL database name.
+- **Username** (Optional): Enter the username.
+- **Password** (Optional): Enter the password.
+- **Enable TLS**: Configure whether to enable TLS.
+- **Connection Pool Size** (Optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the MySQL database; default value: `8`.
+- **Query Timeout**: Enter the connection timeout duration; units available: hours, minutes, seconds, milliseconds.
+- **Password Hash**: Select the hashing algorithm used to store the password, such as plain, md5, sha, bcrypt, pbkdf2, etc.
+  - For algorithms `plain`, `md5`, `sha`, `sha256`, or `sha512`, configure:
+    - **Salt Position**: Specifies how the salt is combined with the password. Except for migrating credentials from external storage to the EMQX built-in database, this option generally does not need to be changed; options: suffix (add salt at the end of the password), prefix (add salt at the beginning of the password), disable (do not use salt). Note: If choosing plain, the salt mode should be set to disable.
+
+  - For the `bcrypt` algorithm, configure:
+    - **Salt Rounds**: Specifies the number of computation iterations (2^Salt Rounds), also known as the cost factor. Default value: 10, options: 4–31; the higher the value, the higher the security of the encryption. Therefore, it is recommended to use a larger value, but the time taken for user verification will also increase. You can configure this according to business requirements.
+
+  - For the `pkbdf2` algorithm, configure:
+    - **Pseudorandom function**: Specifies the hashing function used to generate the key, such as sha256.
+    - **Iteration Count**: Specifies the number of hashes, default value: 4096.
+    - **Derived key length** (Optional): Specifies the desired length of the key. If not specified, the key length will be determined by the pseudorandom function.
+
 - SQL: Fill in the query SQL according to the table structure, specific requirements can be found in [SQL Table Structure and Query Statements](https://docs.emqx.com/en/enterprise/latest/access-control/authn/mysql.html#sql-table-structure-and-query-statements).
 
 ::: tip

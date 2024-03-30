@@ -22,21 +22,21 @@ You can complete the related configurations as follows:
 
 When choosing **JWT** as the **Authentication Method**:
 
-- JWT Originates From: Specify the location of the JWT in the client connection request; options: password, username (corresponding to the `Password` and `Username` fields in the MQTT client `CONNECT` packet, respectively)
-- Encryption Method: Specify the JWT encryption method, options: `hmac-based`, `public-key`;
+- **JWT From**: Specify the location of the JWT in the client connection request; options: password, username (corresponding to the `Password` and `Username` fields in the MQTT client `CONNECT` packet, respectively)
+- **Algorithm**: Specify the JWT encryption method, options: `hmac-based`, `public-key`;
   - If selecting `hmac-based`, i.e., JWT uses a symmetric key for generating and verifying signatures (supports HS256, HS384, and HS512 algorithms), you should also configure:
-    - `Secret`: The key used to verify the signature, the same key used for generating the signature.
-    - `Secret Base64 Encode`: Configure whether EMQX needs to decode the `Secret` using Base64 before verifying the signature; options: True, False, default: False.
+    - **Secret**: The key used to verify the signature, the same key used for generating the signature.
+    - **Secret Base64 Encode**: Configure whether EMQX needs to decode the `Secret` using Base64 before verifying the signature; options: True, False, default: False.
   - If selecting `public-key`, i.e., JWT uses a private key for generating signatures, and a public key is needed for verification (supports RS256, RS384, RS512, ES256, ES384, and ES512 algorithms), you should also configure:
-    - Public Key: Specify the PEM-formatted public key used for verifying the signature.
-- Payload: Add custom Claims checks; users need to add keys and corresponding values to Claim and Expected Value, respectively, supporting `${clientid}` and `${username}` placeholders. Keys are used to find the corresponding Claim in the JWT, and values are used to compare with the actual value of the Claim.
+    - **Public Key**: Specify the PEM-formatted public key used for verifying the signature.
+- **Payload**: Add custom Claims checks; users need to add keys and corresponding values to Claim and Expected Value, respectively, supporting `${clientid}` and `${username}` placeholders. Keys are used to find the corresponding Claim in the JWT, and values are used to compare with the actual value of the Claim.
 
 If selecting JWTS as the authentication method:
 
 In addition to the above configurations, you should also configure:
 
-- JWKS Endpoint: Specify the server endpoint address for EMQX to query JWKS. The endpoint should support GET requests and return a JWKS that conforms to standards.
-- JWKS Refresh Interval: Specify the refresh interval for JWKS, i.e., the interval at which EMQX queries JWKS. Default value: 300 seconds (s). Click create to complete the related configurations.
+- **JWKS Endpoint**: Specify the server endpoint address for EMQX to query JWKS. The endpoint should support GET requests and return a JWKS that conforms to standards.
+- **JWKS Refresh Interval**: Specify the refresh interval for JWKS, i.e., the interval at which EMQX queries JWKS. Default value: 300 seconds (s). Click **Create** to complete the related configurations.
 
 ::: tip
 

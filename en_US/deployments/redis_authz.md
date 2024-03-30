@@ -6,9 +6,9 @@ Extended authorization supports authorization verification through the integrati
 
 The Redis authorizer supports using [Redis hashes](https://redis.io/docs/manual/data-types/#hashes) to store authorization data. Users need to provide a query command template, ensuring the query results include the following fields:
 
-- topic: Specifies the topic that the current rule applies to, which can use topic filters and topic placeholders.
-- action: Specifies which operations the current rule applies to, with possible values `publish`, `subscribe`, and `all`.
-- qos: (optional) Specifies the message QoS that the rule applies to, with possible values `0`, `1`, `2`, or can specify multiple QoS using a Number array. Default is all QoS levels. retain: (optional) Specifies whether the current rule supports publishing retained messages, with possible values `true`, `false`, default allows retained messages.
+- `topic`: Specifies the topic that the current rule applies to, which can use topic filters and topic placeholders.
+- `action`: Specifies which operations the current rule applies to, with possible values `publish`, `subscribe`, and `all`.
+- `qos`: (optional) Specifies the message QoS that the rule applies to, with possible values `0`, `1`, `2`, or can specify multiple QoS using a Number array. Default is all QoS levels. retain: (optional) Specifies whether the current rule supports publishing retained messages, with possible values `true`, `false`, default allows retained messages.
 
 Adding permission data for the user `emqx_u`, allowing subscription to the topic `t/1`:
 
@@ -40,14 +40,14 @@ cmd = "HGETALL mqtt_acl:${username}"
 
 In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, then click **Redis Authorization** to create a new authorization.
 
-- Deployment Mode: Choose the deployment mode of the Redis database, options: Single Node, Sentinel, Cluster
-- Service(s): Enter the Redis server address (host:port); when the deployment mode is selected as Sentinel or Cluster, you need to provide addresses for all related Redis servers, separated by commas, in the format host1:port1,host2:port2,...
-- Sentinel Name: Specify the master server name needed for Redis Sentinel configuration, only required when the deployment mode is set to Sentinel.
-- Database: An integer specifying the Redis database Index.
-- Password (optional): Enter the authorization password.
-- TLS Configuration: Configure whether to enable TLS.
-- Pool size (optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the Redis database; default value: 8.
-- Command: Redis query command
+- **Redis Mode**: Choose the deployment mode of the Redis database, options: `Singl`, `Sentinel`, `Cluster`.
+- **Server**: Enter the Redis server address (host:port); when the deployment mode is selected as Sentinel or Cluster, you need to provide addresses for all related Redis servers, separated by commas, in the format host1:port1,host2:port2,...
+- **Sentinel Name**: Only required when the deployment mode is set to `Sentinel`. Specify the master server name needed for Redis Sentinel configuration, 
+- **Database**: An integer specifying the Redis database Index.
+- **Password** (optional): Enter the authorization password.
+- **Enable TLS**: Configure whether to enable TLS.
+- **Connection Pool Size** (optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the Redis database; default value: `8`.
+- **CMD**: Redis query command.
 
 ::: tip
 

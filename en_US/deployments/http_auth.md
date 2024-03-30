@@ -31,7 +31,7 @@ For identity verification, EMQX Platform will use the current client information
 
 You can complete the related configurations as follows:
 
-- Request Method: Choose the HTTP request method, options: `get`, `post`. 
+- **Method**: Choose the HTTP request method, options: `get`, `post`. 
 
   ::: tip
 
@@ -39,23 +39,19 @@ You can complete the related configurations as follows:
 
   :::
 
-- URL: Enter the URL address of the HTTP service.
+- **URL**: Enter the URL address of the HTTP service.
 
-- Headers (Optional): HTTP request header configuration. Multiple headers can be added.
+- **Headers** (Optional): HTTP request header configuration. Multiple headers can be added.
 
-- Connection Configuration: Configure concurrent connections, connection timeout, maximum HTTP request numbers, and request timeout duration here.
+- **Connection Configurations**: Configure concurrent connections, connection timeout, maximum HTTP request numbers, and request timeout duration here.
 
-- TLS Configuration: Configure whether to enable TLS.
+  - **Enable TLS**: Configure whether to enable TLS.
+  - **Connection Pool Size** (Optional): An integer specifying the number of concurrent connections from EMQX nodes to the external HTTP Server; default value: `8`.
+  - **Connection Timeout** (Optional): Enter the connection timeout duration, and available units: hours, minutes, seconds, milliseconds.
+  - **HTTP Pipeline** (Optional): A positive integer specifying the maximum number of HTTP requests that can be made without waiting for a response; default value: `100`.
+  - **Request Timeout** (Optional): Enter the request timeout duration, and available units: hours, minutes, seconds, milliseconds.
+  - **Body**: Request template. For `POST` requests, it is sent in JSON format in the request body. For `GET` requests, it is encoded as query parameters in the URL. Mapping keys and values can use placeholders.
 
-- Pool Size (Optional): An integer specifying the number of concurrent connections from EMQX nodes to the external HTTP Server; default value: 8.
-
-- Connection Timeout (Optional): Enter the connection timeout duration, available units: hours, minutes, seconds, milliseconds.
-
-- HTTP Pipeline (Optional): A positive integer specifying the maximum number of HTTP requests that can be made without waiting for a response; default value: 100.
-
-- Request Timeout (Optional): Enter the request timeout duration, available units: hours, minutes, seconds, milliseconds.
-
-- Request Body: Request template. For `POST` requests, it is sent in JSON format in the request body. For `GET` requests, it is encoded as query parameters in the URL. Mapping keys and values can use placeholders.
 
 ::: tip
 

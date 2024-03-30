@@ -6,11 +6,11 @@ Extended authorization supports authorization verification through the integrati
 
 The MySQL authorizer can support any table structure, including joint queries across multiple tables or queries from views. Users need to provide a query SQL template, ensuring the query results include the following fields:
 
-- permission: Specifies the operation permission, with possible values `allow` and `deny`.
-- action: Specifies which operations the current rule applies to, with possible values `publish`, `subscribe`, and `all`.
-- topic: Specifies the topic that the current rule applies to, which can use topic filters and topic placeholders.
-- qos: (optional) Specifies the message QoS that the rule applies to, with possible values `0`, `1`, `2`, or a comma-separated string specifying multiple QoS, such as `0,1`. Default is all QoS levels.
-- retain: (optional) Specifies whether the current rule supports publishing retained messages, with possible values `0`, `1`, default allows retained messages.
+- `permission`: Specifies the operation permission, with possible values `allow` and `deny`.
+- `action`: Specifies which operations the current rule applies to, with possible values `publish`, `subscribe`, and `all`.
+- `topic`: Specifies the topic that the current rule applies to, which can use topic filters and topic placeholders.
+- `qos`: (optional) Specifies the message QoS that the rule applies to, with possible values `0`, `1`, `2`, or a comma-separated string specifying multiple QoS, such as `0,1`. Default is all QoS levels.
+- `retain`: (optional) Specifies whether the current rule supports publishing retained messages, with possible values `0`, `1`, default allows retained messages.
 
 Example table structure:
 
@@ -51,12 +51,12 @@ In the deployment, click **Access Control** -> **Authorization** -> **Extended A
 
 You can complete the related configuration according to the following instructions:
 
-- Service: Enter the MySQL server address (host:port).
-- Database: Enter the MySQL database name.
-- Username (optional): Enter the username.
-- Password (optional): Enter the password.
-- TLS Configuration: Configure whether to enable TLS.
-- SQL: Fill in the query SQL according to the table structure, specific requirements can be found at SQL Table Structure and Query Statement.
+- **Server**: Enter the MySQL server address (host:port).
+- **Database**: Enter the MySQL database name.
+- **Username** (optional): Enter the username.
+- **Password** (optional): Enter the password.
+- **Enable TLS**: Configure whether to enable TLS.
+- **SQL**: Fill in the query SQL according to the table structure, specific requirements can be found at SQL Table Structure and Query Statement.
 
 ::: tip
 
