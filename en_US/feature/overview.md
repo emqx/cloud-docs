@@ -1,7 +1,7 @@
 # Projects and Accounts
 
 
-## [Project Management](./project_center.md)
+## [Project Management](./project.md)
 
 Project management is used to group deployments under different projects, making it easy to manage deployments according to the projects.
 
