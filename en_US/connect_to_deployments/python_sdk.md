@@ -9,7 +9,7 @@ It provides support for MQTT V5.0, V3.1, and V3.1.1 for client classes on Python
 
 ### Deploy MQTT Broker
 
-- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Cloud](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
 
   + Broker: **broker.emqx.io**
   + TCP Port: **1883**
@@ -311,6 +311,6 @@ Run the code of publishing messages, we will see that the client connects and pu
 
 ## More
 
-All of the above shows that how to use the paho-mqtt client library to connect to the EMQX Cloud.
+All of the above shows that how to use the paho-mqtt client library to connect to the EMQX Platform.
 You can download the source code to the example in [here](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Python3/).
 You can find more other languages in [GitHub](https://github.com/emqx/MQTT-Client-Examples).

@@ -1,19 +1,19 @@
 # Ingest MQTT Data into HTTP Server
 
-The HTTP Service Data Integration in EMQX Cloud offers a quick way to integrate EMQX with external HTTP services. It supports flexible configuration of request methods and request data formats, offers secure communication through HTTPS, and provides authentication mechanisms. It can efficiently and flexibly transmit client messages and event data in real-time, enabling scenarios such as IoT device state notifications, alert notifications, and data integration.
+The HTTP Service Data Integration in EMQX Platform offers a quick way to integrate EMQX with external HTTP services. It supports flexible configuration of request methods and request data formats, offers secure communication through HTTPS, and provides authentication mechanisms. It can efficiently and flexibly transmit client messages and event data in real-time, enabling scenarios such as IoT device state notifications, alert notifications, and data integration.
 
 This page provides a detailed introduction to the functional features of HTTP Service Data Integration. It also offers practical guidance for creating the data integration, including creating an HTTP Server connector, creating rules, and testing rules.
 
 ## How It Works
 
-HTTP Service Data Integration is an out-of-the-box feature in EMQX Cloud that can be easily configured for integrating EMQX with external services. With HTTP Services, users can write code in their preferred programming languages and frameworks to implement custom, flexible, and complex data processing logic.
+HTTP Service Data Integration is an out-of-the-box feature in EMQX Platform that can be easily configured for integrating EMQX with external services. With HTTP Services, users can write code in their preferred programming languages and frameworks to implement custom, flexible, and complex data processing logic.
 
 ![http frame](./_assets/frame_http.png)
 
-EMQX Cloud forwards device events and data to HTTP services through configured data integration, with the following workflow:
+EMQX Platform forwards device events and data to HTTP services through configured data integration, with the following workflow:
 
-1. Device Connects to EMQX Cloud: When IoT devices successfully connect, an online event is triggered, including information such as the device ID, source IP address, and other attributes.
-2. Device Publishes Messages: Devices report telemetry and status data to EMQX Cloud and trigger rules by publishing messages to specific topics through the MQTT protocol.
+1. Device Connects to EMQX Platform: When IoT devices successfully connect, an online event is triggered, including information such as the device ID, source IP address, and other attributes.
+2. Device Publishes Messages: Devices report telemetry and status data to EMQX Platform and trigger rules by publishing messages to specific topics through the MQTT protocol.
 3. Rule Engine Processes Messages: The built-in rule engine can process messages and events from specific sources based on topic matching. The rule engine matches the corresponding rules and processes messages and events, such as converting data formats, filtering specific information, or enriching messages with context information.
 4. Sent to HTTP Service: The triggering of rules sends messages to HTTP service events. Users can extract data from the results of rule processing, dynamically construct request headers, bodies, or even URLs, achieving flexible integration of data with external services.
 
@@ -25,7 +25,7 @@ After events and message data are sent to the HTTP service, you can flexibly pro
 
 ## Features and Advantages
 
-Using EMQX Cloud’s HTTP Service Integration brings the following advantages to your business:
+Using EMQX Platform’s HTTP Service Integration brings the following advantages to your business:
 
 - **Pass data to more downstream systems**: HTTP services can easily integrate MQTT data into more external systems, such as analytics platforms, cloud services, etc., realizing multi-system data distribution.
 - **Real-time response and triggering of business processes**: Through HTTP services, external systems can receive MQTT data in real-time and trigger business processes for rapid response. For example, receiving alarm data and triggering business workflows.
@@ -36,7 +36,7 @@ In summary, HTTP services provide real-time, flexible, and customizable data int
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create HTTP Service Data Integration in EMQX Cloud.
+This section introduces the preparatory work needed to create HTTP Service Data Integration in EMQX Platform.
 
 ### Prerequisites
 

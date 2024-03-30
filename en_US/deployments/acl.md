@@ -22,7 +22,7 @@ In the `ACL` page of `Authentication & ACL` menu on the left, access control inf
 
 Fill in the client id, topic, allow/deny, pub/sub/pubsub, and then click `Add`.
 
-You can use the following placeholders in your topic and EMQX Cloud will be automatically populated with client information when requested.
+You can use the following placeholders in your topic and EMQX Platform will be automatically populated with client information when requested.
 
 - %u：Username
 - %c：Client ID

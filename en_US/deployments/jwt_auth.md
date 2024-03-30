@@ -1,51 +1,47 @@
 # JWT Authentication
 
-[JWT](https://jwt.io/) Authentication as the easiest way to authenticate is an authentication mechanism based on tokens. It does not rely on the server to retain the authentication information or session information of the client. The authentication information can be issued in batches with the key.
+[JWT](https://jwt.io/) authentication is a token-based authorization mechanism that does not rely on the server retaining client authentication or session information. With the possession of keys, authentication information can be issued in bulk, making it the most straightforward method of authentication.
 
-## Authentication Chain
+## How JWT Authentication Works
 
-If default authentication is also enabled, EMQX Cloud will follow [default authentication](./auth_dedicated.md) -> JWT authentication for chain authentication:
+Clients carry the JWT in either the username or password fields (depending on the module configuration) when initiating a connection. EMQX Platform uses the key or certificate configured to decrypt the JWT. If the decryption is successful, authentication is considered successful; otherwise, it fails.
 
-- Once authentication is successful, terminate the authentication chain and the client is accessible
-- Once authentication fails, terminate the authentication chain and disable client access
-
-![auth_chain](./_assets/jwt_auth_chain.png)
-
-## JWT Authentication Rules
-
-The client carries the JWT using the username or password field (depending on the module configuration) and when initiating a connection, EMQX Cloud uses the configured key and certificate to decrypt it. If it can decrypt it successfully, the authentication is successful. Otherwise, the authentication fails.
-
-With JWT authentication enabled in the default configuration, you can connect with any username and the following password, then it can be verified by the default key field `secret`:
+With the default configuration, once JWT authentication is enabled, connections can be made using any username and the following password, which verifies against the default key field `secret`:
 
 ```bash
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVggQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.wGxZTwkCZtYPzkS854aQ9WCnP8YGIQ_erFh5RIznhYk
 ```
 
-> The above JWT token is for testing purposes only and can be generated using the relevant tools according to your business requirements. An online generation tool is available here: <https://www.jsonwebtoken.io/> , which can also be tested in conjunction with a JSON Web Key (JWK) generator: <https://mkjwk.org>.
-## Authentication Configuration
+> The above JWT Token is for testing purposes only and can be generated according to your business needs using relevant tools. Here is an online generation tool: https://www.jsonwebtoken.io/, and you can also test with a JSON Web Key (JWK) generator: [https://mkjwk.org](https://mkjwk.org/).
 
-1. Click on `Authentication Authentication` - `External Authentication Authorization` in the left menu bar of the EMQX Cloud deployment and select JWT Authentication.
+## Configure JWT Authentication
 
-![jwt_auth](./_assets/jwt_auth_en.png)
+In the deployment, click **Access Control** - **Extended Authentication**, then click **JWT Configure Authentication** to create a new authentication.
 
-2. Click `Configure Authentication` to enter the JWT authentication page, fill in the information, and create a new authentication. In this example, the authentication is performed by configuring the JWKs server address.
+You can complete the related configurations as follows:
 
-> EMQX Cloud will authenticate JWTs in a fixed order of **Secret, Pubkey and JWKs Addr**. Fields that are not configured will be ignored.
+When choosing **JWT** as the **Authentication Method**:
 
-- Authentication source: The field where the JWT is stored when the client connects, currently supports username or password.
-- Key: The key used to issue the JWT. This will be used to verify that the JWT received by EMQX Cloud is legitimate and is applicable to JWTs issued by the HMAC algorithm.
-- Public Key File: This will be used to verify that the JWT received by EMQX Cloud is legitimate and is applicable to JWTs issued by RSA or ECDSA algorithms.
-- JWKs Server Address: EMQX Cloud will periodically query the latest public key list from the JWKs server and will be used to verify that the received JWT is legitimate, for JWTs issued by RSA or ECDSA algorithms.
-- Validate Declaration Fields: Whether you need to validate that the declarations in the JWT Payload match the Declaration Fields List.
-- Declaration Field List: Used to verify that the declarations in the JWT Payload are legal. The most common use is to add a key-value pair with the key username and the value %u, where %u is replaced at runtime as a placeholder with the Username used by the client to actually connect. The following two placeholders are currently supported in the declaration field list.
-  - %u: will be replaced at runtime with the Username used by the client when connecting.
-  - %c: will be replaced at runtime with the Client ID used by the client when connecting.
+- JWT Originates From: Specify the location of the JWT in the client connection request; options: password, username (corresponding to the `Password` and `Username` fields in the MQTT client `CONNECT` packet, respectively)
+- Encryption Method: Specify the JWT encryption method, options: `hmac-based`, `public-key`;
+  - If selecting `hmac-based`, i.e., JWT uses a symmetric key for generating and verifying signatures (supports HS256, HS384, and HS512 algorithms), you should also configure:
+    - `Secret`: The key used to verify the signature, the same key used for generating the signature.
+    - `Secret Base64 Encode`: Configure whether EMQX needs to decode the `Secret` using Base64 before verifying the signature; options: True, False, default: False.
+  - If selecting `public-key`, i.e., JWT uses a private key for generating signatures, and a public key is needed for verification (supports RS256, RS384, RS512, ES256, ES384, and ES512 algorithms), you should also configure:
+    - Public Key: Specify the PEM-formatted public key used for verifying the signature.
+- Payload: Add custom Claims checks; users need to add keys and corresponding values to Claim and Expected Value, respectively, supporting `${clientid}` and `${username}` placeholders. Keys are used to find the corresponding Claim in the JWT, and values are used to compare with the actual value of the Claim.
 
-  ::: tip
-  - For Basic Plan users: Please fill in the public address for the server address.
-  - For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, then fill in the internal network address for the server address.
-  - For BYOC Plan users: Please [establish a peering connection](../create/byoc.md#vpc-peering-configuration) between the VPC where BYOC is deployed and the VPC where the resources are located, then fill in the internal network address for the server address.
-  - If you are prompted with Init resource failure! check whether the server address is correct, and whether the security group is enabled.
-  :::
+If selecting JWTS as the authentication method:
 
-![jwt_auth](./_assets/jwt_auth_info_en.jpeg)
+In addition to the above configurations, you should also configure:
+
+- JWKS Endpoint: Specify the server endpoint address for EMQX to query JWKS. The endpoint should support GET requests and return a JWKS that conforms to standards.
+- JWKS Refresh Interval: Specify the refresh interval for JWKS, i.e., the interval at which EMQX queries JWKS. Default value: 300 seconds (s). Click create to complete the related configurations.
+
+::: tip
+
+- If the current deployment is a dedicated edition, create a [VPC Peering Connection](./vpc_peering.md), and use the internal network address as the server address.
+- If the current deployment is a BYOC edition, you need to create a VPC Peering Connection in your public cloud console. For details, refer to the section [Create BYOC Deployment - VPC Peering Connection Configuration](../create/byoc.md#vpc-peering-connection-configuration). Use the internal network address as the server address.
+- If you see an "Init resource failure!" message, please check if the server address is correct and if the security group is open. 
+
+:::
