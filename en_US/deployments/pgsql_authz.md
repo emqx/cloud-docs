@@ -27,9 +27,13 @@ CREATE TABLE mqtt_acl(
 CREATE INDEX mqtt_acl_username_idx ON mqtt_acl(username);
 ```
 
-::: tip The example above creates an index. When there is a large volume of permission data in the system, ensure the tables used for queries are optimized and use effective indexes to improve data lookup speed with many connections and reduce EMQX load. :::
+::: tip 
 
-Example rule for adding a user `emqx_u` with a prohibition on publishing to the topic `t/1`:
+The example above creates an index. When there is a large volume of permission data in the system, ensure the tables used for queries are optimized and use effective indexes to improve data lookup speed with many connections and reduce EMQX load. 
+
+:::
+
+An example rule for adding a user `emqx_u` with a prohibition on publishing to the topic `t/1`:
 
 ```sql
 postgres=# INSERT INTO mqtt_acl(username, permission, action, topic) VALUES ('emqx_u', 'deny', 'publish', 't/1');
