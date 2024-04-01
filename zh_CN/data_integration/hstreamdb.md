@@ -61,7 +61,8 @@ HStreamDB 资源已连接状态下，在 HStreamDB 中对 Stream 进行操作，
   <details>
   <summary><code>docker-compose-tcp.yaml</code></summary>
 
-    ```yaml
+
+```yaml
     version: '3.9'
 
     services:
@@ -142,7 +143,8 @@ HStreamDB 资源已连接状态下，在 HStreamDB 中对 Stream 进行操作，
         name: quickstart_tcp_data_zk_data
       data_zk_datalog:
         name: quickstart_tcp_data_zk_datalog
-    ```
+
+```
 
   </details>
 
@@ -163,7 +165,7 @@ docker compose -f docker-compose-tcp.yaml up --build
   <details>
   <summary><b>进入 HStreamDB 容器创建 Stream 的命令</b></summary>
 
-    ```bash
+```bash
     $ docker container exec -it quickstart-tcp-hserver bash
     # 创建 Stream `temp_hum`
     root@ed6a64e65ac0:/# hstream stream create temp_hum
@@ -179,7 +181,7 @@ docker compose -f docker-compose-tcp.yaml up --build
     +-------------+---------+----------------+-------------+
     | temp_hum    | 1       | 604800 seconds | 1           |
     +-------------+---------+----------------+-------------+
-    ```
+```
 
   </details>
 
@@ -198,15 +200,18 @@ docker compose -f docker-compose-tcp.yaml up --build
 
 1. 新建目录 tls-deploy/ca 作为证书存储目录。
 
-   ```bash
-   mkdir tls-deploy/ca
-   ```
 
-   ```bash
+```bash
+   mkdir tls-deploy/ca
+
+```
+
+
+```bash
    $ cd tls-deploy
    # 给 "ca" 目录增加写权限
    $ sudo chmod 777 ca
-   ```
+```
 
 2. 将以下 yaml 文件保存至 `tls-deploy/docker-compose-tls.yaml`，请将 `< 服务器 ip >` 更换为您的服务器 IP 地址。
 
@@ -512,15 +517,15 @@ root@9aa62aef0910:/# hstream --tls-ca /data/server/certs/root_ca.crt stream list
 
 2. 在 SQL 编辑器中输入规则，在下面规则中我们从 `temp_hum/emqx` 主题读取消息上报时间 `up_timestamp`、客户端 ID、消息体(Payload)，并从消息体中分别读取温度和湿度：
 
-   ```sql
-   SELECT
-     timestamp as up_timestamp,
-     clientid as client_id,
-     payload.temp as temp,
-     payload.hum as hum
-   FROM
-     "temp_hum/emqx"
-   ```
+```sql
+ SELECT
+ timestamp as up_timestamp,
+ clientid as client_id,
+ payload.temp as temp,
+ payload.hum as hum
+ FROM
+ "temp_hum/emqx"
+```
 
    ::: tip
 
@@ -534,14 +539,14 @@ root@9aa62aef0910:/# hstream --tls-ca /data/server/certs/root_ca.crt stream list
 
 5. 配置 **HStream Record 模板**以实现对指定主题消息的转发。使用如下 HRecord 模板完成数据插入：
 
-   ```bash
+```bash
    {
      "up_timestamp": ${up_timestamp},
      "client_id": ${client_id},
      "temp": ${temp},
      "hum": ${hum}
    }
-   ```
+```
 
 6. 高级配置（可选）
 
@@ -559,19 +564,18 @@ root@9aa62aef0910:/# hstream --tls-ca /data/server/certs/root_ca.crt stream list
 
    - payload:
 
-     ```json
+```json
      {
        "temp": "27.5",
        "hum": "41.8"
      }
-     ```
+```
 
 2. 查看消息是否转发到了 HStreamDB。
-
-   ```bash
+```bash
     # 读取 Stream `temp_hum` 之后按 `Control-C` 停止
     root@7f963b999883:/# hstream stream read-stream temp_hum
     timestamp: "1711442849073", id: 2241614080977213-21474836481-0, key: "", record: {"up_timestamp": 1711442848921, "client_id": mqttx_3f5a2868, "temp": 27.5, "hum": 41.8}
-   ```
+```
 
 3. 在控制台查看运行数据。在规则列表点击规则 ID，在运行统计页面可以查看到规则的统计以及此规则下所有动作的统计。
