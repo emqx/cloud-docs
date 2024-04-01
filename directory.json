@@ -1339,10 +1339,6 @@
       ]
     },
     {
-      "title": "Developer Guide",
-      "path": "dev_guide"
-    },
-    {
       "title": "Best Practices",
       "collapsed": true,
       "children": [
