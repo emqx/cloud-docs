@@ -1,21 +1,21 @@
 # Bridge MQTT Data into RocketMQ
 
-EMQX Cloud supports bridging data into [RocketMQ](https://rocketmq.apache.org/), so you can forward MQTT messages and client events to RocketMQ. For example, you can use RocketMQ to collect sensor data from devices, log data, etc.
+EMQX Platform supports bridging data into [RocketMQ](https://rocketmq.apache.org/), so you can forward MQTT messages and client events to RocketMQ. For example, you can use RocketMQ to collect sensor data from devices, log data, etc.
 
-This page provides a detailed overview of the data integration between EMQX Cloud and RocketMQ with practical instructions on creating and validating the data integration.
+This page provides a detailed overview of the data integration between EMQX Platform and RocketMQ with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-The RocketMQ data integration is an out-of-the-box feature in EMQX Cloud that combines the real-time data capturing and transmission capabilities of EMQX Cloud with RocketMQ's powerful message queue processing capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Cloud to RocketMQ for storage and management, eliminating the need for complex coding.
+The RocketMQ data integration is an out-of-the-box feature in EMQX Platform that combines the real-time data capturing and transmission capabilities of EMQX Platform with RocketMQ's powerful message queue processing capabilities. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Platform to RocketMQ for storage and management, eliminating the need for complex coding.
 
-The diagram below illustrates a typical architecture of data integration between EMQX Cloud and RocketMQ:
+The diagram below illustrates a typical architecture of data integration between EMQX Platform and RocketMQ:
 
 ![EMQX Cloud-RocketMQ Integration](./_assets/data_integration_rocketmq.jpg)
 
 Ingesting MQTT data into RocketMQ works as follows:
 
-1. **Message publication and reception**: Industrial IoT devices establish successful connections to EMQX Cloud through the MQTT protocol and publish real-time MQTT data to EMQX Cloud. When EMQX Cloud receives these messages, it initiates the matching process within its rules engine.
-2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Cloud. The rules, based on predefined criteria, determine which messages need to be routed to RocketMQ. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
+1. **Message publication and reception**: Industrial IoT devices establish successful connections to EMQX Platform through the MQTT protocol and publish real-time MQTT data to EMQX Platform. When EMQX Platform receives these messages, it initiates the matching process within its rules engine.
+2. **Message data processing:** When a message arrives, it passes through the rule engine and is then processed by the rule defined in EMQX Platform. The rules, based on predefined criteria, determine which messages need to be routed to RocketMQ. If any rules specify payload transformations, those transformations are applied, such as converting data formats, filtering out specific information, or enriching the payload with additional context.
 3. **Data ingestion into RocketMQ**: Once the rule has processed the message, it triggers an action of forwarding the messages to RocketMQ. Processed data will be seamlessly written into RocketMQ.
 4. **Data Storage and Utilization**: With the data now stored in RocketMQ, businesses can harness its querying power for various use cases. For example, in the financial industry, RocketMQ can be used as a reliable high-performance message queue to store and manage data from payment terminals and transaction systems. It can connect messages to data analysis and regulatory platforms, fulfilling requirements such as risk management, fraud detection and prevention, and regulatory compliance.
 
@@ -23,9 +23,9 @@ Ingesting MQTT data into RocketMQ works as follows:
 
 The data integration with RocketMQ brings the following features and advantages to your business:
 
-- **Reliable IoT Data Message Delivery**: EMQX Cloud can reliably batch and send MQTT messages to RocketMQ, enabling the integration of IoT devices with RocketMQ and application systems.
-- **MQTT Message Transformation**: Using the rule engine, EMQX Cloud can filter and transform MQTT messages. Messages can undergo data extraction, filtering, enrichment, and transformation before being sent to RocketMQ.
-- **Cloud-Native Elastic Scaling**: EMQX Cloud and RocketMQ are both applications built on cloud-native architecture, offering friendly Kubernetes (K8s) support and integration with the cloud-native ecosystem. They can infinitely and elastically scale to accommodate the rapid development of business needs.
+- **Reliable IoT Data Message Delivery**: EMQX Platform can reliably batch and send MQTT messages to RocketMQ, enabling the integration of IoT devices with RocketMQ and application systems.
+- **MQTT Message Transformation**: Using the rule engine, the EMQX Platform can filter and transform MQTT messages. Messages can undergo data extraction, filtering, enrichment, and transformation before being sent to RocketMQ.
+- **Cloud-Native Elastic Scaling**: EMQX Platform and RocketMQ are both applications built on cloud-native architecture, offering friendly Kubernetes (K8s) support and integration with the cloud-native ecosystem. They can infinitely and elastically scale to accommodate the rapid development of business needs.
 - **Flexible Topic Mapping**: RocketMQ data integration supports flexible mapping of MQTT topics to RocketMQ topics, allowing easy configuration of keys (Key) and values (Value) for data in RocketMQ messages.
 - **Processing Capabilities in High-Throughput Scenarios**: RocketMQ data integration supports both synchronous and asynchronous write modes, allowing for a flexible balance between latency and throughput according to different scenarios.
 
@@ -36,7 +36,7 @@ This section describes the preparations you need to complete before you start to
 ### Prerequisites
 
 - Knowledge about [data integration](./introduction.md)
-- Knowledge about EMQX Cloud data integration [rules](./rules.md)
+- Knowledge about data integration [rules](./rules.md)
 
 ### Install RocketMQ
 
@@ -153,7 +153,7 @@ Next, you can create data bridge rules based on this Connector.
 
 ## Create a Rule
 
-This section demonstrates how to create a RocketMQ Rule and add action to the rule via the EMQX Cloud Console.
+This section demonstrates how to create a RocketMQ Rule and add action to the rule via the EMQX Platform Console.
 
 1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
@@ -182,7 +182,7 @@ If you are a beginner user, click **SQL Examples** and **Enable Test** to learn 
 
 4. Select the connector you just created from the **Connector** dropdown box.
 
-5. Configure the information for publishing messages from EMQX Cloud to the RocketMQ service:
+5. Configure the information for publishing messages from EMQX Platform to the RocketMQ service:
 
    - **RocketMQ topic**: `TopicTest`
    - **Message Template**:Template, the default value is empty. When this value is empty the whole message will be stored in the RocketMQ.The template can be any valid string with placeholders, example:

@@ -31,15 +31,29 @@ For identity authorization, EMQX Platform will use the current client informatio
 
 You can complete the related configuration according to the following instructions:
 
-- Request Method: Choose the HTTP request method, options: `get`, `post`. ::: tip The `POST` method is recommended. When using the `GET` method, some sensitive information (such as plaintext passwords) might be exposed through HTTP server logs. Additionally, for untrusted environments, please use HTTPS. :::
-- URL: Enter the URL address of the HTTP service.
-- Headers (optional): Configuration for HTTP request headers. Multiple headers can be added. Connection Configuration: Configure concurrent connections, connection timeout waiting time, maximum HTTP request count, and request timeout time in this section.
-- TLS Configuration: Configure whether to enable TLS.
-- Pool size (optional): An integer specifying the concurrent connection count from EMQX nodes to the external HTTP Server; default value: 8.
-- Connection Timeout (optional): Enter the connection timeout duration, with units available: hours, minutes, seconds, milliseconds.
-- HTTP Pipelining (optional): A positive integer specifying the maximum number of HTTP requests that can be sent without waiting for responses; default value: 100.
-- Request Timeout (optional): Enter the connection timeout duration, with units available: hours, minutes, seconds, milliseconds.
-- Request Body: The request template, for `POST` requests, it is sent in JSON format in the request body. For `GET` requests, it is encoded as query parameters in the URL. Mapping keys and values can use placeholders.
+- **Method**: Choose the HTTP request method, options: `get`, `post`. 
+
+  ::: tip 
+
+  The `POST` method is recommended. When using the `GET` method, some sensitive information (such as plaintext passwords) might be exposed through HTTP server logs. Additionally, for untrusted environments, please use HTTPS. 
+
+  :::
+
+- **URL**: Enter the URL address of the HTTP service.
+
+- **Headers** (optional): Configuration for HTTP request headers. Multiple headers can be added. Connection Configuration: Configure concurrent connections, connection timeout waiting time, maximum HTTP request count, and request timeout time in this section.
+
+- **Enable TLS**: Configure whether to enable TLS.
+
+- **Connection Pool size** (optional): An integer specifying the concurrent connection count from EMQX nodes to the external HTTP Server; default value: `8.`
+
+- **Connection Timeout** (optional): Enter the connection timeout duration, with units available: hours, minutes, seconds, milliseconds.
+
+- **HTTP Pipelining** (optional): A positive integer specifying the maximum number of HTTP requests that can be sent without waiting for responses; default value: `100`.
+
+- **Request Timeout** (optional): Enter the connection timeout duration, with units available: hours, minutes, seconds, milliseconds.
+
+- **Body**: The request template, for `POST` requests, it is sent in JSON format in the request body. For `GET` requests, it is encoded as query parameters in the URL. Mapping keys and values can use placeholders.
 
 ::: tip
 

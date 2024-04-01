@@ -18,7 +18,7 @@ You can directly use the [Free Public MQTT Server](https://www.emqx.com/en/mqtt/
 
 You can also [create a deployment](../create/overview.md) by yourself. After the creation is complete, you can view the connection-related information in the deployment overview, including connect address, port, etc.
 
-After confirming that the deployment is running, you also need to add the username and password that the client will use when connecting in `Authentication & ACL` > [`Authentication`](../deployments/auth_overview.md). This will allow the client to access EMQX.
+After confirming that the deployment is running, you also need to add the username and password that the client will use when connecting in Access Control -> [Authentication](../deployments/default_auth.md). This will allow the client to access EMQX.
 
 ### 2. Install MicroPython Firmware
 

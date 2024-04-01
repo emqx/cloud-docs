@@ -2,9 +2,9 @@
 
 ## How to bill?
 
-EMQX Cloud charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and data integrations.
+EMQX Platform charges based on the cluster instance specifications and message transmission network traffic, not the number of messages, and does not limit the use of API and data integrations.
 
-For detailed billing rules, you can view [Product Pricing](../price/pricing.md)
+For detailed billing rules, you can view [Product Pricing](../price/pricing.md).
 
 ## How to top up？
 
@@ -12,7 +12,7 @@ You need to bind a credit card and the fee is charged monthly.
 
 ## How do I download an invoice?
 
-[EMQX Console](https://cloud.emqx.com/console)，check `Billing` -> `Invoice`.
+[EMQX Console](https://cloud.emqx.com/console), check `Billing` -> `Invoice`.
 
 ## How to get the coupons?
 

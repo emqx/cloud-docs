@@ -1,20 +1,20 @@
 # Ingest MQTT Data into Elasticsearch
 
-[Elasticsearch](https://www.elastic.co/elasticsearch/) is a distributed search and data analysis engine that offers full-text search, structured search, and analysis capabilities for diverse data types. By integrating with Elasticsearch, EMQX Cloud enables seamless incorporation of MQTT data into Elasticsearch for storage. This integration leverages the powerful scalability and analysis capabilities of Elasticsearch, providing efficient and scalable data storage and analysis solutions for IoT applications.
+[Elasticsearch](https://www.elastic.co/elasticsearch/) is a distributed search and data analysis engine that offers full-text search, structured search, and analysis capabilities for diverse data types. By integrating with Elasticsearch, EMQX Platform enables seamless incorporation of MQTT data into Elasticsearch for storage. This integration leverages the powerful scalability and analysis capabilities of Elasticsearch, providing efficient and scalable data storage and analysis solutions for IoT applications.
 
-This page details the data integration between EMQX Cloud and Elasticsearch and provides practical guidance on rule and action creation.
+This page details the data integration between EMQX Platform and Elasticsearch and provides practical guidance on rule and action creation.
 
 ## How It Works
 
-Data integration with Elasticsearch is an out-of-the-box feature in EMQX Cloud, combining EMQX Cloud's device access and message transmission capabilities with Elasticsearch’s data storage and analysis capabilities. Seamless integration of MQTT data can be achieved through simple configuration.
+Data integration with Elasticsearch is an out-of-the-box feature in EMQX Platform, combining EMQX Platform's device access and message transmission capabilities with Elasticsearch’s data storage and analysis capabilities. Seamless integration of MQTT data can be achieved through simple configuration.
 
 ![EMQX Cloud-Elasticsearch 集成](./_assets/data_integration_elasticsearch.jpg)
 
-EMQX Cloud and Elasticsearch provide a scalable IoT platform for efficiently collecting and analyzing real-time device data. In this architecture, EMQX Cloud acts as the IoT platform, responsible for device access, message transmission, and data routing, while Elasticsearch serves as the data storage and analysis platform, handling data storage, data search, and analysis.
+EMQX Platform and Elasticsearch provide a scalable IoT platform for efficiently collecting and analyzing real-time device data. In this architecture, EMQX Platform acts as the IoT platform, responsible for device access, message transmission, and data routing, while Elasticsearch serves as the data storage and analysis platform, handling data storage, data search, and analysis.
 
-EMQX Cloud forwards device data to Elasticsearch through its rule engine and action, where Elasticsearch utilizes its powerful search and analysis capabilities to generate reports, charts, and other data analysis results, displayed to users through Kibana’s visualization tools. The workflow is as follows:
+EMQX Platform forwards device data to Elasticsearch through its rule engine and action, where Elasticsearch utilizes its powerful search and analysis capabilities to generate reports, charts, and other data analysis results, displayed to users through Kibana’s visualization tools. The workflow is as follows:
 
-1. **Device Message Publishing and Receiving**: IoT devices connect via the MQTT protocol and publish telemetry and status data to specific topics, which EMQX Cloud receives and compares in the rule engine.
+1. **Device Message Publishing and Receiving**: IoT devices connect via the MQTT protocol and publish telemetry and status data to specific topics, which EMQX Platform receives and compares in the rule engine.
 2. **Rule Engine Processes Messages**: Using the built-in rule engine, MQTT messages from specific sources can be processed based on topic matching. The rule engine matches corresponding rules and processes messages, such as transforming data formats, filtering out specific information, or enriching messages with context information.
 3. **Writing to Elasticsearch**: Rules defined in the rule engine trigger the operation of writing messages to Elasticsearch. Elasticsearch action provides flexible operation methods and document templates to construct documents in the desired format, writing specific fields from messages into corresponding indices in Elasticsearch.
 
@@ -28,23 +28,25 @@ Once device data is written to Elasticsearch, you can flexibly use Elasticsearch
 
 The Elasticsearch data integration offers the following features and advantages to your business:
 
-- **Efficient Data Indexing and Search**: Elasticsearch can easily handle large-scale real-time message data from EMQX Cloud. Its powerful full-text search and indexing capabilities enable IoT message data to be quickly and efficiently retrieved and queried.
+- **Efficient Data Indexing and Search**: Elasticsearch can easily handle large-scale real-time message data from EMQX Platform. Its powerful full-text search and indexing capabilities enable IoT message data to be quickly and efficiently retrieved and queried.
 - **Data Visualization**: Through integration with Kibana (part of the Elastic Stack), powerful data visualization of IoT data is possible, aiding in understanding and analyzing the data.
-- **Flexible Data Manipulation**: EMQX Cloud's Elasticsearch integration supports dynamic setting of indices, document IDs, and document templates, allowing for the creation, update, and deletion of documents, suitable for a wider range of IoT data integration scenarios.
-- **Scalability**: Both Elasticsearch and EMQX Cloud support clustering and can easily expand their processing capabilities by adding more nodes, facilitating uninterrupted business expansion.
+- **Flexible Data Manipulation**: EMQX Platform's Elasticsearch integration supports dynamic setting of indices, document IDs, and document templates, allowing for the creation, update, and deletion of documents, suitable for a wider range of IoT data integration scenarios.
+- **Scalability**: Both Elasticsearch and EMQX Platform support clustering and can easily expand their processing capabilities by adding more nodes, facilitating uninterrupted business expansion.
 
 ## Before you Start
 
-This section introduces the preparatory work needed before creating Elasticsearch data integration in EMQX Cloud, including installing Elasticsearch and creating indices.
+This section introduces the preparatory work needed before creating Elasticsearch data integration in EMQX Platform, including installing Elasticsearch and creating indices.
 
 ### Prerequisites
 
 - Knowledge about [data integration](./introduction.md)
-- Knowledge about EMQX Cloud data integration [rules](./rules.md)
+- Knowledge about data integration [rules](./rules.md)
 
-### Install Elasticsearch and Create Indexes
+### Deploy Elasticsearch and Create an Index
 
-EMQX Cloud supports integration with privately deployed Elasticsearch or with Elastic in the cloud. You can use Elastic Cloud or Docker to deploy an Elasticsearch instance.
+EMQX Platform supports integration with privately deployed Elasticsearch or with Elastic in the cloud. You can use Docker or Elastic Cloud to deploy an Elasticsearch instance.
+
+#### Deploy Elasticsearch with Docker
 
 1. If you don't have a Docker environment, [install Docker](https://docs.docker.com/install/).
 
@@ -78,17 +80,14 @@ EMQX Cloud supports integration with privately deployed Elasticsearch or with El
    }'
    ```
 
-#### Using Elastic Cloud
+#### Deploy Elastic in Cloud
+
+For tutorials on using Elastic Cloud, please refer to their [official guides](https://www.elastic.co/guide/en/starting-with-the-elasticsearch-platform-and-its-solutions/8.13/getting-started-guides.html).
 
 1. Elastic Cloud offers a [14-day free trial](https://cloud.elastic.co/registration), where you can create your own deployment. After registration, you'll see the Elastic Cloud console.
-
-2. To initiate a deployment, click on `Create deployment`.
-
-3. For tutorials on using Elastic Cloud, please refer to their [official guides](https://www.elastic.co/guide/en/starting-with-the-elasticsearch-platform-and-its-solutions/8.13/getting-started-guides.html).
-
-4. Note down the Elasticsearch endpoint information and relevant authentication details for future connections.
-
-5. Create an index named `device_data` for storing messages published by devices, ensuring to replace Elasticsearch username and password.
+2. To initiate a deployment, click **Create deployment**.
+3. Note down the Elasticsearch endpoint information and relevant authentication details for future connections.
+4. Create an index named `device_data` for storing messages published by devices, ensuring to replace Elasticsearch username and password.
 
 ```bash
   curl -u elastic:xxxx -X PUT "{Elasticsearch endpoint}/device_data?pretty" -H 'Content-Type: application/json' -d'
@@ -108,9 +107,9 @@ EMQX Cloud supports integration with privately deployed Elasticsearch or with El
 
 ## Create a Connector
 
-Before creating data integration rules, you need to first create a Elasticsearch connector to access the Elasticsearch server.
+Before creating data integration rules, you need to first create an Elasticsearch connector to access the Elasticsearch server.
 
-1.  Go to your deployment. Click **Data Integration** from the left-navigation menu.If it is the first time for you to create a connector, select **Elasticsearch** under the **Data Forward** category. If you have already created connectors, select **New Connector** and then select **Elasticsearch** under the **Data Forward** category.
+1.  Go to your deployment. Click **Data Integration** from the left-navigation menu. If it is the first time for you to create a connector, select **Elasticsearch** under the **Data Forward** category. If you have already created connectors, select **New Connector** and then select **Elasticsearch** under the **Data Forward** category.
 
 2.  **Connector Name**: The system will automatically generate a connector name.
 
@@ -122,7 +121,7 @@ Before creating data integration rules, you need to first create a Elasticsearch
     - **Enable TLS**: If you want to establish an encrypted connection, click the toggle switch.
     - Configure advanced settings according to your business needs (optional).
 
-4.  Click the **Test** button. If the Elasticsearch is accessible, a prompt indicating **connector available** will be returned.
+4.  Click the **Test** button. If Elasticsearch is accessible, a prompt indicating **connector available** will be returned.
 
 5.  Click the **New** button to complete the creation.
 
@@ -130,11 +129,11 @@ Next, you can create data bridge rules based on this Connector.
 
 ## Create a Rule
 
-This section demonstrates how to create a Elasticsearch Rule and add action to the rule via the EMQX Cloud Console.
+This section demonstrates how to create an Elasticsearch Rule and add action to the rule via the EMQX Platform Console.
 
-1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
-2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the temp_hum/emqx topic. Here you need a certain process of SQL:
+2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the `temp_hum/emqx` topic. Here you need a certain process of SQL:
 
    ```sql
     SELECT
@@ -157,7 +156,7 @@ This section demonstrates how to create a Elasticsearch Rule and add action to t
 
 4. Select the connector you just created from the **Connector** dropdown box.
 
-5. Configure the information for publishing messages from EMQX Cloud to the Elasticsearch service:
+5. Configure the information for publishing messages from the EMQX Platform to the Elasticsearch service:
 
    - **Action**: Optional actions `Create`, `Update`, and `Delete`.
 

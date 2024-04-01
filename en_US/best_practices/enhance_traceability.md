@@ -1,8 +1,8 @@
 # Enhance Message Traceability with EMQX Event Topics and TimescaleDB Integration
 
-The EMQX Cloud's message collection and transmission capability can fully utilize the [event topic](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-events-and-fields.html#mqtt-events) feature to enable comprehensive end-to-end message monitoring throughout the transmission process. This capability empowers users to generate detailed logs to track messages from their origin at the publisher, through the EMQX Cloud, to their destination at the subscriber.  The comprehensive monitoring covers various scenarios, allowing the precise detection of any message delays. Moreover, users can have the flexibility to effortlessly transmit critical monitoring data to an external database or message queue through the EMQX Cloud's data integration function. 
+The EMQX Platform's message collection and transmission capability can fully utilize the [event topic](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-events-and-fields.html#mqtt-events) feature to enable comprehensive end-to-end message monitoring throughout the transmission process. This capability empowers users to generate detailed logs to track messages from their origin at the publisher, through the EMQX Platform, to their destination at the subscriber.  The comprehensive monitoring covers various scenarios, allowing the precise detection of any message delays. Moreover, users can have the flexibility to effortlessly transmit critical monitoring data to an external database or message queue through the EMQX Platform's data integration function. 
 
-This guide demonstrates the setup of an end-to-end message tracing system, with a focus on using the Timescale database as an example. It introduces how to use the EMQX Cloud's data integration with TimescaleDB to observe the latency of MQTT messages throughout the entire transmission process, from the publishing client to the subscribing client.
+This guide demonstrates the setup of an end-to-end message tracing system, with a focus on using the Timescale database as an example. It introduces how to use the EMQX Platform's data integration with TimescaleDB to observe the latency of MQTT messages throughout the entire transmission process, from the publishing client to the subscribing client.
 
 ## Prerequisites
 
@@ -80,7 +80,7 @@ This section demonstrates how to create a Timescale instance and create a table 
    CREATE INDEX IF NOT EXISTS "emqx_mqtt_message_traces_pub_clientid_event_at_idx" ON mqtt_message_traces ("pub_clientid", "event_at" DESC);
    ```
 
-## Configure TimescaleDB Data Integration in EMQX Cloud
+## Configure TimescaleDB Data Integration in EMQX Platform
 
 This section demonstrates how to create a data integration with TimescaleDB for forwarding the message traces from the clients to TimescaleDB.
 
@@ -307,7 +307,7 @@ This section demonstrates how to create a data integration with TimescaleDB for 
 
 ## View Message Latency
 
-This section provides some SQL query statements that can help retrieve the information from TimescaleDB, such as the latency of all messages on the EMQX Cloud platform, including from the publisher to the server, within the server itself, and from the server to the subscriber.
+This section provides some SQL query statements that can help retrieve the information from TimescaleDB, such as the latency of all messages on the EMQX Platform platform, including from the publisher to the server, within the server itself, and from the server to the subscriber.
 
 ### How to Calculate Delay
 

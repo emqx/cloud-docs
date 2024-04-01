@@ -6,11 +6,11 @@ Extended authorization supports authorization verification through the integrati
 
 The PostgreSQL authorizer can support any table structure, including joint queries across multiple tables or queries from views. Users need to provide a query SQL template, ensuring the query results include the following fields:
 
-- permission: Specifies the operation permission, with possible values `allow` and `deny`.
-- action: Specifies which operations the current rule applies to, with possible values `publish`, `subscribe`, and `all`.
-- topic: Specifies the topic that the current rule applies to, which can use topic filters and topic placeholders.
-- qos: (optional) Specifies the message QoS that the rule applies to, with possible values `0`, `1`, `2`, or a comma-separated string specifying multiple QoS, such as `0,1`. Default is all QoS levels.
-- retain: (optional) Specifies whether the current rule supports publishing retained messages, with possible values `0`, `1`, default allows retained messages.
+- `permission`: Specifies the operation permission, with possible values `allow` and `deny`.
+- `action`: Specifies which operations the current rule applies to, with possible values `publish`, `subscribe`, and `all`.
+- `topic`: Specifies the topic that the current rule applies to, which can use topic filters and topic placeholders.
+- `qos`: (optional) Specifies the message QoS that the rule applies to, with possible values `0`, `1`, `2`, or a comma-separated string specifying multiple QoS, such as `0,1`. Default is all QoS levels.
+- `retain`: (optional) Specifies whether the current rule supports publishing retained messages, with possible values `0`, `1`, default allows retained messages.
 
 Example table structure:
 
@@ -27,9 +27,13 @@ CREATE TABLE mqtt_acl(
 CREATE INDEX mqtt_acl_username_idx ON mqtt_acl(username);
 ```
 
-::: tip The example above creates an index. When there is a large volume of permission data in the system, ensure the tables used for queries are optimized and use effective indexes to improve data lookup speed with many connections and reduce EMQX load. :::
+::: tip 
 
-Example rule for adding a user `emqx_u` with a prohibition on publishing to the topic `t/1`:
+The example above creates an index. When there is a large volume of permission data in the system, ensure the tables used for queries are optimized and use effective indexes to improve data lookup speed with many connections and reduce EMQX load. 
+
+:::
+
+An example rule for adding a user `emqx_u` with a prohibition on publishing to the topic `t/1`:
 
 ```sql
 postgres=# INSERT INTO mqtt_acl(username, permission, action, topic) VALUES ('emqx_u', 'deny', 'publish', 't/1');
@@ -48,13 +52,13 @@ In the deployment, click **Access Control** -> **Authorization** -> **Extended A
 
 You can complete the related configuration according to the following instructions:
 
-- Service: Enter the PostgreSQL server address (host:port).
-- Database: Enter the PostgreSQL database name.
-- Username (optional): Enter the username.
-- Password (optional): Enter the password.
-- TLS Configuration: Configure whether to enable TLS.
-- Connection Pool Size (optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the PostgreSQL database; default value: 8.
-- SQL: Fill in the query SQL according to the table structure, specific requirements can be found at SQL Table Structure and Query Statement.
+- **Server**: Enter the PostgreSQL server address (host:port).
+- **Database**: Enter the PostgreSQL database name.
+- **Username** (optional): Enter the username.
+- **Password** (optional): Enter the password.
+- **Enable TLS**: Configure whether to enable TLS.
+- **Connection Pool Size** (optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the PostgreSQL database; default value: `8`.
+- **SQL**: Fill in the query SQL according to the table structure, specific requirements can be found at SQL Table Structure and Query Statement.
 
 ::: tip
 

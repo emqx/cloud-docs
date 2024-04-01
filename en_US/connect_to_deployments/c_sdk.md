@@ -11,7 +11,7 @@ Eclipse Paho Embedded C can be used on the desktop operating system, but mainly 
   - Broker: broker.emqx.io 
   - TCP Port: 1883 
   - TLS/SSL Port: 8883 
-- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check [Authentication](https://docs.emqx.com/en/cloud/latest/deployments/auth_overview.html) and set the username and password in Authentication & ACL > Authentication for verification.
+- You can [create a deployment](https://docs.emqx.com/en/cloud/latest/create/overview.html) as well. Find connection information in the deployment overview. Make sure the deployment is running. At the same time, you can use WebSocket to test the connection to the MQTT server. If you are creating your own deployment, check Access Control -> [Authentication](../deployments/default_auth.md) and set the username and password in for verification.
 
 ## Installation Dependency
 

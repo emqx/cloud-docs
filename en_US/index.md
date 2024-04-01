@@ -2,10 +2,10 @@
 {
   'title': 'EMQX Platform Introduction',
   'description': 'EMQX Platform is a fully managed MQTT 5.0 IoT cloud service. It can process a huge amount of data in real-time to and from connected IoT devices and applications.',
-  'introduction': "One MQTT Platform for the IoT from EMQ. As the world's first MQTT 5.0 messaging service, EMQX Platform provides fully-managed environment or On-Premise for MQTT services. EMQX Platform can help you quickly build industry applications and easily realize the collection, transmission, computation and persistence of IoT data.",
+  'introduction': "As a unified MQTT platform for IoT, and the world's first MQTT 5.0 messaging service, the EMQX Platform offers a fully-managed environment and On-Premises deployment options for MQTT services. EMQX Platform can help you quickly build industry applications and easily realize the collection, transmission, computation, and persistence of IoT data.",
   'headers':
     [
-      { 'title': 'Product Introduction', 'slug': 'product-introductione' },
+      { 'title': 'Product Introduction', 'slug': 'product-introduction' },
       { 'title': 'Quick Start', 'slug': 'quick-start' },
       { 'title': 'Console Guide', 'slug': 'console-guide' },
       { 'title': 'Developer Guide', 'slug': 'developer-guide' },

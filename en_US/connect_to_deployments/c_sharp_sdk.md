@@ -7,7 +7,7 @@ This article mainly introduces how to use the **paho.mqtt.m2mqtt** client librar
 ## Preconditions
 
 >1. The deployment has been created. You can view connection-related information under Deployment Overview. Please make sure that the deployment status is running. At the same time, you can use WebSocket to test the connection to the MQTT server.
->2. Set the username and password in `Authentication & ACL` > `Authentication` for connection verification.
+>2. Set the username and password in `Access Control` > `Authentication` for connection verification.
 
 This project uses .NET 5.0 to develop and test. You can use the following commend to confirm the .NET version.
 ```bash
