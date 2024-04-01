@@ -1,16 +1,17 @@
 {
   "cn": [
     {
-      "title": "EMQX Cloud",
+      "title": "EMQX Cloud 文档中心",
       "path": "./"
     },
     {
-      "title": "概览",
+      "title": "EMQX Cloud 概览",
       "path": "overview"
     },
     {
       "title": "版本和定价",
       "path": "price/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "版本介绍",
@@ -25,6 +26,7 @@
     {
       "title": "快速入门",
       "path": "quick_start/introduction",
+      "collapsed": true,
       "children": [
         {
           "title": "使用 MQTTX 连接/验证部署",
@@ -35,6 +37,7 @@
     {
       "title": "创建部署",
       "path": "create/overview",
+      "collapsed": true,
       "children": [
         {
           "title": "创建 Serverless 部署",
@@ -92,23 +95,100 @@
       ]
     },
     {
-      "title": "项目和用户",
-      "path": "feature/overview",
+      "title": "启停/删除部署",
+      "path": "deployments/stop_delete_deployment"
+    },
+    {
+      "title": "客户端认证",
+      "path": "deployments/auth_overview",
+      "collapsed": true,
       "children": [
         {
-          "title": "项目中心",
-          "path": "feature/project_center"
+          "title": "默认认证",
+          "path": "deployments/default_auth"
         },
         {
-          "title": "项目列表",
-          "path": "deployments/project"
+          "title": "扩展认证",
+          "path": "deployments/custom_auth",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "HTTP 密码认证",
+              "path": "deployments/http_auth"
+            },
+            {
+              "title": "Redis 密码认证",
+              "path": "deployments/redis_auth"
+            },
+            {
+              "title": "MySQL 密码认证",
+              "path": "deployments/mysql_auth"
+            },
+            {
+              "title": "PostgreSQL 密码认证",
+              "path": "deployments/pgsql_auth"
+            },
+            {
+              "title": "JWT 认证",
+              "path": "deployments/jwt_auth"
+            }
+          ]
         },
         {
-          "title": "角色权限",
+          "title": "黑名单",
+          "path": "deployments/blacklist"
+        }
+      ]
+    },
+    {
+      "title": "客户端授权",
+      "path": "deployments/authz_overview",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "默认授权",
+          "path": "deployments/default_authz"
+        },
+        {
+          "title": "扩展授权",
+          "path": "deployments/custom_authz",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "基于 HTTP 进行授权",
+              "path": "deployments/http_authz"
+            },
+            {
+              "title": "基于 Redis 进行授权",
+              "path": "deployments/redis_authz"
+            },
+            {
+              "title": "基于 MySQL 进行授权",
+              "path": "deployments/mysql_authz"
+            },
+            {
+              "title": "基于 PostgreSQL 进行授权",
+              "path": "deployments/pgsql_authz"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "项目和用户管理",
+      "path": "feature/overview",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "项目管理",
+          "path": "feature/project"
+        },
+        {
+          "title": "角色和权限",
           "path": "feature/role"
         },
         {
-          "title": "子用户管理",
+          "title": "用户管理",
           "path": "feature/user"
         },
         {
@@ -133,102 +213,46 @@
       ]
     },
     {
-      "title": "认证和访问控制",
-      "path": "deployments/auth_overview",
+      "title": "监控",
+      "path": "deployments/monitors",
+      "collapsed": true,
       "children": [
         {
-          "title": "Serverless",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "认证",
-              "path": "deployments/auth_serverless"
-            },
-            {
-              "title": "访问控制",
-              "path": "deployments/acl_serverless"
-            }
-          ]
+          "title": "指标",
+          "path": "deployments/metrics"
         },
         {
-          "title": "专有版 / BYOC",
+          "title": "客户端",
+          "path": "deployments/clients"
+        },
+        {
+          "title": "订阅管理",
+          "path": "deployments/subscription_management"
+        },
+        {
+          "title": "保留消息",
+          "path": "deployments/retain_message"
+        },
+        {
+          "title": "告警",
+          "path": "deployments/alerts",
           "collapsed": true,
           "children": [
             {
-              "title": "认证",
-              "path": "deployments/auth_dedicated"
-            },
-            {
-              "title": "访问控制",
-              "path": "deployments/acl_dedicated"
-            },
-            {
-              "title": "外部认证和访问控制",
-              "path": "deployments/custom_auth"
-            },
-            {
-              "title": "HTTP 自定义认证",
-              "path": "deployments/http_auth"
-            },
-            {
-              "title": "MySQL 认证/访问控制",
-              "path": "deployments/mysql_auth"
-            },
-            {
-              "title": "PostgreSQL 认证/访问控制",
-              "path": "deployments/pgsql_auth"
-            },
-            {
-              "title": "Redis 认证/访问控制",
-              "path": "deployments/redis_auth"
-            },
-            {
-              "title": "JWT 认证",
-              "path": "deployments/jwt_auth"
-            },
-            {
-              "title": "黑名单",
-              "path": "deployments/blacklist"
+              "title": "Webhook 告警",
+              "path": "deployments/alerts_webhook"
             }
           ]
         }
       ]
     },
     {
-      "title": "运维与监控",
-      "path": "deployments/operation_overview",
+      "title": "问题分析",
+      "collapsed": true,
       "children": [
-        {
-          "title": "监控",
-          "path": "deployments/monitors"
-        },
-        {
-          "title": "指标",
-          "path": "deployments/metrics"
-        },
-        {
-          "title": "告警",
-          "path": "deployments/alerts"
-        },
-        {
-          "title": "Webhook 告警",
-          "path": "deployments/alerts_webhook"
-        },
         {
           "title": "日志",
           "path": "deployments/logs"
-        },
-        {
-          "title": "Prometheus",
-          "path": "deployments/prometheus"
-        },
-        {
-          "title": "启停/删除部署",
-          "path": "deployments/stop_delete_deployment"
-        },
-        {
-          "title": "BYOC 托管运维服务",
-          "path": "deployments/byoc_operation_maintenance"
         }
       ]
     },
@@ -324,9 +348,9 @@
       ]
     },
     {
-      "title": "数据集成（Severless）",
+      "title": "数据集成",
       "path": "data_integration/introduction",
-      "collapsed": false,
+      "collapsed": true,
       "children": [
         {
           "title": "连接器",
@@ -337,139 +361,96 @@
           "path": "data_integration/rules"
         },
         {
-          "title" : "HTTP Server",
-          "path": "data_integration/http_server"
-        },
-        {
-          "title" : "Kafka",
-          "path": "data_integration/kafka"
-        },
-        {
-          "title" : "消息重新发布",
-          "path": "data_integration/republish"
-        },
-        {
-          "title" : "空动作（调试）",
-          "path": "data_integration/empty_action_debug"
-        }
-      ]
-    },
-    {
-      "title": "数据集成（专有版）",
-      "path": "rule_engine/introduction",
-      "collapsed": true,
-      "children": [
-        {
-          "title": "资源管理",
-          "path": "rule_engine/resources"
-        },
-        {
-          "title": "规则管理",
-          "path": "rule_engine/rules"
-        },
-        {
           "title": "事件订阅",
           "path": "rule_engine/rule_engine_events"
         },
         {
-          "title": "空动作（调试）",
-          "path": "rule_engine/rule_engine_empty_action_debug"
-        },
-        {
           "title": "消息重新发布",
-          "path": "rule_engine/rule_engine_republish"
+          "path": "data_integration/republish"
         },
         {
-          "title": "集成 Webhook",
-          "path": "rule_engine/rule_engine_web_hook"
+          "title": "空动作（调试）",
+          "path": "data_integration/empty_action_debug"
         },
         {
-          "title": "集成 MQTT Broker",
-          "path": "rule_engine/rule_engine_mqtt"
+          "title": "HTTP Server",
+          "path": "data_integration/http_server"
         },
         {
-          "title": "集成 Kafka",
-          "path": "rule_engine/rule_engine_kafka"
+          "title": "MQTT Broker",
+          "path": "data_integration/mqtt"
         },
         {
-          "title": "集成阿里云 Kafka",
-          "path": "rule_engine/rule_engine_aliyun_kafka"
+          "title": "Kafka",
+          "path": "data_integration/kafka"
         },
         {
-          "title": "集成华为云 Kafka",
-          "path": "rule_engine/rule_engine_huawei_kafka"
+          "title": "Pulsar",
+          "path": "data_integration/pulsar"
         },
         {
-          "title": "集成 Pulsar",
-          "path": "rule_engine/rule_engine_bridge_pulsar"
+          "title": "RabbitMQ",
+          "path": "data_integration/rabbitmq"
         },
         {
-          "title": "集成 RabbitMQ",
-          "path": "rule_engine/rule_engine_bridge_rabbitmq"
+          "title": "RocketMQ",
+          "path": "data_integration/rocketmq"
         },
         {
-          "title": "集成 RocketMQ",
-          "path": "rule_engine/rule_engine_rocketmq"
+          "title": "MySQL",
+          "path": "data_integration/mysql"
         },
         {
-          "title": "集成 MySQL",
-          "path": "rule_engine/rule_engine_save_mysql"
+          "title": "Redis",
+          "path": "data_integration/redis"
         },
         {
-          "title": "集成阿里云 MySQL",
-          "path": "rule_engine/rule_engine_save_rds_mysql"
+          "title": "MongDB",
+          "path": "data_integration/mongodb"
         },
         {
-          "title": "集成 AWS RDS MySQL",
-          "path": "rule_engine/rule_engine_save_aws_rds_mysql"
+          "title": "PostgreSQL",
+          "path": "data_integration/postgresql"
         },
         {
-          "title": "集成 TimescaleDB",
-          "path": "rule_engine/rule_engine_save_timescaladb"
+          "title": "Cassandra",
+          "path": "data_integration/cassandra"
         },
         {
-          "title": "集成 PostgreSQL",
-          "path": "rule_engine/rule_engine_save_postgresql"
+          "title": "ClickHouse",
+          "path": "data_integration/clickhouse"
         },
         {
-          "title": "集成 MongoDB",
-          "path": "rule_engine/rule_engine_save_mongodb"
+          "title": "InfluxDB",
+          "path": "data_integration/influxdb"
         },
         {
-          "title": "集成阿里云 MongoDB",
-          "path": "rule_engine/rule_engine_aliyun_mongodb"
+          "title": "Microsoft SQL Server",
+          "path": "data_integration/microsoft_sql_server"
         },
         {
-          "title": "集成 Redis",
-          "path": "rule_engine/rule_engine_save_redis"
+          "title": "OpenTSDB",
+          "path": "data_integration/opentsdb"
         },
         {
-          "title": "集成 ClickHouse",
-          "path": "rule_engine/rule_engine_save_clickhouse"
+          "title": "TDengine",
+          "path": "data_integration/tdengine"
         },
         {
-          "title": "集成 InfluxDB 2.0",
-          "path": "rule_engine/rule_engine_influxDB_2.0"
+          "title": "HStreamDB",
+          "path": "data_integration/hstreamdb"
         },
         {
-          "title": "集成 SQL Server",
-          "path": "rule_engine/rule_engine_save_sqlserver"
+          "title": "Apache IoTDB",
+          "path": "data_integration/apache_iotdb"
         },
         {
-          "title": "集成 TDengine",
-          "path": "rule_engine/rule_engine_save_tdengine"
+          "title": "Elasticsearch",
+          "path": "data_integration/elasticsearch"
         },
         {
-          "title": "集成阿里云 Lindorm",
-          "path": "rule_engine/rule_engine_aliyun_lindorm"
-        },
-        {
-          "title": "集成阿里云 Tablestore",
-          "path": "rule_engine/rule_engine_save_tablestore"
-        },
-        {
-          "title": "集成 HStreamDB",
-          "path": "rule_engine/rule_engine_save_hstreamdb"
+          "title": "GreptimeDB",
+          "path": "data_integration/greptimedb"
         }
       ]
     },
@@ -524,119 +505,12 @@
         {
           "title": "流量包",
           "path": "vas/traffic-pack"
-        },
-        {
-          "title": "自定义函数",
-          "path": "vas/codec"
-        },
-        {
-          "title": "自定义函数场景案例",
-          "path": "vas/codec_demo"
-        },
-        {
-          "title": "影子服务",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "服务概览",
-              "path": "shadow_service/overview"
-            },
-            {
-              "title": "计费说明",
-              "path": "shadow_service/pricing"
-            },
-            {
-              "title": "功能简介",
-              "path": "shadow_service/feature"
-            },
-            {
-              "title": "调用和通信",
-              "path": "shadow_service/invoke"
-            },
-            {
-              "title": "场景案例：设备影子",
-              "path": "shadow_service/device_shadow"
-            },
-            {
-              "title": "场景案例：物模型管理应用",
-              "path": "shadow_service/things_model"
-            }
-          ]
         }
       ]
     },
     {
       "title": "APIs",
-      "path": "api/introduction",
-      "collapsed": true,
-      "children": [
-        {
-          "title": "Serverless API",
-          "path": "api/serverless",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "客户端管理",
-              "path": "api/clients_v5"
-            },
-            {
-              "title": "订阅管理",
-              "path": "api/subscriptions_v5"
-            },
-            {
-              "title": "消息发布",
-              "path": "api/publish_v5"
-            }
-          ]
-        },
-        {
-          "title": "专有版 / BYOC API",
-          "path": "api/dedicated",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "认证管理",
-              "path": "api/auth"
-            },
-            {
-              "title": "访问控制管理",
-              "path": "api/acl"
-            },
-            {
-              "title": "客户端管理",
-              "path": "api/clients"
-            },
-            {
-              "title": "黑名单管理",
-              "path": "api/banned"
-            },
-            {
-              "title": "订阅信息",
-              "path": "api/subscriptions"
-            },
-            {
-              "title": "主题订阅",
-              "path": "api/subscribe"
-            },
-            {
-              "title": "消息发布",
-              "path": "api/publish"
-            },
-            {
-              "title": "指标",
-              "path": "api/metrics"
-            },
-            {
-              "title": "数据集成",
-              "path": "api/rules"
-            },
-            {
-              "title": "影子服务",
-              "path": "api/shadow_service"
-            }
-          ]
-        }
-      ]
+      "path": "api/introduction"
     },
     {
       "title": "最佳实践",
@@ -665,23 +539,15 @@
         {
           "title": "如何排查消息丢失",
           "path": "best_practices/how_to_troubleshoot_message_loss"
-        },
-        {
-          "title": "追踪消息延迟",
-          "path": "best_practices/enhance_traceability"
         }
       ]
     },
     {
-      "title": "关于 MQTT",
-      "path": "https://www.emqx.com/zh/mqtt"
-    },
-    {
-      "title": "产品动态和升级策略",
+      "title": "版本发布和升级策略",
       "collapsed": true,
       "children": [
         {
-          "title": "产品动态",
+          "title": "版本发布记录",
           "path": "release_notes"
         },
         {
