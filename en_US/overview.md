@@ -22,7 +22,7 @@ This model is suitable for IoT applications with instant communication requireme
 
 EMQX Platform supports device data on the cloud. With the support of massive topics and data integration, data collection, filtering, transformation, calculation, and persistence can be achieved with low code.
 
-<img src="./_assets/model_2.png" alt="emqx_cloud_model_2" style="zoom: 40%;" />
+<img src="./_assets/model_2.png" alt="emqx_cloud_model_2" style="zoom: 50%;" />
 
 #### Use Case
 
@@ -32,7 +32,7 @@ The model described is an excellent fit for IoT applications where reliable data
 
 EMQX Platform provides MQTT services to support hybrid applications with two-way communication and data collection models. Through capabilities such as shared subscriptions and data integrations, data is persisted while flowing from object to object and from object to application.
 
-<img src="./_assets/hybrid_model.png" alt="hybrid model" style="zoom:50%;" />
+<img src="./_assets/model_3.png" alt="hybrid model" style="zoom:50%;" />
 
 #### Use Case
 
