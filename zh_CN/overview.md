@@ -69,12 +69,12 @@ EMQX Cloud 专有版和 BYOC 均采用高冗余集群架构，以确保服务的
 
 
 ### 灵活的数据集成方案
-EMQX Cloud 专业版和 BYOC 支持实时预处理设备事件与消息数据，并存储到云上 MySQL、Kafka、InfluxDB 等 40+ 的数据库与消息队列资源中。
+EMQX Cloud 专有版和 BYOC 支持实时预处理设备事件与消息数据，并存储到云上 MySQL、Kafka、InfluxDB 等 40+ 的数据库与消息队列资源中。
 
 
 ## 产品版本简介
 
-EMQX Cloud 提供三个版本，支持在全球主流的公有云上部署专属于您的全托管 MQTT 服务，从独立的开发者到全球化的行业领导者，都能找到合适的 EMQX Cloud 产品。
+EMQX Cloud 提供三个版本的全托管产品，支持在全球主流的公有云上部署专属于您的全托管 MQTT 服务，从独立的开发者到全球化的行业领导者，都能找到合适的 EMQX Cloud 产品。
 
 前往[版本介绍](./price/plans.md)了解更多内容。
 
