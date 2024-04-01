@@ -10,7 +10,7 @@ The RocketMQ data integration is an out-of-the-box feature in EMQX Platform that
 
 The diagram below illustrates a typical architecture of data integration between EMQX Platform and RocketMQ:
 
-![EMQX Cloud-RocketMQ Integration](./_assets/data_integration_rocketmq.jpg)
+![EMQX Platform-RocketMQ Integration](./_assets/data_integration_rocketmq.jpg)
 
 Ingesting MQTT data into RocketMQ works as follows:
 

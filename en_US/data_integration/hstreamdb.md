@@ -165,14 +165,14 @@ Once HStreamDB resources are in a connected state, if you perform operations on 
 
    ```bash
     $ docker container exec -it quickstart-tcp-hserver bash
-    # 创建 Stream `temp_hum`
+    # create Stream `temp_hum`
     root@ed6a64e65ac0:/# hstream stream create temp_hum
     +-------------+---------+----------------+-------------+
     | Stream Name | Replica | Retention Time | Shard Count |
     +-------------+---------+----------------+-------------+
     | temp_hum    | 1       | 604800 seconds | 1           |
     +-------------+---------+----------------+-------------+
-    # 列出所有 Stream
+    # list all Stream
     root@ed6a64e65ac0:/# hstream stream list
     +-------------+---------+----------------+-------------+
     | Stream Name | Replica | Retention Time | Shard Count |

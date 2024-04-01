@@ -8,7 +8,7 @@ This page details the data integration between EMQX Platform and Elasticsearch a
 
 Data integration with Elasticsearch is an out-of-the-box feature in EMQX Platform, combining EMQX Platform's device access and message transmission capabilities with Elasticsearch’s data storage and analysis capabilities. Seamless integration of MQTT data can be achieved through simple configuration.
 
-![EMQX Cloud-Elasticsearch 集成](./_assets/data_integration_elasticsearch.jpg)
+![EMQX Platform-Elasticsearch Integration](./_assets/data_integration_elasticsearch.jpg)
 
 EMQX Platform and Elasticsearch provide a scalable IoT platform for efficiently collecting and analyzing real-time device data. In this architecture, EMQX Platform acts as the IoT platform, responsible for device access, message transmission, and data routing, while Elasticsearch serves as the data storage and analysis platform, handling data storage, data search, and analysis.
 

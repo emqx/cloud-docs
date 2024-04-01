@@ -8,7 +8,7 @@ This page provides a detailed overview of the data integration between EMQX Plat
 
 Apache Pulsar data integration is an out-of-the-box feature of EMQX Platform that combines EMQX Platform's device connectivity and message transmission capabilities with Pulsar's robust data processing capabilities. With the built-in rule engine component, the data streaming and processing process is simplified between the two platforms. This means that you can easily transmit MQTT data to Pulsar and leverage Pulsar's powerful features for data processing without the need for complex coding, making the management and utilization of IoT data more efficient and convenient.
 
-![EMQX Cloud-Pulsar Data Integration](./_assets/data_integration_pulsar.jpg)
+![EMQX Platform-Pulsar Data Integration](./_assets/data_integration_pulsar.jpg)
 
 EMQX Platform forwards MQTT data to Apache Pulsar through the rule engine and configured action, and the complete process is as follows:
 

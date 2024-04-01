@@ -1106,12 +1106,24 @@
           "path": "data_integration/http_server"
         },
         {
+          "title": "MQTT Broker",
+          "path": "data_integration/mqtt"
+        },
+        {
           "title": "Kafka",
           "path": "data_integration/kafka"
         },
         {
           "title": "Upstash for Kafka",
           "path": "data_integration/kafka_upstash"
+        },
+        {
+          "title": "Confluent",
+          "path": "data_integration/confluent"
+        },
+        {
+          "title": "Google PubSub",
+          "path": "data_integration/gcp_pubsub"
         },
         {
           "title": "Pulsar",
@@ -1192,6 +1204,18 @@
         {
           "title": "Elasticsearch",
           "path": "data_integration/elasticsearch"
+        },
+        {
+          "title": "GreptimeDB",
+          "path": "data_integration/greptimedb"
+        },
+        {
+          "title": "Amazon Kinesis",
+          "path": "data_integration/amazon_kinesis"
+        },
+        {
+          "title": "Azure Event Hubs",
+          "path": "data_integration/azure_event_hubs"
         }
       ]
     },

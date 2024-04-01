@@ -12,7 +12,7 @@ EMQX Platform supports configuring multiple bridging rules on the same connectio
 
 The diagram below shows a typical architecture of data integration between EMQX Platform and other MQTT services:
 
-![EMQX Cloud-MQTT data integration](./_assets/data_integration_mqtt.jpg)
+![EMQX Platform-MQTT data integration](./_assets/data_integration_mqtt.jpg)
 
 ## Features and Benefits
 
