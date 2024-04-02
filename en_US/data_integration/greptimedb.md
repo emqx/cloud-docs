@@ -2,13 +2,13 @@
 
 [GreptimeDB](https://github.com/GreptimeTeam/greptimedb) is an open-source time-series database with a special focus on scalability, analytical capabilities and efficiency. It's designed to work on the infrastructure of the cloud era, and users benefit from its elasticity and commodity storage. EMQX Platform now supports connection to mainstream versions of GreptimeDB, GreptimeCloud or GreptimeDB Enterprise.
 
-This page provides a comprehensive introduction to the data integration between EMQX Platform and GreptimeDB with practical instructions on creating and validating the data integration.
+This page provides a comprehensive introduction to the data integration between the EMQX Platform and GreptimeDB with practical instructions on creating and validating the data integration.
 
 ## How It Works
 
-GreptimeDB data integration is a built-in feature in EMQX Platform that combines the real-time data capturing and transmission capabilities of EMQX Platform with the data storage and analysis capabilities of GreptimeDB. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from EMQX Platform to GreptimeDB for storage and analysis, eliminating the need for complex coding. The workflow is as follows:
+GreptimeDB data integration is a built-in feature in the EMQX Platform that combines the real-time data capturing and transmission capabilities of the EMQX Platform with the data storage and analysis capabilities of GreptimeDB. With a built-in [rule engine](./rules.md) component, the integration simplifies the process of ingesting data from the EMQX Platform to GreptimeDB for storage and analysis, eliminating the need for complex coding. The workflow is as follows:
 
-The diagram below illustrates a typical architecture of data integration between EMQX Platform and GreptimeDB:
+The diagram below illustrates a typical architecture of data integration between the EMQX Platform and GreptimeDB:
 
 ![EMQX Platform-Integration GreptimeDB](./_assets/data_integration_greptimedb.jpg)
 
@@ -64,7 +64,7 @@ This section describes the preparations you need to complete before you start to
 
 Before creating data integration rules, you need to first create a GreptimeDB connector to access the GreptimeDB server.
 
-1.  Go to your deployment. Click **Data Integration** from the left-navigation menu.If it is the first time for you to create a connector, select **GreptimeDB** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **GreptimeDB** under the **Data Persistence** category.
+1.  Go to your deployment. Click **Data Integration** from the left-navigation menu. If it is the first time for you to create a connector, select **GreptimeDB** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **GreptimeDB** under the **Data Persistence** category.
 
 2. **Connector Name**: The system will automatically generate a connector name.
 
@@ -80,15 +80,13 @@ Before creating data integration rules, you need to first create a GreptimeDB co
 
 5. Click the **New** button to complete the creation.
 
-Next, you can create data bridge rules based on this Connector.
-
 ## Create a Rule
 
 This section demonstrates how to create a GreptimeDB Rule and add action to the rule via the EMQX Platform Console.
 
-1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
-2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the temp_hum/emqx topic. Here you need a certain process of SQL:
+2. Set the rules in the **SQL Editor** based on the feature to use, Our goal is to trigger the engine when the client sends a temperature and humidity message to the `temp_hum/emqx` topic. Here you need a certain process of SQL:
 
    ```sql
     SELECT
