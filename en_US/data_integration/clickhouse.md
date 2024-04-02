@@ -8,7 +8,7 @@ ClickHouse data integration is an out-of-the-box feature in EMQX Platform design
 
 The diagram below illustrates a typical architecture of data integration between EMQX Platform and ClickHouse.
 
-![EMQX Cloud-ClickHouse Integration](./_assets/data_integration_clickhouse.jpg)
+![EMQX Platform-ClickHouse Integration](./_assets/data_integration_clickhouse.jpg)
 
 Ingesting MQTT data into ClickHouse works as follows:
 

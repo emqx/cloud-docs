@@ -10,7 +10,7 @@ Upstash Redis Data Integration is an out-of-the-box feature in EMQX Platform, br
 
 The diagram below illustrates a typical architecture of data integration between EMQX Platform and Redis:
 
-![EMQX Cloud Integration Redis](./_assets/data_integration_redis.png)
+![EMQX Platform Integration Redis](./_assets/data_integration_redis.png)
 
 Ingesting MQTT data into Upstash Redis works as follows:
 

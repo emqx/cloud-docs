@@ -10,7 +10,7 @@ OpenTSDB data integration is an out-of-the-box feature in EMQX Platform that com
 
 The diagram below illustrates a typical architecture of data integration between EMQX Platform and OpenTSDB:
 
-![EMQX Cloud-Integration OpentsDB](./_assets/data_integration_opentsdb.jpg)
+![EMQX Platform-Integration OpentsDB](./_assets/data_integration_opentsdb.jpg)
 
 EMQX Platform inserts device data to OpenTSDB through the rule engine and action. OpenTSDB provides extensive query capabilities, supporting the generation of reports, charts, and other data analysis results. Taking industrial energy management scenarios as an example, the workflow is as follows:
 
