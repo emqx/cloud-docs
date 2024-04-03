@@ -73,7 +73,7 @@ The Dropped Message chart shows the messages that are discarded during the sendi
 
 ### Dedicated / BYOC Timeline Metrics
 
-The Timeline metrics for Dedicated and BYOC deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API - Metrics](../api/metrics.md).
+The Timeline metrics for Dedicated and BYOC deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API](https://docs.emqx.com/en/cloud/latest/api/dedicated.html#tag/Metrics).
 
 ::: tip
 If there is no corresponding API metric in the table, it means that the metric cannot be retrieved from the API.

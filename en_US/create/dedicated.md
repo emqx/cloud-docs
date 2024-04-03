@@ -47,7 +47,7 @@ Check out the [Connection guide](../deployments/port_guide_dedicated.md) to lear
 
 To explore the advanced features of the Dedicated Plan, refer to the following links to the specific sections.
 
-### [REST API](../api/dedicated.md)
+### [REST API](https://docs.emqx.com/en/cloud/latest/api/dedicated)
 
 Provides REST APIs for integration with external systems, such as querying client information, publishing messages, and creating rules.
 

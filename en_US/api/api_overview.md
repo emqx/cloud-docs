@@ -70,4 +70,4 @@ The possible result codes are as follows:
 Depending on the different EMQX versions used in EMQX Platform, the API is also divided into versions based on EMQX 4.x and EMQX 5.x. Please choose the API version that corresponds to the type of deployment you have activated.
 
 - [Serverless API](./serverless.md)
-- [Dedicated / BYOC API](./dedicated.md)
+- [Dedicated API](https://docs.emqx.com/en/cloud/latest/api/dedicated)
