@@ -4,7 +4,7 @@
 This feature is only available for the Dedicated plan.
 :::
 
-EMQX Cloud **Dedicated Deployment** recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
+EMQX Dedicated deployment recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
 
 The following table provides an overview of different requirements for certifications in one-way and two-way authentication modes. 
 
