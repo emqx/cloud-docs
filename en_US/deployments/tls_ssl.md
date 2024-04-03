@@ -20,7 +20,7 @@ The following table provides an overview of different requirements for certifica
   - 1024 bit RSA (RSA_1024)
   - 2048 bit RSA (RSA_2048)
 
-- Certificate (including certificate chain, if applicable): We only support uploading certificates in **x509** format. **Please merge your certificate (.crt or .pem) and any related certificate chain files into one file and upload it**. If your certificate is issued by an certificate authority, it is important to include the certificate chain to ensure that it is correctly recognized.
+- Certificate (including certificate chain, if applicable): The EMQX Platform supports uploading certificates in **x509** format. **Please merge your certificate (.crt or .pem) and any related certificate chain files into one file and upload it**. If your certificate is issued by a certificate authority, it is important to include the certificate chain to ensure that it is correctly recognized.
 - The certificate must be valid. The certificate cannot be imported within **60 days** before the beginning and end of the validity period.
 
 - The certificate, private key and certificate chain must use **PEM encoding**.
