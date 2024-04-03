@@ -68,5 +68,5 @@ EMQX Platform offers three different product plans, allowing you to deploy your 
 
 For detailed feature descriptions and pricing of each product plan, see [Product Plans](./price/plans.md).
 
-![emqx_cloud_product](./_assets/product_edition.png)
+![product_edition](./_assets/product_edition.png)
 

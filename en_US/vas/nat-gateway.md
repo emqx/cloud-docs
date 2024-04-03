@@ -2,16 +2,22 @@
 
 ::: warning Note
 
-This feature is exclusive to the Dedicated Edition. You need to create a Dedicated Edition deployment before purchasing this service. 
+This feature is exclusive to the Dedicated Edition. You need to create a Dedicated deployment before purchasing this service. 
 
 :::
 
-The NAT gateway provides network address translation services. Before the NAT gateway is activated, some functions of the Dedicated Edition deployment, such as extended authentication and data integration, cannot access public network resources. Once activated, it allows access through public network addresses.
+The NAT gateway provides network address translation services. Before the NAT gateway is activated, some functions of the Dedicated deployment, such as extended authentication and data integration, cannot access public network resources. Once subscribed, it allows access through public network addresses.
 
-## Activate the Service
+## Subscribe to the Service
 
-You can activate the NAT Gateway service by selecting the NAT Gateway card in the top menu bar under **Value-Added Services (VAS)** or choosing to open it from the tag bar at the bottom of the deployment overview.
+Click **VAS** from the top menu in the EMQX Platform console to open the **Value Added Services** page. You can subscribe to the NAT Gateway service on the page by clicking **Subscribe Now**.  Alternatively, you can go to the deployment Overview page, select the **NAT Gateway** tab at the bottom, and click **Subscribe Now**.
+
+On the subscribing process page, pay attention to the service descriptions. If you have purchased multiple deployments, select the deployment for which you need to create the service instance.
+
+<img src="./_assets/intro_06.png" style="zoom:50%;" />
 
 ## Use the Service
 
-After purchasing the NAT Gateway value-added service, you can see the creation status of the NAT Gateway in the corresponding deployment overview, waiting for it to be completed. Once the NAT Gateway's status is running, the deployment can access public network resources.
+After purchasing the NAT Gateway service, you can see the creation status of the NAT Gateway on the deployment Overview page. Wait for the creation process to be completed. Once the NAT Gateway's status is running, the deployment can access public network resources.
+
+![intro_07](./_assets/intro_07.png)

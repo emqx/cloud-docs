@@ -2,7 +2,7 @@
 
 ::: warning Note
 
-This feature is exclusive to the Dedicated Edition. You need to create a Dedicated Edition deployment before purchasing this service. 
+This feature is exclusive to the Dedicated Edition. You need to create a Dedicated deployment before subscribing to this service. 
 
 :::
 
@@ -10,14 +10,18 @@ Internal Load Balancing is a service that distributes traffic on-demand within a
 
 Before you begin, you need to complete the creation of [VPC Peering](https://chat.openai.com/g/g-aAzkOrn2h-ruan-jian-wen-dang-xie-zuo-zhu-shou/deployments/vpc_peering.md). The IP addresses mentioned below refer to the resource's internal network IP.
 
-## Activate the Service
+## Subscribe to the Service
 
-You can activate the Internal Load Balancing service by selecting the Internal Load Balancing card in the top menu bar under **Value-Added Services (VAS)** or choosing to open it from the tag bar at the bottom of the deployment overview.
+Click **VAS** from the top menu in the EMQX Platform console to open the **Value Added Services** page. You can subscribe to the Internal Load Balancers service on the page by clicking **Subscribe Now**.  Alternatively, you can go to the deployment Overview page, select the **Internal Load Balancers** tab at the bottom, and click **Subscribe Now**.
+
+On the subscribing process page, pay attention to the service descriptions. If you have purchased multiple deployments, select the deployment for which you need to create the service instance.
+
+<img src="./_assets/intro_02.png" style="zoom:50%;" />
 
 ## Use the Service
 
-After purchasing the Internal Load Balancing value-added service, you can see the creation status of internal load balancing in the corresponding deployment overview, waiting for it to be completed.
+After purchasing the Internal Load Balancer service, you can see the creation status of the service on the Deployment Overview page. Wait for the creation process to be completed.
 
 ![intranet_lb_info](./_assets/intranet_lb_info.png)
 
-When the status of the internal load balancer is running, you can connect terminals under the VPC that has completed VPC peering to the deployment via the internal network address. The connection ports are consistent with the public network connection ports: MQTT port is 1883, and the WebSocket port is 8083.
+When the status turns to be running, you can connect terminals under the VPC that have completed VPC peering to the deployment via the internal network address. The connection ports are consistent with the public network connection ports: MQTT port is 1883, and the WebSocket port is 8083.

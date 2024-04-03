@@ -1,4 +1,4 @@
-# Create Serverless Deployment
+# Create a Serverless Deployment
 
 EMQX Serverless Plan offers a cost-effective and efficient way for developers or small businesses to test and develop IoT applications. This plan is based on secure and scalable clusters and can be easily deployed in just a few simple steps.
 
@@ -7,7 +7,7 @@ One of the biggest advantages of using Serverless deployment is that it is bille
 ## Create a Deployment
 
 
-1. Log in to [EMQX Platform console](https://cloud-intl.emqx.com/console/).
+1. Log in to the [EMQX Platform console](https://cloud-intl.emqx.com/console/).
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
@@ -23,10 +23,10 @@ One of the biggest advantages of using Serverless deployment is that it is bille
 
 7. Upon accepting the terms, the deployment will begin. The deployment's progress can be tracked on the **Projects** page. Once the status updates to **Running**, your deployment is successfully established and is now operational.
 
-## View Deployment
+## View Deployment Information
 After the deployment is created, it will appear on the EMQX Platform console home page. Click the Serverless deployment card to enter the deployment overview page. On the overview page, you can check the real-time status and connection information for your deployment.
 
-![serverless](./_assets/serverless_overview.png)
+![serverless_overview](./_assets/serverless_overview.png)
 
 ### Basic Information
 

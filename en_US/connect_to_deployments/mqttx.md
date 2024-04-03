@@ -13,9 +13,9 @@ This article will introduce using MQTTX as an MQTT client testing tool to connec
 
 Before downloading and installing, please visit our [website](https://mqttx.app/) or [GitHub](https://github.com/emqx/MQTTX) to get the latest version information. The latest version helps to improve the using experience. If you are familiar with this project, you can also directly clone [MQTTX](https://github.com/emqx/MQTTX) repository source code, package and use it yourself. During using, if you have any questions, you can go to [GitHub issues](https://github.com/emqx/MQTTX/issues) to post questions and opinions or Fork our project, and submit a revised PR to us, We will carefully review and reply.
 
-## Connection configuration
+## Connection Configuration
 
-### Broker information
+### Broker Information
 
 Get the connection address and port in the Deployment Overview (the following **xxxxx represents a random port**, the specific port information **please refer to the information on the deployment overview page**).
 

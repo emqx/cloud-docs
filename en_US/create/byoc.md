@@ -1,4 +1,4 @@
-# Create BYOC Deployment
+# Create a BYOC Deployment
 
 EMQX Platform Bring Your Own Cloud (BYOC) plan supports creating deployments in your own cloud infrastructure to ensure that data is kept in your environment. This deployment improves data security and control while avoiding risks such as data leakage. In addition, EMQX BYOC deployment can provide better performance and scalability to meet the needs of different scenarios. This page describes how to create and use a BYOC deployment.
 
@@ -6,19 +6,19 @@ EMQX Platform Bring Your Own Cloud (BYOC) plan supports creating deployments in 
 
 Before you create a BYOC deployment, you must prepare an account corresponding to the public cloud, plan cloud resources, and apply for an EMQX BYOC product license. For more information, see [Deployment Prerequisites](../deployments/byoc_prerequisite.md).
 
-## Create Deployment
+## Create a Deployment
 
 1. Log in to your account and enter the [EMQX Platform console](https://cloud-intl.emqx.com/console/).
 
 2. On the console homepage or the deployment list page, click **New Deployment**.
 
-3. Click **Deploy Now** on the BYOC panel.
+3. Select the BYOC tab.
 
 4. Configure the cloud platform and EMQX cluster according to your needs.
 
    ![BYOCSpecification](./_assets/byoc_specification.png)
 
-   **Cloud platform configuration**
+   **Cloud Provider & Region Configuration**:
 
    - **Choose Cloud Platform**: Select **AWS** or **Google Cloud**.
 
@@ -28,11 +28,7 @@ Before you create a BYOC deployment, you must prepare an account corresponding t
 
      If you want to deploy in other regions, you can contact us through a [ticket](../feature/tickets.md) or [email](mailto:cloud-support@emqx.io).
 
-   - **Deployment Name**: Enter a deployment name that has business meaning.
-
-   - **VPC CIDR Block**: Select the private IP address range used to create the Virtual Private Cloud (VPC).
-
-   **EMQX cluster configuration**
+   **Configuration (for EMQX Cluster)**:
    ::: tip
    The maximum number of sessions must match the number specified in the EMQX BYOC license you request. After the deployment is complete, if you need to modify the sessions limit, you can contact us through a [ticket](../feature/tickets.md).
    :::
@@ -45,9 +41,16 @@ Before you create a BYOC deployment, you must prepare an account corresponding t
 
    - **EMQX Node Quantity**: Automatically filled based on the **sessions limit** and **Pub&Sub TPS**; You can also modify the number of nodes (2-5 nodes) based on your actual business needs.
 
-5. Click **Next** to go to **Advanced Settings**. Add cloud resource tags according to your needs for resource management, with up to 10 tags supported.
+   - **VPC CIDR Block**: Select the private IP address range used to create the Virtual Private Cloud (VPC).
 
-6. Click **Next** to proceed to the **Confirm** page. Review and confirm the information specified in the steps above, and you can also change the project to which this deployment belongs. After confirming the information, click **Deploy**.
+   **Deployment Name & Project**:
+
+   - **Deployment Name**: Enter a deployment name that has business meaning.
+   - **Project**: Select the appropriate project.
+
+   **Tags (Optional)**: Add cloud resource tags according to your needs for resource management, with up to 10 tags supported.
+
+6. Review and confirm the information specified in the steps above, and you can also change the project to which this deployment belongs. After confirming the information, click **Deploy**.
 
 Next, we'll start the deployment by following the steps in the **Deployment Guide** panel on the right.
 
@@ -202,7 +205,7 @@ to manage your deployment.
 Thank you for choosing our service. Happy IoT!
 ```
 
-## View Deployment
+## View Deployment Information
 
 Return to the **Deployment Guide** page and click **Complete**. It will lead you to the EMQX Platform console home page. Click the BYOC deployment card to enter the deployment overview page, and you can check the real-time status and connection information of the deployment.
 
@@ -227,6 +230,6 @@ A VPC peering is a network connection between two VPCs that allows two VPCs in d
 ### NAT Gateway Configuration
 
 The NAT gateway provided by the public cloud platform can provide network address translation services and provide BYOC deployments with the ability to access public network resources without the need for VPC peering connections. You can add NAT gateways in the VPC where BYOC is deployed. For more information, refer to the public cloud NAT gateway documentation: [NAT Gateways - Amazon Web Service](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) and [Cloud NAT - Google Cloud](https://cloud.google.com/nat/docs/overview).
-## Connect to Deployment
+## Connect to the Deployment
 
 You can connect to the deployment using any MQTT client tool for testing, for example, the recommended [MQTTX](../connect_to_deployments/mqttx.md).
