@@ -52,7 +52,7 @@ EMQX Cloud 专有版提供独立的 MQTT 服务集群，有更高的连接上限
 
 您可以通过一下具体章节了解转有版部署特有功能的使用。
 
-### [REST API](../api/introduction.md)
+### [REST API](https://docs.emqx.com/zh/cloud/latest/api/dedicated)
 
 提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 
