@@ -1314,51 +1314,8 @@
           ]
         },
         {
-          "title": "Dedicated / BYOC API",
-          "path": "api/dedicated",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "Authentication Management",
-              "path": "api/auth"
-            },
-            {
-              "title": "ACL Management",
-              "path": "api/acl"
-            },
-            {
-              "title": "Client Management",
-              "path": "api/client"
-            },
-            {
-              "title": "Banned List Management",
-              "path": "api/banned"
-            },
-            {
-              "title": "Subscription",
-              "path": "api/subscriptions"
-            },
-            {
-              "title": "Topic Subscriptions",
-              "path": "api/topic"
-            },
-            {
-              "title": "Message Publishing",
-              "path": "api/pub"
-            },
-            {
-              "title": "Metrics",
-              "path": "api/metrics"
-            },
-            {
-              "title": "Data Integration",
-              "path": "api/rules"
-            },
-            {
-              "title": "Shadow Service",
-              "path": "api/shadow_service"
-            }
-          ]
+          "title": "Dedicated API",
+          "path": "https://docs.emqx.com/en/cloud/latest/api/dedicated.html"
         }
       ]
     },
