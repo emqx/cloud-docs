@@ -753,16 +753,16 @@
       ]
     },
     {
-      "title": "Create Deployment",
+      "title": "Create a Deployment",
       "path": "create/overview",
       "collapsed": true,
       "children": [
         {
-          "title": "Create Serverless Deployment",
+          "title": "Create a Serverless Deployment",
           "path": "create/serverless"
         },
         {
-          "title": "Create Dedicated Deployment",
+          "title": "Create a Dedicated Deployment",
           "path": "create/dedicated",
           "collapsed": true,
           "children": [
@@ -792,7 +792,7 @@
           ]
         },
         {
-          "title": "Create BYOC Deployment",
+          "title": "Create a BYOC Deployment",
           "collapsed": true,
           "children": [
             {
@@ -808,7 +808,7 @@
               "path": "deployments/byoc_license"
             },
             {
-              "title": "Create Deployment",
+              "title": "Create a Deployment",
               "path": "create/byoc"
             },
             {

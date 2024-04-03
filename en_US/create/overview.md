@@ -1,4 +1,4 @@
-# Create Deployment
+# Create a Deployment
 
 This section guides you through creating EMQX Platform deployments under different product plans.
 

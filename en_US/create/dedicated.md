@@ -1,10 +1,10 @@
-# Create Dedicated Deployment
+# Create a Dedicated Deployment
 
 EMQX Dedicated Plan offers independent MQTT service clusters with higher connection and Transactions Per Second (TPS) limits. It also supports more advanced features and complex network architectures. This guide uses the Dedicated Plan as an example to walk you through the steps of creating and utilizing the EMQX Platform.
 
 ## Create a Deployment
 
-1. Log in to [EMQX Platform console](https://cloud-intl.emqx.com/console/).
+1. Log in to the [EMQX Platform console](https://cloud-intl.emqx.com/console/).
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
@@ -23,7 +23,7 @@ EMQX Dedicated Plan offers independent MQTT service clusters with higher connect
 
 6. Upon accepting the terms, the deployment will begin. Once the deployment status changes to **Running**, your deployment is successfully created and ready for use.
 
-## View Deployment
+## View Deployment Information
 After the deployment is created, it will appear on the EMQX Platform console home page. Click the Dedicated deployment card to enter the deployment overview page. On the overview page, you can check the real-time status and connection information for your deployment.
 
 
