@@ -74,6 +74,8 @@ jobs:
         cp -r docs-files/en_US/* frontend/docs/en/${DOCS_TYPE}/${VERSION}/
         cp -r docs-files/zh_CN/* frontend/docs/zh/${DOCS_TYPE}/${VERSION}/
         cp docs-files/directory.json frontend/docs/.vitepress/config/directory.json
+        mkdir -p frontend/redoc/
+        cp -r docs-files/redocly/*.json frontend/redoc/
 
     - name: generate version config
       run: |
@@ -86,6 +88,22 @@ jobs:
         cd frontend
         pnpm install
         pnpm build
+
+    - name: build redoc
+      run: |
+        cd frontend
+        yarn global add redoc-cli
+        LANGS=(zh en)
+        for lang in "${LANGS[@]}"; do
+          redoc-cli bundle redoc/dedicated-${lang}.json -t redoc/template-emqx-cloud.hbs \
+            --output docs/.vitepress/dist/${lang}/cloud/${VERSION}/api/dedicated.html \
+            --options.theme.colors.primary.main=#5e4eff \
+            --options.theme.typography.headings.fontFamily='Roboto, sans-serif' \
+            --options.hide-hostname --templateOptions.title "EMQX Dedicated ${VERSION} API Documentation" \
+            --templateOptions.description "EMQX Dedicated ${VERSION} API Documentation" \
+            --templateOptions.version "${VERSION}" \
+            $(if [ "${lang}" == "zh" ]; then echo "--templateOptions.langZH \"zh\""; fi)
+        done
 
     - name: set aws credentials
       uses: aws-actions/configure-aws-credentials@v4
