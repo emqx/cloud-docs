@@ -56,7 +56,7 @@ The following instructions guide you to configure one-way TLS/SSL in [EMQX Cloud
 1. Login to the EMQX Cloud Console.
 2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
     - **TLS/SSL type**: Choose one-way (only the client verifies the server-side certificate).
-    - **Certificate body**: Custom server-side certificate.
+    - **Certificate body**: Custom server-side certificate.(Including certificate chain, which is provided by a third-party organization when issuing the certificate.)
     - **Certificate private key**: Private secret key.
 3. After filling in all the fields, click **Confirm**. On your deployment overview page, you should see the certificate information in **TLS/SSL Config**.
 
@@ -93,7 +93,7 @@ The following instructions guide you to configure two-way TLS/SSL in [EMQX Cloud
 1. Login to the EMQX Cloud Console.
 2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
     - **TLS/SSL type**: Select two-way (client and server verify each other's certificates).
-    - **Certificate body**: Custom server-side certificate.
+    - **Certificate body**: Custom server-side certificate.(Including certificate chain, which is provided by a third-party organization when issuing the certificate.)
     - **Certificate private key**: Private secret key.
     - **Client CA**: When choosing two-way, you need to provide the client CA certificate.
 3. After filling in all the fields, click on **Confirm**. On your deployment overview page, you should see the certificate information in **TLS/SSL Config**.
