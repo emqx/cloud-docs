@@ -4,7 +4,7 @@
 This feature is only available for the Dedicated plan.
 :::
 
-EMQX Dedicated Deployment recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
+EMQX Cloud Dedicated deployment recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
 
 The following table provides an overview of different requirements for certifications in one-way and two-way authentication modes. 
 
@@ -15,13 +15,12 @@ The following table provides an overview of different requirements for certifica
 
 ## Certificate Requirements
 
-- The certificate must specify the encryption algorithm and key size. EMQX Dedicated supports the following algorithms:
+- The certificate must specify the encryption algorithm and key size. EMQX Cloud supports the following algorithms:
 
   - 1024 bit RSA (RSA_1024)
   - 2048 bit RSA (RSA_2048)
 
-- The certificate must be an SSL/TLS X.509 version 3 certificate. It must contain the public key, the fully qualified domain (FQDN) or IP address of the website, and information about the publisher. The certificate can be self-signed by your private key or the private key of the issuing CA. If the certificate is signed by a CA, the certificate chain must be included when importing the certificate.
-
+- Certificate (including certificate chain, if applicable): The EMQX Cloud supports uploading certificates in **x509** format. **Please merge your certificate (.crt or .pem) and any related certificate chain files into one file and upload it**. If your certificate is issued by a certificate authority, it is important to include the certificate chain to ensure that it is correctly recognized.
 - The certificate must be valid. The certificate cannot be imported within **60 days** before the beginning and end of the validity period.
 
 - The certificate, private key and certificate chain must use **PEM encoding**.
@@ -42,14 +41,6 @@ The following table provides an overview of different requirements for certifica
   -----END CERTIFICATE----- 
   ```
 
-  - Certificate chain format
-
-  ```bash
-  -----BEGIN CERTIFICATE-----
-  Base64–encoded certificate
-  -----END CERTIFICATE----- 
-  ```
-
   - Private key format
 
   ```bash
@@ -60,22 +51,19 @@ The following table provides an overview of different requirements for certifica
 
 ## Configure One-Way TLS/SSL
 
-The following instructions guide you to configure one-way TLS/SSL in [EMQX Platform Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [One-Way TLS/SSL Tutorial](https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null) for each step of the setup.
+The following instructions guide you to configure one-way TLS/SSL in [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [One-Way TLS/SSL Tutorial](https://www.youtube.com/embed/kkb1D4lXbFo/?autoplay=1&null) for each step of the setup.
 
-1. Login to the EMQX Platform Console.
+1. Login to the EMQX Cloud Console.
 2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
     - **TLS/SSL type**: Choose one-way (only the client verifies the server-side certificate).
-    - **Certificate body**: Custom server-side certificate.
-    - **Certificate chain**: It is usually provided by a third-party organization when issuing the certificate. If it is missing, you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
+    - **Certificate body**: Custom server-side certificate.(Including certificate chain, which is provided by a third-party organization when issuing the certificate.)
     - **Certificate private key**: Private secret key.
 3. After filling in all the fields, click **Confirm**. On your deployment overview page, you should see the certificate information in **TLS/SSL Config**.
 
 
-![tls](./_assets/tls.png)
-
 ### Test One-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./default_auth.md). You can use [MQTTX Client](https://mqttx.app/) to connect to the deployment and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
 1. In MQTTX Client, create a new connection.
 
@@ -100,23 +88,21 @@ Before testing, make sure that you have created authentication information, refe
 
 ## Configure Two-Way TLS/SSL
 
-The following instructions guide you to configure two-way TLS/SSL in [EMQX Platform Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [Two-Way TLS/SSL Tutorial](https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null) for each step of the setup.
+The following instructions guide you to configure two-way TLS/SSL in [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>) and test the client connection with TLS/SSL configured. You can also watch [Two-Way TLS/SSL Tutorial](https://www.youtube.com/embed/VzygGJXgVI4/?autoplay=1&null) for each step of the setup.
 
-1. Login to the EMQX Platform Console.
+1. Login to the EMQX Cloud Console.
 2. On your deployment **Overview** page, click the **+TLS/SSL configuration** button to configure the certificate. You can upload the file or fill in the certificate contents directly.
     - **TLS/SSL type**: Select two-way (client and server verify each other's certificates).
-    - **Certificate body**: Custom server-side certificate.
-    - **Certificate chain**: It is usually provided by a third-party organization when issuing the certificate. If it is missing you can go to [Certificate Chain Complement](https://myssl.com/chain_download.html) to complete it.
+    - **Certificate body**: Custom server-side certificate.(Including certificate chain, which is provided by a third-party organization when issuing the certificate.)
     - **Certificate private key**: Private secret key.
     - **Client CA**: When choosing two-way, you need to provide the client CA certificate.
 3. After filling in all the fields, click on **Confirm**. On your deployment overview page, you should see the certificate information in **TLS/SSL Config**.
 
-![tls](./_assets/tls_two.png)
 
 
 ### Test Two-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./default_auth.md). You can use [MQTTX Client](https://mqttx.app/) to connect to the deployment and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
 1. In MQTTX Client, create a new connection.
 
@@ -145,7 +131,7 @@ Before testing, make sure that you have created authentication information, refe
 
 Deleting the certificate will disconnect the client from `8883` and `8084`. Make sure that the deletion does not affect your business.
 
-1. Login to the [EMQX Platform Console](<https://cloud-intl.emqx.com/console>).
+1. Login to the [EMQX Cloud Console](<https://cloud-intl.emqx.com/console>).
 2. Click the delete icon for the certificate in the **TLS/SSL Config** section.
 3. Click **OK** in the dialog to complete the deletion.
 
@@ -212,7 +198,7 @@ subjectAltName = @alt_names
 subjectAltName = @alt_names
 
 [alt_names]
-# EMQX Platform deployment connections address
+# EMQX Cloud deployment connections address
 # IP.1 = <IP Connect Address>
 DNS.1 = <Domain Connect Address>
 EOF
