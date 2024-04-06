@@ -63,7 +63,7 @@ The following instructions guide you to configure one-way TLS/SSL in [EMQX Cloud
 
 ### Test One-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Authentication](./auth_overview.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
 1. In MQTTX Client, create a new connection.
 
@@ -102,7 +102,7 @@ The following instructions guide you to configure two-way TLS/SSL in [EMQX Cloud
 
 ### Test Two-Way TLS with MQTTX Client
 
-Before testing, make sure that you have created authentication information, refer to [Certification and Authentication](./auth_dedicated.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
+Before testing, make sure that you have created authentication information, refer to [Authentication](./auth_overview.md). You can use [MQTTX Client](https://mqttx.app/) to connect to EMQX Cloud and test the TLS/SSL configuration. 
 
 1. In MQTTX Client, create a new connection.
 
