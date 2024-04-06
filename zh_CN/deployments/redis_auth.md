@@ -1,145 +1,17 @@
-# Redis 认证/访问控制
+# Redis 认证
 
-EMQX Cloud 除了支持默认的认证鉴权方式，还可以使⽤外部 Redis 数据库作为数据源，存储⼤量数据，同时⽅便与外部设备管理系统集成。
+作为密码认证方式的一种，EMQX Cloud 支持通过集成 Redis 进行密码认证。EMQX 支持三种 Redis 部署模式：单节点、Redis Sentinel、Redis Cluster，本节将介绍如何进行相关配置。
 
-## 认证链
+## 数据结构与查询指令
+Redis 认证器支持使用 [Redis hashes](https://redis.io/docs/manual/data-types/#hashes) 存储认证数据，用户需要提供一个查询指令模板，且确保查询结果包含以下字段：
 
-若同时启用默认认证模块，EMQX Cloud 将按照[默认认证](./auth_dedicated.md) -> Redis 认证的顺序进行链式认证：
-
-* 一旦认证成功，终止认证链并允许客户端接入
-* 一旦认证失败，终止认证链并禁止客户端接入
-
-![auth_chain](./_assets/redis_auth_chain.png)
-
-## ACL 鉴权链
-
-若同时启用默认 ACL 模块，EMQX Cloud 将按照[默认认证数据库 ACL](./acl_dedicated.md) ->  Redis ACL ->  系统默认设置(允许所有订阅/发布) 的顺序进行链式鉴权：
-
-- 一旦通过鉴权，终止链并允许客户端通过验证
-- 一旦鉴权失败，终止链并禁止客户端通过验证
-- 直到最后一个 ACL 模块仍未通过鉴权，根据系统默认设置来验证，即 **允许所有订阅/发布**
-
-> 同时只启用一个 ACL 插件可以提高客户端 ACL 检查性能。
-
-![acl_chain](./_assets/redis_acl_chain.png)
-
-## Redis 配置
-
-在你的云服务器中，创建一个 Redis 服务。为了方便演示，这里使用 Docker 快速搭建。
-
-1. 获取 Redis 镜像
-
-    ```bash
-    docker pull redis:latest
-    ```
-
-2. 运行 Redis 容器
-
-    ```bash
-    docker run -itd --name redis -p 6379:6379 redis:latest
-    ```
-
-## 认证/访问控制配置
-
-1. 在 EMQX Cloud 部署左侧菜单栏点击 `认证鉴权` - `外部认证授权`，选择 Redis 认证/访问控制。
-
-    ![redis_auth](./_assets/redis_auth.png)
-
-2. 点击`配置认证`，进入 Redis 认证/访问控制页面，填写信息，新建认证。
-
-    ::: tip
-      * 如果当前部署为基础版，服务器地址填写公网地址。
-      * 如果当前部署为专业版，需创建 [VPC 对等连接](./vpc_peering.md)，服务器地址填写内网地址。
-      * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
-      * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
-    :::
-
-    ![redis_auth](./_assets/redis_auth_info.png)
-
-3. 由于 EMQX Cloud ACL 默认是`黑名单模式`，如需开启 Redis ACL 白名单，需要提交[工单](../feature/tickets.md#工单联系)后台开启。
-
-### 权限认证原理
-
-进行身份认证时，EMQX Cloud 将使用当前客户端信息填充并执行用户配置的认证查询命令，查询出该客户端在 Redis 中的认证数据。
-
-```sql
-HMGET mqtt_user:%u password
-```
-
-可以在认证 SQL 中使用以下占位符，执行时 EMQX Cloud 将自动填充为客户端信息：:
-
-* %u：用户名
-* %c：clientid
-
-你可以根据业务需要调整认证查询命令，使用任意 [Redis 支持的命令](http://redisdoc.com/index.html)，但是任何情况下认证查询命令需要满足以下条件：
-
-1. 查询结果中第一个数据必须为 password，EMQX Cloud 使用该字段与客户端密码比对
-
-2. 如果启用了加盐配置，查询结果中第二个数据必须是 salt 字段，EMQX Cloud 使用该字段作为 salt（盐）值
-
-#### 权限认证默认数据结构
-
-Redis 认证默认配置下使用哈希表存储认证数据，使用 mqtt_user: 作为 Redis 键前缀，数据结构如下：
-
-```sql
-redis> hgetall mqtt_user:emqx
-password public
-```
-
-默认配置示例数据如下：
-
-```sql
-HMSET mqtt_user:emqx password public
-```
-
-启用 Redis 认证后，你可以通过用户名： emqx，密码：public 连接。
-
-### 访问控制原理
-
-进行 topic 订阅、发布访问控制鉴权时，EMQX Cloud 将使用当前客户端信息填充并执行用户配置的访问控制认证 SQL，从 Redis 中查找跟客户端相关的数据，然后进行鉴权，默认的查询 SQL 如下：
-
-```sql
-HGETALL mqtt_acl:%u
-```
-
-你可以在 ACL 查询命令中使用以下占位符，执行时 EMQX 将自动填充为客户端信息：
-
-* %u：用户名
-* %c：clientid
-
-你可以根据业务需要调整 ACL 查询命令，但是任何情况下 ACL 查询命令需要满足以下条件：
-
-1. 哈希中使用 topic 作为键，access 作为值
-
-#### 访问控制默认数据结构
-
-ACL 规则数据格式和结构示例如下：
-
-* username：连接客户端的用户名
-* clientid：连接客户端的 clientid
-* topic：订阅/发布的主题
-* access：允许的操作：订阅（1），发布（2），订阅发布都可以（3）
-
-```sql
-## 格式
-HSET mqtt_acl:[username clientid][topic] [access]
-
-## 结构
-redis> hgetall mqtt_acl:emqx
-testtopic/1 1
-```
-
-默认配置示例数据如下：
-
-```sql
-HSET mqtt_acl:emqx # 1
-
-HSET mqtt_acl:test topic/2 2
-```
+- `password_hash`: 必需，数据库中的明文或散列密码字段
+- `salt`: 可选，为空或不存在时视为空盐（salt = ""）
+- `is_superuser`: 可选，标记当前客户端是否为超级用户，默认为 false
 
 ### 加密规则
 
-EMQX Cloud 多数外部认证均可以启用哈希方法，数据源中仅保存密码密文，保证数据安全。启用哈希方法时，用户可以为每个客户端都指定一个 salt（盐）并配置加盐规则，数据库中存储的密码是按照加盐规则与哈希方法处理后的密文。
+外部认证均可以启用哈希方法，数据源中仅保存密码密文，保证数据安全。启用哈希方法时，用户可以为每个客户端都指定一个 salt（盐）并配置加盐规则，数据库中存储的密码是按照加盐规则与哈希方法处理后的密文。
 
 > 可参考：[加盐规则与哈希方法](https://www.emqx.io/docs/zh/v4.3/advanced/auth.html#%E5%AF%86%E7%A0%81%E5%8A%A0%E7%9B%90%E8%A7%84%E5%88%99%E4%B8%8E%E5%93%88%E5%B8%8C%E6%96%B9%E6%B3%95)。
 
@@ -160,3 +32,33 @@ sha256,salt
 ## macfun: md4, md5, ripemd160, sha, sha224, sha256, sha384, sha512
 pbkdf2, sha256, 1000, 20
 ```
+
+
+## Redis 配置
+
+在部署中点击 **访问控制** - **扩展认证**，点击 **Redis 配置认证**，新建认证。
+
+- 部署模式：选择 Redis 数据库的部署模式，可选值：单节点、Sentinel、Cluster
+- 服务（列表）：填入 Redis 服务器地址 (host:port) ；当部署模式选为 Sentinel 或 Cluster，您需在此提供所有相关 Redis 服务器的地址，不同地址之间以 , 分隔，格式为 host1:port1,host2:port2,...
+- Sentinel 名字：指定 Redis Sentinel 配置需要的主服务器名称，仅需在部署模式设置为 Sentinel 时设置。
+- 数据库：整数，用于指定 Redis 数据库的 Index。
+- 密码（可选）：填入认证密码。
+- TLS 配置：配置是否启用 TLS。
+- Pool size（可选）：填入一个整数用于指定从 EMQX 节点到 Redis 数据库的并发连接数；默认值：8。
+- 密码加密方式：选择存储密码时使用的散列算法，如 plain、md5、sha、bcrypt、pbkdf2 等。
+- 选择 plain、md5、sha、sha256 或 sha512 算法，需配置：
+    - 加盐方式：用于指定盐和密码的组合方式，除需将访问凭据从外部存储迁移到 EMQX 内置数据库中外，一般不需要更改此选项；可选值：suffix（在密码尾部加盐）、prefix（在密码头部加盐）、disable（不启用）。注意：如选择 plain，加盐方式应设为 disable。
+- 选择 bcrypt 算法，需配置:
+    - Salt Rounds：指定散列需要的计算次数（2^Salt Rounds），也称成本因子。默认值：10，可选值：4～31；数值越高，加密的安全性越高，因此建议采用较大的值，但相应的用户验证的耗时也会增加，您可根据业务需求进行配置。
+- 选择 pkbdf2 算法，需配置：
+    - 伪随机函数：指定生成密钥使用的散列函数，如 sha256 等。
+    - 迭代次数：指定散列次数，默认值：4096。
+    - 密钥长度（可选）：指定希望得到的密钥长度。如不指定，密钥长度将由伪随机函数确定。
+- 命令：Redis 查询命令
+
+::: tip
+* 如果当前部署为专有版，需创建 [VPC 对等连接](./vpc_peering.md)，服务器地址填写内网地址。
+* 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
+
+若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
+:::

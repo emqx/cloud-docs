@@ -1,9 +1,6 @@
 # 部署告警
 
-EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。EMQX Cloud 提供如下告警事件：
-
-![alert_integrations](./_assets/alerts_info.png)
-
+EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。
 
 
 ## 告警事件
