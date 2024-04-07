@@ -4,7 +4,7 @@
 
 ## 使用 Serverless 部署的免费额度
 
-在 EMQX Platform 控制台创建 Serverless 部署的时候，在配置选择中，保持消费限额为默认值 0。这样您就可以创建一台每个月有 100 万连接分钟数和 1 GB 流量的免费部署。具体的创建流程可以参考[创建 Serverless 部署](../create/serverless.md)。
+在 EMQX Cloud 控制台创建 Serverless 部署的时候，在配置选择中，保持消费限额为默认值 0。这样您就可以创建一台每个月有 100 万连接分钟数和 1 GB 流量的免费部署。具体的创建流程可以参考[创建 Serverless 部署](../create/serverless.md)。
 
 ### 常见问题
 **Q：在哪里可以看到额度的使用情况？** <br>

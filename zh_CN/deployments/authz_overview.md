@@ -9,7 +9,7 @@
 
 ## [默认授权](./default_auth.md)
 
-EMQX Platform 提供默认认证方式，将基于内置数据库存储规则进行授权检查。
+EMQX Cloud 提供默认认证方式，将基于内置数据库存储规则进行授权检查。
 
 ## [扩展授权](./custom_auth.md)
 除了基于内置数据库的默认授权，还支持通过与多类后端数据库的集成提供授权认证，包括 MySQL、PostgreSQL、Redis 和 HTTP。

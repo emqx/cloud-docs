@@ -1,21 +1,21 @@
 # 将 MQTT 数据传输到 RabbitMQ
 
-作为一款广泛使用的开源消息代理，[RabbitMQ](https://www.rabbitmq.com/) 应用了高级消息队列协议（AMQP），为分布式系统之间的消息传递提供了一个强大而可扩展的平台。EMQX Platform 支持与 RabbitMQ 的数据集成，能够让您将 MQTT 消息和事件转发至 RabbitMQ。
+作为一款广泛使用的开源消息代理，[RabbitMQ](https://www.rabbitmq.com/) 应用了高级消息队列协议（AMQP），为分布式系统之间的消息传递提供了一个强大而可扩展的平台。EMQX Cloud 支持与 RabbitMQ 的数据集成，能够让您将 MQTT 消息和事件转发至 RabbitMQ。
 
-本页面提供了 EMQX Platform 与 RabbitMQ 数据集成的全面介绍，并提供了创建规则和动作的实用指导。
+本页面提供了 EMQX Cloud 与 RabbitMQ 数据集成的全面介绍，并提供了创建规则和动作的实用指导。
 
 ## 工作原理
 
-RabbitMQ 数据集成是 EMQX Platform 中的开箱即用功能，结合了 EMQX Platform 的设备接入、消息传输能力与 RabbitMQ 强大的消息队列处理能力。通过内置的[规则引擎](./rules.md)组件，该集成简化了从 EMQX Platform 到 RabbitMQ 的数据摄取过程，无需复杂编码。
+RabbitMQ 数据集成是 EMQX Cloud 中的开箱即用功能，结合了 EMQX Cloud 的设备接入、消息传输能力与 RabbitMQ 强大的消息队列处理能力。通过内置的[规则引擎](./rules.md)组件，该集成简化了从 EMQX Cloud 到 RabbitMQ 的数据摄取过程，无需复杂编码。
 
-下图展示了 EMQX Platform 与 RabbitMQ 之间数据集成的典型架构:
+下图展示了 EMQX Cloud 与 RabbitMQ 之间数据集成的典型架构:
 
-![EMQX Platform-RabbitMQ 集成](./_assets/data_integration_rabbitmq.jpg)
+![EMQX Cloud-RabbitMQ 集成](./_assets/data_integration_rabbitmq.jpg)
 
 MQTT 数据摄取到 RabbitMQ 的工作流程如下：
 
-1. **消息发布和接收**：工业物联网设备通过 MQTT 协议与 EMQX Platform 建立成功连接，并向 EMQX Platform 发布实时 MQTT 数据。EMQX Platform 收到这些消息后，将启动其规则引擎中的匹配过程。
-2. **消息数据处理**：消息到达后，它将通过规则引擎进行处理，然后由 EMQX Platform 中定义的规则处理。根据预定义的标准，规则将决定哪些消息需要路由到 RabbitMQ。如果任何规则指定了载荷转换，则将应用这些转换，例如转换数据格式、过滤特定信息或用额外的上下文丰富载荷。
+1. **消息发布和接收**：工业物联网设备通过 MQTT 协议与 EMQX Cloud 建立成功连接，并向 EMQX Cloud 发布实时 MQTT 数据。EMQX Cloud 收到这些消息后，将启动其规则引擎中的匹配过程。
+2. **消息数据处理**：消息到达后，它将通过规则引擎进行处理，然后由 EMQX Cloud 中定义的规则处理。根据预定义的标准，规则将决定哪些消息需要路由到 RabbitMQ。如果任何规则指定了载荷转换，则将应用这些转换，例如转换数据格式、过滤特定信息或用额外的上下文丰富载荷。
 3. **消息传入到 RabbitMQ**：规则处理完消息后，它将触发一个动作，将消息转发到 RabbitMQ。处理过的消息将无缝写入 RabbitMQ。
 4. **数据持久化和利用**：RabbitMQ 将消息存储在队列中，并将它们传递给适当的消费者。消息可以被其他应用程序或服务消费以进行进一步处理，如数据分析、可视化和存储。
 
@@ -23,15 +23,15 @@ MQTT 数据摄取到 RabbitMQ 的工作流程如下：
 
 RabbitMQ 数据集成为您的业务带来以下特性和优势：
 
-- **可靠的物联网数据消息传递**：EMQX Platform 确保从设备到云的可靠连接和消息传递，而 RabbitMQ 负责消息的持久化和在不同服务之间的可靠传递，确保了各个流程中数据的可靠性。
-- **MQTT 消息转换**：使用规则引擎，EMQX Platform 可以过滤和转换 MQTT 消息。在发送到 RabbitMQ 之前，消息可以经过数据提取、过滤、丰富和转换。
+- **可靠的物联网数据消息传递**：EMQX Cloud 确保从设备到云的可靠连接和消息传递，而 RabbitMQ 负责消息的持久化和在不同服务之间的可靠传递，确保了各个流程中数据的可靠性。
+- **MQTT 消息转换**：使用规则引擎，EMQX Cloud 可以过滤和转换 MQTT 消息。在发送到 RabbitMQ 之前，消息可以经过数据提取、过滤、丰富和转换。
 - **灵活的消息映射**：RabbitMQ 数据桥支持灵活的将 MQTT 主题映射到 RabbitMQ Routing Key 和 Exchange，允许 MQTT 和 RabbitMQ 之间的无缝集成。
-- **高可用性和集群支持**：EMQX Platform 和 RabbitMQ 都支持构建高可用的消息代理集群，确保即使在节点失败的情况下系统也能继续提供服务。利用集群能力还提供了出色的可扩展性。
+- **高可用性和集群支持**：EMQX Cloud 和 RabbitMQ 都支持构建高可用的消息代理集群，确保即使在节点失败的情况下系统也能继续提供服务。利用集群能力还提供了出色的可扩展性。
 - **高吞吐量场景中的处理能力**：RabbitMQ 数据集成支持同步和异步写入模式，允许根据不同场景在延迟和吞吐量之间灵活平衡。
 
 ## 准备工作
 
-本节介绍了在 EMQX Platform 中创建 RabbitMQ 数据集成之前需要做的准备工作，包括启动 RabbitMQ 服务器并创建 RabbitMQ test exchange 和 queue。
+本节介绍了在 EMQX Cloud 中创建 RabbitMQ 数据集成之前需要做的准备工作，包括启动 RabbitMQ 服务器并创建 RabbitMQ test exchange 和 queue。
 
 ### 前置准备
 
@@ -129,7 +129,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.11-ma
 
 4. 从**使用连接器**下拉框中选择您之前创建的连接器。
 
-5. 完成消息从 EMQX Platform 到发布到 RabbitMQ 的配置：
+5. 完成消息从 EMQX Cloud 到发布到 RabbitMQ 的配置：
 
    - **交换机**: 输入之前创建的 `test_exchange`， 消息将被发送到该交换机。
    - **路由键**: 输入之前创建的 `test_routing_key`，用于将消息路由到 RabbitMQ 交换中的正确队列。
@@ -172,7 +172,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.11-ma
 
 推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
 
-1. 使用 MQTTX 连接到 EMQX Platform 部署，并向以下 Topic 发送消息。
+1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
 
    - topic: `temp_hum/emqx`
 

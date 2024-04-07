@@ -1,20 +1,20 @@
 # 将 MQTT 数据写入到 HStreamDB
 
-[HStreamDB](https://hstream.io/) 是一个开源的流数据平台，使您能够在一个统一的平台中高效地摄取、存储、处理和分发所有实时消息、事件和其他数据流。通过 EMQX Platform 与 HStreamDB 的集成，您可以将 MQTT 消息和客户端事件保存到 HStreamDB 中，实现大规模物联网数据的采集、传输与存储，并使用标准 SQL 和物化视图对数据流进行实时处理以及监测和分析。
+[HStreamDB](https://hstream.io/) 是一个开源的流数据平台，使您能够在一个统一的平台中高效地摄取、存储、处理和分发所有实时消息、事件和其他数据流。通过 EMQX Cloud 与 HStreamDB 的集成，您可以将 MQTT 消息和客户端事件保存到 HStreamDB 中，实现大规模物联网数据的采集、传输与存储，并使用标准 SQL 和物化视图对数据流进行实时处理以及监测和分析。
 
-本页提供了 EMQX Platform 与 HStreamDB 的数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
+本页提供了 EMQX Cloud 与 HStreamDB 的数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
 
 ## 工作原理
 
-HStreamDB 数据集成是 EMQX Platform 的即开即用功能，结合了 EMQX Platform 的设备连接和消息传输能力以及 HStreamDB 强大的数据存储和处理能力。内置的[规则引擎](./rules.md)组件简化了两个平台之间的数据流和处理过程。
+HStreamDB 数据集成是 EMQX Cloud 的即开即用功能，结合了 EMQX Cloud 的设备连接和消息传输能力以及 HStreamDB 强大的数据存储和处理能力。内置的[规则引擎](./rules.md)组件简化了两个平台之间的数据流和处理过程。
 
 下图展示了 EMQX 和 HStreamDB 之间的数据集成的典型架构：
 
-![EMQX Platform HStreamDB 集成](./_assets/data_integration_hstreamdb.png)
+![EMQX Cloud HStreamDB 集成](./_assets/data_integration_hstreamdb.png)
 
-EMQX Platform 通过规则引擎和配置的规则将 MQTT 数据转发到 Apache HStreamDB，整个过程如下：
+EMQX Cloud 通过规则引擎和配置的规则将 MQTT 数据转发到 Apache HStreamDB，整个过程如下：
 
-1. **消息发布和接收**：物联网设备通过 MQTT 协议建立成功连接，随后发布遥测和状态数据到特定主题。当 EMQX Platform 接收到这些消息时，它将在其规则引擎中启动匹配过程。
+1. **消息发布和接收**：物联网设备通过 MQTT 协议建立成功连接，随后发布遥测和状态数据到特定主题。当 EMQX Cloud 接收到这些消息时，它将在其规则引擎中启动匹配过程。
 2. **规则引擎处理消息**：使用内置的规则引擎，可以根据主题匹配处理来自特定来源的 MQTT 消息。规则引擎匹配相应规则并处理消息，例如数据格式转换、过滤特定信息或用上下文信息丰富消息。
 3. **数据流入 HStreamDB**：规则触发将消息转发到 HStreamDB 的动作，可以轻松配置数据到 HStreamDB 流名称、分区键和记录，便于后续的数据处理和分析。
 
@@ -28,8 +28,8 @@ EMQX Platform 通过规则引擎和配置的规则将 MQTT 数据转发到 Apach
 
 与 HStreamDB 的数据集成为您的业务带来以下特性和优势：
 
-- **可靠的物联网数据消息传递**：EMQX Platform 能够可靠地批量发送 MQTT 消息到 HStreamDB，使物联网设备与 HStreamDB 和应用系统集成。
-- **MQTT 消息转换**：使用规则引擎，EMQX Platform 可以过滤和转换 MQTT 消息。在发送到 HStreamDB 之前，消息可以经过数据提取、过滤、丰富和转换。
+- **可靠的物联网数据消息传递**：EMQX Cloud 能够可靠地批量发送 MQTT 消息到 HStreamDB，使物联网设备与 HStreamDB 和应用系统集成。
+- **MQTT 消息转换**：使用规则引擎，EMQX Cloud 可以过滤和转换 MQTT 消息。在发送到 HStreamDB 之前，消息可以经过数据提取、过滤、丰富和转换。
 - **大规模数据流存储**：HStreamDB 支持在专门设计的分布式、容错的日志存储集群中可靠地存储数百万数据流，并在需要的时候重放或推送实时数据流的更新到应用中。能够与 EMQX 消息模型完美结合，实现大规模物联网数据采集传输与存储。
 - **集群和可扩展性**：EMQX 和 HStreamDB 采用云原生架构构建，支持集群在线伸缩、动态扩缩容，随着业务增长灵活地水平扩展以满足不断扩大的需求。
 - **灵活的处理能力**：在 HStreamDB 可以使用熟悉的 SQL 来过滤、转换、聚合以及连接多个数据流，也支持使用标准 SQL 和物化视图进行数据流实时处理以及监测和分析，获取实时数据洞察。
@@ -37,7 +37,7 @@ EMQX Platform 通过规则引擎和配置的规则将 MQTT 数据转发到 Apach
 
 ## 准备工作
 
-本节介绍了在 EMQX Platform 中创建 HStreamDB 数据集成之前需要做的准备工作。
+本节介绍了在 EMQX Cloud 中创建 HStreamDB 数据集成之前需要做的准备工作。
 
 以下小节描述如何使用 Docker 镜像在 Linux/MacOS 安装启动 HStreamDB，因此请确保 Docker 已安装并尽可能使用 Docker Compose v2。关于其他 HStreamDB 的安装方式及 HStreamDB Platform，请参阅[使用 Docker-Compose 快速开始](https://docs.hstream.io/zh/start/quickstart-with-docker.html)以及[开始使用 HStream Platform](https://docs.hstream.io/zh/start/try-out-hstream-platform.html)。
 
@@ -533,7 +533,7 @@ root@9aa62aef0910:/# hstream --tls-ca /data/server/certs/root_ca.crt stream list
 
    :::
 
-3. 点击**下一步**开始创建动作，为规则在被触发的情况下指定一个动作。通过这个动作，EMQX Platform 会将经规则处理的数据发送到 HStreamDB。
+3. 点击**下一步**开始创建动作，为规则在被触发的情况下指定一个动作。通过这个动作，EMQX Cloud 会将经规则处理的数据发送到 HStreamDB。
 
 4. 从**使用连接器**下拉框中选择您之前创建的连接器。
 

@@ -1,12 +1,12 @@
 # API
 
-EMQX Platform API 遵循 RESTful 定义，为您提供编程访问 EMQX Platform 中管理部署的能力。通过 API，您可以对认证、客户端、主题等进行管理，并可以获取到更多的指标信息。
+EMQX Cloud API 遵循 RESTful 定义，为您提供编程访问 EMQX Cloud 中管理部署的能力。通过 API，您可以对认证、客户端、主题等进行管理，并可以获取到更多的指标信息。
 
 API 具有以下特征：
 
 - JSON 格式：所有响应内容均以 JSON 格式呈现。
 - 仅支持 HTTPS：您只能通过 HTTPS 访问 API，确保所有通过网络发送的数据都使用 TLS 加密。
-- 基于密钥的访问和摘要认证。在访问 EMQX Platform API 之前，您必须生成 API 密钥。所有请求都通过 HTTP 摘要认证进行身份验证，并确保 API 密钥永远不会通过网络发送。
+- 基于密钥的访问和摘要认证。在访问 EMQX Cloud API 之前，您必须生成 API 密钥。所有请求都通过 HTTP 摘要认证进行身份验证，并确保 API 密钥永远不会通过网络发送。
 
 ## 如何调用 API
 
@@ -67,7 +67,7 @@ HTTP API 使用 [Basic 认证](https://zh.m.wikipedia.org/zh-hans/HTTP%E5%9F%BA%
 
 ## API 版本说明
 
-基于 EMQX Platform 使用的 EMQX 内核版本的不同，API 也分为基于 EMQX 4.x 和 EMQX 5.x 版本。请选择您开通的部署类型对应的 API 版本。
+基于 EMQX Cloud 使用的 EMQX 内核版本的不同，API 也分为基于 EMQX 4.x 和 EMQX 5.x 版本。请选择您开通的部署类型对应的 API 版本。
 
 - [Serverless API](./serverless.md)
 - [专有版 API](https://docs.emqx.com/zh/cloud/latest/api/dedicated)

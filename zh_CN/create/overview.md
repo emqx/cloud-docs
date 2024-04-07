@@ -1,6 +1,6 @@
 # 创建部署
 
-在本节中我们将引导您创建不同版本的 EMQX Platform 部署。
+在本节中我们将引导您创建不同版本的 EMQX Cloud 部署。
 
 ## [创建 EMQX Serverless 部署](./serverless.md)
 创建一个 EMQX Serverless 部署并且通过 MQTTX 工具连接到部署。

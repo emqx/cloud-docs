@@ -2,15 +2,15 @@
 
 [Apache Pulsar](https://pulsar.apache.org/) 是一款流行的开源分布式事件流平台，专为处理实时数据流在应用程序和系统之间的传输而设计。Apache Pulsar 具有更高的可伸缩性，并提供了更快的吞吐量和更低的延迟。在物联网应用中，设备生成的数据通常通过轻量级的 MQTT 协议进行传输。通过与 Aphache Pulsar 的数据集成，用户可以轻松地将 MQTT 数据传入 Apache Pulsar，并与其他数据系统连接，实现对物联网设备生成的数据进行实时处理、存储和分析。
 
-本页详细介绍了 EMQX Platform 与 Apache Pulsar 的数据集成并提供了实用的规则和 Sink 创建指导。
+本页详细介绍了 EMQX Cloud 与 Apache Pulsar 的数据集成并提供了实用的规则和 Sink 创建指导。
 
 ## 工作原理
 
 Apache Pulsar 数据集成是 EMQX 的开箱即用功能，结合了 EMQX 的设备接入、消息传输能力与 Pulsar 的强大数据处理能力。借助内置的规则引擎组件，数据流传输和处理过程在两个平台之间更加简化。这意味着您可以轻松地将 MQTT 数据传输到 Pulsar，并利用 Pulsar 的强大功能进行数据处理，而无需额外的开发工作，使得物联网数据的管理和利用变得更加高效和方便。
 
-![EMQX Platform-Pulsar 集成](./_assets/data_integration_pulsar.jpg)
+![EMQX Cloud-Pulsar 集成](./_assets/data_integration_pulsar.jpg)
 
-EMQX Platform 通过规则引擎将 MQTT 数据转发至 Apache Pulsar，其完整流程如下：
+EMQX Cloud 通过规则引擎将 MQTT 数据转发至 Apache Pulsar，其完整流程如下：
 
 1. **设备消息发布与接收**：物联网设备通过 MQTT 协议连接成功后向特定的主题发布遥测和状态数据，EMQX 接收到消息后将在规则引擎中进行比对。
 2. **规则引擎处理消息**：通过内置的规则引擎，可以根据主题匹配处理特定来源的 MQTT 消息。规则引擎会匹配对应的规则，并对消息进行处理，例如转换数据格式、过滤掉特定信息或使用上下文信息丰富消息。
@@ -25,17 +25,17 @@ MQTT 消息数据写入到 Apache Pulsar 后，您可以进行灵活的应用开
 
 ## 特性与优势
 
-在 EMQX Platform 中使用 Pulsar 数据集成能够为您的业务带来以下特性与优势：
+在 EMQX Cloud 中使用 Pulsar 数据集成能够为您的业务带来以下特性与优势：
 
-- **可靠的物联网数据消息传递**：EMQX Platform 可以将 MQTT 消息可靠地批量发送到 Pulsar，实现物联网设备到 Pulsar 以及应用系统的集成。
-- **MQTT 消息转换**：EMQX Platform 通过规则引擎可以对 MQTT 消息进行过滤和转换，消息可以在发送到 Pulsar 之前进行数据提取、过滤、丰富和转换。
+- **可靠的物联网数据消息传递**：EMQX Cloud 可以将 MQTT 消息可靠地批量发送到 Pulsar，实现物联网设备到 Pulsar 以及应用系统的集成。
+- **MQTT 消息转换**：EMQX Cloud 通过规则引擎可以对 MQTT 消息进行过滤和转换，消息可以在发送到 Pulsar 之前进行数据提取、过滤、丰富和转换。
 - **灵活的主题映射**：Pulsar 支持将 MQTT 主题灵活映射到 Pulsar 主题，允许轻松配置数据到 Pulsar 消息的键（Key）和值（Value）。
 - **灵活的分区选择能力**：Pulsar 可以根据 MQTT 主题或客户端，按照不同的策略选择 Pulsar 分区，更灵活的地组织和标识数据。
 - **高吞吐量场景下的处理能力**：Pulsar 支持同步与异步不同的写入模式，可以根据不同场景实现延迟和吞吐量之间的灵活平衡。
 
 ## 准备工作
 
-本节介绍了在 EMQX Platform 中创建 Pulsar 数据集成之前需要做的准备工作，包括安装 Pulsar 服务器和创建 Pulsar 主题。
+本节介绍了在 EMQX Cloud 中创建 Pulsar 数据集成之前需要做的准备工作，包括安装 Pulsar 服务器和创建 Pulsar 主题。
 
 ### 前置准备
 
@@ -105,7 +105,7 @@ docker exec -it pulsar bin/pulsar-admin topics create-partitioned-topic persiste
 
 4. 从**使用连接器**下拉框中选择您之前创建的连接器。
 
-5. 完成消息从 EMQX Platform 到发布到 Pulsar 的配置：
+5. 完成消息从 EMQX Cloud 到发布到 Pulsar 的配置：
 
    - **Pulsar 主题名称**：输入 `persistent://public/default/my-topic`，即您之前创建的 Pulsar 主题。注意：这里不支持变量。
    - **分区选择策略**：选择生产者将消息分派到 Pulsar 分区的方式：`random`、`roundrobin` 或 `Key_dispatch`。
@@ -123,7 +123,7 @@ docker exec -it pulsar bin/pulsar-admin topics create-partitioned-topic persiste
 
 推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
 
-1. 使用 MQTTX 连接到 EMQX Platform 部署，并向以下 Topic 发送消息。
+1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
 
    - topic: `temp_hum/emqx`
 

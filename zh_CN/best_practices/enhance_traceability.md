@@ -1,8 +1,8 @@
 # 使用 EMQX 事件主题和 TimescaleDB 集成追踪消息延迟
 
-EMQX Platform 的消息收集和传输能力可以充分利用[事件主题](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-events-and-fields.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BA%8B%E4%BB%B6)功能，以实现整个传输过程中的全面端到端消息监控。这一能力使用户能够生成详细的日志，以跟踪消息从发布者的起点，经过 EMQX Platform，到达订阅者的终点。全面的监控涵盖了各种场景，允许精确检测任何消息延迟。此外，用户可以灵活地通过 EMQX Platform 的数据集成功能，轻松将关键监控数据传输到外部数据库或消息队列。
+EMQX Cloud 的消息收集和传输能力可以充分利用[事件主题](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-events-and-fields.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BA%8B%E4%BB%B6)功能，以实现整个传输过程中的全面端到端消息监控。这一能力使用户能够生成详细的日志，以跟踪消息从发布者的起点，经过 EMQX Cloud，到达订阅者的终点。全面的监控涵盖了各种场景，允许精确检测任何消息延迟。此外，用户可以灵活地通过 EMQX Cloud 的数据集成功能，轻松将关键监控数据传输到外部数据库或消息队列。
 
-本指南演示了一个端到端消息追踪系统的设置，重点使用 Timescale 数据库作为示例，介绍了如何使用 EMQX Platform 与 TimescaleDB 的数据集成，来观察整个传输过程中，从发布客户端到订阅客户端的 MQTT 消息延迟。
+本指南演示了一个端到端消息追踪系统的设置，重点使用 Timescale 数据库作为示例，介绍了如何使用 EMQX Cloud 与 TimescaleDB 的数据集成，来观察整个传输过程中，从发布客户端到订阅客户端的 MQTT 消息延迟。
 
 ## 前置准备
 
@@ -80,7 +80,7 @@ EMQX Platform 的消息收集和传输能力可以充分利用[事件主题](htt
    CREATE INDEX IF NOT EXISTS "emqx_mqtt_message_traces_pub_clientid_event_at_idx" O
    ```
 
-## 在 EMQX Platform 中配置 TimescaleDB 数据集成
+## 在 EMQX Cloud 中配置 TimescaleDB 数据集成
 
 本节演示如何创建与 TimescaleDB 的数据集成，以将客户端的消息追踪转发到 TimescaleDB。
 
@@ -307,7 +307,7 @@ EMQX Platform 的消息收集和传输能力可以充分利用[事件主题](htt
 
 ## 查看消息延迟
 
-本节提供了一些 SQL 查询语句，可以帮助从 TimescaleDB 检索信息，例如 EMQX Platform 平台上所有消息的延迟，包括从发布者到服务器，服务器内部以及从服务器到订阅者。
+本节提供了一些 SQL 查询语句，可以帮助从 TimescaleDB 检索信息，例如 EMQX Cloud 平台上所有消息的延迟，包括从发布者到服务器，服务器内部以及从服务器到订阅者。
 
 ### 如何计算延迟
 

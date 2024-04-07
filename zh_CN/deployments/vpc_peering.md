@@ -20,7 +20,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 
 ### 创建对等连接
 
-1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，可获取`接收端账号 ID、接收端实例`。
+1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 `+VPC 对等连接` 按钮，可获取`接收端账号 ID、接收端实例`。
 
     ![cloud_vpc_peering_info](./_assets/cloud_vpc_peering.png)
 
@@ -32,12 +32,12 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
   
     ![aliyun_create_vpc_peering](./_assets/ali_vpc_peering_create.png)
 
-4. 回到 EMQX Platform 控制台，点击`完成配置进入下一步`，需填入`发起端实例`，该实例可在阿里云控制面板找到，填写完以后点击`完成并配置路由`。
+4. 回到 EMQX Cloud 控制台，点击`完成配置进入下一步`，需填入`发起端实例`，该实例可在阿里云控制面板找到，填写完以后点击`完成并配置路由`。
 
     ![aliyun_create_vpc_peering](./_assets/ali_vpc_peering_instance.png)
     ![cloud_vpc_peering_info](./_assets/cloud_vpc_peering_instance_info.png)
 
-5. 在 EMQX Platform 控制台获取到目标网段，回到您的阿里云控制面板的专有网络 - VPC 对等连接，点击配置路由，选择路由表，找到`自定义路由条目`，点击添加路由条目，填入 EMQX Cloud VPC 网段，选择下一跳类型为对等连接。
+5. 在 EMQX Cloud 控制台获取到目标网段，回到您的阿里云控制面板的专有网络 - VPC 对等连接，点击配置路由，选择路由表，找到`自定义路由条目`，点击添加路由条目，填入 EMQX Cloud VPC 网段，选择下一跳类型为对等连接。
 
     ![cloud_vpc_peering_info](./_assets/cloud_vpc_network_segments.png)
     ![aliyun_create_vpc_peering_3](./_assets/ali_vpc_peering_route.png)

@@ -1,13 +1,13 @@
 # 数据集成 + Redis 实时获取主题下订阅的客户端
 
 ::: warning
-该功能在基础版中不可用
+该功能在基础版中不可用。
 :::
 
-在本文中我们将使用 EMQX Platform 数据集成保存 topic 和客户端的订阅关系到 Redis，可以实时获取主题下订阅的客户端列表。
+在本文中我们将使用 EMQX Cloud 数据集成保存 topic 和客户端的订阅关系到 Redis，可以实时获取主题下订阅的客户端列表。
 
 在开始之前，您需要完成以下操作：
-* 已经在 EMQX Platform 上创建部署(EMQX 集群)。
+* 已经在 EMQX Cloud 上创建部署(EMQX 集群)。
 * 对于专业版部署用户：请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 * 对于 BYOC 部署用户：请首先为 BYOC 部署所在的 VPC 与资源所在的 VPC 之间建立对等连接。注：下文提到的 IP 均指资源的内网 IP。如需通过公网地址访问资源，请首先在您的公有云控制台中为 BYOC 部署所在 VPC 配置 NAT 网关。
 
@@ -18,7 +18,7 @@
    docker run -d --name redis -p 6379:6379 redis
    ```
 
-## EMQX Platform 数据集成配置
+## EMQX Cloud 数据集成配置
 
 ### 资源创建
 

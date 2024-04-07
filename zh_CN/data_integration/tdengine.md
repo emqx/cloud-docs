@@ -1,20 +1,20 @@
 # 将 MQTT 数据写入到 TDengine
 
-[TDengine](https://tdengine.com/) 是一款专为物联网、工业互联网等场景设计并优化的大数据平台，其核心模块是高性能、集群开源、云原生、极简的时序数据库。EMQX Platform 支持与 TDengine 集成，能够实现大量设备和数据采集器的海量数据传输、存储、分析和分发，对业务运行状态进行实时监测、预警，提供实时的商业洞察。
+[TDengine](https://tdengine.com/) 是一款专为物联网、工业互联网等场景设计并优化的大数据平台，其核心模块是高性能、集群开源、云原生、极简的时序数据库。EMQX Cloud 支持与 TDengine 集成，能够实现大量设备和数据采集器的海量数据传输、存储、分析和分发，对业务运行状态进行实时监测、预警，提供实时的商业洞察。
 
-本页详细介绍了 EMQX Platform 与 TDengine 的数据集成并提供了实用的规则和动作创建指导。
+本页详细介绍了 EMQX Cloud 与 TDengine 的数据集成并提供了实用的规则和动作创建指导。
 
 ## 工作原理
 
-TDengine 数据集成是 EMQX Platform 的开箱即用功能，通过内置的[规则引擎](./rules.md)组件和动作将设备数据转发到 TDengine。通过 TDengine 动作，MQTT 消息和客户端事件可以存储在 TDengine 中。此外，数据更新或在 TDengine 中的删除操作可以由事件触发，从而实现对设备在线状态和历史上下线事件的记录。该集成简化了从 EMQX Platform 到 TDengine 的数据摄取过程，无需复杂编码。
+TDengine 数据集成是 EMQX Cloud 的开箱即用功能，通过内置的[规则引擎](./rules.md)组件和动作将设备数据转发到 TDengine。通过 TDengine 动作，MQTT 消息和客户端事件可以存储在 TDengine 中。此外，数据更新或在 TDengine 中的删除操作可以由事件触发，从而实现对设备在线状态和历史上下线事件的记录。该集成简化了从 EMQX Cloud 到 TDengine 的数据摄取过程，无需复杂编码。
 
-下图展示了 EMQX Platform 和 TDengine 数据集成在工业物联网中的典型架构:
+下图展示了 EMQX Cloud 和 TDengine 数据集成在工业物联网中的典型架构:
 
-![EMQX Platform-TDengine 集成](./_assets/data_integration_tdengine.jpg)
+![EMQX Cloud-TDengine 集成](./_assets/data_integration_tdengine.jpg)
 
 以工业能耗管理场景为例，工作流程如下：
 
-1. **消息发布和接收**：工业设备通过 MQTT 协议成功连接到 EMQX Platform，并定期使用 MQTT 协议发布能耗数据。这些数据包括生产线标识符和能耗值。当 EMQX Platform 接收到这些消息时，它将在其规则引擎中启动匹配过程。
+1. **消息发布和接收**：工业设备通过 MQTT 协议成功连接到 EMQX Cloud，并定期使用 MQTT 协议发布能耗数据。这些数据包括生产线标识符和能耗值。当 EMQX Cloud 接收到这些消息时，它将在其规则引擎中启动匹配过程。
 2. **规则引擎处理消息**：内置的规则引擎根据主题匹配处理来自特定来源的消息。当消息到达时，它通过规则引擎进行匹配，规则引擎将处理消息数据。这可能包括转换数据格式、过滤特定信息或用上下文信息丰富消息。
 3. **数据写入到 TDengine**：规则引擎中定义的规则触发动作将消息写入 TDengine。TDengine 数据桥提供 SQL 模板，允许灵活定义数据格式，将特定消息字段写入 TDengine 中相应的表和列。
 
@@ -28,14 +28,14 @@ TDengine 数据集成是 EMQX Platform 的开箱即用功能，通过内置的[�
 
 TDengine 数据集成为您的业务带来了以下功能和优势：
 
-- **高性能海量物联网数据**：EMQX Platform 可以高效处理大量物联网设备连接和消息吞吐量，TDengine 充分利用了时序数据特点，在数据写入、存储、查询方面表现优异，满足物联网场景下的数据处理需求，不会对系统造成过大压力。
-- **消息转换**：消息可以在 EMQX Platform 规则中进行丰富的处理和转换，然后写入 TDengine。
-- **集群和可扩展性**：EMQX Platform 和 TDengine 支持集群能力并基于云原生构建，能充分利用云平台的存储、计算、网络资源的弹性能力，随着业务增长灵活地水平扩展以满足不断扩大的需求。
+- **高性能海量物联网数据**：EMQX Cloud 可以高效处理大量物联网设备连接和消息吞吐量，TDengine 充分利用了时序数据特点，在数据写入、存储、查询方面表现优异，满足物联网场景下的数据处理需求，不会对系统造成过大压力。
+- **消息转换**：消息可以在 EMQX Cloud 规则中进行丰富的处理和转换，然后写入 TDengine。
+- **集群和可扩展性**：EMQX Cloud 和 TDengine 支持集群能力并基于云原生构建，能充分利用云平台的存储、计算、网络资源的弹性能力，随着业务增长灵活地水平扩展以满足不断扩大的需求。
 - **高级查询能力**：TDengine 为时戳数据的高效查询和分析提供了优化的功能、操作符和索引技术，使得能够从物联网时间序列数据中提取精确的洞察。
 
 ## 准备工作
 
-本节介绍了在 EMQX Platform 中创建 TDengine 数据集成之前需要做的准备工作，包括如何安装 TDengine 服务器并创建数据表。
+本节介绍了在 EMQX Cloud 中创建 TDengine 数据集成之前需要做的准备工作，包括如何安装 TDengine 服务器并创建数据表。
 
 ### 前置准备
 
@@ -80,7 +80,7 @@ CREATE TABLE t_mqtt_msg (
 
 ## 创建连接器
 
-在创建 TDengine 动作之前，您需要创建一个 TDengine 连接器，以便 EMQX Platform 与 TDengine 服务建立连接。
+在创建 TDengine 动作之前，您需要创建一个 TDengine 连接器，以便 EMQX Cloud 与 TDengine 服务建立连接。
 
 1. 在部署菜单中选择 **数据集成**，在数据持久化分类下选择 TDengine。如果您已经创建了其他的连接器，点击**新建连接器**，然后在数据持久化分类下选择 TDengine。
 
@@ -142,7 +142,7 @@ INSERT INTO t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload, arrived)
 
 ### 批量设置
 
-在 TDengine 中，一条数据可能包含数百个数据点，这使得编写 SQL 语句变得具有挑战性。为了解决这个问题，EMQX Platform 提供了批量设置 SQL 的功能。
+在 TDengine 中，一条数据可能包含数百个数据点，这使得编写 SQL 语句变得具有挑战性。为了解决这个问题，EMQX Cloud 提供了批量设置 SQL 的功能。
 
 当编辑 SQL 模板时，您可以使用批量设置功能，从 CSV 文件中导入要进行插入操作的字段。
 
@@ -163,7 +163,7 @@ INSERT INTO t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload, arrived)
    - **Field**: 字段键，支持常量或 ${var} 格式的占位符。
    - **Value**: 字段值，支持常量或 ${var} 格式的占位符。虽然 SQL 中要求字符类型需要通过引号包裹，但在模板文件中无需包裹引号，而是通过 `Char Value` 列来指定字段是否为字符类型。
    - **Char Value**: 用于指定字段是否为字符类型，以便在导入生成 SQL 时为字段添加引号。如果字段是字符类型，则填写 `TRUE` 或 `1`，否则填写 `FALSE` 或 `0`。
-   - **Remarks**: 仅用于 CSV 文件内字段的备注，无法导入到 EMQX Platform 中。
+   - **Remarks**: 仅用于 CSV 文件内字段的备注，无法导入到 EMQX Cloud 中。
 
    注意，批量设置 CSV 文件中数据不能超过 2048 行。
 
@@ -175,7 +175,7 @@ INSERT INTO t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload, arrived)
 
 推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
 
-1. 使用 MQTTX 连接到 EMQX Platform 部署，并向以下 Topic 发送消息。
+1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
 
    - topic: `temp_hum/emqx`
 
@@ -205,5 +205,4 @@ INSERT INTO t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload, arrived)
      "hum"... | 2024-03-29 06:57:37.300 |
    Query OK, 1 row(s) in set (0.002968s)
    ```
-
 
