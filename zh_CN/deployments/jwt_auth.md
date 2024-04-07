@@ -5,7 +5,7 @@
 
 ## JWT 认证原理
 
-客户端使用用户名或密码字段携带 JWT（取决于模块配置），发起连接时 EMQX Cloud 使用配置中的密钥、证书进行解密，如果能成功解密则认证成功，否则认证失败。
+客户端使用用户名或密码字段携带 JWT（取决于模块配置），发起连接时 EMQX Platform 使用配置中的密钥、证书进行解密，如果能成功解密则认证成功，否则认证失败。
 
 默认配置下启用 JWT 认证后，你可以通过任意用户名+以下密码进行连接，即通过默认的密钥字段 `secret` 做验证：
 
@@ -18,7 +18,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 ## 认证配置
 
 在部署中点击 **访问控制** - **扩展认证**，点击 **JWT 配置认证**，新建认证。
-  
+
 
 您可根据如下说明完成相关配置：
 
@@ -48,7 +48,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 点击创建完成相关配置。
 
 ::: tip
-* 如果当前部署为专有版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址填写内网地址。
+* 如果当前部署为专有版，需创建 [VPC 对等连接](../deployments/vpc_peering.md)，服务器地址填写内网地址。
 * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
 * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
 :::

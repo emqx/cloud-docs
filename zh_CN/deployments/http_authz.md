@@ -28,7 +28,7 @@ Body:
 在部署中点击 **访问控制** -> **授权** -> **扩展授权**，点击 **HTTP 配置授权**，新建授权。
 
 
-进行身份授权时，EMQX Cloud 将使用当前客户端信息填充并发起用户配置的授权查询请求，查询出该客户端在 HTTP 服务器端的授权数据。
+进行身份授权时，EMQX Platform 将使用当前客户端信息填充并发起用户配置的授权查询请求，查询出该客户端在 HTTP 服务器端的授权数据。
 
 您可根据如下说明完成相关配置：
 
@@ -49,7 +49,7 @@ Body:
 
 
 ::: tip
-* 如果当前部署为专有版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址填写内网地址。
+* 如果当前部署为专有版，需创建 [VPC 对等连接](../deployments/vpc_peering.md)，服务器地址填写内网地址。
 * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
 * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
 :::

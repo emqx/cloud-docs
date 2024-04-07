@@ -1,7 +1,7 @@
 # 私网连接 PrivateLink 设置
 
 ::: warning 注意
-该功能仅适用于专有版-专业版。
+该功能仅适用于专有版。
 :::
 
 私网连接（PrivateLink）能够实现 EMQX 专有版部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
@@ -22,7 +22,7 @@
 
 3. 创建并配置了传统型负载均衡（CLB）
 
-> 注意：此处创建的 CLB 的地域可用区需和 EMQX 专有版部署 CLB 可用区一致，该信息可以在 EMQX Cloud 控制台获取。
+> 注意：此处创建的 CLB 的地域可用区需和 EMQX 专有版部署 CLB 可用区一致，该信息可以在 EMQX Platform 控制台获取。
 
 ![cloud_privatelink_info](./_assets/aliyun_privatelink_cloud_zone.png)
 
@@ -46,7 +46,7 @@
 
 ### 创建私网连接 PrivateLink
 
-1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 **+私网连接** 按钮。
+1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 **+私网连接** 按钮。
 
   ![cloud_privatelink_info](./_assets/aliyun_privatelink_create.png)
 
@@ -54,7 +54,7 @@
 
   ![cloud_privatelink_info](./_assets/aliyun_privatelink_cloud_info.png)
 
-3. 在 EMQX Cloud 控制台获取到部署所在的阿里云账号 UID，将其添加到您阿里云平台-终端节点服务的白名单。
+3. 在 EMQX Platform 控制台获取到部署所在的阿里云账号 UID，将其添加到您阿里云平台-终端节点服务的白名单。
 
   ![cloud_privatelink_info](./_assets/aliyun_privatelink_whitelist.png)
 

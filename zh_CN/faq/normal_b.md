@@ -2,16 +2,16 @@
 
 
 ## 支持哪些协议连接？
-EMQX Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
+EMQX Platform 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
 
 如需其他协议支持，您可以提工单或发送邮件(cloud-support@emqx.io)与我们取得联系。
 
 ## 如何绑定域名？
 
-在 EMQX Cloud 建立**专业版部署**后，您会获得一个 MQTT 连接地址，该地址在专业版部署里以 IP 显示。您或许已经拥有自己的域名，希望可以将部署地址绑定到自己拥有的域名，通过您的域名使用 MQTT 服务。
+在 EMQX Platform 建立**专业版部署**后，您会获得一个 MQTT 连接地址，该地址在专业版部署里以 IP 显示。您或许已经拥有自己的域名，希望可以将部署地址绑定到自己拥有的域名，通过您的域名使用 MQTT 服务。
 
 ### 操作步骤
-1. 这里假设您有顶级域名 abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQX Cloud 上的部署的连接地址为 123.123.123.123
+1. 这里假设您有顶级域名 abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQX Platform 上的部署的连接地址为 123.123.123.123
 
 2. 那么只需要在您的域名提供商的操作面板上，将 mqtt.abc.com 的 A 记录指向 123.123.123.123 即可
 

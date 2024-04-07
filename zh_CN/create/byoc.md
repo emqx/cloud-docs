@@ -8,7 +8,7 @@
 
 ## 准备部署
 
-1. 登录账户，进入 EMQX Cloud [控制台](https://cloud.emqx.com/console/)。
+1. 登录账户，进入 EMQX Platform [控制台](https://cloud.emqx.com/console/)。
 
 2. 在控制台首页或部署列表页，点击**新建部署**。
 

@@ -1,8 +1,8 @@
 ---
 {
-  'title': 'EMQX Cloud 文档中心',
-  'description': 'EMQX Cloud 是由 EMQ 提供的全托管 MQTT 5.0 物联网云服务平台，可连接海量物联网设备并实时处理数据，它支持按量付费，可零代码实现消息分发和持久化。',
-  'introduction': 'EMQX Cloud 是 EMQ 公司推出的一款面向物联网领域的 MQTT 消息中间件产品。作为全球首个全托管的 MQTT 5.0 消息云服务，EMQX Cloud 提供了一站式运维代管、独有隔离环境的 MQTT 消息服务。在万物互联的时代，EMQX Cloud 可以帮助您快速构建面向物联网领域的行业应用，轻松实现物联网数据的采集、传输、计算和持久化。',
+  'title': 'EMQX Platform 文档中心',
+  'description': 'EMQX Platform 是由 EMQ 提供的全托管 MQTT 5.0 物联网云服务平台，可连接海量物联网设备并实时处理数据，它支持按量付费，可零代码实现消息分发和持久化。',
+  'introduction': '作为物联网领域的统一 MQTT 平台，以及全球首个支持 MQTT 5.0 消息服务的平台，EMQX Platform 为 MQTT 服务提供全面托管的环境以及 MQTT 服务的本地部署方案。借助 EMQX Platform，您可以快速构建面向物联网领域的行业应用，轻松实现物联网数据的采集、传输、计算和持久化。',
   'headers':
     [
       { 'title': '产品介绍', 'slug': '产品介绍' },
@@ -73,26 +73,23 @@
         'menus':
           [
             {
-              'name': '项目与用户',
+              'name': '项目和用户管理',
               'subMenus':
                 [
-                  {
-                    'name': '项目中心',
-                    'link': './feature/project_center.html',
-                  },
-                  { 'name': '项目列表', 'link': './deployments/project.html' },
-                  { 'name': '角色权限', 'link': './feature/role.html' },
-                  { 'name': '子用户管理', 'link': './feature/user.html' },
+                  { 'name': '项目管理', 'link': './deployments/project.html' },
+                  { 'name': '角色和权限', 'link': './feature/role.html' },
+                  { 'name': '用户管理', 'link': './feature/user.html' },
                 ],
             },
             {
-              'name': '运维与监控',
+              'name': '监控和问题分析',
               'subMenus':
                 [
                   { 'name': '监控', 'link': './deployments/monitors.html' },
                   { 'name': '指标', 'link': './deployments/metrics.html' },
-                  { 'name': '日志', 'link': './deployments/logs.html' },
+                  { 'name': '客户端', 'link': './deployments/clients.html' },
                   { 'name': '告警', 'link': './deployments/alerts.html' },
+                  { 'name': '日志', 'link': './deployments/logs.html' },
                 ],
             },
             {
@@ -152,7 +149,7 @@
                 [
                   {
                     'name': '数据集成',
-                    'link': './rule_engine/introduction.html',
+                    'link': './data_integration/introduction.html',
                   },
                   { 'name': 'API', 'link': './api/introduction.html' },
                 ],

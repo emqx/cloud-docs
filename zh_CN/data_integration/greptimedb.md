@@ -1,20 +1,20 @@
 # 将 MQTT 数据写入到 GreptimeDB
 
-[GreptimeDB](https://github.com/GreptimeTeam/greptimedb) 是一个开源、分布式、云原生时序数据库，融合时序数据处理和分析能力。GreptimeDB 专为云而生，充分利用云的优势，如弹性、可扩展性和高可用性。EMQX Cloud 目前支持与不同版本的 GreptimeDB, GreptimeCloud 以及 GreptimeDB 企业版的数据集成。
+[GreptimeDB](https://github.com/GreptimeTeam/greptimedb) 是一个开源、分布式、云原生时序数据库，融合时序数据处理和分析能力。GreptimeDB 专为云而生，充分利用云的优势，如弹性、可扩展性和高可用性。EMQX Platform 目前支持与不同版本的 GreptimeDB, GreptimeCloud 以及 GreptimeDB 企业版的数据集成。
 
-本页详细介绍了 EMQX Cloud 与 GreptimeDB 的数据集成并提供了实用的规则和动作创建指导。
+本页详细介绍了 EMQX Platform 与 GreptimeDB 的数据集成并提供了实用的规则和动作创建指导。
 
 ## 工作原理
 
-GreptimeDB 数据集成是 EMQX Cloud 开箱即用的功能，它结合了 EMQX Cloud 的实时数据捕获和传输能力以及 GreptimeDB 的数据存储和分析能力。
+GreptimeDB 数据集成是 EMQX Platform 开箱即用的功能，它结合了 EMQX Platform 的实时数据捕获和传输能力以及 GreptimeDB 的数据存储和分析能力。
 
-下图展示了 EMQX Cloud 和 GreptimeDB 之间的数据集成的典型架构：
+下图展示了 EMQX Platform 和 GreptimeDB 之间的数据集成的典型架构：
 
-![EMQX Cloud-GreptimeDB 集成](./_assets/data_integration_greptimedb.jpg)
+![EMQX Platform-GreptimeDB 集成](./_assets/data_integration_greptimedb.jpg)
 
-通过内置的[规则引擎](./rules.md)组件，集成简化了从 EMQX Cloud 到 GreptimeDB 的数据摄取过程，无需复杂编码。工作流程如下：
+通过内置的[规则引擎](./rules.md)组件，集成简化了从 EMQX Platform 到 GreptimeDB 的数据摄取过程，无需复杂编码。工作流程如下：
 
-1. **消息发布和接收**：工业设备通过 MQTT 协议成功连接到 EMQX Cloud，并定期使用 MQTT 协议发布能耗数据。这些数据包括生产线标识符和能耗值。当 EMQX Cloud 接收到这些消息时，它将在其规则引擎中启动匹配过程。
+1. **消息发布和接收**：工业设备通过 MQTT 协议成功连接到 EMQX Platform，并定期使用 MQTT 协议发布能耗数据。这些数据包括生产线标识符和能耗值。当 EMQX Platform 接收到这些消息时，它将在其规则引擎中启动匹配过程。
 2. **规则引擎处理消息**：内置的规则引擎根据主题匹配处理来自特定来源的消息。当消息到达时，它通过规则引擎进行匹配，规则引擎将处理消息数据。这可能包括转换数据格式、过滤特定信息或用上下文信息丰富消息。
 3. **数据写入到 GreptimeDB**：规则引擎中定义的规则触发操作将消息写入 GreptimeDB。GreptimeDB 动作提供 Line Protocol 模板，允许灵活定义数据格式，将特定消息字段写入 GreptimeDB 中相应的表和列。
 
@@ -28,15 +28,15 @@ GreptimeDB 数据集成是 EMQX Cloud 开箱即用的功能，它结合了 EMQX 
 
 与 GreptimeDB 的数据集成为您的业务带来以下特性和优势：
 
-- **易于上手使用**：EMQX Cloud 与 GreptimeDB 在开发、部署方面均提供了用户友好的使用体验。EMQX Cloud 提供了标准的 MQTT 协议以及开箱即用的各类认证、授权和集成功能，GreptimeDB 提供了 Time-Series Table，schemaless 等友好设计。两者的集成能够加快业务的整合与开发过程。
-- **高效数据处理**：EMQX Cloud 能够高效处理大量物联网设备连接和消息吞吐量。GreptimeDB 在数据写入、存储和查询方面表现出色，满足物联网场景下的数据处理需求，不会对系统造成过大压力。
-- **消息转换**：消息可以在写入 GreptimeDB 之前在 EMQX Cloud 规则中进行丰富的处理和转换。
-- **高效存储和可扩展性**：EMQX Cloud 和 GreptimeDB 都具有集群扩展能力，允许随着业务增长灵活地水平扩展以满足不断扩大的需求。
+- **易于上手使用**：EMQX Platform 与 GreptimeDB 在开发、部署方面均提供了用户友好的使用体验。EMQX Platform 提供了标准的 MQTT 协议以及开箱即用的各类认证、授权和集成功能，GreptimeDB 提供了 Time-Series Table，schemaless 等友好设计。两者的集成能够加快业务的整合与开发过程。
+- **高效数据处理**：EMQX Platform 能够高效处理大量物联网设备连接和消息吞吐量。GreptimeDB 在数据写入、存储和查询方面表现出色，满足物联网场景下的数据处理需求，不会对系统造成过大压力。
+- **消息转换**：消息可以在写入 GreptimeDB 之前在 EMQX Platform 规则中进行丰富的处理和转换。
+- **高效存储和可扩展性**：EMQX Platform 和 GreptimeDB 都具有集群扩展能力，允许随着业务增长灵活地水平扩展以满足不断扩大的需求。
 - **高级查询能力**：GreptimeDB 为时戳数据的高效查询和分析提供了优化的功能、操作符和索引技术，使得能够从物联网时间序列数据中提取精确的洞察。
 
 ## 准备工作
 
-本节介绍了在 EMQX Cloud 中创建 GreptimeDB 数据集成之前需要做的准备工作，包括如何设置 GreptimeDB 服务器。
+本节介绍了在 EMQX Platform 中创建 GreptimeDB 数据集成之前需要做的准备工作，包括如何设置 GreptimeDB 服务器。
 
 ### 前置准备
 
@@ -65,7 +65,7 @@ GreptimeDB 数据集成是 EMQX Cloud 开箱即用的功能，它结合了 EMQX 
 
 ## 创建连接器
 
-在创建 GreptimeDB 动作之前，您需要创建一个 GreptimeDB 连接器，以便 EMQX Cloud 与 GreptimeDB 服务建立连接。
+在创建 GreptimeDB 动作之前，您需要创建一个 GreptimeDB 连接器，以便 EMQX Platform 与 GreptimeDB 服务建立连接。
 
 1. 在部署菜单中选择 **数据集成**，在数据持久化分类下选择 GreptimeDB。如果您已经创建了其他的连接器，点击**新建连接器**，然后在数据持久化分类下选择 GreptimeDB。
 
@@ -138,7 +138,7 @@ GreptimeDB 数据集成是 EMQX Cloud 开箱即用的功能，它结合了 EMQX 
 
 推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
 
-1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
+1. 使用 MQTTX 连接到 EMQX Platform 部署，并向以下 Topic 发送消息。
 
    - topic: `temp_hum/emqx`
 

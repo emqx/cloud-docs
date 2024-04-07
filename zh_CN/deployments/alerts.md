@@ -1,11 +1,11 @@
 # 部署告警
 
-EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。
+EMQX Platform 提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。
 
 
 ## 告警事件
 
-在这里您可以查看到部署产生的告警信息，EMQX Cloud 提供如下告警事件：
+在这里您可以查看到部署产生的告警信息，EMQX Platform 提供如下告警事件：
 
 | 类型                      | 级别     | 信息                                                   | 解决                                            |
 | ------------------------ | -------  | ----------------------------------------------------- | ----------------------------------------------- |
@@ -27,7 +27,7 @@ EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维
 
 ## 告警集成
 
-EMQX Cloud 目前提供 邮箱和 PagerDuty 事件告警集成。如您需要其他告警集成方式，可以向我们提工单或发送邮件。
+EMQX Platform 目前提供 邮箱和 PagerDuty 事件告警集成。如您需要其他告警集成方式，可以向我们提工单或发送邮件。
 
 
 
@@ -42,11 +42,11 @@ EMQX Cloud 目前提供 邮箱和 PagerDuty 事件告警集成。如您需要其
 ### PagerDuty 集成
 将告警信息发送到 PagerDuty 的事件，并且 PagerDuty 指定通知方法。
 
-1. 在 PagerDuty 创建告警服务
-  ![pagerduty_service](./_assets/pagerduty_service.png)
+1. 在 PagerDuty 创建告警服务。
+    ![pagerduty_service](./_assets/pagerduty_service.png)
 
-2. 添加 api v2 集成，并复制集成秘钥
-  ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
+2. 添加 api v2 集成，并复制集成秘钥。
+    ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
 
-3. 在 EMQX Cloud 上填写集成秘钥
-  ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
+3. 在 EMQX Platform 上填写集成秘钥。
+    ![pagerduty_alerts](./_assets/pagerduty_alerts.png)

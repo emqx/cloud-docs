@@ -1,4 +1,4 @@
-# Projects and Accounts
+# Project and Account
 
 
 ## [Project Management](./project.md)

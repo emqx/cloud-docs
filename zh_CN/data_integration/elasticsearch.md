@@ -1,22 +1,22 @@
 # 将 MQTT 数据写入到 Elasticsearch
 
-[Elasticsearch](https://www.elastic.co/elasticsearch/)  是一个分布式的搜索和数据分析引擎，提供了多样化数据的全文搜索、结构化搜索以及分析等功能。EMQX Cloud 通过与 Elasticsearch 集成，能够将 MQTT 数据无缝的集成到 Elasticsearch 进行存储，并借助其强大的可扩展性和分析能力，为物联网应用提供了高效、可扩展的数据存储和分析解决方案。
+[Elasticsearch](https://www.elastic.co/elasticsearch/)  是一个分布式的搜索和数据分析引擎，提供了多样化数据的全文搜索、结构化搜索以及分析等功能。EMQX Platform 通过与 Elasticsearch 集成，能够将 MQTT 数据无缝的集成到 Elasticsearch 进行存储，并借助其强大的可扩展性和分析能力，为物联网应用提供了高效、可扩展的数据存储和分析解决方案。
 
-本页详细介绍了 EMQX Cloud 与 Elasticsearch 的数据集成并提供了实用的规则和动作创建指导。
+本页详细介绍了 EMQX Platform 与 Elasticsearch 的数据集成并提供了实用的规则和动作创建指导。
 
 ## 工作原理
 
-Elasticsearch 数据集成是 EMQX Cloud 中开箱即用的功能，它结合了 EMQX Cloud 的设备接入、消息传输能力与 Elasticsearch 的数据存储和分析能力，通过简单的配置即可实现 MQTT 数据的无缝集成。
+Elasticsearch 数据集成是 EMQX Platform 中开箱即用的功能，它结合了 EMQX Platform 的设备接入、消息传输能力与 Elasticsearch 的数据存储和分析能力，通过简单的配置即可实现 MQTT 数据的无缝集成。
 
-下图展示了 EMQX Cloud 和 Elasticsearch 数据集成的典型架构。
+下图展示了 EMQX Platform 和 Elasticsearch 数据集成的典型架构。
 
-![EMQX Cloud-Elasticsearch 集成](./_assets/data_integration_elasticsearch.jpg)
+![EMQX Platform-Elasticsearch 集成](./_assets/data_integration_elasticsearch.jpg)
 
-EMQX Cloud 和 Elasticsearch 提供了一个可扩展的物联网平台，用于高效地实时收集和分析设备数据。在此架构中，EMQX Cloud 作为物联网平台，负责设备接入、消息传输、数据路由等功能，Elasticsearch 作为数据存储和分析平台，负责数据存储、数据搜索和分析等功能。
+EMQX Platform 和 Elasticsearch 提供了一个可扩展的物联网平台，用于高效地实时收集和分析设备数据。在此架构中，EMQX Platform 作为物联网平台，负责设备接入、消息传输、数据路由等功能，Elasticsearch 作为数据存储和分析平台，负责数据存储、数据搜索和分析等功能。
 
-EMQX Cloud 通过规则引擎与动作将设备数据转发至 Elasticsearch，Elasticsearch 通过其强大的搜索和分析能力，生成报表、图表等数据分析结果，通过 Kibana 的可视化工具展示给用户。其工作流程如下：
+EMQX Platform 通过规则引擎与动作将设备数据转发至 Elasticsearch，Elasticsearch 通过其强大的搜索和分析能力，生成报表、图表等数据分析结果，通过 Kibana 的可视化工具展示给用户。其工作流程如下：
 
-1. **设备消息发布与接收**：物联网设备通过 MQTT 协议连接成功后向特定的主题发布遥测和状态数据，EMQX Cloud 接收到消息后将在规则引擎中进行比对。
+1. **设备消息发布与接收**：物联网设备通过 MQTT 协议连接成功后向特定的主题发布遥测和状态数据，EMQX Platform 接收到消息后将在规则引擎中进行比对。
 2. **规则引擎处理消息**：通过内置的规则引擎，可以根据主题匹配处理特定来源的 MQTT 消息。规则引擎会匹配对应的规则，并对消息进行处理，例如转换数据格式、过滤掉特定信息或使用上下文信息丰富消息。
 3. **写入到 Elasticsearch**：规则引擎中定义的规则触发将消息写入到 Elasticsearch 的操作。Elasticsearch 动作提供了灵活的操作方式以及文档模板，能够构造符合需求的文档格式，将消息中的特定字段写入到 Elasticsearch 的对应的索引中。
 
@@ -32,14 +32,14 @@ EMQX Cloud 通过规则引擎与动作将设备数据转发至 Elasticsearch，E
 
 Elasticsearch 数据集成为您的业务带来以下特性和优势：
 
-- **高效数据索引和搜索**： Elasticsearch 可以轻松处理来自 EMQX Cloud 的大规模的实时消息数据。强大的全文搜索和索引功能使得物联网消息数据可以被快速、高效地检索和查询。
+- **高效数据索引和搜索**： Elasticsearch 可以轻松处理来自 EMQX Platform 的大规模的实时消息数据。强大的全文搜索和索引功能使得物联网消息数据可以被快速、高效地检索和查询。
 - **数据可视化**： 通过与 Kibana（Elastic Stack 的一部分）的集成，可以对物联网数据进行强大的数据可视化，帮助理解和分析数据。
-- **灵活的数据操作**：EMQX Cloud 的 Elasticsearch 集成支持动态设置索引、文档 ID 以及文档模板，能够进行文档的创建、更新与删除操作，适用于更多物联网数据集成场景。
-- **扩展性**：Elasticsearch 与 EMQX Cloud 均支持集群，都可以通过添加更多的节点来轻松扩展其处理能力，实现不中断的业务扩展。
+- **灵活的数据操作**：EMQX Platform 的 Elasticsearch 集成支持动态设置索引、文档 ID 以及文档模板，能够进行文档的创建、更新与删除操作，适用于更多物联网数据集成场景。
+- **扩展性**：Elasticsearch 与 EMQX Platform 均支持集群，都可以通过添加更多的节点来轻松扩展其处理能力，实现不中断的业务扩展。
 
 ## 准备工作
 
-本节介绍了在 EMQX Cloud 中创建 Elasticsearch 数据集成之前需要做的准备工作，包括安装 Elasticsearch 和创建索引。
+本节介绍了在 EMQX Platform 中创建 Elasticsearch 数据集成之前需要做的准备工作，包括安装 Elasticsearch 和创建索引。
 
 ### 前置准备
 
@@ -48,7 +48,7 @@ Elasticsearch 数据集成为您的业务带来以下特性和优势：
 
 ### 安装 Elasticsearch 并创建索引
 
-EMQX Cloud 支持与私有部署的 Elasticsearch 或与云上的 Elastic 集成。您可以使用 Elastic Cloud 或者 Docker 部署一个 Elasticsearch 实例。
+EMQX Platform 支持与私有部署的 Elasticsearch 或与云上的 Elastic 集成。您可以使用 Elastic Cloud 或者 Docker 部署一个 Elasticsearch 实例。
 
 #### 使用 Docker 部署一个 Elasticsearch 实例
 
@@ -164,7 +164,7 @@ EMQX Cloud 支持与私有部署的 Elasticsearch 或与云上的 Elastic 集成
 
 4. 从**使用连接器**下拉框中选择您之前创建的连接器。
 
-5. 完成消息从 EMQX Cloud 到发布到 Elasticsearch 的配置：
+5. 完成消息从 EMQX Platform 到发布到 Elasticsearch 的配置：
 
    - **操作**：可选项`创建`，`更新`和`删除`操作。
    - **索引名称**：要执行操作的索引或索引别名的名称，支持 `${var}` 格式的占位符。
@@ -193,7 +193,7 @@ EMQX Cloud 支持与私有部署的 Elasticsearch 或与云上的 Elastic 集成
 
 推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
 
-1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
+1. 使用 MQTTX 连接到 EMQX Platform 部署，并向以下 Topic 发送消息。
 
    - topic: `temp_hum/emqx`
 

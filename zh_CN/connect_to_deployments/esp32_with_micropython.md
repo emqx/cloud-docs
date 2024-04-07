@@ -18,7 +18,7 @@
 
 您也可以自行 [创建部署](../create/overview.md)，创建完成后您可以在部署概览中查看连接相关的信息，包括连接地址、端口等。
 
-在确认部署处于运行状态后，您还需要在部署控制台 `认证鉴权` > [`认证`](../deployments/auth_overview.md) 中添加客户端将在连接时使用的用户名和密码，以允许该客户端接入 EMQX。
+在确认部署处于运行状态后，您还需要在部署控制台 **访问控制** > [**认证**](../deployments/default_auth.md) 中添加客户端将在连接时使用的用户名和密码，以允许该客户端接入 EMQX。
 
 ### 2. 安装 MicroPython 固件
 
@@ -284,4 +284,4 @@ Received '{"msg": 2}' from topic 'raspberry/mqtt'
 
 ## 更多内容
 
-现在，您已经可以在 ESP32 中通过 MicroPython 的 `umqtt` 模块成功连接到 EMQX Cloud。您可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython) 下载完整的示例代码。同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
+现在，您已经可以在 ESP32 中通过 MicroPython 的 `umqtt` 模块成功连接到 EMQX Platform。您可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython) 下载完整的示例代码。同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。

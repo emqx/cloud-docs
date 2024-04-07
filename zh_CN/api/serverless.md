@@ -1,6 +1,6 @@
 # Serverless API 概览
 
-以下表格汇总了 EMQX Cloud Serverless 部署的 API 文档。
+以下表格汇总了 EMQX Serverless 部署的 API 文档。
 
 
 | API                            | 描述                                                         |

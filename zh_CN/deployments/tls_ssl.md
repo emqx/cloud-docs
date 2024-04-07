@@ -4,7 +4,7 @@
 该功能仅适用于专有版。
 :::
 
-EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提供单向/双向 TLS/SSL 两种验证模式，具体如下：
+EMQX **专业版部署** 推荐使用自定义的证书验证，并且提供单向/双向 TLS/SSL 两种验证模式，具体如下：
 
 | 认证方式 | 是否支持自签名证书 | 服务器证书 | 证书链 | 私有秘钥 | 客户端 CA 证书 |
 | -------- | ------------- | ---------- | ------ | -------- | --------------|
@@ -51,7 +51,7 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 
 ## 创建单向认证
 
-1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
+1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)。
 2. 进入部署详情，点击 **TLS/SSL 配置** 按钮，配置证书内容，您可以上传文件或者直接填写证书内容。
     - TLS/SSL 认证类型：选择单向认证（仅客户端验证服务端证书）。
     - 公钥证书：自定义的服务端证书（包括证书链：通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html)）
@@ -81,7 +81,7 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 
 ## 创建双向认证
 
-1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
+1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)。
 2. 进入部署详情，点击 **TLS/SSL 配置** 按钮，配置证书内容，您可以上传文件或者直接填写证书内容:
     - TLS/SSL 认证类型：选择双向认证（客户端和服务端相互验证证书）。
     - 公钥证书：自定义的服务端证书（包括证书链：通常第三方机构签发证书时会提供，如缺失您可以前往 [证书链补全](https://myssl.com/chain_download.html)）
@@ -116,7 +116,7 @@ EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提�
 
 删除证书会断开客户端到 `8883` 和 `8084` 的连接，请确保这不会影响到您的业务。
 
-1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)。
+1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)。
 2. 进入部署详情，点击 **TLS/SSL 配置**部分的证书的删除按钮。
 3. 在对话框点击“确定”，完成删除。
 
@@ -181,7 +181,7 @@ subjectAltName = @alt_names
 subjectAltName = @alt_names
 
 [alt_names]
-# EMQX Cloud deployment connections address
+# EMQX deployment connections address
 # 非亚马逊的部署使用 IP.1
 IP.1 = <当前部署的地址>
 # 亚马逊中国的部署使用 DNS.1

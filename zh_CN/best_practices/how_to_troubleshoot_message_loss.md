@@ -8,7 +8,7 @@
 
    ![未订阅而丢弃指标](./_assets/message_dropped_unsubscribe_metrics.png)
 
-为了跟踪这些被丢弃的消息，您可以利用[事件主题 - 设备消息通知](https://docs.emqx.com/zh/cloud/latest/rule_engine/rule_engine_events.html#设备消息通知)`$events/message_dropped`。每当消息被丢弃时，都会触发一个事件，将消息的相关信息发送到该事件主题。这样，我们可以将消息丢弃事件传送给第三方系统，以进行记录和后续问题排查。
+为了跟踪这些被丢弃的消息，您可以利用[事件主题 - 设备消息通知](../rule_engine/rule_engine_events.md#设备消息通知)`$events/message_dropped`。每当消息被丢弃时，都会触发一个事件，将消息的相关信息发送到该事件主题。这样，我们可以将消息丢弃事件传送给第三方系统，以进行记录和后续问题排查。
 
 ## EMQX 在消息传递过程中丢弃消息
 

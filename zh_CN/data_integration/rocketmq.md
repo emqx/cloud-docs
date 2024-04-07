@@ -2,20 +2,20 @@
 
 通过 [RocketMQ](https://rocketmq.apache.org/) 数据集成可以将 MQTT 消息和客户端事件转发到 RocketMQ 中。例如，可以通过事件触发转发消息到 RocketMQ 中，从而实现对诸如设备在线状态、上下线历史等的记录。
 
-本页详细介绍了 EMQX Cloud 与 RocketMQ 的数据集成并提供了实用的规则和动作创建指导。
+本页详细介绍了 EMQX Platform 与 RocketMQ 的数据集成并提供了实用的规则和动作创建指导。
 
 ## 工作原理
 
-RocketMQ 数据集成是 EMQX Cloud 中的一个开箱即用功能，它结合了 EMQX Cloud 的设备接入以及实时数据捕获和传输能力与 RocketMQ 强大的消息队列处理能力。通过内置的[规则引擎](./rules.md)组件，该集成简化了将数据从 EMQX Cloud 引入到 RocketMQ 进行存储和管理的过程，无需复杂编码。
+RocketMQ 数据集成是 EMQX Platform 中的一个开箱即用功能，它结合了 EMQX Platform 的设备接入以及实时数据捕获和传输能力与 RocketMQ 强大的消息队列处理能力。通过内置的[规则引擎](./rules.md)组件，该集成简化了将数据从 EMQX Platform 引入到 RocketMQ 进行存储和管理的过程，无需复杂编码。
 
-下图展示了 EMQX Cloud 与 RocketMQ 之间数据集成的典型架构:
+下图展示了 EMQX Platform 与 RocketMQ 之间数据集成的典型架构:
 
 ![EMQX Cloud-RocketMQ 集成](./_assets/data_integration_rocketmq.jpg)
 
 将 MQTT 数据引入 RocketMQ 的过程如下：
 
-1. **消息发布和接收**：工业物联网设备通过 MQTT 协议成功连接到 EMQX Cloud，并向 EMQX Cloud 发布实时 MQTT 数据。EMQX Cloud 收到这些消息后，将启动其规则引擎中的匹配过程。
-2. **消息数据处理**：当消息到达时，它会经过规则引擎，然后由 EMQX Cloud 中定义的规则处理。这些规则基于预定义的标准，确定哪些消息需要路由到 RocketMQ。如果任何规则指定了有效载荷转换，那么将应用这些转换，例如转换数据格式、过滤特定信息或用额外的上下文丰富有效载荷。
+1. **消息发布和接收**：工业物联网设备通过 MQTT 协议成功连接到 EMQX Platform，并向 EMQX Platform 发布实时 MQTT 数据。EMQX Platform 收到这些消息后，将启动其规则引擎中的匹配过程。
+2. **消息数据处理**：当消息到达时，它会经过规则引擎，然后由 EMQX Platform 中定义的规则处理。这些规则基于预定义的标准，确定哪些消息需要路由到 RocketMQ。如果任何规则指定了有效载荷转换，那么将应用这些转换，例如转换数据格式、过滤特定信息或用额外的上下文丰富有效载荷。
 3. **数据传入到 RocketMQ**：一旦规则处理了消息，它就会触发一个动作，将消息转发到 RocketMQ。处理后的数据将无缝写入 RocketMQ。
 4. **数据存储和利用**：现在数据存储在 RocketMQ 中，企业可以利用其查询能力应用于各种用例。例如，在金融行业，RocketMQ 可以用作可靠的高性能消息队列来存储和管理来自支付终端、交易系统的数据，并将消息连接到数据分析和监管平台，实现风险管理、欺诈检测和预防、监管合规等要求。
 
@@ -23,15 +23,15 @@ RocketMQ 数据集成是 EMQX Cloud 中的一个开箱即用功能，它结合�
 
 RocketMQ 数据集成为您的业务带来了以下功能和优势：
 
-- **可靠的物联网数据消息传递**：EMQX Cloud 能够可靠地批处理并发送 MQTT 消息到 RocketMQ，实现物联网设备与 RocketMQ 及应用系统的集成。
-- **MQTT 消息转换**：使用规则引擎，EMQX Cloud 可以过滤和转换 MQTT 消息。消息在发送到 RocketMQ 之前，可以进行数据提取、过滤、丰富和转换。
-- **云原生弹性扩展**：EMQX Cloud 与 RocketMQ 都是基于云原生构建的应用，提供了友好的 K8s 支持以及云原生生态集成，能够无限弹性扩缩以适应业务的快速发展。
+- **可靠的物联网数据消息传递**：EMQX Platform 能够可靠地批处理并发送 MQTT 消息到 RocketMQ，实现物联网设备与 RocketMQ 及应用系统的集成。
+- **MQTT 消息转换**：使用规则引擎，EMQX Platform 可以过滤和转换 MQTT 消息。消息在发送到 RocketMQ 之前，可以进行数据提取、过滤、丰富和转换。
+- **云原生弹性扩展**：EMQX Platform 与 RocketMQ 都是基于云原生构建的应用，提供了友好的 K8s 支持以及云原生生态集成，能够无限弹性扩缩以适应业务的快速发展。
 - **灵活的主题映射**：RocketMQ 数据集成支持将 MQTT 主题灵活映射到 RocketMQ 主题，允许轻松配置 RocketMQ 消息中的键（Key）和值（Value）。
 - **高吞吐量场景下的处理能力**：RocketMQ 数据集成支持同步和异步写入模式，允许根据不同场景灵活平衡延迟和吞吐量。
 
 ## 准备工作
 
-本节介绍了在 EMQX Cloud 中创建 RocketMQ 数据集成之前需要做的准备工作，包括如何设置 RocketMQ 服务器。
+本节介绍了在 EMQX Platform 中创建 RocketMQ 数据集成之前需要做的准备工作，包括如何设置 RocketMQ 服务器。
 
 ### 前置准备
 
@@ -183,7 +183,7 @@ docker run --rm -e NAMESRV_ADDR=host.docker.internal:9876 apache/rocketmq:4.9.4 
 
 4. 从**使用连接器**下拉框中选择您之前创建的连接器。
 
-5. 完成消息从 EMQX Cloud 到发布到 RocketMQ 的配置：
+5. 完成消息从 EMQX Platform 到发布到 RocketMQ 的配置：
 
    - **RocketMQ 主题**: 输入 `emqx`
    - **消息模板**: 模板, 默认为空，为空时将会将整个消息转发给 RocketMQ。
@@ -202,7 +202,7 @@ docker run --rm -e NAMESRV_ADDR=host.docker.internal:9876 apache/rocketmq:4.9.4 
 
 推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
 
-1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
+1. 使用 MQTTX 连接到 EMQX Platform 部署，并向以下 Topic 发送消息。
 
    - topic: `temp_hum/emqx`
 

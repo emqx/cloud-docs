@@ -1,11 +1,6 @@
 # 连接器
 
-连接器用于将 EMQX Cloud 连接到云资源，即由云服务商提供的服务或自己运维的服务。连接器仅关注与云资源的连接，用户可以为不同的云资源创建不同的连接器。EMQX Cloud 目前支持与 `HTTP Server` 和 `Kafka` 这2种资源的连接，因此可创建的连接器有：
-
-- [HTTP Server 连接器](./http_server.md#创建-http-server-连接器)：转发数据到 HTTP 服务。
-- [Kafka 连接器](./kafka.md#创建-kafka-连接器)：EMQX Cloud 以生产者的模式将数据转发到 Kafka 服务。
-
-<!-- TODO -->
+连接器用于将 EMQX Platform 连接到云资源，即由云服务商提供的服务或自己运维的服务。连接器仅关注与云资源的连接，用户可以为不同的云资源创建不同的连接器。
 
 ## 创建连接器
 

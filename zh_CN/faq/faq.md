@@ -2,19 +2,19 @@
 
 ## 产品
 
-### 什么是 EMQX Cloud？
+### 什么是 EMQX Platform？
 
-EMQX Cloud 是由 EMQ 团队提供的 EMQX 在线 SaaS 服务。
+EMQX Platform 是由 EMQ 团队提供的 EMQX 在线 SaaS 服务。
 
-在过去的几年里，EMQ 为众多客户提供了成熟的 MQTT 物联网消息中间件及物联网平台相关支持服务，这期间我们积攒了丰富的物联网平台设计、运维管理实践经验。在此基础上我们推出物联网平台公有云服务 EMQX Cloud，提供一站式运维代管、独有隔离环境的 EMQX 接入平台服务。
+在过去的几年里，EMQ 为众多客户提供了成熟的 MQTT 物联网消息中间件及物联网平台相关支持服务，这期间我们积攒了丰富的物联网平台设计、运维管理实践经验。在此基础上我们推出物联网平台公有云服务 EMQX Platform，提供一站式运维代管、独有隔离环境的 EMQX 接入平台服务。
 
-EMQX Cloud 为应用程序及设备提供安全可靠的双向通信能力，在支持大规模集群海量设备连接的基础上同时提供了其他增值能力，如设备管理、数据集成、数据持久化与 Kafka 数据桥接等，覆盖了各类 IoT 应用场景并保留了私有化定制拓展能力。
+EMQX Platform 为应用程序及设备提供安全可靠的双向通信能力，在支持大规模集群海量设备连接的基础上同时提供了其他增值能力，如设备管理、数据集成、数据持久化与 Kafka 数据桥接等，覆盖了各类 IoT 应用场景并保留了私有化定制拓展能力。
 
-### 什么是 EMQX Cloud 部署?
+### 什么是 EMQX Platform 部署?
 
-部署是由 EMQX Cloud 托管的 EMQX Enterprise 集群
+部署是由 EMQX Platform 托管的 EMQX Enterprise 集群。
 
-### 什么是 EMQX ?
+### 什么是 EMQX?
 
 EMQX (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。
 
@@ -28,7 +28,7 @@ EMQX (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发�
 
 ### 支持那些协议连接？
 
-EMQX Cloud 部署仅支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
+EMQX Platform 部署仅支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
 
 如需其他协议支持，您可以提[工单](contact.md)或发送邮件(cloud-support@emqx.io)与我们取得联系
 
@@ -83,15 +83,15 @@ EMQX 提供了 HTTP API 以实现与外部系统的集成，例如查询客户�
 ## 账单
 ### 如何计费？
 
-EMQX Cloud 按集群实例规格与消息传输网络流量收费，而非消息条数，不限 API 与数据集成的使用。
+EMQX Platform 按集群实例规格与消息传输网络流量收费，而非消息条数，不限 API 与数据集成的使用。
 
 详细的收费规则，可以查看[产品定价](pricing.md)
 
 ### 如何充值？
 
-在 EMQX Cloud 控制台，`财物管理` -> `概览` 的账户余额处点击 `充值` 按钮，输入充值金额。
+在 EMQX Platform 控制台，`财物管理` -> `概览` 的账户余额处点击 `充值` 按钮，输入充值金额。
 
-目前 EMQX Cloud 支持 `支付宝`、`微信` 进行充值。
+目前 EMQX Platform 支持 `支付宝`、`微信` 进行充值。
 
 ### 如何获取到代金券？
 

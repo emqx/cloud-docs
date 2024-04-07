@@ -1,13 +1,13 @@
 # 创建 Serverless 部署
 
-EMQX Cloud 已经推出了安全可扩展的 MQTT 服务 —— EMQX Serverless，赋予开发者或微小企业更低成本且高效测试开发物联网应用的能力。简单几步就创建一个 Serverless 部署。
+EMQX Platform 已经推出了安全可扩展的 MQTT 服务 —— EMQX Serverless，赋予开发者或微小企业更低成本且高效测试开发物联网应用的能力。简单几步就创建一个 Serverless 部署。
 
 Serverless 部署最大的优势在于连接场景只按照实际的使用量进行计费，Serverless 详细的计费方式请查看[定价计费](../price/pricing.md)部分。
 
 
 ## 创建部署
 
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)。
+1. 登录 [EMQX Platform 控制台](https://cloud.emqx.com/console/)。
 
 
 2. 在控制台首页或者部署管理页面都可以在指定项目下创建，点击**新建部署**进入创建步骤。
@@ -21,7 +21,7 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 
 5. 设置部署名称和项目。
 
-6. 点击**立即部署**，并同意 EMQX Cloud 标准服务条款和 Serverless 服务使用条款。
+6. 点击**立即部署**，并同意 EMQX Platform 标准服务条款和 Serverless 服务使用条款。
 
 7. 部署将进入创建，当状态显示为**运行中**后，部署创建完成并可使用。
 

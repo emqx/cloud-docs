@@ -1,20 +1,20 @@
 # 将 MQTT 数据写入到 InfluxDB
 
-InfluxDB 是一个用于存储和分析时间序列数据的数据库，其强大的数据吞吐能力以及稳定的性能表现使其非常适合物联网领域。EMQX Cloud 目前支持通过 Sink 的方式连接不同版本的 InfluxDB Cloud、InfluxDB OSS 以及 InfluxDB Enterprise。
+InfluxDB 是一个用于存储和分析时间序列数据的数据库，其强大的数据吞吐能力以及稳定的性能表现使其非常适合物联网领域。EMQX Platform 目前支持通过 Sink 的方式连接不同版本的 InfluxDB Cloud、InfluxDB OSS 以及 InfluxDB Enterprise。
 
-本页提供了 EMQX Cloud 与 InfluxDB 数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
+本页提供了 EMQX Platform 与 InfluxDB 数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
 
 ## 工作原理
 
-InfluxDB 数据集成是 EMQX Cloud 中开箱即用的功能，它结合了 EMQX Cloud 的设备接入、消息传输能力与 InfluxDB 的数据存储和分析能力，通过简单的配置即可实现 MQTT 数据的无缝集成。EMQX 通过规则引擎将设备数据转发至 InfluxDB 进行存储和分析，在对数据进行分析之后，InfluxDB 会生成报表、图表等数据分析结果，通过 InfluxDB 的可视化工具展示给用户。
+InfluxDB 数据集成是 EMQX Platform 中开箱即用的功能，它结合了 EMQX Platform 的设备接入、消息传输能力与 InfluxDB 的数据存储和分析能力，通过简单的配置即可实现 MQTT 数据的无缝集成。EMQX 通过规则引擎将设备数据转发至 InfluxDB 进行存储和分析，在对数据进行分析之后，InfluxDB 会生成报表、图表等数据分析结果，通过 InfluxDB 的可视化工具展示给用户。
 
 下图展示了储能场景中 EMQX 和 InfluxDB 数据集成的典型架构。
 
-![EMQX Cloud InfluxDB 数据集成](./_assets/data_integration_influxdb.jpg)
+![EMQX Platform InfluxDB 数据集成](./_assets/data_integration_influxdb.jpg)
 
-EMQX Cloud 和 InfluxDB 提供了一个可扩展的物联网平台，用于高效地实时收集和分析能耗数据。在此架构中，EMQX Cloud 作为物联网平台，负责设备接入、消息传输、数据路由等功能，InfluxDB 作为数据存储和分析平台，负责数据存储、数据分析等功能。具体的工作流程如下：
+EMQX Platform 和 InfluxDB 提供了一个可扩展的物联网平台，用于高效地实时收集和分析能耗数据。在此架构中，EMQX Platform 作为物联网平台，负责设备接入、消息传输、数据路由等功能，InfluxDB 作为数据存储和分析平台，负责数据存储、数据分析等功能。具体的工作流程如下：
 
-1. **消息发布与接收**：储能设备通过 MQTT 协议连接成功后定期发布能耗数据，这些数据包括电量、输入输出功率信息。EMQX Cloud 接收到消息后将在规则引擎中进行比对。
+1. **消息发布与接收**：储能设备通过 MQTT 协议连接成功后定期发布能耗数据，这些数据包括电量、输入输出功率信息。EMQX Platform 接收到消息后将在规则引擎中进行比对。
 2. **规则引擎处理消息**：通过内置的规则引擎，可以根据主题匹配处理特定来源的消息。当消息到达时，它会通过规则引擎，规则引擎会匹配对应的规则，并对消息数据进行处理，例如转换数据格式、过滤掉特定信息或使用上下文信息丰富消息。
 3. **写入到 InfluxDB**：规则引擎中定义的规则触发将消息写入到 InfluxDB 的操作。数据集成规则提供了 SQL 模板，能够灵活地定义写入的数据格式，将消息中的特定字段写入到 InfluxDB 的对应的表和列中。
 
@@ -27,15 +27,15 @@ EMQX Cloud 和 InfluxDB 提供了一个可扩展的物联网平台，用于高�
 
 InfluxDB 数据集成具有以下特性与优势：
 
-- **高效的数据处理能力**：EMQX Cloud 能够处理海量物联网设备连接与消息吞吐，InfluxDB 在数据写入、存储和查询方面具有出色的性能表现，能够满足物联网场景下的数据处理需求，不会导致系统不堪重负。
-- **消息转换**：消息可以写入 InfluxDB 之前，通过 EMQX Cloud 规则中进行丰富的处理和转换。
-- **可扩展性**：EMQX Cloud 与 InfluxDB 都具备集群扩展能力，能够随着业务的发展，利用灵活地进行集群水平扩展，满足业务的发展需求。
+- **高效的数据处理能力**：EMQX Platform 能够处理海量物联网设备连接与消息吞吐，InfluxDB 在数据写入、存储和查询方面具有出色的性能表现，能够满足物联网场景下的数据处理需求，不会导致系统不堪重负。
+- **消息转换**：消息可以写入 InfluxDB 之前，通过 EMQX Platform 规则中进行丰富的处理和转换。
+- **可扩展性**：EMQX Platform 与 InfluxDB 都具备集群扩展能力，能够随着业务的发展，利用灵活地进行集群水平扩展，满足业务的发展需求。
 - **丰富的查询能力**：InfluxDB 提供包括优化的函数、运算符和索引技术，可实现对时间戳数据的高效查询和分析，准确地从 IoT 时间序列数据中提取有价值的见解。
 - **高效存储**：InfluxDB 使用高压缩比的编码方式，可以大幅降低存储成本。也可以自定义不同数据的存储时间,避免不必要的数据占用存储空间。
 
 ## 准备工作
 
-本节介绍了在 EMQX Cloud 中创建 InfluxDB 数据集成之前需要做的准备工作。
+本节介绍了在 EMQX Platform 中创建 InfluxDB 数据集成之前需要做的准备工作。
 
 ### 前置准备
 
@@ -153,7 +153,7 @@ docker run --name influxdb -p 8086:8086 influxdb:2.5.1
 
 2. 前往 InfluxDB UI Data Explorer 查看数据是否已经写入 InfluxDB 中。
 
-3. 如果使用 InfluxDB V1，进入 InfluxDB 容器，查看 InfluxDB 中的数据
+   如果使用 InfluxDB V1，进入 InfluxDB 容器，查看 InfluxDB 中的数据：
 
    ```bash
      $ docker exec -it influxdb influx
