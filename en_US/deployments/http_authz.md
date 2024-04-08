@@ -25,7 +25,7 @@ Body:
 
 ## Configure HTTP Authorization
 
-In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, then click **HTTP Authorization** to create a new authorization.
+In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, select **HTTP Authorization**, and click **Configure**.
 
 For identity authorization, EMQX Platform will use the current client information to fill in and initiate the authorization query request configured by the user, querying the client's authorization data on the HTTP server side.
 

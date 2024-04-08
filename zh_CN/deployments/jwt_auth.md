@@ -17,34 +17,31 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 
 ## 认证配置
 
-在部署中点击 **访问控制** - **扩展认证**，点击 **JWT 配置认证**，新建认证。
+在部署中点击 **访问控制** -> **客户端认证** -> **扩展认证**，选择 **JWT 认证**，点击**配置认证**。
 
 
 您可根据如下说明完成相关配置：
 
 如**验证方式**选择 **JWT** 时：
 
-- JWT 来自于：指定客户端连接请求中 JWT 的位置；可选值： password、 username（分别对应于 MQTT 客户端 `CONNECT` 报文中的 `Password` 和 `Username` 字段）
+- **JWT 来自于**：指定客户端连接请求中 JWT 的位置；可选值： `password`、 `username`（分别对应于 MQTT 客户端 `CONNECT` 报文中的 `Password` 和 `Username` 字段）
 
-- 加密方式：指定 JWT 的加密方式，可选值： `hmac-based`、`public-key`；
-
+- **加密方式**：指定 JWT 的加密方式，可选值： `hmac-based`、`public-key`；
     - 如选择 `hmac-based`，即 JWT 使用对称密钥生成签名和校验签名（支持 HS256、HS384 和 HS512 算法），还应配置：
-
-    - `Secret`：用于校验签名的密钥，与生成签名时使用的密钥相同。
-    - `Secret Base64 Encode`：配置 EMQX 在使用 `Secret` 校验签名时是否需要先对其进行 Base64 解密；可选值：True、False，默认值：False。
-
-    - 如选择 public-key，即 JWT 使用私钥生成签名，同时需要使用公钥校验签名（支持 RS256、RS384、RS512、ES256、ES384 和 ES512 算法），还应配置：
-
-    - Public Key：指定用于校验签名的 PEM 格式的公钥。
+      - **Secret**：用于校验签名的密钥，与生成签名时使用的密钥相同。
+      - **Secret 使用 Base64 编码**：配置 EMQX 在使用 `Secret` 校验签名时是否需要先对其进行 Base64 解密；可选值：True、False，默认值：False。
     
-- Payload：添加自定义的 Claims 检查；用户需要在 Claim 和 Expected Value 分别添加键和对应的值，支持使用 `${clientid}` 和 `${username}` 占位符。其中键用于查找 JWT 中对应的 Claim，值则用于与 Claim 的实际值进行比较。
+    - 如选择 `public-key`，即 JWT 使用私钥生成签名，同时需要使用公钥校验签名（支持 RS256、RS384、RS512、ES256、ES384 和 ES512 算法），还应配置：
+      - **Public Key**：指定用于校验签名的 PEM 格式的公钥。
+    
+- **Payload**：添加自定义的 Claims 检查；用户需要在 Claim 和 Expected Value 分别添加键和对应的值，支持使用 `${clientid}` 和 `${username}` 占位符。其中键用于查找 JWT 中对应的 Claim，值则用于与 Claim 的实际值进行比较。
 
-如验证方式选择 JWTS：
+如验证方式选择 **JWTS**：
 
 除上述配置外，还应配置：
 
-- JWKS Endpoint：指定 EMQX 查询 JWKS 的服务器端点地址，该端点需要支持 GET 请求，并且返回符合规范的 JWKS。
-- JWKS 刷新间隔：指定 JWKS 的刷新间隔，也就是 EMQX 查询 JWKS 的间隔。默认值：300 单位为秒（s）。
+- **JWKS Endpoint**：指定 EMQX 查询 JWKS 的服务器端点地址，该端点需要支持 GET 请求，并且返回符合规范的 JWKS。
+- **JWKS 刷新间隔**：指定 JWKS 的刷新间隔，也就是 EMQX 查询 JWKS 的间隔。默认值：300 单位为秒（s）。
 点击创建完成相关配置。
 
 ::: tip

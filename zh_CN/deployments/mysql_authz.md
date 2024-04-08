@@ -42,16 +42,16 @@ FROM mqtt_acl
 
 
 ## 配置 MySQL 授权
-在部署中点击 **访问控制** -> **授权** -> **扩展授权**，点击 **MySQL 配置授权**，新建授权。
+在部署中点击 **访问控制** -> **授权** -> **扩展授权**，选择 **MySQL 授权**，点击**配置授权**。
 
 您可按照如下说明完成相关配置：
 
-- 服务：填入 MySQL 服务器地址 (host:port) 。
-- 数据库：填入 MySQL 的数据库名称。
-- 用户名（可选）：填入用户名称。
-- 密码（可选）：填入用户密码。
-- TLS 配置：配置是否启用 TLS。
-- SQL：根据表结构填入查询 SQL，具体要求见 [SQL 表结构与查询语句](https://docs.emqx.com/zh/enterprise/latest/access-control/authn/mysql.html#sql-%E8%A1%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5)。
+- **服务**：填入 MySQL 服务器地址 (host:port) 。
+- **数据库**：填入 MySQL 的数据库名称。
+- **用户名**（可选）：填入用户名称。
+- **密码**（可选）：填入用户密码。
+- **启用 TLS**：配置是否启用 TLS。
+- **SQL**：根据表结构填入查询 SQL，具体要求见 [SQL 表结构与查询语句](https://docs.emqx.com/zh/enterprise/latest/access-control/authn/mysql.html#sql-%E8%A1%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5)。
 
 ::: tip
 * 如果当前部署为专有版，需创建 [VPC 对等连接](../deployments/vpc_peering.md)，服务器地址填写内网地址。

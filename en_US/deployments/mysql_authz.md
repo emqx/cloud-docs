@@ -47,7 +47,7 @@ FROM mqtt_acl
 
 ## Configure MySQL Authorization
 
-In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, then click **MySQL Authorization** to create a new authorization.
+In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, select **MySQL Authorization**, and click **Configure**.
 
 You can complete the related configuration according to the following instructions:
 

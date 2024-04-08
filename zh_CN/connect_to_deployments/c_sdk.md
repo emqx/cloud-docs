@@ -12,7 +12,7 @@
   - 连接地址: broker.emqx.io 
   - TCP Port: 1883 
   - SSL/TLS Port: 8883 
-- 您也可以自己[创建部署](https://github.com/emqx/cloud-docs/blob/master/zh_CN/create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口 测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证鉴权](https://github.com/emqx/cloud-docs/blob/master/zh_CN/deployments/auth_overview.md)，在部署控制台认证鉴权 > 认证 中设置用户名和密码，用于连接验证。
+- 您也可以自己[创建部署](https://github.com/emqx/cloud-docs/blob/master/zh_CN/create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口 测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证](../deployments/auth_overview.md)，在部署控制台认证鉴权 > 认证 中设置用户名和密码，用于连接验证。
 
 ## 安装依赖
 

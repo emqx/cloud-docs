@@ -8,7 +8,6 @@ PostgreSQL 认证器可以支持任何表结构，甚至是多个表联合查询
 
 - `password_hash`: 必需，数据库中的明文或散列密码字段
 - `salt`: 可选，为空或不存在时视为空盐（salt = ""）
-- `is_superuser`: 可选，标记当前客户端是否为超级用户，默认为 `false`
 
 示例表结构：
 ```SQL
@@ -17,7 +16,6 @@ CREATE TABLE `mqtt_user` (
   `username` varchar(100) DEFAULT NULL,
   `password_hash` varchar(100) DEFAULT NULL,
   `salt` varchar(35) DEFAULT NULL,
-  `is_superuser` tinyint(1) DEFAULT 0,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mqtt_username` (`username`)
@@ -45,27 +43,25 @@ SELECT password_hash, salt, is_superuser FROM mqtt_user WHERE username = ${usern
 
 
 ## PostgreSQL 配置
-在部署中点击 **访问控制** -> **认证** -> **扩展认证**，点击 **PostgreSQL 配置认证**，新建认证。
+在部署中点击 **访问控制** -> **客户端认证** -> **扩展认证**，选择 **PostgreSQL 授权**，点击**配置认证**。
 
 您可按照如下说明完成相关配置：
 
-- 服务：填入 PostgreSQL 服务器地址 (host:port) 。
-- 数据库：填入 PostgreSQL 的数据库名称。
-- 用户名（可选）：填入用户名称。
-- 密码（可选）：填入用户密码。
-- TLS 配置：配置是否启用 TLS。
-- 连接池大小（可选）：填入一个整数用于指定从 EMQX 节点到 PostgreSQL 数据库的并发连接数；默认值：8。
-- 查询超时：填入连接超时等待时长，可选单位：小时、分钟、秒、毫秒。
-- 密码加密方式：选择存储密码时使用的散列算法，如 plain、md5、sha、bcrypt、pbkdf2 等。
-- 选择 plain、md5、sha、sha256 或 sha512 算法，需配置：
-  - 加盐方式：用于指定盐和密码的组合方式，除需将访问凭据从外部存储迁移到 EMQX 内置数据库中外，一般不需要更改此选项；可选值：suffix（在密码尾部加盐）、prefix（在密码头部加盐）、disable（不启用）。注意：如选择 plain，加盐方式应设为 disable。
-- 选择 bcrypt 算法，需配置:
-  - Salt Rounds：指定散列需要的计算次数（2^Salt Rounds），也称成本因子。默认值：10，可选值：4～31；数值越高，加密的安全性越高，因此建议采用较大的值，但相应的用户验证的耗时也会增加，您可根据业务需求进行配置。
-- 选择 pkbdf2 算法，需配置：
-  - 伪随机函数：指定生成密钥使用的散列函数，如 sha256 等。
-  - 迭代次数：指定散列次数，默认值：4096。
-  - 密钥长度（可选）：指定希望得到的密钥长度。如不指定，密钥长度将由伪随机函数确定。
-- SQL：根据表结构填入查询 SQL，具体要求见 [SQL 表结构与查询语句](https://docs.emqx.com/zh/enterprise/latest/access-control/authn/mysql.html#sql-%E8%A1%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5)。
+- **服务**：填入 PostgreSQL 服务器地址 (host:port) 。
+- **数据库**：填入 PostgreSQL 的数据库名称。
+- **用户名**（可选）：填入用户名称。
+- **密码**（可选）：填入用户密码。
+- **启用 TLS**：配置是否启用 TLS。
+- **连接池大小**（可选）：填入一个整数用于指定从 EMQX 节点到 PostgreSQL 数据库的并发连接数；默认值：`8`。
+- **查询超时**：填入连接超时等待时长，可选单位：小时、分钟、秒、毫秒。
+- **密码加密方式**：选择存储密码时使用的散列算法，如 `plain`、`md5`、`sha`、`bcrypt`、`pbkdf2` 等。
+  - 选择 `plain`、`md5`、`sha`、`sha256` 或 `sha512` 算法，还需配置：
+    - **加盐方式**：用于指定盐和密码的组合方式，除需将访问凭据从外部存储迁移到 EMQX 内置数据库中外，一般不需要更改此选项；可选值：suffix（在密码尾部加盐）、prefix（在密码头部加盐）、disable（不启用）。注意：如选择 plain，加盐方式应设为 `disable`。
+  - 选择 `pkbdf2` 算法，还需配置：
+    - **伪随机函数**：指定生成密钥使用的散列函数，如 sha256 等。
+    - **迭代次数**：指定散列次数，默认值：4096。
+    - **密钥长度**（可选）：指定希望得到的密钥长度。如不指定，密钥长度将由伪随机函数确定。
+- **SQL**：根据表结构填入查询 SQL，具体要求见 [SQL 表结构与查询语句](https://docs.emqx.com/zh/enterprise/latest/access-control/authn/mysql.html#sql-%E8%A1%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5)。
 
 ::: tip
 * 如果当前部署为专有版，需创建 [VPC 对等连接](../deployments/vpc_peering.md)，服务器地址填写内网地址。

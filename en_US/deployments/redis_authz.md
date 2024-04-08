@@ -38,7 +38,7 @@ cmd = "HGETALL mqtt_acl:${username}"
 
 ## Configure Redis Authorization
 
-In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, then click **Redis Authorization** to create a new authorization.
+In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, select **Redis Authorization**, and click **Configure**.
 
 - **Redis Mode**: Choose the deployment mode of the Redis database, options: `Singl`, `Sentinel`, `Cluster`.
 - **Server**: Enter the Redis server address (host:port); when the deployment mode is selected as Sentinel or Cluster, you need to provide addresses for all related Redis servers, separated by commas, in the format host1:port1,host2:port2,...
