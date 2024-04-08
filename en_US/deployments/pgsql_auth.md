@@ -8,7 +8,6 @@ The PostgreSQL authenticator can support any table structure, including joint qu
 
 - `password_hash`: Required, the plaintext or hashed password field in the database.
 - `salt`: Optional, considered as an empty salt (salt = "") if empty or non-existent.
-- `is_superuser`: Optional, flags the current client as a superuser, default is `false`.
 
 Example table structure:
 
@@ -18,7 +17,6 @@ CREATE TABLE `mqtt_user` (
   `username` varchar(100) DEFAULT NULL,
   `password_hash` varchar(100) DEFAULT NULL,
   `salt` varchar(35) DEFAULT NULL,
-  `is_superuser` tinyint(1) DEFAULT 0,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mqtt_username` (`username`)
@@ -50,7 +48,7 @@ SELECT password_hash, salt, is_superuser FROM mqtt_user WHERE username = ${usern
 
 ## Configure PostgreSQL Authentication
 
-In the deployment, click **Access Control** -> **Extended Authentication**, click **PostgreSQL Configure Authentication**, and create a new authentication.
+In the deployment, click **Access Control** -> **Extended Authentication**, select **PostgreSQL Authentication**, and click **Configure**.
 
 You can complete the related configurations as follows:
 
@@ -62,17 +60,12 @@ You can complete the related configurations as follows:
 - **Connection Pool Size** (Optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the PostgreSQL database; default value: `8`.
 - **Query Timeout**: Enter the connection timeout duration; units available: hours, minutes, seconds, milliseconds.
 - **Password Hash**: Select the hashing algorithm used to store the password, such as plain, md5, sha, bcrypt, pbkdf2, etc.
-  - For algorithms `plain`, `md5`, `sha`, `sha256`, or `sha512`, configure:
+  - For algorithms `plain`, `md5`, `sha`, `sha256`, or `sha512`, you also need to configure:
     - **Salt Position**: Specifies how the salt is combined with the password. This option generally does not need to be changed unless credentials are being migrated from external storage to the EMQX built-in database; options: suffix (add salt at the end of the password), prefix (add salt at the beginning of the password), disable (do not use salt). Note: If choosing plain, the salt mode should be set to disable.
-
-  - For the `bcrypt` algorithm, configure:
-    - **Salt Rounds**: Specifies the computation times required for hashing (2^Salt Rounds), also known as the cost factor. Default value: `10`, options: `4`–`31`; the higher the value, the higher the security of the encryption, but also the longer the user verification time. Configure according to business requirements.
-
-  - For the `pbkdf2` algorithm, configure:
+  - For the `pbkdf2` algorithm, you also need to configure:
     - **Pseudorandom function**: Specifies the hashing function used to generate the key, such as sha256.
     - **Iteration Count**: Specifies the number of hashes, default value: 4096.
     - **Derived key length** (Optional): Specifies the desired length of the key. If not specified, the key length will be determined by the pseudorandom function.
-
 - **SQL**: Fill in the query SQL according to the table structure, specific requirements can be found in [SQL Table Structure and Query Statements](https://docs.emqx.com/en/enterprise/latest/access-control/authn/mysql.html#sql-table-structure-and-query-statements).
 
 ::: tip

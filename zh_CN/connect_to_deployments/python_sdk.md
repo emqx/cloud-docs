@@ -17,7 +17,7 @@
     - WebSocket 端口: **8083**
     - WebSocket TLS/SSL 端口: **8084**
 
-- 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口  测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证鉴权](../deployments/auth_overview.md)，在部署控制台**访问控制** > **认证**中设置用户名和密码，用于连接验证。
+- 您也可以自己[创建部署](../create/overview.md)，在部署概览下可以查看到连接相关的信息，请确保部署状态为运行中。使用 TCP 端口或 SSL/TLS 端口  测试连接到 MQTT 服务器。如果您是自己创建部署，请设置[认证](../deployments/auth_overview.md)，在部署控制台**访问控制** > **客户端认证**中设置用户名和密码，用于连接验证。
 
 ### 检查 Python 版本
 本项目使用 Python 3.8 进行开发测试，可用如下命令确认 Python 的版本。

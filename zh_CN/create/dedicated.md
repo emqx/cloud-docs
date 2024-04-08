@@ -13,7 +13,6 @@ EMQX Cloud 专有版提供独立的 MQTT 服务集群，有更高的连接上限
 3. 选择专有版面板。
 
    ![select_deployment_type](./_assets/create_dedicated.png)
-   <!--TODO 更新图片-->
 
 
 4. 依据您的需求选择相应规格配置。

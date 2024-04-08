@@ -38,11 +38,11 @@ EMQX Cloud 的定价模式是采用连接数作为主要计价衡量因素，相
 
 1、您可以通过以下两个入口开通流量包。
 
-方式一：登陆 EMQX Cloud 控制台，在菜单栏点击`增值服务`，选择流量包。
+方式一：登陆 EMQX Cloud 控制台，在菜单栏点击**增值服务**，选择流量包。
 
 ![vas-traffic-pack](./_assets/traffic-pack-open-1.png)
 
-方式二：在部署的流量消耗处点击`购买流量包`
+方式二：在部署的流量消耗处点击**购买流量包**。
 
 ![vas-traffic-pack](./_assets/traffic-pack-open-2.png)
 
@@ -50,7 +50,7 @@ EMQX Cloud 的定价模式是采用连接数作为主要计价衡量因素，相
 
 ![vas-traffic-pack](./_assets/traffic-pack-info.png)
 
-3、点击`确认购买`，进入待支付订单，选择支付方式，点击`支付`，即可成功开通流量包服务。
+3、点击**创建订单**，进入待支付订单，选择支付方式，点击`支付`，即可成功开通流量包服务。
 
 ![vas-traffic-pack](./_assets/traffic-pack-pay.png)
 
@@ -58,7 +58,7 @@ EMQX Cloud 的定价模式是采用连接数作为主要计价衡量因素，相
 
 在开通流量包之后，您可以通过以下方式查看详情页面。
 
-1、找到控制台顶部菜单栏 `增值服务`，找到流量包，点击服务详情。
+1、找到控制台顶部菜单栏 **增值服务**，找到流量包，点击**服务详情**。
 
 ![vas-traffic-pack](./_assets/traffic-pack-services.png)
 

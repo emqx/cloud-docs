@@ -48,7 +48,7 @@ query = "SELECT permission, action, topic, qos, retain FROM mqtt_acl WHERE usern
 
 ## Configure PostgreSQL Authorization
 
-In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, then click **PostgreSQL Authorization** to create a new authorization.
+In the deployment, click **Access Control** -> **Authorization** -> **Extended Authorization**, select **PostgreSQL Authorization**, and click **Configure**.
 
 You can complete the related configuration according to the following instructions:
 
