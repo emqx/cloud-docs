@@ -107,7 +107,7 @@ Microsoft SQL Server 数据集成是 EMQX Cloud 的开箱即用功能，结合�
 
 ### 配置 ODBC 驱动
 
-通过 EMQX Cloud [工单](https://docs.emqx.com/zh/cloud/latest/feature/tickets.html)服务提供您的 SQL Server 版本，后台将为您的部署安装 ODBC 驱动。
+通过 EMQX Cloud [工单](../feature/tickets.md)服务提供您的 SQL Server 版本，后台将为您的部署安装 ODBC 驱动。
 
 ## 创建 Microsoft SQL Server 连接器
 

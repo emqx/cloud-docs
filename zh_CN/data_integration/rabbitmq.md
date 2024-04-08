@@ -6,7 +6,7 @@
 
 ## 工作原理
 
-RabbitMQ 数据集成是 EMQX Cloud 中的开箱即用功能，结合了 EMQX Cloud 的设备接入、消息传输能力与 RabbitMQ 强大的消息队列处理能力。通过内置的[规则引擎](./rules.md)组件，该集成简化了从 EMQX 到 RabbitMQ 的数据摄取过程，无需复杂编码。
+RabbitMQ 数据集成是 EMQX Cloud 中的开箱即用功能，结合了 EMQX Cloud 的设备接入、消息传输能力与 RabbitMQ 强大的消息队列处理能力。通过内置的[规则引擎](./rules.md)组件，该集成简化了从 EMQX Cloud 到 RabbitMQ 的数据摄取过程，无需复杂编码。
 
 下图展示了 EMQX Cloud 与 RabbitMQ 之间数据集成的典型架构:
 
@@ -191,14 +191,12 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.11-ma
 
 3. 验证消息是否被路由到相应的 queue(s)。点击 queue 查看详情并点击 **Get Message(s)** 按钮查看消息的详细内容。
 
-   - payload:
-
-     ```json
-     {"payload":
-      "{
-      "temp": "27.5",
-      "hum": "41.8"
-       }",
-       "timestamp": 1711333401673
-     }
-     ```
+   ```json
+   {"payload":
+    "{
+    "temp": "27.5",
+    "hum": "41.8"
+     }",
+     "timestamp": 1711333401673
+   }
+   ```

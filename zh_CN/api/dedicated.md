@@ -1,6 +1,6 @@
 # 专有版 / BYOC API 概览
 
-以下表格汇总了 EMQX Cloud 专有版 / BYOC 部署的 API 文档。
+以下表格汇总了 EMQX 专有版 / BYOC 部署的 API 文档。
 
 
 | API                          | 描述                                   |

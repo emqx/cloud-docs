@@ -153,7 +153,7 @@ docker run --name influxdb -p 8086:8086 influxdb:2.5.1
 
 2. 前往 InfluxDB UI Data Explorer 查看数据是否已经写入 InfluxDB 中。
 
-3. 如果使用 InfluxDB V1，进入 InfluxDB 容器，查看 InfluxDB 中的数据
+   如果使用 InfluxDB V1，进入 InfluxDB 容器，查看 InfluxDB 中的数据：
 
    ```bash
      $ docker exec -it influxdb influx

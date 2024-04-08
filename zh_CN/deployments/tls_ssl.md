@@ -4,7 +4,7 @@
 该功能仅适用于专有版。
 :::
 
-EMQX Cloud **专业版部署** 推荐使用自定义的证书验证，并且提供单向/双向 TLS/SSL 两种验证模式，具体如下：
+EMQX **专业版部署** 推荐使用自定义的证书验证，并且提供单向/双向 TLS/SSL 两种验证模式，具体如下：
 
 | 认证方式 | 是否支持自签名证书 | 服务器证书 | 证书链 | 私有秘钥 | 客户端 CA 证书 |
 | -------- | ------------- | ---------- | ------ | -------- | --------------|
@@ -181,7 +181,7 @@ subjectAltName = @alt_names
 subjectAltName = @alt_names
 
 [alt_names]
-# EMQX Cloud deployment connections address
+# EMQX deployment connections address
 # 非亚马逊的部署使用 IP.1
 IP.1 = <当前部署的地址>
 # 亚马逊中国的部署使用 DNS.1

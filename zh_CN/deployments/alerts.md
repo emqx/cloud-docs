@@ -42,11 +42,11 @@ EMQX Cloud 目前提供 邮箱和 PagerDuty 事件告警集成。如您需要其
 ### PagerDuty 集成
 将告警信息发送到 PagerDuty 的事件，并且 PagerDuty 指定通知方法。
 
-1. 在 PagerDuty 创建告警服务
-  ![pagerduty_service](./_assets/pagerduty_service.png)
+1. 在 PagerDuty 创建告警服务。
+    ![pagerduty_service](./_assets/pagerduty_service.png)
 
-2. 添加 api v2 集成，并复制集成秘钥
-  ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
+2. 添加 api v2 集成，并复制集成秘钥。
+    ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
 
-3. 在 EMQX Cloud 上填写集成秘钥
-  ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
+3. 在 EMQX Cloud 上填写集成秘钥。
+    ![pagerduty_alerts](./_assets/pagerduty_alerts.png)

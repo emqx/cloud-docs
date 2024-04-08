@@ -1,6 +1,6 @@
 # Product Overview
 
-EMQX Platform is an IoT messaging middleware product that helps you easily collect, transmit, computer, and persist IoT data. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Platform provides a one-stop O&M collocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, EMQX Platform can help you quickly build industry applications for the IoT domain quickly and securely.
+EMQX Platform is an IoT messaging middleware product that helps you easily collect, transmit, computer, and persist IoT data. As the world's first fully managed MQTT 5.0 cloud messaging service, EMQX Platform provides a one-stop O&M collocation and a unique isolated environment for MQTT messaging services. In the era of the Internet of Everything, the EMQX Platform can help you quickly build industry applications for the IoT domain quickly and securely.
 
 ## Key Features
 

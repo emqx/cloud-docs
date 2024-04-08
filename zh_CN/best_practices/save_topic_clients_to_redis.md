@@ -1,7 +1,7 @@
 # 数据集成 + Redis 实时获取主题下订阅的客户端
 
 ::: warning
-该功能在基础版中不可用
+该功能在基础版中不可用。
 :::
 
 在本文中我们将使用 EMQX Cloud 数据集成保存 topic 和客户端的订阅关系到 Redis，可以实时获取主题下订阅的客户端列表。
@@ -101,10 +101,10 @@
    ![redis_hgetall](./_assets/redis_hgetall.png)
    
 3. 此时我们使用 `emqx_cloud_client2` 客户端取消订阅 topic：`testtopic/a`，然后查看 redis 数据
-    
+   
    ![redis_hgetall_1](./_assets/redis_hgetall_1.png)
    
 4. 同时在规则列表可以点击监控查看监控数据
-    
+   
 
    ![redis_rule_monitor](./_assets/redis_rule_monitor.png)

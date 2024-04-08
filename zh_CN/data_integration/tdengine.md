@@ -42,9 +42,9 @@ TDengine 数据集成为您的业务带来了以下功能和优势：
 - 了解 [规则](./rules.md)。
 - 了解[数据集成](./introduction.md)。
 
-### 安装 TDengine
+### 安装 TDengine 并创建数据表
 
-#### 通过 Docker 安装并启动 TDengine：
+通过 Docker 安装并启动 TDengine：
 
 ```bash
 # 启动一个 TDengine 容器
@@ -140,41 +140,6 @@ INSERT INTO t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload, arrived)
 8. 点击**确认**按钮完成动作的配置。
 9. 在弹出的**成功创建规则**提示框中点击**返回规则列表**，从而完成了整个数据集成的配置链路。
 
-## 测试规则
-
-推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
-
-1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
-
-   - topic: `temp_hum/emqx`
-
-   - client id: `test_client`
-
-   - payload:
-
-     ```json
-     {
-       "temp": "27.5",
-       "hum": "41.8"
-     }
-     ```
-
-2. 查看 TDengine 规则的动作统计，命中、动作成功次数均 +1。
-
-3. 前往 TDengine 查看数据是否已经写入表中。
-
-`t_mqtt_msg` 表：
-
-```bash
-taos> select * from t_mqtt_msg;
-           ts            |             msgid              |           mqtt_topic           | qos  |            payload             |         arrived         |
-==============================================================================================================================================================
- 2024-03-29 06:57:37.300 | 000614C727B230AE67180100069... | temp_hum/emqx                            |    1 | {
-  "temp": "27.5",
-  "hum"... | 2024-03-29 06:57:37.300 |
-Query OK, 1 row(s) in set (0.002968s)
-```
-
 ### 批量设置
 
 在 TDengine 中，一条数据可能包含数百个数据点，这使得编写 SQL 语句变得具有挑战性。为了解决这个问题，EMQX Cloud 提供了批量设置 SQL 的功能。
@@ -203,4 +168,41 @@ Query OK, 1 row(s) in set (0.002968s)
    注意，批量设置 CSV 文件中数据不能超过 2048 行。
 
 3. 将填好的模板文件保存并上传到**导入批量设置**弹窗中，点击**导入**完成批量设置。
+
 4. 导入完成后，您可以在 **SQL 模板** 中对 SQL 进行进一步的调整，例如设置表名称，美化 SQL 等。
+
+## 测试规则
+
+推荐使用 [MQTTX](https://mqttx.app/) 模拟温湿度数据上报，同时您也可以使用其他任意客户端完成。
+
+1. 使用 MQTTX 连接到 EMQX Cloud 部署，并向以下 Topic 发送消息。
+
+   - topic: `temp_hum/emqx`
+
+   - client id: `test_client`
+
+   - payload:
+
+     ```json
+     {
+       "temp": "27.5",
+       "hum": "41.8"
+     }
+     ```
+
+2. 查看 TDengine 规则的动作统计，命中、动作成功次数均 +1。
+
+3. 前往 TDengine 查看数据是否已经写入表中。
+
+   `t_mqtt_msg` 表：
+
+   ```bash
+   taos> select * from t_mqtt_msg;
+              ts            |             msgid              |           mqtt_topic           | qos  |            payload             |         arrived         |
+   ==============================================================================================================================================================
+    2024-03-29 06:57:37.300 | 000614C727B230AE67180100069... | temp_hum/emqx                            |    1 | {
+     "temp": "27.5",
+     "hum"... | 2024-03-29 06:57:37.300 |
+   Query OK, 1 row(s) in set (0.002968s)
+   ```
+

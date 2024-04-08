@@ -18,7 +18,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 ## 认证配置
 
 在部署中点击 **访问控制** - **扩展认证**，点击 **JWT 配置认证**，新建认证。
-  
+
 
 您可根据如下说明完成相关配置：
 
@@ -48,7 +48,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkVNUVg
 点击创建完成相关配置。
 
 ::: tip
-* 如果当前部署为专有版，需创建 [VPC 对等连接](https://docs.emqx.com/zh/cloud/latest/deployments/vpc_peering.html)，服务器地址填写内网地址。
+* 如果当前部署为专有版，需创建 [VPC 对等连接](../deployments/vpc_peering.md)，服务器地址填写内网地址。
 * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 BYOC 部署 - VPC 对等连接配置](../create/byoc.md#vpc-对等连接配置) 章节。服务器地址填写内网地址。
 * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
 :::

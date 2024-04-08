@@ -73,16 +73,12 @@
         'menus':
           [
             {
-              'name': 'Projects and Users',
+              'name': 'Project and Account',
               'subMenus':
                 [
+                  { 'name': 'Project Management', 'link': './feature/project.html' },
                   {
-                    'name': 'Project center',
-                    'link': './feature/project_center.html',
-                  },
-                  { 'name': 'Project list', 'link': './feature/project.html' },
-                  {
-                    'name': 'Role & Authentication',
+                    'name': 'Role and Authentication',
                     'link': './feature/role.html',
                   },
                   {
@@ -92,13 +88,14 @@
                 ],
             },
             {
-              'name': 'DevOps and Monitors',
+              'name': 'Monitoring and Diagnose',
               'subMenus':
                 [
-                  { 'name': 'Monitors', 'link': './deployments/monitors.html' },
+                  { 'name': 'Monitoring', 'link': './deployments/monitors.html' },
                   { 'name': 'Metrics', 'link': './deployments/metrics.html' },
-                  { 'name': 'Logs', 'link': './deployments/logs.html' },
+                  { 'name': 'Clients', 'link': './deployments/clients.html' },
                   { 'name': 'Alerts', 'link': './deployments/alerts.html' },
+                  { 'name': 'Logs', 'link': './deployments/logs.html' },
                 ],
             },
             {
@@ -161,7 +158,7 @@
                 [
                   {
                     'name': 'Data integrations',
-                    'link': './rule_engine/introduction.html',
+                    'link': './data_integration/introduction.html',
                   },
                   { 'name': 'API', 'link': './api/api_overview.html' },
                 ],

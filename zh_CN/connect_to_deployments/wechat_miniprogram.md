@@ -1,11 +1,11 @@
 # 使用微信小程序连接到部署
 
-本文主要介绍在微信小程序中使用 `MQTT.js` 连接到 [EMQX Cloud](https://www.emqx.com/zh/cloud) 部署，进行订阅、取消订阅、收发消息等功能。
+本文主要介绍在微信小程序中使用 `MQTT.js` 连接到 EMQX Cloud 部署，进行订阅、取消订阅、收发消息等功能。
 
 ## 前提条件
 
 ::: tip
-EMQX 专有版部署建议绑定在云厂商自购的证书，选择单向认证且需在 EMQX Cloud 控制台部署详情页面[配置 TLS/SSL](<https://docs.emqx.com/zh/cloud/latest/deployments/tls_ssl.html>) 时**上传证书链**。
+EMQX 专有版部署建议绑定在云厂商自购的证书，选择单向认证且需在 EMQX Cloud 控制台部署详情页面[配置 TLS/SSL](../deployments/tls_ssl.md) 时**上传证书链**。
 :::
 
 1. [注册](https://mp.weixin.qq.com/wxopen/waregister?action=step1) 微信小程序账号，并下载 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 由于微信小程序安全要求比较高，在与后台服务器之间的通讯必须使用 https 或 wss 协议。所以需要登录 [微信公众平台](https://mp.weixin.qq.com/)，在左侧菜单【开发】->【开发管理】->【开发设置】->【服务器域名】中 socket 合法域名添加部署域名。

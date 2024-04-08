@@ -90,7 +90,7 @@ CREATE TABLE `temp_hum` (
    - **密码**：填写 `public`。
    - 如果您想建立加密连接，请点击 **启用 TLS** 切换开关。
 
-4. 根据需要配置高级设置选项（可选），详情请参考[高级设置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-mysql.html#%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE)。。
+4. 根据需要配置高级设置选项（可选），详情请参考[高级设置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-mysql.html#%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE)。
 5. 点击**测试连接**按钮，如果 MySQL 服务能够正常访问，则会返回成功提示。
 6. 点击**新建**按钮完成连接器的创建。
 

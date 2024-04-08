@@ -12,9 +12,9 @@ EMQX Cloud 为应用程序及设备提供安全可靠的双向通信能力，在
 
 ### 什么是 EMQX Cloud 部署?
 
-部署是由 EMQX Cloud 托管的 EMQX Enterprise 集群
+部署是由 EMQX Cloud 托管的 EMQX Enterprise 集群。
 
-### 什么是 EMQX ?
+### 什么是 EMQX?
 
 EMQX (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。
 
