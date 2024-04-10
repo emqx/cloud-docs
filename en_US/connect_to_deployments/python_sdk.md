@@ -91,7 +91,7 @@ username = 'emqx'
 password = '**********'
 ```
 
-- Setting the CA certificate. If you are using Serverless or Basic deployment, you can download CA certificate file in the Deployment Overview of the Console. If you are using Dedicated deployment, please refer to [Configure TLS/SSL](../deployments/tls_ssl.md) for certificate configuration.
+- Setting the CA certificate. If you are using Serverless deployment, you can download CA certificate file in the Deployment Overview of the Console. If you are using Dedicated deployment, please refer to [Configure TLS/SSL](../deployments/tls_ssl.md) for certificate configuration.
 - Write the connect callback function 'on_connect'. 
 This function will be called after connecting the client, and we can determine whether the client is connected successfully according to 'rc' in this function.
 
