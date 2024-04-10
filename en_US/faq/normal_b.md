@@ -8,7 +8,7 @@ If you need other protocol support, you can submit a ticket or send an email (cl
 
 ## How to bind a domain name？
 
-When you create a **Professional deployment**, you will be given an MQTT connection address, which is displayed as a domain in the deployment.You may already have your own domain and would like to be able to link to it.
+When you create a **Dedicated deployment**, you will be given an MQTT connection address, which is displayed as a domain in the deployment. You may already have your own domain and would like to be able to link to it.
 
 
 ### Steps
@@ -20,12 +20,12 @@ When you create a **Professional deployment**, you will be given an MQTT connect
 3. Once the DNS resolution has taken effect, you can connect to the MQTT service via mqtt.abc.com.
 
 :::tip
-**Serverless and Dedicated - Basic deployments do not support using CNAME to bind custom domains.** It is recommended to use the default domain connection address provided by EMQX Cloud to ensure correct allocation and management of connections.
+**Serverless deployments do not support using CNAME to bind custom domains.** It is recommended to use the default domain connection address provided by EMQX Cloud to ensure the correct allocation and management of connections.
 :::
 
 ## How to set up NAT gateway configuration?
 
-NAT is only supported for **Professional plan**. You can enable NAT gateway in Valued-Added Service.
+NAT is only supported for **Dedicated plan**. You can enable NAT gateway in Valued-Added Service.
 
 ## Will cluster scaling affect device connectivity?
 

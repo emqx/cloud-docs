@@ -8,7 +8,7 @@
 
 ### MQTT 服务器部署
 
-- 使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [全托管 MQTT 云服务](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下： 
+- 使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [全托管 MQTT 云服务](https://www.emqx.com/zh) 创建。服务器接入信息如下： 
   - 连接地址: broker.emqx.io 
   - TCP Port: 1883 
   - SSL/TLS Port: 8883 

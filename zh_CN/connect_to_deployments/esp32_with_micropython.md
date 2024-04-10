@@ -10,7 +10,7 @@
 
 ### 1. MQTT 服务器部署
 
-您可以直接使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh/cloud) 创建。服务器接入信息如下：
+您可以直接使用 EMQX 提供的 [免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)，该服务基于 EMQX 的 [MQTT 物联网云平台](https://www.emqx.com/zh) 创建。服务器接入信息如下：
 
 - 连接地址: **broker.emqx.io**
 - TCP 端口: **1883**

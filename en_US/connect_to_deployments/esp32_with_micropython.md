@@ -10,7 +10,7 @@ This article will mainly introduce how to use module `umqtt` of MicroPython in m
 
 ### 1. Deploy MQTT Broker
 
-You can directly use the [Free Public MQTT Server](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX, which is based on EMQX's [MQTT IoT Cloud Platform](https://www.emqx.com/en/cloud) created. The server access information is as follows:
+You can directly use the [Free Public MQTT Server](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX, which is based on EMQX's [MQTT IoT Cloud Platform](https://www.emqx.com/en) created. The server access information is as follows:
 
 - Connection Address: **broker.emqx.io**
 - TCP Port: **1883**

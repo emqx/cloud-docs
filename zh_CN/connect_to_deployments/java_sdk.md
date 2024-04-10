@@ -8,7 +8,7 @@ Eclipse Paho Java 是一个开源的 MQTT 客户端库，可用于在 Java 应�
 
 ### 获得 MQTT 服务器
 
-- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh/cloud)创建。服务器连接信息如下：
+- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh)创建。服务器连接信息如下：
 
     - 连接地址: **broker.emqx.io**
     - TCP Port: **1883**

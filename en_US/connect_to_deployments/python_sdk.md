@@ -9,7 +9,7 @@ It provides support for MQTT V5.0, V3.1, and V3.1.1 for client classes on Python
 
 ### Deploy MQTT Broker
 
-- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en). The information about broker access is as follows:
 
   + Broker: **broker.emqx.io**
   + TCP Port: **1883**
@@ -91,7 +91,7 @@ username = 'emqx'
 password = '**********'
 ```
 
-- Setting the CA certificate. If you are using Serverless or Basic deployment, you can download CA certificate file in the Deployment Overview of the Console. If you are using Professional deployment, please refer to [Configure TLS/SSL](../deployments/tls_ssl.md) for certificate configuration.
+- Setting the CA certificate. If you are using Serverless deployment, you can download CA certificate file in the Deployment Overview of the Console. If you are using Dedicated deployment, please refer to [Configure TLS/SSL](../deployments/tls_ssl.md) for certificate configuration.
 - Write the connect callback function 'on_connect'. 
 This function will be called after connecting the client, and we can determine whether the client is connected successfully according to 'rc' in this function.
 

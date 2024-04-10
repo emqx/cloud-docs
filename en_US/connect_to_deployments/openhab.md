@@ -8,13 +8,13 @@ With the high flexibility and ease of use, openHAB provides a particular binding
 
 ### Get MQTT Broker
 
-You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en). The information about broker access is as follows:
 
 - Broker: **broker.emqx.io**
 - MQTT Port: **1883**
 - MQTT over TLS/SSL Port: **8883**
 
-You can [create a deployment](../create/overview.md) as well. Find connection information in deployment overview. Make sure the deployment is running. Use the TCP port or TLS/SSL port to test the connection to the MQTT server.
+You can [create a deployment](../create/overview.md) as well. Find connection information in the deployment overview. Make sure the deployment is running. Use the TCP port or TLS/SSL port to test the connection to the MQTT server.
 
 If you are creating your own deployment, check [Authentication](../deployments/auth_overview.md) and set the username and password in `Access Control` > `Authentication` for verification.
 

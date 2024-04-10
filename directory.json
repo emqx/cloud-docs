@@ -405,7 +405,7 @@
           "path": "data_integration/redis"
         },
         {
-          "title": "MongDB",
+          "title": "MongoDB",
           "path": "data_integration/mongodb"
         },
         {
@@ -951,7 +951,7 @@
           "path": "connect_to_deployments/esp32"
         },
         {
-          "title": "Connect with ESP32 + MicrPython",
+          "title": "Connect with ESP32 + MicroPython",
           "path": "connect_to_deployments/esp32_with_micropython"
         },
         {
@@ -1046,7 +1046,7 @@
           "path": "data_integration/redis_upstash"
         },
         {
-          "title": "MongDB",
+          "title": "MongoDB",
           "path": "data_integration/mongodb"
         },
         {
@@ -1238,7 +1238,7 @@
       ]
     },
     {
-      "title": "Release Note & Upgrade policy",
+      "title": "Release Note & Upgrade Policy",
       "collapsed": true,
       "children": [
         {

@@ -17,13 +17,12 @@ TCP and TLS protocols are supported **but WebSocket**.
 
 Get the connection address and port in the Deployment Overview (the following **xxxxx represents a random port**, the specific port information **please refer to the information on the deployment overview page**).
 
-- Professional plan address: IP; port: 1883(mqtt), 8083(ws) is enabled by default, you can enable port 8883(mqtts) and 8084(wss) by configuring TLS/SSL
-- Standard plan address: domain ending with emqx.cloud suffix; port: xxxxx (mqtt), xxxxx (ws), xxxxx (mqtts), xxxxx (wss)
+- Dedicated plan address: IP; port: 1883(mqtt), 8083(ws) is enabled by default, you can enable port 8883(mqtts) and 8084(wss) by configuring TLS/SSL
 - BYOC plan address: the domain name specified at deployment time; port: 1883 (mqtt), 8083 (ws), 8883 (mqtts), 8884 (wss)
 
 ### Authentication
 
-All deployments of EMQX Platform have user authentication enabled, so when using MQTT.fx to test the connection, **you need to fill in the Username and Password fields**.
+All deployments of the EMQX Platform have user authentication enabled, so when using MQTT.fx to test the connection, **you need to fill in the Username and Password fields**.
 
 > Set the Username and Password in `Access Control` > `Authentication`, which can be added one by one, or can be imported at once.
 

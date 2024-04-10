@@ -9,7 +9,7 @@
 
 ### 获得 MQTT 服务器
 
-- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh/cloud)创建。服务器连接信息如下：
+- 使用 EMQX 提供的[免费公共 MQTT 服务器](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)（仅支持单向认证），该服务基于 EMQX 的[全托管的 MQTT 消息云服务](https://www.emqx.com/zh)创建。服务器连接信息如下：
 
     - 连接地址: **broker.emqx.io**
     - TCP Port: **1883**
@@ -92,7 +92,7 @@ username = 'emqx'
 password = '**********'
 ```
 
-- 设置 CA 证书，如果您使用 Serverless 或者基础版部署，您可以在部署概览中下载 CA 证书文件。如果您使用专业版部署，请参考[专业版 TLS/SSL 配置](../deployments/tls_ssl.md)进行证书配置。
+- 设置 CA 证书，如果您使用 Serverless 或者基础版部署，您可以在部署概览中下载 CA 证书文件。如果您使用专有版部署，请参考[专业版 TLS/SSL 配置](../deployments/tls_ssl.md)进行证书配置。
 - 编写连接回调函数 `on_connect`，该函数将在客户端连接后被调用，在该函数中可以依据 `rc` 来判断客户端是否连接成功。
 
 ```python
