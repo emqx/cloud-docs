@@ -48,7 +48,7 @@ This section introduces the preparatory work needed to create TimescaleDB Data I
 
 Before you start, you need to create a deployment (EMQX Cluster) on EMQX Platform and configure the networking.
 
-- For Professional Plan users: Please create [ VPC Peering Connections](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource (Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
+- For Dedicated Plan users: Please create [ VPC Peering Connections](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource (Dedicated Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
 - For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 
 ### Install Timescale and Create Data Table

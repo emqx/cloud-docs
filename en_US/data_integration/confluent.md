@@ -50,34 +50,29 @@ The following sections demonstrate how to set up a Confluent Cloud cluster in pu
 
 #### Set Up a Cluster in Public Networking
 
-   If you have or want to create Confluent Basic / Standard / Dedicated clusters, you can set up public networking solutions.
+If you have or want to create Confluent Basic / Standard / Dedicated clusters, you can set up public networking solutions.
 
-1. Create a Cluster
+##### Create a Cluster
 
-   ① Login to the Confluent Cloud console and create a cluster. In this demo, you can select Basic cluster as an example, and click **Begin Configuration**.
+1. Login to the Confluent Cloud console and create a cluster. In this demo, you can select Basic cluster as an example, and click **Begin Configuration**.
+2. Select region/zones. Considering the latency, it is recommended that the EMQX Platform deployment region matches the region of the Confluent Cloud. Click **Continue**.
+3. Enter your cluster name and click **Launch cluster**. Now you have a running cluster in the cloud.
 
-   ② Select region/zones. Considering the latency, it is recommended that the EMQX Platform deployment region matches the region of the Confluent Cloud. Click **Continue**.
+##### Create a topic
 
-   ③ Enter your cluster name and click **Launch cluster**. Now you have a running cluster in the cloud.
+1. From the navigation menu, click **Topics**, and then click **Create topic**.
+2. In the **Topic name** field, type `emqx` and then select **Create with defaults**.
 
-2. Create a topic
+##### Create API Key
 
-   ① From the navigation menu, click **Topics**, and then click **Create topic**.
-   ② In the **Topic name** field, type `emqx` and then select **Create with defaults**.
+1. From the navigation menu, click **API Keys**, and then click **Add key**.
+2. Select scope for API Key. You can select `Global access`, then click **Next**.
+3. Create API Key and download the key for later configuration.
 
-3. Create API Key
+##### Enable NAT Gateway in EMQX Platform
 
-   ①From the navigation menu, click **API Keys**, and then click **Add key**.
-
-   ②Select scope for API Key. You can select `Global access`, then click **Next**.
-
-   ③Create API Key and download the key for later configuration.
-
-4. Enable NAT Gateway in EMQX Platform
-
-   ① Login to EMQX Platform console, and enter the deployment Overview page.
-
-   ② Click the **NAT Gateway** tab on the lower section of the page, and click **Subscribe Now**. Learn more about [NAT Gateway](../vas/nat-gateway.md).
+1. Login to the EMQX Platform console, and enter the deployment Overview page.
+2. Click the **NAT Gateway** tab on the lower section of the page, and click **Subscribe Now**. Learn more about [NAT Gateway](../vas/nat-gateway.md).
 
 In the above steps, we have completed the prerequisite settings of public networking.
 
@@ -178,15 +173,15 @@ confluent kafka topic consume -b <topic-name>
 
 ##### Establish VPC Peering Connection with EMQX Platform Deployment
 
-After you create the cluster, you need to add peering in Confluent Cloud console.
+After you create the cluster, you need to add peering in the Confluent Cloud console.
 
 1. From the navigation menu, click **Cluster settings**, and then click the **Networking** tab. Click the **Add Peering** button.
 
-2. Enter the vpc information. You can get the information from the **VPC Peering Connection** section on the deployment Overview page of your deployment on the EMQX Platform console. Click the **Save** button.
+2. Enter the VPC information. You can get the information from the **VPC Peering Connection** section on the deployment Overview page of your deployment on the EMQX Platform console. Click the **Save** button.
 
 3. Check the VPC Peering Connection status.
-   - If the connection status is `Inactive`, go to the Cloud deployment to accept the peering request. Enter the vpc information of the confluent cloud cluster and click **Confirm**.
-   - When the vpc status turns to `running`, you successfully create the vpc peering connection.
+   - If the connection status is `Inactive`, go to the Cloud deployment to accept the peering request. Enter the VPC information of the confluent cloud cluster and click **Confirm**.
+   - When the VPC status turns to `running`, you successfully create the VPC peering connection.
 
 In the above steps, we have completed the prerequisite settings of private networking.
 

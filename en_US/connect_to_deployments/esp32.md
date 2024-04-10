@@ -12,7 +12,7 @@ Before the connection, you need to get the broker and client ready.
 
 ### Get MQTT Broker
 
-You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en). The information about broker access is as follows:
 - Broker: **broker.emqx.io**
 - TCP Port: **1883**
 - SSL/TLS Port: **8883**
@@ -241,7 +241,7 @@ const int mqtt_port = 8883;
 
 3. Set server-side certificate.
 
-   If you are using a public MQTT broker, [download CA certificate](https://assets.emqx.com/data/emqxsl-ca.crt) here for TLS/SSL port connection with Serverless or Standard deployment. If you are using Professional deployment, use your own server-side certificate.
+   If you are using a public MQTT broker, [download CA certificate](https://assets.emqx.com/data/emqxsl-ca.crt) here for TLS/SSL port connection with Serverless deployment. If you are using Dedicated deployment, use your own server-side certificate.
 
 ```c
 // Root CA Certificate

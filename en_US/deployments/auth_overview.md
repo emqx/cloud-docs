@@ -2,11 +2,10 @@
 
 Authentication is an important component of most applications. The MQTT protocol supports username and password authentication, and enabling identity verification can effectively prevent illegal client connections. In EMQX Platform, authentication refers to controlling the client's permissions to connect to the server through server-side configuration when a client connects to EMQX Platform. To provide better security, EMQX supports multiple authentication mechanisms.
 
-| **Version**              | **Password Authentication** | **Extended (Password) Authentication** | **JWT Authentication** | **X.509 Certificate Authentication** |
-| ------------------------ | --------------------------- | -------------------------------------- | ---------------------- | ------------------------------------ |
-| Serverless               | ✓                           | ✗                                      | ✗                      | ✓                                    |
-| Dedicated - Standard     | ✓                           | ✗                                      | ✗                      | ✓                                    |
-| Dedicated - Professional | ✓                           | ✓                                      | ✓                      | ✓                                    |
+| **Version** | **Password Authentication** | **Extended (Password) Authentication** | **JWT Authentication** | **X.509 Certificate Authentication** |
+| ----------- | --------------------------- | -------------------------------------- | ---------------------- | ------------------------------------ |
+| Serverless  | ✓                           | ✗                                      | ✗                      | ✓                                    |
+| Dedicated   | ✓                           | ✓                                      | ✓                      | ✓                                    |
 
 ## [Password Authentication (Default)](./default_auth.md)
 

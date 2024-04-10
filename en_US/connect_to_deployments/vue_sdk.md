@@ -8,7 +8,7 @@ This article demonstrates the code using Vue 3. If you are using Vue 2, please r
 
 ### Deploy MQTT Broker
 
-- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en). The information about broker access is as follows:
 
   - Address: **broker.emqx.io**
   - WebSocket Port: **8083**

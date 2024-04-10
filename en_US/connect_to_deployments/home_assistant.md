@@ -6,7 +6,7 @@ In recent years, as people's demand for home security, convenience, comfort and 
 
 ### Get MQTT Broker
 
-You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en). The information about broker access is as follows:
 
 - Broker: **broker.emqx.io**
 - MQTT Port: **1883**

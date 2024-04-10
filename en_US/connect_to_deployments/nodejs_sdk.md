@@ -1,6 +1,6 @@
 # Connect to Deployment using Node.js via MQTT.js SDK
 
-This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in the Node.js project to realize the functions of connecting, subscribing, unsubscribing, sending and receiving messages between the client and the [MQTT broker](https://www.emqx.com/en/cloud).
+This article mainly introduces how to use [MQTT](https://www.emqx.com/en/mqtt) in the Node.js project to realize the functions of connecting, subscribing, unsubscribing, sending and receiving messages between the client and the MQTT broker.
 
 ## Pre preparation
 
@@ -14,7 +14,7 @@ v16.19.1
 
 ### Deploy MQTT Broker
 
-- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en/cloud). The information about broker access is as follows:
+- You can use the [free public MQTT broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) provided by EMQX. This service was created based on the [EMQX Platform](https://www.emqx.com/en). The information about broker access is as follows:
   - Address: **broker.emqx.io**
   - TCP Port: **1883**
   - SSL/TLS Port: **8883**
