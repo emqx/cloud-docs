@@ -14,27 +14,27 @@ Select **+ Add** on the Client Authorization page to add new authorization infor
 
 Under the **Client ID** tab, create authorization rules for specific client IDs.
 
-- Client ID: The client applicable to this rule
-- Topic: Configure the topic corresponding to this rule
-- Action: Configure the operation corresponding to this rule. Options: `Publish`, `Subscribe`, `Publish and Subscribe`
-- Permission: Whether to allow the current client to perform the requested operation; Options: `Allow`, `Deny`
+- **Client ID**: The client applying this authorization rule.
+- **Topic**: Configure the topic corresponding to this rule.
+- **Action**: Configure the operation corresponding to this rule. Options: `Publish`, `Subscribe`, `Publish and Subscribe`.
+- **Permission**: Whether to allow the current client to perform the requested operation; Options: `Allow`, `Deny`.
 
 ### Add Username Authorization
 
 Under the **Username** tab, create authorization rules for specific usernames.
 
-- Username: The username applicable to this rule
-- Topic: Configure the topic corresponding to this rule
-- Action: Configure the operation corresponding to this rule. Options: `Publish`, `Subscribe`, `Publish and Subscribe`
-- Permission: Whether to allow the current user to perform the requested operation; Options: `Allow`, `Deny`
+- **Username**: The username applicable to this rule.
+- **Topic**: Configure the topic corresponding to this rule.
+- **Action**: Configure the operation corresponding to this rule. Options: `Publish`, `Subscribe`, `Publish and Subscribe.`
+- **Permission**: Whether to allow the current user to perform the requested operation; Options: `Allow`, `Deny`.
 
 ### Add Topic Authorization
 
 Under the **All Users** tab, create authorization rules for specific topics.
 
-- Topic: Configure the topic corresponding to this rule
-- Action: Configure the operation corresponding to this rule. Options: `Publish`, `Subscribe`, `Publish and Subscribe`
-- Permission: Whether to allow the current topic to perform the requested operation; Options: `Allow`, `Deny`
+- **Topic**: Configure the topic corresponding to this rule.
+- **Action**: Configure the operation corresponding to this rule. Options: `Publish`, `Subscribe`, `Publish and Subscribe`.
+- **Permission**: Whether to allow the current topic to perform the requested operation; Options: `Allow`, `Deny`.
 
 ### Placeholders
 
@@ -66,3 +66,9 @@ Click the edit icon next to the authorization information to modify the current 
 ## Delete Authorization Information
 
 Click the delete icon next to the authorization information to delete it.
+
+## View Authorization Statistics
+
+Click the **Authorization Statistics** icon at the upper right corner to view the metrics and rate indicators of authorization.
+
+![new_authentication](./_assets/authz_statistics.png)
