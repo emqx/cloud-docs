@@ -31,3 +31,9 @@ Click the edit icon on the right side of the authentication information to modif
 ## Delete Authentication Information
 
 Click the delete icon on the right side of the authentication information to delete it.
+
+## View Authentication Statistics
+
+Click the **Authentication Statistics** icon at the upper right corner to view the metrics and rate indicators of authentication.
+
+![new_authentication](./_assets/new_authentication.png)
