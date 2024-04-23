@@ -33,6 +33,8 @@ EMQX Cloud 目前提供邮箱和 PagerDuty 事件告警集成。如您需要其�
 
 ![email_alert](./_assets/email_alert.png)
 
+您可以使用测试功能查看告警邮箱是否配置正确，点击 **测试**，选择一个邮箱发送测试邮件。
+
 ### PagerDuty 集成
 将告警信息发送到 PagerDuty 的事件，并且 PagerDuty 指定通知方法。
 
@@ -43,9 +45,11 @@ EMQX Cloud 目前提供邮箱和 PagerDuty 事件告警集成。如您需要其�
 2. 添加 api v2 集成，并复制集成秘钥。
      ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
 
-3. 在 EMQX Cloud 上填写集成秘钥。
+3. 在告警集成页面，新建 PageDuty 事件，填写名称和集成秘钥。
 
      ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
+
+您可以使用测试功能查看告警事件是否配置正确，点击 **测试**，选择一个事件发送测试消息。
 
 ### Webhook 集成
 
