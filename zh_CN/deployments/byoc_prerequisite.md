@@ -1,17 +1,17 @@
 # 部署前置准备
 
-在部署 EMQX Cloud BYOC 之前，请确保完成以下准备工作：
+在部署 EMQX Platform BYOC 之前，请确保完成以下准备工作：
 
 - 熟悉公有云服务和网络结构的基本概念，如 VPC、子网、ECS、DNS 等。
-- 拥有公有云账号和 EMQX Cloud 账号。
+- 拥有公有云账号和 EMQX Platform 账号。
 - 准备相关资源和权限。
 - 准备启动环境。
-- 准备 EMQX Cloud BYOC 许可证。
+- 准备 EMQX Platform BYOC 许可证。
 - 准备用于 EMQX 服务的域名和 TLS/SSL 证书。
 
 ## 账号准备
 
-EMQX Cloud BYOC 将在您的云账号中创建部署，如您还没有对应公有云的账号，可按照云平台官方文档创建账号：
+EMQX Platform BYOC 将在您的云账号中创建部署，如您还没有对应公有云的账号，可按照云平台官方文档创建账号：
 
 - [创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)
 - [创建亚马逊云科技账号](https://www.amazonaws.cn/about-aws/china/faqs/signup-process/)
@@ -24,15 +24,15 @@ EMQX Cloud BYOC 将在您的云账号中创建部署，如您还没有对应公�
 | 阿里云    | 北京，上海，深圳，杭州，张家口，成都 |
 | 亚马逊云科技 | 宁夏，北京              |
 
-此外，您还需要 EMQX Cloud 账号完成部署，如尚未注册，请前往 [EMQX Cloud 账号注册页面](https://accounts-zh.emqx.com/signup) 注册账号。
+此外，您还需要 EMQX Platform 账号完成部署，如尚未注册，请前往 [EMQX Platform 账号注册页面](https://accounts-zh.emqx.com/signup) 注册账号。
 
 ## 资源与权限
 
-EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请确保相关云账号中已预留足够的资源、并已完成相关权限的设定。
+EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，请确保相关云账号中已预留足够的资源、并已完成相关权限的设定。
 
 ### 资源配额
 
-下表为 EMQX Cloud BYOC 部署所需的云资源与服务（以阿里云为例）。如当前账号中资源不足，请联系云账号管理员增加相关服务配额。
+下表为 EMQX Platform BYOC 部署所需的云资源与服务（以阿里云为例）。如当前账号中资源不足，请联系云账号管理员增加相关服务配额。
 
 ::: tip
 在阿里云，您可在 [配额中心控制台](https://quotas.console.aliyun.com/products) 中快速查看资源与服务的使用情况和配额。
@@ -492,7 +492,7 @@ EMQX Cloud BYOC 需要在您的云账号中创建多种云资源与服务，请�
 ::::
 ## 准备启动环境
 
-为了部署 EMQX Cloud BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可以使用以下两种方式之一：
+为了部署 EMQX Platform BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可以使用以下两种方式之一：
 
 - （推荐）在云账号中使用 Ubuntu 20.04 LTS 镜像创建一个虚拟机实例，且实例的内存需要至少 1 GiB。
 - 使用本地 Ubuntu 20.04 LTS 环境。
@@ -507,7 +507,7 @@ BYOC 部署仅接受 CA 签名证书。关于 TLS/SSL 证书格式要求，请�
 
 ## BYOC 许可证
 
-准备 EMQX Cloud BYOC 许可证。您可联系商务申请 BYOC 许可证，我们的销售团队将根据您设备的连接数和消息上下行的每秒事务处理数（TPS）帮您确定许可证规格。
+准备 EMQX Platform BYOC 许可证。您可联系商务申请 BYOC 许可证，我们的销售团队将根据您设备的连接数和消息上下行的每秒事务处理数（TPS）帮您确定许可证规格。
 
 ## <!--选择规格-->
 

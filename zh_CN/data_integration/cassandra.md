@@ -1,8 +1,8 @@
 # 将 MQTT 数据写入到 Cassandra
 
-[Apache Cassandra](https://cassandra.apache.org/_/index.html) 是一种流行的开源分布式 NoSQL 数据库管理系统，旨在处理大规模数据集并用于构建高吞吐量的应用程序。EMQX Cloud 与 Apache Cassandra 的集成提供了将消息和事件存储在 Cassandra 数据库中的能力，实现时间序列数据存储、设备注册和管理以及实时数据分析等功能。
+[Apache Cassandra](https://cassandra.apache.org/_/index.html) 是一种流行的开源分布式 NoSQL 数据库管理系统，旨在处理大规模数据集并用于构建高吞吐量的应用程序。EMQX Platform 与 Apache Cassandra 的集成提供了将消息和事件存储在 Cassandra 数据库中的能力，实现时间序列数据存储、设备注册和管理以及实时数据分析等功能。
 
-本页提供了 EMQX Cloud 与 Cassandra 的数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
+本页提供了 EMQX Platform 与 Cassandra 的数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
 
 当前实现中：
 
@@ -11,16 +11,16 @@
 
 ## 工作原理
 
-Cassandra 数据集成是 EMQX Cloud 的开箱即用功能，结合了 EMQX Cloud 的设备连接和消息传输能力以及 Cassandra 强大的数据存储能力。通过内置的[规则引擎](./rules.md)组件，集成简化了从 EMQX Cloud 到 Cassandra 的数据摄取过程，无需复杂的编码。
+Cassandra 数据集成是 EMQX Platform 的开箱即用功能，结合了 EMQX Platform 的设备连接和消息传输能力以及 Cassandra 强大的数据存储能力。通过内置的[规则引擎](./rules.md)组件，集成简化了从 EMQX Platform 到 Cassandra 的数据摄取过程，无需复杂的编码。
 
 下图展示了 EMQX 和 Cassandra 之间的数据集成的典型架构：
 
-![EMQX Cloud Cassandra 集成](./_assets/data_integration_cassandra.png)
+![EMQX Platform Cassandra 集成](./_assets/data_integration_cassandra.png)
 
 将 MQTT 数据摄取到 Cassandra 的工作流程如下：
 
-1. **消息发布和接收**：无论是连接车辆、工业物联网 (IIoT) 系统还是能源管理平台的物联网设备，都通过 MQTT 协议成功连接到 EMQX Cloud，并向特定主题发布 MQTT 消息。当 EMQX Cloud 接收到这些消息时，它将在其规则引擎中启动匹配过程。
-2. **消息数据处理**：当消息到达时，它会通过规则引擎进行处理，然后由 EMQX Cloud 中定义的规则处理。规则根据预定义的标准确定哪些消息需要路由到 Cassandra。如果任何规则指定了载荷转换，那么这些转换将被应用，例如转换数据格式、过滤出特定信息，或用额外的上下文丰富载荷。
+1. **消息发布和接收**：无论是连接车辆、工业物联网 (IIoT) 系统还是能源管理平台的物联网设备，都通过 MQTT 协议成功连接到 EMQX Platform，并向特定主题发布 MQTT 消息。当 EMQX Platform 接收到这些消息时，它将在其规则引擎中启动匹配过程。
+2. **消息数据处理**：当消息到达时，它会通过规则引擎进行处理，然后由 EMQX Platform 中定义的规则处理。规则根据预定义的标准确定哪些消息需要路由到 Cassandra。如果任何规则指定了载荷转换，那么这些转换将被应用，例如转换数据格式、过滤出特定信息，或用额外的上下文丰富载荷。
 3. **数据写入到 Cassandra**：一旦规则引擎识别出一条消息需要存储到 Cassandra，它将触发一个将消息转发到 Cassandra 的动作。处理过的数据将被无缝写入 Cassandra 数据库的集合中。
 4. **数据存储和利用**：数据现存储在 Cassandra 中，企业可以利用其查询能力应用于各种用例。例如，在连接车辆的领域，存储的数据可以用于通知车队管理系统关于车辆健康状况、根据实时指标优化路线规划或跟踪资产。类似地，在工业物联网 (IIoT) 设置中，数据可能用于监控机械运行状态、预测维护或优化生产计划。
 
@@ -28,15 +28,15 @@ Cassandra 数据集成是 EMQX Cloud 的开箱即用功能，结合了 EMQX Clou
 
 与 Cassandra 的数据集成提供了一系列特性和优势，确保了数据传输、存储和利用的高效性：
 
-- **大规模时序数据存储**：EMQX Cloud 能够处理海量设备连接与消息传递，借助 Cassandra 高度可扩展性和分布式存储的特性，能够实现大规模数据集包括时序数据的存储和管理，并支持基于时间范围的查询和聚合操作。
-- **实时数据流**：EMQX Cloud 专为处理实时数据流而构建，确保了从源系统到 Cassandra 的数据传输的高效性和可靠性。它使组织能够实时捕获和分析数据，非常适合需要立即洞察和行动的用例。
+- **大规模时序数据存储**：EMQX Platform 能够处理海量设备连接与消息传递，借助 Cassandra 高度可扩展性和分布式存储的特性，能够实现大规模数据集包括时序数据的存储和管理，并支持基于时间范围的查询和聚合操作。
+- **实时数据流**：EMQX Platform 专为处理实时数据流而构建，确保了从源系统到 Cassandra 的数据传输的高效性和可靠性。它使组织能够实时捕获和分析数据，非常适合需要立即洞察和行动的用例。
 - **高可用性保障**：EMQX 与 Cassandra 均提供了集群能力，两者结合使用的情况下，设备连接以及数据可以分布在多台服务器上，当一个节点发生故障时，系统可以自动切换到其他可用节点，从而实现高度可扩展性和容错性。
-- **数据转换的灵活性**：EMQX Cloud 提供了强大的基于 SQL 的规则引擎，允许组织在将数据存储到 Cassandra 之前进行预处理。它支持各种数据转换机制，如过滤、路由、聚合和丰富，使组织能够根据他们的需求塑造数据。
+- **数据转换的灵活性**：EMQX Platform 提供了强大的基于 SQL 的规则引擎，允许组织在将数据存储到 Cassandra 之前进行预处理。它支持各种数据转换机制，如过滤、路由、聚合和丰富，使组织能够根据他们的需求塑造数据。
 - **灵活的数据模型**：Cassandra 使用基于列的数据模型，支持灵活的数据模式和动态添加列，适用于存储和管理结构化的设备事件与消息数据，能够轻松存储不同的 MQTT 消息数据。
 
 ## 准备工作
 
-本节介绍了在 EMQX Cloud 中创建 Cassandra 数据集成之前需要做的准备工作，包括如何设置 Cassandra 服务器、创建 Keyspace 和 Table。
+本节介绍了在 EMQX Platform 中创建 Cassandra 数据集成之前需要做的准备工作，包括如何设置 Cassandra 服务器、创建 Keyspace 和 Table。
 
 ### 前置准备
 
@@ -110,7 +110,7 @@ docker exec -it cassa cqlsh "-e \
        "temp_hum/emqx"
    ```
 
-3. 点击**下一步**开始创建动作，为规则在被触发的情况下指定一个动作。通过这个动作，EMQX Cloud 会将经规则处理的数据发送到 Cassandra。
+3. 点击**下一步**开始创建动作，为规则在被触发的情况下指定一个动作。通过这个动作，EMQX Platform 会将经规则处理的数据发送到 Cassandra。
 
 4. 从**使用连接器**下拉框中选择您之前创建的连接器。
 

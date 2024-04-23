@@ -275,7 +275,7 @@ MrY=
 -----END CERTIFICATE-----
 )EOF";
 
-// Load DigiCert Global Root CA ca_cert, which is used by EMQX Cloud Serverless Deployment
+// Load DigiCert Global Root CA ca_cert, which is used by EMQX Platform Serverless Deployment
 /*
 const char* ca_cert = R"EOF(
 -----BEGIN CERTIFICATE-----
@@ -438,7 +438,7 @@ MrY=
 -----END CERTIFICATE-----
 )EOF";
 
-// Load DigiCert Global Root CA ca_cert, which is used by EMQX Cloud Serverless Deployment
+// Load DigiCert Global Root CA ca_cert, which is used by EMQX Platform Serverless Deployment
 /*
 const char* ca_cert = R"EOF(
 -----BEGIN CERTIFICATE-----

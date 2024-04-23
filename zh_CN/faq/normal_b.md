@@ -2,16 +2,16 @@
 
 
 ## 支持哪些协议连接？
-EMQX Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
+EMQX Platform 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连接。
 
 如需其他协议支持，您可以提工单或发送邮件(cloud-support@emqx.io)与我们取得联系。
 
 ## 如何绑定域名？
 
-在 EMQX Cloud 建立**专有版部署**后，您会获得一个 MQTT 连接地址，该地址在专有版部署里以 IP 显示。您或许已经拥有自己的域名，希望可以将部署地址绑定到自己拥有的域名，通过您的域名使用 MQTT 服务。
+在 EMQX Platform 建立**专有版部署**后，您会获得一个 MQTT 连接地址，该地址在专有版部署里以 IP 显示。您或许已经拥有自己的域名，希望可以将部署地址绑定到自己拥有的域名，通过您的域名使用 MQTT 服务。
 
 ### 操作步骤
-1. 这里假设您有顶级域名 abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQX Cloud 上的部署的连接地址为 123.123.123.123
+1. 这里假设您有顶级域名 abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQX Platform 上的部署的连接地址为 123.123.123.123
 
 2. 那么只需要在您的域名提供商的操作面板上，将 mqtt.abc.com 的 A 记录指向 123.123.123.123 即可
 
@@ -20,14 +20,14 @@ EMQX Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议�
 3. 等待 DNS 解析生效后，您便可通过 mqtt.abc.com 连接 mqtt 服务。
 
 :::tip
-**Serverless 版不支持使用 CNAME 绑定自定义域名**。建议使用 EMQX Cloud 提供的默认域名连接地址，以确保正确分配和管理连接。
+**Serverless 版不支持使用 CNAME 绑定自定义域名**。建议使用 EMQX Platform 提供的默认域名连接地址，以确保正确分配和管理连接。
 :::
 
 ## 如何设置 NAT 网关配置？
 仅支持**专有版**，可以在增值服务中开通 NAT 网关。
 
 ## 建了 VPC 对等连接，自己的服务如何通过内网去连接 MQTT 服务？
-专业版部署在开通增值服务 - 内网负载均衡后可以通过内网连接地址连接到 EMQX Cloud 部署。
+专业版部署在开通增值服务 - 内网负载均衡后可以通过内网连接地址连接到 EMQX Platform 部署。
 
 ## 是否支持 API 调用？
 支持。我们提供了 HTTP API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
@@ -42,10 +42,10 @@ EMQX Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议�
 可以使用数据集成与您现有功能做对接，详情查看 [数据集成](../data_integration/introduction.md)。
 
 ## 设备的认证信息存储在自己的数据库中，是否支持通过我自己的数据库做MQTT连接的认证？
-EMQX Cloud 专有版支持从用户自己的数据库中获取到认证信息，请查看文档[扩展认证](../deployments/custom_auth.md)。
+EMQX Platform 专有版支持从用户自己的数据库中获取到认证信息，请查看文档[扩展认证](../deployments/custom_auth.md)。
 
 ## 控制台的设备日志可以保存多久？
-EMQX Cloud 不会保存设备通讯日志，只会保存部署日志，部署日志默认保存7天。
+EMQX Platform 不会保存设备通讯日志，只会保存部署日志，部署日志默认保存7天。
 
 
 ## 设备事件可以保存多久？

@@ -1,6 +1,6 @@
 # 在线体验
 
-您可通过我们的 Serverless 的免费额度或专有版提供的 14 天免费试用计划探索和试用 EMQX Cloud 产品。
+您可通过我们的 Serverless 的免费额度或专有版提供的 14 天免费试用计划探索和试用 EMQX Platform 产品。
 
 Serverless 免费试用额度：
 
@@ -15,7 +15,7 @@ Serverless 免费试用额度：
 
 * 100 GB 免费流量
 
-* 数据集成、监控管理等 EMQX Cloud 自有的功能
+* 数据集成、监控管理等 EMQX Platform 自有的功能
 
 * 支持 MQTT，WebSocket 协议连接。
 
@@ -31,27 +31,27 @@ Serverless 免费试用额度：
 
 ## 开始创建免费试用部署
 
-1. 登录 [EMQX Cloud 控制台](https://cloud.emqx.com/console/)
+1. 登录 [EMQX Platform 控制台](https://cloud.emqx.com/console/)。
 
 
-2. 单击新建部署按钮
+2. 单击新建部署按钮。
 
    ![first_create_deployment](./_assets/first_create_deployment.png)
 
-3. 选择专有版，并且选择 1000 连接规格的部署
+3. 选择专有版，并且选择 1000 连接规格的部署。
 
    ![create_free_trial](./_assets/create_free_trial.png)
 
-4. 点击立即部署，并同意 EMQX Cloud 标准服务条款和免费试用申明条款
+4. 点击立即部署，并同意 EMQX Cloud 标准服务条款和免费试用申明条款。
 
 
-5. 等待 5 分钟左右，直至部署状态为**运行中**
+5. 等待 5 分钟左右，直至部署状态为**运行中**。
 
    ![free_trial_running](./_assets/free_trial_running.png)
 
 ## 连接到您的免费试用部署
 
-在连接到您的免费试用部署之前，您需等待免费试用部署状态由 **创建中** 转为 **运行中**
+在连接到您的免费试用部署之前，您需等待免费试用部署状态由 **创建中** 转为 **运行中**。
 
 1. 添加客户端认证信息
 

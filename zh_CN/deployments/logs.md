@@ -1,6 +1,6 @@
 # 部署日志
 
-EMQX Cloud 提供实时在线查看 EMQX 日志功能。
+EMQX Platform 提供实时在线查看 EMQX 日志功能。
 
 ::: warning
 该功能仅适用于专有版和 BYOC 部署。

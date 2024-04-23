@@ -22,7 +22,7 @@
 
 3. 创建并配置了传统型负载均衡（CLB）
 
-> 注意：此处创建的 CLB 的地域可用区需和 EMQX 专有版部署 CLB 可用区一致，该信息可以在 EMQX Cloud 控制台获取。
+> 注意：此处创建的 CLB 的地域可用区需和 EMQX 专有版部署 CLB 可用区一致，该信息可以在 EMQX Platform 控制台获取。
 
 ![cloud_privatelink_info](./_assets/aliyun_privatelink_cloud_zone.png)
 
@@ -46,7 +46,7 @@
 
 ### 创建私网连接 PrivateLink
 
-1. 登录 [EMQX Cloud 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 **+私网连接** 按钮。
+1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)，进入所需创建部署详情，点击 **+私网连接** 按钮。
 
   ![cloud_privatelink_info](./_assets/aliyun_privatelink_create.png)
 
@@ -54,7 +54,7 @@
 
   ![cloud_privatelink_info](./_assets/aliyun_privatelink_cloud_info.png)
 
-3. 在 EMQX Cloud 控制台获取到部署所在的阿里云账号 UID，将其添加到您阿里云平台-终端节点服务的白名单。
+3. 在 EMQX Platform 控制台获取到部署所在的阿里云账号 UID，将其添加到您阿里云平台-终端节点服务的白名单。
 
   ![cloud_privatelink_info](./_assets/aliyun_privatelink_whitelist.png)
 
@@ -80,7 +80,7 @@
 
 删除私网连接，您需要确保私网连接状态为 `运行中`。
 
-> - 若需在您的阿里云平台删除私网连接服务，请先在 EMQX Cloud 控制台 删除私网连接节点，否则会导致部署私网连接状态为`failed`。
+> - 若需在您的阿里云平台删除私网连接服务，请先在 EMQX Platform 控制台 删除私网连接节点，否则会导致部署私网连接状态为`failed`。
 > - 删除私网连接前，请确保部署不存在任何关联的资源，否则将导致不可预估的风险。
 
 1. 进入部署详情。
