@@ -1,14 +1,14 @@
 # 部署告警
 
-EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。EMQX Cloud 提供如下告警事件：
+EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。点击部署左侧菜单中的**告警**进入告警页面。在**告警列表**中可以查看到部署产生的告警信息，在**告警集成**中可以配置将告警发送到邮箱，或者通过集成 PagerDuty 或 Webhook 通知告警事件。
 
 ![alert_integrations](./_assets/alerts_info.png)
 
-
+![alert_integrations](./_assets/alert_events.png)
 
 ## 告警事件
 
-在这里您可以查看到部署产生的告警信息，EMQX Cloud 提供如下告警事件：
+以下表格列举了 EMQX Cloud 提供的部署告警事件以及相应的解决措施。
 
 | 类型                      | 级别     | 信息                                                   | 解决                                            |
 | ------------------------ | -------  | ----------------------------------------------------- | ----------------------------------------------- |
@@ -23,16 +23,9 @@ EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维
 | vpc 对等连接异常            | error   | Vpc 对等连接状态异常：{状态}                               | 检查部署对等账户对等连接账户                         |
 | 数据集成 xxx 资源异常        | error   | 部署数据集成 xxx 资源异常                                | 检查部署数据集成中 xxx 资源配置是否正确                |
 
-
-![alert_integrations](./_assets/alert_events.png)
-
-
-
 ## 告警集成
 
-EMQX Cloud 目前提供 邮箱和 PagerDuty 事件告警集成。如您需要其他告警集成方式，可以向我们提工单或发送邮件。
-
-
+EMQX Cloud 目前提供邮箱和 PagerDuty 事件告警集成。如您需要其他告警集成方式，可以向我们提工单或发送邮件。
 
 ### 发送至邮箱
 
@@ -40,16 +33,20 @@ EMQX Cloud 目前提供 邮箱和 PagerDuty 事件告警集成。如您需要其
 
 ![email_alert](./_assets/email_alert.png)
 
-
-
 ### PagerDuty 集成
 将告警信息发送到 PagerDuty 的事件，并且 PagerDuty 指定通知方法。
 
-1. 在 PagerDuty 创建告警服务
-  ![pagerduty_service](./_assets/pagerduty_service.png)
+1. 在 PagerDuty 创建告警服务。
 
-2. 添加 api v2 集成，并复制集成秘钥
-  ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
+     ![pagerduty_service](./_assets/pagerduty_service.png)
 
-3. 在 EMQX Cloud 上填写集成秘钥
-  ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
+2. 添加 api v2 集成，并复制集成秘钥。
+     ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
+
+3. 在 EMQX Cloud 上填写集成秘钥。
+
+     ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
+
+### Webhook 集成
+
+关于 Webhook 集成告警的详细内容，参阅[Webhook 告警](./alerts_webhook.md)。
