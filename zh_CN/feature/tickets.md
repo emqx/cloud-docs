@@ -11,8 +11,6 @@
 
 您可以点击工单列表中的主题名进入相应工单详情页面。
 
-![进入工单详情](./_assets/tickets_link_details.png)
-
 ![工单详情](./_assets/tickets_details.png)
 
 ## 创建工单
@@ -25,4 +23,4 @@
    - 填写问题描述。
 3. 点击**确认**提交工单。
 
-![填写工单](./_assets/tickets_form.png)
+<img src="./_assets/tickets_form.png" alt="填写工单" style="zoom:67%;" />

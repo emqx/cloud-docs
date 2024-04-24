@@ -4,7 +4,7 @@
 
 ## 项目列表
 
-进入**部署管理**，在页面左侧可以看到项目列表
+点击 EMQX Platform 控制台顶部菜单中的**部署管理**，在页面左侧可以看到项目列表。
 
 ![default_project](./_assets/default_project.png)
 
@@ -16,21 +16,21 @@
 
 ## 在项目下创建部署
 
-选中左侧项目，可以在选中项目下创建部署
+选中左侧项目，可以在选中项目下点击**新建部署**。
 
 ![create_deployment_under_project](./_assets/create_deployment_under_project.png)
 
 ## 移动部署到其他项目
 
-点击部署右上角的菜单，选择移动项目
+1. 点击部署右上角的菜单，选择移动项目。
 
-![move_project_menu](./_assets/move_project_menu.png)
+<img src="./_assets/move_project_menu.png" alt="move_project_menu" style="zoom:67%;" />
 
-在项目列表选择目标项目
+2. 在项目列表选择目标项目。
 
-![move_project](./_assets/move_project.png)
+   ![move_project](./_assets/move_project.png)
 
-点击确认后，便可以将部署移动到新的项目下
+3. 点击**确认**后，便可以将部署移动到新的项目下。
 
 
 ## 更新项目
@@ -42,9 +42,9 @@
 
 ## 删除项目
 
-> 删除项目之前请确保项目下没有部署
+> 删除项目之前请确保项目下没有部署。
 
-选择一个项目，点击右上角删除按钮，
+选择一个项目，点击右上角删除按钮。
 
 ![delete_project](./_assets/delete_project.png)
 
@@ -54,7 +54,7 @@
 
    ![delete_project](./_assets/link_subuser.png)
 
-2. 选择子账号，并未账号添加角色。
+2. 选择子账号，并为账号添加角色。
 
    ![delete_project](./_assets/add_subuser.png)
 
