@@ -25,7 +25,7 @@ EMQX Cloud 提供完善的告警提醒、告警集成，允许用户以及运维
 
 ## 告警集成
 
-EMQX Cloud 目前提供邮箱和 PagerDuty 事件告警集成。如您需要其他告警集成方式，可以向我们提工单或发送邮件。
+EMQX Cloud 目前提供邮箱， PagerDuty 和 Webhook 事件告警集成。如您需要其他告警集成方式，可以向我们提工单或发送邮件。
 
 ### 发送至邮箱
 
@@ -33,7 +33,7 @@ EMQX Cloud 目前提供邮箱和 PagerDuty 事件告警集成。如您需要其�
 
 ![email_alert](./_assets/email_alert.png)
 
-您可以使用测试功能查看告警邮箱是否配置正确，点击 **测试**，选择一个邮箱发送测试邮件。
+您可以使用测试功能查看告警邮箱是否配置正确，点击**测试**，选择一个邮箱发送测试邮件。
 
 ### PagerDuty 集成
 将告警信息发送到 PagerDuty 的事件，并且 PagerDuty 指定通知方法。
@@ -49,7 +49,7 @@ EMQX Cloud 目前提供邮箱和 PagerDuty 事件告警集成。如您需要其�
 
      ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
 
-您可以使用测试功能查看告警事件是否配置正确，点击 **测试**，选择一个事件发送测试消息。
+您可以使用测试功能查看告警事件是否配置正确，点击**测试**，选择一个事件发送测试消息。
 
 ### Webhook 集成
 

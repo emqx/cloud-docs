@@ -213,14 +213,6 @@
           "collapsed":true,
           "children": [
             {
-              "title":"测试电子邮件告警",
-              "path":"deployments/alerts_email"
-            },
-            {
-              "title":"测试 PagerDuty 集成告警",
-              "path":"deployments/alerts_pagerduty"
-            },
-            {
               "title": "集成 Webhook 告警",
               "path": "deployments/alerts_webhook"
             }
