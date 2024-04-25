@@ -177,7 +177,7 @@ FROM
   "$bridges/mqtt:source-d1f51e81"
 ```
 
-4. 点击**下一步**开始创建输出动作。
+4. 点击**下一步**，创建输出动作。
 5. 在新建输出动作中，选择**消息重新发布**
 6. 配置输出动作信息：
    - **主题**：转发的 MQTT 主题，支持 `${var}` 格式的占位符。此处输入 `sub/${topic}`，表示在原主题的基础上添加 `sub/` 前缀进行转发。例如，当原始消息主题为 `t/1` 时，转发的主题为 `sub/t/1`。
@@ -190,17 +190,22 @@ FROM
 ### 测试
 我们配置了将外部 MQTT 服务中 `temp_hum/emqx` 主题的消息桥接到当前部署 `sub/${topic}` 主题中，因此当我们向外部 MQTT 服务 `temp_hum/emqx` 主题发布消息时，消息将被转发到部署中的 `sub/temp_hum/emqx` 主题中。
 
-使用 [MQTTX CLI](https://mqttx.app/zh/cli) 进行测试
+使用 [MQTTX](https://mqttx.app/zh/) 向外部 MQTT 服务中发送消息，并订阅转发的主题获取消息
 
-1. 订阅当前部署 sub/# 主题：
-
-   ```bash
-   mqttx sub -t sub/# -q 1 -v
-   ```
+1. 使用 MQTTX 订阅当前部署的主题 `sub/#`：
 
 2. 使用 MQTTX 向外部 MQTT 服务的 `temp_hum/emqx` 主题发布消息：
-   ```bash
-   mqttx pub -t f/1 -m "I'm from broker.emqx.io" -r -h broker.emqx.io
-   ```
+```json
+{
+   "temp": 55,
+   "hum" : 32
+}
+```
 
-3. 
+3. MQTTX 收到当前部署 `sub/temp_hum/emqx` 主题内消息
+```json
+{
+   "temp": 55,
+   "hum" : 32
+}
+```
