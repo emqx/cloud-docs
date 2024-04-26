@@ -54,11 +54,11 @@ Go to the **Configure SSO** page in EMQX Platform and follow these steps:
 
 2. Select **Certificates & secrets** from the left navigation menu in Microsoft Azure. 
 
-3. Select **Client secrets** on the main page and click **+ New client secret**. Fill in the description and expiration date to generate a Client secret. Copy the **Secrete ID**.
+3. Select **Client secrets** on the main page and click **+ New client secret**. Fill in the description and expiration date to generate a Client secret. Copy the **Value**.
 
      <img src="./_assets/azure_3.png" alt="sso" style="zoom:67%;" />
 
-4. Paste the Secret ID into the **Client Secret** field on the EMQX Platform **Configure SSO** page.
+4. Paste the **Value** into the **Client Secret** field on the EMQX Platform **Configure SSO** page.
 
 5. Click **Confirm** to complete the configuration.
 
