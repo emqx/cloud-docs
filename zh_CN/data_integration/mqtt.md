@@ -190,24 +190,25 @@ MQTT 服务（源数据）连接器和 MQTT 服务（目标数据）连接器创
 创建成功后将回到创建规则页面，在**规则列表**中可以查看到新创建的规则。在**动作列表**中，**输入动作列表**可以查看到数据导入的动作列表。消息重新发布动作目前不显示在**输出动作列表**，如需查看，点击规则编辑按钮，在规则设置的下方，可以查看到消息重新发布的输出动作。
 
 ### 测试规则
-在之前创建的规则中配置了将外部 MQTT 服务中 `temp_hum/emqx` 主题的消息桥接到当前部署 `sub/${topic}` 主题，因此当我们向外部 MQTT 服务 `temp_hum/emqx` 主题发布消息时，消息将被转发到部署的 `sub/temp_hum/emqx` 主题中。
+在之前创建的规则中配置了将外部 MQTT 服务中 `temp_hum/emqx` 主题的消息桥接到当前部署 `sub/${topic}` 主题，因此当您向外部 MQTT 服务 `temp_hum/emqx` 主题发布消息时，消息将被转发到部署的 `sub/temp_hum/emqx` 主题中。
 
-使用 [MQTTX](https://mqttx.app/zh/) 向外部 MQTT 服务中发送消息，并订阅转发的主题获取消息
+以下步骤演示了如何使用 [MQTTX](https://mqttx.app/zh/) 向外部 MQTT 服务中发送消息，并订阅转发的主题获取消息。
 
-1. 使用 MQTTX 订阅当前部署的主题 `sub/#`：
+1. 使用 MQTTX 订阅当前部署的主题 `sub/#`。
 
 2. 使用 MQTTX 向外部 MQTT 服务的 `temp_hum/emqx` 主题发布消息：
-```json
-{
-   "temp": 55,
-   "hum" : 32
-}
-```
 
-3. MQTTX 收到当前部署 `sub/temp_hum/emqx` 主题内消息
-```json
-{
-   "temp": 55,
-   "hum" : 32
-}
-```
+   ```json
+   {
+      "temp": 55,
+      "hum": 32
+   }
+   ```
+3. MQTTX 收到当前部署 `sub/temp_hum/emqx` 主题内消息：
+
+   ```json
+   {
+      "temp": 55,
+      "hum": 32
+   }
+   ```
