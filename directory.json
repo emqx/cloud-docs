@@ -197,6 +197,7 @@
     {
       "title": "运维与监控",
       "path": "deployments/operation_overview",
+      "collapsed":true,
       "children": [
         {
           "title": "监控",
@@ -208,11 +209,14 @@
         },
         {
           "title": "告警",
-          "path": "deployments/alerts"
-        },
-        {
-          "title": "Webhook 告警",
-          "path": "deployments/alerts_webhook"
+          "path": "deployments/alerts",
+          "collapsed":true,
+          "children": [
+            {
+              "title": "集成 Webhook 告警",
+              "path": "deployments/alerts_webhook"
+            }
+          ]
         },
         {
           "title": "日志",
