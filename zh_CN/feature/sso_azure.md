@@ -53,11 +53,11 @@
 
 2. 在 Microsoft Azure 中点击左侧导航菜单中的 **Certificates & secrets**。
 
-2. 在主页面中选择 **Client secrets**，点击 **+ New client secret**，填写描述和过期时间，生成 Client secret。复制 **Secrete ID**。
+2. 在主页面中选择 **Client secrets**，点击 **+ New client secret**，填写描述和过期时间，生成 Client secret。复制 **Value**。
 
      ![sso](./_assets/azure_3.png)
 
-3. 将 Secret ID 粘贴到 EMQX Cloud 的**配置 SSO** 页面上的 **Client Secret** 中。
+3. 将 Value 粘贴到 EMQX Cloud 的**配置 SSO** 页面上的 **Client Secret** 中。
 
 4. 点击**确认**完成配置。
 
