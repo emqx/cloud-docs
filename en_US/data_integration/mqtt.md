@@ -6,7 +6,8 @@ MQTT Broker data integration provides EMQX with functionality to connect to anot
 
 During bridging, EMQX Platform establishes an MQTT connection with the target service as a client, achieving bidirectional message transmission through the publish-subscribe model:
 
-- Outgoing Messages: Publishes messages from local topics to specified topics on the remote MQTT service.
+- Outgoing messages: Publishes messages from local topics to specified topics on the remote MQTT service.
+- Incoming messages: Subscribes to the topics of the remote MQTT service and forwards their messages to the current deployment.
 
 EMQX Platform supports configuring multiple bridging rules on the same connection, each with different topic mappings and message transformation rules, implementing a function similar to message routing. During bridging, you can also process messages through the Rule Engine to filter, enrich, and transform messages before forwarding.
 
@@ -51,9 +52,9 @@ When EMQX Platform is running in cluster mode or when a connection pool is enabl
 
 This section guides you on how to configure a connection with a remote MQTT server, using EMQX's [online MQTT server](https://www.emqx.com/en/mqtt/public-mqtt5-broker) as an example.
 
-Before creating rules for data integration, you need to create an MQTT Broker connector to access the MQTT service.
+Before creating rules for data integration, you need to create an MQTT Broker connector to access the MQTT service. The connector can be used for both MQTT (Sink) and MQTT (Source).
 
-1. Select **Data Integration** from the deployment menu, then choose MQTT Broker under the **Data Forward** category.If you have already created connectors, select **New Connector** and then select **MQTT Broker** under the **Data Forward** category.
+1. Select **Data Integration** from the deployment menu, then select **MQTT (Sink)** under the **Data Forward** category. If you have already created connectors, select **New Connector** and then select **MQTT (Sink)** under the **Data Forward** category.
 
 2. **Connector Name**: The system will automatically generate a connector name.
 
@@ -87,7 +88,7 @@ For example, if the client ID prefix is myprefix and the Connector name is foo, 
 myprefix:foo2bd61c44:1
 ```
 
-## Create a Rule with MQTT Broker
+## Create a Rule with MQTT (Sink)
 
 This section demonstrates how to create a rule for specifying data to be forwarded to a remote MQTT service.
 
@@ -124,7 +125,9 @@ This section demonstrates how to create a rule for specifying data to be forward
 
 7. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
-## Test the Rule
+After successful creation, you will return to the rule creation page. In the **Rules** list, you can see the newly created rule. In the **Actions** list, the **Action (Sink)** will show the list of data import actions.
+
+### Test the Rule
 
 You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature and humidity data reporting, but you can also use any other client.
 
@@ -155,4 +158,70 @@ You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature a
    [2024-3-21] [10:43:13] › topic: pub/temp_hum/emqx
    payload:
    { "temp": "27.5", "hum": "41.8"}
+   ```
+
+## Create a Rule with MQTT (Source)
+
+This section demonstrates how to create a rule to forward data from a remote MQTT service to the current deployment. You need to create both an MQTT (Source) and a Message Republishing action to facilitate the subscription from the remote MQTT service to EMQX, as well as the forwarding of the subscribed data.
+
+The creation methods for MQTT (Source) connectors and MQTT (Sink) connectors are the same, refer to [Create a Connector](#create-a-connector).
+
+1. Click the new rule icon under the **Actions** column in the connector list, or click **New Rule** in the rule list to enter the **New Rule** step page.
+
+2. For the source data rule, you first need to configure the input action. The rule editing page will automatically pop up the input action configuration, or select **Actions (Source)** -> **New Action** on the right side of the panel, select **MQTT (Source)**, and click **Next** to enter the configuration.
+
+   - Select the connector created before.
+   - **Topic**: Enter the topic to subscribe to from the remote MQTT, such as the topic `temp_hum/emqx` subscribed from the remote end.
+   - **QoS**: Choose the message QoS.
+
+   Click the **Confirm** button to complete the configuration.
+
+3. The **SQL Editor** will update the data source field:
+
+   ```sql
+   SELECT
+     *
+   FROM
+     "$bridges/mqtt:source-d1f51e81"
+   ```
+
+4. Click **Next** to start creating the output action.
+
+5. In the new output action, select **Republish**.
+
+6. Configure the output action information:
+
+   - **Topic**: The MQTT topic to forward to, supports `${var}` format placeholders. Here, enter `sub/${topic}`, indicating that a `sub/` prefix is added to the original topic for forwarding. For example, when the original message topic is `t/1`, the forwarded topic would be `sub/t/1`.
+   - **QoS**: Message publish QoS, choose from `0`, `1`, `2`, or `${qos}`. You can also enter placeholders to set QoS from other fields, here choosing `${qos}` indicates following the original message's QoS.
+   - **Retain**: Choose `true`, `false`, or `${flags.retain}`, to confirm whether to publish messages as retain messages, also can enter placeholders to set retain message flags from other fields. Here, choosing `${flags.retain}` indicates following the original message's retain message flag.
+   - **Message Template**: Template for generating the forwarded message Payload, default is blank to forward the rule output results. Here, entering `${payload}` means only forwarding the Payload.
+
+7. Use default settings for other configurations, and click the **Confirm** button to complete the creation of the output action.
+
+After successful creation, you will return to the rule creation page. The Republish action is currently not displayed in the **Actions (Source)**. If needed, click the rule edit button, and you can see the Republish output action at the bottom of the rule settings.
+
+### Test the Rule
+
+The rule created is configured to bridge messages from the external MQTT service's `temp_hum/emqx` topic to the current deployment's `sub/${topic}` topic. Therefore, when you publish messages to the external MQTT service's `temp_hum/emqx` topic, the messages will be forwarded to the deployed `sub/temp_hum/emqx` topic.
+
+The following steps demonstrate how to use [MQTTX](https://mqttx.app/zh/) to send messages to the external MQTT service and subscribe to the forwarded topic to receive messages.
+
+1. Use MQTTX to subscribe to the current deployment's topic `sub/#`.
+
+2. Use MQTTX to publish messages to the external MQTT service's `temp_hum/emqx` topic:
+
+   ```json
+   {
+      "temp": 55,
+      "hum": 32
+   }
+   ```
+
+3. MQTTX receives messages within the current deployment's `sub/temp_hum/emqx` topic:
+
+   ```json
+   {
+      "temp": 55,
+      "hum": 32
+   }
    ```

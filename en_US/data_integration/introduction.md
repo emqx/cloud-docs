@@ -8,7 +8,7 @@ As a fully managed MQTT message cloud service, EMQX Platform connects Internet o
 
 ## How It Works
 
-As devices or applications establish connections, the MQTT broker routes the messages. Upon arrival, these messages are processed by the Rule Engine, a powerful component that utilizes SQL statements for data manipulation. This processed data is then forwarded to the target service by an "Action". Actions are categorized into two types: "Sink", for sending data to a service, and "Source", for receiving data from a service. Presently, the Data Integration operates only in "Sink" mode, facilitating the seamless integration of data into various cloud services. It will support "Source" mode in the future updates.
+As devices or applications establish connections, the MQTT broker routes the messages. Upon arrival, these messages are processed by the Rule Engine, a powerful component that utilizes SQL statements for data manipulation. This processed data is then forwarded to the target service by an "Action". Actions are categorized into two types: "Sink", for sending data to a service, and "Source", for receiving data from a service. Presently, the Data Integration operates only in "Sink" mode, facilitating the seamless integration of data into various cloud services.
 
 ### [Connectors](./connectors.md)
 
@@ -18,9 +18,24 @@ A connector serves as the underlying connection channel for Sink/Source, used to
 
 Rules describe "where data comes from" and "how to filter and process data." Rules use SQL-like statements to write custom data and can use SQL testing to simulate exported data. To learn and understand how to write rule SQL, refer to [Rule SQL Writing](https://docs.emqx.com/en/enterprise/v4.2/rule/rule-engine.html#sql-%E8%AF%AD%E5%8F%A5).
 
-### [Actions](./rules.md)
+### [Actions](./rules.md#add-actions)
 
 Actions determine "where the processed data goes." A rule can correspond to one or more actions, and actions need to be set with defined connectors, which means where the data is sent.
+
+#### Sink
+
+A Sink is a data output component added to the actions of a rule. When a device triggers an event or a message arrives at EMQX deployment, the system matches and executes the corresponding rule, filtering and processing the data. The data processed by the Rule Engine is forwarded to the specified Sink. In the Sink, you can configure how the data is handled, for example, by using `${var}` or `${.var}` syntax to extract variables from the data, dynamically generating SQL statements or data templates. Then, the data is sent to external data systems through a corresponding [connector](./connectors.md), enabling operations such as message storage, data updates, and event notifications.
+
+The variable extraction syntax supported in Sink is as follows:
+
+- `${var}`: This syntax is used to extract variables from the output results of a rule, for example, `${topic}`. If you wish to extract nested variables, you can use a period `.` for this, such as `${payload.temp}`. Note that if the variable you want to extract is not included in the output result, you will get the string `undefined`.
+- `${.var}`: This syntax first tries to extract a variable from the rule's output results. If the variable does not exist in the output, it attempts to extract it from the corresponding event data, for example, `${.topic}`. This also supports the use of `.` for extracting nested variables, such as `${.payload.temp}`. If the variable you want to extract is not present in either the rule output results or event data, you will receive the string `undefined`. You can also use `${.}` to extract all variables merged from the rule output results and event data.
+
+#### Source
+
+A Source is a data input component, serving as a [data source](https://docs.emqx.com/en/enterprise/latest/data-integration/rule-sql-events-and-fields.html) for rules, and is selected through rule SQL.
+
+Source subscribes or consumes messages from external data systems such as MQTT or Kafka. When new messages arrive through the connector, the rule engine matches and executes the corresponding rules, filtering and processing the data. Once processed, the data can be published to a specified EMQX topic, enabling operations like cloud command distribution.
 
 ## Work Flow
 

@@ -78,7 +78,7 @@
 
 2. 在规则列表中找到消息重新发布的规则，点击规则 ID 进入规则统计页面，在页面中可以看到相关的统计指标。
 
-  ![重新发布](./_assets/republish_01.png)
+     ![重新发布](./_assets/republish_01.png)
 
 3. 客户端订阅 `greet` 主题，可以看到如果 `msg` 包含 `hello`，消息将被转发，如果不包含，则不会转发。
-  ![重新发布](./_assets/republish_02.png)
+    ![重新发布](./_assets/republish_02.png)
