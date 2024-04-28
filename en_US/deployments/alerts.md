@@ -46,9 +46,10 @@ The alert information is sent to the event of PagerDuty, and PagerDuty specifies
     ![pagerduty_service](./_assets/pagerduty_integrations_api.png)
 
 3. Fill in the Integration key on EMQX Platform. 
-    ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
 
 4. You can use the test feature to check if the alert event is configured correctly. Click the **Test** button, then select an event to send a test message.
+
+   ![pagerduty_alerts](./_assets/pagerduty_alerts.png)
 
 ### Webhook Integration
 
