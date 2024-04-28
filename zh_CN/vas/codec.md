@@ -28,7 +28,7 @@
 
 1. 您可以通过以下两个入口开通自定义函数。
 
-   **方式一**：登陆 EMQX Cloud 控制台，在顶部菜单栏点击`增值服务`，找到自定义函数，点击`开通服务`，并在提示弹框中点击确认。
+   **方式一**：登陆 EMQX Platform 控制台，在顶部菜单栏点击`增值服务`，找到自定义函数，点击`开通服务`，并在提示弹框中点击确认。
 
    ![vas_codec](./_assets/codec-create.png)
 
@@ -88,7 +88,7 @@
      json['param_int1'] = dataView.getInt16(5);
      json['param_int2'] = dataView.getInt16(2);
      json['param_int3'] = dataView.getInt16(1);
-
+   
      return json;
    }
    ```
@@ -108,7 +108,7 @@
      var json = {};
      json["temperature"]=payload["temp"];
      json["humidity"]=payload["hum"]
-
+   
      return json;
    }
    ```

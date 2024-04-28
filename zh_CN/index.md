@@ -1,8 +1,8 @@
 ---
 {
-  'title': 'EMQX Cloud 文档中心',
-  'description': 'EMQX Cloud 是由 EMQ 提供的全托管 MQTT 5.0 物联网云服务平台，可连接海量物联网设备并实时处理数据，它支持按量付费，可零代码实现消息分发和持久化。',
-  'introduction': '作为物联网领域的统一 MQTT 平台，以及全球首个支持 MQTT 5.0 消息服务的平台，EMQX Cloud 为 MQTT 服务提供全面托管的环境以及 MQTT 服务的本地部署方案。借助 EMQX Cloud，您可以快速构建面向物联网领域的行业应用，轻松实现物联网数据的采集、传输、计算和持久化。',
+  'title': 'EMQX Platform 文档中心',
+  'description': 'EMQX Platform 是由 EMQ 提供的全托管 MQTT 5.0 物联网云服务平台，可连接海量物联网设备并实时处理数据，它支持按量付费，可零代码实现消息分发和持久化。',
+  'introduction': '作为物联网领域的统一 MQTT 平台，以及全球首个支持 MQTT 5.0 消息服务的平台，EMQX Platform 为 MQTT 服务提供全面托管的环境以及 MQTT 服务的本地部署方案。借助 EMQX Platform，您可以快速构建面向物联网领域的行业应用，轻松实现物联网数据的采集、传输、计算和持久化。',
   'headers':
     [
       { 'title': '产品介绍', 'slug': '产品介绍' },

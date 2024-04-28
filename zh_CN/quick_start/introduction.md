@@ -1,8 +1,8 @@
 # 快速入门
 
-本节将带您从创建账号开始快速体验 EMQX Cloud 的各项功能与特性，若您已有相关账号，您可跳过本步骤直接查看[创建部署](#创建部署)。
+本节将带您从创建账号开始快速体验 EMQX Platform 的各项功能与特性，若您已有相关账号，您可跳过本步骤直接查看[创建部署](#创建部署)。
 
-## EMQX Cloud 试用
+## EMQX Platform 试用
 
 您可通过我们的 Serverless 免费额度或专有版提供的 14 天免费试用计划探索和试用 EMQX 产品。
 
@@ -32,18 +32,18 @@ Serverless 免费试用额度：
 
 * 试用到期后，如您账户无可用余额，部署将会被保留 3 天。3 天后，试用部署将被自动删除。
 
-## 创建和登录 EMQX Cloud 账户
+## 创建和登录 EMQX Platform 账户
 
 ### [注册账户](https://accounts-zh.emqx.com/signup?continue=https://www.emqx.com/cn/cloud)
 
 1. 请输入：姓名、邮箱、密码和手机号码等必填项；根据监管要求，注册需要验证手机完成实名认证。
-2. 点击**开始试用**，EMQX Cloud 会自动将确认邮件发送到您提供的邮箱地址。
+2. 点击**开始试用**，EMQX Platform 会自动将确认邮件发送到您提供的邮箱地址。
 4. 要验证您的新账户，请点击确认邮件中的链接，该链接将会验证您的账户，并返回登录页面。
 
 
 ### [登录账户](https://www.emqx.com/zh/signin?continue=https://www.emqx.com/cn/cloud)
 
-输入您的邮箱和密码，然后点击**登录**将跳转到 EMQX Cloud 控制台。
+输入您的邮箱和密码，然后点击**登录**将跳转到 EMQX Platform 控制台。
 
 ### [找回密码](https://accounts-zh.emqx.com/forgot-password?continue=https%3A%2F%2Fwww.emqx.com%2Fcn%2Fcloud)
 
@@ -51,7 +51,7 @@ Serverless 免费试用额度：
 
 ## 创建部署
 
-登录 EMQX Cloud [控制台](https://cloud.emqx.com/console/)，在此您可查看当前部署的概要信息，进行项目管理和用户管理等。接下来，我们将带您快速完成部署的创建。
+登录 EMQX Platform [控制台](https://cloud.emqx.com/console/)，在此您可查看当前部署的概要信息，进行项目管理和用户管理等。接下来，我们将带您快速完成部署的创建。
 
 1. 在起始页点击**新建部署**，前往部署创建页面。
 

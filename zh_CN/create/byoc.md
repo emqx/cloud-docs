@@ -8,7 +8,7 @@
 
 ## 准备部署
 
-1. 登录账户，进入 EMQX Cloud [控制台](https://cloud.emqx.com/console/)。
+1. 登录账户，进入 EMQX Platform [控制台](https://cloud.emqx.com/console/)。
 
 2. 在控制台首页或部署列表页，点击**新建部署**。
 
@@ -192,7 +192,7 @@ HTTPS listener is ready
 The deployment is successful! Here is the service information:
 --------------------------------------------------------
 EMQX service connection address: <Your Custom Domain>
-You can log in to the EMQX Cloud Console(https://cloud.emqx.com/console)
+You can log in to the EMQX Platform Console(https://cloud.emqx.com/console)
 to manage your deployment.
 --------------------------------------------------------
 Thank you for choosing our service. Happy IoT!

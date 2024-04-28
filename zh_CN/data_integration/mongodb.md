@@ -1,21 +1,21 @@
 # 将 MQTT 数据写入到 MongoDB
 
-[MongoDB](https://www.mongodb.com/)，作为领先的 NoSQL 数据库，以其在模式设计的灵活性、可扩展性以及存储大量结构化和半结构化数据的能力而闻名。通过将 EMQX Cloud 与 MongoDB 的数据集成，用户可以高效地将 MQTT 消息和客户端事件直接导入 MongoDB。这有助于在 MongoDB 中进行长期序列数据存储和高级查询。集成确保了单向流动，即 EMQX Cloud 的 MQTT 消息被写入 MongoDB 数据库。这种强大的组合是寻求有效管理其物联网数据的企业的坚实基础。
+[MongoDB](https://www.mongodb.com/)，作为领先的 NoSQL 数据库，以其在模式设计的灵活性、可扩展性以及存储大量结构化和半结构化数据的能力而闻名。通过将 EMQX Platform 与 MongoDB 的数据集成，用户可以高效地将 MQTT 消息和客户端事件直接导入 MongoDB。这有助于在 MongoDB 中进行长期序列数据存储和高级查询。集成确保了单向流动，即 EMQX Platform 的 MQTT 消息被写入 MongoDB 数据库。这种强大的组合是寻求有效管理其物联网数据的企业的坚实基础。
 
-本页提供了 EMQX Cloud 与 MongoDB 数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
+本页提供了 EMQX Platform 与 MongoDB 数据集成的全面介绍，并提供了创建和验证数据集成的实用指导。
 
 ## 工作原理
 
-MongoDB 数据集成是 EMQX Cloud 中的开箱即用功能，旨在弥合基于 MQTT 的物联网数据与 MongoDB 强大的数据存储能力之间的差距。借助内置的[规则引擎](./rules.md)组件，集成简化了将数据从 EMQX Cloud 导入 MongoDB 进行存储和管理的过程，无需复杂的编码。
+MongoDB 数据集成是 EMQX Platform 中的开箱即用功能，旨在弥合基于 MQTT 的物联网数据与 MongoDB 强大的数据存储能力之间的差距。借助内置的[规则引擎](./rules.md)组件，集成简化了将数据从 EMQX Platform 导入 MongoDB 进行存储和管理的过程，无需复杂的编码。
 
 下图展示了 EMQX 与 MongoDB 之间数据集成的典型架构。
 
-![EMQX Cloud MongoDB 数据集成](./_assets/data_integration_mongodb.png)
+![EMQX Platform MongoDB 数据集成](./_assets/data_integration_mongodb.png)
 
 将 MQTT 数据写入 MongoDB 的过程如下：
 
-1. **消息发布和接收**：无论是连接车辆、工业物联网系统还是能源管理平台的一部分，物联网设备都通过 MQTT 协议成功连接到 EMQX，并向特定主题发布 MQTT 消息。当 EMQX Cloud 收到这些消息时，它启动其规则引擎中的匹配过程。
-2. **消息数据处理**：消息到达后，经过规则引擎处理，然后由 EMQX Cloud 中定义的规则处理。基于预定义标准的规则确定哪些消息需要路由到 MongoDB。如果任何规则指定了有效载荷转换，则应用这些转换，例如转换数据格式、过滤特定信息或使用额外上下文丰富有效载荷。
+1. **消息发布和接收**：无论是连接车辆、工业物联网系统还是能源管理平台的一部分，物联网设备都通过 MQTT 协议成功连接到 EMQX，并向特定主题发布 MQTT 消息。当 EMQX Platform 收到这些消息时，它启动其规则引擎中的匹配过程。
+2. **消息数据处理**：消息到达后，经过规则引擎处理，然后由 EMQX Platform 中定义的规则处理。基于预定义标准的规则确定哪些消息需要路由到 MongoDB。如果任何规则指定了有效载荷转换，则应用这些转换，例如转换数据格式、过滤特定信息或使用额外上下文丰富有效载荷。
 3. **数据导入 MongoDB**：一旦规则引擎识别出一个消息用于 MongoDB 存储，它就会触发一个动作，将消息转发到 MongoDB。处理过的数据将被无缝写入 MongoDB 数据库的集合中。
 4. **数据存储和利用**：随着数据现在存储在 MongoDB 中，企业可以利用其查询能力应用于各种用例。例如，在连接车辆领域，存储的数据可以通知车队管理系统关于车辆健康状况，根据实时指标优化路线规划或跟踪资产。同样，在工业物联网环境中，数据可能用于监控机械健康，预测维护或优化生产计划。
 
@@ -23,7 +23,7 @@ MongoDB 数据集成是 EMQX Cloud 中的开箱即用功能，旨在弥合基于
 
 ## 特性与优势
 
-EMQX Cloud 与 MongoDB 的数据集成提供了一系列功能和优势，以确保有效的数据处理和存储：
+EMQX Platform 与 MongoDB 的数据集成提供了一系列功能和优势，以确保有效的数据处理和存储：
 
 - **简化物联网数据管理**
 
@@ -31,7 +31,7 @@ EMQX Cloud 与 MongoDB 的数据集成提供了一系列功能和优势，以确
 
 - **实时数据处理**
 
-  EMQX Cloud 专为处理实时数据流而构建，确保从源系统到 MongoDB 的高效可靠数据传输。它使组织能够实时捕获和分析数据，非常适合需要立即洞察和行动的用例。
+  EMQX Platform 专为处理实时数据流而构建，确保从源系统到 MongoDB 的高效可靠数据传输。它使组织能够实时捕获和分析数据，非常适合需要立即洞察和行动的用例。
 
 - **灵活的 MongoDB 连接选项**
 
@@ -43,7 +43,7 @@ EMQX Cloud 与 MongoDB 的数据集成提供了一系列功能和优势，以确
 
 - **灵活的数据转换**
 
-  EMQX Cloud 提供了强大的基于 SQL 的规则引擎，允许组织在将数据存储到 MongoDB 之前对数据进行预处理。它支持各种数据转换机制，如过滤、路由、聚合和丰富，使组织能够根据其需求塑造数据。
+  EMQX Platform 提供了强大的基于 SQL 的规则引擎，允许组织在将数据存储到 MongoDB 之前对数据进行预处理。它支持各种数据转换机制，如过滤、路由、聚合和丰富，使组织能够根据其需求塑造数据。
 
 - **NoSQL**
 
@@ -51,7 +51,7 @@ EMQX Cloud 与 MongoDB 的数据集成提供了一系列功能和优势，以确
 
 - **可靠的数据存储**
 
-  一旦 EMQX Cloud 规则引擎处理并路由消息，它将存储在 MongoDB 中，平台已证明的可靠性确保了数据的完整性和持续可用性。
+  一旦 EMQX Platform 规则引擎处理并路由消息，它将存储在 MongoDB 中，平台已证明的可靠性确保了数据的完整性和持续可用性。
 
 - **运营指标和高级分析**
 
@@ -65,7 +65,7 @@ MongoDB 数据集成加强了您的物联网基础设施，确保您的设备生
 
 ## 连接准备
 
-本节介绍了在 EMQX Cloud 中创建 MongoDB 数据集成之前需要做的准备工作。
+本节介绍了在 EMQX Platform 中创建 MongoDB 数据集成之前需要做的准备工作。
 
 ### 前置准备
 
@@ -123,7 +123,7 @@ db.createCollection('temp_hum')
    - **密码**：输入 `public`。
    - **认证源**：填写与用户证书关联的数据库名称。
    - **使用旧协议**：可选择是否应使用 MongoDB 的旧版通信协议（MongoDB 在 3.6 版本中引入了新的线协议，旧协议保留用于向后兼容。），可以设置为 `true`、 `false` 或 `auto`。在 `auto` 模式（默认选项）下，EMQX 将根据检测到的 MongoDB 版本自动决定使用哪种协议。
-   - **Srv 记录**：默认禁用。启用后，允许 EMQX Cloud 使用 DNS SRV 记录来发现它应该连接的 MongoDB 主机，这使得连接到副本集或分片集群更加容易，无需在连接字符串中指定每个主机。
+   - **Srv 记录**：默认禁用。启用后，允许 EMQX Platform 使用 DNS SRV 记录来发现它应该连接的 MongoDB 主机，这使得连接到副本集或分片集群更加容易，无需在连接字符串中指定每个主机。
    - 如果您想建立加密连接，请点击 **启用 TLS** 切换开关。
 
 4. 根据需要配置高级设置选项（可选），详情请参考[高级设置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-mongodb.html#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)。
@@ -156,11 +156,11 @@ db.createCollection('temp_hum')
 
    :::
 
-3. 点击**下一步**开始创建动作，为规则在被触发的情况下指定一个动作。通过这个动作，EMQX Cloud 会将经规则处理的数据发送到 MongoDB。
+3. 点击**下一步**开始创建动作，为规则在被触发的情况下指定一个动作。通过这个动作，EMQX Platform 会将经规则处理的数据发送到 MongoDB。
 
 4. 从**使用连接器**下拉框中选择您之前创建的连接器。
 
-5. 配置 **有效载荷模板**，将 `client_id`、`up_timestamp`、`temp`、 `hum` 字段存储到 MongoDB 中，该模板将通过 MongoDB insert 命令执行，对应模板如下：
+5. 配置**有效载荷模板**，将 `client_id`、`up_timestamp`、`temp`、 `hum` 字段存储到 MongoDB 中，该模板将通过 MongoDB insert 命令执行，对应模板如下：
 
    ```json
    {

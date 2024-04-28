@@ -1,6 +1,6 @@
 # 规则
 
-规则是 EMQX Cloud 内置基于 SQL 的数据处理组件，搭配[连接器](./connectors.md)使用无需编写代码即可实现一站式的 IoT 数据提取、过滤、转换、存储与处理，以加速应用集成和业务创新。
+规则是 EMQX Platform 内置基于 SQL 的数据处理组件，搭配[连接器](./connectors.md)使用无需编写代码即可实现一站式的 IoT 数据提取、过滤、转换、存储与处理，以加速应用集成和业务创新。
 
 ## 规则的组成
 规则描述了 **数据来源**、**数据处理过程**、**处理结果去向** 三个方面：
@@ -13,7 +13,7 @@
 
   有关语法和内置 SQL 函数的详细解释，请参阅[规则 SQL 语法与示列](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-syntax.html)和[内置 SQL 函数](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-builtin-functions.html)。要了解更多关于 SQL 函数的信息，您还可以参考 [jq 函数](https://docs.emqx.com/zh/enterprise/latest/data-integration/rule-sql-jq.html)。
 
-- **处理结果去向**：动作解决了“将处理后的数据发送到哪里”的问题。它们告诉 EMQX Cloud 如何处理规则产生的数据。在根据指定的规则处理输入之后，可以定义一个或多个动作来处理 SQL 执行结果。规则引擎将依次执行相应的动作。目前，规则支持以下两种类型的动作：
+- **处理结果去向**：动作解决了“将处理后的数据发送到哪里”的问题。它们告诉 EMQX Platform 如何处理规则产生的数据。在根据指定的规则处理输入之后，可以定义一个或多个动作来处理 SQL 执行结果。规则引擎将依次执行相应的动作。目前，规则支持以下两种类型的动作：
 
   - 内置动作：目前，您可以通过[消息重新发布](./republish.md)将处理结果发布到另一个 MQTT 主题。 
   - 将处理结果存储在数据库中：通过预定义的[连接器](./connectors.md)将数据发送到各类目标服务。

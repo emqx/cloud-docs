@@ -26,9 +26,10 @@
 删除部署后，设备将不能连接到部署，部署所有数据和配置将会被删除。
 :::
 
-1. 在控制台中，点击您所需要删除的部署，您将进入部署概览页面。
-2. 点击右上角的**删除**按钮，并在弹出框中输入部署名称。
-3. 点击**确认**，完成部署删除。
+1. 在控制台中，点击您所需要删除的部署，进入部署概览页面。
+2. 点击右上角的**设置**按钮或者点击左侧菜单中的**设置**，进入设置页面。
+3. 点击**删除部署**按钮，并在弹出框中输入部署名称。
+4. 点击**确认**，完成部署删除。
 
 
 ## 专有版部署
@@ -51,8 +52,6 @@
 
 3. 点击**确认**，完成部署停止。
 
-![delete_deployment](./_assets/stop_deployment.png)
-
 
 ### 删除部署
 删除部署之前，您需要确保部署运行状态为**运行中**。
@@ -63,11 +62,10 @@
 
 1. 在控制台中点击您所需要删除的部署，进入部署概览页面。
 
-2. 点击右上角的**删除**按钮，并在弹出框中输入部署名称。
+2. 点击右上角的**设置**按钮或者点击左侧菜单中的**设置**，进入设置页面。
 
-3. 点击**确认**，完成部署删除。
-
-![delete_deployment](./_assets/delete_deployment.png)
+3. 点击**删除部署**按钮，并在弹出框中输入部署名称。
+4. 点击**确认**，完成部署删除。
 
 
 ## BYOC 部署
@@ -214,7 +212,7 @@ tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
 - `--accessKey` 您的公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看您的 AccessKey ID。
 - `--secretKey` 您的公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
 
-此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为  访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 
 最终，命令行输出以下内容时，说明部署停止成功。
@@ -248,7 +246,7 @@ tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
 - `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
 - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
 
-此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Platform 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 
 最终，命令行输出以下内容时，说明部署停止成功。
@@ -307,7 +305,7 @@ tar -zxf delete-aliyun-byoc-deployment.tar.gz && cd delete-aliyun-byoc-deploymen
 - `--accessKey` 您的公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看您的 AccessKey ID。
 - `--secretKey` 您的公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
 
-此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Cloud 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为 EMQX Platform 访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 该命令执行后，提示确认需要删除的云资源，输入“yes“回车后继续。
 

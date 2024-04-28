@@ -1,15 +1,15 @@
 # 配置使用 Azure AD 授权的 SSO
 
-如果您使用 Azure Active Directory (Microsoft Entra ID，本文简称 Azure AD) 管理您的企业账号，可以在 EMQX Cloud 中选择 Azure AD 作为授权服务器配置并开启单点登录（Single Sign-On, SSO）。同时，您还需要在 Azure AD 中进行 OpenID Connect (OIDC) 配置。本页提供了在 EMQX 和 Azure AD 中进行 OIDC 配置的示例，帮助您理解企业 Identity Provider (IdP) 与 EMQX Cloud 之间进行连接授权 SSO 的端到端配置流程。
+如果您使用 Azure Active Directory (Microsoft Entra ID，本文简称 Azure AD) 管理您的企业账号，可以在 EMQX Platform 中选择 Azure AD 作为授权服务器配置并开启单点登录（Single Sign-On, SSO）。同时，您还需要在 Azure AD 中进行 OpenID Connect (OIDC) 配置。本页提供了在 EMQX 和 Azure AD 中进行 OIDC 配置的示例，帮助您理解企业 Identity Provider (IdP) 与 EMQX Platform 之间进行连接授权 SSO 的端到端配置流程。
 
 ## 前置准备
-- 已有一个 EMQX Cloud 主账号 (Root account)。
+- 已有一个 EMQX Platform 主账号 (Root account)。
 - 已有一个 Azure AD 租户，在 Azure AD 租户中，已有一个管理员用户。
 - 您需要通过管理员用户（已授予全局管理员权限）执行 Azure AD 示例中的操作。关于如何在 Azure AD 中创建用户和为用户授权，请参见 [Azure AD 文档](https://learn.microsoft.com/zh-cn/azure/active-directory/fundamentals/)。
 
-## 步骤一：在 EMQX Cloud 开启 SSO 配置
+## 步骤一：在 EMQX Platform 开启 SSO 配置
 
-1. 登录 EMQX Cloud 主账号 (Root account)。
+1. 登录 EMQX Platform 主账号 (Root account)。
 
 2. 点击右上角的用户图标，在下拉菜单中选择 **SSO**。
 
@@ -39,11 +39,11 @@
 
 5. 完成之后点击 **Register** 就会进入新注册应用 `emqx-cloud-sso` 的 Overview 页面。
 
-## 步骤三：在 EMQX Cloud 中配置 SSO 信息
+## 步骤三：在 EMQX Platform 中配置 SSO 信息
 
-转到 EMQX Cloud 的**配置 SSO** 页面，按以下步骤配置信息：
+转到 EMQX Platform 的**配置 SSO** 页面，按以下步骤配置信息：
 
-1. 在 EMQX Cloud 的**配置 SSO** 页面配置以下信息：
+1. 在 EMQX Platform 的**配置 SSO** 页面配置以下信息：
 
    - **Tenant ID**：填写 Azure 门户 `emqx-cloud-sso` 应用 Overview 页面中的 Directory (tenant) ID。
 
@@ -57,7 +57,7 @@
 
      ![sso](./_assets/azure_3.png)
 
-3. 将 Value 粘贴到 EMQX Cloud 的**配置 SSO** 页面上的 **Client Secret** 中。
+3. 将 Value 粘贴到 EMQX Platform 的**配置 SSO** 页面上的 **Client Secret** 中。
 
 4. 点击**确认**完成配置。
 
@@ -75,12 +75,12 @@
 
 4. 选择用户之后，点击 **Assign**，完成用户的授权。
 
-## 步骤五：在 EMQX Cloud 中创建子用户
-1. 用 EMQX Cloud 主账号进入控制台的用户管理页面。
+## 步骤五：在 EMQX Platform 中创建子用户
+1. 用 EMQX Platform 主账号进入控制台的用户管理页面。
 2. 点击右上角 **+ 新建用户**。
 3. 在弹窗内的账号中输入和在 Okta 中授权的相同的邮箱账号： Jack@emqx.io。并且给该账号分配一个角色。请参考[角色权限](./role.md)来设置不同的角色。
  <img src="./_assets/sso3.png" alt="sso" style="zoom:67%;" />
 4. 最后使用用户管理页面中的子账号登录地址进行登录，点击**使用企业账号登录**，浏览器将会跳转到 Microsoft 的登录界面。
 <img src="./_assets/sso4.png" alt="sso" style="zoom:67%;" />
-5. 在 Microsoft 的登录界面上完成登录流程，浏览器会自动返回到 EMQX Cloud 完成 SSO 登录。
+5. 在 Microsoft 的登录界面上完成登录流程，浏览器会自动返回到 EMQX Platform 完成 SSO 登录。
 

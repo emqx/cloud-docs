@@ -1,21 +1,21 @@
 # 将 MQTT 数据写入到 Apache IoTDB
 
-[Apache IoTDB](https://iotdb.apache.org/)）是一个高性能、可扩展的时序数据库，专为处理由各种物联网设备和系统生成的大量时序数据而设计。EMQX Cloud 支持与 Apache IoTDB 的数据集成，使您能够通过轻量级的 MQTT 协议，使用 [REST API V2](https://iotdb.apache.org/UserGuide/Master/API/RestServiceV2.html) 无缝地将数据转发到 Apache IoTDB。这种数据集成确保了数据的单向流动。来自 EMQX Cloud 的 MQTT 消息被写入 IoTDB 数据库，利用 EMQX Cloud 卓越的实时数据摄取能力和 IoTDB 专有的时序数据存储和查询性能。这种强大的组合为希望有效管理其物联网数据的企业提供了坚实的基础。
+[Apache IoTDB](https://iotdb.apache.org/)）是一个高性能、可扩展的时序数据库，专为处理由各种物联网设备和系统生成的大量时序数据而设计。EMQX Platform 支持与 Apache IoTDB 的数据集成，使您能够通过轻量级的 MQTT 协议，使用 [REST API V2](https://iotdb.apache.org/UserGuide/Master/API/RestServiceV2.html) 无缝地将数据转发到 Apache IoTDB。这种数据集成确保了数据的单向流动。来自 EMQX Platform 的 MQTT 消息被写入 IoTDB 数据库，利用 EMQX Platform 卓越的实时数据摄取能力和 IoTDB 专有的时序数据存储和查询性能。这种强大的组合为希望有效管理其物联网数据的企业提供了坚实的基础。
 
-本页面提供了关于 EMQX Cloud 和 Apache IoTDB 之间数据集成的全面介绍，并附有创建和验证数据集成的实用指南。
+本页面提供了关于 EMQX Platform 和 Apache IoTDB 之间数据集成的全面介绍，并附有创建和验证数据集成的实用指南。
 
 ## 工作原理
 
-Apache IoTDB 的数据集成是 EMQX Cloud 中的一个开箱即用的功能，在基于 MQTT 的原始时序数据与 IoTDB 强大数据存储能力之间架起桥梁。通过内置的[规则引擎](./rules.md)组件，该集成简化了从 EMQX Cloud 到 IoTDB 的数据摄取过程，以便存储和查询，无需复杂的编码。
+Apache IoTDB 的数据集成是 EMQX Platform 中的一个开箱即用的功能，在基于 MQTT 的原始时序数据与 IoTDB 强大数据存储能力之间架起桥梁。通过内置的[规则引擎](./rules.md)组件，该集成简化了从 EMQX Platform 到 IoTDB 的数据摄取过程，以便存储和查询，无需复杂的编码。
 
 下图展示了 EMQX 与 IoTDB 之间数据集成的典型架构。<!-- 这张图片需要修改为特定于IoTDB的-->
 
-![EMQX Cloud Apache IoTDB 数据集成](./_assets/data_integration_iotdb.png)
+![EMQX Platform Apache IoTDB 数据集成](./_assets/data_integration_iotdb.png)
 
 数据集成的工作流程如下：
 
-1. **消息发布和接收**：无论是连接车辆、工业物联网系统还是能源管理平台的一部分，设备都通过 MQTT 协议成功连接到 EMQX Cloud，并根据其运行状态、读数或触发的事件通过 MQTT 发送消息。当 EMQX Cloud 接收到这些消息时，它会启动其规则引擎中的匹配过程。
-2. **消息数据处理**：当消息到达时，它通过规则引擎进行处理，然后由 EMQX Cloud 中定义的规则进行处理。这些规则根据预定义的标准确定哪些消息需要路由到 IoTDB。如果任何规则指定了有效负载转换，则应用这些转换，例如转换数据格式、过滤特定信息或用额外的上下文丰富有效负载。
+1. **消息发布和接收**：无论是连接车辆、工业物联网系统还是能源管理平台的一部分，设备都通过 MQTT 协议成功连接到 EMQX Platform，并根据其运行状态、读数或触发的事件通过 MQTT 发送消息。当 EMQX Platform 接收到这些消息时，它会启动其规则引擎中的匹配过程。
+2. **消息数据处理**：当消息到达时，它通过规则引擎进行处理，然后由 EMQX Platform 中定义的规则进行处理。这些规则根据预定义的标准确定哪些消息需要路由到 IoTDB。如果任何规则指定了有效负载转换，则应用这些转换，例如转换数据格式、过滤特定信息或用额外的上下文丰富有效负载。
 3. **数据缓冲**：EMQX 提供了一个内存中的消息缓冲区，以防止 IoTDB 不可用时数据丢失。数据暂时保存在缓冲区中，并可能转储到磁盘以防止内存过载。请注意，如果数据集成或 EMQX 节点重启，数据将不会被保留。
 4. **数据摄入 IoTDB**：一旦规则引擎确定了 IoTDB 存储的消息，它就会触发将消息转发到 IoTDB 的动作。处理后的数据将以时序方式无缝写入 IoTDB。
 5. **数据存储和利用**：现在数据存储在 IoTDB 中，企业可以利用其查询能力应用于各种用例。例如，在连接车辆领域，这些存储的数据可以帮助车队管理系统了解车辆健康状况，根据实时指标优化路线规划，或跟踪资产。同样，在工业物联网环境中，数据可能用于监控机械健康、预测维护或优化生产计划。
@@ -26,15 +26,15 @@ Apache IoTDB 的数据集成是 EMQX Cloud 中的一个开箱即用的功能，�
 
 - **高效的数据采集**
 
-  通过将 EMQX Cloud 与 IoTDB 集成，可以通过轻量级 MQTT 消息协议从资源有限的物联网设备高效收集物联网时序数据，并摄入数据库，确保可靠和高效的数据采集。
+  通过将 EMQX Platform 与 IoTDB 集成，可以通过轻量级 MQTT 消息协议从资源有限的物联网设备高效收集物联网时序数据，并摄入数据库，确保可靠和高效的数据采集。
 
 - **灵活的数据转换**
 
-  EMQX Cloud 提供了基于 SQL 的强大规则引擎，允许组织在存储到 IoTDB 之前对数据进行预处理。它支持各种数据转换机制，如过滤、路由、聚合和丰富，使组织能够根据他们的需要塑造数据。
+  EMQX Platform 提供了基于 SQL 的强大规则引擎，允许组织在存储到 IoTDB 之前对数据进行预处理。它支持各种数据转换机制，如过滤、路由、聚合和丰富，使组织能够根据他们的需要塑造数据。
 
 - **可扩展性和高吞吐量**
 
-  EMQX Cloud 为水平可扩展性而设计，轻松管理不断增长的物联网设备生成的激增消息流量。该解决方案轻松适应扩展的数据量，并支持高并发访问。因此，物联网时序工作负载可以轻松管理物联网部署规模扩大到前所未有水平时数据摄入、存储和处理的增长需求。
+  EMQX Platform 为水平可扩展性而设计，轻松管理不断增长的物联网设备生成的激增消息流量。该解决方案轻松适应扩展的数据量，并支持高并发访问。因此，物联网时序工作负载可以轻松管理物联网部署规模扩大到前所未有水平时数据摄入、存储和处理的增长需求。
 
 - **优化的时序数据存储**
 
@@ -42,11 +42,11 @@ Apache IoTDB 的数据集成是 EMQX Cloud 中的一个开箱即用的功能，�
 
 - **快速和复杂的查询**
 
-  IoTDB 具有丰富的查询语义，支持跨设备和传感器的时序数据时间对齐，时序字段的计算（频域转换）以及时间维度上丰富的聚合函数支持。它还与 Apache Hadoop、Spark 和 Flink 深度集成，提供更强大的分析能力。EMQX Cloud 与 IoTDB 无缝集成，为存储和分析 MQTT 数据提供了统一的解决方案。
+  IoTDB 具有丰富的查询语义，支持跨设备和传感器的时序数据时间对齐，时序字段的计算（频域转换）以及时间维度上丰富的聚合函数支持。它还与 Apache Hadoop、Spark 和 Flink 深度集成，提供更强大的分析能力。EMQX Platform 与 IoTDB 无缝集成，为存储和分析 MQTT 数据提供了统一的解决方案。
 
 ## 准备工作
 
-本节介绍了在 EMQX Cloud 中创建 Apache IoTDB 数据集成之前需要做的准备工作。
+本节介绍了在 EMQX Platform 中创建 Apache IoTDB 数据集成之前需要做的准备工作。
 
 ### 前置准备
 
@@ -178,7 +178,7 @@ docker run -d --name iotdb-service \
 
 ### 批量设置
 
-在 Apache IoTDB 中，可能需要同时写入数百条数据，在 EMQX Cloud 上进行配置是具有挑战性的工作。为了解决这个问题，EMQX Cloud 提供了批量设置数据写入的功能。
+在 Apache IoTDB 中，可能需要同时写入数百条数据，在 EMQX Platform 上进行配置是具有挑战性的工作。为了解决这个问题，EMQX Platform 提供了批量设置数据写入的功能。
 
 当配置 **写入数据** 时，您可以使用批量设置功能，从 CSV 文件中导入要进行插入操作的字段。
 
@@ -201,7 +201,7 @@ docker run -d --name iotdb-service \
    - **Measurement**: 字段名，支持常量或 ${var} 格式的占位符。
    - **Data Type**: 数据类型，可选值包括 BOOLEAN、 INT32、 INT64、 FLOAT、 DOUBLE、 TEXT。
    - **Value**: 写入的数据值，支持常量或 ${var} 格式的占位符，需要与数据类型匹配。
-   - **Remarks**: 仅用于 CSV 文件内字段的备注，无法导入到 EMQX Cloud 中。
+   - **Remarks**: 仅用于 CSV 文件内字段的备注，无法导入到 EMQX Platform 中。
 
    注意，仅支持 1M 以内的 CSV 格式文件，文件中数据不能超过 2000 行。
 

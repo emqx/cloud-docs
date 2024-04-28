@@ -284,4 +284,4 @@ Received '{"msg": 2}' from topic 'raspberry/mqtt'
 
 ## 更多内容
 
-现在，您已经可以在 ESP32 中通过 MicroPython 的 `umqtt` 模块成功连接到 EMQX Cloud。您可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython) 下载完整的示例代码。同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
+现在，您已经可以在 ESP32 中通过 MicroPython 的 `umqtt` 模块成功连接到 EMQX Platform。您可以在 [这里](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-Micropython) 下载完整的示例代码。同时也可以在 [GitHub](https://github.com/emqx/MQTT-Client-Examples) 上找到更多其他语言的 Demo 示例。
