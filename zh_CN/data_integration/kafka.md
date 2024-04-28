@@ -1,6 +1,6 @@
 # 将 MQTT 数据传输到 Apache Kafka
 
-[Apache Kafka](https://kafka.apache.org/) 是一个广泛使用的开源分布式事件流处理平台，能够处理应用程序和系统之间数据流的实时传输。然而，Kafka 并不是为边缘物联网通信构建的，Kafka 客户端需要稳定的网络连接和更多的硬件资源。在物联网领域，设备和应用程序生成的数据使用轻量级 MQTT 协议传输。EMQX Cloud 与 Kafka/Confluent 的集成使用户能够无缝地将 MQTT 数据流入或流出 Kafka。MQTT 数据流被引入 Kafka 主题，确保实时处理、存储和分析。EMQX Cloud 支持将客户端数据转发到 Kafka 进行处理、存储和分析。同时，Kafka 主题的数据可以被 MQTT 设备消费，实现即时处理。
+[Apache Kafka](https://kafka.apache.org/) 是一个广泛使用的开源分布式事件流处理平台，能够处理应用程序和系统之间数据流的实时传输。然而，Kafka 并不是为边缘物联网通信构建的，Kafka 客户端需要稳定的网络连接和更多的硬件资源。在物联网领域，设备和应用程序生成的数据使用轻量级 MQTT 协议传输。EMQX Platform 与 Kafka/Confluent 的集成使用户能够无缝地将 MQTT 数据流入或流出 Kafka。MQTT 数据流被引入 Kafka 主题，确保实时处理、存储和分析。EMQX Cloud 支持将客户端数据转发到 Kafka 进行处理、存储和分析。同时，Kafka 主题的数据可以被 MQTT 设备消费，实现即时处理。
 
 本页详细介绍了 Kafka 数据集成的功能特性，同时提供了实用的 Kafka 数据集成创建指导。
 
@@ -172,7 +172,7 @@ Apache Kafka 数据集成是 EMQX Platform 的开箱即用功能，能够在基�
 
 ## 从 Kafka 消费消息
 
-本节演示了 EMQX Cloud 如何从 Kafka 消费消息并通过配置的数据集成将消息数据重新发布到 MQTT 主题，内容包括创建 Kafka 消费者连接器、创建规则和测试规则。
+本节演示了 EMQX 部署如何从 Kafka 消费消息并通过配置的数据集成将消息数据重新发布到 MQTT 主题，内容包括创建 Kafka 消费者连接器、创建规则和测试规则。
 
 ### 创建 Kafka 消费者连接器
 

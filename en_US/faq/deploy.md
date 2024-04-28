@@ -26,6 +26,6 @@ Messages sent from the client cannot be viewed directly in the deployment consol
 
 ## How can I scale deployment?
 
-EMQX Cloud supports automatic scaling by submitting a ticket. The scaling lasts for 5 to 15 minutes. During the scaling period, it will not affect the normal use of the service, but the device may be disconnected and reconnected for a few seconds. If the device is configured for automatic reconnection, it will not affect use, and the connection address remains the same.
+EMQX Platform supports automatic scaling by submitting a ticket. The scaling lasts for 5 to 15 minutes. During the scaling period, it will not affect the normal use of the service, but the device may be disconnected and reconnected for a few seconds. If the device is configured for automatic reconnection, it will not affect use, and the connection address remains the same.
 
 If you still need to scaling after confirming, please reply: Confirmed, need to scaling the **deployment name** to **tier**.

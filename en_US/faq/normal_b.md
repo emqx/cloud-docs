@@ -2,7 +2,7 @@
 
 ## Which protocol connections are supported?
 
-EMQX Cloud deployment supports MQTT over TLS/SSL and WebSockets over TLS/SSL protocol connections.
+EMQX deployment supports MQTT over TLS/SSL and WebSockets over TLS/SSL protocol connections.
 
 If you need other protocol support, you can submit a ticket or send an email (cloud-support@emqx.io) to us.
 
@@ -13,7 +13,7 @@ When you create a **Dedicated deployment**, you will be given an MQTT connection
 
 ### Steps
 
-1. Let's assume you have the top-level domain abc.com and want to access the MQTT service as mqtt.abc.com, and your deployment on EMQX Cloud has a connection address of xxx.emqx.cloud.
+1. Let's assume you have the top-level domain abc.com and want to access the MQTT service as mqtt.abc.com, and your deployment on EMQX Platform has a connection address of xxx.emqx.cloud.
 
 2. Point the CNAME record from mqtt.abc.com to xxx.emqx.cloud in your domain settings panel.
 
