@@ -18,6 +18,8 @@ EMQX **专有版部署** 推荐使用自定义的证书验证，并且提供单�
 
     - 1024 位 RSA (RSA_1024)
     - 2048 位 RSA (RSA_2048)
+    - 256 位 ECDSA (ECC)
+    - 384 位 ECDSA (ECC)
 
 - 证书（包括证书链，如果适用）：我们只支持上传 **x509** 格式的证书，**请将您的证书（.crt或.pem）和任何相关的证书链文件合并为一个文件后上传**。如果您的证书是由中间证书颁发机构签发的，包含证书链对于确保其被正确识别是非常重要的。
 
@@ -44,9 +46,9 @@ EMQX **专有版部署** 推荐使用自定义的证书验证，并且提供单�
     - 私有秘钥格式
 
       ```bash
-      -----BEGIN (RSA) PRIVATE KEY-----
+      -----BEGIN (RSA/EC) PRIVATE KEY-----
       Base64–encoded private key
-      -----END (RSA) PRIVATE KEY----- 
+      -----END (RSA/EC) PRIVATE KEY----- 
       ```
 
 ## 创建单向认证
