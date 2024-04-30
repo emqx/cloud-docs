@@ -49,15 +49,23 @@ For detailed information on the format and usage of Rule SQL statements, refer t
 
 ## Create Rules
 
-Go to your deployment and click **Data Integration** from the left-navigation menu to enter the Data Integration page. 
+Go to your deployment and click **Data Integration** from the left-navigation menu to enter the Data Integration page. When you first access the initial page of data integration, you can select the type of data integration as needed, and create a connector to connect to the target service by clicking the corresponding icon. For specific steps on creating a connector, refer to [Create a Connector](./connectors.md#create-a-connector) and specific data integration instructions in the Data Integration section.
 
-If you have created a Connector for connecting to the cloud resources, click **New Rule** in the upper left corner of the **Rule List** to enter the **New Rule** page. You can also create a new rule by clicking the rule creation button in the Connector list.
+::: tip
+
+You can return to the data integration initial page by clicking **New Connector**.
+
+:::
+
+When you have created a Connector for connecting to the cloud resources, click **New Rule** in the upper left corner of the **Rule List** to enter the **New Rule** page. You can also create a new rule by clicking the rule creation button in the Connector list.
 
 ![rules](./_assets/rule_02.png)
 
 If you want to create a rule for [message republish](./republish.md), click **Republish** from the **Data Forward** category to start the rule creation process.
 
-<img src="./_assets/republish_03.png" alt="republish_03" style="zoom:67%;" />
+![rule_03](./_assets/rule_03.png)
+
+You can also click **Do Nothing (debug)** under the **Debug** category to enter the rule creation process. An empty action is configured only with rules and does not associate with any actions, which can be used specifically for debugging rules. For more details, refer to [Empty Action (Debug)](./empty_action_debug.md).
 
 ### Define a Data Source
 
@@ -80,7 +88,7 @@ Click the **Enable Test** toggle switch to create a new test SQL. Fill in the ap
 
 In the Output Result, you can see the expected data processing results.
 
-![rule_03](./_assets/rule_03.png)
+![rule_enable_test](./_assets/rule_enable_test.png)
 
 ## Add Actions
 
@@ -90,7 +98,7 @@ A rule can be associated with multiple actions. When you click **Confirm** to co
 
 ### Add Republish Action
 
-The following steps demonstrate how to add an action to republish the original messages received from the topic `t/#` to another topic `a/1`.
+The following steps demonstrate how to add an action to republish the original messages received from the topic `temp_hum/emqx` to another topic `a/1`.
 
 1. Select **Republish** from the **Connector** dropdown box. 
 2. Configure the following settings:
@@ -128,9 +136,21 @@ Click the rule ID in the rule list to view the rule's statistics and the statist
 
 ![rule_04](./_assets/rule_04.png)
 
+## View Action Statistics
+
+You can click the action ID in the action list. On the Action Statistics page, you can view the Metrics and Rate Indicators for this action.
+
+::: tip
+
+Currently, only the Dedicated version v5 deployment supports viewing the metrics of individual actions.
+
+:::
+
+![action_statistics](./_assets/action_statistics.png)
+
 ## Edit Rule
 
-Click the edit icon in the rule list to edit the rule. On the editing page, you can edit the SQL template of the rule and edit or add actions.
+You can directly click the edit icon on the **Rules** list to edit the rule, or you can click on the rule ID and then select the **Settings** tab to edit the rule. On the settings page, you can edit the SQL template of the rule, and also edit or add actions.
 
 ![rule_05](./_assets/rule_05.png)
 

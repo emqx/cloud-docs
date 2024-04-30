@@ -1,11 +1,11 @@
 {
   "cn": [
     {
-      "title": "EMQX Cloud 文档中心",
+      "title": "EMQX Platform 文档中心",
       "path": "./"
     },
     {
-      "title": "EMQX Cloud 概览",
+      "title": "EMQX Platform 概览",
       "path": "overview"
     },
     {

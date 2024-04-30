@@ -19,7 +19,7 @@ This article will introduce the usage of event topics, and the meaning of each f
 
 ### Client connect
 
-The topic of client connect is `$events/client_connected`, click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.
+The topic of client connect is `$events/client_connected`. On the New Rule step page, enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
@@ -54,14 +54,14 @@ The fields are explained as follows.
 
 ### Client disconnect
 
-The topic of client disconnect is `$events/client_disconnected`, click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.
+The topic of client disconnect is `$events/client_disconnected`. On the New Rule step page, enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
         *
     FROM
         "$events/client_disconnected"
-   ```  
+   ```
 
 You can test the SQL, view the return field after firing this rule.
 ![client_disconnected](./_assets/rule_engine_event_client_disconnected.png)
@@ -105,14 +105,14 @@ Here are some common reasons for client disconnections.
 
 ### Message delivery
 
-The topic of client disconnect is `$events/message_delivered`, click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.
+The topic of client disconnect is `$events/message_delivered. On the New Rule step page, enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
         *
     FROM
         "$events/message_delivered"
-   ```  
+   ```
 
 You can test the SQL, view the return field after firing this rule.
 ![message_delivered](./_assets/rule_engine_event_message_delivered.png)
@@ -139,14 +139,14 @@ The fields are explained as follows.
 
 ### Message acknowledged
 
-The topic of client disconnect is `$events/message_acked`, click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.
+The topic of client disconnect is `$events/message_acked`. On the New Rule step page, enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
         *
     FROM
         "$events/message_acked"
-   ```  
+   ```
 
 You can test the SQL, view the return field after firing this rule.
 ![client_acked](./_assets/rule_engine_event_client_acked.png)
@@ -173,14 +173,14 @@ The fields are explained as follows.
 
 ### Message dropped
 
-The topic of a message dropped is `$events/message_dropped`, which triggers the trigger rule when a message has no subscribers. Click on Rules on the left menu bar, click on Create, and enter the following rule to match the SQL statement.
+The topic of a message dropped is `$events/message_dropped`, which triggers the trigger rule when a message has no subscribers. On the New Rule step page, enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
         *
     FROM
         "$events/message_dropped"
-   ```  
+   ```
 
 You can test the SQL, view the return field after firing this rule.
 ![message_dropped](./_assets/rule_engine_event_client_dropped.png)
@@ -205,14 +205,14 @@ The fields are explained as follows.
 
 ### Delivery_dropped
 
-The topic of delivery_dropped is `$events/delivery_dropped, trigger rule when subscriber's message queue is full. Click on Rules on the left menu bar, click on Create, and enter the following rule to match the SQL statement:
+The topic of delivery_dropped is `$events/delivery_dropped, trigger rule when subscriber's message queue is full. On the New Rule step page, enter the following rule to match the SQL statement:
 
    ```sql
     SELECT
         *
     FROM
         "$events/delivery_dropped"
-   ```  
+   ```
 
 You can test the SQL, view the return field after firing this rule.
 ![delivery_dropped](./_assets/rule_engine_event_delivery_dropped.png)
@@ -241,14 +241,14 @@ The fields are explained as follows.
 
 ### Subscribe
 
-The topic of client disconnect is `$events/session_subscribed`, click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.
+The topic of client disconnect is `$events/session_subscribed`. On the New Rule step page, enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
         *
     FROM
         "$events/session_subscribed"
-   ```  
+   ```
 
 You can test the SQL, view the return field after firing this rule.
 ![session_subscribed](./_assets/rule_engine_event_session_subscribed.png)
@@ -268,14 +268,14 @@ The fields are explained as follows.
 
 ### Unsubscribe
 
-The topic of client disconnect is `$events/session_unsubscribed`, click on Rules on the left menu bar → Rules, click on Create and enter the following rule to match the SQL statement.
+The topic of client disconnect is `$events/session_unsubscribed`. On the New Rule step page, enter the following rule to match the SQL statement.
 
    ```sql
     SELECT
         *
     FROM
         "$events/session_unsubscribed"
-   ```  
+   ```
 
 You can test the SQL, view the return field after firing this rule.
 ![session_unsubscribed](./_assets/rule_engine_event_session_unsubscribed.png)

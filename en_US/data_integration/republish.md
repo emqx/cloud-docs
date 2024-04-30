@@ -80,7 +80,7 @@ You are recommended to use [MQTTX](https://mqttx.app/) to simulate message repor
 
 2. Find the message republishing rule in the rule list and click on the rule ID to enter the rule statistics page. You can see the related statistical indicators on the page.
 
-    ![Republishing](./_assets/republish_01.png)
+    ![rule_04](./_assets/rule_04.png)
 
 3. Subscribe to the `greet` topic on the client. You will see that if `msg` contains `hello`, the message will be forwarded, and if not, it will not be forwarded.
 
