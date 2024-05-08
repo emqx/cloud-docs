@@ -51,9 +51,9 @@ You can import authorization information in batch via a CSV file.
 
 1. Click the **Import** button.
 
-2. Download the template. An example template file is shown below:
+2. Download the template. An example template file (client ID template as an example) is shown below:
 
-   ![auth_csv](./_assets/auth_csv.png)
+   ![auth_csv](./_assets/authz_csv.png)
 
 3. Fill in the authorization information and upload the file.
 

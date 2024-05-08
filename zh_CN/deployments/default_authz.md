@@ -49,9 +49,9 @@
 
 1. 点击**导入**按钮。
 
-2. 下载模板。模板示例文件如下图所示：
+2. 下载模板。模板示例文件(client ID 授权模板为例)如下图所示：
 
-   ![auth_csv](./_assets/auth_csv.png)
+   ![auth_csv](./_assets/authz_csv.png)
 
 3. 填写授权信息后上传文件。
 

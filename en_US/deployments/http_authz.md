@@ -4,7 +4,7 @@ EMQX supports authorization based on HTTP applications. In this scenario, users 
 
 ## How HTTP Authorization Works
 
-The authorization process resembles an HTTP API call, where EMQX, acting as the request client, needs to construct and send a request to the HTTP service according to the "API" requirements, and the HTTP service must return results according to the "client's" requirements:
+The authorization process resembles an HTTP API call, where EMQX, acting as the request client, needs to construct and send a request to the HTTP service according to the "API" requirements. The HTTP service must return results according to the "client's" requirements:
 
 - The response `content-type` must be `application/json`.
 - The authorization result is indicated by `result` in the body, with possible values `allow`, `deny`, `ignore`.
@@ -35,7 +35,7 @@ You can complete the related configuration according to the following instructio
 
   ::: tip 
 
-  The `POST` method is recommended. When using the `GET` method, some sensitive information (such as plaintext passwords) might be exposed through HTTP server logs. Additionally, for untrusted environments, please use HTTPS. 
+  The `POST` method is recommended. When using the `GET` method, some sensitive information (such as plaintext passwords) might be exposed through HTTP server logs. Additionally, for untrusted environments, use HTTPS. 
 
   :::
 
@@ -53,7 +53,7 @@ You can complete the related configuration according to the following instructio
 
 - **Request Timeout** (optional): Enter the connection timeout duration, with units available: hours, minutes, seconds, milliseconds.
 
-- **Body**: The request template, for `POST` requests, it is sent in JSON format in the request body. For `GET` requests, it is encoded as query parameters in the URL. Mapping keys and values can use placeholders.
+- **Body**: The request template. `POST` requests are sent in JSON format in the request body. `GET` requests are encoded as query parameters in the URL. Mapping keys and values can use placeholders.
 
 ::: tip
 
@@ -63,13 +63,48 @@ You can complete the related configuration according to the following instructio
 
 :::
 
-### Request Parameter Placeholders
+## HTTP Request and Response
+When the client initiates a subscribing or publishing operation, the HTTP Authorizer constructs and sends a request based on the configured request template. You need to implement authorization logic in the request template and make sure that the checking results are returned in the required format.
 
-You can use the following placeholders in the authorization request, which EMQX will automatically fill with client information when requesting:
+### Request
+The request can use JSON format, with the following placeholders in the URL and request body:
 
-- %u: Username
-- %c: Client ID
-- %a: Client IP Address
-- %r: Client Access Protocol
-- %P: Plaintext Password
-- %p: Client Port
+- `${clientid}`: The client ID
+- `${username}`: The username used by the client on login
+- `${peerhost}`: The source IP address of the client
+- `${proto_name}`: The protocol name used by the client, e.g. `MQTT`, `CoAP`
+- `${mountpoint}`: The mount point of the gateway listener (topic prefix)
+- `${action}`: The action being requested, e.g. `publish`, `subscribe`
+- `${topic}`: The topic (or topic filter) to be published or subscribed in the current request
+- `${qos}`: The QoS of the message to be published or subscribed in the current request
+- `${retain}`: Whether the message to be published in the current request is a retained message
+
+### Response
+After checking, the authorization service needs to return a response in the following format:
+
+- Response content-type must be application/json.
+- If the HTTP Status Code is 200, the authorization result is granted by the HTTP Body. It depends on the value of the result field:
+  - allow: Allow Publish or Subscribe.
+  - deny: Deny Publish or Subscribe.
+  - ignore: Ignore this request, and it will be handed over to the next authorizer.
+- If the HTTP Status Code is 204, it means that this Publish or Subscribe request is allowed.
+- HTTP Status Codes other than 200 and 204, mean "ignore", for example, this HTTP service is not available.
+Example response:
+
+```
+HTTP/1.1 200 OK
+Headers: Content-Type: application/json
+...
+Body:
+{
+    "result": "allow" | "deny" | "ignore" // Default `"ignore"`
+}
+```
+
+::: tip
+
+It is recommended to use the `POST` method. When using the `GET` method, some sensitive information may be exposed through HTTP server logs.
+
+For untrusted environments, HTTPS should be used.
+
+:::
