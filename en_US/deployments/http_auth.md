@@ -61,13 +61,3 @@ You can complete the related configurations as follows:
 
 :::
 
-### Request Parameter Placeholders
-
-You can use the following placeholders in the authentication request, which EMQX will automatically fill with client information when requested:
-
-- %u: Username
-- %c: Client ID
-- %a: Client IP address
-- %r: Client protocol
-- %P: Plain text password
-- %p: Client port

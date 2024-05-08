@@ -63,13 +63,47 @@ You can complete the related configuration according to the following instructio
 
 :::
 
-### Request Parameter Placeholders
+## HTTP Request and Response
+When the client initiates a subscription or publishing operation, the HTTP Authorizer constructs and sends a request based on the configured request template. Users need to implement authorization logic in the authorization service and return the results according to the following requirements.
 
-You can use the following placeholders in the authorization request, which EMQX will automatically fill with client information when requesting:
+### Request
+The request can use JSON format, with the following placeholders in URL and request body:
 
-- %u: Username
-- %c: Client ID
-- %a: Client IP Address
-- %r: Client Access Protocol
-- %P: Plaintext Password
-- %p: Client Port
+- `${clientid}`: The client ID
+- `${username}`: The username used by client on login
+- `${peerhost}`: The source IP address of the client
+- `${proto_name}`: The protocol name used by client, e.g. `MQTT`, `CoAP`
+- `${mountpoint}`: The mountpoint of the gateway listener (topic prefix)
+- `${action}`: The action being requested, e.g. `publish`, `subscribe`
+- `${topic}`: The topic (or topic filter) to be published or subscribed in current request
+- `${qos}`: The QoS of the message to be published or subscribed in current request
+- `${retain}`: Whether the message to be published in current request is a retained message
+
+### Response
+After checking, the authorization service needs to return a response in the following format:
+
+- Response content-type must be application/json.
+- If the HTTP Status Code is 200, the authorization result is granted by HTTP Body. It depends on the value of the result field:
+  - allow: Allow Publish or Subscribe.
+  - deny: Deny Publish or Subscribe.
+  - ignore: Ignore this request, it will be handed over to the next authorizer.
+- If the HTTP Status Code is 204, it means that this Publish or Subscribe request is allowed.
+- HTTP Status Codes other than 200 and 204, mean "ignore", for example, this HTTP service not available.
+Example response:
+
+```
+HTTP/1.1 200 OK
+Headers: Content-Type: application/json
+...
+Body:
+{
+    "result": "allow" | "deny" | "ignore" // Default `"ignore"`
+}
+```
+
+::: tip
+It is recommended to use the `POST` method. When using the `GET` method, some sensitive information may be exposed through HTTP server logs.
+
+For untrusted environments, HTTPS should be used.
+
+:::
