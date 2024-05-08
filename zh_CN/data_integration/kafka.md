@@ -1,6 +1,8 @@
 # 将 MQTT 数据传输到 Apache Kafka
 
-[Apache Kafka](https://kafka.apache.org/) 是一个广泛使用的开源分布式事件流处理平台，能够处理应用程序和系统之间数据流的实时传输。然而，Kafka 并不是为边缘物联网通信构建的，Kafka 客户端需要稳定的网络连接和更多的硬件资源。在物联网领域，设备和应用程序生成的数据使用轻量级 MQTT 协议传输。EMQX Platform 与 Kafka/Confluent 的集成使用户能够无缝地将 MQTT 数据流入或流出 Kafka。MQTT 数据流被引入 Kafka 主题，确保实时处理、存储和分析。EMQX Cloud 支持将客户端数据转发到 Kafka 进行处理、存储和分析。同时，Kafka 主题的数据可以被 MQTT 设备消费，实现即时处理。
+[Apache Kafka](https://kafka.apache.org/) 是一个广泛使用的开源分布式事件流处理平台，能够处理应用程序和系统之间数据流的实时传输。然而，Kafka 并不是为边缘物联网通信构建的，Kafka 客户端需要稳定的网络连接和更多的硬件资源。在物联网领域，设备和应用程序生成的数据使用轻量级 MQTT 协议传输。EMQX Platform 与 Kafka/Confluent 的集成使用户能够无缝地将 MQTT 数据流入或流出 Kafka。MQTT 数据流被引入 Kafka 主题，确保实时处理、存储和分析。EMQX Platform 支持将客户端数据转发到 Kafka 进行处理、存储和分析。同时，Kafka 主题的数据可以被 MQTT 设备消费，实现即时处理。
+
+![kafka_bridge](./_assets/kafka_bridge.jpg)
 
 本页详细介绍了 Kafka 数据集成的功能特性，同时提供了实用的 Kafka 数据集成创建指导。
 
@@ -9,6 +11,8 @@
 
 ## 工作原理 <!-- 参考企业版介绍，添加相应配图 -->
 Apache Kafka 数据集成是 EMQX Platform 的开箱即用功能，能够在基于 MQTT 的物联网数据和 Kafka 强大的数据处理能力之间架起桥梁。通过内置的规则引擎组件，集成简化了两个平台之间的数据流和处理过程，无需复杂编码。
+
+![kafka_architecture](./_assets/kafka_architecture.png)
 
 将消息数据转发到 Kafka 的基本工作流程如下：
 

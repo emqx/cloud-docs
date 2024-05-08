@@ -1,10 +1,10 @@
 # Get Subscription Topic Information Using the Data Integrations
 
-We will use EMQX Cloud data integration to fetch subscription relationships from cloud service resources (third-party databases or message queues) and proxy device subscriptions, which is implemented in this article using MySQL as an example.
+We will use EMQX Platform data integration to fetch subscription relationships from cloud service resources (third-party databases or message queues) and proxy device subscriptions, which is implemented in this article using MySQL as an example.
 
 Before you start, you need to complete the following operations:
 
-- A deployment (EMQX Cluster) has been created on EMQX Cloud.
+- A deployment (EMQX Cluster) has been created on EMQX Platform.
 - For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
 - For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 
@@ -66,11 +66,11 @@ Before you start, you need to complete the following operations:
 
    ```sql
    INSERT INTO mqtt_sub(clientid, topic, qos) values("test", "t1", 1);
-
+   
    select * from mqtt_sub;
    ```
 
-## EMQX Cloud Data Integrations configuration
+## EMQX Platform Data Integrations configuration
 
 Go to Deployment Details and click on EMQX Dashboard to go to Dashboard.
 
