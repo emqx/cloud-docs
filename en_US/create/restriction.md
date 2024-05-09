@@ -21,9 +21,10 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | TLS version          | -                | NO                   |
 | TLS encryption algorithm          | -                | NO                   |
 | Maximum API QPS          | 100/s                | NO                   |
-| Number of deployments                     | 1                | YES                   |
+| Number of deployments                     | Up to 2  [\*1]              | YES                   |
 | Number of subaccounts                     | 20                | NO                   |
 
+[1] Create an extra Serverless deployment by adding a payment method.
 
 ## Dedicated and BYOC
 
