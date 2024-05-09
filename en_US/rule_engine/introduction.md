@@ -34,15 +34,15 @@ When a rule is tested and created, action needs to be attached to the rule. It w
 
 ![integration_intro_02](./_assets/integration_intro_02.png)
 
-## [Resource](https://docs.emqx.com/en/cloud/latest/rule_engine/resources.html#resource-browse-page)
+## [Resource](./resources.md)
 
 The resource is a cloud service offering that you have purchased from the cloud platform, either a message queue service like Kafka or an RDS storage service.
 
-## [Rule](https://docs.emqx.com/en/cloud/latest/rule_engine/rules.html#create-rules)
+## [Rule](./rules.md)
 
 The rules describe "where the data comes from" and "how to filter and process the data". The rules use SQL-like statements to customize the written data and can use SQL tests to simulate the exported data.
 
-## [Action](https://docs.emqx.com/en/cloud/latest/rule_engine/introduction.html#action)
+## [Action](./rules.md#create-actions)
 
 Actions solve the problem of "where to send the processed data". A rule can correspond to one or more actions, and the defined resources need to be set in the action, that is, to which service the data will be sent.
 

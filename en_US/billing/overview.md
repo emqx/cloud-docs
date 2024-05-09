@@ -16,7 +16,13 @@ On the first day of each month, you will be charged for the usage of the previou
 
 Bill is issued monthly. In your Cloud Console, select **Billing** -> **Overview** from the top menu and you can see the details about your bill.
 
-The **Monthly Bill** pane displays the cumulative usage amount. To modify the billing period, locate the option in the top right corner of the pane. You can select a billing period ranging from the current month up to the previous 12 months. The tax on the bills is calculated based on the information you provide to the sales team.
+The **Monthly Bill** pane displays the cumulative usage amount. To modify the billing period, locate the option in the top right corner of the pane. You can select a billing period ranging from the current month up to the previous 12 months. 
+
+- Pending: The monthly bill has not yet been billed.
+- Issued: The bill has been billed and paid.
+- Overdue:The bill has been billed and not paid.
+
+The tax on the bills is calculated based on the information you provide to the sales team.
 
 :::tip
 Taxes are not included in the estimated total amount for the current month. The total amount, including all taxes and additional charges, will be calculated at the start of the next month.
