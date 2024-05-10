@@ -21,9 +21,10 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | TLS version          | -                | NO                   |
 | TLS encryption algorithm          | -                | NO                   |
 | Maximum API QPS          | 100/s                | NO                   |
-| Number of deployments                     | 1                | YES                   |
+| Number of deployments                     | Up to 2  [\*1]              | YES                   |
 | Number of subaccounts                     | 20                | NO                   |
 
+[1] Create an extra Serverless deployment by adding a payment method.
 
 ## Dedicated and BYOC
 
@@ -50,8 +51,8 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | Number of deployments                   | 3                | YES                   |NO|
 | Number of subaccounts                   | 20                | NO |-|
 
-[1] It's recommended to use external auth if the credentials are more than 100,000.<br>
-[2] It's recommended to use external auth if the credentials are more than 100,000.<br>
+[1] It is recommended to use external authentication if the credentials are more than 100,000.<br>
+[2] It is recommended to use external authentication if the credentials are more than 100,000.<br>
 [3] The number can be adjusted to the same as the session tier.<br>
-[4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of trasnmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
+[4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of transmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
 [5] Support TLS 1.0、1.1、1.2、1.3.

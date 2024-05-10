@@ -23,19 +23,19 @@ EMQX Platform is a globally available, fully-managed MQTT service platform that 
    </tr>
    <tr>
       <td style="text-indent: 2em;">AWS</td>
-      <td>&#10003</td>
+      <td>-</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Azure</td>
-      <td>&#10007</td>
+      <td>-</td>
       <td>&#10003</td>
       <td>Coming soon</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">GCP</td>
-      <td>&#10007</td>
+      <td>-</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
