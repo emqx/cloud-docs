@@ -36,6 +36,10 @@ Redis 数据集成是 EMQX Platform 中的一个开箱即用的功能，结合�
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 Redis
 
 EMQX 支持与私有部署的 Redis 或与云上的 Redis 集成。您可以使用 Redis Cloud 或者 Docker 部署一个 Redis 实例。

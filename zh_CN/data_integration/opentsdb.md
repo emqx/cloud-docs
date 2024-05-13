@@ -42,6 +42,10 @@ EMQX Platform 通过规则引擎和动作将设备数据插入到 OpenTSDB。Ope
 - 了解 [规则](./rules.md)。
 - 了解[数据集成](./introduction.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 OpenTSDB
 
 通过 Docker 安装并启动 OpenTSDB （目前仅支持 x86 平台）：

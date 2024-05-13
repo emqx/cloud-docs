@@ -46,6 +46,10 @@ Elasticsearch 数据集成为您的业务带来以下特性和优势：
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 Elasticsearch 并创建索引
 
 EMQX Platform 支持与私有部署的 Elasticsearch 或与云上的 Elastic 集成。您可以使用 Elastic Cloud 或者 Docker 部署一个 Elasticsearch 实例。

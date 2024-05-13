@@ -48,6 +48,10 @@ Apache Kafka 数据集成是 EMQX Platform 的开箱即用功能，能够在基�
 
 ### <!-- 安装 XXX 并创建 XXX 提供两种版本创建指引，如果服务没有通用的托管版本，就提供self-host版本，Confluent, Upstash 的服务单独写 EMQX 支持与私有部署的 XXX 或与云上的 XXX 集成。您可以使用 XXX Cloud 或者 Docker 部署一个 XXX 实例。-->
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 Kafka 并创建主题 <!-- self-host参考企业版即可 -->
 
 1. 安装 Kafka。

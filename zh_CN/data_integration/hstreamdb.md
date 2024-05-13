@@ -46,6 +46,10 @@ EMQX Platform 通过规则引擎和配置的规则将 MQTT 数据转发到 Apach
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 启动 HStreamDB TCP 服务并创建 Stream
 
 本节介绍了如何在本地的 Docker 环境中启动一个单节点的 HStreamDB TCP 服务并创建 Stream。

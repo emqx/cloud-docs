@@ -39,6 +39,10 @@ ClickHouse 数据集成是 EMQX Platform 中的开箱即用功能，旨在结合
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 启动 ClickHouse 服务器
 
 本节将介绍如何通过 [Docker](https://www.docker.com/) 启动 ClickHouse 服务器。

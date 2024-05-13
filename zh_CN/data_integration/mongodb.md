@@ -71,7 +71,10 @@ MongoDB 数据集成加强了您的物联网基础设施，确保您的设备生
 
 - 了解[数据集成](./introduction.md)
 - 了解[规则](./rules.md)
-- 了解 [MongoDB](https://www.mongodb.com/)
+
+### 网络设置
+
+<!--@include: ./network-setting.md-->
 
 ### 安装 MongoDB 并创建数据库
 

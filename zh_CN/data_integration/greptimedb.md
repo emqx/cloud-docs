@@ -43,6 +43,10 @@ GreptimeDB 数据集成是 EMQX Platform 开箱即用的功能，它结合了 EM
 - 了解 [规则](./rules.md)。
 - 了解[数据集成](./introduction.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 GreptimeDB
 
 1. 通过 Docker 安装并启动 GreptimeDB，详细步骤请参考[下载安装 GreptimeDB](https://greptime.cn/download)。

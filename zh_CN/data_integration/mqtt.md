@@ -47,6 +47,9 @@ EMQX Platform 的 MQTT 消息桥接具有以下特性和优势：
 EMQX Platform 运行在集群模式下或启用连接池时，多个节点使用相同的客户端 ID 连接到同一 MQTT 服务通常会导致设备互踢，因此 EMQX Platform MQTT 桥接暂不支持设置固定的客户端 ID。
 :::
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
 
 ## 创建连接器（目标数据和源数据）
 
