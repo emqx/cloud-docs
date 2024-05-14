@@ -36,6 +36,10 @@ This section describes the preparations you need to complete before you start to
 - Knowledge about [data integration](./introduction.md)
 - Knowledge about data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Start a ClickHouse Server
 
 You can start a ClickHouse server and create a database either using [Docker](https://www.docker.com/) or using ClickHouse Cloud.

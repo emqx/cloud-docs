@@ -38,6 +38,10 @@ This section describes the preparations you need to complete before you start to
 - Knowledge about [data integration](./introduction.md)
 - Knowledge about data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install RocketMQ
 
 1. Prepare a docker-compose file, `rocketmq.yaml`, to set up the RocketMQ.

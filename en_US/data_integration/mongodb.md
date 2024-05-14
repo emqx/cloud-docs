@@ -73,9 +73,11 @@ This section introduces the preparatory work needed to create MongoDB Data Integ
 - Understand [data integration](./introduction.md)
 - Knowledge about [MongoDB](https://www.mongodb.com/)
 
-### Set Up MongoDB Server
+### Set up Network
 
-#### Install MongoDB via Docker
+<!--@include: ./network-setting.md-->
+
+### Install MongoDB via Docker
 
 You can use the following commands to install MongoDB via Docker, run the docker image, and create a user.
 

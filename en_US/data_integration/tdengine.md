@@ -42,6 +42,10 @@ This section describes the preparations you must complete before you start creat
 - Knowledge about [data integration](./introduction.md)
 - Knowledge about data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install TDengine
 
 Install TDengine via Docker, and then run the docker image.

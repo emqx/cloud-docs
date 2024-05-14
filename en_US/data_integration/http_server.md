@@ -43,7 +43,11 @@ This section introduces the preparatory work needed to create HTTP Service Data 
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
-### Set Up a Simple HTTP Service
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
+### Set up a Simple HTTP Service
 
 Use the following example to create a simple web server.
 

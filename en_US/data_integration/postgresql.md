@@ -50,6 +50,10 @@ This section introduces the preparatory work needed to create PostgreSQL Data In
 - Knowledge about [Data Integration](./introduction.md)
 - Knowledge about EMQX data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install PostgreSQL
 
 1. Install PostgreSQL via Docker, and then run the docker image.

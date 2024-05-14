@@ -35,7 +35,11 @@ This section introduces the preparatory work needed to create Kafka Data Integra
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
-### Set Up Upstash for Kafka Clusters
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
+### Set up Upstash for Kafka Clusters
 
 To begin using Upstash, visit https://upstash.com/ and create an account.
 

@@ -44,12 +44,9 @@ This section introduces the preparatory work needed to create TimescaleDB Data I
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
-### Set Up Deployment
+### Set up Network
 
-Before you start, you need to create a deployment (EMQX Cluster) on EMQX Platform and configure the networking.
-
-- For Dedicated Plan users: Please create [ VPC Peering Connections](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource (Dedicated Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
-- For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
+<!--@include: ./network-setting.md-->
 
 ### Install Timescale and Create Data Table
 
@@ -147,7 +144,7 @@ If you are using TimescaleDB Cloud for the first time, you can refer to the [hel
 
 Before creating data integration rules, you need to first create a TimescaleDB connector to access the server.
 
-1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
+1. Go to your deployment. Click **Data Integration** from the left navigation menu.
 2. If it is the first time for you to create a connector, select **TimescaleDB** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **TimescaleDB** under the **Data Forward** category.
 3. On the **New Connector** page, configure the following options:
    - **Server Host**: Enter the host and port for the TimescaleDB service. If you are using docker, use `http://<server-address>:5432`.

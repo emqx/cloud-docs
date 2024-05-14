@@ -45,6 +45,10 @@ This section introduces the preparatory work needed to create Kafka Data Integra
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install Kafka and Create Topics
 
 1. Install Kafka.

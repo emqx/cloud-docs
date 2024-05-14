@@ -37,6 +37,10 @@ This section describes the preparations you need to complete before you start to
 - Knowledge about [data integration](./introduction.md)
 - Knowledge about EMQX Platform data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install Redis Server
 
 #### Install Redis via Docker

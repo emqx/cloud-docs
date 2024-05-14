@@ -45,7 +45,11 @@ This section introduces the preparatory work needed to create InfluxDB Data Inte
 
 - Understand [data integration](./introduction.md).
 
-### Install and Set Up InfluxDB
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
+### Install and Set up InfluxDB
 
 #### Install InfluxDB via Docker
 
@@ -68,7 +72,7 @@ docker run --name influxdb -p 8086:8086 influxdb:2.5.1
 
 3. In the InfluxDB UI, click **Load Data** -> **API Token** and then follow the instructions to [create all-access tokens](https://docs.influxdata.com/influxdb/v2.5/install/#create-all-access-tokens).
 
-## Create a InfluxDB Connector
+## Create an InfluxDB Connector
 
 Before creating data integration rules, you need to first create a InfluxDB connector to access the InfluxDB server.
 

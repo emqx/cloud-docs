@@ -36,12 +36,16 @@ These functionalities enhance integration capabilities and flexibility, helping 
 
 ## Before You Start
 
-This section introduces the preparatory work needed to create Kafka Data Integration in EMQX Platform.
+This section introduces the preparatory work needed to create Kafka data integration in the EMQX Platform.
 
 ### Prerequisites
 
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
+
+### Set up Network
+
+<!--@include: ./network-setting.md-->
 
 ### Set Up Azure Event Hub
 
