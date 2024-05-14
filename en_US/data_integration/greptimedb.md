@@ -41,6 +41,10 @@ This section describes the preparations you need to complete before you start to
 - Knowledge about [data integration](./introduction.md)
 - Knowledge about EMQX Platform data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install GreptimeDB Server
 
 1. [Install GreptimeDB](https://greptime.com/download) via Docker, and then run the docker image.
@@ -58,7 +62,7 @@ This section describes the preparations you need to complete before you start to
    ```
 
 2. The `user-provider` parameter configures the GreptimeDB authentication. You can configure it by file. For more information, refer to the [documentation](https://docs.greptime.com/user-guide/clients/authentication#authentication).
-3. With GreptimeDB running, visit [http://localhost:4000/dashboard](http://localhost:4000/dashboard) to use the GreptimeDB dashbaord. The username and password are `greptime_user` and `greptime_pwd`.
+3. With GreptimeDB running, visit [http://localhost:4000/dashboard](http://localhost:4000/dashboard) to use the GreptimeDB dashboard. The username and password are `greptime_user` and `greptime_pwd`.
 
 ## Create a Connector
 

@@ -46,6 +46,10 @@ The sub-sections below describe how to install and connect to HStreamDB on Linux
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Start HStreamDB TCP Service and Create Streams
 
 This section describes how to start a single-node HStreamDB TCP service in your local Docker environment and then create Streams in HStreamDB.

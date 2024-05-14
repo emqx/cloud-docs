@@ -37,6 +37,10 @@ This section describes the preparations you need to complete before you start to
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install and Connect to Microsoft SQL Server
 
 This section describes how to start Microsoft SQL Server 2019 on Linux/MacOS using Docker images and use `sqlcmd` to connect to Microsoft SQL Server. For other installation methods of Microsoft SQL Server, please refer to [Microsoft SQL Server Installation Guide](https://learn.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server?view=sql-server-ver16).

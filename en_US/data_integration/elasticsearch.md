@@ -42,6 +42,10 @@ This section introduces the preparatory work needed before creating Elasticsearc
 - Knowledge about [data integration](./introduction.md)
 - Knowledge about data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Deploy Elasticsearch and Create an Index
 
 EMQX Platform supports integration with privately deployed Elasticsearch or with Elastic in the cloud. You can use Docker or Elastic Cloud to deploy an Elasticsearch instance.

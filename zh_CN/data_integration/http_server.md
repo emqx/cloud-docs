@@ -45,6 +45,10 @@ EMQX Platform 通过配置的数据集成将设备事件和数据转发至 HTTP 
 - 了解[规则](./rules.md)。
 - 了解[数据集成](./introduction.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 搭建简易 HTTP 服务
 
 使用以下示例创建一个简易的 Web 服务器。

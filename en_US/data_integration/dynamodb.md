@@ -37,7 +37,11 @@ This section introduces the preparatory work needed to create DynamoDB Data Inte
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
-### Set Up AWS DynamoDB Instance
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
+### Set up AWS DynamoDB Instance
 
 For the creation of AWS DynamoDB, you have the option to install it either in the cloud or using Docker.
 

@@ -37,6 +37,10 @@ Microsoft SQL Server 数据集成是 EMQX Platform 的开箱即用功能，结�
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装并连接到 Microsoft SQL Server
 
 本节描述如何使用 Docker 镜像在 Linux/MacOS 安装启动 Microsoft SQL Server 2019 以及如何使用 `sqlcmd` 连接到 Microsoft SQL Server。关于其他 Microsoft SQL Server 的安装方式，请参阅微软提供的 [Microsoft SQL Server 安装指南](https://learn.microsoft.com/zh-cn/sql/database-engine/install-windows/install-sql-server?view=sql-server-ver16)。

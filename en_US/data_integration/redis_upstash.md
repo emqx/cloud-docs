@@ -37,7 +37,11 @@ This section introduces the preparatory work needed to create Upstash For Redis 
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
-### Set Up Upstash for Redis Database
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
+### Set up Upstash for Redis Database
 
 To begin using Upstash, visit https://upstash.com/ and create an account.
 

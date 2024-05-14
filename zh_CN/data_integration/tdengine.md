@@ -42,6 +42,10 @@ TDengine 数据集成为您的业务带来了以下功能和优势：
 - 了解 [规则](./rules.md)。
 - 了解[数据集成](./introduction.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 TDengine 并创建数据表
 
 通过 Docker 安装并启动 TDengine：

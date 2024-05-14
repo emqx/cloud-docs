@@ -51,6 +51,10 @@ PostgreSQL 是一款流行的开源关系型数据库，具备丰富的功能。
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 PostgreSQL
 
 1. 通过 Docker 安装并启动 PostgreSQL：

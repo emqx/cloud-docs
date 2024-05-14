@@ -43,6 +43,10 @@ Cassandra 数据集成是 EMQX Platform 的开箱即用功能，结合了 EMQX P
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 Cassandra
 
 使用 docker 启动一个简单的 Cassandra 服务：

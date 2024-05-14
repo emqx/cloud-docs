@@ -42,6 +42,10 @@ MQTT 消息数据写入到 Apache Pulsar 后，您可以进行灵活的应用开
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 Pulsar 服务器
 
 在 Docker 中运行 Pulsar。

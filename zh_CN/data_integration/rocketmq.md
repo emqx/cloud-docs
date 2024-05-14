@@ -38,6 +38,10 @@ RocketMQ 数据集成为您的业务带来了以下功能和优势：
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 RocketMQ
 
 1. 准备一份 docker-compose 文件 `rocketmq.yaml` 来部署 RocketMQ。

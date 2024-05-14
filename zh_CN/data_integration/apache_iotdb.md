@@ -53,6 +53,10 @@ Apache IoTDB 的数据集成是 EMQX Platform 中的一个开箱即用的功能�
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 启动 Apache IoTDB 服务器
 
 本节将介绍如何通过 [Docker](https://www.docker.com/) 启动 Apache IoTDB 服务器。 确保在您的 IoTDB 配置中具备该字段： `enable_rest_service=true`。

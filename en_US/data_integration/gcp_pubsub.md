@@ -41,7 +41,11 @@ This section describes the preparations you need to complete before you start to
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
-#### Create Service Account Key in GCP
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
+### Create a Service Account Key in GCP
 
 You need to create a service account and a service account key to use the GCP PubSub service.
 
@@ -49,7 +53,7 @@ You need to create a service account and a service account key to use the GCP Pu
 
 2. Click the email address for the service account you created. Click the Key tab. In the Add key drop-down list, select **Create new key** to create a Service Account key for that account and download it in JSON format.
 
-#### Create and Manage Topics in GCP
+### Create and Manage Topics in GCP
 
 Before configuring the GCP Pub/Sub data integration on EMQX, you need to create a topic and be familiar with the basic management operation in GCP.
 
@@ -112,7 +116,7 @@ Next, you need to create a rule to specify the data to be written and add corres
    - **Action Name**: The system will automatically generate an action name, or you can name it yourself.
 
    - **GCP PubSub Topic**: Enter the topic ID xxx you created in Create and Manage Topic in GCP.
-    
+   
    - **Payload Template**: Leave it blank or define a template.
      - If left blank, it will encode all visible inputs from the MQTT message using JSON format, such as clientid, topic, payload, etc.
      - If using the defined template, placeholders of the form ${variable_name} will be filled with the corresponding value from the MQTT context. For example, ${topic} will be replaced with my/topic if such is the MQTT message topic.

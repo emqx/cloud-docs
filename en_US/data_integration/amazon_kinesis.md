@@ -44,6 +44,10 @@ This section introduces the preparatory work needed to create AWS Kinesis Data I
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Create Stream in Amazon Kinesis Data Streams
 
 Follow the steps below to create a Stream via the AWS Management Console (see this [tutorial](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-create-a-stream.html) for more details).
@@ -68,7 +72,7 @@ To facilitate the development and test, you can emulate the Amazon Kinesis Data 
 
     # Access the container
     docker exec -it localstack bash
-    ```
+   ```
 
 2. Create a stream named **my_stream** with only one shard:
 
@@ -186,7 +190,7 @@ You are recommended to use [MQTTX](https://mqttx.app/) to simulate temperature a
         "NextShardIterator": "AAAAAAAAAAFj5M3+6XUECflJAlkoSNHV/LBciTYY9If2z1iP+egC/PtdVI2t1HCf3L0S6efAxb01UtvI+3ZSh6BO02+L0BxP5ssB6ONBPfFgqvUIjbfu0GOmzUaPiHTqS8nNjoBtqk0fkYFDOiATdCCnMSqZDVqvARng5oiObgigmxq8InciH+xry2vce1dF9+RRFkKLBc0=",
         "MillisBehindLatest": 0
     }
-
+    
     echo 'eyAibXNnIjogImhlbGxvIEFtYXpvbiBLaW5lc2lzIiB9' | base64 -d
     {"temp":"23.5","hum":"32.6"}
     ```

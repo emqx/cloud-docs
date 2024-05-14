@@ -42,6 +42,10 @@ This section describes the preparations you need to complete before you start to
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install Cassandra Server
 
 Start the simple Cassandra service via docker:

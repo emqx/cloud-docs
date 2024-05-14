@@ -53,6 +53,10 @@ This section introduces the preparatory work needed to create Apache IoTDB Data 
 - Understand [rules](./rules.md).
 - Understand [data integration](./introduction.md).
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Start an Apache IoTDB Server
 
 This section introduces how to start an Apache IoTDB server using [Docker](https://www.docker.com/). Make sure to have `enable_rest_service=true` in your IoTDB's configuration.

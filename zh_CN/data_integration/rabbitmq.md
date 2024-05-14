@@ -39,6 +39,10 @@ RabbitMQ 数据集成为您的业务带来以下特性和优势：
 - 了解[规则](./rules.md)。
 - 了解 UNIX 终端及命令
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 启动 RabbitMQ 服务器
 
 本节介绍了如何使用 [Docker](https://www.docker.com/) 启动 RabbitMQ 服务器。

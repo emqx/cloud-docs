@@ -43,6 +43,10 @@ This section describes the preparations you need to complete before you start to
 - Knowledge about [Data Integration](./introduction.md)
 - Knowledge about EMQX Platform data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install MySQL Server
 
 1. Install MySQL server via Docker, and then run the docker image.

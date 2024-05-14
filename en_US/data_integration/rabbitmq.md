@@ -39,6 +39,10 @@ This section describes the preparations you need to complete before you start to
 - Knowledge about EMQX Platform data integration [rules](./rules.md)
 - Basic knowledge of UNIX terminal and commands
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Start a RabbitMQ Server
 
 This section introduces how to start a RabbitMQ server using [Docker](https://www.docker.com/).

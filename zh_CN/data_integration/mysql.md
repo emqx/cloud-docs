@@ -43,6 +43,10 @@ EMQX Platform 通过规则引擎将设备事件和数据转发至 MySQL，应用
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 MySQL
 
 1. 通过 Docker 安装并启动 MySQL：

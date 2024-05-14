@@ -43,6 +43,10 @@ InfluxDB 数据集成具有以下特性与优势：
 - 了解[数据集成](./introduction.md)。
 - 了解[规则](./rules.md)。
 
+### 网络设置
+
+<!--@include: ./network-setting.md-->
+
 ### 安装 InfluxDB
 
 #### 通过 Docker 安装 InfluxDB

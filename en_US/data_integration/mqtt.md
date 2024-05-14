@@ -42,11 +42,15 @@ Before creating an MQTT Broker data integration, you need to obtain the connecti
 - **Protocol Type**: It is important to determine whether the target service has enabled TLS and whether it is using MQTT over TCP/TLS protocol. Note that the EMQX Platform MQTT bridge currently does not support protocols like MQTT over WebSocket and MQTT over QUIC.
 - **Protocol Version**: The protocol version used by the target MQTT service. EMQX Platform supports MQTT 3.1, 3.1.1, and MQTT 5.0.
 
-The data integration provides good compatibility and support for EMQX Platform or other standard MQTT servers. If you need to connect to other types of MQTT services, you can refer to their relevant documentation to obtain the connection information. Generally, most IoT platforms provide standard MQTT access methods, and you can convert device information into the aforementioned MQTT connection information based on their guidance.
+The data integration provides good compatibility and support for the EMQX Platform or other standard MQTT servers. If you need to connect to other types of MQTT services, you can refer to their relevant documentation to obtain the connection information. Generally, most IoT platforms provide standard MQTT access methods, and you can convert device information into the aforementioned MQTT connection information based on their guidance.
 
 ### Notice for Cluster Mode
 
-When EMQX Platform is running in cluster mode or when a connection pool is enabled, using the same client ID to connect multiple nodes to the same MQTT service usually leads to device conflicts. Therefore, the MQTT message bridge currently does not support setting a fixed client ID.
+When the EMQX Platform is running in cluster mode or when a connection pool is enabled, using the same client ID to connect multiple nodes to the same MQTT service usually leads to device conflicts. Therefore, the MQTT message bridge currently does not support setting a fixed client ID.
+
+### Set up Network
+
+<!--@include: ./network-setting.md-->
 
 ## Create a Connector
 

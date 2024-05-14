@@ -42,6 +42,10 @@ This section describes the preparations you need to complete before you start to
 - Knowledge about [data integration](./introduction.md)
 - Knowledge about data integration [rules](./rules.md)
 
+### Set up Network
+
+<!--@include: ./network-setting.md-->
+
 ### Install OpenTSDB
 
 Install OpenTSDB via Docker, and then run the docker image (Only x86 platform is supported now).
