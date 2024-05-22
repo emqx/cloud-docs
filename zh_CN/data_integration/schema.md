@@ -14,7 +14,7 @@ Schema 可用于各种数据处理系统，包括数据库、消息服务以及�
 
 用户可以在编解码中定义 Schema，用户在规则中使用定义好的 Schema，在通过数据集成将客户端数据转发到不同的数据服务中。同时也可以将应用或者数据服务中的数据通过 Schema 发送给客户端实现双向的数据流转。
 
-//TODO PIC
+![schema](./_assets/schema_pic.jpg)
 
 编解码具有多种优势，包括数据验证、兼容性检查、版本控制和迭代演进。它还能简化数据管道的开发和维护，降低数据兼容性问题、数据损坏和数据丢失的风险。
 
@@ -27,5 +27,9 @@ Schema 可用于各种数据处理系统，包括数据库、消息服务以及�
 ![schema](./_assets/schema_open.png)
 
 ![schema](./_assets/schema_page.png)
+
+::: warning
+编解码功能适用于**专有版**部署。
+:::
 
 支持创建 **Avro**, **Protobuf**, **JSON Schema** 格式的编解码规则，请查看[编解码文档](https://docs.emqx.com/zh/enterprise/latest/data-integration/schema-registry.html)了解详细的使用方法。
