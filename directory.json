@@ -365,6 +365,10 @@
           "path": "data_integration/rules"
         },
         {
+          "title": "编解码",
+          "path": "data_integration/schema"
+        },
+        {
           "title": "事件订阅",
           "path": "rule_engine/rule_engine_events"
         },
@@ -518,7 +522,7 @@
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless API",
+          "title": "Serverless 部署 API",
           "path": "api/serverless",
           "collapsed": true,
           "children": [
@@ -537,8 +541,18 @@
           ]
         },
         {
-          "title": "专有版 API",
+          "title": "专有版 部署 API",
           "path": "https://docs.emqx.com/zh/cloud/latest/api/dedicated"
+        },
+        {
+          "title": "平台 API",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "TLS 证书管理",
+              "path": "api/tls_certificate"
+            }
+          ]
         }
       ]
     },
