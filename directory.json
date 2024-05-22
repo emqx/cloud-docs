@@ -372,6 +372,10 @@
           "path": "rule_engine/rules"
         },
         {
+          "title": "编解码",
+          "path": "rule_engine/schema"
+        },
+        {
           "title": "事件订阅",
           "path": "rule_engine/rule_engine_events"
         },
@@ -575,7 +579,7 @@
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless API",
+          "title": "Serverless 部署 API",
           "path": "api/serverless",
           "collapsed": true,
           "children": [
@@ -594,7 +598,7 @@
           ]
         },
         {
-          "title": "专有版 / BYOC API",
+          "title": "专有版 / BYOC 部署 API",
           "path": "api/dedicated",
           "collapsed": true,
           "children": [
@@ -637,6 +641,16 @@
             {
               "title": "影子服务",
               "path": "api/shadow_service"
+            }
+          ]
+        },
+        {
+          "title": "平台 API",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "TLS 证书管理",
+              "path": "api/tls_certificate"
             }
           ]
         }
