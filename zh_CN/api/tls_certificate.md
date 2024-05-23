@@ -158,8 +158,6 @@ curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"user
 }
 ```
 
-
-
 ## 删除指定部署的 TLS 证书
 
 ### URI
