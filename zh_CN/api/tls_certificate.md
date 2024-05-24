@@ -152,8 +152,6 @@ curl -u key:secret -X PUT -H 'Content-Type: application/json' -d '{"tlsType": "o
 }
 ```
 
-
-
 ## 删除指定部署的 TLS 证书
 
 ### URI
