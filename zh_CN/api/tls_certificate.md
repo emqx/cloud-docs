@@ -9,7 +9,7 @@
 GET /deployments/{deployment_id}/tls
 
 ::: tip
-该方法 60 分钟只能请求 60 次。
+该方法 60 分钟只能请求 60 次。{deployment_id} 为部署 ID， 非部署名称。
 :::
 
 ### 请求消息
@@ -22,7 +22,7 @@ GET /deployments/{deployment_id}/tls
 
 | 名称            | 类型             | 描述               |
 | :-------------- | :--------------- | :----------------- |
-| tls_type        | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。      |
+| tlsType        | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。      |
 | expire | String           | 证书过期时间。        |
 | status | String           | TLS 证书状态：'running' 运行中，' pending'创建中。        |
 
@@ -34,7 +34,7 @@ GET /deployments/{deployment_id}/tls
 ### 请求示例
 
 ```bash
-curl -u key:secret -X GET {api}/deployments/deployment-ge6a1a75/tls
+curl -u key:secret -X GET {api}/deployments/ge6a1a75/tls
 ```
 
 
@@ -42,11 +42,9 @@ curl -u key:secret -X GET {api}/deployments/deployment-ge6a1a75/tls
 
 ```JSON
 {
-
-  "tls_type": "string",
-  "expire": "string",
-  "status": "string"
-
+  "expire": "2034-05-22 02:43:21",
+  "status": "running",
+  "tlsType": "one-way"
 }
 ```
 
@@ -58,14 +56,14 @@ curl -u key:secret -X GET {api}/deployments/deployment-ge6a1a75/tls
 POST /deployments/{deployment_id}/tls
 
 ::: tip
-该方法 60 分钟内只能请求 6 次。
+该方法 60 分钟内只能请求 6 次。{deployment_id} 为部署 ID， 非部署名称。
 :::
 
 ### 请求消息
 
 | 名称     | 类型   | 描述       |
 | :------- | :----- | :--------- |
-| tls_type | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。 |
+| tlsType | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。 |
 | cert | String |  公钥证书  |
 | key | String | 私钥   |
 | cacert | String | 客户端 CA 证书，当证书类型为 'two-way' 需要上传。   |
@@ -76,7 +74,7 @@ POST /deployments/{deployment_id}/tls
 
 | 名称            | 类型             | 描述               |
 | :-------------- | :--------------- | :----------------- |
-| tls_type        | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。      |
+| tlsType        | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。      |
 | expire | String           | 证书过期时间。        |
 | status | String           | TLS 证书状态：'running' 运行中，' pending'创建中。        |
 
@@ -89,18 +87,16 @@ POST /deployments/{deployment_id}/tls
 ### 请求示例
 
 ```bash
-curl -u key:secret -X POST {api}/deployments/deployment-ge6a1a75/tls
+curl -u key:secret -X POST -H 'Content-Type: application/json' -d '{"tlsType": "one-way", "cert": "-----BEGIN CERTIFICATE-----\nMII...tH6j7afSg==\n-----END CERTIFICATE-----},"key":"-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA5bdg8Rt5A7...AjQzYRdov4inpzw==\n-----END RSA PRIVATE KEY-----"' {api}/deployments/ge6a1a75/tls
 ```
 
 ### 响应示例
 
 ```JSON
 {
-
-  "tls_type": "string",
-  "expire": "string",
-  "status": "string"
-
+  "expire": "2034-05-22 02:43:21",
+  "status": "pending",
+  "tlsType": "one-way"
 }
 ```
 
@@ -112,14 +108,14 @@ curl -u key:secret -X POST {api}/deployments/deployment-ge6a1a75/tls
 PUT /deployments/{deployment_id}/tls
 
 ::: tip
-该方法 60 分钟内只能请求 6 次。
+该方法 60 分钟内只能请求 6 次。{deployment_id} 为部署 ID， 非部署名称。
 :::
 
 ### 请求消息
 
 | 名称     | 类型   | 描述       |
 | :------- | :----- | :--------- |
-| tls_type | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。 |
+| tlsType | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。 |
 | cert | String |  公钥证书  |
 | key | String | 私钥   |
 | cacert | String | 客户端 CA 证书，当证书类型为 'two-way' 需要上传。   |
@@ -130,7 +126,7 @@ PUT /deployments/{deployment_id}/tls
 
 | 名称            | 类型             | 描述               |
 | :-------------- | :--------------- | :----------------- |
-| tls_type        | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。      |
+| tlsType        | String | TLS 证书类型：'one-way'单向 TLS，'two-way'双向 TLS。      |
 | expire | String           | 证书过期时间。        |
 | status | String           | TLS 证书状态：'running' 运行中，' pending'创建中。        |
 
@@ -143,18 +139,16 @@ PUT /deployments/{deployment_id}/tls
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"user_id": "user1", "password": "password"}' {api}/authentication/password_based%3Abuilt_in_database/users
+curl -u key:secret -X PUT -H 'Content-Type: application/json' -d '{"tlsType": "one-way", "cert": "-----BEGIN CERTIFICATE-----\nMII...tH6j7afSg==\n-----END CERTIFICATE-----},"key":"-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA5bdg8Rt5A7...AjQzYRdov4inpzw==\n-----END RSA PRIVATE KEY-----"' {api}/deployments/ge6a1a75/tls
 ```
 
 ### 响应示例
 
 ```JSON
-// HTTP status response code
-201
-// HTTP response body
 {
-  "user_id": "user1",
-  "is_superuser": false
+  "expire": "2034-05-22 02:43:21",
+  "status": "pending",
+  "tlsType": "one-way"
 }
 ```
 
@@ -167,7 +161,7 @@ curl -u app_id:app_secret -X POST -H 'Content-Type: application/json' -d '{"user
 DELETE /deployments/{deployment_id}/tls
 
 ::: tip
-该方法 60 分钟内只能请求 6 次。
+该方法 60 分钟内只能请求 6 次。{deployment_id} 为部署 ID， 非部署名称。
 :::
 
 ### 请求消息
@@ -185,7 +179,7 @@ DELETE /deployments/{deployment_id}/tls
 ### 请求示例
 
 ```bash
-curl -u app_id:app_secret -X DELETE {api}/authentication/password_based%3Abuilt_in_database/users/user1
+curl -u key:secret -X DELETE {api}/deployments/ge6a1a75/tls
 ```
 
 ### 响应示例
