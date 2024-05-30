@@ -1000,6 +1000,10 @@
           "path": "data_integration/rules"
         },
         {
+          "title": "Schema",
+          "path": "data_integration/schema"
+        },
+        {
           "title": "Event Topics",
           "path": "rule_engine/rule_engine_events"
         },
@@ -1205,7 +1209,7 @@
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless API",
+          "title": "Serverless Deployment API",
           "path": "api/serverless",
           "collapsed": true,
           "children": [
@@ -1224,8 +1228,18 @@
           ]
         },
         {
-          "title": "Dedicated API",
+          "title": "Dedicated Deployment API",
           "path": "https://docs.emqx.com/en/cloud/latest/api/dedicated.html"
+        },
+        {
+          "title" : "Platform API",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "TLS Management",
+              "path": "api/tls_certificate"
+            }
+          ]
         }
       ]
     },

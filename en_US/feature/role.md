@@ -33,7 +33,7 @@ Role list:
       <th>Auditor</th>
    </tr>
    <tr>
-      <td rowspan="20">Deployment</td>
+      <td rowspan="21">Deployment</td>
       <td>View deployment list</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -118,11 +118,18 @@ Role list:
       <td>Read only</td>
    </tr>
    <tr>
-   	<td>REST API Configuration</td>
+   	<td>Deployment API</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
+   </tr>
+   <tr>
+      <td>Platform API</td>
+      <td>&#10003</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
    </tr>
    <tr>
    	<td>Certification Authentication Configuration</td>
