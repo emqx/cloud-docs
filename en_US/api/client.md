@@ -1,6 +1,6 @@
 # Clients API
 
-This API documentation provides information on various operations related to managing MQTT clients, including viewing all client information, viewing a specific client information, and kicking clients.
+This API documentation provides information on various operations related to managing MQTT clients, including viewing all client information, viewing specific client information, and kicking clients.
 
 ## Clients
 
