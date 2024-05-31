@@ -18,4 +18,4 @@ Deployment API Keys provide access management at the deployment level.
 
 To create and manage deployment API Keys, log in to the EMQX Platform and [Create a Deployment](../create/overview.md). Then, go to the Deployment overview page, where you can create and manage **Deployment API Keys**.
 
-![deployment_key](/Users/emqx/Documents/Cloud/cloud-docs/en_US/api/_assets/deployment_key.png)
+![deployment_key](./_assets/deployment_key.png)
