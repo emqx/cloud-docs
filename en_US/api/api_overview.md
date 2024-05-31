@@ -4,7 +4,7 @@ The EMQX Platform APIs are categorized into two types, Platform API and Deployme
 
 ## Invoke API
 
-The [Platform API](./api_platform.md) and [Deployment API](./api_deployment) pages provide information on how to get API access addresses. Please access the API via HTTPS and ensure all data sent over the network is encrypted using TLS.
+The [Platform API](./api_platform.md) and [Deployment API](./api_deployment.md) pages provide information on how to get API access addresses. Please access the API via HTTPS and ensure all data sent over the network is encrypted using TLS.
 
 
 ## Authentication

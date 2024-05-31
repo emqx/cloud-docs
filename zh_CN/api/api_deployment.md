@@ -16,4 +16,4 @@
 
 部署 API Key 授予对指定部署层面 API 的访问管理。如需创建和管理部署 API Key，您需要先登录 EMQX Platform [创建部署](../create/overview.md)。部署创建完成之后，前往部署详情页面，可在**部署 API Key** 中创建和管理。
 
-![deployment_key](/Users/emqx/Documents/Cloud/cloud-docs/zh_CN/api/_assets/deployment_key.png)
+![deployment_key](./_assets/deployment_key.png)

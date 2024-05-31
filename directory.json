@@ -1218,7 +1218,7 @@
       "children": [
         {
           "title" : "Platform API",
-          "path": "api_platform",
+          "path": "api/api_platform",
           "collapsed": true,
           "children": [
             {
@@ -1229,7 +1229,7 @@
         },
         {
           "title" : "Deployment API",
-          "path": "api_deployment",
+          "path": "api/api_deployment",
           "collapsed": true,
           "children": [
             {
