@@ -77,7 +77,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
-2. Enter the rule matching SQL statement in the **SQL editor**. 
+2. Enter the rule matching SQL statement in the **SQL Editor**. 
 
    ```sql
    SELECT
@@ -85,6 +85,8 @@ Next, you need to create a rule to specify the data to be written and add corres
    FROM 
      "$events/client_connected", "$events/client_disconnected"
    ```
+
+   Alternatively, you can click the **New Action (Source)** button on the right to select the events as data inputs. Select **Event** and click **Next**. Select `Client connected` and `Client disconnected`, and click **Confirm**. You can see the events system topics are added to the FROM clause in the SQL Editor.
 
 3. Click **Next** to add an action.
 
