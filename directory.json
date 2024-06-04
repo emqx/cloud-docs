@@ -517,40 +517,48 @@
       ]
     },
     {
-      "title": "APIs",
+      "title": "API",
       "path": "api/introduction",
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless 部署 API",
-          "path": "api/serverless",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "客户端管理",
-              "path": "api/clients_v5"
-            },
-            {
-              "title": "订阅管理",
-              "path": "api/subscriptions_v5"
-            },
-            {
-              "title": "消息发布",
-              "path": "api/publish_v5"
-            }
-          ]
-        },
-        {
-          "title": "专有版 部署 API",
-          "path": "https://docs.emqx.com/zh/cloud/latest/api/dedicated"
-        },
-        {
           "title": "平台 API",
+          "path": "api/api_platform",
           "collapsed": true,
           "children": [
             {
               "title": "TLS 证书管理",
               "path": "api/tls_certificate"
+            }
+          ]
+        },
+        {
+          "title": "部署 API",
+          "path": "api/api_deployment",
+          "collapsed": true,
+          "children":[
+            {
+              "title": "Serverless 部署 API",
+              "path": "api/serverless",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "客户端管理",
+                  "path": "api/clients_v5"
+                },
+                {
+                  "title": "订阅管理",
+                  "path": "api/subscriptions_v5"
+                },
+                {
+                  "title": "消息发布",
+                  "path": "api/publish_v5"
+                }
+              ]
+            },
+            {
+              "title": "专有版 部署 API",
+              "path": "https://docs.emqx.com/zh/cloud/latest/api/dedicated.html"
             }
           ]
         }
@@ -1209,35 +1217,43 @@
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless Deployment API",
-          "path": "api/serverless",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "Client Management",
-              "path": "api/clients_v5"
-            },
-            {
-              "title": "Subscription Information",
-              "path": "api/subscriptions_v5"
-            },
-            {
-              "title": "Message Publish",
-              "path": "api/publish_v5"
-            }
-          ]
-        },
-        {
-          "title": "Dedicated Deployment API",
-          "path": "https://docs.emqx.com/en/cloud/latest/api/dedicated.html"
-        },
-        {
           "title" : "Platform API",
+          "path": "api/api_platform",
           "collapsed": true,
           "children": [
             {
               "title": "TLS Management",
               "path": "api/tls_certificate"
+            }
+          ]
+        },
+        {
+          "title" : "Deployment API",
+          "path": "api/api_deployment",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "Serverless Deployment API",
+              "path": "api/serverless",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "Client Management",
+                  "path": "api/clients_v5"
+                },
+                {
+                  "title": "Subscription Information",
+                  "path": "api/subscriptions_v5"
+                },
+                {
+                  "title": "Message Publish",
+                  "path": "api/publish_v5"
+                }
+              ]
+            },
+            {
+              "title": "Dedicated Deployment API",
+              "path": "https://docs.emqx.com/en/cloud/latest/api/dedicated.html"
             }
           ]
         }
