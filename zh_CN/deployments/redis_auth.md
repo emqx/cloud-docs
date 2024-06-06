@@ -7,6 +7,21 @@ Redis 认证器支持使用 [Redis hashes](https://redis.io/docs/manual/data-typ
 
 - `password_hash`: 必需，数据库中的明文或散列密码字段
 - `salt`: 可选，为空或不存在时视为空盐（salt = ""）
+- `is_superuser`: 可选，标记当前客户端是否为超级用户，默认为 `false`，**设置为 `true` 时，使用此用户名的客户端将不受到授权规格约束，不建议设置超级用户。**
+
+添加我们希望添加一位名用户名为 `emqx_u`、密码为 `public`、盐值为 `slat_foo123`、散列方式为 `sha256` 且超级用户标志为 `false` 的用户：
+
+```bash
+>redis-cli
+127.0.0.1:6379> HSET mqtt_user:emqx_u is_superuser 1 salt slat_foo123 password_hash 44edc2d57cde8d79c98145003e105b90a14f1460b79186ea9cfe83942fc5abb5
+(integer) 0
+```
+
+对应的配置参数为：
+
+- 密码加密方式：`sha256`
+- 加盐方式：`suffix`
+- 命令：`HMGET mqtt_user:${username} password_hash salt is_superuser`
 
 ### 加密规则
 
@@ -52,6 +67,9 @@ pbkdf2, sha256, 1000, 20
         - **迭代次数**：指定散列次数，默认值：`4096`。
         - **密钥长度**（可选）：指定希望得到的密钥长度。如不指定，密钥长度将由伪随机函数确定。
 - **命令**：Redis 查询命令。
+    - `${clientid}`: 将在运行时被替换为客户端 ID。客户端 ID 一般由客户端在 `CONNECT` 报文中显式指定。
+    - `${username}`: 将在运行时被替换为用户名。用户名来自 `CONNECT` 报文中的 `Username` 字段。
+    - `${password}`: 将在运行时被替换为密码。密码来自 `CONNECT` 报文中的 `Password` 字段。
 
 ::: tip
 * 如果当前部署为专有版，需创建 [VPC 对等连接](./vpc_peering.md)，服务器地址填写内网地址。

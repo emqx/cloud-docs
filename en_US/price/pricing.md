@@ -80,8 +80,8 @@ EMQX Dedicated Plan is charged based on the tier, and message transmission netwo
       <td rowspan="4">$ 0.15/GB</td>
    </tr>
    <tr>
-      <td>3,000 connections / Up to 30,000 TPS</td>
-      <td>$0.64 /hr</td>
+      <td>2,000 connections / Up to 2,000 TPS</td>
+      <td>$0.5 /hr</td>
    </tr>
    <tr>
       <td>5,000 connections / Up to 10,000 TPS</td>

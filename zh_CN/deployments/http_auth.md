@@ -8,6 +8,7 @@ EMQX 支持通过外部 HTTP 服务进行密码认证。客户端连接时，EMQ
 
 - 响应编码格式 `content-type` 必须是 `application/json`。
 - 认证结果通过 body 中的 `result` 标示，可选 `allow`、`deny`、`ignore`。
+- 超级用户通过 body 中的 `is_superuser` 标示，可选 `true`、`false`。**设置为 `true` 时，使用此用户名的客户端将不受到授权规格约束，不建议设置超级用户。**
 - HTTP 响应状态码 `Status Code` 应当为 `200` 或 `204`，返回 `4xx/5xx` 状态码时将忽略 body 并判定结果为 `ignore`，继续执行认证链。
 
 响应示例：
@@ -18,7 +19,7 @@ Headers: Content-Type: application/json
 Body:
 {
     "result": "allow", // 可选 "allow" | "deny" | "ignore"
-    "is_superuser": true // 可选 true | false，该项为空时默认为 false
+    "is_superuser": false // 可选 true | false，该项为空时默认为 false
 }
 ```
 
@@ -41,10 +42,13 @@ Body:
 连接配置：在此部分进行并发连接、连接超时等待时间、最大 HTTP 请求数以及请求超时时间。
 - **启用 TLS**：配置是否启用 TLS。
 - **连接池大小**（可选）：整数，指定从 EMQX 节点到外部 HTTP Server 的并发连接数；默认值：`8`。
-- **连接超时**（可选）：填入连接超时等待时长，可选单位：小时、分钟、秒、毫秒。
+- **连接超时**（可选）：填入连接超时等待时长，单位：秒。
 - **HTTP 管道**（可选）：正整数，指定无需等待响应可发出的最大 HTTP 请求数；默认值：`100`。
-- **请求超时**（可选）：填入连接超时等待时长，可选单位：小时、分钟、秒、毫秒。
-- **请求体**：请求模板，对于 `POST` 请求，它以 JSON 形式在请求体中发送。对于 `GET` 请求，它被编码为 URL 中的查询参数（Query String）。映射键和值可以使用占位符。
+- **请求超时**（可选）：填入连接超时等待时长，单位：秒。
+- **请求体**：请求模板，对于 `POST` 请求，它以 JSON 形式在请求体中发送。对于 `GET` 请求，它被编码为 URL 中的查询参数（Query String）。映射键和值可以使用占位符。请求体支持以下占位符
+    - `${clientid}`: 将在运行时被替换为客户端 ID。客户端 ID 一般由客户端在 `CONNECT` 报文中显式指定。
+    - `${username}`: 将在运行时被替换为用户名。用户名来自 `CONNECT` 报文中的 `Username` 字段。
+    - `${password}`: 将在运行时被替换为密码。密码来自 `CONNECT` 报文中的 `Password` 字段。
 
 
 ::: tip
