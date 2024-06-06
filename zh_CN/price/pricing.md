@@ -72,25 +72,15 @@ EMQX Cloud 专有版按产品版本、实例规格与消息传输网络流量计
       <th>超出流量单价</th>
    </tr>
    <tr>
-      <td rowspan="3">基础版</td>
-      <td>1,000 连接 / 最高 1,000 TPS</td>
-      <td>¥0.68/小时</td>
-      <td rowspan="3">100G/月</td>
-      <td rowspan="7">￥1.5/GB</td>
-   </tr>
-   <tr>
-      <td>5,000 连接 / 最高 5,000 TPS</td>
-      <td>¥1.28/小时</td>
-   </tr>
-   <tr>
-      <td>10,000 连接 / 最高 5,000 TPS</td>
-      <td>￥1.68/小时</td>
-   </tr>
-   <tr>
-      <td rowspan="5">专业版</td>
+      <td rowspan="5">专有版</td>
       <td>1,000 连接 / 最高 1,000 TPS</td>
       <td>￥1.28/小时</td>
-      <td rowspan="3">100G/月</td>
+      <td rowspan="4">100G/月</td>
+      <td rowspan="4">￥1.5/GB</td>
+   </tr>
+   <tr>
+      <td>2,000 连接 / 最高 2,000 TPS</td>
+      <td>￥1.48/小时</td>
    </tr>
    <tr>
       <td>5,000 连接 / 最高 10,000 TPS</td>
@@ -101,12 +91,7 @@ EMQX Cloud 专有版按产品版本、实例规格与消息传输网络流量计
       <td>￥3.99/小时</td>
    </tr>
    <tr>
-      <td>50,000 连接 / 最高 50,000 TPS</td>
-      <td>￥10.99/小时</td>
-      <td rowspan="1">1T/月</td>
-   </tr>
-   <tr>
-      <td>>50,000 连接</td>
+      <td>>10,000 连接</td>
       <td colspan="3" align="center">联系商务</td>
    </tr>
 </table>
