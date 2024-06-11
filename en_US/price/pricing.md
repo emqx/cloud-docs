@@ -67,31 +67,21 @@ EMQX Cloud's Dedicated Plan is charged based on the selected product plan (Stand
 <table>
    <tr>
       <th>Plan</th>
-      <th>tier</th>
+      <th>Tier</th>
       <th>Base Fee</th>
       <th>Free Traffic</th>
       <th>Traffic exceeded</th>
    </tr>
    <tr>
-      <td rowspan="3">Standard</td>
-      <td>1,000 connections / Up to 1,000 TPS</td>
-      <td>$0.18 /hr</td>
-      <td rowspan="3">100G/month</td>
-      <td rowspan="7">$ 0.15/GB</td>
-   </tr>
-   <tr>
-      <td>5,000 connections / Up to 5,000 TPS</td>
-      <td>$0.50 /hr</td>
-   </tr>
-   <tr>
-      <td>10,000 connections / Up to 5,000 TPS</td>
-      <td>$0.88 /hr </td>
-   </tr>
-   <tr>
-      <td rowspan="5">Professional</td>
+      <td rowspan="5">Dedicated</td>
       <td>1,000 connections / Up to 1,000 TPS</td>
       <td>$0.36 /hr </td>
-      <td rowspan="3">100G/month</td>
+      <td rowspan="4">100G/month</td>
+      <td rowspan="4">$ 0.15/GB</td>
+   </tr>
+   <tr>
+      <td>2,000 connections / Up to 2,000 TPS</td>
+      <td>$0.50 /hr</td>
    </tr>
    <tr>
       <td>5,000 connections / Up to 10,000 TPS</td>
@@ -102,12 +92,7 @@ EMQX Cloud's Dedicated Plan is charged based on the selected product plan (Stand
       <td>$1.49 /hr</td>
    </tr>
    <tr>
-      <td>50,000 connections / Up to 50,000 TPS</td>
-      <td>$3.99 /hr</td>
-      <td rowspan="1">1T/month</td>
-   </tr>
-   <tr>
-      <td>>50,000 connections</td>
+      <td>>10,000 connections</td>
       <td colspan="3" align="center">Contact us</td>
    </tr>
 </table>
