@@ -8,6 +8,7 @@ PostgreSQL 认证器可以支持任何表结构，甚至是多个表联合查询
 
 - `password_hash`: 必需，数据库中的明文或散列密码字段
 - `salt`: 可选，为空或不存在时视为空盐（salt = ""）
+- `is_superuser`: 可选，标记当前客户端是否为超级用户。默认为 `false`，**设置为 `true` 时，使用此用户名的客户端将不受到授权规格约束。不建议设置超级用户。**
 
 示例表结构：
 ```SQL
@@ -27,15 +28,15 @@ CREATE TABLE `mqtt_user` (
 :::
 
 在此表中使用 `username` 作为查找条件。
-例如，我们希望添加一名用户名为 `emqx_u`、密码为 `public`、盐值为 `slat_foo123`、散列方式为 `sha256` 且超级用户标志为 `true` 的用户：
+例如，我们希望添加一名用户名为 `emqx_u`、密码为 `public`、盐值为 `slat_foo123`、散列方式为 `sha256` 且超级用户标志为 `false` 的用户：
 ```SQL
-mysql> INSERT INTO mqtt_user(username, password_hash, salt, is_superuser) VALUES ('emqx_u', SHA2(concat('public', 'slat_foo123'), 256), 'slat_foo123', 1);
+mysql> INSERT INTO mqtt_user(username, password_hash, salt, is_superuser) VALUES ('emqx_u', SHA2(concat('public', 'slat_foo123'), 256), 'slat_foo123', 0);
 Query OK, 1 row affected (0,01 sec)
 ```
 对应的查询语句和密码散列方法配置参数为：
 
-- 密码加密方式：sha256
-- 加盐方式：suffix
+- 密码加密方式：`sha256`
+- 加盐方式：`suffix`
 - SQL:
 ```SQL
 SELECT password_hash, salt, is_superuser FROM mqtt_user WHERE username = ${username} LIMIT 1

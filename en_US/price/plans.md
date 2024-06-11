@@ -257,7 +257,7 @@ EMQX Platform is a globally available, fully-managed MQTT service platform that 
    </tr>
    <tr>
       <td style="text-indent: 2em;">Republish</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>

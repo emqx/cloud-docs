@@ -70,11 +70,15 @@ EMQX 专有版按产品版本、实例规格与消息传输网络流量计费。
       <th>超出流量单价</th>
    </tr>
    <tr>
-      <td rowspan="4">专有版</td>
+      <td rowspan="5">专有版</td>
       <td>1,000 连接 / 最高 1,000 TPS</td>
       <td>￥1.28/小时</td>
-      <td rowspan="3">100G/月</td>
-      <td rowspan="3">￥1.5/GB</td>
+      <td rowspan="4">100G/月</td>
+      <td rowspan="4">￥1.5/GB</td>
+   </tr>
+   <tr>
+      <td>2,000 连接 / 最高 2,000 TPS</td>
+      <td>￥1.48/小时</td>
    </tr>
    <tr>
       <td>5,000 连接 / 最高 10,000 TPS</td>
