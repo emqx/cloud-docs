@@ -7,7 +7,7 @@ Redis 认证器支持使用 [Redis hashes](https://redis.io/docs/manual/data-typ
 
 - `password_hash`: 必需，数据库中的明文或散列密码字段
 - `salt`: 可选，为空或不存在时视为空盐（salt = ""）
-- `is_superuser`: 可选，标记当前客户端是否为超级用户，默认为 `false`，**设置为 `true` 时，使用此用户名的客户端将不受到授权规格约束，不建议设置超级用户。**
+- `is_superuser`: 可选，标记当前客户端是否为超级用户。默认为 `false`，**设置为 `true` 时，使用此用户名的客户端将不受到授权规格约束。不建议设置超级用户。**
 
 添加我们希望添加一位名用户名为 `emqx_u`、密码为 `public`、盐值为 `slat_foo123`、散列方式为 `sha256` 且超级用户标志为 `false` 的用户：
 
