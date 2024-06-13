@@ -8,6 +8,21 @@ The Redis authenticator supports using [Redis hashes](https://redis.io/docs/manu
 
 - `password_hash`: Required, the plaintext or hashed password field in the database.
 - `salt`: Optional, considered as no salt (salt = "") if empty or non-existent.
+- `is_superuser`: Optional. Indicates whether the current client is a superuser. The default is `false`. **When set to `true`, clients using this username will not be subject to authorization constraints. It is not recommended to set a superuser.**
+
+For example, to add a user with the username `emqx_u`, password `public`, salt `slat_foo123`, hashed with `sha256`, and superuser flag `false`:
+
+```bash
+>redis-cli
+127.0.0.1:6379> HSET mqtt_user:emqx_u is_superuser 1 salt slat_foo123 password_hash 44edc2d57cde8d79c98145003e105b90a14f1460b79186ea9cfe83942fc5abb5
+(integer) 0
+```
+
+The corresponding configuration parameters are:
+
+- Password encryption method: `sha256`
+- Salt mode: `suffix`
+- Query Command: `HMGET mqtt_user:${username} password_hash salt is_superuser`
 
 ### Encryption Rules
 
@@ -39,12 +54,27 @@ pbkdf2, sha256, 1000, 20
 In the deployment, click **Access Control** - **Extended Authentication**, select **Redis Authentication**, and click **Configure**.
 
 - **Redis Mode**: Choose the deployment mode of the Redis database, available options: `Single`, `Sentinel`, `Cluster`.
+
 - **Server**: Enter the Redis server address (host:port); when the deployment mode is set to Sentinel or Cluster, you need to provide addresses for all related Redis servers, separated by commas, in the format host1:port1,host2:port2,...
+
+  ::: tip
+
+  - If the current deployment is a Dedicated edition, create a [VPC Peering Connection](./vpc_peering.md), and use the internal network address as the server address.
+  - If the current deployment is a BYOC edition, create a VPC Peering Connection in your public cloud console. For details, refer to [Create VPC Peering Connections](./byoc_vpc_peering.md). Use the internal network address as the server address.
+  - If you see an "Init resource failure!" message, please check if the server address is correct and if the security group is open. 
+
+  :::
+
 - **Sentinel Name**: Only required when the deployment mode is set to `Sentinel`. Specify the master server name needed for Redis Sentinel configuration.
+
 - **Database**: An integer specifying the Redis database Index.
+
 - **Password** (optional): Enter the authentication password.
+
 - **Enable TLS**: Configure whether to enable TLS.
+
 - **Connection Pool size** (optional): Enter an integer to specify the concurrent connection count from EMQX nodes to the Redis database; default value: `8`.
+
 - **Password Hash**: Choose the hashing algorithm used to store passwords, such as plain, md5, sha, bcrypt, pbkdf2, etc.
   - When selecting `plain`, `md5`, `sha`, `sha256`, or `sha512` algorithms, you also need to configure:
     - **Salting Position**: Specifies the combination method of salt and password. Generally, this option does not need to be changed except for migrating access credentials from external storage to EMQX's built-in database; available values: suffix (add salt at the end of the password), prefix (add salt at the beginning of the password), disable (do not enable). Note: If selecting plain, the salting method should be set to disable.
@@ -52,13 +82,10 @@ In the deployment, click **Access Control** - **Extended Authentication**, selec
     - **Pseudorandom function**: Specify the hash function used to generate the key, such as `sha256`, etc.
     - **Iteration Count**: Specify the number of hashing iterations, default value: `4096`.
     - **Derived key length** (optional): Specify the desired key length. If not specified, the key length will be determined by the pseudo-random function.
-- **CMD**: Redis query command
+  
+- **CMD**: Redis query command. The command supports to contain the following placeholders:
 
-::: tip
+  - `${clientid}`: Will be replaced with the client ID at runtime. The client ID is usually specified explicitly by the client in the CONNECT packet.
+  - `${username}`: Will be replaced with the username at runtime. The username is taken from the Username field in the CONNECT packet.
+  - `${password}`: Will be replaced with the password at runtime. The password is taken from the Password field in the CONNECT packet.
 
-- If the current deployment is a dedicated edition, create a [VPC Peering Connection](./vpc_peering.md), and fill in the internal network address as the server address.
-- If the current deployment is a BYOC edition, you need to create a VPC Peering Connection in your public cloud console, refer to the [Create BYOC Deployment - VPC Peering Connection Configuration](../create/byoc.md#vpc-peering-connection-configuration) section. The server address should be the internal network address.
-
-If you encounter an Init resource failure! please check whether the server address is correct and whether the security group is open. 
-
-:::
