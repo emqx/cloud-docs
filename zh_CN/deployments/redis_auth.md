@@ -59,7 +59,7 @@ pbkdf2, sha256, 1000, 20
     ::: tip
 
     * 如果当前部署为专有版，需创建 [VPC 对等连接](./vpc_peering.md)，服务器地址填写内网地址。
-    * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [创建 VPC 对等连接](./bypc_vpc_peering.md)。服务器地址填写内网地址。
+    * 如果当前部署为 BYOC 版，需在您的公有云控制台中创建 VPC 对等连接，具体请参考 [在 BYOC 中设置 VPC 对等连接](./byoc_vpc_peering.md)。服务器地址填写内网地址。
     * 若提示 Init resource failure! 请检查服务器地址是否无误、安全组是否开启。
       :::
 
