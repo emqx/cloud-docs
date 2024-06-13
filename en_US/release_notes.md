@@ -2,7 +2,13 @@
 
 # Release Notes
 
+#### 2024-5
+
+* The data integration in EMQX Dedicated now supports Schema Registry.
+* Added Platform-level API, including the TLS certificate management API.
+
 #### 2024-3
+
 * EMQX Cloud is known as EMQX Platform.
 * EMQX Dedicated is upgraded to v5 version with a bunch of new features.
 
@@ -11,7 +17,7 @@
 
 #### 2023-10
 * Serverless API
-* Serverless authentication bacth upload
+* Serverless authentication batch upload
 
 #### 2023-9
 * BYOC deployment Start/Stop 
