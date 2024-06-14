@@ -2,8 +2,17 @@
 
 # Release Notes
 
+#### 2024-5
+
+- The data integration in EMQX Dedicated now supports Schema Registry.
+- Added Platform-level API, including the TLS certificate management API.
+
+#### 2024-3
+
+- EMQX Dedicated is upgraded to v5 version with a bunch of new features.
 
 #### 2023-12
+
 * Data Integration in Serverless 
 
 #### 2023-10
