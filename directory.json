@@ -900,6 +900,10 @@
         {
           "title": "Logs",
           "path": "deployments/logs"
+        },
+        {
+          "title": "Evnet History (Beta)",
+          "path": "vas/eventHistory"
         }
       ]
     },
