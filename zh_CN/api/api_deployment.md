@@ -10,7 +10,7 @@
 | ------------------------------------------------------------ | --------------- | ------------------------------------------------------------ |
 | [Serverless 部署 API](./serverless.md)                       | Serverless 部署 | 管理 Serverless 部署中客户端、订阅和发布的相关操作。         |
 | [专有版 部署 API](https://docs.emqx.com/zh/cloud/latest/api/dedicated) | v5 专有版部署   | 管理专有版 (v5) 部署中的各项操作。如果需要访问和管理专有版(v4) 部署 API，请查看 [v4 API](https://docs.emqx.com/zh/cloud/v4/api/dedicated.html)。 |
-
+| [BYOC 部署 API](https://docs.emqx.com/zh/cloud/latest/api/dedicated) | v5 BYOC 部署（API 与专有版一致）   | 管理 BYOC (v5) 部署中的各项操作。 |
 
 ## 创建和管理部署 API Key
 
