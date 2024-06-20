@@ -45,6 +45,7 @@ EMQX Platform 专有版提供独立的 MQTT 服务集群，有更高的连接上
 
 - **连接地址**：客户端连接到部署的地址。
 - **连接端口**：默认开启 `1883` (MQTT TCP 端口)、`8083` (WebSocket 端口)，您可以通过配置 TLS/SSL 开启 `8883` (MQTT TLS/SSL 端口) 和 `8084` (WebSocket TLS/SSL) 端口。
+- **端口管理**: 通过端口管理，可以对某一个端口进行单独关闭和开启。
 
 建议查看 [端口连接指引](../deployments/port_guide_dedicated.md)了解协议和端口。
 
