@@ -157,7 +157,7 @@ EMQX Platform 提供 3 个全托管版本产品，支持在全球主流的公有
       <td style="text-indent: 1em;">部署试用</td>
       <td>&#10007</td>
       <td>14 天</td>
-      <td>联系商务</td>
+      <td>14 天</td>
    </tr>
    <tr>
       <td style="text-indent: 1em;">免费额度</td>
@@ -253,7 +253,7 @@ EMQX Platform 提供 3 个全托管版本产品，支持在全球主流的公有
       <td style="text-indent: 1em;">日志</td>
       <td>&#10007</td>
       <td>&#10003</td>
-      <td>&#10003</td>
+      <td>可自行集成</td>
    </tr>
    <tr>
       <td><strong>数据集成</strong></td>

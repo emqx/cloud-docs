@@ -118,4 +118,4 @@ EMQX BYOC 会在您的云平台账号中部署 EMQX 服务，相关费用包括�
 | **计费项**             | **说明**                                                                                                                                |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | 云平台资源               | EMQX BYOC 部署在运行时，会使用您云平台账号下的虚拟机、网络等资源，您需要向云平台厂商支付相关资源的使用费。                                                                      |
-| EMQX BYOC 许可证 | 使用 EMQX BYOC 服务时，您需要向 EMQ 支付订阅费以获取一个正式的 EMQX BYOC 许可证。如需了解许可证价格详情，请[联系我们](https://www.emqx.com/zh/contact?product=cloud)。 |
+| EMQX BYOC 许可证 | 使用 EMQX BYOC 服务时，您需要向 EMQ 支付订阅费以获取一个正式的 EMQX BYOC 许可证。如需了解许可证价格详情，请[联系我们](https://www.emqx.com/zh/contact?product=cloud&productEdition=BYOC&pageType=getQuotes)。 |
