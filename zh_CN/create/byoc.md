@@ -22,11 +22,11 @@
 
    - **选择云平台**：可选择**阿里云**或**亚马逊云科技（AWS 中国）**。
 
-     如您希望部署在其他云平台，可通过[工单](../feature/tickets.md)或邮件（cloud-support@emqx.io）联系我们。
+     如您希望部署在其他云平台，可通过[工单](../feature/tickets.md)或邮件（<cloud-support@emqx.io>）联系我们。
 
    - **选择区域**：选择待部署的区域。
 
-     如您希望部署在其他区域，可通过 [工单](../feature/tickets.md) 或邮件（cloud-support@emqx.io）联系我们。
+     如您希望部署在其他区域，可通过 [工单](../feature/tickets.md) 或邮件（<cloud-support@emqx.io>）联系我们。
 
    - **部署名称**：填写具有业务意义的部署名称。
 
@@ -46,28 +46,31 @@
 
 5. 点击**下一步**进入**高级配置**，依据您的需求添加云资源标签，便于后续识别和管理，最多支持 10 个标签。
 
-6. 点击**下一步**进入**确认**页面。核对并确认上述步骤指定的配置信息，同时您也可以在此设置部署所属的项目。信息确认后，点击**前往部署**。
+6. 点击**下一步**进入**确认**页面。核对并确认上述步骤指定的配置信息，同时您也可以在此设置部署所属的项目。信息确认后，点击**新建部署**。
 
-接下来，我们将根据右侧 **部署指南**中的步骤正式开始部署。
+成功提交后，将跳转部署详情页面，接下来，我们将根据**执行部署**章节中的步骤正式开始部署。
 
 ## 执行部署
+
+在部署详情页面中，如果未完成操作，部署状态应该为**等待部署**。此时**连接信息**卡片将不会显示部署信息，点击卡片中的**开始部署**按钮，按照侧边栏弹出的**部署指南**指引完成部署。
 
 我们将在联网的 Ubuntu 20.04 (AMD64) LTS 环境中完成部署，正式部署前，请首先将部署所需的 TLS / SSL 证书和 BYOC 许可证文件提前复制到您的 Ubuntu 环境目录。
 
 :::: tabs
 ::: tab "阿里云"
+
 1. 打开提前准备好的 Ubuntu 20.04 (AMD64) LTS 环境。注意：此 Ubuntu 应能够直接访问互联网。
 
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。<!--这里有客户需要替换的地方吗？-->
-	
-	```bash
-	wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/create-aliyun-byoc-deployment.tar.gz
-	```
+
+ ```bash
+ wget https://cloudassets.emqx.com/cn/byoc-deployments/5.1.0/create-aliyun-byoc-deployment.tar.gz
+ ```
 
 3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
 
    ```bash
-   tar -zxvf create-aliyun-byoc-deployment.tar.gz && cd create-aliyun-byoc-deployment
+   tar -zxf create-aliyun-byoc-deployment.tar.gz && cd create-aliyun-byoc-deployment
    ```
 
 4. 运行以下命令执行部署。
@@ -79,7 +82,7 @@
          --secretKey <Your SecretKey> \
          --domain <Your Domain> \
          --sslCertPath <Your Domain SSL Absolute Cert Path>  \
-         --emqxLicPath <Your EMQX License Absolute Path> \
+         --sslKeyPath <Your Domain SSL Absolute Key Path>  \
          --byocEndpoint https://cloud.emqx.com \
          --byocKey abcdXXXXXXXXXX111
    ```
@@ -87,63 +90,14 @@
    注意：执行 `./byoc create` 命令前，请将以下字段填充为实际参数：
 
    - `--accessKey`：您公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看。
-   
+
    - `--secretKey`：您公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
-   
+
    - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。例如：your.domain.com。
 
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
-   
-   - `--emqxLicPath`：输入 EMQX BYOC 许可证文件所在的绝对路径。
-   
-     此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
-5. 等待数分钟，系统提示确认需要创建的云资源，输入 `yes` 回车后继续。
 
-   ```bash
-   Do you want to perform these actions?
-     Terraform will perform the actions described above.
-     Only 'yes' will be accepted to approve.
-   
-     Enter a value: 
-   ```
-:::
-::: tab "亚马逊云科技"
-
-1. 打开提前准备好的 Ubuntu 20.04 (AMD64) LTS 环境。注意：此 Ubuntu 应能够直接访问互联网。
-
-2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
-
-   ```bash
-   wget https://cloudassets.emqx.com/cn/byoc-deployments/1.2/create-aws_cn-byoc-deployment.tar.gz
-   ```
-
-3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
-
-   ```bash
-   tar -zxf create-aws_cn-byoc-deployment.tar.gz && cd create-aws_cn-byoc-deployment
-   ```
-
-4. 运行以下命令执行部署。
-
-   ```bash
-   ./byoc create \
-         --platform aws_cn \
-         --accessKey <Your AccessKey> \
-         --secretKey <Your SecretKey> \
-         --domain <Your Domain> \
-         --sslCertPath <Your Domain SSL Absolute Cert Path>  \
-         --emqxLicPath <Your EMQX License Absolute Path> \
-         --byocEndpoint https://cloud.emqx.com \
-         --byocKey abcdXXXXXXXXXX111
-   ```
-
-   注意：执行 `./byoc create` 命令前，请将以下字段填充为实际参数：
-
-   - `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
-   - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
-   - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。例如：your.domain.com。
-   - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
-   - `--emqxLicPath`：输入 EMQX BYOC 许可证文件所在的绝对路径。
+   - `--sslKeyPath`：指定 TLS/SSL 证书密钥所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书密钥格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
 
    此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
@@ -156,26 +110,83 @@
    
      Enter a value: 
    ```
+
+:::
+::: tab "亚马逊云科技"
+
+1. 打开提前准备好的 Ubuntu 20.04 (AMD64) LTS 环境。注意：此 Ubuntu 应能够直接访问互联网。
+
+2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。
+
+   ```bash
+   wget https://cloudassets.emqx.com/cn/byoc-deployments/5.1.0/create-aws_cn-byoc-deployment.tar.gz
+   ```
+
+3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
+
+   ```bash
+   tar -zxf create-aws_cn-byoc-deployment.tar.gz && cd create-aws_cn-byoc-deployment
+   ```
+
+4. 运行以下命令执行部署。
+
+   ```bash
+   
+   ./byoc create \
+         --platform aws_cn \
+         --accessKey <Your AccessKey> \
+         --secretKey <Your SecretKey> \
+         --domain <Your Domain> \
+         --sslCertPath <Your Domain SSL Absolute Cert Path> \
+         --sslKeyPath <Your Domain SSL Absolute Key Path> \
+         --byocEndpoint https://cloud.emqx.com \
+         --byocKey abcdXXXXXXXXXX111
+   ```
+
+   注意：执行 `./byoc create` 命令前，请将以下字段填充为实际参数：
+
+   - `--accessKey`：您的亚马逊云账号中一个用户对应的访问密钥 ID。您可以参考 [管理 IAM 用户的访问密钥](https://docs.amazonaws.cn/IAM/latest/UserGuide/id_credentials_access-keys.html) 文档以获取访问密钥。
+   - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
+   - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。例如：your.domain.com。
+   - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
+   - `--sslKeyPath`：指定 TLS/SSL 证书密钥所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书密钥格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
+
+   此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+
+5. 等待数分钟，系统提示确认需要创建的云资源，输入 `yes` 回车后继续。
+
+   ```bash
+   Do you want to perform these actions?
+     Terraform will perform the actions described above.
+     Only 'yes' will be accepted to approve.
+   
+     Enter a value: 
+   ```
+
 :::
 ::::
+
 ## 添加 DNS 记录
 
 部署创建完成后，系统将返回以下内容。您可根据返回的 IP 地址，在 DNS 服务中添加一条域名解析记录，将部署的公网 IP 与您的域名进行绑定。
 
 ```bash
-Apply complete! Resources: 30 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 45 added, 0 changed, 0 destroyed.
 
 Outputs:
+
 cloud_register_data = <sensitive>
 jwt_token = <sensitive>
-lb_address = "120.55.12.49"
-vpc_id = "vpc-bp1wllXXXXXXXXX5j8i0"
+lb_address = "<Your Deployment IP>"
+password = "<EMQX Dashboard Password>"
+username = "<EMQX Dashboard Username>"
+vpc_id = "vpc-bp1n1dwiv2srgkgle4rlu"
 *****************************
 You need add a record to your DNS service provider.
-IP address: 120.55.12.49
-Domain: myexample.mqttce.com
+IP address: 112.124.9.12
+Domain: <Your Custom Domain>
 *****************************
-Checking if https://myexample.mqttce.com is resolved to the 120.55.12.49 of the load balancer
+Checking if <Your Custom Domain> is resolved to the 112.124.9.12 of the load balancer
 ```
 
 您可以选择主流云平台提供的 DNS 解析服务。以阿里云平台的云解析 DNS 服务为例，您可以根据 [云解析 DNS - 添加网站解析页面](https://help.aliyun.com/document_detail/106535.html) 的操作步骤，添加一条域名解析记录。关于 DNS 和域名解析等基本概念，请参考 [DNS 概念](https://help.aliyun.com/document_detail/102237.html)。
@@ -187,49 +198,69 @@ HTTPS listener is ready
 ```
 
 ## 完成部署
+
 完成域名解析后，Ubuntu 命令行界面将输出以下内容，说明该部署执行成功。
+
 ```bash
-The deployment is successful! Here is the service information:
+Deployment successful! Here is the service information:
 --------------------------------------------------------
-EMQX service connection address: <Your Custom Domain>
-You can log in to the EMQX Platform Console(https://cloud.emqx.com/console)
-to manage your deployment.
+EMQX service connection address: <Your Custom Doamin>
+EMQX Dashboard address: https://<Your Custom Doamin>:18084
+EMQX Dashboard username: <EMQX Dashboard Username>
+EMQX Dashboard password: <EMQX Dashboard Password>
+You can log in to the EMQX Platform Console(https://cloud.emqx.com/console) to manage your deployment.
 --------------------------------------------------------
 Thank you for choosing our service. Happy IoT!
 ```
 
+您可以打开 EMQX Dashboard 地址，并使用返回的用户名和密码登录，进行集群的配置和管理。您需要记录并妥善 EMQX Dashboard 的用户名和密码，后续不会再显示该信息。
+
 ## 部署概览
 
-返回**部署指南**页面，点击**完成部署**。系统随机将跳转到控制台页面，点击 BYOC 部署卡片进入概览页面，可获取到部署实时状态和连接信息：
+返回并刷新**部署详情**页面，可获取到部署实时状态和连接信息：
 
    ![byoc](./_assets/byoc_deployment_console.png)
 
-* 实例状态：运行状态和创建时间。
-* 连接数：当前连接数和最大连接数。
-* 消息上下行 TPS：部署当前每秒钟消息发送和接收条数，以及 TPS 上限。
-* 部署名称：部署名称，同时也是云资源的前缀，方便在公有云控制台中快速查找。
-* 部署规格：显示当前部署的最大连接数、最大消息上下行和计费模式。
-* 连接地址：部署时用户指定的域名。
-* 连接端口：默认开启 1883(mqtt)、8083(ws)、8883(mqtts) 和 8084(wss) 端口。如您希望自定义端口，可通过 [工单](../feature/tickets.md) 或邮件（cloud-support@emqx.io）联系我们。
+**实时状态：**
+
+- 部署名称：部署名称，同时也是云资源的前缀，方便在公有云控制台中快速查找。
+- 实例状态：运行状态和创建时间。
+- 连接数：当前连接数和最大连接数。
+- 消息上下行 TPS：部署当前每秒钟消息发送和接收条数，以及 TPS 上限。
+
+**连接信息：**
+
+- 连接地址：部署时用户指定的域名。
+- 连接端口：默认开启 1883(mqtt)、8883(mqtts) 、8083(ws)、8084(wss) 端口，用于 MQTT 协议接入；18084(https) 和 8443(https) 分别用于 Dashboard 登录和 REST API 访问。
+
+点击 **EMQX 管理控制台**按钮可以跳转到 EMQX 控制台，您可以在该控制台对集群进行配置和管理。
+
+如您希望自定义端口，可通过 [工单](../feature/tickets.md) 或邮件（<cloud-support@emqx.io>）联系我们。
+
+**许可证信息：**
+
+包含许可证基本信息与到期时间，许可证相关信息请参考[BYOC 许可证](../deployments/byoc_license.md)。
 
 ## 高级网络设置
-
 
 ### VPC 对等连接配置
 
 VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，两个位于不同网络中的 VPC（Virtual Private Cloud） 也可以彼此通信。该功能由云服务商提供，支持在同云服务商、同区域内，BYOC 部署所在的 VPC 与客户其他 VPC 创建对等连接。 请参考各公有云 VPC 对等连接文档进行配置：
+
 - [阿里云 VPC 对等连接](https://help.aliyun.com/document_detail/418507.html)
 - [亚马逊云科技 VPC 对等连接](https://docs.amazonaws.cn/vpc/latest/peering/peering-configurations-full-access.html)
 
-
 ### 私网连接 PrivateLink 配置
+
 私网连接（PrivateLink）能够实现 BYOC 部署所在的 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。请参考各公有云 VPC 私网连接文档进行配置：
+
 - [阿里云私网连接 PrivateLink](https://help.aliyun.com/product/120462.html)
 - [Amazon PrivateLink](https://docs.amazonaws.cn/vpc/latest/privatelink/getting-started.html)
 
 ### NAT 网关配置
 
 公有云平台提供的 NAT 网关可以提供网络地址转换服务，为 BYOC 部署提供访问公网资源的能力，无需 VPC 对等连接。您可以在 BYOC 部署所在 VPC 内添加 NAT 网关，请参考各公有云 NAT 网关文档进行配置：
+
 - [阿里云公网 NAT 网关](https://help.aliyun.com/document_detail/121139.html)
 - [亚马逊云科技 NAT 网关](https://docs.amazonaws.cn/vpc/latest/userguide/vpc-nat-gateway.html)
 

@@ -38,7 +38,7 @@ EMQX BYOC 部署使用 TLS/SSL 加密协议，建立安全的加密通信通道�
 
 这些准则确保了在您的 BYOC 部署中正确配置 TLS/SSL。
 
-## 创建 PEM 文件
+<!-- ## 创建 PEM 文件
 
 要创建所需的 PEM 文件，请按照以下步骤操作：
 
@@ -59,9 +59,8 @@ Base64 编码的证书链内容
 -----BEGIN RSA PRIVATE KEY-----
 Base64 编码的私钥内容
 -----END RSA PRIVATE KEY-----
-```
+``` -->
 
-## 在 "byoc create" 命令中使用 PEM 文件
+## 在 "byoc create" 命令中使用证书文件
 
-创建 BYOC 部署时，在执行 `./byoc create` 命令之前，请确保已将 PEM 文件复制到您的 Ubuntu 环境目录，并且可以轻松访问。在执行 `./byoc create` 命令部署您的 BYOC 环境时，参数中需提供包含服务器证书、证书链和私钥的 PEM 文件路径。关于如何配置参数，详见[执行部署](../create/byoc.md#执行部署)。
-
+创建 BYOC 部署时，在执行 `./byoc create` 命令之前，请确保已将证书和私钥文件复制到您的 Ubuntu 环境目录，并且可以轻松访问。在执行 `./byoc create` 命令部署您的 BYOC 环境时，参数中需提供服务器证书和私钥的 PEM 文件路径。关于如何配置参数，详见[执行部署](../create/byoc.md#执行部署)。

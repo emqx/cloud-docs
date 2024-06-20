@@ -16,8 +16,7 @@ EMQX Platform BYOC 将在您的云账号中创建部署，如您还没有对应�
 - [创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)
 - [创建亚马逊云科技账号](https://www.amazonaws.cn/about-aws/china/faqs/signup-process/)
   
-
-目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以通过 [工单](../feature/tickets.md) 或 邮件(cloud-support@emqx.io) 与我们联系。
+目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以通过 [工单](../feature/tickets.md) 或 邮件(<cloud-support@emqx.io>) 与我们联系。
 
 | 平台     | 区域                 |
 |--------|--------------------|
@@ -25,6 +24,16 @@ EMQX Platform BYOC 将在您的云账号中创建部署，如您还没有对应�
 | 亚马逊云科技 | 宁夏，北京              |
 
 此外，您还需要 EMQX Platform 账号完成部署，如尚未注册，请前往 [EMQX Platform 账号注册页面](https://accounts-zh.emqx.com/signup) 注册账号。
+
+## 域名及证书
+
+提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书，我们支持自定义单向 TLS/SSL 认证。
+
+::: warning 注意
+
+1. 根据政策要求，域名必须完成 ICP 备案，并且备案的云服务商需要与部署 BYOC 的平台保持一致。
+2. BYOC 部署仅接受 CA 签名证书。关于 TLS/SSL 证书格式要求，请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
+:::
 
 ## 资源与权限
 
@@ -191,6 +200,7 @@ EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，�
 ```
 
 在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考示例如下：
+
 ```json
 {
   "Version": "1",
@@ -284,6 +294,7 @@ EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，�
 ```
 
 在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考示例如下：
+
 ```json
 {
   "Version": "1",
@@ -398,6 +409,7 @@ EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，�
 ```
 
 在创建部署之后，如果您需要对部署进行删除操作，可以分配单独的权限策略。策略参考示例如下：
+
 ```json
 {
   "Version": "2012-10-17",
@@ -459,6 +471,7 @@ EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，�
 ```
 
 在创建部署之后，如果您需要对部署进行停止和启动操作，可以分配单独的权限策略。策略参考示例如下：
+
 ```json
 {
   "Version": "2012-10-17",
@@ -488,8 +501,10 @@ EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，�
   ]
 }
 ```
+
 :::
 ::::
+
 ## 准备启动环境
 
 为了部署 EMQX Platform BYOC，您需要一个可连接公网的 Ubuntu 20.04 LTS (AMD64) 环境，您可以使用以下两种方式之一：
@@ -497,23 +512,10 @@ EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，�
 - （推荐）在云账号中使用 Ubuntu 20.04 LTS 镜像创建一个虚拟机实例，且实例的内存需要至少 1 GiB。
 - 使用本地 Ubuntu 20.04 LTS 环境。
 
-## 域名及证书
-
-提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书。我们支持自定义单向 TLS/SSL 认证，并且只支持在部署时指定 TLS/SSL 证书。
-
-::: warning 注意
-BYOC 部署仅接受 CA 签名证书。关于 TLS/SSL 证书格式要求，请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
-:::
-
 ## BYOC 许可证
 
-准备 EMQX Platform BYOC 许可证。您可联系商务申请 BYOC 许可证，我们的销售团队将根据您设备的连接数和消息上下行的每秒事务处理数（TPS）帮您确定许可证规格。
+准备 EMQX Platform [BYOC 许可证](./byoc_license.md)。您可联系商务申请 BYOC 许可证，我们的销售团队将根据您设备的连接数和消息上下行的每秒事务处理数（TPS）帮您确定许可证规格。
 
-## <!--选择规格-->
+<!--## 选择规格-->
 
 <!--我们根据设备连接数和消息上下行 TPS 提供四个集群大小示例以供选择。我们为每个示例推荐了相应的机器规格和节点数量。我们的销售团队会根据您不同的使用场景，为您提供最合适的集群配置。-->
-
-
-
-
-
