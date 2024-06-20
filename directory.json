@@ -87,6 +87,10 @@
               "path": "create/byoc"
             },
             {
+              "title": "管理部署",
+              "path": "deployments/byoc_management"
+            },
+            {
               "title": "VPC 对等连接设置",
               "path": "deployments/byoc_vpc_peering"
             }

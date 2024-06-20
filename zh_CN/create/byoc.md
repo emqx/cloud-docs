@@ -213,7 +213,7 @@ You can log in to the EMQX Platform Console(https://cloud.emqx.com/console) to m
 Thank you for choosing our service. Happy IoT!
 ```
 
-您可以打开 EMQX Dashboard 地址，并使用返回的用户名和密码登录，进行集群的配置和管理。您需要记录并妥善 EMQX Dashboard 的用户名和密码，后续不会再显示该信息。
+请妥善保存 EMQX Dashboard 用户名和密码，它将用于管理控制台登录和集群管理中，后续不会再显示该信息。
 
 ## 部署概览
 
@@ -232,8 +232,6 @@ Thank you for choosing our service. Happy IoT!
 
 - 连接地址：部署时用户指定的域名。
 - 连接端口：默认开启 1883(mqtt)、8883(mqtts) 、8083(ws)、8084(wss) 端口，用于 MQTT 协议接入；18084(https) 和 8443(https) 分别用于 Dashboard 登录和 REST API 访问。
-
-点击 **EMQX 管理控制台**按钮可以跳转到 EMQX 控制台，您可以在该控制台对集群进行配置和管理。
 
 如您希望自定义端口，可通过 [工单](../feature/tickets.md) 或邮件（<cloud-support@emqx.io>）联系我们。
 
