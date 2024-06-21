@@ -121,6 +121,7 @@ EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，�
         "ecs:DescribeInstances",
         "ecs:DescribeInstanceMaintenanceAttributes",
         "ecs:DescribeInstanceRamRole",
+        "ecs:DescribeInstanceAttribute",
         "ecs:DescribeKeyPairs",
         "ecs:DescribeNetworkInterfaces",
         "ecs:DescribeRegions",
