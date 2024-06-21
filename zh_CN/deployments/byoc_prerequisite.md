@@ -1,12 +1,12 @@
 # 部署前置准备
 
-在部署 EMQX Platform BYOC 之前，请确保完成以下准备工作：
+在部署 EMQX BYOC 之前，请确保完成以下准备工作：
 
 - 熟悉公有云服务和网络结构的基本概念，如 VPC、子网、ECS、DNS 等。
 - 拥有公有云账号和 EMQX Platform 账号。
 - 准备相关资源和权限。
 - 准备启动环境。
-- 准备 EMQX Platform BYOC 许可证。
+- 准备 EMQX BYOC 许可证。
 - 准备用于 EMQX 服务的域名和 TLS/SSL 证书。
 
 ## 账号准备
@@ -16,6 +16,7 @@ EMQX Platform BYOC 将在您的云账号中创建部署，如您还没有对应�
 - [创建阿里云账号](https://account.aliyun.com/register/qr_register.htm)
 - [创建亚马逊云科技账号](https://www.amazonaws.cn/about-aws/china/faqs/signup-process/)
   
+
 目前 BYOC 支持以下公有云及区域，如您需要其他云服务商或地区的支持，您可以通过 [工单](../feature/tickets.md) 或 邮件(<cloud-support@emqx.io>) 与我们联系。
 
 | 平台     | 区域                 |
@@ -37,7 +38,7 @@ EMQX Platform BYOC 将在您的云账号中创建部署，如您还没有对应�
 
 ## 资源与权限
 
-EMQX Platform BYOC 需要在您的云账号中创建多种云资源与服务，请确保相关云账号中已预留足够的资源、并已完成相关权限的设定。
+EMQX Platform BYOC 部署需要在您的云账号中创建多种云资源与服务，请确保相关云账号中已预留足够的资源、并已完成相关权限的设定。
 
 ### 资源配额
 

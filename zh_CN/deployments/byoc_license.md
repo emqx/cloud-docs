@@ -1,12 +1,12 @@
 # BYOC 许可证
 
-EMQX Platform BYOC 许可证是每个部署的服务凭证，关联了部署类型、有效期等关键信息，您需要订阅 EMQX Platform BYOC 服务以获取正式许可证。如需获取报价，请[联系我们](https://www.emqx.com/zh/contact?product=cloud&productEdition=BYOC&pageType=getQuotes)。
+EMQX BYOC 许可证是每个部署的服务凭证，关联了部署类型、有效期等关键信息，您需要订阅 EMQX Platform BYOC 服务以获取正式许可证。如需获取报价，请[联系我们](https://www.emqx.com/zh/contact?product=cloud&productEdition=BYOC&pageType=getQuotes)。
 
 本节主要介绍 BYOC 许可证类型，以及如何在控制台查看和更新 BYOC 部署的许可证。
 
 ## 许可证类型
 
-EMQX Platform BYOC 包含以下 3 种类型：
+EMQX BYOC 包含以下 3 种类型的许可证：
 
 - 默认许可证：BYOC 内置了默认的试用许可证，最多支持 25 个连接，有效期为部署完成后的 14 天。
 - 试用许可证：如需在试用期间增加连接数或延长试用期，您可以向销售人员[申请试用许可证](https://www.emqx.com/zh/contact?product=cloud&productEdition=BYOC&pageType=applyLicense)。
@@ -14,16 +14,16 @@ EMQX Platform BYOC 包含以下 3 种类型：
 
 ## 查看许可证
 
-您可在 Cloud 控制台中，进入 BYOC 部署。在部署概览中，您可以看到许可证的到期时间。在到期时间旁，点击**许可证**图标，查看许可证信息。
+您可以在 Platform 控制台中，进入 BYOC 部署。在部署概览中，您可以看到许可证的到期时间。在到期时间旁，点击**许可证**图标，查看许可证信息。
 
 许可证信息中包含：
 
-- 许可证类型：试用或正式。
-- 最大连接数：EMQX 集群支持的最大连接数。
-- 签发对象：许可证的签发对象，即您的公司名称。
-- 签发邮箱：许可证的签发邮箱，即您的公司邮箱。
-- 签发时间：许可证的签发时间。
-- 到期时间：许可证的到期时间。
+- **许可证类型**：试用或正式。
+- **最大连接数**：EMQX 集群支持的最大连接数。
+- **签发对象**：许可证的签发对象，即您的公司名称。
+- **签发邮箱**：许可证的签发邮箱，即您的公司邮箱。
+- **签发时间**：许可证的签发时间。
+- **到期时间**：许可证的到期时间。
 
 ## 更新许可证
 
