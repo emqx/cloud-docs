@@ -1,6 +1,6 @@
 # 创建 BYOC 部署
 
-作为一款 MQTT 消息中间件，EMQX BYOC 支持在您自己的云基础设施中创建部署，确保数据只在您的环境中，安全可控。这种部署方式可以提高数据安全性和可控性，同时也可以避免数据泄漏等风险。另外，EMQX BYOC 还能够提供更好的性能和可扩展性，以满足不同场景下的需求。本节将介绍如何创建和使用 BYOC 部署。
+作为一款 MQTT 消息中间件，EMQX Bring Your Own Cloud (BYOC) 支持在您自己的云基础设施中创建部署，确保数据只在您的环境中，安全可控。这种部署方式可以提高数据安全性和可控性，同时也可以避免数据泄漏等风险。另外，EMQX BYOC 还能够提供更好的性能和可扩展性，以满足不同场景下的需求。本节将介绍如何创建和使用 BYOC 部署。
 
 ## 前置准备
 
@@ -26,7 +26,7 @@
 
    - **选择区域**：选择待部署的区域。
 
-     如您希望部署在其他区域，可通过 [工单](../feature/tickets.md) 或邮件（<cloud-support@emqx.io>）联系我们。
+     如您希望部署在其他区域，可通过[工单](../feature/tickets.md)或邮件（<cloud-support@emqx.io>）联系我们。
 
    - **部署名称**：填写具有业务意义的部署名称。
 
@@ -63,9 +63,9 @@
 
 2. 在 Ubuntu 命令行界面，使用以下命令下载工具包，并保存到您的 Ubuntu 目录中。<!--这里有客户需要替换的地方吗？-->
 
- ```bash
- wget https://cloudassets.emqx.com/cn/byoc-deployments/5.1.0/create-aliyun-byoc-deployment.tar.gz
- ```
+   ```bash
+   wget https://cloudassets.emqx.com/cn/byoc-deployments/5.1.0/create-aliyun-byoc-deployment.tar.gz
+   ```
 
 3. 在 Ubuntu 命令行界面，通过以下命令解压缩，然后导航到解压后的文件夹目录。
 
@@ -89,7 +89,7 @@
 
    注意：执行 `./byoc create` 命令前，请将以下字段填充为实际参数：
 
-   - `--accessKey`：您公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看。
+   - `--accessKey`：您公有云账号的 AccessKey ID。阿里云平台可以在[工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak)中查看。
 
    - `--secretKey`：您公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
 
@@ -97,7 +97,7 @@
 
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
 
-   - `--sslKeyPath`：指定 TLS/SSL 证书密钥所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书密钥格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
+   - `--sslKeyPath`：指定 TLS/SSL 证书密钥所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书密钥格式要求请参考[在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
 
    此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
@@ -149,7 +149,7 @@
    - `--secretKey`：您的亚马逊云账号中一个用户对应的访问密钥 Secret。请使用与访问密钥 ID 对应的访问密钥 Secret。
    - `--domain` ：输入部署中 MQTT 服务的域名，后续客户端将通过此域名访问 MQTT 服务。例如：your.domain.com。
    - `--sslCertPath`：指定 TLS/SSL 证书所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。注：BYOC 提供 **自定义单向** TLS/SSL 认证。
-   - `--sslKeyPath`：指定 TLS/SSL 证书密钥所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书密钥格式要求请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
+   - `--sslKeyPath`：指定 TLS/SSL 证书密钥所在的绝对路径，仅支持 **CA 签名证书**。SSL 证书密钥格式要求请参考[在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
 
    此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
@@ -223,27 +223,27 @@ Thank you for choosing our service. Happy IoT!
 
 **实时状态：**
 
-- 部署名称：部署名称，同时也是云资源的前缀，方便在公有云控制台中快速查找。
-- 实例状态：运行状态和创建时间。
-- 连接数：当前连接数和最大连接数。
-- 消息上下行 TPS：部署当前每秒钟消息发送和接收条数，以及 TPS 上限。
+- **部署名称**：部署名称，同时也是云资源的前缀，方便在公有云控制台中快速查找。
+- **实例状态**：运行状态和创建时间。
+- **连接数**：当前连接数和最大连接数。
+- **消息上下行 TPS**：部署当前每秒钟消息发送和接收条数，以及 TPS 上限。
 
-**连接信息：**
+**连接信息**：
 
-- 连接地址：部署时用户指定的域名。
-- 连接端口：默认开启 1883(mqtt)、8883(mqtts) 、8083(ws)、8084(wss) 端口，用于 MQTT 协议接入；18084(https) 和 8443(https) 分别用于 Dashboard 登录和 REST API 访问。
+- **连接地址**：部署时用户指定的域名。
+- **连接端口**：默认开启 1883(mqtt)、8883(mqtts) 、8083(ws)、8084(wss) 端口，用于 MQTT 协议接入；18084(https) 和 8443(https) 分别用于 Dashboard 登录和 REST API 访问。
 
-如您希望自定义端口，可通过 [工单](../feature/tickets.md) 或邮件（<cloud-support@emqx.io>）联系我们。
+如您希望自定义端口，可通过[工单](../feature/tickets.md)或邮件（<cloud-support@emqx.io>）联系我们。
 
-**许可证信息：**
+**许可证信息**：
 
-包含许可证基本信息与到期时间，许可证相关信息请参考[BYOC 许可证](../deployments/byoc_license.md)。
+包含许可证基本信息与到期时间，许可证相关信息请参考 [BYOC 许可证](../deployments/byoc_license.md)。
 
 ## 高级网络设置
 
 ### VPC 对等连接配置
 
-VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，两个位于不同网络中的 VPC（Virtual Private Cloud） 也可以彼此通信。该功能由云服务商提供，支持在同云服务商、同区域内，BYOC 部署所在的 VPC 与客户其他 VPC 创建对等连接。 请参考各公有云 VPC 对等连接文档进行配置：
+Virtual Private Cloud (VPC)  对等连接是两个 VPC 之间的网络连接，通过此连接，两个位于不同网络中的 VPC 也可以彼此通信。该功能由云服务商提供，支持在同云服务商、同区域内，BYOC 部署所在的 VPC 与客户其他 VPC 创建对等连接。 请参考各公有云 VPC 对等连接文档进行配置：
 
 - [阿里云 VPC 对等连接](https://help.aliyun.com/document_detail/418507.html)
 - [亚马逊云科技 VPC 对等连接](https://docs.amazonaws.cn/vpc/latest/peering/peering-configurations-full-access.html)
