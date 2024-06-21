@@ -903,7 +903,7 @@
         },
         {
           "title": "Evnet History (Beta)",
-          "path": "vas/eventHistory"
+          "path": "vas/event_history"
         }
       ]
     },
