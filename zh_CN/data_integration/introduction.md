@@ -76,5 +76,9 @@ EMQX Platform 数据集成是一个开箱即用的功能。设备通过 MQTT 协
 
 **BYOC 部署**
 
+:::tip 提示
+BYOC 部署无法在控制台上进行数据集成配置。请使用 [EMQX 管理控制台](../deployments/byoc_management.md)进行配置。
+:::
+
 - 建议通过内部网络访问数据源，以提高网络安全性和性能。在创建之前，您需要在公有云控制台中配置资源所在的 VPC 与 BYOC 部署所在的 VPC 之间的对等连接，并打开相关安全组。相关步骤，请参考[创建 VPC 对等连接](../deployments/byoc_vpc_peering.md)部分。
 - 如果您需要通过公网访问资源，请在您的公有云控制台为 BYOC 部署所在的 VPC 配置 NAT 网关。
