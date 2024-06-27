@@ -10,7 +10,7 @@ To meet the data compliance and security requirements of enterprise users, BYOC 
 
 Other functionalities need to be managed through the EMQX Management Console, commonly used features include:
 
-- [Client Authentication]((https://docs.emqx.com/en/emqx/latest/access-control/authn/authn.html))
+- [Client Authentication](https://docs.emqx.com/en/emqx/latest/access-control/authn/authn.html)
 - [Client Authorization](https://docs.emqx.com/en/emqx/latest/access-control/authz/authz.html)
 - [Banned Clients](https://docs.emqx.com/en/emqx/latest/access-control/blacklist.html)
 - [Client List](https://docs.emqx.com/en/emqx/latest/dashboard/connections/connections.html)
