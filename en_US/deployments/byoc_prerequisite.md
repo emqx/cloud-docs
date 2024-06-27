@@ -16,7 +16,7 @@ The EMQX BYOC deployment will be created in your cloud account. If you do not ha
 - [Create an AWS account in your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html)
 - [Create a Google Cloud Platform account](https://cloud.google.com/docs/get-started)
 
-Currently, BYOC supports the following public clouds and regions. If you need support from other cloud service providers or regions, you can submit a ticket or send an [email](mailto:cloud-support@emqx.io) to contact us.
+Currently, BYOC supports the following public clouds and regions. If you need support from other cloud service providers or regions, you can submit a ticket or send an [email](<mailto:cloud-support@emqx.io>) to contact us.
 
 | Cloud Provider | Region                                                                                                                                                                                                                                            |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -25,6 +25,17 @@ Currently, BYOC supports the following public clouds and regions. If you need su
 
 
 In addition, you also need an EMQX Platform account to complete the deployment. If you have not registered, please go to the [EMQX Platform account registration page](https://accounts.emqx.com/signup) to register an account.
+
+## Domain and Certificate
+
+Prepare the domain and TLS/SSL certificates for the EMQX service in advance. The EMQX Platform supports custom one-way TLS/SSL authentication.
+
+::: warning Note
+
+1. According to policy requirements, the domain must complete ICP registration, and the cloud service provider where the domain is registered must be consistent with the platform where BYOC is deployed.
+2. BYOC deployment only accepts CA-signed certificates. For requirements on TLS/SSL certificate formats, please refer to [TLS/SSL Configuration for BYOC Plan](../deployments/byoc_ssl.md). 
+
+:::
 
 ## Resources and Permissions
 
@@ -393,15 +404,7 @@ To deploy EMQX BYOC, you need an Ubuntu 20.04 LTS (AMD64) environment that can b
 - (Recommended) Use the Ubuntu 20.04 LTS image to create a virtual machine instance in the cloud account. The memory of the instance must be more than 1 GiB.
 - Use a local Ubuntu 20.04 LTS environment.
 
-## Domain Name and Certificate
-
-Prepare a domain name and TLS/SSL certificate for the EMQX service in advance. EMQX BYOC supports custom one-way TLS/SSL authentication and only supports specifying TLS/SSL certificates during the deployment.
-
-::: warning
-The certificate needs to be a CA-signed certificate. Please refer to the [TLS/SSL Configuration for BYOC Plan](../deployments/byoc_ssl.md) for TLS/SSL certificate format requirements.
-:::
-
 
 ## BYOC License
 
-Prepare the EMQX BYOC license. You can contact sales to apply for a BYOC license. Our sales team will determine the license specifications based on the number of devices connected and the number of Pub&Sub transactions per second (TPS).
+Prepare the EMQX Platform [BYOC License](./byoc_license.md). You can contact our business team to apply for a BYOC license. Our sales team will help determine the license specifications based on the number of device connections and the transactions per second (TPS) for message throughput that you require.

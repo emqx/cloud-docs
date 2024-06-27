@@ -87,7 +87,7 @@ For different deployment cloud platforms, the specific operating steps are as fo
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 
 ```bash
-wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/5.1.0/operate-byoc-deployment.tar.gz
 ```
 
 2. Unzip the downloaded toolkit on the Ubuntu command line interface and navigate to the unzipped folder directory.
@@ -128,7 +128,7 @@ Start the deployment successfully!
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 
 ```bash
-wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/5.1.0/operate-byoc-deployment.tar.gz
 ```
 
 2. Unzip the downloaded toolkit on the Ubuntu command line interface and navigate to the unzipped folder directory.
@@ -267,7 +267,7 @@ Before deleting the deployment, please ensure that the deployment's status is **
 Once you delete the deployment, you will no longer be able to connect to it, and all data and configurations associated with the deployment will be permanently deleted.
 :::
 
-To delete a deployment, go to the console, click on the deployment you want to delete to enter the deployment overview page. Click the **Delete** button in the upper right corner to open the **Delete Deployment Guide** as shown below:
+Enter the console and click on the deployment you wish to delete to go to the deployment overview page. Click the **Settings** button in the upper right corner to go to the settings page, then click the **Delete Deployment** button at the bottom of the page. A **Delete Deployment Guide** will pop up, as shown in the image below:
 
 ![byoc_delete_deployment](./_assets/byoc_delete_deployment.png)
 
@@ -283,7 +283,7 @@ For different deployment cloud platforms, the specific operating steps are as fo
 
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.emqx.com/en/byoc-deployments/1.2/delete-aws-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/5.1.0/delete-aws-byoc-deployment.tar.gz
 ```
 
 2. Unzip the downloaded toolkit on the Ubuntu command line interface and navigate to the unzipped folder directory.
@@ -328,7 +328,7 @@ Delete the deployment successfully!
 ::: tab "Google Cloud"
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.emqx.com/en/byoc-deployments/1.2/delete-gcp-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/5.1.0/delete-gcp-byoc-deployment.tar.gz
 ```
 
 2. Unzip the downloaded toolkit on the Ubuntu command line interface and navigate to the unzipped folder directory.
