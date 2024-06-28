@@ -8,35 +8,41 @@ EMQX Serverless Plan is billed based on the actual usage of your deployment, inc
 
 ### Billing Unit
 
-**Session Minute**: Represents a connection to the deployment for any duration within a one-minute timeframe. For billing purposes, any partial minute of connection is rounded up and considered as a full minute. 
-
-**Session**: The total number of clients that are currently connected simultaneously, including offline clients that have enabled [persistent sessions](https://www.emqx.com/en/blog/mqtt-session).
+**Connection time**: Calculated by connection minutes, where 1 connection minute is the unit for measuring 1 client connection to the deployment for 1 minute. Any duration less than 1 minute is calculated as a full minute.
 
 **Traffic:** Traffic (including free traffic) refers to all public network traffic that flows in and out of your deployment.
 
 **Rule Action:** The total number of action execution times in [Data Integration](../data_integration/introduction.md).
 
+::: tip Related Terms
+
+**Number of Client Connections**: The number of clients simultaneously online (including offline clients that have enabled persistent sessions) connected to the deployment.
+
+**[Persistent Session](https://www.emqx.com/en/blog/mqtt-session)**: A session that remains active and stores offline messages when the client disconnects, until the session times out and is logged out. 
+
+:::
+
 ### Billing Plan
 
 | Billing Unit | **Free quota**                  | **Price**           |
 | -------------------- | -------------------------------------------- | ------------------|
-| Session       |  1 million session minutes / month     | $ 2.00 per million session minutes                                |
+| Connection time |  1 million connection minutes / month  | $ 2.00 per million connection minutes                      |
 | Traffic     | 1 GB / month              | $ 0.15 / GB              |
 | Rule Action     | 1 million rule action executions / month | $ 0.25 per million rule action executions |
 
 ### Billing method
 
-**Session fee** = sessions * connection span (measured per minute or part thereof) / 1,000,000 * 2 <br />
+**Connection time fee** = Number of connected clients * connection time (in minutes, rounded up to the nearest minute) / 1,000,000 * 2 <br />
 **Traffic fee** = Inbound and outbound traffic（byte）/ 1024 / 1024 / 1024 * 0.15 <br />
 **Rule Action fee** = Number of rule action executions / 1,000,000 * 0.25
 
-::: tip
+::: tip Billing use case
 
-Assume in a 24-hour billing period, a user has 120 sessions for 10 hours, 20 sessions for 10 hours, and 0 sessions for 4 hours, the total session minutes are: 120 * 60 * 10 + 20 * 60 * 10 + 0 = 84,000, and the session fee is 0 if this falls within the free quota. If the free quota has run out, the session fee will be 84,000 / 1,000,000 * 2 = 0.168, rounded up to $ 0.17. The traffic fee and the rule action fee are calculated in the same way as the session.
-
-:::
+Assume in a 24-hour billing period, a user has 120 client connections for 10 hours, 20 client connections for 10 hours, and 0 client connections for 4 hours, the total connection minutes are: 120 * 60 * 10 + 20 * 60 * 10 + 0 = 84,000, and the connection time fee is 0 if this falls within the free quota. If the free quota has run out, the connection time fee will be 84,000 / 1,000,000 * 2 = 0.168, rounded up to $ 0.17. 
 
 The bill is calculated based on the fees accumulated in the previous 24 hours, with collections taking place at 0:00 daily. You can go to the [Billings](https://docs.emqx.com/en/cloud/latest/billing/overview.html) page in EMQX Platform console to find the details.
+
+:::
 
 ### Spend Limit
 
@@ -54,20 +60,32 @@ EMQX Dedicated Plan is charged based on the tier, and message transmission netwo
 
 ### Billing Unit
 
-**Session**: Total number of  clients that are currently connected simultaneously, including offline clients that have enabled [Persistent sessions](https://www.emqx.com/en/blog/mqtt-session).
+**Base Fee**: The base fee for the instance is calculated based on the hourly unit price corresponding to the selected product plan and instance tier (maximum number of connections, message TPS) at the time of deployment. In practical usage, this fee is only related to the duration of usage and will not be affected by changes in usage (number of connections, message TPS).
 
-**Base Fee**: The base fee for the instance is calculated based on the hourly unit price corresponding to the selected product plan and instance tier (maximum connection number, message TPS) at the time of deployment. In practical usage, this fee is only related to the duration of usage and will not be affected by changes in usage (connection number, message TPS).
+**Traffic Fee**: Each instance tier includes a certain amount of free traffic. The free traffic is valid for the current month and any remaining amount will be automatically cleared at the end of the month. When device communication exceeds the free traffic, the excess part will be charged as traffic fees.
 
-**Traffic Fee**: Each instance tier includes a certain amount of free traffic, which is valid for the current month and will be automatically cleared at the end of the month if any remains. When device communication exceeds the gifted traffic, additional traffic fees will be charged. Here, traffic, including free traffic, measures all traffic flowing out of the deployment, including:
+::: tip Related Terms
 
-   - Traffic over VPC Peering or PrivateLink is not measured.
-   - Traffic from messages received by the deployment, such as messages sent to the deployment from the clients, is not measured.
-   - If the NAT gateway is enabled, outgoing traffic from deployment will be measured.
+**Number of Clicnet Connections:** The total number of clients simultaneously online (including offline clients with persistent sessions).
+
+**[Persistent Session](https://www.emqx.com/en/blog/mqtt-session):** A session that remains active and stores offline messages when the client disconnects until the session times out and is logged out.
+
+**Traffic:** Traffic (including free traffic) refers to all public network traffic flowing out of the deployment.
+
+- Traffic through VPC peering connections or private network connections is not included in the traffic calculation.
+
+- Traffic of messages received by the deployment (e.g., messages sent to the deployment by clients) is not included in the traffic calculation.
+
+- If a NAT gateway is enabled, the traffic flowing out of the deployment is considered public network traffic and will be included in the traffic calculation. 
+
+  :::
+
+### Specification Based Fee for Dedicated Plan
 
 <table>
    <tr>
       <th>Plan</th>
-      <th>tier</th>
+      <th>Tier</th>
       <th>Base Fee</th>
       <th>Free Traffic</th>
       <th>Traffic exceeded</th>
@@ -94,8 +112,9 @@ EMQX Dedicated Plan is charged based on the tier, and message transmission netwo
    <tr>
       <td>>10,000 connections</td>
       <td colspan="3" align="center">Contact us</td>
-   </tr>
+  </tr>
 </table>
+
 
 ::: tip
 Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.

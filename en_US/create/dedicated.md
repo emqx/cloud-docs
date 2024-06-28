@@ -38,8 +38,9 @@ After the deployment is created, it will appear on the EMQX Platform console hom
 
 ### Connection Information
 
-- **Address**: The IP address
+- **Address**: The IP address.
 - **Ports**: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable `8883` (mqtts) and `8084` (wss) ports.
+- **Ports Management**: Allows you to disable or enable an individual port separately.
 
 Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.
 
