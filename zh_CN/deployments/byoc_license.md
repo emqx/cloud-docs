@@ -8,9 +8,9 @@ EMQX BYOC 许可证是每个部署的服务凭证，关联了部署类型、有�
 
 EMQX BYOC 包含以下 3 种类型的许可证：
 
-- 默认许可证：BYOC 内置了默认的试用许可证，最多支持 25 个连接，有效期为部署完成后的 14 天。
-- 试用许可证：如需在试用期间增加连接数或延长试用期，您可以向销售人员[申请试用许可证](https://www.emqx.com/zh/contact?product=cloud&productEdition=BYOC&pageType=applyLicense)。
-- 正式许可证：订阅 BYOC 服务后获得，连接数和有效期取决于实际签发的许可证。
+- **默认许可证**：BYOC 内置了默认的试用许可证，最多支持 25 个连接，有效期为部署完成后的 14 天。
+- **试用许可证**：如需在试用期间增加连接数或延长试用期，您可以向销售人员[申请试用许可证](https://www.emqx.com/zh/contact?product=cloud&productEdition=BYOC&pageType=applyLicense)。
+- **正式许可证**：订阅 BYOC 服务后获得，连接数和有效期取决于实际签发的许可证。
 
 ## 查看许可证
 

@@ -145,7 +145,7 @@ EMQX Platform is a globally available, fully-managed MQTT service platform that 
       <td style="text-indent: 2em;">Trial Deployment</td>
       <td>&#10007</td>
       <td>14 Days</td>
-      <td>Contact Us</td>
+      <td>14 Days</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Free Quota</td>
@@ -241,7 +241,7 @@ EMQX Platform is a globally available, fully-managed MQTT service platform that 
       <td style="text-indent: 2em;">Log</td>
       <td>&#10007</td>
       <td>&#10003</td>
-      <td>&#10003</td>
+      <td>Can be integrated independently</td>
    </tr>
    <tr>
       <td><strong>Data Integrations</strong></td>
@@ -400,6 +400,7 @@ EMQX Platform is a globally available, fully-managed MQTT service platform that 
       <td>&#10003</td>
    </tr>
 </table>
+
 
 ## Cloud Providers and Regions
 

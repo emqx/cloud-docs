@@ -11,7 +11,7 @@ One of the biggest advantages of using Serverless deployment is that it is bille
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
-3. Select the **Serverless** tab.
+3. In **Choose Plan**, select **Serverless**.
 
    ![create_serverless](./_assets/create_serverless.png)
 

@@ -28,12 +28,13 @@ EMQX Platform BYOC 将在您的云账号中创建部署，如您还没有对应�
 
 ## 域名及证书
 
-提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书，我们支持自定义单向 TLS/SSL 认证。
+提前准备好用于 EMQX 服务的域名和 TLS/SSL 证书，EMQX Platform 支持自定义单向 TLS/SSL 认证。
 
 ::: warning 注意
 
 1. 根据政策要求，域名必须完成 ICP 备案，并且备案的云服务商需要与部署 BYOC 的平台保持一致。
 2. BYOC 部署仅接受 CA 签名证书。关于 TLS/SSL 证书格式要求，请参考 [在 BYOC 中配置 TLS/SSL](../deployments/byoc_ssl.md)。
+
 :::
 
 ## 资源与权限

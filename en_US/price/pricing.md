@@ -117,4 +117,4 @@ EMQX BYOC will deploy the EMQX service in your cloud platform account, and the a
 | **Item**                 | **Description**                                                                                                                          |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | Cloud Platform Resources | When EMQX BYOC is deployed and running, it utilizes virtual machines, networks, and other resources under your cloud platform account. You will be billed by the cloud platform provider for the usage of these resources. |
-| EMQX BYOC License  | To use the EMQX BYOC service, you need to subscribe and obtain an official EMQX BYOC license from EMQ. For details on license pricing, please [contact us](https://www.emqx.com/contact?product=cloud). |
+| EMQX BYOC License  | To use the EMQX BYOC service, you need to subscribe and obtain an official EMQX BYOC license from EMQ. For details on license pricing, please [contact us](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes). |

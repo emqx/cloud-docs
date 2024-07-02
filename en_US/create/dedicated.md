@@ -8,7 +8,7 @@ EMQX Dedicated Plan offers independent MQTT service clusters with higher connect
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
-3. Select the **Dedicated** tab.
+3. In **Choose Plan**, select **Dedicated**.
 
    ![create_dedicated](./_assets/create_dedicated.png)
 

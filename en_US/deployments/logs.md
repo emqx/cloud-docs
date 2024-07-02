@@ -1,8 +1,8 @@
 # Logs
 
-:::warning
+:::warning Note
 
-This feature is available on Dedicated Plan and BYOC Plan. 
+This feature is available on the Dedicated Plan. 
 
 :::
 

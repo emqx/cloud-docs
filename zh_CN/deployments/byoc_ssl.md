@@ -60,6 +60,7 @@ Base64 编码的证书链内容
 Base64 编码的私钥内容
 -----END RSA PRIVATE KEY-----
 ``` -->
+```
 
 ## 在 "byoc create" 命令中使用证书文件
 

@@ -38,7 +38,7 @@ When preparing your certificate for TLS/SSL configuration, consider the followin
 
 These guidelines ensure the proper configuration and secure deployment of TLS/SSL for your BYOC environment.
 
-## Create PEM File
+<!-- ## Create PEM File
 
 To create the required PEM file, follow these steps:
 
@@ -60,6 +60,7 @@ Base64–encoded Certificate Chain Content
 Base64–encoded Private Key Content
 -----END RSA PRIVATE KEY-----
 ```
+-->
 
 ## Use PEM File in "byoc create" Command
 
