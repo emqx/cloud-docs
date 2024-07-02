@@ -8,13 +8,13 @@ Before you create a BYOC deployment, you must prepare an account corresponding t
 
 ## Create a Deployment
 
-1. Log in to your account and enter the [EMQX Platform console](https://cloud-intl.emqx.com/console/).
+1. Log in to your account and enter the [EMQX Platform Console](https://cloud-intl.emqx.com/console/).
 
-2. On the console homepage or the deployment list page, click **New Deployment**.
+2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
-3. Select the BYOC tab.
+3. In **Choose Plan**, select **BYOC**.
 
-4. Configure the cloud platform and EMQX cluster according to your needs.
+4. Configure the settings for the BYOC plan according to your needs.
 
    ![BYOCSpecification](./_assets/byoc_specification.png)
 
@@ -50,13 +50,17 @@ Before you create a BYOC deployment, you must prepare an account corresponding t
 
    **Tags (Optional)**: Add cloud resource tags according to your needs for resource management, with up to 10 tags supported.
 
-6. Review and confirm the information specified in the steps above, and you can also change the project to which this deployment belongs. After confirming the information, click **New Deployment**.
+5. Click the **New Deploy** button on the right to launch the deployment. This stage will prompt you to review and accept the *EMQX Platform Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
 
-You will be redirected to the deployment details page. Next, you can start the deployment by following the steps in the [Run Deployment](#run-deployment) section.
+6. Accept the terms and it will redirect you to the deployment overview page. 
+
+Next, you can start the deployment by following the steps in the [Run Deployment](#run-deployment) section.
 
 ## Run Deployment
 
-You can follow the instructions below to complete the deployment in an Ubuntu 20.04 (AMD64) environment with a public network connection. Before you start, copy your TLS/SSL certificates and BYOC license files required for deployment to your Ubuntu environment directory.
+On the deployment overview page, the deployment status should be **Waiting for Deployment**. At this point, the **Connection Information** will not display any deployment details. Click the **Start Deployment** button, and a **Deployment Guide** sidebar will pop up to guide you through the deployment process. You can also follow the steps below to complete the deployment.
+
+The instructions below shows how to complete the deployment in an Ubuntu 20.04 (AMD64) environment with a public network connection. Before you start, copy your TLS/SSL certificates and BYOC license files required for deployment to your Ubuntu environment directory.
 
 :::: tabs
 ::: tab "AWS"
@@ -214,7 +218,7 @@ Please securely save the EMQX Dashboard username and password, as it will be use
 
 ## View Deployment Information
 
-Return and refresh the deployment details page to obtain real-time status and connection information:
+Return and refresh the deployment overview page to obtain real-time status and connection information:
 
    ![byoc](./_assets/byoc_deployment_console.png)
 
