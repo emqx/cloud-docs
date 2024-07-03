@@ -226,12 +226,12 @@ Return and refresh the deployment overview page to obtain real-time status and c
 
 - **Deployment Name**: The name of the deployment, which also serves as the prefix for cloud resources, making it easier to quickly locate in the public cloud console.
 - **Instance Status**: Running status and creation time.
-- **Connection Count**: Current number of connections and the maximum allowed.
-- **Message Throughput TPS**: The current number of messages sent and received per second in the deployment, along with the TPS limit.
+- **Sessions**: Current number of connections and the maximum allowed.
+- **Pub&Sub TPS**: The current number of messages sent and received per second in the deployment, along with the TPS limit.
 
 **Connection Information:**
 
-- **Connection Address**: The domain name specified by the user during deployment.
+- **Address**: The domain name specified by the user during deployment.
 - **Connection Ports**: By default, ports 1883 (mqtt), 8883 (mqtts), 8083 (ws), and 8084 (wss) are opened for MQTT protocol access; 18084 (https) and 8443 (https) are used for Dashboard login and REST API access, respectively.
 
 If you wish to customize the ports, please contact us via [support ticket](../feature/tickets.md) or email (cloud-support@emqx.io).

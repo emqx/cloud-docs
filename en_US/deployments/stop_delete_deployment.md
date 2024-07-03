@@ -76,7 +76,7 @@ Before operating a deployment start, please make sure you've set the right [IAM 
 
 :::
 
-To start a deployment, go to the console, click on the deployment you want to start, and enter the deployment overview page. Click the **Start** button in the upper right corner to open the **Start Deployment Guide** as shown below:
+To start a deployment, go to the console, click on the deployment you want to start and enter the deployment overview page. Click the **Start** button in the upper right corner to open the **Start Deployment Guide** as shown below:
 
 ![byoc_start_deployment](./_assets/byoc_aws_start.png)
 
@@ -190,7 +190,7 @@ For different deployment cloud platforms, the specific operating steps are as fo
 
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/5.1.0/operate-byoc-deployment.tar.gz
 ```
 
 2. Unzip the downloaded toolkit on the Ubuntu command line interface and navigate to the unzipped folder directory.
@@ -224,7 +224,7 @@ Stop the deployment successfully!
 ::: tab "Google Cloud"
 1. On the Ubuntu command line interface, use the command below to download the toolkit and save it to your Ubuntu directory.
 ```bash
-wget https://cloudassets.emqx.com/en/byoc-deployments/1.3/operate-byoc-deployment.tar.gz
+wget https://cloudassets.emqx.com/en/byoc-deployments/5.1.0/operate-byoc-deployment.tar.gz
 ```
 
 2. Unzip the downloaded toolkit on the Ubuntu command line interface and navigate to the unzipped folder directory.
