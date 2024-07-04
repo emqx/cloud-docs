@@ -18,6 +18,7 @@ EMQX Platform 提供了 Prometheus API ，您可以轻松调用 API 来监控 EM
 
 GET /deployment_metrics
 
+返回供 Prometheus 采集的集群指标。
 
 **查询参数:**
 
@@ -409,6 +410,42 @@ curl -u app_id:app_secret -X GET {api}/deployment_metrics
 ```
 
 
+### URI
+
+GET /deployment_metrics/data_integration
+
+返回供 Prometheus 采集的数据集成指标。
+
+**查询参数:**
+
+无
+
+### 请求消息
+
+无
+
+### 响应示例
+```prometheus
+# HELP deployment_emqx_resource_status The current status of a specific resource
+# TYPE deployment_emqx_resource_status gauge
+deployment_emqx_resource_status{deployment_id="gde1d4ab",deployment_type="dedicated",platform="aliyun_en",resource_id="http:connector-fe4fb3d3"} 1
+# HELP deployment_emqx_rule_action_execution_count The execution count of a specific rule action
+# TYPE deployment_emqx_rule_action_execution_count gauge
+deployment_emqx_rule_action_execution_count{deployment_id="gde1d4ab",deployment_type="dedicated",execution_status="failed",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+deployment_emqx_rule_action_execution_count{deployment_id="gde1d4ab",deployment_type="dedicated",execution_status="success",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+deployment_emqx_rule_action_execution_count{deployment_id="gde1d4ab",deployment_type="dedicated",execution_status="taken",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+# HELP deployment_emqx_rule_matched_count The matching count of a specific rule
+# TYPE deployment_emqx_rule_matched_count gauge
+deployment_emqx_rule_matched_count{deployment_id="gde1d4ab",deployment_type="dedicated",match_status="exception",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+deployment_emqx_rule_matched_count{deployment_id="gde1d4ab",deployment_type="dedicated",match_status="failed",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+deployment_emqx_rule_matched_count{deployment_id="gde1d4ab",deployment_type="dedicated",match_status="matched",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+deployment_emqx_rule_matched_count{deployment_id="gde1d4ab",deployment_type="dedicated",match_status="no_result",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+deployment_emqx_rule_matched_count{deployment_id="gde1d4ab",deployment_type="dedicated",match_status="passed",platform="aliyun_en",rule_id="rule-3394ce25"} 0
+# HELP deployment_emqx_rule_status The current status of a specific rule
+# TYPE deployment_emqx_rule_status gauge
+deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated",platform="aliyun_en",rule_id="rule-3394ce25"} 1
+```
+
 
 ## Prometheus 配置
 
@@ -469,7 +506,7 @@ curl -u app_id:app_secret -X GET {api}/deployment_metrics
 
     EMQX Platform 提供了 Grafana 的 Dashboard 的模板文件。这些模板包含了所有 EMQX Platform 监控数据的展示。用户可直接导入到 Grafana 中，进行显示 EMQX 的监控状态的图标。
 
-    模板文件位于：[emqx_prometheus.json](https://github.com/emqx/emqx-cloud-grafana)，可通过 Upload JSON file 的方式上传本地的 EMQ.json ⽂件，或者通过 Import via panel json 手动编写。
+    模板文件位于：[grafana_template.json](https://github.com/emqx/emqx-cloud-grafana)，可通过 Upload JSON file 的方式上传本地的 grafana_template.json ⽂件，或者通过 Import via panel json 手动编写。
 
     ![Grafana](./_assets/grafana_template.png)
 
