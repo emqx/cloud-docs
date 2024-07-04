@@ -1,8 +1,8 @@
 # Prometheus Monitoring Alerts
 
-:::warning
+::: warning Note
 
-This feature is available on Dedicated Plan and BYOC Plan. 
+This feature is available on the Dedicated Plan. 
 
 :::
 
@@ -278,7 +278,7 @@ emqx_packets_subscribe_received 0
     wget https://dl.grafana.com/enterprise/release/grafana-enterprise-8.4.6.linux-amd64.tar.gz
     tar -zxvf grafana-enterprise-8.4.6.linux-amd64.tar.gz
     ./bin/grafana-server
-    ```
+   ```
 
 2. Configure Grafana
 

@@ -734,6 +734,10 @@
               "path": "create/byoc"
             },
             {
+              "title": "Manage a Deployment",
+              "path": "deployments/byoc_management"
+            },
+            {
               "title": "VPC Peering Setting",
               "path": "deployments/byoc_vpc_peering"
             }
