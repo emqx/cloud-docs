@@ -21,6 +21,11 @@ In addition to the default authorization based on the built-in database, it also
 - [Authorize with PostgreSQL](./pgsql_auth.md)
 - [Authorize with Redis](./redis_auth.md)
 
+## Authorization White List Mode
+- Using Default Authorization: Click on **Access Control** in the deployment left menu, then **Authorization**. Add an authorization entry for **All Users**, input # as the topic, select Publish and Subscribe for topic action, and choose Deny to enable white list mode.
+- Using Extended Authorization: Follow the steps for **Using Default Authorization** to set up default authentication. After adding an extended authentication data source, go to the extended authorization page and click **Authorization Order**. Enter the sorting page and ensure the default authentication is at the far right of the authorization order to enable white list mode.
+- Once white list mode is enabled, all users are by default prohibited from subscribing and publishing. Authorization details must be set for clients to allow them to subscribe and publish.
+
 ## Authorization Support by Version
 
 | **Version**       | **Default Authorization** | **Extended Authorization** |
