@@ -168,7 +168,7 @@ Start the deployment successfully!
 停止部署后您将不能连接到部署，您的数据和连接地址将会被保留。
 :::
 
-进入控制台，点击您所需要删除的部署，进入部署概览页面。点击右上角的**停止**按钮，弹出**停止部署指引**，如下图所示：
+进入控制台，点击您所需要停止的部署，进入部署概览页面。点击右上角的**停止**按钮，弹出**停止部署指引**，如下图所示：
 
 ![byoc_stop_deployment](./_assets/byoc_stop_deployment.png)
 
@@ -210,7 +210,7 @@ tar -zxf operate-byoc-deployment.tar.gz && cd operate-byoc-deployment
 - `--accessKey` 您的公有云账号的 AccessKey ID。阿里云平台可以在 [工作台 RAM 访问控制](https://ram.console.aliyun.com/manage/ak) 中查看您的 AccessKey ID。
 - `--secretKey` 您的公有云账号的 AccessKey Secret。请使用与 AccessKey ID 对应的 AccessKey Secret。
 
-此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为  访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
+此外，上述命令中的 `--platform` 为部署的云平台，`--byocEndpoint` 为访问地址，`--byocKey` 为 BYOC 部署的认证密钥，在控制台生成部署指引时已自动填入相应的值，请勿修改。其中生成的 byocKey 有效期为一小时，请在生成脚本命令后尽快执行。
 
 最终，命令行输出以下内容时，说明部署停止成功。
 

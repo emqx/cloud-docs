@@ -13,7 +13,7 @@ Serverless 部署最大的优势在于连接场景只按照实际的使用量进
 2. 在控制台首页或者部署管理页面都可以在指定项目下创建，点击**新建部署**进入创建步骤。
 
 
-3. 选择 Serverless 面板。
+3. 在**选择版本**中选中 **Serverless**。
 
    ![create_serverless](./_assets/create_serverless.png)
    

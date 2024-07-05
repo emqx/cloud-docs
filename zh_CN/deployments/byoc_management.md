@@ -10,13 +10,13 @@
 
 其他功能需要在 EMQX 管理控制台上管理，常用功能包括：
 
-- [客户端认证](https://docs.emqx.com/zh/enterprise/latest/access-control/authn/authn.html)
-- [客户端授权](https://docs.emqx.com/zh/enterprise/latest/access-control/authz/authz.html)
-- [黑名单](https://docs.emqx.com/zh/enterprise/latest/access-control/blacklist.html)
-- [客户端列表](https://docs.emqx.com/zh/enterprise/latest/dashboard/connections/connections.html)
-- [主题与订阅列表](https://docs.emqx.com/zh/enterprise/latest/dashboard/subscriptions/overview.html)
-- [保留消息](https://docs.emqx.com/zh/enterprise/latest/dashboard/retained.html)
-- [数据集成](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridges.html)
+- [客户端认证](https://docs.emqx.com/zh/emqx/latest/access-control/authn/authn.html)
+- [客户端授权](https://docs.emqx.com/zh/emqx/latest/access-control/authz/authz.html)
+- [黑名单](https://docs.emqx.com/zh/emqx/latest/access-control/blacklist.html)
+- [客户端列表](https://docs.emqx.com/zh/emqx/latest/dashboard/connections/connections.html)
+- [主题与订阅列表](https://docs.emqx.com/zh/emqx/latest/dashboard/subscriptions/overview.html)
+- [保留消息](https://docs.emqx.com/zh/emqx/latest/dashboard/retained.html)
+- [数据集成](https://docs.emqx.com/zh/emqx/latest/data-integration/data-bridges.html)
 
 ## EMQX 管理控制台打开方式
 
