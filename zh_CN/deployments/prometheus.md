@@ -3,18 +3,18 @@
 EMQX Platform 提供了 Prometheus API ，您可以轻松调用 API 来监控 EMQX Platform 的关键指标。
 在本文中我们将介绍如何配置 Prometheus 服务，从 EMQX Platform API 读取关键指标，以及如何使用 Grafana 模版查看指标。
 
-::: warning
+::: warning 注意
 该功能仅适用于**专有版部署**。
 :::
 
 ## API 配置
 
-在 EMQX Platform 部署控制台找到概览 - REST API，获取到 API 地址，点击新建应用，获取 APP ID、APP Secret。
+在 EMQX Platform 部署控制台的**概览**页面找到**部署 API Key**，获取到 API 地址，点击**新建应用**，获取 APP ID 和 APP Secret。
 
 ![cloud_prometheus_api](./_assets/prometheus_api.png)
 
 
-### URI
+### 集群指标 URI
 
 GET /deployment_metrics
 
@@ -24,12 +24,17 @@ GET /deployment_metrics
 
 无
 
-### 请求消息
+#### 请求消息
 
 无
 
+#### 请求示例
 
-### 响应示例
+```bash
+curl -u app_id:app_secret -X GET {api}/deployment_metrics
+```
+
+#### 响应示例
 
 ```prometheus
 # HELP deployment_emqx_connections_count The current number of connections for the current cluster, including active connections
@@ -403,14 +408,8 @@ deployment_emqx_subscriptions_count{deployment_id="b9110d11",deployment_type="de
 deployment_emqx_topics_count{deployment_id="b9110d11",deployment_type="dedicated",platform="aliyun_en"} 0
 ```
 
-### 请求示例
 
-```bash
-curl -u app_id:app_secret -X GET {api}/deployment_metrics
-```
-
-
-### URI
+### 数据集成指标 URI
 
 GET /deployment_metrics/data_integration
 
@@ -420,11 +419,18 @@ GET /deployment_metrics/data_integration
 
 无
 
-### 请求消息
+#### 请求消息
 
 无
 
-### 响应示例
+#### 请求示例
+
+```bash
+curl -u app_id:app_secret -X GET {api}/deployment_metrics/data_integration
+```
+
+#### 响应示例
+
 ```prometheus
 # HELP deployment_emqx_resource_status The current status of a specific resource
 # TYPE deployment_emqx_resource_status gauge
@@ -449,16 +455,16 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
 
 ## Prometheus 配置
 
-1. 安装 Prometheus
+1. 安装 Prometheus：
 
     ```bash
     wget -c https://github.com/prometheus/prometheus/releases/download/v2.35.0-rc0/prometheus-2.35.0-rc0.linux-amd64.tar.gz
     tar xvfz prometheus-*.tar.gz
     ```
 
-2. 修改配置文件
+2. 修改配置文件。
 
-    找到您的 Prometheus 服务指定的监控目录，按如下示例修改配置文件 prometheus.yml 的 scrape_configs section。
+    找到您的 Prometheus 服务指定的监控目录，按如下示例修改配置文件 prometheus.yml 的 scrape_configs section：
 
     ```bash
     scrape_configs:
@@ -474,9 +480,9 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
           password: 'APP Secret'
     ```
 
-3. 启动并检查服务状态
+3. 启动并检查服务状态。
 
-    启动 Prometheus
+    启动 Prometheus：
 
    ```bash
     ./prometheus --config.file=prometheus.yml
@@ -484,11 +490,11 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
 
     通过本地 IP + 对应端⼝，如：x.x.x.x:9090 访问您的 Prometheus 服务，检查 Status - Targets 以确认新的 scrape_config 文件已被读取。如果状态显示异常，您可能需要检查配置文件，重新启动 Prometheus 服务。
 
-    ![Prometheus_service](./_assets/prometheus_service.png)
+   ![Prometheus_service](./_assets/prometheus_service.png)
 
 ## Grafana 配置
 
-1. 安装并启动 Grafana
+1. 安装并启动 Grafana：
 
    ```bash
     wget https://dl.grafana.com/enterprise/release/grafana-enterprise-8.4.6.linux-amd64.tar.gz
@@ -496,13 +502,13 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
     ./bin/grafana-server
    ```
 
-2. 配置 Grafana
+2. 配置 Grafana。
 
-    通过本地 IP + 对应端⼝，如：x.x.x.x:3000 访问 Grafana 的 dashbroad，初始 ID 和密码都是 admin，初次登录请修改密码，登录进⼊后需添加 Data sources - Prometheus。
+    通过本地 IP + 对应端⼝，如：x.x.x.x:3000， 访问 Grafana 的 Dashbroad。初始 ID 和密码都是 admin，初次登录请修改密码，登录进⼊后需添加 Data sources - Prometheus。
 
     ![Grafana](./_assets/grafana_data_sources.png)
 
-3. 导⼊ Grafana 数据模板
+3. 导⼊ Grafana 数据模板。
 
     EMQX Platform 提供了 Grafana 的 Dashboard 的模板文件。这些模板包含了所有 EMQX Platform 监控数据的展示。用户可直接导入到 Grafana 中，进行显示 EMQX 的监控状态的图标。
 
@@ -512,7 +518,7 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
 
 ## 指标详解
 
-完成整套系统搭建并运行一段时间后，EMQX Platform Prometheus 收集到的数据将展示在 Grafana 上，包括客户端数、订阅数、主题数、消息数、报文数等业务信息历史统计，可以查看每种指标对应的展示图表，某个时间点的详细信息.
+完成整套系统搭建并运行一段时间后，EMQX Platform Prometheus 收集到的数据将展示在 Grafana 上，包括客户端数、订阅数、主题数、消息数、报文数等业务信息历史统计，可以查看每种指标对应的展示图表，某个时间点的详细信息。
 
 ![Grafana](./_assets/emqx_grafana_metrics.png)
 
