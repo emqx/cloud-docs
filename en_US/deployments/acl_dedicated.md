@@ -53,3 +53,9 @@ ACL information can be imported in bulk through CSV files.
 ## Delete ACL Information
 
 Click the `delete` button to the right of the ACL information to delete the ACL information.
+
+## Access Control White List Mode
+
+- Using Default Access Control: Click on **Authentication & ACL** -> **ACL** in the left deployment menu. Add an authorization entry for **All Users**, enter # in the topic, select Publish and Subscribe for topic action, and choose Deny to enable white list mode. 
+- Using External Access Control：If you need to use external access control, please submit a ticket to contact us.
+- After enabling white list mode, all users will be prohibited by default from subscribing and publishing. Authorization information must be set for clients to allow them to subscribe and publish.
