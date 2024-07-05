@@ -464,7 +464,7 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
 
 2. 修改配置文件。
 
-    找到您的 Prometheus 服务指定的监控目录，按如下示例修改配置文件 prometheus.yml 的 scrape_configs section：
+    找到您的 Prometheus 服务指定的监控目录，按如下示例修改配置文件 prometheus.yml 的 `scrape_configs` section：
 
     ```bash
     scrape_configs:
@@ -510,9 +510,9 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
 
 3. 导⼊ Grafana 数据模板。
 
-    EMQX Platform 提供了 Grafana 的 Dashboard 的模板文件。这些模板包含了所有 EMQX Platform 监控数据的展示。用户可直接导入到 Grafana 中，进行显示 EMQX 的监控状态的图标。
+    EMQX Platform 提供了 Grafana 的 Dashboard 的模板文件。这些模板包含了所有 EMQX Platform 监控数据的展示。用户可直接导入到 Grafana 中，生成显示 EMQX 监控状态的图表。
 
-    模板文件位于：[grafana_template.json](https://github.com/emqx/emqx-cloud-grafana)，可通过 Upload JSON file 的方式上传本地的 grafana_template.json ⽂件，或者通过 Import via panel json 手动编写。
+    模板文件位于：[grafana_template.json](https://github.com/emqx/emqx-cloud-grafana)，可通过 "Upload JSON file" 的方式上传本地的 grafana_template.json ⽂件，或者通过 "Import via panel json" 手动编写。
 
     ![Grafana](./_assets/grafana_template.png)
 
@@ -544,7 +544,7 @@ Prometheus 跟踪您的 EMQX Platform 部署的以下指标数据。
 | deployment_emqx_metrics_messages_sent                | counter    | 发送消息数量                |
 | deployment_emqx_metrics_messages_qos0_sent           | counter    | 发送的 QoS=0 消息的数量                      |
 | deployment_emqx_metrics_messages_qos1_sent           | counter    | 发送的 QoS=1 消息的数量                          |
-| deployment_emqx_metrics_messages_qos2_sent           | counter  | 发送的 QoS=1 消息的数量                             |
+| deployment_emqx_metrics_messages_qos2_sent           | counter  | 发送的 QoS=2 消息的数量                            |
 | deployment_emqx_metrics_delivery_dropped              | counter  | 部署在投递阶段丢弃的消息数量                          |
 | deployment_emqx_metrics_delivery_dropped_too_large    | counter  | 因为过大而被丢弃的消息数量                        |
 | deployment_emqx_metrics_delivery_dropped_queue_full   | counter  | 因为队列满了而被丢弃的消息数量                            |
