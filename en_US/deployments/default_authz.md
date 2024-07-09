@@ -4,7 +4,13 @@ Default authorization is based on a built-in database, offering users a low-cost
 
 ## View Authorization Information
 
-Click on **Access Control** -> **Authorization** in the left menu of the deployment to see authorization information. Authorization information can be viewed through three dimensions: **Client ID**, **Username**, and **All Users** (topic) to view the details of authorization entries.
+Click **Access Control** -> **Authorization** in the left menu of the deployment to see authorization information. Authorization information can be viewed through three dimensions: **Client ID**, **Username**, and **All Users** (topic) to view the details of authorization entries.
+
+## Enable Authorization Whitelist Mode
+
+When the whitelist mode is enabled, all users are prohibited from subscribing and publishing by default. Clients need to be granted authorization to perform subscription and publishing actions.
+
+Click **Access Control** -> **Authorization** in the left menu of the deployment. Under the **All Users** tab, add an authorization entry. Enter `#` in the **Topic** field, select `Publish & Subscribe` for **Action**, select `Deny` for **Permission**, and click **Confirm** to enable whitelist mode.
 
 ## Add Authorization Information
 
