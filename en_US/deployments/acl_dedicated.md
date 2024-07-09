@@ -8,7 +8,7 @@ Access control pertains to controlling permissions for publish (PUBLISH) and sub
 
 :::tip TIP
 
-- Access control uses a blacklist mode by default, ACL matching order is: All Users -> User/Client. The mode can be switched to whilelist via [ticket](../feature/tickets.md). <br/>
+- Access control uses a blacklist mode by default, and the ACL matching order is: All Users -> User/Client. The mode can be switched to whitelist, see [Access Control Whitelist Mode](#access-control-whitelist-mode).
 - The combination of clientid/username + topic is unique, which means that only the latest record for the same clientid/username + topic is considered valid.
 
 :::
@@ -54,8 +54,9 @@ ACL information can be imported in bulk through CSV files.
 
 Click the `delete` button to the right of the ACL information to delete the ACL information.
 
-## Access Control White List Mode
+## Access Control Whitelist Mode
 
-- Using Default Access Control: Click on **Authentication & ACL** -> **ACL** in the left deployment menu. Add an authorization entry for **All Users**, enter # in the topic, select Publish and Subscribe for topic action, and choose Deny to enable white list mode. 
-- Using External Access Control：If you need to use external access control, please submit a ticket to contact us.
-- After enabling white list mode, all users will be prohibited by default from subscribing and publishing. Authorization information must be set for clients to allow them to subscribe and publish.
+When the whitelist mode is enabled, all users are prohibited from subscribing and publishing by default. Clients need to be granted authorization to perform subscription and publishing actions.
+
+- **For Default Access Control**: Click **Authentication & ACL** -> **ACL** in the left menu of the deployment. In the **All Users** tab, add an authorization entry. Enter `#` in the **Topic** field, select `pubsub` for **Action**, and select `Deny` for **Allowed**, to enable the whitelist mode.
+- **For External Access Control**: If you need to switch to the whitelist mode for external access control, please submit a [ticket](../feature/tickets.md) to contact us.
