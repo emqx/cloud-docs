@@ -251,6 +251,10 @@
               "path": "deployments/alerts_webhook"
             }
           ]
+        },
+        {
+          "title": "Prometheus 监控",
+          "path": "deployments/prometheus"
         }
       ]
     },
