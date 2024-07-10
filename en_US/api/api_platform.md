@@ -2,6 +2,10 @@
 
 This section introduces the EMQX Platform API functionality for TLS certificate management and how to create and manage the platform API key for secure access control.
 
+::: warning Notice
+Platform API is only available for Dedicated deployment.
+:::
+
 ## API Function
 
 Currently, the EMQX Platform supports TLS certificate management API. More platform-level APIs will be supported in the future.

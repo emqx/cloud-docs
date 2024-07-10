@@ -2,6 +2,10 @@
 
 本节介绍了 EMQX Platform 中用于 TLS 证书管理的平台 API，以及如何创建和管理用于安全访问平台 API 的 API key。
 
+::: warning 注意
+平台 API 仅适用于专有版部署。
+:::
+
 ## API 功能
 
 目前 EMQX Platform 仅支持 TLS 证书管理 API，我们计划将在未来支持更多平台层面的 API。
