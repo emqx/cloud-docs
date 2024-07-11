@@ -55,4 +55,4 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 [2] It is recommended to use external authentication if the credentials are more than 100,000.<br>
 [3] The number can be adjusted to the same as the session tier.<br>
 [4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of transmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
-[5] Support TLS 1.0、1.1、1.2、1.3.
+[5] Support TLS 1.2、1.3、1.4.
