@@ -251,6 +251,10 @@
               "path": "deployments/alerts_webhook"
             }
           ]
+        },
+        {
+          "title": "Prometheus 监控",
+          "path": "deployments/prometheus"
         }
       ]
     },
@@ -732,6 +736,10 @@
             {
               "title": "Create a Deployment",
               "path": "create/byoc"
+            },
+            {
+              "title": "Manage a Deployment",
+              "path": "deployments/byoc_management"
             },
             {
               "title": "VPC Peering Setting",

@@ -33,33 +33,12 @@ Role list:
       <th>Auditor</th>
    </tr>
    <tr>
-      <td rowspan="21">Deployment</td>
+      <td rowspan="16">Deployment</td>
       <td>View deployment list</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   </tr>
-   <tr>
-   	  <td>Create new project in the deployment list</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-   </tr>
-   <tr>
-   	  <td>Edit project in the deployment list</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-   </tr>
-   <tr>
-   	  <td>Delete project in the deployment list</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
    </tr>
    <tr>
    	<td>Create new deployments</td>
@@ -126,10 +105,10 @@ Role list:
    </tr>
    <tr>
       <td>Platform API</td>
-      <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
+      <td>Read only</td>
    </tr>
    <tr>
    	<td>Certification Authentication Configuration</td>
@@ -146,18 +125,11 @@ Role list:
       <td>Read only</td>
    </tr>
    <tr>
-   <td>Monitoring</td>
+   <td>Monitor Menu</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
-   </tr>
-   <tr>
-   <td>Metrics</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
    </tr>
    <tr>
    <td>Logs</td>
@@ -165,13 +137,6 @@ Role list:
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   </tr>
-   <tr>
-   <td>Alerts</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>Read only</td>
-      <td>Read only</td>
    </tr>
    <tr>
    <td>Online Debugging</td>
@@ -311,11 +276,11 @@ Role list:
       <td>&#10007</td>
       </tr>
    <tr>
-      <td colspan="2">Events</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
+      <td colspan="2">Audit Log</td>
       <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
    </tr>
    	<tr>
       <td colspan="2">Tickets</td>

@@ -8,7 +8,7 @@ EMQX Dedicated Plan offers independent MQTT service clusters with higher connect
 
 2. To initiate a new deployment for your project, navigate to either the Console's homepage or the Deployment List page. Here, click **+ New Deployment**.
 
-3. Select the **Dedicated** tab.
+3. In **Choose Plan**, select **Dedicated**.
 
    ![create_dedicated](./_assets/create_dedicated.png)
 
@@ -38,8 +38,9 @@ After the deployment is created, it will appear on the EMQX Platform console hom
 
 ### Connection Information
 
-- **Address**: The IP address
+- **Address**: The IP address.
 - **Ports**: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable `8883` (mqtts) and `8084` (wss) ports.
+- **Ports Management**: Allows you to disable or enable an individual port separately.
 
 Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.
 
