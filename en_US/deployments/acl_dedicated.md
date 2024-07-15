@@ -8,7 +8,7 @@ Access control pertains to controlling permissions for publish (PUBLISH) and sub
 
 :::tip TIP
 
-- Access control uses a blacklist mode by default, and the ACL matching order is: All Users -> User/Client. The mode can be switched to whitelist, see [Access Control Whitelist Mode](#access-control-whitelist-mode).
+- Access control uses a blacklist mode by default, and the ACL matching order is: All Users -> User/Client. The mode can be switched to whitelist, see [ACL Whitelist Mode](#acl-whitelist-mode).
 - The combination of clientid/username + topic is unique, which means that only the latest record for the same clientid/username + topic is considered valid.
 
 :::
@@ -54,7 +54,7 @@ ACL information can be imported in bulk through CSV files.
 
 Click the `delete` button to the right of the ACL information to delete the ACL information.
 
-## Access Control Whitelist Mode
+## ACL Whitelist Mode
 
 When the whitelist mode is enabled, all users are prohibited from subscribing and publishing by default. Clients need to be granted authorization to perform subscription and publishing actions.
 
