@@ -18,7 +18,7 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | Client ID maximum length（MQTT 5.0）        | 256                | NO                   |
 | Maximum subscriptions for a single client | 10                | NO                   |
 | TCP connect timeout                       | 10s                | NO                   |
-| TLS version          | -                | NO                   |
+| TLS version          | 1.2、1.3                 | NO                   |
 | TLS encryption algorithm          | -                | NO                   |
 | Maximum API QPS          | 100/s                | NO                   |
 | Number of deployments                     | Up to 2  [\*1]              | YES                   |
@@ -44,8 +44,8 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | Client ID maximum length（MQTT 5.0）      | 256                | YES                   |YES|
 | Maximum API QPS          | 100/s                | NO                   |-|
 | TCP connect timeout                     | 10s                | YES                   |YES|
-| TLS version          | -                | YES[\*5]                   |NO|
-| TLS encryption algorithm          | -                | YES                |NO|
+| TLS version          | 1.2、1.3                | NO                   |YES|
+| TLS encryption algorithm          | -                | YES                |YES|
 | Maximum resources that can be created in Data Integration     | 10               | YES                   |NO|
 | Maximum rules that can be created in Data Integration     | 50               | YES                   |NO|
 | Number of deployments                   | 3                | YES                   |NO|
@@ -55,4 +55,4 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 [2] It is recommended to use external authentication if the credentials are more than 100,000.<br>
 [3] The number can be adjusted to the same as the session tier.<br>
 [4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of transmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
-[5] Support TLS 1.2、1.3.
+
