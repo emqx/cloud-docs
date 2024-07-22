@@ -18,7 +18,7 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | Client ID maximum length（MQTT 5.0）        | 256                | NO                   |
 | Maximum subscriptions for a single client | 10                | NO                   |
 | TCP connect timeout                       | 10s                | NO                   |
-| TLS version          | 1.2、1.3                 | NO                   |
+| TLS version          | 1.2 and 1.3                 | NO                   |
 | TLS encryption algorithm          | -                | NO                   |
 | Maximum API QPS          | 100/s                | NO                   |
 | Number of deployments                     | Up to 2  [\*1]              | YES                   |
