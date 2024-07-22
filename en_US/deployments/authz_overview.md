@@ -8,11 +8,11 @@ A single piece of client permission data consists of the following parts:
 | -------------- | ----------------------------- | ----------------------------------- | --------------------------- |
 | Allow/Deny     | Client ID/Username/IP Address | Publish/Subscribe/Publish Subscribe | Topic/QoS/Retained Messages |
 
-## [Default Authorization](./default_auth.md)
+## [Default Authorization](./default_authz.md)
 
 EMQX Platform provides a default authentication method, which will authorize based on rules stored in the built-in database.
 
-## [Extended Authorization](./custom_auth.md)
+## [Extended Authorization](./custom_authz.md)
 
 In addition to the default authorization based on the built-in database, it also supports authorization authentication through integration with various backend databases, including MySQL, PostgreSQL, Redis, and HTTP.
 

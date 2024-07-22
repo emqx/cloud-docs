@@ -24,3 +24,9 @@ After adding extended authorization data sources, users can sort the authorizati
 
 - Actions are matched with permissions, allowing or denying client operations based on permissions
 - If actions do not match with permissions, the check is passed to the next authorization checker Custom authorization chain: Authorization data source icons can be dragged and arranged left and right to sequence the authorization order.
+
+## Enable Authorization Whitelist Mode
+
+When the whitelist mode is enabled, all users are prohibited from subscribing and publishing by default. Clients need to be granted authorization to perform subscription and publishing actions.
+
+Follow the steps in [Enable Authorization Whitelist Mode](./default_authz.md#enable-authorization-whitelist-mode) to set up default authorization. After adding an extended authorization data source, go to the extended authorization page and click **Authorization Order** to enter the sorting page. Ensure that "Default Authorization" is positioned at the far right in the authorization order to enable whitelist mode.
