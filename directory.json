@@ -649,6 +649,10 @@
           "collapsed": true,
           "children": [
             {
+              "title": "部署管理",
+              "path": "api/deployment_manage"
+            },
+            {
               "title": "TLS 证书管理",
               "path": "api/tls_certificate"
             }
