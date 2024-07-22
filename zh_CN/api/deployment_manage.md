@@ -1,15 +1,15 @@
 # 部署管理 API
 
-本页 API 文档提供了部署状态查询，启动部署，停止部署操作。
+本页介绍了如何通过 API 查询部署状态、启动部署和停止部署。
 
-## 查看指定部署状态
+## 查看指定部署的状态
 
 ### URI
 
 GET /deployments/{deployment_id}
 
 ::: tip
-该方法 60 分钟只能请求 60 次。{deployment_id} 为部署 ID， 非部署名称。
+该方法 60 分钟内只能请求 60 次。{deployment_id} 为部署 ID， 非部署名称。
 :::
 
 ### 请求消息
@@ -26,10 +26,10 @@ GET /deployments/{deployment_id}
 | createAt | String           | 部署创建时间。        |
 | deploymentID | String    | 部署 ID。        |
 | deploymentName | String    | 部署名称。        |
-| deploymentType | String    | 部署类型，“dedicated”为专有版。        |
+| deploymentType | String    | 部署类型，“dedicated” 为专有版。       |
 | platform | String    | 云服务商。        |
 | region | String    | 云主机所在地区。        |
-| status | String    | 部署运行状态。"running"运行中，“starting” 创建过程中，“stopped” 停止状态。        |
+| status | String    | 部署运行状态： "running" 为运行中， “starting” 为创建过程中， “stopped” 为停止状态。 |
 
 - **401:** API Key 认证失败。
 - **403:** API Key 没有权限访问。
@@ -80,7 +80,7 @@ POST /deployments/{deployment_id}/stop
 | :-------------- | :--------------- | :----------------- |
 | deploymentID   | String | 部署 ID。      |
 | deploymentName | String | 部署名称。        |
-| operation | String   | 操作类型，“stopping”为停止操作。        |
+| operation | String   | 操作类型，“stopping” 为停止操作。       |
 
 - **401:** API Key 认证失败。
 - **403:** API Key 没有权限访问。
@@ -127,7 +127,7 @@ POST /deployments/{deployment_id}/start
 | :-------------- | :--------------- | :----------------- |
 | deploymentID   | String | 部署 ID。      |
 | deploymentName | String | 部署名称。        |
-| operation | String   | 操作类型，“starting”为开启操作。        |
+| operation | String   | 操作类型，“starting” 为开启操作。       |
 
 - **401:** API Key 认证失败。
 - **403:** API Key 没有权限访问。
