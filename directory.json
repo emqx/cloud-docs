@@ -1422,6 +1422,20 @@
               "path": "api/shadow_service"
             }
           ]
+        },
+        {
+          "title": "Platform API",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "Deployment Management",
+              "path": "api/deployment_manage"
+            },
+            {
+              "title": "TLS Certificate Management",
+              "path": "api/tls_certificate"
+            }
+          ]
         }
       ]
     },
