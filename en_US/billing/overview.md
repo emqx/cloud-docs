@@ -20,9 +20,9 @@ The **Monthly Bill** pane displays the cumulative usage amount. To modify the bi
 
 The **Bill status** shows one of the following:
 
-- `Pending`: The monthly bill has not yet been billed.
-- `Issued`: The bill has been billed and paid.
-- `Overdue`: The bill has been billed and not paid.
+- **Pending**: The monthly bill has not yet been billed.
+- **Issued**: The bill has been billed and paid.
+- **Overdue**: The bill has been billed and not paid.
 
 The tax on the bills is calculated based on the information you provide to the sales team.
 
