@@ -1242,6 +1242,10 @@
           "collapsed": true,
           "children": [
             {
+              "title": "Deployment Management",
+              "path": "api/deployment_manage"
+            },
+            {
               "title": "TLS Management",
               "path": "api/tls_certificate"
             }

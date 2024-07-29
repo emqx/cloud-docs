@@ -8,11 +8,12 @@ Platform API is only available for Dedicated deployment.
 
 ## API Function
 
-Currently, the EMQX Platform supports TLS certificate management API. More platform-level APIs will be supported in the future.
+Currently, the EMQX Platform supports TLS certificate management and deployment management API. More platform-level APIs will be supported in the future.
 
 | API                                                | Deployment Type                                              | Description                                                  |
 | -------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [TLS Certificate Management](./tls_certificate.md) | EMQX v5 deployment and  v4 (4.4.x) deployment created under the Platform account | Manage the lifecycle of TLS certificates for a specified deployment. |
+| [Deployment Management](./deployment_manage.md)    | EMQX v5 deployment and  v4 (4.4.x) deployment created under the Platform account | Query deployment status, start deployment, and stop deployment |
 
 ## Create and Manage Platform API Key
 
