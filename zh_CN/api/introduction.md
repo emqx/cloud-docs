@@ -5,12 +5,17 @@ EMQX Platform API 用于对 EMQX Platform 和 EMQX 部署的控制和管理，�
 要访问管理 Platform API，您需要创建一个 API Key。 EMQX Platform 的 API Key 分为**平台 API Key** 和**部署 API Key**，分别针对平台层面的功能和部署层面的功能设计。每一个 API Key 由一个 Key 和 Secret 组成。本页将详细介绍这 2 种 API Key 和 API 的使用说明。
 
 ## 平台 API Key
-平台 API Key 授予对 EMQX Platform 平台层面的访问管理。目前支持 1 种类型平台 API Key：TLS 证书管理，我们计划将在未来支持更多平台层面的 API Key。
+平台 API Key 授予对 EMQX Platform 平台层面的访问管理。目前支持 2 种类型平台 API Key：TLS 证书管理和部署管理，我们计划将在未来支持更多平台层面的 API Key。
+
+::: warning 注意
+平台 API 仅适用于专有版部署。
+:::
 
 ### API 功能
-| API         | 适用部署    | 描述                            |
-| ----------- | ---------------|-------------------------------------------- |
-|  [TLS 证书管理](./tls_certificate.md)  |平台账号下 v5 部署和 v4（4.4.x）部署 | 管理部署 TLS 证书的更新、删除。 |
+| API                                  | 适用部署                             | 描述                               |
+| ------------------------------------ | ------------------------------------ | ---------------------------------- |
+| [TLS 证书管理](./tls_certificate.md) | 平台账号下 v5 部署和 v4（4.4.x）部署 | 管理部署 TLS 证书的更新、删除。    |
+| [部署管理](./deployment_manage.md)   | 平台账号下 v5 部署和 v4（4.4.x）部署 | 查询部署状态、启动部署和停止部署。 |
 
 
 ### 创建和管理平台 API Key
