@@ -53,8 +53,8 @@ curl -u key:secret -X GET {api}/deployments/w41b11c0
     "deploymentID": "w41b11c0",
     "deploymentName": "deployment-w41b11c0",
     "deploymentType": "dedicated",
-    "platform": "Alibaba Cloud",
-    "region": "Hangzhou",
+    "platform": "AWS",
+    "region": "N. Virginia (us-east-1)",
     "status": "running"
 }
 ```
