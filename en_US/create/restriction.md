@@ -44,10 +44,11 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | Client ID maximum length（MQTT 5.0）      | 256                | YES                   |YES|
 | Maximum API QPS          | 100/s                | NO                   |-|
 | TCP connect timeout                     | 10s                | YES                   |YES|
-| TLS version          | 1.2、1.3                | NO                   |YES|
+| TLS version          | 1.2 and 1.3                | NO                   |YES|
 | TLS encryption algorithm          | -                | YES                |YES|
 | Maximum resources that can be created in Data Integration     | 10               | YES                   |NO|
 | Maximum rules that can be created in Data Integration     | 50               | YES                   |NO|
+| Maximum actions that can be created in Data Integration     | 50               | YES                   |NO|
 | Number of deployments                   | 3                | YES                   |NO|
 | Number of subaccounts                   | 20                | NO |-|
 
