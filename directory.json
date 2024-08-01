@@ -906,6 +906,10 @@
               "path": "deployments/alerts_webhook"
             }
           ]
+        },
+        {
+          "title": "Prometheus Monitoring",
+          "path": "deployments/prometheus"
         }
       ]
     },
