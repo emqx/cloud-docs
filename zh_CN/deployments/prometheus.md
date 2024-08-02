@@ -468,11 +468,21 @@ deployment_emqx_rule_status{deployment_id="gde1d4ab",deployment_type="dedicated"
 
     ```bash
     scrape_configs:
-      - job_name: 'emqx'
+      - job_name: 'emqx_cloud_deployment_metrics'
         scheme: 'https'
         static_configs:
           - targets: [ 'xxxx:8443' ]
-        metrics_path: "/api/emqx_prometheus"
+        metrics_path: "/api/v5/deployment_metrics"
+        params:
+          type: [ "prometheus" ]
+        basic_auth:
+          username: 'APP ID'
+          password: 'APP Secret'
+      - job_name: 'emqx_cloud_deployment_data_integration_metrics'
+        scheme: 'https'
+        static_configs:
+          - targets: [ 'xxxx:8443' ]
+        metrics_path: "/api/v5/deployment_metrics/data_integration"
         params:
           type: [ "prometheus" ]
         basic_auth:
