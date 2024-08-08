@@ -154,7 +154,7 @@
                     'name': '数据集成',
                     'link': './rule_engine/introduction.html',
                   },
-                  { 'name': 'API', 'link': './api/introduction.html' },
+                  { 'name': 'API', 'link': './api/api_overview.html' },
                 ],
             },
           ],

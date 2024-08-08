@@ -632,7 +632,7 @@
                 },
                 {
                   "title": "客户端管理",
-                  "path": "api/clients"
+                  "path": "api/client"
                 },
                 {
                   "title": "黑名单管理",
@@ -644,11 +644,11 @@
                 },
                 {
                   "title": "主题订阅",
-                  "path": "api/subscribe"
+                  "path": "api/topic"
                 },
                 {
                   "title": "消息发布",
-                  "path": "api/publish"
+                  "path": "api/pub"
                 },
                 {
                   "title": "指标",
@@ -1419,7 +1419,7 @@
                 },
                 {
                   "title": "Client Management",
-                  "path": "api/clients"
+                  "path": "api/client"
                 },
                 {
                   "title": "Banned List Management",
@@ -1431,11 +1431,11 @@
                 },
                 {
                   "title": "Topic Subscription",
-                  "path": "api/subscribe"
+                  "path": "api/topic"
                 },
                 {
                   "title": "Message Publishing",
-                  "path": "api/publish"
+                  "path": "api/pub"
                 },
                 {
                   "title": "Metrics",
