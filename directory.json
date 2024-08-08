@@ -632,7 +632,7 @@
                 },
                 {
                   "title": "客户端管理",
-                  "path": "api/client"
+                  "path": "api/clients"
                 },
                 {
                   "title": "黑名单管理",
@@ -644,11 +644,11 @@
                 },
                 {
                   "title": "主题订阅",
-                  "path": "api/topic"
+                  "path": "api/subscribe"
                 },
                 {
                   "title": "消息发布",
-                  "path": "api/pub"
+                  "path": "api/publish"
                 },
                 {
                   "title": "指标",
