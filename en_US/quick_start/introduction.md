@@ -76,4 +76,4 @@ Keep this user information safe. When using MQTTX to verify client connections, 
 
 EMQX Platform recommends using [MQTTX](https://mqttx.app) to test the connection to your deployment, but you can also use familiar [SDKs or other tools](../connect_to_deployments/overview.md) to connect to your deployment. Before using MQTTX to connect to your deployment, you need to obtain the deployment's authentication information.
 
-Next, we will introduce how to test the connection using [MQTTX](https://mqttx.app/zh/). For detailed content, refer to [Testing Connection with MQTTX](../connect_to_deployments/mqttx.md).
+Next, we will introduce how to test the connection using [MQTTX](https://mqttx.app). For detailed content, refer to [Testing Connection with MQTTX](../connect_to_deployments/mqttx.md).
