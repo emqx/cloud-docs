@@ -52,7 +52,7 @@ If you are unable to connect to Serverless deployment, follow these steps for tr
 3. **Test Network Connectivity**. Use the `telnet` command to test network connectivity between your server and EMQX Serverless, e.g., `telnet broker.emqx.io 8883`. (Replace with your actual deployment address.)
 4. **Verify Authentication Information**. EMQX Platform does **not support anonymous authentication**. Ensure that you have set the MQTT client's username and password in the EMQX Platform console and configured them correctly during client connection.
 5. **Check SNI (Server Name Indication) Configuration**. Correct SNI information must be provided during client connection. Incorrect or missing SNI information will result in connection rejection by EMQX Platform with error code -5.
-6. **Test with MQTTX Client**. We recommend using MQTTX as an MQTT client testing tool. It is a free and easy-to-use cross-platform MQTT 5.0 client. You can use it to verify if the client code is causing connection issues. For detailed usage instructions, refer to: [MQTTX User Guide](https://chat.openai.com/connect_to_deployments/mqttx.md).
+6. **Test with MQTTX Client**. We recommend using MQTTX as an MQTT client testing tool. It is a free and easy-to-use cross-platform MQTT 5.0 client. You can use it to verify if the client code is causing connection issues. For detailed usage instructions, refer to: [MQTTX User Guide](../connect_to_deployments/mqttx.md).
 
 ### Get Help via Support Ticket
 
