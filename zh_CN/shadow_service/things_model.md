@@ -386,7 +386,7 @@ curl --request PATCH \
 ```
 
 ### 创建物模型
-在使用 API 创建之前需要在部署生成相应的 App ID 和 APP Secret，请查看 [API 帮助](../api/introduction.md) 获得更多信息。
+在使用 API 创建之前需要在部署生成相应的 App ID 和 APP Secret，请查看 [API 帮助](../api/api_overview.md) 获得更多信息。
 
 ![things_model](./_assets/things_model_06.png)
 使用创建 api 创建一个模型，获得成功的返回。
@@ -499,7 +499,6 @@ curl --request PATCH \
 物模型应用端通过 API 可以获取物模型状态下所有设备的状态，从而可以实现应用界面。
 
 ![things_model](./_assets/things_model_13.png)
-
 
 
 

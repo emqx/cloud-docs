@@ -44,7 +44,7 @@ EMQX Cloud 部署仅支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议连�
 
 EMQX 提供了 HTTP API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 
-更多关于 API 的使用方法，可以前往指南 —— [REST API](api/introduction.md)
+更多关于 API 的使用方法，可以前往指南 —— [REST API](api/api_overview.md)
 
 ### 我可以将 mqtt 地址绑定到自己的域名上吗？
 

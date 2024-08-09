@@ -574,78 +574,13 @@
       ]
     },
     {
-      "title": "APIs",
-      "path": "api/introduction",
+      "title": "API",
+      "path": "api/api_overview",
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless 部署 API",
-          "path": "api/serverless",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "客户端管理",
-              "path": "api/clients_v5"
-            },
-            {
-              "title": "订阅管理",
-              "path": "api/subscriptions_v5"
-            },
-            {
-              "title": "消息发布",
-              "path": "api/publish_v5"
-            }
-          ]
-        },
-        {
-          "title": "专有版 / BYOC 部署 API",
-          "path": "api/dedicated",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "认证管理",
-              "path": "api/auth"
-            },
-            {
-              "title": "访问控制管理",
-              "path": "api/acl"
-            },
-            {
-              "title": "客户端管理",
-              "path": "api/clients"
-            },
-            {
-              "title": "黑名单管理",
-              "path": "api/banned"
-            },
-            {
-              "title": "订阅信息",
-              "path": "api/subscriptions"
-            },
-            {
-              "title": "主题订阅",
-              "path": "api/subscribe"
-            },
-            {
-              "title": "消息发布",
-              "path": "api/publish"
-            },
-            {
-              "title": "指标",
-              "path": "api/metrics"
-            },
-            {
-              "title": "数据集成",
-              "path": "api/rules"
-            },
-            {
-              "title": "影子服务",
-              "path": "api/shadow_service"
-            }
-          ]
-        },
-        {
           "title": "平台 API",
+          "path": "api/api_platform",
           "collapsed": true,
           "children": [
             {
@@ -655,6 +590,79 @@
             {
               "title": "TLS 证书管理",
               "path": "api/tls_certificate"
+            }
+          ]
+        },
+        {
+          "title": "部署 API",
+          "path": "api/api_deployment",
+          "collapsed": true,
+          "children":[
+            {
+              "title": "Serverless 部署 API",
+              "path": "api/serverless",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "客户端管理",
+                  "path": "api/clients_v5"
+                },
+                {
+                  "title": "订阅管理",
+                  "path": "api/subscriptions_v5"
+                },
+                {
+                  "title": "消息发布",
+                  "path": "api/publish_v5"
+                }
+              ]
+            },
+            {
+              "title": "专有版 / BYOC 部署 API",
+              "path": "api/dedicated",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "认证管理",
+                  "path": "api/auth"
+                },
+                {
+                  "title": "访问控制管理",
+                  "path": "api/acl"
+                },
+                {
+                  "title": "客户端管理",
+                  "path": "api/clients"
+                },
+                {
+                  "title": "黑名单管理",
+                  "path": "api/banned"
+                },
+                {
+                  "title": "订阅信息",
+                  "path": "api/subscriptions"
+                },
+                {
+                  "title": "主题订阅",
+                  "path": "api/subscribe"
+                },
+                {
+                  "title": "消息发布",
+                  "path": "api/publish"
+                },
+                {
+                  "title": "指标",
+                  "path": "api/metrics"
+                },
+                {
+                  "title": "数据集成",
+                  "path": "api/rules"
+                },
+                {
+                  "title": "影子服务",
+                  "path": "api/shadow_service"
+                }
+              ]
             }
           ]
         }
@@ -1358,73 +1366,8 @@
       "collapsed": true,
       "children": [
         {
-          "title": "Serverless API",
-          "path": "api/serverless",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "Client Management",
-              "path": "api/clients_v5"
-            },
-            {
-              "title": "Subscription Information",
-              "path": "api/subscriptions_v5"
-            },
-            {
-              "title": "Message Publish",
-              "path": "api/publish_v5"
-            }
-          ]
-        },
-        {
-          "title": "Dedicated / BYOC API",
-          "path": "api/dedicated",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "Authentication Management",
-              "path": "api/auth"
-            },
-            {
-              "title": "ACL Management",
-              "path": "api/acl"
-            },
-            {
-              "title": "Client Management",
-              "path": "api/client"
-            },
-            {
-              "title": "Banned List Management",
-              "path": "api/banned"
-            },
-            {
-              "title": "Subscription",
-              "path": "api/subscriptions"
-            },
-            {
-              "title": "Topic Subscriptions",
-              "path": "api/topic"
-            },
-            {
-              "title": "Message Publishing",
-              "path": "api/pub"
-            },
-            {
-              "title": "Metrics",
-              "path": "api/metrics"
-            },
-            {
-              "title": "Data Integration",
-              "path": "api/rules"
-            },
-            {
-              "title": "Shadow Service",
-              "path": "api/shadow_service"
-            }
-          ]
-        },
-        {
           "title": "Platform API",
+          "path": "api/api_platform",
           "collapsed": true,
           "children": [
             {
@@ -1432,8 +1375,81 @@
               "path": "api/deployment_manage"
             },
             {
-              "title": "TLS Certificate Management",
+              "title": "TLS Management",
               "path": "api/tls_certificate"
+            }
+          ]
+        },
+        {
+          "title": "Deployment API",
+          "path": "api/api_deployment",
+          "collapsed": true,
+          "children":[
+            {
+              "title": "Serverless Deployment API",
+              "path": "api/serverless",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "Client Management",
+                  "path": "api/clients_v5"
+                },
+                {
+                  "title": "Subscription Information",
+                  "path": "api/subscriptions_v5"
+                },
+                {
+                  "title": "Message Publish",
+                  "path": "api/publish_v5"
+                }
+              ]
+            },
+            {
+              "title": "Dedicated / BYOC Deployment API",
+              "path": "api/dedicated",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "Authentication Management",
+                  "path": "api/auth"
+                },
+                {
+                  "title": "ACL Management",
+                  "path": "api/acl"
+                },
+                {
+                  "title": "Client Management",
+                  "path": "api/client"
+                },
+                {
+                  "title": "Banned List Management",
+                  "path": "api/banned"
+                },
+                {
+                  "title": "Subscription",
+                  "path": "api/subscriptions"
+                },
+                {
+                  "title": "Topic Subscription",
+                  "path": "api/topic"
+                },
+                {
+                  "title": "Message Publishing",
+                  "path": "api/pub"
+                },
+                {
+                  "title": "Metrics",
+                  "path": "api/metrics"
+                },
+                {
+                  "title": "Data Integration",
+                  "path": "api/rules"
+                },
+                {
+                  "title": "Shadow Service",
+                  "path": "api/shadow_service"
+                }
+              ]
             }
           ]
         }
