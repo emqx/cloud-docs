@@ -11,8 +11,9 @@ Before creating a connector, make sure the current deployment is running.
 
 :::
 
-1. If you are creating a connector for the first time, select the resource you want to connect to on the Data Integration Connectors page, such as **Kafka**. If you have created connectors before, you can create a new connector by clicking the **New Connector** button in the upper right corner of the page.
-2. Fill in the corresponding resource configuration and click the **Test** button. If the connection is successful, a success prompt will be displayed, and you can click to view it. If it fails, check the connector configuration.
+1. Go to your deployment, and click **Data Integration** from the left menu to access the Data Integration page.
+1. If you are creating a connector for the first time, select the resource you want to connect to on the Data Integration Connectors page, such as **Kafka**. If you have created connectors before, you can create a new one by clicking the New Connector button in the top right corner of the connector list.
+2. Fill in the corresponding resource configuration and click the **Test** button. A success prompt will be displayed if the connection is successful, and you can click to view it. If it fails, check the connector configuration.
 
 ## View Connector List and Details
 
@@ -24,8 +25,20 @@ Click on the connector ID to view details. The basic information and configurati
 
 ![Connector](./_assets/connector_02.png)
 
+## Edit a Connector
+
+::: tip Note
+
+This feature is only available for Dedicated deployments.
+
+:::
+
+1. In the **Actions** column of the connector list, click the edit icon to enter the editing page. 
+2. Modify the corresponding configuration and click the **Test** button. A success message will be displayed if the connection is successful, and you can click the **Save** button to update. If it fails, please check the connector configuration.
+
 ## Delete a Connector
 
 1. Make sure to clear all rules under the connector before deleting it.
-2. In the **Connector List**, click the **Delete** button to delete a connector.
+2. In the Connector List, click the delete icon in the **Actions** column to delete a connector.
 3. You must enter the connector's ID to confirm the deletion.
+
