@@ -121,6 +121,46 @@ The following steps demonstrate how to add an action to republish the original m
 
 You can also add actions to forward the processed results to target services using associated Connectors. On the **New Action** step page, select the target Connector from the Connector drop-down list. For details on the action configuration, see [Ingest MQTT Data into HTTP Server](./http_server.md) and [Stream MQTT Data into Apache Kafka](./kafka.md).
 
+## Test Rule
+
+::: tip Note
+
+This feature is only available for Dedicated deployments.
+
+:::
+
+The rule engine provides a rule testing feature, which allows you to trigger rules using simulated data or real client data, execute rule SQL, and perform all actions added to the rule, obtaining the execution results for each step.
+
+By testing rules, you can verify whether the rules work as expected, and quickly identify and solve any issues. This not only speeds up the development process but also ensures that the rules can run as expected in real environments, avoiding failures in production.
+
+### Testing Steps
+
+1. Toggle the **Try It Out** switch and select **Rule** as the test target. Note that before starting the test, you need to save the rule.
+2. Click the **Start Test** button to begin the test. The browser will wait for the current rule to be triggered to generate the test results.
+3. Trigger the rule for testing. The following 2 methods are supported:
+   - **Use simulated data**: Click the **Input Simulated Data** button, select the **Data Source** that matches the SQL in the pop-up window, and ensure it matches the specified source in the rule (FROM clause). EMQX provides default values for all fields, such as **Client ID**, **Username**, **Topic**, **QoS**, **Payload**, etc. Modify them as needed, and click the **Submit Test** button to trigger the rule for testing once.
+   - **Use real device data**: Keep the current page open, connect to EMQX using a real client or MQTT client tool, trigger the corresponding events, and perform testing.
+4. View the test results: When the rule is triggered, the execution results will be output to the Console, displaying detailed execution results for each step.
+
+### Testing Example
+
+You can use [MQTTX](https://mqttx.app/) to test the rule with the republish action. Create one client, and use this client to subscribe to the `a/1` topic and send a `t/1` message. You will see in the dialog box that this message is republished to the topic `a/1`.
+
+For details on how to build the connection between the MQTTX client tool and EMQX, see [MQTTX - Get Started](https://mqttx.app/docs/get-started).
+
+![mqttx-test-rule](./_assets/en_rule_overview_mqttx.png)
+
+Correspondingly, on the Console, the execution results of the entire rule will be displayed, with the following contents:
+
+- On the left are the rule execution records. Each time the rule is triggered, a record is generated. Clicking on it can switch to the corresponding message or event details.
+- On the right is the list of actions recorded by the selected rule. Clicking on it can expand to view the action execution results and logs.
+
+When the execution of the rule SQL or any action fails, the entire rule record will be marked as failed. You can select the record to view the corresponding action's error information for troubleshooting.
+
+![test_rule](./_assets/test_rule.png)
+
+From the above example, it can be seen that the rule was triggered 4 times, with 3 times the rule execution being completely successful. The 4th time failed due to the **HTTP Server** action execution failure, with the error reason being service unavailable.
+
 ## View Rule Statistics
 
 Send a message to the `temp_hum/emqx` topic for verification.
@@ -161,6 +201,16 @@ You can enable and disable rules in the rule list. Click the toggle switch in th
 ## Delete Rules
 
 You can delete rules in the rule list. Click the delete button and enter the rule ID to delete the rule.
+
+## Enable and Disable Actions
+
+::: tip Note
+
+This feature is only available for Dedicated deployments.
+
+:::
+
+Actions can be enabled or disabled on the actions list. Simply click the **Enable** toggle switch to turn an action on or off.
 
 ## Edit and Delete Actions
 
