@@ -6,7 +6,7 @@ EMQX Platform can be quickly and easily deployed in just a few minutes. With sup
 
 ## Product Plans
 
-The EMQX Platform offers four fully-managed product plans to better serve our diverse user groups, including the Serverless, Dedicated, Premium, and Bring Your Own Cloud (BYOC). Whether you are an individual developer or a global industry leader, our product plans can meet your needs.
+The EMQX Platform offers four fully-managed product plans to better serve our diverse user groups, including the Serverless, Dedicated, Premium, and Bring Your Own Cloud (BYOC). Whether you are an individual developer or a global industry leader, you can find the right product plan to meet your needs.
 
 For more details on the features and billing modes of different product plans, see [Product Plans](./plans.md).
 

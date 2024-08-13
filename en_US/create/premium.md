@@ -10,7 +10,7 @@ The EMQX Premium Plan offers independent MQTT service clusters with higher conne
 
 3. In **Choose Plan**, select **Premium**.
 
-   ![create_dedicated](/Users/emqx/Documents/Cloud/cloud-docs/en_US/create/_assets/create_dedicated.png)
+   ![create_dedicated](./_assets/create_dedicated.png)
 
 4. Configure the specifications according to your needs.
 
@@ -28,7 +28,7 @@ The EMQX Premium Plan offers independent MQTT service clusters with higher conne
 After the deployment is created, it will appear on the EMQX Platform console home page. Click the Premium deployment card to enter the deployment overview page. On the overview page, you can check the real-time status and connection information for your deployment.
 
 
-![dedicated](/Users/emqx/Documents/Cloud/cloud-docs/en_US/create/_assets/dedicated_overview.png)
+![dedicated](./_assets/dedicated_overview.png)
 
 ### Basic Information
 

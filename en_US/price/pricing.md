@@ -163,7 +163,7 @@ EMQX Premium Plan is charged based on the tier, and message transmission network
       <th>Traffic exceeded</th>
    </tr>
    <tr>
-      <td rowspan="5">Dedicated</td>
+      <td rowspan="5">Premium</td>
       <td>1,000 connections / Up to 1,000 TPS</td>
       <td>$0.36 /hr </td>
       <td rowspan="4">100G/month</td>
@@ -186,6 +186,7 @@ EMQX Premium Plan is charged based on the tier, and message transmission network
       <td colspan="3" align="center">Contact us</td>
   </tr>
 </table>
+
 
 ::: tip
 Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
