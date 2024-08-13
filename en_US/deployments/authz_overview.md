@@ -27,4 +27,5 @@ In addition to the default authorization based on the built-in database, it also
 | ----------------- | ------------------------- | -------------------------- |
 | Serverless        | ✓                         | ✗                          |
 | Dedicated | ✓                         | ✓                          |
+| Premium | ✓ | ✓ |
 | BYOC              | ✓                         | ✓                          |

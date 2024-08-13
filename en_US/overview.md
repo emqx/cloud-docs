@@ -64,7 +64,7 @@ EMQX Platform's Dedicated Plan and BYOC Plan enables real-time pre-processing of
 
 ## Product Plans
 
-EMQX Platform offers three different product plans, allowing you to deploy your fully managed MQTT service on popular public clouds worldwide. Whether you're an independent developer or a global industry leader, you can find the perfect EMQX Platform product to suit your needs.
+EMQX Platform offers four different product plans, allowing you to deploy your fully managed MQTT service on popular public clouds worldwide. Whether you're an independent developer or a global industry leader, you can find the perfect EMQX Platform product to suit your needs.
 
 For detailed feature descriptions and pricing of each product plan, see [Product Plans](./price/plans.md).
 

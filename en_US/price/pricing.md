@@ -66,7 +66,7 @@ EMQX Dedicated Plan is charged based on the tier, and message transmission netwo
 
 ::: tip Related Terms
 
-**Number of Clicnet Connections:** The total number of clients simultaneously online (including offline clients with persistent sessions).
+**Number of Client Connections:** The total number of clients simultaneously online (including offline clients with persistent sessions).
 
 **[Persistent Session](https://www.emqx.com/en/blog/mqtt-session):** A session that remains active and stores offline messages when the client disconnects until the session times out and is logged out.
 
@@ -80,7 +80,79 @@ EMQX Dedicated Plan is charged based on the tier, and message transmission netwo
 
   :::
 
-### Specification Based Fee for Dedicated Plan
+### Specification-Based Fee for Dedicated Plan
+
+<table>
+   <tr>
+      <th>Plan</th>
+      <th>Tier</th>
+      <th>Base Fee</th>
+      <th>Free Traffic</th>
+      <th>Traffic exceeded</th>
+   </tr>
+   <tr>
+      <td rowspan="5">Dedicated</td>
+      <td>1,000 connections / Up to 1,000 TPS</td>
+      <td>$0.36 /hr </td>
+      <td rowspan="4">100G/month</td>
+      <td rowspan="4">$ 0.15/GB</td>
+   </tr>
+   <tr>
+      <td>2,000 connections / Up to 2,000 TPS</td>
+      <td>$0.5 /hr</td>
+   </tr>
+   <tr>
+      <td>5,000 connections / Up to 10,000 TPS</td>
+      <td>$0.99 /hr</td>
+   </tr>
+   <tr>
+      <td>10,000 connections / Up to 20,000 TPS</td>
+      <td>$1.49 /hr</td>
+   </tr>
+   <tr>
+      <td>>10,000 connections</td>
+      <td colspan="3" align="center">Contact us</td>
+  </tr>
+</table>
+::: tip
+Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
+:::
+
+### Billing Method
+
+For Dedicated deployments, charges are calculated every hour based on usage for the previous hour, and charged from your account balance. The hourly charges are then accumulated into monthly charges, which you can view in detail on the [Billing Overview](https://cloud.emqx.com/console/billing/overview) page.
+
+### Pricing of suspended deployment
+**Dedicated deployment in hourly billing** will incur data retention fees at the following rates when suspended: **$0.06 / hour**.
+
+## Premium Plan
+
+EMQX Premium Plan is charged based on the tier, and message transmission network traffic. There are no restrictions on the number of messages, API calls, or data integration usage. You can select the appropriate product plan based on your business needs, and be confident that the costs remain transparent and manageable even as your business expands.
+
+
+### Billing Unit
+
+**Base Fee**: The base fee for the instance is calculated based on the hourly unit price corresponding to the selected product plan and instance tier (maximum number of connections, message TPS) at the time of deployment. In practical usage, this fee is only related to the duration of usage and will not be affected by changes in usage (number of connections, message TPS).
+
+**Traffic Fee**: Each instance tier includes a certain amount of free traffic. The free traffic is valid for the current month and any remaining amount will be automatically cleared at the end of the month. When device communication exceeds the free traffic, the excess part will be charged as traffic fees.
+
+::: tip Related Terms
+
+**Number of Client Connections:** The total number of clients simultaneously online (including offline clients with persistent sessions).
+
+**[Persistent Session](https://www.emqx.com/en/blog/mqtt-session):** A session that remains active and stores offline messages when the client disconnects until the session times out and is logged out.
+
+**Traffic:** Traffic (including free traffic) refers to all public network traffic flowing out of the deployment.
+
+- Traffic through VPC peering connections or private network connections is not included in the traffic calculation.
+
+- The traffic of messages received by the deployment (e.g., messages sent to the deployment by clients) is not included in the traffic calculation.
+
+- If a NAT gateway is enabled, the traffic flowing out of the deployment is considered public network traffic and will be included in the traffic calculation. 
+
+  :::
+
+### Specification-Based Fee for Premium Plan
 
 <table>
    <tr>
@@ -115,17 +187,17 @@ EMQX Dedicated Plan is charged based on the tier, and message transmission netwo
   </tr>
 </table>
 
-
 ::: tip
 Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
 :::
 
 ### Billing Method
 
-For Dedicated Plan deployments, charges are calculated every hour based on usage for the previous hour, and charged from your account balance. The hourly charges are then accumulated into monthly charges, which you can view in detail on the [Billing Overview](https://cloud.emqx.com/console/billing/overview) page.
+For Premium deployments, charges are calculated every hour based on usage for the previous hour, and charged from your account balance. The hourly charges are then accumulated into monthly charges, which you can view in detail on the [Billing Overview](https://cloud.emqx.com/console/billing/overview) page.
 
-### Pricing of suspended depoyment
-**Dedicated deployment in hourly billing** will incur data retention fees at the following rates when suspended: **$0.06 / hour**
+### Pricing of suspended deployment
+
+**Premium deployment in hourly billing** will incur data retention fees at the following rates when suspended: **$0.06 / hour**.
 
 ## BYOC Plan
 

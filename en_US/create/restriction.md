@@ -1,6 +1,6 @@
 # Quotas and Limits
 
-EMQX Platform sets default quotas (or limits) for each deployment and the default value of some of the quotas can be adjusted. The following tables show the default value of the quotas in different deployments and whether they can be adjusted. If you need to adjust the quotas, please [contact us](../feature/tickets.md).
+The EMQX Platform sets default quotas (or limits) for each deployment and the default value of some of the quotas can be adjusted. The following tables show the default value of the quotas in different deployments and whether they can be adjusted. If you need to adjust the quotas, please [contact us](../feature/tickets.md).
 
 ## Serverless
 | Quotas                                    | **Default Value**          | **Adjustable**     |
@@ -26,7 +26,7 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 
 [1] Create an extra Serverless deployment by adding a payment method.
 
-## Dedicated and BYOC
+## Dedicated, Premium and BYOC
 
 | **Quotas**                              | **Default Value**          | **Adjustable**           |**Requires Deployment Restart** |
 |-----------------------------------------| ----------------------- | ------------------|------------------|

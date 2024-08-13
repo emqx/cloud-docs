@@ -1,7 +1,7 @@
 # Data Integration Overview
 
 
-As a fully managed MQTT message cloud service, EMQX Platform connects Internet of Things (IoT) devices via the MQTT protocol and delivers messages in real time. Building on this foundation, Data Integration enhances EMQX Platform's capability of connecting with other cloud resources, enabling seamless integration of devices with other business systems. EMQX Platform Data Integration not only provides a clear and flexible "configurable" architecture solution but also simplifies the development process. It improves user availability, reduces the coupling between business systems and EMQX Platform, and provides a better infrastructure for data forwarding.
+As a fully managed MQTT message cloud service, EMQX Platform connects Internet of Things (IoT) devices via the MQTT protocol and delivers messages in real time. Building on this foundation, Data Integration enhances EMQX Platform's capability of connecting with other cloud resources, enabling seamless integration of devices with other business systems. EMQX Platform Data Integration not only provides a clear and flexible "configurable" architecture solution but also simplifies the development process. It improves user availability, reduces the coupling between business systems and the EMQX Platform, and provides a better infrastructure for data forwarding.
 
 
 ![data_integration_intro](./_assets/integration_intro_01.png)
@@ -58,7 +58,7 @@ The data integration function in different deployments requires different levels
 
 - Only supports Kafka and HTTP Server connectors.
 
-- Serverless Data Integration employs a pay-as-you-go mode, explaining as follows:
+- The data integration for Serverless deployments employs a pay-as-you-go mode, explained as follows:
 
   EMQX Serverless provides users with a free quota for data integration: up to 1 million rule action executions per month. Should your usage exceed this allocation, a nominal fee of $0.25 is applied for each additional million rule action executions. 
 
@@ -70,7 +70,7 @@ The data integration function in different deployments requires different levels
   | Total Rules                 | 4               |
   | Actions Associated Per Rule | 1               |
 
-**Dedicated Deployment**
+**Dedicated and Premium Deployment**
 
 - It is recommended to access data sources through an internal network. Therefore, before creating, you need to configure [VPC peering](../deployments/vpc_peering.md) first and also open the security group.
 - If you need to access it through the public network, you can enable a [NAT gateway](../vas/nat-gateway.md).

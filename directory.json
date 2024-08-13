@@ -722,6 +722,36 @@
           ]
         },
         {
+          "title": "Create a Premium Deployment",
+          "path": "create/premium",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "TLS/SSL",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "VPC Peering Connection",
+              "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "Configure PrivateLink",
+              "path": "deployments/privatelink",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "AWS PrivateLink",
+                  "path": "deployments/privatelink-aws"
+                },
+                {
+                  "title": "Azure PrivateLink",
+                  "path": "deployments/privatelink-azure"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "title": "Create a BYOC Deployment",
           "collapsed": true,
           "children": [
@@ -1282,6 +1312,10 @@
             {
               "title": "Dedicated Deployment API",
               "path": "https://docs.emqx.com/en/cloud/latest/api/dedicated.html"
+            },
+            {
+              "title": "Dedicated Deployment API",
+              "path": "https://docs.emqx.com/en/cloud/latest/api/premium.html"
             }
           ]
         }

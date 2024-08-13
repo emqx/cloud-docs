@@ -1,14 +1,14 @@
 # Start, Stop and Delete Deployments
 
-This page provides detailed instructions on how to start, stop, and delete different plans of deployments in the Cloud Console.
+This page provides detailed instructions on how to start, stop, and delete different plans of deployments in the Platform Console.
 
 ## Serverless Plan
 
-This section introduces how to start, stop, and delete a serverless plan deployment.
+This section introduces how to start, stop, and delete a Serverless plan deployment.
 
 ### Start and Stop a Deployment
 
-To start a deployment that is already stopped in the console, click on the deployment to enter the deployment overview page and click the **Start** button in the upper right corner. To stop a deployment, follow the instructions below:
+To start a deployment that is already stopped in the Console, click on the deployment to enter the deployment overview page and click the **Start** button in the upper right corner. To stop a deployment, follow the instructions below:
 
 ::: warning Note 
 
@@ -16,7 +16,7 @@ After stopping the deployment, devices will not be able to connect to the deploy
 
 :::
 
-1. In the console, click on the deployment you want to stop to enter the deployment overview page.
+1. In the Console, click on the deployment you want to stop to enter the deployment overview page.
 2. Click the **Stop** button in the upper right corner and enter the deployment name in the pop-up box.
 3. Click **Confirm** to stop the deployment.
 
@@ -28,18 +28,18 @@ After deleting the deployment, devices will not be able to connect to the deploy
 
 :::
 
-1. In the console, click on the deployment you want to delete to enter the deployment overview page.
+1. In the Console, click on the deployment you want to delete to enter the deployment overview page.
 2. Click the **Delete** button in the upper right corner and enter the deployment name in the pop-up box.
 3. Click **Confirm** to delete the deployment.
 
 
 ## Dedicated Plan
 
-This section introduces how to start, stop, and delete a dedicated plan deployment.
+This section introduces how to start, stop, and delete a Dedicated plan deployment.
 
 ### Start and Stop a Deployment
 
-To start a deployment that is already stopped in the console, click on the deployment to enter the deployment overview page and click the **Start** button in the upper right corner.
+To start a deployment that is already stopped in the Console, click on the deployment to enter the deployment overview page and click the **Start** button in the upper right corner.
 
 To stop a deployment, follow the instructions below. Before stopping the deployment, make sure that the deployment is in the **Running** state.
 
@@ -47,7 +47,7 @@ To stop a deployment, follow the instructions below. Before stopping the deploym
 After stopping the deployment, you will not be able to connect to the deployment, but your data and connection addresses will be retained, and data retention fees will be charged.
 :::
 
-1. In the console, click on the deployment you want to stop to enter the deployment overview page.
+1. In the Console, click on the deployment you want to stop to enter the deployment overview page.
 2. Click the **Stop** button in the upper right corner and enter the deployment name in the pop-up box.
 3. Click **Confirm** to stop the deployment.
 
@@ -59,10 +59,40 @@ Before deleting the deployment, make sure that the deployment is in the **Runnin
 After deleting the deployment, you will no longer be able to connect to it, and all deployment data and configurations will be removed. The deployment billing will also be stopped. 
 :::
 
-1. In the console, click on the deployment you want to delete to enter the deployment overview page.
+1. In the Console, click on the deployment you want to delete to enter the deployment overview page.
 2. Click the **Delete** button in the upper right corner and enter the deployment name in the pop-up box.
 3. Click **Confirm** to delete the deployment.
 
+## Premium Plan
+
+This section introduces how to start, stop, and delete a Premium plan deployment.
+
+### Start and Stop a Deployment
+
+To start a deployment that is already stopped in the Console, click on the deployment to enter the deployment overview page and click the **Start** button in the upper right corner.
+
+To stop a deployment, follow the instructions below. Before stopping the deployment, make sure that the deployment is in the **Running** state.
+
+::: warning Note
+After stopping the deployment, you will not be able to connect to the deployment, but your data and connection addresses will be retained, and data retention fees will be charged.
+:::
+
+1. In the Console, click on the deployment you want to stop to enter the deployment overview page.
+2. Click the **Stop** button in the upper right corner and enter the deployment name in the pop-up box.
+3. Click **Confirm** to stop the deployment.
+
+
+### Delete a Deployment
+
+Before deleting the deployment, make sure that the deployment is in the **Running** state.
+
+::: warning Note
+After deleting the deployment, you will no longer be able to connect to it, and all deployment data and configurations will be removed. The deployment billing will also be stopped. 
+:::
+
+1. In the Console, click on the deployment you want to delete to enter the deployment overview page.
+2. Click the **Delete** button in the upper right corner and enter the deployment name in the pop-up box.
+3. Click **Confirm** to delete the deployment.
 
 ## BYOC
 
