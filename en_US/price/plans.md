@@ -100,13 +100,13 @@ EMQX Platform is a globally available, fully-managed MQTT service platform that 
       <td>Unlimited</td>
    </tr>
   <tr>
-      <td style="text-indent: 2em;">Maximum single-client subscription TPS</td>
+      <td style="text-indent: 2em;">Maximum Single-Client Subscription TPS</td>
       <td>1000</td>
       <td>Unlimited</td>
       <td>Unlimited</td>
    </tr> 
    <tr>
-      <td style="text-indent: 2em;">Maximum single-client publishing TPS </td>
+      <td style="text-indent: 2em;">Maximum Single-Client Publishing TPS </td>
       <td>10</td>
       <td>Unlimited</td>
       <td>Unlimited</td>
@@ -406,6 +406,7 @@ EMQX Platform is a globally available, fully-managed MQTT service platform that 
       <td>&#10003</td>
    </tr>
 </table>
+
 
 
 ## Cloud Providers and Regions
