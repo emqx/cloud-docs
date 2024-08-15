@@ -1,10 +1,10 @@
 # Product Plans
 
-EMQX Platform is a globally available, fully-managed MQTT service platform that can be easily deployed on popular public clouds, offering a tailored solution to meet your specific requirements. Whether you are an individual developer or a global industry leader, EMQX Platform provides three fully-managed product plans to better serve you:
+The EMQX Platform provides the following fully-managed product plans:
 
-- **Serverless Plan**: Secure and scalable MQTT service, billed based on usage, completely free within the free quota. Supports up to 1000 sessions.
+- **Serverless Plan**: Provide MQTT services on a secure and scalable cluster that is charged based on usage. The service is free for usage within the free quota, supporting up to 1000 concurrent connections.
 - **Dedicated Plan**: Deployed in an independent cloud environment, the MQTT cluster service supports advanced features such as real-time data processing, data persistence, message distribution, VPC peering (private network), etc. Highly available and high-performance, it is the best choice for your production environment usage.
-- **BYOC (Bring Your Own Cloud):** Seamlessly integrates the EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise. 
+- **BYOC (Bring Your Own Cloud):** Seamlessly integrates the EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise.
 
 ## Feature List
 
