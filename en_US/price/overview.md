@@ -2,7 +2,7 @@
 
 EMQX Platform is a comprehensive, fully-managed MQTT messaging cloud service that seamlessly connects your IoT devices to any cloud without the hassle of infrastructure maintenance. With a client base of over 200 global enterprise users, it is a trusted and reliable solution that provides a high-availability MQTT service, fully managed by our teams of experts. 
 
-EMQX Platform can be quickly and easily deployed in just a few minutes. With support for 17 different regions across AWS, Google Cloud, and Microsoft Azure, it's an ideal choice for running your MQTT services globally. 
+EMQX Platform can be quickly and easily deployed in just a few minutes. With support for 20+ different regions across AWS, Google Cloud, and Microsoft Azure, it's an ideal choice for running your MQTT services globally.
 
 ## Product Plans
 
