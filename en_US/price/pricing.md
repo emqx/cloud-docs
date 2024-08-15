@@ -40,7 +40,7 @@ $$
 $$
 **Traffic fee**:
 $$
-\text{Traffic Fee} = \text {Inbound and outbound traffic (bytes)}\div (1024\times1024\times1024)\div 0.15
+\text{Traffic Fee} = \text {Inbound and outbound traffic (bytes)} \div (1024 \times 1024 \times1024)\times 0.15
 $$
 **Data integration fee**:
 $$
