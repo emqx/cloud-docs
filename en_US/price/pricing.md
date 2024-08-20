@@ -14,7 +14,7 @@ The EMQX Serverless Plan charges are based on the actual usage of your deploymen
 
 **Data integration:** The total number of rule action execution times.
 
-::: tip Related Terms
+::: tip Term Explanations
 
 **Number of Client Sessions**: The total number of clients currently connected to the deployment, including both online clients and offline clients with persistent sessions enabled.
 
@@ -87,7 +87,7 @@ The EMQX Dedicated Plan is billed based on the selected tier and the amount of m
 
 **Traffic Fee**: Each instance tier includes a monthly allowance of free traffic. This free traffic is only valid for the current month and any unused portion will be automatically cleared at the month's end. If device communication exceeds the allocated free traffic, the excess will be billed as traffic fees.
 
-::: tip Related Terms
+::: tip Term Explanations
 
 **Number of Client Connections:** The total number of clients currently connected to the deployment, including both online clients and offline clients with persistent sessions enabled.
 
@@ -166,3 +166,7 @@ EMQX BYOC will deploy the EMQX service in your cloud platform account, and the a
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Cloud Platform Resources | When EMQX BYOC is deployed and running, it utilizes virtual machines, networks, and other resources under your cloud platform account. You will be billed by the cloud platform provider for the usage of these resources.                        |
 | EMQX BYOC License        | To use the EMQX BYOC service, you need to subscribe and obtain an official EMQX BYOC license from EMQ. For details on license pricing, please [contact us](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes). |
+
+## Quotas and Limits
+
+In addition to understanding the billing for product deployments, it is important to be fully aware of the quotas and limits associated with each deployment to avoid exceeding these limits. This will help ensure the stability of your deployment and the smooth operation of your business. For more details, see [Quotas and Limits](../create/restriction.md).
