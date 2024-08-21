@@ -1,11 +1,45 @@
 # Product Plans
 
-The EMQX Platform provides the following fully-managed product plans:
+As a globally available, fully-managed MQTT service platform, the EMQX Platform can be easily deployed on popular public clouds. The following product plans are available to offer you a tailored solution to meet your specific requirements:
 
-- **Serverless Plan**: Provide MQTT services on a secure and scalable cluster that is charged based on usage. The service is free for usage within the free quota, supporting up to 1000 concurrent connections.
-- **Dedicated Plan**: Deployed in an independent cloud environment, the MQTT cluster service supports advanced features such as real-time data processing, data persistence, message distribution, VPC peering (private network), etc. Highly available and high-performance, it is the best choice for your production environment usage.
-- **Premium Plan**: <!--To be added-->
-- **BYOC (Bring Your Own Cloud):** Seamlessly integrates the EMQX MQTT server with your existing systems. Keep your data secure in your own cloud and manage it with EMQ's expertise. 
+## Serverless Plan
+
+The Serverless Plan provides MQTT services on a secure on a secure, scalable cluster with pay-as-you-go pricing, making it a flexible and cost-effective solution for starting with MQTT. Key features include:
+
+- **Usage-Based Billing**: Pay only for what you use, with a generous free quota offering up to 1 million session minutes.
+- **Automatic Scaling**: Seamlessly scales with your application’s demands.
+- **Quick Start**: Ideal for developers and small projects.
+
+## Dedicated Plan
+
+The Dedicated Plan is designed for businesses that require enhanced performance and security with isolated resources:
+
+- **Capacity-Based Billing**: Hourly billing based on reserved resource allocation, ensuring resources are exclusively dedicated to your deployment.
+- **High Performance**: Provides a dedicated environment with guaranteed resources.
+- **Advanced Features**: Offers advanced enterprise features such as Single Sign-On (SSO), real-time data processing, data integration, private network, etc.
+- **Customizable Deployment**: Flexible deployment options across AWS, Azure, and GCP.
+
+## Premium Plan
+
+The Premium Plan offers all the advantages of the Dedicated Plan, along with additional features to support complex enterprise applications:
+
+**Durable Sessions:** Enhanced storage capacity for persistent client sessions.
+
+**Event History**: Records and stores client events for monitoring and analysis.
+
+**Cluster Linking (coming soon)**: Facilitates cross-regional communication through cluster bridging.
+
+**Kafka Streaming (coming soon)**: Direct support for Kafka protocol, allowing Kafka clients to consume MQTT messages seamlessly.
+
+## BYOC (Bring Your Own Cloud) Plan
+
+The BYOC Plan allows businesses to integrate the EMQX Platform with their existing cloud infrastructure. It keeps your data secure in your own cloud and manages it with EMQ’s expertise.
+
+**Full Control:** Deploy the EMQX Platform in your own cloud environment for full data control.
+
+**Security Compliance**: Maintain compliance with internal security policies by managing data within your cloud.
+
+**Customization**: Tailor the MQTT infrastructure to meet specific business requirements.
 
 ## Feature List
 
@@ -182,7 +216,7 @@ This section provides a detailed comparison of features across different service
       <td style="text-indent: 2em;">Free Quota</td>
       <td>Connection: 1,000,000 session minutes / month<br />Traffic: 1 GB / Month<br />Rule actions: 1,000,000 / month </td>
       <td>Traffic：Maximum 1 TB / Month</td>
-      <td>Traffic：Maximum 1 TB / Month</td>
+      <td>&#10007</td>
       <td>&#10007</td>
    </tr>
    <tr>
@@ -228,7 +262,7 @@ This section provides a detailed comparison of features across different service
       <td>&#10003</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Client and Topic Access control</td>
+      <td style="text-indent: 2em;">Client and Topic Access Control</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -289,6 +323,34 @@ This section provides a detailed comparison of features across different service
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Can be integrated independently</td>
+   </tr>
+    <tr>
+      <td style="text-indent: 2em;">Durable Session</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+  <tr>
+      <td style="text-indent: 2em;">Event History</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10007</td>
+   </tr>
+  <tr>
+      <td style="text-indent: 2em;">Cluster Linking</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>Coming soon</td>
+      <td>&#10007</td>
+   </tr>
+  <tr>
+      <td style="text-indent: 2em;">Kafka Streaming</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>Coming soon</td>
+      <td>&#10007</td>
    </tr>
    <tr>
       <td><strong>Data Integrations</strong></td>
@@ -476,6 +538,7 @@ This section provides a detailed comparison of features across different service
 
 
 
+
 ## Cloud Providers and Regions
 
 The following sections outline the available cloud providers and their supported regions across different service plans, with options for deployment in major regions across North America, Europe, and Asia.
@@ -499,11 +562,9 @@ The following sections outline the available cloud providers and their supported
 ### Premium Plan
 
 
-| Cloud Provider | Region                                                       |
-| -------------- | ------------------------------------------------------------ |
-| AWS            | **US:** US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Azure          | **US:** East US, West US 2 <br />**EU:** West Europe, West Central <br />**Asia:** Southeast Asia |
-| Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1(Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1(Mumbai), asia-southeast1(Singapore), asia-east1(Taiwan) |
+| Cloud Provider | Region              |
+| -------------- | ------------------- |
+| AWS            | **US:** N. Virginia |
 
 ### BYOC Plan
 
