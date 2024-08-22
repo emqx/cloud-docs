@@ -8,14 +8,12 @@ EMQX Platform 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协�
 
 ## 如何绑定域名？
 
-在 EMQX Platform 建立**专有版部署**后，您会获得一个 MQTT 连接地址，该地址在专有版部署里以 IP 显示。您或许已经拥有自己的域名，希望可以将部署地址绑定到自己拥有的域名，通过您的域名使用 MQTT 服务。
+在 EMQX Platform 建立**专有版部署**后，您会获得一个 MQTT 连接地址，该地址在专有版部署里以域名形式显示。您或许已经拥有自己的域名，希望可以将部署地址绑定到自己拥有的域名，通过您的域名使用 MQTT 服务。
 
 ### 操作步骤
-1. 这里假设您有顶级域名 abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQX Platform 上的部署的连接地址为 123.123.123.123
+1. 这里假设您有顶级域名 abc.com， 希望以 mqtt.abc.com 访问 mqtt 服务，您在 EMQX Platform 上的部署的连接地址为 xxx.ala.dedicated.aliyun.emqxcloud.cn。
 
-2. 那么只需要在您的域名提供商的操作面板上，将 mqtt.abc.com 的 A 记录指向 123.123.123.123 即可
-
-> 注意：如果您使用的是基础版或者亚马逊中国，则需要将 mqtt.abc.com 的 CNAME 记录指向 123.123.123.123
+2. 那么只需要在您的域名提供商的操作面板上，将 mqtt.abc.com 的 CNAME 记录指向 xxx.ala.dedicated.aliyun.emqxcloud.cn 即可。
 
 3. 等待 DNS 解析生效后，您便可通过 mqtt.abc.com 连接 mqtt 服务。
 
