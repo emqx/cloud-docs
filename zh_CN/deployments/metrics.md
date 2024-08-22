@@ -63,7 +63,7 @@ Serverless 部署的时间轴指标页面提供了连接数、流入流出消息
 
 <img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
-### 专有版 / 旗舰版 / BYOC 时间轴指标
+### 专有版<!-- / 旗舰版--> / BYOC 时间轴指标
 
 专有版和 BYOC 部署的时间轴指标页面提供了连接数、流入流出消息、报文流量、订阅数和丢弃消息这五种指标。您可以查看每类指标对应的展示图表，以及在某个时间点的详细信息。对于有一些指标，标明了 API 中对应的指标名称，如果您需要了解和查看更多的指标，可以通过 [API - 指标](https://docs.emqx.com/zh/cloud/latest/api/dedicated) 获取更多的指标信息。
 

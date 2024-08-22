@@ -6,6 +6,7 @@ Authentication is an important component of most applications. The MQTT protocol
 | ----------- | --------------------------- | -------------------------------------- | ---------------------- | ------------------------------------ |
 | Serverless  | ✓                           | ✗                                      | ✗                      | ✓                                    |
 | Dedicated   | ✓                           | ✓                                      | ✓                      | ✓                                    |
+| Premium     | ✓                           | ✓                                      | ✓                      | ✓                                    |
 
 ## [Password Authentication (Default)](./default_auth.md)
 

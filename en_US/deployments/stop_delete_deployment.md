@@ -33,39 +33,9 @@ After deleting the deployment, devices will not be able to connect to the deploy
 3. Click **Confirm** to delete the deployment.
 
 
-## Dedicated Plan
+## Dedicated / Premium Plan
 
-This section introduces how to start, stop, and delete a Dedicated plan deployment.
-
-### Start and Stop a Deployment
-
-To start a deployment that is already stopped in the Console, click on the deployment to enter the deployment overview page and click the **Start** button in the upper right corner.
-
-To stop a deployment, follow the instructions below. Before stopping the deployment, make sure that the deployment is in the **Running** state.
-
-::: warning Note
-After stopping the deployment, you will not be able to connect to the deployment, but your data and connection addresses will be retained, and data retention fees will be charged.
-:::
-
-1. In the Console, click on the deployment you want to stop to enter the deployment overview page.
-2. Click the **Stop** button in the upper right corner and enter the deployment name in the pop-up box.
-3. Click **Confirm** to stop the deployment.
-
-
-### Delete a Deployment
-Before deleting the deployment, make sure that the deployment is in the **Running** state.
-
-::: warning Note
-After deleting the deployment, you will no longer be able to connect to it, and all deployment data and configurations will be removed. The deployment billing will also be stopped. 
-:::
-
-1. In the Console, click on the deployment you want to delete to enter the deployment overview page.
-2. Click the **Delete** button in the upper right corner and enter the deployment name in the pop-up box.
-3. Click **Confirm** to delete the deployment.
-
-## Premium Plan
-
-This section introduces how to start, stop, and delete a Premium plan deployment.
+This section introduces how to start, stop, and delete a Dedicated / Premium plan deployment.
 
 ### Start and Stop a Deployment
 
@@ -83,7 +53,6 @@ After stopping the deployment, you will not be able to connect to the deployment
 
 
 ### Delete a Deployment
-
 Before deleting the deployment, make sure that the deployment is in the **Running** state.
 
 ::: warning Note

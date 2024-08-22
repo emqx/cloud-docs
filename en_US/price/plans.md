@@ -71,14 +71,14 @@ This section provides a detailed comparison of features across different service
       <td style="text-indent: 2em;">Azure</td>
       <td>-</td>
       <td>&#10003</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>Coming soon</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">GCP</td>
       <td>-</td>
       <td>&#10003</td>
-      <td>&#10003</td>
+      <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
@@ -535,7 +535,6 @@ This section provides a detailed comparison of features across different service
       <td>&#10003</td>
    </tr>
 </table>
-
 
 
 

@@ -23,7 +23,7 @@ Free Tier for Serverless Plan includes:
 Free trial deployment precautions:
 
 - If there are no client connections for 5 consecutive days during the trial period, the trial deployment will be stopped, but your deployment instance will be retained. If you want to continue the trial, please manually enable it in the Platform Console.
-- After the trial expires, if your account has an available balance, the deployment will continue to run and charges will automatically be applied on an hourly basis.
+- After the trial expires, if your account has an available credits, the deployment will continue to run and charges will automatically be applied on an hourly basis.
 - After the trial expires, if your account has no available balance, the deployment will be preserved for 3 days. After 3 days, the trial deployment will be automatically deleted.
 
 ## Create and Log into an EMQX Platform Account

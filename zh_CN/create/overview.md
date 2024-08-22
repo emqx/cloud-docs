@@ -9,9 +9,9 @@
 ## [创建 EMQX 专有版部署](./dedicated.md)
 创建一个 EMQX 专有版部署并且通过 MQTTX 工具连接到部署。
 
-## [创建 EMQX 旗舰版部署](./dedicated.md)
+## <!--[<创建 EMQX 旗舰版部署](./dedicated.md)-->
 
-创建一个 EMQX 旗舰版部署并且通过 MQTTX 工具连接到部署。
+<!--创建一个 EMQX 旗舰版部署并且通过 MQTTX 工具连接到部署。-->
 
 ## [创建 EMQX BYOC 部署](./byoc.md)
 

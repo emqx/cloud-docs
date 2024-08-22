@@ -16,6 +16,7 @@ Here you can observe the real-time metrics of your deployment.
 | Topics                 | The total number of topics currently subscribed to by all clients. |
 | Subscriptions          | The total number of subscribed topics in each client.        |
 | Shared subscriptions   | The total number of shared subscriptions in the deployment. <br>For an introduction to shared subscriptions, see [MQTT Shared Subscriptions: Practical Guidelines and Use Cases ](https://www.emqx.com/blog/introduction-to-mqtt5-protocol-shared-subscription). |
+| Storage (GB)           | The storage space used by Durable Sessions and Event History within the deployment. |
 
 ::: tip
 
@@ -137,3 +138,8 @@ The Dropped Messages chart shows the number of messages that are dropped during 
 
 <img src="./_assets/metric_dedicated_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
+#### Storage (GB)
+
+The Storage (GB) chart shows the storage space used by Durable Sessions and Event History within the selected time period.
+
+<img src="./_assets/metrics_premium.png" style="zoom:65%;" >

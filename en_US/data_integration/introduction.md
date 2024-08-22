@@ -70,7 +70,7 @@ The data integration function in different deployments requires different levels
   | Total Rules                 | 4               |
   | Actions Associated Per Rule | 1               |
 
-**Dedicated and Premium Deployment**
+**Dedicated and Premium Deployments**
 
 - It is recommended to access data sources through an internal network. Therefore, before creating, you need to configure [VPC peering](../deployments/vpc_peering.md) first and also open the security group.
 - If you need to access it through the public network, you can enable a [NAT gateway](../vas/nat-gateway.md).

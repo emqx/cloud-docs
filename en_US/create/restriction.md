@@ -39,9 +39,11 @@ The EMQX Platform sets default quotas (or limits) for each deployment and the de
 | Anonymous access                                          | No anonymous access     | YES            | NO                              |
 | Maximum message queue length                              | 1000                    | YES[\*3]       | NO                              |
 | Maximum message size                                      | 1 MB                    | YES[\*4]       | NO                              |
+| Maximum message size (Premium Plan)                       | 100 KB                  | NO             | -                               |
 | Session expiry time（MQTT 3.x）                           | 2 hours                 | YES            | NO                              |
 | Maximum retained messages                                 | Session tier * 10       | NO             | -                               |
 | Maximum size of a retained message                        | 1 MB                    | YES            | NO                              |
+| Maximum size of a retained message (Premium Plan)         | 100 KB                  | NO             | -                               |
 | Retained message expiry interval                          | Never                   | YES            | NO                              |
 | Client ID maximum length（MQTT 3.x）                      | 23                      | YES            | YES                             |
 | Client ID maximum length（MQTT 5.0）                      | 256                     | YES            | YES                             |
@@ -58,5 +60,5 @@ The EMQX Platform sets default quotas (or limits) for each deployment and the de
 [1] It is recommended to use external authentication if the credentials are more than 100,000.<br>
 [2] It is recommended to use external authentication if the credentials are more than 100,000.<br>
 [3] The number can be adjusted to the same as the session tier.<br>
-[4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of transmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
+[4] The maximum size can be adjusted to 10 MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In the case of transmitting 10 MB-sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
 

@@ -1,35 +1,24 @@
-# Event History (Beta)
+# Event History
 
-Event History (Beta) is a value-added service provided by the EMQX Platform. It records the client or message events, providing in-depth data insights for MQTT connections. This page introduces how to enable and use the Event History (Beta).
+::: tip
 
-::: tip Beta Disclaimer
-
-Event History (Beta) is offered for free, and customers can choose to use this feature at their discretion. The Beta Version may not be supported and is subject to change at any time without notice. The Beta Version does not represent the final product and may contain bugs that could cause failures and data loss.
+The Event History feature is only available to the Premium Deployment. Make sure to create a valid deployment before you start.
 
 :::
+
+Event History is a value-added service provided by the EMQX Platform. It records the client or message events, providing in-depth data insights for MQTT connections. This page introduces how to use the Event History.
 
 ## Benefits
 
 The Event History service provides the following benefits.
 
-- **For Troubleshooting**: Users can examine past events, events such as "Disconnected", "Session Expiry", "Message Drop" etc., enabling them to troubleshoot issues and get insights into potential causes.
-- **For Compliance and Regulation**: In many industries, such as healthcare or manufacturing, there are regulatory requirements for maintaining a detailed record of system activities. Event history ensures compliance with these regulations by providing a comprehensive audit trail of all relevant events.
-- **For Device Behavior Analysis**: Event history can assist in analyzing the device behavior of the IoT system. By examining timestamps and event details, developers can pinpoint the weakness for optimization or improvement.
-
-## Enable Event History (Beta)
-::: warning Prerequisites
-In the Beta phase, Event History is only available to the **v5 Dedicated Deployment in AWS - Virginia**. Make sure to create a valid deployment before you start.
-:::
-
-1. On the deployment page, expand the **Diagnose** from the left navigation menu. 
-2. Click **Event History (Beta)**. On the initial page, click **Enable Event History**. 
-3. Follow the enabling procedure to enable the value-added service.
-
-<img src="./_assets/event_enable.png" style="zoom:50%;" />
+- **Troubleshooting**: Users can examine past events, events such as "Disconnected", "Session Expiry", "Message Drop" etc., enabling them to troubleshoot issues and get insights into potential causes.
+- **Compliance and Regulation**: In many industries, such as healthcare or manufacturing, there are regulatory requirements for maintaining a detailed record of system activities. Event history ensures compliance with these regulations by providing a comprehensive audit trail of all relevant events.
+- **Device Behavior Analysis**: Event history can assist in analyzing the device behavior of the IoT system. By examining timestamps and event details, developers can pinpoint the weakness for optimization or improvement.
 
 ## View Events
 
-After enabling the service, you can view client events and message events in their respective tabs. You can filter events by a specific time period and search for events by Client ID and event type.
+Go to your Premium deployment. Click **Diagnose** -> **Event History** from the left navigation menu. On the Event History page, you can view client events and message events in their respective tabs. You can filter events by a specific time period and search for events by Client ID and event type.
 
 <img src="./_assets/view_event.png" alt="view_event" style="zoom:67%;" /> 
 

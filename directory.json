@@ -67,25 +67,6 @@
           ]
         },
         {
-          "title": "创建旗舰版部署",
-          "path": "create/premium",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "TLS/SSL 设置",
-              "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC 对等连接设置",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "私网连接 PrivateLink 设置",
-              "path": "deployments/privatelink"
-            }
-          ]
-        },
-        {
           "title": "创建 BYOC 部署",
           "collapsed": true,
           "children": [
@@ -590,10 +571,6 @@
             {
               "title": "专有版 部署 API",
               "path": "https://docs.emqx.com/zh/cloud/latest/api/dedicated.html"
-            },
-            {
-              "title": "旗舰版 部署 API",
-              "path": "https://docs.emqx.com/zh/cloud/latest/api/premium.html"
             }
           ]
         }
@@ -975,7 +952,7 @@
           "path": "deployments/logs"
         },
         {
-          "title": "Evnet History (Beta)",
+          "title": "Evnet History",
           "path": "vas/event_history"
         }
       ]
@@ -1333,12 +1310,8 @@
               ]
             },
             {
-              "title": "Dedicated Deployment API",
+              "title": "Dedicated / Premium Deployment API",
               "path": "https://docs.emqx.com/en/cloud/latest/api/dedicated.html"
-            },
-            {
-              "title": "Dedicated Deployment API",
-              "path": "https://docs.emqx.com/en/cloud/latest/api/premium.html"
             }
           ]
         }

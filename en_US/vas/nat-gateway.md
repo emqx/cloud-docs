@@ -2,7 +2,7 @@
 
 ::: warning Note
 
-This feature is exclusive to the Dedicated Edition. You need to create a Dedicated deployment before purchasing this service. 
+This feature is exclusive to the Dedicated and Premium editions. You need to create a deployment before purchasing this service. 
 
 :::
 
