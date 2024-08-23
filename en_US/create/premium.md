@@ -22,13 +22,13 @@ If your trial request is approved, you will receive an email with details about 
 
 When your trial is activated, you can go to the Platform Console to deploy your Premium Plan.
 
-4. Fill in the **Deployment Name & Project**: Provide a name for your deployment and select the appropriate project.
+1. Fill in the **Deployment Name & Project**: Provide a name for your deployment and select the appropriate project.
 
 2. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Platform Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
 
    ![deploy_premium](./_assets/deploy_premium.png)
 
-6. Upon accepting the terms, the deployment will begin. Once the deployment status changes to **Running**, your deployment is successfully created and ready for use.
+3. Upon accepting the terms, the deployment will begin. Once the deployment status changes to **Running**, your deployment is successfully created and ready for use.
 
 ## View Deployment Information
 
