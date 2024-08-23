@@ -206,7 +206,7 @@ You can delete rules in the rule list. Click the delete button and enter the rul
 
 ::: tip Note
 
-This feature is only available for Dedicated deployments.
+This feature is only available for Dedicated and Premium deployments.
 
 :::
 

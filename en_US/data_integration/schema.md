@@ -1,10 +1,10 @@
 # Schema Registry
 
-Schema Registry provides a centralized schema for managing and validating topic message data and the ability to serialize and deserialize data over the network. Publishers and subscribers of MQTT topics can use the Schema to ensure data consistency and compatibility. Schema Registry is a key component of the rule engine. It can be adapted to multiple scenarios of device access and rule design, helping to ensure data quality, compliance, application development efficiency and system performance.
-
-::: warning Note
-Schema Registry is only available for **Dedicated** deployments.
+::: tip Note
+Schema Registry is only available for Dedicated and Premium deployments.
 :::
+
+Schema Registry provides a centralized schema for managing and validating topic message data and the ability to serialize and deserialize data over the network. Publishers and subscribers of MQTT topics can use the Schema to ensure data consistency and compatibility. Schema Registry is a key component of the rule engine. It can be adapted to multiple scenarios of device access and rule design, helping to ensure data quality, compliance, application development efficiency and system performance.
 
 ## Understand Schema Registry
 

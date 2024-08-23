@@ -1,8 +1,8 @@
 # Event History
 
-::: tip
+::: tip Note
 
-The Event History feature is only available to the Premium Deployment. Make sure to create a valid deployment before you start.
+The Event History feature is only available for Premium Deployments. Make sure to create a valid deployment before you start.
 
 :::
 

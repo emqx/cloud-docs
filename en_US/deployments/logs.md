@@ -1,8 +1,8 @@
 # Logs
 
-:::warning Note
+::: tip Note
 
-This feature is available on the Dedicated Plan. 
+This feature is only available for Dedicated and Premium deployments. 
 
 :::
 
