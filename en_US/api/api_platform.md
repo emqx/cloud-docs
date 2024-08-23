@@ -3,7 +3,7 @@
 This section introduces the EMQX Platform API functionality for TLS certificate management and how to create and manage the platform API key for secure access control.
 
 ::: warning Notice
-Platform API is only available for Dedicated deployment.
+Platform API is only available for Dedicated and Premium deployments.
 :::
 
 ## API Function
@@ -12,8 +12,8 @@ Currently, the EMQX Platform supports TLS certificate management and deployment 
 
 | API                                                | Deployment Type                                              | Description                                                  |
 | -------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [TLS Certificate Management](./tls_certificate.md) | EMQX v5 deployment and  v4 (4.4.x) deployment created under the Platform account | Manage the lifecycle of TLS certificates for a specified deployment. |
-| [Deployment Management](./deployment_manage.md)    | EMQX v5 deployment and  v4 (4.4.x) deployment created under the Platform account | Query deployment status, start deployment, and stop deployment |
+| [TLS Certificate Management](./tls_certificate.md) | EMQX Dedicated v5 and Premium deployment<br />EMQX v4 (4.4.x) deployment created under the Platform account | Manage the lifecycle of TLS certificates for a specified deployment. |
+| [Deployment Management](./deployment_manage.md)    | EMQX Dedicated v5 and Premium deployment<br /> EMQX v4 (4.4.x) deployment created under the Platform account | Query deployment status, start deployment, and stop deployment |
 
 ## Create and Manage Platform API Key
 

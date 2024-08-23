@@ -2,6 +2,23 @@
 
 # Release Notes
 
+#### 2024-8
+
+- Released EMQX Platform Premium Plan.
+- The EMQX Dedicated stops supporting the value-added service of Event History.
+- New regions are added to the Azure platform.
+
+#### 2024-7
+
+- Added rule testing feature in data integration for Dedicated deployments.
+- Added connector editing function in data integration for Dedicated deployments.
+- Added deployment management API.
+- Updated Prometheus API configuration.
+
+#### 2024-6
+
+- The EMQX Dedicated supports the value-added service of Event History (Beta).
+
 #### 2024-5
 
 * The data integration in EMQX Dedicated now supports Schema Registry.

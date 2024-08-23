@@ -121,11 +121,11 @@ The following steps demonstrate how to add an action to republish the original m
 
 You can also add actions to forward the processed results to target services using associated Connectors. On the **New Action** step page, select the target Connector from the Connector drop-down list. For details on the action configuration, see [Ingest MQTT Data into HTTP Server](./http_server.md) and [Stream MQTT Data into Apache Kafka](./kafka.md).
 
-## Test Rule
+## Test Rules
 
 ::: tip Note
 
-This feature is only available for Dedicated deployments.
+This feature is only available for Dedicated and Premium deployments.
 
 :::
 

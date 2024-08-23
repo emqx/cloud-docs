@@ -1,6 +1,6 @@
 # Value Added Services
 
-Value Added Services (VAS) are highly available service plans provided and maintained by the EMQX Platform. It helps to meet the specific technical and product needs of our customers. Value-added services are associated with the deployment you purchase. You can subscribe to related value-added services only after you purchase a Dedicated deployment. 
+Value Added Services (VAS) are highly available service plans provided and maintained by the EMQX Platform. It helps to meet the specific technical and product needs of our customers. Value-added services are associated with the deployment you purchase. You can subscribe to related value-added services only after you purchase a Dedicated or Premium deployment. 
 
 You can find all value-added services offered by the EMQX Platform by clicking **VAS** from the top menu. On the **Value Added Services** page, you can view or subscribe to the services. 
 
