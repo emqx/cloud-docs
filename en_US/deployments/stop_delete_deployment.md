@@ -29,7 +29,8 @@ After deleting the deployment, devices will not be able to connect to the deploy
 :::
 
 1. In the Console, click on the deployment you want to delete to enter the deployment overview page.
-2. Click the **Delete** button in the upper right corner and enter the deployment name in the pop-up box.
+2. Click the **Settings** button in the upper right corner and click the **Delete Deployment** at the bottom of the page.
+2. Enter the deployment name in the pop-up box.
 3. Click **Confirm** to delete the deployment.
 
 
@@ -60,7 +61,8 @@ After deleting the deployment, you will no longer be able to connect to it, and 
 :::
 
 1. In the Console, click on the deployment you want to delete to enter the deployment overview page.
-2. Click the **Delete** button in the upper right corner and enter the deployment name in the pop-up box.
+2. Click the **Settings** button in the upper right corner and click the **Delete Deployment** button at the bottom of the page.
+2. Enter the deployment name in the pop-up box.
 3. Click **Confirm** to delete the deployment.
 
 ## BYOC
