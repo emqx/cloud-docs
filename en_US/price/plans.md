@@ -167,7 +167,7 @@ This section provides a detailed comparison of features across different service
       <td style="text-indent: 2em;">Maximum Message Size</td>
       <td>1 MB</td>
       <td>10 MB</td>
-      <td>10 MB</td>
+      <td>10 KB</td>
       <td>256 MB</td>
    </tr>
    <tr>
@@ -535,6 +535,7 @@ This section provides a detailed comparison of features across different service
       <td>&#10003</td>
    </tr>
 </table>
+
 
 
 
