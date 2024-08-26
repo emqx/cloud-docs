@@ -8,8 +8,8 @@ You can explore and try EMQX Platform products through our Serverless free quota
 
 Free Tier for Serverless Plan includes:
 
-- **1 million** connection minutes per month
-- **1GB** of traffic per month
+- **1 million** session minutes per month
+- **1 GB** of traffic per month
 - **1 million** rule actions per month
 
 14 Days Free Trial for the Dedicated Plan includes:

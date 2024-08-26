@@ -2,7 +2,7 @@
 
 The spend limit allows you to control the monthly spending of the Serverless deployment. It can provide a reminder when the limit is reached. The spend limit is set during deployment creation and can be modified afterward.
 
-If the spend limit is set to 0, the deployment will only use the free resources, which includes 1 million connection minutes and 1 GB of traffic per month. Once the free resources are exhausted, the deployment will be stopped.
+If the spend limit is set to 0, the deployment will only use the free resources, which includes 1 million session minutes and 1 GB of traffic per month. Once the free resources are exhausted, the deployment will be stopped.
 
    ![spend_limit_0](./_assets/spend_limit_0.png)
 
