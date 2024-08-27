@@ -10,7 +10,7 @@ Create an EMQX Serverless deployment and use the MQTTX tool to try the features.
 
 Create an EMQX Dedicated deployment and use the MQTTX tool to try the features.
 
-## [Create a Premium Deployment](./dedicated.md)
+## [Create a Premium Deployment](./premium.md)
 
 Create an EMQX Premium deployment and use the MQTTX tool to try the features.
 

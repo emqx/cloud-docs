@@ -1,6 +1,6 @@
 # Create a Premium Deployment
 
-The EMQX Premium Plan offers a robust EMQX Cluster with advanced features for large-scale, mission-critical applications. This guide provide instructions on how to create the Premium deployment on the EMQX Platform.
+The EMQX Premium Plan offers a robust EMQX Cluster with advanced features for large-scale, mission-critical applications. This guide provides instructions on how to create the Premium deployment on the EMQX Platform.
 
 ## Apply for a Trial
 
@@ -16,7 +16,7 @@ EMQX Premium deployments can only be created by requesting a trial. Users cannot
 
    ![apply_premium_trial](./_assets/apply_premium_trial.png)
 
-If your trial request is approved, you will receive an email with details about the trial period, deployment platform and region, as well as the activation time.
+If your trial request is approved, you will receive an email with details about the trial period, deployment platform, and region, as well as the activation time.
 
 ## Create a Deployment
 
