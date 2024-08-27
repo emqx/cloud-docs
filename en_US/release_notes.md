@@ -5,7 +5,7 @@
 #### 2024-8
 
 - Released EMQX Platform Premium Plan.
-- The Event History service are fully supported in the EMQX Premium.
+- The Event History service is fully supported in the EMQX Premium.
 - Added regions of North Europe and West Us 3 to the Azure platform.
 
 #### 2024-7
