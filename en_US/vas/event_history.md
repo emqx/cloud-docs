@@ -6,7 +6,7 @@ The Event History feature is only available for Premium Deployments. Make sure t
 
 :::
 
-Event History is a value-added service provided by the EMQX Platform. It records the client or message events, providing in-depth data insights for MQTT connections. This page introduces how to use the Event History.
+Event History is a service provided by the EMQX Platform. It records the client or message events, providing in-depth data insights for MQTT connections. This page introduces how to use the Event History.
 
 ## Benefits
 

@@ -5,19 +5,19 @@
 #### 2024-8
 
 - Released EMQX Platform Premium Plan.
-- The EMQX Dedicated stops supporting the value-added service of Event History.
-- New regions are added to the Azure platform.
+- The Event History service are fully supported in the EMQX Premium.
+- Added regions of North Europe and West Us 3 to the Azure platform.
 
 #### 2024-7
 
-- Added rule testing feature in data integration for Dedicated deployments.
-- Added connector editing function in data integration for Dedicated deployments.
-- Added deployment management API.
-- Updated Prometheus API configuration.
+- Adapted EMQX Platform Console to display gateway client information.
+- Supported starting and stopping deployments via Platform API.
 
 #### 2024-6
 
-- The EMQX Dedicated supports the value-added service of Event History (Beta).
+- The EMQX Platform supports the value-added service of Event History (Beta).
+- Released EMQX Cloud Status Page: https://status.emqxcloud.com/.
+- Supported customer control of deployment ports in EMQX Platform Console.
 
 #### 2024-5
 

@@ -569,7 +569,7 @@
               ]
             },
             {
-              "title": "专有版 部署 API",
+              "title": "专有版部署 API",
               "path": "https://docs.emqx.com/zh/cloud/latest/api/dedicated.html"
             }
           ]
@@ -952,7 +952,7 @@
           "path": "deployments/logs"
         },
         {
-          "title": "Evnet History",
+          "title": "Event History",
           "path": "vas/event_history"
         }
       ]
@@ -967,7 +967,7 @@
           "path": "deployments/port_guide_serverless"
         },
         {
-          "title": "Dedicated / BYOC Connection Guide",
+          "title": "Dedicated / Premium / BYOC Connection Guide",
           "path": "deployments/port_guide_dedicated"
         },
         {

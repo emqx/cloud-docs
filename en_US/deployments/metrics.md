@@ -81,7 +81,7 @@ The timeline metrics for Dedicated, Premium, and BYOC deployments include the fo
 - Messages
 - Packets
 - Dropped messages
-- Storage (GB) (Premium only)
+- Storage (GB) (for Premium Plan only)
 
 You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API](https://docs.emqx.com/en/cloud/latest/api/dedicated.html#tag/Metrics).
 
@@ -113,6 +113,7 @@ The Subscriptions chart provides three metrics to display the subscription statu
 | client.unsubscribe | The number of unsubscriptions at the moment.  |
 
 <img src="./_assets/metric_dedicated_2.png" alt="metrics_detail" style="zoom: 33%;" />
+
 
 #### Messages
 

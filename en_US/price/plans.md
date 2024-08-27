@@ -71,14 +71,14 @@ This section provides a detailed comparison of features across different service
       <td style="text-indent: 2em;">Azure</td>
       <td>-</td>
       <td>&#10003</td>
-      <td>&#10007</td>
+      <td>Coming soon</td>
       <td>Coming soon</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">GCP</td>
       <td>-</td>
       <td>&#10003</td>
-      <td>&#10007</td>
+      <td>Coming soon</td>
       <td>&#10003</td>
    </tr>
    <tr>
@@ -156,18 +156,20 @@ This section provides a detailed comparison of features across different service
       <td>1000</td>
       <td>Unlimited</td>
       <td>Unlimited</td>
+      <td>Unlimited</td>
    </tr> 
    <tr>
       <td style="text-indent: 2em;">Maximum Single-Client Publishing TPS </td>
       <td>10</td>
       <td>Unlimited</td>
       <td>Unlimited</td>
+      <td>Unlimited</td>
    </tr>
    <tr>
       <td style="text-indent: 2em;">Maximum Message Size</td>
       <td>1 MB</td>
-      <td>10 MB</td>
-      <td>10 KB</td>
+      <td>1 MB</td>
+      <td>100 KB</td>
       <td>256 MB</td>
    </tr>
    <tr>
@@ -535,6 +537,7 @@ This section provides a detailed comparison of features across different service
       <td>&#10003</td>
    </tr>
 </table>
+
 
 
 

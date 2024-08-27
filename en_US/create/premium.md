@@ -102,7 +102,7 @@ You can use any MQTT client tool to connect to the deployment for testing. It is
 
 ## Convert to a Commercial Deployment
 
-At the end of the trial period, your trial deployment will be automatically stopped. If you wish to continue using the Premium deployment, please reach out to our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes) team to purchase a subscription. For detailed pricing information, refer to [Pricing - Premium Plan](../price/pricing.md#premium-plan).
+At the end of the trial period, your trial deployment will be automatically stopped. If you wish to continue using the Premium deployment, please reach out to our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes) team to purchase the Premium Plan service. For detailed pricing information, refer to [Pricing - Premium Plan](../price/pricing.md#premium-plan).
 
 ::: tip
 
