@@ -28,7 +28,7 @@ We are committed to continuously improving the Premium Plan with additional ente
 
 ### Upgrade to the Premium Plan
 
-The EMQX Platform Premium Plan is designed to meet the demands of complex enterprise applications with its robust new features. Contact our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes) team now to upgrade and start leveraging these powerful new features to enhance your business operations.
+The EMQX Platform Premium Plan is designed to meet the demands of complex enterprise applications with its robust new features. Contact our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=Premium) team now to upgrade and start leveraging these powerful new features to enhance your business operations.
 
 ## New Features in Dedicated v5
 
