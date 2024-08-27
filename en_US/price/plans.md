@@ -543,21 +543,20 @@ This section provides a detailed comparison of features across different service
 
 The following sections outline the available cloud providers and their supported regions across different service plans, with options for deployment in major regions across North America, Europe, and Asia.
 
-### Serverless Plan
-
-| Cloud Provider | Region           |
-| ------ | --------------- |
-| AWS/Azure/CGP | North America, Europe, Asia |
+### Serverless
+| Cloud Provider | Region                              |
+| -------------- | ----------------------------------- |
+| AWS/Azure/CGP  | North America, Europe, Asia-Pacific |
 
 
 ### Dedicated Plan
 
 
-| Cloud Provider | Region                                                                                                                                                                                                                                            |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AWS            | **US:** US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Azure          | **US:** East US, West US 2 <br />**EU:** West Europe, West Central <br />**Asia:** Southeast Asia                                                                                                                                                 |
-| Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1(Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1(Mumbai), asia-southeast1(Singapore), asia-east1(Taiwan)                         |
+| Cloud Provider | Region                                                       |
+| -------------- | ------------------------------------------------------------ |
+| AWS            | **US:** N. Virginia, Ohio, N. California, Oregon<br />**EU:** Ireland, London, Frankfurt<br />**Aisa:** Singapore, Mumbai, Hong Kong, Tokyo, Sydney |
+| Azure          | **US:** East US, West US 2, West US 3<br />**EU:** West Europe, Germany West Central, North Europe <br />**Asia:** Southeast Asia |
+| Google Cloud   | **US:** South Carolina, Oregon, Iowa<br />**EU:** Frankfurt, Finland<br />**Asia:** Mumbai, Singapore, Taiwan, Tokyo |
 
 ### Premium Plan
 
@@ -569,10 +568,10 @@ The following sections outline the available cloud providers and their supported
 ### BYOC Plan
 
 
-| Cloud Provider | Region                                                                                                                                                                                                                                            |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AWS            | **US:** US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon)<br />**EU:** EU (Ireland), EU (Frankfurt)<br />**Aisa:** Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Hong Kong), Asia Pacific (Tokyo) |
-| Google Cloud   | **US:** us-east1 (South Carolina), us-west1 (Oregon), us-central1 (Iowa)<br />**EU:** europe-west3 (Frankfurt), europe-north1 (Finland)<br />**Asia:** asia-south1 (Mumbai), asia-southeast1 (Singapore), asia-east1 (Taiwan)                     |
+| Cloud Provider | Region                                                       |
+| -------------- | ------------------------------------------------------------ |
+| AWS            | **US:** N. Virginia, Ohio, N. California, Oregon<br />**EU:** Ireland, London, Frankfurt<br />**Aisa:** Singapore, Mumbai, Hong Kong, Tokyo, Sydney |
+| Google Cloud   | **US:** South Carolina, Oregon, Iowa<br />**EU:** Frankfurt, Finland<br />**Asia:** Mumbai, Singapore, Taiwan, Tokyo |
 
 To deploy your EMQX Cluster in a different region, you can submit a request via a [ticket](../feature/tickets.md) or email to [cloud-support@emqx.io](mailto:cloud-support@emqx.io). The EMQX support team will assist you in deploying your instance in the desired region.
 
