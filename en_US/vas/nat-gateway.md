@@ -2,11 +2,11 @@
 
 ::: warning Note
 
-This feature is exclusive to the Dedicated Edition. You need to create a Dedicated deployment before purchasing this service. 
+This feature is exclusive to the Dedicated and Premium editions. You need to create a deployment before purchasing this service. 
 
 :::
 
-The NAT gateway provides network address translation services. Before the NAT gateway is activated, some functions of the Dedicated deployment, such as extended authentication and data integration, cannot access public network resources. Once subscribed, it allows access through public network addresses.
+The NAT gateway provides network address translation services. Before the NAT gateway is activated, some functions of the Dedicated/Premium deployment, such as extended authentication and data integration, cannot access public network resources. Once subscribed, it allows access through public network addresses.
 
 ## Subscribe to the Service
 

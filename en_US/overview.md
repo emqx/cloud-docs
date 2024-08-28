@@ -14,7 +14,7 @@ EMQX Platform supports massive devices and application-side connectivity, provid
 
 <img src="./_assets/model_1.png" alt="two-way-communication" style="zoom:50%;" />
 
-#### Use Cases
+#### Use Case
 
 This model is suitable for IoT applications with instant communication requirements, such as the smart home scenario, where the cell phone app gets the status information of smart devices. Users can send control commands to smart devices through app. 
 
@@ -38,17 +38,25 @@ EMQX Platform provides MQTT services to support hybrid applications with two-way
 
 The model described can be used in Connected Cars, where the data collected by the vehicle's sensors is transmitted to the cloud. The cloud then processes this data using a computation model and provides instant feedback to the vehicle. An intelligent app can also send commands to the vehicle. Additionally, a copy of the data can be persistently in a database for other Connected Car applications.
 
+## Product Plans
+
+EMQX Platform offers four different product plans, allowing you to deploy your fully managed MQTT service on popular public clouds worldwide. Whether you are an independent developer or a global industry leader, you can find the perfect EMQX Platform product to suit your needs.
+
+For detailed feature descriptions and pricing of each product plan, see [Product Plans](./price/plans.md).
+
+![product_edition](./_assets/product_edition.png)
+
 ## Product Advantages
 
-When choosing EMQX Platform as your messaging middleware for building IoT applications, you can enjoy the following benefits:
+When choosing the EMQX Platform as your messaging middleware for building IoT applications, you can enjoy the following benefits:
 
 ### Comprehensive Protocol Support
 
-EMQX Platform provides developers with extensive protocol support, enabling them to easily create various IoT applications with MQTT v3.1, v3.1.1, and v5.0 protocols, as well as MQTT over WebSocket. It offers complete support for MQTT message levels of QoS0, QoS1, and QoS2. Additionally, EMQX Platform supports multiple communication protocols such as MQTT-SN, CoAP, and private TCP protocols, making it suitable for various industrial applications. Customizable private features are also available, allowing you to tailor the platform to meet the unique demands of your business.
+EMQX Platform provides developers with extensive protocol support, enabling them to easily create various IoT applications with MQTT v3.1, v3.1.1, and v5.0 protocols, as well as MQTT over WebSocket. It offers complete support for MQTT message levels of QoS0, QoS1, and QoS2. Additionally, the EMQX Platform supports multiple communication protocols such as MQTT-SN, CoAP, and private TCP protocols, making it suitable for various industrial applications. Customizable private features are also available, allowing you to tailor the platform to meet the unique demands of your business.
 
 ### Fast Deployment, Fully Managed
 
-EMQX Platform allows you to easily create a fully managed MQTT cloud service within minutes. By registering and logging in and selecting your preferred deployment area, you can instantly access your service without the hassle of traditional operational setups. Our global service support team and EMQ experts will provide 24/7 uninterrupted technical support and operation services throughout the entire use cycle of EMQX Platform. You can contact us anytime via tickets, emails, or phone calls for a quick response.
+EMQX Platform allows you to easily create a fully managed MQTT cloud service within minutes. By registering and logging in and selecting your preferred deployment area, you can instantly access your service without the hassle of traditional operational setups. Our global service support team and EMQ experts will provide 24/7 uninterrupted technical support and operation services throughout the entire use cycle of the EMQX Platform. You can contact us anytime via tickets, emails, or phone calls for a quick response.
 
 ### Flexible Billing and Scalability for Effective Cost Control
 
@@ -56,17 +64,8 @@ EMQX Platform offers flexible billing methods to provide effective cost control.
 
 ### High Availability and Data Security
 
-EMQX Platform's Dedicated Plan and BYOC Plan utilizes a high-redundancy cluster architecture to ensure high service availability. It also provides a unique isolation environment that guarantees the security of your data and the stability of your business. Each deployment cluster has its own public IP address, dedicated VPC network, independent EMQX servers, and database servers, making it highly secure and reliable.
+EMQX Platform's Dedicated, Premium, and BYOC Plan utilize a high-redundancy cluster architecture to ensure high service availability. It also provides a unique isolation environment that guarantees the security of your data and the stability of your business. Each deployment cluster has its own public IP address, dedicated VPC network, independent EMQX servers, and database servers, making it highly secure and reliable.
 
 ### Flexible Data Integration Solutions
 
-EMQX Platform's Dedicated Plan and BYOC Plan enables real-time pre-processing of device events and message data, which can be stored in over 40 cloud services and enterprise systems such as MySQL, Kafka, and InfluxDB, all hosted on the cloud.
-
-## Product Plans
-
-EMQX Platform offers three different product plans, allowing you to deploy your fully managed MQTT service on popular public clouds worldwide. Whether you're an independent developer or a global industry leader, you can find the perfect EMQX Platform product to suit your needs.
-
-For detailed feature descriptions and pricing of each product plan, see [Product Plans](./price/plans.md).
-
-![product_edition](./_assets/product_edition.png)
-
+EMQX Platform's Dedicated, Premium, and BYOC Plan support real-time pre-processing of device events and message data. These events and data can be stored in over 40 cloud services and enterprise systems such as MySQL, Kafka, and InfluxDB, all hosted on the cloud.

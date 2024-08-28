@@ -1,7 +1,7 @@
 # VPC Peering Connections
 
 ::: tip Note
-This feature is only available for the Dedicated plan.
+This feature is only available for the Dedicated and Premium Plans.
 :::
 
 VPC peering connection is a network connection between two VPCs. Through this connection, the instances in different VPCs can communicate with each other as if they are in the same network.
@@ -36,7 +36,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![aws-vpc1](./_assets/aws-vpc1.png)
 
-4. Return to  [EMQX Platform console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
+4. Return to the [EMQX Platform Console](<https://cloud-intl.emqx.com/console>), fill in the information recorded in step 3, and click the `Confirm` button to complete the creation of the peering connection
 
    * For Peering ID,  fill in the recorded `VPC Peering Connection`
    * For VPC ID,  fill in the recorded `Requester VPC ID`
@@ -51,7 +51,7 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![security-groups](./_assets/security-groups.png)
 
-### Delete peering connections
+### Delete Peering Connections
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
 
@@ -132,7 +132,7 @@ If all the provided information is correct, after several minutes, when the stat
    4. In **Source IP ranges**, fill in the CIDR of deployment in step 1
    5. Select your Protocols and ports.
 
-### Delete peering connections
+### Delete Peering Connections
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
 
@@ -166,7 +166,7 @@ After the Confluent Cloud cluster has been created, we could add peering by the 
 
    ![vpc](./_assets/aws_vpc_peeing_status.png)
 
-### Delete peering connections
+### Delete Peering Connections
 
 To delete a peering connection, you need to ensure that the status of peering connection is `running`
 

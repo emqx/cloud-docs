@@ -2,7 +2,7 @@
 
 You can enter the ticket system by following the steps below:
 
-1. Login into the [EMQX Platform console](https://cloud-intl.emqx.com/console/).
+1. Login into the [EMQX Platform Console](https://cloud-intl.emqx.com/console/).
 2. Click **Tickets** in the top right corner.
 
 ![Tickets](./_assets/tickets.png)

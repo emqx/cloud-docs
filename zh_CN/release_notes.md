@@ -4,7 +4,18 @@
 
 ## 2024
 
+#### 2024-7
+
+- 支持通过平台 API 启动和停止部署。
+- 调整 EMQX Cloud 控制台以显示网关客户端信息。
+
+#### 2024-6
+
+- 发布 EMQX Cloud 状态页面：https://status.emqxcloud.com/。
+- 支持用户在控制台中控制部署端口。
+
 #### 2024-5
+
 * 专有版数据集成支持 Schema Registry
 * 开放平台 API Key，增加 TLS 证书管理 API
 

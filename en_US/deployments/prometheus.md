@@ -4,7 +4,7 @@ The EMQX Platform provides a Prometheus API that allows you to easily call the A
 
 ::: warning Note
 
-This feature is only available for **dedicated deployments**. 
+This feature is only available for Dedicated and Premium deployments. 
 
 :::
 

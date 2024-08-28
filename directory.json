@@ -569,7 +569,7 @@
               ]
             },
             {
-              "title": "专有版 部署 API",
+              "title": "专有版部署 API",
               "path": "https://docs.emqx.com/zh/cloud/latest/api/dedicated.html"
             }
           ]
@@ -716,6 +716,32 @@
                 {
                   "title": "Azure PrivateLink",
                   "path": "deployments/privatelink-azure"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Create a Premium Deployment",
+          "path": "create/premium",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "TLS/SSL",
+              "path": "deployments/tls_ssl"
+            },
+            {
+              "title": "VPC Peering Connection",
+              "path": "deployments/vpc_peering"
+            },
+            {
+              "title": "Configure PrivateLink",
+              "path": "deployments/privatelink",
+              "collapsed": true,
+              "children": [
+                {
+                  "title": "AWS PrivateLink",
+                  "path": "deployments/privatelink-aws"
                 }
               ]
             }
@@ -920,6 +946,10 @@
         {
           "title": "Logs",
           "path": "deployments/logs"
+        },
+        {
+          "title": "Event History",
+          "path": "vas/event_history"
         }
       ]
     },
@@ -933,7 +963,7 @@
           "path": "deployments/port_guide_serverless"
         },
         {
-          "title": "Dedicated / BYOC Connection Guide",
+          "title": "Dedicated / Premium / BYOC Connection Guide",
           "path": "deployments/port_guide_dedicated"
         },
         {
@@ -1276,7 +1306,7 @@
               ]
             },
             {
-              "title": "Dedicated Deployment API",
+              "title": "Dedicated / Premium Deployment API",
               "path": "https://docs.emqx.com/en/cloud/latest/api/dedicated.html"
             }
           ]

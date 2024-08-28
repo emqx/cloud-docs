@@ -1,6 +1,6 @@
-# Dedicated and BYOC Connection Guide
+# Dedicated, Premium and BYOC Connection Guide
 
-This page introduces the protocols and ports used for connecting to the Dedicated and BYOC deployments and provides a troubleshooting guide for connection issues.
+This page introduces the protocols and ports used for connecting to the Dedicated, Premium and BYOC deployments and provides a troubleshooting guide for connection issues.
 
 ## Protocols and Ports Q&A
 
@@ -8,7 +8,7 @@ The following table lists the protocols and ports used for connecting to the Ded
 
 | **Plans**                | **TCP port(mqtt)** | **MQTT over TLS/SSL port (mqtts)** | **WebSocket port(ws)** | **WebSocket over TLS/SSL port(wss)** |
 | ------------------------ | ------------------ | ---------------------------------- | ---------------------- | ------------------------------------ |
-| Decicated | 1883               | 8883 (Need TLS/SSL configuration)  | 8083                   | 8084 (Need TLS/SSL configuration)    |
+| Decicated / Premium | 1883               | 8883  | 8083                   | 8084    |
 | BYOC                     | 1883               | 8883                               | 8083                   | 8084                                 |
 
 
@@ -62,9 +62,9 @@ You can check sample code (TLS-related sample code) to write client's code.
 
 If you encounter problems when connecting to a deployment, follow the steps in this guide based on your deployment plan for troubleshooting and self-diagnosis.
 
-### Dedicated Plan
+### Dedicated / Premium Plan
 
-If you encounter problems connecting to the Dedicated plan, self-diagnose and troubleshoot using the following steps:
+If you encounter problems connecting to the Dedicated / Premium plan, self-diagnose and troubleshoot using the following steps:
 
 1. **Check the connection address**. Ensure you are using the **correct IP address** provided by the Dedicated plan for connection. Note that the Dedicated plan supports direct connection using IP addresses and encrypted connection through custom TLS/SSL configuration. If you need a domain name as the connection address, you can point the Dedicated plan's connection IP address to your own domain name.
 

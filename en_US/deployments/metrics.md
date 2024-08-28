@@ -2,7 +2,7 @@
 
 Metrics provide key data states and changes in deployments over a period of time. You can view them on the deployment details page by clicking **Monitor**->**Metrics** in the left navigation menu.
 
-## Real Time Metrics
+## Real-Time Metrics
 
 Here you can observe the real-time metrics of your deployment.
 
@@ -16,10 +16,11 @@ Here you can observe the real-time metrics of your deployment.
 | Topics                 | The total number of topics currently subscribed to by all clients. |
 | Subscriptions          | The total number of subscribed topics in each client.        |
 | Shared subscriptions   | The total number of shared subscriptions in the deployment. <br>For an introduction to shared subscriptions, see [MQTT Shared Subscriptions: Practical Guidelines and Use Cases ](https://www.emqx.com/blog/introduction-to-mqtt5-protocol-shared-subscription). |
+| Storage (GB)           | The storage space used by Durable Sessions and Event History within the deployment. |
 
 ::: tip
 
-Subscription count is calculated per client. If 2 different clients are subscribed to the same topic, the subscription count is considered as 2. 
+Subscription count is calculated per client. If two different clients are subscribed to the same topic, the subscription count is considered as two. 
 
 :::
 
@@ -29,7 +30,7 @@ CIick the **Timeline** tab, you can see the metrics data of the deployment withi
 
 ### Serverless Timeline Metrics
 
-The Timeline page for serverless deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view the corresponding graphical charts for each type of metric and detailed information at a specific point in time.
+The Timeline page for serverless deployment provides five types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view the corresponding graphical charts for each type of metric and detailed information at a specific point in time.
 
 
 #### Sessions
@@ -59,7 +60,7 @@ The Packets chart shows the traffic of the messages received and sent by the dep
 
 - Total packets: Total traffic of packets received and sent.
 - Sent packets: The traffic of packets sent to the device or application.
-- Recieved packets: The traffic of packets recieved from the device or application.
+- Received packets: The traffic of packets received from the device or application.
 
 <img src="./_assets/metric_serverless_4.png" alt="metrics_detail" style="zoom: 33%;" />
 
@@ -71,9 +72,18 @@ The Dropped Message chart shows the messages that are discarded during the sendi
 <img src="./_assets/metric_serverless_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
 
-### Dedicated / BYOC Timeline Metrics
+### Dedicated / Premium / BYOC Timeline Metrics
 
-The Timeline metrics for Dedicated and BYOC deployment provides 5 types of metrics: sessions, subscriptions, messages, packets, and dropped messages. You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API](https://docs.emqx.com/en/cloud/latest/api/dedicated.html#tag/Metrics).
+The timeline metrics for Dedicated, Premium, and BYOC deployments include the following types:
+
+- Sessions
+- Subscriptions
+- Messages
+- Packets
+- Dropped messages
+- Storage (GB) (for Premium Plan only)
+
+You can view graphical charts corresponding to each type of metric and detailed information at a specific time. For some metrics, the corresponding metrics in the API are indicated. If you need to learn and view more metrics, you can retrieve more metrics through the [API](https://docs.emqx.com/en/cloud/latest/api/dedicated.html#tag/Metrics).
 
 ::: tip
 If there is no corresponding API metric in the table, it means that the metric cannot be retrieved from the API.
@@ -94,7 +104,7 @@ The Sessions chart displays the number of concurrent sessions within a selected 
 <img src="./_assets/metric_dedicated_1.png" alt="metrics_detail" style="zoom: 33%;" />
 
 #### Subscriptions
-The Subscriptions chart provides 3 metrics to display the subscription status within the selected time period.
+The Subscriptions chart provides three metrics to display the subscription status within the selected time period.
 
 |Metrics in API       |   Description                                   |
 | ----------------- | :--------------------------------------- |
@@ -104,9 +114,10 @@ The Subscriptions chart provides 3 metrics to display the subscription status wi
 
 <img src="./_assets/metric_dedicated_2.png" alt="metrics_detail" style="zoom: 33%;" />
 
+
 #### Messages
 
-The Messages chart provides 3 metrics, showing the number of messages received and sent by the deployment during the selected time period, and the messages with no subscribers.
+The Messages chart provides three metrics, showing the number of messages received and sent by the deployment during the selected time period, and the messages with no subscribers.
 
 |Metrics in API       |   Description                                   |
 | ----------------- | :--------------------------------------- |
@@ -117,7 +128,7 @@ The Messages chart provides 3 metrics, showing the number of messages received a
 <img src="./_assets/metric_dedicated_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
 #### Packets
-The Packets chart provides 2 metrics, showing the traffic of messages received and sent by the deployment during the selected time period.
+The Packets chart provides two metrics, showing the traffic of messages received and sent by the deployment during the selected time period.
 
 | Metrics in API   | Description                  |
 | ------------------ | :--------------------------- |
@@ -137,3 +148,8 @@ The Dropped Messages chart shows the number of messages that are dropped during 
 
 <img src="./_assets/metric_dedicated_5.png" alt="metrics_detail" style="zoom: 33%;" />
 
+#### Storage (GB)
+
+The Storage (GB) chart shows the storage space used by Durable Sessions and Event History within the selected time period.
+
+<img src="./_assets/metrics_premium.png" style="zoom:65%;" >

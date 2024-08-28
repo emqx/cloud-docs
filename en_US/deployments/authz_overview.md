@@ -21,10 +21,10 @@ In addition to the default authorization based on the built-in database, it also
 - [Authorize with PostgreSQL](./pgsql_auth.md)
 - [Authorize with Redis](./redis_auth.md)
 
-## Authorization Support by Version
+## Authorization Support by Deployment
 
-| **Version**       | **Default Authorization** | **Extended Authorization** |
+| **Deployment** | **Default Authorization** | **Extended Authorization** |
 | ----------------- | ------------------------- | -------------------------- |
 | Serverless        | ✓                         | ✗                          |
 | Dedicated | ✓                         | ✓                          |
-| BYOC              | ✓                         | ✓                          |
+| Premium | ✓ | ✓ |

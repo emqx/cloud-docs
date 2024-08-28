@@ -1,12 +1,12 @@
 # Single Sign-On (SSO) Overview
 
-Single Sign-On (SSO) is an authentication service that allows users to access multiple different applications or systems associated with the same authentication service using a single set of usernames and passwords. When SSO is enabled in EMQX Platform, users can conveniently log in to the EMQX Platform deployment console using their enterprise account credentials.
+Single Sign-On (SSO) is an authentication service that allows users to access multiple different applications or systems associated with the same authentication service using a single set of usernames and passwords. When SSO is enabled in the EMQX Platform, users can conveniently log in to the EMQX Platform deployment console using their enterprise account credentials.
 
-EMQX Platform implements the SSO feature based on the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) standard. When users perform a single sign-on with their enterprise account, EMQX Platform, acting as the application server (also known as the "Relying Party," RP), can obtain the user's basic identity information from an authorized identity provider (the enterprise's own identity management server). Users can then log in to EMQX Platform with a single click using their enterprise account.
+EMQX Platform implements the SSO feature based on the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) standard. When users perform a single sign-on with their enterprise account, EMQX Platform, acting as the application server (also known as the "Relying Party," RP), can obtain the user's basic identity information from an authorized identity provider (the enterprise's own identity management server). Users can then log in to the EMQX Platform with a single click using their enterprise account.
 
 ## Key Concepts
 
-Before using into the Single Sign-On feature, you need to understand several key concepts:
+Before using the Single Sign-On feature, you need to understand several key concepts:
 
 - **OpenID Provider (OP)** or **Identity Provider (IdP)**: The authorized identity provider or authorization server. Common enterprise IdPs include Okta and Azure Active Directory (AAD).
 - **RP**: Relying Party, which is the application server or website that outsources its user authentication to the IdP (Identity Provider). EMQX Platform, as the provider of single sign-on services, is also referred to as the Service Provider (SP).
@@ -14,7 +14,7 @@ Before using into the Single Sign-On feature, you need to understand several key
 
 ## Authorization Flow
 
-The basic workflow for users to log in to EMQX Platform using SSO is illustrated in the following diagram: 
+The basic workflow for users to log in to the EMQX Platform using SSO is illustrated in the following diagram: 
 
 <img src="./_assets/sso0.png" alt="sso" style="zoom:67%;" />
 

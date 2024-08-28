@@ -145,8 +145,9 @@ The hourly charges are then accumulated into monthly charges, which you can view
 </table>
 
 ::: tip
-Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the New Deployment page.
+Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.
 :::
+
 
 #### Annual Prepaid Method
 
@@ -155,6 +156,28 @@ When you choose the annual prepaid option, you will receive a 15% discount on th
 ### Pricing of Suspended Deployment
 
 **Dedicated deployment in hourly billing** will incur data retention fees at the following rates when suspended: **$0.06 / hour**.
+
+## Premium Plan
+
+The Premium Plan provides a comprehensive solution for enterprises with advanced requirements. It offers dedicated resources and enhanced features, tailored to meet complex needs. This plan combines the reliability of a fixed annual subscription with the flexibility of usage-based pricing, ensuring scalability to suit your business growth.
+
+### Billing Unit
+
+**Base Fee**: An annual subscription fee based on your allocated resources, guaranteeing dedicated capacity throughout the year.
+
+**Usage Fee**: Variable charges based on data traffic, including:
+
+- Ingress Traffic: $0.05 per GB
+- Egress Traffic: $0.10 per GB
+
+### Billing Method
+
+**Annual Subscription**: The Premium Plan operates on an annual billing cycle, with the base fee covering your dedicated resource allocation for the entire year.
+
+**Traffic-Based Charges**: Monthly usage fees are calculated based on your ingress and egress data traffic, providing a clear and predictable cost structure.
+
+For more information and to customize your Premium Plan, please contact our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=Premium) team.
+
 
 ## BYOC Plan
 
@@ -167,6 +190,8 @@ EMQX BYOC will deploy the EMQX service in your cloud platform account, and the a
 | Cloud Platform Resources | When EMQX BYOC is deployed and running, it utilizes virtual machines, networks, and other resources under your cloud platform account. You will be billed by the cloud platform provider for the usage of these resources.                        |
 | EMQX BYOC License        | To use the EMQX BYOC service, you need to subscribe and obtain an official EMQX BYOC license from EMQ. For details on license pricing, please [contact us](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes). |
 
+
 ## Quotas and Limits
 
 In addition to understanding the billing for product deployments, it is important to be fully aware of the quotas and limits associated with each deployment to avoid exceeding these limits. This will help ensure the stability of your deployment and the smooth operation of your business. For more details, see [Quotas and Limits](../create/restriction.md).
+

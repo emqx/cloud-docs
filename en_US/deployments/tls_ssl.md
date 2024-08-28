@@ -1,12 +1,12 @@
 # Configure TLS/SSL
 
 ::: tip Note
-This feature is only available for the Dedicated plan.
+This feature is only available for the Dedicated and Premium Plans.
 :::
 
-EMQX Platform Dedicated deployment recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on how to configure the TSL/SSL protocol in your deployment and test if the configuration is successful.
+EMQX Platform Dedicated/Premium deployment recommends customized certificate validation and provides both one-way/two-way TLS/SSL. This section introduces the certification validation, including instructions on configuring the TSL/SSL protocol in your deployment and testing if the configuration is successful.
 
-The following table provides an overview of different requirements for certifications in one-way and two-way authentication modes. 
+The following table provides an overview of different certification requirements in one-way and two-way authentication modes. 
 
 | Certification Mode     | Self-signed Certificate | Server Certificate | Certificate Chain | Private Key | Client CA Certificate |
 | ---------------------- | ------------------------------- | ------------------ | ----------------- | ----------- | --------------------- |

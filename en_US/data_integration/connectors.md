@@ -29,7 +29,7 @@ Click on the connector ID to view details. The basic information and configurati
 
 ::: tip Note
 
-This feature is only available for Dedicated deployments.
+This feature is only available for Dedicated and Premium deployments.
 
 :::
 

@@ -1,6 +1,6 @@
 # Quotas and Limits
 
-EMQX Platform sets default quotas (or limits) for each deployment and the default value of some of the quotas can be adjusted. The following tables show the default value of the quotas in different deployments and whether they can be adjusted. If you need to adjust the quotas, please [contact us](../feature/tickets.md).
+The EMQX Platform sets default quotas (or limits) for each deployment and the default value of some of the quotas can be adjusted. The following tables show the default value of the quotas in different deployments and whether they can be adjusted. If you need to adjust the quotas, please [contact us](../feature/tickets.md).
 
 ## Serverless
 | Quotas                                    | **Default Value**   | **Adjustable** |
@@ -28,7 +28,7 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 
 [1] Create an extra Serverless deployment by adding a payment method.
 
-## Dedicated and BYOC
+## Dedicated, Premium and BYOC
 
 | **Quotas**                                                | **Default Value**       | **Adjustable** | **Requires Deployment Restart** |
 | --------------------------------------------------------- | ----------------------- | -------------- | ------------------------------- |
@@ -38,9 +38,11 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 | Anonymous access                                          | No anonymous access     | YES            | NO                              |
 | Maximum message queue length                              | 1000                    | YES[\*3]       | NO                              |
 | Maximum message size                                      | 1 MB                    | YES[\*4]       | NO                              |
+| Maximum message size (Premium Plan)                       | 100 KB                  | NO             | -                               |
 | Session expiry time（MQTT 3.x）                           | 2 hours                 | YES            | NO                              |
 | Maximum retained messages                                 | Session tier * 10       | NO             | -                               |
 | Maximum size of a retained message                        | 1 MB                    | YES            | NO                              |
+| Maximum size of a retained message (Premium Plan)         | 100 KB                  | NO             | -                               |
 | Retained message expiry interval                          | Never                   | YES            | NO                              |
 | Client ID maximum length                                  | 1024                    | YES            | YES                             |
 | Maximum API QPS                                           | 100/s                   | NO             | -                               |
@@ -56,5 +58,5 @@ EMQX Platform sets default quotas (or limits) for each deployment and the defaul
 [1] It is recommended to use external authentication if the credentials are more than 100,000.<br>
 [2] It is recommended to use external authentication if the credentials are more than 100,000.<br>
 [3] The number can be adjusted to the same as the session tier.<br>
-[4] The maximum size can be adjusted to 10MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In case of transmitting 10MB sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
+[4] The maximum size can be adjusted to 10 MB. Due to deployment bandwidth limitations, the maximum TPS will be affected. In the case of transmitting 10 MB-sized MQTT messages, the TPS of the deployed will shrink to 100/s.<br>
 

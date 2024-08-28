@@ -1,11 +1,5 @@
 # Logs
 
-:::warning Note
-
-This feature is available on the Dedicated Plan. 
-
-:::
-
 EMQX Platform provides real-time online viewing of EMQX logs.
 
 ## View Deployment Logs
