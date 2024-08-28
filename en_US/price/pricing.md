@@ -176,7 +176,7 @@ The Premium Plan provides a comprehensive solution for enterprises with advanced
 
 **Traffic-Based Charges**: Monthly usage fees are calculated based on your ingress and egress data traffic, providing a clear and predictable cost structure.
 
-For more information and to customize your Premium Plan, please contact our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes) team.
+For more information and to customize your Premium Plan, please contact our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=Premium) team.
 
 
 ## BYOC Plan

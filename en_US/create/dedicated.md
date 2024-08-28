@@ -31,7 +31,7 @@ After the deployment is created, it will appear on the EMQX Platform console hom
 
 ### Basic Information
 
-- **Instance Status:** Running status and duration of operation.
+- **Instance Status:** Running status and deployment creation time.
 - **Sessions:** Current and maximum connection counts.
 - **Pub&Sub TPS:** Current messages sent and received per second, as well as the TPS limit.
 - **Traffic:** Usage information for the deployed traffic, including monthly usage and free quota.
@@ -39,7 +39,7 @@ After the deployment is created, it will appear on the EMQX Platform console hom
 ### Connection Information
 
 - **Address**: The IP address.
-- **Ports**: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable `8883` (mqtts) and `8084` (wss) ports.
+- **Ports**: `1883` (mqtt), `8083` (ws), `8883` (mqtts), and `8084` (wss) ports are enabled by default.
 - **Ports Management**: Allows you to disable or enable an individual port separately.
 
 Check out the [Connection guide](../deployments/port_guide_dedicated.md) to learn more.

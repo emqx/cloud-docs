@@ -4,7 +4,7 @@ As a globally available, fully-managed MQTT service platform, the EMQX Platform 
 
 ## Serverless Plan
 
-The Serverless Plan provides MQTT services on a secure on a secure, scalable cluster with pay-as-you-go pricing, making it a flexible and cost-effective solution for starting with MQTT. Key features include:
+The Serverless Plan provides MQTT services on a secure, scalable cluster with pay-as-you-go pricing, making it a flexible and cost-effective solution for starting with MQTT. Key features include:
 
 - **Usage-Based Billing**: Pay only for what you use, with a generous free quota offering up to 1 million session minutes.
 - **Automatic Scaling**: Seamlessly scales with your application’s demands.

@@ -1,11 +1,5 @@
 # Logs
 
-::: tip Note
-
-This feature is only available for Dedicated and Premium deployments. 
-
-:::
-
 EMQX Platform provides real-time online viewing of EMQX logs.
 
 ## View Deployment Logs

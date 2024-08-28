@@ -8,7 +8,7 @@ The following table lists the protocols and ports used for connecting to the Ded
 
 | **Plans**                | **TCP port(mqtt)** | **MQTT over TLS/SSL port (mqtts)** | **WebSocket port(ws)** | **WebSocket over TLS/SSL port(wss)** |
 | ------------------------ | ------------------ | ---------------------------------- | ---------------------- | ------------------------------------ |
-| Decicated / Premium | 1883               | 8883 (Need TLS/SSL configuration)  | 8083                   | 8084 (Need TLS/SSL configuration)    |
+| Decicated / Premium | 1883               | 8883  | 8083                   | 8084    |
 | BYOC                     | 1883               | 8883                               | 8083                   | 8084                                 |
 
 

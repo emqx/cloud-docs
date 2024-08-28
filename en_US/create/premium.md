@@ -39,16 +39,16 @@ After the deployment is created, it will appear on the EMQX Platform Console hom
 
 ### Basic Information
 
-- **Instance Status**: Running status and duration of operation.
+- **Instance Status**: Running status and deployment creation time.
 - **Sessions**: Current and maximum connection counts.
 - **Pub&Sub TPS**: Current messages sent and received per second, as well as the TPS limit.
-- **Traffic**: Usage information for the deployed traffic, including monthly usage and free quota.
+- **Traffic**: Usage information for the deployed traffic, including monthly usage.
 - **Storage**: The storage space can be used by Durable Sessions and Event History.
 
 ### Connection Information
 
 - **Address**: The IP address.
-- **Ports**: `1883` (mqtt) and `8083` (ws) are enabled by default. You can configure TLS/SSL to enable `8883` (mqtts) and `8084` (wss) ports.
+- **Ports**: `1883` (mqtt), `8083` (ws), `8883` (mqtts), and `8084` (wss) ports are enabled by default.
 - **Ports Management**: Allows you to disable or enable an individual port separately.
 
 Check out the [Connection Guide](../deployments/port_guide_dedicated.md) to learn more.
@@ -57,7 +57,7 @@ Check out the [Connection Guide](../deployments/port_guide_dedicated.md) to lear
 
 The Premium Plan provides you with the following the advanced features.
 
-### [REST API](https://docs.emqx.com/en/cloud/latest/api/dedicated)
+### [Deployment API](https://docs.emqx.com/en/cloud/latest/api/dedicated)
 
 Provides REST APIs for integration with external systems, such as querying client information, publishing messages, and creating rules.
 
@@ -94,7 +94,7 @@ Durable Session allows the EMQX Platform to persist client sessions to the built
 
 ### [Event History](../vas/event_history.md)
 
-As a value-added service, Event History enables the EMQX Platform to record the client and message events for further mornitoring and analysis.
+The Event History service enables the EMQX Platform to record the client and message events for further monitoring and analysis.
 
 ## Connect to the Deployment
 
@@ -102,7 +102,7 @@ You can use any MQTT client tool to connect to the deployment for testing. It is
 
 ## Convert to a Commercial Deployment
 
-At the end of the trial period, your trial deployment will be automatically stopped. If you wish to continue using the Premium deployment, please reach out to our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=BYOC&pageType=getQuotes) team to purchase the Premium Plan service. For detailed pricing information, refer to [Pricing - Premium Plan](../price/pricing.md#premium-plan).
+At the end of the trial period, your trial deployment will be automatically stopped. If you wish to continue using the Premium deployment, please reach out to our [Sales](https://www.emqx.com/en/contact?product=cloud&productEdition=Premium) team to purchase the Premium Plan service. For detailed pricing information, refer to [Pricing - Premium Plan](../price/pricing.md#premium-plan).
 
 ::: tip
 
