@@ -42,8 +42,8 @@ After the deployment is created, it will appear on the EMQX Platform Console hom
 - **Instance Status**: Running status and deployment creation time.
 - **Sessions**: Current and maximum connection counts.
 - **Pub&Sub TPS**: Current messages sent and received per second, as well as the TPS limit.
-- **Traffic**: Usage information for the deployed traffic, including monthly usage.
-- **Storage**: The storage space can be used by Durable Sessions and Event History.
+- **Traffic**: Traffic usage information for the deployment, including all public network traffic that flows in and out of your deployment.
+- **Storage**: The storage space can be used for Durable Sessions and Event History.
 
 ### Connection Information
 
