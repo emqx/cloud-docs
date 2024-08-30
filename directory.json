@@ -575,7 +575,7 @@
     },
     {
       "title": "API",
-      "path": "api/api_overview",
+      "path": "api/introduction",
       "collapsed": true,
       "children": [
         {

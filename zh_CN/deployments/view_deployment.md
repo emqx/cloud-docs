@@ -68,7 +68,7 @@ EMQX Cloud 支持同云服务商、同区域与客户已有 VPC(Virtual Private 
 
 
 
-## [API 访问](../api/api_overview.md)
+## [API 访问](../api/introduction.md)
 
 EMQX Cloud 提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 
