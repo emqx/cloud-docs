@@ -66,7 +66,7 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 **专业版**提供私网连接（PrivateLink）能够实现 EMQX Cloud 部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
 
 
-### [API 访问](../api/api_overview.md)
+### [API 访问](../api/introduction.md)
 
 提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 

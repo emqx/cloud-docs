@@ -1,6 +1,6 @@
 # API 功能和管理
 
-EMQX Platform API 分为平台层面和部署层面 2 种API，皆遵循 RESTful 定义。平台 API 用于对 EMQX Platform 的控制和管理，而部署 API 用于对部署层面功能的管理。本章节介绍了如何访问和使用平台 API 和 部署 API。
+EMQX Platform API 分为平台层面和部署层面 2 种 API，皆遵循 RESTful 定义。平台 API 用于对 EMQX Platform 的控制和管理，而部署 API 用于对部署层面功能的管理。本章节介绍了如何访问和使用平台 API 和 部署 API。
 
 ## 调用 API
 
