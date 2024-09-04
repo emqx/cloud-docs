@@ -18,17 +18,24 @@ Access control can be applied at three levels:
 2. **Username**: Restrict access via the Username field.
 3. **All Users**: Apply access control rules to all users.
 
-Fill in the Client ID or Username, the topic, select whether to allow or deny access, then choose the action (sub/pub/pubsub), and finally click the "Add" button to complete the operation.
+In the **Add ACL** dialog, fill in the Client ID or Username, the topic, select whether to allow or deny access, then choose the action (sub/pub/pubsub), and finally click the **Add** button to complete the operation.
 
 ### Bulk Importing Access Control Entries
 
+You can import access control entries in bulk using either of the following methods:
+
 1. You can bulk import access control entries using a provided CSV template (this is not supported for "All Users"). The import fields are as follows:
 
-- `clientid`: Client ID
-- `username`: Username
-- `topic`: Topic for access control
-- `action`: Action (sub/pub/pubsub)
-- `access`: Allow or deny (allow/deny)
+   - `clientid`: Client ID
+
+   - `username`: Username
+
+   - `topic`: Topic for access control
+
+   - `action`: Action (sub/pub/pubsub)
+
+   - `access`: Allow or deny (allow/deny)
+
 
 2. To import ACL rules via API, refer to the [API](../api/acl.md) section.
 
@@ -59,7 +66,7 @@ To enable whitelisting (i.e., default deny for all subscriptions and publish) in
 
 ### 1. Not Using External Access Control
 
-If you are not using external access control, go to the "Authentication & Authorization" -> "Access Control" menu on the left side of your deployment. In the **All Users** tab, add an authorization entry, enter `#` in the **Topic** field, select `pubsub` for the **Topic Action**, and set **Permission** to "Deny" to enable whitelist mode.
+If you are not using external access control, go to the **Authentication & ACL** -> **ACl** menu on the left side of your deployment. In the **All Users** tab, add an authorization entry, enter `#` in the **Topic** field, select `Publish & Subscribe` for the **Action**, and set **Permission** to `Deny` to enable whitelist mode.
 
 ![add_acl](./_assets/acl_deny_all.png)
 
