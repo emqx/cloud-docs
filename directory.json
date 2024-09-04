@@ -609,7 +609,7 @@
           "path": "best_practices/how_to_troubleshoot_message_loss"
         },
         {
-          "title": "配置和使用 ACL",
+          "title": "配置和使用授权",
           "path": "best_practices/acl_v5"
         }
       ]
@@ -1346,7 +1346,7 @@
           "path": "best_practices/how_to_troubleshoot_message_loss"
         },
         {
-          "title": "Configuring and Using ACL",
+          "title": "Configure and Use Authorization",
           "path": "best_practices/acl_v5"
         }
       ]

@@ -1,8 +1,8 @@
-# Configuring and Managing Authorization in EMQX Platform v5 Deployments
+# Configure and Manage Authorization in EMQX Platform v5 Deployments
 
 In EMQX Platform v5, client authorization is used to control the publish and subscribe permissions of MQTT clients. This document provides a detailed guide on configuring client ID, username, quota limits, as well as using whitelists, placeholders, and extended authorization for more advanced permission control.
 
-## Adding Authorization Information
+## Add Authorization Information
 
 :::tip Note
 
@@ -16,9 +16,9 @@ Authorization can be controlled at three levels:
 2. **Username**: Authorization validation for a specific username.
 3. **All Users**: Authorization validation based on topics for all users.
 
-When adding authorization information, fill in the client ID or username, topic, select whether to allow, then choose an action (sub/pub/pubsub), and finally click the "Add" button to complete the operation.
+When adding authorization information, fill in the client ID or username, topic,  choose an action (sub/pub/pubsub), then select whether to allow, and finally click the **Add** button to complete the operation.
 
-### Bulk Import of Authorization Information
+### Bulk Import Authorization Information
 
 You can use the provided CSV template to bulk import authorization information (not supported for "All Users"). The fields for import are as follows:
 
@@ -28,7 +28,7 @@ You can use the provided CSV template to bulk import authorization information (
 - `action`: Action (sub/pub/pubsub)
 - `access`: Whether to allow (allow/deny)
 
-## Using Placeholders
+## Use Placeholders
 
 > Placeholders can only be used to replace an entire field in a topic, such as `a/b/${username}/c/d`, and cannot replace part of a field, such as `a/b${username}c/d`.
 
@@ -44,21 +44,23 @@ If you want to restrict all users to only subscribe to or publish specific topic
 
 ![add_acl](./_assets/add_acl_v5_placeholder.png)
 
-## Enabling Whitelists
+## Enable Whitelists
 
 :::tip Note
 
 - By default, authorization uses a **blacklist mode** (i.e., all subscriptions and publish are allowed by default).
-- The **order of authorization matching** is: All Users ACL -> Username/Client ID ACL.
+- The **order of authorization matching** is: All Users authorization -> Username/Client ID authorization.
 - The combination of Client ID/Username and Topic is unique. For multiple records with the same Client ID/Username + Topic, only the most recent record is valid.
 - If you have added extended authorization data sources, ensure that "Default Authorization" is placed last in the **Authorization order** on the extended authorization page to enable whitelist mode.
 :::
 
-To enable whitelist mode (i.e., all subscriptions and publish are denied by default) in EMQX Platform, go to the "Authentication & Authorization" -> "Access Control" in the left-side menu of the deployment. On the **All Users** tab, add an authorization entry, enter `#` in the **Topic** field, select **Topic Action** as `pubsub`, and then set **Permission** to "Deny" to enable whitelist mode.
+To enable whitelist mode (i.e., all subscriptions and publish are denied by default) in EMQX Platform, go to the **Access Control** -> **Authorization** in the left menu of the deployment. 
+
+On the **All Users** tab, add an authorization entry by clicking the **Add** button. Enter `#` in the **Topic** field, select **Action** as `Publish & Subscribe`, and then set **Permission** to `Deny`. Click **Confirm** to enable whitelist mode.
 
 ![add_acl](./_assets/acl_deny_all.png)
 
-## Using External Authorization for Advanced Permission Control
+## Use External Authorization for Advanced Permission Control
 
 :::tip Note
 
@@ -68,7 +70,7 @@ To enable whitelist mode (i.e., all subscriptions and publish are denied by defa
 
 By enabling [extended authorization](../deployments/custom_authz), you can use custom services for authentication and authorization. The currently supported external data sources include Redis, MySQL, PostgreSQL, and authentication via HTTP services.
 
-### Authorization order
+### Authorization Order
 
 After adding extended authorization data sources, you can sort the authorization data sources, supporting a **custom authorization chain**: drag and arrange the authorization data source icons to configure the authorization order.
 
