@@ -1,6 +1,6 @@
-# Configuring and Using Access Control (ACL) in EMQX Platform v4 Deployments
+# Configure and Use Access Control List (ACL) in EMQX Platform v4 Deployments
 
-Access Control (ACL) is used to manage client permissions for PUBLISH and SUBSCRIBE operations within EMQX Platform.
+Access Control List (ACL) is used to manage client permissions for PUBLISH and SUBSCRIBE operations within EMQX Platform.
 
 This page provides detailed information on client ID, username, and quota restrictions, how to enable whitelisting, use Placeholders, and leverage external ACLs for more advanced access control.
 
@@ -20,7 +20,7 @@ Access control can be applied at three levels:
 
 In the **Add ACL** dialog, fill in the Client ID or Username, the topic, select whether to allow or deny access, then choose the action (sub/pub/pubsub), and finally click the **Add** button to complete the operation.
 
-### Bulk Importing Access Control Entries
+### Bulk Import ACL Entries
 
 You can import access control entries in bulk using either of the following methods:
 
@@ -39,7 +39,7 @@ You can import access control entries in bulk using either of the following meth
 
 2. To import ACL rules via API, refer to the [API](../api/acl.md) section.
 
-## Using Placeholders
+## Use Placeholders
 
 In the **Topic** field, you can use the following placeholders, which EMQX Platform will automatically replace with client information during requests:
 
@@ -64,13 +64,13 @@ If you want to restrict all users to only subscribe to or publish specific topic
 
 To enable whitelisting (i.e., default deny for all subscriptions and publish) in EMQX Platform, you have the following two options:
 
-### 1. Not Using External Access Control
+### 1. Not Use External Access Control
 
 If you are not using external access control, go to the **Authentication & ACL** -> **ACl** menu on the left side of your deployment. In the **All Users** tab, add an authorization entry, enter `#` in the **Topic** field, select `Publish & Subscribe` for the **Action**, and set **Permission** to `Deny` to enable whitelist mode.
 
 ![add_acl](./_assets/acl_deny_all.png)
 
-### 2. Using External Access Control
+### 2. Use External Access Control
 
 If you are using external access control, please submit a [ticket](../feature/tickets.md) to contact us, and we will switch to whitelist mode for you.
 
