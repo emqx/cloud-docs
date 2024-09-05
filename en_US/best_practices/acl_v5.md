@@ -18,9 +18,9 @@ Authorization can be controlled at three levels:
 
 When adding authorization information, fill in the client ID or username, topic,  choose an action (sub/pub/pubsub), then select whether to allow, and finally click the **Add** button to complete the operation.
 
-### Bulk Import Authorization Information
+### Import Authorization Information in Batches
 
-You can use the provided CSV template to bulk import authorization information (not supported for "All Users"). The fields for import are as follows:
+You can use the provided CSV template to import authorization information in batches (not supported for "All Users"). The fields for import are as follows:
 
 - `clientid`: Client ID
 - `username`: Username
