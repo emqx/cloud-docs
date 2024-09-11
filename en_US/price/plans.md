@@ -27,7 +27,7 @@ The Premium Plan offers all the advantages of the Dedicated Plan, along with add
 
 **Event History**: Records and stores client events for monitoring and analysis.
 
-**Cluster Linking (coming soon)**: Facilitates cross-regional communication through cluster bridging.
+**Cluster Linking**: Facilitates cross-regional communication through cluster bridging.
 
 **Kafka Streaming (coming soon)**: Direct support for Kafka protocol, allowing Kafka clients to consume MQTT messages seamlessly.
 
@@ -344,7 +344,7 @@ This section provides a detailed comparison of features across different service
       <td style="text-indent: 2em;">Cluster Linking</td>
       <td>&#10007</td>
       <td>&#10007</td>
-      <td>Coming soon</td>
+      <td>&#10003</td>
       <td>&#10007</td>
    </tr>
   <tr>
@@ -542,6 +542,7 @@ This section provides a detailed comparison of features across different service
 
 
 
+
 ## Cloud Providers and Regions
 
 The following sections outline the available cloud providers and their supported regions across different service plans, with options for deployment in major regions across North America, Europe, and Asia.
@@ -564,9 +565,9 @@ The following sections outline the available cloud providers and their supported
 ### Premium Plan
 
 
-| Cloud Provider | Region              |
-| -------------- | ------------------- |
-| AWS            | **US:** N. Virginia |
+| Cloud Provider | Region                                     |
+| -------------- | ------------------------------------------ |
+| AWS            | **US:** N. Virginia<br />**EU:** Frankfurt |
 
 ### BYOC Plan
 
