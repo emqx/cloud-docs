@@ -63,4 +63,5 @@ You can complete the related configurations as follows:
     - `${clientid}`: Will be replaced with the client ID at runtime. The client ID is usually specified explicitly by the client in the CONNECT packet.
     - `${username}`: Will be replaced with the username at runtime. The username is taken from the Username field in the CONNECT packet.
     - `${password}`: Will be replaced with the password at runtime. The password is taken from the Password field in the CONNECT packet.
+    - `${client_attrs.<attribute>}`: A client attribute. `<attribute>` will be replaced by an attribute name set based on predefined configurations at runtime.
 

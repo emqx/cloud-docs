@@ -83,4 +83,4 @@ You can complete the related configurations as follows:
     - **Iteration Count**: Specifies the number of hashes, default value: 4096.
     - **Derived key length** (Optional): Specifies the desired length of the key. If not specified, the key length will be determined by the pseudorandom function.
   
-- SQL: Fill in the query SQL according to the table structure, specific requirements can be found in [SQL Table Structure and Query Statements](https://docs.emqx.com/en/enterprise/latest/access-control/authn/mysql.html#sql-table-structure-and-query-statements).
+- **SQL**: Fill in the query SQL according to the table structure, specific requirements can be found in [SQL Table Structure and Query Statements](https://docs.emqx.com/en/enterprise/latest/access-control/authn/mysql.html#sql-table-structure-and-query-statements).

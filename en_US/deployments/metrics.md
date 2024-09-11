@@ -50,6 +50,7 @@ The Messages chart displays the number of messages received and sent by the depl
 
 - Inbound messages are the messages received from the device or application.
 - Outbound messages are messages sent to the device or application.
+- Messages with no subscribers are messages dropped because there is no subscriber to the topic.
 
 <img src="./_assets/metric_serverless_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
