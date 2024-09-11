@@ -20,7 +20,7 @@ A maximum of 2 extended authorization data sources can be created.
 
 ## Authorization Order
 
-After adding extended authorization data sources, users can sort the authorization data sources. On the extended authorization page, click **Authorization Order** to enter the sorting page. The deployment will authorize in the order from left to right, with the default authorization chain order being default authorization -> extended authorization.
+After adding extended authorization data sources, users can sort the authorization data sources. On the extended authorization page, click **Authorization Order** to enter the sorting page. The deployment will authorize in the order from left to right, the most recently added authorization is placed first, and the default authorization is placed last.
 
 - Actions are matched with permissions, allowing or denying client operations based on permissions
 - If actions do not match with permissions, the check is passed to the next authorization checker Custom authorization chain: Authorization data source icons can be dragged and arranged left and right to sequence the authorization order.

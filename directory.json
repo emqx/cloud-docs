@@ -548,7 +548,7 @@
           "title": "部署 API",
           "path": "api/api_deployment",
           "collapsed": true,
-          "children":[
+          "children": [
             {
               "title": "Serverless 部署 API",
               "path": "api/serverless",
@@ -603,6 +603,14 @@
         {
           "title": "如何排查消息丢失",
           "path": "best_practices/how_to_troubleshoot_message_loss"
+        },
+        {
+          "title": "如何排查消息丢失",
+          "path": "best_practices/how_to_troubleshoot_message_loss"
+        },
+        {
+          "title": "配置和使用授权",
+          "path": "best_practices/acl_v5"
         }
       ]
     },
@@ -1267,7 +1275,7 @@
       "collapsed": true,
       "children": [
         {
-          "title" : "Platform API",
+          "title": "Platform API",
           "path": "api/api_platform",
           "collapsed": true,
           "children": [
@@ -1282,7 +1290,7 @@
           ]
         },
         {
-          "title" : "Deployment API",
+          "title": "Deployment API",
           "path": "api/api_deployment",
           "collapsed": true,
           "children": [
@@ -1336,6 +1344,10 @@
         {
           "title": "How to Troubleshoot Message Loss",
           "path": "best_practices/how_to_troubleshoot_message_loss"
+        },
+        {
+          "title": "Configure and Use Authorization",
+          "path": "best_practices/acl_v5"
         }
       ]
     },
