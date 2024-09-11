@@ -197,7 +197,7 @@
     {
       "title": "运维与监控",
       "path": "deployments/operation_overview",
-      "collapsed":true,
+      "collapsed": true,
       "children": [
         {
           "title": "监控",
@@ -210,7 +210,7 @@
         {
           "title": "告警",
           "path": "deployments/alerts",
-          "collapsed":true,
+          "collapsed": true,
           "children": [
             {
               "title": "集成 Webhook 告警",
@@ -341,19 +341,19 @@
           "path": "data_integration/rules"
         },
         {
-          "title" : "HTTP Server",
+          "title": "HTTP Server",
           "path": "data_integration/http_server"
         },
         {
-          "title" : "Kafka",
+          "title": "Kafka",
           "path": "data_integration/kafka"
         },
         {
-          "title" : "消息重新发布",
+          "title": "消息重新发布",
           "path": "data_integration/republish"
         },
         {
-          "title" : "空动作（调试）",
+          "title": "空动作（调试）",
           "path": "data_integration/empty_action_debug"
         }
       ]
@@ -597,7 +597,7 @@
           "title": "部署 API",
           "path": "api/api_deployment",
           "collapsed": true,
-          "children":[
+          "children": [
             {
               "title": "Serverless 部署 API",
               "path": "api/serverless",
@@ -699,6 +699,10 @@
         {
           "title": "追踪消息延迟",
           "path": "best_practices/enhance_traceability"
+        },
+        {
+          "title": "配置和使用 ACL",
+          "path": "best_practices/acl_v4"
         }
       ]
     },
@@ -875,7 +879,7 @@
           "title": "Single Sign-On (SSO)",
           "path": "feature/sso_overview",
           "collapsed": true,
-          "children":[
+          "children": [
             {
               "title": "Configure Okta SSO",
               "path": "feature/sso_okta"
@@ -1095,19 +1099,19 @@
           "path": "data_integration/rules"
         },
         {
-          "title" : "Message Republish",
+          "title": "Message Republish",
           "path": "data_integration/republish"
         },
         {
-          "title" : "Null Action (Debug)",
+          "title": "Null Action (Debug)",
           "path": "data_integration/empty_action_debug"
         },
         {
-          "title" : "HTTP Server",
+          "title": "HTTP Server",
           "path": "data_integration/http_server"
         },
         {
-          "title" : "Kafka",
+          "title": "Kafka",
           "path": "data_integration/kafka"
         }
       ]
@@ -1354,9 +1358,13 @@
           "title": "How to Troubleshoot Message Loss",
           "path": "best_practices/how_to_troubleshoot_message_loss"
         },
-        { 
+        {
           "title": "Enhance Message Traceability",
           "path": "best_practices/enhance_traceability"
+        },
+        {
+          "title": "Configure and Use ACL",
+          "path": "best_practices/acl_v4"
         }
       ]
     },
@@ -1384,7 +1392,7 @@
           "title": "Deployment API",
           "path": "api/api_deployment",
           "collapsed": true,
-          "children":[
+          "children": [
             {
               "title": "Serverless Deployment API",
               "path": "api/serverless",
