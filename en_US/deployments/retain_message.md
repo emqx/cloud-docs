@@ -24,7 +24,7 @@ For Serverless deployments, the search function is not supported.
 
 ## View Payload
 
-You can view the payload of a retained message. Click the view button in the **Action** column of a retained message entry in the list to view the message payload.
+You can view the payload of a retained message. Click the view payload icon in the **Action** column of a retained message entry in the list to view the message payload.
 
 In the Show Payload popup, you can view the specific content of the retained message payload. You can click the copy button to quickly copy the payload. In the dropdown box, you can also format the output of the payload, which allows for more intuitive viewing for some special payload formats, such as JSON or Hex format.
 
