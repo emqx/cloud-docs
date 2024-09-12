@@ -60,11 +60,12 @@ Configuring the message republishing feature through data integration does not r
    - **Connector**: Keep the default value `Republish`.
    - **Topic**: Set the target topic as `greet`.
    - **Payload**: Fill in `${msg} -- forward from EMQX Platform` as the message content template.
-   - Leave QoS at its default value. For more information on options for **MQTT 5.0 Message Properties**, see [Add Republish Action](./republish.md#add-republish-action).
+   - Leave QoS at its default value. 
 
-3. Click **Confirm** to complete the action and rule creation.
-
-4. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
+3. Configure the **MQTT 5.0 Message Properties** options (optional) by clicking the toggle switch. For more information on these options, see [Add Republish Action](https://docs.emqx.com/en/emqx/latest/data-integration/rule-get-started.html#add-republish-action).
+4. If you need to enable the **Direct Dispatch**, click the toggle switch. Once enabled, the message is dispatched directly to subscribers. It helps prevent the triggering of additional rules or the recursive activation of the same rule.
+5. Click **Confirm** to complete the action and rule creation.
+6. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
 ## Test Message Republish
 

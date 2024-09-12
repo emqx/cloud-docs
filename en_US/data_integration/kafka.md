@@ -205,6 +205,7 @@ Next, you need to create a rule to specify the input data and the rules for rule
 
    - Select the Kafka Consumer Connector.
    - **Kafka Topic**: Enter the topic to be consumed from Kafka, such as `temp_hum/emqx`.
+   - **Group ID**: Specify the consumer group identifier for this source. If left blank, a group ID will be automatically generated based on the source name. It can only contain letters, numbers, underscores, dots, and hyphens.
    - **Key Encoding Mode** and **Value Encoding Mode**: Select the encoding mode for Kafka message key and message value.
    - **Offset Reset Policy**: Select the offset reset strategy for Kafka consumers to start reading from Kafka topic partitions when there is no consumer offset or when the offset becomes invalid.
      - If you want the consumer to start reading messages from the latest offset, skipping messages produced before the consumer starts, select `latest`.
