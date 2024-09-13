@@ -35,7 +35,7 @@ To ensure secure and efficient inter-cluster connectivity, the clusters should c
 2. Select **Cluster Linking** from the left navigation menu.
 
 3. Click **New** at the upper right corner. On the **New Cluster Linking** page, configure the following options:
-   - **Deployment Name**: Select the deployment name of the Premium deployment that you want to link to. In this demonstration, it is `deployment-eu`. You can find the deployment name information on the deployment **Settings** page.
+   - **Deployment Name**: Select the deployment name of the Premium deployment that you want to link to. In this demonstration, it is `deployment-eu`.
    
    - **Address**: The MQTT host and port of the deployment to be linked. It is automatically filled when you select the deployment name.
    
@@ -43,7 +43,7 @@ To ensure secure and efficient inter-cluster connectivity, the clusters should c
    
    - **Password**: Enter the password for authentication to the `deployment-eu`, if it is configured on its Authentication page.
    
-   - **Client ID Prefix**: Specify a prefix for Client IDs used by MQTT connections to the `deployment-eu`, for example, `from-eu`.
+   - **Client ID Prefix**: Specify a prefix for Client IDs used by MQTT connections to the `deployment-eu`, for example, `from-us`.
    
      ::: tip
    
@@ -51,7 +51,7 @@ To ensure secure and efficient inter-cluster connectivity, the clusters should c
    
      :::
    
-   - **Topics**: List of MQTT topic filters that specify which messages the local cluster will receive from the remote cluster, for example, `/from-eu`. You can click the plus icon to add more topics.
+   - **Topics**: List of MQTT topic filters that specify which messages the current deployment will receive from another deployment, for example, `/from-eu`. You can click the plus icon to add more topics.
    
      ::: tip
    
@@ -74,7 +74,7 @@ To ensure secure and efficient inter-cluster connectivity, the clusters should c
    - **Address**: The MQTT host and port of the `deployment-us`. It is automatically filled when you select the deployment name.
    - **Username**: Enter the username for authentication to the `deployment-us`, if it is configured on its Authentication page.
    - **Password**: Enter the password for authentication to the `deployment-us`, if it is configured on its Authentication page.
-   - **Client ID Prefix**: Specify a prefix for Client IDs used by MQTT connections to the remote cluster. For example, `from-us`.
+   - **Client ID Prefix**: Specify a prefix for Client IDs used by MQTT connections to the `deployment-us`. For example, `from-eu`.
    - **Topics**: List of MQTT topic filters that specify which messages the local cluster will receive from the remote cluster, for example, `/from-us`. You can click the plus icon to add more topics.
    - **Advanced Settings**: Configure additional settings such as MQTT protocol parameters.
 4. Click **Confirm**. You will be directed back to the Cluster Linking page and see a new entry is listed and is enabled by default.
