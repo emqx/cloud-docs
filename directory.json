@@ -954,8 +954,8 @@
           ]
         },
         {
-          "title": "Username Quota Limitation",
-          "path": "deployments/username_quota_limitation"
+          "title": "User Session Limit",
+          "path": "deployments/user_session_limit"
         }
       ]
     },
