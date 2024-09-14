@@ -16,7 +16,7 @@ A single deployment can serve thousands of geographically distributed MQTT clien
 
 The traditional solution involves adding an MQTT bridge to each deployment, which forwards all messages between deployments. This approach leads to excessive bandwidth usage and can increase message latency, as many forwarded messages might not be relevant to clients on the other side of the bridge.
 
-Cluster Linking addresses these issues by forwarding only relevant messages between clusters. This optimization reduces bandwidth usage and ensures efficient communication, even during network interruptions.
+Cluster Linking addresses these issues by forwarding only relevant messages between deployments. This optimization reduces bandwidth usage and ensures efficient communication, even during network interruptions.
 
 ## Get Started with Cluster Linking
 
@@ -30,7 +30,7 @@ To ensure secure and efficient inter-cluster connectivity, the clusters should c
 
 ### Create Cluster Linking in `deployment-us`
 
-1. Click the deployment card of `deployment-us` in your Console.
+1. Click the deployment card for `deployment-us` in your Console.
 
 2. Select **Cluster Linking** from the left navigation menu.
 
@@ -43,25 +43,25 @@ To ensure secure and efficient inter-cluster connectivity, the clusters should c
    
    - **Password**: Enter the password for authentication to the `deployment-eu`, if it is configured on its Authentication page.
    
-   - **Client ID Prefix**: Specify a prefix for Client IDs used by MQTT connections to the `deployment-eu`, for example, `from-us`.
+   - **Client ID Prefix**: Define a prefix for Client IDs used by MQTT connections to the `deployment-eu`, for example, `from-us`.
    
      ::: tip
    
-     Depending on the cluster size and configuration, multiple MQTT client connections may be established to the remote cluster, and each client must have a unique ClientID. You can control how these ClientIDs are allocated by setting the *Client ID Prefix* for these connections.
+     Depending on the cluster size and configuration, multiple MQTT client connections might be established to the remote cluster, and each client must have a unique ClientID. You can control how these ClientIDs are allocated by setting the *Client ID Prefix* for these connections.
    
      :::
    
-   - **Topics**: List of MQTT topic filters that specify which messages the current deployment will receive from another deployment, for example, `/from-eu`. You can click the plus icon to add more topics.
+   - **Topics**: List of MQTT topic filters that specify which messages the current deployment will receive from the remote deployment, for example, `/from-eu`. You can click the plus icon to add more topics.
    
      ::: tip
    
-     The local cluster expects to receive messages published to these topics from the remote cluster. This list can be empty, meaning the local cluster will not receive any messages from the remote cluster if no topics are specified.
+     These are the topics that the local cluster expects to receive messages for from the remote cluster. If left empty, the local cluster will not receive any messages from the remote cluster.
    
      :::
    
    - **Advanced Settings**: Configure additional settings such as MQTT protocol parameters.
    
-4. Click **Confirm**. You will be directed back to the Cluster Linking page and see a new entry is listed and is enabled by default.
+4. Click **Confirm**. You will be redirected to the Cluster Linking page, where the new entry will appear and be enabled by default.
 
 ![create_link_us](./_assets/create_link_us.png)
 
