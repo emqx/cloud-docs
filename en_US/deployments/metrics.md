@@ -48,8 +48,9 @@ The Subscriptions chart displays the total number of subscriptions within the se
 #### Messages
 The Messages chart displays the number of messages received and sent by the deployment within the selected time period.
 
-- Inbound messages are the messages received from the device or application.
-- Outbound messages are messages sent to the device or application.
+- Inbound messages: Messages received from the device or application.
+- Outbound messages: Messages sent to the device or application.
+- Messages with no subscribers: Messages dropped because there is no subscriber to the topic.
 
 <img src="./_assets/metric_serverless_3.png" alt="metrics_detail" style="zoom: 33%;" />
 
