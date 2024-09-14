@@ -26,7 +26,7 @@ Before you start, you need to create two deployments in different regions. For e
 
 ### Set Up the Network
 
-To ensure secure and efficient inter-cluster connectivity, the clusters should communicate with each other exclusively through private network connections. You need to set up [NAT Gateway](../vas/nat-gateway.md) for both deployments and the NAT gateway status must be running. 
+To ensure the efficient inter-cluster connectivity, the deployments should communicate with each other through public network connections. You need to set up [NAT Gateway](../vas/nat-gateway.md) for both deployments and the NAT gateway status must be running. 
 
 ### Create Cluster Linking in `deployment-us`
 
