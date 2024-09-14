@@ -1200,6 +1200,10 @@
       ]
     },
     {
+      "title": "Cluster Linking",
+      "path": "cluster_linking/cluster_linking"
+    },
+    {
       "title": "Billing",
       "path": "billing/overview",
       "collapsed": true,

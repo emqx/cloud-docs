@@ -1,10 +1,10 @@
 # Create a Premium Deployment
 
-The EMQX Premium Plan offers a robust EMQX Cluster with advanced features for large-scale, mission-critical applications. This guide provides instructions on how to create the Premium deployment on the EMQX Platform.
+The EMQX Premium Plan offers a robust EMQX Cluster with advanced features for large-scale, mission-critical applications. This guide provides instructions on how to create a Premium deployment on the EMQX Platform.
 
 ## Apply for a Trial
 
-EMQX Premium deployments can only be created by requesting a trial. Users cannot create them independently. You can contact us to request a trial period. Each user is granted only one trial opportunity. If the Premium deployment is deleted during the trial period, it cannot be requested again (the same rule applies to Dedicated trials). The trial period is free of charge, and you can enjoy all the features of the Premium Plan.
+EMQX Premium deployments can only be created by requesting a trial. Users cannot create them independently. You can contact us to request a trial period. Each user can create two trial Premium deployments during the trial period. If both deployments are deleted during the trial period, you cannot request the trial again. The trial period is free of charge, and you can enjoy all the features of the Premium Plan.
 
 1. Log in to the [EMQX Platform Console](https://cloud-intl.emqx.com/console/).
 
@@ -22,7 +22,9 @@ If your trial request is approved, you will receive an email with details about 
 
 When your trial is activated, you can go to the Platform Console to deploy your Premium Plan.
 
-1. Fill in the **Deployment Name & Project**: Provide a name for your deployment and select the appropriate project.
+1. Under the **Cloud Provider & Region**, select a deployment region.
+
+1. Under the **Deployment Name & Project**, provide a name for your deployment and select the appropriate project.
 
 2. Confirm the deployment information in the **Summary** area, and then click the **Deploy** button. This stage will prompt you to review and accept the *EMQX Platform Services Agreement*. It's important to thoroughly read the agreement and accept its terms to proceed.
 
@@ -82,7 +84,7 @@ Intranet load balancing is a service that distributes traffic on demand in the i
 
 ### [NAT Gateway](../vas/nat-gateway.md)
 
-NAT gateways can provide network address translation services to provide Dedicated deployments with the ability to access public network resources without the need for VPC peering connections.
+NAT gateways can provide network address translation services to provide Premium deployments with the ability to access public network resources without the need for VPC peering connections.
 
 ### Dedicated Storage Layer
 
@@ -95,6 +97,10 @@ Durable Session allows the EMQX Platform to persist client sessions to the built
 ### [Event History](../vas/event_history.md)
 
 The Event History service enables the EMQX Platform to record the client and message events for further monitoring and analysis.
+
+### [Cluster Linking](../cluster_linking/cluster_linking.md)
+
+The Cluster Linking feature facilitates client communication and message transmission between geographically distributed Premium deployments.
 
 ## Connect to the Deployment
 
