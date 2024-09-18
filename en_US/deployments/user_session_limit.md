@@ -8,7 +8,7 @@ The User Session Limit feature is used to limit the maximum number of sessions f
 
 2. Click **Configure Limit** to enable the feature.
 
-3. Configure the following options for the username quota.
+3. Configure the following options for the user session limit.
 
    - **Max Sessions Per Username**: Defines the maximum number of MQTT sessions allowed for each username, with a default of `100`. This option applies to all usernames, except for those in the whitelist. 
 
