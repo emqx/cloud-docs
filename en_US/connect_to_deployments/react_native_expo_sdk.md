@@ -1,4 +1,4 @@
-# Connect to Deployment using React Native via MQTT.js SDK
+# Connect to Deployment Using React Native via MQTT.js SDK
 
 This article mainly introduces how to use MQTT.js in a React Native application built with Expo, and implement the connection, subscription, messaging, unsubscribing and other functions between the client and MQTT broker.
 
@@ -12,23 +12,23 @@ This article mainly introduces how to use MQTT.js in a React Native application 
   - WebSocket over TLS/SSL Port: **8084**
 - You can also [create your own MQTT broker](../create/overview.md). After the deployment is in running status, you can find connection information on the deployment overview page. And for the username and password required in the later client connection stage, you can navigate to the **Access Control** -> **[Authentication](../deployments/default_auth.md)** for the setting.
 
-### Creating a React Native Application
+### Create a React Native Application
 
-Reference link: [https://docs.expo.dev/get-started/create-a-project/](https://docs.expo.dev/get-started/create-a-project/)
+Create new React Native applications with `Expo`:
 
-- Creating new React Native applications with `Expo`
+```shell
+npx create-expo-app@latest mqtt-test
+```
 
-  ```shell
-  npx create-expo-app@latest mqtt-test
-  ```
+Reference link: [https://docs.expo.dev/get-started/create-a-project/](https://docs.expo.dev/get-started/create-a-project/).
 
 ## Install Dependencies
 
 [MQTT.js](https://github.com/mqttjs/MQTT.js) is a fully open-source client-side library for the MQTT protocol, written in JavaScript and available for Node.js and browsers. For more information and usage of `MQTT.js`, please refer to the [MQTT.js GitHub](https://github.com/mqttjs/MQTT.js#table-of-contents).
 
-MQTT.js can be installed via npm, yarn or pnpm,. This example will install MQTT.js through npm command.
+MQTT.js can be installed via npm, yarn or pnpm. This example will install MQTT.js through npm command.
 
-1. Installation via the command line
+1. Install via the command line:
 
    ```shell
     npm install mqtt
@@ -38,7 +38,7 @@ MQTT.js can be installed via npm, yarn or pnpm,. This example will install MQTT.
     pnpm add mqtt
    ```
 
-2. Import MQTT.js where needed
+2. Import MQTT.js where needed:
 
    ```js
    import mqtt from "mqtt";
@@ -166,7 +166,7 @@ The above section only shows some key code snippets, for the full project code, 
 
 We have written the following simple application using React Native with the ability to create connections, subscribe to topics, send and receive messages, unsubscribe, and disconnect.
 
-![react_native_ui.png](./_assets/react_native_ui.png)
+<img src="./_assets/react_native_ui.png" alt="react_native_ui.png" style="zoom:67%;" />
 
 Use [MQTT 5.0 client tool - MQTTX](https://mqttx.app/) as another client to test sending and receiving messages.
 
@@ -174,9 +174,9 @@ Use [MQTT 5.0 client tool - MQTTX](https://mqttx.app/) as another client to test
 
 You can see that MQTTX can receive messages from the React Native side normally, as can be seen when sending a message to the topic using MQTTX.
 
-![react_native_mqttx.png](./_assets/react_native_mqttx.png)
+<img src="./_assets/react_native_mqttx.png" alt="react_native_mqttx.png" style="zoom:67%;" />
 
-## More
+## More Information
 
 In conclusion, we have implemented creating MQTT connections in a React Native project and simulated scenarios of subscribing, publishing messages, unsubscribing, and disconnecting between clients and MQTT servers.
 

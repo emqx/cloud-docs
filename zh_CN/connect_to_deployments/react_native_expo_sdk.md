@@ -16,13 +16,13 @@
 
 ### 创建 React Native Expo 应用
 
-参考链接：[https://docs.expo.dev/get-started/create-a-project/](https://docs.expo.dev/get-started/create-a-project/)
+使用 Expo CLI 创建 React Native 应用：
 
-- 使用 Expo CLI 创建 React Native 应用
+```shell
+npx create-expo-app@latest mqtt-test
+```
 
-  ```shell
-  npx create-expo-app@latest mqtt-test
-  ```
+参考链接：[https://docs.expo.dev/get-started/create-a-project/](https://docs.expo.dev/get-started/create-a-project/)。
 
 ## 安装依赖
 
@@ -30,7 +30,7 @@
 
 MQTT.js 支持通过 npm、yarn 或 pnpm 进行安装。本文使用 npm 进行安装。
 
-1. 使用 npm 命令安装
+1. 使用 npm 命令安装：
 
    ```shell
    npm install mqtt
@@ -40,7 +40,7 @@ MQTT.js 支持通过 npm、yarn 或 pnpm 进行安装。本文使用 npm 进行�
    pnpm add mqtt
    ```
 
-2. 在使用到的地方引入 MQTT.js
+2. 在使用到的地方引入 MQTT.js：
 
    ```js
    import mqtt from "mqtt";
@@ -166,15 +166,15 @@ const doDisconnect = () => {
 
 我们使用 React Native 编写了如下简单的应用，该应用具备：创建连接、订阅主题、收发消息、取消订阅、断开连接等功能。
 
-![react_native_ui.png](./_assets/react_native_ui.png)
+<img src="./_assets/react_native_ui.png" alt="react_native_ui.png" style="zoom:67%;" />
 
 使用 [MQTT 5.0 客户端工具 - MQTTX](https://mqttx.app/zh) 作为另一个客户端进行消息收发测试。
 
 ![mqttx_react_native.png](./_assets/mqttx_react_native.png)
 
-可以看到 MQTTX 可以正常接收来自 React Native 应用发送的消息，同样，使用 MQTTX 向该主题发送一条消息时，也可以看到 React Native 端可以正常接收到该消息。
+可以看到 MQTTX 可以正常接收来自 React Native 应用发送的消息。同样，使用 MQTTX 向该主题发送一条消息时，也可以看到 React Native 端可以正常接收到该消息。
 
-![react_native_mqttx.png](./_assets/react_native_mqttx.png)
+<img src="./_assets/react_native_mqttx.png" alt="react_native_mqttx.png" style="zoom:67%;" />
 
 ## 更多内容
 
