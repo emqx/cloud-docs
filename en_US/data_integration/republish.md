@@ -65,7 +65,7 @@ Configuring the message republishing feature through data integration does not r
 3. Configure the **MQTT 5.0 Message Properties** options (optional) by clicking the toggle switch. For more information on these options, see [Add Republish Action](https://docs.emqx.com/en/emqx/latest/data-integration/rule-get-started.html#add-republish-action).
 4. If you need to enable the **Direct Dispatch**, click the toggle switch. Once enabled, the message is dispatched directly to subscribers. It helps prevent the triggering of additional rules or the recursive activation of the same rule.
 5. Click **Confirm** to complete the action and rule creation.
-6. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
+6. In the **Successful new rule** pop-up, click **Back to Rules**, and test the rule according to the instructions in [Test Message Republish](#test-message-republish). Alternatively, you can click **Test Rules** and input simulated data on the page to test the rule. For details, see [Test Rules](#test-rules).
 
 ## Test Message Republish
 

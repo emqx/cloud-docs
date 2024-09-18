@@ -85,3 +85,4 @@ pbkdf2, sha256, 1000, 20
     - `${clientid}`: 将在运行时被替换为客户端 ID。客户端 ID 一般由客户端在 `CONNECT` 报文中显式指定。
     - `${username}`: 将在运行时被替换为用户名。用户名来自 `CONNECT` 报文中的 `Username` 字段。
     - `${password}`: 将在运行时被替换为密码。密码来自 `CONNECT` 报文中的 `Password` 字段。
+    - `${client_attrs.<attribute>}`：客户端属性。`<attribute>` 会在运行时根据预定义的配置被替换为具体的属性名称。
