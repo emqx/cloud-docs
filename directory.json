@@ -467,6 +467,10 @@
         {
           "title": "GreptimeDB",
           "path": "data_integration/greptimedb"
+        },
+        {
+          "title": "Amazon S3",
+          "path": "data_integration/s3"
         }
       ]
     },
@@ -1196,6 +1200,10 @@
         {
           "title": "Azure Event Hubs",
           "path": "data_integration/azure_event_hubs"
+        },
+        {
+          "title": "Amazon S3",
+          "path": "data_integration/s3"
         }
       ]
     },
