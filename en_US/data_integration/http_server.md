@@ -114,7 +114,7 @@ Next, you need to create a rule to specify the data to be written and add corres
 
    - **Method**: Select `POST` for the HTTP request method. 
 
-   - **URL Path**: You can also set an individual request path for this action. 
+   - **URL Path**: It is possible to set up a separate request path for the action, which will be appended to the url configuration of the connector to form the full URL address. Templates with variables can be used in this option. You need to first define the relevant variable in the rule SQL, for example, `“select clientid as device_id”`. After that, you can use the variable `“${device_id}”` in the URL path of the HTTP action.
 
    - **Headers**: The action can have its own request headers set, or use the connector's configured headers directly.
 
