@@ -475,6 +475,10 @@
         {
           "title": "Amazon S3",
           "path": "data_integration/s3"
+        },
+        {
+          "title": "Datalayers",
+          "path": "data_integration/datalayers"
         }
       ]
     },
