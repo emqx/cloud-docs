@@ -151,6 +151,6 @@ The Dropped Messages chart shows the number of messages that are dropped during 
 
 #### Storage (GB)
 
-The Storage (GB) chart shows the storage space used by Durable Sessions and Event History within the selected time period.
+The Storage (GB) chart shows the storage space used by Durable Sessions and Event History within the selected period.
 
 <img src="./_assets/metrics_premium.png" style="zoom:65%;" >

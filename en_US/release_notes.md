@@ -2,6 +2,8 @@
 
 # Release Notes
 
+## 2024
+
 #### 2024-8
 
 - Released EMQX Platform Premium Plan.

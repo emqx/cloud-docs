@@ -182,7 +182,7 @@ You can click the action ID in the action list. On the Action Statistics page, y
 
 ::: tip
 
-Currently, only the Dedicated version v5 deployment supports viewing the metrics of individual actions.
+Currently, only the Dedicated version v5 and Premium deployments support viewing the metrics of individual actions.
 
 :::
 
