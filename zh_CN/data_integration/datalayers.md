@@ -47,9 +47,7 @@ Datalayers 数据集成具有以下特性与优势：
 
 <!--@include: ./network-setting.md-->
 
-### 安装 Datalayers
-
-#### 通过 Docker 安装 Datalayers
+### 通过 Docker 安装 Datalayers
 
 1. 通过 Docker 安装并启动 Datalayers，详细步骤请参考 [Install Datalayers](https://docs.datalayers.cn/datalayers/latest/getting-started/docker.html)。
 
@@ -60,23 +58,23 @@ docker run --name datalayers -p 8361:8361 datalayers/datalayers:v2.1.7
 
 2. Datalayers 服务启动后，您可以通过以下步骤进入 Datalayers CLI 中创建数据库，默认的用户和密码为 admin/public：
 
-进入 Datalayers 容器：
+    进入 Datalayers 容器：
 
-```bash
-docker exec -it datalayers bash
-```
+    ```bash
+    docker exec -it datalayers bash
+    ```
 
-进入 Datalayers CLI：
+    进入 Datalayers CLI：
 
-```bash
-dlsql -u admin -p public
-```
+    ```bash
+    dlsql -u admin -p public
+    ```
 
-创建数据库：
+    创建数据库：
 
-```sql
-create database emqx
-```
+    ```sql
+    create database emqx
+    ```
 
 ## 创建 Datalayers 连接器
 
@@ -88,7 +86,7 @@ create database emqx
 
 3. 输入连接信息：
 
-   - **服务器地址**：填写服务器的 IP 地址以及端口。如果是 Datalayers Cloud 需要指定端口为 8361 `{url}:8361` 。
+   - **服务器地址**：填写服务器的 IP 地址以及端口: `{url}:8361` 。
    - 按照安装 Datalayers 中的设定完成**数据库名字**、**用户名**及**密码**设置。
    - 如果您想建立加密连接，请点击 **启用 TLS** 切换开关。
 
@@ -165,15 +163,15 @@ create database emqx
 
 2. 前往 Datalayers CLI，查看数据是否成功写入到数据库，执行以下命令：
 
-    1. 进入 Datalayers 控制台：
+    ① 进入 Datalayers 控制台：
 
    ```bash
-    docker exec -it datalayers bash
-    dlsql -u admin -p public
-    use emqx
+    $ docker exec -it datalayers bash
+    $ dlsql -u admin -p public
+    $ use emqx
    ```
 
-   2. 执行 SQL 查询数据：
+   ② 执行 SQL 查询数据：
 
    ```bash
     > select * from "temp_hum"
