@@ -4,10 +4,6 @@
 
 The blacklist is used to prohibit client connections from being matched and is suitable for restricting a small number of clients. The control of the blacklist will expire after the validity period.
 
-::: tip
-The blacklist function only applies to Dedicated and Premium deployments.
-:::
-
 From the left-navigation menu of EMQX Platform Console, selet **Access Control** -> **Blacklist**. Click **+ Add** on the top right to add a client to the blacklist.
 
 ![blacklist](./_assets/blacklist_new.png)
