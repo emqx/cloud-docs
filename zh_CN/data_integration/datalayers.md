@@ -163,7 +163,8 @@ docker run --name datalayers -p 8361:8361 datalayers/datalayers:v2.1.7
 
 2. 前往 Datalayers CLI，查看数据是否成功写入到数据库，执行以下命令：
 
-    ① 进入 Datalayers 控制台：
+   - 进入 Datalayers 控制台：
+
 
    ```bash
     $ docker exec -it datalayers bash
@@ -171,7 +172,8 @@ docker run --name datalayers -p 8361:8361 datalayers/datalayers:v2.1.7
     $ use emqx
    ```
 
-   ② 执行 SQL 查询数据：
+   - 执行 SQL 查询数据：
+
 
    ```bash
     > select * from "temp_hum"
