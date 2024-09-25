@@ -1,4 +1,4 @@
-# TLS/SSL Configuration for BYOC Plan
+# Configure TLS/SSL in BYOC Plan
 
 To protect the confidentiality of data transmission within your MQTT ecosystem, EMQX BYOC Plan supports establishing secure and encrypted communication channels using SSL and TLS encryption protocols. This page introduces how to enable TSL/SSL communication on a one-way authentication mode by preparing the certificate to create a Privacy Enhanced Mail (PEM) file.
 
