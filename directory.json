@@ -475,6 +475,10 @@
         {
           "title": "Amazon S3",
           "path": "data_integration/s3"
+        },
+        {
+          "title": "Couchbase",
+          "path": "data_integration/couchbase"
         }
       ]
     },
@@ -1212,6 +1216,10 @@
         {
           "title": "Amazon S3",
           "path": "data_integration/s3"
+        },
+        {
+          "title": "Couchbase",
+          "path": "data_integration/couchbase"
         }
       ]
     },
