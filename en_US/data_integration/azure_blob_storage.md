@@ -2,11 +2,11 @@
 
 [Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs/) is Microsoft's cloud-based object storage solution, designed specifically for handling large volumes of unstructured data. Unstructured data refers to data types that do not follow a specific data model or format, such as text files or binary data. EMQX Platform can efficiently store MQTT messages in Blob Storage containers, providing a versatile solution for storing Internet of Things (IoT) data.
 
-This page provides a detailed introduction to the data integration between EMQX Platform and Azure Blob Storage, and offers practical guidance on the rule and Sink creation.
+This page provides a detailed introduction to the data integration between EMQX Platform and Azure Blob Storage and offers practical guidance on the rule and Sink creation.
 
 ## How It Works
 
-Azure Blob Storage data integration in EMQX Platform is a ready-to-use feature that can be easily configured for complex business development. In a typical IoT application, EMQX Platform acts as the IoT platform responsible for device connectivity and message transmission, while Azure Blob Storage serves as the data storage platform, handling message data storage.
+Azure Blob Storage data integration in the EMQX Platform is a ready-to-use feature that can be easily configured for complex business development. In a typical IoT application, the EMQX Platform acts as the IoT platform responsible for device connectivity and message transmission, while Azure Blob Storage serves as the data storage platform, handling message data storage.
 
 ![EMQX Platform Azure Blob Storage](./_assets/data_integration_azure-blob-storage.png)
 
@@ -15,16 +15,16 @@ EMQX Platform utilizes rules engines and Sinks to forward device events and data
 1. **Device Connection to EMQX Platform**: IoT devices trigger an online event upon successfully connecting via the MQTT protocol. The event includes device ID, source IP address, and other property information.
 2. **Device Message Publishing and Receiving**: Devices publish telemetry and status data through specific topics. EMQX Platform receives the messages and compares them within the rules engine.
 3. **Rules Engine Processing Messages**: The built-in rules engine processes messages and events from specific sources based on topic matching. It matches corresponding rules and processes messages and events, such as data format transformation, filtering specific information, or enriching messages with context information.
-4. **Writing to Azure Blob Storage**: The rule triggers an action to write the message to Storage Container. Using the Azure Blob Storage Sink, users can extract data from processing results and send it to Blob Storage. Messages can be stored in text or binary format, or multiple lines of structured data can be aggregated into a single CSV file, depending on the message content and the Sink configuration.
+4. **Writing to Azure Blob Storage**: The rule triggers an action to write the message to the Storage Container. Using the Azure Blob Storage Sink, users can extract data from processing results and send it to Blob Storage. Messages can be stored in text or binary format, or multiple lines of structured data can be aggregated into a single CSV file, depending on the message content and the Sink configuration.
 
-After events and message data are written to Storage Container, you can connect to Azure Blob Storage to read the data for flexible application development, such as:
+After events and message data are written to the Storage Container, you can connect to Azure Blob Storage to read the data for flexible application development, such as:
 
 - Data archiving: Store device messages as objects in Azure Blob Storage for long-term preservation to meet compliance requirements or business needs.
 - Data analysis: Import data from Storage Container into analytics services like Snowflake for predictive maintenance, device efficiency evaluation, and other data analysis services.
 
 ## Features and Advantages
 
-Using Azure Blob Storage data integration in EMQX Platform can bring the following features and advantages to your business:
+Using Azure Blob Storage data integration in the EMQX Platform can bring the following features and advantages to your business:
 
 - **Message Transformation**: Messages can undergo extensive processing and transformation in EMQX Platform rules before being written to Azure Blob Storage, facilitating subsequent storage and use.
 - **Flexible Data Operations**: With the Azure Blob Storage Sink, specific fields of data can be conveniently written into Azure Blob Storage containers, supporting the dynamic setting of containers and object keys for flexible data storage.
@@ -41,8 +41,8 @@ This section introduces the preparations required before creating an Azure Blob 
 
 - Understand [Data Integration](./introduction.md).
 - Familiarize yourself with [Rules](./rules.md).
-- Enable [NAT Gatway](https://docs.EMQX.com/en/cloud/latest/vas/nat-gateway.html#nat-%E7%BD%91%E5%85%B3),to support public access to Azure Storage
-### Create a container in Azure Storage
+- Enable the [NAT Gateway](../vas/nat-gateway.md) to support public access to Azure Storage.
+### Create a Container in Azure Storage
 
 1. To access Azure Storage, you'll need an Azure subscription. If you don't already have a subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 
@@ -67,14 +67,14 @@ Before adding the Azure Blob Storage Sink, you need to create the corresponding 
 3. Enter the connection information:
 
    - **Account Name**: Your Storage Account name
-   - **Account Key**: Your Storage Account key from previous step
+   - **Account Key**: Your Storage Account key from the previous step
    - **Advanced Settings (Optional)**: Refer to [Advanced Configuration](https://docs.emqx.com/en/emqx/latest/data-integration/azure-blob-storage.html#advanced-settings)。
 
 4. Click the **Test Connection** button; if the Azure Blob Storage can be accessed normally, a success message will be returned.
 
 5. Click the **Create** button to complete the creation of the connector.
 
-## Create Rules
+## Create a Rule
 
 Next, you need to create a rule that specifies the data to be written and add response actions to forward the processed data to Azure Blob Storage.
 
@@ -91,7 +91,7 @@ Next, you need to create a rule that specifies the data to be written and add re
 
    ::: tip
 
-   If you're new to SQL, you can click **SQL Examples** and **Enable Debugging** to learn and test the results of the rule SQL.
+   If you're new to SQL, you can click **SQL Examples** and **Enable Test** to learn and test the results of the rule SQL.
 
    :::
 
@@ -152,7 +152,7 @@ Next, you need to create a rule that specifies the data to be written and add re
 
 8. Click the **Confirm** button to complete the action configuration.
 
-9. In the popup success message box, click **Return to Rule List** to complete the entire data integration configuration link.
+9. In the popup success message box, click **Return to Rule List** to complete the data integration configuration.
 
 ## Test the Rule
 
@@ -164,8 +164,6 @@ This section shows how to test the rule configured with the direct upload method
 mqttx pub -i emqx_c -t t/1 -m '{ "msg": "Hello Azure" }'
 ```
 
-2. After sending a few messages, access the Azure Portal to view the uploaded objects in the `iot-data` container.
+2. After sending a few messages, log in to the [Azure portal](https://portal.azure.com/), navigate to the storage account, and open the `iot-data` container. You should see the uploaded objects in the container.
 
-   Login to the [Azure portal](https://portal.azure.com/), navigate to the storage account, and open the `iot-data` container. You should see the uploaded objects in the container.
-
-3. Check the runtime data in the console. Click on the rule ID in the rules list, and you can view the statistics of the rule and all actions under this rule on the runtime statistics page.
+3. Check the runtime data in the EMQX Platform Console. Click on the rule ID in the rules list, and you can view the statistics of the rule and all actions under this rule on the runtime statistics page.
