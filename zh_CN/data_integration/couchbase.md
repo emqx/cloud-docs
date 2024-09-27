@@ -6,16 +6,16 @@
 
 ## 工作原理
 
-Couchbase 数据集成是 EMQX 中开箱即用的功能，旨在将 MQTT 的实时数据捕获和传输能力与 Couchbase 的强大数据处理功能结合在一起。通过内置的[规则引擎](https://docs.emqx.com/zh/emqx/latest/data-integration/rules.html)组件，这种集成简化了将数据从 EMQX 导入 Couchbase 进行存储和分析的过程，无需复杂的编码。
+Couchbase 数据集成是 EMQX Platform 中开箱即用的功能，旨在将 MQTT 的实时数据捕获和传输能力与 Couchbase 的强大数据处理功能结合在一起。通过内置的[规则引擎](https://docs.emqx.com/zh/emqx/latest/data-integration/rules.html)组件，这种集成简化了将数据从 EMQX Platform 导入 Couchbase 进行存储和分析的过程，无需复杂的编码。
 
-下图展示了 EMQX 与 Couchbase 数据集成的典型架构。
+下图展示了 EMQX Platform 与 Couchbase 数据集成的典型架构。
 
 ![EMQX Platform Couchbase 数据集成](./_assets/data_integration_couchbase.png)
 
 将 MQTT 数据导入 Couchbase 的工作流程如下：
 
-1. **消息发布和接收**：工业物联网设备通过 MQTT 协议成功连接到 EMQX，并基于其操作状态、读数或触发事件，将机器、传感器和生产线的实时 MQTT 数据发布到 EMQX。当 EMQX 接收到这些消息时，它会启动其规则引擎中的匹配过程。
-2. **消息数据处理**：消息到达后，它会通过规则引擎并由 EMQX 中定义的规则进行处理。这些规则基于预定义的条件，决定哪些消息需要路由到 Couchbase。如果规则指定了负载转换，则会进行相应的转换，如数据格式转换、过滤特定信息或用额外的上下文丰富负载。
+1. **消息发布和接收**：工业物联网设备通过 MQTT 协议成功连接到 EMQX Platform，并基于其操作状态、读数或触发事件，将机器、传感器和生产线的实时 MQTT 数据发布到 EMQX Platform。当 EMQX Platform 接收到这些消息时，它会启动其规则引擎中的匹配过程。
+2. **消息数据处理**：消息到达后，它会通过规则引擎并由 EMQX Platform 中定义的规则进行处理。这些规则基于预定义的条件，决定哪些消息需要路由到 Couchbase。如果规则指定了负载转换，则会进行相应的转换，如数据格式转换、过滤特定信息或用额外的上下文丰富负载。
 3. **数据导入到 Couchbase**：一旦规则引擎识别出某条消息需要存储到 Couchbase，它会触发一个操作，将消息转发到 Couchbase。处理后的数据将无缝地写入 Couchbase 数据库的数据集中。
 4. **数据存储和利用**：数据存储在 Couchbase 中后，企业可以利用其强大的查询能力支持各种用例。例如，在动态产品目录的场景中，企业可以使用 Couchbase 高效管理和检索产品信息，支持实时库存更新，并向客户提供个性化推荐，从而提升购物体验并增加销售额。
 
@@ -23,10 +23,10 @@ Couchbase 数据集成是 EMQX 中开箱即用的功能，旨在将 MQTT 的实�
 
 Couchbase 数据集成具有以下特性与优势：
 
-- **实时数据流**：EMQX 专为处理实时数据流而设计，确保从源系统到 Couchbase 的数据传输高效且可靠。它使组织能够实时捕获和分析数据，非常适合需要即时见解和行动的使用场景。
-- **高性能和可扩展性**：EMQX 的分布式架构和 Couchbase 的列式存储格式在数据量增加时实现无缝扩展。这确保了即使在处理大数据集时，性能和响应速度也能保持一致。
-- **数据转换的灵活性**：EMQX 提供了强大的基于 SQL 的规则引擎，允许组织在将数据存储到 Couchbase 之前进行预处理。它支持多种数据转换机制，如过滤、路由、聚合和丰富，帮助组织根据自身需求调整数据。
-- **易于部署和管理**：EMQX 提供了一个用户友好的界面，用于配置数据源、预处理数据规则和 Couchbase 存储设置。这简化了数据集成过程的设置和持续管理。
+- **实时数据流**：EMQX Platform 专为处理实时数据流而设计，确保从源系统到 Couchbase 的数据传输高效且可靠。它使组织能够实时捕获和分析数据，非常适合需要即时见解和行动的使用场景。
+- **高性能和可扩展性**：EMQX Platform 的分布式架构和 Couchbase 的列式存储格式在数据量增加时实现无缝扩展。这确保了即使在处理大数据集时，性能和响应速度也能保持一致。
+- **数据转换的灵活性**：EMQX Platform 提供了强大的基于 SQL 的规则引擎，允许组织在将数据存储到 Couchbase 之前进行预处理。它支持多种数据转换机制，如过滤、路由、聚合和丰富，帮助组织根据自身需求调整数据。
+- **易于部署和管理**：EMQX Platform 提供了一个用户友好的界面，用于配置数据源、预处理数据规则和 Couchbase 存储设置。这简化了数据集成过程的设置和持续管理。
 - **高级分析功能**：Couchbase 强大的基于 SQL 的查询语言和对复杂分析功能的支持，使用户能够从物联网数据中获得有价值的见解，实现预测性分析、异常检测等功能。
 
 ## 准备工作
@@ -43,6 +43,8 @@ Couchbase 数据集成具有以下特性与优势：
 <!--@include: ./network-setting.md-->
 
 ### 安装 Couchbase
+
+您可以选择通过 Docker 安装 Couchbase，或者使用 Couchbase Cloud 创建一个 Couchbase 云服务。
 
 #### 通过 Docker 安装 Couchbase
 
@@ -64,19 +66,17 @@ Couchbase 数据集成具有以下特性与优势：
 
 2. 在浏览器中打开 Couchbase Web 控制台，访问 http://x.x.x.x:8091。
 
-    ①点击 **Setup New Cluster** 并为您的集群命名。为了便于入门，将完整管理员凭据设置为 admin 和 password。
+3. 点击 **Setup New Cluster** 并为您的集群命名。为了便于入门，将完整管理员凭据设置为 admin 和 password。然后接受条款和条件，点击 **Finish with Defaults**，使用默认值完成配置。
 
-    然后接受条款和条件，点击 **Finish with Defaults**，使用默认值完成配置。
+4. 配置完成后，点击右下角的 **Save & Finish** 按钮。这将根据配置设置服务器，并打开 Couchbase Web 控制台仪表板。
 
-    ②输入完配置信息后，点击右下角的 **Save & Finish** 按钮。这将根据配置设置服务器，并打开 Couchbase Web 控制台仪表板。
+5. 在左侧导航面板中选择 **Buckets**，然后点击 **ADD BUCKET** 按钮，输入 bucket 的名称，例如 `emqx`，然后点击 **Create** 以创建 bucket。
 
-    ③在左侧导航面板中选择 **Buckets**，然后点击 **ADD BUCKET** 按钮，输入 bucket 的名称，例如 `emqx`，然后点击 **Create** 以创建 bucket。
+6. 为默认集合创建主索引：
 
-    ④为默认集合创建主索引：
-
-    ```bash
-    docker exec -t db /opt/couchbase/bin/cbq -u admin -p password -engine=http://127.0.0.1:8091/ -script "create primary index on default:emqx._default._default;"
-    ```
+   ```bash
+   docker exec -t db /opt/couchbase/bin/cbq -u admin -p password -engine=http://127.0.0.1:8091/ -script "create primary index on default:emqx._default._default;"
+   ```
 
 #### 使用 Couchbase Cloud 创建 Couchbase 服务
 
@@ -90,11 +90,11 @@ Couchbase 数据集成具有以下特性与优势：
 
 5. 点击 **Connect**，找到 **Public Connection String** 并记录下来用于后续连接。
 
-6. 前往 **Cluster Access** ，填写 Cluster access name 和 Password 用于认证，然后点击 **Bucket-Level Access**给第四步创建的 Bucket 授予合适的权限。
+6. 前往 **Cluster Access**，填写 Cluster access name 和 Password 用于认证，然后点击 **Bucket-Level Access**给第4步创建的 Bucket 授予合适的权限。
 
 7. 前往 Allowed IP Addresses，点击 **Add Allowed IP**，添加 IP 白名单。
 
-至此，您已经成功创建好 Couchbase Cloud 实例了，可以继续下一步的连接测试。
+至此，您已经成功创建好 Couchbase Cloud 实例。
 
 ## 创建 Couchbase 连接器
 
@@ -106,7 +106,7 @@ Couchbase 数据集成具有以下特性与优势：
 
 3. 输入连接信息：
 
-   - **服务器地址**：填写服务器的 IP 地址以及端口。如果是 Couchbase Cloud，需要去掉前缀couchbases://，默认端口为 18093，并且启用 TLS。
+   - **服务器地址**：填写服务器的 IP 地址以及端口。如果是 Couchbase Cloud，需要去掉前缀couchbases://，默认端口为 `18093`，并且启用 TLS。
    - **认证信息**：按照安装 Couchbase 中的设定完成**用户名**及**密码**的设定。
    - **高级设置（可选）**：请参阅[高级配置](https://docs.emqx.com/zh/emqx/latest/data-integration/data-bridge-couchbase.html#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)。
 
@@ -120,7 +120,7 @@ Couchbase 数据集成具有以下特性与优势：
 
 1. 点击连接器列表**操作**列下的新建规则图标或在**规则列表**中点击**新建规则**进入**新建规则**步骤页。
 
-2. 在 SQL 编辑器中输入规则，客户端将温湿度消息发送到 `temp_hum/emqx` 主题时，就会触发引擎。这里需要对 SQL 进行一定的处理：
+2. 在 SQL 编辑器中输入规则，例如客户端将温湿度消息发送到 `temp_hum/emqx` 主题时，就会触发引擎。这里需要对 SQL 进行一定的处理：
 
    ```sql
     SELECT 
