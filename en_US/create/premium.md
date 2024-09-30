@@ -94,7 +94,7 @@ The Premium Plan provides a dedicated storage layer for each deployment, providi
 
 Durable Session allows the EMQX Platform to persist client sessions to the built-in database instead of memory. Client session data is retained even after the server restarts, ensuring uninterrupted connectivity. 
 
-### [Event History](../vas/event_history.md)
+### [Event History](../deployments/event_history.md)
 
 The Event History service enables the EMQX Platform to record the client and message events for further monitoring and analysis.
 
