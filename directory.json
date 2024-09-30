@@ -479,6 +479,14 @@
         {
           "title": "Datalayers",
           "path": "data_integration/datalayers"
+        },
+        {
+          "title": "Couchbase",
+          "path": "data_integration/couchbase"
+        },
+        {
+          "title": "Azure Blob Storage",
+          "path": "data_integration/azure_blob_storage"
         }
       ]
     },
@@ -1216,6 +1224,14 @@
         {
           "title": "Amazon S3",
           "path": "data_integration/s3"
+        },
+        {
+          "title": "Couchbase",
+          "path": "data_integration/couchbase"
+        },
+        {
+          "title": "Azure Blob Storage",
+          "path": "data_integration/azure_blob_storage"
         }
       ]
     },
