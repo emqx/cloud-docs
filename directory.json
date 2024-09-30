@@ -477,6 +477,10 @@
           "path": "data_integration/s3"
         },
         {
+          "title": "Datalayers",
+          "path": "data_integration/datalayers"
+        },
+        {
           "title": "Couchbase",
           "path": "data_integration/couchbase"
         },
