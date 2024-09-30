@@ -51,7 +51,7 @@
 
 [MQTT.js](https://github.com/mqttjs/MQTT.js) 是一个完全开源的 MQTT 协议的客户端库，使用 JavaScript 编写，可用于 Node.js 和浏览器环境。有关 `MQTT.js` 的更多内容和使用方法，您可以前往查阅 [MQTT.js GitHub 页面](https://github.com/mqttjs/MQTT.js#table-of-contents)。
 
-MQTT.js 支持通过 NPM 或 Yarn 安装，通过 CDN 或相对路径引入。本示例将通过 Yarn 命令安装 MQTT.js，直接引入文件的方法更适用于通过 CDN 使用 Vue 的项目。
+MQTT.js 支持通过 NPM 或 Yarn 安装，通过 CDN 或相对路径引入。本示例将通过 Yarn 命令安装 MQTT.js，直接引入文件的方法更适用于通过 CDN 使用 React 的项目。
 
 1. 通过命令行安装，可以使用 npm 或 yarn 命令（二者选一）
 

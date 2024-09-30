@@ -345,6 +345,10 @@
           "path": "connect_to_deployments/react_sdk"
         },
         {
+          "title": "使用 React Native Expo 接入",
+          "path": "connect_to_deployments/react_native_expo_sdk"
+        },
+        {
           "title": "使用 Electron SDK 接入",
           "path": "connect_to_deployments/electron_sdk"
         },
@@ -490,6 +494,10 @@
         {
           "title": "GreptimeDB",
           "path": "data_integration/greptimedb"
+        },
+        {
+          "title": "Amazon S3",
+          "path": "data_integration/s3"
         }
       ]
     },
@@ -1034,6 +1042,10 @@
           "path": "connect_to_deployments/react_sdk"
         },
         {
+          "title": "Connect via React Native Expo",
+          "path": "connect_to_deployments/react_native_expo_sdk"
+        },
+        {
           "title": "Connect via Electron SDK",
           "path": "connect_to_deployments/electron_sdk"
         },
@@ -1219,6 +1231,10 @@
         {
           "title": "Azure Event Hubs",
           "path": "data_integration/azure_event_hubs"
+        },
+        {
+          "title": "Amazon S3",
+          "path": "data_integration/s3"
         }
       ]
     },

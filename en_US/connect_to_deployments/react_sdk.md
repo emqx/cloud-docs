@@ -49,7 +49,7 @@ Reference link: [https://reactjs.org/docs/getting-started.html](https://reactjs.
 
 [MQTT.js](https://github.com/mqttjs/MQTT.js) is a fully open-source client-side library for the MQTT protocol, written in JavaScript and available for Node.js and browsers. For more information and usage of `MQTT.js`, please refer to the [MQTT.js GitHub](https://github.com/mqttjs/MQTT.js#table-of-contents).
 
-MQTT.js can be installed via NPM or Yarn, or can be imported through CDN or relative path. This example will install MQTT.js through NPM command. Directly importing files is more suitable for projects that use Vue through CDN.
+MQTT.js can be installed via NPM or Yarn, or can be imported through CDN or relative path. This example will install MQTT.js through NPM command. Directly importing files is more suitable for projects that use React through CDN.
 
 1. Installation via the command line, either using the npm or yarn command (one or the other)
 
@@ -81,7 +81,7 @@ const username = "emqx_test";
 const password = "emqx_test";
 ```
 
-You can establish a connection between the client and the MQTT broker using the following code: 
+You can establish a connection between the client and the MQTT broker using the following code:
 
 ```js
 const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt", {
@@ -219,9 +219,8 @@ You can see that MQTTX can receive messages from the browser side normally, as c
 
 ## More
 
-In conclusion, we have implemented creating MQTT connections in a React project and simulated scenarios of subscribing, publishing messages, unsubscribing, and disconnecting between clients and MQTT servers. 
+In conclusion, we have implemented creating MQTT connections in a React project and simulated scenarios of subscribing, publishing messages, unsubscribing, and disconnecting between clients and MQTT servers.
 
 In this article, we use React v18.2.0, so the Hook Component feature will be used as example code to demonstrate, or if required, you can refer to the `ClassMqtt` component in the full example code to use the Class Component feature for project building.
 
 You can download the complete example source code on the [MQTT Client - React page](https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-React), and we also welcome you to explore more demo examples in other languages on the [MQTT Client example page](https://github.com/emqx/MQTT-Client-Examples).
-

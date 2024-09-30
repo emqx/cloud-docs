@@ -6,9 +6,9 @@
 ## 扩展认证数据源
 
 [HTTP 认证](./http_auth.md)
- 
+
 [MySQL 认证](./mysql_auth.md)
- 
+
 [PostgreSQL 认证](./pgsql_auth.md)
 
 [Redis 认证](./redis_auth.md)
@@ -26,5 +26,6 @@
 - 认证失败，终止认证链并禁止客户端接入
 - 当前数据源未能匹配，将进入下一个认证源进行认证
 自定义认证链：可拖动认证数据源的图标，左右排列进行认证顺序的编排。
+
 ![auth_management](./_assets/auth_management.png)
 

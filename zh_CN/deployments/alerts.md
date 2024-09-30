@@ -2,8 +2,6 @@
 
 EMQX Platform 提供完善的告警提醒、告警集成，允许用户以及运维人员根据这些告警及时做出相应的处理。点击部署左侧菜单中的**监控** -> **告警**进入告警页面。在**告警列表**中可以查看到部署产生的告警信息，在**告警集成**中可以配置将告警发送到邮箱，或者通过集成 PagerDuty 或 Webhook 通知告警事件。
 
-![alert_integrations](./_assets/alert_events.png)
-
 ## 告警事件
 
 以下表格列举了 EMQX Platform 提供的部署告警事件以及相应的解决措施。
@@ -53,4 +51,3 @@ EMQX Platform 目前提供邮箱， PagerDuty 和 Webhook 事件告警集成。�
 ### Webhook 集成
 
 关于 Webhook 集成告警的详细内容，参阅[集成 Webhook 告警](./alerts_webhook.md)。
-
