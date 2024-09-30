@@ -479,6 +479,10 @@
         {
           "title": "Couchbase",
           "path": "data_integration/couchbase"
+        },
+        {
+          "title": "Azure Blob Storage",
+          "path": "data_integration/azure_blob_storage"
         }
       ]
     },
@@ -1220,6 +1224,10 @@
         {
           "title": "Couchbase",
           "path": "data_integration/couchbase"
+        },
+        {
+          "title": "Azure Blob Storage",
+          "path": "data_integration/azure_blob_storage"
         }
       ]
     },
