@@ -91,7 +91,7 @@ Before creating data integration rules, you need to first create a Apache IoTDB 
 
 1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
 
-2. If it is the first time for you to create a connector, select **Microsoft SQL server** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **Microsoft SQL server** under the **Data Persistence** category.
+2. If it is the first time for you to create a connector, select **Apache IoTDB** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **Apache IoTDB** under the **Data Persistence** category.
 
 3. Enter the connection information:
 
@@ -100,7 +100,7 @@ Before creating data integration rules, you need to first create a Apache IoTDB 
 
 4. Leave the other options as default. For the configuration of **Advanced Settings** (optional): See [Advanced Configurations](https://docs.emqx.com/en/enterprise/latest/data-integration/data-bridge-iotdb.html#advanced-configurations).
 
-5. Click the **Test** button. If the Microsoft SQL server service is accessible, a success prompt will be returned.
+5. Click the **Test** button. If the Apache IoTDB service is accessible, a success prompt will be returned.
 
 6. Click the **New** button to complete the creation.
 

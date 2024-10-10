@@ -100,7 +100,7 @@ docker run -d --name iotdb-service \
 
 4. 其他选项保留默认。关于 **高级设置** 的配置（可选）：参见[高级配置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-iotdb.html#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)。
 
-5. 点击**测试连接**按钮，如果 Microsoft SQL Server 服务能够正常访问，则会返回成功提示。
+5. 点击**测试连接**按钮，如果 Apache IoTDB 服务能够正常访问，则会返回成功提示。
 
 6. 点击**新建**按钮完成连接器的创建。
 
