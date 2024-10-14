@@ -44,11 +44,21 @@ You can complete the related configurations as follows:
 
   ::: tip
 
-  - If the current deployment is a Dedicated edition, create a [VPC Peering Connection](./vpc_peering.md), and fill in the internal network address as the server address.
-  - If the current deployment is a BYOC edition, create a VPC Peering Connection in your public cloud console. For details, refer to [Create VPC Peering Connections](./byoc_vpc_peering.md). Fill in the internal network address as the server address.
-  - If you see an "Init resource failure!" message, please check if the server address is correct and if the security group is open. 
+  - For the Dedicated deployment, create a [VPC Peering Connection](./vpc_peering.md), and use the internal network address as the server address.
+  - For the BYOC deployment, create a VPC Peering Connection in your public cloud console. For details, refer to [Create VPC Peering Connections](./byoc_vpc_peering.md). Use the internal network address as the server address.
+  - If you encounter an "Init resource failure!" message, check if the server address is correct and ensure that the security group allows access. 
 
   :::
+
+  - The URL address must start either with `http://` or `https://`.
+  - Avoid using placeholders in the domain name.
+  - You can use the following placeholders in the URL path:
+    - `${clientid}`
+    - `${username}`
+    - `${password}`
+    - `${peerhost}`
+    - `${cert_subject}`
+    - `${cert_common_name}`
 
 - **Headers** (Optional): HTTP request header configuration. Multiple headers can be added.
 
