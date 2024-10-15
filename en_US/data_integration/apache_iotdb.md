@@ -90,18 +90,12 @@ You can find more information about running [IoTDB in Docker on Docker Hub](http
 Before creating data integration rules, you need to first create a Apache IoTDB connector to access the Apache IoTDB server.
 
 1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
-
 2. If it is the first time for you to create a connector, select **Apache IoTDB** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **Apache IoTDB** under the **Data Persistence** category.
-
-3. Enter the connection information:
-
-   - **IoTDB REST Service Base URL**: IP address and port of the server.
-   - **Username** and **Password**: Enter the username and password for the Connector to access the Apache IoTDB server. Use default username `root` and default password `root` here.
-
+3. Select the driver from the **Driver** dropdown.
+   - If you select `REST API` as the driver, enter `http://localhost:18080` in the **IoTDB REST Service Base URL**.
+   - If you want to use the Thrift protocol for this connector, select `Thrift Protocol` and enter the IoTDB Thrift server address in the **Server Host** field.
 4. Leave the other options as default. For the configuration of **Advanced Settings** (optional): See [Advanced Configurations](https://docs.emqx.com/en/enterprise/latest/data-integration/data-bridge-iotdb.html#advanced-configurations).
-
 5. Click the **Test** button. If the Apache IoTDB service is accessible, a success prompt will be returned.
-
 6. Click the **New** button to complete the creation.
 
 ## Create Rules

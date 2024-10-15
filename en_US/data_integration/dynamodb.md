@@ -150,7 +150,7 @@ Next, you need to create a rule to specify the data to be written and add corres
     "temp_hum/emqx"
    ```
 
-    To create a rule for online/offline status recording, input the following statement:
+   To create a rule for online/offline status recording, enter the following statement:
 
    ```sql
     SELECT
@@ -159,7 +159,11 @@ Next, you need to create a rule to specify the data to be written and add corres
     "$events/client_connected", "$events/client_disconnected"
    ```
 
-   You can use **Enable Test** to simulate data input and test the results.
+   ::: tip
+
+   If you are a beginner user, click **SQL Examples** and **Enable Test** to learn and test the SQL rule.
+
+   :::
 
 3. Click **Next** to add an action.
 
@@ -172,6 +176,18 @@ Next, you need to create a rule to specify the data to be written and add corres
    - **Table Name**: Input `temp_hum`.
 
    - **Message Template**: When this value is empty the whole message will be stored in the database. The template can be any valid JSON with placeholders and make sure all keys for table are here, example: `{"id" : "${id}", "clientid" : "${clientid}", "data" : "${payload.data}"}`.
+
+     If a placeholder variable is undefined in the SQL template, you can toggle the **Undefined Vars as Null** switch above the **Message template** to define the rule engine behavior:
+
+     - **Disabled** (default): The rule engine can insert the string `undefined` into the database.
+
+     - **Enabled**: Allow the rule engine to insert `NULL` into the database when a variable is undefined.
+
+       ::: tip
+
+       If possible, this option should always be enabled; disabling the option is only used to ensure backward compatibility.
+
+       :::
 
    - Use default values for other settings, or configure them according to your business needs.
 
