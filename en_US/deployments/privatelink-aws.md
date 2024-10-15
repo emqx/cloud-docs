@@ -1,73 +1,92 @@
 # AWS PrivateLink
 
-This page provides instructions on how to enable the PrivateLink feature for the EMQX Platform deployment on the Amazon AWS platform. Once the PrivateLink is enabled, the EMQX Platform deployment can access AWS hosted services through a private connection in your virtual network. In the private connection, the EMQX Platform deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
+This page provides detailed instructions on how to enable the PrivateLink feature for EMQX Platform deployments on the Amazon AWS platform. By enabling PrivateLink, your EMQX deployment can access AWS-hosted services through a secure and private connection within your virtual network. This ensures that communication remains isolated from the public internet, improving both security and performance.
+
+In this setup, your EMQX Platform deployment’s Virtual Private Cloud (VPC) acts as the service user, establishing a connection to the service provider’s VPC, where your AWS resources reside.
 
 <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/vu_3KW4pq9A/?autoplay=1&null" />
 
 ## Create Endpoint Service Using AWS PrivateLink
 
-When creating Endpoint Service in AWS, the LB Availability Zone [AZ ID](https://us-east-1.console.aws.amazon.com/ram/home?region=us-east-1#Home) created should be identical to that in the EMQX Platform deployment. To get the AZ ID in EMQX Platform:
+This section demonstrates the steps to create an AWS Endpoint Service using AWS PrivateLink, which allows EMQX deployments to securely connect to AWS services. This is crucial for ensuring that your EMQX deployment communicates privately and directly with AWS services via a private connection within the VPC. This process involves setting up the required AWS resources, configuring load balancers, and enabling PrivateLink on the EMQX Platform.
 
-Login to [EMQX Platform Console](<https://cloud.emqx.com/console>), go to the desired deployment creation details, and click the `+PrivateLink` button to get the deployment availability zone.
+### Obtain AZ ID from EQMX Platform Console
 
-![lb](./_assets/deployment_privatelink_details.png)
+When creating an Endpoint Service in AWS, the Availability Zone ID (AZ ID) of your Load Balancer (LB) must match the AZ ID in your EMQX Platform deployment. To obtain the AZ ID:
 
-Before you can configure PrivateLink, you need to complete the following prerequisite steps on the AWS platform.
+1. Go to your deployment in the EMQX Platform Console.
+2. On the deployment overview page, select the **PrivateLink** button at the bottom and click **+PrivateLink**.
+3. In the pop-up dialog, you will see the availability zone details for the deployment.
 
-1. Register an AWS account and enable the PrivateLink service
+<img src="./_assets/deployment_privatelink_details.png" alt="lb" style="zoom:67%;" />
 
-2. Create an instance and VPC
+### Complete Preparatory Steps on the AWS Platform
 
-3. Create a target group for load balancing
+Before configuring PrivateLink, complete the following steps on the AWS platform.
 
-   On **Basic configuration**, set the **Target group name**, **Protocol** （TCP） and **Port**.
+1. Register an AWS account and enable the PrivateLink service.
 
-   ![lb](./_assets/lb_target_group_1.png)
+2. Create an EC2 instance and VPC.
 
-   On **Health checks**, set the **Override** port, and for the rest, you can keep the default setting or set as your business needs.
-   ![lb](./_assets/lb_target_group_2.png)
+3. Create a target group for load balancing.
 
-   Then register target group and create instance.
-   ![lb](./_assets/lb_target_group_3.png)
+   - On **Basic configuration**, set the **Target group name**, **Protocol** (TCP), and **Port**.
 
-4. Create and configure the Load Balancer with the AZ ID you obtained from EMQX Platform Console.
+     ![lb](./_assets/lb_target_group_1.png)
 
-   Select the type of load balancing as **Network Load Balancer**.
-   ![lb](./_assets/lb_type.png)
+   - On **Health checks**, set the **Override** port, and for the rest, you can keep the default setting or set as your business needs.
 
-   Select the schema type as internal to facilitate requests to private IP addresses.
-   ![lb](./_assets/lb_1.png)
+     ![lb](./_assets/lb_target_group_2.png)
 
-   Select the TCP protocol, fill in the listening port and the corresponding target group.
-   ![lb](./_assets/lb_2.png)
+   - Register target group and create instance.
 
-   After creating the load balancer, check whether the listening port status of the target group is healthy.
-   ![lb](./_assets/lb_3.png)
+     ![lb](./_assets/lb_target_group_3.png)
 
-5. Create an endpoint service
+4. Create and configure the LB with the AZ ID you obtained from EMQX Platform Console.
 
-   Find the Endpoint Services in the left menu bar of your AWS account and click Create. The load balancer type is Network, select the load balancer created in the previous step.
+   - Select **Network Load Balancer** as the type of load balancing and click **Create**.
+
+     ![lb](./_assets/lb_type.png)
+
+   - Select the schema type as internal to facilitate requests to private IP addresses.
+
+     ![lb](./_assets/lb_1.png)
+
+   - Select the TCP protocol, fill in the listening port and the corresponding target group.
+
+     ![lb](./_assets/lb_2.png)
+
+   - After creating the load balancer, check whether the listening port status of the target group is healthy.
+
+     ![lb](./_assets/lb_3.png)
+
+### Create An Endpoint Service
+
+Follow the instructions below and refer to [AWS Help](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html#create-endpoint-service-nlb) to complete the configuration.
+
+1. Find the Endpoint Services in the left menu bar of your AWS account and click **Create**. Select the load balancer type as **Network**, and select the load balancer created in the previous step.
+
    ![endpoint service](./_assets/endpoint_service_1.png)
 
-   In the additional settings, select the IP address type as IPV4.
+2. In the additional settings, select the IP address type as IPV4.
+
    ![endpoint service](./_assets/endpoint_service_2.png)
 
-   Once created, you will get the endpoint service name.
+3. Once created, you will get the endpoint service name.
+
    ![endpoint service](./_assets/endpoint_service_3.png)
 
-   You can refer to [AWS Help](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html#create-endpoint-service-nlb) to complete the above configuration.
+## Enable PrivateLink on EMQX Platform
 
-## Enable EMQX Platform PrivateLink
-
-1. After getting the AWS ARN where the deployment is located in EMQX Platform console, add it to the allowed principals entry of your AWS Platform-Endpoint Service.
+1. After getting the AWS ARN where the deployment is located in EMQX Platform Console, add it to the allowed principals entry of your AWS Platform-Endpoint Service.
 
    ![lb](./_assets/endpoint_service_grant.png)
 
-   Once added, click `Allow principals and go to the next step`.
+   Once added, click **Allow principals** and go to the next step.
 
-2. Locate the Endpoint service on your AWS platform, copy the service name, fill it to the EMQX Platform Endpoint service name, and click `Create PrivateLink`.
+2. In the AWS platform, locate your Endpoint Service, copy the service name, and enter it into the **Enter the name of Endpoint Service** field on the EMQX Platform Console. Then, click **Create PrivateLink**.
 
-   ![lb](./_assets/p6.png)
+   <img src="./_assets/p6.png" alt="lb" style="zoom:67%;" />
 
 3. Once completed, find the Endpoint Service - Endpoint Connection in your AWS platform and click `Accept Endpoint Connection Request`.
 
@@ -88,9 +107,9 @@ To remove the private connection, you need to ensure that the PrivateLink status
 > - If you need to remove the PrivateLink service from your AWS platform, please remove the PrivateLink from EMQX Platform console first, otherwise it will cause PrivateLink status of the deployment to be `failed`.
 > - Please ensure that there are no associated resources in the deployment before removing the PrivateLink, otherwise it will lead to unpredictable risks.
 
-1. Go to Deployment Details
+1. Go to the Deployment Overview page.
 
-2. Click on the `Delete button` to the right of the PrivateLink and click on Confirm to complete the deletion.
+2. Click on the Delete button to the right of the PrivateLink and click **Confirm** to complete the deletion.
 
    ![delete](./_assets/delete_privatelink.png)
 
