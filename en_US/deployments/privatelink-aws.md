@@ -4,8 +4,6 @@ This page provides detailed instructions on how to enable the PrivateLink featur
 
 In this setup, your EMQX Platform deployment’s Virtual Private Cloud (VPC) acts as the service user, establishing a connection to the service provider’s VPC, where your AWS resources reside.
 
-<LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/vu_3KW4pq9A/?autoplay=1&null" />
-
 ## Create Endpoint Service Using AWS PrivateLink
 
 This section demonstrates the steps to create an AWS Endpoint Service using AWS PrivateLink, which allows EMQX deployments to securely connect to AWS services. This is crucial for ensuring that your EMQX deployment communicates privately and directly with AWS services via a private connection within the VPC. This process involves setting up the required AWS resources, configuring load balancers, and enabling PrivateLink on the EMQX Platform.
