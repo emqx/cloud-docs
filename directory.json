@@ -514,6 +514,10 @@
       ]
     },
     {
+      "title": "集群连接",
+      "path": "cluster_linking/cluster_linking"
+    },
+    {
       "title": "财务管理",
       "path": "billing/overview",
       "collapsed": true,
