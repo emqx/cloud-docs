@@ -4,6 +4,10 @@
 
 ## 2024
 
+#### 2024-9
+
+- The EMQX Platform Premium supports the Cluster Linking feature.
+
 #### 2024-8
 
 - Released EMQX Platform Premium Plan.
