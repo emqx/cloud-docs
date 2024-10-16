@@ -90,13 +90,9 @@ Follow the instructions below and refer to [AWS Help](https://docs.aws.amazon.co
 
    ![lb](./_assets/accept_enpoint_service.png)
 
-4. Wait for a while and check the status of the PrivateLink in the deployment details, `running` means it has been created successfully. Copy the `Address` for the next data integration-resource configuration.
+4. Wait until the status of the PrivateLink in the deployment overview shows `Running`, indicating a successful connection.
 
    ![lb](./_assets/privatelink_status.png)
-
-5. Click the Data Integration menu on the left, find the resource type, fill in the `Server` on the New Resource page with the private connection service connection domain and port, database and user information，click `Test`, and the resource will be available.
-
-   ![lb](./_assets/privatelink_en_resource.png)
 
 ## Delete the PrivateLink
 
