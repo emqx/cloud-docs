@@ -366,7 +366,7 @@ BYOC 版本允许企业将 EMQX Platform 集成到现有的云基础设施中，
       <td style="text-indent: 2em;">集群连接</td>
       <td>&#10007</td>
       <td>&#10007</td>
-      <td>即将推出</td>
+      <td>&#10003</td>
       <td>&#10007</td>
    </tr>
    <tr>
@@ -573,6 +573,7 @@ BYOC 版本允许企业将 EMQX Platform 集成到现有的云基础设施中，
       <td>&#10003</td>
    </tr>
 </table>
+
 
 
 ## 支持的云服务提供商和地区
