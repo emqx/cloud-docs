@@ -1267,6 +1267,17 @@
       "path": "cluster_linking/cluster_linking"
     },
     {
+      "title": "EMQX Streaming",
+      "path": "emqx_streaming/emqx_streaming",
+      "collapsed":true,
+      "children":[
+        {
+          "title": "Use EMQX Streaming in EMQX Premium",
+          "path": "emqx_streaming/use_emqx_streaming"
+        }
+      ]
+    },
+    {
       "title": "Billing",
       "path": "billing/overview",
       "collapsed": true,
