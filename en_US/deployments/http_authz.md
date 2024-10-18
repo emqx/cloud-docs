@@ -41,6 +41,16 @@ You can complete the related configuration according to the following instructio
 
 - **URL**: Enter the URL address of the HTTP service.
 
+  - The URL address must start either with `http://` or `https://`.
+  - Avoid using placeholders in the domain name.
+  - You can use the following placeholders in the URL path:
+    - `${clientid}`
+    - `${username}`
+    - `${password}`
+    - `${peerhost}`
+    - `${cert_subject}`
+    - `${cert_common_name}`
+
 - **Headers** (optional): Configuration for HTTP request headers. Multiple headers can be added. Connection Configuration: Configure concurrent connections, connection timeout waiting time, maximum HTTP request count, and request timeout time in this section.
 
 - **Enable TLS**: Configure whether to enable TLS.
