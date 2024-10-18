@@ -30,7 +30,7 @@ EMQX Platform 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协�
 ## 是否支持 API 调用？
 支持。我们提供了 HTTP API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 
-更多关于 API 的使用方法，可以前往指南 —— [REST API](../api/introduction.md)。
+更多关于 API 的使用方法，可以前往指南 —— [REST API](../api/api_overview.md)。
 
 ## 支持什么样的 TLS/SSL 认证？
 目前支持 [单向](../deployments/tls_ssl.md),[双向](../deployments/tls_ssl.md),和 [自定义签名](../deployments/tls_ssl.md)的方式来进行配置。

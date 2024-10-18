@@ -57,7 +57,7 @@ Check out the [Connection Guide](../deployments/port_guide_dedicated.md) to lear
 
 ## Premium Deployment Features
 
-The Premium Plan provides you with the following the advanced features.
+The Premium Plan provides you with the following advanced features.
 
 ### [Deployment API](https://docs.emqx.com/en/cloud/latest/api/dedicated)
 
@@ -101,6 +101,10 @@ The Event History service enables the EMQX Platform to record the client and mes
 ### [Cluster Linking](../cluster_linking/cluster_linking.md)
 
 The Cluster Linking feature facilitates client communication and message transmission between geographically distributed Premium deployments.
+
+### [EMQX Streaming](../emqx_streaming/emqx_streaming.md)
+
+The EMQX Streaming feature allows users to persistently store MQTT messages as data streams and consume them directly using Kafka clients.
 
 ## Connect to the Deployment
 
