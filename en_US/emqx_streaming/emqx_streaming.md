@@ -22,7 +22,7 @@ The EMQX Streaming feature addresses these challenges by providing a unified sol
 
 ### What is EMQX Streaming?
 
-Building on EMQX's existing [durable storage](https://docs.emqx.com/en/emqx/latest/durability/durability_introduction.html) capabilities, the EMQX Streaming feature makes these stored data streams accessible through interfaces commonly used for data streaming, such as Kafka. It allows users to retrieve and replay stored messages through familiar Kafka clients, the operational overhead of managing a separate Kafka cluster.
+Building on the distributed storage capabilities of the Premium edition, the EMQX Streaming feature stores MQTT messages that match specified topic filters as data streams. When an MQTT client publishes a message to a matching topic, the message is ingested and stored in the EMQX Platform’s durable, distributed storage. These stored data streams can be accessible via interfaces commonly used for data streaming, such as Kafka. It allows users to retrieve and replay stored messages through familiar Kafka clients, the operational overhead of managing a separate Kafka cluster.
 
 With Kafka Streaming, you can achieve the following: 
 

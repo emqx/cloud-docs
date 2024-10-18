@@ -24,23 +24,22 @@ Once the EMQX Streaming is activated, the Kafka endpoint information will be dis
 
 ## Create a Stream in EMQX Platform Console
 
-Users can create two types of streams: default and free. The difference is that a default stream needs to be associated with an MQTT topic, while a free stream does not.
+Users can create two types of streams: default and free. A default stream is linked to an MQTT topic filter and created with 16 partitions by default, storing all matching MQTT messages. A free stream operates independently of MQTT topics, with customizable partition numbers, providing greater flexibility for non-MQTT use cases.
 
-In the current version, each default stream is created with 16 partitions by default, whereas the number of partitions for a free stream can be configured by the user. The retention period for both types of streams is fixed at 1 day and cannot be modified.
+ The retention period for both types of streams is fixed at 1 day and cannot be modified.
 
 1. Navigate to **Streaming (beta)** -> **Streams**.
 2. Click **New** on the Streams page. On the **New Streams** popup, complete the following settings:
    - **Stream Name**: Provide a name for the stream, for example, `demo1`. The Kafka topic for a Kafka client must match the stream name.
-   - **Stream Type**: Select the stream type:
+   - **Stream Type**: Select the stream type.
      - **Default**: The default type Stream is associated with an MQTT topic filter, and MQTT messages matching the topic filter are saved to the Stream. 
-     - **Free**: The free type Stream is not associated with an MQTT topic filter.
-   - **MQTT Topic Filter**: Enter a topic filter for MQTT messages. MQTT messages matching this topic filter are saved to the corresponding default type Stream. For this example, enter `t1/+`.
+     - **Free**: The free type Stream is not associated with an MQTT topic filter and is typically used for other data processing purposes.
+   - **MQTT Topic Filter**: If you select `Default` as the stream type, enter a topic filter for MQTT messages. MQTT messages matching this topic filter are saved to the corresponding default type Stream. For this example, enter `t1/+`.
+   - **Number of Partitions**: If you select `Free` as the stream type, specify the number of partitions to divide the stream for scalability and parallel processing.
 
 3. Click **Confirm**.
 
 Once the stream is created, it will appear in the **Streams** list. By clicking the stream name, you can view details, including the partition offsets and other stream-specific information.
-
-<!-- How to configure the free stream partition?-->
 
 ## Publish Messages Using MQTT Client
 

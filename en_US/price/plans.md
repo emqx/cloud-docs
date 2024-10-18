@@ -29,7 +29,7 @@ The Premium Plan offers all the advantages of the Dedicated Plan, along with add
 
 **Cluster Linking**: Facilitates cross-regional communication through cluster bridging.
 
-**EMQX Streaming (coming soon)**: Direct support for Kafka protocol, allowing Kafka clients to consume MQTT messages seamlessly.
+**EMQX Streaming**: Store MQTT messages as data streams and users can consume them directly using Kafka clients.
 
 ## BYOC (Bring Your Own Cloud) Plan
 
