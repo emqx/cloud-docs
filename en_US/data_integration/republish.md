@@ -1,6 +1,6 @@
 # Message Republish
 
-Through EMQX Platform Data Integration, it's possible to republish messages that meet certain conditions to other topics without writing any code. In EMQX Platform, you can create rules, define rule SQL to filter and process data from source messages and add a "Message Republish" action to the rule to forward the processed results via message publishing.
+Through EMQX Platform Data Integration, it's possible to republish messages that meet certain conditions to other topics without writing any code. In the EMQX Platform, you can create rules, define rule SQL to filter and process data from source messages, and add a "Message Republish" action to the rule to forward the processed results via message publishing.
 
 This page provides a demonstration of how to create data integration to republish a message to the `greet` topic whenever any message's `msg` contains the string `hello`. The main steps include:
 

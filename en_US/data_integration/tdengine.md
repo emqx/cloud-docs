@@ -139,9 +139,22 @@ This section demonstrates how to create a TDengine Rule and add action to the ru
        VALUES (${ts}, '${id}', '${topic}', ${qos}, '${payload}', ${timestamp})
    ```
 
+   If a placeholder variable is undefined in the SQL template, you can toggle the **Undefined Vars as Null** switch above the **SQL template** to define the rule engine behavior:
+
+   - **Disabled** (default): The rule engine can insert the string `undefined` into the database.
+
+   - **Enabled**: Allow the rule engine to insert `NULL` into the database when a variable is undefined.
+
+     ::: tip
+
+     If possible, this option should always be enabled; disabling the option is only used to ensure backward compatibility.
+
+     :::
+
 7. Expand **Advanced Settings** to configure Sync/Async mode, queue and batch, and other parameters as appropriate Advanced Settings Options (optional)
 
 8. Click the **Confirm** button to complete the rule creation.
+
 9. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
 
 ### Batch Setting

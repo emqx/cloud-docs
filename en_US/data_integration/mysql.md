@@ -103,9 +103,9 @@ Before creating data integration rules, you need to first create a MySQL connect
 
 Next, you need to create a rule to specify the data to be written and add corresponding actions in the rule to forward the processed data to MySQL.
 
-1. Click **New Rule** in Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
+1. Click **New Rule** in the Rules area or click the New Rule icon in the **Actions** column of the connector you just created.
 
-2. Enter the rule matching SQL statement in the **SQL editor**. In the following rule, we read the time when the message was reported `up_timestamp`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
+2. Enter the rule-matching SQL statement in the **SQL editor**. In the following rule, we read the time when the message was reported `up_timestamp`, client ID, payload via `temp_hum/emqx` topic. Also, we can read temperature and humidity from this topic.
 
    ```sql
     SELECT
@@ -140,6 +140,18 @@ Next, you need to create a rule to specify the data to be written and add corres
       ${hum}
     )
    ```
+
+   If a placeholder variable is undefined in the SQL template, you can toggle the **Undefined Vars as Null** switch above the **SQL template** to define the rule engine behavior:
+
+   - **Disabled** (default): The rule engine can insert the string `undefined` into the database.
+
+   - **Enabled**: Allow the rule engine to insert `NULL` into the database when a variable is undefined.
+
+     ::: tip
+
+     If possible, this option should always be enabled; disabling the option is only used to ensure backward compatibility.
+
+     :::
 
 6. Advanced Settings (Optional): Refer to [Advanced Configuration](https://docs.emqx.com/en/enterprise/latest/data-integration/data-bridge-mysql.html#advanced-configurations).
 
