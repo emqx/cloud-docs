@@ -80,12 +80,6 @@ The **Kafka Protocol** is a messaging protocol used for producing and consuming 
 
 A **Kafka Consumer Group** is a mechanism that allows multiple Kafka consumers to cooperate in consuming data from a stream, ensuring that the load is distributed evenly among the group and that each message is processed only once.
 
-### Design Architecture
-
-The architecture diagram illustrates the EMQX Platform and how it handles both MQTT and Kafka message streams.
-
-![architecture](./_assets/architecture.png)
-
 ## How EMQX Streaming Works
 
 The general workflow of the EMQX Streaming is as follows:
