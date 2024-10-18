@@ -41,6 +41,8 @@ Users can create two types of streams: default and free. A default stream is lin
 
 Once the stream is created, it will appear in the **Streams** list. By clicking the stream name, you can view details, including the partition offsets and other stream-specific information.
 
+![stream_details](./_assets/stream_details.png)
+
 ## Publish Messages Using MQTT Client
 
 You can use [MQTTX](https://mqttx.app/) to simulate an MQTT client and publish messages to the topics `t1/a` and `t1/b`.
@@ -86,7 +88,7 @@ To verify the consumed messages, navigate to **Streaming (beta)** -> **Consumer 
 
 Click on the **Group ID** to view details about the consumer group, such as the list of consumers and their consumption progress.
 
-<!-- Need an English screenshot-->
+![consumer_group_detail](./_assets/consumer_group_detail.png)
 
 ## Remove a Stream
 

@@ -4,15 +4,19 @@
 
 ## 2024
 
+#### 2024-10
+
+- The EMQX Platform Premium edition supports the EMQX Streaming feature (Beta).
+
 #### 2024-9
 
-- The EMQX Platform Premium supports the Cluster Linking feature.
+- The EMQX Platform Premium edition supports the Cluster Linking feature.
 
 #### 2024-8
 
 - Released EMQX Platform Premium Plan.
 - The Event History service is fully supported in the EMQX Premium.
-- Added regions of North Europe and West Us 3 to the Azure platform.
+- Added regions of North Europe and West US 3 to the Azure platform.
 
 #### 2024-7
 
