@@ -48,6 +48,24 @@ Body:
 
     :::
 
+    - URL 地址必须以 `http://` 或 `https://` 开头。
+
+    - 避免在域名中使用占位符。
+
+    - 您可以在 URL 路径中使用以下占位符：
+
+      - `${clientid}`
+
+      - `${username}`
+
+      - `${password}`
+
+      - `${peerhost}`
+
+      - `${cert_subject}`
+
+      - `${cert_common_name}`
+
 - **请求头**（可选）：HTTP 请求头配置。可以添加多个请求头。
   连接配置：在此部分进行并发连接、连接超时等待时间、最大 HTTP 请求数以及请求超时时间。
 

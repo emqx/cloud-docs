@@ -138,6 +138,18 @@ CREATE TABLE `temp_hum` (
     )
    ```
 
+   如果在模板中使用未定义的占位符变量，您可以切换**未定义变量作为 NULL** 开关（位于 **SQL 模板** 上方）来定义规则引擎的行为：
+
+   - **关闭**（默认）：规则引擎可以将字符串 `undefined` 插入数据库。
+
+   - **启用**：允许规则引擎在变量未定义时将 `NULL` 插入数据库。
+
+   ::: tip
+
+   如果可能，应始终启用此选项；关闭该选项仅用于确保向后兼容性。
+
+   :::
+
 6. 根据需要配置高级设置选项（可选），详情请参考[高级设置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-mysql.html#%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE)。
 
 7. 点击**确认**按钮完成动作的配置。

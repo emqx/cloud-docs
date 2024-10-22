@@ -125,9 +125,10 @@ Before creating data integration rules, you need to first create a DynamoDB conn
 1. Go to your deployment. Click **Data Integration** from the left-navigation menu.
 2. If it is the first time for you to create a connector, select **DynamoDB** under the **Data Persistence** category. If you have already created connectors, select **New Connector** and then select **DynamoDB** under the **Data Forward** category.
 3. On the **New Connector** page, configure the following options:
-   - **DynamoDB Endpoint**: Enter the [Endpoint](https://docs.aws.amazon.com/general/latest/gr/ddb.html) for the DynamoDB service. Make sure to include the prefix "https://". If you are using LocalStack, use `http://localhost:8000`.
-   - **AWS Access Key ID**: Enter the [Access key ID](https://docs.aws.amazon.com/powershell/latest/userguide/creds-idc.html).
-   - **AWS Secret Access Key**: Enter the [secret access key](https://docs.aws.amazon.com/powershell/latest/userguide/creds-idc.html).
+   - **DynamoDB Region**: Enter the region where the DynamoDB instance is located, for example, `us-west-2` in this case.
+   - **DynamoDB Server**: Enter the [Endpoint](https://docs.aws.amazon.com/general/latest/gr/ddb.html) for the DynamoDB service. Make sure to include the prefix "https://". If you are using LocalStack, use `http://localhost:8000`.
+   - **AWS Access Key ID**: Enter the [Access key ID](https://docs.aws.amazon.com/powershell/latest/userguide/creds-idc.html), for example, `root` in this case.
+   - **AWS Secret Access Key**: Enter the [secret access key](https://docs.aws.amazon.com/powershell/latest/userguide/creds-idc.html), for example, `public` in this case.
    - Use default values for other settings, or configure them according to your business needs.
 4. Click the **Test** button. If the DynamoDB service is accessible, a success prompt will be returned.
 5. Click the **New** button to complete the creation.
