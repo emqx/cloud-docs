@@ -60,7 +60,7 @@ Stream 是 EMQX Streaming 中的基本元素，用于存储和管理 MQTT 或 Ka
 
 #### MQTT 客户端
 
-MQTT 客户端是连接到 EMQX Platform 的设备或软件组件，用于发送和接收 MQTT 消息，这些消息被存储在 stream 中以便日后访问。
+MQTT 客户端是连接到 EMQX Platform 部署的设备或软件组件，用于发送和接收 MQTT 消息，这些消息被存储在 stream 中以便日后访问。
 
 #### Kafka 客户端
 

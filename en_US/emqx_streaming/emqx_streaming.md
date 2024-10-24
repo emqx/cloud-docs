@@ -66,7 +66,7 @@ A Partition is a logical segment of a stream, where each partition handles a sub
 
 #### MQTT Client
 
-An MQTT Client is a device or software component that connects to the EMQX Platform, sending and receiving MQTT messages, which are stored in streams for later access.
+An MQTT Client is a device or software component that connects to the EMQX Platform deployment, sending and receiving MQTT messages, which are stored in streams for later access.
 
 #### Kafka Client
 

@@ -32,7 +32,7 @@ DynamoDB 数据集成是 EMQX Platform 的开箱即用功能，它结合了 EMQX
 
 本节介绍在 EMQX Platform 中创建 DynamoDB 数据集成所需的准备工作。
 
-### 前置准尉
+### 前置准备
 
 - 了解 [规则](./rules.md)。
 - 了解 [数据集成](./introduction.md)。
