@@ -134,13 +134,24 @@ CREATE TABLE t_mqtt_msg (
 
 6. 配置 SQL 模板，可使用如下 SQL 完成数据插入，并支持通过 CSV 文件批量设置，详细请参考[批量设置](#批量设置)。
 
-```sql
-INSERT INTO t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload, arrived)
-    VALUES (${ts}, '${id}', '${topic}', ${qos}, '${payload}', ${timestamp})
-```
+   ```sql
+   INSERT INTO t_mqtt_msg(ts, msgid, mqtt_topic, qos, payload, arrived)
+       VALUES (${ts}, '${id}', '${topic}', ${qos}, '${payload}', ${timestamp})
+   ```
+
+   如果在模板中使用未定义的占位符变量，您可以切换**未定义变量作为 NULL** 开关（位于 **SQL 模板** 上方）来定义规则引擎的行为：
+
+   - **关闭**（默认）：规则引擎可以将字符串 `undefined` 插入数据库。
+
+   - **启用**：允许规则引擎在变量未定义时将 `NULL` 插入数据库。
+
+   ::: tip
+
+   如果可能，应始终启用此选项；关闭该选项仅用于确保向后兼容性。
+
+   :::
 
 7. 高级配置（可选），根据情况配置同步/异步模式，队列与批量等参数。
-
 8. 点击**确认**按钮完成动作的配置。
 9. 在弹出的**成功创建规则**提示框中点击**返回规则列表**，从而完成了整个数据集成的配置链路。
 

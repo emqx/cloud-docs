@@ -90,18 +90,14 @@ docker run -d --name iotdb-service \
 在创建数据集成的规则之前，您需要先创建一个 Apache IoTDB 连接器用于访问 Apache IoTDB 服务器。
 
 1. 在部署菜单中选择 **数据集成**，在数据持久化服务分类下选择 Apache IoTDB 服务。如果您已经创建了其他的连接器，点击**新建连接器**，然后在数据持久化服务分类下选择 Apache IoTDB 服务。
-
 2. **连接器名称**：系统将自动生成一个连接器的名称。
-
-3. 输入连接信息：
-
-   - **IoTDB REST 服务基础 URL**：填写服务器的 IP 地址以及端口。
-   - **用户名和密码**：输入连接器访问 Apache IoTDB 服务器的用户名和密码，此处使用默认用户名 `root` 和默认密码 `root`
-
-4. 其他选项保留默认。关于 **高级设置** 的配置（可选）：参见[高级配置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-iotdb.html#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)。
-
-5. 点击**测试连接**按钮，如果 Apache IoTDB 服务能够正常访问，则会返回成功提示。
-
+3. 选择驱动：
+   - 如果选择 `REST API` 作为驱动程序，请在 **IoTDB REST 服务基础 URL** 中输入外部 IoTDB 服务的 REST 接口基础 URL。URL 必须遵循 `Host:Port` 格式。
+   - 如果要为该连接器使用 Thrift 协议，选择 `Thrift 协议`，并将 **服务器地址** 设置为 IotDB 的 Thrift 服务器地址。
+4. 输入连接器访问 Apache IoTDB 服务器的用户名和密码。
+5. 在**IoTDB 版本**中选择要连接的 IoTDB 系统的版本。
+6. 其他选项保留默认。关于 **高级设置** 的配置（可选）：参见[高级配置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-iotdb.html#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)。
+7. 点击**测试连接**按钮，如果 Apache IoTDB 服务能够正常访问，则会返回成功提示。
 6. 点击**新建**按钮完成连接器的创建。
 
 ## 创建规则

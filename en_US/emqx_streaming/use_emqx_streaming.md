@@ -11,7 +11,7 @@ Before you begin, ensure you have completed the following steps:
 - Any MQTT clients that will publish messages are set up and available.
 - Any Kafka clients that will consume messages are ready.
 
-## Enable EMQX Streaming
+## Enable EMQX Streaming in EMQX Platform Console
 
 The EMQX Streaming feature can only be activated by submitting a ticket. 
 
@@ -22,7 +22,7 @@ Once the EMQX Streaming is activated, the Kafka endpoint information will be dis
 
 ![streaming_connection_information](./_assets/streaming_connection_information.png)
 
-## Create a Stream in EMQX Platform Console
+## Create a Stream
 
 Users can create two types of streams: default and free. A default stream is linked to an MQTT topic filter and created with 16 partitions by default, storing all matching MQTT messages. A free stream operates independently of MQTT topics, with customizable partition numbers, providing greater flexibility for non-MQTT use cases.
 
@@ -95,5 +95,5 @@ Click on the **Group ID** to view details about the consumer group, such as the 
 To remove a stream:
 
 1. Go to the **Streaming (beta)** -> **Streams** section.
-2. Click the **Delete** icon in the **Action** column next to the stream you want to remove.
+2. Click the delete icon in the **Action** column of the stream you want to remove.
 3. Confirm the deletion by clicking **Confirm**.

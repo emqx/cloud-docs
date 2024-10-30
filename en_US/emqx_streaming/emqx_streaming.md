@@ -39,7 +39,7 @@ To fully utilize EMQX Streaming, it's important to understand the following key 
 
 #### Stream
 
-A **Stream** is a fundamental element of EMQX Streaming where MQTT or Kafka messages are stored and managed. EMQX Streaming offers two types of streams:
+A Stream is a fundamental element of EMQX Streaming where MQTT or Kafka messages are stored and managed. EMQX Streaming offers two types of streams:
 
 - **Default (bound) stream**:
   - An MQTT Topic Filter must be bound during creation.
@@ -62,23 +62,23 @@ A **Stream** is a fundamental element of EMQX Streaming where MQTT or Kafka mess
 
 #### Partition
 
-A **Partition** is a logical segment of a stream, where each partition handles a subset of the stream data. This helps distribute the load and optimize throughput. Users can configure the number of partitions when creating free streams.
+A Partition is a logical segment of a stream, where each partition handles a subset of the stream data. This helps distribute the load and optimize throughput. Users can configure the number of partitions when creating free streams.
 
 #### MQTT Client
 
-An **MQTT Client** is a device or software component that connects to the EMQX broker, sending and receiving MQTT messages, which are stored in streams for later access.
+An MQTT Client is a device or software component that connects to the EMQX Platform deployment, sending and receiving MQTT messages, which are stored in streams for later access.
 
 #### Kafka Client
 
-A **Kafka Client** is any software component (producer or consumer) that communicates with EMQX Streaming via the Kafka protocol to read or write data to streams.
+A Kafka Client is any software component (producer or consumer) that communicates with EMQX Streaming via the Kafka protocol to read or write data to streams.
 
 #### Kafka Protocol
 
-The **Kafka Protocol** is a messaging protocol used for producing and consuming messages. EMQX Streaming implements this protocol, allowing Kafka clients to interact with the system as if it were a Kafka broker.
+The Kafka Protocol is a messaging protocol used for producing and consuming messages. EMQX Streaming implements this protocol, allowing Kafka clients to interact with the system as if it were a Kafka broker.
 
 #### Kafka Consumer Group
 
-A **Kafka Consumer Group** is a mechanism that allows multiple Kafka consumers to cooperate in consuming data from a stream, ensuring that the load is distributed evenly among the group and that each message is processed only once.
+A Kafka Consumer Group is a mechanism that allows multiple Kafka consumers to cooperate in consuming data from a stream, ensuring that the load is distributed evenly among the group and that each message is processed only once.
 
 ## How EMQX Streaming Works
 
@@ -101,5 +101,5 @@ The EMQX Streams brings you the following benefits.
 
 ## Next Steps
 
-To learn how to implement and configure EMQX Streaming in your EMQX Premium deployment, refer to the guide [Use EMQX Streaming in EMQX Platform Premium](./use_emqx_streaming.md).
+To learn how to implement and configure EMQX Streaming in your EMQX Premium deployment, refer to the guide [Use EMQX Streaming in EMQX Premium](./use_emqx_streaming.md).
 

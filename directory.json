@@ -464,6 +464,10 @@
           "path": "data_integration/clickhouse"
         },
         {
+          "title": "DynamoDB",
+          "path": "data_integration/dynamodb"
+        },
+        {
           "title": "InfluxDB",
           "path": "data_integration/influxdb"
         },
@@ -516,6 +520,17 @@
     {
       "title": "集群连接",
       "path": "cluster_linking/cluster_linking"
+    },
+    {
+      "title": "EMQX Streaming",
+      "path": "emqx_streaming/emqx_streaming",
+      "collapsed":true,
+      "children":[
+        {
+          "title": "在旗舰版中使用 EMQX Streaming",
+          "path": "emqx_streaming/use_emqx_streaming"
+        }
+      ]
     },
     {
       "title": "财务管理",
