@@ -15,7 +15,7 @@ This page provides a guide for changing deployment tiers in the EMQX Platform Co
 The changing tiers feature allows users with the appropriate permissions to:
 
 - Scale their running deployments through the EMQX Platform Console.
-- Perform tier changing actions directly, with limitations in place to prevent frequent changes.
+- Perform tier-changing actions directly, with limitations in place to prevent frequent changes.
 - Roll back tier changes if necessary.
 
 ### Feature Availability
@@ -25,7 +25,7 @@ This feature is only available for specific deployment types and statuses. Refer
 | Deployment Type                                     | Scaling Option Availability | Action                                                       |
 | --------------------------------------------------- | --------------------------- | ------------------------------------------------------------ |
 | Serverless / BYOC                                   | Not Available               | No changing tier option displayed.                           |
-| Non-tiral Running Dedicated (Hourly Billing Method) | Available                   | Changing tier directly in the Console without submitting a support ticket. |
+| Non-trial Running Dedicated (Hourly Billing Method) | Available                   | Changing tier directly in the Console without submitting a support ticket. |
 | Running Dedicated (Annual Prepaid Method)           | Limited                     | **Change Tier** button displayed, prompting ticket submission. |
 | Running Premium                                     | Limited                     | **Change Tier** button displayed, prompting ticket submission. |
 
