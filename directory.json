@@ -854,6 +854,10 @@
       ]
     },
     {
+      "title": "Change Deployment Tiers",
+      "path": "deployments/change_tier"
+    },
+    {
       "title": "Start/Stop/Delete Deployment",
       "path": "deployments/stop_delete_deployment"
     },
@@ -1158,10 +1162,6 @@
         {
           "title": "Kafka",
           "path": "data_integration/kafka"
-        },
-        {
-          "title": "Upstash for Kafka",
-          "path": "data_integration/kafka_upstash"
         },
         {
           "title": "Confluent",

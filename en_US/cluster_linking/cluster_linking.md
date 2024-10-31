@@ -103,6 +103,8 @@ If you repeat the message publishing and subscribing steps in [Verify Cluster Li
 
 You can view the basic information of the cluster links listed on the Cluster Linking page. 
 
-By clicking the deployment name, you can view metrics and statistics for the cluster linking execution and message transmission on the **Overview** tab. By clicking the **Settings** tab, you can modify the configurations. Alternatively, you can also click the editing icon in the **Actions** column.
+By clicking the deployment name, you can view metrics and statistics for the cluster linking execution and message transmission on the **Overview** tab. If you want to reset the metrics, you can click the "Reset" button on the upper right corner, and you will be prompted to confirm the resetting.
+
+By clicking the **Settings** tab, you can modify the configurations. Alternatively, you can also click the editing icon in the **Actions** column.
 
 Clicking the delete icon in the **Actions** column will delete the selected cluster linking entry.
