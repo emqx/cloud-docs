@@ -21,6 +21,7 @@ The EMQX Platform sets default quotas (or limits) for each deployment and the de
 | Maximum single-client subscription TPS    | 1000/s              | NO             |
 | Maximum single-client publishing TPS      | 10/s                | NO             |
 | TCP connect timeout                       | 10s                 | NO             |
+| Customized TLS/SSL configuration          | Not support         | NO             |
 | TLS version                               | 1.2 and 1.3         | NO             |
 | TLS encryption algorithm                  | -                   | NO             |
 | Maximum API QPS                           | 100/s               | NO             |
