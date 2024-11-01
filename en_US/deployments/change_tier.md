@@ -53,7 +53,7 @@ Once confirmed, the request will be sent to the backend, and you will be redirec
 
 ## Restrictions on Changing Tier
 
-To prevent misuse, changing tiers is limited to **one action per 24 hours**. If you attempt to initiate another changing tier action within this period, an error message will notify you of the restriction.
+To prevent misuse, changing tiers is limited to **one action per 12 hours**. If you attempt to initiate another changing tier action within this period, an error message will notify you of the restriction.
 
 ## Rollback for Changing Tier
 
