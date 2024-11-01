@@ -854,7 +854,7 @@
       ]
     },
     {
-      "title": "Change Deployment Tiers",
+      "title": "Change Deployment Tier",
       "path": "deployments/change_tier"
     },
     {
