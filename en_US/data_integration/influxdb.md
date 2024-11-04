@@ -121,24 +121,56 @@ Next, you need to create a rule to specify the data to be written and add corres
 
 5. Specify the **Time Precision**: Select `millisecond` by default.
 
-6. Conf of InfluxDB line protocol to write data points. It is a text-based format that provides the measurement, tag set, field set, and timestamp of a data point, and placeholder supported. See also [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2/reference/syntax/line-protocol/) and [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1/write_protocols/line_protocol_tutorial/)
+6. Select **Data Format** as `JSON` or `Line Protocol` for how data should be parsed and written into InfluxDB.
 
-   ```bash
-    temp_hum,location=${location} temp=${temp},hum=${hum} ${timestamp}
-   ```
+   - For JSON format, define data parsing method, including **Measurement**, **Timestamp**, **Fields,** and **Tags**. Note: All key values can be variables or placeholders, and you can also follow the [InfluxDB line protocol](https://docs.influxdata.com/influxdb/v2.5/reference/syntax/line-protocol/) to set them. The **Fields** field supports batch setting by importing a CSV file; for details, refer to [Batch Setting](#batch-setting).
 
-   ::: tip
+   - For Line Protocol format, specify a text-based format that provides the measurement, tag set, field set, timestamp of a data point, and placeholder supported. See also [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2/reference/syntax/line-protocol/) and [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1/write_protocols/line_protocol_tutorial/). 
 
-   - To write a signed integer type value to InfluxDB 1.x or 2.x, add `i` as the type identifier after the placeholder, for example, `${payload.int}i`. See [InfluxDB 1.8 write integer value](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_reference/#write-the-field-value-1-as-an-integer-to-influxdb).
-   - To write an unsigned integer type value to InfluxDB 1.x or 2.x, add `u` as the type identifier after the placeholder, for example, `${payload.int}u`. See [InfluxDB 1.8 write integer value](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_reference/#write-the-field-value-1-as-an-integer-to-influxdb).
+     For example:
 
-   :::
+     ```bash
+      temp_hum,location=${location} temp=${temp},hum=${hum} ${timestamp}
+     ```
+
+     ::: tip
+
+     - To write a signed integer type value to InfluxDB 1.x or 2.x, add `i` as the type identifier after the placeholder, for example, `${payload.int}i`. See [InfluxDB 1.8 write integer value](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_reference/#write-the-field-value-1-as-an-integer-to-influxdb).
+     - To write an unsigned integer type value to InfluxDB 1.x or 2.x, add `u` as the type identifier after the placeholder, for example, `${payload.int}u`. See [InfluxDB 1.8 write integer value](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_reference/#write-the-field-value-1-as-an-integer-to-influxdb).
+
+     :::
 
 7. Advanced Settings (Optional): Refer to [Advanced Configuration](https://docs.emqx.com/en/enterprise/latest/data-integration/data-bridge-influxdb.html#advanced-configurations).
 
 8. Click the **Confirm** button to complete the rule creation.
 
 9. In the **Successful new rule** pop-up, click **Back to Rules**, thus completing the entire data integration configuration chain.
+
+### Batch Setting
+
+In InfluxDB, a data entry typically includes hundreds of fields, making the setup of data formats a challenging task. To address this, EMQX Platform offers a feature for batch setting of fields.
+
+When setting data formats via JSON, you can use the batch setting feature to import key-value pairs of fields from a CSV file.
+
+1. Click the **Import** button in the **Fields** table to open the **Import Batch Setting** popup.
+
+2. Follow the instructions to first download the batch setting template file, then fill in the key-value pairs of Fields in the template file. The default template file content is as follows:
+
+   | Field  | Value              | Remarks (Optional)                                           |
+   | :----- | :----------------- | :----------------------------------------------------------- |
+   | temp   | ${payload.temp}    |                                                              |
+   | hum    | ${payload.hum}     |                                                              |
+   | precip | ${payload.precip}i | Append an i to the field value to tell InfluxDB to store the number as an integer. |
+
+   - **Field**: Field key, supports constants or ${var} format placeholders.
+   - **Value**: Field value, supports constants or placeholders, can append type identifiers according to the line protocol.
+   - **Remarks**: Used only for notes within the CSV file, cannot be imported into EMQX.
+
+   Note that the data in the CSV file for batch setting should not exceed 2048 rows.
+
+3. Save the filled template file and upload it to the **Import Batch Setting** popup, then click **Import** to complete the batch setting.
+
+4. After importing, you can further adjust the key-value pairs of fields in the **Fields** setting table.
 
 ## Test the Rule
 

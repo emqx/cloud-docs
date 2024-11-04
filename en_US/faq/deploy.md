@@ -20,12 +20,12 @@ You can connect via client such as [MQTTX](https://mqttx.app). You can also conn
 
 You need to double-check the right deployment name before deleting a deployment. Deployments cannot be recovered after they have been deleted.
 
-## How can I get the messages sent by the client in deployment console?
+## How can I get the messages sent by the client in the deployment console?
 
 Messages sent from the client cannot be viewed directly in the deployment console and need to be persisted using data integrations for forwarding, while EMQX Cloud does not store client messages.
 
-## How can I scale deployment?
+## How can I scale deployments?
 
-EMQX Platform supports automatic scaling by submitting a ticket. The scaling lasts for 5 to 15 minutes. During the scaling period, it will not affect the normal use of the service, but the device may be disconnected and reconnected for a few seconds. If the device is configured for automatic reconnection, it will not affect use, and the connection address remains the same.
+For Dedicated and Premium deployments, the EMQX Platform supports automatic scaling by submitting a ticket or changing tiers directly in the Platform Console. For more information, see [Change Deployment Tiers](../deployments/change_tier.md).
 
-If you still need to scaling after confirming, please reply: Confirmed, need to scaling the **deployment name** to **tier**.
+The scaling lasts for 5 to 15 minutes. During the scaling period, it will not affect the normal use of the service, but the device may be disconnected and reconnected for a few seconds. If the device is configured for automatic reconnection, it will not affect use, and the connection address remains the same.
