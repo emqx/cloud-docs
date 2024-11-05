@@ -3,30 +3,33 @@
 The EMQX Platform sets default quotas (or limits) for each deployment and the default value of some of the quotas can be adjusted. The following tables show the default value of the quotas in different deployments and whether they can be adjusted. If you need to adjust the quotas, please [contact us](../feature/tickets.md).
 
 ## Serverless
-| Quotas                                    | **Default Value**   | **Adjustable** |
-| ----------------------------------------- | ------------------- | -------------- |
-| Maximum internal authentication entries   | 2000                | NO             |
-| Maximum internal authorization entries    | 2000                | NO             |
-| Anonymous access                          | No anonymous access | NO             |
-| Maximum message queue length              | 1000                | NO             |
-| Maximum message size                      | 1 MB                | NO             |
-| Session expiry time（MQTT 3.x）           | 2 hours             | NO             |
-| Maximum retained messages                 | 2000                | NO             |
-| Maximum size of a retained message        | 1 MB                | NO             |
-| Retained message expiry interval          | Never               | NO             |
-| Client ID maximum length                  | 1024                | NO             |
-| Maximum subscriptions for a single client | 10                  | NO             |
-| Maximum deployment TPS                    | 1000/s              | NO             |
-| Maximum Topic Levels                      | 10                  | NO             |
-| Maximum single-client subscription TPS    | 1000/s              | NO             |
-| Maximum single-client publishing TPS      | 10/s                | NO             |
-| TCP connect timeout                       | 10s                 | NO             |
-| Customized TLS/SSL configuration          | Not support         | NO             |
-| TLS version                               | 1.2 and 1.3         | NO             |
-| TLS encryption algorithm                  | -                   | NO             |
-| Maximum API QPS                           | 100/s               | NO             |
-| Number of deployments                     | Up to 2  [\*1]      | YES            |
-| Number of subaccounts                     | 20                  | NO             |
+| Quotas                                                   | **Default Value**   | **Adjustable** |
+| -------------------------------------------------------- | ------------------- | -------------- |
+| Maximum internal authentication entries                  | 2000                | NO             |
+| Maximum internal authorization entries                   | 2000                | NO             |
+| Anonymous access                                         | No anonymous access | NO             |
+| Maximum message queue length                             | 1000                | NO             |
+| Maximum message size                                     | 1 MB                | NO             |
+| Session expiry time（MQTT 3.x）                          | 2 hours             | NO             |
+| Maximum retained messages                                | 2000                | NO             |
+| Maximum size of a retained message                       | 1 MB                | NO             |
+| Retained message expiry interval                         | Never               | NO             |
+| Client ID maximum length                                 | 1024                | NO             |
+| Maximum subscriptions for a single client                | 10                  | NO             |
+| Maximum deployment TPS                                   | 1000/s              | NO             |
+| Maximum Topic Levels                                     | 10                  | NO             |
+| Maximum single-client subscription TPS                   | 1000/s              | NO             |
+| Maximum single-client publishing TPS                     | 10/s                | NO             |
+| TCP connect timeout                                      | 10s                 | NO             |
+| Customized TLS/SSL configuration                         | Not support         | NO             |
+| TLS version                                              | 1.2 and 1.3         | NO             |
+| TLS encryption algorithm                                 | -                   | NO             |
+| Maximum API QPS                                          | 100/s               | NO             |
+| Number of deployments                                    | Up to 2  [\*1]      | YES            |
+| Number of subaccounts                                    | 20                  | NO             |
+| Maximum number of connectors created in data integration | 2                   | NO             |
+| Maximum number of rules created in data integration      | 4                   | NO             |
+| Maximum number of actions created in data integration    | 4                   | NO             |
 
 [1] Create an extra Serverless deployment by adding a payment method.
 
