@@ -41,7 +41,7 @@ Before your start, make sure your deployment is in the running state.
 
 2. Navigate to **Tier**, and click **Change Tier**.
 
-3. Select the desired tier option from the dropdown and click the **Confirm** button next to the dropdown. After selecting the specifications, click **Confirm** to proceed.
+3. Select the desired tier option from the dropdown and click the **Confirm** button next to the dropdown. 
 
    - For the `>10,000 Sessions` option, you have to submit a ticket. You will be redirected to the [Tickets](../feature/tickets.md) page and prompted to fill in the ticket.
 

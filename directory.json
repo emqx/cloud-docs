@@ -122,6 +122,10 @@
       ]
     },
     {
+      "title": "调整部署规格",
+      "path": "deployments/change_tier"
+    },
+    {
       "title": "启停/删除部署",
       "path": "deployments/stop_delete_deployment"
     },

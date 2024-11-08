@@ -118,24 +118,54 @@ docker run --name influxdb -p 8086:8086 influxdb:2.5.1
 
 5. 设定**时间精度**，默认为毫秒。
 
-6. 使用 InfluxDB API Line Protocol 写入 InfluxDB 的数据，支持占位符，参考 [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2/reference/syntax/line-protocol/) 及 [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1/write_protocols/line_protocol_tutorial/)。
+6. 定义解析数据， 指定**数据格式**与内容，使其能被解析并写入到 InfluxDB 中，可选项为 `JSON` 或 `Line Protocol`。
 
-   ```bash
-     temp_hum,location=${location} temp=${temp},hum=${hum} ${timestamp}
-   ```
+   - 对于 JSON 格式，需设置数据的 **Measurement**，**Fields**，**Timestamp** 与 **Tags**，键值均支持常量或占位符变量，可按照[行协议](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/)进行设置。其中 **Fields** 字段支持通过 CSV 文件批量设置，详细请参考[批量设置](#批量设置)。
 
-   ::: tip
+   - 对于 Line Protocol 格式，请通过一段语句指定数据点的 Measurement、Fields、Timestamp 与 Tags，键值均支持常量或占位符变量，可按照[行协议](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/)进行设置。参考 [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2/reference/syntax/line-protocol/) 及 [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1/write_protocols/line_protocol_tutorial/)。
 
-   如希望输入带符号的整型值，请在占位符后添加 `i` 作为类型标识，例如 `${payload.int}i`。参见 [InfluxDB 1.8 写入整型值](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_reference/#write-the-field-value-1-as-an-integer-to-influxdb)。
+     ```bash
+      temp_hum,location=${location} temp=${temp},hum=${hum} ${timestamp}
+     ```
 
-   对于 InfluxDB 2.x 中支持的无符号整型值，请在占位符后添加 `u` 作为类型标识，例如 `${payload.uint}u`。参见 [InfluxDB 2.6 无符号整型](https://docs.influxdata.com/influxdb/v2.6/reference/syntax/line-protocol/#uinteger)。
-   :::
+     ::: tip
+
+     如希望输入带符号的整型值，请在占位符后添加 `i` 作为类型标识，例如 `${payload.int}i`。参见 [InfluxDB 1.8 写入整型值](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_reference/#write-the-field-value-1-as-an-integer-to-influxdb)。
+
+     对于 InfluxDB 2.x 中支持的无符号整型值，请在占位符后添加 `u` 作为类型标识，例如 `${payload.uint}u`。参见 [InfluxDB 2.6 无符号整型](https://docs.influxdata.com/influxdb/v2.6/reference/syntax/line-protocol/#uinteger)。
+     :::
 
 7. 根据需要配置高级设置选项（可选），详情请参考[高级设置](https://docs.emqx.com/zh/enterprise/latest/data-integration/data-bridge-influxdb.html#%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE)。
 
 8. 点击**确认**按钮完成动作的配置。
 
 9. 在弹出的**成功创建规则**提示框中点击**返回规则列表**，从而完成了整个数据集成的配置链路。
+
+### 批量设置
+
+在 InfluxDB 中，一个数据条目通常包含数百个字段（Fields），这使得数据格式的设置变得具有挑战性。为了解决这个问题，EMQX 提供了批量设置字段的功能。
+
+当通过 JSON 设置数据格式时，您可以使用批量设置功能，从 CSV 文件中导入字段的键值对。
+
+1. 点击 **Fields** 表格中的**批量设置**按钮，打开**导入批量设置**弹窗。
+
+2. 根据指引，先下载批量设置模板文件，然后在模板文件中填入 Fields 键值对，默认的模板文件内容如下：
+
+   | Field  | Value              | Remarks (Optional)                                     |
+   | :----- | :----------------- | :----------------------------------------------------- |
+   | temp   | ${payload.temp}    |                                                        |
+   | hum    | ${payload.hum}     |                                                        |
+   | precip | ${payload.precip}i | 在字段值后追加 i， InfluxDB 则将该数值存储为整数类型。 |
+
+   - **Field**: 字段键，支持常量或 ${var} 格式的占位符。
+   - **Value**: 字段值，支持常量或占位符，可以按照行协议追加类型标识。
+   - **Remarks**: 仅用于 CSV 文件内字段的备注，无法导入到 EMQX 中。
+
+   注意，批量设置 CSV 文件中数据不能超过 2048 行。
+
+3. 将填好的模板文件保存并上传到**导入批量设置**弹窗中，点击**导入**完成批量设置。
+
+4. 导入完成后，您可以在 **Fields** 设置表格中进一步调整字段的键值对。
 
 ## 测试规则
 
