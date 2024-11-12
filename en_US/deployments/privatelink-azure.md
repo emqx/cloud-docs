@@ -1,6 +1,10 @@
 # Azure PrivateLink
 
-This page provides instructions on how to enable the PrivateLink feature for the EMQX Platform deployment on the Microsoft Azure platform. Once the PrivateLink is enabled, the EMQX Platform deployment can access Azure PaaS Services and Azure hosted customer-owned/partner services through a private connection in your virtual network. In the private connection, the EMQX Platform deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
+::: tip Note
+This feature is only available for Dedicated and Premium deployments.
+:::
+
+This page provides instructions on enabling the PrivateLink feature for the EMQX Platform deployment on the Microsoft Azure platform. Once the PrivateLink is enabled, the EMQX Platform deployment can access Azure PaaS Services and Azure-hosted customer-owned/partner services through a private connection in your virtual network. In the private connection, the EMQX Platform deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
 
 The following contents are demonstrated on this page:
 
@@ -123,41 +127,36 @@ Create a Private Link service behind the load balancer you created in the previo
 
 By creating a PrivateLink connection in your deployment, you enable the PrivateLink feature for your deployment.
 
-1. Go to your deployment in EMQX Platform Console. Scroll down the **Overview** page until you see **PrivateLink**. Click **+ PrivateLink**. On the pop-up dialogue, copy the Azure subscription ID in the **Subscription ID** field.
+1. Go to your deployment in EMQX Platform Console. 
 
-![azure private](./_assets/azure_privatelink_9.png)
+2. Click **Network Management** from the deployment left menu.
+
+3. Navigate to the **Privatelink** area and click **+ PrivateLink**. On the pop-up dialogue, copy the Azure subscription ID in the **Subscription ID** field
+
+   <img src="./_assets/azure_privatelink_9.png" alt="azure private" style="zoom:67%;" />
 
 2. Go to the private link service `demo` you created in Azure Portal. 
+
 3. Click **Access security** under **Settings**. Select **Restricted by subscription** and click **Add subscription**. Paste the Azure subscription ID copied from EMQX Platform Console in the **Subscription** textbox.
 
-![azure private](./_assets/azure_privatelink_10.png)
+   ![azure private](./_assets/azure_privatelink_10.png)
 
 4. Click **OK**. Go to the **Overview** page and copy the alias for the private link service.
 
-![azure private](./_assets/azure_privatelink_11.png)
+   ![azure private](./_assets/azure_privatelink_11.png)
 
 5. Go to the EMQX Platform Console. Click **Next Step**, paste the alias you just copied in the **Enter the ID of Private Link Service** textbox. Click **Create PrivateLink**.
 
-<img src="./_assets/azure_privatelink_12.png" alt="azure private" style="zoom:67%;" />
+   <img src="./_assets/azure_privatelink_12.png" alt="azure private" style="zoom:67%;" />
 
 6. Once completed, go to the private link service `demo` and click **Private endpoint connections**. Select the connection and click **Approve**.
 
-![azure private](./_assets/azure_privatelink_13.png)
+   ![azure private](./_assets/azure_privatelink_13.png)
 
 7. Wait for a while and check the status of the PrivateLink in the deployment details. When the status turns to `running`, it means the PrivateLink has been created successfully. 
 8. Copy the PrivateLink IP address for later use in the configuration in [Test PrivateLink Connection](#test-privatelink-connection).
 
 ![azure private](./_assets/azure_privatelink_14.png)
-
-## Test PrivateLink Connection
-
-In this section, you can test if the PrivateLink works properly by connecting to the Redis resource via the private connection in the data integration.
-
-1. In your deployment, click the Data Integrations from the left navigation menu. 
-2. Under **Data Persistence**, select **Redis Single Mode**. 
-3. On the **New Resource** page, paste the IP address you copied from the **PrivateLink** to the **Redis Server** field as the connection domain. Click **Test**, and the resource should be available.
-
-![azure private](./_assets/azure_privatelink_15.png)
 
 ## Remove PrivateLink
 
@@ -168,8 +167,8 @@ Before removing a PrivateLink connection, you need to check the following:
 
 > If you intend to remove the private link service from your Azure platform, it is important to first remove the PrivateLink from the EMQX Platform Console. Failing to do so may result in a "Failed" PrivateLink status for the deployment.  
 
-1. Go to the deployment details page.
+1. Go to the Network Management page in your deployment.
 
-2. Click the removal icon in the **Actions** column of the PrivateLink and click **Confirm** to delete.
+2. In the **PrivateLink** area, click the remove icon in the **Actions** column of the PrivateLink and click **Confirm** to delete.
 
 ![azure private](./_assets/azure_privatelink_16.png)

@@ -56,8 +56,6 @@ Provides REST APIs for integration with external systems, such as querying clien
 
 EMQX Dedicated deployment provides custom one-way/two-way TLS/SSL configuration and supports self-signed and CA-signed certificates.
 
-
-
 ### [VPC Peering Connections](../deployments/vpc_peering.md)
 
 VPC peering connection is a network connection between two VPCs. Through this connection, the instances in different VPCs can communicate with each other as if they are in the same network.
@@ -66,10 +64,9 @@ VPC peering connection is a network connection between two VPCs. Through this co
 ### [Configure PrivateLink](../deployments/privatelink.md)
 PrivateLink enables the proprietary network VPC where the EMQX Platform deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
 
+### [Internal Endpoint](../vas/intranet-lb.md)
 
-### [Internal Load Balancers](../vas/intranet-lb.md)
-
-Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
+Internal Endpoint allows you to create an internal load-balancing service that distributes traffic on-demand within an internal network. It can expand the application system's throughput by distributing traffic to different backend servers.
 
 
 ### [NAT Gateway](../vas/nat-gateway.md)

@@ -773,25 +773,6 @@
             {
               "title": "TLS/SSL",
               "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC Peering Connection",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "Configure PrivateLink",
-              "path": "deployments/privatelink",
-              "collapsed": true,
-              "children": [
-                {
-                  "title": "AWS PrivateLink",
-                  "path": "deployments/privatelink-aws"
-                },
-                {
-                  "title": "Azure PrivateLink",
-                  "path": "deployments/privatelink-azure"
-                }
-              ]
             }
           ]
         },
@@ -803,21 +784,6 @@
             {
               "title": "TLS/SSL",
               "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC Peering Connection",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "Configure PrivateLink",
-              "path": "deployments/privatelink",
-              "collapsed": true,
-              "children": [
-                {
-                  "title": "AWS PrivateLink",
-                  "path": "deployments/privatelink-aws"
-                }
-              ]
             }
           ]
         },
@@ -864,6 +830,41 @@
     {
       "title": "Start/Stop/Delete Deployment",
       "path": "deployments/stop_delete_deployment"
+    },
+    {
+      "title": "Network Management",
+      "path": "deployments/network_management",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "VPC Peering Connection",
+          "path": "deployments/vpc_peering"
+        },
+        {
+          "title": "Configure PrivateLink",
+          "path": "deployments/privatelink",
+          "collapsed": true,
+          "children": [
+              {
+                "title": "AWS PrivateLink",
+                "path": "deployments/privatelink-aws"
+              },
+              {
+                "title": "Azure PrivateLink",
+                "path": "deployments/privatelink-azure"
+              }
+          ]
+        },
+        {
+          "title": "Internal Endpoint",
+          "path": "vas/intranet-lb"
+        },
+        {
+          "title": "NAT Gateway",
+          "path": "vas/nat-gateway"
+        }
+      ]
+
     },
     {
       "title": "Client Authentication",
@@ -1322,6 +1323,10 @@
           "path": "billing/gcp_marketplace"
         },
         {
+          "title": "Billing Instructions for NAT Gateway and Internal Endpoint",
+          "path": "vas/vas-price"
+        },
+        {
           "title": "Invoice",
           "path": "billing/invoices"
         },
@@ -1344,25 +1349,6 @@
         {
           "title": "Serverless Spend Limit",
           "path": "deployments/spend_limit"
-        }
-      ]
-    },
-    {
-      "title": "Value Added Services",
-      "path": "vas/vas-intro",
-      "collapsed": true,
-      "children": [
-        {
-          "title": "VAS Billing",
-          "path": "vas/vas-price"
-        },
-        {
-          "title": "NAT Gateway",
-          "path": "vas/nat-gateway"
-        },
-        {
-          "title": "Internal Load Balancers",
-          "path": "vas/intranet-lb"
         }
       ]
     },
