@@ -25,7 +25,7 @@ When you create a **Dedicated deployment**, you will be given an MQTT connection
 
 ## How to set up NAT gateway configuration?
 
-NAT is only supported for **Dedicated plan**. You can enable NAT gateway in Valued-Added Service.
+NAT is only supported for the **Dedicated or Premium plan**. You can enable the [NAT gateway](../vas/nat-gateway.md) service in your deployment.
 
 ## Will cluster scaling affect device connectivity?
 
@@ -33,7 +33,7 @@ It will cause an interruption to the connectivity for a few seconds.
 
 ## How do I connect my own services to the MQTT service via local network when I have built a VPC peer-to-peer connection?
 
-If you need an internal network connection to the professional deployment, you can purchase [Internal Load Balancers](../vas/intranet-lb.md) to achieve that. It'a [Value Added Service](../vas/vas-intro.md) provided by us.
+If you need an internal network connection to the professional deployment, you can purchase [Internal Load Balancers](../vas/intranet-lb.md) to achieve that. It's a value-added service provided by us.
 
 ## Is API supported？
 
