@@ -123,7 +123,9 @@ Create a Private Link service behind the load balancer you created in the previo
 
 By creating a PrivateLink connection in your deployment, you enable the PrivateLink feature for your deployment.
 
-1. Go to your deployment in EMQX Cloud Console. Scroll down the **Overview** page until you see **PrivateLink**. Click **+ PrivateLink**. On the pop-up dialogue, copy the Azure subscription ID in the **Subscription ID** field.
+1. Go to your deployment in EMQX Platform Console.
+2. Click **Network Management** from the deployment left menu.
+3. Navigate to the **Privatelink** area and click **+ PrivateLink**. On the pop-up dialogue, copy the Azure subscription ID in the **Subscription ID** field.
 
 ![azure private](./_assets/azure_privatelink_9.png)
 
@@ -168,8 +170,7 @@ Before removing a PrivateLink connection, you need to check the following:
 
 > If you intend to remove the private link service from your Azure platform, it is important to first remove the PrivateLink from the EMQX Cloud Console. Failing to do so may result in a "Failed" PrivateLink status for the deployment.  
 
-1. Go to the deployment details page.
-
-2. Click the removal icon in the **Actions** column of the PrivateLink and click **Confirm** to delete.
+1. Go to the Network Management page in your deployment.
+2. In the **PrivateLink** area, click the remove icon in the **Actions** column of the PrivateLink and click **Confirm** to delete.
 
 ![azure private](./_assets/azure_privatelink_16.png)
