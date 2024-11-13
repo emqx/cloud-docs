@@ -33,7 +33,7 @@ It will cause an interruption to the connectivity for a few seconds.
 
 ## How do I connect my own services to the MQTT service via local network when I have built a VPC peer-to-peer connection?
 
-If you need an internal network connection to the professional deployment, you can purchase [Internal Load Balancers](../vas/intranet-lb.md) to achieve that. It's a value-added service provided by us.
+If you need an internal network connection to the professional deployment, you can purchase [Internal Endpoints](../vas/intranet-lb.md) to achieve that. It's a value-added service provided by us.
 
 ## Is API supported？
 

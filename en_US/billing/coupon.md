@@ -4,14 +4,14 @@ The coupon will show all the coupons owned by the account, including the coupon 
 
 ## Coupon Redemption Service
 
-| **Service Consumption**                      | **Eligible for Voucher Redemption** |
-| -------------------------------------------- | ----------------------------------- |
-| Serverless                                   | ✓                                   |
-| Dedicated Edition - Pay by Hour              | ✓                                   |
-| Dedicated Edition - Annual Billing           | ✗                                   |
-| BYOC                                         | ✗                                   |
-| Value-added Service - NAT Gateway            | ✓                                   |
-| Value-added Service - Internal Load Balancer | ✓                                   |
+| **Service Consumption**            | **Eligible for Voucher Redemption** |
+| ---------------------------------- | ----------------------------------- |
+| Serverless                         | ✓                                   |
+| Dedicated Edition - Pay by Hour    | ✓                                   |
+| Dedicated Edition - Annual Billing | ✗                                   |
+| BYOC                               | ✗                                   |
+| NAT Gateway                        | ✓                                   |
+| Internal Endpoints                 | ✓                                   |
 
 ## View Coupons
 
