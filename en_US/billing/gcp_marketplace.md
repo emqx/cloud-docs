@@ -27,6 +27,7 @@ The following situation will cause a failure on account linking.
 1. The EMQX account already has been set up a credit card.
 2. The EMQX account uses Available Credits.
 3. The EMQX account already has been linked to a Marketplace EMQX product.
+4. THE EMQX account has vouchers and no unpaid bills.
 
 If you still encounter a problem, please submit a [ticket](../feature/tickets.md) to get help.
 :::
