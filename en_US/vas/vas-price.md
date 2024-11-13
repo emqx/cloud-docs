@@ -1,5 +1,11 @@
 # Billing Instructions for NAT Gateway and Internal Endpoint
 
+::: tip
+
+The billing instructions on this page apply to **Dedicated deployments**. For **Premium deployments**, there is no additional fee for the NAT Gateway and Internal Endpoint services as these are included in the annual subscription fee.
+
+:::
+
 ## NAT Gateway
 
 After the initial activation of the NAT Gateway, you will automatically receive a 14-day free trial. After the first trial instance ends or is deleted, the next created instance will be charged.
