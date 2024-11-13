@@ -4,7 +4,7 @@
 This feature is not available in the standard deployment.
 :::
 
-Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
+Internal Endpoint allows you to create an internal load-balancing service that distributes traffic on-demand within an internal network. It can expand the application system's throughput by distributing traffic to different backend servers. It can also eliminate single points of failure in the system, enhancing the application system's availability. Once an internal endpoint is enabled, your other service applications can connect to the EMQX deployment via an internal network address.
 
 Before start, you will need to complete the following actions:
 

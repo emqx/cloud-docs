@@ -77,8 +77,6 @@ To ensure the security of your data, it is necessary to add authentication infor
 
 ![add_users](./_assets/auth.png)
 
-
-
 ## Use MQTTX to Verify the Connection
 
 It is recommended to use [MQTTX](https://mqttx.app) to test the connection to EMQX Cloud deployments. Alternatively, you can use familiar [SDKs or other tools](../connect_to_deployments/overview.md) to connect to the deployment. Prior to using MQTTX to connect to the deployment, you need to obtain the deployment's connection address (Host) and port number (Port).

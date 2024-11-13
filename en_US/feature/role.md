@@ -275,33 +275,33 @@ Role list:
       <td>&#10007</td>
    	</tr>
       <tr>
-      <td rowspan="4">Value Added Services</td>
-      <td>View VAS List</td>
+      <td rowspan="4">Network Management</td>
+      <td>Create/Delete VPC/PrivateLink</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
       </tr>
       <tr>
-      <td>Enable a Service</td>
+      <td>View VPC/PrivateLink</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      </tr>
+      <tr>
+      <td>Create/Delete NAT/Internal Endpoint</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
       </tr>
       <tr>
-      <td>Service Usage</td>
+      <td>View NAT/Internal Endpoint</td>
       <td>&#10003</td>
       <td>&#10003</td>
-      <td>Read Only</td>
-      <td>Read Only</td>
-      </tr>
-      <tr>
-      <td>Delete a Service</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
       </tr>
    <tr>
       <td colspan="2">Events</td>
@@ -318,3 +318,4 @@ Role list:
       <td>&#10003</td>
    </tr>
 </table>
+
