@@ -55,11 +55,11 @@ VPC peering connection is a network connection between two VPCs. Through this co
 
    ![create-vpc2](./_assets/aws_vpc_peering_info.png)
 
-5. Return to Amazon Web Services console, go to `Networking & Content Delivery` -> `VPC` -> `Route Tables`, add the `CIDR of deployment` recorded in step 1 to the route table of the corresponding VPC
+5. Return to Amazon Web Services console, go to `Networking & Content Delivery` -> `VPC` -> `Route Tables`, add the `CIDR of deployment` recorded in step 1 to the route table of the corresponding VPC.
 
    ![route-tables](./_assets/route-tables.png)
 
-6. Go to `Networking & Content Delivery` -> `VPC` -> `Security Groups`,configure the security group bound to the corresponding VPC, edit inbound rules and add a rule
+6. Go to `Networking & Content Delivery` -> `VPC` -> `Security Groups`,configure the security group bound to the corresponding VPC, edit inbound rules and add a rule.
 
    ![security-groups](./_assets/security-groups.png)
 
@@ -68,14 +68,16 @@ VPC peering connection is a network connection between two VPCs. Through this co
 To delete a peering connection, you need to ensure that the status of peering connection is `running`.
 
 ::: tip
+
 Before deleting the peering connection, please make sure that there are no associated resources in the deployment, otherwise there will be unpredictable risks.
+
 :::
 
-1. Go to deployment details.
+1. Go to the VPC Peering Connection area on the Network Management page in your deployment.
 
    ![vpc-list](./_assets/aws_vpc_peeing_status.png)
 
-2. Click the `delete button` on the right side of the peering connection.
+2. Click the "delete" icon in the **Actions** column of the peering connection.
 
    ![vpc-delete](./_assets/aws_vpc_peering_delete.png)
 
@@ -119,7 +121,8 @@ If all the provided information is correct, after several minutes, when the stat
    
     * **Project ID**: GCP Project ID of your peering VPC
     * **VPC Network Name**:  Network Name of your peering VPC
-     
+    
+      
    
    Record the following information for future use:
     * **VPC Network Name of deployment**
@@ -155,10 +158,12 @@ If all the provided information is correct, after several minutes, when the stat
 
 ### Delete a Peering Connection
 
-To delete a peering connection, you need to ensure that the status of peering connection is `running`
+To delete a peering connection, you need to ensure that the status of peering connection is `running`.
 
 ::: tip
+
 Before deleting the peering connection, please make sure that there is no associated resources in the deployment, otherwise there will be unpredictable risks
+
 :::
 
 1. Go to the VPC Peering Connection area on the Network Management page in your deployment.
@@ -189,10 +194,12 @@ After the Confluent Cloud cluster has been created, you can add peering by refer
 
 ### Delete a Peering Connection
 
-To delete a peering connection, you need to ensure that the status of peering connection is `running`
+To delete a peering connection, you need to ensure that the status of peering connection is `running`.
 
 ::: tip
+
 Before deleting the peering connection, please make sure that there are no associated resources in the deployment, otherwise there will be unpredictable risks
+
 :::
 
 1. Go to the VPC Peering Connection area on the Network Management page.
