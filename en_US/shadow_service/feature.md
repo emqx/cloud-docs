@@ -1,7 +1,7 @@
 # Features
 
-## Overview
-On Statistics Overview, you can learn about the metrics of the usage of Shadow Service.
+## Usage Overview
+On the **Usage Overview** tab, you can view the usage metrics of the Shadow Service.
 
 ![feature01](./_assets/feature.png)
 
@@ -19,13 +19,13 @@ The statistics are real-time usage for coordinate point times. In 1 hour chart, 
 
 ![chart](./_assets/device_shadow_12.png)
 
-## Shadow Model List
-In the shadow model list you can create, edit, and delete shadow models, and import custom's shadow models in bulk via CSV files.
+## Shadow Models
+In the Shadow Models list, you can create, edit, and delete shadow models, and import custom's shadow models in bulk via CSV files.
 
 ![list](./_assets/shadow_list.png)
 
-### Create Shadow
-Click the Add button to create a new shadow model.
+### Add Shadow Model
+Click the **Add** button to create a new shadow model.
 
 ![new](./_assets/shadow_new.png)
 
@@ -66,16 +66,15 @@ Click the Add button to create a new shadow model.
    </tr>
 </table>
 
-### Shadow Detail
+### Shadow Model Detail
 
-Click ID in the shadow model list, or click the Edit button to enter the shadow model detail. On this page, you can view and modify the name and notes of the current shadow. You can also see the latest data of the payload JSON. And you can modify the JSON from the pop-up window.
+Click the Shadow Model ID in the list, or click the "edit" icon in the **Actions** column to view the shadow model detail. On this page, you can view and modify the name and notes of the current shadow. You can also see the latest data of the payload JSON. And you can modify the JSON from the pop-up window.
 
 ![detail](./_assets/shadow_detail.png)
 
 ::: tip
-Once a shadow model is created, ID cannot be modified anymore.
+Once a shadow model is created, the ID cannot be modified anymore.
 :::
 
 Learn more about the publishing topics and the subscription topics from [Communication](./invoke.md).
-
 

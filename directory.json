@@ -862,27 +862,6 @@
         {
           "title": "NAT Gateway",
           "path": "vas/nat-gateway"
-        },
-        {
-          "title": "Shadow Service",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "shadow_service/overview"
-            },
-            {
-              "title": "Pricing",
-              "path": "shadow_service/pricing"
-            },
-            {
-              "title": "Features",
-              "path": "shadow_service/feature"
-            },
-            {
-              "title": "Communication",
-              "path": "shadow_service/invoke"
-            }
-          ]
         }
       ]
     },
@@ -1327,6 +1306,27 @@
         {
           "title": "Serverless Spend Limit",
           "path": "deployments/spend_limit"
+        }
+      ]
+    },
+    {
+      "title": "Shadow Service",
+      "children": [
+        {
+          "title": "Overview",
+          "path": "shadow_service/overview"
+        },
+        {
+          "title": "Pricing",
+          "path": "shadow_service/pricing"
+        },
+        {
+          "title": "Features",
+          "path": "shadow_service/feature"
+        },
+        {
+          "title": "Communication",
+          "path": "shadow_service/invoke"
         }
       ]
     },

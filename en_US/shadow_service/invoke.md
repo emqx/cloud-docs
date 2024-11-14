@@ -161,7 +161,7 @@ Shadow model’s JSON updated result
 }
 ```
 
-#### Add new multi-level objects
+#### Add New Multi-Level Objects
 
 Because it can't add new multi-level objects at once by partial update, the object should be added one level at a time.
 
@@ -230,7 +230,7 @@ Second Step
 }
 ```
 
-#### Get shadow model’s JSON
+#### Get Shadow Model’s JSON
 Get shadow model’s JSON by `GET`
 
 Shadow model’s JSON
