@@ -52,7 +52,7 @@ After the deployment is created, it will appear on the EMQX Platform Console hom
 - **Address**: The IP address.
 - **Ports**: `1883` (mqtt), `8083` (ws), `8883` (mqtts), and `8084` (wss) ports are enabled by default.
 - **Ports Management**: Allows you to disable or enable an individual port separately.
-- **CA Certificate**: Allows you to download the client CA-signed certificate file and remindes you of the certificate expiration time.
+- **CA Certificate**: Allows you to download a server-side CA-signed certificate file for verification and remindes you of the certificate expiration time.
 
 Check out the [Connection Guide](../deployments/port_guide_dedicated.md) to learn more.
 
