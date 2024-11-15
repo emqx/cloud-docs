@@ -11,7 +11,7 @@ The coupon will show all the coupons owned by the account, including the coupon 
 | Dedicated Edition - Annual Billing | ✗                                   |
 | BYOC                               | ✗                                   |
 | NAT Gateway                        | ✓                                   |
-| Internal Endpoints                 | ✓                                   |
+| Internal Endpoint                  | ✓                                   |
 
 ## View Coupons
 

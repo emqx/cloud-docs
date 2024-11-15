@@ -1,4 +1,4 @@
-# Internal Load Balancers
+# Internal Endpoint
 
 ::: warning Note
 

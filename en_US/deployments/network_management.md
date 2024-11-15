@@ -12,5 +12,5 @@ This section includes essential features for managing network access, optimizing
 
 - **[VPC Peering Connection](./vpc_peering.md)**: Establishing secure, direct network connections between your EMQX VPC and your application’s VPC within the same or different regions.
 - **[PrivateLink](./privatelink.md)**: Connecting to EMQX services securely over a private AWS or Azure network.
-- **[Internal Endpoints](../vas/intranet-lb.md)**: Distributing incoming traffic across multiple EMQX instances within the VPC peering network.
+- **[Internal Endpoint](../vas/intranet-lb.md)**: Distributing incoming traffic across multiple EMQX instances within the VPC peering network.
 - **[NAT Gateway](../vas/nat-gateway.md)**: Enabling your EMQX instances to communicate with external services while keeping internal resources private.

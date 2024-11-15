@@ -194,7 +194,7 @@ This section provides a detailed comparison of features across different service
       <td>Self-configurable</td>
    </tr>
    <tr>
-      <td style="text-indent: 2em;">Internal Load Balance</td>
+      <td style="text-indent: 2em;">Internal Endpoint</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>

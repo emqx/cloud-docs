@@ -71,7 +71,7 @@ Internal Endpoint allows you to create an internal load-balancing service that d
 
 ### [NAT Gateway](../vas/nat-gateway.md)
 
-NAT gateways can provide network address translation services to provide Dedicated deployments with the ability to access public network resources without the need for VPC peering connections.
+NAT gateway can provide network address translation services to provide Dedicated deployments with the ability to access public network resources without the need for VPC peering connections.
 
 ## Connect to the Deployment
 

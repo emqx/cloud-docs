@@ -5,7 +5,7 @@ We will use EMQX Platform data integration to fetch subscription relationships f
 Before you start, you need to complete the following operations:
 
 - A deployment (EMQX Cluster) has been created on EMQX Platform.
-- For Professional Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Professional Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
+- For Dedicated/Premium Plan users: Please complete [Peering Connection Creation](../deployments/vpc_peering.md) first, all IPs mentioned below refer to the internal network IP of the resource.(Dedicated/Premium Plan with a [NAT gateway](../vas/nat-gateway.md) can also use public IP to connect to resources).
 - For BYOC Plan users: Please establish a peering connection between the VPC where BYOC is deployed and the VPC where the resources are located. All IPs mentioned below refer to the internal IP of the resources. If you need to access the resources via public IP addresses, please configure a NAT gateway in your public cloud console for the VPC where BYOC is deployed.
 
 ## MySQL configuration
@@ -52,13 +52,13 @@ Before you start, you need to complete the following operations:
 
 4. Set the EMQX cluster IP segment to be allowed to access the database (optional)
 
-   For professional deployment, if you want to get deployment segment, you can go to Deployment Details → View Peer Connection Information and copy the deployment VPC segment.
+   For Dedicated/Premium deployment, if you want to get deployment segment, you can go to Deployment Details → View Peer Connection Information and copy the deployment VPC segment.
 
    ```sql
-   # Professional deployment
+   # Dedicated/Premium deployment
    GRANT ALL PRIVILEGES ON *.* TO root@'10.11.30.%' IDENTIFIED BY 'public' WITH GRANT OPTION;
 
-   # Basic deployment
+   # Standard deployment
    GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'public' WITH GRANT OPTION;
    ```
 
