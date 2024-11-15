@@ -12,8 +12,6 @@ Precautions:
 * Deployment with no active client connections for 30 days will be stopped. To continue the trial, please start it manually in [EMQX Cloud console](https://cloud.emqx.com/console/). 
 * Deployment remains disabled for a consecutive 30 days after being stopped will be deleted.
 
-
-
 ## Create a deployment
 
 1. Log in to [EMQX Cloud Console](https://cloud.emqx.com/console/). 

@@ -1,6 +1,6 @@
-# Contact us
+# Contact Us
 
-## Contact by tickets
+## Contact by Tickets
 
 You can enter the ticket system by following the steps below:
 
@@ -9,7 +9,7 @@ You can enter the ticket system by following the steps below:
 
 ![Tickets](./_assets/tickets.png)
 
-### Create tickets
+### Create Tickets
 
 1. Click `New` in the upper right corner.
 2. Enter `Subject` and `Description` in the pop-up page.

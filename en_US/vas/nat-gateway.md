@@ -4,24 +4,22 @@
 This feature is not available in the standard deployment.
 :::
 
-NAT gateways can provide network address translation services to provide Professional deployments with the ability to access public network resources without the need for VPC peering connections.
+The Network Address Translation (NAT) gateway provides network address translation services. Before the NAT gateway is activated, some functions of the Dedicated/Premium deployment, such as extended authentication and data integration, cannot access public network resources. Once subscribed, it allows access through public network addresses.
 
-Before start, you will need to complete the following actions:
+Before you start, make sure you have created a Professional deployment (EMQX clusters) on the EMQX Platform.
 
-* Professional deployments (EMQX clusters) have been created on EMQX Cloud.
+## Enable NAT Gateway
 
-## Service Activation
+1. Go to your Dedicated deployment in the EMQX Platform Console.
 
-You can choose to enable the NAT gateway service from the top menu bar - `VAS` or at the bottom of the deployment overview.
+2. Click **Network Management** from the left menu. Navigate to the **NAT Gateway** area and click **+NAT Gateway**.
 
-![vas](./_assets/intro_01.png)
+3. In the pop-up dialog, check to accept the Value Added Service Agreement and click **Buy Now**.
 
-![overview_vas](./_assets/overview_vas.png)
+   <img src="./_assets/create_nat_dedicated.png" style="zoom:50%;" />
 
-## Usage
+4. After purchasing the service, you can see the creation status on the page. Wait for the creation process to be completed.
 
-After completing the NAT gateway value added service purchase, you can see the NAT gateway creation status at the appropriate deployment overview and wait for the creation to complete.
+   Once the NAT Gateway's status is `Running`, the deployment can access public network resources.
 
-![intranet_lb_info](./_assets/nat_gateway_info.png)
-
-When the status of the NAT gateway is running, the deployment can access public network resources.
+   ![intranet_lb_info](./_assets/gateway_info_dedicated.png)

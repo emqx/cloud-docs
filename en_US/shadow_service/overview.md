@@ -1,28 +1,17 @@
 # Shadow Service
 
-## What's Shadow Service?
-
-Shadow service is a **data cache service** provided by EMQX Cloud. Users can implement IoT applications quickly through Topics and APIs.
+Shadow Service is a **data cache service** provided by EMQX Cloud. Users can implement IoT applications quickly through Topics and APIs.
 
 
 With Shadow Service, users do not need to set up cloud services, create VPC connections, or transfer data through data integration step by step. Instead, this capability is used to rapidly implement applications such as things models, device shadow, and other applications related to data reporting and distribution, resulting in significant savings in development and costs.
 
 ![Benefit](./_assets/benefit.png)
 
-## How to enable the service?
+## Enable Shadow Service
 
 Due to the architect infrastructure, Shadow Service is currently only available for the deployments managed on AWS. In addition, Shadow Service is only available for **Professional Plan**, so if you have purchased Standard Plan, it's not able to use this service for the time being.
 
-
-### Access A:
-If you have a running deployment that meets all the criteria above, on the deployment page, click `Shadow Service` on the left menu and click `Subscribe Now` to enter the service enablement.
-
-![entry](./_assets/entry01.png)
-
-### Access B:
-Click `VAS`(Value-Added Services) on the top menu and click `Subscribe` on Shadow Service card to go to the service enablement. If you currently have a professional deployment running in AWS, you can find the eligible deployment in the drop-down menu, so you can continue with the provision.
-
-![entry](./_assets/entry02.png)
+If you have a running deployment that meets all the criteria above, you can submit a [ticket](../feature/tickets.md#create-tickets) to apply for enabling the service. Once it is enabled, you need to refresh the deployment overview page and you will see **Shadow Service** from the left menu. Click the **Shadow Service** menu will bring you to the **[Usage Overview](./feature.md#usage-overview)** tab page.
 
 ### Brief Instruction
 The metrics for Shadow Service include memory, invocation, and traffic.
@@ -47,9 +36,10 @@ The metrics for Shadow Service include memory, invocation, and traffic.
       <td>32,000</td>
    </tr>
 </table>
-
 :::tip
+
 The above figures are for reference only and the actual number of shadows that can be created is subject to the actual scenario. As shadows are generally smaller than the maximum size of 128KB, the actual maximum amount can be much larger than the above figures.
+
 :::
 
 2. The invocation includes every message published from the device or client and every API call. It will be billed at a unit rate of **0.04 USD per 10,000 requests**.
@@ -72,12 +62,9 @@ Shadow Service is available on a 7-day trial with the following rules.
 For more about billing, please see [Billing of Shadow Service](./pricing.md)。
 
 
-## Delete the service
+## Delete Shadow Service
 
-Please note that when the service is in the billing phase, **it will still be billed even if no shadows have been created**. When you decide not to use the service anymore, please click on `VAS` in the top menu - `Details` on the card of Shadow Service delete the service from the list and stop billing.
-
-
-![delete](./_assets/deletion.png)
+Please note that when the service is in the billing phase, **it will still be billed even if no shadows have been created**. When you decide not to use the service anymore, click the "delete" icon at the upper right corner of the Shadow Service page to stop the billing.
 
 ## Quick Guide
 

@@ -1,5 +1,11 @@
 # AWS PrivateLink
 
+::: tip Note
+
+This feature is only available for Dedicated deployments.
+
+:::
+
 This page provides instructions on how to enable the PrivateLink feature for the EMQX Cloud deployment on the Amazon AWS platform. Once the PrivateLink is enabled, the EMQX Cloud deployment can access AWS hosted services through a private connection in your virtual network. In the private connection, the EMQX Cloud deployment's Virtual Private Cloud (VPC) functions as the service user, sending requests to the VPC where your cloud-based resources reside, namely, the service provider's VPC.
 
 <LazyIframeVideo vendor="youtube" src="https://www.youtube.com/embed/vu_3KW4pq9A/?autoplay=1&null" />
@@ -8,9 +14,11 @@ This page provides instructions on how to enable the PrivateLink feature for the
 
 When creating Endpoint Service in AWS, the LB Availability Zone [AZ ID](https://us-east-1.console.aws.amazon.com/ram/home?region=us-east-1#Home) created should be identical to that in the EMQX Cloud deployment. To get the AZ ID in EMQX cloud:
 
-Login to [EMQX Cloud Console](<https://cloud.emqx.com/console>), go to the desired deployment creation details, and click the `+PrivateLink` button to get the deployment availability zone.
+1. Go to your deployment in the EMQX Platform Console.
+2. Click **Network Management** from the left menu. Navigate to the **PrivateLink** area and click **+PrivateLink**.
+3. In the pop-up dialog, you will see the availability zone details for the deployment.
 
-![lb](./_assets/deployment_privatelink_details.png)
+<img src="./_assets/depoyment_privatelink_details.png" alt="depoyment_privatelink_details" style="zoom:67%;" />
 
 Before you can configure PrivateLink, you need to complete the following prerequisite steps on the AWS platform.
 
@@ -88,9 +96,9 @@ To remove the private connection, you need to ensure that the PrivateLink status
 > - If you need to remove the PrivateLink service from your AWS platform, please remove the PrivateLink from EMQX Cloud console first, otherwise it will cause PrivateLink status of the deployment to be `failed`.
 > - Please ensure that there are no associated resources in the deployment before removing the PrivateLink, otherwise it will lead to unpredictable risks.
 
-1. Go to Deployment Details
+1. Go to the PrivateLink area on the Network Management page of your deployment.
 
-2. Click on the `Delete button` to the right of the PrivateLink and click on Confirm to complete the deletion.
+2. Click the "delete" icon in the **Actions** column of the PrivateLink. Click **Confirm** to complete the deletion.
 
    ![delete](./_assets/delete_privatelink.png)
 

@@ -74,9 +74,9 @@ PrivateLink enables the proprietary network VPC where the EMQX Cloud deployment 
 
 EMQX Cloud API follows the REST architecture. You can access the functions of EMQX programmatically.
 
-### [Internal Load Balancers](../vas/intranet-lb.md)
+### [Internal Endpoint](../vas/intranet-lb.md)
 
-Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
+Internal Endpoint allows you to create an internal load-balancing service that distributes traffic on-demand within an internal network. It can expand the application system's throughput by distributing traffic to different backend servers.
 
 
 ### [NAT Gateway](../vas/nat-gateway.md)
