@@ -47,8 +47,8 @@ Serverless uses one-way TLS. EMQX provides and maintains server-side CA. Some cl
 
 If you are unable to connect to Serverless deployment, follow these steps for troubleshooting:
 
-1. **Check Connection Address**. Ensure that you are using the **correct domain** provided by EMQX Serverless for the connection. Note that redirecting EMQX Platform's domain to your own domain via CNAME is not supported. If your use case requires non-encrypted TCP port connections, consider using EMQX Dedicated - Professional plan.
-2. **Confirm Connection Ports**. EMQX Serverless only supports connections via MQTT over TLS (port 8883) and WebSocket over TLS (port 8084). Connections to ports 1883 and 8083 are not supported. If your use case requires non-encrypted TCP port connections, consider using our EMQX Dedicated - Professional plan.
+1. **Check Connection Address**. Ensure that you are using the **correct domain** provided by EMQX Serverless for the connection. Note that redirecting EMQX Platform's domain to your own domain via CNAME is not supported. If your use case requires non-encrypted TCP port connections, consider using Dedicated/Premium plan.
+2. **Confirm Connection Ports**. EMQX Serverless only supports connections via MQTT over TLS (port 8883) and WebSocket over TLS (port 8084). Connections to ports 1883 and 8083 are not supported. If your use case requires non-encrypted TCP port connections, consider using our Dedicated/Premium plan.
 3. **Test Network Connectivity**. Use the `telnet` command to test network connectivity between your server and EMQX Serverless, e.g., `telnet broker.emqx.io 8883`. (Replace with your actual deployment address.)
 4. **Verify Authentication Information**. EMQX Platform does **not support anonymous authentication**. Ensure that you have set the MQTT client's username and password in the EMQX Platform console and configured them correctly during client connection.
 5. **Check SNI (Server Name Indication) Configuration**. Correct SNI information must be provided during client connection. Incorrect or missing SNI information will result in connection rejection by EMQX Platform with error code -5.
@@ -59,7 +59,7 @@ If you are unable to connect to Serverless deployment, follow these steps for tr
 If all the above steps are correct but the issue persists, please submit a support ticket through our ticket system. Provide the following detailed information to expedite issue resolution:
 
 - Deployment name and ID (found on the "Deployment Management" page in the console)
-- Deployment type (e.g., Serverless, Standard, Professional, etc.)
+- Deployment type (e.g., Serverless, Dedicated, Premium, etc.)
 - Specific client type and version
 - Client connection example code (provide your programming language, e.g., Python, JavaScript, and the relevant connection code with sensitive information redacted)
 - Client error logs or specific error messages (please provide detailed error descriptions or screenshots, if possible)

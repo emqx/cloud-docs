@@ -8,16 +8,32 @@ This feature is exclusive to the Dedicated and Premium editions. You need to cre
 
 The Network Address Translation (NAT) gateway provides network address translation services. Before the NAT gateway is activated, some functions of the Dedicated/Premium deployment, such as extended authentication and data integration, cannot access public network resources. Once subscribed, it allows access through public network addresses.
 
-## Subscribe to the Service
+## Enable NAT Gateway in a Dedicated Deployment
 
-Click **VAS** from the top menu in the EMQX Platform console to open the **Value Added Services** page. You can subscribe to the NAT Gateway service on the page by clicking **Subscribe Now**.  Alternatively, you can go to the deployment Overview page, select the **NAT Gateway** tab at the bottom, and click **Subscribe Now**.
+1. Go to your Dedicated deployment in the EMQX Platform Console.
 
-On the subscribing process page, pay attention to the service descriptions. If you have purchased multiple deployments, select the deployment for which you need to create the service instance.
+2. Click **Network Management** from the left menu. Navigate to the **NAT Gateway** area and click **+NAT Gateway**.
 
-<img src="./_assets/intro_06.png" style="zoom:50%;" />
+3. In the pop-up dialog, check to accept the Value Added Service Agreement and click **Buy Now**.
 
-## Use the Service
+   <img src="./_assets/create_nat_dedicated.png" style="zoom:50%;" />
 
-After purchasing the NAT Gateway service, you can see the creation status of the NAT Gateway on the deployment Overview page. Wait for the creation process to be completed. Once the NAT Gateway's status is running, the deployment can access public network resources.
+4. After purchasing the service, you can see the creation status on the page. Wait for the creation process to be completed.
 
-![intro_07](./_assets/intro_07.png)
+   Once the NAT Gateway's status is `Running`, the deployment can access public network resources.
+
+   ![intranet_lb_info](./_assets/gateway_info_dedicated.png)
+
+## Enable NAT Gateway in a Premium Deployment
+
+1. Go to your Premium deployment in the EMQX Platform Console.
+
+2. Click **Network Management** from the left menu. Navigate to the **NAT Gateway** area and click **+NAT Gateway**.
+
+3. In the pop-up dialog, click **Confirm** to start the creation process.
+
+   <img src="./_assets/create_nat_premium.png" alt="create_nat_premium" style="zoom:67%;" />
+
+   You can see the creation status of the NAT Gateway on the deployment Overview page. Wait for the creation process to be completed. Once the NAT Gateway's status is `Running`, the deployment can access public network resources.
+
+   ![intranet_lb_info](./_assets/gateway_info_premium.png)

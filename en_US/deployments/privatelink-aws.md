@@ -1,6 +1,10 @@
 # AWS PrivateLink
 
-This page provides detailed instructions on how to enable the PrivateLink feature for EMQX Platform deployments on the Amazon AWS platform. By enabling PrivateLink, your EMQX deployment can access AWS-hosted services through a secure and private connection within your virtual network. This ensures that communication remains isolated from the public internet, improving both security and performance.
+::: tip Note
+This feature is only available for Dedicated and Premium deployments.
+:::
+
+This page provides detailed instructions on enabling the PrivateLink feature for EMQX Platform deployments on the Amazon AWS platform. By enabling PrivateLink, your EMQX deployment can access AWS-hosted services through a secure and private connection within your virtual network. This ensures that communication remains isolated from the public internet, improving both security and performance.
 
 In this setup, your EMQX Platform deployment’s Virtual Private Cloud (VPC) acts as the service user, establishing a connection to the service provider’s VPC, where your AWS resources reside.
 
@@ -13,7 +17,7 @@ This section demonstrates the steps to create an AWS Endpoint Service using AWS 
 When creating an Endpoint Service in AWS, the Availability Zone ID (AZ ID) of your Load Balancer (LB) must match the AZ ID in your EMQX Platform deployment. To obtain the AZ ID:
 
 1. Go to your deployment in the EMQX Platform Console.
-2. On the deployment overview page, select the **PrivateLink** button at the bottom and click **+PrivateLink**.
+2. Click **Network Management** from the left menu. Navigate to the **PrivateLink** area and click **+PrivateLink**.
 3. In the pop-up dialog, you will see the availability zone details for the deployment.
 
 <img src="./_assets/deployment_privatelink_details.png" alt="lb" style="zoom:67%;" />
@@ -101,9 +105,9 @@ To remove the private connection, you need to ensure that the PrivateLink status
 > - If you need to remove the PrivateLink service from your AWS platform, please remove the PrivateLink from EMQX Platform console first, otherwise it will cause PrivateLink status of the deployment to be `failed`.
 > - Please ensure that there are no associated resources in the deployment before removing the PrivateLink, otherwise it will lead to unpredictable risks.
 
-1. Go to the Deployment Overview page.
+1. Go to the PrivateLink area on the Network Management page of your deployment.
 
-2. Click on the Delete button to the right of the PrivateLink and click **Confirm** to complete the deletion.
+2. Click the "delete" icon in the **Actions** column of the PrivateLink. Click **Confirm** to complete the deletion.
 
    ![delete](./_assets/delete_privatelink.png)
 

@@ -25,7 +25,7 @@ When you create a **Dedicated deployment**, you will be given an MQTT connection
 
 ## How to set up NAT gateway configuration?
 
-NAT is only supported for **Dedicated plan**. You can enable NAT gateway in Valued-Added Service.
+NAT is only supported for the **Dedicated or Premium plan**. You can enable the [NAT gateway](../vas/nat-gateway.md) service in your deployment.
 
 ## Will cluster scaling affect device connectivity?
 
@@ -33,7 +33,7 @@ It will cause an interruption to the connectivity for a few seconds.
 
 ## How do I connect my own services to the MQTT service via local network when I have built a VPC peer-to-peer connection?
 
-If you need an internal network connection to the professional deployment, you can purchase [Internal Load Balancers](../vas/intranet-lb.md) to achieve that. It'a [Value Added Service](../vas/vas-intro.md) provided by us.
+If you need an internal network connection to the Dedicated/Premium deployment, you can create [Internal Endpoints](../vas/intranet-lb.md) to achieve that. It's an additional service provided by us.
 
 ## Is API supported？
 
@@ -70,7 +70,7 @@ Offline messages are useful when the network connection is not very stable, or w
 The default is 2 hours for MQTT v3 protocols, and for MQTT v5 protocols it is set according to the value of session_expiry_interval in the client. After the expiration time, the messages in the queue will be lost.
 
 ## How to do offline message staging?
-Given the instability of message staging, we recommend storing offline messages. We recommend storing offline messages on a disk. Here we need to use the professional version of the Data Integration Service, which can save offline messages to a database like Redis. After the device comes online and consumes the message, the corresponding offline message will also be deleted.
+Given the instability of message staging, we recommend storing offline messages. We recommend storing offline messages on a disk. Here we need to use the Data Integration, which can save offline messages to a database like Redis. After the device comes online and consumes the message, the corresponding offline message will also be deleted.
 
 ## How to calculate sessions?
 The definition for session: The number of sessions is calculated by adding the number of connected clients and the disconnected clients with sessions retained in the broker. Connected clients are those that connect to the broker after `CONNECT`, including those that are not disconnected within the `keepAlive` span. Disconnected clients that keep a session are clients that are offline but have `CleanSession` set to false, and such clients are counted in the session count. When a device `DISCONNECT` goes offline, or if it has not communicated for more than the keepAlive span, the device will go offline and will not be counted in the number of sessions.

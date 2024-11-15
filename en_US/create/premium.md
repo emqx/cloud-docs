@@ -77,14 +77,14 @@ VPC peering connection is a network connection between two VPCs. Through this co
 PrivateLink enables the proprietary network VPC where the EMQX Platform deployment is located to establish a secure and stable private connection to services on the public cloud. It simplifies the network architecture, enables private access to services, and avoids the potential security risks associated with accessing services over the public network.
 
 
-### [Internal Load Balancers](../vas/intranet-lb.md)
+### [Internal Endpoint](../vas/intranet-lb.md)
 
-Intranet load balancing is a service that distributes traffic on demand in the internal network, extending the throughput capacity of applications by distributing traffic to different back-end servers, and eliminating single points of failure in the system to improve the availability of applications.
+Internal Endpoint allows you to create an internal load-balancing service that distributes traffic on-demand within an internal network. It can expand the application system's throughput by distributing traffic to different backend servers.
 
 
 ### [NAT Gateway](../vas/nat-gateway.md)
 
-NAT gateways can provide network address translation services to provide Premium deployments with the ability to access public network resources without the need for VPC peering connections.
+NAT gateway can provide network address translation services to provide Premium deployments with the ability to access public network resources without the need for VPC peering connections.
 
 ### Dedicated Storage Layer
 

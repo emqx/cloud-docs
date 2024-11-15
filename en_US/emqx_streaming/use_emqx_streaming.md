@@ -18,9 +18,7 @@ The EMQX Streaming feature can only be activated by submitting a ticket.
 1. Go to your deployment and navigate to **Streaming (beta)**. 
 2. Click **Enable Streaming (beta)** on the page to submit a ticket.
 
-Once the EMQX Streaming is activated, the Kafka endpoint information will be displayed under the **Streaming Connection Information** section on the deployment overview page.
-
-![streaming_connection_information](./_assets/streaming_connection_information.png)
+Once the EMQX Streaming is activated, the Kafka endpoint information will be displayed on the **Streaming (beta)** -> **Streams** page.
 
 ## Create a Stream
 
