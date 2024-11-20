@@ -70,7 +70,7 @@
 
    ![cloud_privatelink_info](./_assets/aliyun_privatelink_allow_conn.png)
 
-6. 等待一段时间，在部署详情查看私网连接状态，`运行中`表示已经创建成功。复制`服务连接域名`，用于下一步数据集成-资源的配置。
+6. 等待一段时间，在部署详情查看私网连接状态，`运行中`表示已经创建成功。
 
    ![cloud_privatelink_info](./_assets/aliyun_privatelink_cloud_conip.png)
 

@@ -553,10 +553,6 @@
           "path": "billing/overview"
         },
         {
-          "title": "NAT 网关和内部接入点计费说明",
-          "path": "vas/vas-price"
-        },
-        {
           "title": "流量包",
           "path": "vas/traffic-pack"
         },
@@ -579,6 +575,10 @@
         {
           "title": "Serverless 消费限额设置",
           "path": "deployments/spend_limit"
+        },
+        {
+          "title": "网络管理计费说明",
+          "path": "vas/vas-price"
         }
       ]
     },
