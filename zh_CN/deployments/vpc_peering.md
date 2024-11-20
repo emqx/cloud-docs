@@ -72,11 +72,11 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
 ### 创建对等连接
 
 1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)，进入所需创建 VPC 对等连接的部署概览页。
-    
+   
 2. 点击左侧菜单中的**网络管理**，在 **VPC 对等连接**区域中点击 **+VPC 对等连接**按钮。
 
 1. 从弹出的对话框中，获取并记录以下 EMQX Platform VPC 对等连接提示。
-    
+   
     > 注意：暂时不要关闭该页面。
    
    * 部署 VPC ID
@@ -84,7 +84,7 @@ VPC 对等连接是两个 VPC 之间的网络连接，通过此连接，使两�
     * EMQX Platform 账户 ID
    
     <img src="./_assets/huawei_emqx_vpc_peering_info1.png" alt="huawei_vpc_peering_info" style="zoom:67%;" />
-    
+   
 2. 登录华为云账号，进入控制台 -> **虚拟私有云 VPC**。
 
     ![huawei_account_id](./_assets/huawei_vpc.png)

@@ -217,7 +217,7 @@ BYOC 版本允许企业将 EMQX Platform 集成到现有的云基础设施中，
       <td>可在云平台自行配置</td>
    </tr>
    <tr>
-      <td style="text-indent: 1em;">内网 LB</td>
+      <td style="text-indent: 1em;">内部接入点</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -531,7 +531,7 @@ BYOC 版本允许企业将 EMQX Platform 集成到现有的云基础设施中，
       <td>&#10003</td>
    </tr>
    <tr>
-      <td><strong>增值服务</strong></td>
+      <td><strong>财务管理</strong></td>
       <td></td>
       <td></td>
       <td></td>
@@ -573,6 +573,7 @@ BYOC 版本允许企业将 EMQX Platform 集成到现有的云基础设施中，
       <td>&#10003</td>
    </tr>
 </table>
+
 
 
 

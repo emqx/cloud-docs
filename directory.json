@@ -55,14 +55,6 @@
             {
               "title": "TLS/SSL 设置",
               "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC 对等连接设置",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "私网连接 PrivateLink 设置",
-              "path": "deployments/privatelink"
             }
           ]
         },
@@ -74,14 +66,6 @@
             {
               "title": "TLS/SSL 设置",
               "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC 对等连接设置",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "私网连接 PrivateLink 设置",
-              "path": "deployments/privatelink"
             }
           ]
         },
@@ -128,6 +112,29 @@
     {
       "title": "启停/删除部署",
       "path": "deployments/stop_delete_deployment"
+    },
+    {
+      "title": "网络管理",
+      "path": "deployments/network_management",
+      "collapsed": true,
+      "children":  [
+        {
+          "title": "VPC 对等连接设置",
+          "path": "deployments/vpc_peering"
+        },
+        {
+          "title": "私网连接 PrivateLink 设置",
+          "path": "deployments/privatelink"
+        },
+        {
+          "title": "NAT 网关",
+          "path": "vas/nat-gateway"
+        },
+        {
+          "title": "内部接入点",
+          "path": "vas/intranet-lb"
+        }
+      ]
     },
     {
       "title": "客户端认证",
@@ -546,6 +553,14 @@
           "path": "billing/overview"
         },
         {
+          "title": "NAT 网关和内部接入点计费说明",
+          "path": "vas/vas-price"
+        },
+        {
+          "title": "流量包",
+          "path": "vas/traffic-pack"
+        },
+        {
           "title": "代金券",
           "path": "billing/coupon"
         },
@@ -564,29 +579,6 @@
         {
           "title": "Serverless 消费限额设置",
           "path": "deployments/spend_limit"
-        }
-      ]
-    },
-    {
-      "title": "增值服务",
-      "path": "vas/vas-intro",
-      "collapsed": true,
-      "children": [
-        {
-          "title": "增值服务计费说明",
-          "path": "vas/vas-price"
-        },
-        {
-          "title": "NAT 网关",
-          "path": "vas/nat-gateway"
-        },
-        {
-          "title": "内网负载均衡",
-          "path": "vas/intranet-lb"
-        },
-        {
-          "title": "流量包",
-          "path": "vas/traffic-pack"
         }
       ]
     },

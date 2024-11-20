@@ -19,15 +19,15 @@ EMQX Platform supports paying for usage via the Google Cloud Marketplace. You ca
     - If you are not already signed in to an existing EMQX account, you are prompted to sign in to an EMQX account. Upon successful sign-in, you are automatically redirected to the index page. A modal will display the status of linking to your GCP Billing Account.
 9. Wait for GCP to finish syncing.
 	EMQX Platform index page displays a pop-up notifying you that account syncing status. Additionally, the Payment Method field of the Billing page will change to GCP Marketplace Subscription when the sync is complete.
-	
 
 ::: warning
-The following situation will cause a failure on account linking.
+The following situations may cause a failure in account linking.
 
-1. The EMQX account already has been set up a credit card.
+1. The EMQX account already has a credit card set up.
 2. The EMQX account uses Available Credits.
-3. The EMQX account already has been linked to a Marketplace EMQX product.
-4. THE EMQX account has vouchers and no unpaid bills.
+3. The EMQX account has already been linked to an EMQX product from the Marketplace.
+4. The EMQX account has vouchers and no unpaid bills.
+4. Each GCP billing account can only be used to subscribe to one EMQX Platform service through the GCP Marketplace at a time.
 
 If you still encounter a problem, please submit a [ticket](../feature/tickets.md) to get help.
 :::

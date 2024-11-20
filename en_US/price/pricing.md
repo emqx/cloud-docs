@@ -143,6 +143,7 @@ The hourly charges are then accumulated into monthly charges, which you can view
       <td colspan="3" align="center">Contact Us</td>
   </tr>
 </table>
+
 ::: tip
 
 Prices may vary depending on the public cloud platform selected and the deployment region. The actual price is based on the price displayed on the deployment page.

@@ -16,6 +16,7 @@ The EMQX Platform sets default quotas (or limits) for each deployment and the de
 | Retained message expiry interval                         | Never               | NO             |
 | Client ID maximum length                                 | 1024                | NO             |
 | Maximum subscriptions for a single client                | 10                  | NO             |
+| Maximum hierarchy levels of a subscribed topic           | 10                  | NO             |
 | Maximum deployment TPS                                   | 1000/s              | NO             |
 | Maximum Topic Levels                                     | 10                  | NO             |
 | Maximum single-client subscription TPS                   | 1000/s              | NO             |

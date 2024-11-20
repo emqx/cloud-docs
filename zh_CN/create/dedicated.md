@@ -61,7 +61,7 @@ EMQX Platform 专有版提供独立的 MQTT 服务集群，有更高的连接上
 
 ### [TLS/SSL 配置](../deployments/tls_ssl.md)
 
-提供**自定义单双向** TLS/SSL 认证，并支持 **自签名证书** 和 **CA 签名证书**。
+提供**自定义单双向** TLS/SSL 认证，并支持**自签名证书**和 **CA 签名证书**。
 
 
 ### [VPC 对等连接](../deployments/vpc_peering.md)
