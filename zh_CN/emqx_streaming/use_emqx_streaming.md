@@ -18,9 +18,7 @@ EMQX Streaming 功能只能通过提交工单来激活。
 1. 登录 EMQX Platform，进入您的部署，导航到 **Streaming (beta)**。
 2. 点击页面上的 **开通 Streaming (beta)** 按钮提交工单。
 
-一旦 EMQX Streaming 被激活，Kafka 端点信息将显示在部署概览页面的 **Streaming 连接信息**中。
-
-![streaming_connection_information](./_assets/streaming_connection_information.png)
+一旦 EMQX Streaming 被激活，Kafka 端点信息将显示在 **Streaming (beta)** -> **Streams** 页面的中。
 
 ## 创建 Stream
 

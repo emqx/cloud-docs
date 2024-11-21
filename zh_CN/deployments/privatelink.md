@@ -1,5 +1,11 @@
 # 私网连接 PrivateLink 设置
 
+::: warning 注意
+
+该功能仅适用于专有版和旗舰版。
+
+:::
+
 私网连接（PrivateLink）能够实现 EMQX 专有版或旗舰版部署所在的专有网络 VPC 与公有云上的服务建立安全稳定的私有连接，简化网络架构，实现私网访问服务，避免通过公网访问服务带来的潜在安全风险。
 
 在私网连接中，EMQX 部署 VPC 作为服务使用方，请求用户在云服务商资源所在的 VPC，即服务提供方。
@@ -42,11 +48,11 @@
 
 ### 创建私网连接 PrivateLink
 
-1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)，进入需要创建 PrivateLink 的部署的概览页面，点击 **+私网连接** 按钮。
+1. 登录 [EMQX Platform 控制台](<https://cloud.emqx.com/console>)，进入需要创建 PrivateLink 的部署的概览页面。
 
-   ![cloud_privatelink_info](./_assets/aliyun_privatelink_create.png)
+1. 点击左侧菜单中的**网络管理**，在**私网连接 (PrivateLink)** 区域点击 **+私网连接** 按钮。
 
-2. 确认提示信息后，点击 **了解并进入下一步**。
+2. 确认提示信息后，点击**了解并进入下一步**。
 
    <img src="./_assets/aliyun_privatelink_cloud_info.png" alt="cloud_privatelink_info" style="zoom:80%;" />
 
@@ -64,17 +70,18 @@
 
    ![cloud_privatelink_info](./_assets/aliyun_privatelink_allow_conn.png)
 
-6. 等待一段时间，在部署详情查看私网连接状态，`运行中`表示已经创建成功。复制`服务连接域名`，用于下一步数据集成-资源的配置。
+6. 等待一段时间，在部署详情查看私网连接状态，`运行中`表示已经创建成功。
 
    ![cloud_privatelink_info](./_assets/aliyun_privatelink_cloud_conip.png)
 
 ### 删除私网连接
 
-删除私网连接，您需要确保私网连接状态为 `运行中`。
+删除私网连接，您需要确保私网连接状态为`运行中`。
 
 > - 若需在您的阿里云平台删除私网连接服务，请先在 EMQX Platform 控制台 删除私网连接节点，否则会导致部署私网连接状态为`failed`。
 > - 删除私网连接前，请确保部署不存在任何关联的资源，否则将导致不可预估的风险。
 
-1. 进入部署概览页面。
+1. 进入部署的**网络管理**页面。
 
 2. 点击私网连接**操作**列中的删除按钮，点击**确认**后完成删除。
+

@@ -55,7 +55,7 @@ Serverless 免费试用额度：
 
 1. 在起始页点击**新建部署**，前往部署创建页面。
 
-   ![index](./_assets/index_overview.png)
+   ![first_create_deployment](./_assets/first_create_deployment.png)
    
 2. 从现有的版本中选择一种部署开始创建，可创建[ Serverless 部署](../create/serverless.md)或[专有版部署](../create/dedicated.md)。如选择免费试用 EMQX 专有版，您还需再配置云平台、部署区域、连接规格、计费方式等信息。最后确认您的部署信息，点击**立即部署**。
 
@@ -63,7 +63,7 @@ Serverless 免费试用额度：
    
 3. 至此，我们已经完成了部署创建流程，只需要等待部署创建完成，即可以进入刚创建的部署查看连接配置。
 
-   ![add_users](./_assets/dedicated_overview.png)
+   ![connections](./_assets/overview.png)
 
 
 ## 客户端认证
