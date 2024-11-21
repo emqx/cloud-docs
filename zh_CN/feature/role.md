@@ -320,33 +320,33 @@
          <td>只读</td>
       </tr>
    <tr>
-      <td rowspan="4">增值服务</td>
-      <td>查看增值服务列表</td>
+      <td rowspan="4">网络管理</td>
+      <td>创建/删除 VPC/PrivateLink</td>
       <td>&#10003</td>
       <td>&#10003</td>
-      <td>只读</td>
-      <td>只读</td>
-   </tr>
-   <tr>
-      <td>开通增值服务</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
    </tr>
    <tr>
-      <td>增值服务开通之后使用</td>
+      <td>查看 VPC/PrivateLink</td>
       <td>&#10003</td>
       <td>&#10003</td>
-      <td>只读</td>
-      <td>只读</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
    </tr>
    <tr>
-      <td>删除增值服务</td>
+      <td>创建/删除 NAT 网关/内部接入点</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
+   </tr>
+   <tr>
+      <td>查看 NAT 网关/内部接入点</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
    </tr>
    <tr>
       <td colspan="2">事件</td>

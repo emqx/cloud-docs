@@ -2,7 +2,7 @@
 
 ::: tip 注意
 
-网络管理仅适用于专有版部署。
+网络管理仅适用于专业版部署。
 
 :::
 
@@ -10,7 +10,7 @@ EMQX Platform 提供了一系列网络管理选项，以便为您的专有版部
 
 该部分包括用于管理网络访问、优化路由和维护网络安全的基本功能。有关配置和使用每个功能的详细说明，请点击以下链接：
 
-- **[VPC 对等连接](https://github.com/emqx/cloud-docs/blob/83fed2a47116d95d0f28ab2fdf1f0860e730f341/zh_CN/deployments/vpc_peering.md)**: 将 EMQX 的 VPC 与您的 VPC 建立对等连接，实现跨 VPC 的内部安全通信。
-- **[PrivateLink](https://github.com/emqx/cloud-docs/blob/83fed2a47116d95d0f28ab2fdf1f0860e730f341/zh_CN/deployments/privatelink.md)**: 使用阿里云私网连接来连接到您的部署，确保数据传输的私密性与安全性。
-- **[内部接入点](https://github.com/emqx/cloud-docs/blob/83fed2a47116d95d0f28ab2fdf1f0860e730f341/zh_CN/vas/intranet-lb.md)**: 在 VPC 内创建一个内部负载均衡服务，实现安全访问 EMQX 集群。
-- **[NAT 网关](https://github.com/emqx/cloud-docs/blob/83fed2a47116d95d0f28ab2fdf1f0860e730f341/zh_CN/vas/nat-gateway.md)**: 使您的 EMQX 集群能够通过公网安全地建立对外连接。
+- **[VPC 对等连接](./vpc_peering.md)**: 将 EMQX 的 VPC 与您的 VPC 建立对等连接，实现跨 VPC 的内部安全通信。
+- **[PrivateLink](./privatelink.md)**: 使用阿里云私网连接来连接到您的部署，确保数据传输的私密性与安全性。
+- **[内部接入点](../vas/intranet-lb.md)**: 在 VPC 内创建一个内部负载均衡服务，实现安全访问 EMQX 集群。
+- **[NAT 网关](../vas/nat-gateway.md)**: 使您的 EMQX 集群能够通过公网安全地建立对外连接。

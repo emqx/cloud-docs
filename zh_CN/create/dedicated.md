@@ -29,7 +29,7 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 
 部署概览页面可获取到部署实时状态和连接信息：
 
-   ![dedicated](./_assets/dedicated_overview.png)
+![dedicated](./_assets/dedicated_overview.png)
 
 * 实例状态：运行状态和运行时长
 * 连接数：当前连接数和最大连接数
@@ -50,8 +50,6 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 
 查看 [端口连接指引](../deployments/port_guide_serverless.md) 了解协议和端口。
 
-
-
 ### [TLS/SSL 配置](../deployments/tls_ssl.md)
 
 **专业版**提供**自定义单双向** TLS/SSL 认证，并支持 **自签名证书** 和 **CA 签名证书**。
@@ -70,14 +68,14 @@ EMQX Cloud 专有版提供独立的 MQTT 服务实例/集群，有更高的连�
 
 提供了 REST API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。
 
-### [内网负载均衡](../vas/intranet-lb.md)
+### [内部接入点](../vas/intranet-lb.md)
 
-内网负载均衡是一种在内网中对流量进行按需分发的服务，提供部署内网访问能力。内网负载均衡为增值服务，需要单独开通。
+内部接入点允许您在部署的 VPC 内创建一个内部负载均衡服务，实现安全访问 EMQX 集群。
 
 
 ### [NAT 网关](../vas/nat-gateway.md)
 
-NAT 网关可以提供网络地址转换服务，为专业版部署提供访问公网资源的能力。NAT 网关为增值服务，需要单独开通。
+NAT 网关可以提供网络地址转换服务，使 EMQX 集群能够通过公网安全地建立对外连接。
 
 
 ## 连接到部署
