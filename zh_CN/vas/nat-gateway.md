@@ -17,10 +17,10 @@ NAT 网关可以提供网络地址转换服务，为专业版部署提供访问�
 
 3. 在弹出的对话框中，勾选**购买即表示同意协议**，并点击**确认购买**。
 
-   ![img](./_assets/create_nat_dedicated.png)
+   ![create_nat_dedicated](./_assets/create_nat_dedicated.png)
 
 4. 购买服务后，您可以在页面上查看创建状态，等待创建过程完成。
 
    当 NAT 网关状态变为`运行中`时，该部署即可访问公网资源。
 
-   [![nat](./_assets/nat_gateway.png)](https://github.com/emqx/cloud-docs/blob/835ef16a66878bc91dfbdcd50dfd9510f52771c5/zh_CN/vas/_assets/nat_gateway.png)
+   ![nat](./_assets/nat_gateway.png)
