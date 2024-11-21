@@ -85,7 +85,7 @@
     },
     {
       "title": "网络管理",
-      "path": "deloyments/network_management",
+      "path": "deployments/network_management",
       "collapsed": true,
       "children": [
         {
