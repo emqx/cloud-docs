@@ -27,4 +27,4 @@
 
    当状态变为`运行中`时，您可以通过内部网络地址，将已完成 VPC 对等连接的 VPC 下的终端连接到该部署。连接端口与公网连接端口一致：MQTT 端口为 1883，WebSocket 端口为 8083。
 
-   [![intranet_lb_info](./_assets/intranet_lb_info_dedicated.png)](https://github.com/emqx/cloud-docs/blob/835ef16a66878bc91dfbdcd50dfd9510f52771c5/zh_CN/vas/_assets/intranet_lb_info_dedicated.png)
+   ![intranet_lb_info](./_assets/intranet_lb_info_dedicated.png)

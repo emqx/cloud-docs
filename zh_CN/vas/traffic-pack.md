@@ -58,4 +58,4 @@ EMQX Platform 的定价模式是采用连接数作为主要计价衡量因素，
 
 在页面中您可以查看到流量包 ID、使用情况（GB）、生效时间、到期时间和状态。点击**操作**列下的使用记录图标按钮，可查看到流量包的详细使用记录。
 
-[![vas-traffic-pack](。/_assets/traffic-pack-details-1.png)](https://github.com/emqx/cloud-docs/blob/835ef16a66878bc91dfbdcd50dfd9510f52771c5/zh_CN/vas/_assets/traffic-pack-details-1.png)
+[![vas-traffic-pack](./_assets/traffic-pack-details-1.png)](https://github.com/emqx/cloud-docs/blob/835ef16a66878bc91dfbdcd50dfd9510f52771c5/zh_CN/vas/_assets/traffic-pack-details-1.png)
