@@ -1,28 +1,30 @@
-# 内网负载均衡
+# 内部接入点
 
-::: warning
+::: warning 注意
+
 该功能为专业版功能，需要创建专业版部署开通服务。
+
 :::
 
 内网负载均衡是一种在内网中对流量进行按需分发的服务，通过将流量分发到不同的后端服务器来扩展应用系统的吞吐能力，并且可以消除系统中的单点故障，提升应用系统的可用性。
 
 在开始之前，您需要完成以下操作：
-* 已经在 EMQX Cloud 上创建专业版部署(EMQX 集群)。
-* 请先完成 [对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
-## 服务开通
+- 已经在 EMQX Cloud 上创建专业版部署(EMQX 集群)。
+- 请先完成 [VPC 对等连接的创建](../deployments/vpc_peering.md)，下文提到的 IP 均指资源的内网 IP。
 
-您可以在顶部菜单栏 - `增值服务` 或者部署概览底部选择开通内网负载均衡服务。
+## 启用内部接入点
 
-![vas](./_assets/intro_01.png)
+1. 在 EMQX 平台控制台中，进入您的专有版部署。
 
-![overview_vas](./_assets/overview_vas.png)
+2. 点击左侧菜单中的**网络管理**，导航到**内部接入点** 区域，然后点击 **+内部接入点**。
 
+3. 在弹出的对话框中，勾选**购买即表示同意协议**，并点击**确认购买**。
 
-## 服务使用
+   ![img](./_assets/create_internal_endpoint_dedicated.png)
 
-完成内网负载均衡增值服务购买后，您可在相应部署概览处看到内网负载均衡创建状态，等待创建完成。
+4. 购买服务后，您可以在页面上查看创建状态。等待创建过程完成。
 
-![intranet_lb_info](./_assets/intranet_lb_info.png)
+   当状态变为`运行中`时，您可以通过内部网络地址，将已完成 VPC 对等连接的 VPC 下的终端连接到该部署。连接端口与公网连接端口一致：MQTT 端口为 1883，WebSocket 端口为 8083。
 
-当内网负载均衡的状态为 running 后，您可以将完成对等连接的 VPC 下终端通过内网地址的内网 IP 连接到该部署，连接端口和公网连接端口一致：mqtt 端口为 1883，websocket 端口为 8083。
+   [![intranet_lb_info](./_assets/intranet_lb_info_dedicated.png)](https://github.com/emqx/cloud-docs/blob/835ef16a66878bc91dfbdcd50dfd9510f52771c5/zh_CN/vas/_assets/intranet_lb_info_dedicated.png)

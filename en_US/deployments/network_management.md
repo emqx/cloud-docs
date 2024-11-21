@@ -2,7 +2,7 @@
 
 ::: tip Note
 
-Network Management is only available for Dedicated or Premium deployments.
+Network Management is only available for Dedicated deployments.
 
 :::
 
