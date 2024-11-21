@@ -9,29 +9,18 @@ NAT 网关可以提供网络地址转换服务，为专业版部署提供访问�
 在开始之前，您需要完成以下操作：
 * 已经在 EMQX Cloud 上创建专业版部署(EMQX 集群)。
 
-## 服务开通
+## 在专有版部署中启用 NAT 网关
 
-您可以在顶部菜单栏 - `增值服务` 或者部署概览底部选择开通 NAT 网关服务。
+1. 在 EMQX 平台控制台中，进入您的专有版部署。
 
-![vas](./_assets/intro_01.png)
+2. 点击左侧菜单中的**网络管理**，导航到 **NAT 网关**区域，然后点击 **+NAT 网关**。
 
-![overview_vas](./_assets/overview_vas.png)
+3. 在弹出的对话框中，勾选**购买即表示同意协议**，并点击**确认购买**。
 
+   ![create_nat_dedicated](./_assets/create_nat_dedicated.png)
 
-## 服务使用
+4. 购买服务后，您可以在页面上查看创建状态，等待创建过程完成。
 
-完成 NAT 网关增值服务购买后，您可在相应部署概览处看到 NAT 网关创建状态，等待创建完成。
+   当 NAT 网关状态变为`运行中`时，该部署即可访问公网资源。
 
-![intranet_lb_info](./_assets/nat_gateway_info.png)
-
-当 NAT 网关的状态为 running 后，该部署便可访问公网资源。
-
-## 测试
-
-### 未开启 NAT 网关访问公网资源
-
-![no_nat_gateway_access_resource](./_assets/no_nat_gateway_access_resource.png)
-
-### 开启 NAT 网关后访问公网资源
-
-![nat_gateway_access_resource](./_assets/nat_gateway_access_resource.png)
+   ![nat](./_assets/nat_gateway.png)

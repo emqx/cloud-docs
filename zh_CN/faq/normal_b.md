@@ -24,10 +24,10 @@ EMQX Cloud 部署目前支持 MQTT over TLS/SSL, WebSockets over TLS/SSL 协议�
 :::
 
 ## 如何设置 NAT 网关配置？
-仅支持**专业版**，可以在增值服务中开通 NAT 网关。
+仅支持**专业版**，可以在网络管理中启用 [NAT 网关](../vas/nat-gateway.md)。
 
 ## 建了 VPC 对等连接，自己的服务如何通过内网去连接 MQTT 服务？
-专业版部署在开通增值服务 - 内网负载均衡后可以通过内网连接地址连接到 EMQX Cloud 部署。
+专业版部署在启用[内部接入点](../vas/intranet-lb.md)后可以通过内网连接地址连接到 EMQX Cloud 部署。
 
 ## 是否支持 API 调用？
 支持。我们提供了 HTTP API 以实现与外部系统的集成，例如查询客户端信息、发布消息和创建规则等。

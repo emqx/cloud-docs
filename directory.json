@@ -48,14 +48,6 @@
             {
               "title": "TLS/SSL 设置",
               "path": "deployments/tls_ssl"
-            },
-            {
-              "title": "VPC 对等连接设置",
-              "path": "deployments/vpc_peering"
-            },
-            {
-              "title": "私网连接 PrivateLink 设置",
-              "path": "deployments/privatelink"
             }
           ]
         },
@@ -88,6 +80,29 @@
         {
           "title": "配额和限制",
           "path": "create/restriction"
+        }
+      ]
+    },
+    {
+      "title": "网络管理",
+      "path": "deployments/network_management",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "VPC 对等连接设置",
+          "path": "deployments/vpc_peering"
+        },
+        {
+          "title": "私网连接 PrivateLink 设置",
+          "path": "deployments/privatelink"
+        },
+        {
+          "title": "NAT 网关",
+          "path": "vas/nat-gateway"
+        },
+        {
+          "title": "内网负载均衡",
+          "path": "vas/intranet-lb"
         }
       ]
     },
@@ -491,6 +506,10 @@
           "path": "billing/overview"
         },
         {
+          "title": "流量包",
+          "path": "vas/traffic-pack"
+        },
+        {
           "title": "代金券",
           "path": "billing/coupon"
         },
@@ -509,67 +528,40 @@
         {
           "title": "Serverless 消费限额设置",
           "path": "deployments/spend_limit"
+        },
+        {
+          "title": "网络管理服务计费说明",
+          "path": "vas/vas-price"
         }
       ]
     },
     {
-      "title": "增值服务",
-      "path": "vas/vas-intro",
+      "title": "影子服务",
       "collapsed": true,
       "children": [
         {
-          "title": "增值服务计费说明",
-          "path": "vas/vas-price"
+          "title": "服务概览",
+          "path": "shadow_service/overview"
         },
         {
-          "title": "NAT 网关",
-          "path": "vas/nat-gateway"
+          "title": "计费说明",
+          "path": "shadow_service/pricing"
         },
         {
-          "title": "内网负载均衡",
-          "path": "vas/intranet-lb"
+          "title": "功能简介",
+          "path": "shadow_service/feature"
         },
         {
-          "title": "流量包",
-          "path": "vas/traffic-pack"
+          "title": "调用和通信",
+          "path": "shadow_service/invoke"
         },
         {
-          "title": "自定义函数",
-          "path": "vas/codec"
+          "title": "场景案例：设备影子",
+          "path": "shadow_service/device_shadow"
         },
         {
-          "title": "自定义函数场景案例",
-          "path": "vas/codec_demo"
-        },
-        {
-          "title": "影子服务",
-          "collapsed": true,
-          "children": [
-            {
-              "title": "服务概览",
-              "path": "shadow_service/overview"
-            },
-            {
-              "title": "计费说明",
-              "path": "shadow_service/pricing"
-            },
-            {
-              "title": "功能简介",
-              "path": "shadow_service/feature"
-            },
-            {
-              "title": "调用和通信",
-              "path": "shadow_service/invoke"
-            },
-            {
-              "title": "场景案例：设备影子",
-              "path": "shadow_service/device_shadow"
-            },
-            {
-              "title": "场景案例：物模型管理应用",
-              "path": "shadow_service/things_model"
-            }
-          ]
+          "title": "场景案例：物模型管理应用",
+          "path": "shadow_service/things_model"
         }
       ]
     },
