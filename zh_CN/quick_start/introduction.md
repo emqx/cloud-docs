@@ -57,7 +57,7 @@ Serverless 免费试用额度：
 
    ![first_create_deployment](./_assets/first_create_deployment.png)
    
-2. 从现有的版本中选择一种部署开始创建，可创建[ Serverless 部署](../create/serverless.md)或[专有版部署](../create/dedicated.md)。如选择免费试用 EMQX 专有版，您还需再配置云平台、部署区域、连接规格、计费方式等信息。最后确认您的部署信息，点击**立即部署**。
+2. 从现有的版本中选择一种部署开始创建，可创建[ Serverless 部署](../create/serverless.md)或[专有版部署](../create/dedicated.md)。如选择免费试用 EMQX 专有版，您还需再配置云平台、部署区域、连接规格等信息。最后确认您的部署信息，点击**立即部署**。
 
    ![add_users](./_assets/create_free_trial.png)
    
