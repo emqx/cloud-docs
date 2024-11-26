@@ -10,10 +10,10 @@ From the left-navigation menu of EMQX Platform Console, select **Access Control*
 
 ### Type and Value
 
-The client to be added to the blacklist can be identified by the following types. Select the type and set the value accordingly based on the requirements:
+The client to be added to the blacklist can be identified by the following types. Set the target value according to the selected blacklist type:
 
-- Client ID: Letters, numbers and some special characters (_, -, /, +, #, $, %, @, & and .), up to 256 characters.
-- Username: Letters, numbers and some special characters (_, -, /, +, #, $, %, @, & and .), up to 256 characters.
+- Client ID: Restrict a specific client by its client ID.
+- Username: Restrict a specific client by its username.
 - Client IP: IPv4 address.
 
 ### Expiration Time
