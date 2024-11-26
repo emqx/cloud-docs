@@ -7,7 +7,6 @@ In EMQX Platform v5, client authorization is used to control the publish and sub
 :::tip Note
 
 - The **maximum number of entries** for built-in authorization is twice the number of deployment connections, with an upper limit of 100,000. If this limit is exceeded, please use an external ACL.
-- Authorization fields support letters, numbers, and certain special characters (_ , - , / , + , # , $ , % , @ , & , and .), with a maximum length of 128 characters.
 :::
 
 Authorization can be controlled at three levels:
