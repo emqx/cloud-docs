@@ -290,23 +290,23 @@
     },
     {
       "title": "网关",
-      "path": "gateway/gateway.md",
+      "path": "gateway/gateway",
       "collapsed": true,
       "children": [
         {
           "title": "CoAP 协议网关",
-          "path": "gateway/coap.md",
+          "path": "gateway/coap",
           "collapsed": true,
           "children": [
             {
               "title": "客户端接入接口说明",
-              "path": "gateway/connection_interface.md"
+              "path": "gateway/connection_interface"
             }
           ]
         },
         {
           "title": "JT/T 808 网关",
-          "path": "gateway/jt808.md"
+          "path": "gateway/jt808"
         }
       ]
     },
