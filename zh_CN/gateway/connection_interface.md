@@ -28,7 +28,11 @@
 以 `libcoap` 为例：
 
 ```bash
-# 使用 clientid 为 123，用户名密码为 admin/public 发起创建连接请求 # 返回 Token 为 3404490787 coap-client -m post -e "" "coap://${your-deployment-connection-address}/mqtt/connection?clientid=123&username=admin&password=public" 3404490787
+# 使用 clientid 为 123，用户名密码为 admin/public 发起创建连接请求
+# 返回 Token 为 3404490787
+coap-client -m post -e "" "coap://${your-deployment-connection-address}/mqtt/connection?clientid=123&username=admin&password=public"
+
+3404490787
 ```
 
 ::: tip
