@@ -30,10 +30,10 @@ The Schema Registry feature is available in the Dedicated version of EMQX 4.4 an
 
    ![schema_open](./_assets/schema_open.png)
 
-   If you have already created a [connector](https://docs.emqx.com/en/cloud/latest/data_integration/connectors.html) or a [rule](https://docs.emqx.com/en/cloud/latest/data_integration/rules.html), click the **Schema Registry** tab beside the **Integration** tab. Click the **+New** button to create a new schema.
+   If you have already created a [resource](./resources.md) or a [rule](./rules.md), click the **Schema Registry** tab beside the **Integration** tab. Click the **+New** button to create a new schema.
 
    ![schema_page](./_assets/schema_page.png)
 
-4. The EMQX Platform supports the creation of a schema in **Avro**, **Protobuf**, **JSON Schema** format. Check the [Schema Documentation](https://docs.emqx.com/en/enterprise/latest/data-integration/schema-registry.html) for details on how to create them.
+4. The EMQX Platform supports the creation of a schema in **Avro** and **Protobuf** format. Check the [Custom codec example - Avro](https://docs.emqx.com/en/enterprise/v4.4/rule/schema-registry-examp-avro.html) and [Custom codec example - Protobuf](https://docs.emqx.com/en/enterprise/v4.4/rule/schema-registry-examp-protobuf.html) for details on how to create them.
 
 Once a schema is created, you can click the schema name to view and edit the settings. You can also click the editing icon in the **Actions** column to edit the settings.
