@@ -146,7 +146,7 @@ EMQX 专有版按产品版本、实例规格与消息传输网络流量计费。
 
 #### 年度预付方式
 
-如果您希望选择年度预付计费方式，请联系我们的[销售](https://www.emqx.com/zh/contact?product=cloud&productEdition=Premium)团队了解包年选项和专属折扣。
+如果您希望选择年度预付计费方式，请联系我们的[销售](https://www.emqx.com/zh/contact?product=cloud)团队了解包年选项和专属折扣。
 
 
 ### 停止部署的计费
