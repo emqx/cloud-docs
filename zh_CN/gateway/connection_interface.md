@@ -27,7 +27,7 @@
 
 以 `libcoap` 为例：
 
-```
+```bash
 # 使用 clientid 为 123，用户名密码为 admin/public 发起创建连接请求 # 返回 Token 为 3404490787 coap-client -m post -e "" "coap://${your-deployment-connection-address}/mqtt/connection?clientid=123&username=admin&password=public" 3404490787
 ```
 
@@ -59,7 +59,7 @@
 
 例如：
 
-```
+```bash
 coap-client -m delete -e "" "coap://${your-deployment-connection-address}/mqtt/connection?clientid=123&token=3404490787"
 ```
 
@@ -87,7 +87,7 @@ coap-client -m delete -e "" "coap://${your-deployment-connection-address}/mqtt/c
 
 例如：
 
-```
+```bash
 coap-client -m put -e "" "coap://${your-deployment-connection-address}/mqtt/connection?clientid=123&token=3404490787"
 ```
 
@@ -122,12 +122,12 @@ coap-client -m put -e "" "coap://${your-deployment-connection-address}/mqtt/conn
 
 例如，`无连接模式` 下为 `coap/test` 发送一条消息：
 
-```
+```bash
 coap-client -m post -e "Hi, this is libcoap" "coap://${your-deployment-connection-address}/ps/coap/test"
-连接模式` 下则需要携带 `clientid` 和 `token
+连接模式下则需要携带 `clientid` 和 `token`
 ```
 
-```
+```bash
 coap-client -m post -e "Hi, this is libcoap" "coap://${your-deployment-connection-address}/ps/coap/test?clientid=123&token=3404490787"
 ```
 
@@ -158,13 +158,13 @@ coap-client -m post -e "Hi, this is libcoap" "coap://${your-deployment-connectio
 
 例如，`无连接模式` 下订阅主题 `coap/test` ：
 
-```
+```bash
 coap-client -m get -s 60 -O 6,0x00 -o - -T "obstoken" "coap://${your-deployment-connection-address}/ps/coap/test"
 ```
 
 `连接模式` 下则需要携带 `clientid` 和 `token`：
 
-```
+```bash
 coap-client -m get -s 60 -O 6,0x00 -o - -T "obstoken" "coap://${your-deployment-connection-address}/ps/coap/test?clientid=123&token=3404490787"
 ```
 
@@ -193,7 +193,7 @@ coap-client -m get -s 60 -O 6,0x00 -o - -T "obstoken" "coap://${your-deployment-
 
 例如，`连接模式` 下取消订阅主题 `coap/test` ：
 
-```
+```bash
 coap-client -m get -O 6,0x01 "coap://${your-deployment-connection-address}/ps/coap/test?clientid=123&token=3404490787"
 ```
 
