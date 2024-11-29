@@ -289,6 +289,28 @@
       ]
     },
     {
+      "title": "网关",
+      "path": "gateway/gateway",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "CoAP 协议网关",
+          "path": "gateway/coap",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "客户端接入接口说明",
+              "path": "gateway/connection_interface"
+            }
+          ]
+        },
+        {
+          "title": "JT/T 808 网关",
+          "path": "gateway/jt808"
+        }
+      ]
+    },
+    {
       "title": "问题分析",
       "collapsed": true,
       "children": [
@@ -657,10 +679,6 @@
         {
           "title": "数据集成 + Redis 实时获取主题下订阅的客户端",
           "path": "best_practices/save_topic_clients_to_redis"
-        },
-        {
-          "title": "如何排查消息丢失",
-          "path": "best_practices/how_to_troubleshoot_message_loss"
         },
         {
           "title": "如何排查消息丢失",
