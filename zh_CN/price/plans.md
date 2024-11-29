@@ -249,6 +249,7 @@ BYOC 版本允许企业将 EMQX Platform 集成到现有的云基础设施中，
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
    </tr>
    <tr>
       <td style="text-indent: 1em;">QoS 0,1,2</td>
@@ -573,6 +574,7 @@ BYOC 版本允许企业将 EMQX Platform 集成到现有的云基础设施中，
       <td>&#10003</td>
    </tr>
 </table>
+
 
 
 
