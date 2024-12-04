@@ -204,6 +204,10 @@
             {
               "title": "黑名单",
               "path": "deployments/blacklist"
+            },
+            {
+              "title": "用户最大连接数限制",
+              "path": "deployments/user_session_limit"
             }
           ]
         }
