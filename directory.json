@@ -963,6 +963,10 @@
               "path": "deployments/blacklist"
             }
           ]
+        },
+        {
+          "title": "User Session Limit",
+          "path": "deployments/user_session_limit"
         }
       ]
     },
