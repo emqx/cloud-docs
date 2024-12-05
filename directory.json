@@ -1029,6 +1029,28 @@
       ]
     },
     {
+      "title": "Gateway",
+      "path": "gateway/gateway",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "CoAP Gateway",
+          "path": "gateway/coap",
+          "collapsed": true,
+          "children": [
+            {
+              "title": "CoAP Client Connection Guide",
+              "path": "gateway/connection_interface"
+            }
+          ]
+        },
+        {
+          "title": "JT/T 808 Gateway",
+          "path": "gateway/jt808"
+        }
+      ]
+    },
+    {
       "title": "Diagnose",
       "collapsed": true,
       "children": [
