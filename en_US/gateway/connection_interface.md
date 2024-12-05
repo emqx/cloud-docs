@@ -1,6 +1,6 @@
 # CoAP Client Connection Guide
 
-### Create Connection
+## Create Connection
 
 Only available in `Connection Mode`.
 
@@ -42,7 +42,7 @@ Once the connection is successfully created, you can verify it in the client lis
 
 :::
 
-### Close Connnection
+## Close Connnection
 
 Only available in `Connection Mode`.
 
@@ -70,7 +70,7 @@ For example:
 coap-client -m delete -e "" "coap://${your-deployment-connection-address}/mqtt/connection?clientid=123&token=3404490787"
 ```
 
-### Heartbeat
+## Heartbeat
 
 Only available in `Connection Mode`.
 
@@ -104,7 +104,7 @@ The heartbeat interval is configured in the CoAP Gateway settings under the `hea
 
 :::
 
-### Message Publish
+## Message Publish
 
 This interface is used by the CoAP client to send messages to the specified topic. Additional identity information needs to be carried if the `Connection Mode` is enabled.
 
@@ -141,7 +141,7 @@ Or carry `clientid` and `token` in `Connection Mode`:
 coap-client -m post -e "Hi, this is libcoap" "coap://${your-deployment-connection-address}/ps/coap/test?clientid=123&token=3404490787"
 ```
 
-### Topic Subscribe
+## Topic Subscribe
 
 This interface is used by the CoAP client to subscribe a topic. Additional identity information needs to be carried if the `Connection Mode` enabled.
 
@@ -179,7 +179,7 @@ Or, carry `clientid` and `token` to subscribe in `Connection Mode`:
 coap-client -m get -s 60 -O 6,0x00 -o - -T "obstoken" "coap://${your-deployment-connection-address}/ps/coap/test?clientid=123&token=3404490787"
 ```
 
-### Topic Unsubscribe
+## Topic Unsubscribe
 
 This interface is used by the CoAP client to unsubscribe from a topic.
 
@@ -209,7 +209,7 @@ For example, unsubscribe to `coap/test` in `Connection Mode`:
 coap-client -m get -O 6,0x01 "coap://${your-deployment-connection-address}/ps/coap/test?clientid=123&token=3404490787"
 ```
 
-### Short Parameter Names
+## Short Parameter Names
 
 To reduce message size, the CoAP gateway supports short parameter names. For example, the parameter `clientid=barx` can be written as `c=bar`. Therefore, the supported short parameter names are listed in the following table:
 
