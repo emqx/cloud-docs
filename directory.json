@@ -1145,6 +1145,10 @@
           "path": "rule_engine/rules"
         },
         {
+          "title": "Schema Registry",
+          "path": "rule_engine/schema"
+        },
+        {
           "title": "Event Topics",
           "path": "rule_engine/rule_engine_events"
         },
