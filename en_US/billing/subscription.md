@@ -4,6 +4,6 @@ The **Subscriptions** page allows you to manage the renewal status of all **annu
 
 The renewal status of each deployment is managed independently, allowing you to configure each deployment separately. To renew a deployment, click the **Renew** button in the **Actions** column. In the **New Ticket** dialog that appears, click **Confirm**.
 
-![subscription_01](/Users/emqx/Documents/Cloud/cloud-docs/zh_CN/billing/_assets/subscription_01.png)
+![subscription_01](./_assets/subscription_01.png)
 
 <img src="./_assets/subscription_ticket.png" alt="subscription_ticket" style="zoom:50%;" />
