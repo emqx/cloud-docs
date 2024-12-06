@@ -158,7 +158,7 @@ If you wish to choose the annual prepaid billing method, please contact our [Sal
 
 ### Pricing of Suspended Deployment
 
-**Dedicated deployment in hourly billing** will incur data retention fees at the following rates when suspended: **$0.06 / hour**.
+**Dedicated deployment billed in the "Pay as you go" method** will incur data retention fees at the following rates when suspended: **$0.06 / hour**.
 
 ## Premium Plan
 
