@@ -47,7 +47,7 @@ Before your start, make sure your deployment is in the running state.
 
    <img src="./_assets/change_tier.png" alt="change_tier" style="zoom:67%;" />
 
-4. A **Change Tier** pop-up dialogue will appear to prevent unintended actions. Click **Confirm** to initiate the request.
+4. Enter the deployment name in the **Change Tier** pop-up dialogue. Click **Confirm** to initiate the request.
 
 Once confirmed, the request will be sent to the backend, and you will be redirected to the **Deployment Overview** page. A notification will inform you that the scaling process has started. You will receive a prompt when the scaling process is complete.
 
