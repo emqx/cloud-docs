@@ -12,15 +12,15 @@ Subaccounts get a separate login page for subaccounts only.
 
 ## Accounts Categories
 
-**Administrator**：Same as the platform account, Administrator have all the access to the platform and is the super administrator in the subaccount system. It is important to note that although functionally equivalent to the platform account, the administrator still belongs to the system of subaccount.
+**Administrator**: Same as the platform account; Administrators have all the access to the platform and is the super administrator in the subaccount system. It is important to note that although functionally equivalent to the platform account, the administrator still belongs to the system of subaccount.
 
-**Project Administrator**：Project Administrators have permission to view and modify projects and to modify and delete deployments. Project administrator is mainly used for project deployment-related management. For example, an organization needs to have separate cluster management and designate a person as administrator for a certain project. Assigning the project administrators will give them sufficient access instead of full access to the project.
+**Project Administrator**: Project Administrators have permission to view and modify projects and to modify and delete deployments. Project administrator is mainly used for project deployment-related management. For example, an organization needs to have separate cluster management and designate a person as administrator for a certain project. Assigning the project administrators will give them sufficient access instead of full access to the project.
 
-**Project User**：Project users have permission to view the project, and the permission to view and edit the deployment. Project users are usually business developers. In addition to viewing projects and deployment permissions, they can also view deployment details, use Data Integrations and monitoring, and further process-related business requirements.
+**Project User**: Project users have permission to view the project, and the permission to view and edit the deployment. Project users are usually business developers. In addition to viewing projects and deployment permissions, they can also view deployment details, use Data Integrations and monitoring, and further process-related business requirements.
 
-**Accountant**：Accountants have financial management permissions and can view projects and deployments. They can manage the billing, balance, invoices, etc.
+**Accountant**: Accountants have financial management permissions and can view projects and deployments. They can manage the billing, balance, invoices, etc.
 
-**Auditor**：Auditors can view projects, deployments,  accounts, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
+**Auditor**: Auditors can view projects, deployments,  accounts, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
 
 Role list:
 
@@ -48,7 +48,7 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-   	  <td>Move deployments to other project</td>
+   	  <td>Move deployments to other projects</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -72,13 +72,6 @@ Role list:
    	<td>Change deployment's name</td>
       <td>&#10003</td>
       <td>&#10003</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-   </tr>
-	<tr>
-   	  <td>Change to annual plan</td>
-      <td>&#10003</td>
-      <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
    </tr>
@@ -119,6 +112,12 @@ Role list:
    </tr>
    <tr>
    	<td>Data Integrations Configuration</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>Read only</td>
+      <td>Read only</td>
+   </tr>
+  <td>Update Gateway Configurations</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>

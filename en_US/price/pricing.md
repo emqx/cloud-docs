@@ -105,11 +105,11 @@ The EMQX Dedicated Plan is billed based on the selected tier and the amount of m
 
 ### Billing Method
 
-There are two billing methods: hourly billing and annual prepaid. For hourly billing, charges are calculated every hour based on usage for the previous hour, and charged from your account balance. For annual prepaid, you can choose to be charged from a credit card or available credits.
+There are two billing methods: "Pay as you go" and annual prepaid. 
 
-#### Tier-Based Fee for Hourly Billing Method
+The Dedicated deployments you create on the console are billed in "Pay as you go" method. The charges are calculated based on the consumption of the Dedicated deployment during the previous hour and are calculated once every hour (hourly billing). The hourly charges are then accumulated into monthly charges. You can visit the [Billing Overview](../billing/overview.md) to view detailed billing information.
 
-The hourly charges are then accumulated into monthly charges, which you can view details on the [Billing Overview](../billing/overview.md) page.
+#### Tier-Based Fee for "Pay as you go" Method
 
 <table>
    <tr>
@@ -143,6 +143,7 @@ The hourly charges are then accumulated into monthly charges, which you can view
       <td colspan="3" align="center">Contact Us</td>
   </tr>
 </table>
+You can also find the hourly prices for different products and specifications on the [Product Pricing](https://www.emqx.com/en/pricing) page.
 
 ::: tip
 
@@ -153,11 +154,11 @@ Prices may vary depending on the public cloud platform selected and the deployme
 
 #### Annual Prepaid Method
 
-When you choose the annual prepaid option, you will receive a 15% discount on the total fee. The estimated total cost, reflecting this discount, will be displayed in the Summary section during the deployment creation process.
+If you wish to choose the annual prepaid billing method, please contact our [Sales team](https://www.emqx.com/en/contact?product=cloud) to learn about the annual plans and exclusive discounts.
 
 ### Pricing of Suspended Deployment
 
-**Dedicated deployment in hourly billing** will incur data retention fees at the following rates when suspended: **$0.06 / hour**.
+**Dedicated deployment billed in the "Pay as you go" method** will incur data retention fees at the following rates when suspended: **$0.06 / hour**.
 
 ## Premium Plan
 

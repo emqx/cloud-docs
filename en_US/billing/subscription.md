@@ -1,20 +1,9 @@
 # Subscriptions
 
-The subscription management feature provides control over the automatic renewal of annual prepaid deployments. However, project managers can only access authorized deployments within their projects. You can mange your subscriptions on the **Subscriptions** page by select **Billing** -> **Subscriptions** from the top menu of the Cloud Console.
+The **Subscriptions** page allows you to manage the renewal status of all **annual prepaid deployments** (project managers can only view deployments under their authorized projects). You can access the **Subscriptions** page by navigating to **Billing** -> **Subscriptions** in the top menu of the console. From this page, you can perform renewal operations for deployments.
 
+The renewal status of each deployment is managed independently, allowing you to configure each deployment separately. To renew a deployment, click the **Renew** button in the **Actions** column. In the **New Ticket** dialog that appears, click **Confirm**.
 
-::: tip
-- Each deployment can have its own automatic renewal status, which is set independently.
-- Automatic renewal extends the duration for another year.
-- Autorenewal is applicable only to annual prepaid deployments.
+![subscription_01](./_assets/subscription_01.png)
 
-:::
-
-
-## Subscription Rules
-
-1. When automatic renewal is enabled for a deployment, the system will attempt to deduct the required amount for one year of the current deployment using the reserved payment method. This deduction occurs 12 hours prior to the expiration time.
-
-
-2. The automatic deduction will not be successful if there is an issue with the payment method.
-
+<img src="./_assets/subscription_ticket.png" alt="subscription_ticket" style="zoom:50%;" />
