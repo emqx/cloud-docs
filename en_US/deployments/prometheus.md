@@ -36,7 +36,7 @@ curl -u app_id:app_secret -X GET {api}/deployment_metrics
 
 #### Response Example
 
-```prometheus
+```bash
 # HELP deployment_emqx_connections_count The current number of connections for the current cluster, including active connections
 # TYPE deployment_emqx_connections_count gauge
 deployment_emqx_connections_count{deployment_id="b9110d11",deployment_type="dedicated",platform="aliyun_en"} 0
@@ -430,7 +430,7 @@ curl -u app_id:app_secret -X GET {api}/deployment_metrics/data_integration
 
 #### Response Example
 
-```prometheus
+```bash
 # HELP deployment_emqx_resource_status The current status of a specific resource
 # TYPE deployment_emqx_resource_status gauge
 deployment_emqx_resource_status{deployment_id="gde1d4ab",deployment_type="dedicated",platform="aliyun_en",resource_id="http:connector-fe4fb3d3"} 1
