@@ -8,7 +8,7 @@ A subaccount is an account created by an EMQX Platform user. Subaccounts will be
 
 Subaccounts get a separate login page for subaccounts only.
 
-<img src="./_assets/login_1.png" alt="default_project" style="zoom:67%;" />
+![default_project](./_assets/login_1.png)
 
 ## Accounts Categories
 
@@ -48,7 +48,7 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-   	  <td>Move deployments to other projects</td>
+   	<td>Move deployments to other projects</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -75,7 +75,7 @@ Role list:
       <td>&#10007</td>
       <td>&#10007</td>
    </tr>
-    <tr>
+   <tr>
    	<td>TLS/SSL Configuration</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -117,28 +117,29 @@ Role list:
       <td>Read only</td>
       <td>Read only</td>
    </tr>
-  <td>Update Gateway Configurations</td>
+   <tr>
+      <td>Update Gateway Configurations</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
    </tr>
    <tr>
-   <td>Monitor Menu</td>
+      <td>Monitor Menu</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
    </tr>
    <tr>
-   <td>Logs</td>
+      <td>Logs</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-   <td>Online Debugging</td>
+      <td>Online Debugging</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10007</td>
@@ -175,7 +176,7 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-   	  <td>Delete the project</td>
+   	<td>Delete the project</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -202,78 +203,78 @@ Role list:
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   	</tr>
-   	<tr>
+   </tr>
+   <tr>
       <td>Change credit card info</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10007</td>
-   	</tr>
-   	<tr>
+   </tr>
+   <tr>
       <td>View Bills page</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   	</tr>
-   	<tr>
+   </tr>
+   <tr>
       <td>View Charges by Services page</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   	</tr>
-   	<tr>
+   </tr>
+   <tr>
       <td>View Coupons</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   	</tr>
-   	<tr>
+   </tr>
+   <tr>
       <td>View Invoices</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
-   	</tr>
-   	<tr>
+   </tr>
+   <tr>
       <td>Download Invoices</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10007</td>
-   	</tr>
-      <tr>
+   </tr>
+   <tr>
       <td rowspan="4">Network Management</td>
       <td>Create/Delete VPC/PrivateLink</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
-      </tr>
-      <tr>
+   </tr>
+   <tr>
       <td>View VPC/PrivateLink</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
-      </tr>
-      <tr>
+   </tr>
+   <tr>
       <td>Create/Delete NAT/Internal Endpoint</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
-      </tr>
-      <tr>
+   </tr>
+   <tr>
       <td>View NAT/Internal Endpoint</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
-      </tr>
+   </tr>
    <tr>
       <td colspan="2">Audit Log</td>
       <td>&#10007</td>
@@ -281,7 +282,7 @@ Role list:
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
-   	<tr>
+   <tr>
       <td colspan="2">Tickets</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -289,4 +290,3 @@ Role list:
       <td>&#10003</td>
    </tr>
 </table>
-
