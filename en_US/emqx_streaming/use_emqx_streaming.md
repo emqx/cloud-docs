@@ -18,7 +18,7 @@ The EMQX Streaming feature can only be activated by submitting a ticket.
 1. Go to your deployment and navigate to **Streaming (beta)**. 
 2. Click **Enable Streaming (beta)** on the page to submit a ticket.
 
-Once the EMQX Streaming is activated, the Kafka endpoint information will be displayed on the **Streaming (beta)** -> **Streams** page.
+Once the EMQX Streaming is activated, the Kafka endpoint information will be displayed on the **Streaming (beta)** -> **Overview** page.
 
 ## Create a Stream
 
@@ -87,6 +87,12 @@ To verify the consumed messages, navigate to **Streaming (beta)** -> **Consumer 
 Click on the **Group ID** to view details about the consumer group, such as the list of consumers and their consumption progress.
 
 ![consumer_group_detail](./_assets/consumer_group_detail.png)
+
+## View EMQX Streaming Metrics
+
+The **Streaming** -> **Overview** page provides a comprehensive view of the metrics for Kafka endpoints and EMQX streaming. This page displays statistics, including the current number of streams, partitions, and consumer groups and the message rates for streaming operations.
+
+![streaming_overview](./_assets/streaming_overview.png)
 
 ## Remove a Stream
 
