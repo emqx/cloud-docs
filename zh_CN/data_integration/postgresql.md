@@ -169,8 +169,8 @@ emqx_data=# SELECT * FROM temp_hum;
 
      ```json
      {
-       "temp": "27.5",
-       "hum": "41.8"
+       "temp": 27.5,
+       "hum": 41.8
      }
      ```
 
