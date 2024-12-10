@@ -557,7 +557,7 @@ The following sections outline the available cloud providers and their supported
 | Cloud Provider | Region                                                       |
 | -------------- | ------------------------------------------------------------ |
 | AWS            | **US:** N. Virginia, Ohio, N. California, Oregon<br />**EU:** Ireland, London, Frankfurt<br />**Aisa:** Singapore, Mumbai, Hong Kong, Tokyo, Sydney |
-| Azure          | **US:** East US, West US 2, West US 3<br />**EU:** West Europe, Germany West Central, North Europe <br />**Asia:** Southeast Asia |
+| Azure          | **US:** East US, West US 2, West US 3<br />**EU:** West Europe, Germany West Central, North Europe <br />**Asia:** Southeast Asia, Japan East |
 | Google Cloud   | **US:** South Carolina, Oregon, Iowa<br />**EU:** Frankfurt, Finland<br />**Asia:** Mumbai, Singapore, Taiwan, Tokyo |
 
 ### Premium Plan
