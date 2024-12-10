@@ -1,294 +1,599 @@
 # Event Topics
 
-The Rule of Data Integrations provides several event topics available for FROM clause.
+The Rule of Data Integrations provides several event topics for the `FROM` clause. You can use rules to extract data from event topics to get event notifications, for example, clients online and offline, client subscriptions, etc. The event topic starts with `"$events/"`, such as `"$events/client_connected"`, which can be specified in the `FROM` clause of the rule.
 
-| Event topic name             | Explanation                     |
-| ---------------------------- | ------------------------------- |
-| $events/client_connected     | Client connect                  |
-| $events/client_disconnected  | Client disconnect               |
-| $events/message_delivered    | Message delivery                |
-| $events/message_acked        | Message acknowledged            |
-| $events/message_dropped      | Message dropped when routing    |
-| $events/delivery_dropped     | Message dropped when delivering |
-| $events/session_subscribed   | Subscribe                       |
-| $events/session_unsubscribed | Unsubscribe                     |
+This section introduces the usage of event topics and the meaning of each field from three aspects: client connect and disconnect events, message events, and topic subscribe and unsubscribe events.
 
-This article will introduce the usage of event topics, and the meaning of each field from three aspects: client connect and disconnect events, message events, topic subscribe and unsubscribe events.
+::: tip
 
-## Client connect and disconnect events
+By default, clients are unable to subscribe directly to MQTT event messages. This section describes using rules to subscribe to these messages.
 
-### Client connect
+:::
 
-The topic of client connect is `$events/client_connected`. On the New Rule step page, enter the following rule to match the SQL statement.
+See the table below for the supported event topic list. 
 
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/client_connected"
-   ```
+## Event Topic List
 
-You can test the SQL, view the return field after firing this rule.
-![client_connected](./_assets/rule_engine_event_client_connected.png)
+| Event topic name                                             | Explanation                     |
+| ------------------------------------------------------------ | :------------------------------ |
+| [$events/message_delivered](#message-delivery-event-events-message-delivered) | Message delivery                |
+| [$events/message_acked](#message-acknowledged-event-events-message-acked) | Message acknowledged            |
+| [$events/message_dropped](#message-dropped-when-routing-event-events-message-dropped) | Message dropped when routing    |
+| [$events/delivery_dropped](#message-dropped-when-delivering-event-events-delivery-dropped) | Message dropped when delivering |
+| [$events/client_connected](#connection-complete-event-events-client-connected) | Connection complete             |
+| [$events/client_disconnected](#disconnect-event-events-client-disconnected) | Disconnect                      |
+| [$events/client_connack](#connection-acknowlege-event-events-client-connack) | Connection acknowledged         |
+| [$events/client_check_authz_complete](#authorization-check-complete-event-events-client-check-authz-complete) | Authorization check complete    |
+| [$events/client_check_authn_complete](#authentication-check-complete-event-events-client-check-authn-complete) | Authentication check complete   |
+| [$events/session_subscribed](#subscriber-event-events-session-subscribed) | Subscribe                       |
+| [$events/session_unsubscribed](#unsubcribe-event-events-session-unsubscribed) | Unsubscribe                     |
 
-The fields are explained as follows.
+## Message Delivery Event ("$events/message_delivered")
 
-| field           | Explanation                             |
-| --------------- | --------------------------------------- |
-| clean_start     | MQTT clean_start                        |
-| clientid        | Client ID                               |
-| connected_at    | Terminal connection completion time (s) |
-| event           | Event type, fixed at "client.connected" |
-| expiry_interval | MQTT Session Expiration time            |
-| is_bridge       | Whether it is MQTT bridge connection    |
-| keepalive       | MQTT keepalive interval                 |
-| mountpoint      | Mountpoint for bridging messages        |
-| node            | Node name of the trigger event          |
-| peername        | IPAddress and Port of terminal          |
-| proto_name      | Protocol name                           |
-| proto_ver       | Protocol version                        |
-| sockname        | IPAddress and Port listened by emqx     |
-| timestamp       | Event trigger time (ms)                 |
-| username        | Current MQTT username                   |
+This event topic can be used to trigger a rule when a message is delivered to a client.
+
+For example, to extract data from the `"$events/message_delivered"` event topic that includes the following data fields, ID and username of the publisher, message topic, message QoS, EMQX node with the event triggered, and the time when the event was triggered, you can use the statement below:
+
+Example:
+
+```sql
+SELECT
+  from_clientid,
+  from_username,
+  topic,
+  qos,
+  node,
+  timestamp
+FROM
+  "$events/message_delivered"
+```
+
+Output:
+
+```json
+{
+  "topic": "t/a",
+  "timestamp": 1645002753259,
+  "qos": 1,
+  "node": "emqx@127.0.0.1",
+  "from_username": "u_emqx_1",
+  "from_clientid": "c_emqx_1"
+}
+```
+
+Below are detailed explanations of each field. 
+
+| Code                  | Explanation                                             |
+| :-------------------- | :------------------------------------------------------ |
+| `id`                  | MQTT message ID                                         |
+| `from_clientid`       | Client ID of the publisher                              |
+| `from_username`       | Username of the publisher                               |
+| `clientid`            | Client ID of the subscriber                             |
+| `username`            | Username of the subscriber                              |
+| `payload`             | MQTT payload                                            |
+| `peerhost`            | Client IP address                                       |
+| `topic`               | MQTT topic                                              |
+| `qos`                 | QoS level                                               |
+| `flags`               | Flags                                                   |
+| `pub_props`           | PUBLISH Properties (MQTT 5.0 clients only)              |
+| `timestamp`           | Event trigger time (unit: ms)                           |
+| `publish_received_at` | Time when PUBLISH message reaches EMQX <br />(unit: ms) |
+| `node`                | EMQX node where the event triggered                     |
+
+## Message Acknowledged Event ("$events/message_acked")
+
+This event topic can be used to trigger a rule when the message delivery is acknowledged. 
+
+::: tip
+
+Only availabe for QOS 1 and QOS 2 messages.
+
+:::
+
+For example, to extract data from the `"$events/message_acked"` event topic that includes the following data fields, ID and username of the publisher, message topic, message QoS, EMQX node where the event triggered, and the time when the event was triggered, you can use the statement below: <!--need to confirm the node part-->
+
+Example:
+
+```sql
+SELECT
+  from_clientid,
+  from_username,
+  topic,
+  qos,
+  node,
+  timestamp
+FROM
+  "$events/message_acked"
+```
+
+Output:
+
+```json
+{
+  "topic": "t/a",
+  "timestamp": 1645002965664,
+  "qos": 1,
+  "node": "emqx@127.0.0.1",
+  "from_username": "u_emqx_1",
+  "from_clientid": "c_emqx_1"
+}
+```
+
+Below are detailed explanations of each field. 
+
+| Code                  | Explanation                                       |
+| :-------------------- | :------------------------------------------------ |
+| `id`                  | MQTT message ID                                   |
+| `from_clientid`       | Client ID of the publisher                        |
+| `from_username`       | Username of the publisher                         |
+| `clientid`            | Client ID of the subscriber                       |
+| `username`            | Username of the subscriber                        |
+| `payload`             | MQTT payload                                      |
+| `peerhost`            | Client IPAddress                                  |
+| `topic`               | MQTT topic                                        |
+| `qos`                 | QoS levels                                        |
+| `flags`               | Flags                                             |
+| `pub_props`           | PUBLISH Properties (MQTT 5.0 only)                |
+| `puback_props`        | PUBACK Properties (MQTT 5.0 only)                 |
+| `timestamp`           | Event trigger time (in milliseconds)              |
+| `publish_received_at` | Time when PUBLISH message reaches EMQX (unit: ms) |
+| `node`                | EMQX node where the event triggered               |
+
+## Message Dropped When Routing Event ("$events/message_dropped")
+
+This event topic can be used to trigger a rule when a message is dropped during routing. 
+
+For example, to extract data from the `"$events/message_dropped"` event topic that includes the following data fields: drop reason, message topic, message QoS, EMQX node where the event triggered, and the time when the event was triggered, you can use the statement below: 
+
+Example:
+
+```sql
+SELECT
+  reason,
+  topic,
+  qos,
+  node,
+  timestamp
+FROM
+  "$events/message_dropped"
+```
+
+Output:
+
+```json
+{
+  "topic": "t/a",
+  "timestamp": 1645003103004,
+  "reason": "no_subscribers",
+  "qos": 1,
+  "node": "emqx@127.0.0.1"
+}
+```
+
+| Field                 | Explanation                                                  |
+| :-------------------- | :----------------------------------------------------------- |
+| `id`                  | MQTT message ID                                              |
+| `reason`              | Dropping reasons: <br/><br/>`no_subscribers`: No clients subscribe to the topic<br/><br/>`receive_maximum_exceeded`: `awaiting_rel` queue is full<br/><br/>`packet_identifier_inuse`: Receive a QoS 2 message with unreleased packet ID <!--originally was send--> |
+| `clientid`            | Client ID of the publisher                                   |
+| `username`            | Username of the publisher                                    |
+| `payload`             | MQTT payload                                                 |
+| `peerhost`            | Client IP Address                                            |
+| `topic`               | MQTT topic                                                   |
+| `qos`                 | QoS levels                                                   |
+| `flags`               | Flags                                                        |
+| `pub_props`           | PUBLISH Properties (MQTT 5.0 only)                           |
+| `timestamp`           | Event trigger time (unit: ms)                                |
+| `publish_received_at` | Time when PUBLISH message reaches EMQX (unit: ms)            |
+| `node`                | Node where the event is triggered                            |
+
+## Message Dropped When Delivering Event ("$events/delivery_dropped")
+
+This event topic can trigger a rule when a message is dropped during delivery. 
+
+For example, to extract data from the `"$events/delivery_dropped"` event topic that includes the following data fields: publisher ID and username, drop reason, message topic and QoS, you can use the statement below: 
+
+Example:
+
+```sql
+SELECT
+  from_clientid,
+  from_username,
+  reason,
+  topic,
+  qos
+FROM "$events/delivery_dropped"
+```
+
+Output:
+
+```json
+{
+  "topic": "t/a",
+  "reason": "queue_full",
+  "qos": 1,
+  "from_username": "u_emqx_1",
+  "from_clientid": "c_emqx_1"
+}
+```
+
+Below are detailed explanations of each field. 
+
+| Explanation           |                                                              |
+| :-------------------- | ------------------------------------------------------------ |
+| `id`                  | MQTT message ID                                              |
+| `reason`              | Dropping reasons: <br/><br/>`queue_full`: Message (QoS>0) queue is full.<br/><br/>`no_local`: Clients are not allowed to receive messages published by themselves.<br/><br/>`expired`: Message or the Session expired.<br/><br/>`qos0_msg`: Message (QoS 0) queue is full. |
+| `from_clientid`       | Client ID of the publisher                                   |
+| `from_username`       | Username of the publisher                                    |
+| `clientid`            | Client ID of the subscriber                                  |
+| `username`            | Username of the subscriber                                   |
+| `payload`             | MQTT payload                                                 |
+| `peerhost`            | Client IP Address                                            |
+| `topic`               | MQTT topic                                                   |
+| `qos`                 | Message QoS                                                  |
+| `flags`               | Flags                                                        |
+| `pub_props`           | PUBLISH Properties (MQTT 5.0 clients only)                   |
+| `timestamp`           | Event trigger time (unit: ms)                                |
+| `publish_received_at` | Time when PUBLISH message reaches EMQX (unit: ms)            |
+| `node`                | EMQX node where the event is triggered                       |
+
+## Connection Complete Event ("$events/client_connected")
+
+This event topic can be used to trigger a rule when a client is connected successfully.
+
+For example, to extract data from the `"$events/client_connected"` event topic that includes the following data fields: client ID and username, keepalive interval, and whether the connected MQTT client is acting as a bridge, you can use the statement below: 
+
+Example:
+
+```sql
+SELECT
+  clientid,
+  username,
+  keepalive,
+  is_bridge
+FROM
+  "$events/client_connected"
+```
+
+Output:
+
+```json
+{
+  "username": "u_emqx",
+  "keepalive": 60,
+  "is_bridge": false,
+  "clientid": "c_emqx"
+}
+```
+
+Refer to the table below for fields that can be selected from the received MQTT messages: 
+
+| Field             | Explanation                                                  |
+| :---------------- | :----------------------------------------------------------- |
+| `clientid`        | Client ID                                                    |
+| `username`        | Client username                                              |
+| `mountpoint`      | Mountpoint for bridging messages                             |
+| `peername`        | IP address and port of terminal <!--whether all should include port--> |
+| `sockname`        | IP Address and Port listened by EMQX                         |
+| `proto_name`      | Protocol name                                                |
+| `proto_ver`       | Protocol version                                             |
+| `keepalive`       | MQTT keepalive interval                                      |
+| `clean_start`     | MQTT clean_start                                             |
+| `expiry_interval` | MQTT session expiration time                                 |
+| `is_bridge`       | Whether the client is acting as a bridge                     |
+| `connected_at`    | Client connection completion time (unit: ms)                 |
+| `conn_props`      | CONNECT Properties (MQTT 5.0 clients only)                   |
+| `timestamp`       | Event trigger time (unit: ms)                                |
+| `node`            | EMQX node where the event is triggered                       |
+| `client_attrs`    | [Client attributes](https://docs.emqx.com/en/emqx/latest/client-attributes/client-attributes.html) |
+
+## Disconnect Event ("$events/client_disconnected")
+
+This event topic can be used to trigger a rule when a client is disconnected.
+
+For example, you can use the statement below to extract data from the `"$events/client_disconnected"` event topic that includes the following data fields: client ID, username, disconnect reason, disconnect time, and EMQX node where the event is triggered.
+
+Example:
+
+```sql
+SELECT
+  clientid,
+  username,
+  reason,
+  disconnected_at,
+  node
+FROM
+  "$events/client_disconnected"
+```
+
+Output:
+
+```json
+{
+  "username": "u_emqx",
+  "reason": "normal",
+  "node": "emqx@127.0.0.1",
+  "disconnected_at": 1645003578536,
+  "clientid": "c_emqx"
+}
+```
+
+| Field             | Explanation                                                  |
+| :---------------- | :----------------------------------------------------------- |
+| `reason`          | Disconnect reasons<br/><br/>`normal`: The client is intentionally disconnected <br/><br/>`kicked`: EMQX has forcibly removed the client through REST API<br/><br/>`keepalive_timeout`: The specified keepalive time period expired.<br/><br/>`not_authorized`: Authorization failed.<br/><br/>`tcp_closed`: The peer has closed network connection.<br/><br/>`discarded`: Another client ( with `clean_start` set to `true`) connected with the same ClientID, causing the previous connection to be dropped.<br/><br/>`takenover`: Another client ( with `clean_start` set to `false`) connected with the same ClientID, taking over the previous connection..<br/><br/>`internal_error`: An error has occurred due to an improperly formatted message or other unknown issues. |
+| `clientid`        | Client ID                                                    |
+| `username`        | Client username                                              |
+| `peername`        | IP Address and Port number                                   |
+| `sockname`        | IP Address and Port number listened by EMQX                  |
+| `disconnected_at` | Client disconnection completion time (unit: ms)              |
+| `disconn_props`   | DISCONNECT Properties (MQTT 5.0 clients only)                |
+| `timestamp`       | Event trigger time (unit: ms)                                |
+| `node`            | EMQX node where the event is triggered                       |
+| `client_attrs`    | [Client attributes](https://docs.emqx.com/en/emqx/latest/client-attributes/client-attributes.html) |
+
+## Connection Acknowlege Event ("$events/client_connack")
+
+This event topic can be used to trigger a rule when the EMQX sends a `CONNACK` packet to the client. 
+
+Example:
+
+```sql
+SELECT
+  clientid,
+  username,
+  reason_code,
+  node
+FROM
+  "$events/client_connack"
+```
+
+Output:
+
+```json
+{
+  "username": "u_emqx",
+  "reason_code": "success",
+  "node": "emqx@127.0.0.1",
+  "connected_at": 1645003578536,
+  "clientid": "c_emqx"
+}
+```
+
+Refer to the table below for fields that can be extracted:
+
+| Field             | Explanation                                |
+| ----------------- | :----------------------------------------- |
+| `reason_code`     | Reason code*                               |
+| `clientid`        | Client ID of the publisher                 |
+| `username`        | Username of the publisher                  |
+| `peername`        | IP and port                                |
+| `sockname`        | IP and port listened by EMQX               |
+| `proto_name`      | Protocol name                              |
+| `proto_ver`       | Protocol version                           |
+| `keepalive`       | MQTT keepalive interval                    |
+| `clean_start`     | MQTT clean_start                           |
+| `expiry_interval` | MQTT session expiration time               |
+| `conn_props`      | CONNECT Properties (MQTT 5.0 clients only) |
+| `timestamp`       | Event trigger time (unit: ms)              |
+| `node`            | EMQX node where the alarm is triggered.    |
+
+[^*]: The MQTT v5.0 protocol renames the return code to a reason code, adding a reason code to indicate more types of errors ([Reason code and ACK - MQTT 5.0 new features](https://www.emqx.com/en/blog/mqtt5-new-features-reason-code-and-ack)).
+
+Here is the reason code for MQTT v3.1.1 and MQTT v5.0. 
+
+:::: tabs type:card
+
+::: tab MQTT v3.1.1
+
+| Reason Code                      | Description                                                  |
+| -------------------------------- | ------------------------------------------------------------ |
+| `connection_accepted`            | Connection accepted                                          |
+| `unacceptable_protocol_version`  | EMQX does not support the MQTT protocol requested by the client. <!--MQTT protocol?--> |
+| `client_identifier_not_valid`    | The client ID is not allowed by EMQX. <!--tech review-->     |
+| `server_unavaliable`             | Network connection has been established, but MQTT service is unavailable. |
+| `malformed_username_or_password` | Username or password is in the wrong data format.            |
+| `unauthorized_client`            | Client connection is not authorized.                         |
+
+:::
+
+::: tab MQTT v5.0
+
+| Reason Code                     | Description                        |
+| ------------------------------- | ---------------------------------- |
+| `success`                       | Connection successful              |
+| `unspecified_error`             | Unknown error                      |
+| `malformed_packet`              | Packet malformed                   |
+| `protocol_error`                | Protocol issue                     |
+| `implementation_specific_error` | Specific implementation error      |
+| `unsupported_protocol_version`  | Unsupported protocol version       |
+| `client_identifier_not_valid`   | Invalid client ID                  |
+| `bad_username_or_password`      | Invalid username/password          |
+| `not_authorized`                | Unauthorized                       |
+| `server_unavailable`            | Server unavailable                 |
+| `server_busy`                   | Server busy                        |
+| `banned`                        | Banned                             |
+| `bad_authentication_method`     | Invalid authentication method      |
+| `topic_name_invalid`            | Invalid topic name                 |
+| `packet_too_large`              | Packet too big                     |
+| `quota_exceeded`                | Quota exceeded                     |
+| `retain_not_supported`          | Retain message feature unsupported |
+| `qos_not_supported`             | Unsupported QoS level              |
+| `use_another_server`            | Use different broker               |
+| `server_moved`                  | Broker relocated                   |
+| `connection_rate_exceeded`      | Connection rate limit reached      |
+
+:::
+
+::::
+
+## Authorization Check Complete Event ("$events/client_check_authz_complete")
+
+This event topic can be used to trigger a rule when the authorization check for the client is complete.
+
+Example:
+
+```sql
+SELECT
+  clientid,
+  username,
+  topic,
+  action,
+  result,
+  authz_source,
+  node
+FROM
+  "$events/client_check_authz_complete"
+```
+
+Output:
+
+```json
+{
+  "username": "u_emqx",
+  "topic": "t/a",
+  "action": "publish",
+  "result": "allow",
+  "authz_source": "cache",
+  "node": "emqx@127.0.0.1",
+  "clientid": "c_emqx"
+}
+```
+
+Refer to the table below for fields that can be extracted.
+
+| Field           | Explanation                                                  |
+| --------------- | :----------------------------------------------------------- |
+| `clientid`      | Client ID                                                    |
+| `username`      | Username                                                     |
+| `peerhost`      | Client IP Address                                            |
+| `topic`         | MQTT topic                                                   |
+| `action`        | Publish or subscribe action                                  |
+| `result`        | Access control check result                                  |
+| `authz_source ` | The authorization source                                     |
+| `timestamp`     | Timestamp (unit: ms)                                         |
+| `node`          | EMQX node where the event is triggered.                      |
+| `client_attrs`  | [Client attributes](https://docs.emqx.com/en/emqx/latest/client-attributes/client-attributes.html) |
+
+## Authentication Check Complete Event ("$events/client_check_authn_complete")
+
+This event topic can be used to trigger a rule when the authentication check for the client is complete.
+
+Example:
+
+```sql
+SELECT
+  clientid,
+  username,
+  reason_code,
+  is_superuser,
+  is_anonymous
+FROM
+  "$events/client_check_authn_complete"
+```
+
+Output:
+
+```json
+{
+  "clientid": "c_emqx",
+  "username": "u_emqx",
+  "reason_code": "success",
+  "is_superuser": true,
+  "is_anonymous": false
+}
+```
+
+Refer to the table below for fields that can be extracted.
+
+| Field          | Explanation                                                  |
+| -------------- | :----------------------------------------------------------- |
+| `clientid`     | Client ID                                                    |
+| `username`     | Username                                                     |
+| `peername`     | Client IP Address                                            |
+| `reason_code`  | Authentication result                                        |
+| `is_superuser` | Whether this client is a super user                          |
+| `is_anonymous` | Whether this client is a anonymous user                      |
+| `client_attrs` | [Client attributes](https://docs.emqx.com/en/emqx/latest/client-attributes/client-attributes.html) |
+
+## Subscriber Event ("$events/session_subscribed")
+
+This event topic can be used to trigger a rule when the client subscribes successfully.
+
+Example:
+
+```sql
+SELECT
+  clientid,
+  username,
+  topic,
+  qos
+FROM
+  "$events/session_subscribed"
+```
+
+Output:
+
+```json
+{
+  "username": "u_emqx",
+  "topic": "t/a",
+  "qos": 1,
+  "clientid": "c_emqx"
+}
+```
+
+Refer to the table below for fields that can be extracted.
+
+| Field          | Explanation                                                  |
+| :------------- | :----------------------------------------------------------- |
+| `clientid`     | Client ID                                                    |
+| `username`     | Client username                                              |
+| `peerhost`     | Client IP Address                                            |
+| `topic`        | MQTT topic                                                   |
+| `qos`          | QoS levels                                                   |
+| `sub_props`    | SUBSCRIBE Properties (MQTT 5.0 client only)                  |
+| `timestamp`    | Event trigger time (unit: ms)                                |
+| `node`         | EMQX node where the event is triggered                       |
+| `client_attrs` | [Client attributes](https://docs.emqx.com/en/emqx/latest/client-attributes/client-attributes.html) |
+
+## Unsubcribe Event ("$events/session_unsubscribed")
+
+The rule is triggered when the terminal subscription is cancelled successfully.
 
 
-### Client disconnect
+Example:
 
-The topic of client disconnect is `$events/client_disconnected`. On the New Rule step page, enter the following rule to match the SQL statement.
+```sql
+SELECT
+  clientid,
+  username,
+  topic,
+  qos
+FROM
+  "$events/session_unsubscribed"
+```
 
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/client_disconnected"
-   ```
+Output:
 
-You can test the SQL, view the return field after firing this rule.
-![client_disconnected](./_assets/rule_engine_event_client_disconnected.png)
+```json
+{
+  "username": "u_emqx",
+  "topic": "t/a",
+  "qos": 1,
+  "clientid": "c_emqx"
+}
+```
 
-The fields are explained as follows.
+Refer to the table below for fields that can be extracted.
 
-| field           | Explanation                                |
-| --------------- | ------------------------------------------ |
-| clientid        | Client ID                                  |
-| disconnected_at | Terminal disconnection completion time (s) |
-| event           | Event type, fixed at "client.disconnected" |
-| node            | Node name of the trigger event             |
-| expiry_interval | MQTT Session Expiration time               |
-| sockname        | IPAddress and Port listened by emqx        |
-| timestamp       | Event trigger time (ms)                    |
-| username        | Current MQTT username                      |
-| peername        | IPAddress and Port of terminal             |
-| reason          | Reason for disconnection of terminal       |
+| Field          | Explanation                                                  |
+| -------------- | :----------------------------------------------------------- |
+| `clientid`     | Client ID                                                    |
+| `username`     | Client username                                              |
+| `peerhost`     | Client IP Address                                            |
+| `topic`        | MQTT topic                                                   |
+| `qos`          | QoS levels                                                   |
+| `unsub_props`  | UNSUBSCRIBE Properties (MQTT 5.0 clients only)               |
+| `timestamp`    | Event trigger time (unit: ms)                                |
+| `node`         | EMQX node where the event is triggered                       |
+| `client_attrs` | [Client attributes](https://docs.emqx.com/en/emqx/latest/client-attributes/client-attributes.html) |
 
-Here are some common reasons for client disconnections.
-
-| types                    | reason                                                                                                                                                                                                                               |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| normal                   | MQTT client disconnects normally                                                                               |
-| discarded                   |Because clients with the same ClientID and have clean_start = true set.                  |
-| takeovered                   |Because clients with the same ClientID and have clean_start = false set.                                |
-| kicked                   | Using the REST API to kick out clients                                                                                                                                                                                               |
-| keepalive_timeout        | MQTT keepalive timeout                                                                                                                                                                                                               |
-| not_authorized           | Authentication fails, or Pub/Sub without permission will actively disconnect the client when acl_nomatch = disconnect                                                                                                                |
-| tcp_closed               | The TCP connection is actively closed by the client                                                                                                                                                                                  |
-| receive_maximum_exceeded | When a client sends a qos2 message, a large number of messages pile up on the MQTT Broker because it does not reply to the PUBREL in time. When the number of message pileups reaches the upper limit, EMQX will actively disconnect |
-| internal_error           | Malformed packet parsing error                                                                                                                                                                                                       |
-| einval                   | EMQX wants to send a message to the client, but the Socket has been disconnected                                                                                                                                                     |
-| function_clause          | MQTT packet format error                                                                                                                                                                                                             |
-| etimedout                | TCP send timeout (no TCP ACK response received)                                                                                                                                                                                      |
-| proto_unexpected_c       | MQTT connection request received repeatedly when there is already an MQTT connection                                                                                                                                                 |
-| idle_timeout             | 15s after the TCP connection is established, the connect message has not been received                                                                                                                                               |
-| others                   | Please refer to [MQTT Reason Code and ACK](https://www.emqx.com/en/blog/mqtt5-new-features-reason-code-and-ack)                                                                                                                      |
-
-## Message events
-
-### Message delivery
-
-The topic of client disconnect is `$events/message_delivered. On the New Rule step page, enter the following rule to match the SQL statement.
-
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/message_delivered"
-   ```
-
-You can test the SQL, view the return field after firing this rule.
-![message_delivered](./_assets/rule_engine_event_message_delivered.png)
-
-The fields are explained as follows.
-
-| field               | Explanation                                   |
-| ------------------- | --------------------------------------------- |
-| clientid            | Client ID                                     |
-| event               | Event type, fixed at "message.delivered"      |
-| flags               | MQTT Message flags                            |
-| from_clientid       | Message source client ID                      |
-| from_username       | Message source username                       |
-| id                  | MQTT message ID                               |
-| node                | Node name of the trigger event                |
-| payload             | MQTT payload                                  |
-| peerhost            | Client IPAddress                              |
-| publish_received_at | Time when PUBLISH message reaches Broker (ms) |
-| qos                 | Enumeration of message QoS 0,1,2              |
-| timestamp           | Event trigger time (ms)                       |
-| topic               | MQTT topic                                    |
-| username            | Current MQTT username                         |
-
-
-### Message acknowledged
-
-The topic of client disconnect is `$events/message_acked`. On the New Rule step page, enter the following rule to match the SQL statement.
-
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/message_acked"
-   ```
-
-You can test the SQL, view the return field after firing this rule.
-![client_acked](./_assets/rule_engine_event_client_acked.png)
-
-The fields are explained as follows.
-
-| field               | Explanation                                   |
-| ------------------- | --------------------------------------------- |
-| clientid            | Client ID                                     |
-| event               | Event type, fixed at "message.acked"          |
-| flags               | MQTT message flags                            |
-| from_clientid       | Message source client ID                      |
-| from_username       | Message source username                       |
-| id                  | MQTT message ID                               |
-| node                | Node name of the trigger event                |
-| payload             | MQTT payload                                  |
-| peerhost            | Client IPAddress                              |
-| publish_received_at | Time when PUBLISH message reaches Broker (ms) |
-| qos                 | Enumeration of message QoS 0,1,2              |
-| timestamp           | Event trigger time (ms)                       |
-| topic               | MQTT topic                                    |
-| username            | Current MQTT username                         |
-
-
-### Message dropped
-
-The topic of a message dropped is `$events/message_dropped`, which triggers the trigger rule when a message has no subscribers. On the New Rule step page, enter the following rule to match the SQL statement.
-
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/message_dropped"
-   ```
-
-You can test the SQL, view the return field after firing this rule.
-![message_dropped](./_assets/rule_engine_event_client_dropped.png)
-
-The fields are explained as follows.
-
-| Field               | Explanation                                                                                                                                                                                                                  |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                  | MQTT message id                                                                                                                                                                                                              |
-| reason              | Reasons of dropping, possible reasons: <br>no_subscribers: no clients subscribes the topic<br>receive_maximum_exceeded: awaiting_rel queue is full<br>packet_identifier_inuse: send a qos2 message with unreleased packet ID |  |
-| clientid            | Client ID of the sender                                                                                                                                                                                                      |
-| username            | Username of the sender                                                                                                                                                                                                       |
-| payload             | MQTT payload                                                                                                                                                                                                                 |
-| peerhost            | Client IPAddress                                                                                                                                                                                                             |
-| topic               | MQTT topic                                                                                                                                                                                                                   |
-| qos                 | Enumeration of message QoS 0,1,2                                                                                                                                                                                             |
-| flags               | Flags                                                                                                                                                                                                                        |
-| pub_props           | The PUBLISH Properties (MQTT 5.0 only)                                                                                                                                                                                       |
-| timestamp           | Event trigger time(millisecond)                                                                                                                                                                                              |
-| publish_received_at | Time when PUBLISH message reaches Broker (ms)                                                                                                                                                                                |
-| node                | Node name of the trigger event                                                                                                                                                                                               |
-
-### Delivery_dropped
-
-The topic of delivery_dropped is `$events/delivery_dropped, trigger rule when subscriber's message queue is full. On the New Rule step page, enter the following rule to match the SQL statement:
-
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/delivery_dropped"
-   ```
-
-You can test the SQL, view the return field after firing this rule.
-![delivery_dropped](./_assets/rule_engine_event_delivery_dropped.png)
-
-The fields are explained as follows.
-
-| Field               | Explanation                                                                                                                                                                                                                                                                      |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                  | MQTT message id                                                                                                                                                                                                                                                                  |
-| reason              | Reasons of dropping, possible reasons: <br>queue_full: the message queue is full(QoS>0)<br>no_local: it's not allowed for the client to received messages published by themselves<br>expired: the message or the session is expired<br>qos0_msg: the message queue is full(QoS0) |  |
-| clientid            | Client ID of the sender                                                                                                                                                                                                                                                          |
-| from_clientid       | Client ID of the sender                                                                                                                                                                                                                                                          |
-| from_username       | Username of the sender                                                                                                                                                                                                                                                           |
-| username            | Username of the sender                                                                                                                                                                                                                                                           |
-| payload             | MQTT payload                                                                                                                                                                                                                                                                     |
-| peerhost            | Client IPAddress                                                                                                                                                                                                                                                                 |
-| topic               | MQTT topic                                                                                                                                                                                                                                                                       |
-| qos                 | Enumeration of message QoS 0,1,2                                                                                                                                                                                                                                                 |
-| flags               | Flags                                                                                                                                                                                                                                                                            |
-| pub_props           | The PUBLISH Properties (MQTT 5.0 only)                                                                                                                                                                                                                                           |
-| timestamp           | Event trigger time(millisecond)                                                                                                                                                                                                                                                  |
-| publish_received_at | Time when PUBLISH message reaches Broker (ms)                                                                                                                                                                                                                                    |
-| node                | Node name of the trigger event                                                                                                                                                                                                                                                   |
-
-## Topic subscribe and unsubscribe events
-
-### Subscribe
-
-The topic of client disconnect is `$events/session_subscribed`. On the New Rule step page, enter the following rule to match the SQL statement.
-
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/session_subscribed"
-   ```
-
-You can test the SQL, view the return field after firing this rule.
-![session_subscribed](./_assets/rule_engine_event_session_subscribed.png)
-
-The fields are explained as follows.
-
-| field     | Explanation                               |
-| --------- | ----------------------------------------- |
-| clientid  | Client ID                                 |
-| event     | Event type, fixed at "session.subscribed" |
-| node      | Node name of the trigger event            |
-| peerhost  | Client IPAddress                          |
-| qos       | Enumeration of message QoS 0,1,2          |
-| timestamp | Event trigger time (ms)                   |
-| topic     | MQTT topic                                |
-| username  | Current MQTT username                     |
-
-### Unsubscribe
-
-The topic of client disconnect is `$events/session_unsubscribed`. On the New Rule step page, enter the following rule to match the SQL statement.
-
-   ```sql
-    SELECT
-        *
-    FROM
-        "$events/session_unsubscribed"
-   ```
-
-You can test the SQL, view the return field after firing this rule.
-![session_unsubscribed](./_assets/rule_engine_event_session_unsubscribed.png)
-
-The fields are explained as follows.
-
-| field     | Explanation                                 |
-| --------- | ------------------------------------------- |
-| clientid  | Client ID                                   |
-| event     | Event type, fixed at "session.unsubscribed" |
-| node      | Node name of the trigger event              |
-| peerhost  | Client IPAddress                            |
-| qos       | Enumeration of message QoS 0,1,2            |
-| timestamp | Event trigger time (ms)                     |
-| topic     | MQTT topic                                  |
-| username  | Current MQTT username                       |
