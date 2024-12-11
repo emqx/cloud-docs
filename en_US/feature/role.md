@@ -1,4 +1,4 @@
-# Role and Authentication
+# Roles and Permissions
 
 Accounts management fulfills enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. Different personnel can be invited within the enterprise to do detailed management of resources.
 
@@ -8,7 +8,7 @@ A subaccount is an account created by an EMQX Platform user. Subaccounts will be
 
 Subaccounts get a separate login page for subaccounts only.
 
-![default_project](./_assets/login_1.png)
+<img src="./_assets/login_1.png" alt="default_project" style="zoom:67%;" />
 
 ## Accounts Categories
 
@@ -22,7 +22,7 @@ Subaccounts get a separate login page for subaccounts only.
 
 **Auditor**: Auditors can view projects, deployments,  accounts, and Accountants. The audit role addresses the need for internal company audits and can have viewing permissions to various features of the platform.
 
-Role list:
+## Role Permission List
 
 <table>
    <tr>
@@ -33,8 +33,15 @@ Role list:
       <th>Auditor</th>
    </tr>
    <tr>
-      <td rowspan="16">Deployment</td>
+      <td rowspan="19">Deployment</td>
       <td>View deployment list</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+      <td>&#10003</td>
+   </tr>
+  <tr>
+   	  <td>View deployment details (all features within deployments)</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10003</td>
@@ -76,14 +83,35 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-   	<td>TLS/SSL Configuration</td>
+   	<td>Change deployment tiers</td>
+      <td>&#10003</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+   </tr>
+   <tr>
+   	<td>Change spend limit for Serverless</td>
+      <td>&#10003</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+   </tr>
+   <tr>
+   	<td>Update BYOC License</td>
+      <td>&#10003</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+   </tr>
+   <tr>
+   	<td>TLS/SSL configuration</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
    </tr>
    <tr>
-   	<td>VPC Connection Configuration</td>
+   	<td>VPC Connection configuration</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
@@ -97,35 +125,28 @@ Role list:
       <td>Read only</td>
    </tr>
    <tr>
-      <td>Platform API</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>&#10007</td>
-      <td>Read only</td>
-   </tr>
-   <tr>
-   	<td>Certification Authentication Configuration</td>
+   	<td>Certification authentication configuration</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
    </tr>
    <tr>
-   	<td>Data Integrations Configuration</td>
+   	<td>Data integrations configuration</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
    </tr>
    <tr>
-      <td>Update Gateway Configurations</td>
+      <td>Update gateway configurations</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
       <td>Read only</td>
    </tr>
    <tr>
-      <td>Monitor Menu</td>
+      <td>Monitor menu</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>Read only</td>
@@ -139,7 +160,7 @@ Role list:
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>Online Debugging</td>
+      <td>Online debugging</td>
       <td>&#10003</td>
       <td>&#10003</td>
       <td>&#10007</td>
@@ -147,14 +168,14 @@ Role list:
    </tr>
    <tr>
       <td rowspan="2">Subaccounts</td>
-      <td>View Subaccounts List</td>
+      <td>View subaccounts list</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>Subaccounts Operation</td>
+      <td>Subaccounts operation</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -163,8 +184,8 @@ Role list:
    <tr>
       <td rowspan="5">Project Management</td>
       <td>View project list</td>
-      <td>&#10003</td>
-      <td>&#10003</td>
+      <td>&#10003 (authorized projects only)</td>
+      <td>&#10003 (authorized projects only)</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
@@ -176,14 +197,14 @@ Role list:
       <td>&#10007</td>
    </tr>
    <tr>
-   	<td>Delete the project</td>
+   	<td>Delete project</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10007</td>
    </tr>
    <tr>
-      <td>Edit the project</td>
+      <td>Edit project name and note</td>
       <td>&#10003</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -197,7 +218,7 @@ Role list:
       <td>&#10007</td>
    </tr>
 	<tr>
-      <td rowspan="7">Billing</td>
+      <td rowspan="8">Billing</td>
       <td>Billing Overview</td>
       <td>&#10007</td>
       <td>&#10007</td>
@@ -219,31 +240,38 @@ Role list:
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>View Charges by Services page</td>
+      <td>View charges by services page</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>View Coupons</td>
+      <td>View coupons</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>View Invoices</td>
+      <td>View invoices</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
       <td>&#10003</td>
    </tr>
    <tr>
-      <td>Download Invoices</td>
+      <td>Download invoices</td>
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
+      <td>&#10007</td>
+   </tr>
+   <tr>
+      <td>Subscription renewal</td>
+      <td>&#10003</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
       <td>&#10007</td>
    </tr>
    <tr>
@@ -281,6 +309,20 @@ Role list:
       <td>&#10007</td>
       <td>&#10007</td>
       <td>&#10003</td>
+   </tr>
+   <tr>
+      <td colspan="2">View platform API key</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10003</td>
+   </tr>
+   <tr>
+      <td colspan="2">Manage platform API key</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
+      <td>&#10007</td>
    </tr>
    <tr>
       <td colspan="2">Tickets</td>

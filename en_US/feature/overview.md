@@ -5,7 +5,7 @@
 
 Project management is used to group deployments under different projects, making it easy to manage deployments according to the projects.
 
-## [Role and Authentication](./role.md)
+## [Roles and Permissions](./role.md)
 
 Accounts management fulfills enterprise users' multi-role management requirements, by assigning different permissions and projects to different roles. 
 
